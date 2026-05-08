@@ -6,7 +6,7 @@ This repository uses **[Agent Skills](https://agentskills.io/specification)**-st
 2. **Graph file creation** — prune and export **viewer JSON** plus `graph-metadata.json`.
 3. **Local server** — serve the visualization UI in a browser.
 
-Validated commands and defaults are also summarized in [`CIRCUIT_TRACER_LOCAL_WORKFLOW.md`](CIRCUIT_TRACER_LOCAL_WORKFLOW.md) and narrative notes in [`update-1.md`](update-1.md).
+Validated commands and defaults live in each skill's `SKILL.md` and `references/REFERENCE.md` files. Narrative notes from the original setup are in [`update-1.md`](update-1.md).
 
 ## Skill registry
 
@@ -28,14 +28,17 @@ When the user gives a **single high-level request** such as:
 the agent should:
 
 1. **Read** the three `skills/*/SKILL.md` files (or at minimum the attribution + viewer skills, plus graph-export if not using `--server` one-shot).
-2. **Choose a run directory** — e.g. `runs/<YYYY-MM-DD>_<short-slug>/` under the repo root (or a path the user specifies). Create it if missing.
-3. **Pick identifiers**
+2. **Use the project environment** — use `/Users/anthony/miniconda3/envs/pyclean/bin/python` and `/Users/anthony/miniconda3/envs/pyclean/bin/circuit-tracer`. Do **not** create a venv for this repo.
+3. **Choose a run directory** — e.g. `runs/<YYYY-MM-DD>_<short-slug>/` under the repo root (or a path the user specifies). Create it if missing.
+4. **Pick identifiers**
    - **`slug`**: short filesystem-safe id (lowercase, hyphens), e.g. `france-capital` or derived from the prompt hash/date.
    - **`.pt` path**: e.g. `./graph.pt` or `./<slug>.pt` inside the run directory.
-4. **Execute phase 1 (Attribution)** per [`skills/circuit-attribution/SKILL.md`](skills/circuit-attribution/SKILL.md): produce a `.pt` **unless** the user explicitly wants the one-shot CLI path (`--slug` + `--graph_file_dir` + `--server`), which combines attribution + JSON + server in one process (see workflow doc).
-5. **Execute phase 2 (Graph export)** when needed per [`skills/circuit-graph-export/SKILL.md`](skills/circuit-graph-export/SKILL.md): call `create_graph_files(...)` so `./graph_files/<slug>.json` and `./graph_files/graph-metadata.json` exist. Always pass **`output_path` as `./graph_files`** (leading `./`) to avoid path assertion failures documented in `update-1.md`.
-6. **Execute phase 3 (Viewer)** per [`skills/circuit-graph-viewer/SKILL.md`](skills/circuit-graph-viewer/SKILL.md): `circuit-tracer start-server --graph_file_dir ./graph_files --port <port>`. Prefer running the server in the **background**; tell the user to open `http://localhost:<port>/` (default **8041** if unchanged).
-7. **Summarize** what ran: prompt, model, transcoder, backend, paths to `.pt` and JSON, server URL, and how to stop the server (Ctrl+C in the server terminal).
+5. **Execute phase 1 (Attribution)** per [`skills/circuit-attribution/SKILL.md`](skills/circuit-attribution/SKILL.md): produce a `.pt` **unless** the user explicitly wants the one-shot CLI path (`--slug` + `--graph_file_dir` + `--server`), which combines attribution + JSON + server in one process.
+   - First try the normal `circuit-tracer attribute` command from the `pyclean` env.
+   - If it fails on Hugging Face DNS, offline mode, or `repo_info` metadata even though the artifacts are cached, immediately use the local-cache fallback in [`skills/circuit-attribution/references/REFERENCE.md`](skills/circuit-attribution/references/REFERENCE.md). The local cache currently contains the Gemma model snapshot and Gemma Scope 2 transcoder weights needed for the default stack.
+6. **Execute phase 2 (Graph export)** when needed per [`skills/circuit-graph-export/SKILL.md`](skills/circuit-graph-export/SKILL.md): call `create_graph_files(...)` so `./graph_files/<slug>.json` and `./graph_files/graph-metadata.json` exist. Always pass **`output_path` as `./graph_files`** (leading `./`) to avoid path assertion failures documented in `update-1.md`.
+7. **Execute phase 3 (Viewer)** per [`skills/circuit-graph-viewer/SKILL.md`](skills/circuit-graph-viewer/SKILL.md): `circuit-tracer start-server --graph_file_dir ./graph_files --port <port>`. Prefer running the server in the **background**; tell the user to open `http://localhost:<port>/` (default **8041** if unchanged).
+8. **Summarize** what ran: prompt, model, transcoder, backend, paths to `.pt` and JSON, server URL, and how to stop the server (Ctrl+C in the server terminal).
 
 ### Defaults (validated on this project)
 
@@ -44,7 +47,18 @@ Unless the user overrides:
 - **Model:** `google/gemma-3-270m`
 - **Transcoder:** `mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine`
 - **Backend:** `nnsight`
-- **Package:** PyPI `circuit-tracer` (pin version in env requirements when possible)
+- **Environment:** conda env `pyclean` at `/Users/anthony/miniconda3/envs/pyclean`
+- **Package:** PyPI `circuit-tracer` already installed in `pyclean`
+
+### Local cache details
+
+The default run can be completed without re-downloading model weights:
+
+- Base model snapshot: `/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1`
+- Transcoder config snapshot: `/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml`
+- Transcoder weight snapshot: `/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49/clt/width_262k_l0_medium_affine`
+
+`circuit-tracer` may still perform live Hugging Face metadata checks even when these files are cached. If network is unavailable or sandboxed, use the documented local-cache fallback instead of installing packages or creating a new environment.
 
 ### Prerequisites reminder
 

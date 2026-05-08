@@ -24,3 +24,11 @@ create_graph_files(
 ## Path pitfall (macOS / relative paths)
 
 Pass **`./graph_files`** for `output_path` when using a relative directory string so internal metadata helpers resolve a non-empty parent directory.
+
+## Command
+
+Use the project conda environment:
+
+```bash
+/Users/anthony/miniconda3/envs/pyclean/bin/python -c 'from circuit_tracer.utils.create_graph_files import create_graph_files; create_graph_files("graph.pt", slug="my-run-slug", output_path="./graph_files")'
+```

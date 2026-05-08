@@ -9,7 +9,6 @@ compatibility: >-
   choose a free TCP port (default 8041).
 metadata:
   upstream: "https://github.com/decoderesearch/circuit-tracer"
-  workflow-doc: "CIRCUIT_TRACER_LOCAL_WORKFLOW.md"
   version: "1.0"
 ---
 
@@ -33,7 +32,7 @@ This skill maps to **Local Server** in the [circuit-tracer README](https://githu
 2. Start the server:
 
 ```bash
-circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
+/Users/anthony/miniconda3/envs/pyclean/bin/circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
 ```
 
 3. If port is busy, retry with another `--port` and tell the user the updated URL.
@@ -42,6 +41,7 @@ circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
 
 - Prefer **long-running servers in the background**; do not block the session indefinitely unless the user asks for foreground logs.
 - Confirm the server responds (e.g., HTTP 200 to `/`) when troubleshooting blank pages.
+- If socket binding fails with `PermissionError: [Errno 1] Operation not permitted`, rerun the same server command with the agent/tooling's escalation mechanism. This is a local server permission issue, not a graph export issue.
 
 ## Edge cases
 
