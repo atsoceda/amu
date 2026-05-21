@@ -18,6 +18,16 @@ Validated commands and defaults live in each skill's `SKILL.md` and `references/
 
 Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter + Markdown body). Optional detail lives under `references/` inside each skill.
 
+## Google Drive / `.gdoc` workflow
+
+`drive-sync-amu/*.gdoc` files are Google Drive pointer files. Do **not** create or edit them manually as document contents.
+
+When creating a Google Doc for this repo:
+
+1. Prefer creating/importing directly into the Drive folder `drive-sync-amu`.
+2. If connector import tools create a file in Drive root, move that resulting Google Doc into the `drive-sync-amu` Drive folder before relying on the local sync folder.
+3. Avoid manually adding `.gdoc` pointer files unless the target Drive doc already exists and you have confirmed this will not create a duplicate synced copy.
+
 ## High-level user commands (orchestration)
 
 When the user gives a **single high-level request** such as:
