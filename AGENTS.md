@@ -22,8 +22,9 @@ Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter 
 
 When writing math in chat or docs:
 
-- Use `$...$` for inline math.
+- Use `\(...\)` for inline math because it renders properly in this chat UI.
 - Use `$$...$$` on separate lines for block equations.
+- Avoid `$...$` for inline math in chat; it may show raw delimiters instead of rendering.
 - Do not put math inside fenced code blocks like ` ```latex `.
 
 ## Google Drive / `.gdoc` workflow
