@@ -18,6 +18,14 @@ Validated commands and defaults live in each skill's `SKILL.md` and `references/
 
 Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter + Markdown body). Optional detail lives under `references/` inside each skill.
 
+## Communication preferences
+
+When writing math in chat or docs:
+
+- Use `$...$` for inline math.
+- Use `$$...$$` on separate lines for block equations.
+- Do not put math inside fenced code blocks like ` ```latex `.
+
 ## Google Drive / `.gdoc` workflow
 
 `drive-sync-amu/*.gdoc` files are Google Drive pointer files. Do **not** create or edit them manually as document contents.
