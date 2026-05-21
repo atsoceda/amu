@@ -37,6 +37,32 @@ When creating a Google Doc for this repo:
 2. If connector import tools create a file in Drive root, move that resulting Google Doc into the `drive-sync-amu` Drive folder before relying on the local sync folder.
 3. Avoid manually adding `.gdoc` pointer files unless the target Drive doc already exists and you have confirmed this will not create a duplicate synced copy.
 
+## DOCX + LaTeX equation workflow
+
+For longer technical documents with equations, prefer a local `.docx` workflow over direct Google Docs editing when native Google Docs plugins are not required.
+
+When the document contains LaTeX math that should render as equations:
+
+1. Use Pandoc as the conversion path. Keep the editable source as Markdown with `\(...\)` inline math and `$$...$$` block math.
+2. If starting from an existing `.docx`, first extract it with media:
+
+   ```bash
+   pandoc input.docx -t markdown+tex_math_single_backslash --extract-media=<work-dir>/media -o <work-dir>/source.md
+   ```
+
+3. Normalize any equation-image links or escaped math delimiters into real Markdown math before exporting.
+4. Export back to `.docx` with Pandoc, preserving media and optionally using the original document as a style reference:
+
+   ```bash
+   pandoc source.md --from markdown+tex_math_single_backslash+tex_math_dollars --to docx --resource-path=. --reference-doc=input.docx -o output.docx
+   ```
+
+5. Verify the result is a real equation document, not just visually similar:
+   - `word/document.xml` should contain Word math tags such as `<m:oMath>`.
+   - The `.docx` should not contain raw `\(...\)` delimiters, `$$...$$` delimiters, or old equation-image service links such as CodeCogs.
+   - Embedded screenshots and figures should still exist under `word/media/`.
+6. If LibreOffice/`soffice` is available, render the `.docx` to page images and visually inspect it before delivery. If `soffice` is unavailable, state that full visual rendering was not completed.
+
 ## High-level user commands (orchestration)
 
 When the user gives a **single high-level request** such as:
