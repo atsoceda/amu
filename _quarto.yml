@@ -1,0 +1,21 @@
+project:
+  type: default
+  output-dir: dist/default
+
+metadata-files:
+  - manuscript/metadata.yml
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+    cite-method: natbib
+    colorlinks: true
+    from: markdown+tex_math_single_backslash+tex_math_dollars

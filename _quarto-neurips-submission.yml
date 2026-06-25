@@ -1,0 +1,15 @@
+project:
+  output-dir: dist/neurips-submission
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+    classoption:
+      - preprint
+
+params:
+  target: neurips
+  mode: submission
+  anonymous: true

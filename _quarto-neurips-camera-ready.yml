@@ -1,0 +1,15 @@
+project:
+  output-dir: dist/neurips-camera-ready
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+    classoption:
+      - final
+
+params:
+  target: neurips
+  mode: camera-ready
+  anonymous: false

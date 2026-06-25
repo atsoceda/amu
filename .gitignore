@@ -16,7 +16,38 @@ graph_files/
 *.pt
 drive-sync-amu/
 
+# Quarto publishing workflow
+.tools/
+.home/
+.quarto/
+.quarto-cache/
+/.quarto/
+/_freeze/
+/.jupyter_cache/
+build/
+dist/
+/paper.tex
+/paper.bbl
+/paper.blg
+/paper.fdb_latexmk
+/paper.fls
+/paper.log
+/paper.out
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
 # OS / editor
 .DS_Store
 *.swp
 .idea/
+
+**/*.quarto_ipynb

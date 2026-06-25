@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+target="${1:-neurips}"
+mode="${2:-submission}"
+profile="${target}-${mode}"
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+lock="$root/.quarto-render.lock"
+
+export HOME="$root/.home"
+export PATH="$root/.tools/bin:$root/.tools/quarto/bin:$PATH"
+
+mkdir -p "$root/dist/$profile"
+
+if ! mkdir "$lock" 2>/dev/null; then
+  echo "Another render is already running. Try again when it finishes." >&2
+  exit 1
+fi
+trap 'rmdir "$lock"' EXIT
+
+if [[ -f "$root/paper.tex" ]]; then
+  latexmk -C "$root/paper.tex" >/dev/null 2>&1 || true
+fi
+rm -f "$root"/paper.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,synctex.gz,toc,tex}
+
+quarto render "$root/paper.qmd" --profile "$profile"
+
+pdf="$root/dist/$profile/paper.pdf"
+tex="$root/dist/$profile/paper.tex"
+manifest="$root/dist/$profile/build-manifest.json"
+
+if [[ -f "$root/paper.tex" ]]; then
+  mv "$root/paper.tex" "$tex"
+fi
+rm -f "$root"/paper.{aux,bbl,bcf,blg,fdb_latexmk,fls,log,out,run.xml,synctex.gz,toc}
+
+commit="$(git -C "$root" rev-parse HEAD 2>/dev/null || true)"
+dirty="false"
+if ! git -C "$root" diff --quiet -- . 2>/dev/null || ! git -C "$root" diff --cached --quiet -- . 2>/dev/null; then
+  dirty="true"
+fi
+
+pdf_sha=""
+tex_sha=""
+if [[ -f "$pdf" ]]; then
+  pdf_sha="$(shasum -a 256 "$pdf" | awk '{print $1}')"
+fi
+if [[ -f "$tex" ]]; then
+  tex_sha="$(shasum -a 256 "$tex" | awk '{print $1}')"
+fi
+
+cat > "$manifest" <<JSON
+{
+  "target": "$target",
+  "mode": "$mode",
+  "timestamp_utc": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+  "git_commit": "$commit",
+  "git_dirty": $dirty,
+  "quarto_version": "$(quarto --version)",
+  "latexmk_version": "$(latexmk -v | head -n 1 | sed 's/"/\\"/g')",
+  "pdf": "dist/$profile/paper.pdf",
+  "pdf_sha256": "$pdf_sha",
+  "tex": "dist/$profile/paper.tex",
+  "tex_sha256": "$tex_sha"
+}
+JSON
+
+echo "Wrote $pdf"
+echo "Wrote $tex"
+echo "Wrote $manifest"

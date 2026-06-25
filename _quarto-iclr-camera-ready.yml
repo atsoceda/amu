@@ -1,0 +1,13 @@
+project:
+  output-dir: dist/iclr-camera-ready
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+
+params:
+  target: iclr
+  mode: camera-ready
+  anonymous: false

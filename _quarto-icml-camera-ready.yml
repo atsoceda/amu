@@ -1,0 +1,13 @@
+project:
+  output-dir: dist/icml-camera-ready
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+
+params:
+  target: icml
+  mode: camera-ready
+  anonymous: false

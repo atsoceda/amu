@@ -1,0 +1,13 @@
+project:
+  output-dir: dist/icml-submission
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+
+params:
+  target: icml
+  mode: submission
+  anonymous: true

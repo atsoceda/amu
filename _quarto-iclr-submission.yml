@@ -1,0 +1,13 @@
+project:
+  output-dir: dist/iclr-submission
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+
+params:
+  target: iclr
+  mode: submission
+  anonymous: true
