@@ -27,6 +27,50 @@ When writing math in chat or docs:
 - Avoid `$...$` for inline math in chat; it may show raw delimiters instead of rendering.
 - Do not put math inside fenced code blocks like ` ```latex `.
 
+## NeurIPS paper drafting and publishing
+
+When the user gives a high-level request such as “generate an updated draft of
+our results as a complete paper in NeurIPS format,” treat this as a manuscript
+editing plus render task, not as a DOCX or Google Docs task.
+
+Use the Quarto publishing workflow:
+
+1. Edit the manuscript source only:
+   - Main entry point: [`paper.qmd`](paper.qmd)
+   - Body sections: [`manuscript/sections/`](manuscript/sections/)
+   - Bibliography: [`manuscript/references.bib`](manuscript/references.bib)
+   - Figures/assets: use repository-relative paths.
+2. Do **not** edit generated files under `dist/` or root-level generated
+   `paper.tex` files. Generated `.tex` is an output artifact for inspection or
+   venue upload, not the source of truth.
+3. Use the vendored NeurIPS files under [`_extensions/neurips/`](_extensions/neurips/).
+   The current target is NeurIPS 2026. Official style loading and local TeX
+   compatibility notes live in [`_extensions/neurips/README.md`](_extensions/neurips/README.md).
+4. Render with:
+
+   ```bash
+   bin/render-paper neurips submission
+   ```
+
+   For camera-ready output, use:
+
+   ```bash
+   bin/render-paper neurips camera-ready
+   ```
+
+5. Expected outputs:
+   - `dist/neurips-submission/paper.pdf`
+   - `dist/neurips-submission/paper.tex`
+   - `dist/neurips-submission/build-manifest.json`
+   - analogous files under `dist/neurips-camera-ready/` for camera-ready builds.
+6. Before reporting completion, verify that the render command succeeds and
+   mention any remaining manuscript TODOs, especially NeurIPS checklist items.
+
+The helper script configures repo-local Quarto, `latexmk`, and TeX search paths.
+Do not install a new TeX environment or create a Python virtual environment
+unless the render fails for a reason that cannot be solved with the vendored
+workflow. Additional publishing notes live in [`docs/publishing.md`](docs/publishing.md).
+
 ## Google Drive / `.gdoc` workflow
 
 `drive-sync-amu/*.gdoc` files are Google Drive pointer files. Do **not** create or edit them manually as document contents.

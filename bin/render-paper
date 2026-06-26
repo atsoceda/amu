@@ -9,6 +9,7 @@ lock="$root/.quarto-render.lock"
 
 export HOME="$root/.home"
 export PATH="$root/.tools/bin:$root/.tools/quarto/bin:$PATH"
+export TEXINPUTS="$root/_extensions/texmf//:$root//:${TEXINPUTS:-}"
 
 mkdir -p "$root/dist/$profile"
 

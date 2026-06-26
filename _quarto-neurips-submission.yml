@@ -6,8 +6,10 @@ format:
     keep-tex: true
     pdf-engine: latexmk
     documentclass: article
-    classoption:
-      - preprint
+    include-in-header:
+      - _extensions/neurips/header-submission.tex
+    include-after-body:
+      - _extensions/neurips/checklist.tex
 
 params:
   target: neurips
