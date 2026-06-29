@@ -1,0 +1,95 @@
+{
+  "experiment_name": "semantic_commitment_validation",
+  "description": "Validation sprint for the semantic commitment pilot: rerun strongest pilot interventions across matched prompts, syntax controls, and competing semantic targets.",
+  "python": "/Users/anthony/miniconda3/bin/python",
+  "pilot_summary_path": "../semantic_commitment_sprint/results/summary.json",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "float32",
+  "selected_pilot_interventions": [
+    "semantic_candidate_5_zero",
+    "semantic_candidate_top8_double",
+    "semantic_candidate_1_double",
+    "semantic_candidate_top3_double"
+  ],
+  "target_token_texts": [
+    " Paris",
+    " Rome",
+    " London",
+    " Berlin",
+    " the",
+    " a",
+    " that",
+    " one",
+    " is"
+  ],
+  "semantic_target_text": " Paris",
+  "competitor_target_texts": [" Rome", " London", " Berlin"],
+  "fallback_target_texts": [" the", " a", " that", " one", " is"],
+  "prompts": [
+    {
+      "id": "idealized_city",
+      "family": "near_match",
+      "text": "The city most idealized is"
+    },
+    {
+      "id": "romantic_city",
+      "family": "near_match",
+      "text": "The most romantic city is"
+    },
+    {
+      "id": "fashion_city",
+      "family": "near_match",
+      "text": "The city most associated with fashion is"
+    },
+    {
+      "id": "art_city",
+      "family": "near_match",
+      "text": "The city most associated with art is"
+    },
+    {
+      "id": "france_famous_city",
+      "family": "france_semantic",
+      "text": "The famous city in France is"
+    },
+    {
+      "id": "clear_france_capital",
+      "family": "france_semantic",
+      "text": "The capital of France is"
+    },
+    {
+      "id": "italy_capital_competitor",
+      "family": "semantic_competitor",
+      "text": "The capital of Italy is"
+    },
+    {
+      "id": "uk_capital_competitor",
+      "family": "semantic_competitor",
+      "text": "The capital of England is"
+    },
+    {
+      "id": "germany_capital_competitor",
+      "family": "semantic_competitor",
+      "text": "The capital of Germany is"
+    },
+    {
+      "id": "syntactic_described",
+      "family": "syntax_control",
+      "text": "The city most described is"
+    },
+    {
+      "id": "syntactic_discussed",
+      "family": "syntax_control",
+      "text": "The city most discussed is"
+    },
+    {
+      "id": "noncity_control",
+      "family": "domain_control",
+      "text": "The instrument most idealized is"
+    }
+  ]
+}
