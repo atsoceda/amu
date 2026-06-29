@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import importlib.util
 import json
 import logging
 import sys
@@ -10,39 +9,25 @@ from pathlib import Path
 from statistics import mean
 from typing import Any
 
-import torch
-
-
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from experiments.lib.core import (
+    dict_intervention_result,
+    load_replacement_model,
+    logits_for_prompt,
+    setup_file_logging,
+    token_id_for_text,
+)
+
 EXP_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = EXP_DIR / "config.json"
 RESULTS_DIR = EXP_DIR / "results"
-PILOT_RUN_PATH = ROOT / "experiments" / "semantic_commitment_sprint" / "run.py"
-
-
-def load_pilot_module():
-    spec = importlib.util.spec_from_file_location("semantic_commitment_pilot_run", PILOT_RUN_PATH)
-    if spec is None or spec.loader is None:
-        raise RuntimeError(f"Could not import pilot runner from {PILOT_RUN_PATH}")
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = module
-    spec.loader.exec_module(module)
-    return module
-
-
-pilot = load_pilot_module()
 
 
 def setup_logging() -> None:
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s %(message)s",
-        handlers=[
-            logging.StreamHandler(sys.stdout),
-            logging.FileHandler(RESULTS_DIR / "run.log", mode="w"),
-        ],
-    )
+    setup_file_logging(RESULTS_DIR)
 
 
 def load_config() -> dict[str, Any]:
@@ -56,50 +41,8 @@ def resolve_exp_path(path_text: str) -> Path:
     return (EXP_DIR / path).resolve()
 
 
-def token_id_for_text(tokenizer, text: str) -> int:
-    ids = tokenizer(text, add_special_tokens=False).input_ids
-    if len(ids) != 1:
-        raise ValueError(f"Target text {text!r} tokenized to {ids}; expected one token")
-    return int(ids[0])
-
-
-def decode_token(tokenizer, token_id: int) -> str:
-    return tokenizer.decode([int(token_id)])
-
-
 def logits_snapshot(model, prompt: str, target_ids: list[int]) -> dict[str, Any]:
-    logits, _ = model.feature_intervention(
-        prompt,
-        interventions=[],
-        freeze_attention=False,
-        sparse=True,
-        return_activations=False,
-    )
-    next_logits = logits[0, -1].detach().float().cpu()
-    probs = torch.softmax(next_logits, dim=-1)
-    top_probs, top_ids = torch.topk(probs, k=12)
-    targets = {}
-    for token_id in target_ids:
-        targets[str(token_id)] = {
-            "token_id": int(token_id),
-            "token": decode_token(model.tokenizer, token_id),
-            "logit": float(next_logits[token_id]),
-            "prob": float(probs[token_id]),
-            "rank": int((next_logits > next_logits[token_id]).sum().item() + 1),
-        }
-    return {
-        "top_tokens": [
-            {
-                "rank": i + 1,
-                "token_id": int(tok),
-                "token": decode_token(model.tokenizer, int(tok)),
-                "prob": float(prob),
-                "logit": float(next_logits[int(tok)]),
-            }
-            for i, (prob, tok) in enumerate(zip(top_probs, top_ids))
-        ],
-        "targets": targets,
-    }
+    return logits_for_prompt(model, prompt, target_ids, top_k=12, return_activations=False)
 
 
 def intervention_snapshot(
@@ -109,34 +52,7 @@ def intervention_snapshot(
     target_ids: list[int],
     baseline: dict[str, Any],
 ) -> dict[str, Any]:
-    tuples = [
-        (int(i["layer"]), int(i["pos"]), int(i["feature_idx"]), float(i["value"]))
-        for i in interventions
-    ]
-    logits, _ = model.feature_intervention(
-        prompt,
-        interventions=tuples,
-        freeze_attention=True,
-        sparse=True,
-        return_activations=False,
-    )
-    next_logits = logits[0, -1].detach().float().cpu()
-    probs = torch.softmax(next_logits, dim=-1)
-    targets = {}
-    for token_id in target_ids:
-        base = baseline["targets"][str(token_id)]
-        rank = int((next_logits > next_logits[token_id]).sum().item() + 1)
-        targets[str(token_id)] = {
-            "token_id": int(token_id),
-            "token": decode_token(model.tokenizer, token_id),
-            "logit": float(next_logits[token_id]),
-            "prob": float(probs[token_id]),
-            "rank": rank,
-            "delta_logit": float(next_logits[token_id] - base["logit"]),
-            "delta_prob": float(probs[token_id] - base["prob"]),
-            "delta_rank": int(base["rank"] - rank),
-        }
-    return {"targets": targets}
+    return dict_intervention_result(model, prompt, interventions, target_ids, baseline)
 
 
 def select_pilot_interventions(pilot_summary: dict[str, Any], names: list[str]) -> list[dict[str, Any]]:
@@ -279,7 +195,7 @@ def main() -> None:
     pilot_summary = json.loads(pilot_summary_path.read_text())
 
     logging.info("Loading model")
-    model = pilot.load_replacement_model(config)
+    model = load_replacement_model(config)
     tokenizer = model.tokenizer
 
     target_text_to_id = {}

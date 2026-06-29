@@ -1,0 +1,65 @@
+{
+  "experiment_name": "stall_commitment_sprint",
+  "description": "Intervention-first sprint testing whether the model can be causally shifted from a stall/bridge token toward direct Paris commitment on an ambiguous France association prompt.",
+  "python": "/Users/anthony/miniconda3/bin/python",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "float32",
+  "batch_size": 128,
+  "max_feature_nodes": 180,
+  "top_features_per_target": 12,
+  "positive_features_per_set": 8,
+  "target_token_texts": [" Paris", " the", " a", " one", " city", " capital", " France", " Rome", " London", " Berlin", " Lyon", " Marseille"],
+  "intervention_prompt_id": "france_association",
+  "semantic_target_text": " Paris",
+  "stall_target_text": " the",
+  "competitor_target_texts": [" Rome", " London", " Berlin", " Lyon", " Marseille"],
+  "fallback_target_texts": [" a", " one", " city", " capital", " France"],
+  "group_sizes": [1, 3, 5, 8],
+  "prompts": [
+    {
+      "id": "france_association",
+      "family": "ambiguous_france_association",
+      "text": "The city people most strongly associate with France is"
+    },
+    {
+      "id": "france_association_plain",
+      "family": "ambiguous_france_association",
+      "text": "The city most people associate with France is"
+    },
+    {
+      "id": "france_famous_city",
+      "family": "near_match_france",
+      "text": "The famous city in France is"
+    },
+    {
+      "id": "clear_france_capital",
+      "family": "direct_france",
+      "text": "The capital of France is"
+    },
+    {
+      "id": "italy_association",
+      "family": "country_competitor",
+      "text": "The city people most strongly associate with Italy is"
+    },
+    {
+      "id": "uk_association",
+      "family": "country_competitor",
+      "text": "The city people most strongly associate with the United Kingdom is"
+    },
+    {
+      "id": "syntax_stall_control",
+      "family": "syntax_control",
+      "text": "The city people most strongly associate with this phrase is"
+    },
+    {
+      "id": "generic_stall_control",
+      "family": "syntax_control",
+      "text": "The thing people most strongly associate with this word is"
+    }
+  ]
+}

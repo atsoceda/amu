@@ -1,6 +1,6 @@
 # Semantic Commitment Validation Report
 
-Generated: 2026-06-29T16:23:28+0900
+Generated: 2026-06-29T17:34:13+0900
 Model: `google/gemma-3-270m`
 Pilot interventions reused: semantic_candidate_5_zero, semantic_candidate_top8_double, semantic_candidate_1_double, semantic_candidate_top3_double
 
