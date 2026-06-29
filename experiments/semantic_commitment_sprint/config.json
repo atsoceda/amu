@@ -1,0 +1,49 @@
+{
+  "experiment_name": "semantic_commitment_sprint",
+  "description": "Intervention-first sprint testing whether Gemma 3 270M can be causally moved between semantic commitment and syntactic fallback on Paris/France/romance prompts.",
+  "python": "/Users/anthony/miniconda3/bin/python",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "float32",
+  "batch_size": 128,
+  "max_feature_nodes": 160,
+  "top_features_per_target": 8,
+  "target_token_texts": [" Paris", " the", " is", " a", " one", " Rome", " London"],
+  "prompts": [
+    {
+      "id": "clear_france_capital",
+      "kind": "clear_factual",
+      "text": "The capital of France is"
+    },
+    {
+      "id": "france_famous_city",
+      "kind": "underspecified_france",
+      "text": "The famous city in France is"
+    },
+    {
+      "id": "romance_associated_city",
+      "kind": "ambiguous_but_semantic",
+      "text": "The city most associated with romance is"
+    },
+    {
+      "id": "idealized_city",
+      "kind": "ambiguous_stalling_probe",
+      "text": "The city most idealized is"
+    },
+    {
+      "id": "syntactic_control",
+      "kind": "syntax_control",
+      "text": "The city most described is"
+    }
+  ],
+  "intervention_prompt_id": "idealized_city",
+  "semantic_source_prompt_id": "clear_france_capital",
+  "semantic_target_text": " Paris",
+  "fallback_target_texts": [" the", " is", " a", " one"],
+  "individual_feature_modes": ["zero", "double", "source_patch"],
+  "group_sizes": [3, 5, 8]
+}
