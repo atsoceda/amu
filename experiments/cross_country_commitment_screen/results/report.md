@@ -7,6 +7,96 @@ Model: `google/gemma-3-270m`
 
 The screen found strong same-country movement, but cross-country wrong-answer induction remains a serious confound.
 
+## Human-Readable Result
+
+This is the most relevant experiment so far, and it does not validate the main
+hypothesis yet.
+
+What we did:
+
+- We tested country-conditioned prompts for France, Germany, Spain, and Italy.
+- For each country, we compared the expected city token against the high
+  fallback token `the`.
+- We built interventions from attribution-graph features that supported either
+  the expected city token or `the`.
+- We then applied those interventions both to the same country and to other
+  countries.
+
+The experiment asked whether interventions found on one country prompt behave
+like general commitment/stall interventions or whether they just inject a
+specific city answer. A useful result would look like this: a France-derived
+intervention helps `Paris` on France prompts, a Germany-derived intervention
+helps `Berlin` on Germany prompts, and those interventions do not push the
+wrong city when applied to other countries.
+
+We did find strong same-country movement. For example:
+
+- `germany_commitment_combo_top8` improved the `Berlin - the` margin on the
+  Germany association prompt by 5.480.
+- `spain_commitment_combo_top8` improved the `Madrid - the` margin on the
+  Spain association prompt by 4.493.
+- `italy_commitment_combo_top8` improved the `Rome - the` margin on the Italy
+  association prompt by 4.216.
+
+But the same strong interventions also showed cross-country pollution. That
+means an intervention derived from one country pushed that country's answer on
+other country prompts where it was wrong. For example:
+
+- `germany_commitment_combo_top8` applied to the Italy prompt increased the
+  wrong Germany answer by 7.261.
+- `germany_commitment_combo_top8` applied to the Spain prompt increased the
+  wrong Germany answer by 7.162.
+- `germany_commitment_combo_top8` applied to the France prompt increased the
+  wrong Germany answer by 6.731.
+- `spain_commitment_combo_top8` applied to the Germany prompt increased the
+  wrong Spain answer by 5.953.
+
+This is the core failure mode. The strongest interventions are not cleanly
+"make the model commit to the answer implied by this prompt." They may be
+partly "push the source country's city answer." That is not publishable as a
+general commitment mechanism.
+
+Suppression-only result:
+
+We did test pure suppression of combinations of features leading to `the`.
+Those are the `*_stall_positive_top*_zero` rows. They are more aligned with the
+hypothesis than answer amplification, because they do not intentionally boost a
+specific city. The results were mixed:
+
+- France suppression-only failed: all `france_stall_positive_top*_zero`
+  interventions left `Paris` behind `the` and often made the margin worse.
+- Spain suppression-only worked on the same-country prompt: for example,
+  `spain_stall_positive_top1_zero` improved the `Madrid - the` margin by 2.745.
+- Italy suppression-only worked on the same-country prompt: for example,
+  `italy_stall_positive_top3_zero` improved the `Rome - the` margin by 2.647.
+- Germany suppression-only was mixed: `germany_stall_positive_top8_zero`
+  improved the margin by 2.491 but still did not make `Berlin` beat `the`.
+
+That means pure stall suppression is the right direction to test next, but this
+screen does not yet show a reusable stall circuit. The behavior varies by
+country and still needs held-out prompts, stronger controls, and feature-level
+inspection.
+
+The individual feature candidates are weaker but more interesting because some
+had low measured cross-country wrong-answer movement in this screen. These are
+only candidates. They still need held-out prompt testing and representation
+inspection before we can call them commitment or stalling features.
+
+Plain interpretation:
+
+- We have validated the tooling enough to run causal interventions.
+- We have not validated the hypothesis that a reusable stalling circuit exists.
+- The strongest mixed interventions are confounded by wrong-city induction.
+- Pure stall suppression is less confounded in principle, but so far it is only
+  a candidate signal, not a result we can publish as a mechanism.
+- The next sprint should drop answer-token amplification and test only
+  suppression of `the`-supporting features across held-out country prompt
+  families.
+
+Conclusion: this experiment is useful mostly because it exposed the confound.
+It supports the next step of stricter candidate screening, but it does not yet
+prove that a reusable stall/commitment circuit exists.
+
 ## Baseline Snapshots
 
 - `france_association` (ambiguous_association): top5 ` the`, ` Paris`, ` France`, ` that`, ` Marseille`
@@ -123,3 +213,8 @@ The screen found strong same-country movement, but cross-country wrong-answer in
 The high bar is not merely moving one city token or suppressing `the`. A meaningful result should show analogous same-country movement across country-answer prompts while failing the obvious confounds: wrong-city induction and syntax-control movement.
 
 Rows with `applied=0/...` are positional non-applications, not evidence that the representation is absent. This screen therefore treats them as a transfer-design limitation and bases the verdict on applied rows.
+
+For readers new to these experiments: the important question is not "can an
+intervention move logits?" It can. The important question is whether the same
+kind of intervention suppresses hesitation-like continuation across prompts
+without smuggling in a particular answer. This report says we are not there yet.

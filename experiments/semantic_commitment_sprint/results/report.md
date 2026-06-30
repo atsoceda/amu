@@ -4,6 +4,51 @@ Generated: 2026-06-29T17:35:04+0900
 Model: `google/gemma-3-270m`
 Intervention prompt: `The city most idealized is`
 
+## Human-Readable Result
+
+This experiment should be treated as an early pilot, not evidence for the
+stall/commitment hypothesis. It answered one narrow tooling question: can we
+select circuit-tracer features from an attribution graph and causally move next
+token logits by clamping those features during a model rerun? Yes. It did not
+answer the research question we care about.
+
+What we did:
+
+- We used the prompt `The city most idealized is`.
+- We looked for features that supported either `Paris` or the fallback token
+  `the`.
+- We reran the model while clamping selected features, either suppressing them
+  to zero or increasing them.
+- We measured whether `Paris` moved up relative to `the`.
+
+Why this prompt is flawed:
+
+`The city most idealized is` is too broad for the research question. It is not
+country-specific. If an intervention moves the model toward `Paris`, that could
+mean only that `Paris` is a culturally salient city. It does not show that the
+model is resolving an ambiguous country-conditioned prompt, and it does not
+show that we found a reusable "stop stalling and commit" mechanism.
+
+The best interventions raised the `Paris` logit by up to 1.003, but they did
+not clearly suppress the main stall token `the`. For the top intervention,
+`semantic_candidate_5_zero`, `Paris` increased by 1.003 while `the` also
+increased by 0.327. That is not a clean shift from stalling to commitment.
+
+Plain interpretation:
+
+- Positive result here: circuit-tracer interventions can move logits.
+- Negative result here: the movement is not specific enough to support our
+  hypothesis.
+- Main confound: we may have found Paris-salience features, not commitment
+  features.
+- Publication value: tooling validation only; not a publishable mechanistic
+  result by our current bar.
+
+Conclusion: this run validated that circuit-tracer interventions can move
+logits, but it did not validate a reusable commitment or stalling circuit.
+Results from this run should not be used as positive evidence for the main
+hypothesis.
+
 ## Baseline
 
 - rank 1: ` the` prob=0.313978 logit=21.473
@@ -34,4 +79,9 @@ Intervention prompt: `The city most idealized is`
 
 ## Interpretation
 
-This sprint is exploratory. Treat a large directional logit movement as a candidate causal handle, not a final representation label. The next validation step is to rerun the strongest interventions across a larger matched prompt family and test specificity against unrelated semantic targets.
+This sprint is exploratory. Treat a large directional logit movement as a
+candidate causal handle, not a final representation label. The correct lesson is
+that broad answer-token amplification is easy to produce and easy to
+misinterpret. The next experiments therefore moved away from this prompt and
+toward country-specific prompts where the expected answer is known in advance
+and where wrong-city induction can be measured directly.

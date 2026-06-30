@@ -8,6 +8,51 @@ Pilot interventions reused: semantic_candidate_5_zero, semantic_candidate_top8_d
 
 The reused pilot interventions still move `Paris`, but they leak into controls; treat them as broad causal handles, not clean semantic-commitment features.
 
+## Human-Readable Result
+
+This validation run tested whether the strongest pilot interventions were
+specific to Paris/France-like prompts. They were not.
+
+What we did:
+
+- We reused the strongest interventions from the flawed pilot prompt
+  `The city most idealized is`.
+- We applied them to several prompt families: France/Paris prompts, near-match
+  city prompts, competitor-country prompts such as Germany and Italy, syntax
+  controls, and a non-city control.
+- We measured whether `Paris` moved up where it should move up, and whether it
+  stayed weak where it should not be relevant.
+
+The most important failure is that the interventions increased `Paris` in
+places where `Paris` should not be helped. For example:
+
+- On the non-city control prompt, `The instrument most idealized is`,
+  `semantic_candidate_top8_double` increased `Paris` by 5.847.
+- On the Germany capital prompt, where the expected answer is `Berlin`,
+  `semantic_candidate_1_double` increased `Paris` by 1.734.
+- On the Italy capital prompt, where the expected answer is `Rome`,
+  `semantic_candidate_top3_double` increased `Paris` by 1.702.
+- On the syntax-control prompt, `The city most described is`,
+  `semantic_candidate_5_zero` increased `Paris` by 0.812.
+
+That pattern is the opposite of what we need. A useful commitment intervention
+should help the contextually correct answer while staying weak on unrelated
+controls and competitor prompts. Here, the interventions broadly pushed
+`Paris`, including in prompts where `Paris` is wrong or irrelevant.
+
+Plain interpretation:
+
+- This is a negative validation result.
+- It shows broad Paris induction, not context-sensitive commitment.
+- It supports your concern that amplifying answer-token features is likely to
+  be confounded.
+- It is evidence against using these pilot candidates as the basis for a paper.
+
+Conclusion: this run argues against treating the pilot candidates as clean
+semantic-commitment features. It shows broad Paris induction, not a validated
+stall-to-commitment mechanism. It is also affected by the bad `idealized`
+prompt inherited from the pilot.
+
 ## Family Summary
 
 - `domain_control` n=4; mean Paris delta_logit=2.802; mean specificity_margin=-0.386; positive Paris=3/4; positive specific=0/4
@@ -52,4 +97,11 @@ The reused pilot interventions still move `Paris`, but they leak into controls; 
 
 ## Interpretation
 
-A useful validation result would show positive `Paris` movement on near-match and France prompts while remaining weak or negative on semantic competitors and syntax/domain controls. Positive movement everywhere is evidence for a broad perturbation rather than a clean semantic-commitment handle.
+A useful validation result would show positive `Paris` movement on near-match
+and France prompts while remaining weak or negative on semantic competitors and
+syntax/domain controls. Positive movement everywhere is evidence for a broad
+perturbation rather than a clean semantic-commitment handle.
+
+For the current hypothesis, this report should be read as a warning label:
+answer-token amplification can look impressive in a single prompt while failing
+as soon as it is tested against wrong-answer controls.

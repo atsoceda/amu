@@ -8,6 +8,58 @@ Primary prompt: `The city people most strongly associate with France is`
 
 The sprint found a real commitment-margin handle, but validation suggests it may partly affect broad answer format rather than only France/Paris commitment.
 
+## Human-Readable Result
+
+This was the first better-aligned experiment because it used a country-specific
+prompt: `The city people most strongly associate with France is`.
+
+What we did:
+
+- We generated an attribution graph for the France association prompt.
+- In that graph, the model's top next token was `the`; `Paris` was second.
+- We treated `the` as a possible stall or bridge token: the model may be about
+  to say something like "the city of Paris" rather than immediately emitting
+  `Paris`.
+- We selected features that directly supported either `the` or `Paris`.
+- We reran the model with interventions on those features.
+
+The intervention types were:
+
+- `stall_positive_*_zero`: suppress features that supported `the`.
+- `paris_positive_*_double`: increase features that supported `Paris`.
+- `commitment_combo_*`: combine stall suppression with Paris amplification.
+
+At baseline, the model put `the` ahead of `Paris`. The margin `Paris - the`
+was -0.284, so the model looked like it might continue with a phrase instead
+of directly answering `Paris`.
+
+The strongest intervention, `commitment_combo_top8`, flipped the top answer:
+`Paris` became rank 1 and `the` became rank 2. The margin improved by 1.175.
+Importantly, this happened mostly because `the` went down by 1.340, not because
+`Paris` went up. That is the closest result so far to the original intuition:
+reduce a stall/bridge token and the expected answer wins.
+
+Important negative detail:
+
+The pure stall-suppression interventions on this France prompt did not work by
+themselves. For example, `stall_positive_top8_zero` made the `Paris - the`
+margin worse by -0.672. The successful `commitment_combo_top8` mixed two
+things: suppression of `the`-supporting features and amplification of
+`Paris`-supporting features. Because of that, this experiment cannot tell us
+whether we found a clean stalling circuit.
+
+However, this is still not enough for the main hypothesis. The family summary
+shows that competitor-country prompts also moved under these interventions
+(`country_competitor` mean delta_margin = 1.430), and syntax controls moved
+somewhat too (`syntax_control` mean delta_margin = 0.282). That means the
+intervention may be changing broad answer format or city-answer behavior, not
+only France-specific commitment.
+
+Conclusion: this run produced a plausible candidate effect, but did not prove a
+commitment circuit. It justified the next cross-country screen, where the key
+question became whether analogous interventions help the correct country answer
+without injecting the wrong city elsewhere.
+
 ## Primary Baseline
 
 - rank 1: ` the` prob=0.247503 logit=18.743
@@ -40,7 +92,10 @@ Baseline commitment margin `Paris - the`: -0.284
 
 ## Mechanism Note
 
-The best primary intervention, `commitment_combo_top8`, flips the margin mostly by suppressing the stall token rather than amplifying `Paris`.
+The best primary intervention, `commitment_combo_top8`, flips the margin mostly
+by lowering the `the` logit. But because that intervention also included
+Paris-feature amplification, it should not be described as proof that stall
+suppression alone works.
 
 ## Family Summary
 
@@ -52,4 +107,11 @@ The best primary intervention, `commitment_combo_top8`, flips the margin mostly 
 
 ## Interpretation
 
-This sprint treats the high `the` logit as a potential stall/bridge continuation rather than a lack of Paris knowledge. A publishable positive result would show that suppressing stall-supporting features or amplifying Paris-supporting features increases the `Paris - the` margin on France association prompts without doing the same on syntax and country-competitor controls.
+This sprint treats the high `the` logit as a potential stall/bridge
+continuation rather than a lack of Paris knowledge. It is a useful bridge from
+tool validation to hypothesis testing, but it remains inconclusive.
+
+A publishable positive result would require more than flipping this one prompt.
+It would need to show that suppressing stall-supporting features reliably helps
+the contextually correct answer across matched country prompts, while avoiding
+wrong-city induction and syntax-control movement.
