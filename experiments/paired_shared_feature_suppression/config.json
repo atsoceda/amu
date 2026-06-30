@@ -1,0 +1,211 @@
+{
+  "experiment_name": "paired_shared_feature_suppression",
+  "description": "Tests whether the two individually promising shared stall-token features combine into a better reusable suppression intervention on the current prompt set.",
+  "python": "/Users/anthony/miniconda3/bin/python",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "float32",
+  "stall_target_text": " the",
+  "target_token_texts": [
+    " Paris",
+    " Berlin",
+    " Rome",
+    " London",
+    " Madrid",
+    " the",
+    " a",
+    " one",
+    " city",
+    " capital",
+    " France",
+    " Germany",
+    " Italy",
+    " Spain"
+  ],
+  "features": {
+    "l7_f89": {
+      "layer": 7,
+      "feature_idx": 89,
+      "source_pos": 9,
+      "why_tested": "Best individual behavioral lead from shared_stall_suppression: improved expected-city-over-the margin on 6 of 8 ambiguous prompts with small average wrong-city movement."
+    },
+    "l10_f9037": {
+      "layer": 10,
+      "feature_idx": 9037,
+      "source_pos": 9,
+      "why_tested": "Second individual behavioral lead from shared_stall_suppression: improved expected-city-over-the margin on 6 of 8 ambiguous prompts, but looked more entangled with expected-city suppression."
+    },
+    "l5_f383": {
+      "layer": 5,
+      "feature_idx": 383,
+      "source_pos": 9,
+      "why_tested": "High direct-effect comparison feature. It strongly supported the stall token in the attribution overlap, but was not selected as the cleanest behavioral lead."
+    }
+  },
+  "regimens": [
+    {
+      "name": "l7_f89",
+      "description": "Suppress L7/F89 at the final token position.",
+      "feature_keys": ["l7_f89"]
+    },
+    {
+      "name": "l10_f9037",
+      "description": "Suppress L10/F9037 at the final token position.",
+      "feature_keys": ["l10_f9037"]
+    },
+    {
+      "name": "l7_f89_plus_l10_f9037",
+      "description": "Suppress the two individually promising shared features together at the final token position.",
+      "feature_keys": ["l7_f89", "l10_f9037"]
+    },
+    {
+      "name": "l7_f89_plus_l5_f383",
+      "description": "Suppress the cleaner L7/F89 lead plus the highest-direct-effect shared feature as a comparison bundle.",
+      "feature_keys": ["l7_f89", "l5_f383"]
+    }
+  ],
+  "countries": [
+    {
+      "id": "france",
+      "country_text": "France",
+      "answer_text": " Paris",
+      "wrong_answer_texts": [" Berlin", " Rome", " London", " Madrid"],
+      "fallback_target_texts": [" a", " one", " city", " capital", " France"]
+    },
+    {
+      "id": "germany",
+      "country_text": "Germany",
+      "answer_text": " Berlin",
+      "wrong_answer_texts": [" Paris", " Rome", " London", " Madrid"],
+      "fallback_target_texts": [" a", " one", " city", " capital", " Germany"]
+    },
+    {
+      "id": "italy",
+      "country_text": "Italy",
+      "answer_text": " Rome",
+      "wrong_answer_texts": [" Paris", " Berlin", " London", " Madrid"],
+      "fallback_target_texts": [" a", " one", " city", " capital", " Italy"]
+    },
+    {
+      "id": "spain",
+      "country_text": "Spain",
+      "answer_text": " Madrid",
+      "wrong_answer_texts": [" Paris", " Berlin", " Rome", " London"],
+      "fallback_target_texts": [" a", " one", " city", " capital", " Spain"]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "france_association",
+      "country_id": "france",
+      "family": "ambiguous_association",
+      "text": "The city people most strongly associate with France is"
+    },
+    {
+      "id": "france_association_plain",
+      "country_id": "france",
+      "family": "ambiguous_association",
+      "text": "The city most people associate with France is"
+    },
+    {
+      "id": "france_famous_city",
+      "country_id": "france",
+      "family": "near_match",
+      "text": "The famous city in France is"
+    },
+    {
+      "id": "france_capital",
+      "country_id": "france",
+      "family": "direct_capital",
+      "text": "The capital of France is"
+    },
+    {
+      "id": "germany_association",
+      "country_id": "germany",
+      "family": "ambiguous_association",
+      "text": "The city people most strongly associate with Germany is"
+    },
+    {
+      "id": "germany_association_plain",
+      "country_id": "germany",
+      "family": "ambiguous_association",
+      "text": "The city most people associate with Germany is"
+    },
+    {
+      "id": "germany_famous_city",
+      "country_id": "germany",
+      "family": "near_match",
+      "text": "The famous city in Germany is"
+    },
+    {
+      "id": "germany_capital",
+      "country_id": "germany",
+      "family": "direct_capital",
+      "text": "The capital of Germany is"
+    },
+    {
+      "id": "italy_association",
+      "country_id": "italy",
+      "family": "ambiguous_association",
+      "text": "The city people most strongly associate with Italy is"
+    },
+    {
+      "id": "italy_association_plain",
+      "country_id": "italy",
+      "family": "ambiguous_association",
+      "text": "The city most people associate with Italy is"
+    },
+    {
+      "id": "italy_famous_city",
+      "country_id": "italy",
+      "family": "near_match",
+      "text": "The famous city in Italy is"
+    },
+    {
+      "id": "italy_capital",
+      "country_id": "italy",
+      "family": "direct_capital",
+      "text": "The capital of Italy is"
+    },
+    {
+      "id": "spain_association",
+      "country_id": "spain",
+      "family": "ambiguous_association",
+      "text": "The city people most strongly associate with Spain is"
+    },
+    {
+      "id": "spain_association_plain",
+      "country_id": "spain",
+      "family": "ambiguous_association",
+      "text": "The city most people associate with Spain is"
+    },
+    {
+      "id": "spain_famous_city",
+      "country_id": "spain",
+      "family": "near_match",
+      "text": "The famous city in Spain is"
+    },
+    {
+      "id": "spain_capital",
+      "country_id": "spain",
+      "family": "direct_capital",
+      "text": "The capital of Spain is"
+    },
+    {
+      "id": "syntax_stall_control",
+      "country_id": "control",
+      "family": "syntax_control",
+      "text": "The city people most strongly associate with this phrase is"
+    },
+    {
+      "id": "generic_stall_control",
+      "country_id": "control",
+      "family": "syntax_control",
+      "text": "The thing people most strongly associate with this word is"
+    }
+  ]
+}
