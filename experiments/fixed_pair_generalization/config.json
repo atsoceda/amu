@@ -1,0 +1,21 @@
+{
+  "experiment_name": "fixed_pair_generalization",
+  "description": "Applies the ophthalmologist-discovered suppression pair without feature reselection to every other occupation prompt in the released a/an dataset.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "dataset_path": "../a_an_full_dataset_screen/data/a_an_examples.csv",
+  "dataset_sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "excluded_source_sentence": "Someone who treats eye diseases is",
+  "fixed_features": [
+    {"layer": 13, "feature_idx": 10304},
+    {"layer": 14, "feature_idx": 1949}
+  ],
+  "max_new_tokens": 4
+}

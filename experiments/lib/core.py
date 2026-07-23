@@ -443,3 +443,38 @@ def dict_intervention_result(
             }
         )
     return result
+
+
+def generate_with_interventions(
+    model,
+    prompt: str,
+    interventions: list[dict[str, Any]],
+    *,
+    max_new_tokens: int = 4,
+) -> str:
+    tuples = [
+        (
+            int(item["layer"]),
+            int(item["pos"]),
+            int(item["feature_idx"]),
+            float(item["value"]),
+        )
+        for item in interventions
+    ]
+    generated_ids = []
+    current_prompt = prompt
+    for _ in range(max_new_tokens):
+        logits, _ = model.feature_intervention(
+            current_prompt,
+            interventions=tuples,
+            freeze_attention=True,
+            sparse=True,
+            return_activations=False,
+        )
+        token_id = int(torch.argmax(logits[0, -1]).item())
+        generated_ids.append(token_id)
+        token_text = model.tokenizer.decode([token_id])
+        current_prompt += token_text
+        if token_text.strip() in {".", "!", "?"}:
+            break
+    return model.tokenizer.decode(generated_ids)

@@ -11,12 +11,12 @@ from itertools import combinations
 from pathlib import Path
 from typing import Any
 
-import torch
 from circuit_tracer.graph import Graph
 
 from experiments.lib.core import (
     dict_intervention_result,
     feature_effect_map,
+    generate_with_interventions,
     load_replacement_model,
     logits_for_prompt,
     setup_file_logging,
@@ -94,39 +94,6 @@ def select_candidates(
         reverse=True,
     )
     return candidates[: int(config["top_candidates_to_intervene"])]
-
-
-def generate_with_interventions(
-    model,
-    prompt: str,
-    interventions: list[dict[str, Any]],
-    max_new_tokens: int = 4,
-) -> str:
-    tuples = [
-        (
-            int(item["layer"]),
-            int(item["pos"]),
-            int(item["feature_idx"]),
-            float(item["value"]),
-        )
-        for item in interventions
-    ]
-    generated_ids = []
-    current_prompt = prompt
-    for _ in range(max_new_tokens):
-        logits, _ = model.feature_intervention(
-            current_prompt,
-            interventions=tuples,
-            freeze_attention=True,
-            sparse=True,
-            return_activations=False,
-        )
-        token_id = int(torch.argmax(logits[0, -1]).item())
-        generated_ids.append(token_id)
-        current_prompt += model.tokenizer.decode([token_id])
-        if model.tokenizer.decode([token_id]).strip() in {".", "!", "?"}:
-            break
-    return model.tokenizer.decode(generated_ids)
 
 
 def write_report(summary: dict[str, Any]) -> None:
