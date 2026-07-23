@@ -1,0 +1,20 @@
+{
+  "experiment_name": "ophthalmologist_competing_pathway_screen",
+  "source_experiment": "ophthalmologist_planning_pilot",
+  "description": "Suppresses pre-article features that favor incorrect a over correct an while screening for preservation of the future ophthalm token.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "prompt": "Someone who studies living organisms is a biologist. Someone who treats eye diseases is",
+  "future_prompt": "Someone who studies living organisms is a biologist. Someone who treats eye diseases is a",
+  "future_target_text": " ophthalm",
+  "top_candidates_to_intervene": 20,
+  "combination_candidate_count": 5,
+  "max_abs_future_direct_effect": 0.05,
+  "future_preservation_tolerance": 0.125
+}

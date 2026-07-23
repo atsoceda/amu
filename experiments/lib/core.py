@@ -284,6 +284,32 @@ def run_graph(
     return graph
 
 
+def feature_effect_map(graph, target_id: int) -> dict[tuple[int, int, int], dict[str, Any]]:
+    """Map selected (layer, position, feature) nodes to one target's direct effects."""
+    target_ids = [int(target.vocab_idx) for target in graph.logit_targets]
+    target_offset = target_ids.index(target_id)
+    n_features = int(len(graph.selected_features))
+    row = graph.adjacency_matrix[
+        -len(target_ids) + target_offset, :n_features
+    ].detach().float().cpu()
+    output = {}
+    for column, selected_idx_tensor in enumerate(graph.selected_features):
+        selected_idx = int(selected_idx_tensor)
+        layer, pos, feature_idx = [
+            int(value) for value in graph.active_features[selected_idx].tolist()
+        ]
+        output[(layer, pos, feature_idx)] = {
+            "layer": layer,
+            "pos": pos,
+            "feature_idx": feature_idx,
+            "activation": float(
+                graph.activation_values[selected_idx].detach().float().cpu()
+            ),
+            "direct_effect": float(row[column]),
+        }
+    return output
+
+
 def graph_features_for_target(
     graph,
     tokenizer,
@@ -354,6 +380,7 @@ def intervention_result(
     )
     next_logits = logits[0, -1].detach().float().cpu()
     probs = torch.softmax(next_logits, dim=-1)
+    top_probs, top_ids = torch.topk(probs, k=min(10, probs.numel()))
     targets = {}
     for token_id in target_ids:
         base = baseline["targets"][str(token_id)]
@@ -368,7 +395,22 @@ def intervention_result(
             "delta_prob": float(probs[token_id] - base["prob"]),
             "delta_rank": int(base["rank"] - rank),
         }
-    return {"targets": targets}
+    return {
+        "targets": targets,
+        "top_tokens": [
+            {
+                "rank": rank,
+                "token_id": int(token_id),
+                "token": decode_token(model.tokenizer, int(token_id)),
+                "logit": float(next_logits[int(token_id)]),
+                "prob": float(prob),
+            }
+            for rank, (prob, token_id) in enumerate(
+                zip(top_probs, top_ids),
+                start=1,
+            )
+        ],
+    }
 
 
 def dict_intervention_result(

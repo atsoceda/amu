@@ -13,6 +13,7 @@ from typing import Any
 
 from experiments.lib.core import (
     dict_intervention_result,
+    feature_effect_map,
     load_replacement_model,
     logits_for_prompt,
     run_graph,
@@ -69,31 +70,6 @@ def run_graph_phase(graph_name: str) -> None:
         target_ids = [token_id_for_text(tokenizer, config["future_target_text"])]
         prompt = config["future_prompt"]
     run_graph(model, prompt, graph_name, target_ids, config, GRAPHS_DIR)
-
-
-def feature_effect_map(graph, target_id: int) -> dict[tuple[int, int, int], dict[str, Any]]:
-    target_ids = [int(target.vocab_idx) for target in graph.logit_targets]
-    target_offset = target_ids.index(target_id)
-    n_features = int(len(graph.selected_features))
-    row = graph.adjacency_matrix[
-        -len(target_ids) + target_offset, :n_features
-    ].detach().float().cpu()
-    output = {}
-    for column, selected_idx_tensor in enumerate(graph.selected_features):
-        selected_idx = int(selected_idx_tensor)
-        layer, pos, feature_idx = [
-            int(value) for value in graph.active_features[selected_idx].tolist()
-        ]
-        output[(layer, pos, feature_idx)] = {
-            "layer": layer,
-            "pos": pos,
-            "feature_idx": feature_idx,
-            "activation": float(
-                graph.activation_values[selected_idx].detach().float().cpu()
-            ),
-            "direct_effect": float(row[column]),
-        }
-    return output
 
 
 def write_report(summary: dict[str, Any]) -> None:
