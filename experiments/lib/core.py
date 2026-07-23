@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import os
 import sys
+import gc
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -63,9 +64,89 @@ def patch_hf_cache(config: dict[str, Any]) -> None:
     h.download_hf_uris = local_download_hf_uris
 
 
+def load_gemma_scope_2_streaming(
+    paths: dict[int, str],
+    *,
+    feature_input_hook: str,
+    feature_output_hook: str,
+    scan: str | list[str] | None,
+    dtype: torch.dtype,
+):
+    """Load Gemma Scope 2 one layer at a time to avoid two full float32 copies."""
+    from circuit_tracer.transcoder.cross_layer_transcoder import CrossLayerTranscoder
+    from circuit_tracer.utils import get_default_device
+    from safetensors.torch import load_file
+
+    # Match circuit-tracer's Gemma Scope 2 loader: the path list includes one
+    # terminal entry beyond the model's 18 replacement layers.
+    layer_ids = list(range(max(paths)))
+
+    device = get_default_device()
+    state_dict: dict[str, torch.Tensor] = {}
+    encoders = []
+    encoder_biases = []
+    decoder_biases = []
+    thresholds = []
+    skip_connections = []
+
+    logging.info(
+        "Streaming %d Gemma Scope 2 layers as %s on %s",
+        len(layer_ids),
+        dtype,
+        device,
+    )
+    for layer_idx in layer_ids:
+        logging.info("Loading transcoder layer %d/%d", layer_idx + 1, len(layer_ids))
+        params = load_file(paths[layer_idx], device=device.type)
+        encoders.append(params["w_enc"].T.to(dtype=dtype).contiguous())
+        encoder_biases.append(params["b_enc"].to(dtype=dtype))
+        decoder_biases.append(params["b_dec"].to(dtype=dtype))
+        thresholds.append(params["threshold"].to(dtype=dtype))
+        state_dict[f"W_dec.{layer_idx}"] = (
+            params["w_dec"][:, layer_idx:, :].to(dtype=dtype).contiguous()
+        )
+        if "affine_skip_connection" in params:
+            skip_connections.append(
+                params["affine_skip_connection"].to(dtype=dtype)
+            )
+        del params
+        gc.collect()
+        if device.type == "mps":
+            torch.mps.empty_cache()
+
+    state_dict["W_enc"] = torch.stack(encoders)
+    state_dict["b_enc"] = torch.stack(encoder_biases)
+    state_dict["b_dec"] = torch.stack(decoder_biases)
+    state_dict["activation_function.threshold"] = torch.stack(thresholds).unsqueeze(1)
+    if skip_connections:
+        state_dict["W_skip"] = torch.stack(skip_connections)
+
+    n_layers, d_transcoder, d_model = state_dict["W_enc"].shape
+    with torch.device("meta"):
+        transcoder = CrossLayerTranscoder(
+            n_layers,
+            d_transcoder,
+            d_model,
+            activation_function="jump_relu",
+            skip_connection="W_skip" in state_dict,
+            lazy_decoder=False,
+            lazy_encoder=False,
+            feature_input_hook=feature_input_hook,
+            feature_output_hook=feature_output_hook,
+            scan=scan,
+            dtype=dtype,
+        )
+    transcoder.load_state_dict(state_dict, assign=True)
+    return transcoder
+
+
 def load_replacement_model(config: dict[str, Any]):
     from circuit_tracer import ReplacementModel
-    from circuit_tracer.utils.hf_utils import load_transcoder_from_hub, load_transcoders
+    from circuit_tracer.utils.hf_utils import (
+        load_transcoder_from_hub,
+        load_transcoders,
+        resolve_transcoder_paths,
+    )
     import yaml
 
     patch_hf_cache(config)
@@ -80,12 +161,22 @@ def load_replacement_model(config: dict[str, Any]):
         transcoder_config["revision"] = None
         transcoder_config["subfolder"] = "clt/width_262k_l0_medium_affine"
         transcoder_config["scan"] = "mwhanna/gemma-scope-2-270m-pt//clt/width_262k_l0_medium_affine"
-        transcoder = load_transcoders(
-            transcoder_config,
-            dtype=dtype,
-            lazy_encoder=False,
-            lazy_decoder=False,
-        )
+        if config.get("stream_transcoder_load", False):
+            paths = resolve_transcoder_paths(transcoder_config)
+            transcoder = load_gemma_scope_2_streaming(
+                paths,
+                feature_input_hook=transcoder_config["feature_input_hook"],
+                feature_output_hook=transcoder_config["feature_output_hook"],
+                scan=transcoder_config["scan"],
+                dtype=dtype,
+            )
+        else:
+            transcoder = load_transcoders(
+                transcoder_config,
+                dtype=dtype,
+                lazy_encoder=False,
+                lazy_decoder=False,
+            )
     else:
         logging.info("Loading transcoder %s", config["transcoder_set"])
         transcoder, _ = load_transcoder_from_hub(
@@ -187,7 +278,7 @@ def run_graph(
         batch_size=int(config["batch_size"]),
         max_feature_nodes=int(config["max_feature_nodes"]),
         verbose=True,
-        offload=None,
+        offload=config.get("offload"),
     )
     graph.to_pt(str(graph_path))
     return graph

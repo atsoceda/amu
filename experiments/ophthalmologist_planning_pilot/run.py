@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import json
 import logging
+import subprocess
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +28,47 @@ GRAPHS_DIR = RESULTS_DIR / "graphs"
 
 def load_config() -> dict[str, Any]:
     return json.loads(CONFIG_PATH.read_text())
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--graph-only",
+        choices=("article", "future"),
+        help="Internal isolated attribution phase.",
+    )
+    return parser.parse_args()
+
+
+def ensure_graphs() -> None:
+    GRAPHS_DIR.mkdir(parents=True, exist_ok=True)
+    for graph_name in ("article", "future"):
+        graph_path = GRAPHS_DIR / f"{graph_name}.pt"
+        if graph_path.exists():
+            logging.info("Reusing existing graph %s", graph_path)
+            continue
+        logging.info("Starting isolated %s attribution", graph_name)
+        subprocess.run(
+            [sys.executable, str(Path(__file__).resolve()), "--graph-only", graph_name],
+            check=True,
+        )
+
+
+def run_graph_phase(graph_name: str) -> None:
+    config = load_config()
+    setup_file_logging(RESULTS_DIR)
+    model = load_replacement_model(config)
+    tokenizer = model.tokenizer
+    if graph_name == "article":
+        target_ids = [
+            token_id_for_text(tokenizer, " a"),
+            token_id_for_text(tokenizer, " an"),
+        ]
+        prompt = config["prompt"]
+    else:
+        target_ids = [token_id_for_text(tokenizer, config["future_target_text"])]
+        prompt = config["future_prompt"]
+    run_graph(model, prompt, graph_name, target_ids, config, GRAPHS_DIR)
 
 
 def feature_effect_map(graph, target_id: int) -> dict[tuple[int, int, int], dict[str, Any]]:
@@ -53,6 +97,14 @@ def feature_effect_map(graph, target_id: int) -> dict[tuple[int, int, int], dict
 
 
 def write_report(summary: dict[str, Any]) -> None:
+    dual_effects = [
+        item for item in summary["interventions"] if item["dual_effect"]
+    ]
+    strongest = min(
+        dual_effects,
+        key=lambda item: item["suppression_delta_an_minus_a"],
+        default=None,
+    )
     lines = [
         "# Ophthalmologist Planning Pilot",
         "",
@@ -84,16 +136,38 @@ def write_report(summary: dict[str, Any]) -> None:
         f"- Suppression candidates tested: {len(summary['interventions'])}",
         f"- Candidates whose suppression reduced both the future prefix and the `an-a` margin: {summary['dual_effect_candidate_count']}",
         "",
+    ]
+    if strongest is not None:
+        lines += [
+            "## Strongest Individual Result",
+            "",
+            f"Suppressing `L{strongest['layer']}/F{strongest['feature_idx']}` at the final prompt token:",
+            "",
+            f"- changed the incorrect `a` logit by {strongest['suppression_delta_a_logit']:.3f};",
+            f"- changed the losing `an` logit by {strongest['suppression_delta_an_logit']:.3f};",
+            f"- therefore changed the `an-a` margin by {strongest['suppression_delta_an_minus_a']:.3f}; and",
+            f"- changed the later ` ophthalm` logit by {strongest['suppression_delta_future_logit']:.3f}.",
+            "",
+            "This is the cleanest result because the same suppression selectively weakens the grammatically correct preparation and the future answer prefix while leaving the chosen `a` logit unchanged. It does not yet tell us what the feature represents.",
+            "",
+        ]
+    lines += [
+        "## How Candidates Were Selected",
+        "",
+        "The article and future-word attribution graphs were built separately. A candidate had to be the exact same circuit-tracer feature at the pre-article token position in both graphs, with a positive direct attribution to both `an` and ` ophthalm`. The 20 candidates with the largest minimum of those two direct effects were suppressed one at a time. No answer feature was augmented.",
+        "",
         "## Candidate Interventions",
         "",
-        "| Feature | Article-Graph Activation | Direct Effect on `a` | Direct Effect on `an` | Direct Effect on ` ophthalm` | Suppression Δ(`an-a`) | Suppression Δ` ophthalm` | Dual Effect? |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| Feature | Activation | Direct Effect on `a` | Direct Effect on `an` | Direct Effect on ` ophthalm` | Suppression Δ`a` | Suppression Δ`an` | Suppression Δ(`an-a`) | Suppression Δ` ophthalm` | Dual Effect? |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
     for item in summary["interventions"]:
         lines.append(
             f"| `L{item['layer']}/F{item['feature_idx']}` | "
             f"{item['article_activation']:.3f} | {item['direct_effect_a']:.3f} | "
             f"{item['direct_effect_an']:.3f} | {item['direct_effect_future']:.3f} | "
+            f"{item['suppression_delta_a_logit']:.3f} | "
+            f"{item['suppression_delta_an_logit']:.3f} | "
             f"{item['suppression_delta_an_minus_a']:.3f} | "
             f"{item['suppression_delta_future_logit']:.3f} | "
             f"{item['dual_effect']} |"
@@ -103,6 +177,8 @@ def write_report(summary: dict[str, Any]) -> None:
         "## Interpretation Boundary",
         "",
         "A dual-effect feature is evidence that a representation active before the article contributes to both the losing grammatical preparation `an` and the later answer prefix. Feature semantics still require validation across activating examples and held-out prompts. This single prompt cannot establish a general concealed-planning mechanism.",
+        "",
+        "The model and transcoder ran in bfloat16 to fit the 16 GiB machine, so small changes are quantized in roughly 0.125-logit increments in this run. The strongest 1.125-logit article-margin effect is substantially larger than that resolution; the 0.125 effects require replication.",
         "",
         "## Artifacts",
         "",
@@ -115,9 +191,15 @@ def write_report(summary: dict[str, Any]) -> None:
 
 
 def main() -> None:
+    args = parse_args()
+    if args.graph_only:
+        run_graph_phase(args.graph_only)
+        return
+
     config = load_config()
     setup_file_logging(RESULTS_DIR)
     started = time.time()
+    ensure_graphs()
     model = load_replacement_model(config)
     tokenizer = model.tokenizer
     a_id = token_id_for_text(tokenizer, " a")
