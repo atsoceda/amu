@@ -1,0 +1,11 @@
+{
+  "experiment_name": "a_an_continuation_check",
+  "description": "Checks whether Gemma's incorrect a predictions are followed by the intended vowel-initial noun, a grammatically compatible alternative, or an unrelated continuation.",
+  "baseline_config": "../a_an_majority_baseline/config.json",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "dtype": "float32",
+  "batch_size": 12,
+  "max_new_tokens_from_prompt": 4,
+  "max_new_tokens_after_article": 3
+}

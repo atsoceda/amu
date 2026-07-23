@@ -1,0 +1,28 @@
+{
+  "experiment_name": "a_an_full_dataset_screen",
+  "description": "Screens every an-target example released with Latent Planning Emerges with Scale for a followed by a vowel-initial answer in Gemma 3 270M.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "dtype": "float32",
+  "batch_size": 16,
+  "max_new_tokens": 4,
+  "source": {
+    "repository": "https://github.com/hannamw/model-planning-public",
+    "commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+    "path": "a_an/data/a_an_examples.csv",
+    "url": "https://raw.githubusercontent.com/hannamw/model-planning-public/993cff51450f43e8e86c254f761cc48c008b8dab/a_an/data/a_an_examples.csv",
+    "sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c"
+  },
+  "in_context_examples": [
+    {
+      "id": "a_biologist",
+      "article": "a",
+      "text": "Someone who studies living organisms is a biologist."
+    },
+    {
+      "id": "an_archaeologist",
+      "article": "an",
+      "text": "Someone who studies ancient objects and sites is an archaeologist."
+    }
+  ]
+}

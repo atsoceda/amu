@@ -1,0 +1,56 @@
+{
+  "experiment_name": "a_an_majority_baseline",
+  "generated_at": "2026-07-23T07:43:00.144716+00:00",
+  "model": "google/gemma-3-270m",
+  "model_ref": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "device": "mps",
+  "runtime_seconds": 2.4788589477539062,
+  "n_unique_examples": 32,
+  "n_rows": 64,
+  "n_an": 24,
+  "n_a": 40,
+  "correct_an": 3,
+  "correct_a": 40,
+  "recall_an": 0.125,
+  "recall_a": 1.0,
+  "other_predictions": 0,
+  "grouped_metrics": [
+    {
+      "expected_article": "a",
+      "in_context_article": "a",
+      "n": 20,
+      "recall": 1.0,
+      "mean_prob_a": 0.7206243604421616,
+      "mean_prob_an": 0.19583415128290654,
+      "mean_an_minus_a_logit": -1.3434558868408204
+    },
+    {
+      "expected_article": "a",
+      "in_context_article": "an",
+      "n": 20,
+      "recall": 1.0,
+      "mean_prob_a": 0.7129165887832641,
+      "mean_prob_an": 0.22129218615591525,
+      "mean_an_minus_a_logit": -1.2279541015625
+    },
+    {
+      "expected_article": "an",
+      "in_context_article": "a",
+      "n": 12,
+      "recall": 0.08333333333333333,
+      "mean_prob_a": 0.6505251154303551,
+      "mean_prob_an": 0.24578797382613024,
+      "mean_an_minus_a_logit": -1.0829564730326335
+    },
+    {
+      "expected_article": "an",
+      "in_context_article": "an",
+      "n": 12,
+      "recall": 0.16666666666666666,
+      "mean_prob_a": 0.6368183145920435,
+      "mean_prob_an": 0.2865033907194932,
+      "mean_an_minus_a_logit": -0.8900389671325684
+    }
+  ],
+  "interpretation": "Gemma shows a meaningful minority-class disadvantage, but not a complete collapse to `a`."
+}

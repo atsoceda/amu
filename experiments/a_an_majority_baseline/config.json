@@ -1,0 +1,214 @@
+{
+  "experiment_name": "a_an_majority_baseline",
+  "description": "Behavioral replication of the a/an majority-class test from Latent Planning Emerges with Scale, evaluated on Gemma 3 270M without circuit tracing.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "dtype": "float32",
+  "batch_size": 16,
+  "in_context_examples": [
+    {
+      "id": "a_biologist",
+      "article": "a",
+      "text": "Someone who studies living organisms is a biologist."
+    },
+    {
+      "id": "an_archaeologist",
+      "article": "an",
+      "text": "Someone who studies ancient objects and sites is an archaeologist."
+    }
+  ],
+  "examples": [
+    {
+      "id": "accountant",
+      "article": "an",
+      "planned_word": "accountant",
+      "prompt": "Someone who handles financial records is"
+    },
+    {
+      "id": "architect",
+      "article": "an",
+      "planned_word": "architect",
+      "prompt": "Someone who designs buildings and structures is"
+    },
+    {
+      "id": "electrician",
+      "article": "an",
+      "planned_word": "electrician",
+      "prompt": "Someone who installs and repairs electrical systems is"
+    },
+    {
+      "id": "engineer",
+      "article": "an",
+      "planned_word": "engineer",
+      "prompt": "Someone who designs and builds technical systems is"
+    },
+    {
+      "id": "economist",
+      "article": "an",
+      "planned_word": "economist",
+      "prompt": "Someone who studies financial systems and markets is"
+    },
+    {
+      "id": "editor",
+      "article": "an",
+      "planned_word": "editor",
+      "prompt": "Someone who reviews and corrects written material is"
+    },
+    {
+      "id": "illustrator",
+      "article": "an",
+      "planned_word": "illustrator",
+      "prompt": "Someone who creates pictures for books and magazines is"
+    },
+    {
+      "id": "interpreter",
+      "article": "an",
+      "planned_word": "interpreter",
+      "prompt": "Someone who translates spoken language in real time is"
+    },
+    {
+      "id": "optometrist",
+      "article": "an",
+      "planned_word": "optometrist",
+      "prompt": "Someone who examines eyes and prescribes corrective lenses is"
+    },
+    {
+      "id": "orthodontist",
+      "article": "an",
+      "planned_word": "orthodontist",
+      "prompt": "Someone who corrects the alignment of teeth is"
+    },
+    {
+      "id": "undertaker",
+      "article": "an",
+      "planned_word": "undertaker",
+      "prompt": "Someone who prepares deceased people for funerals is"
+    },
+    {
+      "id": "auditor",
+      "article": "an",
+      "planned_word": "auditor",
+      "prompt": "Someone who officially examines financial accounts is"
+    },
+    {
+      "id": "veterinarian",
+      "article": "a",
+      "planned_word": "veterinarian",
+      "prompt": "Someone who heals sick pets is"
+    },
+    {
+      "id": "teacher",
+      "article": "a",
+      "planned_word": "teacher",
+      "prompt": "Someone who educates children in schools is"
+    },
+    {
+      "id": "chef",
+      "article": "a",
+      "planned_word": "chef",
+      "prompt": "Someone who prepares meals in restaurants is"
+    },
+    {
+      "id": "firefighter",
+      "article": "a",
+      "planned_word": "firefighter",
+      "prompt": "Someone who extinguishes fires and rescues people is"
+    },
+    {
+      "id": "pilot",
+      "article": "a",
+      "planned_word": "pilot",
+      "prompt": "Someone who flies airplanes is"
+    },
+    {
+      "id": "dentist",
+      "article": "a",
+      "planned_word": "dentist",
+      "prompt": "Someone who treats teeth and gums is"
+    },
+    {
+      "id": "librarian",
+      "article": "a",
+      "planned_word": "librarian",
+      "prompt": "Someone who manages books and helps people find information is"
+    },
+    {
+      "id": "photographer",
+      "article": "a",
+      "planned_word": "photographer",
+      "prompt": "Someone who takes professional pictures is"
+    },
+    {
+      "id": "mechanic",
+      "article": "a",
+      "planned_word": "mechanic",
+      "prompt": "Someone who fixes cars and engines is"
+    },
+    {
+      "id": "surgeon",
+      "article": "a",
+      "planned_word": "surgeon",
+      "prompt": "Someone who performs operations on patients is"
+    },
+    {
+      "id": "pharmacist",
+      "article": "a",
+      "planned_word": "pharmacist",
+      "prompt": "Someone who dispenses medications is"
+    },
+    {
+      "id": "journalist",
+      "article": "a",
+      "planned_word": "journalist",
+      "prompt": "Someone who writes news articles is"
+    },
+    {
+      "id": "plumber",
+      "article": "a",
+      "planned_word": "plumber",
+      "prompt": "Someone who fixes pipes and water systems is"
+    },
+    {
+      "id": "lawyer",
+      "article": "a",
+      "planned_word": "lawyer",
+      "prompt": "Someone who represents clients in legal matters is"
+    },
+    {
+      "id": "baker",
+      "article": "a",
+      "planned_word": "baker",
+      "prompt": "Someone who makes bread and pastries is"
+    },
+    {
+      "id": "carpenter",
+      "article": "a",
+      "planned_word": "carpenter",
+      "prompt": "Someone who builds things with wood is"
+    },
+    {
+      "id": "professor",
+      "article": "a",
+      "planned_word": "professor",
+      "prompt": "Someone who teaches and conducts research at universities is"
+    },
+    {
+      "id": "physicist",
+      "article": "a",
+      "planned_word": "physicist",
+      "prompt": "Someone who studies matter and energy is"
+    },
+    {
+      "id": "chemist",
+      "article": "a",
+      "planned_word": "chemist",
+      "prompt": "Someone who studies chemical reactions and compounds is"
+    },
+    {
+      "id": "historian",
+      "article": "a",
+      "planned_word": "historian",
+      "prompt": "Someone who studies and writes about past events is"
+    }
+  ]
+}

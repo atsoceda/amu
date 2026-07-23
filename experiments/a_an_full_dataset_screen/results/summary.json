@@ -1,0 +1,45 @@
+{
+  "experiment_name": "a_an_full_dataset_screen",
+  "generated_at": "2026-07-23T08:22:04.158432+00:00",
+  "model": "google/gemma-3-270m",
+  "model_ref": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "device": "mps",
+  "runtime_seconds": 21.016539812088013,
+  "source": {
+    "repository": "https://github.com/hannamw/model-planning-public",
+    "commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+    "path": "a_an/data/a_an_examples.csv",
+    "url": "https://raw.githubusercontent.com/hannamw/model-planning-public/993cff51450f43e8e86c254f761cc48c008b8dab/a_an/data/a_an_examples.csv",
+    "sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c"
+  },
+  "source_total_rows": 457,
+  "source_class_counts": {
+    "an": 105,
+    "a": 352
+  },
+  "demonstrations": [
+    {
+      "id": "a_biologist",
+      "article": "a",
+      "text": "Someone who studies living organisms is a biologist."
+    },
+    {
+      "id": "an_archaeologist",
+      "article": "an",
+      "text": "Someone who studies ancient objects and sites is an archaeologist."
+    }
+  ],
+  "unique_targets": 105,
+  "n_rows": 210,
+  "article_an_recall": 0.21904761904761905,
+  "candidate_row_count": 3,
+  "unique_candidate_targets": 2,
+  "reproduced_candidate_targets": 1,
+  "class_counts": {
+    "a_plus_consonant_word": 102,
+    "a_plus_listed_word_mismatch": 3,
+    "article_an": 46,
+    "other": 59
+  },
+  "interpretation": "The screen found some behavioral mismatch candidates, but fewer than the ten distinct targets set as the threshold for a broad mechanistic study."
+}

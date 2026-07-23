@@ -1,0 +1,17 @@
+{
+  "experiment_name": "is_are_behavioral_screen",
+  "description": "Screens the paper's released is/are dataset for cases where Gemma generates are followed by the correct singular answer 1.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "dtype": "float32",
+  "device": "mps",
+  "batch_size": 24,
+  "max_new_tokens": 6,
+  "source": {
+    "repository": "https://github.com/hannamw/model-planning-public",
+    "commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+    "path": "is_are/data/animals_dataset.csv",
+    "url": "https://raw.githubusercontent.com/hannamw/model-planning-public/993cff51450f43e8e86c254f761cc48c008b8dab/is_are/data/animals_dataset.csv",
+    "sha256": "e2167d1a6ed8ca0849fcda75a790f1f2d41c594113cbd342560edcc05e6eeccd"
+  }
+}
