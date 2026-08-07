@@ -30,5 +30,5 @@ Pass **`./graph_files`** for `output_path` when using a relative directory strin
 Use the project conda environment:
 
 ```bash
-/Users/anthony/miniconda3/envs/pyclean/bin/python -c 'from circuit_tracer.utils.create_graph_files import create_graph_files; create_graph_files("graph.pt", slug="my-run-slug", output_path="./graph_files")'
+/Users/anthony/miniconda3/bin/python -c 'from circuit_tracer.utils.create_graph_files import create_graph_files; create_graph_files("graph.pt", slug="my-run-slug", output_path="./graph_files")'
 ```

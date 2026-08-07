@@ -1,0 +1,120 @@
+{
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "batch_size": 32,
+  "max_feature_nodes": 1200,
+  "dataset_path": "../a_an_full_dataset_screen/data/a_an_examples.csv",
+  "dataset_sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "control_feature_count": 4,
+  "control_seed": 0,
+  "max_new_tokens": 4,
+  "experiment_name": "domain_transfer_aan",
+  "description": "E5: slim non-occupation a/an transfer of winning E1/E3 feature sets.",
+  "e1_selection_path": "../selection_criterion_ablation/results/selection.json",
+  "e1_summary_path": "../selection_criterion_ablation/results/summary.json",
+  "e3_summary_path": "../forced_content_lock/results/summary.json",
+  "amplify_factor": 5.0,
+  "feature_set_ids": [
+    "S1_dual_effect"
+  ],
+  "test_examples": [
+    {
+      "sentence": "An animal that says meow is",
+      "listed_word": "cat",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "An animal that says woof is",
+      "listed_word": "dog",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "An animal with a long trunk is",
+      "listed_word": "elephant",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "An animal that flies at night is",
+      "listed_word": "owl",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "An animal that hops and has long ears is",
+      "listed_word": "rabbit",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A musical instrument with keys is",
+      "listed_word": "piano",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A musical instrument with strings played with a bow is",
+      "listed_word": "violin",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A musical instrument you blow into with valves is",
+      "listed_word": "trumpet",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A musical instrument with a reed is",
+      "listed_word": "oboe",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A musical instrument you strike with mallets is",
+      "listed_word": "xylophone",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A person from Italy is",
+      "listed_word": "Italian",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A person from France is",
+      "listed_word": "Frenchman",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A person from Spain is",
+      "listed_word": "Spaniard",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A person from England is",
+      "listed_word": "Englishman",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "A person from Germany is",
+      "listed_word": "German",
+      "expected_article": "a",
+      "twin_word": ""
+    }
+  ]
+}

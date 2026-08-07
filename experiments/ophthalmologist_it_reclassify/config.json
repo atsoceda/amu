@@ -1,0 +1,42 @@
+{
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "batch_size": 32,
+  "max_feature_nodes": 1200,
+  "dataset_path": "../a_an_full_dataset_screen/data/a_an_examples.csv",
+  "dataset_sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "control_feature_count": 4,
+  "control_seed": 0,
+  "max_new_tokens": 6,
+  "experiment_name": "ophthalmologist_it_reclassify",
+  "description": "E6: reclassify the ophthalmologist mismatch under E3-style conditions on IT.",
+  "e1_selection_path": "../selection_criterion_ablation/results/selection.json",
+  "e3_summary_path": "../forced_content_lock/results/summary.json",
+  "amplify_factor": 5.0,
+  "prompt": "Someone who treats eye diseases is",
+  "listed_word": "ophthalmologist",
+  "expected_article": "an",
+  "future_prompt_article": "a",
+  "lof_pair": [
+    {
+      "layer": 13,
+      "feature_idx": 10304,
+      "label": "`L13/F10304`"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 1949,
+      "label": "`L14/F1949`"
+    }
+  ],
+  "article_set_id": "S1_dual_effect",
+  "content_set_id": "S3_content_only"
+}

@@ -5,7 +5,7 @@
   "model": "google/gemma-3-270m",
   "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
   "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
-  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
   "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
   "backend": "nnsight",
   "dtype": "float32",
@@ -50,22 +50,32 @@
     {
       "name": "l7_f89",
       "description": "Suppress L7/F89 at the final token position.",
-      "feature_keys": ["l7_f89"]
+      "feature_keys": [
+        "l7_f89"
+      ]
     },
     {
       "name": "l10_f9037",
       "description": "Suppress L10/F9037 at the final token position.",
-      "feature_keys": ["l10_f9037"]
+      "feature_keys": [
+        "l10_f9037"
+      ]
     },
     {
       "name": "l7_f89_plus_l10_f9037",
       "description": "Suppress the two individually promising shared features together at the final token position.",
-      "feature_keys": ["l7_f89", "l10_f9037"]
+      "feature_keys": [
+        "l7_f89",
+        "l10_f9037"
+      ]
     },
     {
       "name": "l7_f89_plus_l5_f383",
       "description": "Suppress the cleaner L7/F89 lead plus the highest-direct-effect shared feature as a comparison bundle.",
-      "feature_keys": ["l7_f89", "l5_f383"]
+      "feature_keys": [
+        "l7_f89",
+        "l5_f383"
+      ]
     }
   ],
   "countries": [
@@ -73,29 +83,73 @@
       "id": "france",
       "country_text": "France",
       "answer_text": " Paris",
-      "wrong_answer_texts": [" Berlin", " Rome", " London", " Madrid"],
-      "fallback_target_texts": [" a", " one", " city", " capital", " France"]
+      "wrong_answer_texts": [
+        " Berlin",
+        " Rome",
+        " London",
+        " Madrid"
+      ],
+      "fallback_target_texts": [
+        " a",
+        " one",
+        " city",
+        " capital",
+        " France"
+      ]
     },
     {
       "id": "germany",
       "country_text": "Germany",
       "answer_text": " Berlin",
-      "wrong_answer_texts": [" Paris", " Rome", " London", " Madrid"],
-      "fallback_target_texts": [" a", " one", " city", " capital", " Germany"]
+      "wrong_answer_texts": [
+        " Paris",
+        " Rome",
+        " London",
+        " Madrid"
+      ],
+      "fallback_target_texts": [
+        " a",
+        " one",
+        " city",
+        " capital",
+        " Germany"
+      ]
     },
     {
       "id": "italy",
       "country_text": "Italy",
       "answer_text": " Rome",
-      "wrong_answer_texts": [" Paris", " Berlin", " London", " Madrid"],
-      "fallback_target_texts": [" a", " one", " city", " capital", " Italy"]
+      "wrong_answer_texts": [
+        " Paris",
+        " Berlin",
+        " London",
+        " Madrid"
+      ],
+      "fallback_target_texts": [
+        " a",
+        " one",
+        " city",
+        " capital",
+        " Italy"
+      ]
     },
     {
       "id": "spain",
       "country_text": "Spain",
       "answer_text": " Madrid",
-      "wrong_answer_texts": [" Paris", " Berlin", " Rome", " London"],
-      "fallback_target_texts": [" a", " one", " city", " capital", " Spain"]
+      "wrong_answer_texts": [
+        " Paris",
+        " Berlin",
+        " Rome",
+        " London"
+      ],
+      "fallback_target_texts": [
+        " a",
+        " one",
+        " city",
+        " capital",
+        " Spain"
+      ]
     }
   ],
   "prompts": [

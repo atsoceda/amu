@@ -1,0 +1,451 @@
+{
+  "experiment_name": "trajectory_causal_tetrad",
+  "generated_at": "2026-08-07T05:41:39.341132+00:00",
+  "model": "google/gemma-3-270m",
+  "runtime_seconds": 59.03945183753967,
+  "feature_set_id": "S1_dual_effect",
+  "amplify_factor": 5.0,
+  "interpretation": "GoF on the frozen set moves twin/class packages above matched controls; supports causal role for trajectory-class features.",
+  "families": {
+    "pilot_aviator": {
+      "family": {
+        "name": "pilot_aviator",
+        "sentence": "Someone who flies airplanes is",
+        "baseline_word": "pilot",
+        "twin_word": "aviator",
+        "expected_article": "a"
+      },
+      "features": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.2559814453125,
+          "mean_direct_effect_a": 0.1849365234375,
+          "mean_direct_effect_a_minus_an": -0.071044921875,
+          "mean_direct_effect_future": 0.1431884765625,
+          "mean_activation": 1442.0,
+          "mean_score": 0.1431884765625,
+          "label": "`L12/F6229`"
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.096893310546875,
+          "mean_direct_effect_a": 0.093994140625,
+          "mean_direct_effect_a_minus_an": -0.002899169921875,
+          "mean_direct_effect_future": 0.024379730224609375,
+          "mean_activation": 119.5,
+          "mean_score": 0.024379730224609375,
+          "label": "`L10/F2930`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.86083984375,
+          "mean_direct_effect_a": -0.469482421875,
+          "mean_direct_effect_a_minus_an": -1.330322265625,
+          "mean_direct_effect_future": 0.019838333129882812,
+          "mean_activation": 890.0,
+          "mean_score": 0.019838333129882812,
+          "label": "`L13/F10231`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0283355712890625,
+          "mean_direct_effect_a": 0.02532958984375,
+          "mean_direct_effect_a_minus_an": -0.0030059814453125,
+          "mean_direct_effect_future": 0.01972198486328125,
+          "mean_activation": 287.375,
+          "mean_score": 0.01929473876953125,
+          "label": "`L11/F793`"
+        }
+      ],
+      "control_features": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 480.0,
+          "activation_distance": 204.71875,
+          "mean_activation": 480.0,
+          "label": "`L11/F2954`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 632.0,
+          "activation_distance": 52.71875,
+          "mean_activation": 632.0,
+          "label": "`L11/F5451`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 484.0,
+          "activation_distance": 200.71875,
+          "mean_activation": 484.0,
+          "label": "`L11/F14119`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 506.0,
+          "activation_distance": 178.71875,
+          "mean_activation": 506.0,
+          "label": "`L12/F6421`"
+        }
+      ],
+      "conditions": {
+        "baseline": {
+          "condition": "baseline",
+          "family": "pilot_aviator",
+          "sentence": "Someone who flies airplanes is",
+          "baseline_continuation": " a pilot.",
+          "intervention_continuation": " a pilot.",
+          "baseline_article": "a",
+          "intervention_article": "a",
+          "baseline_word": "pilot",
+          "intervention_word": "pilot",
+          "baseline_package": "baseline",
+          "intervention_package": "baseline",
+          "class_shifted": false,
+          "content_preserved": true,
+          "matched_twin": false,
+          "delta_an_minus_a": 0.0
+        },
+        "lof_zero": {
+          "condition": "lof_zero",
+          "family": "pilot_aviator",
+          "sentence": "Someone who flies airplanes is",
+          "baseline_continuation": " a pilot.",
+          "intervention_continuation": " a pilot.",
+          "baseline_article": "a",
+          "intervention_article": "a",
+          "baseline_word": "pilot",
+          "intervention_word": "pilot",
+          "baseline_package": "baseline",
+          "intervention_package": "baseline",
+          "class_shifted": false,
+          "content_preserved": true,
+          "matched_twin": false,
+          "delta_an_minus_a": -0.875
+        },
+        "gof_amplify": {
+          "condition": "gof_amplify",
+          "family": "pilot_aviator",
+          "sentence": "Someone who flies airplanes is",
+          "baseline_continuation": " a pilot.",
+          "intervention_continuation": " an aviator.",
+          "baseline_article": "a",
+          "intervention_article": "an",
+          "baseline_word": "pilot",
+          "intervention_word": "aviator",
+          "baseline_package": "baseline",
+          "intervention_package": "twin",
+          "class_shifted": true,
+          "content_preserved": false,
+          "matched_twin": true,
+          "delta_an_minus_a": 2.875
+        },
+        "rescue_amplify": {
+          "condition": "rescue_amplify",
+          "family": "pilot_aviator",
+          "sentence": "Someone who flies airplanes is",
+          "baseline_continuation": " a pilot.",
+          "intervention_continuation": " an aviator.",
+          "baseline_article": "a",
+          "intervention_article": "an",
+          "baseline_word": "pilot",
+          "intervention_word": "aviator",
+          "baseline_package": "baseline",
+          "intervention_package": "twin",
+          "class_shifted": true,
+          "content_preserved": false,
+          "matched_twin": true,
+          "delta_an_minus_a": 2.875
+        },
+        "control_amplify": {
+          "condition": "control_amplify",
+          "family": "pilot_aviator",
+          "sentence": "Someone who flies airplanes is",
+          "baseline_continuation": " a pilot.",
+          "intervention_continuation": " a pilot.",
+          "baseline_article": "a",
+          "intervention_article": "a",
+          "baseline_word": "pilot",
+          "intervention_word": "pilot",
+          "baseline_package": "baseline",
+          "intervention_package": "baseline",
+          "class_shifted": false,
+          "content_preserved": true,
+          "matched_twin": false,
+          "delta_an_minus_a": 0.125
+        }
+      }
+    },
+    "lawyer_attorney": {
+      "family": {
+        "name": "lawyer_attorney",
+        "sentence": "Someone who represents clients in legal matters is",
+        "baseline_word": "lawyer",
+        "twin_word": "attorney",
+        "expected_article": "a"
+      },
+      "features": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.2559814453125,
+          "mean_direct_effect_a": 0.1849365234375,
+          "mean_direct_effect_a_minus_an": -0.071044921875,
+          "mean_direct_effect_future": 0.1431884765625,
+          "mean_activation": 1442.0,
+          "mean_score": 0.1431884765625,
+          "label": "`L12/F6229`"
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.096893310546875,
+          "mean_direct_effect_a": 0.093994140625,
+          "mean_direct_effect_a_minus_an": -0.002899169921875,
+          "mean_direct_effect_future": 0.024379730224609375,
+          "mean_activation": 119.5,
+          "mean_score": 0.024379730224609375,
+          "label": "`L10/F2930`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.86083984375,
+          "mean_direct_effect_a": -0.469482421875,
+          "mean_direct_effect_a_minus_an": -1.330322265625,
+          "mean_direct_effect_future": 0.019838333129882812,
+          "mean_activation": 890.0,
+          "mean_score": 0.019838333129882812,
+          "label": "`L13/F10231`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0283355712890625,
+          "mean_direct_effect_a": 0.02532958984375,
+          "mean_direct_effect_a_minus_an": -0.0030059814453125,
+          "mean_direct_effect_future": 0.01972198486328125,
+          "mean_activation": 287.375,
+          "mean_score": 0.01929473876953125,
+          "label": "`L11/F793`"
+        }
+      ],
+      "control_features": [
+        {
+          "layer": 12,
+          "feature_idx": 263,
+          "activation": 496.0,
+          "activation_distance": 188.71875,
+          "mean_activation": 496.0,
+          "label": "`L12/F263`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 9603,
+          "activation": 470.0,
+          "activation_distance": 214.71875,
+          "mean_activation": 470.0,
+          "label": "`L12/F9603`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1230,
+          "activation": 640.0,
+          "activation_distance": 44.71875,
+          "mean_activation": 640.0,
+          "label": "`L13/F1230`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 2494,
+          "activation": 464.0,
+          "activation_distance": 220.71875,
+          "mean_activation": 464.0,
+          "label": "`L13/F2494`"
+        }
+      ],
+      "conditions": {
+        "baseline": {
+          "condition": "baseline",
+          "family": "lawyer_attorney",
+          "sentence": "Someone who represents clients in legal matters is",
+          "baseline_continuation": " a lawyer.",
+          "intervention_continuation": " a lawyer.",
+          "baseline_article": "a",
+          "intervention_article": "a",
+          "baseline_word": "lawyer",
+          "intervention_word": "lawyer",
+          "baseline_package": "baseline",
+          "intervention_package": "baseline",
+          "class_shifted": false,
+          "content_preserved": true,
+          "matched_twin": false,
+          "delta_an_minus_a": 0.0
+        },
+        "lof_zero": {
+          "condition": "lof_zero",
+          "family": "lawyer_attorney",
+          "sentence": "Someone who represents clients in legal matters is",
+          "baseline_continuation": " a lawyer.",
+          "intervention_continuation": " a lawyer.",
+          "baseline_article": "a",
+          "intervention_article": "a",
+          "baseline_word": "lawyer",
+          "intervention_word": "lawyer",
+          "baseline_package": "baseline",
+          "intervention_package": "baseline",
+          "class_shifted": false,
+          "content_preserved": true,
+          "matched_twin": false,
+          "delta_an_minus_a": -1.125
+        },
+        "gof_amplify": {
+          "condition": "gof_amplify",
+          "family": "lawyer_attorney",
+          "sentence": "Someone who represents clients in legal matters is",
+          "baseline_continuation": " a lawyer.",
+          "intervention_continuation": " an attorney.",
+          "baseline_article": "a",
+          "intervention_article": "an",
+          "baseline_word": "lawyer",
+          "intervention_word": "attorney",
+          "baseline_package": "baseline",
+          "intervention_package": "twin",
+          "class_shifted": true,
+          "content_preserved": false,
+          "matched_twin": true,
+          "delta_an_minus_a": 3.25
+        },
+        "rescue_amplify": {
+          "condition": "rescue_amplify",
+          "family": "lawyer_attorney",
+          "sentence": "Someone who represents clients in legal matters is",
+          "baseline_continuation": " a lawyer.",
+          "intervention_continuation": " an attorney.",
+          "baseline_article": "a",
+          "intervention_article": "an",
+          "baseline_word": "lawyer",
+          "intervention_word": "attorney",
+          "baseline_package": "baseline",
+          "intervention_package": "twin",
+          "class_shifted": true,
+          "content_preserved": false,
+          "matched_twin": true,
+          "delta_an_minus_a": 3.25
+        },
+        "control_amplify": {
+          "condition": "control_amplify",
+          "family": "lawyer_attorney",
+          "sentence": "Someone who represents clients in legal matters is",
+          "baseline_continuation": " a lawyer.",
+          "intervention_continuation": " a lawyer.",
+          "baseline_article": "a",
+          "intervention_article": "a",
+          "baseline_word": "lawyer",
+          "intervention_word": "lawyer",
+          "baseline_package": "baseline",
+          "intervention_package": "baseline",
+          "class_shifted": false,
+          "content_preserved": true,
+          "matched_twin": false,
+          "delta_an_minus_a": 0.25
+        }
+      }
+    }
+  }
+}

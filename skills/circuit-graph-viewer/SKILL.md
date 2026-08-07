@@ -32,7 +32,7 @@ This skill maps to **Local Server** in the [circuit-tracer README](https://githu
 2. Start the server:
 
 ```bash
-/Users/anthony/miniconda3/envs/pyclean/bin/circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
+/Users/anthony/miniconda3/bin/circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
 ```
 
 3. If port is busy, retry with another `--port` and tell the user the updated URL.

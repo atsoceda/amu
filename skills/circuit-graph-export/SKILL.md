@@ -5,7 +5,7 @@ description: >-
   suitable for the local web UI. Use when the user already has graph.pt or attribution output on disk and needs browser-ready graph_files.
 license: MIT
 compatibility: >-
-  Python 3.10+, circuit-tracer installed in this repo's pyclean conda environment, write access to run directory.
+  Python 3.10+, circuit-tracer installed in this repo's project conda environment, write access to run directory.
 metadata:
   upstream: "https://github.com/decoderesearch/circuit-tracer"
   version: "1.0"
@@ -27,7 +27,7 @@ This skill maps to **Graph File Creation** in the [circuit-tracer README](https:
 
 ## Procedure
 
-1. Use the project conda environment: `/Users/anthony/miniconda3/envs/pyclean/bin/python`. Do **not** create a venv.
+1. Use the project conda environment: `/Users/anthony/miniconda3/bin/python`. Do **not** create a venv.
 2. `cd` to the directory containing the `.pt` **or** pass an absolute path into `create_graph_files`.
 3. Run Python calling **`circuit_tracer.utils.create_graph_files.create_graph_files`** with:
    - `graph_or_path`: path to `.pt` **or** an in-memory `Graph`.
@@ -37,7 +37,7 @@ This skill maps to **Graph File Creation** in the [circuit-tracer README](https:
 Example one-liner:
 
 ```bash
-/Users/anthony/miniconda3/envs/pyclean/bin/python -c 'from circuit_tracer.utils.create_graph_files import create_graph_files; create_graph_files("graph.pt", slug="my-run-slug", output_path="./graph_files")'
+/Users/anthony/miniconda3/bin/python -c 'from circuit_tracer.utils.create_graph_files import create_graph_files; create_graph_files("graph.pt", slug="my-run-slug", output_path="./graph_files")'
 ```
 
 4. Confirm files landed under `./graph_files/` before starting the server skill.

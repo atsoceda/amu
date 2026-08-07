@@ -7,7 +7,7 @@ description: >-
 license: MIT
 compatibility: >-
   Python 3.10+, PyPI package circuit-tracer, Hugging Face auth for model/transcoder downloads, network on first run,
-  sufficient RAM for chosen model; use this repo's pyclean conda environment.
+  sufficient RAM for chosen model; use this repo's project conda environment.
 metadata:
   upstream: "https://github.com/decoderesearch/circuit-tracer"
   version: "1.0"
@@ -24,7 +24,7 @@ This skill maps to **Attribution** in the [circuit-tracer README](https://github
 
 ## Procedure
 
-1. Use the project conda environment: `/Users/anthony/miniconda3/envs/pyclean/bin/python` and `/Users/anthony/miniconda3/envs/pyclean/bin/circuit-tracer`. Do **not** create a venv.
+1. Use the project conda environment: `/Users/anthony/miniconda3/bin/python` and `/Users/anthony/miniconda3/bin/circuit-tracer`. Do **not** create a venv.
 2. Ensure Hugging Face access is configured for the **base model** and **transcoder** repos (token / CLI login; license acceptance on the hub) if downloads or live metadata checks are needed.
 3. `cd` into the **run directory** (create `runs/<date>_<slug>/` if the user did not specify one).
 4. Run **`circuit-tracer attribute`** with **either**:

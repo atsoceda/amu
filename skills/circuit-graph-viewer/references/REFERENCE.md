@@ -3,7 +3,7 @@
 ## Command
 
 ```bash
-/Users/anthony/miniconda3/envs/pyclean/bin/circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
+/Users/anthony/miniconda3/bin/circuit-tracer start-server --graph_file_dir ./graph_files --port 8041
 ```
 
 ## URLs

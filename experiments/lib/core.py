@@ -43,17 +43,52 @@ def setup_file_logging(results_dir: Path) -> None:
     )
 
 
+def _google_scope_repo_id(config: dict[str, Any]) -> str:
+    """Map this repo's Gemma Scope 2 stack to the Google weight-hosting repo."""
+    transcoder_set = str(config.get("transcoder_set", ""))
+    weight_root = str(config.get("transcoder_weight_snapshot", ""))
+    blob = f"{transcoder_set} {weight_root}".lower()
+    if "gemma-scope-2-270m-it" in blob:
+        return "google/gemma-scope-2-270m-it"
+    if "gemma-scope-2-270m-pt" in blob:
+        return "google/gemma-scope-2-270m-pt"
+    raise ValueError(
+        "Cannot infer Google Gemma Scope repo from transcoder_set/"
+        "transcoder_weight_snapshot; expected gemma-scope-2-270m-it or -pt"
+    )
+
+
+def _mwhanna_scope_repo_id(config: dict[str, Any]) -> str:
+    google_repo = _google_scope_repo_id(config)
+    return google_repo.replace("google/", "mwhanna/", 1)
+
+
+def _clt_subfolder(config: dict[str, Any]) -> str:
+    transcoder_set = str(config.get("transcoder_set", ""))
+    marker = "/clt/"
+    if marker in transcoder_set:
+        return "clt/" + transcoder_set.split(marker, 1)[1].strip("/")
+    cfg_path = str(config.get("transcoder_config_snapshot", ""))
+    if "/clt/" in cfg_path:
+        # .../clt/<variant>/config.yaml
+        parts = cfg_path.split("/clt/", 1)[1].split("/")
+        if parts:
+            return f"clt/{parts[0]}"
+    return "clt/width_262k_l0_medium"
+
+
 def patch_hf_cache(config: dict[str, Any]) -> None:
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     import circuit_tracer.utils.hf_utils as h
 
     weight_root = Path(config["transcoder_weight_snapshot"])
+    expected_repo = _google_scope_repo_id(config)
 
     def local_download_hf_uris(uris, max_workers=8):
         mapping = {}
         for uri in uris:
             info = h.parse_hf_uri(uri)
-            if info.repo_id != "google/gemma-scope-2-270m-pt":
+            if info.repo_id != expected_repo:
                 raise ValueError(f"No local mapping for {uri}")
             path = weight_root / info.file_path
             if not path.exists():
@@ -157,10 +192,12 @@ def load_replacement_model(config: dict[str, Any]):
     if config_snapshot.exists():
         logging.info("Loading transcoder config %s", config_snapshot)
         transcoder_config = yaml.safe_load(config_snapshot.read_text())
-        transcoder_config["repo_id"] = "mwhanna/gemma-scope-2-270m-pt"
+        mwhanna_repo = _mwhanna_scope_repo_id(config)
+        subfolder = _clt_subfolder(config)
+        transcoder_config["repo_id"] = mwhanna_repo
         transcoder_config["revision"] = None
-        transcoder_config["subfolder"] = "clt/width_262k_l0_medium_affine"
-        transcoder_config["scan"] = "mwhanna/gemma-scope-2-270m-pt//clt/width_262k_l0_medium_affine"
+        transcoder_config["subfolder"] = subfolder
+        transcoder_config["scan"] = f"{mwhanna_repo}//{subfolder}"
         if config.get("stream_transcoder_load", False):
             paths = resolve_transcoder_paths(transcoder_config)
             transcoder = load_gemma_scope_2_streaming(

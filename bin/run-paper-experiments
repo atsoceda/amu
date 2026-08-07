@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Run paper experiments E1→E6 on the PT affine stack in order.
+# Usage: bin/run-paper-experiments
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+PY=/Users/anthony/miniconda3/bin/python
+cd "$ROOT"
+
+run_one() {
+  local dir="$1"
+  echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) starting $dir ==="
+  mkdir -p "experiments/$dir/results"
+  "$PY" "experiments/$dir/run.py" 2>&1 | tee "experiments/$dir/results/console.log"
+  echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) finished $dir ==="
+}
+
+run_one selection_criterion_ablation
+run_one planning_dose_response
+run_one forced_content_lock
+run_one trajectory_causal_tetrad
+run_one ophthalmologist_it_reclassify
+run_one domain_transfer_aan
+
+echo "All paper experiments complete."

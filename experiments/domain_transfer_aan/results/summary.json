@@ -1,0 +1,3930 @@
+{
+  "experiment_name": "domain_transfer_aan",
+  "generated_at": "2026-08-07T05:47:52.600941+00:00",
+  "model": "google/gemma-3-270m",
+  "runtime_seconds": 324.16676592826843,
+  "set_ids": [
+    "S1_dual_effect",
+    "S3_content_only"
+  ],
+  "interpretation": "Occupation-selected features transfer above controls on non-occupation a/an prompts.",
+  "transfer_specific": true,
+  "set_results": {
+    "S1_dual_effect": {
+      "selected_features": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.2559814453125,
+          "mean_direct_effect_a": 0.1849365234375,
+          "mean_direct_effect_a_minus_an": -0.071044921875,
+          "mean_direct_effect_future": 0.1431884765625,
+          "mean_activation": 1442.0,
+          "mean_score": 0.1431884765625,
+          "label": "`L12/F6229`"
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.096893310546875,
+          "mean_direct_effect_a": 0.093994140625,
+          "mean_direct_effect_a_minus_an": -0.002899169921875,
+          "mean_direct_effect_future": 0.024379730224609375,
+          "mean_activation": 119.5,
+          "mean_score": 0.024379730224609375,
+          "label": "`L10/F2930`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.86083984375,
+          "mean_direct_effect_a": -0.469482421875,
+          "mean_direct_effect_a_minus_an": -1.330322265625,
+          "mean_direct_effect_future": 0.019838333129882812,
+          "mean_activation": 890.0,
+          "mean_score": 0.019838333129882812,
+          "label": "`L13/F10231`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0283355712890625,
+          "mean_direct_effect_a": 0.02532958984375,
+          "mean_direct_effect_a_minus_an": -0.0030059814453125,
+          "mean_direct_effect_future": 0.01972198486328125,
+          "mean_activation": 287.375,
+          "mean_score": 0.01929473876953125,
+          "label": "`L11/F793`"
+        }
+      ],
+      "control_features": [
+        {
+          "layer": 10,
+          "feature_idx": 918,
+          "activation": 424.0,
+          "activation_distance": 260.71875,
+          "mean_activation": 424.0,
+          "label": "`L10/F918`"
+        },
+        {
+          "layer": 10,
+          "feature_idx": 7981,
+          "activation": 368.0,
+          "activation_distance": 316.71875,
+          "mean_activation": 368.0,
+          "label": "`L10/F7981`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 2672,
+          "activation": 344.0,
+          "activation_distance": 340.71875,
+          "mean_activation": 344.0,
+          "label": "`L12/F2672`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1254,
+          "activation": 576.0,
+          "activation_distance": 108.71875,
+          "mean_activation": 576.0,
+          "label": "`L13/F1254`"
+        }
+      ],
+      "summary": {
+        "n": 15,
+        "mean_delta_an_minus_a": 2.3,
+        "article_moved_toward_an_rate": 0.9333333333333333,
+        "article_moved_toward_a_rate": 0.06666666666666667,
+        "generated_article_changed_rate": 0.8666666666666667,
+        "content_preserved_rate": 0.13333333333333333,
+        "content_word_changed_rate": 0.8666666666666667,
+        "class_shifted_rate": 0.8666666666666667,
+        "wrapper_like_rate": 0.0,
+        "trajectory_like_rate": 0.8666666666666667,
+        "matched_twin_rate": 0.0,
+        "illicit_mismatch_rate": 0.0
+      },
+      "control_summary": {
+        "n": 15,
+        "mean_delta_an_minus_a": 0.24583333333333332,
+        "article_moved_toward_an_rate": 0.9333333333333333,
+        "article_moved_toward_a_rate": 0.06666666666666667,
+        "generated_article_changed_rate": 0.13333333333333333,
+        "content_preserved_rate": 0.8666666666666667,
+        "content_word_changed_rate": 0.13333333333333333,
+        "class_shifted_rate": 0.0,
+        "wrapper_like_rate": 0.0,
+        "trajectory_like_rate": 0.0,
+        "matched_twin_rate": 0.0,
+        "illicit_mismatch_rate": 0.0
+      },
+      "examples": [
+        {
+          "index": 1,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says meow is",
+          "listed_word": "cat",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 676.0,
+              "value": 3380.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 632.0,
+              "value": 3160.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.5,
+          "delta_an": 2.5,
+          "delta_an_minus_a": 2.0,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " an animal that is",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "animal",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 2,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says woof is",
+          "listed_word": "dog",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 632.0,
+              "value": 3160.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.875,
+          "delta_a": 0.125,
+          "delta_an": -0.125,
+          "delta_an_minus_a": -0.25,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " a biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "biologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": true,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 3,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal with a long trunk is",
+          "listed_word": "elephant",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 568.0,
+              "value": 2840.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 840.0,
+              "value": 4200.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -0.625,
+          "delta_a": -0.375,
+          "delta_an": 2.375,
+          "delta_an_minus_a": 2.75,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " an animal with a",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "animal",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 4,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that flies at night is",
+          "listed_word": "owl",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 820.0,
+              "value": 4100.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 992.0,
+              "value": 4960.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": -1.0,
+          "delta_an": 2.375,
+          "delta_an_minus_a": 3.375,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an insect.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "insect",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 5,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that hops and has long ears is",
+          "listed_word": "rabbit",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 832.0,
+              "value": 4160.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 992.0,
+              "value": 4960.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -0.5,
+          "delta_a": -1.0,
+          "delta_an": 2.0,
+          "delta_an_minus_a": 3.0,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " an animal biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "animal",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 6,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with keys is",
+          "listed_word": "piano",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 15,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 588.0,
+              "value": 2940.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 688.0,
+              "value": 3440.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 129.0,
+              "value": 645.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.375,
+          "delta_an": 3.125,
+          "delta_an_minus_a": 2.75,
+          "baseline_continuation": " a composer.",
+          "intervention_continuation": " an organ.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "composer",
+          "intervention_generated_word": "organ",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 7,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with strings played with a bow is",
+          "listed_word": "violin",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 19,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 596.0,
+              "value": 2980.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 776.0,
+              "value": 3880.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 0.0,
+              "value": 0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": -0.125,
+          "delta_an": 2.75,
+          "delta_an_minus_a": 2.875,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an instrument.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "instrument",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 8,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you blow into with valves is",
+          "listed_word": "trumpet",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 364.0,
+              "value": 1820.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 672.0,
+              "value": 3360.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.125,
+          "delta_an": 2.875,
+          "delta_an_minus_a": 2.75,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an instrument.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "instrument",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 9,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with a reed is",
+          "listed_word": "oboe",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 544.0,
+              "value": 2720.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.25,
+          "delta_an": 2.75,
+          "delta_an_minus_a": 2.5,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an example of a",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "example",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 10,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you strike with mallets is",
+          "listed_word": "xylophone",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 302.0,
+              "value": 1510.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 552.0,
+              "value": 2760.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.375,
+          "delta_an": 2.75,
+          "delta_an_minus_a": 2.375,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an instrument.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "instrument",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 11,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Italy is",
+          "listed_word": "Italian",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 864.0,
+              "value": 4320.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 584.0,
+              "value": 2920.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 548.0,
+              "value": 2740.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.25,
+          "delta_an": 2.25,
+          "delta_an_minus_a": 2.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 12,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from France is",
+          "listed_word": "Frenchman",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 784.0,
+              "value": 3920.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 536.0,
+              "value": 2680.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 548.0,
+              "value": 2740.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.625,
+          "delta_a": 0.5,
+          "delta_an": 2.375,
+          "delta_an_minus_a": 1.875,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 13,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Spain is",
+          "listed_word": "Spaniard",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 828.0,
+              "value": 4140.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 506.0,
+              "value": 2530.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 548.0,
+              "value": 2740.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": 0.75,
+          "delta_an": 2.5,
+          "delta_an_minus_a": 1.75,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 14,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from England is",
+          "listed_word": "Englishman",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 888.0,
+              "value": 4440.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 728.0,
+              "value": 3640.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 632.0,
+              "value": 3160.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.125,
+          "delta_an": 2.75,
+          "delta_an_minus_a": 2.625,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 15,
+          "condition": "S1_dual_effect_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Germany is",
+          "listed_word": "German",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 12,
+              "feature_idx": 6229,
+              "activation": 776.0,
+              "value": 3880.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 2930,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 576.0,
+              "value": 2880.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 580.0,
+              "value": 2900.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": 0.375,
+          "delta_an": 2.5,
+          "delta_an_minus_a": 2.125,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        }
+      ],
+      "control_examples": [
+        {
+          "index": 1,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says meow is",
+          "listed_word": "cat",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 424.0,
+              "value": 2120.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 368.0,
+              "value": 1840.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 344.0,
+              "value": 1720.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": 576.0,
+              "value": 2880.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -1.5,
+          "delta_an": -1.25,
+          "delta_an_minus_a": 0.25,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " a biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "biologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 2,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says woof is",
+          "listed_word": "dog",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 195.0,
+              "value": 975.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": 352.0,
+              "value": 1760.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.875,
+          "delta_a": -0.625,
+          "delta_an": -0.6875,
+          "delta_an_minus_a": -0.0625,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " a biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "biologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": true,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 3,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal with a long trunk is",
+          "listed_word": "elephant",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 328.0,
+              "value": 1640.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 544.0,
+              "value": 2720.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 420.0,
+              "value": 2100.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": 720.0,
+              "value": 3600.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -0.625,
+          "delta_a": -0.75,
+          "delta_an": -0.625,
+          "delta_an_minus_a": 0.125,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " a mammal.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "mammal",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 4,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that flies at night is",
+          "listed_word": "owl",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 392.0,
+              "value": 1960.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 392.0,
+              "value": 1960.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 1056.0,
+              "value": 5280.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": 608.0,
+              "value": 3040.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": -1.5,
+          "delta_an": -0.875,
+          "delta_an_minus_a": 0.625,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 5,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that hops and has long ears is",
+          "listed_word": "rabbit",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 396.0,
+              "value": 1980.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 496.0,
+              "value": 2480.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 804.0,
+              "value": 4020.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": 752.0,
+              "value": 3760.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -0.5,
+          "delta_a": -1.375,
+          "delta_an": -1.0,
+          "delta_an_minus_a": 0.375,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " a mammal.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "mammal",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 6,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with keys is",
+          "listed_word": "piano",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 15,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 372.0,
+              "value": 1860.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 800.0,
+              "value": 4000.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 848.0,
+              "value": 4240.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.5,
+          "delta_an": -0.125,
+          "delta_an_minus_a": 0.375,
+          "baseline_continuation": " a composer.",
+          "intervention_continuation": " a composer.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "composer",
+          "intervention_generated_word": "composer",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 7,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with strings played with a bow is",
+          "listed_word": "violin",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 19,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 344.0,
+              "value": 1720.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 760.0,
+              "value": 3800.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 832.0,
+              "value": 4160.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "other",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": -0.375,
+          "delta_an": -0.125,
+          "delta_an_minus_a": 0.25,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " called a string instrument",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "other",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 8,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you blow into with valves is",
+          "listed_word": "trumpet",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 440.0,
+              "value": 2200.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 616.0,
+              "value": 3080.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 612.0,
+              "value": 3060.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "other",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.625,
+          "delta_an": -0.25,
+          "delta_an_minus_a": 0.375,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " called a valve.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "other",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 9,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with a reed is",
+          "listed_word": "oboe",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 376.0,
+              "value": 1880.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 744.0,
+              "value": 3720.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 516.0,
+              "value": 2580.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.375,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.375,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " a musician.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "musician",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 10,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you strike with mallets is",
+          "listed_word": "xylophone",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 400.0,
+              "value": 2000.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 696.0,
+              "value": 3480.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 500.0,
+              "value": 2500.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": -0.375,
+          "delta_an": -0.125,
+          "delta_an_minus_a": 0.25,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " a musician.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "musician",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 11,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Italy is",
+          "listed_word": "Italian",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 229.0,
+              "value": 1145.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 404.0,
+              "value": 2020.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": -1.0,
+          "delta_an": -0.875,
+          "delta_an_minus_a": 0.125,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 12,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from France is",
+          "listed_word": "Frenchman",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 229.0,
+              "value": 1145.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 380.0,
+              "value": 1900.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.625,
+          "delta_a": -1.0,
+          "delta_an": -0.875,
+          "delta_an_minus_a": 0.125,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 13,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Spain is",
+          "listed_word": "Spaniard",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 276.0,
+              "value": 1380.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 396.0,
+              "value": 1980.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": -1.25,
+          "delta_an": -1.0,
+          "delta_an_minus_a": 0.25,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 14,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from England is",
+          "listed_word": "Englishman",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 264.0,
+              "value": 1320.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 332.0,
+              "value": 1660.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": -1.125,
+          "delta_an": -1.0,
+          "delta_an_minus_a": 0.125,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 15,
+          "condition": "S1_dual_effect_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Germany is",
+          "listed_word": "German",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 10,
+              "feature_idx": 918,
+              "activation": 243.0,
+              "value": 1215.0
+            },
+            {
+              "layer": 10,
+              "feature_idx": 7981,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 12,
+              "feature_idx": 2672,
+              "activation": 432.0,
+              "value": 2160.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 1254,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": -1.0,
+          "delta_an": -0.875,
+          "delta_an_minus_a": 0.125,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        }
+      ]
+    },
+    "S3_content_only": {
+      "selected_features": [
+        {
+          "layer": 11,
+          "feature_idx": 292,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0126800537109375,
+          "mean_direct_effect_a": 0.031402587890625,
+          "mean_direct_effect_a_minus_an": 0.0440826416015625,
+          "mean_direct_effect_future": 0.021240234375,
+          "mean_activation": 367.25,
+          "mean_score": 0.021240234375,
+          "label": "`L11/F292`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0283355712890625,
+          "mean_direct_effect_a": 0.02532958984375,
+          "mean_direct_effect_a_minus_an": -0.0030059814453125,
+          "mean_direct_effect_future": 0.01972198486328125,
+          "mean_activation": 287.375,
+          "mean_score": 0.01972198486328125,
+          "label": "`L11/F793`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 6131,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.00812530517578125,
+          "mean_direct_effect_a": -0.01326751708984375,
+          "mean_direct_effect_a_minus_an": -0.0051422119140625,
+          "mean_direct_effect_future": 0.014972686767578125,
+          "mean_activation": 384.0,
+          "mean_score": 0.014972686767578125,
+          "label": "`L11/F6131`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 568,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.008214950561523438,
+          "mean_direct_effect_a": -0.01947021484375,
+          "mean_direct_effect_a_minus_an": -0.027685165405273438,
+          "mean_direct_effect_future": 0.014898300170898438,
+          "mean_activation": 474.5,
+          "mean_score": 0.014898300170898438,
+          "label": "`L13/F568`"
+        }
+      ],
+      "control_features": [
+        {
+          "layer": 11,
+          "feature_idx": 464,
+          "activation": 180.0,
+          "activation_distance": 198.28125,
+          "mean_activation": 180.0,
+          "label": "`L11/F464`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 7366,
+          "activation": 384.0,
+          "activation_distance": 5.71875,
+          "mean_activation": 384.0,
+          "label": "`L11/F7366`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 10079,
+          "activation": 452.0,
+          "activation_distance": 73.71875,
+          "mean_activation": 452.0,
+          "label": "`L11/F10079`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 632.0,
+          "activation_distance": 253.71875,
+          "mean_activation": 632.0,
+          "label": "`L13/F10231`"
+        }
+      ],
+      "summary": {
+        "n": 15,
+        "mean_delta_an_minus_a": 0.008333333333333333,
+        "article_moved_toward_an_rate": 0.13333333333333333,
+        "article_moved_toward_a_rate": 0.13333333333333333,
+        "generated_article_changed_rate": 0.0,
+        "content_preserved_rate": 1.0,
+        "content_word_changed_rate": 0.0,
+        "class_shifted_rate": 0.0,
+        "wrapper_like_rate": 0.0,
+        "trajectory_like_rate": 0.0,
+        "matched_twin_rate": 0.0,
+        "illicit_mismatch_rate": 0.0
+      },
+      "control_summary": {
+        "n": 15,
+        "mean_delta_an_minus_a": 2.2416666666666667,
+        "article_moved_toward_an_rate": 0.9333333333333333,
+        "article_moved_toward_a_rate": 0.06666666666666667,
+        "generated_article_changed_rate": 0.9333333333333333,
+        "content_preserved_rate": 0.06666666666666667,
+        "content_word_changed_rate": 0.9333333333333333,
+        "class_shifted_rate": 0.8666666666666667,
+        "wrapper_like_rate": 0.0,
+        "trajectory_like_rate": 0.8666666666666667,
+        "matched_twin_rate": 0.0,
+        "illicit_mismatch_rate": 0.0
+      },
+      "examples": [
+        {
+          "index": 1,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says meow is",
+          "listed_word": "cat",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 114.0,
+              "value": 570.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.0,
+          "delta_an": -0.125,
+          "delta_an_minus_a": -0.125,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " a biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "biologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": true,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 2,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says woof is",
+          "listed_word": "dog",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 292.0,
+              "value": 1460.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.875,
+          "delta_a": -0.25,
+          "delta_an": -0.25,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " a biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "biologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 3,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal with a long trunk is",
+          "listed_word": "elephant",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 456.0,
+              "value": 2280.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -0.625,
+          "delta_a": -0.125,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.125,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " a mammal.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "mammal",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 4,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that flies at night is",
+          "listed_word": "owl",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 264.0,
+              "value": 1320.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 223.0,
+              "value": 1115.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": 0.0,
+          "delta_an": 0.25,
+          "delta_an_minus_a": 0.25,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 5,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that hops and has long ears is",
+          "listed_word": "rabbit",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 104.0,
+              "value": 520.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 211.0,
+              "value": 1055.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -0.5,
+          "delta_a": 0.125,
+          "delta_an": 0.125,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " a mammal.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "mammal",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 6,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with keys is",
+          "listed_word": "piano",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 15,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 129.0,
+              "value": 645.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 328.0,
+              "value": 1640.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.0,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a composer.",
+          "intervention_continuation": " a composer.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "composer",
+          "intervention_generated_word": "composer",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 7,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with strings played with a bow is",
+          "listed_word": "violin",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 19,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 320.0,
+              "value": 1600.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": 0.0,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " a musician.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "musician",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 8,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you blow into with valves is",
+          "listed_word": "trumpet",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.0,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " a musician.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "musician",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 9,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with a reed is",
+          "listed_word": "oboe",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": 0.0,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " a musician.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "musician",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 10,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you strike with mallets is",
+          "listed_word": "xylophone",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.0,
+          "delta_an": 0.0,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " a musician.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "musician",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 11,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Italy is",
+          "listed_word": "Italian",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 564.0,
+              "value": 2820.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 548.0,
+              "value": 2740.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.625,
+          "delta_an": 0.625,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 12,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from France is",
+          "listed_word": "Frenchman",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 600.0,
+              "value": 3000.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 548.0,
+              "value": 2740.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.625,
+          "delta_a": 0.25,
+          "delta_an": 0.25,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 13,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Spain is",
+          "listed_word": "Spaniard",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 604.0,
+              "value": 3020.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 548.0,
+              "value": 2740.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": 0.0,
+              "value": 0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": 0.5,
+          "delta_an": 0.5,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 14,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from England is",
+          "listed_word": "Englishman",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 664.0,
+              "value": 3320.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 632.0,
+              "value": 3160.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": 0.0,
+              "value": 0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.375,
+          "delta_an": 0.375,
+          "delta_an_minus_a": 0.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": false,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 15,
+          "condition": "S3_content_only_amplify",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Germany is",
+          "listed_word": "German",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 292,
+              "activation": 552.0,
+              "value": 2760.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 793,
+              "activation": 580.0,
+              "value": 2900.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 6131,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 568,
+              "activation": -0.0,
+              "value": -0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": 0.625,
+          "delta_an": 0.5,
+          "delta_an_minus_a": -0.125,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " a zoologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "zoologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": true,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        }
+      ],
+      "control_examples": [
+        {
+          "index": 1,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says meow is",
+          "listed_word": "cat",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": 180.0,
+              "value": 900.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 384.0,
+              "value": 1920.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 452.0,
+              "value": 2260.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 632.0,
+              "value": 3160.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.625,
+          "delta_an": 1.125,
+          "delta_an_minus_a": 1.75,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " an animal that is",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "animal",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 2,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that says woof is",
+          "listed_word": "dog",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": 260.0,
+              "value": 1300.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 428.0,
+              "value": 2140.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 0.0,
+              "value": 0.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "a",
+          "baseline_an_minus_a": -1.875,
+          "delta_a": -0.625,
+          "delta_an": -0.75,
+          "delta_an_minus_a": -0.125,
+          "baseline_continuation": " a biologist.",
+          "intervention_continuation": " a biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "a",
+          "baseline_generated_word": "biologist",
+          "intervention_generated_word": "biologist",
+          "content_preserved": true,
+          "content_word_changed": false,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": false,
+          "article_moved_toward_a": true,
+          "generated_article_changed": false,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 3,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal with a long trunk is",
+          "listed_word": "elephant",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": 98.0,
+              "value": 490.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 428.0,
+              "value": 2140.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 840.0,
+              "value": 4200.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -0.625,
+          "delta_a": -0.75,
+          "delta_an": 1.875,
+          "delta_an_minus_a": 2.625,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " an animal with a",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "animal",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 4,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that flies at night is",
+          "listed_word": "owl",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 412.0,
+              "value": 2060.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 332.0,
+              "value": 1660.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 992.0,
+              "value": 4960.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": -1.75,
+          "delta_an": 1.5,
+          "delta_an_minus_a": 3.25,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an insect.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "insect",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 5,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "An animal that hops and has long ears is",
+          "listed_word": "rabbit",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 352.0,
+              "value": 1760.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 364.0,
+              "value": 1820.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 992.0,
+              "value": 4960.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -0.5,
+          "delta_a": -1.875,
+          "delta_an": 1.25,
+          "delta_an_minus_a": 3.125,
+          "baseline_continuation": " a mammal.",
+          "intervention_continuation": " an animal biologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "mammal",
+          "intervention_generated_word": "animal",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 6,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with keys is",
+          "listed_word": "piano",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 15,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 420.0,
+              "value": 2100.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 324.0,
+              "value": 1620.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 688.0,
+              "value": 3440.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.25,
+          "delta_an": 2.25,
+          "delta_an_minus_a": 2.5,
+          "baseline_continuation": " a composer.",
+          "intervention_continuation": " an organ.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "composer",
+          "intervention_generated_word": "organ",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 7,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with strings played with a bow is",
+          "listed_word": "violin",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 19,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 424.0,
+              "value": 2120.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 276.0,
+              "value": 1380.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 776.0,
+              "value": 3880.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.0,
+          "delta_a": -0.625,
+          "delta_an": 2.125,
+          "delta_an_minus_a": 2.75,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an instrument.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "instrument",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 8,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you blow into with valves is",
+          "listed_word": "trumpet",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 268.0,
+              "value": 1340.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 348.0,
+              "value": 1740.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 672.0,
+              "value": 3360.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "other",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.25,
+          "delta_an": 2.375,
+          "delta_an_minus_a": 2.625,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " called a valve.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "other",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": false,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": false,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": false,
+          "matched_twin": false
+        },
+        {
+          "index": 9,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument with a reed is",
+          "listed_word": "oboe",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 16,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 390.0,
+              "value": 1950.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 276.0,
+              "value": 1380.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 544.0,
+              "value": 2720.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.375,
+          "delta_a": -0.125,
+          "delta_an": 2.0,
+          "delta_an_minus_a": 2.125,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an example of a",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "example",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 10,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A musical instrument you strike with mallets is",
+          "listed_word": "xylophone",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 18,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 278.0,
+              "value": 1390.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 244.0,
+              "value": 1220.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 552.0,
+              "value": 2760.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": 0.0,
+          "delta_an": 2.125,
+          "delta_an_minus_a": 2.125,
+          "baseline_continuation": " a musician.",
+          "intervention_continuation": " an instrument.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "musician",
+          "intervention_generated_word": "instrument",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 11,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Italy is",
+          "listed_word": "Italian",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 540.0,
+              "value": 2700.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 584.0,
+              "value": 2920.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": -0.625,
+          "delta_an": 1.375,
+          "delta_an_minus_a": 2.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 12,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from France is",
+          "listed_word": "Frenchman",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 580.0,
+              "value": 2900.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 536.0,
+              "value": 2680.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.625,
+          "delta_a": -0.75,
+          "delta_an": 1.25,
+          "delta_an_minus_a": 2.0,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 13,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Spain is",
+          "listed_word": "Spaniard",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 596.0,
+              "value": 2980.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 506.0,
+              "value": 2530.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": -0.375,
+          "delta_an": 1.5,
+          "delta_an_minus_a": 1.875,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 14,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from England is",
+          "listed_word": "Englishman",
+          "expected_article": "an",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 508.0,
+              "value": 2540.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 728.0,
+              "value": 3640.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.5,
+          "delta_a": -0.75,
+          "delta_an": 2.0,
+          "delta_an_minus_a": 2.75,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        },
+        {
+          "index": 15,
+          "condition": "S3_content_only_control",
+          "amplify_factor": 5.0,
+          "target_prompt": "A person from Germany is",
+          "listed_word": "German",
+          "expected_article": "a",
+          "twin_word": "",
+          "position": 14,
+          "feature_activations": [
+            {
+              "layer": 11,
+              "feature_idx": 464,
+              "activation": -0.0,
+              "value": -0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 7366,
+              "activation": 0.0,
+              "value": 0.0
+            },
+            {
+              "layer": 11,
+              "feature_idx": 10079,
+              "activation": 452.0,
+              "value": 2260.0
+            },
+            {
+              "layer": 13,
+              "feature_idx": 10231,
+              "activation": 576.0,
+              "value": 2880.0
+            }
+          ],
+          "baseline_top_article": "a",
+          "intervention_top_article": "an",
+          "baseline_an_minus_a": -1.75,
+          "delta_a": -0.5,
+          "delta_an": 1.75,
+          "delta_an_minus_a": 2.25,
+          "baseline_continuation": " a zoologist.",
+          "intervention_continuation": " an ecologist.",
+          "baseline_generated_article": "a",
+          "intervention_generated_article": "an",
+          "baseline_generated_word": "zoologist",
+          "intervention_generated_word": "ecologist",
+          "content_preserved": false,
+          "content_word_changed": true,
+          "class_shifted": true,
+          "baseline_vowel_initial": false,
+          "intervention_vowel_initial": true,
+          "article_moved_toward_an": true,
+          "article_moved_toward_a": false,
+          "generated_article_changed": true,
+          "illicit_mismatch": false,
+          "wrapper_like": false,
+          "trajectory_like": true,
+          "matched_twin": false
+        }
+      ]
+    }
+  }
+}
