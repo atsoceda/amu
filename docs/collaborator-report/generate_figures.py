@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate collaborator-report figures 1–7 from experiment summary.json files.
+"""Regenerate collaborator-report figures 1–8 from experiment summary.json files.
 
 Required experiment result artifacts (under experiments/*/results/summary.json):
 
@@ -10,6 +10,7 @@ Required experiment result artifacts (under experiments/*/results/summary.json):
   figure5  planning_dose_response
   figure6  forced_content_lock
   figure7  trajectory_causal_tetrad
+  figure8  selective_bc_force_native
 """
 from __future__ import annotations
 
@@ -38,6 +39,7 @@ REQUIRED = {
     "figure5_dose_response.png": ["planning_dose_response"],
     "figure6_dual_lock.png": ["forced_content_lock"],
     "figure7_causal_tetrad.png": ["trajectory_causal_tetrad"],
+    "figure8_selective_force_native.png": ["selective_bc_force_native"],
 }
 
 
@@ -343,6 +345,50 @@ def figure7(e4: dict) -> None:
     plt.close()
 
 
+def figure8(sel: dict) -> None:
+    conds = [
+        ("baseline", "Baseline"),
+        ("S1_dual_effect_amplify", "S1 amplify"),
+        ("S3_content_only_amplify", "S3 amplify"),
+        ("S2_article_only_amplify", "S2 amplify"),
+        ("control_amplify", "Control amplify"),
+    ]
+    labels = [c[1] for c in conds]
+    traj = [
+        sel["conditions"][k]["summary"]["trajectory_like_free_rate"] for k, _ in conds
+    ]
+    force_p = [
+        sel["conditions"][k]["summary"]["content_preserved_force_rate"]
+        for k, _ in conds
+    ]
+    free_p = [
+        sel["conditions"][k]["summary"]["content_preserved_free_rate"] for k, _ in conds
+    ]
+    x = np.arange(len(labels))
+    w = 0.28
+    fig, ax = plt.subplots(figsize=(10.2, 5.6))
+    ax.bar(x - w, traj, w, label="Trajectory-like (free gen.)", color="#C44E52")
+    ax.bar(
+        x,
+        force_p,
+        w,
+        label="Content preserved (force-native a/an)",
+        color="#55A868",
+    )
+    ax.bar(x + w, free_p, w, label="Content preserved (free gen.)", color="#4C72B0")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, rotation=12, ha="right")
+    ax.set_ylim(0, 1.12)
+    ax.set_ylabel("Rate on 20 held-out prompts")
+    ax.set_title(
+        "Selective b-step + force-native article: packaging, not editable wrappers"
+    )
+    ax.legend(frameon=False, loc="upper right")
+    fig.tight_layout()
+    fig.savefig(FIGDIR / "figure8_selective_force_native.png", dpi=160)
+    plt.close()
+
+
 def main() -> None:
     missing_exps = sorted(
         {
@@ -367,7 +413,8 @@ def main() -> None:
     figure5(load_summary("planning_dose_response"))
     figure6(load_summary("forced_content_lock"))
     figure7(load_summary("trajectory_causal_tetrad"))
-    print("Wrote figures 1–7 into", FIGDIR)
+    figure8(load_summary("selective_bc_force_native"))
+    print("Wrote figures 1–8 into", FIGDIR)
 
 
 if __name__ == "__main__":

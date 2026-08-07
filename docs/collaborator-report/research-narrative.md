@@ -58,13 +58,15 @@ moves. We therefore ran a stricter causal program on pretrained Gemma 3
 270M with an affine Gemma Scope 2 transcoder (chosen over
 instruction-tuned + non-affine after comparing the two stacks; see
 Section 10). Across selection-criterion ablation, dose–response, forced
-content-lock / dual intervention, a causal tetrad on twin families, and
-slim domain transfer, **no held-out condition produced reliable
-wrapper-like repair**. Dual-effect gain-of-function remained
-trajectory-like (chunking)—for example amplifying frozen features turned
-`Someone who flies airplanes is` from `a pilot` into `an aviator`, and
-simultaneously amplifying “content-lock” features did not preserve
-`pilot` while flipping only the article. Illicit mismatches such as
+content-lock / dual intervention, a causal tetrad on twin families,
+slim domain transfer, and a **selective article-step intervention with
+forced native article** (the cleanest modular \(C \rightarrow B\) test we
+ran), **no held-out condition produced reliable wrapper-like repair**.
+Dual-effect gain-of-function remained trajectory-like (chunking)—for
+example amplifying frozen features turned `Someone who flies airplanes
+is` from `a pilot` into `an aviator` when generation was free, yet
+forcing the native article `a` restored `pilot`. Content-only features
+did not provide a selective licensing handle. Illicit mismatches such as
 `an` + consonant-initial nouns stayed near zero.
 
 Our current claim is therefore:
@@ -74,7 +76,9 @@ Our current claim is therefore:
 > coherent multi-token packages—compiled trajectories (chunks)—rather
 > than acting as editable wrappers around a fixed latent noun.
 > Article movement alone is not evidence of content-preserving latent
-> planning unless content identity is locked and reported.*
+> planning unless content identity is locked and reported—and even under
+> a selective intervene-at-\(b\) / force-native-\(b\) / generate-\(c\)-off
+> protocol, we still see packaging rather than modular licensing.*
 
 This is a publishable *mechanistic* claim relative to the Latent Planning
 task family on this model, not a claim about all scales or all
@@ -152,16 +156,55 @@ interpretability:
   by chance.
 
 
-- **Wrapper-like effect:** an intervention that changes the preparatory article while preserving the later content word (or its identity). This is what a content-preserving latent-planning repair would look like.
-- **Trajectory-like / compiled-trajectory effect (chunking):** an intervention that switches a coordinated multi-token package—typically article plus noun-initial sound class—together (for example `a pilot` to `an aviator`). In this report we use “compiled trajectory,” “response class,” and “chunk” as near-synonyms for that package structure.
-- **Gain-of-function (amplify):** raising a feature’s activation above its natural value on a prompt, used to test sufficiency.
-- **Loss-of-function (zero / suppress):** setting a feature’s activation to zero, used to test necessity.
+- **Wrapper-like effect / editable wrapper:** an intervention that
+  changes the preparatory article while preserving the later content
+  word (or its planned identity). This is what a content-preserving
+  latent-planning repair would look like—an editable “wrapper” around a
+  fixed latent noun.
+
+- **Trajectory-like / compiled-trajectory effect (chunking):** an
+  intervention that switches a coordinated multi-token package—typically
+  article plus noun-initial sound class—together (for example `a pilot`
+  to `an aviator`). In this report we use “compiled trajectory,”
+  “response class,” “chunk,” and “package” as near-synonyms for that
+  structure. A **packager** mechanism is one that implements such fused
+  packages rather than separately editable preparation and content.
+
+- **Latent Planning causal graph \(A \rightarrow C \rightarrow B\):** for a
+  token sequence \(a\) (prompt-final context), \(b\) (article), \(c\)
+  (noun), the modular planning claim is that concept \(A\) causes future
+  content concept \(C\) (**forward planning**), and \(C\) causes
+  preparatory concept \(B\) (**backward planning** / licensing). Token
+  order is \(a,b,c\); causal order for planning is \(A \rightarrow C
+  \rightarrow B\).
+
+- **Selective \(b\)-step intervention:** clamp selected features only on
+  the forward pass that predicts the article \(b\), then turn the clamp
+  **off** before predicting the noun \(c\).
+
+- **Force-native article:** after the intervened \(b\)-step, insert the
+  article token the *unintervened* model would have produced, then
+  continue. This prevents a non-native article from rewriting \(c\)
+  merely by sitting in the autoregressive context—so any change in \(c\)
+  cannot be blamed on having emitted `an` instead of `a` (or vice
+  versa).
+
+- **Gain-of-function (amplify):** raising a feature’s activation above
+  its natural value on a prompt, used to test sufficiency.
+
+- **Loss-of-function (zero / suppress):** setting a feature’s activation
+  to zero, used to test necessity.
+
+- **Illicit mismatch:** a generated article–noun pair that violates
+  English indefinite-article phonology (for example `an pilot` or `a
+  aviator`). Near-zero illicit rates under strong article interventions
+  suggest the model prefers legal packages over grammar-only edits.
 
 Whenever this report says that a token was "predicted," it means that
 the token had the highest next-token logit unless stated otherwise.
 Whenever it says that behavior "changed," it refers to a comparison
 between the unchanged baseline run and a run with the specified feature
-activations suppressed.
+activations suppressed (or amplified).
 
 # 1. Research question and standard of evidence
 
@@ -763,7 +806,12 @@ features or tried to lock content while pushing the article.
 We also adopted a clearer causality checklist for later stages:
 loss-of-function (necessity), gain-of-function (sufficiency),
 rescue/reversibility where feasible, activation-matched controls, and
-joint scoring of article *and* content on every trial.
+joint scoring of article *and* content on every trial. Collaborator
+discussion further required a **selective** modular test: intervene only
+while predicting the article, force the native article back into the
+string, then generate the noun with the clamp off—so a changed noun
+cannot be blamed merely on autoregressive conditioning on `an` instead
+of `a`. That protocol is Stage XV below.
 
 ## 10.3 Model and transcoder stack: PT+affine versus IT+non-affine
 
@@ -936,16 +984,102 @@ clean grammar tool. We interpret this as locality of a packaging
 mechanism that is not confined to one prompt template, not as discovery
 of a universal a/an module.
 
-## 10.11 Current hypothesis (after Stages VIII–XIV)
+## 10.11 Stage XV: Selective \(b\)-step intervention with force-native article
+
+E3 kept the feature clamp on for the whole continuation. That design can
+show packaging, but it leaves open a modular objection: perhaps the noun
+changed only because the intervened article remained in context. The
+selective protocol answers that objection directly.
+
+### Why this test?
+
+Under modular Latent Planning (\(A \rightarrow C \rightarrow B\)):
+
+1. Selectively turning **content** concept \(C\) up or down should move
+   licensing \(B\) (the article preference), while—after restoring the
+   native article—content token \(c\) should still follow from \(A\).
+2. Selectively turning **article/licensing** concept \(B\) should move
+   article logits without rewriting \(C\).
+3. A fused **packager** instead predicts: free generation under
+   “planning” features yields twin packages (`a pilot`→`an aviator`);
+   forcing the native article restores the baseline noun; there is no
+   selective \(C\)-only handle that edits only \(B\).
+
+### Protocol (operational definitions)
+
+For each held-out prompt and each frozen feature set from E1:
+
+1. **\(b\)-step ON:** apply amplify (\(5\times\)) or zero only on the
+   forward pass that scores `a` versus `an`.
+2. **Force-native \(b\):** append the baseline article token (almost
+   always `a` on these stems).
+3. **\(c\)-step OFF:** generate the noun with interventions disabled.
+4. **Free companion:** generate the full continuation with the same
+   intervention left on (packager check).
+
+Feature mapping used here:
+
+| Set | Intended role |
+| --- | --- |
+| S3 content-only | Approximate content concept \(C\) |
+| S2 article-only | Approximate licensing concept \(B\) |
+| S1 dual-effect | Joint Latent-Planning-style set (not a pure context \(A\) set) |
+
+### Results
+
+| Condition | Mean \(\Delta(\texttt{an}-\texttt{a})\) | Content preserved (force-native) | Content preserved (free) | Trajectory-like (free) | Illicit (free) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Baseline | 0.00 | 1.00 | 1.00 | 0.00 | 0.00 |
+| S1 amplify | **+3.31** | **1.00** | **0.05** | **0.95** | **0.00** |
+| S1 zero | −1.03 | 1.00 | 0.95 | 0.00 | 0.00 |
+| S2 amplify | +1.03 | 1.00 | 0.35 | 0.05 | 0.00 |
+| S3 amplify | +0.11 | 1.00 | 0.95 | 0.05 | 0.00 |
+| S3 zero | −0.08 | 1.00 | 1.00 | 0.00 | 0.00 |
+| Control amplify | +0.14 | 1.00 | 1.00 | 0.00 | 0.00 |
+
+![Figure 8. Selective protocol: S1 amplify class-switches under free generation but restores baseline nouns when the native article is forced; S3 does not move article preference enough to act as a modular \(C \rightarrow B\) handle.](figures/figure8_selective_force_native.png)
+
+Concrete S1-amplify examples:
+
+| Prompt | Force-native continuation | Free continuation |
+| --- | --- | --- |
+| Someone who flies airplanes is | a pilot | an aviator |
+| Someone who represents clients in legal matters is | a lawyer | an attorney |
+| Someone who studies matter and energy is | a physicist | an astronomer |
+
+### How to read the pattern (avoiding a false “wrapper” reading)
+
+S1 amplify raises article logits toward `an` *and* yields force-native
+content preservation near 1.0. That combination is **not** editable-wrapper
+success. It is what packaging predicts: when you refuse to emit the
+intervened article and put baseline `a` back in the string, the
+\(a\)+consonant package returns. True wrapper evidence on these stems
+would require free `an` with the **same** noun (often an illicit
+`an pilot`), or a selective \(F_C\) (S3) that moves only licensing while
+content stays fixed. We observed **neither**: illicit free rate stayed
+0.00, and S3 barely moved \(\Delta(\texttt{an}-\texttt{a})\).
+
+S2 amplify moved article logits moderately but produced messy free
+continuations (`called a …`, `also a biologist`), not clean
+content-preserving `an` repairs. Controls remained near baseline.
+
+### Conclusion of Stage XV
+
+The editable-wrapper / modular \(C \rightarrow B\) hypothesis remains
+**testable in principle**, but on these frozen feature sets and prompts
+it is **not supported**. The selective force-native protocol strengthens
+the compiled-trajectory (chunking) reading already favored by E1–E4.
+
+## 10.12 Current hypothesis (after Stages VIII–XV)
 
 Relating old and new terms:
 
 | Earlier Stage VII language | Current causal language |
 | --- | --- |
-| Coordinated preparation--content classes | Compiled trajectories (chunks) |
-| Content-preserving grammar repair | Wrapper-like / modular planning success |
+| Coordinated preparation--content classes | Compiled trajectories (chunks) / packages |
+| Content-preserving grammar repair | Wrapper-like / modular \(C \rightarrow B\) success |
 | Fixed-pair suppression switches `a pilot`→`an aviator` | Loss- or gain-of-function selects packages |
-| “Not yet publishable; need twin study” | Twin + dual-lock + dose suite now completed |
+| “Need a cleaner modular test” | Selective \(b\)-step + force-native article (Stage XV) |
 
 **Current hypothesis.**
 
@@ -954,15 +1088,19 @@ Relating old and new terms:
 > attributions causally implement compiled trajectories (chunking): they
 > select coherent article–noun packages. They do not behave as wrappers
 > that edit preparation around a locked latent noun under held-out
-> gain-of-function, dose sweeps, or dual content-lock tests.
+> gain-of-function, dose sweeps, dual content-lock tests, or selective
+> intervene-at-\(b\) / force-native-\(b\) / generate-\(c\)-off tests.
 
 **Rejected alternative (for this model/task).**
 
 > Dual-effect “planning” features can be used to flip `a`/`an` while
-> preserving content identity above controls.
+> preserving content identity above controls—or, more strongly, content
+> features alone can selectively retune licensing \(B\) while leaving
+> content \(C\) intact under force-native article continuation.
 
-Article \(\Delta\) without content locking remains an insufficient
-metric for claiming content-preserving latent planning.
+Article \(\Delta\) without content locking—and without the selective
+force-native control—remains an insufficient metric for claiming
+content-preserving latent planning.
 
 # 11. What has and has not been achieved
 
@@ -990,6 +1128,10 @@ We have achieved:
   zero;
 - a twin-family causal tetrad in which gain-of-function selects
   `an aviator` / `an attorney` above matched controls;
+- a selective \(b\)-step / force-native-article test showing that free
+  dual-effect amplification still class-switches while forcing the native
+  article restores baseline nouns, and that content-only features do not
+  supply a modular \(C \rightarrow B\) licensing handle;
 - an explicit stack decision for pretrained + affine over IT + non-affine
   for this hypothesis test.
 
@@ -1003,16 +1145,20 @@ We have not achieved:
   scales or in other model families—the Latent Planning scale axis is
   outside our hardware envelope;
 - a complete necessity story from zero-ablation alone on twin baselines
-  (GoF/specificity carry more of the causal weight here).
+  (GoF/specificity carry more of the causal weight here);
+- a pure context-concept (\(A\)) feature set for the full
+  \(A \rightarrow C \rightarrow B\) latent triad (Stage XV tested \(B\)/
+  \(C\)/joint sets).
 
 The main scientific progress is therefore twofold. First, increasingly
 stringent transfer and specificity tests rejected the simplest stalling
 and wrapper readings. Second, the same tests—extended with Latent
-Planning-style gain-of-function, dose, dual lock, and twin
-controls—support a precise positive claim: in this small model, sparse
-“planning-looking” features causally select preparation–content packages
-(chunks), so article interventions must not be scored as
-content-preserving latent planning unless content identity is locked.
+Planning-style gain-of-function, dose, dual lock, twin controls, and
+selective force-native article continuation—support a precise positive
+claim: in this small model, sparse “planning-looking” features causally
+select preparation–content packages (chunks), so article interventions
+must not be scored as content-preserving latent planning unless content
+identity is locked.
 
 # Reproducibility map
 
@@ -1036,6 +1182,7 @@ The reports and machine-readable outputs are organized by experiment:
 | Twin causal tetrad (E4) | `experiments/trajectory_causal_tetrad/` |
 | Ophthalmologist reclassify (E6) | `experiments/ophthalmologist_it_reclassify/` |
 | Domain transfer (E5) | `experiments/domain_transfer_aan/` |
+| Selective \(b\)-step + force-native article | `experiments/selective_bc_force_native/` |
 | Paper execution contract | `experiments/PAPER_EXPERIMENTS.md` |
 
 Each experiment directory contains a human-readable `results/report.md`,

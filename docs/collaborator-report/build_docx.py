@@ -32,6 +32,7 @@ REQUIRED_FIGURES = [
     "figures/figure5_dose_response.png",
     "figures/figure6_dual_lock.png",
     "figures/figure7_causal_tetrad.png",
+    "figures/figure8_selective_force_native.png",
 ]
 
 
@@ -82,9 +83,9 @@ def build() -> Path:
             "Check Pandoc/math setup.",
             file=sys.stderr,
         )
-    if len(media) < 7:
+    if len(media) < 8:
         print(
-            f"WARNING: expected ≥7 embedded media files, found {len(media)}.",
+            f"WARNING: expected ≥8 embedded media files, found {len(media)}.",
             file=sys.stderr,
         )
     return OUTPUT
