@@ -1,0 +1,2439 @@
+{
+  "experiment_name": "planning_gain_content_clincher",
+  "generated_at": "2026-08-06T13:22:44.565901+00:00",
+  "model": "google/gemma-3-270m",
+  "runtime_seconds": 5200.191358089447,
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "amplify_factor": 5.0,
+  "selection_prompt_count": 8,
+  "min_selection_prompt_count": 3,
+  "fallback_used": false,
+  "test_prompt_count": 20,
+  "control_feature_count": 4,
+  "selected_features": [
+    {
+      "layer": 12,
+      "feature_idx": 6229,
+      "prompt_count": 8,
+      "prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ],
+      "mean_direct_effect_an": 0.2559814453125,
+      "mean_direct_effect_future": 0.1431884765625,
+      "mean_activation": 1442.0,
+      "mean_score": 0.1431884765625,
+      "label": "`L12/F6229`"
+    },
+    {
+      "layer": 10,
+      "feature_idx": 2930,
+      "prompt_count": 8,
+      "prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ],
+      "mean_direct_effect_an": 0.096893310546875,
+      "mean_direct_effect_future": 0.024379730224609375,
+      "mean_activation": 119.5,
+      "mean_score": 0.024379730224609375,
+      "label": "`L10/F2930`"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 10231,
+      "prompt_count": 8,
+      "prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ],
+      "mean_direct_effect_an": 0.86083984375,
+      "mean_direct_effect_future": 0.019838333129882812,
+      "mean_activation": 890.0,
+      "mean_score": 0.019838333129882812,
+      "label": "`L13/F10231`"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 793,
+      "prompt_count": 8,
+      "prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ],
+      "mean_direct_effect_an": 0.0283355712890625,
+      "mean_direct_effect_future": 0.01972198486328125,
+      "mean_activation": 287.375,
+      "mean_score": 0.01929473876953125,
+      "label": "`L11/F793`"
+    }
+  ],
+  "control_features": [
+    {
+      "layer": 11,
+      "feature_idx": 2954,
+      "activation": 480.0,
+      "activation_distance": 204.71875,
+      "mean_activation": 480.0,
+      "label": "`L11/F2954`"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 5451,
+      "activation": 632.0,
+      "activation_distance": 52.71875,
+      "mean_activation": 632.0,
+      "label": "`L11/F5451`"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 14119,
+      "activation": 484.0,
+      "activation_distance": 200.71875,
+      "mean_activation": 484.0,
+      "label": "`L11/F14119`"
+    },
+    {
+      "layer": 12,
+      "feature_idx": 6421,
+      "activation": 506.0,
+      "activation_distance": 178.71875,
+      "mean_activation": 506.0,
+      "label": "`L12/F6421`"
+    }
+  ],
+  "content_summary": {
+    "n": 20,
+    "mean_delta_an_minus_a": 3.3125,
+    "article_moved_toward_an_rate": 1.0,
+    "generated_article_changed_rate": 0.95,
+    "content_preserved_rate": 0.05,
+    "content_word_changed_rate": 0.95,
+    "class_shifted_rate": 0.95,
+    "wrapper_like_rate": 0.0,
+    "trajectory_like_rate": 0.95,
+    "matched_twin_rate": 0.35
+  },
+  "control_summary": {
+    "n": 20,
+    "mean_delta_an_minus_a": 0.1375,
+    "article_moved_toward_an_rate": 0.7,
+    "generated_article_changed_rate": 0.0,
+    "content_preserved_rate": 1.0,
+    "content_word_changed_rate": 0.0,
+    "class_shifted_rate": 0.0,
+    "wrapper_like_rate": 0.0,
+    "trajectory_like_rate": 0.0,
+    "matched_twin_rate": 0.0
+  },
+  "decision": "framework_live_trajectory_path",
+  "interpretation": "Amplifying frozen content-supporting features changed behavior relative to controls, but mainly by changing content words / vowel-consonant class rather than preserving a fixed later word. The stricter framework is live and the Outcome-2 path is favored.",
+  "content_examples": [
+    {
+      "index": 1,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who flies airplanes is",
+      "listed_word": "pilot",
+      "expected_article": "a",
+      "twin_word": "aviator",
+      "position": 14,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1368.0,
+          "value": 6840.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 164.0,
+          "value": 820.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 864.0,
+          "value": 4320.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 229.0,
+          "value": 1145.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.75,
+      "delta_a": -1.75,
+      "delta_an": 1.125,
+      "delta_an_minus_a": 2.875,
+      "baseline_continuation": " a pilot.",
+      "intervention_continuation": " an aviator.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "pilot",
+      "intervention_generated_word": "aviator",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 2,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who represents clients in legal matters is",
+      "listed_word": "lawyer",
+      "expected_article": "a",
+      "twin_word": "attorney",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1656.0,
+          "value": 8280.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 135.0,
+          "value": 675.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1080.0,
+          "value": 5400.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 213.0,
+          "value": 1065.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.75,
+      "delta_a": -1.375,
+      "delta_an": 1.875,
+      "delta_an_minus_a": 3.25,
+      "baseline_continuation": " a lawyer.",
+      "intervention_continuation": " an attorney.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "lawyer",
+      "intervention_generated_word": "attorney",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 3,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who studies matter and energy is",
+      "listed_word": "physicist",
+      "expected_article": "a",
+      "twin_word": "astronomer",
+      "position": 16,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 984.0,
+          "value": 4920.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 888.0,
+          "value": 4440.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 424.0,
+          "value": 2120.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.625,
+      "delta_a": -1.625,
+      "delta_an": 1.625,
+      "delta_an_minus_a": 3.25,
+      "baseline_continuation": " a physicist.",
+      "intervention_continuation": " an astronomer.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "physicist",
+      "intervention_generated_word": "astronomer",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 4,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who takes professional pictures is",
+      "listed_word": "photographer",
+      "expected_article": "a",
+      "twin_word": "artist",
+      "position": 15,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1712.0,
+          "value": 8560.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 153.0,
+          "value": 765.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1040.0,
+          "value": 5200.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 251.0,
+          "value": 1255.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -1.25,
+      "delta_an": 2.125,
+      "delta_an_minus_a": 3.375,
+      "baseline_continuation": " a photographer.",
+      "intervention_continuation": " an artist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "photographer",
+      "intervention_generated_word": "artist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 5,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who studies human behavior and mental processes is",
+      "listed_word": "psychologist",
+      "expected_article": "a",
+      "twin_word": "anthropologist",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1400.0,
+          "value": 7000.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 128.0,
+          "value": 640.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1016.0,
+          "value": 5080.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 344.0,
+          "value": 1720.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.25,
+      "delta_a": -1.25,
+      "delta_an": 2.625,
+      "delta_an_minus_a": 3.875,
+      "baseline_continuation": " a psychologist.",
+      "intervention_continuation": " an anthropologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "psychologist",
+      "intervention_generated_word": "anthropologist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 6,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who studies rocks and earth formations is",
+      "listed_word": "geologist",
+      "expected_article": "a",
+      "twin_word": "archaeologist",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1680.0,
+          "value": 8400.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 112.0,
+          "value": 560.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1000.0,
+          "value": 5000.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 209.0,
+          "value": 1045.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.875,
+      "delta_a": -1.75,
+      "delta_an": 1.625,
+      "delta_an_minus_a": 3.375,
+      "baseline_continuation": " a geologist.",
+      "intervention_continuation": " an archaeologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "geologist",
+      "intervention_generated_word": "archaeologist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 7,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who grows crops and raises livestock is",
+      "listed_word": "farmer",
+      "expected_article": "a",
+      "twin_word": "agriculturist",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1144.0,
+          "value": 5720.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 86.5,
+          "value": 432.5
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 936.0,
+          "value": 4680.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 0.0,
+          "value": 0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -0.75,
+      "delta_an": 2.625,
+      "delta_an_minus_a": 3.375,
+      "baseline_continuation": " a farmer.",
+      "intervention_continuation": " an agriculturist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "farmer",
+      "intervention_generated_word": "agriculturist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": true
+    },
+    {
+      "index": 8,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who educates children in schools is",
+      "listed_word": "teacher",
+      "expected_article": "a",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1400.0,
+          "value": 7000.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 184.0,
+          "value": 920.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 816.0,
+          "value": 4080.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 215.0,
+          "value": 1075.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.75,
+      "delta_a": -0.125,
+      "delta_an": 2.75,
+      "delta_an_minus_a": 2.875,
+      "baseline_continuation": " a teacher.",
+      "intervention_continuation": " an educator.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "teacher",
+      "intervention_generated_word": "educator",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 9,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who prepares meals in restaurants is",
+      "listed_word": "chef",
+      "expected_article": "a",
+      "twin_word": "",
+      "position": 16,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1408.0,
+          "value": 7040.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 140.0,
+          "value": 700.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 896.0,
+          "value": 4480.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 151.0,
+          "value": 755.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -2.25,
+      "delta_a": -1.375,
+      "delta_an": 2.0,
+      "delta_an_minus_a": 3.375,
+      "baseline_continuation": " a chef.",
+      "intervention_continuation": " an accountant.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "chef",
+      "intervention_generated_word": "accountant",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 10,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who extinguishes fires and rescues people is",
+      "listed_word": "firefighter",
+      "expected_article": "a",
+      "twin_word": "",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1432.0,
+          "value": 7160.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 126.0,
+          "value": 630.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 880.0,
+          "value": 4400.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 167.0,
+          "value": 835.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -1.375,
+      "delta_an": 1.625,
+      "delta_an_minus_a": 3.0,
+      "baseline_continuation": " a firefighter.",
+      "intervention_continuation": " an arsonist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "firefighter",
+      "intervention_generated_word": "arsonist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 11,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who treats bone and joint problems is",
+      "listed_word": "orthopedist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1616.0,
+          "value": 8080.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 112.5,
+          "value": 562.5
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 936.0,
+          "value": 4680.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 268.0,
+          "value": 1340.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.125,
+      "delta_a": -0.75,
+      "delta_an": 2.5,
+      "delta_an_minus_a": 3.25,
+      "baseline_continuation": " a physiologist.",
+      "intervention_continuation": " an osteopath.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "physiologist",
+      "intervention_generated_word": "osteopath",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 12,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who studies human cultures and societies is",
+      "listed_word": "anthropologist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1504.0,
+          "value": 7520.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 151.0,
+          "value": 755.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1024.0,
+          "value": 5120.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 284.0,
+          "value": 1420.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.625,
+      "delta_a": -0.875,
+      "delta_an": 2.75,
+      "delta_an_minus_a": 3.625,
+      "baseline_continuation": " a sociologist.",
+      "intervention_continuation": " an anthropologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "sociologist",
+      "intervention_generated_word": "anthropologist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 13,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who studies ancient civilizations through artifacts is",
+      "listed_word": "archaeologist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1720.0,
+          "value": 8600.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 161.0,
+          "value": 805.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1104.0,
+          "value": 5520.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 340.0,
+          "value": 1700.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.5,
+      "delta_a": -1.875,
+      "delta_an": 1.625,
+      "delta_an_minus_a": 3.5,
+      "baseline_continuation": " a historian.",
+      "intervention_continuation": " an archaeologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "historian",
+      "intervention_generated_word": "archaeologist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 14,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who creates visual art is",
+      "listed_word": "artist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 15,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1640.0,
+          "value": 8200.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 112.5,
+          "value": 562.5
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1024.0,
+          "value": 5120.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 268.0,
+          "value": 1340.0
+        }
+      ],
+      "baseline_top_article": "an",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": 0.25,
+      "delta_a": -1.5,
+      "delta_an": 2.25,
+      "delta_an_minus_a": 3.75,
+      "baseline_continuation": " an artist.",
+      "intervention_continuation": " an artist.",
+      "baseline_generated_article": "an",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "artist",
+      "intervention_generated_word": "artist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": true,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 15,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who performs in plays or movies is",
+      "listed_word": "actor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1584.0,
+          "value": 7920.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 91.5,
+          "value": 457.5
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1048.0,
+          "value": 5240.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 215.0,
+          "value": 1075.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.75,
+      "delta_a": -1.0,
+      "delta_an": 2.75,
+      "delta_an_minus_a": 3.75,
+      "baseline_continuation": " a director.",
+      "intervention_continuation": " an actor.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "director",
+      "intervention_generated_word": "actor",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 16,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who reviews and revises written content is",
+      "listed_word": "editor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1632.0,
+          "value": 8160.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 880.0,
+          "value": 4400.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 348.0,
+          "value": 1740.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.375,
+      "delta_a": -1.125,
+      "delta_an": 1.875,
+      "delta_an_minus_a": 3.0,
+      "baseline_continuation": " a writer.",
+      "intervention_continuation": " an editor.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "writer",
+      "intervention_generated_word": "editor",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 17,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who examines data and information is",
+      "listed_word": "analyst",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 16,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1312.0,
+          "value": 6560.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 95.0,
+          "value": 475.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1128.0,
+          "value": 5640.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 296.0,
+          "value": 1480.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -2.25,
+      "delta_an": 1.375,
+      "delta_an_minus_a": 3.625,
+      "baseline_continuation": " a statistician.",
+      "intervention_continuation": " an economist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "statistician",
+      "intervention_generated_word": "economist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 18,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who examines financial records is",
+      "listed_word": "auditor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 15,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1328.0,
+          "value": 6640.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 132.0,
+          "value": 660.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1064.0,
+          "value": 5320.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 272.0,
+          "value": 1360.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.5,
+      "delta_a": -1.875,
+      "delta_an": 1.125,
+      "delta_an_minus_a": 3.0,
+      "baseline_continuation": " a financial analyst.",
+      "intervention_continuation": " an accountant.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "financial",
+      "intervention_generated_word": "accountant",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 19,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who creates new devices or processes is",
+      "listed_word": "inventor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1128.0,
+          "value": 5640.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1016.0,
+          "value": 5080.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 139.0,
+          "value": 695.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.25,
+      "delta_a": -2.0,
+      "delta_an": 1.375,
+      "delta_an_minus_a": 3.375,
+      "baseline_continuation": " a scientist.",
+      "intervention_continuation": " an engineer.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "scientist",
+      "intervention_generated_word": "engineer",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    },
+    {
+      "index": 20,
+      "condition": "content_amplify",
+      "target_prompt": "Someone who examines things for quality or compliance is",
+      "listed_word": "inspector",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 12,
+          "feature_idx": 6229,
+          "activation": 1384.0,
+          "value": 6920.0
+        },
+        {
+          "layer": 10,
+          "feature_idx": 2930,
+          "activation": 89.5,
+          "value": 447.5
+        },
+        {
+          "layer": 13,
+          "feature_idx": 10231,
+          "activation": 1000.0,
+          "value": 5000.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 793,
+          "activation": 0.0,
+          "value": 0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": -0.5,
+      "delta_a": -1.75,
+      "delta_an": 1.0,
+      "delta_an_minus_a": 2.75,
+      "baseline_continuation": " a sociologist.",
+      "intervention_continuation": " an economist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "sociologist",
+      "intervention_generated_word": "economist",
+      "content_preserved": false,
+      "content_word_changed": true,
+      "class_shifted": true,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": true,
+      "generated_article_changed": true,
+      "wrapper_like": false,
+      "trajectory_like": true,
+      "matched_twin": false
+    }
+  ],
+  "control_examples": [
+    {
+      "index": 1,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who flies airplanes is",
+      "listed_word": "pilot",
+      "expected_article": "a",
+      "twin_word": "aviator",
+      "position": 14,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 480.0,
+          "value": 2400.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 632.0,
+          "value": 3160.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 484.0,
+          "value": 2420.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 506.0,
+          "value": 2530.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.75,
+      "delta_a": 0.25,
+      "delta_an": 0.375,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a pilot.",
+      "intervention_continuation": " a pilot.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "pilot",
+      "intervention_generated_word": "pilot",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 2,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who represents clients in legal matters is",
+      "listed_word": "lawyer",
+      "expected_article": "a",
+      "twin_word": "attorney",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 296.0,
+          "value": 1480.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": -0.0,
+          "value": -0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.75,
+      "delta_a": -0.125,
+      "delta_an": 0.0,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a lawyer.",
+      "intervention_continuation": " a lawyer.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "lawyer",
+      "intervention_generated_word": "lawyer",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 3,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who studies matter and energy is",
+      "listed_word": "physicist",
+      "expected_article": "a",
+      "twin_word": "astronomer",
+      "position": 16,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 468.0,
+          "value": 2340.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 420.0,
+          "value": 2100.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 0.0,
+          "value": 0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.625,
+      "delta_a": -0.375,
+      "delta_an": -0.25,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a physicist.",
+      "intervention_continuation": " a physicist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "physicist",
+      "intervention_generated_word": "physicist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 4,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who takes professional pictures is",
+      "listed_word": "photographer",
+      "expected_article": "a",
+      "twin_word": "artist",
+      "position": 15,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 484.0,
+          "value": 2420.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 398.0,
+          "value": 1990.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 656.0,
+          "value": 3280.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -0.125,
+      "delta_an": 0.375,
+      "delta_an_minus_a": 0.5,
+      "baseline_continuation": " a photographer.",
+      "intervention_continuation": " a photographer.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "photographer",
+      "intervention_generated_word": "photographer",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 5,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who studies human behavior and mental processes is",
+      "listed_word": "psychologist",
+      "expected_article": "a",
+      "twin_word": "anthropologist",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 248.0,
+          "value": 1240.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": -0.0,
+          "value": -0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 276.0,
+          "value": 1380.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.25,
+      "delta_a": -0.375,
+      "delta_an": -0.25,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a psychologist.",
+      "intervention_continuation": " a psychologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "psychologist",
+      "intervention_generated_word": "psychologist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 6,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who studies rocks and earth formations is",
+      "listed_word": "geologist",
+      "expected_article": "a",
+      "twin_word": "archaeologist",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 340.0,
+          "value": 1700.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 220.0,
+          "value": 1100.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 0.0,
+          "value": 0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.875,
+      "delta_a": -0.125,
+      "delta_an": 0.125,
+      "delta_an_minus_a": 0.25,
+      "baseline_continuation": " a geologist.",
+      "intervention_continuation": " a geologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "geologist",
+      "intervention_generated_word": "geologist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 7,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who grows crops and raises livestock is",
+      "listed_word": "farmer",
+      "expected_article": "a",
+      "twin_word": "agriculturist",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 424.0,
+          "value": 2120.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 398.0,
+          "value": 1990.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 232.0,
+          "value": 1160.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -0.375,
+      "delta_an": -0.25,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a farmer.",
+      "intervention_continuation": " a farmer.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "farmer",
+      "intervention_generated_word": "farmer",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 8,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who educates children in schools is",
+      "listed_word": "teacher",
+      "expected_article": "a",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 412.0,
+          "value": 2060.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 252.0,
+          "value": 1260.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.75,
+      "delta_a": 0.0,
+      "delta_an": 0.0,
+      "delta_an_minus_a": 0.0,
+      "baseline_continuation": " a teacher.",
+      "intervention_continuation": " a teacher.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "teacher",
+      "intervention_generated_word": "teacher",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": false,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 9,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who prepares meals in restaurants is",
+      "listed_word": "chef",
+      "expected_article": "a",
+      "twin_word": "",
+      "position": 16,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 484.0,
+          "value": 2420.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 358.0,
+          "value": 1790.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 334.0,
+          "value": 1670.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -2.25,
+      "delta_a": -0.625,
+      "delta_an": -0.375,
+      "delta_an_minus_a": 0.25,
+      "baseline_continuation": " a chef.",
+      "intervention_continuation": " a chef.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "chef",
+      "intervention_generated_word": "chef",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 10,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who extinguishes fires and rescues people is",
+      "listed_word": "firefighter",
+      "expected_article": "a",
+      "twin_word": "",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 432.0,
+          "value": 2160.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 280.0,
+          "value": 1400.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -0.25,
+      "delta_an": -0.25,
+      "delta_an_minus_a": 0.0,
+      "baseline_continuation": " a firefighter.",
+      "intervention_continuation": " a firefighter.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "firefighter",
+      "intervention_generated_word": "firefighter",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": false,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 11,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who treats bone and joint problems is",
+      "listed_word": "orthopedist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 408.0,
+          "value": 2040.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 262.0,
+          "value": 1310.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.125,
+      "delta_a": -0.125,
+      "delta_an": -0.125,
+      "delta_an_minus_a": 0.0,
+      "baseline_continuation": " a physiologist.",
+      "intervention_continuation": " a physiologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "physiologist",
+      "intervention_generated_word": "physiologist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": false,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 12,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who studies human cultures and societies is",
+      "listed_word": "anthropologist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 266.0,
+          "value": 1330.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": -0.0,
+          "value": -0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.625,
+      "delta_a": -0.125,
+      "delta_an": 0.125,
+      "delta_an_minus_a": 0.25,
+      "baseline_continuation": " a sociologist.",
+      "intervention_continuation": " a sociologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "sociologist",
+      "intervention_generated_word": "sociologist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 13,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who studies ancient civilizations through artifacts is",
+      "listed_word": "archaeologist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 360.0,
+          "value": 1800.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.5,
+      "delta_a": -0.25,
+      "delta_an": -0.25,
+      "delta_an_minus_a": 0.0,
+      "baseline_continuation": " a historian.",
+      "intervention_continuation": " a historian.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "historian",
+      "intervention_generated_word": "historian",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": false,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 14,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who creates visual art is",
+      "listed_word": "artist",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 15,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 492.0,
+          "value": 2460.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 360.0,
+          "value": 1800.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 378.0,
+          "value": 1890.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 728.0,
+          "value": 3640.0
+        }
+      ],
+      "baseline_top_article": "an",
+      "intervention_top_article": "an",
+      "baseline_an_minus_a": 0.25,
+      "delta_a": -0.125,
+      "delta_an": -0.125,
+      "delta_an_minus_a": 0.0,
+      "baseline_continuation": " an artist.",
+      "intervention_continuation": " an artist.",
+      "baseline_generated_article": "an",
+      "intervention_generated_article": "an",
+      "baseline_generated_word": "artist",
+      "intervention_generated_word": "artist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": true,
+      "intervention_vowel_initial": true,
+      "article_moved_toward_an": false,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 15,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who performs in plays or movies is",
+      "listed_word": "actor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 386.0,
+          "value": 1930.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": -0.0,
+          "value": -0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 334.0,
+          "value": 1670.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 696.0,
+          "value": 3480.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.75,
+      "delta_a": -0.125,
+      "delta_an": 0.25,
+      "delta_an_minus_a": 0.375,
+      "baseline_continuation": " a director.",
+      "intervention_continuation": " a director.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "director",
+      "intervention_generated_word": "director",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 16,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who reviews and revises written content is",
+      "listed_word": "editor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 360.0,
+          "value": 1800.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 292.0,
+          "value": 1460.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 0.0,
+          "value": 0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.375,
+      "delta_a": 0.0,
+      "delta_an": 0.25,
+      "delta_an_minus_a": 0.25,
+      "baseline_continuation": " a writer.",
+      "intervention_continuation": " a writer.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "writer",
+      "intervention_generated_word": "writer",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 17,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who examines data and information is",
+      "listed_word": "analyst",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 16,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 374.0,
+          "value": 1870.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 228.0,
+          "value": 1140.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -1.0,
+      "delta_a": -0.125,
+      "delta_an": 0.0,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a statistician.",
+      "intervention_continuation": " a statistician.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "statistician",
+      "intervention_generated_word": "statistician",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 18,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who examines financial records is",
+      "listed_word": "auditor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 15,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 420.0,
+          "value": 2100.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 316.0,
+          "value": 1580.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 0.0,
+          "value": 0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.5,
+      "delta_a": 0.0,
+      "delta_an": 0.125,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a financial analyst.",
+      "intervention_continuation": " a financial analyst.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "financial",
+      "intervention_generated_word": "financial",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 19,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who creates new devices or processes is",
+      "listed_word": "inventor",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 17,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 370.0,
+          "value": 1850.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": -0.0,
+          "value": -0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": 382.0,
+          "value": 1910.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.25,
+      "delta_a": -0.25,
+      "delta_an": -0.125,
+      "delta_an_minus_a": 0.125,
+      "baseline_continuation": " a scientist.",
+      "intervention_continuation": " a scientist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "scientist",
+      "intervention_generated_word": "scientist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": true,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    },
+    {
+      "index": 20,
+      "condition": "control_amplify",
+      "target_prompt": "Someone who examines things for quality or compliance is",
+      "listed_word": "inspector",
+      "expected_article": "an",
+      "twin_word": "",
+      "position": 18,
+      "feature_activations": [
+        {
+          "layer": 11,
+          "feature_idx": 2954,
+          "activation": 400.0,
+          "value": 2000.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5451,
+          "activation": 0.0,
+          "value": 0.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 14119,
+          "activation": 280.0,
+          "value": 1400.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6421,
+          "activation": -0.0,
+          "value": -0.0
+        }
+      ],
+      "baseline_top_article": "a",
+      "intervention_top_article": "a",
+      "baseline_an_minus_a": -0.5,
+      "delta_a": -0.25,
+      "delta_an": -0.375,
+      "delta_an_minus_a": -0.125,
+      "baseline_continuation": " a sociologist.",
+      "intervention_continuation": " a sociologist.",
+      "baseline_generated_article": "a",
+      "intervention_generated_article": "a",
+      "baseline_generated_word": "sociologist",
+      "intervention_generated_word": "sociologist",
+      "content_preserved": true,
+      "content_word_changed": false,
+      "class_shifted": false,
+      "baseline_vowel_initial": false,
+      "intervention_vowel_initial": false,
+      "article_moved_toward_an": false,
+      "generated_article_changed": false,
+      "wrapper_like": false,
+      "trajectory_like": false,
+      "matched_twin": false
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "experiment_name": "planning_gain_content_clincher",
+  "description": "Clincher test: amplify frozen content-supporting features in Latent-Planning style and score content preservation versus class switching against activation-matched random controls.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/.cache/huggingface/hub/models--mwhanna--gemma-scope-2-270m-pt/snapshots/fada11860ac1d337c1e41e9da308798405b94c8e/clt/width_262k_l0_medium_affine/config.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": "disk",
+  "batch_size": 32,
+  "max_feature_nodes": 1200,
+  "dataset_path": "../a_an_full_dataset_screen/data/a_an_examples.csv",
+  "dataset_sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "amplify_factor": 5.0,
+  "min_selection_prompt_count": 3,
+  "top_content_features": 4,
+  "control_feature_count": 4,
+  "control_seed": 0,
+  "max_new_tokens": 4,
+  "selection_sentences": [
+    "Someone who installs and repairs electrical systems is",
+    "Someone who designs buildings and structures is",
+    "Someone who manages financial records is",
+    "Someone who designs and builds technical systems is",
+    "Someone who studies financial systems and markets is",
+    "Someone who administers anesthesia during surgery is",
+    "Someone who treats cancer patients is",
+    "Someone who studies stars and planets is"
+  ],
+  "test_examples": [
+    {
+      "sentence": "Someone who flies airplanes is",
+      "listed_word": "pilot",
+      "expected_article": "a",
+      "twin_word": "aviator"
+    },
+    {
+      "sentence": "Someone who represents clients in legal matters is",
+      "listed_word": "lawyer",
+      "expected_article": "a",
+      "twin_word": "attorney"
+    },
+    {
+      "sentence": "Someone who studies matter and energy is",
+      "listed_word": "physicist",
+      "expected_article": "a",
+      "twin_word": "astronomer"
+    },
+    {
+      "sentence": "Someone who takes professional pictures is",
+      "listed_word": "photographer",
+      "expected_article": "a",
+      "twin_word": "artist"
+    },
+    {
+      "sentence": "Someone who studies human behavior and mental processes is",
+      "listed_word": "psychologist",
+      "expected_article": "a",
+      "twin_word": "anthropologist"
+    },
+    {
+      "sentence": "Someone who studies rocks and earth formations is",
+      "listed_word": "geologist",
+      "expected_article": "a",
+      "twin_word": "archaeologist"
+    },
+    {
+      "sentence": "Someone who grows crops and raises livestock is",
+      "listed_word": "farmer",
+      "expected_article": "a",
+      "twin_word": "agriculturist"
+    },
+    {
+      "sentence": "Someone who educates children in schools is",
+      "listed_word": "teacher",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who prepares meals in restaurants is",
+      "listed_word": "chef",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who extinguishes fires and rescues people is",
+      "listed_word": "firefighter",
+      "expected_article": "a",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who treats bone and joint problems is",
+      "listed_word": "orthopedist",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who studies human cultures and societies is",
+      "listed_word": "anthropologist",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who studies ancient civilizations through artifacts is",
+      "listed_word": "archaeologist",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who creates visual art is",
+      "listed_word": "artist",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who performs in plays or movies is",
+      "listed_word": "actor",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who reviews and revises written content is",
+      "listed_word": "editor",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who examines data and information is",
+      "listed_word": "analyst",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who examines financial records is",
+      "listed_word": "auditor",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who creates new devices or processes is",
+      "listed_word": "inventor",
+      "expected_article": "an",
+      "twin_word": ""
+    },
+    {
+      "sentence": "Someone who examines things for quality or compliance is",
+      "listed_word": "inspector",
+      "expected_article": "an",
+      "twin_word": ""
+    }
+  ]
+}
