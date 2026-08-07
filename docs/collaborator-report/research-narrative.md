@@ -211,15 +211,25 @@ a → A → {B, C}_bundle → (b, c)
 - **Turned up / turned down:** amplifying or zeroing a chosen feature
   set (\(A\), \(B\), \(C\), or a joint set such as S1).
 
-- **Selective \(b\)-step intervention:** clamp selected features only on
-  the forward pass that predicts the article \(b\), then turn the clamp
-  **off** before predicting the noun \(c\).
+- **Selective \(b\)-step intervention (Stage XV schedule):** clamp
+  selected features on the forward pass that predicts the article
+  \(b\), then turn the clamp **off** before predicting the noun \(c\).
+  Good for demonstrating \(b \rightarrow c\) under free vs force-native
+  generation; **not** a fair negative test of \(C \rightarrow c\) by
+  itself, because content clamps are absent at the noun step.
 
 - **Paste native article (force-native \(b\)):** after the intervened
   \(b\)-step, insert the article token the *unintervened* model would
   have produced, then continue. This holds the \(b \rightarrow c\) edge
   fixed at its native value so a changed noun cannot be blamed merely on
   having emitted `an` instead of `a` (or vice versa).
+
+- **Fixed \(b\), content-on-at-\(c\) (Stage XVI schedule):** paste native
+  \(b\), but keep content-feature clamps **active** at the original
+  pre-article planning position while predicting \(c\) (full-sequence
+  recompute). The fair assay for independent \(C \rightarrow c\),
+  especially with **within-class** noun targets (e.g. `pilot`↔`captain`
+  under fixed `a`).
 
 - **Gain-of-function (amplify):** raising a feature’s activation above
   its natural value on a prompt, used to test sufficiency.
@@ -778,7 +788,7 @@ coordinated preparation--content control—compiled trajectories
 result, how collaborator discussion changed the question we needed to
 answer—anchored on the H1 vs H2 causal graphs in Section 10.2—which
 model stack we used, and the causal experiments that followed (Stages
-VIII–XV).
+VIII–XVI).
 
 ## 10.1 What we planned after Stage VII
 
@@ -861,9 +871,11 @@ Article preference and noun-initial class are one fused object. Pushing
 There is no stable content plan with an independently editable wrapper.
 
 **H2 success:** free intervention moves \(b\) and \(c\) together as a
-legal package; pasting native \(b\) restores native \(c\); no handle
-moves \(c\) with \(b\) held fixed, and no handle moves only \(b\) while
-leaving content identity fixed.
+legal package; pasting native \(b\) restores native \(c\); and—under the
+corrected Stage XVI schedule—no content handle moves \(c\) with \(b\)
+held fixed, including among within-class synonyms. (A selective
+licensing handle that moves article logits without rewriting executed
+\(c\) under fixed \(b\) is compatible with H2 and does not revive H1.)
 
 ### Why \(b \rightarrow c\) is the confounder
 
@@ -1014,10 +1026,10 @@ buy package switches, not grammar-only edits.
 **Edges under test:** attempt to edit \(C \rightarrow B\) (article-push)
 while holding \(C\) via content-lock features—the operational H1 test of
 “edit licensing without rewriting content,” still under free generation
-(so \(b \rightarrow c\) remains a confounder until Stage XV).
+(so \(b \rightarrow c\) remains a confounder until Stages XV–XVI).
 
 **This was the decisive dual-feature experiment before the selective
-paste-native-\(b\) protocol.** If modular planning exists, pushing the
+paste-native-\(b\) protocols.** If modular planning exists, pushing the
 article while locking content-supporting features should raise
 wrapper-like success above article-push alone.
 
@@ -1185,10 +1197,13 @@ editable-wrapper success. On the graphs:
 
 True H1 evidence on these stems would require free `an` with the **same**
 noun (often illicit `an pilot`), or a selective \(F_C\) (S3) that moves
-only licensing while content stays fixed—**or**, with \(b\) pasted native,
-a content intervention that still changes \(c\) within the allowed article
-class. We observed **none** of these: illicit free rate stayed 0.00, and
-S3 barely moved \(\Delta(\texttt{an}-\texttt{a})\).
+only licensing while content stays fixed—**or**, with \(b\) pasted native
+and content clamps still active, a content intervention that still
+changes \(c\) within the allowed article class. In Stage XV itself we
+observed the first two failures: illicit free rate stayed 0.00, and S3
+barely moved \(\Delta(\texttt{an}-\texttt{a})\). The third
+(within-class \(C \rightarrow c\) under content-on-at-\(c\)) is Stage
+XVI’s test, not Stage XV’s—see below.
 
 S2 amplify moved article logits moderately but produced messy free
 continuations (`called a …`, `also a biologist`), not clean
@@ -1278,7 +1293,7 @@ hint-contrast, and controls. Generated continuations stayed glued to
 baseline (`a pilot`, `a lawyer`, …) whether content clamps were on or
 off. Same-class targets remained ~5 logits below the source noun.
 
-![Figure 9. Corrected fixed-\(b\) assay: no condition produces within-class \(C \rightarrow c\) under content clamps kept on at the noun step.](figures/figure9_fixed_b_content_on.png)
+![Figure 9. Corrected fixed-\(b\) assay: binary within-class outcomes are all exactly zero; same-class nouns stay ~5 logits below source under content clamps kept on at the noun step.](figures/figure9_fixed_b_content_on.png)
 
 **N2 (factorial \(C \rightarrow B\)).** Without a validated N1 content
 dial, N2 is not used as H1 evidence. S3 still barely moves article
@@ -1454,13 +1469,11 @@ What still limits a harder claim:
 
 Collaborators should read the interim claim as: **strong against modular
 H1 for these interventions’ free-generation and fixed-\(b\) execution
-behavior**, including the phonological caveat for within-class targets.
-Until finer latent probes and broader handles are run, we should not
-claim latent absence of all content plans—only absence of demonstrated
-independent causal control of executed \(c\) with \(b\) fixed for the
-handles we tested.
-
-## Other achievements and open engineering gaps
+behavior**, with the phonological within-class caveat now closed for
+these sparse handles. Until finer latent probes and broader handles are
+run, we should not claim latent absence of all content plans—only
+absence of demonstrated independent causal control of executed \(c\)
+with \(b\) fixed for the handles we tested.
 
 # Reproducibility map
 
