@@ -46,6 +46,17 @@ dist/
 *.synctex.gz
 *.toc
 
+# Collaborator report: local scratch / intermediate builds
+docs/collaborator-report/build/
+docs/collaborator-report/_extract*/
+docs/collaborator-report/media/
+docs/collaborator-report/rendered/
+docs/collaborator-report/rendered-v2/
+docs/collaborator-report/*.bak
+docs/collaborator-report/_sections_*.md
+docs/collaborator-report/collaborator-report-v3-*.docx
+docs/collaborator-report/From Stalling*.docx
+
 # OS / editor
 .DS_Store
 *.swp
