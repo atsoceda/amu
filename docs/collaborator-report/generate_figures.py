@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate collaborator-report figures 1–8 from experiment summary.json files.
+"""Regenerate collaborator-report figures 1–9 from experiment summary.json files.
 
 Required experiment result artifacts (under experiments/*/results/summary.json):
 
@@ -11,6 +11,7 @@ Required experiment result artifacts (under experiments/*/results/summary.json):
   figure6  forced_content_lock
   figure7  trajectory_causal_tetrad
   figure8  selective_bc_force_native
+  figure9  causal_edge_independence
 """
 from __future__ import annotations
 
@@ -40,6 +41,7 @@ REQUIRED = {
     "figure6_dual_lock.png": ["forced_content_lock"],
     "figure7_causal_tetrad.png": ["trajectory_causal_tetrad"],
     "figure8_selective_force_native.png": ["selective_bc_force_native"],
+    "figure9_fixed_b_content_on.png": ["causal_edge_independence"],
 }
 
 
@@ -389,6 +391,82 @@ def figure8(sel: dict) -> None:
     plt.close()
 
 
+def figure9(edge: dict) -> None:
+    """Fixed-b content-on-c null: rates are all zero; show logits as the signal."""
+    n1 = edge["n1"]["by_condition"]
+    order = [
+        ("baseline", "Baseline"),
+        ("S3_content_only_amplify_x5", "S3 amp ×5"),
+        ("S3_content_only_amplify_x8", "S3 amp ×8"),
+        ("S3_content_only_zero", "S3 zero"),
+        ("S2_article_only_amplify_x5", "S2 amp ×5"),
+        ("control_amplify_x5", "Control ×5"),
+        ("contrast_amplify_x5", "Contrast ×5"),
+    ]
+    labels = [lab for key, lab in order if key in n1]
+    keys = [key for key, lab in order if key in n1]
+    c2c = [n1[k]["c_to_c_signal_rate"] for k in keys]
+    changed = [n1[k]["content_changed_on_rate"] for k in keys]
+    matched = [n1[k]["matched_same_class_on_rate"] for k in keys]
+    logit_gap = [n1[k]["mean_delta_same_minus_source_on"] for k in keys]
+    x = np.arange(len(labels))
+
+    fig, (ax0, ax1) = plt.subplots(
+        1, 2, figsize=(12.5, 5.4), gridspec_kw={"width_ratios": [1.15, 1.0]}
+    )
+
+    # Left: rate metrics (all null) — mark zeros explicitly so the panel is readable.
+    for vals, color, marker, label in [
+        (c2c, "#C44E52", "o", "Within-class C→c signal"),
+        (changed, "#4C72B0", "s", "Content changed (clamps on)"),
+        (matched, "#55A868", "^", "Matched same-class noun"),
+    ]:
+        ax0.plot(
+            x,
+            vals,
+            marker=marker,
+            linestyle="None",
+            markersize=9,
+            color=color,
+            label=label,
+            zorder=3,
+        )
+    ax0.axhline(0.0, color="#333333", linewidth=1.0, zorder=1)
+    ax0.set_xticks(x)
+    ax0.set_xticklabels(labels, rotation=25, ha="right")
+    ax0.set_ylim(-0.08, 1.05)
+    ax0.set_ylabel("Rate on 8 occupation families")
+    ax0.set_title("Binary outcomes (all exactly 0)")
+    ax0.legend(frameon=False, loc="upper right", fontsize=9)
+    ax0.text(
+        0.02,
+        0.92,
+        "null C→c under fixed b",
+        transform=ax0.transAxes,
+        fontsize=10,
+        color="#666666",
+    )
+
+    # Right: continuous null — same-class stays ~5 logits below source.
+    ax1.bar(x, logit_gap, color="#8172B3", width=0.7)
+    ax1.axhline(0.0, color="#333333", linewidth=1.0)
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(labels, rotation=25, ha="right")
+    ax1.set_ylabel("Mean logit(same-class) − logit(source)")
+    ax1.set_title("Same-class never overtakes source")
+    ymin = min(logit_gap) - 0.5
+    ax1.set_ylim(ymin, 0.5)
+
+    fig.suptitle(
+        "Stage XVI: fixed native article, content clamps ON at noun step",
+        y=1.02,
+        fontsize=13,
+    )
+    fig.tight_layout()
+    fig.savefig(FIGDIR / "figure9_fixed_b_content_on.png", dpi=160, bbox_inches="tight")
+    plt.close()
+
+
 def main() -> None:
     missing_exps = sorted(
         {
@@ -414,7 +492,8 @@ def main() -> None:
     figure6(load_summary("forced_content_lock"))
     figure7(load_summary("trajectory_causal_tetrad"))
     figure8(load_summary("selective_bc_force_native"))
-    print("Wrote figures 1–8 into", FIGDIR)
+    figure9(load_summary("causal_edge_independence"))
+    print("Wrote figures 1–9 into", FIGDIR)
 
 
 if __name__ == "__main__":

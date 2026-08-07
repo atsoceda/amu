@@ -62,15 +62,18 @@ fixed**. We therefore ran a stricter causal program on pretrained Gemma 3
 instruction-tuned + non-affine after comparing the two stacks; see
 Section 10). Across selection-criterion ablation, dose–response, forced
 content-lock / dual intervention, a causal tetrad on twin families,
-slim domain transfer, and a **selective article-step intervention with
-pasted native article**, **no held-out condition produced reliable
-wrapper-like repair**. Dual-effect gain-of-function remained
-trajectory-like (chunking)—for example amplifying frozen features turned
+slim domain transfer, a **selective article-step intervention with
+pasted native article**, and a **corrected fixed-\(b\) within-class
+\(C \rightarrow c\) assay** (content clamps kept **on** at the noun step),
+**no held-out condition produced reliable wrapper-like repair**.
+Dual-effect gain-of-function remained trajectory-like
+(chunking)—for example amplifying frozen features turned
 `Someone who flies airplanes is` from `a pilot` into `an aviator` when
 generation was free, yet pasting the native article `a` restored
 `pilot`. Content-only features did not provide a selective licensing
-handle. Illicit mismatches such as `an` + consonant-initial nouns stayed
-near zero.
+handle, and under fixed native \(b\) they also failed to move nouns
+among same-article-class alternatives (`pilot`↔`captain`, …). Illicit
+mismatches such as `an` + consonant-initial nouns stayed near zero.
 
 Our current claim is therefore:
 
@@ -78,9 +81,10 @@ Our current claim is therefore:
 > “planning” features under article-only metrics behave as packaged
 > \(\{B,C\}\) controls (Hypothesis H2), not as an editable modular graph
 > (Hypothesis H1). With these intervenable features we cannot demonstrate
-> independent \(C \rightarrow c\) once \(b\) is held fixed; free noun
-> change tracks \(b \rightarrow c\). That is strong evidence these
-> mechanisms are not modular latent planning and that
+> independent \(C \rightarrow c\) once \(b\) is held fixed—including on
+> within-class noun targets under a corrected content-on-at-\(c\)
+> protocol; free noun change tracks \(b \rightarrow c\). That is strong
+> evidence these mechanisms are not modular latent planning and that
 > article-conditioned packaging (or strong \(b \rightarrow c\)) dominates
 > execution—without yet being a refutation of every \(C \rightarrow c\)
 > somewhere in the network (Section 11).*
@@ -873,9 +877,11 @@ context). Therefore:
 > If no intervention on content-related features can pass that test, that
 > is strong evidence against a usable independent \(C \rightarrow c\) for
 > those features—and thus against reading them as modular H1 planning.
-> (Caveat and next experiment: within-class noun tests under fixed \(b\),
-> Section 11—so failure is not dismissed as “`a` merely blocks
-> `aviator`.”)
+> Stage XVI closes the phonological caveat by asking for
+> **within-class** noun moves under fixed \(b\) with content clamps
+> still active at the noun step (so failure is not dismissed as
+> “`a` merely blocks `aviator`,” nor as “interventions were off at
+> \(c\)”).
 
 *Latent Planning* already notes that small models fail behaviorally and
 may have only nascent mechanisms. Our sharpened question is sharper
@@ -891,7 +897,8 @@ model, are they implementing separable \(C \rightarrow B\) and \(C
 | E2 dose | Same, across gain: wrapper window (\(b\) moves, \(c\) fixed) or package dose-response? |
 | E3 dual lock | \(C \rightarrow B\) while trying to hold \(C\): article-push vs content-lock vs both |
 | E4 tetrad | Sufficiency/specificity of package selection on twin families |
-| XV selective + paste native \(b\) | Isolate \(b \rightarrow c\); ask whether any \(C\)-ish handle still moves \(c\) with \(b\) fixed; ask whether \(C \rightarrow B\) is selective |
+| XV selective + paste native \(b\) | Isolate \(b \rightarrow c\) under free vs force-native; ask whether \(C \rightarrow B\) is selective (c-step interventions were **off**—see Stage XVI) |
+| XVI fixed \(b\), content clamps **on** at \(c\) | Fair within-class \(C \rightarrow c\); factorial \(C \rightarrow B\); selective \(B \rightarrow b\); latent S2/S3 readouts |
 
 We also adopted loss-of-function, gain-of-function, activation-matched
 controls, and joint scoring of article *and* content on every trial.
@@ -1189,22 +1196,124 @@ content-preserving `an` repairs. Controls remained near baseline.
 
 ### Conclusion of Stage XV
 
-**Emphatic result.** With these intervenable sparse features, we cannot
-demonstrate independent \(C \rightarrow c\) once \(b\) is held fixed.
-Free S1 generation class-switches (`a pilot` → `an aviator`); pasting
-native \(b\) restores native \(c\); S3 does not supply modular
-\(C \rightarrow B\). Noun changes under free intervention track
-\(b \rightarrow c\). That is strong evidence these mechanisms are **not**
-H1 modular latent planning, and that article-conditioned packaging and/or
-strong \(b \rightarrow c\) dominates **execution** for the handles we
-tested.
+**Emphatic result (with a protocol caveat).** Free S1 generation
+class-switches (`a pilot` → `an aviator`); pasting native \(b\) restores
+native \(c\); S3 does not supply modular \(C \rightarrow B\). Noun
+changes under free intervention track \(b \rightarrow c\). That is strong
+evidence these mechanisms are **not** H1 modular latent planning for
+**execution**, and that article-conditioned packaging and/or strong
+\(b \rightarrow c\) dominates for the handles we tested.
 
-This challenges the modular graph **as an account of our interventions**.
-It does not yet refute every possible \(C \rightarrow c\) in the full
-network (see Section 11 for the remaining within-class and latent-probe
-holes).
+**Methodological caveat.** Stage XV’s \(c\)-step turned **all**
+interventions **off** after pasting native \(b\). Restoring native \(c\)
+is then partly expected by recomputation: with the same article and empty
+clamps, the forward pass at the noun step is close to baseline. Stage XV
+therefore cleanly demonstrates \(b \rightarrow c\) confounding under free
+generation, but it is **not** by itself a fair negative test of
+independent \(C \rightarrow c\) (content clamps never remained active
+while \(b\) was fixed). Stage XVI supplies that test.
 
-## 10.12 Current hypothesis (after Stages VIII–XV)
+## 10.12 Stage XVI: Fixed \(b\), content clamps **on** at \(c\) (within-class)
+
+**Edges under test:** fair \(C \rightarrow c\) under fixed native \(b\);
+whether any validated content dial feeds \(C \rightarrow B\); selective
+\(B \rightarrow b\) via S2; S2/S3 latent readouts at article vs noun time.
+
+### Why this test?
+
+Stage XV left two escape hatches for a modular reading:
+
+1. **Phonology:** failing to get `aviator` under pasted `a` may only show
+   that \(b \rightarrow c\) blocks vowel-initial nouns, not that \(C\)
+   cannot rewrite \(c\) among consonant-initial synonyms
+   (`pilot`↔`captain`).
+2. **Schedule:** content features were clamped only at the article step,
+   then cleared before noun prediction.
+
+Stage XVI closes both: paste native \(b\), keep content-feature clamps
+**active at the original pre-article position** during noun prediction
+(full-sequence `feature_intervention`, no KV-cache remapping), and score
+**within-class** noun moves plus source-vs-same-class noun logits.
+
+### Protocol
+
+For each of eight occupation families (six native-`a` stems with
+same-class consonant twins such as pilot/captain and lawyer/barrister;
+two intended `an` stems), and for E1 S3 amplify/zero, S2 amplify (negative
+control with empty \(c\)-step clamps), activation-matched controls, and a
+graph-free hint-contrast feature selector:
+
+1. Optional \(b\)-step: measure \(\Delta(\texttt{an}-\texttt{a})\) under
+   the condition’s clamps at planning position \(P\).
+2. Paste the **native** baseline article.
+3. **\(c\)-step ON (corrected):** generate the noun with content clamps
+   still applied at the same \(P\) and values (planning-time activations
+   \(\times\) amplify, or zero).
+4. Companion arm: identical paste-native generation with \(c\)-step
+   clamps **off** (Stage XV schedule).
+5. Free-generation companion with clamps on (package check).
+
+Primary H1 success criterion: under fixed native \(b\), content-on
+generation changes the noun **within** the article’s legal class at rates
+above content-off and controls (`c_to_c_signal`).
+
+### Results
+
+N0 protocol smoke: content-on vs content-off differed on **100%** of
+smoke rows at the logit level—so the assay is not collapsing to
+baseline-by-construction.
+
+| N1 condition (8 families) | \(c \rightarrow c\) signal (on) | Content changed (on) | Matched same-class (on) | Mean \(\Delta\)(same−source) logit (on) |
+| --- | ---: | ---: | ---: | ---: |
+| Baseline | 0.00 | 0.00 | 0.00 | −4.90 |
+| S3 amplify \(\times 5\) | 0.00 | 0.00 | 0.00 | −4.91 |
+| S3 amplify \(\times 8\) | 0.00 | 0.00 | 0.00 | −4.96 |
+| S3 zero | 0.00 | 0.00 | 0.00 | −4.88 |
+| S2 amplify \(\times 5\) (\(c\)-step empty) | 0.00 | 0.00 | 0.00 | −4.90 |
+| Control amplify \(\times 5\) | 0.00 | 0.00 | 0.00 | −4.92 |
+| Hint-contrast amplify \(\times 5\) | 0.00 | 0.00 | 0.00 | −4.91 |
+
+**Zero** within-class noun switches under fixed \(b\) across S3,
+hint-contrast, and controls. Generated continuations stayed glued to
+baseline (`a pilot`, `a lawyer`, …) whether content clamps were on or
+off. Same-class targets remained ~5 logits below the source noun.
+
+![Figure 9. Corrected fixed-\(b\) assay: no condition produces within-class \(C \rightarrow c\) under content clamps kept on at the noun step.](figures/figure9_fixed_b_content_on.png)
+
+**N2 (factorial \(C \rightarrow B\)).** Without a validated N1 content
+dial, N2 is not used as H1 evidence. S3 still barely moves article
+logits (mean \(\Delta(\texttt{an}-\texttt{a}) \approx 0.17\)).
+
+**N3 (selective \(B \rightarrow b\)).** S2 amplify/zero **do** move
+article logits (mean \(\Delta(\texttt{an}-\texttt{a}) \approx +0.95\) /
+\(-0.89\)) while fixed-\(b\) content stays native—consistent with a
+usable licensing handle at the article step, not with modular content
+rewrite under fixed \(b\).
+
+**N4 (latent readouts).** Mean S3 activation was essentially identical at
+the \(b\)-step and at the \(c\)-step under fixed \(b\) (~386); there was
+no latent same-class takeover in noun logits.
+
+**N5 (\(A \rightarrow C\)).** Skipped: no pure \(A\) feature set, and
+gated on a validated N1 dial.
+
+### Conclusion of Stage XVI
+
+The corrected within-class assay is a **fair negative** for independent
+\(C \rightarrow c\) among these sparse handles: holding native \(b\)
+fixed and keeping S3 / contrast / control clamps active at planning
+position \(P\) still never moves executed nouns inside the legal article
+class. Combined with Stage XV’s free-vs-force packaging pattern, this
+closes the main phonological and schedule caveats that previously limited
+how hard we could push the anti-H1 claim for *these interventions*.
+
+Remaining limits (Section 11): no pure \(A\) set; no residual/full
+activation-direction patch beyond sparse CLT features and a lightweight
+hint-contrast selector; latent noun-identity probes are only coarse
+(S2/S3 means + noun logits), not dedicated pilot-vs-captain feature
+probes; scale generalization remains open.
+
+## 10.13 Current hypothesis (after Stages VIII–XVI)
 
 Relating old and new terms:
 
@@ -1214,6 +1323,7 @@ Relating old and new terms:
 | Content-preserving grammar repair | Wrapper-like / modular \(C \rightarrow B\) success |
 | Fixed-pair suppression switches `a pilot`→`an aviator` | Loss- or gain-of-function selects packages |
 | “Need a cleaner modular test” | Selective \(b\)-step + force-native article (Stage XV) |
+| “Need within-class \(C \rightarrow c\) under fixed \(b\)” | Content-on-at-\(c\) within-class assay (Stage XVI) |
 
 **Current hypothesis (H2).**
 
@@ -1229,7 +1339,8 @@ Relating old and new terms:
 
 > Dual-effect “planning” features implement separable \(C \rightarrow B\)
 > and \(C \rightarrow c\): flip `a`/`an` while preserving content
-> identity, or move the noun with the article held fixed.
+> identity, or move the noun with the article held fixed—including among
+> same-article-class synonyms.
 
 # 11. What has and has not been achieved
 
@@ -1246,8 +1357,8 @@ S3 ≈ content-ish). We never isolated a validated pure \(A\) set.
 | \(A \rightarrow C\) | Only indirect: content-ish features sit at the pre-article position with future-content attribution. No pure \(A\) dial. | Cannot claim forward planning as a separated edge. |
 | \(C \rightarrow B\) | **Not supported** as selective. S3 turned up/down barely moves article preference. S1 turned up moves \(b\) strongly but also co-moves content-ish activations and free \(c\). | Against modular backward planning for these handles; favors a \(\{B,C\}\) bundle (H2). |
 | \(B \rightarrow b\) | Supported in the weak sense: article-related / dual-effect interventions change `a`/`an` logits and free-generation articles. | Shows we can move licensing readouts; does not show \(B\) is separable from \(C\). |
-| \(C \rightarrow c\) | **Not demonstrated independently.** Free S1 often changes the noun, but Stage XV shows that pasting native \(b\) restores native \(c\). S3 with \(b\) fixed also leaves \(c\) native. | Free noun change is accounted for by \(b \rightarrow c\), not by a proven independent content path. Strong pressure against reading these interventions as H1. |
-| \(b \rightarrow c\) | **Supported.** Free S1: non-native \(b\) with non-native \(c\). Paste native \(b\): native \(c\) returns (content preserved ≈ 1.0). | The confounder edge is real. Any claim of \(C \rightarrow c\) must survive holding \(b\) fixed. |
+| \(C \rightarrow c\) | **Not demonstrated independently—now under a fair protocol.** Free S1 often changes the noun; Stage XV paste-native restores native \(c\) (shows \(b \rightarrow c\), but \(c\)-step clamps were off). Stage XVI keeps content clamps **on** at \(c\) with fixed native \(b\) and asks for within-class noun moves: \(c \rightarrow c\) signal = 0 for S3, hint-contrast, and controls. | Free noun change is accounted for by \(b \rightarrow c\). Independent content rewrite fails even when phonology and schedule caveats are closed for these handles. |
+| \(b \rightarrow c\) | **Supported.** Free S1: non-native \(b\) with non-native \(c\). Paste native \(b\): native \(c\) returns (content preserved ≈ 1.0). | The confounder edge is real. Any claim of \(C \rightarrow c\) must survive holding \(b\) fixed **with content clamps still active**. |
 
 ## Achievements (engineering and experiments)
 
@@ -1260,10 +1371,13 @@ We have achieved:
 - source-prompt evidence that future-answer information is active before
   an incorrect article (ophthalmologist discovery)—relevant to whether
   some \(C\)-like signal exists before \(b\), not yet to separable edges;
-- held-out fixed-pair, GoF clincher, E1–E4, and Stage XV results that
-  map onto the edge table above;
+- held-out fixed-pair, GoF clincher, E1–E4, Stage XV, and Stage XVI
+  results that map onto the edge table above;
 - an explicit stack decision for pretrained + affine over IT + non-affine
-  for this hypothesis test.
+  for this hypothesis test;
+- a **corrected** fixed-\(b\) / content-on-at-\(c\) within-class null for
+  \(C \rightarrow c\) (closes the Stage XV schedule hole and the
+  phonological “`a` blocks `aviator`” caveat for these handles).
 
 We have not achieved:
 
@@ -1272,9 +1386,11 @@ We have not achieved:
 - proof of H1 (separable \(C \rightarrow B\) and independent \(C \rightarrow c\))
   for any frozen feature set we tried;
 - a pure context-concept (\(A\)) feature set;
-- **within-class noun moves under fixed \(b\)** (the main hole before a
-  harder anti-H1 claim; see above);
-- noun-identity latent probes for plan-then-abandon vs package-reset;
+- residual / full activation-direction content steering beyond sparse CLT
+  features and a lightweight hint-contrast selector;
+- dedicated noun-identity latent probes (pilot vs captain feature
+  contrasts) that would separate plan-then-abandon from package-reset
+  more finely than S2/S3 means + noun logits;
 - proof that H2 is the story at larger scales or in other model
   families—the Latent Planning scale axis is outside our hardware
   envelope;
@@ -1284,11 +1400,13 @@ We have not achieved:
 
 **Claim (scoped).** On this small model, with these intervenable sparse
 features, we **cannot demonstrate independent \(C \rightarrow c\) once
-\(b\) is held fixed**. Noun changes under free intervention track
-\(b \rightarrow c\). That is **strong evidence these mechanisms are not
-modular latent planning (H1)**, and that **article-conditioned packaging
-and/or strong \(b \rightarrow c\) dominates execution** for the handles we
-tested (H2 as an account of *these interventions*).
+\(b\) is held fixed**—including under a corrected protocol that keeps
+content clamps **on** at the noun step and asks for **within-class**
+noun moves. Noun changes under free intervention track \(b \rightarrow c\).
+That is **strong evidence these mechanisms are not modular latent
+planning (H1)**, and that **article-conditioned packaging and/or strong
+\(b \rightarrow c\) dominates execution** for the handles we tested (H2
+as an account of *these interventions*).
 
 **What this is.** A paper-grade challenge to reading Latent-Planning-style
 dual-effect (and related) sparse interventions on Gemma 3 270M as the
@@ -1298,53 +1416,49 @@ for a methods/results paper on misreading article flips.
 **What this is not.** It is **not** a metaphysical refutation of any
 \(C \rightarrow c\) anywhere in the network, nor a claim that the model
 has no causal structure, nor that latent planning is impossible at larger
-scales. We tested specific frozen feature sets (S1/S2/S3/controls), not
-all of activation space. *Latent Planning Emerges with Scale* already
-places reliable a/an success at much larger models; our contribution is
-to show why article-moving sparse interventions here are easy to
-**misread** as modular planning if \(b \rightarrow c\) and content identity
-are not tested as separate edges.
+scales. We tested specific frozen feature sets (S1/S2/S3/controls/hint
+contrast), not all of activation space. *Latent Planning Emerges with
+Scale* already places reliable a/an success at much larger models; our
+contribution is to show why article-moving sparse interventions here are
+easy to **misread** as modular planning if \(b \rightarrow c\) and content
+identity are not tested as separate edges.
 
 **One-sentence bottom line for readers:** holding the article fixed
-abolishes noun change under these interventions; therefore free noun
-change is not evidence of independent content causation for these
-features.
+abolishes noun change under these interventions—even when content clamps
+stay on and the target noun is within-class; therefore free noun change
+is not evidence of independent content causation for these features.
 
 ## What is still missing (before we can state the claim more forcefully)
 
-The scoped claim above is already supported by Stage XV + E1–E3. Two
-gaps still limit how hard we can push it:
+The scoped claim above is now supported by Stage XV + Stage XVI + E1–E3.
+The **within-class / schedule hole is closed** for these sparse handles.
+What still limits a harder claim:
 
-1. **Within-class noun tests under fixed \(b\)** *(highest priority).*
-   Pasting native `a` and failing to get `aviator` may partly reflect
-   English phonology (\(b \rightarrow c\) blocking vowel-initial nouns),
-   not absence of \(C \rightarrow c\). To close that hole we need
-   interventions that try to change the noun **while staying inside the
-   article’s legal class**, for example:
-   - paste native `a`, then turn content-related features up/down and ask
-     whether \(c\) moves among consonant-initial occupations
-     (`pilot` ↔ `farmer`, `lawyer` ↔ `teacher`, …);
-   - paste `an` (or a vowel-licensing article), then ask whether \(c\)
-     moves among vowel-initial occupations.
-   If those also fail across content-targeted handles, the
-   “no independent \(C \rightarrow c\) for these features” claim becomes
-   much harder to dismiss as a grammar artifact.
+1. **Broader content handles.** We still lack residual patching and
+   true per-noun attribution-graph feature selection for every twin
+   family (Stage XVI’s contrast selector is a graph-free fallback). A
+   positive \(C \rightarrow c\) dial could exist outside E1 S3 / this
+   contrast rule.
 
-2. **Latent content identity at article time and after paste-native \(b\).**
-   Written tokens only show execution. A content plan could rise under
-   S1 and then be abandoned when `a` is pasted. Noun-identity or
-   class probes (pilot vs aviator features) at (i) the article step under
-   intervention and (ii) the noun step after paste-native \(b\) would
-   distinguish packaging-with-reset from plan-then-abandon. That does not
-   weaken the scoped claim about *execution*, but it is required before
-   claiming there was never a latent content code.
+2. **Finer latent content identity.** Written tokens and coarse S2/S3
+   means only show execution plus set-level amplitude. Dedicated
+   noun-identity probes (pilot vs captain / aviator) at (i) the article
+   step under intervention and (ii) the noun step after paste-native
+   \(b\) would distinguish packaging-with-reset from plan-then-abandon
+   more sharply. That does not weaken the scoped claim about
+   *execution*, but it is required before claiming there was never a
+   latent content code.
 
-Until (1) is run, collaborators should read our interim claim as:
-**strong against modular H1 for these interventions’ free-generation
-behavior; not yet maximally strong against every phonological caveat.**
-Until (2) is run, we should not claim latent absence of content plans—only
-absence of demonstrated independent causal control of executed \(c\) with
-\(b\) fixed.
+3. **Pure \(A\) and \(A \rightarrow C\).** Still untested as causal
+   interventions.
+
+Collaborators should read the interim claim as: **strong against modular
+H1 for these interventions’ free-generation and fixed-\(b\) execution
+behavior**, including the phonological caveat for within-class targets.
+Until finer latent probes and broader handles are run, we should not
+claim latent absence of all content plans—only absence of demonstrated
+independent causal control of executed \(c\) with \(b\) fixed for the
+handles we tested.
 
 ## Other achievements and open engineering gaps
 
@@ -1371,6 +1485,7 @@ The reports and machine-readable outputs are organized by experiment:
 | Ophthalmologist reclassify (E6) | `experiments/ophthalmologist_it_reclassify/` |
 | Domain transfer (E5) | `experiments/domain_transfer_aan/` |
 | Selective \(b\)-step + force-native article | `experiments/selective_bc_force_native/` |
+| Fixed \(b\), content-on-at-\(c\) within-class (N0–N4) | `experiments/causal_edge_independence/` |
 | Paper execution contract | `experiments/PAPER_EXPERIMENTS.md` |
 
 Each experiment directory contains a human-readable `results/report.md`,
