@@ -1,0 +1,88 @@
+{
+  "experiment_name": "causal_edge_independence",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "batch_size": 32,
+  "max_feature_nodes": 1600,
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "control_feature_count": 4,
+  "amplify_factors": [5.0, 8.0],
+  "control_seed": 17,
+  "max_new_tokens": 4,
+  "contrast_top_k": 4,
+  "contrast_layers": [11, 12, 13, 14],
+  "e1_selection_path": "../selection_criterion_ablation/results/selection.json",
+  "families": [
+    {
+      "id": "aircraft",
+      "sentence": "Someone who flies airplanes is",
+      "native_article": "a",
+      "source_word": "pilot",
+      "same_class_word": "captain",
+      "cross_class_word": "aviator"
+    },
+    {
+      "id": "legal",
+      "sentence": "Someone who represents clients in legal matters is",
+      "native_article": "a",
+      "source_word": "lawyer",
+      "same_class_word": "barrister",
+      "cross_class_word": "attorney"
+    },
+    {
+      "id": "physics",
+      "sentence": "Someone who studies matter and energy is",
+      "native_article": "a",
+      "source_word": "physicist",
+      "same_class_word": "scientist",
+      "cross_class_word": "astronomer"
+    },
+    {
+      "id": "photography",
+      "sentence": "Someone who takes professional pictures is",
+      "native_article": "a",
+      "source_word": "photographer",
+      "same_class_word": "painter",
+      "cross_class_word": "artist"
+    },
+    {
+      "id": "psychology",
+      "sentence": "Someone who studies human behavior and mental processes is",
+      "native_article": "a",
+      "source_word": "psychologist",
+      "same_class_word": "therapist",
+      "cross_class_word": "anthropologist"
+    },
+    {
+      "id": "geology",
+      "sentence": "Someone who studies rocks and earth formations is",
+      "native_article": "a",
+      "source_word": "geologist",
+      "same_class_word": "scientist",
+      "cross_class_word": "archaeologist"
+    },
+    {
+      "id": "architecture",
+      "sentence": "Someone who designs buildings and structures is",
+      "native_article": "an",
+      "source_word": "architect",
+      "same_class_word": "engineer",
+      "cross_class_word": "builder"
+    },
+    {
+      "id": "accounting",
+      "sentence": "Someone who manages financial records is",
+      "native_article": "an",
+      "source_word": "accountant",
+      "same_class_word": "auditor",
+      "cross_class_word": "bookkeeper"
+    }
+  ]
+}
