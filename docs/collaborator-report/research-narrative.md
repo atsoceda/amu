@@ -77,11 +77,13 @@ Our current claim is therefore:
 > *In Gemma 3 270M (pretrained), sparse features that look like
 > “planning” features under article-only metrics behave as packaged
 > \(\{B,C\}\) controls (Hypothesis H2), not as an editable modular graph
-> (Hypothesis H1). Holding the article fixed abolishes noun change under
-> these interventions; free noun change tracks \(b \rightarrow c\).
-> Article movement alone is not evidence of content-preserving latent
-> planning unless the H1 edges—especially independent \(C \rightarrow c\)
-> with \(b\) fixed—are demonstrated.*
+> (Hypothesis H1). With these intervenable features we cannot demonstrate
+> independent \(C \rightarrow c\) once \(b\) is held fixed; free noun
+> change tracks \(b \rightarrow c\). That is strong evidence these
+> mechanisms are not modular latent planning and that
+> article-conditioned packaging (or strong \(b \rightarrow c\)) dominates
+> execution—without yet being a refutation of every \(C \rightarrow c\)
+> somewhere in the network (Section 11).*
 
 This is a publishable *mechanistic* claim relative to the Latent Planning
 task family on this model, not a claim about all scales or all
@@ -871,6 +873,9 @@ context). Therefore:
 > If no intervention on content-related features can pass that test, that
 > is strong evidence against a usable independent \(C \rightarrow c\) for
 > those features—and thus against reading them as modular H1 planning.
+> (Caveat and next experiment: within-class noun tests under fixed \(b\),
+> Section 11—so failure is not dismissed as “`a` merely blocks
+> `aviator`.”)
 
 *Latent Planning* already notes that small models fail behaviorally and
 may have only nascent mechanisms. Our sharpened question is sharper
@@ -1184,11 +1189,20 @@ content-preserving `an` repairs. Controls remained near baseline.
 
 ### Conclusion of Stage XV
 
-H1 remains **testable in principle**, but on these frozen feature sets and
-prompts it is **not supported**. The selective paste-native-\(b\) protocol
-strengthens H2 for these interventions: free S1 generation class-switches;
-holding \(b\) fixed abolishes noun change; S3 does not supply modular
-\(C \rightarrow B\).
+**Emphatic result.** With these intervenable sparse features, we cannot
+demonstrate independent \(C \rightarrow c\) once \(b\) is held fixed.
+Free S1 generation class-switches (`a pilot` → `an aviator`); pasting
+native \(b\) restores native \(c\); S3 does not supply modular
+\(C \rightarrow B\). Noun changes under free intervention track
+\(b \rightarrow c\). That is strong evidence these mechanisms are **not**
+H1 modular latent planning, and that article-conditioned packaging and/or
+strong \(b \rightarrow c\) dominates **execution** for the handles we
+tested.
+
+This challenges the modular graph **as an account of our interventions**.
+It does not yet refute every possible \(C \rightarrow c\) in the full
+network (see Section 11 for the remaining within-class and latent-probe
+holes).
 
 ## 10.12 Current hypothesis (after Stages VIII–XV)
 
@@ -1258,35 +1272,81 @@ We have not achieved:
 - proof of H1 (separable \(C \rightarrow B\) and independent \(C \rightarrow c\))
   for any frozen feature set we tried;
 - a pure context-concept (\(A\)) feature set;
-- noun-identity latent probes that could still detect an “abandoned”
-  content plan after pasting native \(b\) (tokens only show execution);
+- **within-class noun moves under fixed \(b\)** (the main hole before a
+  harder anti-H1 claim; see above);
+- noun-identity latent probes for plan-then-abandon vs package-reset;
 - proof that H2 is the story at larger scales or in other model
   families—the Latent Planning scale axis is outside our hardware
   envelope;
 - a complete necessity story from zero-ablation alone on twin baselines.
 
-## Interim paper-strong conclusion
+## Interim paper-strong claim (stated as in our internal reasoning)
 
-For Latent-Planning-style and content-oriented sparse interventions on
-**this** model, **holding the article fixed abolishes noun change**; free
-noun change tracks article change. That is strong evidence these
-interventions do **not** implement modular \(C \rightarrow c\) independent
-of \(b \rightarrow c\), and therefore should **not** be read as confirming
-the separable planning graph (H1) for these features.
+**Claim (scoped).** On this small model, with these intervenable sparse
+features, we **cannot demonstrate independent \(C \rightarrow c\) once
+\(b\) is held fixed**. Noun changes under free intervention track
+\(b \rightarrow c\). That is **strong evidence these mechanisms are not
+modular latent planning (H1)**, and that **article-conditioned packaging
+and/or strong \(b \rightarrow c\) dominates execution** for the handles we
+tested (H2 as an account of *these interventions*).
 
-Equivalently: among the handles we can turn up and down, we have not
-demonstrated independence of the H1 edges that would make “planning
-features” mean an editable wrapper around a fixed content plan. What we
-*have* demonstrated is package-like control plus a real \(b \rightarrow c\)
-confounder—i.e., support for H2 as an account of **these interventions**.
+**What this is.** A paper-grade challenge to reading Latent-Planning-style
+dual-effect (and related) sparse interventions on Gemma 3 270M as the
+separable modular graph. It is the right emphasis for collaborators and
+for a methods/results paper on misreading article flips.
 
-This is a **mechanistic / methodological** conclusion, not a claim that
-Gemma 3 270M has no causal structure anywhere, nor that latent planning
-is impossible at larger scales. *Latent Planning Emerges with Scale*
-already places reliable a/an success at much larger models; our
-contribution is to show why article-moving sparse interventions on a
-small model are easy to **misread** as modular planning if \(b \rightarrow c\)
-and content identity are not tested as separate edges.
+**What this is not.** It is **not** a metaphysical refutation of any
+\(C \rightarrow c\) anywhere in the network, nor a claim that the model
+has no causal structure, nor that latent planning is impossible at larger
+scales. We tested specific frozen feature sets (S1/S2/S3/controls), not
+all of activation space. *Latent Planning Emerges with Scale* already
+places reliable a/an success at much larger models; our contribution is
+to show why article-moving sparse interventions here are easy to
+**misread** as modular planning if \(b \rightarrow c\) and content identity
+are not tested as separate edges.
+
+**One-sentence bottom line for readers:** holding the article fixed
+abolishes noun change under these interventions; therefore free noun
+change is not evidence of independent content causation for these
+features.
+
+## What is still missing (before we can state the claim more forcefully)
+
+The scoped claim above is already supported by Stage XV + E1–E3. Two
+gaps still limit how hard we can push it:
+
+1. **Within-class noun tests under fixed \(b\)** *(highest priority).*
+   Pasting native `a` and failing to get `aviator` may partly reflect
+   English phonology (\(b \rightarrow c\) blocking vowel-initial nouns),
+   not absence of \(C \rightarrow c\). To close that hole we need
+   interventions that try to change the noun **while staying inside the
+   article’s legal class**, for example:
+   - paste native `a`, then turn content-related features up/down and ask
+     whether \(c\) moves among consonant-initial occupations
+     (`pilot` ↔ `farmer`, `lawyer` ↔ `teacher`, …);
+   - paste `an` (or a vowel-licensing article), then ask whether \(c\)
+     moves among vowel-initial occupations.
+   If those also fail across content-targeted handles, the
+   “no independent \(C \rightarrow c\) for these features” claim becomes
+   much harder to dismiss as a grammar artifact.
+
+2. **Latent content identity at article time and after paste-native \(b\).**
+   Written tokens only show execution. A content plan could rise under
+   S1 and then be abandoned when `a` is pasted. Noun-identity or
+   class probes (pilot vs aviator features) at (i) the article step under
+   intervention and (ii) the noun step after paste-native \(b\) would
+   distinguish packaging-with-reset from plan-then-abandon. That does not
+   weaken the scoped claim about *execution*, but it is required before
+   claiming there was never a latent content code.
+
+Until (1) is run, collaborators should read our interim claim as:
+**strong against modular H1 for these interventions’ free-generation
+behavior; not yet maximally strong against every phonological caveat.**
+Until (2) is run, we should not claim latent absence of content plans—only
+absence of demonstrated independent causal control of executed \(c\) with
+\(b\) fixed.
+
+## Other achievements and open engineering gaps
 
 # Reproducibility map
 
