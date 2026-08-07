@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Rebuild the collaborator DOCX from experiment summaries + polished Markdown.
+#
+# Prerequisites:
+#   - experiments/*/results/summary.json for the figure sources
+#     (see docs/collaborator-report/generate_figures.py)
+#   - docs/collaborator-report/research-narrative.md
+#   - pandoc on PATH
+#   - optional: docs/collaborator-report/styles-reference.docx (Word styles)
+#
+# Usage: bin/build-collaborator-report
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+REPORT="$ROOT/docs/collaborator-report"
+PY="${PYTHON:-/Users/anthony/miniconda3/bin/python}"
+
+if ! command -v pandoc >/dev/null 2>&1; then
+  echo "pandoc not found on PATH" >&2
+  exit 1
+fi
+if [[ ! -x "$PY" ]]; then
+  PY="$(command -v python3)"
+fi
+
+cd "$REPORT"
+echo "=== generating figures 1–7 from experiment summaries ==="
+"$PY" generate_figures.py
+echo "=== building DOCX via Pandoc ==="
+"$PY" build_docx.py
+echo "Done: $REPORT/collaborator-report-v3.docx"

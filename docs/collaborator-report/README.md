@@ -1,20 +1,40 @@
 # Collaborator report build
 
-## Source of truth
+Rebuild the full collaborator DOCX from **experiment result summaries** plus the
+**polished Markdown writeup**. Checked-in PNGs are outputs, not sources.
 
-- Narrative: [`research-narrative.md`](research-narrative.md)
-- Existing figures 1–3: [`figures/figure1_article_recall.png`](figures/figure1_article_recall.png), [`figure2_source_intervention.png`](figures/figure2_source_intervention.png), [`figure3_generalization.png`](figures/figure3_generalization.png)
-- New figures 4–7: regenerate from experiment summaries with [`generate_figures.py`](generate_figures.py)
-- Style reference DOCX (manual collaborator edits): `From Stalling to Coordinated Preparation–Content Control in Gemma 3 270M — Revised for Collaborators.docx`
+## Inputs
 
-## Rebuild
+| Input | Role |
+| --- | --- |
+| [`research-narrative.md`](research-narrative.md) | Polished prose (source of truth for text/equations) |
+| `experiments/*/results/summary.json` | Raw result tables for figures 1–7 |
+| [`styles-reference.docx`](styles-reference.docx) | Word styles only (optional; Pandoc defaults if missing) |
+
+Figure → experiment map (see [`generate_figures.py`](generate_figures.py)):
+
+1. `a_an_majority_baseline`, `a_an_full_dataset_screen`
+2. `ophthalmologist_competing_pathway_screen`
+3. `fixed_pair_generalization`
+4. `selection_criterion_ablation`
+5. `planning_dose_response`
+6. `forced_content_lock`
+7. `trajectory_causal_tetrad`
+
+## One-command rebuild
 
 ```bash
-cd /Users/anthony/repos/amu/docs/collaborator-report
+bin/build-collaborator-report
+```
+
+Or the two steps:
+
+```bash
+cd docs/collaborator-report
 /Users/anthony/miniconda3/bin/python generate_figures.py
 /Users/anthony/miniconda3/bin/python build_docx.py
 ```
 
-Output: `collaborator-report-v3.docx` (and a convenience copy under `build/`, which is gitignored)
+Output: [`collaborator-report-v3.docx`](collaborator-report-v3.docx) (copy also under `build/`, gitignored).
 
-The build uses Pandoc so `$$...$$` equations become Word math (`<m:oMath>`), and embeds figures from `figures/`.
+Pandoc turns `$$...$$` / `\(...\)` into Word math (`<m:oMath>`) and embeds the regenerated figures.
