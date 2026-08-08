@@ -1,5 +1,7 @@
 \appendix
 
+\section*{Appendix}
+
 \section{Bridge from mismatch discovery to packaging}
 \label{sec-app-bridge}
 
@@ -66,3 +68,24 @@ S3. Per-noun Stage~XVII selects top-4 features per family by target direct
 effect (and by target--source contrast) subject to
 \(|\mathrm{DE}(a/an)|\le 0.05\). Residual Stage~XVIII unit-normalizes
 per-layer MLP-in differences before scaling by \(\alpha\).
+
+\section{Per-noun fixed-\texorpdfstring{\(b\)}{b} null (Stage XVII)}
+\label{app:pernoun}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{docs/collaborator-report/figures/figure10_per_noun_fixed_b.png}
+\caption{Per-noun LP-style and contrast features under fixed \(b\):
+within-class outcomes remain zero; same-class nouns stay \(\sim 5\) logits
+below source. Visually parallel to the main-text fixed-\(b\) null
+(Figure~\ref{fig-fixed-b}); rates are summarized in
+Table~\ref{tbl-escape}.}
+\label{fig-pernoun}
+\end{figure}
+
+For completeness we include the Stage~XVII plot. Binary within-class
+outcomes are exactly zero across LP-target, contrast, and control
+amplify/zero arms on the three twin families; the same-class logit gap
+stays near \(-5\). The main text reports these rates in
+Table~\ref{tbl-escape} and emphasizes the residual construction instead,
+to avoid stacking two near-identical null panels across a page break.

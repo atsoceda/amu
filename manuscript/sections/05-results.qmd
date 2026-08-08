@@ -118,6 +118,10 @@ content dial.
 
 ![Corrected fixed-\(b\) assay: binary within-class outcomes are all zero; same-class nouns stay ~5 logits below source.](docs/collaborator-report/figures/figure9_fixed_b_content_on.png){#fig-fixed-b width=80%}
 
+```{=latex}
+\clearpage
+```
+
 ## Escape hatches: per-noun sparse features and residual directions
 
 A modular defender might blame the wrong sparse objects. We therefore
@@ -125,25 +129,37 @@ A modular defender might blame the wrong sparse objects. We therefore
 same-class target (positive target attribution, low article attribution;
 plus target$-$source contrast) and (ii)~steer a dense MLP-in residual
 direction toward the same-class noun. Both use the same fixed-\(b\),
-content-on schedule on three twin families (@tbl-escape;
-@fig-pernoun; @fig-residual).
+content-on schedule on three twin families. The per-noun sparse null is
+the same all-zero pattern as @fig-fixed-b (Appendix~D); the residual
+construction is shown below, with both assays summarized in the following
+table.
 
-| Handle | Best \(c\to c\) | Best \(\Delta\Delta\)(same$-$src) |
-| --- | ---: | ---: |
-| Per-noun LP-target / contrast (amp \(5\times\)--\(8\times\)) | 0.00 | \(+0.29\) |
-| Residual content steer \(\alpha=1\)--\(8\) | 0.00 | \(\approx 0.08\) |
-| Residual random control \(\alpha=1\)--\(8\) | 0.00 | \(\approx 0.15\) |
+```{=latex}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.88\linewidth]{docs/collaborator-report/figures/figure11_residual_fixed_b.png}
+\caption{Dense residual (MLP-in) content steering under fixed \(b\):
+within-class outcomes remain zero for content and random directions.}
+\label{fig-residual}
+\end{figure}
 
-: Escape-hatch assays under fixed \(b\). Neither per-noun sparse selection
-nor residual MLP-in steering opens a within-class dial; residual content
-steering does not beat random controls.
-{#tbl-escape}
-
-Every force-on continuation remained on the baseline noun
-(`pilot`/`lawyer`/`psychologist`). Per-noun sparse selection does not
-open a dial (@fig-pernoun); residual content steering does not beat
-matched-norm random controls (@fig-residual).
-
-![Per-noun LP-style and contrast features under fixed \(b\): within-class outcomes remain zero; same-class nouns stay ~5 logits below source.](docs/collaborator-report/figures/figure10_per_noun_fixed_b.png){#fig-pernoun width=80%}
-
-![Dense residual (MLP-in) content steering under fixed \(b\): within-class outcomes remain zero for content and random directions.](docs/collaborator-report/figures/figure11_residual_fixed_b.png){#fig-residual width=82%}
+\begin{table}[h!]
+\centering
+\caption{Escape-hatch assays under fixed \(b\). Neither per-noun sparse
+selection nor residual MLP-in steering opens a within-class dial;
+residual content steering does not beat random controls. Every force-on
+continuation remained on the baseline noun
+(\texttt{pilot}/\texttt{lawyer}/\texttt{psychologist}).}
+\label{tbl-escape}
+\small
+\begin{tabular}{lcc}
+\toprule
+Handle & Best \(c\to c\) & Best \(\Delta\Delta\)(same$-$src) \\
+\midrule
+Per-noun LP-target / contrast (amp \(5\times\)--\(8\times\)) & 0.00 & \(+0.29\) \\
+Residual content steer \(\alpha=1\)--\(8\) & 0.00 & \(\approx 0.08\) \\
+Residual random control \(\alpha=1\)--\(8\) & 0.00 & \(\approx 0.15\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
