@@ -10,16 +10,23 @@ feature IDs are for the PT+affine stack.
 
 **Task.** Latent-Planning-style occupation prompts of the form
 ``Someone who \ldots\ is'' with a fixed one-shot demonstration.
-Baselines strongly prefer majority \(a\).
+Baselines strongly prefer majority \(a\). Early mismatch discovery and
+the held-out transfer that first broke a wrapper reading are summarized
+in Appendix~A; the main text starts from packaging assays on
+held-out occupations.
 
-**Feature families.** From attribution graphs on selection occupations we
-construct: **S1** dual-effect (joint article and future-content
-attribution); **S2** article-ish; **S3** content-ish (future-content
-attribution with low article direct effect); activation-matched
-**controls**; and later **per-noun** Latent-Planning-style features for a
-same-class target with low \(|\mathrm{attr}(a/an)|\). Interventions are
-amplify (\(5\times\)--\(8\times\) prompt-specific activation) or zero at
-position \(P\).
+**Feature families.** From attribution graphs on eight selection
+occupations (disjoint from the free-generation test set) we construct
+\(k{=}4\) feature sets: **S1** dual-effect (positive direct effect on
+`an` *and* on the future noun); **S2** article-ish (positive on `an`,
+near-zero on future content); **S3** content-ish (positive on future
+content, near-zero on `an`); **S4** competing / `a`-favoring.
+Activation-matched random controls match mean activation of the
+intervened set. Later assays add **per-noun** Latent-Planning-style
+features for a same-class target with low \(|\mathrm{attr}(a/an)|\), and
+hint-contrast sets. Default free-generation interventions amplify
+\(5\times\) prompt-specific activation at \(P\); dose sweeps use
+\(\{1.5,2,3,5,8\}\times\).
 
 **Dense residual steer.** As a dictionary-completeness check we build
 unit MLP-in directions
@@ -30,8 +37,8 @@ direction at \(P\) under the fixed-\(b\) protocol, versus matched-norm
 random controls.
 
 **Held-out sets.** Free-generation packaging results use \(N{=}20\)
-held-out occupations including twin pairs. Fixed-\(b\) within-class assays
-use eight families (Stage~XVI) or three twin families shared by the
-per-noun and residual experiments (Stages~XVII--XVIII). Full prompts,
-feature IDs, and machine-readable summaries are released in the
-accompanying code.
+held-out occupations including twin pairs (`pilot`/`aviator`,
+`lawyer`/`attorney`, \ldots). Fixed-\(b\) within-class assays use eight
+families (Stage~XVI) or three twin families shared by the per-noun and
+residual experiments (Stages~XVII--XVIII). Full prompts, feature IDs,
+and machine-readable summaries are released in the accompanying code.

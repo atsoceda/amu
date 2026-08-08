@@ -3,22 +3,24 @@
 **What the surprise is.** The interesting finding is not that a 270M
 model fails the behavioral \(a\)/\(an\) demo---@hanna2026latent already
 place reliable success at larger scales. The surprise is the
-**juxtaposition** inside editable mechanisms: the same sparse features
-that cleanly switch legal packages under free generation still fail as
-independent content dials once \(b\) is held fixed, even after within-class
-targets, per-noun Latent-Planning-style selection, and a dense residual
-steer. Packaging and \(b\to c\) are easy to move; modular
-\(C\to c\) is not.
+**juxtaposition** inside editable mechanisms. Dual-effect features are
+easy to move as *packages*: selection ablation, dose--response, dual
+lock, and twin tetrads all agree that free generation yields legal
+article--noun switches rather than content-preserving wrappers. The same
+handles---plus Latent-Planning-style per-noun features and a dense
+residual MLP-in steer---still fail as independent content dials once
+\(b\) is held fixed with content interventions kept on. Packaging and
+\(b\to c\) are easy to edit; modular \(C\to c\) is not.
 
 **Methodological implication.** Article-only attribution and free
 generation overstate modular planning whenever noun changes can be
-explained by \(b\to c\). Edge tests that paste native \(b\)
-**while keeping content edits active** should be standard before claiming
-separable forward/backward planning from feature interventions.
+explained by \(b\to c\). Edge tests that paste native \(b\) while keeping
+content edits active, and that score within-class rewrites rather than
+any noun change, should be standard before claiming separable
+forward/backward planning from feature interventions.
 
 **Relation to Latent Planning.** We do not claim their large-model
-results are wrong, nor that latent planning is impossible. We claim that
-on this small model, dual-effect / content-attributed interventions are
-better explained as H2 packagers than as H1 modular planners, and that
-the independent-content edge required by a strong modular reading is
-missing from the handles we could edit.
+results are wrong, nor that latent planning is impossible. On this small
+model, dual-effect / content-attributed interventions are better explained
+as H2 packagers than as H1 modular planners: what is editable does not
+decompose into independent \(C\to c\).

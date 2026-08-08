@@ -1,5 +1,30 @@
 \appendix
 
+\section{Bridge from mismatch discovery to packaging}
+\label{sec-app-bridge}
+
+Early stages asked whether a sparse feature pair could repair a
+grammatical mismatch while preserving planned content. On a source prompt
+of the form ``Someone who treats eye diseases is,'' suppressing a
+competing feature pair crossed the decision boundary from majority
+\texttt{a} toward \texttt{an} while preserving \texttt{ophthalmologist}
+on that prompt. The held-out transfer of the same frozen pair did
+\emph{not} behave as a content-preserving grammar tool: many expected-\texttt{a}
+controls flipped toward \texttt{an}, and content words changed on 37/107
+prompts, with zero grammar-only repairs that kept the noun fixed
+(Figure~\ref{fig-generalization} in the main text).
+
+That failure sharpened the question from ``can we fix articles?'' to
+``do Latent-Planning-style dual-effect interventions implement modular
+\(C\rightarrow B\) with independent \(C\rightarrow c\), or only packages
+plus \(b\rightarrow c\)?'' Behavioral article-recall baselines on this
+270M stack strongly prefer majority \texttt{a}; reliable \texttt{an}
+when required by listed targets is rare---consistent with
+\citet{hanna2026latent}'s scale story, and the reason we focus on
+\emph{editable} mechanisms rather than behavioral demos. Subsequent main-text
+assays (selection ablation, dose--response, dual lock, tetrad, paste-native
+\(b\), and fixed-\(b\) content-on nulls) answer that sharpened question.
+
 \section{Reproducibility map}
 \label{app:reproducibility}
 
@@ -8,6 +33,7 @@ Experiment directories under \texttt{experiments/} contain
 \texttt{results/report.md}. Key stages:
 
 \begin{center}
+\small
 \begin{tabular}{ll}
 \toprule
 Stage & Directory \\
@@ -15,6 +41,9 @@ Stage & Directory \\
 Fixed-pair held-out transfer & \texttt{fixed\_pair\_generalization/} \\
 GoF packaging clincher & \texttt{planning\_gain\_content\_clincher/} \\
 Selection-criterion ablation (S1--S4) & \texttt{selection\_criterion\_ablation/} \\
+Dose--response & \texttt{planning\_dose\_response/} \\
+Forced content-lock / dual & \texttt{forced\_content\_lock/} \\
+Causal tetrad on twins & \texttt{trajectory\_causal\_tetrad/} \\
 Selective \(b\)-step + force-native & \texttt{selective\_bc\_force\_native/} \\
 Fixed \(b\), content-on-at-\(c\) & \texttt{causal\_edge\_independence/} \\
 Per-noun LP-style under fixed \(b\) & \texttt{per\_noun\_fixed\_b\_c\_to\_c/} \\
