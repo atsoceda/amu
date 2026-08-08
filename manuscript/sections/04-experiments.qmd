@@ -1,3 +1,37 @@
-# Experiments
+# Experimental setup
 
-Add experiment setup, datasets, prompts, and evaluation details here.
+**Model stack.** Primary results use pretrained `google/gemma-3-270m` with
+Gemma Scope~2 PT CLT `width_262k_l0_medium_affine` and the `nnsight`
+backend [@gemma3; @gemmascope2]. We prefer pretrained+affine over
+instruction-tuned stacks for this task: Appendix~J of @hanna2026latent
+finds base models slightly stronger on \(a\)/\(an\), and Hub IT
+`medium_affine` layer~0 was unavailable in our setup. All reported
+feature IDs are for the PT+affine stack.
+
+**Task.** Latent-Planning-style occupation prompts of the form
+``Someone who \ldots\ is'' with a fixed one-shot demonstration.
+Baselines strongly prefer majority \(a\).
+
+**Feature families.** From attribution graphs on selection occupations we
+construct: **S1** dual-effect (joint article and future-content
+attribution); **S2** article-ish; **S3** content-ish (future-content
+attribution with low article direct effect); activation-matched
+**controls**; and later **per-noun** Latent-Planning-style features for a
+same-class target with low \(|\mathrm{attr}(a/an)|\). Interventions are
+amplify (\(5\times\)--\(8\times\) prompt-specific activation) or zero at
+position \(P\).
+
+**Dense residual steer.** As a dictionary-completeness check we build
+unit MLP-in directions
+\(\mathrm{mlp\_in}(\texttt{Think of a \{target\}.}\,p)
+-\mathrm{mlp\_in}(\texttt{Think of a \{source\}.}\,p)\)
+at layers \(\{8,10,12,14\}\) and add \(\alpha\in\{1,2,4,8\}\) times the
+direction at \(P\) under the fixed-\(b\) protocol, versus matched-norm
+random controls.
+
+**Held-out sets.** Free-generation packaging results use \(N{=}20\)
+held-out occupations including twin pairs. Fixed-\(b\) within-class assays
+use eight families (Stage~XVI) or three twin families shared by the
+per-noun and residual experiments (Stages~XVII--XVIII). Full prompts,
+feature IDs, and machine-readable summaries are released in the
+accompanying code.

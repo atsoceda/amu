@@ -1,3 +1,27 @@
-# Background
+# Background and related work
 
-Add related work and technical background here.
+**Latent planning.** @hanna2026latent define latent planning as internal
+representations that (i)~cause a specific future token or concept
+(forward planning) and (ii)~shape preceding context to license it
+(backward planning). On \(a\)/\(an\) tasks they report that reliable
+behavioral success emerges mainly at larger scales; small models fail
+often yet can host nascent mechanisms. Our work does not dispute that
+scale story. We ask a sharper local question: when sparse interventions
+on a *small* model *do* move articles, do they implement the separable
+modular graph implied by the verbal definition, or only packages plus
+\(b\!\rightarrow\!c\)?
+
+**Feature circuits.** Attribution graphs over sparse autoencoders /
+transcoders estimate causal contributions among features and logits
+[@ameisen2025attribution; @lindsey2025biology; @dunefsky2024transcoders;
+@marks2025sparse]. We use `circuit-tracer` with Gemma Scope~2
+cross-layer transcoders [@hanna2025circuittracer; @gemmascope2] to select
+features and intervene. Affine skip connections improve reconstruction
+but allow MLP computation to bypass sparse features; we therefore also
+test a dense residual steer at the MLP-in site.
+
+**Steering and confounds.** Activation steering and feature clamping are
+standard tools for testing sufficiency. Our contribution is not a new
+steering operator but a confound analysis: article-conditioned generation
+confounds content causation unless \(b\) is held fixed *while* content
+edits remain active.

@@ -1,0 +1,39 @@
+\appendix
+
+\section{Reproducibility map}
+\label{app:reproducibility}
+
+Experiment directories under \texttt{experiments/} contain
+\texttt{config.json}, \texttt{run.py}, \texttt{results/summary.json}, and
+\texttt{results/report.md}. Key stages:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Stage & Directory \\
+\midrule
+Fixed-pair held-out transfer & \texttt{fixed\_pair\_generalization/} \\
+GoF packaging clincher & \texttt{planning\_gain\_content\_clincher/} \\
+Selection-criterion ablation (S1--S4) & \texttt{selection\_criterion\_ablation/} \\
+Selective \(b\)-step + force-native & \texttt{selective\_bc\_force\_native/} \\
+Fixed \(b\), content-on-at-\(c\) & \texttt{causal\_edge\_independence/} \\
+Per-noun LP-style under fixed \(b\) & \texttt{per\_noun\_fixed\_b\_c\_to\_c/} \\
+Residual MLP-in under fixed \(b\) & \texttt{residual\_direction\_fixed\_b\_c\_to\_c/} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Environment: conda Python with PyPI \texttt{circuit-tracer}; model and
+transcoder snapshots as recorded in each \texttt{config.json}. Experiments
+ran on one Apple M1 (16~GB RAM) workstation with CPU inference; attribution
+runs dominate wall-clock time (typically tens of minutes per graph).
+
+\section{Additional selection details}
+\label{app:selection}
+
+S1--S3 are selected from intersection of article and future-content
+attribution graphs at position \(P\), with article direct-effect bounds for
+S3. Per-noun Stage~XVII selects top-4 features per family by target direct
+effect (and by target--source contrast) subject to
+\(|\mathrm{DE}(a/an)|\le 0.05\). Residual Stage~XVIII unit-normalizes
+per-layer MLP-in differences before scaling by \(\alpha\).

@@ -1,3 +1,14 @@
 # Limitations
 
-Add limitations here.
+Our claim is scoped to Gemma~3 270M, the PT+affine Gemma Scope~2 CLT
+dictionary, occupation \(a\)/\(an\) prompts, and the interventions we
+ran. We did not isolate a pure context concept \(A\), nor run dedicated
+latent noun-identity probes that would separate a latent
+plan-then-abandon story from a package-reset story beyond executed
+tokens and coarse set means.
+Stage~XVIII tests one standard hint-contrast residual construction at
+MLP-in layers; other dense sites remain possible in principle. Scale and
+model-family generalization are outside our local compute envelope.
+Affine skip means sparse interventions need not exhaust MLP computation;
+the residual null reduces but does not metaphysically eliminate that
+concern for every conceivable patch.

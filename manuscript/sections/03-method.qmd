@@ -1,8 +1,52 @@
-# Method
+# Causal setup
 
-Add the method description here. Inline math should use \(x_\ell\), and display
-math should use block equations:
+## Tokens, concepts, and edges
 
-$$
-x_{\ell+1} = x_\ell + \mathrm{Attn}_\ell(x_\ell) + \mathrm{MLP}_\ell(x_\ell).
-$$
+Let \(a\) be the prompt-final context, \(b\in\{\texttt{a},\texttt{an}\}\)
+the article, and \(c\) the first content noun token. Write \(A,B,C\) for
+corresponding internal concepts. Two graphs organize the debate.
+
+**H1 (modular planning).** Separable edges
+\(A\!\rightarrow\!C\!\rightarrow\!B\!\rightarrow\!b\) with an independent
+content edge \(C\!\rightarrow\!c\). Success would include flipping \(b\)
+while preserving planned content identity, or rewriting \(c\) among
+same-article-class synonyms with \(b\) held fixed.
+
+**H2 (packager / compiled trajectory).** Article preference and
+noun-initial class are fused: intervening on dual-effect features selects
+legal packages such as \(\{\texttt{a},\mathit{pilot}\}\) versus
+\(\{\texttt{an},\mathit{aviator}\}\), with a real confounder
+\(b\!\rightarrow\!c\).
+
+Under free generation, \(c\) has two parents on H1: \(C\) and \(b\).
+Therefore noun change after an intervention is ambiguous. The remaining
+H1 path once \(b\) is fixed is \(A\!\rightarrow\!C\!\rightarrow\!c\).
+
+## Evaluation metrics
+
+On each trial we score (i)~article logits \(\Delta(\texttt{an}-\texttt{a})\);
+(ii)~generated article and noun; (iii)~**wrapper-like** success (article
+moves, content preserved); (iv)~**trajectory-like** success (legal
+article--class package switch); (v)~illicit mismatches (`an` +
+consonant-initial noun). Under fixed \(b\), the primary H1 criterion is
+**within-class** \(c\!\rightarrow\!c\): the generated noun changes while
+remaining phonologically licensed by the pasted article.
+
+## Corrected fixed-\(b\) protocol
+
+Past work (and an intermediate protocol of ours) clamped features while
+predicting \(b\), then cleared clamps before predicting \(c\). That
+schedule demonstrates \(b\!\rightarrow\!c\) under free versus
+force-native generation, but it is **not** a fair negative test of
+\(C\!\rightarrow\!c\). Our corrected schedule:
+
+1. Optionally measure article-logit effects at the planning position \(P\)
+   (last prompt token before the article).
+2. **Paste** the native baseline article token.
+3. Keep candidate content interventions **on** at the same absolute
+   position \(P\) during noun prediction (full-sequence recompute; no
+   KV-cache remapping of clamps).
+4. Compare to an otherwise identical content-off arm.
+
+Within-class targets (e.g., `pilot`/`captain`) close the phonological
+caveat that fixed `a` merely blocks `aviator`.

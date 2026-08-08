@@ -1,3 +1,93 @@
 # Results
 
-Add quantitative and qualitative results here.
+## Free generation selects packages, not wrappers
+
+Amplifying frozen dual-effect / content-supporting features on 20
+held-out prompts moves article preference toward `an` on every prompt,
+but almost never preserves content. @tbl-packaging summarizes the
+clincher and selection-criterion ablation (S1). Wrapper-like repairs
+are at chance zero; trajectory-like package switches dominate; illicit
+`an`+consonant mismatches stay at zero. Qualitative twins include
+`a pilot`\(\rightarrow\)`an aviator` and
+`a lawyer`\(\rightarrow\)`an attorney`.
+
+| Condition | \(N\) | Art.\(\rightarrow\)`an` | Content preserved | Class shift | Wrapper | Trajectory | Twin match |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| S1 amplify \(5\times\) | 20 | 1.00 | 0.05 | 0.95 | 0.00 | 0.95 | 0.35 |
+| S1 matched control | 20 | 0.70 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| S3 amplify \(5\times\) | 20 | 0.70 | 0.95 | 0.05 | 0.00 | 0.05 | 0.00 |
+
+: Free-generation packaging versus wrapper metrics (held-out occupations).
+S1 is dual-effect; S3 is content-ish. Controls are activation-matched.
+{#tbl-packaging}
+
+An earlier frozen LoF pair that repaired the source
+`a ophthalmologist`\(\rightarrow\)`an ophthalmologist` likewise failed as
+a content-preserving transfer: on held-out data it flipped many expected-`a`
+controls to `an` and changed content words on 37/107 prompts, with
+**zero** grammar-only repairs that kept the noun fixed
+(@fig-generalization).
+
+![Held-out frozen-pair transfer changes articles and content together rather than repairing grammar alone.](docs/collaborator-report/figures/figure3_generalization.png){#fig-generalization width=90%}
+
+## Pasting native \(b\) restores native \(c\)
+
+Under selective article-step intervention with clamps **off** at the noun
+step, free S1 amplify remains trajectory-like (\(\approx 95\%\)), but
+forcing the native article yields content preservation \(\approx 1.0\):
+e.g., free `an aviator` becomes `a pilot` after pasting `a`
+(@fig-force-native). This isolates a real \(b\to c\) edge. It
+does **not** yet refute independent \(C\to c\), because content
+clamps were absent at \(c\).
+
+![Free dual-effect intervention switches packages; pasting the native article restores the native noun.](docs/collaborator-report/figures/figure8_selective_force_native.png){#fig-force-native width=90%}
+
+## Fixed \(b\), content on at \(c\): within-class null
+
+@tbl-fixed-b reports the corrected assay. Across eight occupation
+families, S3 amplify/zero, hint-contrast features, and controls yield
+**zero** within-class noun switches under fixed native \(b\) with clamps
+kept on at \(P\). Same-class noun logits remain \(\approx 5\) below the
+source noun. Protocol smoke tests confirm content-on versus content-off
+differ at the logit level, so the assay is not collapsing by
+construction. S2 (article-ish) still moves article logits under
+paste-native while content stays native---a licensing handle compatible
+with H2, not a modular content dial.
+
+| Condition | \(c\to c\) | Content \(\Delta\) | Match same-class | Mean \(\Delta\)(same$-$src) |
+| --- | ---: | ---: | ---: | ---: |
+| Baseline | 0.00 | 0.00 | 0.00 | \(-4.90\) |
+| S3 amp \(5\times\) / \(8\times\) / zero | 0.00 | 0.00 | 0.00 | \(\approx -4.9\) |
+| Hint-contrast amp \(5\times\) | 0.00 | 0.00 | 0.00 | \(-4.91\) |
+| Control amp \(5\times\) | 0.00 | 0.00 | 0.00 | \(-4.92\) |
+
+: Fixed-\(b\), content-on-at-\(c\) within-class rates (8 families).
+{#tbl-fixed-b}
+
+![Corrected fixed-\(b\) assay: binary within-class outcomes are all zero; same-class nouns stay ~5 logits below source.](docs/collaborator-report/figures/figure9_fixed_b_content_on.png){#fig-fixed-b width=80%}
+
+## Per-noun sparse features and residual directions also null
+
+A modular defender might blame the wrong sparse objects. We therefore
+(i)~select Latent-Planning-style per-example features for each
+same-class target (positive target attribution, low article attribution;
+plus target$-$source contrast) and (ii)~steer a dense MLP-in residual
+direction toward the same-class noun. Both use the same fixed-\(b\),
+content-on schedule on three twin families (@tbl-escape).
+
+| Handle | Best \(c\to c\) | Best \(\Delta\Delta\)(same$-$src) |
+| --- | ---: | ---: |
+| Per-noun LP-target / contrast (amp \(5\times\)--\(8\times\)) | 0.00 | \(+0.29\) |
+| Residual content steer \(\alpha=1\)--\(8\) | 0.00 | \(\approx 0.08\) |
+| Residual random control \(\alpha=1\)--\(8\) | 0.00 | \(\approx 0.15\) |
+
+: Escape-hatch assays under fixed \(b\). Neither per-noun sparse selection
+nor residual MLP-in steering opens a within-class dial; residual content
+steering does not beat random controls.
+{#tbl-escape}
+
+Every force-on continuation remained on the baseline noun
+(`pilot`/`lawyer`/`psychologist`). @fig-residual shows the residual
+null; the per-noun sparse null is qualitatively identical.
+
+![Dense residual (MLP-in) content steering under fixed \(b\): within-class outcomes remain zero for content and random directions.](docs/collaborator-report/figures/figure11_residual_fixed_b.png){#fig-residual width=95%}
