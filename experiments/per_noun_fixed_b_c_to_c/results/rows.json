@@ -1,0 +1,1274 @@
+[
+  {
+    "condition": "baseline",
+    "op": "none",
+    "amplify_factor": 1.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 0,
+    "features": [],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -6.125,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 22.375,
+    "logit_same_on": 16.25,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "baseline",
+    "op": "none",
+    "amplify_factor": 1.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 0,
+    "features": [],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 27.125,
+    "logit_same_on": 22.375,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "baseline",
+    "op": "none",
+    "amplify_factor": 1.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 0,
+    "features": [],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 25.0,
+    "logit_same_on": 19.25,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "lp_target_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 6,
+        "feature_idx": 4640
+      },
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 13,
+        "feature_idx": 542
+      },
+      {
+        "layer": 11,
+        "feature_idx": 292
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.125,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -5.9375,
+    "delta_same_minus_source_delta": 0.1875,
+    "logit_source_on": 21.625,
+    "logit_same_on": 15.6875,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 12,
+        "feature_idx": 1436
+      },
+      {
+        "layer": 10,
+        "feature_idx": 1015
+      },
+      {
+        "layer": 13,
+        "feature_idx": 568
+      },
+      {
+        "layer": 11,
+        "feature_idx": 3127
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.375,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.625,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 27.5,
+    "logit_same_on": 22.875,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 10,
+        "feature_idx": 1015
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 11,
+        "feature_idx": 793
+      },
+      {
+        "layer": 9,
+        "feature_idx": 3094
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.875,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.875,
+    "delta_same_minus_source_delta": -0.125,
+    "logit_source_on": 25.375,
+    "logit_same_on": 19.5,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 6,
+        "feature_idx": 4640
+      },
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 13,
+        "feature_idx": 542
+      },
+      {
+        "layer": 11,
+        "feature_idx": 292
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.25,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -6.0,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 21.625,
+    "logit_same_on": 15.625,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 12,
+        "feature_idx": 1436
+      },
+      {
+        "layer": 10,
+        "feature_idx": 1015
+      },
+      {
+        "layer": 13,
+        "feature_idx": 568
+      },
+      {
+        "layer": 11,
+        "feature_idx": 3127
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " called a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "",
+    "free_article": "other",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.5,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.625,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 27.75,
+    "logit_same_on": 23.125,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 10,
+        "feature_idx": 1015
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 11,
+        "feature_idx": 793
+      },
+      {
+        "layer": 9,
+        "feature_idx": 3094
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -1.375,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -6.125,
+    "delta_same_minus_source_delta": -0.375,
+    "logit_source_on": 25.75,
+    "logit_same_on": 19.625,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_zero",
+    "op": "zero",
+    "amplify_factor": 5.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 6,
+        "feature_idx": 4640
+      },
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 13,
+        "feature_idx": 542
+      },
+      {
+        "layer": 11,
+        "feature_idx": 292
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -6.0,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 22.125,
+    "logit_same_on": 16.125,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "lp_target_zero",
+    "op": "zero",
+    "amplify_factor": 5.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 12,
+        "feature_idx": 1436
+      },
+      {
+        "layer": 10,
+        "feature_idx": 1015
+      },
+      {
+        "layer": 13,
+        "feature_idx": 568
+      },
+      {
+        "layer": 11,
+        "feature_idx": 3127
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.125,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 27.125,
+    "logit_same_on": 22.375,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "lp_target_zero",
+    "op": "zero",
+    "amplify_factor": 5.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 10,
+        "feature_idx": 1015
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 11,
+        "feature_idx": 793
+      },
+      {
+        "layer": 9,
+        "feature_idx": 3094
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 25.0,
+    "logit_same_on": 19.25,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "contrast_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 6,
+        "feature_idx": 4640
+      },
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 3,
+        "feature_idx": 77
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.625,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -5.875,
+    "delta_same_minus_source_delta": 0.25,
+    "logit_source_on": 22.5,
+    "logit_same_on": 16.625,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 13,
+        "feature_idx": 2733
+      },
+      {
+        "layer": 10,
+        "feature_idx": 9037
+      },
+      {
+        "layer": 3,
+        "feature_idx": 4972
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.25,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.375,
+    "delta_same_minus_source_delta": 0.375,
+    "logit_source_on": 28.0,
+    "logit_same_on": 23.625,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 6,
+        "feature_idx": 756
+      },
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 3,
+        "feature_idx": 1554
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.75,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.625,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 25.625,
+    "logit_same_on": 20.0,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 6,
+        "feature_idx": 4640
+      },
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 3,
+        "feature_idx": 77
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -1.125,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -5.75,
+    "delta_same_minus_source_delta": 0.375,
+    "logit_source_on": 22.75,
+    "logit_same_on": 17.0,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 13,
+        "feature_idx": 2733
+      },
+      {
+        "layer": 10,
+        "feature_idx": 9037
+      },
+      {
+        "layer": 3,
+        "feature_idx": 4972
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.75,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.375,
+    "delta_same_minus_source_delta": 0.375,
+    "logit_source_on": 28.375,
+    "logit_same_on": 24.0,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 6,
+        "feature_idx": 756
+      },
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 3,
+        "feature_idx": 1554
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -1.25,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.625,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 26.25,
+    "logit_same_on": 20.625,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_zero",
+    "op": "zero",
+    "amplify_factor": 5.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 6,
+        "feature_idx": 4640
+      },
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 3,
+        "feature_idx": 77
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.125,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -6.0,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 22.0,
+    "logit_same_on": 16.0,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_zero",
+    "op": "zero",
+    "amplify_factor": 5.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 13,
+        "feature_idx": 2733
+      },
+      {
+        "layer": 10,
+        "feature_idx": 9037
+      },
+      {
+        "layer": 3,
+        "feature_idx": 4972
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.125,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 26.875,
+    "logit_same_on": 22.125,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "contrast_zero",
+    "op": "zero",
+    "amplify_factor": 5.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 7,
+        "feature_idx": 7133
+      },
+      {
+        "layer": 6,
+        "feature_idx": 756
+      },
+      {
+        "layer": 8,
+        "feature_idx": 12890
+      },
+      {
+        "layer": 3,
+        "feature_idx": 1554
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.375,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.875,
+    "delta_same_minus_source_delta": -0.125,
+    "logit_source_on": 25.0,
+    "logit_same_on": 19.125,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "control_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 2678
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 13,
+        "feature_idx": 502
+      },
+      {
+        "layer": 13,
+        "feature_idx": 1028
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -6.0,
+    "delta_same_minus_source_delta": 0.125,
+    "logit_source_on": 22.25,
+    "logit_same_on": 16.25,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "control_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 2678
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 13,
+        "feature_idx": 502
+      },
+      {
+        "layer": 13,
+        "feature_idx": 1028
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.0,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 27.125,
+    "logit_same_on": 22.375,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "control_amplify_x5",
+    "op": "amplify",
+    "amplify_factor": 5.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 2678
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 13,
+        "feature_idx": 502
+      },
+      {
+        "layer": 13,
+        "feature_idx": 1028
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.25,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -5.875,
+    "delta_same_minus_source_delta": -0.125,
+    "logit_source_on": 25.0,
+    "logit_same_on": 19.125,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "control_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "aircraft",
+    "sentence": "Someone who flies airplanes is",
+    "source_word": "pilot",
+    "same_class_word": "captain",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 2678
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 13,
+        "feature_idx": 502
+      },
+      {
+        "layer": 13,
+        "feature_idx": 1028
+      }
+    ],
+    "baseline_continuation": " a pilot.",
+    "baseline_word": "pilot",
+    "force_off_continuation": " a pilot.",
+    "force_on_continuation": " a pilot.",
+    "free_continuation": " a pilot.",
+    "force_off_word": "pilot",
+    "force_on_word": "pilot",
+    "free_word": "pilot",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.125,
+    "delta_same_minus_source_off": -6.125,
+    "delta_same_minus_source_on": -5.875,
+    "delta_same_minus_source_delta": 0.25,
+    "logit_source_on": 22.25,
+    "logit_same_on": 16.375,
+    "protocol_differs_on_vs_off": true
+  },
+  {
+    "condition": "control_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "legal",
+    "sentence": "Someone who represents clients in legal matters is",
+    "source_word": "lawyer",
+    "same_class_word": "barrister",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 2678
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 13,
+        "feature_idx": 502
+      },
+      {
+        "layer": 13,
+        "feature_idx": 1028
+      }
+    ],
+    "baseline_continuation": " a lawyer.",
+    "baseline_word": "lawyer",
+    "force_off_continuation": " a lawyer.",
+    "force_on_continuation": " a lawyer.",
+    "free_continuation": " a lawyer.",
+    "force_off_word": "lawyer",
+    "force_on_word": "lawyer",
+    "free_word": "lawyer",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": 0.125,
+    "delta_same_minus_source_off": -4.75,
+    "delta_same_minus_source_on": -4.75,
+    "delta_same_minus_source_delta": 0.0,
+    "logit_source_on": 27.125,
+    "logit_same_on": 22.375,
+    "protocol_differs_on_vs_off": false
+  },
+  {
+    "condition": "control_amplify_x8",
+    "op": "amplify",
+    "amplify_factor": 8.0,
+    "family_id": "psychology",
+    "sentence": "Someone who studies human behavior and mental processes is",
+    "source_word": "psychologist",
+    "same_class_word": "therapist",
+    "native_article_used": "a",
+    "n_features": 4,
+    "features": [
+      {
+        "layer": 8,
+        "feature_idx": 2678
+      },
+      {
+        "layer": 11,
+        "feature_idx": 6131
+      },
+      {
+        "layer": 13,
+        "feature_idx": 502
+      },
+      {
+        "layer": 13,
+        "feature_idx": 1028
+      }
+    ],
+    "baseline_continuation": " a psychologist.",
+    "baseline_word": "psychologist",
+    "force_off_continuation": " a psychologist.",
+    "force_on_continuation": " a psychologist.",
+    "free_continuation": " a psychologist.",
+    "force_off_word": "psychologist",
+    "force_on_word": "psychologist",
+    "free_word": "psychologist",
+    "free_article": "a",
+    "content_changed_on": false,
+    "within_class_on": true,
+    "c_to_c_signal": false,
+    "matched_same_class_on": false,
+    "delta_an_minus_a_bstep": -0.375,
+    "delta_same_minus_source_off": -5.75,
+    "delta_same_minus_source_on": -6.125,
+    "delta_same_minus_source_delta": -0.375,
+    "logit_source_on": 25.125,
+    "logit_same_on": 19.0,
+    "protocol_differs_on_vs_off": true
+  }
+]

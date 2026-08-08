@@ -1,0 +1,20 @@
+{
+  "family_id": "legal",
+  "sentence": "Someone who represents clients in legal matters is",
+  "native_article": "a",
+  "source_word": "lawyer",
+  "same_class_word": "barrister",
+  "article_prompt": "Someone who studies living organisms is a biologist. Someone who represents clients in legal matters is",
+  "future_prompt": "Someone who studies living organisms is a biologist. Someone who represents clients in legal matters is a",
+  "pre_article_pos": 17,
+  "future_targets": {
+    "lawyer": {
+      "content_token_text": " lawyer",
+      "graph": "legal__future_lawyer.pt"
+    },
+    "barrister": {
+      "content_token_text": " barrister",
+      "graph": "legal__future_barrister.pt"
+    }
+  }
+}

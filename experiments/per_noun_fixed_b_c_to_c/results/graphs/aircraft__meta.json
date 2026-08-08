@@ -1,0 +1,20 @@
+{
+  "family_id": "aircraft",
+  "sentence": "Someone who flies airplanes is",
+  "native_article": "a",
+  "source_word": "pilot",
+  "same_class_word": "captain",
+  "article_prompt": "Someone who studies living organisms is a biologist. Someone who flies airplanes is",
+  "future_prompt": "Someone who studies living organisms is a biologist. Someone who flies airplanes is a",
+  "pre_article_pos": 14,
+  "future_targets": {
+    "pilot": {
+      "content_token_text": " pilot",
+      "graph": "aircraft__future_pilot.pt"
+    },
+    "captain": {
+      "content_token_text": " captain",
+      "graph": "aircraft__future_captain.pt"
+    }
+  }
+}

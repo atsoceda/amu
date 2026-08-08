@@ -1,0 +1,125 @@
+{
+  "experiment_name": "per_noun_fixed_b_c_to_c",
+  "generated_at": "2026-08-08T03:44:20.868127+00:00",
+  "model": "google/gemma-3-270m",
+  "runtime_seconds": 350.67786598205566,
+  "protocol": "per_noun_features__force_native_b__content_on_at_c",
+  "families": [
+    "aircraft",
+    "legal",
+    "psychology"
+  ],
+  "by_condition": {
+    "baseline": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.541666666666667,
+      "mean_delta_same_minus_source_delta": 0.0,
+      "mean_delta_an_minus_a_bstep": 0.0,
+      "protocol_differs_on_vs_off_rate": 0.0
+    },
+    "lp_target_amplify_x5": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.479166666666667,
+      "mean_delta_same_minus_source_delta": 0.0625,
+      "mean_delta_an_minus_a_bstep": -0.125,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "lp_target_amplify_x8": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.583333333333333,
+      "mean_delta_same_minus_source_delta": -0.041666666666666664,
+      "mean_delta_an_minus_a_bstep": -0.375,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "lp_target_zero": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.5,
+      "mean_delta_same_minus_source_delta": 0.041666666666666664,
+      "mean_delta_an_minus_a_bstep": -0.041666666666666664,
+      "protocol_differs_on_vs_off_rate": 0.3333333333333333
+    },
+    "contrast_amplify_x5": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.291666666666667,
+      "mean_delta_same_minus_source_delta": 0.25,
+      "mean_delta_an_minus_a_bstep": -0.5416666666666666,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "contrast_amplify_x8": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.25,
+      "mean_delta_same_minus_source_delta": 0.2916666666666667,
+      "mean_delta_an_minus_a_bstep": -1.0416666666666667,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "contrast_zero": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.541666666666667,
+      "mean_delta_same_minus_source_delta": 0.0,
+      "mean_delta_an_minus_a_bstep": 0.125,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "control_amplify_x5": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.541666666666667,
+      "mean_delta_same_minus_source_delta": 0.0,
+      "mean_delta_an_minus_a_bstep": -0.08333333333333333,
+      "protocol_differs_on_vs_off_rate": 0.3333333333333333
+    },
+    "control_amplify_x8": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.583333333333333,
+      "mean_delta_same_minus_source_delta": -0.041666666666666664,
+      "mean_delta_an_minus_a_bstep": -0.125,
+      "protocol_differs_on_vs_off_rate": 0.6666666666666666
+    }
+  },
+  "control_features": [
+    {
+      "layer": 8,
+      "feature_idx": 2678
+    },
+    {
+      "layer": 11,
+      "feature_idx": 6131
+    },
+    {
+      "layer": 13,
+      "feature_idx": 502
+    },
+    {
+      "layer": 13,
+      "feature_idx": 1028
+    }
+  ],
+  "selection_path": "/Users/anthony/repos/amu/experiments/per_noun_fixed_b_c_to_c/results/selection.json",
+  "dial_found": false,
+  "interpretation": "baseline: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.542, \u0394\u0394(same\u2212src)=0.000. lp_target_amplify_x5: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.479, \u0394\u0394(same\u2212src)=0.062. lp_target_amplify_x8: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.583, \u0394\u0394(same\u2212src)=-0.042. lp_target_zero: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.500, \u0394\u0394(same\u2212src)=0.042. contrast_amplify_x5: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.292, \u0394\u0394(same\u2212src)=0.250. contrast_amplify_x8: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.250, \u0394\u0394(same\u2212src)=0.292. contrast_zero: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.542, \u0394\u0394(same\u2212src)=0.000. control_amplify_x5: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.542, \u0394\u0394(same\u2212src)=0.000. control_amplify_x8: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.583, \u0394\u0394(same\u2212src)=-0.042. Null: per-noun LP-style and contrast features do not move within-class nouns under fixed b. Fairer negative than recurring E1 S3 alone."
+}

@@ -1,0 +1,20 @@
+{
+  "family_id": "psychology",
+  "sentence": "Someone who studies human behavior and mental processes is",
+  "native_article": "a",
+  "source_word": "psychologist",
+  "same_class_word": "therapist",
+  "article_prompt": "Someone who studies living organisms is a biologist. Someone who studies human behavior and mental processes is",
+  "future_prompt": "Someone who studies living organisms is a biologist. Someone who studies human behavior and mental processes is a",
+  "pre_article_pos": 18,
+  "future_targets": {
+    "psychologist": {
+      "content_token_text": " psychologist",
+      "graph": "psychology__future_psychologist.pt"
+    },
+    "therapist": {
+      "content_token_text": " therapist",
+      "graph": "psychology__future_therapist.pt"
+    }
+  }
+}

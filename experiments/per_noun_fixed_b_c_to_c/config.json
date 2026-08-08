@@ -1,0 +1,47 @@
+{
+  "experiment_name": "per_noun_fixed_b_c_to_c",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "batch_size": 32,
+  "max_feature_nodes": 1600,
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "max_abs_article_direct_effect": 0.05,
+  "top_features_per_method": 4,
+  "amplify_factors": [5.0, 8.0],
+  "control_feature_count": 4,
+  "control_seed": 17,
+  "max_new_tokens": 4,
+  "families": [
+    {
+      "id": "aircraft",
+      "sentence": "Someone who flies airplanes is",
+      "native_article": "a",
+      "source_word": "pilot",
+      "same_class_word": "captain",
+      "cross_class_word": "aviator"
+    },
+    {
+      "id": "legal",
+      "sentence": "Someone who represents clients in legal matters is",
+      "native_article": "a",
+      "source_word": "lawyer",
+      "same_class_word": "barrister",
+      "cross_class_word": "attorney"
+    },
+    {
+      "id": "psychology",
+      "sentence": "Someone who studies human behavior and mental processes is",
+      "native_article": "a",
+      "source_word": "psychologist",
+      "same_class_word": "therapist",
+      "cross_class_word": "anthropologist"
+    }
+  ]
+}
