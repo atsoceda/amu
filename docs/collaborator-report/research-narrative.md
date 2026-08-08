@@ -90,6 +90,16 @@ Our current claim is therefore:
 > \(b \rightarrow c\)) dominates execution—without yet being a refutation
 > of every \(C \rightarrow c\) somewhere in the network (Section 11).*
 
+The novelty is the juxtaposition, not a blanket “no content
+causation” claim. The same editable sparse space that *successfully*
+switches legal packages under free generation (`a pilot` ↔ `an aviator`)
+still yields a stubborn null for **independent** \(C \rightarrow c\)
+under fixed \(b\). Packaging and \(b \rightarrow c\) are easy to move;
+modular content control is not—in every representation we could
+actually manipulate (dual-effect, content-ish, hint-contrast, and
+per-noun LP-style features). Residual / dense directions remain an open
+fairness check (Section 11), not a result we claim to have closed.
+
 This is a publishable *mechanistic* claim relative to the Latent Planning
 task family on this model, not a claim about all scales or all
 architectures. The early stages remain the path by which the claim was
@@ -1392,6 +1402,13 @@ article attribution, still do not open an independent within-class
 \(C \rightarrow c\) dial under fixed native \(b\). The H2 packaging read
 for *these intervenable sparse features* is hardened, not revised.
 
+Surprise for collaborators: packaging success coexists with a stubborn
+independent-\(C \rightarrow c\) null in manipulable space. We are not
+mainly reporting that content is invisible to intervention; we are
+reporting that the handles that *do* move \(\{b,c\}\) packages still fail
+as content dials once \(b\) is held fixed—even after selecting features
+the way Latent Planning would for a target noun \(C_t\).
+
 What remains open (Section 11): residual / dense activation-direction
 patching; dedicated noun-identity latent probes finer than written tokens
 + coarse set means; pure \(A\); scale / model-family generalization.
@@ -1498,25 +1515,32 @@ mechanisms are not modular latent planning (H1)**, and that
 dominates execution** for the handles we tested (H2 as an account of
 *these interventions*).
 
-**What this is.** A paper-grade challenge to reading Latent-Planning-style
-dual-effect (and related) sparse interventions on Gemma 3 270M as the
-separable modular graph. It is the right emphasis for collaborators and
-for a methods/results paper on misreading article flips.
+**What this is.** The surprise juxtaposition: on this model, every
+intervenable sparse representation we could edit that **successfully
+moves legal \(\{b,c\}\) packages** under free generation still **fails
+to move \(c\) independently** once \(b\) is held fixed (Stages XV–XVII,
+including per-noun LP-style selection). That is a paper-grade challenge
+to reading Latent-Planning-style dual-effect (and related) sparse
+interventions on Gemma 3 270M as the separable modular graph. The
+practical consequence is that article flips here are easy to **misread**
+as modular planning if \(b \rightarrow c\) and content identity are not
+tested as separate edges.
 
 **What this is not.** It is **not** a metaphysical refutation of any
 \(C \rightarrow c\) anywhere in the network, nor a claim that the model
 has no causal structure, nor that latent planning is impossible at larger
-scales. We tested specific frozen feature sets (S1/S2/S3/controls/hint
+scales, nor that content causation is absent from every representation.
+We tested specific frozen feature sets (S1/S2/S3/controls/hint
 contrast/per-noun LP-target and contrast), not all of activation space.
 *Latent Planning Emerges with Scale* already places reliable a/an success
-at much larger models; our contribution is to show why article-moving
-sparse interventions here are easy to **misread** as modular planning if
-\(b \rightarrow c\) and content identity are not tested as separate edges.
+at much larger models; our contribution is the scoped null for
+*independent* content control in the space we could manipulate.
 
-**One-sentence bottom line for readers:** holding the article fixed
-abolishes noun change under these interventions—even when content clamps
-stay on, the target noun is within-class, and features are selected
-per-noun for that target; therefore free noun change is not evidence of
+**One-sentence bottom line for readers:** packaging works and independent
+\(C \rightarrow c\) does not—in the same editable sparse features—so
+holding the article fixed abolishes noun change even when content clamps
+stay on, the target is within-class, and features are selected per-noun
+for that target; free noun change is therefore not evidence of
 independent content causation for these features.
 
 ## What is still missing (before we can state the claim more forcefully)
