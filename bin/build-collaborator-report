@@ -23,7 +23,7 @@ if [[ ! -x "$PY" ]]; then
 fi
 
 cd "$REPORT"
-echo "=== generating figures 1–9 from experiment summaries ==="
+echo "=== generating figures 1–10 from experiment summaries ==="
 "$PY" generate_figures.py
 echo "=== building DOCX via Pandoc ==="
 "$PY" build_docx.py

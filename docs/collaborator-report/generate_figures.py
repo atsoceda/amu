@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate collaborator-report figures 1–9 from experiment summary.json files.
+"""Regenerate collaborator-report figures 1–10 from experiment summary.json files.
 
 Required experiment result artifacts (under experiments/*/results/summary.json):
 
@@ -12,6 +12,7 @@ Required experiment result artifacts (under experiments/*/results/summary.json):
   figure7  trajectory_causal_tetrad
   figure8  selective_bc_force_native
   figure9  causal_edge_independence
+  figure10 per_noun_fixed_b_c_to_c
 """
 from __future__ import annotations
 
@@ -42,6 +43,7 @@ REQUIRED = {
     "figure7_causal_tetrad.png": ["trajectory_causal_tetrad"],
     "figure8_selective_force_native.png": ["selective_bc_force_native"],
     "figure9_fixed_b_content_on.png": ["causal_edge_independence"],
+    "figure10_per_noun_fixed_b.png": ["per_noun_fixed_b_c_to_c"],
 }
 
 
@@ -467,6 +469,82 @@ def figure9(edge: dict) -> None:
     plt.close()
 
 
+def figure10(per_noun: dict) -> None:
+    """Per-noun LP-style fixed-b null (Stage XVII / Exp 2)."""
+    by = per_noun["by_condition"]
+    order = [
+        ("baseline", "Baseline"),
+        ("lp_target_amplify_x5", "LP amp ×5"),
+        ("lp_target_amplify_x8", "LP amp ×8"),
+        ("lp_target_zero", "LP zero"),
+        ("contrast_amplify_x5", "Contrast ×5"),
+        ("contrast_amplify_x8", "Contrast ×8"),
+        ("contrast_zero", "Contrast zero"),
+        ("control_amplify_x5", "Control ×5"),
+        ("control_amplify_x8", "Control ×8"),
+    ]
+    labels = [lab for key, lab in order if key in by]
+    keys = [key for key, lab in order if key in by]
+    c2c = [by[k]["c_to_c_signal_rate"] for k in keys]
+    changed = [by[k]["content_changed_on_rate"] for k in keys]
+    matched = [by[k]["matched_same_class_on_rate"] for k in keys]
+    logit_gap = [by[k]["mean_delta_same_minus_source_on"] for k in keys]
+    x = np.arange(len(labels))
+
+    fig, (ax0, ax1) = plt.subplots(
+        1, 2, figsize=(13.0, 5.4), gridspec_kw={"width_ratios": [1.2, 1.0]}
+    )
+
+    for vals, color, marker, label in [
+        (c2c, "#C44E52", "o", "Within-class C→c signal"),
+        (changed, "#4C72B0", "s", "Content changed (clamps on)"),
+        (matched, "#55A868", "^", "Matched same-class noun"),
+    ]:
+        ax0.plot(
+            x,
+            vals,
+            marker=marker,
+            linestyle="None",
+            markersize=9,
+            color=color,
+            label=label,
+            zorder=3,
+        )
+    ax0.axhline(0.0, color="#333333", linewidth=1.0, zorder=1)
+    ax0.set_xticks(x)
+    ax0.set_xticklabels(labels, rotation=30, ha="right")
+    ax0.set_ylim(-0.08, 1.05)
+    ax0.set_ylabel("Rate on 3 twin families")
+    ax0.set_title("Binary outcomes (all exactly 0)")
+    ax0.legend(frameon=False, loc="upper right", fontsize=9)
+    ax0.text(
+        0.02,
+        0.92,
+        "null C→c for per-noun features",
+        transform=ax0.transAxes,
+        fontsize=10,
+        color="#666666",
+    )
+
+    ax1.bar(x, logit_gap, color="#8172B3", width=0.7)
+    ax1.axhline(0.0, color="#333333", linewidth=1.0)
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(labels, rotation=30, ha="right")
+    ax1.set_ylabel("Mean logit(same-class) − logit(source)")
+    ax1.set_title("Same-class never overtakes source")
+    ymin = min(logit_gap) - 0.5
+    ax1.set_ylim(ymin, 0.5)
+
+    fig.suptitle(
+        "Stage XVII: per-noun LP-style features, fixed native article, clamps ON at c",
+        y=1.02,
+        fontsize=13,
+    )
+    fig.tight_layout()
+    fig.savefig(FIGDIR / "figure10_per_noun_fixed_b.png", dpi=160, bbox_inches="tight")
+    plt.close()
+
+
 def main() -> None:
     missing_exps = sorted(
         {
@@ -493,7 +571,8 @@ def main() -> None:
     figure7(load_summary("trajectory_causal_tetrad"))
     figure8(load_summary("selective_bc_force_native"))
     figure9(load_summary("causal_edge_independence"))
-    print("Wrote figures 1–9 into", FIGDIR)
+    figure10(load_summary("per_noun_fixed_b_c_to_c"))
+    print("Wrote figures 1–10 into", FIGDIR)
 
 
 if __name__ == "__main__":

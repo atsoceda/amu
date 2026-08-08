@@ -83,11 +83,12 @@ Our current claim is therefore:
 > (Hypothesis H1). With these intervenable features we cannot demonstrate
 > independent \(C \rightarrow c\) once \(b\) is held fixed—including on
 > within-class noun targets under a corrected content-on-at-\(c\)
-> protocol; free noun change tracks \(b \rightarrow c\). That is strong
-> evidence these mechanisms are not modular latent planning and that
-> article-conditioned packaging (or strong \(b \rightarrow c\)) dominates
-> execution—without yet being a refutation of every \(C \rightarrow c\)
-> somewhere in the network (Section 11).*
+> protocol, and including Latent-Planning-style per-noun feature
+> selection (Stage XVII); free noun change tracks \(b \rightarrow c\).
+> That is strong evidence these mechanisms are not modular latent
+> planning and that article-conditioned packaging (or strong
+> \(b \rightarrow c\)) dominates execution—without yet being a refutation
+> of every \(C \rightarrow c\) somewhere in the network (Section 11).*
 
 This is a publishable *mechanistic* claim relative to the Latent Planning
 task family on this model, not a claim about all scales or all
@@ -788,7 +789,7 @@ coordinated preparation--content control—compiled trajectories
 result, how collaborator discussion changed the question we needed to
 answer—anchored on the H1 vs H2 causal graphs in Section 10.2—which
 model stack we used, and the causal experiments that followed (Stages
-VIII–XVI).
+VIII–XVII).
 
 ## 10.1 What we planned after Stage VII
 
@@ -873,7 +874,8 @@ There is no stable content plan with an independently editable wrapper.
 **H2 success:** free intervention moves \(b\) and \(c\) together as a
 legal package; pasting native \(b\) restores native \(c\); and—under the
 corrected Stage XVI schedule—no content handle moves \(c\) with \(b\)
-held fixed, including among within-class synonyms. (A selective
+held fixed, including among within-class synonyms and including
+per-noun Latent-Planning-style features (Stage XVII). (A selective
 licensing handle that moves article logits without rewriting executed
 \(c\) under fixed \(b\) is compatible with H2 and does not revive H1.)
 
@@ -893,7 +895,8 @@ context). Therefore:
 > **within-class** noun moves under fixed \(b\) with content clamps
 > still active at the noun step (so failure is not dismissed as
 > “`a` merely blocks `aviator`,” nor as “interventions were off at
-> \(c\)”).
+> \(c\)”). Stage XVII closes the “wrong sparse grain” caveat by
+> repeating that schedule with per-noun LP-style target features.
 
 *Latent Planning* already notes that small models fail behaviorally and
 may have only nascent mechanisms. Our sharpened question is sharper
@@ -911,6 +914,7 @@ model, are they implementing separable \(C \rightarrow B\) and \(C
 | E4 tetrad | Sufficiency/specificity of package selection on twin families |
 | XV selective + paste native \(b\) | Isolate \(b \rightarrow c\) under free vs force-native; ask whether \(C \rightarrow B\) is selective (c-step interventions were **off**—see Stage XVI) |
 | XVI fixed \(b\), content clamps **on** at \(c\) | Fair within-class \(C \rightarrow c\); factorial \(C \rightarrow B\); selective \(B \rightarrow b\); latent S2/S3 readouts |
+| XVII per-noun LP-style \(C_t\) under fixed \(b\) | Same fair \(C \rightarrow c\) assay with per-example target-noun / contrast features (wrong-grain escape hatch) |
 
 We also adopted loss-of-function, gain-of-function, activation-matched
 controls, and joint scoring of article *and* content on every trial.
@@ -1322,13 +1326,77 @@ class. Combined with Stage XV’s free-vs-force packaging pattern, this
 closes the main phonological and schedule caveats that previously limited
 how hard we could push the anti-H1 claim for *these interventions*.
 
-Remaining limits (Section 11): no pure \(A\) set; no residual/full
-activation-direction patch beyond sparse CLT features and a lightweight
-hint-contrast selector; latent noun-identity probes are only coarse
-(S2/S3 means + noun logits), not dedicated pilot-vs-captain feature
-probes; scale generalization remains open.
+Remaining limits after Stage XVI alone (Section 11): Stage XVI still used
+recurring E1 S3 / a graph-free hint-contrast selector rather than
+Latent-Planning-style per-noun attribution features; residual/full
+activation-direction patching was untested; latent noun-identity probes
+were only coarse; scale generalization remains open. Stage XVII closes
+the per-noun grain hole.
 
-## 10.13 Current hypothesis (after Stages VIII–XVI)
+## 10.13 Stage XVII (Experiment 2): Per-noun LP-style features under fixed \(b\)
+
+**Escape hatch under test:** after Stage XVI, a modular defender could
+still say that E1 S3 and the graph-free contrast selector were the
+*wrong sparse objects*—that Latent Planning’s per-example content
+features \(C_t\) (positive attribution to a target noun, low article
+attribution) would provide the missing independent \(C \rightarrow c\)
+dial.
+
+### Protocol
+
+For three native-`a` twin families (aircraft pilot/captain; legal
+lawyer/barrister; psychology psychologist/therapist):
+
+1. Attribute `a`/`an` on the pre-article prompt.
+2. Attribute source and same-class noun tokens on
+   `prompt + native article`.
+3. At planning position \(P\), select top-4 features under each rule
+   (article \(|\mathrm{DE}| \le 0.05\)):
+   - **lp_target:** \(+\mathrm{attr}(\text{same-class target})\)
+   - **contrast:** maximize
+     \(\mathrm{attr}(\text{target})-\mathrm{attr}(\text{source})\)
+4. Evaluate amplify \(\times 5\)/\(\times 8\), zero, and activation-matched
+   controls under the **Stage XVI schedule** (paste native \(b\); content
+   clamps **on** at \(P\) during noun prediction).
+
+Primary success (upset): within-class noun change under fixed \(b\) at
+rates above baseline/controls, or a clear same−source logit takeover.
+
+### Results
+
+| Condition (3 families) | \(c \rightarrow c\) signal | Content changed | Matched same-class | Mean \(\Delta\)(same−source) | Mean \(\Delta\Delta\)(same−source) vs off |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Baseline | 0.00 | 0.00 | 0.00 | −5.54 | 0.00 |
+| lp_target amplify \(\times 5\) | 0.00 | 0.00 | 0.00 | −5.48 | +0.06 |
+| lp_target amplify \(\times 8\) | 0.00 | 0.00 | 0.00 | −5.58 | −0.04 |
+| lp_target zero | 0.00 | 0.00 | 0.00 | −5.50 | +0.04 |
+| contrast amplify \(\times 5\) | 0.00 | 0.00 | 0.00 | −5.29 | +0.25 |
+| contrast amplify \(\times 8\) | 0.00 | 0.00 | 0.00 | −5.25 | +0.29 |
+| contrast zero | 0.00 | 0.00 | 0.00 | −5.54 | 0.00 |
+| Control amplify \(\times 5\)/\(\times 8\) | 0.00 | 0.00 | 0.00 | −5.54 / −5.58 | ≈0 |
+
+Every force-on continuation stayed on the baseline noun (`a pilot`,
+`a lawyer`, `a psychologist`). Clamps were not inert—on vs off often
+differed slightly at the logit level—but never enough to switch nouns or
+close the ~5-logit same−source gap. Selection found four features per
+method per family (article bound held without relaxation).
+
+![Figure 10. Per-noun LP-style and contrast features under the Stage XVI fixed-\(b\) protocol: within-class outcomes remain exactly zero; same-class nouns stay ~5 logits below source.](figures/figure10_per_noun_fixed_b.png)
+
+### Conclusion of Stage XVII
+
+This is a **fairer negative** than Stage XVI alone: the null is not an
+artifact of reusing E1’s recurring S3 set. Per-example Latent-Planning-style
+target-noun features, and target−source contrast features with low
+article attribution, still do not open an independent within-class
+\(C \rightarrow c\) dial under fixed native \(b\). The H2 packaging read
+for *these intervenable sparse features* is hardened, not revised.
+
+What remains open (Section 11): residual / dense activation-direction
+patching; dedicated noun-identity latent probes finer than written tokens
++ coarse set means; pure \(A\); scale / model-family generalization.
+
+## 10.14 Current hypothesis (after Stages VIII–XVII)
 
 Relating old and new terms:
 
@@ -1339,6 +1407,7 @@ Relating old and new terms:
 | Fixed-pair suppression switches `a pilot`→`an aviator` | Loss- or gain-of-function selects packages |
 | “Need a cleaner modular test” | Selective \(b\)-step + force-native article (Stage XV) |
 | “Need within-class \(C \rightarrow c\) under fixed \(b\)” | Content-on-at-\(c\) within-class assay (Stage XVI) |
+| “Maybe S3 was the wrong grain; need LP-style \(C_t\)” | Per-noun attribution selection under fixed \(b\) (Stage XVII) |
 
 **Current hypothesis (H2).**
 
@@ -1372,7 +1441,7 @@ S3 ≈ content-ish). We never isolated a validated pure \(A\) set.
 | \(A \rightarrow C\) | Only indirect: content-ish features sit at the pre-article position with future-content attribution. No pure \(A\) dial. | Cannot claim forward planning as a separated edge. |
 | \(C \rightarrow B\) | **Not supported** as selective. S3 turned up/down barely moves article preference. S1 turned up moves \(b\) strongly but also co-moves content-ish activations and free \(c\). | Against modular backward planning for these handles; favors a \(\{B,C\}\) bundle (H2). |
 | \(B \rightarrow b\) | Supported in the weak sense: article-related / dual-effect interventions change `a`/`an` logits and free-generation articles. | Shows we can move licensing readouts; does not show \(B\) is separable from \(C\). |
-| \(C \rightarrow c\) | **Not demonstrated independently—now under a fair protocol.** Free S1 often changes the noun; Stage XV paste-native restores native \(c\) (shows \(b \rightarrow c\), but \(c\)-step clamps were off). Stage XVI keeps content clamps **on** at \(c\) with fixed native \(b\) and asks for within-class noun moves: \(c \rightarrow c\) signal = 0 for S3, hint-contrast, and controls. | Free noun change is accounted for by \(b \rightarrow c\). Independent content rewrite fails even when phonology and schedule caveats are closed for these handles. |
+| \(C \rightarrow c\) | **Not demonstrated independently—now under a fair protocol and a fairer feature grain.** Free S1 often changes the noun; Stage XV paste-native restores native \(c\) (shows \(b \rightarrow c\), but \(c\)-step clamps were off). Stage XVI: content clamps **on** at \(c\) with fixed native \(b\); \(c \rightarrow c\) signal = 0 for S3, hint-contrast, and controls. Stage XVII: same schedule with per-noun LP-style / contrast features on three twin families; again signal = 0 (max \(\Delta\Delta\) same−source ≈ +0.29 logits). | Free noun change is accounted for by \(b \rightarrow c\). Independent content rewrite fails for recurring S3 **and** for Latent-Planning-style per-example noun features under fixed \(b\). |
 | \(b \rightarrow c\) | **Supported.** Free S1: non-native \(b\) with non-native \(c\). Paste native \(b\): native \(c\) returns (content preserved ≈ 1.0). | The confounder edge is real. Any claim of \(C \rightarrow c\) must survive holding \(b\) fixed **with content clamps still active**. |
 
 ## Achievements (engineering and experiments)
@@ -1386,13 +1455,16 @@ We have achieved:
 - source-prompt evidence that future-answer information is active before
   an incorrect article (ophthalmologist discovery)—relevant to whether
   some \(C\)-like signal exists before \(b\), not yet to separable edges;
-- held-out fixed-pair, GoF clincher, E1–E4, Stage XV, and Stage XVI
-  results that map onto the edge table above;
+- held-out fixed-pair, GoF clincher, E1–E4, Stage XV, Stage XVI, and
+  Stage XVII results that map onto the edge table above;
 - an explicit stack decision for pretrained + affine over IT + non-affine
   for this hypothesis test;
 - a **corrected** fixed-\(b\) / content-on-at-\(c\) within-class null for
   \(C \rightarrow c\) (closes the Stage XV schedule hole and the
-  phonological “`a` blocks `aviator`” caveat for these handles).
+  phonological “`a` blocks `aviator`” caveat for these handles);
+- a **per-noun** Latent-Planning-style attribution null under that same
+  schedule (Stage XVII)—closes the “wrong sparse grain / wrong \(C_t\)”
+  escape hatch for the handles we can select from CLT graphs.
 
 We have not achieved:
 
@@ -1402,10 +1474,11 @@ We have not achieved:
   for any frozen feature set we tried;
 - a pure context-concept (\(A\)) feature set;
 - residual / full activation-direction content steering beyond sparse CLT
-  features and a lightweight hint-contrast selector;
+  features (Stage XVI hint-contrast and Stage XVII per-noun selection
+  remain inside the sparse feature dictionary);
 - dedicated noun-identity latent probes (pilot vs captain feature
   contrasts) that would separate plan-then-abandon from package-reset
-  more finely than S2/S3 means + noun logits;
+  more finely than written tokens + coarse set means + noun logits;
 - proof that H2 is the story at larger scales or in other model
   families—the Latent Planning scale axis is outside our hardware
   envelope;
@@ -1417,11 +1490,13 @@ We have not achieved:
 features, we **cannot demonstrate independent \(C \rightarrow c\) once
 \(b\) is held fixed**—including under a corrected protocol that keeps
 content clamps **on** at the noun step and asks for **within-class**
-noun moves. Noun changes under free intervention track \(b \rightarrow c\).
-That is **strong evidence these mechanisms are not modular latent
-planning (H1)**, and that **article-conditioned packaging and/or strong
-\(b \rightarrow c\) dominates execution** for the handles we tested (H2
-as an account of *these interventions*).
+noun moves, and including **per-noun Latent-Planning-style** feature
+selection on twin families (Stage XVII). Noun changes under free
+intervention track \(b \rightarrow c\). That is **strong evidence these
+mechanisms are not modular latent planning (H1)**, and that
+**article-conditioned packaging and/or strong \(b \rightarrow c\)
+dominates execution** for the handles we tested (H2 as an account of
+*these interventions*).
 
 **What this is.** A paper-grade challenge to reading Latent-Planning-style
 dual-effect (and related) sparse interventions on Gemma 3 270M as the
@@ -1432,30 +1507,31 @@ for a methods/results paper on misreading article flips.
 \(C \rightarrow c\) anywhere in the network, nor a claim that the model
 has no causal structure, nor that latent planning is impossible at larger
 scales. We tested specific frozen feature sets (S1/S2/S3/controls/hint
-contrast), not all of activation space. *Latent Planning Emerges with
-Scale* already places reliable a/an success at much larger models; our
-contribution is to show why article-moving sparse interventions here are
-easy to **misread** as modular planning if \(b \rightarrow c\) and content
-identity are not tested as separate edges.
+contrast/per-noun LP-target and contrast), not all of activation space.
+*Latent Planning Emerges with Scale* already places reliable a/an success
+at much larger models; our contribution is to show why article-moving
+sparse interventions here are easy to **misread** as modular planning if
+\(b \rightarrow c\) and content identity are not tested as separate edges.
 
 **One-sentence bottom line for readers:** holding the article fixed
 abolishes noun change under these interventions—even when content clamps
-stay on and the target noun is within-class; therefore free noun change
-is not evidence of independent content causation for these features.
+stay on, the target noun is within-class, and features are selected
+per-noun for that target; therefore free noun change is not evidence of
+independent content causation for these features.
 
 ## What is still missing (before we can state the claim more forcefully)
 
-The scoped claim above is now supported by Stage XV + Stage XVI + E1–E3.
-The **within-class / schedule hole is closed** for these sparse handles.
-What still limits a harder claim:
+The scoped claim above is now supported by Stage XV + Stage XVI + Stage
+XVII + E1–E3. The **within-class / schedule hole** and the **per-noun
+sparse-grain hole** are closed for these CLT handles. What still limits
+a harder claim:
 
-1. **Broader content handles.** We still lack residual patching and
-   true per-noun attribution-graph feature selection for every twin
-   family (Stage XVI’s contrast selector is a graph-free fallback). A
-   positive \(C \rightarrow c\) dial could exist outside E1 S3 / this
-   contrast rule.
+1. **Residual / dense content handles.** Stage XVII closes per-noun
+   *sparse* selection; it does not patch residual-stream or full
+   activation directions. A positive \(C \rightarrow c\) dial could still
+   exist outside the CLT dictionary.
 
-2. **Finer latent content identity.** Written tokens and coarse S2/S3
+2. **Finer latent content identity.** Written tokens and coarse set
    means only show execution plus set-level amplitude. Dedicated
    noun-identity probes (pilot vs captain / aviator) at (i) the article
    step under intervention and (ii) the noun step after paste-native
@@ -1469,11 +1545,12 @@ What still limits a harder claim:
 
 Collaborators should read the interim claim as: **strong against modular
 H1 for these interventions’ free-generation and fixed-\(b\) execution
-behavior**, with the phonological within-class caveat now closed for
-these sparse handles. Until finer latent probes and broader handles are
-run, we should not claim latent absence of all content plans—only
-absence of demonstrated independent causal control of executed \(c\)
-with \(b\) fixed for the handles we tested.
+behavior**, with the phonological within-class caveat and the per-noun
+\(C_t\) grain caveat now closed for sparse CLT handles. Until residual
+patches and finer latent probes are run, we should not claim latent
+absence of all content plans—only absence of demonstrated independent
+causal control of executed \(c\) with \(b\) fixed for the handles we
+tested.
 
 # Reproducibility map
 
@@ -1499,6 +1576,7 @@ The reports and machine-readable outputs are organized by experiment:
 | Domain transfer (E5) | `experiments/domain_transfer_aan/` |
 | Selective \(b\)-step + force-native article | `experiments/selective_bc_force_native/` |
 | Fixed \(b\), content-on-at-\(c\) within-class (N0–N4) | `experiments/causal_edge_independence/` |
+| Per-noun LP-style features under fixed \(b\) (Stage XVII / Exp 2) | `experiments/per_noun_fixed_b_c_to_c/` |
 | Paper execution contract | `experiments/PAPER_EXPERIMENTS.md` |
 
 Each experiment directory contains a human-readable `results/report.md`,
