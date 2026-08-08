@@ -63,9 +63,11 @@ instruction-tuned + non-affine after comparing the two stacks; see
 Section 10). Across selection-criterion ablation, dose–response, forced
 content-lock / dual intervention, a causal tetrad on twin families,
 slim domain transfer, a **selective article-step intervention with
-pasted native article**, and a **corrected fixed-\(b\) within-class
+pasted native article**, a **corrected fixed-\(b\) within-class
 \(C \rightarrow c\) assay** (content clamps kept **on** at the noun step),
-**no held-out condition produced reliable wrapper-like repair**.
+**per-noun Latent-Planning-style feature selection**, and a **dense
+residual / activation-direction steer** under that same fixed-\(b\)
+schedule, **no held-out condition produced reliable wrapper-like repair**.
 Dual-effect gain-of-function remained trajectory-like
 (chunking)—for example amplifying frozen features turned
 `Someone who flies airplanes is` from `a pilot` into `an aviator` when
@@ -83,22 +85,24 @@ Our current claim is therefore:
 > (Hypothesis H1). With these intervenable features we cannot demonstrate
 > independent \(C \rightarrow c\) once \(b\) is held fixed—including on
 > within-class noun targets under a corrected content-on-at-\(c\)
-> protocol, and including Latent-Planning-style per-noun feature
-> selection (Stage XVII); free noun change tracks \(b \rightarrow c\).
+> protocol, including Latent-Planning-style per-noun feature selection
+> (Stage XVII), and including a dense residual / activation-direction
+> steer (Stage XVIII); free noun change tracks \(b \rightarrow c\).
 > That is strong evidence these mechanisms are not modular latent
 > planning and that article-conditioned packaging (or strong
 > \(b \rightarrow c\)) dominates execution—without yet being a refutation
 > of every \(C \rightarrow c\) somewhere in the network (Section 11).*
 
 The novelty is the juxtaposition, not a blanket “no content
-causation” claim. The same editable sparse space that *successfully*
+causation” claim. The same editable space that *successfully*
 switches legal packages under free generation (`a pilot` ↔ `an aviator`)
 still yields a stubborn null for **independent** \(C \rightarrow c\)
 under fixed \(b\). Packaging and \(b \rightarrow c\) are easy to move;
-modular content control is not—in every representation we could
-actually manipulate (dual-effect, content-ish, hint-contrast, and
-per-noun LP-style features). Residual / dense directions remain an open
-fairness check (Section 11), not a result we claim to have closed.
+modular content control is not—across sparse dual-effect / content-ish /
+hint-contrast / per-noun LP-style features **and** a dense residual
+direction constructed to point toward the same-class noun (Stages
+XVI–XVIII). Remaining limits are finer latent probes, pure \(A\), and
+scale (Section 11)—not an untested residual escape hatch.
 
 This is a publishable *mechanistic* claim relative to the Latent Planning
 task family on this model, not a claim about all scales or all
@@ -241,6 +245,20 @@ a → A → {B, C}_bundle → (b, c)
   recompute). The fair assay for independent \(C \rightarrow c\),
   especially with **within-class** noun targets (e.g. `pilot`↔`captain`
   under fixed `a`).
+
+- **Residual stream / MLP-in activation:** the high-dimensional continuous
+  state the model carries from layer to layer (here, the vector entering
+  each MLP block). Unlike a sparse “feature,” this is a dense vector of
+  hundreds of numbers. Our affine transcoder reconstructs MLP computation
+  from features **plus** a skip path that can bypass those features, so
+  some useful signal might live outside the sparse dictionary.
+
+- **Activation-direction / residual steer:** instead of turning a few
+  named features up or down, build a single direction in residual space
+  that points from one concept toward another (for example, from
+  “thinking of *pilot*” toward “thinking of *captain*”), then add a
+  scaled copy of that direction at the planning position. This is the
+  standard dense fallback when sparse features might be the wrong grain.
 
 - **Gain-of-function (amplify):** raising a feature’s activation above
   its natural value on a prompt, used to test sufficiency.
@@ -799,7 +817,7 @@ coordinated preparation--content control—compiled trajectories
 result, how collaborator discussion changed the question we needed to
 answer—anchored on the H1 vs H2 causal graphs in Section 10.2—which
 model stack we used, and the causal experiments that followed (Stages
-VIII–XVII).
+VIII–XVIII).
 
 ## 10.1 What we planned after Stage VII
 
@@ -884,8 +902,9 @@ There is no stable content plan with an independently editable wrapper.
 **H2 success:** free intervention moves \(b\) and \(c\) together as a
 legal package; pasting native \(b\) restores native \(c\); and—under the
 corrected Stage XVI schedule—no content handle moves \(c\) with \(b\)
-held fixed, including among within-class synonyms and including
-per-noun Latent-Planning-style features (Stage XVII). (A selective
+held fixed, including among within-class synonyms, including
+per-noun Latent-Planning-style features (Stage XVII), and including a
+dense residual direction toward the same-class noun (Stage XVIII). (A selective
 licensing handle that moves article logits without rewriting executed
 \(c\) under fixed \(b\) is compatible with H2 and does not revive H1.)
 
@@ -907,6 +926,8 @@ context). Therefore:
 > “`a` merely blocks `aviator`,” nor as “interventions were off at
 > \(c\)”). Stage XVII closes the “wrong sparse grain” caveat by
 > repeating that schedule with per-noun LP-style target features.
+> Stage XVIII closes the “maybe it lives outside the sparse dictionary”
+> caveat with a dense residual steer under the same fixed-\(b\) schedule.
 
 *Latent Planning* already notes that small models fail behaviorally and
 may have only nascent mechanisms. Our sharpened question is sharper
@@ -925,6 +946,7 @@ model, are they implementing separable \(C \rightarrow B\) and \(C
 | XV selective + paste native \(b\) | Isolate \(b \rightarrow c\) under free vs force-native; ask whether \(C \rightarrow B\) is selective (c-step interventions were **off**—see Stage XVI) |
 | XVI fixed \(b\), content clamps **on** at \(c\) | Fair within-class \(C \rightarrow c\); factorial \(C \rightarrow B\); selective \(B \rightarrow b\); latent S2/S3 readouts |
 | XVII per-noun LP-style \(C_t\) under fixed \(b\) | Same fair \(C \rightarrow c\) assay with per-example target-noun / contrast features (wrong-grain escape hatch) |
+| XVIII residual / activation-direction under fixed \(b\) | Same fair assay with a dense MLP-in direction (dictionary / affine-skip escape hatch) |
 
 We also adopted loss-of-function, gain-of-function, activation-matched
 controls, and joint scoring of article *and* content on every trial.
@@ -1409,11 +1431,93 @@ reporting that the handles that *do* move \(\{b,c\}\) packages still fail
 as content dials once \(b\) is held fixed—even after selecting features
 the way Latent Planning would for a target noun \(C_t\).
 
-What remains open (Section 11): residual / dense activation-direction
-patching; dedicated noun-identity latent probes finer than written tokens
-+ coarse set means; pure \(A\); scale / model-family generalization.
+What remains open after Stage XVII alone (Section 11): residual / dense
+activation-direction patching; dedicated noun-identity latent probes
+finer than written tokens + coarse set means; pure \(A\); scale /
+model-family generalization. Stage XVIII closes the residual-direction
+hole for the construction we tested.
 
-## 10.14 Current hypothesis (after Stages VIII–XVII)
+## 10.14 Stage XVIII (Experiment 1): Residual / activation-direction under fixed \(b\)
+
+**Escape hatch under test:** after Stages XVI–XVII, a modular defender
+could still say: “Sparse features are the wrong *kind* of object. The
+model’s real content code lives in the continuous residual stream—or in
+the affine skip path that bypasses the transcoder dictionary. Patch
+*that*, and independent \(C \rightarrow c\) will appear.”
+
+### Plain-language motivation
+
+Think of sparse features as a small set of named dials Circuit Tracer
+lets us turn. A residual direction is different: it is a single arrow in
+the model’s high-dimensional internal space, built by comparing two
+states of the network—“thinking of *pilot*” versus “thinking of
+*captain*”—and then pushing the network a bit along that arrow. If
+independent content control exists anywhere we can edit, this is the
+standard next place to look after sparse features fail.
+
+### Protocol
+
+For the same three native-`a` twin families as Stage XVII (aircraft
+pilot/captain; legal lawyer/barrister; psychology
+psychologist/therapist):
+
+1. Build a **content direction** at mid/late layers (8, 10, 12, 14):
+   at the planning (pre-article) position, take
+   \(\mathrm{mlp\_in}(\texttt{Think of a \{target\}. prompt})
+   - \mathrm{mlp\_in}(\texttt{Think of a \{source\}. prompt})\),
+   and unit-normalize each layer’s vector. (Here `mlp_in` is the residual
+   vector entering the MLP—the site our affine skip also reads.)
+2. Build a **matched-norm random control** direction at the same layers.
+3. Under the Stage XVI schedule: paste the native article, then keep
+   adding \(\alpha \times\) direction at the original planning position
+   \(P\) while predicting the noun, for
+   \(\alpha \in \{1,2,4,8\}\).
+4. Score within-class noun change and same−source noun logits, just as
+   in Stages XVI–XVII.
+
+Primary success (upset): within-class noun switches under fixed \(b\),
+or a clear same−source logit takeover that content steering achieves and
+random controls do not.
+
+### Results
+
+| Condition (3 families) | \(c \rightarrow c\) signal | Content changed | Matched same-class | Mean \(\Delta\)(same−source) | Mean \(\Delta\Delta\)(same−source) vs off |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Baseline | 0.00 | 0.00 | 0.00 | −5.54 | 0.00 |
+| Content steer \(\alpha=1\) | 0.00 | 0.00 | 0.00 | −5.46 | +0.08 |
+| Content steer \(\alpha=2\) | 0.00 | 0.00 | 0.00 | −5.50 | +0.04 |
+| Content steer \(\alpha=4\) | 0.00 | 0.00 | 0.00 | −5.46 | +0.08 |
+| Content steer \(\alpha=8\) | 0.00 | 0.00 | 0.00 | −5.62 | −0.08 |
+| Random control \(\alpha=1\)–\(8\) | 0.00 | 0.00 | 0.00 | ~−5.4 to −5.5 | ≈0 |
+
+Every force-on continuation stayed on the baseline noun (`a pilot`,
+`a lawyer`, `a psychologist`). Content steering never outperformed
+random controls on the within-class metrics; the ~5-logit same−source
+gap did not close.
+
+![Figure 11. Dense residual (MLP-in) content steering under the Stage XVI fixed-\(b\) protocol: within-class outcomes remain exactly zero across content and random directions; same-class nouns stay ~5 logits below source.](figures/figure11_residual_fixed_b.png)
+
+### Conclusion of Stage XVIII
+
+In plain terms: **pushing the network along a dense “toward the
+same-class noun” arrow, while holding the article fixed, still does not
+rewrite the noun.** The Stage XVI/XVII sparse nulls were therefore not
+only “we picked the wrong sparse dials.” Independent \(C \rightarrow c\)
+also fails for this residual construction at the MLP-in / affine-skip
+site under the fair fixed-\(b\) schedule.
+
+This hardens—not revises—the H2 packaging read for *editable*
+representations on this model and task. It does **not** prove that no denser
+or differently constructed direction could ever work, nor that content
+identity is absent from latent space; it closes the specific escape
+hatch that “sparse dictionary incompleteness alone” explained the null.
+
+What remains open (Section 11): dedicated noun-identity latent probes;
+pure \(A\); scale / model-family generalization; alternative dense
+constructions (e.g. other sites or multi-token patching) if collaborators
+want even harder completeness.
+
+## 10.15 Current hypothesis (after Stages VIII–XVIII)
 
 Relating old and new terms:
 
@@ -1425,6 +1529,7 @@ Relating old and new terms:
 | “Need a cleaner modular test” | Selective \(b\)-step + force-native article (Stage XV) |
 | “Need within-class \(C \rightarrow c\) under fixed \(b\)” | Content-on-at-\(c\) within-class assay (Stage XVI) |
 | “Maybe S3 was the wrong grain; need LP-style \(C_t\)” | Per-noun attribution selection under fixed \(b\) (Stage XVII) |
+| “Maybe content lives outside the sparse dictionary” | Residual / MLP-in activation-direction under fixed \(b\) (Stage XVIII) |
 
 **Current hypothesis (H2).**
 
@@ -1458,7 +1563,7 @@ S3 ≈ content-ish). We never isolated a validated pure \(A\) set.
 | \(A \rightarrow C\) | Only indirect: content-ish features sit at the pre-article position with future-content attribution. No pure \(A\) dial. | Cannot claim forward planning as a separated edge. |
 | \(C \rightarrow B\) | **Not supported** as selective. S3 turned up/down barely moves article preference. S1 turned up moves \(b\) strongly but also co-moves content-ish activations and free \(c\). | Against modular backward planning for these handles; favors a \(\{B,C\}\) bundle (H2). |
 | \(B \rightarrow b\) | Supported in the weak sense: article-related / dual-effect interventions change `a`/`an` logits and free-generation articles. | Shows we can move licensing readouts; does not show \(B\) is separable from \(C\). |
-| \(C \rightarrow c\) | **Not demonstrated independently—now under a fair protocol and a fairer feature grain.** Free S1 often changes the noun; Stage XV paste-native restores native \(c\) (shows \(b \rightarrow c\), but \(c\)-step clamps were off). Stage XVI: content clamps **on** at \(c\) with fixed native \(b\); \(c \rightarrow c\) signal = 0 for S3, hint-contrast, and controls. Stage XVII: same schedule with per-noun LP-style / contrast features on three twin families; again signal = 0 (max \(\Delta\Delta\) same−source ≈ +0.29 logits). | Free noun change is accounted for by \(b \rightarrow c\). Independent content rewrite fails for recurring S3 **and** for Latent-Planning-style per-example noun features under fixed \(b\). |
+| \(C \rightarrow c\) | **Not demonstrated independently—now under a fair protocol, fairer sparse grain, and a dense residual steer.** Free S1 often changes the noun; Stage XV paste-native restores native \(c\) (shows \(b \rightarrow c\), but \(c\)-step clamps were off). Stage XVI: content clamps **on** at \(c\) with fixed native \(b\); signal = 0 for S3, hint-contrast, controls. Stage XVII: per-noun LP-style / contrast features; signal = 0. Stage XVIII: residual MLP-in content directions (\(\alpha=1\)–\(8\)); signal = 0 and no better than random controls (max \(\lvert\Delta\Delta\rvert\) same−source ≲ 0.15). | Free noun change is accounted for by \(b \rightarrow c\). Independent content rewrite fails for recurring S3, Latent-Planning-style per-example features, **and** this dense residual construction under fixed \(b\). |
 | \(b \rightarrow c\) | **Supported.** Free S1: non-native \(b\) with non-native \(c\). Paste native \(b\): native \(c\) returns (content preserved ≈ 1.0). | The confounder edge is real. Any claim of \(C \rightarrow c\) must survive holding \(b\) fixed **with content clamps still active**. |
 
 ## Achievements (engineering and experiments)
@@ -1472,8 +1577,8 @@ We have achieved:
 - source-prompt evidence that future-answer information is active before
   an incorrect article (ophthalmologist discovery)—relevant to whether
   some \(C\)-like signal exists before \(b\), not yet to separable edges;
-- held-out fixed-pair, GoF clincher, E1–E4, Stage XV, Stage XVI, and
-  Stage XVII results that map onto the edge table above;
+- held-out fixed-pair, GoF clincher, E1–E4, Stage XV, Stage XVI, Stage
+  XVII, and Stage XVIII results that map onto the edge table above;
 - an explicit stack decision for pretrained + affine over IT + non-affine
   for this hypothesis test;
 - a **corrected** fixed-\(b\) / content-on-at-\(c\) within-class null for
@@ -1481,18 +1586,21 @@ We have achieved:
   phonological “`a` blocks `aviator`” caveat for these handles);
 - a **per-noun** Latent-Planning-style attribution null under that same
   schedule (Stage XVII)—closes the “wrong sparse grain / wrong \(C_t\)”
-  escape hatch for the handles we can select from CLT graphs.
+  escape hatch for the handles we can select from CLT graphs;
+- a **dense residual / MLP-in activation-direction** null under that same
+  schedule (Stage XVIII)—closes the main “maybe it lives outside the
+  sparse dictionary / affine skip” escape hatch for the construction we
+  tested.
 
 We have not achieved:
 
 - a general tool for reducing stalling behavior on country--city prompts;
 - a content-preserving grammar correction that transfers across prompts;
 - proof of H1 (separable \(C \rightarrow B\) and independent \(C \rightarrow c\))
-  for any frozen feature set we tried;
+  for any frozen feature set or residual direction we tried;
 - a pure context-concept (\(A\)) feature set;
-- residual / full activation-direction content steering beyond sparse CLT
-  features (Stage XVI hint-contrast and Stage XVII per-noun selection
-  remain inside the sparse feature dictionary);
+- proof that *every* possible dense construction fails (Stage XVIII tests
+  one standard hint-contrast residual direction at MLP-in layers);
 - dedicated noun-identity latent probes (pilot vs captain feature
   contrasts) that would separate plan-then-abandon from package-reset
   more finely than written tokens + coarse set means + noun logits;
@@ -1504,56 +1612,59 @@ We have not achieved:
 ## Interim paper-strong claim (stated as in our internal reasoning)
 
 **Claim (scoped).** On this small model, with these intervenable sparse
-features, we **cannot demonstrate independent \(C \rightarrow c\) once
-\(b\) is held fixed**—including under a corrected protocol that keeps
-content clamps **on** at the noun step and asks for **within-class**
-noun moves, and including **per-noun Latent-Planning-style** feature
-selection on twin families (Stage XVII). Noun changes under free
-intervention track \(b \rightarrow c\). That is **strong evidence these
-mechanisms are not modular latent planning (H1)**, and that
-**article-conditioned packaging and/or strong \(b \rightarrow c\)
-dominates execution** for the handles we tested (H2 as an account of
-*these interventions*).
+features **and** a dense residual content direction, we **cannot
+demonstrate independent \(C \rightarrow c\) once \(b\) is held
+fixed**—including under a corrected protocol that keeps content edits
+**on** at the noun step and asks for **within-class** noun moves
+(Stages XVI–XVIII). Noun changes under free intervention track
+\(b \rightarrow c\). That is **strong evidence these mechanisms are not
+modular latent planning (H1)**, and that **article-conditioned packaging
+and/or strong \(b \rightarrow c\) dominates execution** for the handles
+we tested (H2 as an account of *these interventions*).
 
 **What this is.** The surprise juxtaposition: on this model, every
-intervenable sparse representation we could edit that **successfully
+intervenable representation we could edit that **successfully
 moves legal \(\{b,c\}\) packages** under free generation still **fails
-to move \(c\) independently** once \(b\) is held fixed (Stages XV–XVII,
-including per-noun LP-style selection). That is a paper-grade challenge
-to reading Latent-Planning-style dual-effect (and related) sparse
-interventions on Gemma 3 270M as the separable modular graph. The
-practical consequence is that article flips here are easy to **misread**
-as modular planning if \(b \rightarrow c\) and content identity are not
-tested as separate edges.
+to move \(c\) independently** once \(b\) is held fixed—sparse dual-effect
+/ content-ish / hint-contrast / per-noun LP-style features **and** a
+dense residual (MLP-in) direction toward the same-class noun (Stages
+XV–XVIII). That is a paper-grade challenge to reading
+Latent-Planning-style article-moving interventions on Gemma 3 270M as
+the separable modular graph. The practical consequence is that article
+flips here are easy to **misread** as modular planning if
+\(b \rightarrow c\) and content identity are not tested as separate
+edges.
 
 **What this is not.** It is **not** a metaphysical refutation of any
 \(C \rightarrow c\) anywhere in the network, nor a claim that the model
 has no causal structure, nor that latent planning is impossible at larger
-scales, nor that content causation is absent from every representation.
-We tested specific frozen feature sets (S1/S2/S3/controls/hint
-contrast/per-noun LP-target and contrast), not all of activation space.
-*Latent Planning Emerges with Scale* already places reliable a/an success
-at much larger models; our contribution is the scoped null for
-*independent* content control in the space we could manipulate.
+scales, nor that every conceivable dense patch has been tried. We tested
+specific frozen feature sets and one standard residual construction, not
+all of activation space. *Latent Planning Emerges with Scale* already
+places reliable a/an success at much larger models; our contribution is
+the scoped null for *independent* content control in the space we could
+manipulate.
 
 **One-sentence bottom line for readers:** packaging works and independent
-\(C \rightarrow c\) does not—in the same editable sparse features—so
-holding the article fixed abolishes noun change even when content clamps
-stay on, the target is within-class, and features are selected per-noun
-for that target; free noun change is therefore not evidence of
-independent content causation for these features.
+\(C \rightarrow c\) does not—in editable sparse features **and** in a
+dense residual steer toward the same-class noun—so holding the article
+fixed abolishes noun change even when content edits stay on and the
+target is within-class; free noun change is therefore not evidence of
+independent content causation for these handles.
 
 ## What is still missing (before we can state the claim more forcefully)
 
 The scoped claim above is now supported by Stage XV + Stage XVI + Stage
-XVII + E1–E3. The **within-class / schedule hole** and the **per-noun
-sparse-grain hole** are closed for these CLT handles. What still limits
-a harder claim:
+XVII + Stage XVIII + E1–E3. The **within-class / schedule**, **per-noun
+sparse-grain**, and **residual-direction** holes are closed for the
+constructions we tested. What still limits a harder claim:
 
-1. **Residual / dense content handles.** Stage XVII closes per-noun
-   *sparse* selection; it does not patch residual-stream or full
-   activation directions. A positive \(C \rightarrow c\) dial could still
-   exist outside the CLT dictionary.
+1. **Alternative dense constructions.** Stage XVIII closes one standard
+   hint-contrast residual direction at MLP-in layers with matched random
+   controls. Other sites, multi-position patches, or differently built
+   directions could still be tried if collaborators want completeness
+   beyond this construction—without undoing the scoped claim about the
+   handles we already edited.
 
 2. **Finer latent content identity.** Written tokens and coarse set
    means only show execution plus set-level amplitude. Dedicated
@@ -1569,12 +1680,12 @@ a harder claim:
 
 Collaborators should read the interim claim as: **strong against modular
 H1 for these interventions’ free-generation and fixed-\(b\) execution
-behavior**, with the phonological within-class caveat and the per-noun
-\(C_t\) grain caveat now closed for sparse CLT handles. Until residual
-patches and finer latent probes are run, we should not claim latent
-absence of all content plans—only absence of demonstrated independent
-causal control of executed \(c\) with \(b\) fixed for the handles we
-tested.
+behavior**, with the phonological within-class caveat, the per-noun
+\(C_t\) grain caveat, and the residual-direction caveat now closed for
+the constructions we tested. Until finer latent probes (and optionally
+further dense variants) are run, we should not claim latent absence of
+all content plans—only absence of demonstrated independent causal control
+of executed \(c\) with \(b\) fixed for the handles we tested.
 
 # Reproducibility map
 
@@ -1601,6 +1712,7 @@ The reports and machine-readable outputs are organized by experiment:
 | Selective \(b\)-step + force-native article | `experiments/selective_bc_force_native/` |
 | Fixed \(b\), content-on-at-\(c\) within-class (N0–N4) | `experiments/causal_edge_independence/` |
 | Per-noun LP-style features under fixed \(b\) (Stage XVII / Exp 2) | `experiments/per_noun_fixed_b_c_to_c/` |
+| Residual / MLP-in direction under fixed \(b\) (Stage XVIII / Exp 1) | `experiments/residual_direction_fixed_b_c_to_c/` |
 | Paper execution contract | `experiments/PAPER_EXPERIMENTS.md` |
 
 Each experiment directory contains a human-readable `results/report.md`,

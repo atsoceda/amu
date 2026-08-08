@@ -8,7 +8,7 @@ Rebuild the full collaborator DOCX from **experiment result summaries** plus the
 | Input | Role |
 | --- | --- |
 | [`research-narrative.md`](research-narrative.md) | Polished prose (source of truth for text/equations) |
-| `experiments/*/results/summary.json` | Raw result tables for figures 1–10 |
+| `experiments/*/results/summary.json` | Raw result tables for figures 1–11 |
 | [`styles-reference.docx`](styles-reference.docx) | Word styles only (optional; Pandoc defaults if missing) |
 
 Figure → experiment map (see [`generate_figures.py`](generate_figures.py)):
@@ -23,6 +23,7 @@ Figure → experiment map (see [`generate_figures.py`](generate_figures.py)):
 8. `selective_bc_force_native`
 9. `causal_edge_independence`
 10. `per_noun_fixed_b_c_to_c`
+11. `residual_direction_fixed_b_c_to_c`
 
 ## One-command rebuild
 

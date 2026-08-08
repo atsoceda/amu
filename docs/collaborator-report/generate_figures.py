@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate collaborator-report figures 1–10 from experiment summary.json files.
+"""Regenerate collaborator-report figures 1–11 from experiment summary.json files.
 
 Required experiment result artifacts (under experiments/*/results/summary.json):
 
@@ -13,6 +13,7 @@ Required experiment result artifacts (under experiments/*/results/summary.json):
   figure8  selective_bc_force_native
   figure9  causal_edge_independence
   figure10 per_noun_fixed_b_c_to_c
+  figure11 residual_direction_fixed_b_c_to_c
 """
 from __future__ import annotations
 
@@ -44,6 +45,7 @@ REQUIRED = {
     "figure8_selective_force_native.png": ["selective_bc_force_native"],
     "figure9_fixed_b_content_on.png": ["causal_edge_independence"],
     "figure10_per_noun_fixed_b.png": ["per_noun_fixed_b_c_to_c"],
+    "figure11_residual_fixed_b.png": ["residual_direction_fixed_b_c_to_c"],
 }
 
 
@@ -545,6 +547,82 @@ def figure10(per_noun: dict) -> None:
     plt.close()
 
 
+def figure11(residual: dict) -> None:
+    """Residual / MLP-in direction fixed-b null (Stage XVIII / Exp 1)."""
+    by = residual["by_condition"]
+    order = [
+        ("baseline", "Baseline"),
+        ("content_steer_a1", "Content α1"),
+        ("content_steer_a2", "Content α2"),
+        ("content_steer_a4", "Content α4"),
+        ("content_steer_a8", "Content α8"),
+        ("control_steer_a1", "Random α1"),
+        ("control_steer_a2", "Random α2"),
+        ("control_steer_a4", "Random α4"),
+        ("control_steer_a8", "Random α8"),
+    ]
+    labels = [lab for key, lab in order if key in by]
+    keys = [key for key, lab in order if key in by]
+    c2c = [by[k]["c_to_c_signal_rate"] for k in keys]
+    changed = [by[k]["content_changed_on_rate"] for k in keys]
+    matched = [by[k]["matched_same_class_on_rate"] for k in keys]
+    logit_gap = [by[k]["mean_delta_same_minus_source_on"] for k in keys]
+    x = np.arange(len(labels))
+
+    fig, (ax0, ax1) = plt.subplots(
+        1, 2, figsize=(13.2, 5.4), gridspec_kw={"width_ratios": [1.25, 1.0]}
+    )
+
+    for vals, color, marker, label in [
+        (c2c, "#C44E52", "o", "Within-class C→c signal"),
+        (changed, "#4C72B0", "s", "Content changed (steer on)"),
+        (matched, "#55A868", "^", "Matched same-class noun"),
+    ]:
+        ax0.plot(
+            x,
+            vals,
+            marker=marker,
+            linestyle="None",
+            markersize=9,
+            color=color,
+            label=label,
+            zorder=3,
+        )
+    ax0.axhline(0.0, color="#333333", linewidth=1.0, zorder=1)
+    ax0.set_xticks(x)
+    ax0.set_xticklabels(labels, rotation=30, ha="right")
+    ax0.set_ylim(-0.08, 1.05)
+    ax0.set_ylabel("Rate on 3 twin families")
+    ax0.set_title("Binary outcomes (all exactly 0)")
+    ax0.legend(frameon=False, loc="upper right", fontsize=9)
+    ax0.text(
+        0.02,
+        0.92,
+        "null C→c for residual steer",
+        transform=ax0.transAxes,
+        fontsize=10,
+        color="#666666",
+    )
+
+    ax1.bar(x, logit_gap, color="#8172B3", width=0.7)
+    ax1.axhline(0.0, color="#333333", linewidth=1.0)
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(labels, rotation=30, ha="right")
+    ax1.set_ylabel("Mean logit(same-class) − logit(source)")
+    ax1.set_title("Same-class never overtakes source")
+    ymin = min(logit_gap) - 0.5
+    ax1.set_ylim(ymin, 0.5)
+
+    fig.suptitle(
+        "Stage XVIII: residual MLP-in content direction, fixed native article, steer ON at c",
+        y=1.02,
+        fontsize=12,
+    )
+    fig.tight_layout()
+    fig.savefig(FIGDIR / "figure11_residual_fixed_b.png", dpi=160, bbox_inches="tight")
+    plt.close()
+
+
 def main() -> None:
     missing_exps = sorted(
         {
@@ -572,7 +650,8 @@ def main() -> None:
     figure8(load_summary("selective_bc_force_native"))
     figure9(load_summary("causal_edge_independence"))
     figure10(load_summary("per_noun_fixed_b_c_to_c"))
-    print("Wrote figures 1–10 into", FIGDIR)
+    figure11(load_summary("residual_direction_fixed_b_c_to_c"))
+    print("Wrote figures 1–11 into", FIGDIR)
 
 
 if __name__ == "__main__":

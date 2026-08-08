@@ -1,0 +1,120 @@
+{
+  "experiment_name": "residual_direction_fixed_b_c_to_c",
+  "generated_at": "2026-08-08T05:05:24.732491+00:00",
+  "model": "google/gemma-3-270m",
+  "runtime_seconds": 78.02418398857117,
+  "protocol": "residual_mlp_in_direction__force_native_b__steer_on_at_c",
+  "patch_site": "mlp.hook_in (feature_input / residual into MLP; affine skip path)",
+  "patch_layers": [
+    8,
+    10,
+    12,
+    14
+  ],
+  "steering_alphas": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "families": [
+    "aircraft",
+    "legal",
+    "psychology"
+  ],
+  "by_condition": {
+    "baseline": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.541666666666667,
+      "mean_delta_same_minus_source_delta": 0.0,
+      "mean_delta_an_minus_a_bstep": 0.0,
+      "protocol_differs_on_vs_off_rate": 0.0
+    },
+    "content_steer_a1": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.458333333333333,
+      "mean_delta_same_minus_source_delta": 0.08333333333333333,
+      "mean_delta_an_minus_a_bstep": -0.041666666666666664,
+      "protocol_differs_on_vs_off_rate": 0.6666666666666666
+    },
+    "control_steer_a1": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.541666666666667,
+      "mean_delta_same_minus_source_delta": 0.0,
+      "mean_delta_an_minus_a_bstep": 0.0,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "content_steer_a2": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.5,
+      "mean_delta_same_minus_source_delta": 0.041666666666666664,
+      "mean_delta_an_minus_a_bstep": -0.125,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "control_steer_a2": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.458333333333333,
+      "mean_delta_same_minus_source_delta": 0.08333333333333333,
+      "mean_delta_an_minus_a_bstep": -0.08333333333333333,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "content_steer_a4": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.458333333333333,
+      "mean_delta_same_minus_source_delta": 0.08333333333333333,
+      "mean_delta_an_minus_a_bstep": -0.25,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "control_steer_a4": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.458333333333333,
+      "mean_delta_same_minus_source_delta": 0.08333333333333333,
+      "mean_delta_an_minus_a_bstep": -0.125,
+      "protocol_differs_on_vs_off_rate": 0.6666666666666666
+    },
+    "content_steer_a8": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.625,
+      "mean_delta_same_minus_source_delta": -0.08333333333333333,
+      "mean_delta_an_minus_a_bstep": -0.4166666666666667,
+      "protocol_differs_on_vs_off_rate": 1.0
+    },
+    "control_steer_a8": {
+      "n": 3,
+      "c_to_c_signal_rate": 0.0,
+      "content_changed_on_rate": 0.0,
+      "matched_same_class_on_rate": 0.0,
+      "mean_delta_same_minus_source_on": -5.395833333333333,
+      "mean_delta_same_minus_source_delta": 0.14583333333333334,
+      "mean_delta_an_minus_a_bstep": -0.7916666666666666,
+      "protocol_differs_on_vs_off_rate": 0.6666666666666666
+    }
+  },
+  "dial_found": false,
+  "best_condition": "control_steer_a8",
+  "interpretation": "baseline: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.542, \u0394\u0394(same\u2212src)=0.000. content_steer_a1: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.458, \u0394\u0394(same\u2212src)=0.083. control_steer_a1: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.542, \u0394\u0394(same\u2212src)=0.000. content_steer_a2: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.500, \u0394\u0394(same\u2212src)=0.042. control_steer_a2: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.458, \u0394\u0394(same\u2212src)=0.083. content_steer_a4: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.458, \u0394\u0394(same\u2212src)=0.083. control_steer_a4: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.458, \u0394\u0394(same\u2212src)=0.083. content_steer_a8: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.625, \u0394\u0394(same\u2212src)=-0.083. control_steer_a8: c\u2192c=0.00, match_same=0.00, \u0394(same\u2212src)=-5.396, \u0394\u0394(same\u2212src)=0.146. Null: residual MLP-in content directions do not open a within-class C\u2192c dial under fixed b. Fairer negative than sparse-only Stage XVI/XVII."
+}
