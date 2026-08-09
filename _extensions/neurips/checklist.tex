@@ -5,7 +5,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and Section~1 state a scoped claim: editable packaging without independent $C\rightarrow c$ on Gemma~3 270M under fixed-$b$ assays; limitations are explicit.
+    \item[] Justification: The abstract and Section~1 state a scoped mediation claim: free-generation noun-token changes after article-directed interventions are non-diagnostic on Gemma~3 270M; fixed-\(b\) results are about tested handles under floor limits, with an attempted oracle positive control.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -17,7 +17,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~7 discusses model/stack/task scope, missing pure $A$, latent probes, residual-construction completeness, and scale.
+    \item[] Justification: Section~7 discusses model/stack/task scope, floor effects, failed positive-control construction, residual weakness vs random, and scale.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -94,8 +94,8 @@
 
 \item {\bf Experiment statistical significance}
     \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
-    \item[] Answer: \answerNo{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: We report rates over fixed held-out prompt sets and deterministic greedy decoding; we do not report error bars over random seeds because interventions and decoding are deterministic given the frozen stack.
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: We report Clopper--Pearson intervals for binomial rates and normal-approximation intervals for mean logit effects across pairs and random-control seeds; decoding is greedy, but sampling uncertainty over prompts/pairs/controls is quantified.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.

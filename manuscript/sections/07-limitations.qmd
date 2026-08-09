@@ -2,10 +2,12 @@
 
 Our claim is scoped to Gemma~3 270M, the PT+affine Gemma Scope~2 CLT
 dictionary, occupation \(a\)/\(an\) prompts, and the interventions we ran.
-We did not isolate a pure context concept \(A\), nor run dedicated latent
-noun-identity probes beyond executed tokens and coarse set means.
-Stage~XVIII tests one hint-contrast residual construction at MLP-in;
-other dense sites remain possible. Scale and model-family generalization
+The model is in a weak behavioral regime for this task. We did not isolate
+a pure context concept \(A\), nor run dedicated semantic-concept probes
+beyond noun-token outcomes. Many same-class targets begin several logits
+behind the source, so top-1 nulls can reflect floor effects. The residual
+hint-contrast construction is one dense baseline and can be weaker than
+matched random directions; oracle activation patching is a stronger but
+still incomplete positive control. Scale and model-family generalization
 are outside our local compute envelope. Affine skip means sparse
-interventions need not exhaust MLP computation; the residual null reduces
-but does not eliminate that concern for every patch.
+interventions need not exhaust MLP computation.

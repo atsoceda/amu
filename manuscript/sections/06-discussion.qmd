@@ -1,26 +1,32 @@
 # Discussion
 
-**What the surprise is.** The interesting finding is not that a 270M
-model fails the behavioral \(a\)/\(an\) demo---@hanna2026latent already
-place reliable success at larger scales. The surprise is the
-**juxtaposition** inside editable mechanisms. Dual-effect features are
-easy to move as *packages*: selection ablation, dose--response, dual
-lock, and twin tetrads all agree that free generation yields legal
-article--noun switches rather than content-preserving wrappers. The same
-handles---plus Latent-Planning-style per-noun features and a dense
-residual MLP-in steer---still fail as independent content dials once
-\(b\) is held fixed with content interventions kept on. Packaging and
-\(b\to c\) are easy to edit; modular \(C\to c\) is not.
+**Main finding.** On Gemma~3 270M, selected dual-effect interventions
+produce large *total* effects on article--noun completions under free
+generation, but noun-token changes are largely consistent with mediation
+through the generated article (**H3**). When the article is held fixed and
+interventions remain active, the tested sparse and dense handles give
+little behaviorally sufficient control of same-article-class noun tokens,
+especially when targets begin far below the decoding boundary.
 
-**Methodological implication.** Article-only attribution and free
-generation overstate modular planning whenever noun changes can be
-explained by \(b\to c\). Edge tests that paste native \(b\) while keeping
-content edits active, and that score within-class rewrites rather than
-any noun change, should be standard before claiming separable
-forward/backward planning from feature interventions.
+**What we do and do not claim.** We do not claim that latent planning is
+impossible, that @hanna2026latent's larger-model results are wrong, or
+that an abstract \(C\to c\) edge is absent everywhere in the network. We
+claim that free-generation metrics can overstate separable planning, that
+\(b\) is a mediator rather than a classical confounder, and that the
+tested handles do not function as independently editable noun-token
+controls under fixed \(b\). Output package-like behavior does not by itself
+identify a fused internal package representation (**H2**).
 
-**Relation to Latent Planning.** We do not claim their large-model
-results are wrong, nor that latent planning is impossible. On this small
-model, dual-effect / content-attributed interventions are better explained
-as H2 packagers than as H1 modular planners: what is editable does not
-decompose into independent \(C\to c\).
+**Assay validation.** We screened near-boundary same-article-class pairs
+and attempted oracle MLP-in activation patching under fixed native \(b\).
+That construction did **not** produce clear noun-token control, so
+fixed-\(b\) top-1 nulls cannot be read as a fully validated negative test
+of every possible noun pathway. Continuous logit effects and uncertainty
+intervals should be reported alongside top-1 rates whenever targets are
+floor-limited.
+
+**Methodological implication.** Before treating article-directed feature
+interventions as modular planning evidence, hold the generated article
+fixed, keep candidate interventions on, score noun-token logits (not only
+switches), compare to matched random controls, and attempt a positive
+control that can move noun tokens when such control exists.

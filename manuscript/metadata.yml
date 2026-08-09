@@ -1,4 +1,4 @@
-title: "Packaging without Independent Content Control: Causal Edge Tests of Latent Planning Features in Gemma~3 270M"
+title: "Autoregressive Article-to-Noun Mediation Can Mimic Latent Planning in Gemma~3 270M"
 author:
   - name: Anonymous Authors
     affiliations:
@@ -6,24 +6,26 @@ author:
 abstract: |
   Sparse feature interventions that flip grammatical articles ($a$/$an$)
   are often read as evidence of modular latent planning: an internal
-  content representation that both licenses the article and determines the
-  upcoming noun. We show that, on pretrained Gemma~3 270M with Gemma Scope~2
-  cross-layer transcoders, this reading is fragile. Features that move
-  articles under free generation typically switch coordinated
-  article--noun packages (e.g., $a$ pilot $\to$ $an$ aviator)
-  rather than preserving content. Holding the article fixed restores the
-  native noun, revealing a strong $b\to c$ confound. Under a
-  corrected protocol that keeps content interventions active while the
-  article is pasted at its native value, we obtain a consistent null for
-  independent within-class content rewrite across recurring content-ish
-  features, Latent-Planning-style per-noun attribution features, and a
-  dense residual (MLP-in) direction. The novelty is the juxtaposition:
-  packaging is easy to edit; independent $C\to c$ is not, in
-  every representation we could manipulate. We argue that article-only
-  metrics systematically overstate modular planning on this model and task.
+  content state that both licenses the article and independently sets the
+  upcoming noun. On pretrained Gemma~3 270M with Gemma Scope~2
+  cross-layer transcoders, we show that this reading is fragile. Features
+  that move articles under free generation typically change the following
+  noun token as well (e.g., $a$ pilot $\to$ $an$ aviator). Holding the
+  generated article fixed largely restores the native noun, consistent with
+  mediation through the article rather than independently editable
+  noun-token identity. Under a corrected protocol that keeps interventions
+  active while pasting the native article, selected sparse and dense
+  handles produce little behaviorally sufficient control of
+  same-article-class noun tokens, especially when targets begin far below
+  the decoding boundary. We attempt to validate the fixed-article assay with
+  oracle activation patching; that construction fails to move noun tokens,
+  so we report continuous logit effects with uncertainty and treat top-1
+  nulls as handle- and floor-scoped rather than network-wide. The
+  methodological point is that free-generation noun changes after
+  article-directed interventions are non-diagnostic of separable planning.
 keywords:
   - mechanistic interpretability
   - latent planning
+  - causal mediation
   - feature circuits
   - sparse autoencoders
-  - causal interventions

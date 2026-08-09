@@ -5,42 +5,42 @@ Mechanistic interpretability increasingly studies whether language models
 earlier tokens that license that content [@hanna2026latent]. On
 article--noun tasks such as choosing \(a\) versus \(an\) before an
 occupation noun, dual-effect sparse features that affect both article
-logits and future-content attributions look like planning features. Under
+logits and future-noun attributions look like planning features. Under
 free generation, intervening on them can flip `a pilot` into
 `an aviator`. It is tempting to conclude that the model implements a
 modular graph in which a content concept \(C\) independently controls both
-the article \(b\) and the noun \(c\).
+the article \(b\) and the noun token \(c\).
 
-We argue that this conclusion requires edge-level causal tests that prior
-article-centric metrics do not provide. Autoregression itself induces a
-confounder \(b\to c\): once the model emits `an`, vowel-initial
-nouns become likelier. Free noun change after an article flip is therefore
-not evidence of independent content rewrite. The decisive assay is to
-**hold \(b\) fixed** while keeping candidate content interventions active,
-and to ask whether \(c\) still moves---especially among
-**within-class** synonyms that the pasted article still licenses
-(`pilot`\(\leftrightarrow\)`captain` under fixed `a`).
+We argue that this conclusion requires edge-level tests that free
+generation does not provide. Once an intervention changes \(b\), ordinary
+autoregressive decoding induces a **mediated** path \(I\to b\to c\): after
+`an`, vowel-initial nouns become likelier. Free noun-token change after an
+article flip is therefore not evidence of independently editable
+noun-token identity. The key assay is to **hold \(b\) fixed** while
+keeping candidate interventions active, and to ask whether \(c\) still
+moves---especially among **same-article-class** alternatives that the
+pasted article still licenses (`pilot`/`captain` under fixed `a`).
 
 **Contributions.** On pretrained Gemma~3 270M with Gemma Scope~2 affine
 cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
 
-1. Separate two hypotheses: modular editable planning (**H1**) versus
-   packaged article--content trajectories (**H2**).
-2. Show that dual-effect interventions are trajectory-like under free
-   generation (\(\approx 95\%\) class shifts; \(\approx 0\%\)
-   content-preserving wrapper repairs) across selection ablation,
-   dose--response, dual lock, and twin tetrads---yet restore native nouns
-   when the native article is pasted.
-3. Introduce a corrected fixed-\(b\), content-on-at-\(c\) protocol and
-   obtain a consistent **null** for independent within-class
-   \(C\to c\) across recurring content-ish features,
-   Latent-Planning-style per-noun attribution features, and a dense
-   residual MLP-in direction.
-4. Reframe the novelty as a juxtaposition: **packaging is editable;
-   independent content control is not**, in every representation we could
-   manipulate---without claiming content causation is impossible
-   everywhere in the network.
+1. Separate three accounts: modular editable planning (**H1**), fused
+   article--noun packages (**H2**), and article control plus autoregressive
+   continuation (**H3**).
+2. Show that dual-effect interventions produce large free-generation
+   effects on article--noun completions (high rates of legal package-like
+   switches; near-zero content-preserving wrapper repairs) across selection
+   ablation, dose--response, dual lock, and twin tetrads---yet restoring
+   the native article typically restores the native noun token.
+3. Introduce a corrected fixed-\(b\), intervention-on-at-\(c\) protocol that
+   estimates a controlled direct effect of the **feature intervention** on
+   noun-token outcomes; attempt an oracle activation-patching positive
+   control (which fails on this stack); and report continuous logit effects
+   with uncertainty alongside top-1 rates.
+4. Argue that free-generation and article-only metrics can overstate
+   separable planning whenever noun-token changes are explainable by
+   mediation through the generated article.
 
 The result is a methodological challenge to reading article flips as
-modular latent planning on this small model, and a template for edge
-tests that larger-scale planning studies can reuse.
+modular latent planning on this small model, and a template for mediation
+controls that larger-scale planning studies can reuse.

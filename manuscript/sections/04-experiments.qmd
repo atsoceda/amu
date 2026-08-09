@@ -6,14 +6,16 @@ backend [@gemma3; @gemmascope2]. We prefer pretrained+affine over
 instruction-tuned stacks for this task: Appendix~J of @hanna2026latent
 finds base models slightly stronger on \(a\)/\(an\), and Hub IT
 `medium_affine` layer~0 was unavailable in our setup. All reported
-feature IDs are for the PT+affine stack.
+feature IDs are for the PT+affine stack. This model strongly prefers
+majority \(a\) and sits below the scale regime where @hanna2026latent
+report reliable behavioral planning success; we therefore focus on
+*editable* mechanisms and assay validation rather than behavioral demos.
 
 **Task.** Latent-Planning-style occupation prompts of the form
 ``Someone who \ldots\ is'' with a fixed one-shot demonstration.
-Baselines strongly prefer majority \(a\). Early mismatch discovery and
-the held-out transfer that first broke a wrapper reading are summarized
-in Appendix~A; the main text starts from packaging assays on
-held-out occupations.
+Early mismatch discovery and the held-out transfer that first broke a
+wrapper reading are summarized in Appendix~A; the main text starts from
+free-generation package-like assays and fixed-article controls.
 
 **Feature families.** From attribution graphs on eight selection
 occupations (disjoint from the free-generation test set) we construct
@@ -26,19 +28,27 @@ intervened set. Later assays add **per-noun** Latent-Planning-style
 features for a same-class target with low \(|\mathrm{attr}(a/an)|\), and
 hint-contrast sets. Default free-generation interventions amplify
 \(5\times\) prompt-specific activation at \(P\); dose sweeps use
-\(\{1.5,2,3,5,8\}\times\).
+\(\{1.5,2,3,5,8\}\times\). Large multiplicative gains can be
+off-manifold; we therefore also run **oracle MLP-in activation patching**
+from natural target prompts as a positive control under fixed \(b\).
 
-**Dense residual steer.** As a dictionary-completeness check we build
-unit MLP-in directions
+**Dense residual / oracle interventions.** As a dictionary-completeness
+check we build unit MLP-in directions
 \(\mathrm{mlp\_in}(\texttt{Think of a \{target\}.}\,p)
 -\mathrm{mlp\_in}(\texttt{Think of a \{source\}.}\,p)\)
 at layers \(\{8,10,12,14\}\) and add \(\alpha\in\{1,2,4,8\}\) times the
 direction at \(P\) under the fixed-\(b\) protocol, versus matched-norm
-random controls.
+random controls. Separately, the positive-control experiment replaces
+MLP-in activations at \(P\) with a mixture
+\((1-\lambda)\,\mathrm{act}_{\mathrm{source}}+\lambda\,\mathrm{act}_{\mathrm{target}}\)
+from two natural prompts that produce different same-article-class nouns.
 
-**Held-out sets.** Free-generation packaging results use \(N{=}20\)
-held-out occupations including twin pairs (`pilot`/`aviator`,
-`lawyer`/`attorney`, \ldots). Fixed-\(b\) within-class assays use eight
-families (Stage~XVI) or three twin families shared by the per-noun and
-residual experiments (Stages~XVII--XVIII). Full prompts, feature IDs,
-and machine-readable summaries are released in the accompanying code.
+**Held-out sets and uncertainty.** Free-generation package-like results use
+\(N{=}20\) held-out occupations including twin pairs. Fixed-\(b\)
+within-class assays use eight families or three twin families for
+per-noun/residual tests. Near-boundary screening searches additional
+same-article-class pairs for smaller baseline target$-$source gaps.
+We report binomial Clopper--Pearson upper bounds for rates and
+normal-approximation intervals for mean logit effects across pairs and
+random-control seeds. Full prompts, feature IDs, and machine-readable
+summaries are released in the accompanying code.

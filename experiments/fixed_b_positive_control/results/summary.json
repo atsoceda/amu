@@ -1,0 +1,179 @@
+{
+  "experiment": "fixed_b_positive_control",
+  "timestamp_utc": "2026-08-08T14:47:07.741191+00:00",
+  "elapsed_sec": 529.9175379276276,
+  "n_candidates_screened": 12,
+  "n_near_boundary": 2,
+  "n_usable_matched_pairs": 6,
+  "test_pair_ids": [
+    "med_doctor_surgeon",
+    "science_scientist_biologist",
+    "psych_psychologist_counselor",
+    "science_scientist_chemist"
+  ],
+  "closest_gaps": [
+    {
+      "pair_id": "science_scientist_biologist",
+      "gap": -0.75,
+      "near_boundary": true
+    },
+    {
+      "pair_id": "science_scientist_chemist",
+      "gap": -1.125,
+      "near_boundary": true
+    },
+    {
+      "pair_id": "legal_lawyer_solicitor",
+      "gap": -3.625,
+      "near_boundary": false
+    },
+    {
+      "pair_id": "med_doctor_surgeon",
+      "gap": -4.625,
+      "near_boundary": false
+    },
+    {
+      "pair_id": "legal_lawyer_barrister",
+      "gap": -4.75,
+      "near_boundary": false
+    },
+    {
+      "pair_id": "psych_psychologist_counselor",
+      "gap": -5.125,
+      "near_boundary": false
+    },
+    {
+      "pair_id": "psych_psychologist_therapist",
+      "gap": -5.75,
+      "near_boundary": false
+    },
+    {
+      "pair_id": "teach_teacher_tutor",
+      "gap": -5.75,
+      "near_boundary": false
+    }
+  ],
+  "oracle_by_mix": {
+    "0.25": {
+      "n": 4,
+      "match_rate": 0.0,
+      "switch_rate": 0.0,
+      "match_rate_cp_upper95": 0.6023646356164747,
+      "switch_rate_cp_upper95": 0.6023646356164747,
+      "delta_delta": {
+        "mean": 0.0625,
+        "lo": -0.008225407975729154,
+        "hi": 0.13322540797572915,
+        "n": 4
+      },
+      "delta_target_logit": {
+        "mean": 0.09375,
+        "lo": -0.02353482070015142,
+        "hi": 0.21103482070015142,
+        "n": 4
+      }
+    },
+    "0.5": {
+      "n": 4,
+      "match_rate": 0.0,
+      "switch_rate": 0.0,
+      "match_rate_cp_upper95": 0.6023646356164747,
+      "switch_rate_cp_upper95": 0.6023646356164747,
+      "delta_delta": {
+        "mean": 0.03125,
+        "lo": -0.03,
+        "hi": 0.0925,
+        "n": 4
+      },
+      "delta_target_logit": {
+        "mean": -0.03125,
+        "lo": -0.0925,
+        "hi": 0.03,
+        "n": 4
+      }
+    },
+    "0.75": {
+      "n": 4,
+      "match_rate": 0.0,
+      "switch_rate": 0.0,
+      "match_rate_cp_upper95": 0.6023646356164747,
+      "switch_rate_cp_upper95": 0.6023646356164747,
+      "delta_delta": {
+        "mean": 0.03125,
+        "lo": -0.03,
+        "hi": 0.0925,
+        "n": 4
+      },
+      "delta_target_logit": {
+        "mean": 0.03125,
+        "lo": -0.03,
+        "hi": 0.0925,
+        "n": 4
+      }
+    },
+    "1.0": {
+      "n": 4,
+      "match_rate": 0.0,
+      "switch_rate": 0.0,
+      "match_rate_cp_upper95": 0.6023646356164747,
+      "switch_rate_cp_upper95": 0.6023646356164747,
+      "delta_delta": {
+        "mean": 0.0625,
+        "lo": -0.008225407975729154,
+        "hi": 0.13322540797572915,
+        "n": 4
+      },
+      "delta_target_logit": {
+        "mean": 0.09375,
+        "lo": -0.09,
+        "hi": 0.27749999999999997,
+        "n": 4
+      }
+    }
+  },
+  "random_by_mix": {
+    "0.25": {
+      "n": 20,
+      "match_rate": 0.0,
+      "delta_delta": {
+        "mean": -0.025,
+        "lo": -0.090547893297874,
+        "hi": 0.040547893297873984,
+        "n": 20
+      }
+    },
+    "0.5": {
+      "n": 20,
+      "match_rate": 0.0,
+      "delta_delta": {
+        "mean": -0.10625,
+        "lo": -0.22451835842803924,
+        "hi": 0.012018358428039236,
+        "n": 20
+      }
+    },
+    "0.75": {
+      "n": 20,
+      "match_rate": 0.0,
+      "delta_delta": {
+        "mean": -0.0625,
+        "lo": -0.21694105501350414,
+        "hi": 0.09194105501350414,
+        "n": 20
+      }
+    },
+    "1.0": {
+      "n": 20,
+      "match_rate": 0.0,
+      "delta_delta": {
+        "mean": -0.04375,
+        "lo": -0.19061561840138436,
+        "hi": 0.10311561840138438,
+        "n": 20
+      }
+    }
+  },
+  "best_mix": 0.25,
+  "assay_validated": false,
+  "interpretation": "Oracle MLP-in activation patching under fixed native article does not clearly move nouns; fixed-b assay may be insensitive or model may lack separable noun control at these sites."
+}
