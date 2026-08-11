@@ -1,0 +1,631 @@
+{
+  "experiment": "s1_article_factorial",
+  "generated_at": "2026-08-10T09:52:11.604922+00:00",
+  "elapsed_sec": 262.5381381511688,
+  "model": "google/gemma-3-270m",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "feature_set": "S1_dual_effect",
+  "features": [
+    {
+      "layer": 12,
+      "feature_idx": 6229,
+      "mean_activation": 1442.0,
+      "label": "`L12/F6229`"
+    },
+    {
+      "layer": 10,
+      "feature_idx": 2930,
+      "mean_activation": 119.5,
+      "label": "`L10/F2930`"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 10231,
+      "mean_activation": 890.0,
+      "label": "`L13/F10231`"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 793,
+      "mean_activation": 287.375,
+      "label": "`L11/F793`"
+    }
+  ],
+  "amplify_factor": 5.0,
+  "n_pre_specified_prompts": 20,
+  "analysis": {
+    "recomputed": {
+      "a": {
+        "js_full_vocab": {
+          "n": 20,
+          "mean": 0.0010678174017812125,
+          "median": 0.0008904509013518691,
+          "lo": 0.0007818850441253744,
+          "hi": 0.0014012437866767868,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "tv_full_vocab": {
+          "n": 20,
+          "mean": 0.03300918317399919,
+          "median": 0.03193073160946369,
+          "lo": 0.027144516818225384,
+          "hi": 0.03897173092700541,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "top_k_jaccard": {
+          "n": 20,
+          "mean": 0.92987012987013,
+          "median": 0.9047619047619048,
+          "lo": 0.9021645021645022,
+          "hi": 0.9575757575757576,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "js_candidate_tokens": {
+          "n": 20,
+          "mean": 0.00043994658454096227,
+          "median": 7.53786662244238e-05,
+          "lo": 0.00015802644752511698,
+          "hi": 0.0007653011250567943,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "an": {
+        "js_full_vocab": {
+          "n": 20,
+          "mean": 0.0007222389926027972,
+          "median": 0.000558830943191424,
+          "lo": 0.0005081826937384903,
+          "hi": 0.0009558588564686943,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "tv_full_vocab": {
+          "n": 20,
+          "mean": 0.027846127445809544,
+          "median": 0.029487057588994503,
+          "lo": 0.02081206508446485,
+          "hi": 0.034790814970619977,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "top_k_jaccard": {
+          "n": 20,
+          "mean": 0.9666666666666666,
+          "median": 1.0,
+          "lo": 0.9476190476190476,
+          "hi": 0.9857142857142858,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "js_candidate_tokens": {
+          "n": 20,
+          "mean": 0.0003704687654362715,
+          "median": 0.00016541217337362468,
+          "lo": 0.00019058677532939327,
+          "hi": 0.0005895242051337845,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "s1_selected": {
+        "js_full_vocab": {
+          "n": 20,
+          "mean": 0.0007222389926027972,
+          "median": 0.000558830943191424,
+          "lo": 0.0005054961111454759,
+          "hi": 0.0009565335072693415,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "tv_full_vocab": {
+          "n": 20,
+          "mean": 0.027846127445809544,
+          "median": 0.029487057588994503,
+          "lo": 0.020934200868941842,
+          "hi": 0.03500222945585847,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "top_k_jaccard": {
+          "n": 20,
+          "mean": 0.9666666666666666,
+          "median": 1.0,
+          "lo": 0.9476190476190476,
+          "hi": 0.9857142857142858,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "js_candidate_tokens": {
+          "n": 20,
+          "mean": 0.0003704687654362715,
+          "median": 0.00016541217337362468,
+          "lo": 0.0001966469951412364,
+          "hi": 0.0005873878857528325,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "pre_specified_twins": {
+        "a": {
+          "delta_delta_target_minus_source": {
+            "n": 7,
+            "mean": 0.017857142857142856,
+            "median": 0.0,
+            "lo": -0.07142857142857142,
+            "hi": 0.10714285714285714,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_sequence_log_odds": {
+            "n": 7,
+            "mean": 0.018227869511715004,
+            "median": 0.0010920586064457893,
+            "lo": -0.0710578958636948,
+            "hi": 0.10766959855599063,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "an": {
+          "delta_delta_target_minus_source": {
+            "n": 7,
+            "mean": 0.08928571428571429,
+            "median": 0.0625,
+            "lo": 0.026785714285714284,
+            "hi": 0.15178571428571427,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_sequence_log_odds": {
+            "n": 7,
+            "mean": 0.08687752698149,
+            "median": 0.06250086426734924,
+            "lo": 0.024198191506522044,
+            "hi": 0.15178591864449636,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      },
+      "rates": {
+        "n_prompts": 20,
+        "baseline_free_article_a": 0.95,
+        "s1_free_article_an": 1.0,
+        "s1_free_noun_changed": 0.95,
+        "article_only_reproduces_s1_top1": 1.0
+      },
+      "decomposition": {
+        "total_js_full_vocab": {
+          "n": 20,
+          "mean": 0.5747068119424512,
+          "median": 0.6578108072280884,
+          "lo": 0.4927487517154077,
+          "hi": 0.6383277118206024,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "article_only_js_full_vocab": {
+          "n": 20,
+          "mean": 0.5727815990410516,
+          "median": 0.6578235030174255,
+          "lo": 0.48968977968385624,
+          "hi": 0.6373033195734024,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_js_full_vocab": {
+          "n": 20,
+          "mean": 0.0007222389926027972,
+          "median": 0.000558830943191424,
+          "lo": 0.0005107102857436985,
+          "hi": 0.0009608968830434605,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "total_tv_full_vocab": {
+          "n": 20,
+          "mean": 0.8932282479479909,
+          "median": 0.985509067773819,
+          "lo": 0.7844813086092473,
+          "hi": 0.96910060942173,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "article_only_tv_full_vocab": {
+          "n": 20,
+          "mean": 0.8905629992485047,
+          "median": 0.9854318499565125,
+          "lo": 0.7764941781759263,
+          "hi": 0.968595540523529,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_full_vocab": {
+          "n": 20,
+          "mean": 0.027846127445809544,
+          "median": 0.029487057588994503,
+          "lo": 0.020864638756029306,
+          "hi": 0.035071262368001045,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_over_total_tv": {
+          "n": 20,
+          "mean": 0.0798251253587045,
+          "median": 0.032516710580320206,
+          "lo": 0.025480967656468484,
+          "hi": 0.18079523424724556,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "posthoc_total_delta_delta": {
+          "n": 20,
+          "mean": 11.6375,
+          "median": 12.03125,
+          "lo": 10.06875,
+          "hi": 12.84375,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "posthoc_article_only_delta_delta": {
+          "n": 20,
+          "mean": 11.590625,
+          "median": 12.0,
+          "lo": 10.003125,
+          "hi": 12.853125,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "posthoc_residual_delta_delta": {
+          "n": 20,
+          "mean": 0.046875,
+          "median": 0.0625,
+          "lo": -0.009375,
+          "hi": 0.103125,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "descriptive_article_switch_subset": {
+        "n": 19,
+        "total_tv_full_vocab": {
+          "n": 19,
+          "mean": 0.9397371285840085,
+          "median": 0.9856688976287842,
+          "lo": 0.8915112771485981,
+          "hi": 0.9769575501743116,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "article_only_tv_full_vocab": {
+          "n": 19,
+          "mean": 0.9374347360510575,
+          "median": 0.9855653643608093,
+          "lo": 0.8872821676103693,
+          "hi": 0.9774424527820788,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_full_vocab": {
+          "n": 19,
+          "mean": 0.028808580686975466,
+          "median": 0.03075915388762951,
+          "lo": 0.021808391976121225,
+          "hi": 0.03591335398194037,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_over_total_tv": {
+          "n": 19,
+          "mean": 0.031394868798636316,
+          "median": 0.03154085969419141,
+          "lo": 0.023245398631931303,
+          "hi": 0.040013892421835826,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      }
+    },
+    "frozen": {
+      "a": {
+        "js_full_vocab": {
+          "n": 20,
+          "mean": 0.0012289618443901418,
+          "median": 0.0010901301866397262,
+          "lo": 0.0009003342187497765,
+          "hi": 0.001581112930944073,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "tv_full_vocab": {
+          "n": 20,
+          "mean": 0.0324466897174716,
+          "median": 0.02913399413228035,
+          "lo": 0.025677040591835974,
+          "hi": 0.039194821286946534,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "top_k_jaccard": {
+          "n": 20,
+          "mean": 0.9064935064935066,
+          "median": 0.9047619047619048,
+          "lo": 0.8831168831168832,
+          "hi": 0.92987012987013,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "js_candidate_tokens": {
+          "n": 20,
+          "mean": 0.0005565736734240545,
+          "median": 0.00011637694842647761,
+          "lo": 0.0002063373802343449,
+          "hi": 0.0010167129700789702,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "an": {
+        "js_full_vocab": {
+          "n": 20,
+          "mean": 0.0007302124558918877,
+          "median": 0.0006096485594753176,
+          "lo": 0.0005225961162068415,
+          "hi": 0.0009548161790007726,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "tv_full_vocab": {
+          "n": 20,
+          "mean": 0.026233928999863564,
+          "median": 0.023045210167765617,
+          "lo": 0.02013685633428395,
+          "hi": 0.032792391860857605,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "top_k_jaccard": {
+          "n": 20,
+          "mean": 0.9523809523809523,
+          "median": 0.9523809523809523,
+          "lo": 0.9333333333333333,
+          "hi": 0.9714285714285713,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "js_candidate_tokens": {
+          "n": 20,
+          "mean": 0.00036453520292525356,
+          "median": 9.18809964787215e-05,
+          "lo": 0.00014563659892701252,
+          "hi": 0.0006383736110365135,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "s1_selected": {
+        "js_full_vocab": {
+          "n": 20,
+          "mean": 0.0007302124558918877,
+          "median": 0.0006096485594753176,
+          "lo": 0.0005271123121929122,
+          "hi": 0.0009625420829252107,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "tv_full_vocab": {
+          "n": 20,
+          "mean": 0.026233928999863564,
+          "median": 0.023045210167765617,
+          "lo": 0.020178713323548435,
+          "hi": 0.03265556404367089,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "top_k_jaccard": {
+          "n": 20,
+          "mean": 0.9523809523809523,
+          "median": 0.9523809523809523,
+          "lo": 0.9333333333333333,
+          "hi": 0.9714285714285713,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "js_candidate_tokens": {
+          "n": 20,
+          "mean": 0.00036453520292525356,
+          "median": 9.18809964787215e-05,
+          "lo": 0.0001476623468533944,
+          "hi": 0.0006301174351392546,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "pre_specified_twins": {
+        "a": {
+          "delta_delta_target_minus_source": {
+            "n": 7,
+            "mean": 0.0,
+            "median": 0.0,
+            "lo": -0.16071428571428573,
+            "hi": 0.15178571428571427,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_sequence_log_odds": {
+            "n": 7,
+            "mean": 0.0007776774998222079,
+            "median": 0.005410216748714447,
+            "lo": -0.1517857930489949,
+            "hi": 0.15179073358220713,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "an": {
+          "delta_delta_target_minus_source": {
+            "n": 7,
+            "mean": 0.08928571428571429,
+            "median": 0.125,
+            "lo": -0.017857142857142856,
+            "hi": 0.17857142857142858,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_sequence_log_odds": {
+            "n": 7,
+            "mean": 0.08815752754786185,
+            "median": 0.1250000223517418,
+            "lo": -0.018985307243253504,
+            "hi": 0.17744321628872836,
+            "method": "prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      },
+      "rates": {
+        "n_prompts": 20,
+        "baseline_free_article_a": 0.95,
+        "s1_free_article_an": 1.0,
+        "s1_free_noun_changed": 0.95,
+        "article_only_reproduces_s1_top1": 1.0
+      },
+      "decomposition": {
+        "total_js_full_vocab": {
+          "n": 20,
+          "mean": 0.574195896423771,
+          "median": 0.658041775226593,
+          "lo": 0.4932547296193661,
+          "hi": 0.6376728385686874,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "article_only_js_full_vocab": {
+          "n": 20,
+          "mean": 0.5727815990410516,
+          "median": 0.6578235030174255,
+          "lo": 0.48764075331755585,
+          "hi": 0.6366140604019165,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_js_full_vocab": {
+          "n": 20,
+          "mean": 0.0007302124558918877,
+          "median": 0.0006096485594753176,
+          "lo": 0.0005247561970463721,
+          "hi": 0.0009548593712679576,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "total_tv_full_vocab": {
+          "n": 20,
+          "mean": 0.893001515371725,
+          "median": 0.9855195581912994,
+          "lo": 0.7793186298105865,
+          "hi": 0.9695491075515748,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "article_only_tv_full_vocab": {
+          "n": 20,
+          "mean": 0.8905629992485047,
+          "median": 0.9854318499565125,
+          "lo": 0.7774774074554444,
+          "hi": 0.9689424365758896,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_full_vocab": {
+          "n": 20,
+          "mean": 0.026233928999863564,
+          "median": 0.023045210167765617,
+          "lo": 0.02016220905352384,
+          "hi": 0.03270875285379589,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_over_total_tv": {
+          "n": 20,
+          "mean": 0.07781105324933599,
+          "median": 0.02476699927050493,
+          "lo": 0.023644192190567744,
+          "hi": 0.17847412736569068,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "posthoc_total_delta_delta": {
+          "n": 20,
+          "mean": 11.6453125,
+          "median": 12.0,
+          "lo": 10.034375,
+          "hi": 12.8703125,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "posthoc_article_only_delta_delta": {
+          "n": 20,
+          "mean": 11.590625,
+          "median": 12.0,
+          "lo": 9.95625,
+          "hi": 12.81875,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "posthoc_residual_delta_delta": {
+          "n": 20,
+          "mean": 0.0546875,
+          "median": 0.046875,
+          "lo": -0.003125,
+          "hi": 0.1109375,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "descriptive_article_switch_subset": {
+        "n": 19,
+        "total_tv_full_vocab": {
+          "n": 19,
+          "mean": 0.939259344025662,
+          "median": 0.9855820536613464,
+          "lo": 0.8912874711187262,
+          "hi": 0.976793392708427,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "article_only_tv_full_vocab": {
+          "n": 19,
+          "mean": 0.9374347360510575,
+          "median": 0.9855653643608093,
+          "lo": 0.8874170842923617,
+          "hi": 0.9762876629829407,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_full_vocab": {
+          "n": 19,
+          "mean": 0.026872411002650073,
+          "median": 0.023562924936413765,
+          "lo": 0.020642420718152272,
+          "hi": 0.03359788989550189,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv_over_total_tv": {
+          "n": 19,
+          "mean": 0.029274792894037883,
+          "median": 0.023746924786841286,
+          "lo": 0.02180277954635832,
+          "hi": 0.03736314788972404,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      }
+    }
+  },
+  "interpretation_status": "pending_result_review"
+}

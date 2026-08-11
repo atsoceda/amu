@@ -28,138 +28,86 @@ content-ish. Wrapper-like = generated article moves and noun token stays;
 package-like = legal article--class switch.
 {#tbl-packaging}
 
-An earlier frozen LoF pair that repaired the source mismatch
-`a ophthalmologist`\(\rightarrow\)`an ophthalmologist` likewise failed as
-a noun-preserving transfer: on held-out data it flipped many
-expected-`a` controls toward `an` and changed noun tokens on 37/107
-prompts, with **zero** grammar-only repairs that kept the noun fixed
-(@fig-generalization; bridge details in Appendix~A).
+The selection, dose, dual-lock, and twin-tetrad ablations all reproduce the
+same qualitative free-generation coordination and are summarized in
+Appendix~C. Those assays establish that S1 is a specific and controllable
+handle on legal article--noun completions; they do not distinguish **H2**
+from **H3**.
 
-![Held-out frozen-pair transfer changes articles and noun tokens together rather than repairing grammar alone.](docs/collaborator-report/figures/figure3_generalization.png){#fig-generalization width=82%}
+## Exact factorial: the article recreates the noun switch
 
-## Selection rule and dose do not open a wrapper window
+The factorial supplies that distinction. With attention recomputed, S1
+selects `an` on 20/20 prompts and changes the free noun on 19/20. Yet after
+we insert that same S1-selected article and turn S1 **off**, the top-1 noun
+matches the S1-on noun on 20/20 prompts. The numerical identity check
+between free S1-on noun logits and forced-selected-article S1-on logits has
+maximum absolute error zero.
 
-Changing how features are selected does not yield noun-preserving article
-edits (@fig-selection). Across S1--S4 at \(5\times\) amplify, wrapper-like
-rate is \(0/20\) in each arm. Only S1 is strongly package-like (0.95);
-S2/S3 stay near 0.05; S4 (competing `a`) produces neither wrappers nor
-`an`-packages under amplification. Dual-effect selection therefore
-matters for free-generation package-like behavior, but does not by itself
-identify a fused latent package (**H2**) versus article-driven
-continuation (**H3**).
+@tbl-mediation reports the distributional decomposition. Across all 20
+pre-specified prompts, total TV is \(0.893\), article-only TV is \(0.891\),
+and same-prefix residual TV is \(0.0278\). The one prompt already generating
+`an` has no article-only contrast, making its residual/total ratio one; on
+the 19 descriptive article-switching prompts, the mean ratio is \(0.031\)
+[0.023, 0.040]. TV is not additive, so this ratio is a scale comparison,
+not a formal percentage mediated. Frozen attention yields the same
+qualitative decomposition.
 
-![No selection rule yields held-out wrapper-like repair; dual-effect S1 is almost purely package-like.](docs/collaborator-report/figures/figure4_selection_ablation.png){#fig-selection width=78%}
-
-A dose sweep on S1 likewise finds **no wrapper window**
-(@fig-dose). As gain rises from \(1.5\times\) to \(8\times\), noun-token
-preservation falls from 0.90 to 0.05 while package-like rate rises from
-0.10 to 0.95; wrapper-like rate remains 0.00 at every point. Mild doses
-mostly do little; stronger doses buy package-like switches, not
-grammar-only edits.
-
-![Dose–response for dual-effect features: package-like rate rises with gain; wrapper-like rate stays at zero.](docs/collaborator-report/figures/figure5_dose_response.png){#fig-dose width=78%}
-
-## Dual lock and twin tetrad: coordinated outputs under free generation
-
-If modular planning existed as an editable wrapper, amplifying
-article-moving features while locking content-supporting features should
-raise wrapper-like success above article-push alone. Under free
-generation it does not (@fig-dual): content-lock alone (S3) preserves
-noun tokens (\(\approx 0.95\)) but barely moves articles; article-push
-(S1) and dual S1+S3 both remain \(\approx 95\%\) package-like with
-wrapper-like and illicit mismatch rates at 0.00. Completions re-bundle
-into legal pairs (`an aviator`, `an attorney`) rather than `an`+`pilot`.
-
-![Content-lock preserves noun tokens but does not move articles; dual intervention still class-switches into legal pairs.](docs/collaborator-report/figures/figure6_dual_lock.png){#fig-dual width=82%}
-
-On pre-specified twins, a causal tetrad shows sufficiency and specificity
-of free-generation package-like selection relative to matched controls
-(@fig-tetrad): baseline and LoF (zero S1) remain `a pilot` / `a lawyer`;
-GoF (amplify S1) selects `an aviator` / `an attorney`; control amplify
-does not. This establishes controllable *output* coordination under free
-generation; it does not identify the internal representation as a fused
-package.
-
-![Gain-of-function selects the vowel-initial twin completion; matched random amplifications do not.](docs/collaborator-report/figures/figure7_causal_tetrad.png){#fig-tetrad width=82%}
-
-## Pasting native \(b\) restores the native noun token
-
-Under selective article-step intervention with clamps **off** at the noun
-step, free S1 amplify remains package-like (\(\approx 95\%\)), but forcing
-the native article yields noun-token preservation \(\approx 1.0\): e.g.,
-free `an aviator` becomes `a pilot` after pasting `a`
-(@fig-force-native). This is exactly what **H3** predicts if noun-token
-changes are mediated by the generated article. It isolates a real
-\(b\to c\) path. It does **not** yet measure a controlled direct effect of
-the intervention on \(c\), because content clamps were absent at \(c\).
-
-![Free dual-effect intervention switches article--noun completions; pasting the native article restores the native noun token.](docs/collaborator-report/figures/figure8_selective_force_native.png){#fig-force-native width=88%}
-
-## Fixed \(b\), intervention on: little behavioral noun-token control
-
-@tbl-fixed-b and @fig-fixed-b report the corrected assay. Across eight
-occupation families, S3 amplify (\(5\times\)/\(8\times\)), S3 zero,
-hint-contrast amplify, and matched controls yield **zero** within-class
-top-1 noun switches under fixed native \(b\) with interventions kept on at
-\(P\) (\(0/8\); Clopper--Pearson 95\% upper bound \(\approx 0.37\)).
-Same-class noun logits typically remain \(\approx 5\) below the source
-noun---a severe **floor**: a real target-specific effect of a few tenths
-of a logit would rarely flip top-1. Protocol smoke tests confirm
-intervention-on versus off differ somewhere in the logits, but that does
-not validate target-specific transmission.
-
-| Condition | Top-1 within-class switch | Noun token \(\Delta\) | Match same-class | Mean \(\Delta\)(same$-$src) |
+| Attention | Total TV | Article-only TV | Same-prefix residual TV | Article-only top-1 reproduction |
 | --- | ---: | ---: | ---: | ---: |
-| Baseline | 0.00 | 0.00 | 0.00 | \(-4.90\) |
-| S3 amp \(5\times\) / \(8\times\) / zero | 0.00 | 0.00 | 0.00 | \(\approx -4.9\) |
-| Hint-contrast amp \(5\times\) | 0.00 | 0.00 | 0.00 | \(-4.91\) |
-| Control amp \(5\times\) | 0.00 | 0.00 | 0.00 | \(-4.92\) |
+| Recomputed (primary) | 0.893 | 0.891 | 0.0278 [0.0209, 0.0350] | 1.00 |
+| Frozen (ablation) | 0.893 | 0.891 | 0.0262 [0.0202, 0.0327] | 1.00 |
 
-: Fixed-\(b\), intervention-on-at-\(c\) rates (8 families). Top-1 zeros are
-not decisive given \(\approx 5\)-logit floors and small \(N\).
-{#tbl-fixed-b}
+: S1-by-article factorial on all 20 held-out prompts. Intervals are
+prompt-bootstrap 95\% intervals. Total compares free baseline with the
+S1-selected article and S1 on; article-only inserts that article with S1
+off; residual compares S1 on/off under the same selected article.
+{#tbl-mediation}
 
-![Corrected fixed-\(b\) assay: binary within-class top-1 outcomes are zero; same-class nouns stay ~5 logits below source.](docs/collaborator-report/figures/figure9_fixed_b_content_on.png){#fig-fixed-b width=80%}
+![Generated-token mediation decomposition and held-out full-residual sensitivity control.](manuscript/figures/fig_mediation_decomposition.png){#fig-mediation width=94%}
 
-## Additional handles, near-boundary pairs, and a failed positive control
+The target-free distribution result is stronger than a top-1 null, but it
+does not imply an exactly zero direct effect. On seven pre-specified twins,
+fixed `a` gives target-minus-source \(\Delta\Delta=0.018\)
+[\(-0.071,0.107\)], whereas fixed `an` gives \(0.089\)
+[\(0.027,0.152\)]. Full-sequence noun log-odds give the same result
+(\(0.087\) [0.024, 0.152]). S1 therefore retains a small
+token-clamped residual under `an`, while the free-generation target/source
+contrast is \(11.64\) logits and article insertion alone contributes
+\(11.59\) logits (post-hoc descriptive contrast).
 
-A modular reading might blame the wrong sparse objects. We therefore
-also tested Latent-Planning-style per-example features and a dense MLP-in
-hint-contrast direction under the same fixed-\(b\) schedule on three twin
-families (@tbl-handles; @fig-residual). Top-1 within-class switches remain
-\(0/3\) (upper 95\% bound \(\approx 0.71\)). Best continuous
-same$-$source improvements are tiny (\(+0.29\) logits for per-noun;
-\(\approx +0.08\) for residual content), and the residual content
-direction does **not** beat matched-norm random controls
-(\(\approx +0.15\)). Every force-on continuation remained on the baseline
-noun token.
+## Cross-token propagation is present
 
-![Dense residual (MLP-in) content steering under fixed \(b\): within-class top-1 outcomes remain zero for content and random directions.](docs/collaborator-report/figures/figure11_residual_fixed_b.png){#fig-residual width=82%}
+The residual is architecturally reachable rather than ruled out by token
+clamping. Applying S1 at \(P\) changes sparse CLT activations one token
+later at the forced article position beginning at layer 11. With recomputed
+attention, mean activation \(\Delta L_2\) is \(11.6\) at layer 11,
+\(133.8\) at layer 12, and remains nonzero through layer 17; mean noun TV
+on these four diagnostics is \(0.0252\). Frozen attention also propagates
+the perturbation (mean TV \(0.0328\)). Thus the small residual is empirical,
+not a consequence of an impossible causal path.
 
-| Handle | Best top-1 \(c\to c\) | Best \(\Delta\Delta\)(same$-$src) |
+## A held-out full-residual reference validates sensitivity
+
+Earlier MLP-input patches at \(P\) failed to move nouns (Appendix~E), so we
+do not call them oracles. A more direct upstream reference patches the
+complete decoder-layer output residual at the fixed article position.
+Layer 12 is selected on four development pairs. On four held-out
+same-article-class pairs, the target-specific effect is \(+6.44\) logits
+[4.19, 10.06], versus \(+0.14\) [\(-0.33,0.61\)] for ten
+matched-norm random directions averaged within pair (@tbl-reference).
+
+| Intervention at fixed article position | Held-out \(N\) | Mean target-specific \(\Delta\Delta\) [95\%] |
 | --- | ---: | ---: |
-| Per-noun LP-target / contrast (amp \(5\times\)--\(8\times\)) | 0.00 | \(+0.29\) |
-| Residual content steer \(\alpha=1\)--\(8\) | 0.00 | \(\approx 0.08\) |
-| Residual random control \(\alpha=1\)--\(8\) | 0.00 | \(\approx 0.15\) |
+| Layer-12 target residual | 4 | \(6.44\) [4.19, 10.06] |
+| Matched-norm random residual | 4 | \(0.14\) [\(-0.33,0.61\)] |
 
-: Additional fixed-\(b\) handles. Neither per-noun sparse selection nor
-residual MLP-in steering opens a within-class top-1 dial; residual content
-steering does not beat random controls.
-{#tbl-handles}
+: Development-selected full-residual reference on held-out pairs. This
+validates sensitivity of noun computation to an upstream state at the
+article position; it does not show that S1 contains the same information.
+{#tbl-reference}
 
-To address floor effects we screened 12 same-article-class occupation
-pairs for baseline target$-$source gaps under fixed native \(b\). Two pairs
-are near-boundary (`scientist`/`biologist` at \(-0.75\) logits;
-`scientist`/`chemist` at \(-1.13\)). As a **positive control**, we then
-ran oracle MLP-in activation patching
-\((1-\lambda)\mathrm{act}_{\mathrm{source}}+\lambda\mathrm{act}_{\mathrm{target}}\)
-at layers \(\{8,10,12,14\}\) under fixed \(b\), versus matched-norm random
-patches (5 seeds). Across four test pairs and \(\lambda\in\{0.25,0.5,0.75,1\}\),
-oracle top-1 target matches were \(0/4\) per mix (upper 95\% bound
-\(\approx 0.60\)); mean \(\Delta\Delta\) stayed within
-\(\approx 0.03\)--\(0.06\) logits and did not clearly separate from random
-controls (Appendix E). Thus this oracle construction **does not validate**
-that the fixed-\(b\) protocol can transmit behaviorally sufficient
-noun-token control at these sites. We therefore treat fixed-\(b\) top-1
-nulls as evidence about **tested handles under floor-limited targets**,
-not as proof that no independent noun pathway exists.
+Together, the factorial, propagation trace, and reference control support
+a precise conclusion: S1's large free-generation noun change is
+overwhelmingly recreated by the generated article, with a small measurable
+same-prefix residual rather than an independently editable noun plan of
+comparable magnitude.

@@ -1,0 +1,235 @@
+{
+  "experiment": "s1_propagation_diagnostics",
+  "generated_at": "2026-08-10T10:09:55.391572+00:00",
+  "elapsed_sec": 39.54738998413086,
+  "model": "google/gemma-3-270m",
+  "forced_article": "an",
+  "features": [
+    {
+      "layer": 12,
+      "feature_idx": 6229,
+      "mean_activation": 1442.0,
+      "label": "`L12/F6229`"
+    },
+    {
+      "layer": 10,
+      "feature_idx": 2930,
+      "mean_activation": 119.5,
+      "label": "`L10/F2930`"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 10231,
+      "mean_activation": 890.0,
+      "label": "`L13/F10231`"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 793,
+      "mean_activation": 287.375,
+      "label": "`L11/F793`"
+    }
+  ],
+  "example_indices": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "analysis": {
+    "frozen": {
+      "n": 4,
+      "mean_output_tv": 0.03279038239270449,
+      "mean_output_js": 0.0008991026115836576,
+      "layers": {
+        "0": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "1": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "2": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "3": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "4": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "5": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "6": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "7": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "8": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "9": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "10": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "11": {
+          "mean_delta_l2": 10.420326296048756,
+          "mean_delta_l1": 26.25,
+          "mean_changed_feature_count": 6.5
+        },
+        "12": {
+          "mean_delta_l2": 135.15413996073778,
+          "mean_delta_l1": 211.25,
+          "mean_changed_feature_count": 11.5
+        },
+        "13": {
+          "mean_delta_l2": 208.9531590090808,
+          "mean_delta_l1": 631.5,
+          "mean_changed_feature_count": 20.5
+        },
+        "14": {
+          "mean_delta_l2": 251.47008624927952,
+          "mean_delta_l1": 539.25,
+          "mean_changed_feature_count": 18.75
+        },
+        "15": {
+          "mean_delta_l2": 243.03868937871758,
+          "mean_delta_l1": 671.5,
+          "mean_changed_feature_count": 18.0
+        },
+        "16": {
+          "mean_delta_l2": 279.43131999847714,
+          "mean_delta_l1": 429.5,
+          "mean_changed_feature_count": 5.5
+        },
+        "17": {
+          "mean_delta_l2": 190.44815871824426,
+          "mean_delta_l1": 288.0,
+          "mean_changed_feature_count": 4.25
+        }
+      }
+    },
+    "recomputed": {
+      "n": 4,
+      "mean_output_tv": 0.02519947593100369,
+      "mean_output_js": 0.000572264201764483,
+      "layers": {
+        "0": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "1": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "2": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "3": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "4": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "5": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "6": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "7": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "8": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "9": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "10": {
+          "mean_delta_l2": 0.0,
+          "mean_delta_l1": 0.0,
+          "mean_changed_feature_count": 0.0
+        },
+        "11": {
+          "mean_delta_l2": 11.621872493497163,
+          "mean_delta_l1": 32.0,
+          "mean_changed_feature_count": 6.75
+        },
+        "12": {
+          "mean_delta_l2": 133.79478040101318,
+          "mean_delta_l1": 187.5,
+          "mean_changed_feature_count": 10.25
+        },
+        "13": {
+          "mean_delta_l2": 89.79682463574119,
+          "mean_delta_l1": 291.0,
+          "mean_changed_feature_count": 19.5
+        },
+        "14": {
+          "mean_delta_l2": 217.06810000521318,
+          "mean_delta_l1": 425.5,
+          "mean_changed_feature_count": 16.5
+        },
+        "15": {
+          "mean_delta_l2": 154.70110904058777,
+          "mean_delta_l1": 349.0,
+          "mean_changed_feature_count": 16.0
+        },
+        "16": {
+          "mean_delta_l2": 312.9442546342093,
+          "mean_delta_l1": 470.5,
+          "mean_changed_feature_count": 5.75
+        },
+        "17": {
+          "mean_delta_l2": 134.43783627823038,
+          "mean_delta_l1": 183.0,
+          "mean_changed_feature_count": 3.75
+        }
+      }
+    }
+  }
+}

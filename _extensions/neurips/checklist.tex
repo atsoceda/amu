@@ -5,7 +5,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and Section~1 state a scoped mediation claim: free-generation noun-token changes after article-directed interventions are non-diagnostic on Gemma~3 270M; fixed-\(b\) results are about tested handles under floor limits, with an attempted oracle positive control.
+    \item[] Justification: The abstract and Section~1 state a scoped generated-token mediation claim supported by the exact S1-by-article factorial, a small nonzero same-prefix residual, propagation diagnostics, and a held-out full-residual sensitivity control.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -17,7 +17,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~7 discusses model/stack/task scope, floor effects, failed positive-control construction, residual weakness vs random, and scale.
+    \item[] Justification: Section~7 discusses model/stack/task scope, post-selection and non-additivity, small twin samples, intervention-site sensitivity, off-manifold gain, and scale.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -84,7 +84,7 @@
 \item {\bf Experimental setting/details}
     \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~4 and the appendix give prompts, feature-selection rules, intervention schedules, and evaluation metrics.
+    \item[] Justification: Section~4 and the appendix give prompts, fixed development/test splits, feature-selection rules, intervention schedules, attention semantics, and evaluation metrics.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.
@@ -95,7 +95,7 @@
 \item {\bf Experiment statistical significance}
     \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: We report Clopper--Pearson intervals for binomial rates and normal-approximation intervals for mean logit effects across pairs and random-control seeds; decoding is greedy, but sampling uncertainty over prompts/pairs/controls is quantified.
+    \item[] Justification: Main factorial and reference effects use 10,000-resample prompt- or pair-level nonparametric bootstrap intervals; binomial rates use Clopper--Pearson intervals. Random seeds are averaged within pair before pair-level inference.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.

@@ -1,0 +1,78 @@
+{
+  "experiment_name": "fixed_article_residual_reference",
+  "description": "Development-selected, held-out decoder-layer residual reference patch under a fixed article, using paired lexical cues and the same core sentence.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "paired_prompt_template": "Vocabulary: {cue}. Complete using that vocabulary: {sentence}",
+  "patch_layers": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+  "random_seeds": [17, 29, 41, 53, 67, 79, 83, 97, 101, 113],
+  "article": "a",
+  "patch_position": "article_token",
+  "patch_site": "decoder_layer_output_residual",
+  "minimum_validation_delta_delta": 0.5,
+  "pairs": [
+    {
+      "id": "legal_lawyer_solicitor",
+      "split": "dev",
+      "sentence": "Someone who provides legal advice and represents clients is",
+      "source_word": "lawyer",
+      "target_word": "solicitor"
+    },
+    {
+      "id": "teaching_teacher_tutor",
+      "split": "dev",
+      "sentence": "Someone who gives academic instruction to a student is",
+      "source_word": "teacher",
+      "target_word": "tutor"
+    },
+    {
+      "id": "science_scientist_researcher",
+      "split": "dev",
+      "sentence": "Someone who performs scientific investigations is",
+      "source_word": "scientist",
+      "target_word": "researcher"
+    },
+    {
+      "id": "aircraft_pilot_captain",
+      "split": "dev",
+      "sentence": "Someone who commands and flies an aircraft is",
+      "source_word": "pilot",
+      "target_word": "captain"
+    },
+    {
+      "id": "therapy_therapist_counselor",
+      "split": "test",
+      "sentence": "Someone who provides mental health counseling is",
+      "source_word": "therapist",
+      "target_word": "counselor"
+    },
+    {
+      "id": "medicine_doctor_physician",
+      "split": "test",
+      "sentence": "Someone who diagnoses illnesses and treats patients is",
+      "source_word": "doctor",
+      "target_word": "physician"
+    },
+    {
+      "id": "agriculture_farmer_rancher",
+      "split": "test",
+      "sentence": "Someone who raises livestock and works agricultural land is",
+      "source_word": "farmer",
+      "target_word": "rancher"
+    },
+    {
+      "id": "news_journalist_reporter",
+      "split": "test",
+      "sentence": "Someone who investigates and writes news stories is",
+      "source_word": "journalist",
+      "target_word": "reporter"
+    }
+  ]
+}

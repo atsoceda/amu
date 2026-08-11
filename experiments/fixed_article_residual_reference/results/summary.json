@@ -1,0 +1,175 @@
+{
+  "experiment": "fixed_article_residual_reference",
+  "generated_at": "2026-08-10T10:08:04.569414+00:00",
+  "elapsed_sec": 133.11538791656494,
+  "model": "google/gemma-3-270m",
+  "article": "a",
+  "patch_position": "article_token",
+  "patch_site": "decoder_layer_output_residual",
+  "selected_layer": 12,
+  "selection_rule": "maximum mean target-specific delta-delta on fixed dev pairs",
+  "dev_layer_summary": {
+    "0": {
+      "n": 4,
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "1": {
+      "n": 4,
+      "mean": 0.015625,
+      "lo": -0.046875,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "2": {
+      "n": 4,
+      "mean": 0.03125,
+      "lo": 0.0,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "3": {
+      "n": 4,
+      "mean": 0.03125,
+      "lo": 0.0,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "4": {
+      "n": 4,
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "5": {
+      "n": 4,
+      "mean": 0.03125,
+      "lo": 0.0,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "6": {
+      "n": 4,
+      "mean": 0.046875,
+      "lo": -0.03125,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "7": {
+      "n": 4,
+      "mean": 0.015625,
+      "lo": -0.109375,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "8": {
+      "n": 4,
+      "mean": 0.078125,
+      "lo": -0.015625,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "9": {
+      "n": 4,
+      "mean": 0.046875,
+      "lo": -0.03125,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "10": {
+      "n": 4,
+      "mean": 0.34375,
+      "lo": 0.25,
+      "hi": 0.4375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "11": {
+      "n": 4,
+      "mean": 1.53125,
+      "lo": 1.3125,
+      "hi": 1.84375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "12": {
+      "n": 4,
+      "mean": 7.9375,
+      "lo": 6.34375,
+      "hi": 9.34375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "13": {
+      "n": 4,
+      "mean": 6.0625,
+      "lo": 5.0625,
+      "hi": 7.0625,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "14": {
+      "n": 4,
+      "mean": 6.15625,
+      "lo": 5.125,
+      "hi": 7.1875,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "15": {
+      "n": 4,
+      "mean": 7.71875,
+      "lo": 6.4375,
+      "hi": 9.0,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "16": {
+      "n": 4,
+      "mean": 7.71875,
+      "lo": 6.5,
+      "hi": 8.9375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "17": {
+      "n": 4,
+      "mean": 7.4375,
+      "lo": 6.25,
+      "hi": 8.625,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    }
+  },
+  "heldout_target_patch": {
+    "n": 4,
+    "mean": 6.4375,
+    "lo": 4.1875,
+    "hi": 10.0625,
+    "method": "pair-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "heldout_random_controls": {
+    "n": 4,
+    "mean": 0.142822265625,
+    "lo": -0.3267578125,
+    "hi": 0.61240234375,
+    "method": "pair-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "assay_validated": true,
+  "minimum_validation_delta_delta": 0.5
+}

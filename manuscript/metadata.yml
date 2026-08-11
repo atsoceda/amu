@@ -1,28 +1,31 @@
-title: "Autoregressive Article-to-Noun Mediation Can Mimic Latent Planning in Gemma~3 270M"
+title: "Generated-Token Mediation in Latent-Planning Interventions"
 author:
   - name: Anonymous Authors
     affiliations:
       - name: Anonymous Institution
 abstract: |
-  Sparse feature interventions that flip grammatical articles ($a$/$an$)
-  are often read as evidence of modular latent planning: an internal
-  content state that both licenses the article and independently sets the
-  upcoming noun. On pretrained Gemma~3 270M with Gemma Scope~2
-  cross-layer transcoders, we show that this reading is fragile. Features
-  that move articles under free generation typically change the following
-  noun token as well (e.g., $a$ pilot $\to$ $an$ aviator). Holding the
-  generated article fixed largely restores the native noun, consistent with
-  mediation through the article rather than independently editable
-  noun-token identity. Under a corrected protocol that keeps interventions
-  active while pasting the native article, selected sparse and dense
-  handles produce little behaviorally sufficient control of
-  same-article-class noun tokens, especially when targets begin far below
-  the decoding boundary. We attempt to validate the fixed-article assay with
-  oracle activation patching; that construction fails to move noun tokens,
-  so we report continuous logit effects with uncertainty and treat top-1
-  nulls as handle- and floor-scoped rather than network-wide. The
-  methodological point is that free-generation noun changes after
-  article-directed interventions are non-diagnostic of separable planning.
+  Interventions on an autoregressive model can alter both an early token and
+  a later token, yet the later change need not reveal a persistent latent
+  plan: the generated early token is itself a causal input. We formalize
+  this ambiguity as generated-token mediation and test it in article--noun
+  completions on pretrained Gemma~3 270M with Gemma Scope~2 cross-layer
+  transcoders. Amplifying a dual-effect sparse set changes the free
+  completion on 19/20 held-out prompts (e.g., $a$ pilot $\to$ $an$
+  aviator). In the exact $2\times3$ intervention-by-article factorial,
+  however, inserting the intervention-selected article with the
+  intervention off reproduces the intervention-on top-1 noun on 20/20
+  prompts. On the 19 article-switching prompts, total noun-distribution
+  variation is 0.940, article-only variation is 0.937, and the same-prefix
+  residual is 0.029 (residual/total 0.031, 95\% bootstrap interval
+  [0.023, 0.040]). A small target-specific residual remains under fixed
+  `an` for seven pre-specified twins ($+0.089$ logits [0.027, 0.152]).
+  Sparse activation diagnostics confirm cross-token propagation, while a
+  development-selected full-residual reference at the fixed article
+  position strongly moves held-out noun targets ($+6.44$ logits versus
+  $+0.14$ for matched-norm random controls). Thus the free-generation
+  effect is overwhelmingly article-mediated for this intervention, but not
+  literally zero after token clamping. Generated-token controls are
+  necessary to identify persistent latent control in autoregressive models.
 keywords:
   - mechanistic interpretability
   - latent planning

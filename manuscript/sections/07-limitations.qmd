@@ -4,10 +4,18 @@ Our claim is scoped to Gemma~3 270M, the PT+affine Gemma Scope~2 CLT
 dictionary, occupation \(a\)/\(an\) prompts, and the interventions we ran.
 The model is in a weak behavioral regime for this task. We did not isolate
 a pure context concept \(A\), nor run dedicated semantic-concept probes
-beyond noun-token outcomes. Many same-class targets begin several logits
-behind the source, so top-1 nulls can reflect floor effects. The residual
-hint-contrast construction is one dense baseline and can be weaker than
-matched random directions; oracle activation patching is a stronger but
-still incomplete positive control. Scale and model-family generalization
-are outside our local compute envelope. Affine skip means sparse
-interventions need not exhaust MLP computation.
+beyond noun-token outcomes. S1 was selected using article and future-token
+attributions, so the paper identifies the causal decomposition of this
+specific handle rather than the model's unique internal ontology. The
+19-prompt article-switch ratio is descriptive because it conditions on an
+observed switch, and TV distances are not additive mediation effects.
+The seven-twin residual estimate is small-\(N\), while several
+same-article targets remain floor-limited.
+
+The full-residual reference is patched at the article-token position and
+therefore validates sensitivity of noun computation there, not sensitivity
+of every pre-article planning site. Conversely, the sparse propagation
+diagnostic measures CLT features rather than native residual geometry.
+Large \(5\times\) sparse amplification may be off-manifold; affine skip
+means sparse interventions need not exhaust MLP computation. Scale,
+model-family, task, and sampling-policy generalization remain open.

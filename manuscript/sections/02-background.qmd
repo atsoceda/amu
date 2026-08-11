@@ -19,11 +19,16 @@ Gemma Scope~2 cross-layer transcoders [@hanna2025circuittracer;
 @gemmascope2] to select features and intervene. Affine skip connections
 improve reconstruction but allow MLP computation to bypass sparse
 features; we therefore also test dense MLP-in interventions, including
-an oracle activation-patching positive control.
+a held-out full-residual reference intervention.
 
-**Causal mediation in autoregressive models.** Holding an intervening
-generated token fixed is a standard way to separate total effects from
-paths through that token. Our contribution is to apply this control to
-article--noun interventions that are easy to misread as modular planning
-under free generation, and to show how floor effects and small samples
-limit strong negative claims about latent edges.
+**Generated-token mediation.** In an autoregressive model, an emitted token
+has two roles: it is an outcome of the preceding computation and an input
+to every later prediction. Consequently, changing an early generated token
+creates a mediated path even if the intervention has no persistent latent
+effect. Holding that token fixed separates a total intervention contrast
+from a same-prefix residual contrast, but does not remove earlier hidden
+states or make direct persistence impossible. Our contribution is to make
+this identification problem explicit for latent-planning interventions,
+measure the full intervention-by-token factorial rather than only a
+free/forced top-1 comparison, and pair it with reachability and sensitivity
+controls.

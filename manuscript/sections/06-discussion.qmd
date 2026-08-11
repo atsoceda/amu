@@ -2,31 +2,37 @@
 
 **Main finding.** On Gemma~3 270M, selected dual-effect interventions
 produce large *total* effects on article--noun completions under free
-generation, but noun-token changes are largely consistent with mediation
-through the generated article (**H3**). When the article is held fixed and
-interventions remain active, the tested sparse and dense handles give
-little behaviorally sufficient control of same-article-class noun tokens,
-especially when targets begin far below the decoding boundary.
+generation, but the exact factorial shows that the generated article
+recreates almost the entire noun-distribution change. On the 19
+article-switching prompts, article insertion with S1 off has TV \(0.937\)
+from baseline, versus \(0.940\) for the total S1 contrast; turning S1 back
+on under the identical selected-article prefix adds residual TV \(0.029\).
+Top-1 article-only reproduction is 20/20. This is direct evidence for
+generated-token mediation (**H3**) rather than an inference from a null.
 
 **What we do and do not claim.** We do not claim that latent planning is
 impossible, that @hanna2026latent's larger-model results are wrong, or
-that an abstract \(C\to c\) edge is absent everywhere in the network. We
-claim that free-generation metrics can overstate separable planning, that
-\(b\) is a mediator rather than a classical confounder, and that the
-tested handles do not function as independently editable noun-token
-controls under fixed \(b\). Output package-like behavior does not by itself
-identify a fused internal package representation (**H2**).
+that S1 has literally zero direct effect. The pre-specified fixed-`an`
+twin contrast is small but nonzero, and propagation diagnostics show that
+earlier states can reach article-position computation. We claim that the
+free-generation effect is overwhelmingly article-mediated for this handle,
+that \(b\) is a mediator rather than a classical confounder, and that
+output coordination does not identify a fused package (**H2**) or a
+comparably strong independently persistent noun plan (**H1**).
 
 **Assay validation.** We screened near-boundary same-article-class pairs
-and attempted oracle MLP-in activation patching under fixed native \(b\).
-That construction did **not** produce clear noun-token control, so
-fixed-\(b\) top-1 nulls cannot be read as a fully validated negative test
-of every possible noun pathway. Continuous logit effects and uncertainty
-intervals should be reported alongside top-1 rates whenever targets are
-floor-limited.
+and found that pre-article MLP-input patches did not produce clear
+noun-token control. A held-out full-residual reference at the fixed article
+position does: \(+6.44\) target-specific logits versus \(+0.14\) for
+matched-norm random directions. The distinction localizes the sensitivity
+claim. Noun computation can be causally moved within the stack, but not
+every sparse or normalized-MLP handle is behaviorally sufficient.
 
-**Methodological implication.** Before treating article-directed feature
-interventions as modular planning evidence, hold the generated article
-fixed, keep candidate interventions on, score noun-token logits (not only
-switches), compare to matched random controls, and attempt a positive
-control that can move noun tokens when such control exists.
+**Methodological implication.** For any multi-token causal claim, report
+the intervention-by-generated-token factorial: total effect, mediator-token
+reproduction, and same-prefix residual. Keep the original intervention on,
+recompute the full sequence, use target-free distributional distances,
+pre-specify lexical contrasts, trace cross-token reachability, and validate
+sensitivity with an intervention at a causally relevant upstream site.
+Without this decomposition, a later-token change is evidence of coordinated
+output, not identified evidence of persistent latent control.

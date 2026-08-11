@@ -14,7 +14,7 @@ on that prompt. The held-out transfer of the same frozen pair did
 \emph{not} behave as a noun-preserving grammar tool: many expected-\texttt{a}
 controls flipped toward \texttt{an}, and noun tokens changed on 37/107
 prompts, with zero grammar-only repairs that kept the noun fixed
-(Figure~\ref{fig-generalization} in the main text).
+(machine-readable results in \texttt{fixed\_pair\_generalization/}).
 
 That failure sharpened the question from ``can we fix articles?'' to
 ``do Latent-Planning-style dual-effect interventions identify separable
@@ -49,6 +49,9 @@ Fixed \(b\), intervention-on-at-\(c\) & \texttt{causal\_edge\_independence/} \\
 Per-noun LP-style under fixed \(b\) & \texttt{per\_noun\_fixed\_b\_c\_to\_c/} \\
 Residual MLP-in under fixed \(b\) & \texttt{residual\_direction\_fixed\_b\_c\_to\_c/} \\
 Near-boundary screen + oracle patch & \texttt{fixed\_b\_positive\_control/} \\
+Exact S1 \(\times\) article factorial & \texttt{s1\_article\_factorial/} \\
+Cross-token propagation diagnostic & \texttt{s1\_propagation\_diagnostics/} \\
+Held-out full-residual reference & \texttt{fixed\_article\_residual\_reference/} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -70,6 +73,21 @@ per-layer MLP-in differences before scaling by \(\alpha\). Oracle
 positive-control patches blend source and target MLP-in activations at
 layers \(\{8,10,12,14\}\) under fixed native \(b\).
 
+The main factorial reuses the exact pre-registered S1 set and gain on all
+20 held-out E1 prompts. It crosses S1 off/on with free, forced-\texttt{a},
+and forced-\texttt{an} articles, and runs both recomputed- and
+frozen-attention semantics. Primary intervals are prompt-level
+nonparametric bootstrap intervals with 10,000 resamples.
+
+\paragraph{Exploratory free-generation ablations.}
+Across S1--S4 at \(5\times\), wrapper-like rate is \(0/20\); only S1
+produces package-like switches at 0.95. Across S1 doses
+\(\{1.5,2,3,5,8\}\times\), package-like rate rises from 0.10 to 0.95 while
+wrapper-like rate remains zero. Adding an S3 content lock does not prevent
+S1 from selecting legal \texttt{an}+vowel-initial completions. These
+results motivate decomposition of S1 but are not the primary mediation
+evidence.
+
 \section{Per-noun fixed-\texorpdfstring{\(b\)}{b} null plot}
 \label{app:pernoun}
 
@@ -78,9 +96,8 @@ layers \(\{8,10,12,14\}\) under fixed native \(b\).
 \includegraphics[width=0.92\linewidth]{docs/collaborator-report/figures/figure10_per_noun_fixed_b.png}
 \caption{Per-noun LP-style and contrast features under fixed \(b\):
 within-class top-1 outcomes remain zero; same-class nouns stay \(\sim 5\)
-logits below source. Visually parallel to the main-text fixed-\(b\) panel
-(Figure~\ref{fig-fixed-b}); rates are summarized in
-Table~\ref{tbl-handles}.}
+logits below source. This exploratory handle search preceded the exact S1
+factorial in the main text.}
 \label{fig-pernoun}
 \end{figure}
 
@@ -119,3 +136,28 @@ source and target MLP-in activations at layers \(\{8,10,12,14\}\) under
 fixed native \(b\). The construction does not produce top-1 target matches
 and does not clearly beat matched-norm random controls, so it fails as an
 assay-validation positive control on this stack.
+
+\section{Factorial, propagation, and residual-reference details}
+\label{app:factorial-details}
+
+On the 19 prompts where S1 changes the article, recomputed-attention mean
+TV is 0.9397 for the total contrast, 0.9374 for article insertion alone,
+and 0.0288 for the same-prefix residual. The prompt-bootstrap 95\%
+interval for residual/total is [0.023, 0.040]. Frozen-attention values are
+0.9393, 0.9374, and 0.0269, with ratio interval [0.022, 0.037].
+The all-20 analysis is primary; the switch-conditioned analysis is
+descriptive.
+
+For the propagation diagnostic, S1 is applied at the pre-article position
+and \texttt{an} is pasted. At the article position, recomputed-attention
+mean sparse-activation \(\Delta L_2\) rises from zero through layer 10 to
+11.6 at layer 11, 133.8 at layer 12, and remains nonzero through layer 17.
+The corresponding mean noun-distribution TV is 0.0252. Frozen attention
+also propagates the intervention (mean TV 0.0328).
+
+The full-residual reference uses paired source/target vocabulary cues with
+an identical occupation sentence and fixed \texttt{a}. Layers are swept on
+four development pairs; layer 12 is selected. On four disjoint test pairs,
+the target residual yields mean target-specific
+\(\Delta\Delta=6.44\,[4.19,10.06]\), while ten matched-norm random
+directions averaged within pair yield \(0.14\,[-0.33,0.61]\).

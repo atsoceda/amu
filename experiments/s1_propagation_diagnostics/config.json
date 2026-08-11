@@ -1,0 +1,29 @@
+{
+  "experiment_name": "s1_propagation_diagnostics",
+  "description": "Sparse CLT activation diagnostics tracing S1 from the pre-article intervention site into the fixed article-token position.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "e1_config_path": "../selection_criterion_ablation/config.json",
+  "e1_selection_path": "../selection_criterion_ablation/results/selection.json",
+  "feature_set": "S1_dual_effect",
+  "amplify_factor": 5.0,
+  "forced_article": "an",
+  "example_indices": [1, 2, 3, 4],
+  "attention_modes": [
+    {
+      "id": "recomputed",
+      "freeze_attention": false
+    },
+    {
+      "id": "frozen",
+      "freeze_attention": true
+    }
+  ]
+}

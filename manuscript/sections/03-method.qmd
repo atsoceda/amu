@@ -34,39 +34,64 @@ confounds a putative direct path with **mediation through \(b\)**.
 common-cause confounder.) Fixing \(b=b^*\) targets a controlled direct
 effect of \(I\) on \(c\).
 
-![Hypotheses and corrected assay. Left: H1 modular planning, H2 fused packages, and H3 article-mediated continuation. Right: paste native \(b\) while keeping interventions on at position \(P\) (CDE of \(I\) on noun-token \(c\)).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=100%}
+![Hypotheses and token-clamped assay. Left: H1 modular planning, H2 fused packages, and H3 article-mediated continuation. Right: paste \(b\) while keeping interventions on at position \(P\) to estimate residual control of noun-token \(c\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=100%}
 
-## Evaluation metrics
+## Generated-token mediation factorial
 
-On each trial we score (i)~article logits \(\Delta(\texttt{an}-\texttt{a})\);
-(ii)~generated article and noun token; (iii)~**wrapper-like** success
-(generated article moves, noun token preserved); (iv)~**package-like /
-trajectory-like** success (legal article--class switch);
-(v)~illicit mismatches (`an` + consonant-initial noun). Under fixed \(b\),
-we report both **continuous** effects (target and source logits, their
-difference, ranks/probabilities) and **behavioral** top-1 switches,
-with binomial confidence intervals for rates. Primary scientific interest
-is whether \(I\) produces target-specific logit movement beyond matched
-random controls; top-1 switches are secondary and can be floor-limited
-when targets begin many logits behind the source.
+Let \(I\) denote the S1 amplification and let \(B_0,B_1\) be the greedy
+articles under \(I=0,1\). For every pre-specified prompt we run
 
-## Corrected fixed-\(b\) protocol
+$$
+I\in\{0,1\}\ \times\
+b\in\{\text{free},\operatorname{do}(\texttt{a}),
+\operatorname{do}(\texttt{an})\}.
+$$
 
-An intermediate protocol clamped features while predicting \(b\), then
-cleared clamps before predicting \(c\). That schedule demonstrates
-mediation through \(b\) under free versus force-native generation, but it
-is **not** a fair test of a remaining direct effect of \(I\) on \(c\). Our
-corrected schedule (@fig-schematic, right):
+In forced cells, the article token is pasted and S1 remains active at the
+original pre-article position \(P\) during noun prediction. Every step is a
+full-sequence forward pass, so no KV-cache index remapping is involved.
+Attention is recomputed in the primary analysis; freezing baseline
+attention and normalization statistics is a mechanistic ablation.
 
-1. Optionally measure article-logit effects at the planning position \(P\)
-   (last prompt token before the article).
-2. **Paste** the native baseline article token \(b^*\).
-3. Keep candidate interventions **on** at the same absolute
-   position \(P\) during noun prediction (full-sequence recompute; no
-   KV-cache remapping of clamps).
-4. Compare to an otherwise identical intervention-off arm.
+The factorial defines three prompt-level noun-distribution comparisons:
 
-Same-article-class targets close the phonological caveat that fixed `a`
-merely blocks vowel-initial nouns such as `aviator`. The estimand is a
-controlled direct effect of the **tested intervention handle**, not a
-proof that an abstract latent edge \(C\to c\) is absent from the network.
+1. **Total free-generation contrast:**
+   \(p(c\mid I{=}1,\operatorname{do}(B_1))\) versus
+   \(p(c\mid I{=}0,\operatorname{do}(B_0))\).
+2. **Article-only reproduction:**
+   \(p(c\mid I{=}0,\operatorname{do}(B_1))\) versus
+   \(p(c\mid I{=}0,\operatorname{do}(B_0))\).
+3. **Token-clamped residual control:**
+   \(p(c\mid I{=}1,\operatorname{do}(B_1))\) versus
+   \(p(c\mid I{=}0,\operatorname{do}(B_1))\).
+
+The third comparison is a controlled direct effect at the treated mediator
+value \(B_1\). We report full-vocabulary total variation (TV) and
+Jensen--Shannon (JS) divergence, top-\(k\) overlap, and greedy top-1
+reproduction. Distance ratios are descriptive because TV does not provide
+an additive causal decomposition. The article-switching subset is also
+descriptive; inference uses all 20 held-out prompts.
+
+## Pre-specified lexical outcomes and uncertainty
+
+Seven held-out prompts have pre-specified cross-class twins
+(`pilot`/`aviator`, `lawyer`/`attorney`, etc.). For each forced article we
+report the change in target-minus-source first-token logits and full noun
+sequence log odds. Multi-token nouns are teacher-forced token by token.
+Nouns observed after S1 free generation are post hoc and used only for
+descriptive contrasts. Confidence intervals are prompt-level nonparametric
+bootstrap intervals with 10,000 resamples; top-1 rates use
+Clopper--Pearson intervals where reported.
+
+## Reachability and positive control
+
+Token clamping does not erase earlier hidden states: at later layers the
+article position can attend to the pre-article position. We verify actual
+reachability by measuring sparse CLT activation changes at the fixed article
+position after applying S1 at \(P\). To distinguish a weak sparse handle
+from an insensitive noun assay, we also patch the complete decoder-layer
+output residual at the fixed article position. Layer selection uses four
+fixed development pairs; the selected layer is evaluated on four held-out
+same-article-class pairs against ten matched-norm random directions.
+This is a reference intervention, not an oracle and not evidence that S1
+encodes the same lexical information.
