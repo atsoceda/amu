@@ -111,3 +111,21 @@ a precise conclusion: S1's large free-generation noun change is
 overwhelmingly recreated by the generated article, with a small measurable
 same-prefix residual rather than an independently editable noun plan of
 comparable magnitude.
+
+## Synthetic estimands discriminate mediation from residual control
+
+The same decomposition cleanly separates known mechanisms
+(@fig-synthetic). For the mediated model, total and article-only TV both
+equal \(0.905\), residual TV is \(0\), article-only top-1 reproduction is
+\(8/8\), and both force-`a` and force-`an` \(k\)-curves remain at zero
+through \(k{=}4\). For the direct model, force-`a` CDE TV is \(0.667\) with
+target-minus-source \(\Delta\Delta{=}6.25\), and the force-`a`
+residual-control curve stays at \(0.667\) for every \(k\). Force-`an`
+residual TV is smaller (\(0.090\)) because article coupling already
+saturates the noun distribution, while the logit CDE remains \(6.25\);
+reporting both articles is therefore necessary. All pre-specified
+acceptance checks pass. The Gemma full-residual reference remains the
+stack-sensitivity control; the synthetic assay shows that the estimands
+themselves are not biased toward declaring mediation.
+
+![Synthetic ground-truth validation of mediation estimands. Left: factorial TV decomposition. Right: \(k\)-token residual-control curve under \(\operatorname{do}(\texttt{a})\).](manuscript/figures/fig_synthetic_mediation_validation.png){#fig-synthetic width=94%}

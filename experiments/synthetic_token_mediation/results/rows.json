@@ -1,0 +1,3828 @@
+{
+  "rows": [
+    {
+      "cue": "pilot",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "pilot",
+      "treated_top1": "aviator",
+      "article_only_top1": "aviator",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597408,
+          "tv": 0.9046264235246743,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597408,
+          "tv": 0.9046264235246743,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 2.524087907941579e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 2.524087907941579e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": 2.524087907941579e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "lawyer",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "lawyer",
+      "treated_top1": "attorney",
+      "article_only_top1": "attorney",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597408,
+          "tv": 0.9046264235246743,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597408,
+          "tv": 0.9046264235246743,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 2.524087907941579e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 2.524087907941579e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": 2.524087907941579e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 2.524087907941579e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 2.524087907941579e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "doctor",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "doctor",
+      "treated_top1": "oculist",
+      "article_only_top1": "oculist",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597406,
+          "tv": 0.9046264235246742,
+          "top_k_jaccard": 0.25
+        },
+        "mediator_only": {
+          "js": 0.6038167372597406,
+          "tv": 0.9046264235246742,
+          "top_k_jaccard": 0.25
+        },
+        "residual": {
+          "js": -3.7861318619123684e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": -3.7861318619123684e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": -3.7861318619123684e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "physicist",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "physicist",
+      "treated_top1": "astronomer",
+      "article_only_top1": "astronomer",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597406,
+          "tv": 0.9046264235246742,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597406,
+          "tv": 0.9046264235246742,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": -3.7861318619123684e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": -3.7861318619123684e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": -3.7861318619123684e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -3.7861318619123684e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -3.7861318619123684e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "chemist",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "chemist",
+      "treated_top1": "analyst",
+      "article_only_top1": "analyst",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597405,
+          "tv": 0.9046264235246739,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597405,
+          "tv": 0.9046264235246739,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": -1.2620439539707891e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": -1.2620439539707891e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": -1.2620439539707891e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "farmer",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "farmer",
+      "treated_top1": "agriculturist",
+      "article_only_top1": "agriculturist",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597405,
+          "tv": 0.9046264235246739,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597405,
+          "tv": 0.9046264235246739,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": -1.2620439539707891e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": -1.2620439539707891e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": -1.2620439539707891e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": -1.2620439539707891e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": -1.2620439539707891e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "teacher",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "teacher",
+      "treated_top1": "educator",
+      "article_only_top1": "educator",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597404,
+          "tv": 0.9046264235246737,
+          "top_k_jaccard": 0.42857142857142855
+        },
+        "mediator_only": {
+          "js": 0.6038167372597404,
+          "tv": 0.9046264235246737,
+          "top_k_jaccard": 0.42857142857142855
+        },
+        "residual": {
+          "js": 3.7861318619123665e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 3.7861318619123665e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": 3.7861318619123665e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "sailor",
+      "mechanism": "mediated",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "sailor",
+      "treated_top1": "admiral",
+      "article_only_top1": "admiral",
+      "decomposition": {
+        "total": {
+          "js": 0.6038167372597404,
+          "tv": 0.9046264235246737,
+          "top_k_jaccard": 0.25
+        },
+        "mediator_only": {
+          "js": 0.6038167372597404,
+          "tv": 0.9046264235246737,
+          "top_k_jaccard": 0.25
+        },
+        "residual": {
+          "js": 3.7861318619123665e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.0,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 3.7861318619123665e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "cde_an": {
+          "js": 3.7861318619123665e-17,
+          "tv": 0.0,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 0.0
+        },
+        "interaction_an_minus_a": {
+          "tv": 0.0,
+          "js": 0.0,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.0,
+          "residual_js": 3.7861318619123665e-17,
+          "target_minus_source_delta": 0.0
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.0,
+            "residual_js": 3.7861318619123665e-17,
+            "target_minus_source_delta": 0.0
+          }
+        ]
+      },
+      "total_target_source_delta": 10.5,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 0.0
+    },
+    {
+      "cue": "pilot",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "pilot",
+      "treated_top1": "aviator",
+      "article_only_top1": "aviator",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373017,
+          "tv": 0.9945822714113284,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597408,
+          "tv": 0.9046264235246743,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 0.030770115909388794,
+          "tv": 0.08995584788665417,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270007,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.32108513728615096,
+          "tv": 0.6667896896767309,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.030770115909388794,
+          "tv": 0.08995584788665417,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900767,
+          "js": -0.2903150213767622,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "lawyer",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "lawyer",
+      "treated_top1": "attorney",
+      "article_only_top1": "attorney",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373017,
+          "tv": 0.9945822714113284,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597408,
+          "tv": 0.9046264235246743,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 0.030770115909388794,
+          "tv": 0.08995584788665417,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270007,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.32108513728615096,
+          "tv": 0.6667896896767309,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.030770115909388794,
+          "tv": 0.08995584788665417,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900767,
+          "js": -0.2903150213767622,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767309,
+          "residual_js": 0.32108513728615096,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767309,
+            "residual_js": 0.32108513728615096,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665417,
+            "residual_js": 0.030770115909388794,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "doctor",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "doctor",
+      "treated_top1": "oculist",
+      "article_only_top1": "oculist",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373017,
+          "tv": 0.9945822714113284,
+          "top_k_jaccard": 0.25
+        },
+        "mediator_only": {
+          "js": 0.6038167372597406,
+          "tv": 0.9046264235246742,
+          "top_k_jaccard": 0.25
+        },
+        "residual": {
+          "js": 0.030770115909388822,
+          "tv": 0.08995584788665423,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270012,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.3210851372861509,
+          "tv": 0.6667896896767308,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.030770115909388822,
+          "tv": 0.08995584788665423,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900766,
+          "js": -0.2903150213767621,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "physicist",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "physicist",
+      "treated_top1": "astronomer",
+      "article_only_top1": "astronomer",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373017,
+          "tv": 0.9945822714113284,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597406,
+          "tv": 0.9046264235246742,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 0.030770115909388822,
+          "tv": 0.08995584788665423,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270012,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.32108513728615085,
+          "tv": 0.6667896896767308,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.030770115909388822,
+          "tv": 0.08995584788665423,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900766,
+          "js": -0.290315021376762,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767308,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767308,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665423,
+            "residual_js": 0.030770115909388822,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "chemist",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "chemist",
+      "treated_top1": "analyst",
+      "article_only_top1": "analyst",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373017,
+          "tv": 0.9945822714113282,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597405,
+          "tv": 0.9046264235246739,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 0.030770115909388728,
+          "tv": 0.08995584788665431,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270022,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.3210851372861509,
+          "tv": 0.6667896896767307,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.030770115909388728,
+          "tv": 0.08995584788665431,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900764,
+          "js": -0.2903150213767622,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "farmer",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "farmer",
+      "treated_top1": "agriculturist",
+      "article_only_top1": "agriculturist",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373017,
+          "tv": 0.9945822714113282,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "mediator_only": {
+          "js": 0.6038167372597405,
+          "tv": 0.9046264235246739,
+          "top_k_jaccard": 0.6666666666666666
+        },
+        "residual": {
+          "js": 0.030770115909388728,
+          "tv": 0.08995584788665431,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270022,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.3210851372861509,
+          "tv": 0.6667896896767307,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.030770115909388728,
+          "tv": 0.08995584788665431,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900764,
+          "js": -0.2903150213767622,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767307,
+          "residual_js": 0.3210851372861509,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767307,
+            "residual_js": 0.3210851372861509,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665431,
+            "residual_js": 0.030770115909388728,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "teacher",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "teacher",
+      "treated_top1": "educator",
+      "article_only_top1": "educator",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373016,
+          "tv": 0.9945822714113282,
+          "top_k_jaccard": 0.42857142857142855
+        },
+        "mediator_only": {
+          "js": 0.6038167372597404,
+          "tv": 0.9046264235246737,
+          "top_k_jaccard": 0.42857142857142855
+        },
+        "residual": {
+          "js": 0.03077011590938887,
+          "tv": 0.08995584788665442,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270033,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.32108513728615085,
+          "tv": 0.6667896896767306,
+          "top_k_jaccard": 0.6666666666666666,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.03077011590938887,
+          "tv": 0.08995584788665442,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900761,
+          "js": -0.29031502137676196,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    },
+    {
+      "cue": "sailor",
+      "mechanism": "direct",
+      "baseline_article": "a",
+      "treated_article": "an",
+      "article_switched": true,
+      "baseline_top1": "sailor",
+      "treated_top1": "admiral",
+      "article_only_top1": "admiral",
+      "decomposition": {
+        "total": {
+          "js": 0.6760631057373016,
+          "tv": 0.9945822714113282,
+          "top_k_jaccard": 0.25
+        },
+        "mediator_only": {
+          "js": 0.6038167372597404,
+          "tv": 0.9046264235246737,
+          "top_k_jaccard": 0.25
+        },
+        "residual": {
+          "js": 0.03077011590938887,
+          "tv": 0.08995584788665442,
+          "top_k_jaccard": 1.0
+        },
+        "residual_over_total_tv": 0.09044585900270033,
+        "top1_mediator_reproduces_treated": true
+      },
+      "controlled_direct_effects": {
+        "cde_a": {
+          "js": 0.32108513728615085,
+          "tv": 0.6667896896767306,
+          "top_k_jaccard": 0.42857142857142855,
+          "target_minus_source_delta": 6.25
+        },
+        "cde_an": {
+          "js": 0.03077011590938887,
+          "tv": 0.08995584788665442,
+          "top_k_jaccard": 1.0,
+          "target_minus_source_delta": 6.25
+        },
+        "interaction_an_minus_a": {
+          "tv": -0.5768338417900761,
+          "js": -0.29031502137676196,
+          "target_minus_source_delta": 0.0
+        }
+      },
+      "residual_control_curve": [
+        {
+          "k": 0,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 1,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 2,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 3,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        },
+        {
+          "k": 4,
+          "forced_article": "a",
+          "forced_prefix": [
+            "a",
+            "young",
+            "skilled",
+            "senior",
+            "local"
+          ],
+          "residual_tv": 0.6667896896767306,
+          "residual_js": 0.32108513728615085,
+          "target_minus_source_delta": 6.25
+        }
+      ],
+      "residual_control_curve_by_article": {
+        "a": [
+          {
+            "k": 0,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "a",
+            "forced_prefix": [
+              "a",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.6667896896767306,
+            "residual_js": 0.32108513728615085,
+            "target_minus_source_delta": 6.25
+          }
+        ],
+        "an": [
+          {
+            "k": 0,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 1,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 2,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 3,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          },
+          {
+            "k": 4,
+            "forced_article": "an",
+            "forced_prefix": [
+              "an",
+              "young",
+              "skilled",
+              "senior",
+              "local"
+            ],
+            "residual_tv": 0.08995584788665442,
+            "residual_js": 0.03077011590938887,
+            "target_minus_source_delta": 6.25
+          }
+        ]
+      },
+      "total_target_source_delta": 16.75,
+      "article_only_target_source_delta": 10.5,
+      "residual_target_source_delta": 6.25
+    }
+  ]
+}

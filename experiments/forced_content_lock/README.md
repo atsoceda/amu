@@ -1,6 +1,6 @@
 # forced content lock
 
-See `../PAPER_EXPERIMENTS.md` for the full protocol.
+E1–E6 protocol (complete; historical): [`../PAPER_EXPERIMENTS.md`](../PAPER_EXPERIMENTS.md). Current paper claim lives in `paper.qmd`.
 
 ## Run
 

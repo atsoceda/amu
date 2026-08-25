@@ -52,6 +52,7 @@ Near-boundary screen + oracle patch & \texttt{fixed\_b\_positive\_control/} \\
 Exact S1 \(\times\) article factorial & \texttt{s1\_article\_factorial/} \\
 Cross-token propagation diagnostic & \texttt{s1\_propagation\_diagnostics/} \\
 Held-out full-residual reference & \texttt{fixed\_article\_residual\_reference/} \\
+Synthetic mediation estimand check & \texttt{synthetic\_token\_mediation/} \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -161,3 +162,21 @@ four development pairs; layer 12 is selected. On four disjoint test pairs,
 the target residual yields mean target-specific
 \(\Delta\Delta=6.44\,[4.19,10.06]\), while ten matched-norm random
 directions averaged within pair yield \(0.14\,[-0.33,0.61]\).
+
+\section{Synthetic estimand-validation details}
+\label{app:synthetic}
+
+The synthetic vocabulary contains a cue marker, articles \{\texttt{a},
+\texttt{an}\}, four filler tokens, and eight source/target noun pairs.
+Both mechanisms share article-bias and noun--article coupling parameters;
+only the direct mechanism adds a persistent plan bias to noun logits after
+the article is fixed. Under the mediated mechanism, mean total and
+article-only TV are both 0.905, residual TV is 0, and both force-\texttt{a}
+and force-\texttt{an} residual-control curves are identically zero for
+\(k\in\{0,1,2,3,4\}\). Under the direct mechanism, force-\texttt{a} CDE TV
+is 0.667 with target-minus-source \(\Delta\Delta=6.25\), and the
+force-\texttt{a} curve remains 0.667 for every \(k\). Force-\texttt{an}
+residual TV is 0.090 with the same logit \(\Delta\Delta\), illustrating
+saturation of distributional residuals when the mediator already favors the
+target. Machine-readable outputs live in
+\texttt{synthetic\_token\_mediation/}.

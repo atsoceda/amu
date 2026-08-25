@@ -33,6 +33,13 @@ off-manifold; our central factorial therefore evaluates the *same* S1
 handle on and off under identical token prefixes rather than generalizing
 from unrelated handles.
 
+**Synthetic method check.** Before interpreting Gemma residuals, we run the
+same estimands on two ground-truth autoregressive mechanisms with eight
+occupation cues: a mediated article-only mechanism and a direct persistent-plan
+mechanism. Acceptance requires near-zero token-clamped residual control for
+the mediated model and large force-`a` residual TV (\(\ge 0.40\)) with a
+non-collapsing \(k\)-curve for the direct model.
+
 **Exact S1 factorial.** We evaluate all 20 held-out E1 prompts under S1
 off/on crossed with free, forced-`a`, and forced-`an` generation. S1 uses
 the four selection-only features at layers 10--13 and the pre-registered

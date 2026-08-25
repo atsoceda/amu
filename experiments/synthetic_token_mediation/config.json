@@ -1,0 +1,29 @@
+{
+  "seed": 0,
+  "temperature": 1.0,
+  "article_bias_on": 4.0,
+  "direct_plan_bias": 5.0,
+  "mediated_plan_bias": 0.0,
+  "noun_article_coupling": 3.5,
+  "filler_bias": 2.5,
+  "bootstrap_samples": 10000,
+  "k_values": [0, 1, 2, 3, 4],
+  "mechanisms": ["mediated", "direct"],
+  "cues": [
+    {"id": "pilot", "source": "pilot", "target": "aviator"},
+    {"id": "lawyer", "source": "lawyer", "target": "attorney"},
+    {"id": "doctor", "source": "doctor", "target": "oculist"},
+    {"id": "physicist", "source": "physicist", "target": "astronomer"},
+    {"id": "chemist", "source": "chemist", "target": "analyst"},
+    {"id": "farmer", "source": "farmer", "target": "agriculturist"},
+    {"id": "teacher", "source": "teacher", "target": "educator"},
+    {"id": "sailor", "source": "sailor", "target": "admiral"}
+  ],
+  "fillers": ["young", "skilled", "senior", "local"],
+  "acceptance": {
+    "mediated_max_residual_over_total": 0.05,
+    "direct_min_cde_a_tv": 0.40,
+    "mediated_max_k_residual_tv": 0.05,
+    "direct_min_k0_residual_tv": 0.40
+  }
+}

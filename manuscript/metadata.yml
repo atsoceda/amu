@@ -22,10 +22,13 @@ abstract: |
   Sparse activation diagnostics confirm cross-token propagation, while a
   development-selected full-residual reference at the fixed article
   position strongly moves held-out noun targets ($+6.44$ logits versus
-  $+0.14$ for matched-norm random controls). Thus the free-generation
-  effect is overwhelmingly article-mediated for this intervention, but not
-  literally zero after token clamping. Generated-token controls are
-  necessary to identify persistent latent control in autoregressive models.
+  $+0.14$ for matched-norm random controls). A synthetic ground-truth pair
+  confirms that the same estimands return residual TV $0$ under pure
+  article mediation and force-$a$ residual TV $0.667$ under persistent
+  direct control. Thus the free-generation effect is overwhelmingly
+  article-mediated for this intervention, but not literally zero after
+  token clamping. Generated-token controls are necessary to identify
+  persistent latent control in autoregressive models.
 keywords:
   - mechanistic interpretability
   - latent planning

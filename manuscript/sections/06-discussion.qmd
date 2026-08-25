@@ -20,7 +20,11 @@ that \(b\) is a mediator rather than a classical confounder, and that
 output coordination does not identify a fused package (**H2**) or a
 comparably strong independently persistent noun plan (**H1**).
 
-**Assay validation.** We screened near-boundary same-article-class pairs
+**Assay validation.** A synthetic ground-truth pair shows that the
+estimands discriminate generated-token relay from residual control: the
+mediated mechanism yields residual TV \(0\) and a flat zero \(k\)-curve,
+while the direct mechanism retains force-`a` residual TV \(0.667\) through
+\(k{=}4\). On Gemma, we screened near-boundary same-article-class pairs
 and found that pre-article MLP-input patches did not produce clear
 noun-token control. A held-out full-residual reference at the fixed article
 position does: \(+6.44\) target-specific logits versus \(+0.14\) for
@@ -30,9 +34,12 @@ every sparse or normalized-MLP handle is behaviorally sufficient.
 
 **Methodological implication.** For any multi-token causal claim, report
 the intervention-by-generated-token factorial: total effect, mediator-token
-reproduction, and same-prefix residual. Keep the original intervention on,
+reproduction, same-prefix residual, and---when continuations are longer---a
+\(k\)-token residual-control curve with mediator-state interactions
+(\(\mathrm{CDE}_{b}-\mathrm{CDE}_{b'}\)). Keep the original intervention on,
 recompute the full sequence, use target-free distributional distances,
 pre-specify lexical contrasts, trace cross-token reachability, and validate
-sensitivity with an intervention at a causally relevant upstream site.
-Without this decomposition, a later-token change is evidence of coordinated
-output, not identified evidence of persistent latent control.
+sensitivity both with known mechanisms and with an upstream reference on
+the studied stack. Without this decomposition, a later-token change is
+evidence of coordinated output, not identified evidence of persistent
+latent control.

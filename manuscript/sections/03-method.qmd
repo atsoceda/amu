@@ -36,9 +36,9 @@ effect of \(I\) on \(c\).
 
 ![Hypotheses and token-clamped assay. Left: H1 modular planning, H2 fused packages, and H3 article-mediated continuation. Right: paste \(b\) while keeping interventions on at position \(P\) to estimate residual control of noun-token \(c\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=100%}
 
-## Generated-token mediation factorial
+## Generated-token mediation estimands
 
-Let \(I\) denote the S1 amplification and let \(B_0,B_1\) be the greedy
+Let \(I\) denote an internal intervention and let \(B_0,B_1\) be the greedy
 articles under \(I=0,1\). For every pre-specified prompt we run
 
 $$
@@ -47,30 +47,49 @@ b\in\{\text{free},\operatorname{do}(\texttt{a}),
 \operatorname{do}(\texttt{an})\}.
 $$
 
-In forced cells, the article token is pasted and S1 remains active at the
-original pre-article position \(P\) during noun prediction. Every step is a
-full-sequence forward pass, so no KV-cache index remapping is involved.
-Attention is recomputed in the primary analysis; freezing baseline
-attention and normalization statistics is a mechanistic ablation.
+In forced cells, the article token is pasted and the intervention remains
+active at the original pre-article position \(P\) during noun prediction.
+Every step is a full-sequence forward pass, so no KV-cache index remapping
+is involved. Attention is recomputed in the primary Gemma analysis;
+freezing baseline attention and normalization statistics is a mechanistic
+ablation.
 
-The factorial defines three prompt-level noun-distribution comparisons:
+The factorial defines four prompt-level estimands:
 
-1. **Total free-generation contrast:**
+1. **Total free-generation effect (TE):**
    \(p(c\mid I{=}1,\operatorname{do}(B_1))\) versus
    \(p(c\mid I{=}0,\operatorname{do}(B_0))\).
-2. **Article-only reproduction:**
+2. **Article-only / mediator reproduction:**
    \(p(c\mid I{=}0,\operatorname{do}(B_1))\) versus
    \(p(c\mid I{=}0,\operatorname{do}(B_0))\).
-3. **Token-clamped residual control:**
+3. **Token-clamped residual control (CDE at \(B_1\)):**
    \(p(c\mid I{=}1,\operatorname{do}(B_1))\) versus
    \(p(c\mid I{=}0,\operatorname{do}(B_1))\).
+4. **Intervention–mediator interaction:**
+   \(\mathrm{CDE}_{\texttt{an}}-\mathrm{CDE}_{\texttt{a}}\), using
+   target-minus-source logits and distributional distances under each
+   forced article.
 
-The third comparison is a controlled direct effect at the treated mediator
-value \(B_1\). We report full-vocabulary total variation (TV) and
-Jensen--Shannon (JS) divergence, top-\(k\) overlap, and greedy top-1
-reproduction. Distance ratios are descriptive because TV does not provide
-an additive causal decomposition. The article-switching subset is also
+We also define a **\(k\)-token residual-control curve**: clamp a forced
+article plus the first \(k\) continuation tokens and remeasure the same
+prefix residual on the noun. Distances use full-vocabulary total variation
+(TV) and Jensen--Shannon (JS) divergence, with top-\(k\) overlap as a
+secondary readout. Distance ratios are descriptive because TV is not an
+additive causal decomposition. On Gemma, the article-switching subset is
 descriptive; inference uses all 20 held-out prompts.
+
+## Synthetic ground-truth validation
+
+Because a single empirical residual can be small for either weak handles or
+true mediation, we validate the estimands on two known autoregressive
+mechanisms that share vocabulary and cues. In the **mediated** mechanism,
+\(I\) changes only article logits and nouns depend on the article. In the
+**direct** mechanism, \(I\) also injects a persistent plan bias that
+continues to move the noun after article and filler clamping. The assay
+must return near-zero CDEs and a flat zero \(k\)-curve for the mediated
+model, and large force-\(\texttt{a}\) residual control for the direct model.
+This check validates the *method*; the Gemma full-residual reference
+separately validates sensitivity of the *stack*.
 
 ## Pre-specified lexical outcomes and uncertainty
 
