@@ -1,23 +1,23 @@
 # Limitations
 
-Our claim is scoped to Gemma~3 270M, the PT+affine Gemma Scope~2 CLT
+The claim is scoped to Gemma 3 270M, the PT+affine Gemma Scope 2
 dictionary, occupation \(a\)/\(an\) prompts, and the interventions we ran.
-The model is in a weak behavioral regime for this task. We did not isolate
-a pure context concept \(A\), nor run dedicated semantic-concept probes
-beyond noun-token outcomes. S1 was selected using article and future-token
-attributions, so the paper identifies the causal decomposition of this
-specific handle rather than the model's unique internal ontology. The
-19-prompt article-switch ratio is descriptive because it conditions on an
-observed switch, and TV distances are not additive mediation effects.
-The seven-twin residual estimate is small-\(N\), while several
-same-article targets remain floor-limited.
+The model is in a weak behavioral regime for this task. Outcomes are
+lexical noun tokens, not semantic concepts. S1 was selected using article
+and future-token attributions, so the paper identifies the causal
+decomposition of this handle rather than the model's unique internal
+ontology. S2 shares a feature with S1 and often derails rather than
+flipping `an`; it is not a clean article-only dissociation. The S1 leftover
+under `an` overlaps the random control, so we do not interpret it as a
+specific noun plan. The 19-prompt article-switch subset is descriptive
+because it conditions on an observed switch. TV distances are not additive
+mediation effects. The seven-twin leftover estimate is small-\(N\).
 
 The synthetic mediated/direct pair validates estimand polarity on a known
 generative process; it is not a trained transformer and cannot replace the
 Gemma stack-sensitivity control. The full-residual reference is patched at
 the article-token position and therefore validates sensitivity of noun
-computation there, not sensitivity of every pre-article planning site. Conversely, the sparse propagation
-diagnostic measures CLT features rather than native residual geometry.
+computation there, not sensitivity of every pre-article planning site.
 Large \(5\times\) sparse amplification may be off-manifold; affine skip
 means sparse interventions need not exhaust MLP computation. Scale,
 model-family, task, and sampling-policy generalization remain open.

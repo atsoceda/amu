@@ -1,0 +1,66 @@
+{
+  "experiment_name": "six_cell_family_sweep",
+  "description": "Intervention-off/on crossed with free, forced-a, and forced-an generation for S1–S4, S1 random control, and S1 low-gain doses. Shared intervention-off cells; recomputed attention only.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "e1_config_path": "../selection_criterion_ablation/config.json",
+  "e1_selection_path": "../selection_criterion_ablation/results/selection.json",
+  "e1_summary_path": "../selection_criterion_ablation/results/summary.json",
+  "top_k": 10,
+  "candidate_top_k": 20,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260826,
+  "max_new_tokens": 4,
+  "runs": [
+    {
+      "id": "S1_5x",
+      "feature_set": "S1_dual_effect",
+      "amplify_factor": 5.0,
+      "use_control_features": false
+    },
+    {
+      "id": "S1_1.5x",
+      "feature_set": "S1_dual_effect",
+      "amplify_factor": 1.5,
+      "use_control_features": false
+    },
+    {
+      "id": "S1_3x",
+      "feature_set": "S1_dual_effect",
+      "amplify_factor": 3.0,
+      "use_control_features": false
+    },
+    {
+      "id": "S2_5x",
+      "feature_set": "S2_article_only",
+      "amplify_factor": 5.0,
+      "use_control_features": false
+    },
+    {
+      "id": "S3_5x",
+      "feature_set": "S3_content_only",
+      "amplify_factor": 5.0,
+      "use_control_features": false
+    },
+    {
+      "id": "S4_5x",
+      "feature_set": "S4_competing_a",
+      "amplify_factor": 5.0,
+      "use_control_features": false
+    },
+    {
+      "id": "S1_random_5x",
+      "feature_set": "S1_dual_effect",
+      "amplify_factor": 5.0,
+      "use_control_features": true
+    }
+  ]
+}

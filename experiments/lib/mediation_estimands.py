@@ -35,6 +35,60 @@ def total_variation_from_logits(left: torch.Tensor, right: torch.Tensor) -> floa
     return float(0.5 * torch.sum(torch.abs(p - q)))
 
 
+def _unit_cosine(left: torch.Tensor, right: torch.Tensor) -> float:
+    left_norm = float(torch.linalg.vector_norm(left))
+    right_norm = float(torch.linalg.vector_norm(right))
+    if left_norm < 1e-12 or right_norm < 1e-12:
+        return 0.0
+    return float(torch.dot(left, right) / (left_norm * right_norm))
+
+
+def effect_vector_decomposition(
+    *,
+    baseline_off: torch.Tensor,
+    treated_article_off: torch.Tensor,
+    treated_article_on: torch.Tensor,
+) -> dict[str, float]:
+    """Additive probability-vector decomposition of a generated-token contrast.
+
+    Let Y(i, b) be the noun-token distribution under intervention i and article
+    b. For greedy articles B0, B1 this stores
+
+        E_T = Y(1, B1) - Y(0, B0)
+        E_M = Y(0, B1) - Y(0, B0)
+        E_R = Y(1, B1) - Y(0, B1)
+
+    with E_T = E_M + E_R before any distance is taken. The TV of a difference
+    vector is half its L1 norm; those TVs are not themselves additive.
+    """
+    y_off_b0 = torch.softmax(baseline_off.float(), dim=-1)
+    y_off_b1 = torch.softmax(treated_article_off.float(), dim=-1)
+    y_on_b1 = torch.softmax(treated_article_on.float(), dim=-1)
+    e_t = y_on_b1 - y_off_b0
+    e_m = y_off_b1 - y_off_b0
+    e_r = y_on_b1 - y_off_b1
+    reconstruction = e_t - (e_m + e_r)
+
+    def tv_norm(delta: torch.Tensor) -> float:
+        return float(0.5 * torch.sum(torch.abs(delta)))
+
+    return {
+        "total_tv": tv_norm(e_t),
+        "mediator_tv": tv_norm(e_m),
+        "residual_tv": tv_norm(e_r),
+        "l1_total": float(torch.sum(torch.abs(e_t))),
+        "l1_mediator": float(torch.sum(torch.abs(e_m))),
+        "l1_residual": float(torch.sum(torch.abs(e_r))),
+        "cosine_mediator_total": _unit_cosine(e_m, e_t),
+        "cosine_residual_total": _unit_cosine(e_r, e_t),
+        "cosine_mediator_residual": _unit_cosine(e_m, e_r),
+        "reconstruction_l1": float(torch.sum(torch.abs(reconstruction))),
+        "residual_tv_over_total_tv": (
+            tv_norm(e_r) / tv_norm(e_t) if tv_norm(e_t) > 0 else 0.0
+        ),
+    }
+
+
 def top_k_overlap(left: torch.Tensor, right: torch.Tensor, k: int) -> float:
     left_ids = set(torch.topk(left, k=min(k, left.numel())).indices.tolist())
     right_ids = set(torch.topk(right, k=min(k, right.numel())).indices.tolist())

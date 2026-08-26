@@ -3,32 +3,48 @@
 **Latent planning.** @hanna2026latent define latent planning as internal
 representations that (i)~cause a specific future token or concept
 (forward planning) and (ii)~shape preceding context to license it
-(backward planning). On \(a\)/\(an\) tasks they report that reliable
-behavioral success emerges mainly at larger scales; small models fail
-often yet can host nascent mechanisms. Our work does not dispute that
-scale story. We ask a sharper local question: when sparse interventions
-on a *small* model *do* move articles, do free-generation noun-token
-changes identify separable planning, or can they be explained by
-mediation through the generated article?
+(backward planning). On \(a\)/\(an\) they report that reliable behavioral
+success emerges mainly at larger scales. They already use two controls
+close to ours. First, they insert the correct or incorrect article and
+measure whether the intended noun survives disagreement with the article
+(their Fig.~13). Second, in rhyming they feed back intermediate context
+generated under steering and then turn steering off (their Fig.~5). We do
+not claim to invent token insertion or context replay. We add a complete
+six-cell design for an *internal* sparse intervention, full-vocabulary
+noun distributions, both article backgrounds, an additive vector split,
+dose, and a comparison across selection families. Our local question is
+not whether planning exists at scale. It is whether a planning-like
+sparse intervention on a small model identifies leftover noun control
+after the generated article is held fixed.
+
+**Causal mediation in NLP.** @vig2020mediation formulate total, direct,
+and indirect effects for neural NLP and intervene on internal mediators.
+@paul2024reasoning treat generated chain-of-thought tokens as mediators of
+final answers. The broad claim that generated text can mediate later
+outputs is therefore not new. The narrower claim here is that generated
+output tokens can mediate the downstream behavioral effect of an
+*internal mechanistic intervention*, so matched-token controls are
+required before later-token change is read as persistent internal
+control. @geiger2025abstraction unifies activation patching, mediation,
+causal scrubbing, circuits, sparse features, and steering under causal
+abstraction. @chan2022scrubbing test a mechanistic hypothesis by
+interventions that should preserve behavior if the hypothesis is
+correct. Treated-article insertion with the intervention off is a simple
+instance: if the later noun change is carried by the article token,
+substituting that token into an unintervened run should recreate most of
+the change. @wu2024plan distinguish *pre-caching* (features computed for
+future use) from *breadcrumbs* (present-token features that remain useful
+later). Our assay does not decide why a representation was computed; it
+measures whether an intervention's later effect still exists after the
+generated token is controlled.
 
 **Feature circuits and steering.** Attribution graphs over sparse
 autoencoders / transcoders estimate contributions among features and
 logits [@ameisen2025attribution; @lindsey2025biology;
 @dunefsky2024transcoders; @marks2025sparse]. We use `circuit-tracer` with
-Gemma Scope~2 cross-layer transcoders [@hanna2025circuittracer;
+Gemma Scope 2 cross-layer transcoders [@hanna2025circuittracer;
 @gemmascope2] to select features and intervene. Affine skip connections
 improve reconstruction but allow MLP computation to bypass sparse
-features; we therefore also test dense MLP-in interventions, including
-a held-out full-residual reference intervention.
-
-**Generated-token mediation.** In an autoregressive model, an emitted token
-has two roles: it is an outcome of the preceding computation and an input
-to every later prediction. Consequently, changing an early generated token
-creates a mediated path even if the intervention has no persistent latent
-effect. Holding that token fixed separates a total intervention contrast
-from a same-prefix residual contrast, but does not remove earlier hidden
-states or make direct persistence impossible. Our contribution is to make
-this identification problem explicit for latent-planning interventions,
-measure the full intervention-by-token factorial rather than only a
-free/forced top-1 comparison, and pair it with reachability and sensitivity
-controls.
+features; we therefore also test a dense residual reference. Graph edges
+to future tokens are selection criteria, not already-identified leftover
+control; the six cells test that distinction.

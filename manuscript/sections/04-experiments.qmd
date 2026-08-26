@@ -1,70 +1,77 @@
 # Experimental setup
 
 **Model stack.** Primary results use pretrained `google/gemma-3-270m` with
-Gemma Scope~2 PT CLT `width_262k_l0_medium_affine` and the `nnsight`
+Gemma Scope 2 PT CLT `width_262k_l0_medium_affine` and the `nnsight`
 backend [@gemma3; @gemmascope2]. We prefer pretrained+affine over
-instruction-tuned stacks for this task: Appendix~J of @hanna2026latent
+instruction-tuned stacks for this task: Appendix J of @hanna2026latent
 finds base models slightly stronger on \(a\)/\(an\), and Hub IT
-`medium_affine` layer~0 was unavailable in our setup. All reported
+`medium_affine` layer 0 was unavailable in our setup. All reported
 feature IDs are for the PT+affine stack. This model strongly prefers
-majority \(a\) and sits below the scale regime where @hanna2026latent
-report reliable behavioral planning success; we therefore focus on
-*editable* mechanisms and assay validation rather than behavioral demos.
+majority `a` and sits below the scale where @hanna2026latent report
+reliable behavioral planning success.
 
-**Task.** Latent-Planning-style occupation prompts of the form
-``Someone who \ldots\ is'' with a fixed one-shot demonstration.
-Early mismatch discovery and the held-out transfer that first broke a
-wrapper reading are summarized in Appendix~A; the main text starts from
-free-generation package-like assays and fixed-article controls.
+**Task.** Occupation prompts of the form ``Someone who \ldots\ is'' with a
+fixed one-shot demonstration. Early mismatch discovery and the held-out
+transfer that first broke a wrapper reading are summarized in Appendix A.
+The main text starts from free-generation coordination and the six-cell
+split.
 
 **Feature families.** From attribution graphs on eight selection
-occupations (disjoint from the free-generation test set) we construct
-\(k{=}4\) feature sets: **S1** dual-effect (positive direct effect on
-`an` *and* on the future noun); **S2** article-ish (positive on `an`,
-near-zero on future content); **S3** content-ish (positive on future
-content, near-zero on `an`); **S4** competing / `a`-favoring.
-Activation-matched random controls match mean activation of the
-intervened set. Later assays add **per-noun** Latent-Planning-style
-features for a same-class target with low \(|\mathrm{attr}(a/an)|\), and
-hint-contrast sets. Default free-generation interventions amplify
-\(5\times\) prompt-specific activation at \(P\); dose sweeps use
-\(\{1.5,2,3,5,8\}\times\). Large multiplicative gains can be
-off-manifold; our central factorial therefore evaluates the *same* S1
-handle on and off under identical token prefixes rather than generalizing
-from unrelated handles.
+occupations we construct \(k{=}4\) feature sets (@tbl-families).
+**S1** is dual-effect (positive on `an` *and* on the future noun);
+**S2** is article-ish (positive on `an`, near-zero on future content);
+**S3** is content-ish (positive on future content, near-zero on `an`);
+**S4** is competing / `a`-favoring. An activation-matched random control
+uses four frozen features whose mean activations match the S1 set
+(\(\texttt{L11/F2954}\), \(\texttt{L11/F5451}\), \(\texttt{L11/F14119}\),
+\(\texttt{L12/F6421}\)). The sets are not disjoint: S3 shares
+\(\texttt{L11/F793}\) with S1, S2 shares \(\texttt{L13/F10231}\) with S1,
+and S4 shares \(\texttt{L14/F1949}\) with S2 and \(\texttt{L11/F292}\)
+with S3. Default amplification is \(5\times\) prompt-specific activation
+at \(P\).
 
-**Synthetic method check.** Before interpreting Gemma residuals, we run the
-same estimands on two ground-truth autoregressive mechanisms with eight
-occupation cues: a mediated article-only mechanism and a direct persistent-plan
-mechanism. Acceptance requires near-zero token-clamped residual control for
-the mediated model and large force-`a` residual TV (\(\ge 0.40\)) with a
-non-collapsing \(k\)-curve for the direct model.
+| Set | Selection rule | Features |
+| --- | --- | --- |
+| S1 | Dual-effect | L12/F6229, L10/F2930, L13/F10231, L11/F793 |
+| S2 | Article-ish | L14/F1949, L13/F10231, L5/F383, L11/F12690 |
+| S3 | Content-ish | L11/F292, L11/F793, L11/F6131, L13/F568 |
+| S4 | Competing (`a`) | L13/F10304, L14/F1949, L13/F9129, L11/F292 |
 
-**Exact S1 factorial.** We evaluate all 20 held-out E1 prompts under S1
-off/on crossed with free, forced-`a`, and forced-`an` generation. S1 uses
-the four selection-only features at layers 10--13 and the pre-registered
-\(5\times\) gain. Forced cells keep S1 active at \(P\) for noun prediction.
-Recomputed attention is primary; `circuit-tracer`'s
-`freeze_attention=True` path is reported separately. We store
-full-vocabulary distances and top-50 distributions, while target metrics
-cover pre-specified listed/twin nouns and teacher-forced multi-token nouns.
+: Feature sets used in the six-cell sweep. IDs are PT+affine Gemma Scope 2.
+{#tbl-families}
+
+**Six-cell sweep.** We evaluate all 20 held-out E1 prompts for S1 at
+\(1.5\times\), \(3\times\), and \(5\times\); for S2, S3, and S4 at
+\(5\times\); and for the S1 random control at \(5\times\). Intervention-off
+cells are shared across handles. Attention is recomputed. Forced cells
+keep the intervention active at \(P\) during noun prediction. The original
+S1 \(5\times\) factorial also ran `circuit-tracer`'s
+`freeze_attention=True` path as an ablation.
+
+**Article-prefix baseline.** Independently of sparse features, we insert
+`a` versus `an` on the same 20 held-out prompts and on 95 released
+`an`-target occupation prompts from a broader screen, using a
+transformers-only forward with no transcoder.
+
+**Synthetic method check.** Two known autoregressive mechanisms with eight
+occupation cues share vocabulary and article--noun coupling. In the
+mediated mechanism, \(I\) changes only article logits. In the direct
+mechanism, \(I\) also injects a persistent plan bias that continues to
+move the noun after the article is fixed. Acceptance requires near-zero
+matched-prefix leftover for the mediated model and large leftover TV
+under inserted `a` (\(\ge 0.40\)) with a non-collapsing \(k\)-curve for
+the direct model.
 
 **Propagation and full-residual reference.** On four fixed prompts we
-record sparse CLT activations at the forced-`an` position with S1 off/on.
-As a sensitivity control, paired prompts share an occupation sentence and
-differ only in an explicit source/target vocabulary cue; both use fixed
-`a`. We patch the complete decoder-layer output residual at the article
-position, choose the layer with largest mean target-specific
+record sparse CLT activations at the inserted-`an` position with S1
+off/on. As a sensitivity control, paired prompts share an occupation
+sentence and differ only in an explicit source/target vocabulary cue;
+both use inserted `a`. We patch the complete decoder-layer output residual
+at the article position, choose the layer with largest mean target-specific
 \(\Delta\Delta\) on four development pairs, and compare its effect on four
-held-out pairs with ten matched-norm random directions. This intervention
-tests whether upstream noun computation can move the target through the
-same model stack; it does not claim semantic equivalence to S1.
+held-out pairs with ten matched-norm random directions.
 
-**Held-out sets and uncertainty.** Free-generation package-like results use
-\(N{=}20\) held-out occupations including seven pre-specified twin pairs.
-The same 20 prompts define the primary factorial; the 19 prompts on which
-the article changes are labeled descriptive. Full-residual layer selection
-and evaluation use disjoint four-pair development/test splits.
-Prompt-level and pair-level intervals use 10,000-sample nonparametric
-bootstrap resampling. Full prompts, feature IDs, tokenization audits, and
-machine-readable summaries are released in the accompanying code.
+**Uncertainty.** Primary intervals are prompt-level nonparametric
+bootstrap intervals with 10,000 resamples. The 19 prompts on which S1
+\(5\times\) changes the article are labeled descriptive. Full-residual
+layer selection and evaluation use disjoint four-pair splits.

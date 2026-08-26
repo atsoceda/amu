@@ -1,21 +1,25 @@
 # Results
 
-## Free generation: article flips co-occur with noun-token changes
+## The article is already a strong noun lever
 
-Amplifying frozen dual-effect features on 20 held-out prompts moves
-article preference toward `an` on every prompt, but almost never
-preserves the baseline noun token. Concrete twins include
-`a pilot`\(\rightarrow\)`an aviator`,
-`a lawyer`\(\rightarrow\)`an attorney`, and
-`a physicist`\(\rightarrow\)`an astronomer`.
-@tbl-packaging reports rates: package-like switches dominate
-(0.95; 95\% Clopper--Pearson interval comfortably above chance);
-wrapper-like repairs are \(0/20\) (upper 95\% bound \(\approx 0.17\));
-illicit `an`+consonant mismatches stay at zero. Matched controls do not
-reproduce the package-like switch. Column ``\(\Delta\) art.\ logit favors
-`an`'' is a *logit-direction* readout and need not equal a generated-article
-switch (hence the control can score 0.70 there while preserving the noun
-token and scoring 0.00 wrapper-like).
+With the intervention off, inserting `an` versus `a` moves the
+full-vocabulary noun distribution by TV \(0.937\) \([0.891,0.975]\) on
+the 20 held-out prompts. A transformers-only baseline, with no sparse
+intervention, gives TV \(0.940\) \([0.893,0.976]\) on the same 20 prompts
+and TV \(0.975\) \([0.964,0.983]\) on 95 released `an`-target occupations;
+the top-1 noun changes on every prompt in both splits. Any sparse handle
+that flips the article therefore has a large, generic continuation
+channel available before leftover internal control is considered.
+
+## Free generation looks coordinated; the six cells split it
+
+Amplifying S1 at \(5\times\) moves every held-out prompt to `an` and
+changes the greedy noun on 19/20 prompts (@tbl-packaging). Concrete twins
+include `a pilot`\(\rightarrow\)`an aviator` and
+`a lawyer`\(\rightarrow\)`an attorney`. Matched random features and S3 do
+not produce this switch. Those free-generation rates show that S1 is a
+specific handle on legal article--noun completions. They do not identify
+the transmission route.
 
 | Condition | \(N\) | \(\Delta\) art.\ logit favors `an` | Noun token preserved | Class shift | Wrapper-like | Package-like | Twin match |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -23,109 +27,115 @@ token and scoring 0.00 wrapper-like).
 | S1 matched control | 20 | 0.70 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | S3 amplify \(5\times\) | 20 | 0.70 | 0.95 | 0.05 | 0.00 | 0.05 | 0.00 |
 
-: Free-generation metrics (held-out occupations). S1 is dual-effect; S3 is
-content-ish. Wrapper-like = generated article moves and noun token stays;
-package-like = legal article--class switch.
+: Free-generation metrics (held-out occupations). Wrapper-like = generated
+article moves and noun token stays; package-like = legal article--class
+switch. These rates do not identify leftover noun control.
 {#tbl-packaging}
 
-The selection, dose, dual-lock, and twin-tetrad ablations all reproduce the
-same qualitative free-generation coordination and are summarized in
-Appendix~C. Those assays establish that S1 is a specific and controllable
-handle on legal article--noun completions; they do not distinguish **H2**
-from **H3**.
+The six-cell split does. S1 at \(5\times\) selects `an` on 20/20 prompts.
+Inserting that treated article with the intervention **off** reproduces
+the S1-on top-1 noun on 20/20 prompts. Across all 20 prompts, total TV is
+\(0.893\), token-substitution TV is \(0.891\), and matched-prefix leftover
+TV is \(0.028\) \([0.021,0.035]\) (@tbl-mediation; @fig-mediation A).
+Cosine of \(E_M\) with \(E_T\) is \(0.949\) \([0.849,1.000]\); cosine of
+\(E_R\) with \(E_T\) is \(0.124\) \([-0.112,0.355]\). Reconstruction
+\(\|E_T-(E_M+E_R)\|_1\) is numerically zero (implementation check).
+Frozen attention in the original S1 factorial yields the same qualitative
+split.
 
-## Exact factorial: the article recreates the noun switch
-
-The factorial supplies that distinction. With attention recomputed, S1
-selects `an` on 20/20 prompts and changes the free noun on 19/20. Yet after
-we insert that same S1-selected article and turn S1 **off**, the top-1 noun
-matches the S1-on noun on 20/20 prompts. The numerical identity check
-between free S1-on noun logits and forced-selected-article S1-on logits has
-maximum absolute error zero.
-
-@tbl-mediation reports the distributional decomposition. Across all 20
-pre-specified prompts, total TV is \(0.893\), article-only TV is \(0.891\),
-and same-prefix residual TV is \(0.0278\). The one prompt already generating
-`an` has no article-only contrast, making its residual/total ratio one; on
-the 19 descriptive article-switching prompts, the mean ratio is \(0.031\)
-[0.023, 0.040]. TV is not additive, so this ratio is a scale comparison,
-not a formal percentage mediated. Frozen attention yields the same
-qualitative decomposition.
-
-| Attention | Total TV | Article-only TV | Same-prefix residual TV | Article-only top-1 reproduction |
+| Attention | Total TV | Token-substitution TV | Leftover TV under treated article | Treated-token top-1 |
 | --- | ---: | ---: | ---: | ---: |
-| Recomputed (primary) | 0.893 | 0.891 | 0.0278 [0.0209, 0.0350] | 1.00 |
-| Frozen (ablation) | 0.893 | 0.891 | 0.0262 [0.0202, 0.0327] | 1.00 |
+| Recomputed (primary) | 0.893 | 0.891 | 0.028 [0.021, 0.035] | 1.00 |
+| Frozen (ablation) | 0.893 | 0.891 | 0.026 [0.020, 0.033] | 1.00 |
 
-: S1-by-article factorial on all 20 held-out prompts. Intervals are
-prompt-bootstrap 95\% intervals. Total compares free baseline with the
-S1-selected article and S1 on; article-only inserts that article with S1
-off; residual compares S1 on/off under the same selected article.
+: S1 \(5\times\) six-cell split on all 20 held-out prompts. Intervals are
+prompt-bootstrap 95\% intervals.
 {#tbl-mediation}
 
-![Generated-token mediation decomposition and held-out full-residual sensitivity control.](manuscript/figures/fig_mediation_decomposition.png){#fig-mediation width=94%}
+The leftover is not exactly zero, and it is not confined to the treated
+article. On seven listed twins, target-minus-source \(\Delta\Delta\) is
+\(0.018\) \([-0.071,0.107]\) under inserted `a` and \(0.089\)
+\([0.027,0.152]\) under inserted `an`. Individual `an` leftovers are
+pilot\(\to\)aviator \(+0.125\), lawyer\(\to\)attorney \(+0.062\),
+physicist\(\to\)astronomer \(+0.062\), photographer\(\to\)artist
+\(-0.062\), psychologist\(\to\)anthropologist \(+0.125\),
+geologist\(\to\)archaeologist \(+0.250\), farmer\(\to\)agriculturist
+\(+0.062\). Free-generation target/source contrast on the same twins is
+about \(11.6\) logits; treated-article insertion alone contributes about
+\(11.6\) logits (post-hoc descriptive).
 
-The target-free distribution result is stronger than a top-1 null, but it
-does not imply an exactly zero direct effect. On seven pre-specified twins,
-fixed `a` gives target-minus-source \(\Delta\Delta=0.018\)
-[\(-0.071,0.107\)], whereas fixed `an` gives \(0.089\)
-[\(0.027,0.152\)]. Full-sequence noun log-odds give the same result
-(\(0.087\) [0.024, 0.152]). S1 therefore retains a small
-token-clamped residual under `an`, while the free-generation target/source
-contrast is \(11.64\) logits and article insertion alone contributes
-\(11.59\) logits (post-hoc descriptive contrast).
+![S1 vector split against the generic article lever, and six-cell leftovers across handles and S1 dose.](manuscript/figures/fig_mediation_decomposition.png){#fig-mediation width=94%}
 
-## Cross-token propagation is present
+## Dose: the large total effect is gain-gated; the leftover is not
 
-The residual is architecturally reachable rather than ruled out by token
-clamping. Applying S1 at \(P\) changes sparse CLT activations one token
-later at the forced article position beginning at layer 11. With recomputed
-attention, mean activation \(\Delta L_2\) is \(11.6\) at layer 11,
-\(133.8\) at layer 12, and remains nonzero through layer 17; mean noun TV
-on these four diagnostics is \(0.0252\). Frozen attention also propagates
-the perturbation (mean TV \(0.0328\)). Thus the small residual is empirical,
-not a consequence of an impossible causal path.
+At \(1.5\times\), S1 writes `an` on only \(2/20\) prompts and total TV
+collapses to \(0.065\). The leftover under inserted `an` is already
+present: TV \(0.015\) and twin \(\Delta\Delta\) \(0.098\)
+\([0.027,0.161]\). At \(3\times\), free `an` rises to \(0.90\), total TV
+to \(0.802\), and token substitution still dominates (cosine of \(E_M\)
+with \(E_T\) remains high). The dramatic free-generation rewrite is
+therefore gated by whether the gain is large enough to engage the
+article boundary of TV \(0.937\). The small leftover under `an` is not
+created only by \(5\times\).
 
-## A held-out full-residual reference validates sensitivity
+## Family comparison: only S1 produces a large article-flipping rewrite
 
-Earlier MLP-input patches at \(P\) failed to move nouns (Appendix~E), so we
-do not call them oracles. A more direct upstream reference patches the
-complete decoder-layer output residual at the fixed article position.
-Layer 12 is selected on four development pairs. On four held-out
-same-article-class pairs, the target-specific effect is \(+6.44\) logits
-[4.19, 10.06], versus \(+0.14\) [\(-0.33,0.61\)] for ten
-matched-norm random directions averaged within pair (@tbl-reference).
+@tbl-family compares \(5\times\) handles; @fig-mediation B also shows S1 dose.
+Only S1 produces a large free-generation article+noun switch, and that switch
+remains token-substitution dominated. S3, the attribution-selected
+content-ish set, does not move nouns (total TV \(0.025\); noun-changed
+rate \(0\)). Attribution future-token scores therefore did not predict
+matched-prefix leftover control. S4 never writes `an`. S2 never writes
+`an` either; greedy strings often derail (`called a \ldots`,
+`not a biologist`), so the 0.70 ``noun changed'' rate is a parse artifact
+rather than a coordinated rewrite. S2's leftover TV under `an` is larger
+(\(\approx 0.10\)) and its twin \(\Delta\Delta\) under `an` is
+\(+0.830\); we do not read that as a content plan. S2 includes a feature
+shared with S1 and appears to disrupt continuation, not to transmit a
+noun. The S1 leftover under `an` (\(+0.089\)) overlaps the random control
+(\(+0.071\) \([0.027,0.134]\)). We therefore do not claim a specific noun
+plan from the residual.
 
-| Intervention at fixed article position | Held-out \(N\) | Mean target-specific \(\Delta\Delta\) [95\%] |
+| Handle | Free an | Noun changed | Treated top-1 | Total TV | Token-subst. TV | Leftover TV (an) | Twin \(\Delta\Delta\) a | Twin \(\Delta\Delta\) an |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| S1 \(5\times\) | 1.00 | 0.95 | 1.00 | 0.893 | 0.891 | 0.028 | 0.018 | 0.089 |
+| S2 \(5\times\) | 0.00 | 0.70 | 0.86 | 0.109 | 0.000 | 0.101 | 0.018 | 0.830 |
+| S3 \(5\times\) | 0.05 | 0.00 | 1.00 | 0.025 | 0.000 | 0.021 | 0.062 | 0.018 |
+| S4 \(5\times\) | 0.00 | 0.35 | 1.00 | 0.028 | 0.000 | 0.021 | \(-0.107\) | 0.080 |
+| Random \(5\times\) | 0.05 | 0.05 | 1.00 | 0.019 | 0.000 | 0.020 | 0.000 | 0.071 |
+
+: Six-cell family sweep at \(5\times\) on the same 20 held-out prompts. S2/S4 noun-changed rates often reflect illegal greedy strings. S2's vector split is defined only on prompts whose free articles are a or an.
+{#tbl-family}
+
+## Propagation, residual reference, and synthetic polarity
+
+Applying S1 at \(P\) changes sparse CLT activations one token later at
+the inserted-article position beginning at layer 11 (mean activation
+\(\Delta L_2\) \(11.6\) at layer 11, \(133.8\) at layer 12). Mean noun TV
+on these four diagnostics is \(0.025\). The leftover is therefore
+architecturally reachable.
+
+A full-residual patch at the inserted-article position validates
+stack sensitivity. Layer 12 is selected on four development pairs. On
+four held-out same-article-class pairs, the target-specific effect is
+\(+6.44\) logits \([4.19,10.06]\), versus \(+0.14\) \([-0.33,0.61]\) for
+ten matched-norm random directions averaged within pair
+(@tbl-reference). Earlier MLP-input patches at \(P\) failed to move nouns
+(Appendix E).
+
+| Intervention | Held-out \(N\) | Mean target-specific \(\Delta\Delta\) [95\%] |
 | --- | ---: | ---: |
 | Layer-12 target residual | 4 | \(6.44\) [4.19, 10.06] |
 | Matched-norm random residual | 4 | \(0.14\) [\(-0.33,0.61\)] |
 
-: Development-selected full-residual reference on held-out pairs. This
-validates sensitivity of noun computation to an upstream state at the
-article position; it does not show that S1 contains the same information.
+: Development-selected full-residual reference. This validates
+sensitivity of noun computation to an upstream state; it does not show
+that S1 contains the same information.
 {#tbl-reference}
 
-Together, the factorial, propagation trace, and reference control support
-a precise conclusion: S1's large free-generation noun change is
-overwhelmingly recreated by the generated article, with a small measurable
-same-prefix residual rather than an independently editable noun plan of
-comparable magnitude.
-
-## Synthetic estimands discriminate mediation from residual control
-
-The same decomposition cleanly separates known mechanisms
-(@fig-synthetic). For the mediated model, total and article-only TV both
-equal \(0.905\), residual TV is \(0\), article-only top-1 reproduction is
-\(8/8\), and both force-`a` and force-`an` \(k\)-curves remain at zero
-through \(k{=}4\). For the direct model, force-`a` CDE TV is \(0.667\) with
-target-minus-source \(\Delta\Delta{=}6.25\), and the force-`a`
-residual-control curve stays at \(0.667\) for every \(k\). Force-`an`
-residual TV is smaller (\(0.090\)) because article coupling already
-saturates the noun distribution, while the logit CDE remains \(6.25\);
-reporting both articles is therefore necessary. All pre-specified
-acceptance checks pass. The Gemma full-residual reference remains the
-stack-sensitivity control; the synthetic assay shows that the estimands
-themselves are not biased toward declaring mediation.
-
-![Synthetic ground-truth validation of mediation estimands. Left: factorial TV decomposition. Right: \(k\)-token residual-control curve under \(\operatorname{do}(\texttt{a})\).](manuscript/figures/fig_synthetic_mediation_validation.png){#fig-synthetic width=94%}
+On two known generative mechanisms (Appendix G), the same estimands
+return leftover TV \(0\) for article-only mediation and leftover TV
+\(0.667\) under inserted `a` for a persistent plan bias. The Gemma
+full-residual reference remains the stack-sensitivity control; the
+synthetic pair shows that the estimands are not biased toward declaring
+token substitution.

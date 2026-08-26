@@ -1,0 +1,13 @@
+{
+  "experiment_name": "article_prefix_baseline",
+  "description": "Intervention-off contrast between inserted a and inserted an on held-out occupation prompts and the released an-target set.",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "dtype": "bfloat16",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "e1_config_path": "../selection_criterion_ablation/config.json",
+  "dataset_path": "../a_an_full_dataset_screen/data/a_an_examples.csv",
+  "dataset_sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c",
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260826
+}

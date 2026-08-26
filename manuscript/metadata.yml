@@ -1,34 +1,30 @@
-title: "Generated-Token Mediation in Latent-Planning Interventions"
+title: "The Output Is Part of the Circuit: Separating Latent Persistence from Generated-Token Relay"
 author:
   - name: Anonymous Authors
     affiliations:
       - name: Anonymous Institution
 abstract: |
-  Interventions on an autoregressive model can alter both an early token and
-  a later token, yet the later change need not reveal a persistent latent
-  plan: the generated early token is itself a causal input. We formalize
-  this ambiguity as generated-token mediation and test it in article--noun
-  completions on pretrained Gemma~3 270M with Gemma Scope~2 cross-layer
-  transcoders. Amplifying a dual-effect sparse set changes the free
-  completion on 19/20 held-out prompts (e.g., $a$ pilot $\to$ $an$
-  aviator). In the exact $2\times3$ intervention-by-article factorial,
-  however, inserting the intervention-selected article with the
-  intervention off reproduces the intervention-on top-1 noun on 20/20
-  prompts. On the 19 article-switching prompts, total noun-distribution
-  variation is 0.940, article-only variation is 0.937, and the same-prefix
-  residual is 0.029 (residual/total 0.031, 95\% bootstrap interval
-  [0.023, 0.040]). A small target-specific residual remains under fixed
-  `an` for seven pre-specified twins ($+0.089$ logits [0.027, 0.152]).
-  Sparse activation diagnostics confirm cross-token propagation, while a
-  development-selected full-residual reference at the fixed article
-  position strongly moves held-out noun targets ($+6.44$ logits versus
-  $+0.14$ for matched-norm random controls). A synthetic ground-truth pair
-  confirms that the same estimands return residual TV $0$ under pure
-  article mediation and force-$a$ residual TV $0.667$ under persistent
-  direct control. Thus the free-generation effect is overwhelmingly
-  article-mediated for this intervention, but not literally zero after
-  token clamping. Generated-token controls are necessary to identify
-  persistent latent control in autoregressive models.
+  Once an autoregressive model writes a token, that token is an input to every
+  later prediction. An internal intervention that changes an early token can
+  therefore change a later token without any leftover internal control of the
+  later computation. We separate those routes with a six-cell design: the
+  intervention off or on, crossed with free generation and with two inserted
+  values of the early token. The free-generation change in the later-token
+  distribution then splits exactly into a token-substitution piece and a
+  matched-prefix leftover. On pretrained Gemma 3 270M, inserting `a` versus
+  `an` with the intervention off already moves occupation-noun distributions
+  by total variation $0.937$ on 20 held-out prompts. Amplifying a dual-effect
+  sparse set (S1) at $5\times$ flips free completions such as $a$ pilot
+  $\to$ $an$ aviator on 19/20 prompts, but inserting the intervention-chosen
+  article with the intervention off reproduces the new top-1 noun on 20/20
+  prompts; the token-substitution vector has cosine $0.95$ with the total
+  change, while the leftover has total variation $0.028$. The same leftover
+  under inserted `an` is already present at $1.5\times$, when free generation
+  almost never flips the article. Attribution-selected ``content'' features
+  (S3) do not move nouns. The result is a transmission measurement, not a
+  verdict on whether a latent plan exists: generated-token controls are
+  required before later-token change can be read as persistent internal
+  control.
 keywords:
   - mechanistic interpretability
   - latent planning

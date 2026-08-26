@@ -1,45 +1,44 @@
 # Discussion
 
-**Main finding.** On Gemma~3 270M, selected dual-effect interventions
-produce large *total* effects on article--noun completions under free
-generation, but the exact factorial shows that the generated article
-recreates almost the entire noun-distribution change. On the 19
-article-switching prompts, article insertion with S1 off has TV \(0.937\)
-from baseline, versus \(0.940\) for the total S1 contrast; turning S1 back
-on under the identical selected-article prefix adds residual TV \(0.029\).
-Top-1 article-only reproduction is 20/20. This is direct evidence for
-generated-token mediation (**H3**) rather than an inference from a null.
+**Main finding.** On Gemma 3 270M, a dual-effect sparse intervention
+produces large free-generation article--noun rewrites, but the six-cell
+split shows that those rewrites are carried by the generated article.
+Inserting `a` versus `an` with the intervention off already moves noun
+distributions by TV \(0.937\). For S1 at \(5\times\), treated-article
+insertion reproduces the new top-1 noun on 20/20 prompts;
+\(\operatorname{cosine}(E_M,E_T)=0.95\), while matched-prefix leftover TV
+is \(0.028\). Attribution-selected content-ish features (S3) do not move
+nouns. The S1 leftover under `an` is small, already present at
+\(1.5\times\), and comparable to a matched random control.
 
-**What we do and do not claim.** We do not claim that latent planning is
-impossible, that @hanna2026latent's larger-model results are wrong, or
-that S1 has literally zero direct effect. The pre-specified fixed-`an`
-twin contrast is small but nonzero, and propagation diagnostics show that
-earlier states can reach article-position computation. We claim that the
-free-generation effect is overwhelmingly article-mediated for this handle,
-that \(b\) is a mediator rather than a classical confounder, and that
-output coordination does not identify a fused package (**H2**) or a
-comparably strong independently persistent noun plan (**H1**).
+This is a **transmission** result, not a verdict that no latent plan
+exists. H1/H2-style claims about what is represented at \(P\) and H3-style
+claims about how a later effect is transmitted are not mutually exclusive.
+The assay distinguishes generated-token relay from matched-prefix leftover.
+It does not distinguish fused packages from modular plans.
 
-**Assay validation.** A synthetic ground-truth pair shows that the
-estimands discriminate generated-token relay from residual control: the
-mediated mechanism yields residual TV \(0\) and a flat zero \(k\)-curve,
-while the direct mechanism retains force-`a` residual TV \(0.667\) through
-\(k{=}4\). On Gemma, we screened near-boundary same-article-class pairs
-and found that pre-article MLP-input patches did not produce clear
-noun-token control. A held-out full-residual reference at the fixed article
-position does: \(+6.44\) target-specific logits versus \(+0.14\) for
-matched-norm random directions. The distinction localizes the sensitivity
-claim. Noun computation can be causally moved within the stack, but not
-every sparse or normalized-MLP handle is behaviorally sufficient.
+**Replay as a falsifier.** Treated-article insertion with the intervention
+off is a simple causal-scrubbing test [@chan2022scrubbing]: if the later
+noun change is carried by the article token, substituting that token into
+an unintervened run should recreate most of the change. It does. The
+exact identity \(E_T=E_M+E_R\) makes that statement a vector split rather
+than a slogan.
 
-**Methodological implication.** For any multi-token causal claim, report
-the intervention-by-generated-token factorial: total effect, mediator-token
-reproduction, same-prefix residual, and---when continuations are longer---a
-\(k\)-token residual-control curve with mediator-state interactions
-(\(\mathrm{CDE}_{b}-\mathrm{CDE}_{b'}\)). Keep the original intervention on,
+**Closed loop.** In an autoregressive model the generated article is
+self-generated feedback. An internal intervention can change later
+computation by changing that feedback even if leftover internal control of
+the noun is negligible. Measuring both routes is the mechanistic analogue
+of separating an organism's internal state from the sensory consequences
+of its own action. We do not import a neuroscience literature; we note
+the architectural fact that the output is part of the circuit.
+
+**Methodological standard.** For any multi-token causal claim, report the
+six cells, print \(E_T=E_M+E_R\) before TV, report leftovers under both
+token values, and compare the intervention-off token contrast to the
+total effect. Keep the original intervention on in matched-prefix cells,
 recompute the full sequence, use target-free distributional distances,
-pre-specify lexical contrasts, trace cross-token reachability, and validate
-sensitivity both with known mechanisms and with an upstream reference on
-the studied stack. Without this decomposition, a later-token change is
-evidence of coordinated output, not identified evidence of persistent
-latent control.
+list pre-specified lexical contrasts individually when \(N\) is small,
+trace cross-token reachability, and validate sensitivity both with known
+mechanisms and with an upstream reference on the studied stack. Without
+this split, a later-token change is evidence of coordinated output, not
+identified leftover internal control.

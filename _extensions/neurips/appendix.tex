@@ -50,6 +50,8 @@ Per-noun LP-style under fixed \(b\) & \texttt{per\_noun\_fixed\_b\_c\_to\_c/} \\
 Residual MLP-in under fixed \(b\) & \texttt{residual\_direction\_fixed\_b\_c\_to\_c/} \\
 Near-boundary screen + oracle patch & \texttt{fixed\_b\_positive\_control/} \\
 Exact S1 \(\times\) article factorial & \texttt{s1\_article\_factorial/} \\
+Six-cell family and dose sweep & \texttt{six\_cell\_family\_sweep/} \\
+Article-prefix baseline (no sparse \(I\)) & \texttt{article\_prefix\_baseline/} \\
 Cross-token propagation diagnostic & \texttt{s1\_propagation\_diagnostics/} \\
 Held-out full-residual reference & \texttt{fixed\_article\_residual\_reference/} \\
 Synthetic mediation estimand check & \texttt{synthetic\_token\_mediation/} \\
@@ -74,10 +76,11 @@ per-layer MLP-in differences before scaling by \(\alpha\). Oracle
 positive-control patches blend source and target MLP-in activations at
 layers \(\{8,10,12,14\}\) under fixed native \(b\).
 
-The main factorial reuses the exact pre-registered S1 set and gain on all
-20 held-out E1 prompts. It crosses S1 off/on with free, forced-\texttt{a},
-and forced-\texttt{an} articles, and runs both recomputed- and
-frozen-attention semantics. Primary intervals are prompt-level
+The six-cell runs reuse the S1--S4 sets and S1 random-control features
+that were fixed from selection-occupation attribution graphs before those
+runs. They cross each handle off/on with free, inserted-\texttt{a}, and
+inserted-\texttt{an} articles. The original S1 \(5\times\) factorial also
+ran frozen-attention semantics. Primary intervals are prompt-level
 nonparametric bootstrap intervals with 10,000 resamples.
 
 \paragraph{Exploratory free-generation ablations.}
@@ -163,6 +166,32 @@ the target residual yields mean target-specific
 \(\Delta\Delta=6.44\,[4.19,10.06]\), while ten matched-norm random
 directions averaged within pair yield \(0.14\,[-0.33,0.61]\).
 
+Equality of free S1-on noun logits with S1-on logits after inserting the
+treated article is an implementation consistency check (maximum absolute
+error zero in the original factorial). It is not a scientific result.
+
+\paragraph{Identification argument.}
+Let \(Y(i,b)\) be the noun distribution under intervention \(i\) and
+article \(b\). The free-generation contrast is
+\(E_T=Y(1,B_1)-Y(0,B_0)\). If \(Y\) depends on \(B\) only through the
+visible article token, then \(Y(1,b)=Y(0,b)\) for each inserted \(b\), so
+\(E_R=0\) and \(E_T=E_M\). If a leftover internal effect remains after
+\(B\) is fixed, \(E_R\neq 0\). Observing \(E_T\) alone cannot distinguish
+those cases. Cosine and TV of \(E_M\) versus \(E_R\) are descriptive
+summaries of those vectors; they are not a percent-mediated.
+
+\paragraph{Family sweep.}
+Shared intervention-off insertion of \texttt{an} versus \texttt{a} yields
+noun TV \(0.937\,[0.891,0.975]\) on the 20 held-out prompts. A
+transformers-only baseline with no sparse intervention yields
+\(0.940\,[0.893,0.976]\) on those prompts and
+\(0.975\,[0.964,0.983]\) on 95 released \texttt{an}-target occupations,
+with top-1 noun change on every prompt. S1 at \(5\times\) has
+\(\operatorname{cosine}(E_M,E_T)=0.949\,[0.849,1.000]\) and reconstruction
+L1 numerically zero. S2/S4 ``noun changed'' rates often reflect greedy
+strings that are not a legal article--noun pair. S2's twin leftover under
+\texttt{an} (\(+0.830\)) is not interpreted as a content plan.
+
 \section{Synthetic estimand-validation details}
 \label{app:synthetic}
 
@@ -180,3 +209,13 @@ residual TV is 0.090 with the same logit \(\Delta\Delta\), illustrating
 saturation of distributional residuals when the mediator already favors the
 target. Machine-readable outputs live in
 \texttt{synthetic\_token\_mediation/}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.92\linewidth]{manuscript/figures/fig_synthetic_mediation_validation.png}
+\caption{Synthetic polarity check. Left: factorial TV split. Right:
+\(k\)-token leftover curve under inserted \texttt{a}. The mediated
+mechanism yields leftover TV \(0\); the direct mechanism retains leftover
+TV \(0.667\).}
+\label{fig-synthetic-app}
+\end{figure}

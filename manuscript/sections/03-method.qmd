@@ -1,116 +1,109 @@
 # Causal setup
 
-## Tokens, concepts, and hypotheses
+## Two questions that are not alternatives
 
-Let \(a\) be the prompt-final context, \(b\in\{\texttt{a},\texttt{an}\}\)
-the article, and \(c\) the first content **noun token**. Write \(A,B,C\) for
-corresponding internal concepts when needed. We treat \(c\) as
-**lexical / noun-token identity**, not as a guarantee of semantic-concept
-rewrite (`lawyer`\(\leftrightarrow\)`attorney` may preserve occupation
-meaning while changing the token). Three accounts organize the debate
-(@fig-schematic, left).
+Write \(X\) for the prompt ending immediately before the article,
+\(B\in\{\texttt{a},\texttt{an}\}\) for the article token, and \(Y\) for
+the next-token distribution over the first content **noun token**.
+Outcomes are lexical / noun-token identity, not semantic-concept rewrite
+(`lawyer`\(\leftrightarrow\)`attorney` may keep occupation meaning while
+changing the token). An internal intervention \(I\) is applied at the last
+prompt position \(P\) and **kept on** during noun prediction.
 
-**H1 (modular planning).** Separable edges
-\(A\to C\to B\to b\) with an independent content edge \(C\to c\).
-Success would include flipping \(b\) while preserving planned noun-token
-identity, or rewriting \(c\) among same-article-class alternatives with
-\(b\) held fixed.
+Two questions are independent (@fig-schematic, left). The first is about
+**content**: does the intervened state at \(P\) represent phonological
+article class, a specific noun token, or a coarser concept? The second is
+about **transmission**: after \(I\) is applied, does a later noun change
+travel through the identity of the generated article, or remain after that
+article is held fixed? Generated-token mediation answers the second
+question. It does not rule out a latent plan at \(P\). A fused
+article--noun package and a modular plan can both produce large
+free-generation noun changes that are still carried by the written
+article.
 
-**H2 (fused package).** Article preference and noun-initial class are
-fused in the intervened representation: dual-effect features select legal
-packages such as \(\{\texttt{a},\mathit{pilot}\}\) versus
-\(\{\texttt{an},\mathit{aviator}\}\).
+![Two independent questions and the six-cell design. Left: representational content versus transmission route. Right: intervention off/on crossed with free generation and with inserted \(\texttt{a}\) or \(\texttt{an}\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=100%}
 
-**H3 (article control + autoregressive continuation).** The intervention
-primarily changes \(B\to b\); once \(b\) is generated, ordinary next-token
-prediction explains much of the noun change via \(b\to c\). No latent
-article--noun package representation is required. Restoring native \(b\)
-should restore the native noun---exactly the pattern of free
-`an aviator`\(\to\) pasted `a`\(\to\)`a pilot`.
+## Six-cell design and vector identity
 
-Under free generation, the total effect of an intervention \(I\) on \(c\)
-confounds a putative direct path with **mediation through \(b\)**.
-(Note: \(b\) is a *mediator* downstream of \(I\), not a classical
-common-cause confounder.) Fixing \(b=b^*\) targets a controlled direct
-effect of \(I\) on \(c\).
-
-![Hypotheses and token-clamped assay. Left: H1 modular planning, H2 fused packages, and H3 article-mediated continuation. Right: paste \(b\) while keeping interventions on at position \(P\) to estimate residual control of noun-token \(c\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=100%}
-
-## Generated-token mediation estimands
-
-Let \(I\) denote an internal intervention and let \(B_0,B_1\) be the greedy
-articles under \(I=0,1\). For every pre-specified prompt we run
+For every prompt we run six forwards:
 
 $$
-I\in\{0,1\}\ \times\
-b\in\{\text{free},\operatorname{do}(\texttt{a}),
+I\in\{\text{off},\text{on}\}
+\times
+B\in\{\text{free},\operatorname{do}(\texttt{a}),
 \operatorname{do}(\texttt{an})\}.
 $$
 
-In forced cells, the article token is pasted and the intervention remains
-active at the original pre-article position \(P\) during noun prediction.
-Every step is a full-sequence forward pass, so no KV-cache index remapping
-is involved. Attention is recomputed in the primary Gemma analysis;
-freezing baseline attention and normalization statistics is a mechanistic
-ablation.
+Free cells let the model write the article. Inserted-article cells paste
+`a` or `an` and then predict the noun. This is a **natural-and-controlled**
+design, not an assigned \(2\times 3\) factorial: `free` is a policy, not a
+treatment level of \(B\). Write \(B_0\) and \(B_1\) for the greedy articles
+under \(I=\text{off}\) and \(I=\text{on}\), and write \(Y(i,b)\) for the
+noun distribution. Define the free-generation **total** change, the
+**token-substitution** (treated-token replay) change, and the
+**matched-prefix leftover** under the treated article:
 
-The factorial defines four prompt-level estimands:
+$$
+\begin{aligned}
+E_T &= Y(1,B_1)-Y(0,B_0),\\
+E_M &= Y(0,B_1)-Y(0,B_0),\\
+E_R &= Y(1,B_1)-Y(0,B_1).
+\end{aligned}
+$$
 
-1. **Total free-generation effect (TE):**
-   \(p(c\mid I{=}1,\operatorname{do}(B_1))\) versus
-   \(p(c\mid I{=}0,\operatorname{do}(B_0))\).
-2. **Article-only / mediator reproduction:**
-   \(p(c\mid I{=}0,\operatorname{do}(B_1))\) versus
-   \(p(c\mid I{=}0,\operatorname{do}(B_0))\).
-3. **Token-clamped residual control (CDE at \(B_1\)):**
-   \(p(c\mid I{=}1,\operatorname{do}(B_1))\) versus
-   \(p(c\mid I{=}0,\operatorname{do}(B_1))\).
-4. **Intervention–mediator interaction:**
-   \(\mathrm{CDE}_{\texttt{an}}-\mathrm{CDE}_{\texttt{a}}\), using
-   target-minus-source logits and distributional distances under each
-   forced article.
+These are probability vectors, so
+\(E_T=E_M+E_R\) holds exactly for every prompt whose free articles are
+`a` or `an`. Total variation of those vectors is **not** additive and is
+not a percent mediated. We therefore report TV of each piece, cosine of
+\(E_M\) and of \(E_R\) with \(E_T\), and the reconstruction
+\(\|E_T-(E_M+E_R)\|_1\) as an implementation check. We also report
+matched-prefix leftovers under **both** inserted articles, including the
+article the intervention does not select. Distances use full-vocabulary
+TV; target-minus-source logits on seven prompts with listed
+cross-class twins are a second readout. Multi-token nouns are
+teacher-forced token by token.
 
-We also define a **\(k\)-token residual-control curve**: clamp a forced
-article plus the first \(k\) continuation tokens and remeasure the same
-prefix residual on the noun. Distances use full-vocabulary total variation
-(TV) and Jensen--Shannon (JS) divergence, with top-\(k\) overlap as a
-secondary readout. Distance ratios are descriptive because TV is not an
-additive causal decomposition. On Gemma, the article-switching subset is
-descriptive; inference uses all 20 held-out prompts.
+We never write ``direct effect'' for a leftover without naming the
+fixed article. The leftover \(E_R\) is a controlled contrast under
+treated-article insertion, not Pearl's natural direct effect.
 
-## Synthetic ground-truth validation
+## Non-identifiability of leftover control from free generation
 
-Because a single empirical residual can be small for either weak handles or
-true mediation, we validate the estimands on two known autoregressive
-mechanisms that share vocabulary and cues. In the **mediated** mechanism,
-\(I\) changes only article logits and nouns depend on the article. In the
-**direct** mechanism, \(I\) also injects a persistent plan bias that
-continues to move the noun after article and filler clamping. The assay
-must return near-zero CDEs and a flat zero \(k\)-curve for the mediated
-model, and large force-\(\texttt{a}\) residual control for the direct model.
-This check validates the *method*; the Gemma full-residual reference
-separately validates sensitivity of the *stack*.
+**Proposition.** A large free-generation change in \(Y\) does not identify
+leftover internal control of the noun. If \(I\) changes only \(B\) and
+\(Y\) depends on \(B\), then \(E_T\) can be large while \(E_R=0\). If \(I\)
+also changes noun computation after \(B\) is fixed, \(E_R\) is nonzero.
+Observing \(E_T\) alone cannot distinguish those cases, nor distinguish a
+fused package from a modular plan. The six cells separate token
+substitution from matched-prefix leftover; they still do not identify
+semantic content at \(P\).
 
-## Pre-specified lexical outcomes and uncertainty
+## Intervention, outcomes, and uncertainty
 
-Seven held-out prompts have pre-specified cross-class twins
-(`pilot`/`aviator`, `lawyer`/`attorney`, etc.). For each forced article we
-report the change in target-minus-source first-token logits and full noun
-sequence log odds. Multi-token nouns are teacher-forced token by token.
-Nouns observed after S1 free generation are post hoc and used only for
-descriptive contrasts. Confidence intervals are prompt-level nonparametric
-bootstrap intervals with 10,000 resamples; top-1 rates use
-Clopper--Pearson intervals where reported.
+The sparse intervention is multiplicative on prompt-specific activations
+at \(P\):
+
+$$
+z_f \leftarrow \texttt{amplify\_factor}\times z_f(X,P)
+$$
+
+for each selected feature \(f\). The default gain is \(5\times\); dose
+runs use \(1.5\times\) and \(3\times\). Large multiplicative gains can be
+off-manifold; dose and a matched random control bound that concern.
+Feature sets were **fixed before the six-cell runs** from attribution
+graphs on eight selection occupations disjoint from the 20 held-out
+prompts. Nouns observed after free generation are post hoc and used only
+descriptively. Confidence intervals are prompt-level nonparametric
+bootstrap intervals with 10,000 resamples.
 
 ## Reachability and positive control
 
-Token clamping does not erase earlier hidden states: at later layers the
-article position can attend to the pre-article position. We verify actual
-reachability by measuring sparse CLT activation changes at the fixed article
-position after applying S1 at \(P\). To distinguish a weak sparse handle
-from an insensitive noun assay, we also patch the complete decoder-layer
-output residual at the fixed article position. Layer selection uses four
-fixed development pairs; the selected layer is evaluated on four held-out
-same-article-class pairs against ten matched-norm random directions.
-This is a reference intervention, not an oracle and not evidence that S1
+Inserting an article does not erase earlier hidden states: later layers
+can attend to position \(P\). We verify reachability by measuring sparse
+CLT activation changes at the inserted-article position after applying S1
+at \(P\). Separately, we patch the complete decoder-layer output residual
+at the inserted-article position. Layer selection uses four development
+pairs; the selected layer is evaluated on four held-out same-article-class
+pairs against ten matched-norm random directions. This is a
+stack-sensitivity reference, not an oracle and not evidence that S1
 encodes the same lexical information.

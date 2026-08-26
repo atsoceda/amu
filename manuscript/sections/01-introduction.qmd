@@ -1,49 +1,55 @@
 # Introduction
 
-Mechanistic interpretability increasingly studies whether language models
+Mechanistic interpretability increasingly asks whether language models
 *plan*: whether internal representations of future content causally shape
 earlier tokens that license that content [@hanna2026latent]. On
 article--noun tasks such as choosing \(a\) versus \(an\) before an
-occupation noun, dual-effect sparse features that affect both article
-logits and future-noun attributions look like planning features. Under
-free generation, intervening on them can flip `a pilot` into
-`an aviator`. But this observation does not identify whether a latent state
-persists independently into noun computation.
+occupation noun, sparse features that affect both article logits and
+future-noun attributions look like planning features. Under free
+generation, amplifying them can flip `a pilot` into `an aviator`.
 
-We call the ambiguity **generated-token mediation**. Once an intervention
-changes article \(b\), ordinary autoregressive decoding opens the path
-\(I\to b\to c\): the sampled article becomes part of the visible prefix
-used to predict noun \(c\). This does not make direct persistence
-architecturally impossible---later positions can attend to earlier residual
-states---but it makes free-generation evidence non-identifying. The required
-test is a factorial intervention that crosses \(I\in\{0,1\}\) with
-\(b\in\{\text{free},\operatorname{do}(a),\operatorname{do}(an)\}\), keeps
-\(I\) active during noun prediction, and compares noun distributions under
-an identical token prefix.
+That observation does not identify leftover internal control of the noun.
+In an autoregressive model the written article is part of the input to
+noun prediction. An intervention can change the noun solely by changing
+the article. We call this **generated-token mediation**. Direct
+persistence is not architecturally impossible---later positions can attend
+to earlier residual states---but free-generation evidence cannot separate
+it from self-generated feedback.
 
-**Contributions.** On pretrained Gemma~3 270M with Gemma Scope~2 affine
+The required measurement is a six-cell design. For each prompt we run the
+intervention off and on, and for each of those we let the model write the
+article or we insert `a` or `an`. The intervention remains active at the
+original pre-article position during noun prediction. The free-generation
+change in the noun distribution then splits, as probability vectors, into
+a piece reproduced by inserting the treated article with the intervention
+off and a leftover that remains when the visible article is held fixed.
+Those two questions---what is represented before the article, and how a
+later effect is transmitted---are independent (@fig-schematic). Token
+mediation does not disprove a latent plan; it shows that the plan, if any,
+is not identified by free generation.
+
+**Contributions.** On pretrained Gemma 3 270M with Gemma Scope 2 affine
 cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
 
-1. Separate three accounts: modular editable planning (**H1**), fused
-   article--noun packages (**H2**), and article control plus autoregressive
-   continuation (**H3**).
-2. Run the exact S1-by-article factorial on all 20 pre-specified held-out
-   prompts. Article insertion alone reproduces the S1-on top-1 noun on
-   20/20 prompts; on the 19 article-switching prompts, same-prefix residual
-   variation is \(0.029\) versus total variation \(0.940\).
-3. Detect a small but nonzero token-clamped residual on seven pre-specified
-   twins under fixed `an` (\(+0.089\) logits, 95\% bootstrap interval
-   \([0.027,0.152]\)), distinguishing *overwhelmingly mediated* from
-   *no direct effect*.
-4. Verify that S1 perturbations propagate from the pre-article position into
-   later article-position features, validate noun-assay sensitivity with
-   a development-selected full-residual reference on held-out pairs, and
-   show that the same estimands return residual TV \(0\) under a synthetic
-   mediated mechanism versus force-`a` residual TV \(0.667\) under a
-   synthetic direct-plan mechanism.
+1. State a six-cell assay and the exact vector identity
+   \(E_T=E_M+E_R\) that decomposes a later-token intervention contrast into
+   token substitution and matched-prefix leftover.
+2. Show that inserting `a` versus `an` with the intervention off already
+   yields noun-distribution total variation \(0.937\) on 20 held-out
+   occupation prompts. For the dual-effect set S1 at \(5\times\), treated-article
+   insertion reproduces the S1-on top-1 noun on 20/20 prompts; cosine of
+   \(E_M\) with \(E_T\) is \(0.95\), while leftover total variation is
+   \(0.028\).
+3. Run the same six cells on S1 at \(1.5\times\) and \(3\times\), on
+   article-ish (S2), content-ish (S3), and competing (S4) sets, and on an
+   activation-matched random control. Only S1 produces a large
+   article-flipping noun change, and that change remains token-substitution
+   dominated down to \(3\times\). S3 does not move nouns. The small S1
+   leftover under `an` is already present at \(1.5\times\) and is comparable
+   in size to the random control.
+4. Keep the earlier reachability check, full-residual stack-sensitivity
+   control, and synthetic polarity check.
 
-Our contribution is not a claim that latent planning is absent. It is an
-identification result: a large free-generation intervention effect can be
-almost completely recreated by the generated mediator token, while a much
-smaller token-clamped residual remains. This decomposition is a reusable
-standard for claims of persistent latent control in autoregressive models.
+The contribution is an identification standard for multi-token mechanistic
+claims, instantiated on one sparse handle that initially looks like
+coordinated article--noun planning.
