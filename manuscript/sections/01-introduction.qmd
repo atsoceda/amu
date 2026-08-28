@@ -39,17 +39,27 @@ cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
    occupation prompts. For the dual-effect set S1 at \(5\times\), treated-article
    insertion reproduces the S1-on top-1 noun on 20/20 prompts; cosine of
    \(E_M\) with \(E_T\) is \(0.95\), while leftover total variation is
-   \(0.028\).
+   \(0.028\). Treated-token replay phenocopies and baseline-token restoration
+   rescues the corresponding top noun on 20/20 prompts.
 3. Run the same six cells on S1 at \(1.5\times\) and \(3\times\), on
    article-ish (S2), content-ish (S3), and competing (S4) sets, and on an
    activation-matched random control. Only S1 produces a large
    article-flipping noun change, and that change remains token-substitution
    dominated down to \(3\times\). S3 does not move nouns. The small S1
-   leftover under `an` is already present at \(1.5\times\) and is comparable
-   in size to the random control.
-4. Keep the earlier reachability check, full-residual stack-sensitivity
-   control, and synthetic polarity check.
+   leftover under `an` is already present at \(1.5\times\). Feature-level
+   decomposition isolates most of S2's fixed-token class-aligned signal in
+   L5/F383 while separating it from coalition-level continuation disruption.
+4. Align gain to each prompt's article boundary. Across a final gain interval
+   of only \(0.0039\), the free-path noun distribution jumps \(0.938\) TV while
+   either fixed-article distribution moves only \(0.014\) TV.
+5. Patch a target-cued full residual at the original pre-article position and
+   cross it with public article identity. On 12 held-out same-article pairs,
+   target-specific influence survives a fixed visible token and interacts with
+   the public-token effect, demonstrating separately manipulable public and
+   private causal registers in a target-constructed reference.
 
 The contribution is an identification standard for multi-token mechanistic
-claims, instantiated on one sparse handle that initially looks like
-coordinated article--noun planning.
+claims together with evidence that autoregressive computation can use two
+causal registers: public token identity and private contextual state. The S1
+case identifies public relay; the residual reference establishes private-state
+capacity, not a natural sparse lexical plan.

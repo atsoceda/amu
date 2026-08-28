@@ -1,0 +1,24 @@
+{
+  "experiment": "s1_replay_rescue",
+  "generated_at": "2026-08-28T05:19:34.846004+00:00",
+  "n_prompts": 20,
+  "phenocopy_top1_rate": 1.0,
+  "rescue_top1_rate": 1.0,
+  "phenocopy_residual_tv": {
+    "n": 20,
+    "mean": 0.027846127445809544,
+    "lo": 0.02090988722629845,
+    "hi": 0.034849281143397096,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "rescue_residual_tv": {
+    "n": 20,
+    "mean": 0.030410635052248836,
+    "lo": 0.024856516253203155,
+    "hi": 0.0361324118450284,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "interpretation": "The treated article phenocopies the S1-on noun, and restoring the baseline article rescues the baseline top noun despite S1 remaining active."
+}

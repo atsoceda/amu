@@ -1,44 +1,43 @@
 # Discussion
 
-**Main finding.** On Gemma 3 270M, a dual-effect sparse intervention
-produces large free-generation article--noun rewrites, but the six-cell
-split shows that those rewrites are carried by the generated article.
-Inserting `a` versus `an` with the intervention off already moves noun
-distributions by TV \(0.937\). For S1 at \(5\times\), treated-article
-insertion reproduces the new top-1 noun on 20/20 prompts;
-\(\operatorname{cosine}(E_M,E_T)=0.95\), while matched-prefix leftover TV
-is \(0.028\). Attribution-selected content-ish features (S3) do not move
-nouns. The S1 leftover under `an` is small, already present at
-\(1.5\times\), and comparable to a matched random control.
+**Main finding.** A sparse intervention produces large article--noun rewrites,
+but the six-cell split shows that the generated article carries them. For S1
+at \(5\times\), treated-article replay reproduces the new top noun on 20/20
+prompts; \(\operatorname{cosine}(E_M,E_T)=0.95\), while matched-prefix
+leftover TV is \(0.028\) and comparable to a random control.
 
-This is a **transmission** result, not a verdict that no latent plan
-exists. H1/H2-style claims about what is represented at \(P\) and H3-style
-claims about how a later effect is transmitted are not mutually exclusive.
-The assay distinguishes generated-token relay from matched-prefix leftover.
-It does not distinguish fused packages from modular plans.
+Across a gain change below \(0.004\), fixed-article distributions move only
+\(0.014\) TV while the free-path noun distribution jumps \(0.938\) TV in
+near-perfect token-substitution alignment. Discrete decoding is therefore a
+high-gain causal relay; behavioral magnitude need not measure persistent
+latent control.
 
-**Replay as a falsifier.** Treated-article insertion with the intervention
-off is a simple causal-scrubbing test [@chan2022scrubbing]: if the later
-noun change is carried by the article token, substituting that token into
-an unintervened run should recreate most of the change. It does. The
-exact identity \(E_T=E_M+E_R\) makes that statement a vector split rather
-than a slogan.
+This is a **transmission** result, not evidence that no latent plan exists.
+Representation at \(P\) and transmission of its later effect are distinct;
+the assay separates generated-token relay from matched-prefix leftover, not
+fused packages from modular plans.
 
-**Closed loop.** In an autoregressive model the generated article is
-self-generated feedback. An internal intervention can change later
-computation by changing that feedback even if leftover internal control of
-the noun is negligible. Measuring both routes is the mechanistic analogue
-of separating an organism's internal state from the sensory consequences
-of its own action. We do not import a neuroscience literature; we note
-the architectural fact that the output is part of the circuit.
+**Replay as a falsifier.** If the article carries the later change, replaying
+it in an unintervened run should recreate that change [@chan2022scrubbing].
+It does; \(E_T=E_M+E_R\) makes this an exact vector split.
 
-**Methodological standard.** For any multi-token causal claim, report the
-six cells, print \(E_T=E_M+E_R\) before TV, report leftovers under both
-token values, and compare the intervention-off token contrast to the
-total effect. Keep the original intervention on in matched-prefix cells,
-recompute the full sequence, use target-free distributional distances,
-list pre-specified lexical contrasts individually when \(N\) is small,
-trace cross-token reachability, and validate sensitivity both with known
-mechanisms and with an upstream reference on the studied stack. Without
-this split, a later-token change is evidence of coordinated output, not
-identified leftover internal control.
+**Two causal registers.** A generated position contains both a public token
+identity and a private contextual state [@shih2026registers]. Our
+target-constructed residual patch shows that lexical influence can survive
+from the pre-article position under an identical visible article, while S1
+shows that a natural sparse intervention can be overwhelmingly relayed through
+the public token. These are a real-model double phenotype, not a double
+dissociation between comparable natural sparse mechanisms: the patch is target
+constructed and subthreshold. The routes also interact, precluding a general
+additive allocation percentage.
+
+**Closed loop.** The generated article is self-generated feedback. We borrow
+the intervention logic of opening a biological feedback loop—replay the
+consequence, restore its baseline value under perturbation, and cross public
+feedback with private state—not an anatomical analogy to nervous systems.
+
+**Methodological standard.** Multi-token causal claims should report the six
+cells, exact vector split, both fixed-token leftovers, and intervention-off
+token contrast; use full-sequence recomputation and target-free distances; and
+validate reachability and sensitivity. Otherwise a later-token change shows
+coordinated output, not identified leftover control.

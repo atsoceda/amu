@@ -1,0 +1,179 @@
+{
+  "experiment": "l5_fixed_token_matched_null",
+  "generated_at": "2026-08-28T05:32:00.937410+00:00",
+  "elapsed_sec": 46.571712017059326,
+  "n_prompts": 20,
+  "requested_controls": 20,
+  "n_controls": 4,
+  "matching": "same layer; nearest mean activation on eight selection prompts; frozen before held-out evaluation",
+  "features": {
+    "target_L5_F383": {
+      "kind": "target",
+      "feature": {
+        "layer": 5,
+        "feature_idx": 383
+      },
+      "selection_mean_activation": 405.5,
+      "tv": {
+        "n": 20,
+        "mean": 0.0964908379712142,
+        "lo": 0.07463660488137976,
+        "hi": 0.11788091628113762,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta": {
+        "n": 7,
+        "mean": 0.7678571428571429,
+        "lo": 0.5,
+        "hi": 1.0089285714285714,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 1.0
+    },
+    "control_L5_F6024": {
+      "kind": "control",
+      "feature": {
+        "layer": 5,
+        "feature_idx": 6024
+      },
+      "selection_mean_activation": 23.75,
+      "tv": {
+        "n": 20,
+        "mean": 0.0008836592547595501,
+        "lo": 0.0,
+        "hi": 0.0026509777642786505,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.0
+    },
+    "control_L5_F6996": {
+      "kind": "control",
+      "feature": {
+        "layer": 5,
+        "feature_idx": 6996
+      },
+      "selection_mean_activation": 127.0,
+      "tv": {
+        "n": 20,
+        "mean": 0.029511403292417526,
+        "lo": 0.02117258757352829,
+        "hi": 0.03842997588217258,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta": {
+        "n": 7,
+        "mean": 0.10714285714285714,
+        "lo": 0.044642857142857144,
+        "hi": 0.16964285714285715,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.7142857142857143
+    },
+    "control_L5_F7486": {
+      "kind": "control",
+      "feature": {
+        "layer": 5,
+        "feature_idx": 7486
+      },
+      "selection_mean_activation": 15.0,
+      "tv": {
+        "n": 20,
+        "mean": 2.798855712171644e-05,
+        "lo": 0.0,
+        "hi": 8.396567136514932e-05,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.0
+    },
+    "control_L5_F9107": {
+      "kind": "control",
+      "feature": {
+        "layer": 5,
+        "feature_idx": 9107
+      },
+      "selection_mean_activation": 125.5,
+      "tv": {
+        "n": 20,
+        "mean": 0.02107068048790097,
+        "lo": 0.013592361472547054,
+        "hi": 0.028662934247404338,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta": {
+        "n": 7,
+        "mean": 0.03571428571428571,
+        "lo": -0.0625,
+        "hi": 0.13392857142857142,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.42857142857142855
+    }
+  },
+  "target": {
+    "kind": "target",
+    "feature": {
+      "layer": 5,
+      "feature_idx": 383
+    },
+    "selection_mean_activation": 405.5,
+    "tv": {
+      "n": 20,
+      "mean": 0.0964908379712142,
+      "lo": 0.07463660488137976,
+      "hi": 0.11788091628113762,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "twin_delta_delta": {
+      "n": 7,
+      "mean": 0.7678571428571429,
+      "lo": 0.5,
+      "hi": 1.0089285714285714,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "twin_positive_rate": 1.0
+  },
+  "control_tv_means": {
+    "n": 4,
+    "mean": 0.01287343289804994,
+    "lo": 0.0004558239059406333,
+    "hi": 0.02529104189015925,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "control_twin_means": {
+    "n": 4,
+    "mean": 0.03571428571428571,
+    "lo": 0.0,
+    "hi": 0.08035714285714285,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "empirical_p_tv": 0.2,
+  "empirical_p_twin": 0.2
+}

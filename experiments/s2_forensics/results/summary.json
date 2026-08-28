@@ -1,0 +1,189 @@
+{
+  "experiment": "s2_forensics",
+  "generated_at": "2026-08-28T05:18:42.262922+00:00",
+  "source_experiment": "six_cell_family_sweep",
+  "analysis": {
+    "S2_5x": {
+      "n_prompts": 20,
+      "free_legal_article_noun_rate": 0.35,
+      "free_other_prefix_rate": 0.65,
+      "forced_an_top1_changed_rate": 0.05,
+      "forced_an_tv": {
+        "n": 20,
+        "mean": 0.10141972452402115,
+        "lo": 0.07819021297618747,
+        "hi": 0.12409366499632597,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_lower_bound_delta": {
+        "n": 20,
+        "mean": -0.013259038457181304,
+        "lo": -0.036012734821997586,
+        "hi": 0.0065705858520232144,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta_an": {
+        "n": 7,
+        "mean": 0.8303571428571429,
+        "lo": 0.5446428571428571,
+        "hi": 1.125,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 1.0,
+      "twin_range": [
+        0.1875,
+        1.5
+      ]
+    },
+    "S1_5x": {
+      "n_prompts": 20,
+      "free_legal_article_noun_rate": 1.0,
+      "free_other_prefix_rate": 0.0,
+      "forced_an_top1_changed_rate": 0.0,
+      "forced_an_tv": {
+        "n": 20,
+        "mean": 0.027846127445809544,
+        "lo": 0.02091507366858423,
+        "hi": 0.03497787558007985,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_lower_bound_delta": {
+        "n": 20,
+        "mean": 0.004989582649432123,
+        "lo": 0.00035032914020121096,
+        "hi": 0.010109587176702916,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta_an": {
+        "n": 7,
+        "mean": 0.08928571428571429,
+        "lo": 0.026785714285714284,
+        "hi": 0.16071428571428573,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.8571428571428571,
+      "twin_range": [
+        -0.0625,
+        0.25
+      ]
+    },
+    "S1_random_5x": {
+      "n_prompts": 20,
+      "free_legal_article_noun_rate": 0.95,
+      "free_other_prefix_rate": 0.05,
+      "forced_an_top1_changed_rate": 0.0,
+      "forced_an_tv": {
+        "n": 20,
+        "mean": 0.020163094848976472,
+        "lo": 0.01439574091346003,
+        "hi": 0.02637726317625493,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_lower_bound_delta": {
+        "n": 20,
+        "mean": 0.0009063050267286599,
+        "lo": -0.0021581647568382325,
+        "hi": 0.004342541890218854,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta_an": {
+        "n": 7,
+        "mean": 0.07142857142857142,
+        "lo": 0.026785714285714284,
+        "hi": 0.13392857142857142,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.7142857142857143,
+      "twin_range": [
+        0.0,
+        0.25
+      ]
+    },
+    "S3_5x": {
+      "n_prompts": 20,
+      "free_legal_article_noun_rate": 1.0,
+      "free_other_prefix_rate": 0.0,
+      "forced_an_top1_changed_rate": 0.05,
+      "forced_an_tv": {
+        "n": 20,
+        "mean": 0.02054023363161832,
+        "lo": 0.015662170480936766,
+        "hi": 0.025311068538576363,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_lower_bound_delta": {
+        "n": 20,
+        "mean": 0.00029015660984441636,
+        "lo": -0.0036690797889605163,
+        "hi": 0.004729460331145674,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta_an": {
+        "n": 7,
+        "mean": 0.017857142857142856,
+        "lo": -0.026785714285714284,
+        "hi": 0.07142857142857142,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.2857142857142857,
+      "twin_range": [
+        -0.0625,
+        0.125
+      ]
+    },
+    "S4_5x": {
+      "n_prompts": 20,
+      "free_legal_article_noun_rate": 0.65,
+      "free_other_prefix_rate": 0.35,
+      "forced_an_top1_changed_rate": 0.0,
+      "forced_an_tv": {
+        "n": 20,
+        "mean": 0.021305995201691984,
+        "lo": 0.015917289187200367,
+        "hi": 0.02668424735311419,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_lower_bound_delta": {
+        "n": 20,
+        "mean": -0.0006830052123405039,
+        "lo": -0.005523455829825252,
+        "hi": 0.004140469082631171,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_delta_delta_an": {
+        "n": 7,
+        "mean": 0.08035714285714286,
+        "lo": 0.03571428571428571,
+        "hi": 0.125,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "twin_positive_rate": 0.7142857142857143,
+      "twin_range": [
+        0.0,
+        0.1875
+      ]
+    }
+  },
+  "primary_conclusion": "S2 combines free-generation disruption with a consistent subthreshold fixed-an target signal: its free generations frequently fail the legal article+noun parse, yet all seven pre-specified twins move in the target direction. Because the forced-prefix top noun almost never changes and only one frozen random set is available, S2 is evidence of target-aligned fixed-token influence but is not yet a clean persistence-dominant intervention.",
+  "s2_exceeds_single_random_tv": true,
+  "limitations": [
+    "Occupation-vocabulary probability mass is a lower bound computed from stored top-10 tokens.",
+    "This reanalysis cannot recover full-vocabulary entropy because full logit vectors were not stored.",
+    "The comparison random arm contains one frozen four-feature set, not a multi-set empirical null distribution."
+  ]
+}

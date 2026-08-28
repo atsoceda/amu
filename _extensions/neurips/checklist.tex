@@ -5,7 +5,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and Section~1 state a scoped transmission claim: S1's free-generation noun change is carried by the generated article. Support is the six-cell split, the intervention-off article baseline, S1--S4 and dose, a leftover comparable to a random control, propagation, a held-out full-residual control, and a synthetic polarity check.
+    \item[] Justification: The abstract and Section~1 distinguish the scoped S1 relay result from the target-constructed private-state reference. Support includes the six-cell split, replay/rescue, prompt-aligned boundary assay, feature decomposition, disjoint development/test residual patches, matched controls, and synthetic polarity check.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -17,7 +17,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~7 discusses model/stack/task scope, feature overlap across S1--S4, leftover versus random-control overlap, non-additivity of TV, small twin samples, intervention-site sensitivity, off-manifold gain, and scale.
+    \item[] Justification: Section~7 discusses model/stack/task scope, feature overlap, the low-resolution L5 matched null, non-additivity of TV, small twin samples, target construction and subthreshold effects in the residual reference, off-manifold gain, and scale.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -32,8 +32,8 @@
 
 \item {\bf Theory assumptions and proofs}
     \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
-    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~3 states an identification proposition (free-generation change does not identify leftover noun control). The argument is the vector identity \(E_T=E_M+E_R\) together with the two mechanisms in Appendix~G; we do not claim a measure-theoretic theorem.
+    \item[] Answer: \answerNA{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: The paper uses an exact probability-vector identity and a causal identification observation, but claims no theorem requiring a formal proof.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include theoretical results. 

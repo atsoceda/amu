@@ -69,7 +69,7 @@ treated-article insertion, not Pearl's natural direct effect.
 
 ## Non-identifiability of leftover control from free generation
 
-**Proposition.** A large free-generation change in \(Y\) does not identify
+**Identification observation.** A large free-generation change in \(Y\) does not identify
 leftover internal control of the noun. If \(I\) changes only \(B\) and
 \(Y\) depends on \(B\), then \(E_T\) can be large while \(E_R=0\). If \(I\)
 also changes noun computation after \(B\) is fixed, \(E_R\) is nonzero.
@@ -107,3 +107,29 @@ pairs; the selected layer is evaluated on four held-out same-article-class
 pairs against ten matched-norm random directions. This is a
 stack-sensitivity reference, not an oracle and not evidence that S1
 encodes the same lexical information.
+
+## Public and private causal registers
+
+Fixing the article token does not fix its contextual hidden state. A surviving
+effect may travel from the intervened pre-article position \(P\) into the
+article-position computation even when the visible article is identical. We
+therefore distinguish the **public register** \(B\), the discrete token identity,
+from a **private register** \(H\), contextual state propagated from \(P\).
+
+We construct a target-state reference using source/target lexical cues whose
+nouns share native article `a`. At each layer, \(H=0\) leaves the source residual
+at \(P\) unchanged and \(H=1\) replaces it with the target-cued residual. We
+cross this with inserted \(B\in\{\texttt{a},\texttt{an}\}\). Define
+
+$$
+\begin{aligned}
+L_b &= Y(H=1,b)-Y(H=0,b),\\
+P_h &= Y(h,\texttt{an})-Y(h,\texttt{a}),\\
+\Gamma &= L_{\texttt{an}}-L_{\texttt{a}}=P_1-P_0.
+\end{aligned}
+$$
+
+This factorial tests whether target-specific influence can survive from \(P\)
+under a fixed visible token and whether public and private state interact. The
+target-constructed full-residual patch is a capacity/reference intervention,
+not evidence that S1 naturally carries the same lexical state.

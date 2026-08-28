@@ -1,0 +1,247 @@
+{
+  "experiment": "pre_article_public_private_factorial",
+  "generated_at": "2026-08-28T05:24:07.105167+00:00",
+  "elapsed_sec": 233.72543001174927,
+  "model": "google/gemma-3-270m",
+  "patch_site": "decoder_layer_output_residual",
+  "patch_position": "final_pre_article_prompt_token",
+  "articles": [
+    "a",
+    "an"
+  ],
+  "native_article": "a",
+  "n_dev_pairs": 4,
+  "n_test_pairs": 12,
+  "selected_layer": 12,
+  "selection_rule": "maximum mean target-specific delta-delta on native-article development pairs",
+  "dev_layer_summary": {
+    "0": {
+      "n": 4,
+      "mean": 0.015625,
+      "lo": -0.078125,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "1": {
+      "n": 4,
+      "mean": -0.03125,
+      "lo": -0.125,
+      "hi": 0.0625,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "2": {
+      "n": 4,
+      "mean": -0.03125,
+      "lo": -0.09375,
+      "hi": 0.0,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "3": {
+      "n": 4,
+      "mean": 0.03125,
+      "lo": 0.0,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "4": {
+      "n": 4,
+      "mean": 0.03125,
+      "lo": -0.0625,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "5": {
+      "n": 4,
+      "mean": -0.015625,
+      "lo": -0.046875,
+      "hi": 0.0,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "6": {
+      "n": 4,
+      "mean": 0.0625,
+      "lo": 0.0,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "7": {
+      "n": 4,
+      "mean": 0.015625,
+      "lo": 0.0,
+      "hi": 0.046875,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "8": {
+      "n": 4,
+      "mean": 0.046875,
+      "lo": 0.0,
+      "hi": 0.09375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "9": {
+      "n": 4,
+      "mean": -0.03125,
+      "lo": -0.125,
+      "hi": 0.0625,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "10": {
+      "n": 4,
+      "mean": 0.09375,
+      "lo": 0.03125,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "11": {
+      "n": 4,
+      "mean": 0.15625,
+      "lo": 0.125,
+      "hi": 0.21875,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "12": {
+      "n": 4,
+      "mean": 1.328125,
+      "lo": 0.9375,
+      "hi": 1.71875,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "13": {
+      "n": 4,
+      "mean": 1.078125,
+      "lo": 0.78125,
+      "hi": 1.28125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "14": {
+      "n": 4,
+      "mean": 1.0,
+      "lo": 0.75,
+      "hi": 1.1875,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "15": {
+      "n": 4,
+      "mean": 0.078125,
+      "lo": 0.03125,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "16": {
+      "n": 4,
+      "mean": 0.0625,
+      "lo": 0.0,
+      "hi": 0.125,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "17": {
+      "n": 4,
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    }
+  },
+  "heldout": {
+    "a": {
+      "target_delta_delta": {
+        "n": 12,
+        "mean": 1.3385416666666667,
+        "lo": 1.0208333333333333,
+        "hi": 1.6770833333333333,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "patch_tv": {
+        "n": 12,
+        "mean": 0.07270310477664073,
+        "lo": 0.053884547824660935,
+        "hi": 0.0952993171910445,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_top1_rate": 0.0,
+      "random_delta_delta": {
+        "n": 12,
+        "mean": 0.21510416666666665,
+        "lo": 0.08125,
+        "hi": 0.3572916666666666,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "an": {
+      "target_delta_delta": {
+        "n": 12,
+        "mean": 0.703125,
+        "lo": 0.5260416666666666,
+        "hi": 0.875,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "patch_tv": {
+        "n": 12,
+        "mean": 0.03922369393209616,
+        "lo": 0.031570034101605415,
+        "hi": 0.04731270701934894,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_top1_rate": 0.0,
+      "random_delta_delta": {
+        "n": 12,
+        "mean": 0.11979166666666667,
+        "lo": 0.029166666666666664,
+        "hi": 0.21458333333333335,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    }
+  },
+  "factorial": {
+    "public_effect_off": {
+      "n": 12,
+      "mean": 0.609375,
+      "lo": 0.22395833333333334,
+      "hi": 0.984375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "public_effect_on": {
+      "n": 12,
+      "mean": -0.026041666666666668,
+      "lo": -0.3854166666666667,
+      "hi": 0.359375,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "interaction": {
+      "n": 12,
+      "mean": -0.6354166666666666,
+      "lo": -0.8385416666666666,
+      "hi": -0.4479166666666667,
+      "method": "pair-level nonparametric bootstrap",
+      "resamples": 10000
+    }
+  },
+  "private_persistence_validated": true,
+  "interpretation_scope": "Target-constructed full-residual capacity/reference intervention; not a natural sparse planning representation."
+}

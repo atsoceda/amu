@@ -34,10 +34,21 @@ def plot_schematic() -> None:
     ax.set_ylabel("What is represented before the article")
     ax.set_xticks([0.2, 0.9], ["Generated-token identity", "Matched-prefix leftover"])
     ax.set_yticks([0.15, 0.55, 0.95], ["Phonological class", "Lexical token", "Semantic concept"])
-    ax.scatter([0.2], [0.15], s=80, color="#2563a6", zorder=3)
+    # The experiment identifies S1's transmission route, not whether its
+    # pre-article content is phonological, lexical, or semantic.
+    ax.errorbar(
+        [0.2],
+        [0.55],
+        yerr=[[0.40], [0.40]],
+        fmt="o",
+        markersize=6,
+        color="#2563a6",
+        capsize=4,
+        zorder=3,
+    )
     ax.annotate(
-        "S1 5×\n(this paper)",
-        (0.2, 0.15),
+        "S1 5× route\n(content unidentified)",
+        (0.2, 0.55),
         textcoords="offset points",
         xytext=(12, 10),
         fontsize=8,

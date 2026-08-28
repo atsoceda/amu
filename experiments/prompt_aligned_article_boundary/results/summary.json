@@ -1,0 +1,65 @@
+{
+  "experiment": "prompt_aligned_article_boundary",
+  "generated_at": "2026-08-28T05:29:12.391771+00:00",
+  "elapsed_sec": 78.60484099388123,
+  "n_prompts": 20,
+  "n_bracketed": 19,
+  "binary_search_steps": 10,
+  "gain_width": {
+    "n": 19,
+    "mean": 0.00390625,
+    "lo": 0.00390625,
+    "hi": 0.00390625,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "total_tv": {
+    "n": 19,
+    "mean": 0.9383114325372797,
+    "lo": 0.8888875089193645,
+    "hi": 0.9777872123216328,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "token_substitution_tv": {
+    "n": 19,
+    "mean": 0.9385625218090258,
+    "lo": 0.8890230749782763,
+    "hi": 0.9772346584420455,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "fixed_an_residual_tv": {
+    "n": 19,
+    "mean": 0.013587163323168889,
+    "lo": 0.009837228372864621,
+    "hi": 0.017418861297253323,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "fixed_a_residual_tv": {
+    "n": 19,
+    "mean": 0.014052315597502073,
+    "lo": 0.009481913698867797,
+    "hi": 0.018909099040779677,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "cosine_token_total": {
+    "n": 19,
+    "mean": 0.9998114767827486,
+    "lo": 0.9996339835618672,
+    "hi": 0.9999333525958815,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "reconstruction_l1": {
+    "n": 19,
+    "mean": 2.1088217841560095e-08,
+    "lo": 1.2026091584559887e-08,
+    "hi": 3.11987965812876e-08,
+    "method": "prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "interpretation": "Prompt alignment isolates a discrete article-policy transition: the free-path noun jump is compared with smooth fixed-article changes over the same narrow gain interval."
+}

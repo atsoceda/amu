@@ -1,23 +1,15 @@
 # Limitations
 
-The claim is scoped to Gemma 3 270M, the PT+affine Gemma Scope 2
-dictionary, occupation \(a\)/\(an\) prompts, and the interventions we ran.
-The model is in a weak behavioral regime for this task. Outcomes are
-lexical noun tokens, not semantic concepts. S1 was selected using article
-and future-token attributions, so the paper identifies the causal
-decomposition of this handle rather than the model's unique internal
-ontology. S2 shares a feature with S1 and often derails rather than
-flipping `an`; it is not a clean article-only dissociation. The S1 leftover
-under `an` overlaps the random control, so we do not interpret it as a
-specific noun plan. The 19-prompt article-switch subset is descriptive
-because it conditions on an observed switch. TV distances are not additive
-mediation effects. The seven-twin leftover estimate is small-\(N\).
+Claims are scoped to Gemma 3 270M, one dictionary and task, and lexical rather
+than semantic outcomes. S1 was attribution-selected, so we decompose this
+handle, not a unique ontology. S2 often derails; L5/F383 carries its fixed-token
+effect but may encode a vowel class, and only four features met the frozen
+matched-null rule. S1's leftover overlaps its random control; the switched
+subset is descriptive; the twin estimate is small-\(N\); and TV is nonadditive.
 
-The synthetic mediated/direct pair validates estimand polarity on a known
-generative process; it is not a trained transformer and cannot replace the
-Gemma stack-sensitivity control. The full-residual reference is patched at
-the article-token position and therefore validates sensitivity of noun
-computation there, not sensitivity of every pre-article planning site.
-Large \(5\times\) sparse amplification may be off-manifold; affine skip
-means sparse interventions need not exhaust MLP computation. Scale,
-model-family, task, and sampling-policy generalization remain open.
+The synthetic pair validates estimand polarity, not transformer behavior.
+The pre-article patch establishes sensitivity on 12 held-out pairs but is
+target-constructed, vocabulary-cued, and subthreshold: private capacity, not a
+natural sparse plan. Layer selection uses four development pairs; the
+interaction implies no fixed allocation. Finally, \(5\times\) amplification
+may be off-manifold; scale, model-family, task, and sampling remain open.

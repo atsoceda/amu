@@ -12,19 +12,20 @@ abstract: |
   values of the early token. The free-generation change in the later-token
   distribution then splits exactly into a token-substitution piece and a
   matched-prefix leftover. On pretrained Gemma 3 270M, inserting `a` versus
-  `an` with the intervention off already moves occupation-noun distributions
-  by total variation $0.937$ on 20 held-out prompts. Amplifying a dual-effect
-  sparse set (S1) at $5\times$ flips free completions such as $a$ pilot
-  $\to$ $an$ aviator on 19/20 prompts, but inserting the intervention-chosen
-  article with the intervention off reproduces the new top-1 noun on 20/20
-  prompts; the token-substitution vector has cosine $0.95$ with the total
-  change, while the leftover has total variation $0.028$. The same leftover
-  under inserted `an` is already present at $1.5\times$, when free generation
-  almost never flips the article. Attribution-selected ``content'' features
-  (S3) do not move nouns. The result is a transmission measurement, not a
-  verdict on whether a latent plan exists: generated-token controls are
-  required before later-token change can be read as persistent internal
-  control.
+  `an` already moves occupation-noun distributions by total variation $0.937$.
+  Amplifying a dual-effect sparse set (S1) at $5\times$ flips completions such
+  as $a$ pilot $\to$ $an$ aviator on 19/20 prompts, but treated-token replay
+  phenocopies and baseline-token restoration rescues the corresponding top noun
+  on 20/20; token substitution has cosine $0.95$ with the total while leftover
+  TV is $0.028$. Aligning gain to each prompt's decoding boundary sharpens the
+  mechanism: over only $0.0039$ gain units the free-path noun distribution
+  jumps $0.938$ TV, whereas either fixed-article distribution moves $0.014$.
+  Conversely, a target-cued full residual patched at the original pre-article
+  position shifts target-minus-source logits by $1.339$ on 12 held-out
+  same-article pairs despite a fixed visible token, and interacts with article
+  identity. Autoregressive positions therefore provide two separately
+  manipulable causal registers---public token identity and private contextual
+  state---but the natural sparse S1 effect is overwhelmingly public-relayed.
 keywords:
   - mechanistic interpretability
   - latent planning

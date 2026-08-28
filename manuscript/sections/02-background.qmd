@@ -17,6 +17,18 @@ not whether planning exists at scale. It is whether a planning-like
 sparse intervention on a small model identifies leftover noun control
 after the generated article is held fixed.
 
+**Causal state at generated positions.** @ma2026plan distinguish future
+information that is linearly decodable from information that is causally used,
+and identify a localized handoff to a line-boundary representation in one
+large-model rhyme setting. @shih2026registers hold visible scratchpad text
+fixed while editing the hidden representation at a written state token; the
+edit causally changes the next state update in trained state-writing models.
+These interventions complement ours. They establish that private contextual
+state beneath a fixed written token can matter; our replay design measures how
+much of an upstream intervention's effect is carried by the public token itself.
+Together they motivate treating a generated position as two potential causal
+registers: its public discrete identity and its private contextual state.
+
 **Causal mediation in NLP.** @vig2020mediation formulate total, direct,
 and indirect effects for neural NLP and intervene on internal mediators.
 @paul2024reasoning treat generated chain-of-thought tokens as mediators of
