@@ -31,35 +31,25 @@ is not identified by free generation.
 **Contributions.** On pretrained Gemma 3 270M with Gemma Scope 2 affine
 cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
 
-1. State a six-cell assay and the exact vector identity
+1. **Identification.** State a six-cell assay and the exact vector identity
    \(E_T=E_M+E_R\) that decomposes a later-token intervention contrast into
    token substitution and matched-prefix leftover.
-2. Show that inserting `a` versus `an` with the intervention off already
-   yields noun-distribution total variation \(0.937\) on 20 held-out
-   occupation prompts. For the dual-effect set S1 at \(5\times\), treated-article
-   insertion reproduces the S1-on top-1 noun on 20/20 prompts; cosine of
-   \(E_M\) with \(E_T\) is \(0.95\), while leftover total variation is
-   \(0.028\). Treated-token replay phenocopies and baseline-token restoration
-   rescues the corresponding top noun on 20/20 prompts.
-3. Run the same six cells on S1 at \(1.5\times\) and \(3\times\), on
-   article-ish (S2), content-ish (S3), and competing (S4) sets, and on an
-   activation-matched random control. Only S1 produces a large
-   article-flipping noun change, and that change remains token-substitution
-   dominated down to \(3\times\). S3 does not move nouns. The small S1
-   leftover under `an` is already present at \(1.5\times\). Feature-level
-   decomposition isolates most of S2's fixed-token class-aligned signal in
-   L5/F383 while separating it from coalition-level continuation disruption.
-4. Align gain to each prompt's article boundary. Across a final gain interval
-   of only \(0.0039\), the free-path noun distribution jumps \(0.938\) TV while
-   either fixed-article distribution moves only \(0.014\) TV.
-5. Patch a target-cued full residual at the original pre-article position and
-   cross it with public article identity. On 12 held-out same-article pairs,
-   target-specific influence survives a fixed visible token and interacts with
-   the public-token effect, demonstrating separately manipulable public and
-   private causal registers in a target-constructed reference.
+2. **Mechanism.** Show that an attribution-selected sparse S1 intervention
+   is relay-dominant and decoding-boundary-amplified: treated-article replay
+   and baseline-article rescue recover the corresponding top-1 noun on 20/20
+   prompts, leftover TV is \(0.028\), and a prompt-aligned article-boundary
+   jump of \(0.938\) TV under greedy decoding is almost entirely token
+   substitution, while either fixed-article path moves \(0.014\).
+3. **Private-route capacity.** Patch a held-out target-cued residual at the
+   original pre-article position. On 12 same-article pairs the patch
+   survives a fixed visible token, exceeds matched-norm random directions,
+   and interacts with article identity. This is a target-constructed,
+   subthreshold capacity result, not a sparse persistence-dominant plan.
 
-The contribution is an identification standard for multi-token mechanistic
-claims together with evidence that autoregressive computation can use two
-causal registers: public token identity and private contextual state. The S1
-case identifies public relay; the residual reference establishes private-state
-capacity, not a natural sparse lexical plan.
+Family comparisons, S2 forensics, random controls, propagation, and a
+synthetic polarity check are supporting controls. The contribution is an
+identification standard together with evidence that, in this model and
+task, noun prediction is separately causally sensitive to visible article
+identity and to target-related contextual information from the preceding
+position. The S1 case identifies a high-gain public relay; the residual
+patch establishes private-route capacity.

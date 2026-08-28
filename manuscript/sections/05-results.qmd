@@ -11,7 +11,7 @@ the top-1 noun changes on every prompt in both splits. Any sparse handle
 that flips the article therefore has a large, generic continuation
 channel available before leftover internal control is considered.
 
-## Free generation looks coordinated; the six cells split it
+## Free generation looks coordinated; replay and rescue split it
 
 Amplifying S1 at \(5\times\) moves every held-out prompt to `an` and
 changes the greedy noun on 19/20 prompts (@tbl-packaging). Concrete twins
@@ -55,92 +55,57 @@ prompt-bootstrap 95\% intervals.
 The remaining forced cell supplies the complementary rescue. Restoring the
 baseline article while leaving S1 active restores the baseline top noun on
 20/20 prompts; the on/off distributional difference under that restored
-article is TV \(0.030\) \([0.025,0.036]\). Thus the treated article is
-sufficient to phenocopy the treated top noun, and the baseline article is
-sufficient to rescue the baseline top noun despite the upstream intervention.
+article is TV \(0.030\) \([0.025,0.036]\) (@fig-mediation B). Thus the
+treated article is sufficient to phenocopy the treated top noun, and the
+baseline article is sufficient to rescue the baseline top noun despite the
+upstream intervention. The leftover is not exactly zero: on seven listed
+twins, target-minus-source \(\Delta\Delta\) is \(0.018\)
+\([-0.071,0.107]\) under inserted `a` and \(0.089\) \([0.027,0.152]\)
+under inserted `an`.
 
-The leftover is not exactly zero, and it is not confined to the treated
-article. On seven listed twins, target-minus-source \(\Delta\Delta\) is
-\(0.018\) \([-0.071,0.107]\) under inserted `a` and \(0.089\)
-\([0.027,0.152]\) under inserted `an`. Individual `an` leftovers are
-pilot\(\to\)aviator \(+0.125\), lawyer\(\to\)attorney \(+0.062\),
-physicist\(\to\)astronomer \(+0.062\), photographer\(\to\)artist
-\(-0.062\), psychologist\(\to\)anthropologist \(+0.125\),
-geologist\(\to\)archaeologist \(+0.250\), farmer\(\to\)agriculturist
-\(+0.062\). Free-generation target/source contrast on the same twins is
-about \(11.6\) logits; treated-article insertion alone contributes about
-\(11.6\) logits (post-hoc descriptive).
+![S1 vector split, treated-token phenocopy and baseline-token rescue, and the prompt-aligned article-boundary jump under greedy decoding.](manuscript/figures/fig_mediation_decomposition.png){#fig-mediation width=92%}
 
-![S1 vector split against the generic article lever, and six-cell leftovers across handles and S1 dose.](manuscript/figures/fig_mediation_decomposition.png){#fig-mediation width=94%}
+## Prompt-aligned boundaries expose discrete causal amplification
 
-## Dose: the large total effect is gain-gated; the leftover is not
+We binary-search each prompt's S1 gain until its article margin is
+bracketed by two gains separated by at most \(0.0039\), the chosen search
+tolerance rather than an estimated physical width. Nineteen of 20 prompts
+cross between gains 1 and 5. Under greedy decoding, the cross-boundary
+noun change is TV \(0.938\) \([0.889,0.978]\); token substitution alone is
+TV \(0.939\) \([0.889,0.977]\), with cosine \(0.9998\) \([0.9996,0.9999]\)
+to the total (@fig-mediation C). Over the same interval, the fixed-`a`
+distribution moves TV \(0.014\) \([0.009,0.019]\) and the fixed-`an`
+distribution moves TV \(0.014\) \([0.010,0.017]\). The existence of an
+argmax discontinuity is architectural and therefore unsurprising; the
+empirical result is that this particular boundary exposes an approximately
+\(0.94\)-TV continuation change while the two fixed-prefix paths remain
+locally smooth. Greedy decoding therefore converts a tiny continuous
+change into a nearly maximal downstream jump: a discrete causal
+amplification, not a comparably large persistent latent rewrite.
+
+## Supporting controls: dose, families, and exploratory S2 localization
 
 At \(1.5\times\), S1 writes `an` on only \(2/20\) prompts and total TV
 collapses to \(0.065\). The leftover under inserted `an` is already
 present: TV \(0.015\) and twin \(\Delta\Delta\) \(0.098\)
 \([0.027,0.161]\). At \(3\times\), free `an` rises to \(0.90\), total TV
-to \(0.802\), and token substitution still dominates (cosine of \(E_M\)
-with \(E_T\) remains high). The dramatic free-generation rewrite is
-therefore gated by whether the gain is large enough to engage the
-article boundary of TV \(0.937\). The small leftover under `an` is not
-created only by \(5\times\).
+to \(0.802\), and token substitution still dominates. The dramatic
+free-generation rewrite is therefore gated by whether the gain is large
+enough to engage the article boundary of TV \(0.937\). The small leftover
+under `an` is not created only by \(5\times\).
 
-## Prompt-aligned boundaries expose discrete causal amplification
-
-We binary-search each prompt's S1 gain until its article margin is bracketed
-within \(0.0039\) gain units. Nineteen of 20 prompts cross between gains 1 and
-5. Across them, the cross-boundary noun change is TV \(0.938\)
-\([0.889,0.978]\); token substitution alone is TV \(0.939\)
-\([0.889,0.977]\), with cosine \(0.9998\) \([0.9996,0.9999]\) to the total.
-Over the same interval, each fixed-article distribution moves only \(0.014\)
-TV. Greedy decoding therefore converts a tiny continuous change into a nearly
-maximal downstream jump: a discrete causal amplification, not a comparably
-large persistent latent rewrite.
-
-## Family comparison: only S1 produces a large article-flipping rewrite
-
-@tbl-family compares \(5\times\) handles; @fig-mediation B also shows S1 dose.
-Only S1 produces a large free-generation article+noun switch, and that switch
-remains token-substitution dominated. S3, the attribution-selected
-content-ish set, does not move nouns (total TV \(0.025\); noun-changed
-rate \(0\)). The selected S3 set therefore does not supply matched-prefix
-noun control; this set-level null does not establish a general failure of
-future-token attribution. S4 never writes `an`. S2 never writes `an` either;
-greedy strings often derail (`called a \ldots`, `not a biologist`), so its raw
-noun-change rate is a parse artifact rather than a coordinated rewrite.
-Forensic reanalysis nevertheless prevents dismissing S2 as mere noise: only
-7/20 S2-on free continuations are legal article--noun completions, but under
-fixed `an` all seven pre-specified twins move toward their target, with mean
-\(\Delta\Delta=+0.830\) \([0.545,1.125]\). The forced-`an` top noun changes on
-only 1/20 prompts. We therefore classify S2 as **target-aligned subthreshold
-private influence mixed with free-generation disruption**, not as a clean
-persistence-dominant intervention. The S1 leftover under `an` (\(+0.089\))
-overlaps the random control (\(+0.071\) \([0.027,0.134]\)). We therefore do
-not claim a specific noun plan from the S1 residual.
-
-Individual and leave-one-out runs localize S2's two phenotypes. L5/F383 alone
-keeps all 20 free continuations legal while retaining fixed-`an` TV \(0.096\)
-\([0.075,0.118]\) and twin \(\Delta\Delta=0.768\)
-\([0.500,1.009]\), positive on 7/7 twins. Removing L5/F383 collapses the
-fixed-`an` TV to \(0.020\) and the twin effect to \(0.205\). Conversely,
-removing L11/F12690 makes all 20 free continuations invalid while leaving the
-fixed-token signal intact. Thus a single sparse feature carries most of the
-fixed-token class-aligned influence, whereas derailment is a nonlinear
-coalition phenotype. Only four other layer-5 features met the frozen
-activation-matching rule; their mean TV is \(0.013\) and twin effect \(0.036\),
-but this small eligible pool gives minimum empirical \(p=0.20\) and is not a
-definitive null distribution.
-
-| Handle | Free an | Noun changed | Treated top-1 | Total TV | Token-subst. TV | Leftover TV (an) | Twin \(\Delta\Delta\) a | Twin \(\Delta\Delta\) an |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| S1 \(5\times\) | 1.00 | 0.95 | 1.00 | 0.893 | 0.891 | 0.028 | 0.018 | 0.089 |
-| S2 \(5\times\) | 0.00 | 0.70 | 0.86 | 0.109 | 0.000 | 0.101 | 0.018 | 0.830 |
-| S3 \(5\times\) | 0.05 | 0.00 | 1.00 | 0.025 | 0.000 | 0.021 | 0.062 | 0.018 |
-| S4 \(5\times\) | 0.00 | 0.35 | 1.00 | 0.028 | 0.000 | 0.021 | \(-0.107\) | 0.080 |
-| Random \(5\times\) | 0.05 | 0.05 | 1.00 | 0.019 | 0.000 | 0.020 | 0.000 | 0.071 |
-
-: Six-cell family sweep at \(5\times\) on the same 20 held-out prompts. S2/S4 noun-changed rates often reflect illegal greedy strings. S2's vector split is defined only on prompts whose free articles are a or an.
-{#tbl-family}
+Appendix H compares \(5\times\) handles. Only S1 produces a large
+free-generation article+noun switch, and that switch remains
+token-substitution dominated. S3 does not move nouns. S2 never writes
+`an`; greedy strings often derail, but under fixed `an` all seven twins
+move toward their target (\(\Delta\Delta=+0.830\)). We classify S2 as
+**exploratory evidence for a sparse fixed-token, vowel-class-aligned
+effect mixed with free-generation disruption**. The S1 leftover under
+`an` overlaps the random control, so we do not claim a specific noun plan
+from that residual. An exploratory within-set decomposition identifies
+L5/F383 as the principal carrier on the same 20 evaluation prompts
+(Appendix I); it may encode vowel class, and only four matched controls
+exist (\(p=0.20\)).
 
 Appendices E--G establish cross-token reachability, stack sensitivity, and
 estimand polarity: S1 changes later CLT activations; a layer-12 full-residual
@@ -149,26 +114,40 @@ generators yield leftover TV \(0\) versus \(0.667\), respectively.
 
 ## Target-specific influence survives from the pre-article position
 
-The stronger pre-article reference directly tests the missing
-\(t\rightarrow t+2\) route. Layer 12 is selected on four development pairs.
-On 12 disjoint same-article-class pairs, patching the target-cued full residual
-at \(P\) while inserting the shared native article `a` shifts the
-target-minus-source contrast by \(+1.339\) logits
+The stronger pre-article reference tests the missing
+\(t\rightarrow t+2\) route. Layer 12 is selected on four development
+pairs (Appendix J). On 12 disjoint same-article-class pairs, patching the
+target-cued full residual at \(P\) while inserting the shared native
+article `a` shifts the target-minus-source contrast by \(+1.339\) logits
 \([1.021,1.677]\), compared with \(+0.215\) \([0.081,0.357]\) for ten
-matched-norm random directions averaged within pair (@fig-public-private A).
-The mean full-vocabulary TV is \(0.073\) \([0.054,0.095]\). The target does not
-become top-1 on any held-out pair, so this is target-specific private-state
-capacity, not persistence-dominant behavioral control.
+matched-norm random directions averaged within pair. The paired difference
+is \(D=1.123\) \([0.858,1.440]\) (@fig-public-private A). The mean
+full-vocabulary TV is \(0.073\) \([0.054,0.095]\). Before the patch the
+mean target-minus-source gap is \(-4.302\) logits
+\([-5.214,-3.422]\); the patch closes \(0.312\) \([0.265,0.371]\) of that
+gap and moves mean target rank from \(12.2\) to \(4.4\), with top-10 entry
+rising from \(8/12\) to \(11/12\). The target does not become top-1 on any
+held-out pair, so this is target-specific private-state capacity, not
+persistence-dominant behavioral control.
 
 The same patch remains target-aligned under inserted `an`:
 \(\Delta\Delta=+0.703\) \([0.526,0.875]\), versus \(+0.120\)
-\([0.029,0.215]\) for matched random directions. Crossing public article with
-private patch yields a public effect of \(+0.609\) logits
-\([0.224,0.984]\) with the private patch off, \(-0.026\)
-\([-0.385,0.359]\) with it on, and interaction
-\(\Gamma=-0.635\) \([-0.839,-0.448]\) (@fig-public-private B). Public and
-private causes are therefore separately manipulable and non-additive in this
-target-constructed reference. This does not yet show that a natural sparse
-feature allocates the same lexical state between the registers.
+\([0.029,0.215]\) for matched random directions; the paired difference is
+\(D=0.583\) \([0.417,0.761]\). Crossing public article with private patch
+yields a public effect of \(+0.609\) logits \([0.224,0.984]\) with the
+private patch off and \(-0.026\) \([-0.385,0.359]\) with it on
+(@fig-public-private B). The interaction is
+\(\Gamma=-0.635\) \([-0.839,-0.448]\). Matched random patches have a small
+positive interaction \(+0.095\) \([0.019,0.171]\); the paired
+target-minus-random interaction is \(-0.731\) \([-0.971,-0.498]\)
+(@fig-public-private C). Article-prefix compatibility therefore modulates
+the private target-state effect. Inserted `an` is mismatched for both
+consonant-initial alternatives, so the negative interaction may reflect
+grammatical mismatch, saturation, or support shifts toward other
+vowel-initial nouns; we do not interpret it as an allocation trade-off
+between two registers. Public token identity and private upstream state
+are separately intervenable and non-additive in this target-constructed
+reference. This does not show that a sparse feature allocates the same
+lexical state between those routes.
 
-![A pre-article target residual moves held-out nouns under a fixed visible article; crossing article identity with the patch reveals an interaction. Error bars are pair-bootstrap 95\% intervals.](manuscript/figures/fig_pre_article_public_private.png){#fig-public-private width=84%}
+![A pre-article target residual moves held-out nouns under a fixed visible article more than matched random directions; the raw \(2\times 2\) surface and the random-controlled interaction show that article-prefix compatibility modulates the private effect. Error bars are pair-bootstrap 95\% intervals.](manuscript/figures/fig_pre_article_public_private.png){#fig-public-private width=90%}

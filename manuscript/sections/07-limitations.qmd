@@ -1,15 +1,26 @@
 # Limitations
 
-Claims are scoped to Gemma 3 270M, one dictionary and task, and lexical rather
-than semantic outcomes. S1 was attribution-selected, so we decompose this
-handle, not a unique ontology. S2 often derails; L5/F383 carries its fixed-token
-effect but may encode a vowel class, and only four features met the frozen
-matched-null rule. S1's leftover overlaps its random control; the switched
-subset is descriptive; the twin estimate is small-\(N\); and TV is nonadditive.
+Claims are scoped to Gemma 3 270M, one dictionary and task, greedy
+decoding, and lexical rather than semantic outcomes. S1 was
+attribution-selected and amplified by up to \(5\times\), so we decompose
+this handle rather than a unique ontology; large gain may be off-manifold.
+S2 often derails; the L5/F383 localization is exploratory and post-selection
+on the evaluation prompts, may encode a vowel class, and has only four
+matched controls (\(p=0.20\)). S1's leftover overlaps its random control;
+the switched subset is descriptive; the twin estimate is small-\(N\); and
+TV is nonadditive.
 
 The synthetic pair validates estimand polarity, not transformer behavior.
 The pre-article patch establishes sensitivity on 12 held-out pairs but is
-target-constructed, vocabulary-cued, and subthreshold: private capacity, not a
-natural sparse plan. Layer selection uses four development pairs; the
-interaction implies no fixed allocation. Finally, \(5\times\) amplification
-may be off-manifold; scale, model-family, task, and sampling remain open.
+target-constructed, vocabulary-cued, a full residual transplant, and
+subthreshold: private-route capacity, not a sparse plan. All 12 pairs are
+consonant-native, so inserted `an` is mismatched for both alternatives.
+Layer selection uses four development pairs. The interaction shows
+article-prefix compatibility, not a meaningful allocation trade-off.
+Scale, model-family, task, sampling, and prompt-controlled route
+allocation remain open.
+
+**Ethics.** This public-model study uses synthetic prompts and no human or
+personal data. We mitigate overclaiming through scoped conclusions and
+released code/results. AI-agent assistance is declared in the NeurIPS
+checklist.

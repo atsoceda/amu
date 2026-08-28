@@ -6,26 +6,28 @@ author:
 abstract: |
   Once an autoregressive model writes a token, that token is an input to every
   later prediction. An internal intervention that changes an early token can
-  therefore change a later token without any leftover internal control of the
-  later computation. We separate those routes with a six-cell design: the
-  intervention off or on, crossed with free generation and with two inserted
-  values of the early token. The free-generation change in the later-token
-  distribution then splits exactly into a token-substitution piece and a
-  matched-prefix leftover. On pretrained Gemma 3 270M, inserting `a` versus
-  `an` already moves occupation-noun distributions by total variation $0.937$.
-  Amplifying a dual-effect sparse set (S1) at $5\times$ flips completions such
-  as $a$ pilot $\to$ $an$ aviator on 19/20 prompts, but treated-token replay
-  phenocopies and baseline-token restoration rescues the corresponding top noun
-  on 20/20; token substitution has cosine $0.95$ with the total while leftover
-  TV is $0.028$. Aligning gain to each prompt's decoding boundary sharpens the
-  mechanism: over only $0.0039$ gain units the free-path noun distribution
-  jumps $0.938$ TV, whereas either fixed-article distribution moves $0.014$.
-  Conversely, a target-cued full residual patched at the original pre-article
-  position shifts target-minus-source logits by $1.339$ on 12 held-out
-  same-article pairs despite a fixed visible token, and interacts with article
-  identity. Autoregressive positions therefore provide two separately
-  manipulable causal registers---public token identity and private contextual
-  state---but the natural sparse S1 effect is overwhelmingly public-relayed.
+  therefore change a later token without leftover internal control of the later
+  computation. We separate those routes with a six-cell design: the intervention
+  off or on, crossed with free generation and with two inserted values of the
+  early token. The free-generation change then splits exactly into a
+  token-substitution piece and a matched-prefix leftover. On pretrained Gemma 3
+  270M, inserting `a` versus `an` already moves occupation-noun distributions by
+  total variation $0.937$. Amplifying an attribution-selected dual-effect sparse
+  set (S1) at $5\times$ flips completions such as $a$ pilot $\to$ $an$ aviator
+  on 19/20 prompts, but under greedy decoding treated-token replay phenocopies
+  and baseline-token restoration rescues the corresponding top noun on 20/20;
+  token substitution has cosine $0.95$ with the total while leftover TV is
+  $0.028$. Aligning gain to each prompt's article boundary sharpens the
+  mechanism: between two gains separated by at most $0.0039$ that bracket the
+  article argmax, the free-path noun distribution jumps $0.938$ TV, whereas
+  either fixed-article distribution moves $0.014$. Conversely, a target-cued
+  full residual patched at the original pre-article position shifts
+  target-minus-source logits by $1.339$ on 12 held-out same-article pairs
+  despite a fixed visible token. In this task, visible token identity and
+  contextual information propagated from the preceding position are separately
+  intervenable causes of noun prediction; S1's large effect is overwhelmingly
+  public-relayed, while a target-constructed residual patch establishes
+  private-route capacity.
 keywords:
   - mechanistic interpretability
   - latent planning

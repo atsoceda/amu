@@ -21,7 +21,7 @@ article--noun package and a modular plan can both produce large
 free-generation noun changes that are still carried by the written
 article.
 
-![Two independent questions and the six-cell design. Left: representational content versus transmission route. Right: intervention off/on crossed with free generation and with inserted \(\texttt{a}\) or \(\texttt{an}\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=100%}
+![Public and private routes from the pre-article intervention, and the six-cell assay. Left: \(I_t\) can affect \(Y_{t+2}\) through the visible article \(B_{t+1}\) or through private contextual state \(H_P\); \(\operatorname{do}(B)\) clamps public token identity, while a residual patch at \(P\) intervenes on the private path. Right: intervention off/on crossed with free generation and inserted \(\texttt{a}\) or \(\texttt{an}\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=96%}
 
 ## Six-cell design and vector identity
 
@@ -63,7 +63,7 @@ TV; target-minus-source logits on seven prompts with listed
 cross-class twins are a second readout. Multi-token nouns are
 teacher-forced token by token.
 
-We never write ``direct effect'' for a leftover without naming the
+We never write "direct effect" for a leftover without naming the
 fixed article. The leftover \(E_R\) is a controlled contrast under
 treated-article insertion, not Pearl's natural direct effect.
 
@@ -93,8 +93,9 @@ off-manifold; dose and a matched random control bound that concern.
 Feature sets were **fixed before the six-cell runs** from attribution
 graphs on eight selection occupations disjoint from the 20 held-out
 prompts. Nouns observed after free generation are post hoc and used only
-descriptively. Confidence intervals are prompt-level nonparametric
-bootstrap intervals with 10,000 resamples.
+descriptively. Primary noun sampling is **greedy decoding**. Confidence
+intervals are prompt-level nonparametric bootstrap intervals with 10,000
+resamples.
 
 ## Reachability and positive control
 
@@ -108,18 +109,30 @@ pairs against ten matched-norm random directions. This is a
 stack-sensitivity reference, not an oracle and not evidence that S1
 encodes the same lexical information.
 
-## Public and private causal registers
+## Separately intervenable public and private routes
 
-Fixing the article token does not fix its contextual hidden state. A surviving
-effect may travel from the intervened pre-article position \(P\) into the
-article-position computation even when the visible article is identical. We
-therefore distinguish the **public register** \(B\), the discrete token identity,
-from a **private register** \(H\), contextual state propagated from \(P\).
+Fixing the article token does not fix contextual hidden state. A surviving
+effect may travel from the intervened pre-article position \(P\) even when
+the visible article is identical. Write \(B\) for the **public token
+identity** and \(H\) for **private contextual state** propagated from
+\(P\). These are experimentally separable causes in this task, not
+independent registers carrying the same lexical plan, and not a direct
+edit of the hidden state underneath the written article [@shih2026registers].
 
 We construct a target-state reference using source/target lexical cues whose
-nouns share native article `a`. At each layer, \(H=0\) leaves the source residual
-at \(P\) unchanged and \(H=1\) replaces it with the target-cued residual. We
-cross this with inserted \(B\in\{\texttt{a},\texttt{an}\}\). Define
+nouns share native article `a`. At selected layer \(\ell\), \(H=0\) leaves
+the source residual at \(P\) unchanged and \(H=1\) replaces it with the
+target-cued residual,
+
+$$
+h_P^{(\ell)} \leftarrow h_P^{(\ell)}(X_{\mathrm{target}}).
+$$
+
+Matched-norm random controls replace the same residual by
+\(h_P^{(\ell)}(X_{\mathrm{source}})+\| \delta \| \, r/\|r\|\), where
+\(\delta=h_P^{(\ell)}(X_{\mathrm{target}})-h_P^{(\ell)}(X_{\mathrm{source}})\)
+and \(r\) is a standard Gaussian vector. We cross this with inserted
+\(B\in\{\texttt{a},\texttt{an}\}\). Define
 
 $$
 \begin{aligned}
@@ -129,7 +142,9 @@ P_h &= Y(h,\texttt{an})-Y(h,\texttt{a}),\\
 \end{aligned}
 $$
 
-This factorial tests whether target-specific influence can survive from \(P\)
-under a fixed visible token and whether public and private state interact. The
-target-constructed full-residual patch is a capacity/reference intervention,
-not evidence that S1 naturally carries the same lexical state.
+Primary private-route inference uses the paired differences
+\(D_i=L_{\texttt{a},i}^{\mathrm{target}}-\overline{L_{\texttt{a},i}^{\mathrm{random}}}\)
+and
+\(\Gamma_i^{\mathrm{target}}-\overline{\Gamma_i^{\mathrm{random}}}\).
+The patch is a capacity/reference intervention, not evidence that S1
+naturally carries the same lexical state.

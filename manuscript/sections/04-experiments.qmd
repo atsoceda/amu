@@ -1,24 +1,27 @@
 # Experimental setup
 
 **Model stack.** Primary results use pretrained `google/gemma-3-270m` with
-Gemma Scope 2 PT CLT `width_262k_l0_medium_affine` and the `nnsight`
-backend [@gemma3; @gemmascope2]. We prefer pretrained+affine over
-instruction-tuned stacks for this task: Appendix J of @hanna2026latent
-finds base models slightly stronger on \(a\)/\(an\), and Hub IT
-`medium_affine` layer 0 was unavailable in our setup. All reported
-feature IDs are for the PT+affine stack. This model strongly prefers
-majority `a` and sits below the scale where @hanna2026latent report
-reliable behavioral planning success.
+Gemma Scope 2 PT CLT `width_262k_l0_medium_affine`, `circuit-tracer` 0.5.0,
+and the NNsight backend [@gemma3; @gemmascope2; @fiotto2025nnsight].
+Pinned snapshots, Transformers 4.57.3, and licenses are in Appendix B.
+We prefer pretrained+affine over instruction-tuned stacks for this task:
+Appendix J of @hanna2026latent finds base models slightly stronger on
+\(a\)/\(an\), and Hub IT `medium_affine` layer 0 was unavailable in our
+setup. All reported feature IDs are for the PT+affine stack. This model
+strongly prefers majority `a` and sits below the scale where
+@hanna2026latent report reliable behavioral planning success.
 
 **Task.** Occupation prompts of the form `Someone who ... is` with a
 fixed one-shot demonstration. Early mismatch discovery and the held-out
 transfer that first broke a wrapper reading are summarized in Appendix A.
 The main text starts from free-generation coordination and the six-cell
-split. The source dataset is `hannamw/model-planning-public` at pinned commit
-`993cff51450f`; the checked-in `a_an_examples.csv` copy matches the full
-commit and SHA-256 digest recorded in its experiment config. Our
-selection/test partitions and lexical twins are derived from that source and
-recorded in experiment configs.
+split. The source dataset is `hannamw/model-planning-public`
+[@hanna2026planningdata] at pinned commit
+`993cff51450f43e8e86c254f761cc48c008b8dab`; the checked-in
+`a_an_examples.csv` copy matches that commit and SHA-256
+`fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c`.
+Selection/test partitions and lexical twins are derived from that source
+and recorded in experiment configs.
 
 **Feature families.** From attribution graphs on eight selection
 occupations we construct \(k{=}4\) feature sets (@tbl-families).
@@ -52,12 +55,14 @@ keep the intervention active at \(P\) during noun prediction. The original
 S1 \(5\times\) factorial also ran `circuit-tracer`'s
 `freeze_attention=True` path as an ablation.
 
-**Prompt-aligned boundary assay.** For each held-out prompt we binary-search
-S1 gain over \([1,5]\) for the zero crossing of
+**Replay, rescue, and prompt-aligned boundary.** On the same 20 prompts we
+replay the treated article with S1 off and restore the baseline article
+with S1 on. Separately, for each held-out prompt we binary-search S1 gain
+over \([1,5]\) for the zero crossing of
 \(\operatorname{logit}(\texttt{an})-\operatorname{logit}(\texttt{a})\).
-At the final below/above bracket we evaluate both inserted articles. This gives
-an exact local split of the free-path jump into token substitution and the
-fixed-token change across the same narrow gain interval.
+At the final below/above bracket, whose width is the search tolerance
+\(0.0039\) rather than an estimated physical transition width, we evaluate
+both inserted articles under greedy decoding.
 
 **Article-prefix baseline.** Independently of sparse features, we insert
 `a` versus `an` on the same 20 held-out prompts and on 95 released
@@ -78,23 +83,29 @@ the prior article-position residual reference on disjoint four/four pairs.
 
 **S2 forensics and feature decomposition.** We reanalyze S2's free and
 fixed-`an` cells for legal article--noun completions, forced-prefix top-1
-stability, and the seven pre-specified twin contrasts. We then run the four S2
-features individually and in four leave-one-out combinations on the same 20
-held-out prompts. This separates target-aligned fixed-token influence from the
-features responsible for free-generation disruption. For the feature carrying
-the largest residual, we freeze every eligible nonselected same-layer control
-matched by mean activation on the eight selection prompts; sparsity leaves four
-eligible controls, fewer than the 20 requested.
+stability, and the seven pre-specified twin contrasts. A continuation is
+legal if the greedy article is `a` or `an` and the following noun's first
+letter matches that article class. We then run the four S2 features
+individually and in four leave-one-out combinations on the same 20
+held-out prompts. This decomposition is **exploratory**: the principal
+carrier is identified and evaluated on the same 20 prompts. For that
+feature we freeze every eligible nonselected same-layer control matched by
+mean activation on the eight selection prompts; sparsity leaves four
+eligible controls, fewer than the 20 requested, so the empirical
+resolution is no better than \(p=0.20\).
 
 **Pre-article public/private factorial.** Source and target cues share an
-occupation sentence and name two consonant-initial lexical alternatives. We
-patch the complete target-cued decoder-layer output residual at the original
-pre-article position \(P\), not at the article position. Layer selection uses
-four fixed development pairs under inserted `a`. Layer 12 is then evaluated on
-12 held-out pairs under both inserted `a` and `an`, against ten matched-norm
-random directions per pair. Primary readouts are target-minus-source
-\(\Delta\Delta\), full-vocabulary TV, target top-1 rate, and the public/private
-interaction. Development and test pairs are disjoint.
+occupation sentence and name two consonant-initial lexical alternatives.
+We patch the complete target-cued decoder-layer output residual at the
+original pre-article position \(P\), not at the article position. Layer
+selection uses four fixed development pairs under inserted `a`. Layer 12
+is then evaluated on 12 held-out pairs under both inserted `a` and `an`,
+against ten matched-norm random directions per pair. Primary readouts are
+paired target-minus-random \(\Delta\Delta\), full-vocabulary TV, baseline
+lexical gap, target rank, target top-1 rate, and the public/private
+interaction versus the random-interaction distribution. All 16 pairs are
+same-`a` class, so inserted `an` is mismatched for both alternatives.
+Development and test pairs are disjoint.
 
 **Uncertainty.** Primary intervals are prompt-level nonparametric
 bootstrap intervals with 10,000 resamples. The 19 prompts on which S1

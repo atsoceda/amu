@@ -27,7 +27,10 @@ These interventions complement ours. They establish that private contextual
 state beneath a fixed written token can matter; our replay design measures how
 much of an upstream intervention's effect is carried by the public token itself.
 Together they motivate treating a generated position as two potential causal
-registers: its public discrete identity and its private contextual state.
+routes: its public discrete identity and private contextual state propagated
+from earlier positions. Our private intervention is applied at the pre-article
+position, not as a direct edit of the hidden state underneath the written
+article.
 
 **Causal mediation in NLP.** @vig2020mediation formulate total, direct,
 and indirect effects for neural NLP and intervene on internal mediators.
@@ -53,10 +56,11 @@ generated token is controlled.
 **Feature circuits and steering.** Attribution graphs over sparse
 autoencoders / transcoders estimate contributions among features and
 logits [@ameisen2025attribution; @lindsey2025biology;
-@dunefsky2024transcoders; @marks2025sparse]. We use `circuit-tracer` with
-Gemma Scope 2 cross-layer transcoders [@hanna2025circuittracer;
-@gemmascope2] to select features and intervene. Affine skip connections
-improve reconstruction but allow MLP computation to bypass sparse
-features; we therefore also test a dense residual reference. Graph edges
-to future tokens are selection criteria, not already-identified leftover
-control; the six cells test that distinction.
+@dunefsky2024transcoders; @marks2025sparse]. We use `circuit-tracer` 0.5.0
+with the NNsight backend [@hanna2025circuittracer; @fiotto2025nnsight] and
+Gemma Scope 2 cross-layer transcoders [@gemmascope2] to select features and
+intervene. Affine skip connections improve reconstruction but allow MLP
+computation to bypass sparse features; we therefore also test a dense
+residual reference. Graph edges to future tokens are selection criteria,
+not already-identified leftover control; the six cells test that
+distinction.

@@ -1,40 +1,50 @@
 # Discussion
 
-**Main finding.** A sparse intervention produces large article--noun rewrites,
-but the six-cell split shows that the generated article carries them. For S1
-at \(5\times\), treated-article replay reproduces the new top noun on 20/20
-prompts; \(\operatorname{cosine}(E_M,E_T)=0.95\), while matched-prefix
-leftover TV is \(0.028\) and comparable to a random control.
-
-Across a gain change below \(0.004\), fixed-article distributions move only
-\(0.014\) TV while the free-path noun distribution jumps \(0.938\) TV in
-near-perfect token-substitution alignment. Discrete decoding is therefore a
-high-gain causal relay; behavioral magnitude need not measure persistent
-latent control.
+**Main finding.** In autoregressive generation, behavioral intervention
+magnitude can be created at a causal handoff from continuous latent state
+to a discrete emitted token. Crossing the decoding boundary exposes a
+high-gain public continuation channel, so a large free-generation effect
+need not imply a comparably large persistent latent effect. For the
+attribution-selected S1 intervention at \(5\times\), treated-article
+replay reproduces the new top noun on 20/20 prompts;
+\(\operatorname{cosine}(E_M,E_T)=0.95\), while matched-prefix leftover TV
+is \(0.028\) and comparable to a random control. Between two gains
+separated by at most \(0.0039\) that bracket the article argmax, fixed-article
+distributions move only \(0.014\) TV while the free-path noun distribution
+jumps \(0.938\) TV in near-perfect token-substitution alignment.
 
 This is a **transmission** result, not evidence that no latent plan exists.
 Representation at \(P\) and transmission of its later effect are distinct;
 the assay separates generated-token relay from matched-prefix leftover, not
-fused packages from modular plans.
+fused packages from modular plans. The six-cell assay tells us which
+channel carries the intervention. The boundary experiment tells us why its
+behavioral magnitude can become enormous.
 
 **Replay as a falsifier.** If the article carries the later change, replaying
 it in an unintervened run should recreate that change [@chan2022scrubbing].
 It does; \(E_T=E_M+E_R\) makes this an exact vector split.
 
-**Two causal registers.** A generated position contains both a public token
-identity and a private contextual state [@shih2026registers]. Our
-target-constructed residual patch shows that lexical influence can survive
-from the pre-article position under an identical visible article, while S1
-shows that a natural sparse intervention can be overwhelmingly relayed through
-the public token. These are a real-model double phenotype, not a double
-dissociation between comparable natural sparse mechanisms: the patch is target
-constructed and subthreshold. The routes also interact, precluding a general
-additive allocation percentage.
+**Separately intervenable routes.** In this model and task, visible token
+identity and contextual information propagated from the previous position
+are separately intervenable causes of noun prediction. The public token
+behaves as a low-bandwidth discrete relay for coarse class information,
+while a target-constructed residual patch shows that a private contextual
+channel can carry finer target-specific information. These are a
+real-model double phenotype, not a double dissociation between comparable
+sparse mechanisms, and not two independent registers: the observed
+interaction shows that the effects are not additive, the patch is applied
+at \(P\) rather than under the article token, and the two factors do not
+carry the same information. The patch is target constructed and
+subthreshold.
 
-**Closed loop.** The generated article is self-generated feedback. We borrow
-the intervention logic of opening a biological feedback loop—replay the
-consequence, restore its baseline value under perturbation, and cross public
-feedback with private state—not an anatomical analogy to nervous systems.
+**Closed-loop intervention logic.** The generated article is a
+self-generated consequence of the upstream state. We use closed-loop
+intervention logic: replay the consequence, restore its baseline value
+under perturbation, and cross external feedback with private state
+[@crapse2008corollary]. The article maps to a reafferent consequence and
+token replay/rescue to opening that loop; the matched-token leftover is
+internal influence that survives feedback control, not a localized
+corollary-discharge signal.
 
 **Methodological standard.** Multi-token causal claims should report the six
 cells, exact vector split, both fixed-token leftovers, and intervention-off

@@ -5,7 +5,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and Section~1 distinguish the scoped S1 relay result from the target-constructed private-state reference. Support includes the six-cell split, replay/rescue, prompt-aligned boundary assay, feature decomposition, disjoint development/test residual patches, matched controls, and synthetic polarity check.
+    \item[] Justification: The abstract and Section~1 distinguish the scoped S1 relay-and-amplification result from the target-constructed private-route reference. Support includes the six-cell split, replay/rescue, prompt-aligned boundary assay, paired random controls, disjoint development/test residual patches, and a synthetic polarity check.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -17,7 +17,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~7 discusses model/stack/task scope, feature overlap, the low-resolution L5 matched null, non-additivity of TV, small twin samples, target construction and subthreshold effects in the residual reference, off-manifold gain, and scale.
+    \item[] Justification: Section~7 discusses model/stack/task/greedy-decoding scope, feature overlap, exploratory L5 localization, the low-resolution matched null, non-additivity of TV, small twin samples, target construction, grammatical mismatch of inserted \texttt{an}, subthreshold residual effects, off-manifold gain, and scale.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -47,7 +47,7 @@
     \item {\bf Experimental result reproducibility}
     \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Sections~3--4 and the appendix specify model, transcoder, protocols, metrics, and experiment directories with configs and summaries.
+    \item[] Justification: Sections~3--4 and the appendix specify model, transcoder, package versions, protocols, metrics, and experiment directories with configs and summaries.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not include experiments.
@@ -162,7 +162,7 @@
 \item {\bf Licenses for existing assets}
     \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: We cite Gemma~3, Gemma Scope~2, and circuit-tracer and use publicly released model/transcoder weights under their respective licenses.
+    \item[] Justification: We cite Gemma~3, Gemma Scope~2, circuit-tracer, and NNsight. Appendix~B names licenses (Gemma Terms of Use; Apache-2.0; MIT), pinned snapshots, package versions, and the Hanna--Ameisen dataset commit and checksum.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not use existing assets.
@@ -213,8 +213,8 @@
 \item {\bf Declaration of LLM usage}
     \item[] Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.
     %this research? 
-    \item[] Answer: \answerNA{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: LLMs are the object of study; no LLM was used as an original component of the method beyond standard writing assistance.
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: An AI coding agent assisted with experiment implementation, execution, result aggregation, and manuscript editing. The authors determined the hypotheses and experimental criteria. Reported numbers, figures, and citations in this draft were checked against the stored machine-readable outputs and source papers.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the core method development in this research does not involve LLMs as any important, original, or non-standard components.
