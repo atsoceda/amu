@@ -20,6 +20,15 @@ fused packages from modular plans. The six-cell assay tells us which
 channel carries the intervention. The boundary experiment tells us why its
 behavioral magnitude can become enormous.
 
+The precision and temperature audits refine that conclusion. The coarse
+native boundary margins reflect bfloat16 readout quantization, not a
+discrete internal state. Yet a float32 head preserves the sharp
+cross-boundary continuation change, and stochastic policies preserve a
+graded version whose magnitude follows article-policy movement. The
+relevant mechanism is therefore decoder gain: continuous latent evidence
+controls a public symbolic action whose reuse at the next step strongly
+reshapes the continuation distribution.
+
 **Replay as a falsifier.** If the article carries the later change, replaying
 it in an unintervened run should recreate that change [@chan2022scrubbing].
 It does; \(E_T=E_M+E_R\) makes this an exact vector split.
@@ -36,6 +45,22 @@ interaction shows that the effects are not additive, the patch is applied
 at \(P\) rather than under the article token, and the two factors do not
 carry the same information. The patch is target constructed and
 subthreshold.
+
+Natural target-state patches strengthen the private half of this picture:
+they enhance target logits, partly suppress source logits, reverse sign
+when the direction is reversed, and exceed wrong-target and Gaussian
+controls without explicit noun cues. But neither same- nor cross-class
+prompts convert that state into an article change. We therefore observe
+two causally usable channels, not experimental control over the medium in
+which the model stores or transmits a computation. Discovering such a
+carrier switch remains the decisive next step.
+
+**Attribution is not a channel label.** Held-out calibration shows a clean
+local success and a downstream failure: article attribution predicts
+article-margin movement, but article and future attribution do not predict
+relay strength or fixed-token persistence. Graph scores rank influence on
+their stated objectives; they should not be read as evidence that a
+feature's later consequences travel through a particular medium.
 
 **Closed-loop intervention logic.** The generated article is a
 self-generated consequence of the upstream state. We use closed-loop

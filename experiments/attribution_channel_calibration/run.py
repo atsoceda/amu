@@ -10,7 +10,6 @@ from pathlib import Path
 from typing import Any
 
 import torch
-from scipy.stats import rankdata, spearmanr
 
 from circuit_tracer.graph import Graph
 from experiments.lib.aan_protocol import first_content_token_text, slugify, token_id_for_text, write_json
@@ -33,6 +32,41 @@ def interval(values: list[float], seed: int, resamples: int) -> dict[str, Any]:
     boot = [sum(values[rng.randrange(n)] for _ in range(n)) / n for _ in range(resamples)]
     boot.sort()
     return {"n": n, "mean": sum(values)/n, "lo": boot[math.floor(.025*(len(boot)-1))], "hi": boot[math.ceil(.975*(len(boot)-1))], "method": "feature-level nonparametric bootstrap", "resamples": resamples}
+
+
+def rankdata(values: list[float]) -> list[float]:
+    order = sorted(range(len(values)), key=lambda index: values[index])
+    ranks = [0.0] * len(values)
+    cursor = 0
+    while cursor < len(order):
+        end = cursor + 1
+        while end < len(order) and values[order[end]] == values[order[cursor]]:
+            end += 1
+        average = (cursor + 1 + end) / 2
+        for position in range(cursor, end):
+            ranks[order[position]] = average
+        cursor = end
+    return ranks
+
+
+def pearson(left: list[float], right: list[float]) -> float:
+    left_mean = sum(left) / len(left); right_mean = sum(right) / len(right)
+    left_centered = [value-left_mean for value in left]
+    right_centered = [value-right_mean for value in right]
+    denominator = math.sqrt(sum(value*value for value in left_centered) * sum(value*value for value in right_centered))
+    return sum(a*b for a,b in zip(left_centered,right_centered)) / denominator if denominator else 0.0
+
+
+def spearman_permutation(left: list[float], right: list[float], seed: int, permutations: int = 10000) -> tuple[float, float]:
+    left_ranks = rankdata(left); right_ranks = rankdata(right)
+    observed = pearson(left_ranks, right_ranks)
+    rng = random.Random(seed); exceed = 0
+    shuffled = list(right_ranks)
+    for _ in range(permutations):
+        rng.shuffle(shuffled)
+        if abs(pearson(left_ranks, shuffled)) >= abs(observed):
+            exceed += 1
+    return observed, (exceed + 1) / (permutations + 1)
 
 
 def select_features(config: dict[str, Any], tokenizer) -> list[dict[str, Any]]:
@@ -72,8 +106,8 @@ def select_features(config: dict[str, Any], tokenizer) -> list[dict[str, Any]]:
         })
     article_values = [c["article_attribution"] for c in candidates]
     future_values = [c["future_attribution"] for c in candidates]
-    article_rank = rankdata(article_values, method="average") / len(candidates)
-    future_rank = rankdata(future_values, method="average") / len(candidates)
+    article_rank = [value/len(candidates) for value in rankdata(article_values)]
+    future_rank = [value/len(candidates) for value in rankdata(future_values)]
     for row, ar, fr in zip(candidates, article_rank, future_rank):
         row["article_rank"] = float(ar)
         row["future_rank"] = float(fr)
@@ -164,12 +198,14 @@ def main() -> None:
             "fixed_mean_tv": sum((r["fixed_a_tv"]+r["fixed_an_tv"])/2 for r in group)/len(group),
         })
 
+    seed = int(config["bootstrap_seed"]); resamples = int(config["bootstrap_resamples"])
     correlations: dict[str, Any] = {}
+    correlation_index = 0
     for predictor in ("article_attribution", "future_attribution"):
         for outcome in ("article_margin_effect", "total_tv", "mediator_tv", "residual_tv_treated", "fixed_mean_tv"):
-            statistic, pvalue = spearmanr([r[predictor] for r in feature_rows], [r[outcome] for r in feature_rows])
-            correlations[f"{predictor}__{outcome}"] = {"spearman_rho": float(statistic), "two_sided_p": float(pvalue), "n_features": len(feature_rows)}
-    seed = int(config["bootstrap_seed"]); resamples = int(config["bootstrap_resamples"])
+            statistic, pvalue = spearman_permutation([float(r[predictor]) for r in feature_rows], [float(r[outcome]) for r in feature_rows], seed+500+correlation_index)
+            correlation_index += 1
+            correlations[f"{predictor}__{outcome}"] = {"spearman_rho": float(statistic), "two_sided_permutation_p": float(pvalue), "permutations": 10000, "n_features": len(feature_rows)}
     strata = {}
     for stratum_index, stratum in enumerate(sorted(set(r["stratum"] for r in feature_rows))):
         group = [r for r in feature_rows if r["stratum"] == stratum]
@@ -186,7 +222,7 @@ def main() -> None:
     lines = ["# Attribution-score calibration against causal channel type", "", f"Features: {len(feature_rows)}; held-out prompts: {len(e1['test_examples'])}.", "", "| Predictor | Outcome | Spearman rho | p |", "| --- | --- | ---: | ---: |"]
     for key, block in correlations.items():
         predictor, outcome = key.split("__")
-        lines.append(f"| {predictor} | {outcome} | {block['spearman_rho']:.3f} | {block['two_sided_p']:.3g} |")
+        lines.append(f"| {predictor} | {outcome} | {block['spearman_rho']:.3f} | {block['two_sided_permutation_p']:.3g} |")
     (RESULTS_DIR / "report.md").write_text("\n".join(lines)+"\n")
 
 

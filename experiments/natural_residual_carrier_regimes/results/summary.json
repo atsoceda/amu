@@ -1,0 +1,303 @@
+{
+  "experiment": "natural_residual_carrier_regimes",
+  "generated_at": "2026-08-28T11:52:37.924345+00:00",
+  "elapsed_sec": 146.61217594146729,
+  "selected_layer": 12,
+  "layer_selection": "maximum pooled mean target-minus-source change on eight disjoint development pairs",
+  "dev_layer_means": {
+    "0": 0.0390625,
+    "1": 0.0,
+    "2": 0.015625,
+    "3": 0.0,
+    "4": -0.046875,
+    "5": -0.0390625,
+    "6": 0.03125,
+    "7": 0.0546875,
+    "8": -0.015625,
+    "9": 0.0703125,
+    "10": 0.03125,
+    "11": 0.078125,
+    "12": 0.796875,
+    "13": 0.7109375,
+    "14": 0.7109375,
+    "15": 0.0390625,
+    "16": 0.03125,
+    "17": 0.0
+  },
+  "regimes": {
+    "between": {
+      "total_tv": {
+        "n": 12,
+        "mean": 0.04924048692919314,
+        "lo": 0.03605685359798372,
+        "hi": 0.06351906441462536,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_tv": {
+        "n": 12,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_tv": {
+        "n": 12,
+        "mean": 0.04924048692919314,
+        "lo": 0.035707349268098675,
+        "hi": 0.06378470764805873,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_total_cosine": {
+        "n": 12,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_total_cosine": {
+        "n": 12,
+        "mean": 1.0000002334515254,
+        "lo": 1.000000129143397,
+        "hi": 1.0000003576278687,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_delta_delta": {
+        "n": 12,
+        "mean": 0.7760416666666666,
+        "lo": 0.484375,
+        "hi": 1.1145833333333333,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_logit_change": {
+        "n": 12,
+        "mean": 0.5260416666666666,
+        "lo": 0.3177083333333333,
+        "hi": 0.734375,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_logit_change": {
+        "n": 12,
+        "mean": -0.25,
+        "lo": -0.4479166666666667,
+        "hi": -0.09375,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_prob_change": {
+        "n": 12,
+        "mean": 0.0012002474328625112,
+        "lo": 0.00018316602591520828,
+        "hi": 0.002740882820338205,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_prob_change": {
+        "n": 12,
+        "mean": -0.021789465099573135,
+        "lo": -0.04099860725303491,
+        "hi": -0.005949635369082292,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_change": {
+        "n": 12,
+        "mean": -0.013582420845826467,
+        "lo": -0.03265557189782461,
+        "hi": 0.0029725258549054465,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 12,
+        "mean": 0.14583333333333334,
+        "lo": 0.005208333333333333,
+        "hi": 0.2864583333333333,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "sign_reversed_delta_delta": {
+        "n": 12,
+        "mean": -0.4739583333333333,
+        "lo": -0.6354166666666666,
+        "hi": -0.3125,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "reverse_delta_delta": {
+        "n": 12,
+        "mean": 0.5625,
+        "lo": 0.3880208333333333,
+        "hi": 0.73828125,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_a_tv": {
+        "n": 12,
+        "mean": 0.04924048692919314,
+        "lo": 0.03574638099720081,
+        "hi": 0.06325946973326306,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_an_tv": {
+        "n": 12,
+        "mean": 0.06853800515333812,
+        "lo": 0.04666053410619497,
+        "hi": 0.09345818590372801,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "n_pairs": 12,
+      "article_change_rate": 0.0,
+      "target_top10_before": 0.08333333333333333,
+      "target_top10_after": 0.08333333333333333
+    },
+    "within": {
+      "total_tv": {
+        "n": 12,
+        "mean": 0.05873524242391189,
+        "lo": 0.05254428616414467,
+        "hi": 0.06457050393025081,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_tv": {
+        "n": 12,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_tv": {
+        "n": 12,
+        "mean": 0.05873524242391189,
+        "lo": 0.052491395423809685,
+        "hi": 0.06456518173217773,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_total_cosine": {
+        "n": 12,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_total_cosine": {
+        "n": 12,
+        "mean": 1.0000001986821492,
+        "lo": 1.000000129143397,
+        "hi": 1.0000002682209015,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_delta_delta": {
+        "n": 12,
+        "mean": 0.9635416666666666,
+        "lo": 0.6666666666666666,
+        "hi": 1.265625,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_logit_change": {
+        "n": 12,
+        "mean": 0.8385416666666666,
+        "lo": 0.6041666666666666,
+        "hi": 1.0885416666666667,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_logit_change": {
+        "n": 12,
+        "mean": -0.125,
+        "lo": -0.23958333333333334,
+        "hi": 0.020833333333333332,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "target_prob_change": {
+        "n": 12,
+        "mean": 0.014077650198790556,
+        "lo": 0.009391949434454242,
+        "hi": 0.01878314820351079,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_prob_change": {
+        "n": 12,
+        "mean": -0.03173718973994255,
+        "lo": -0.046842666963736214,
+        "hi": -0.015421514709790548,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "occupation_mass_change": {
+        "n": 12,
+        "mean": -0.011431710173686346,
+        "lo": -0.026881307363510132,
+        "hi": 0.0039849380652109785,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 12,
+        "mean": 0.13020833333333334,
+        "lo": -0.020833333333333332,
+        "hi": 0.3072916666666667,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "sign_reversed_delta_delta": {
+        "n": 12,
+        "mean": -0.4427083333333333,
+        "lo": -0.6458333333333334,
+        "hi": -0.2552083333333333,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "reverse_delta_delta": {
+        "n": 12,
+        "mean": 0.6510416666666666,
+        "lo": 0.4739583333333333,
+        "hi": 0.8229166666666666,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_a_tv": {
+        "n": 12,
+        "mean": 0.05873524242391189,
+        "lo": 0.05253764738639196,
+        "hi": 0.06450093009819587,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_an_tv": {
+        "n": 12,
+        "mean": 0.060290559815863766,
+        "lo": 0.04658111650496721,
+        "hi": 0.07332392192135255,
+        "method": "pair-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "n_pairs": 12,
+      "article_change_rate": 0.0,
+      "target_top10_before": 0.5833333333333334,
+      "target_top10_after": 0.75
+    }
+  },
+  "control_definitions": {
+    "wrong_target": "cyclic natural target residual from another held-out pair in the same regime",
+    "sign_reversed": "source residual minus the natural target-minus-source direction",
+    "reverse": "source residual patched into the target prompt; positive values favor source over target"
+  },
+  "prompt_scope": "Natural occupation descriptions only; target nouns are never named in prompts."
+}

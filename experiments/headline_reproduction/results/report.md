@@ -1,0 +1,33 @@
+# Independent headline-number reproduction
+
+```json
+{
+  "s1_six_cell": {
+    "n": 20,
+    "total_tv": 0.8932282479479909,
+    "token_substitution_tv": 0.8905629992485047,
+    "fixed_treated_leftover_tv": 0.027846127445809544,
+    "token_total_cosine": 0.9492342829704284
+  },
+  "prompt_aligned_boundary": {
+    "n": 19,
+    "gain_width": 0.00390625,
+    "total_tv": 0.9383114325372797,
+    "token_substitution_tv": 0.9385625218090258,
+    "fixed_a_tv": 0.014052315597502073,
+    "fixed_an_tv": 0.013587163323168889
+  },
+  "pre_article_private_patch": {
+    "n": 12,
+    "target_delta_delta": 1.3385416666666667,
+    "matched_random_delta_delta": 0.21510416666666665,
+    "paired_target_minus_random": 1.1234374999999999
+  },
+  "source_files": [
+    "experiments/six_cell_family_sweep/results/rows.json",
+    "experiments/prompt_aligned_article_boundary/results/rows.json",
+    "experiments/pre_article_public_private_factorial/results/rows.json",
+    "experiments/pre_article_public_private_factorial/results/random_rows.json"
+  ]
+}
+```

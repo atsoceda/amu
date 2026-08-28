@@ -64,6 +64,13 @@ At the final below/above bracket, whose width is the search tolerance
 \(0.0039\) rather than an estimated physical transition width, we evaluate
 both inserted articles under greedy decoding.
 
+**Precision and stochastic-policy audit.** We record every relevant tensor
+dtype, recompute final-head logits in float32, and use dense native/float32
+grids around three fixed crossings. At each prompt's original boundary we
+then replace greedy article choice by temperatures
+\(\tau\in\{0.1,0.25,0.5,1\}\), evaluating both fixed-article branches and
+the resulting policy mixture exactly.
+
 **Article-prefix baseline.** Independently of sparse features, we insert
 `a` versus `an` on the same 20 held-out prompts and on 95 released
 `an`-target occupation prompts from a broader screen, using a
@@ -82,10 +89,12 @@ the direct model.
 the prior article-position residual reference on disjoint four/four pairs.
 
 **S2 forensics and feature decomposition.** We reanalyze S2's free and
-fixed-`an` cells for legal article--noun completions, forced-prefix top-1
+fixed-`an` cells for orthographic article-class consistency, forced-prefix top-1
 stability, and the seven pre-specified twin contrasts. A continuation is
-legal if the greedy article is `a` or `an` and the following noun's first
-letter matches that article class. We then run the four S2 features
+consistent if the greedy article is `a` or `an` and the following noun's first
+letter matches that article class. This is a task-specific orthographic
+audit, not a general English grammaticality test; all released occupation
+nouns were manually audited for exceptions. We then run the four S2 features
 individually and in four leave-one-out combinations on the same 20
 held-out prompts. This decomposition is **exploratory**: the principal
 carrier is identified and evaluated on the same 20 prompts. For that
@@ -106,6 +115,22 @@ lexical gap, target rank, target top-1 rate, and the public/private
 interaction versus the random-interaction distribution. All 16 pairs are
 same-`a` class, so inserted `an` is mismatched for both alternatives.
 Development and test pairs are disjoint.
+
+**Natural residual regimes and controls.** To remove explicit target-noun
+cues, source and target prompts use natural occupation descriptions. We
+select one pooled layer on eight development pairs, then evaluate 12
+cross-article-class and 12 same-article-class pairs. For every pair we
+patch the target residual, a sign-reversed residual, the reverse-direction
+patch, a shuffled wrong target, and ten matched-norm Gaussian directions.
+We separately report target-logit enhancement, source-logit suppression,
+their probabilities, occupation-vocabulary mass, article changes, and
+fixed-article TV.
+
+**Attribution-to-channel calibration.** The 32-feature held-out calibration
+crosses article and future-content graph-score strata. Outcomes include
+article-margin movement, free-path total TV, token-substitution TV,
+matched-prefix leftover TV, and mean fixed-article TV. Selection and test
+occupations remain disjoint.
 
 **Uncertainty.** Primary intervals are prompt-level nonparametric
 bootstrap intervals with 10,000 resamples. The 19 prompts on which S1

@@ -54,10 +54,14 @@ Six-cell family and dose sweep & \texttt{six\_cell\_family\_sweep/} \\
 Article-prefix baseline (no sparse \(I\)) & \texttt{article\_prefix\_baseline/} \\
 S1 treated-token replay / rescue & \texttt{s1\_replay\_rescue/} \\
 Prompt-aligned article-boundary assay & \texttt{prompt\_aligned\_article\_boundary/} \\
+Precision and stochastic-policy audit & \texttt{boundary\_precision\_policy/} \\
 S2 forensic reanalysis & \texttt{s2\_forensics/} \\
 S2 single-feature / leave-one-out & \texttt{s2\_feature\_decomposition/} \\
 L5/F383 matched-null controls & \texttt{l5\_fixed\_token\_matched\_null/} \\
 Pre-article public/private factorial & \texttt{pre\_article\_public\_private\_factorial/} \\
+Natural residual carrier regimes & \texttt{natural\_residual\_carrier\_regimes/} \\
+Attribution-to-channel calibration & \texttt{attribution\_channel\_calibration/} \\
+Independent headline reproduction & \texttt{headline\_reproduction/} \\
 Cross-token propagation diagnostic & \texttt{s1\_propagation\_diagnostics/} \\
 Held-out full-residual reference & \texttt{fixed\_article\_residual\_reference/} \\
 Synthetic mediation estimand check & \texttt{synthetic\_token\_mediation/} \\
@@ -74,16 +78,15 @@ runs dominate wall-clock time (typically tens of minutes per graph).
 
 \noindent\textbf{Assets and licenses.}
 Gemma 3 weights are used under the Gemma Terms of Use
-(\url{https://ai.google.dev/gemma/terms}). Gemma Scope 2 CLT weights are
-released on Hugging Face under Apache-2.0. \texttt{circuit-tracer} and
+(\url{https://ai.google.dev/gemma/terms}). Gemma Scope 2 PT CLT weights are
+released on Hugging Face under CC BY 4.0. \texttt{circuit-tracer} and
 NNsight are MIT-licensed. Transformers is Apache-2.0. Occupation prompts
 are derived from \texttt{hannamw/model-planning-public}
 \citep{hanna2026planningdata} at commit
 \texttt{993cff51450f43e8e86c254f761cc48c008b8dab}; the checked-in copy has
 SHA-256 \texttt{fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c}.
-The source repository does not ship a separate dataset license file; we
-use the released CSV only as academic evaluation data and retain the
-pinned commit and checksum.
+The source repository, including the released CSV, is MIT-licensed; we
+retain the pinned commit and checksum.
 
 \section{Additional selection details}
 \label{app:selection}
@@ -109,7 +112,7 @@ Across S1--S4 at \(5\times\), wrapper-like rate is \(0/20\); only S1
 produces package-like switches at 0.95. Across S1 doses
 \(\{1.5,2,3,5,8\}\times\), package-like rate rises from 0.10 to 0.95 while
 wrapper-like rate remains zero. Adding an S3 content lock does not prevent
-S1 from selecting legal \texttt{an}+vowel-initial completions. These
+S1 from selecting orthographically consistent \texttt{an}+vowel-initial completions. These
 results motivate decomposition of S1 but are not the primary mediation
 evidence.
 
@@ -210,7 +213,7 @@ transformers-only baseline with no sparse intervention yields
 with top-1 noun change on every prompt. S1 at \(5\times\) has
 \(\operatorname{cosine}(E_M,E_T)=0.949\,[0.849,1.000]\) and reconstruction
 L1 numerically zero. S2/S4 ``noun changed'' rates often reflect greedy
-strings that are not a legal article--noun pair. S2's twin leftover under
+strings that are not an orthographically consistent article--noun pair. S2's twin leftover under
 \texttt{an} (\(+0.830\)) is not interpreted as a content plan.
 
 \section{Synthetic estimand-validation details}
@@ -287,15 +290,76 @@ interval.}
 \end{table}
 
 Mean token/total cosine is \(0.9998\,[0.9996,0.9999]\). Reconstruction L1
-is numerically zero. Endpoint article margins on the low side of each
-bracket are \(0\) (tied or \(a\)-favoring) and \(0.125\) on the high side
-for every bracketed prompt.
+is numerically zero. Endpoint native article margins on the low side of
+each bracket are \(0\) (tied or \(a\)-favoring) and \(0.125\) on the high
+side for every bracketed prompt. The precision audit below establishes
+that this uniformity is bfloat16 quantization, not an intrinsic transition
+width or logit quantum.
+
+\section{Precision, stochastic policy, and independent reproduction}
+\label{app:precision-policy}
+
+Model parameters, CLT tensors, residuals, final normalization output, and
+native logits are bfloat16. For three fixed boundary prompts, a 51-point
+native grid has only three distinct article margins, whereas casting the
+final normalization and unembedding to float32 yields 43 distinct margins
+and a zero crossing for every prompt. A float32-margin binary search reaches
+width \(0.000244140625\). Mean free-path TV across those crossings is
+\(0.9917\,[0.9891,0.9966]\); fixed-\(a\) and fixed-\(an\) TVs are
+\(0.0092\,[0.0037,0.0141]\) and \(0.0037\,[0.0016,0.0049]\).
+
+For stochastic article policies, the table reports exact two-branch
+mixtures. ``Policy TV'' changes only the article probabilities; the
+matched-policy leftover holds those probabilities fixed.
+
+\begin{center}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Temperature & Total TV & Policy TV & Leftover TV & Cosine(policy,total) \\
+\midrule
+0.10 & 0.4557 & 0.4542 & 0.0153 & 0.9990 \\
+0.25 & 0.2121 & 0.2110 & 0.0149 & 0.9962 \\
+0.50 & 0.1094 & 0.1083 & 0.0148 & 0.9870 \\
+1.00 & 0.0566 & 0.0546 & 0.0148 & 0.9571 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+An independent runner re-loads frozen artifacts without importing the
+primary analysis scripts. It reproduces S1 total/token/leftover TV as
+0.8932/0.8906/0.0278, boundary total/token TV as 0.9383/0.9386, and the
+pre-article target/random/paired \(\Delta\Delta\) as
+1.3385/0.2151/1.1234.
+
+\section{Natural residual regimes and attribution calibration}
+\label{app:natural-calibration}
+
+Natural occupation descriptions omit explicit target nouns. A pooled
+eight-pair development sweep selects layer 12; 12 cross-class and 12
+same-class test pairs are disjoint from development. Target patches yield
+target-minus-source \(\Delta\Delta\) of
+\(0.776\,[0.484,1.115]\) and \(0.964\,[0.667,1.266]\), respectively.
+Wrong-target controls yield 0.146 and 0.130; sign-reversed patches yield
+-0.474 and -0.443. In both regimes the article changes on 0/12 pairs, so
+token-substitution TV is zero and the entire free-path TV survives article
+fixing. Target-logit changes are +0.526 and +0.839; source-logit changes
+are -0.250 and -0.125. Occupation-vocabulary probability mass does not
+reliably increase.
+
+For calibration, 32 individual features are chosen exclusively from eight
+selection occupations in four article-by-future attribution strata and
+evaluated on 20 held-out prompts. Article attribution predicts
+article-margin movement (Spearman \(\rho=0.530\), 10,000-permutation
+two-sided \(p=0.0021\)). Neither article nor future attribution predicts
+total, token-substitution, treated-token leftover, or fixed-token TV
+(all \(|\rho|\le0.178\), all \(p\ge0.323\)).
 
 \section{Family/dose leftovers and S2 decomposition}
 \label{app:s2-decomp}
 
 Figure~\ref{fig-family-app} is the family/dose panel formerly in the main
-text. A continuation is legal iff the greedy article is in
+text. A continuation is orthographically article-class consistent iff the greedy article is in
 \(\{\texttt{a},\texttt{an}\}\) and the following word's first letter is in
 \(\{\texttt{a},\texttt{e},\texttt{i},\texttt{o},\texttt{u}\}\) exactly when
 the article is \texttt{an}.
@@ -303,7 +367,7 @@ the article is \texttt{an}.
 \begin{table}[h]
 \centering
 \caption{Six-cell family sweep at \(5\times\) on the same 20 held-out
-prompts. S2/S4 noun-changed rates often reflect illegal greedy strings.}
+prompts. S2/S4 noun-changed rates often reflect orthographically inconsistent greedy strings.}
 \label{tbl-family}
 \scriptsize
 \begin{tabular}{lrrrrrrrr}
@@ -330,13 +394,13 @@ across S1 dose and S2--S4 / random handles.}
 \begin{table}[h]
 \centering
 \caption{Exploratory S2 single-feature and leave-one-out results on the
-same 20 held-out prompts. Legal rate is the free-generation
+same 20 held-out prompts. Consistency rate is the free-generation
 article--noun parse.}
 \label{tbl-s2-decomp}
 \small
 \begin{tabular}{lcccc}
 \toprule
-Condition & Legal free & Forced-\texttt{an} TV & Twin \(\Delta\Delta\) \texttt{an} & Positive twins \\
+Condition & Consistent free & Forced-\texttt{an} TV & Twin \(\Delta\Delta\) \texttt{an} & Positive twins \\
 \midrule
 S2 full & 0.35 & \(0.101\,[0.078,0.124]\) & \(0.830\,[0.545,1.125]\) & 7/7 \\
 L5/F383 alone & 1.00 & \(0.096\,[0.075,0.118]\) & \(0.768\,[0.500,1.009]\) & 7/7 \\
@@ -355,7 +419,7 @@ LOO L11/F12690 & 0.00 & \(0.096\,[0.073,0.119]\) & \(0.857\,[0.598,1.107]\) & 7/
 \centering
 \includegraphics[width=0.98\linewidth]{manuscript/figures/fig_s2_decomposition.png}
 \caption{Exploratory S2 decomposition. L5/F383 carries most of the
-fixed-\texttt{an} class-aligned signal and preserves legal
+fixed-\texttt{an} class-aligned signal and preserves orthographically consistent
 continuations; removing L11/F12690 derails free generation while leaving
 the fixed-token signal intact.}
 \label{fig-s2-app}

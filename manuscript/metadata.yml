@@ -20,14 +20,20 @@ abstract: |
   $0.028$. Aligning gain to each prompt's article boundary sharpens the
   mechanism: between two gains separated by at most $0.0039$ that bracket the
   article argmax, the free-path noun distribution jumps $0.938$ TV, whereas
-  either fixed-article distribution moves $0.014$. Conversely, a target-cued
+  either fixed-article distribution moves $0.014$. Float32 final-head and
+  stochastic-policy audits show that coarse native margins are bfloat16
+  quantization while relay dominance survives finer readout and non-greedy
+  article policies. Conversely, a target-cued
   full residual patched at the original pre-article position shifts
   target-minus-source logits by $1.339$ on 12 held-out same-article pairs
   despite a fixed visible token. In this task, visible token identity and
   contextual information propagated from the preceding position are separately
   intervenable causes of noun prediction; S1's large effect is overwhelmingly
   public-relayed, while a target-constructed residual patch establishes
-  private-route capacity.
+  private-route capacity. Natural residual patches reproduce target-specific
+  fixed-token influence without an article switch, and held-out feature
+  calibration finds that attribution predicts local article efficacy but not
+  the later transmission channel.
 keywords:
   - mechanistic interpretability
   - latent planning

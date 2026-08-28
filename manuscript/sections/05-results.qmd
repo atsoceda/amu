@@ -18,7 +18,7 @@ changes the greedy noun on 19/20 prompts (@tbl-packaging). Concrete twins
 include `a pilot`\(\rightarrow\)`an aviator` and
 `a lawyer`\(\rightarrow\)`an attorney`. Matched random features and S3 do
 not produce this switch. Those free-generation rates show that S1 is a
-specific handle on legal article--noun completions. They do not identify
+specific handle on orthographically article-class-consistent completions. They do not identify
 the transmission route.
 
 | Condition | \(N\) | \(\Delta\) art.\ logit favors `an` | Noun token preserved | Class shift | Wrapper-like | Package-like | Twin match |
@@ -28,7 +28,7 @@ the transmission route.
 | S3 \(5\times\) | 20 | 0.70 | 0.95 | 0.05 | 0.00 | 0.05 | 0.00 |
 
 : Free-generation metrics (held-out occupations). Wrapper-like = generated
-article moves and noun token stays; package-like = legal article--class
+article moves and noun token stays; package-like = article-class-consistent
 switch. These rates do not identify leftover noun control.
 {#tbl-packaging}
 
@@ -82,6 +82,29 @@ empirical result is that this particular boundary exposes an approximately
 locally smooth. Greedy decoding therefore converts a tiny continuous
 change into a nearly maximal downstream jump: a discrete causal
 amplification, not a comparably large persistent latent rewrite.
+
+The equal-looking endpoint margins in the original table require a
+correction. Model, CLT, residual, and native logits are bfloat16; the
+native dense grids contain only three distinct article margins. With the
+same upstream states but a float32 normalization/unembedding readout, the
+three audited grids contain 43 distinct margins across 51 gains and all
+three cross zero. A float32 binary search narrows the bracket to
+\(0.000244\); cross-boundary free TV remains \(0.992\)
+\([0.989,0.997]\), whereas fixed-`a` and fixed-`an` TV are \(0.009\) and
+\(0.004\), respectively. Thus \(0/0.125\) was a finite-precision artifact,
+not evidence for a physical logit quantum; the high-gain argmax relay is
+the robust result.
+
+Nor is relay dominance confined to greedy decoding. Across article
+temperatures \(0.1,0.25,0.5,1\), total TV declines smoothly from \(0.456\)
+to \(0.057\), and the component produced by changing only the article
+policy declines from \(0.454\) to \(0.055\). The matched-policy leftover
+stays near \(0.015\); policy/total vector cosine ranges from \(0.999\) to
+\(0.957\). At \(\tau=1\), `a`/`an` retain about 90% of article probability
+mass. The public route is therefore a temperature-dependent gain channel,
+not merely an argmax pathology (@fig-boundary-policy).
+
+![Finite-precision audit and stochastic article-policy decomposition. Float32 final-head readout resolves the native bfloat16 plateaus; policy-mediated TV tracks total TV across temperature while the matched-policy leftover remains small.](manuscript/figures/fig_boundary_precision_policy.png){#fig-boundary-policy width=92%}
 
 ## Supporting controls: dose, families, and exploratory S2 localization
 
@@ -151,3 +174,41 @@ reference. This does not show that a sparse feature allocates the same
 lexical state between those routes.
 
 ![A pre-article target residual moves held-out nouns under a fixed visible article more than matched random directions; the raw \(2\times 2\) surface and the random-controlled interaction show that article-prefix compatibility modulates the private effect. Error bars are pair-bootstrap 95\% intervals.](manuscript/figures/fig_pre_article_public_private.png){#fig-public-private width=90%}
+
+## Natural residuals isolate private influence but not a carrier switch
+
+Natural occupation descriptions reproduce target-specific private
+influence without naming the target noun. The pooled development sweep
+selects layer 12. Under a fixed article, target patches move the
+target-minus-source logit by \(0.776\) \([0.484,1.115]\) on 12
+cross-class pairs and \(0.964\) \([0.667,1.266]\) on 12 same-class pairs.
+Wrong-target patches yield only \(0.146\) and \(0.130\), respectively;
+sign-reversed patches move the contrast in the opposite direction. The
+effect decomposes into target-logit enhancement (\(+0.526\) cross-class;
+\(+0.839\) same-class) plus smaller source suppression
+(\(-0.250\) and \(-0.125\)). Target probability rises in both regimes,
+while total occupation-vocabulary mass does not reliably increase.
+
+Crucially, the natural patch changes the article on 0/12 pairs in either
+regime. Consequently token-substitution TV is zero and all observed
+free-path TV---\(0.049\) cross-class and \(0.059\) same-class---survives token
+fixing. This strengthens the evidence for a natural private route, but it
+does **not** reveal prompting regimes that reallocate causal state between
+public and private carriers. Same versus cross article class changes
+effect size, not channel identity (@fig-natural-regimes).
+
+![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes, outperform wrong-target and matched-norm controls, but never change the article.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
+
+## Attribution predicts local efficacy, not transmission channel
+
+Across 32 features selected on disjoint occupations, article attribution
+predicts the induced article-margin change (Spearman \(\rho=0.530\),
+two-sided permutation \(p=0.0021\)). It does not predict total TV
+(\(\rho=-0.105\)), token-substitution TV (\(-0.176\)), treated-token
+leftover TV (\(-0.052\)), or mean fixed-token TV (\(0.026\)); future-noun
+attribution likewise predicts none of these interventional outcomes
+(all \(|\rho|\le0.178\), all \(p\ge0.323\)). Attribution is calibrated for
+the local contrast it scores, but does not by itself classify whether a
+later effect will use the public or private route (@fig-attribution-calibration).
+
+![Held-out calibration of attribution scores against causal outcomes. Article attribution predicts local article-margin movement but not downstream public or private channel strength.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=88%}

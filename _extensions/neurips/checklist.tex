@@ -5,7 +5,7 @@
 \item {\bf Claims}
     \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: The abstract and Section~1 distinguish the scoped S1 relay-and-amplification result from the target-constructed private-route reference. Support includes the six-cell split, replay/rescue, prompt-aligned boundary assay, paired random controls, disjoint development/test residual patches, and a synthetic polarity check.
+    \item[] Justification: The abstract and Section~1 distinguish the scoped S1 relay-and-amplification result from private-route capacity. Support includes the six-cell split, replay/rescue, precision and stochastic-policy audits, natural residual controls, held-out attribution calibration, disjoint development/test patches, and an independent reproduction.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
@@ -17,7 +17,7 @@
 \item {\bf Limitations}
     \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: Section~7 discusses model/stack/task/greedy-decoding scope, feature overlap, exploratory L5 localization, the low-resolution matched null, non-additivity of TV, small twin samples, target construction, grammatical mismatch of inserted \texttt{an}, subthreshold residual effects, off-manifold gain, and scale.
+    \item[] Justification: Section~7 discusses model/stack/task scope, restricted stochastic mixtures, feature overlap, exploratory localization, bfloat16 versus final-head float32 precision, natural full-residual transplants, attribution-calibration power, target construction, subthreshold effects, off-manifold gain, and scale.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
@@ -162,7 +162,7 @@
 \item {\bf Licenses for existing assets}
     \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
     \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
-    \item[] Justification: We cite Gemma~3, Gemma Scope~2, circuit-tracer, and NNsight. Appendix~B names licenses (Gemma Terms of Use; Apache-2.0; MIT), pinned snapshots, package versions, and the Hanna--Ameisen dataset commit and checksum.
+    \item[] Justification: We cite Gemma~3, Gemma Scope~2, circuit-tracer, NNsight, and the source prompt repository. Appendix~B names licenses (Gemma Terms of Use; Gemma Scope~2 CC BY~4.0; MIT; Transformers Apache-2.0), pinned snapshots, package versions, and the MIT-licensed Hanna--Ameisen repository commit and checksum.
     \item[] Guidelines:
     \begin{itemize}
         \item The answer \answerNA{} means that the paper does not use existing assets.

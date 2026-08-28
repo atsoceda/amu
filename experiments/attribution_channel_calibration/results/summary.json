@@ -1,0 +1,273 @@
+{
+  "experiment": "attribution_channel_calibration",
+  "generated_at": "2026-08-28T12:01:44.333116+00:00",
+  "elapsed_sec": 435.4397828578949,
+  "n_features": 32,
+  "n_prompts": 20,
+  "gain": 5.0,
+  "selection_scope": "All feature selection and strata use only eight selection occupations and their stored graphs.",
+  "correlations": {
+    "article_attribution__article_margin_effect": {
+      "spearman_rho": 0.529934959872887,
+      "two_sided_permutation_p": 0.0020997900209979003,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "article_attribution__total_tv": {
+      "spearman_rho": -0.10483870967741936,
+      "two_sided_permutation_p": 0.563943605639436,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "article_attribution__mediator_tv": {
+      "spearman_rho": -0.17622610661169047,
+      "two_sided_permutation_p": 0.3294670532946705,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "article_attribution__residual_tv_treated": {
+      "spearman_rho": -0.05168621700879766,
+      "two_sided_permutation_p": 0.7762223777622238,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "article_attribution__fixed_mean_tv": {
+      "spearman_rho": 0.026392961876832845,
+      "two_sided_permutation_p": 0.888011198880112,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "future_attribution__article_margin_effect": {
+      "spearman_rho": 0.06436234287729528,
+      "two_sided_permutation_p": 0.7264273572642735,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "future_attribution__total_tv": {
+      "spearman_rho": -0.12243401759530792,
+      "two_sided_permutation_p": 0.5031496850314968,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "future_attribution__mediator_tv": {
+      "spearman_rho": -0.07147319913275152,
+      "two_sided_permutation_p": 0.6895310468953104,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "future_attribution__residual_tv_treated": {
+      "spearman_rho": -0.1777859237536657,
+      "two_sided_permutation_p": 0.32296770322967705,
+      "permutations": 10000,
+      "n_features": 32
+    },
+    "future_attribution__fixed_mean_tv": {
+      "spearman_rho": -0.17412023460410558,
+      "two_sided_permutation_p": 0.34236576342365765,
+      "permutations": 10000,
+      "n_features": 32
+    }
+  },
+  "strata": {
+    "high_article_high_future": {
+      "article_margin_effect": {
+        "n": 8,
+        "mean": 0.453125,
+        "lo": -0.08281250000000001,
+        "hi": 1.34296875,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 8,
+        "mean": 0.136157253185047,
+        "lo": 0.014282020836981246,
+        "hi": 0.35700552270918706,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_tv": {
+        "n": 8,
+        "mean": 0.12332060560584068,
+        "lo": 0.0058315940201282505,
+        "hi": 0.34596135541796685,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_tv_treated": {
+        "n": 8,
+        "mean": 0.014807188680970284,
+        "lo": 0.008369018062876422,
+        "hi": 0.020862088292415138,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_mean_tv": {
+        "n": 8,
+        "mean": 0.014648511155837696,
+        "lo": 0.008089651522095665,
+        "hi": 0.02063464010584539,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": {
+        "n": 8,
+        "mean": 0.13125,
+        "lo": 0.00625,
+        "hi": 0.36874999999999997,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "high_article_low_future": {
+      "article_margin_effect": {
+        "n": 8,
+        "mean": 0.08203125,
+        "lo": -0.0007812500000000005,
+        "hi": 0.1921875,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 8,
+        "mean": 0.023102142201059904,
+        "lo": 0.006947272678371519,
+        "hi": 0.04088281238473428,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_tv": {
+        "n": 8,
+        "mean": 0.005225612968206406,
+        "lo": 0.0,
+        "hi": 0.01567683890461922,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_tv_treated": {
+        "n": 8,
+        "mean": 0.018037175112658586,
+        "lo": 0.0056746499536529885,
+        "hi": 0.032380176014339665,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_mean_tv": {
+        "n": 8,
+        "mean": 0.0168009312721324,
+        "lo": 0.0052329566648040785,
+        "hi": 0.030861820323434586,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": {
+        "n": 8,
+        "mean": 0.00625,
+        "lo": 0.0,
+        "hi": 0.018750000000000003,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "low_article_high_future": {
+      "article_margin_effect": {
+        "n": 8,
+        "mean": -0.015234375,
+        "lo": -0.148828125,
+        "hi": 0.119140625,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 8,
+        "mean": 0.026800189444838907,
+        "lo": 0.008107281065895222,
+        "hi": 0.04815183754071768,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_tv": {
+        "n": 8,
+        "mean": 0.012000230699777605,
+        "lo": 0.0,
+        "hi": 0.029495012760162354,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_tv_treated": {
+        "n": 8,
+        "mean": 0.015363821391292732,
+        "lo": 0.007194221892132192,
+        "hi": 0.024535348811332368,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_mean_tv": {
+        "n": 8,
+        "mean": 0.01527703548399586,
+        "lo": 0.007076064452667197,
+        "hi": 0.024683648583777543,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": {
+        "n": 8,
+        "mean": 0.0125,
+        "lo": 0.0,
+        "hi": 0.03125,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "low_article_low_future": {
+      "article_margin_effect": {
+        "n": 8,
+        "mean": -0.641796875,
+        "lo": -1.50546875,
+        "hi": 0.011718749999999998,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 8,
+        "mean": 0.059782289390386725,
+        "lo": 0.026547467856289586,
+        "hi": 0.09637726349210425,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "mediator_tv": {
+        "n": 8,
+        "mean": 0.039499840885400775,
+        "lo": 0.01100252941250801,
+        "hi": 0.0731680877506733,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "residual_tv_treated": {
+        "n": 8,
+        "mean": 0.021307514890031597,
+        "lo": 0.011828279779183505,
+        "hi": 0.03251212446484715,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_mean_tv": {
+        "n": 8,
+        "mean": 0.020758769990948167,
+        "lo": 0.0109372736080104,
+        "hi": 0.032415898583712986,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": {
+        "n": 8,
+        "mean": 0.04375,
+        "lo": 0.0125,
+        "hi": 0.08125,
+        "method": "feature-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    }
+  }
+}

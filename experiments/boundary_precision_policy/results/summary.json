@@ -1,0 +1,423 @@
+{
+  "experiment": "boundary_precision_policy",
+  "generated_at": "2026-08-28T11:49:54.967222+00:00",
+  "elapsed_sec": 61.429362058639526,
+  "dtype_audit": {
+    "model_compute": "torch.bfloat16",
+    "sparse_feature_activation": "torch.bfloat16",
+    "transcoder_encoder_parameters": "torch.bfloat16",
+    "transcoder_decoder_vectors": "torch.bfloat16",
+    "transcoder_reconstruction_delta": "torch.bfloat16",
+    "residual_before_final_norm": "torch.bfloat16",
+    "residual_after_native_final_norm": "torch.bfloat16",
+    "final_norm_parameters": "torch.bfloat16",
+    "unembedding_parameters_native": "torch.bfloat16",
+    "stored_native_logits": "torch.bfloat16",
+    "stored_float32_head_logits": "torch.float32",
+    "recorded_feature_cache": "torch.bfloat16"
+  },
+  "native_boundary_reference": {
+    "experiment": "prompt_aligned_article_boundary",
+    "generated_at": "2026-08-28T05:29:12.391771+00:00",
+    "elapsed_sec": 78.60484099388123,
+    "n_prompts": 20,
+    "n_bracketed": 19,
+    "binary_search_steps": 10,
+    "gain_width": {
+      "n": 19,
+      "mean": 0.00390625,
+      "lo": 0.00390625,
+      "hi": 0.00390625,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "total_tv": {
+      "n": 19,
+      "mean": 0.9383114325372797,
+      "lo": 0.8888875089193645,
+      "hi": 0.9777872123216328,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "token_substitution_tv": {
+      "n": 19,
+      "mean": 0.9385625218090258,
+      "lo": 0.8890230749782763,
+      "hi": 0.9772346584420455,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "fixed_an_residual_tv": {
+      "n": 19,
+      "mean": 0.013587163323168889,
+      "lo": 0.009837228372864621,
+      "hi": 0.017418861297253323,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "fixed_a_residual_tv": {
+      "n": 19,
+      "mean": 0.014052315597502073,
+      "lo": 0.009481913698867797,
+      "hi": 0.018909099040779677,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "cosine_token_total": {
+      "n": 19,
+      "mean": 0.9998114767827486,
+      "lo": 0.9996339835618672,
+      "hi": 0.9999333525958815,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "reconstruction_l1": {
+      "n": 19,
+      "mean": 2.1088217841560095e-08,
+      "lo": 1.2026091584559887e-08,
+      "hi": 3.11987965812876e-08,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "interpretation": "Prompt alignment isolates a discrete article-policy transition: the free-path noun jump is compared with smooth fixed-article changes over the same narrow gain interval."
+  },
+  "precision_audit": {
+    "n_prompts": 3,
+    "gain_width": {
+      "n": 3,
+      "mean": 0.000244140625,
+      "lo": 0.000244140625,
+      "hi": 0.000244140625,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "free_tv_fp32": {
+      "n": 3,
+      "mean": 0.991651733716329,
+      "lo": 0.9891494512557983,
+      "hi": 0.9966402053833008,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "fixed_a_tv_fp32": {
+      "n": 3,
+      "mean": 0.00919127130570511,
+      "lo": 0.0036709841806441545,
+      "hi": 0.014129024930298328,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "fixed_an_tv_fp32": {
+      "n": 3,
+      "mean": 0.0037244342577954135,
+      "lo": 0.0016494118608534336,
+      "hi": 0.00485944002866745,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "native_margin_low": {
+      "n": 3,
+      "mean": -0.041666666666666664,
+      "lo": -0.125,
+      "hi": 0.0,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "native_margin_high": {
+      "n": 3,
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "fp32_margin_low": {
+      "n": 3,
+      "mean": -0.0066394805908203125,
+      "lo": -0.008396148681640625,
+      "hi": -0.0043964385986328125,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    },
+    "fp32_margin_high": {
+      "n": 3,
+      "mean": 0.012994130452473959,
+      "lo": 0.0028820037841796875,
+      "hi": 0.02242279052734375,
+      "method": "prompt-level nonparametric bootstrap",
+      "resamples": 10000
+    }
+  },
+  "dense_grid": {
+    "n_prompts": 3,
+    "native_unique_margins": 3,
+    "fp32_unique_margins_1e6": 43
+  },
+  "policy": {
+    "0.1": {
+      "total_tv": {
+        "n": 19,
+        "mean": 0.4557097883600938,
+        "lo": 0.38680344506313924,
+        "hi": 0.5289846752819262,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_tv": {
+        "n": 19,
+        "mean": 0.45423922256419536,
+        "lo": 0.38420331634973226,
+        "hi": 0.5255899852827975,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_tv": {
+        "n": 19,
+        "mean": 0.015307139421470072,
+        "lo": 0.011761649119618692,
+        "hi": 0.018688705210622988,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_total_cosine": {
+        "n": 19,
+        "mean": 0.9990386398215043,
+        "lo": 0.9982795715332031,
+        "hi": 0.9995956922832289,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_total_cosine": {
+        "n": 19,
+        "mean": 0.17196323330465116,
+        "lo": -0.056115960604266116,
+        "hi": 0.38259522067873103,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_low": {
+        "n": 19,
+        "mean": 0.9993877285405209,
+        "lo": 0.9981638600951747,
+        "hi": 1.0,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_high": {
+        "n": 19,
+        "mean": 0.9997255959008869,
+        "lo": 0.9991769853391146,
+        "hi": 1.0,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "reconstruction_l1": {
+        "n": 19,
+        "mean": 6.248929654430556e-08,
+        "lo": 4.9385194880881645e-08,
+        "hi": 7.640910042694988e-08,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "0.25": {
+      "total_tv": {
+        "n": 19,
+        "mean": 0.21210513342367976,
+        "lo": 0.17495084750024895,
+        "hi": 0.24947690336327805,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_tv": {
+        "n": 19,
+        "mean": 0.2109816321416905,
+        "lo": 0.17341682197231995,
+        "hi": 0.24941560547602803,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_tv": {
+        "n": 19,
+        "mean": 0.014938749054348782,
+        "lo": 0.012040331543080117,
+        "hi": 0.017738138864699163,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_total_cosine": {
+        "n": 19,
+        "mean": 0.9962068545190912,
+        "lo": 0.9933201984355324,
+        "hi": 0.9983792179509213,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_total_cosine": {
+        "n": 19,
+        "mean": 0.1835525439022795,
+        "lo": -0.04110326500315415,
+        "hi": 0.3931629794257644,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_low": {
+        "n": 19,
+        "mean": 0.9941723283968473,
+        "lo": 0.9831797574695788,
+        "hi": 0.9999677193792242,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_high": {
+        "n": 19,
+        "mean": 0.9955298273186934,
+        "lo": 0.9871277244467485,
+        "hi": 0.9999767165434988,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "reconstruction_l1": {
+        "n": 19,
+        "mean": 4.350373161125725e-08,
+        "lo": 3.7246384128988405e-08,
+        "hi": 5.019916561964596e-08,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "0.5": {
+      "total_tv": {
+        "n": 19,
+        "mean": 0.10936685435866055,
+        "lo": 0.0901556869870738,
+        "hi": 0.12905075773596764,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_tv": {
+        "n": 19,
+        "mean": 0.10834279715230591,
+        "lo": 0.0891073148109411,
+        "hi": 0.12835368866983213,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_tv": {
+        "n": 19,
+        "mean": 0.014808573196397015,
+        "lo": 0.0121535776477111,
+        "hi": 0.017345522726444823,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_total_cosine": {
+        "n": 19,
+        "mean": 0.9869979870946783,
+        "lo": 0.9772644639015198,
+        "hi": 0.9945094585418701,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_total_cosine": {
+        "n": 19,
+        "mean": 0.22881202811473295,
+        "lo": 0.0029358599138887306,
+        "hi": 0.4283057933575229,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_low": {
+        "n": 19,
+        "mean": 0.9816091437088815,
+        "lo": 0.9574408091996846,
+        "hi": 0.996636268339659,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_high": {
+        "n": 19,
+        "mean": 0.9837705712569388,
+        "lo": 0.961723826433483,
+        "hi": 0.9973688470689874,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "reconstruction_l1": {
+        "n": 19,
+        "mean": 3.63731773589393e-08,
+        "lo": 3.085999970184766e-08,
+        "hi": 4.245048513876339e-08,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "1.0": {
+      "total_tv": {
+        "n": 19,
+        "mean": 0.05659215191477224,
+        "lo": 0.04723300451510831,
+        "hi": 0.06605008813111406,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_tv": {
+        "n": 19,
+        "mean": 0.05455055019181026,
+        "lo": 0.04477068977920633,
+        "hi": 0.06464494156994317,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_tv": {
+        "n": 19,
+        "mean": 0.014748785032057449,
+        "lo": 0.01226626223835506,
+        "hi": 0.017236681458981412,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "policy_total_cosine": {
+        "n": 19,
+        "mean": 0.9571477676692762,
+        "lo": 0.9289764385474356,
+        "hi": 0.9803594884119535,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "fixed_total_cosine": {
+        "n": 19,
+        "mean": 0.3195170102346885,
+        "lo": 0.09234932957119063,
+        "hi": 0.5187860034210118,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_low": {
+        "n": 19,
+        "mean": 0.899179038248564,
+        "lo": 0.8575366798200106,
+        "hi": 0.9334848648623416,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "a_an_mass_high": {
+        "n": 19,
+        "mean": 0.9039063955608168,
+        "lo": 0.8625573829600686,
+        "hi": 0.9362427435423198,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "reconstruction_l1": {
+        "n": 19,
+        "mean": 3.7821747885626986e-08,
+        "lo": 3.3566037247935225e-08,
+        "hi": 4.2261693653394535e-08,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    }
+  },
+  "scope": "Precision audit is pre-specified on the first three bracketed prompts; stochastic results condition the article policy on a/an and report retained mass."
+}

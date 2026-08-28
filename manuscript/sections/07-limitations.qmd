@@ -1,7 +1,8 @@
 # Limitations
 
-Claims are scoped to Gemma 3 270M, one dictionary and task, greedy
-decoding, and lexical rather than semantic outcomes. S1 was
+Claims are scoped to Gemma 3 270M, one dictionary and task, and lexical
+rather than semantic outcomes. Greedy results are supplemented by exact
+two-article stochastic mixtures, not unrestricted vocabulary sampling. S1 was
 attribution-selected and amplified by up to \(5\times\), so we decompose
 this handle rather than a unique ontology; large gain may be off-manifold.
 S2 often derails; the L5/F383 localization is exploratory and post-selection
@@ -19,6 +20,15 @@ Layer selection uses four development pairs. The interaction shows
 article-prefix compatibility, not a meaningful allocation trade-off.
 Scale, model-family, task, sampling, and prompt-controlled route
 allocation remain open.
+
+The float32 audit casts only the final normalization and unembedding; it
+does not rerun the transformer or CLT in float32. Natural residual patches
+are full-state transplants selected at one pooled development layer. They
+show private target influence but no article change, so they do not
+establish causal allocation or a public/private regime switch. The
+32-feature attribution calibration has adequate resolution for moderate
+monotone effects, not proof of zero association, and its intervention gain
+remains \(5\times\).
 
 **Ethics.** This public-model study uses synthetic prompts and no human or
 personal data. We mitigate overclaiming through scoped conclusions and

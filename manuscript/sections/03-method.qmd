@@ -148,3 +148,34 @@ and
 \(\Gamma_i^{\mathrm{target}}-\overline{\Gamma_i^{\mathrm{random}}}\).
 The patch is a capacity/reference intervention, not evidence that S1
 naturally carries the same lexical state.
+
+## Precision, stochastic policies, and channel calibration
+
+The deployed stack stores model, CLT, and residual tensors in bfloat16.
+We therefore distinguish the native article margin from a diagnostic
+float32 readout: the final normalized residual is cast to float32 and
+multiplied by a float32 copy of the unembedding. This does not make the
+upstream computation float32; it tests whether coarse reported logit
+levels arise at the final readout. For three pre-specified prompts we
+binary-search the float32 margin to width \(2.44\times10^{-4}\) and record
+51-point native and float32 gain grids.
+
+Greedy decoding is a limiting policy. At article temperature \(\tau\), we
+also average the noun distribution over the two article branches,
+
+$$
+Y_\tau(i)=\sum_{b\in\{\texttt{a},\texttt{an}\}}
+q_\tau(b\mid i)Y(i,b),
+$$
+
+renormalizing \(q_\tau\) over `a` and `an` and reporting the retained
+two-token mass. Replacing only \(q_\tau\) gives the stochastic-policy
+component; holding it fixed gives the matched-policy leftover.
+
+Finally, we calibrate graph scores against interventions rather than
+treating attribution as causal ground truth. Thirty-two pre-article
+features (eight from each high/low article-by-future attribution stratum)
+are selected using only the eight selection occupations, amplified
+individually at \(5\times\), and evaluated on the 20 held-out prompts.
+Spearman tests use feature-level aggregates and 10,000 two-sided label
+permutations.
