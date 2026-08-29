@@ -52,9 +52,11 @@ def _google_scope_repo_id(config: dict[str, Any]) -> str:
         return "google/gemma-scope-2-270m-it"
     if "gemma-scope-2-270m-pt" in blob:
         return "google/gemma-scope-2-270m-pt"
+    if "gemma-scope-2-1b-pt" in blob:
+        return "google/gemma-scope-2-1b-pt"
     raise ValueError(
         "Cannot infer Google Gemma Scope repo from transcoder_set/"
-        "transcoder_weight_snapshot; expected gemma-scope-2-270m-it or -pt"
+        "transcoder_weight_snapshot; expected a supported Gemma Scope 2 PT/IT stack"
     )
 
 

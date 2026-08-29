@@ -1,0 +1,15 @@
+{
+  "experiment_name": "gemma_1b_residual_scale",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "dtype": "bfloat16",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "natural_config_path": "../natural_residual_carrier_regimes/config.json",
+  "e1_config_path": "../selection_criterion_ablation/config.json",
+  "dataset_path": "../a_an_full_dataset_screen/data/a_an_examples.csv",
+  "strengths": [0.5, 1.0, 1.5],
+  "temperatures": [0.1, 0.25, 0.5, 1.0],
+  "random_seeds": [101, 211, 307, 401, 503],
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260831
+}
