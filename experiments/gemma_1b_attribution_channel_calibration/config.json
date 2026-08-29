@@ -1,0 +1,20 @@
+{
+  "experiment_name": "gemma_1b_attribution_channel_calibration",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "transcoder_set": "mwhanna/gemma-scope-2-1b-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-1b-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-1b-pt/snapshots/b738dc06961818c011fb2e44a316352ca0f4e873",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "offload": null,
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "source_config_path": "../gemma_1b_sparse_scale/config.json",
+  "graphs_path": "../gemma_1b_sparse_scale/results/graphs",
+  "features_per_stratum": 8,
+  "minimum_selection_prompt_count": 3,
+  "amplify_factor": 5.0,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260829
+}

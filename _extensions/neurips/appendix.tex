@@ -61,6 +61,7 @@ L5/F383 matched-null controls & \texttt{l5\_fixed\_token\_matched\_null/} \\
 Pre-article public/private factorial & \texttt{pre\_article\_public\_private\_factorial/} \\
 Natural residual carrier regimes & \texttt{natural\_residual\_carrier\_regimes/} \\
 Attribution-to-channel calibration & \texttt{attribution\_channel\_calibration/} \\
+Gemma 1B attribution-to-channel calibration & \texttt{gemma\_1b\_attribution\_channel\_calibration/} \\
 Gemma 1B sparse selection baseline & \texttt{gemma\_1b\_sparse\_scale/} \\
 Gemma 1B effect-matched diagnostics/six-cell & \texttt{gemma\_1b\_effect\_matched/} \\
 Gemma 270M--1B natural residual comparison & \texttt{gemma\_1b\_residual\_scale/} \\
@@ -89,6 +90,13 @@ effect-matched coalition is the first 24 entries in
 Per-prompt activations, decoder norms, selection scores, baselines, graph
 coverage, development sweep, held-out efficacy, six-cell rows, runtimes, and
 raw stochastic decompositions are machine-readable in those directories.
+The independent 1B calibration selects 32 features from the same eight
+development graphs and evaluates 640 single-feature/prompt interventions. Its
+raw rows, selected-feature metadata, decoder norms, strict mediator-validity
+gate, bootstrap intervals, and robustness analyses are under
+\texttt{gemma\_1b\_attribution\_channel\_calibration/results/}. The run required
+1,968 seconds wall time; all 16 source graphs reached the 1,200-node cap, with
+mean 1,981.5 active features and mean selected/active fraction 0.608.
 
 \noindent\textbf{Assets and licenses.}
 Gemma 3 weights are used under the Gemma Terms of Use
@@ -355,9 +363,10 @@ same-class test pairs are disjoint from development. Target patches yield
 target-minus-source \(\Delta\Delta\) of
 \(0.776\,[0.484,1.115]\) and \(0.964\,[0.667,1.266]\), respectively.
 Wrong-target controls yield 0.146 and 0.130; sign-reversed patches yield
--0.474 and -0.443. In both regimes the article changes on 0/12 pairs, so
-token-substitution TV is zero and the entire free-path TV survives article
-fixing. Target-logit changes are +0.526 and +0.839; source-logit changes
+-0.474 and -0.443. In both regimes the greedy article changes on 0/12 pairs.
+Under stochastic two-article policies a public component can nevertheless
+appear, so the greedy result is not a claim that token-substitution TV is zero
+under all decoding policies. Target-logit changes are +0.526 and +0.839; source-logit changes
 are -0.250 and -0.125. Occupation-vocabulary probability mass does not
 reliably increase.
 
@@ -368,6 +377,18 @@ article-margin movement (Spearman \(\rho=0.530\), 10,000-permutation
 two-sided \(p=0.0021\)). Neither article nor future attribution predicts
 total, token-substitution, treated-token leftover, or fixed-token TV
 (all \(|\rho|\le0.178\), all \(p\ge0.323\)).
+
+At 1B, an independently selected 32-feature panel reproduces the first-stage
+association (article attribution versus held-out margin movement:
+\(\rho=0.432\), bootstrap 95\% CI \([0.014,0.729]\)). Leave-one-out values span
+\([0.375,0.478]\), largest-effect exclusion gives 0.375, and the partial rank
+correlation controlling layer, held-out activation, and decoder norm is 0.352.
+One feature leaves the intended article support on 17/20 prompts and is excluded
+from channel correlations. Among the 31 all-prompt mediator-valid features,
+article attribution has correlations 0.043 with token-substitution TV, -0.123
+with treated-token leftover TV, and -0.077 with mean fixed-token TV; all
+bootstrap intervals include zero. Future attribution likewise has no detectable
+local-margin or channel association.
 
 \section{Family/dose leftovers and S2 decomposition}
 \label{app:s2-decomp}

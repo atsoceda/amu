@@ -55,14 +55,16 @@ two causally usable channels, not experimental control over the medium in
 which the model stores or transmits a computation. Discovering such a
 carrier switch remains the decisive next step.
 
-**Attribution is not a channel label.** Held-out calibration shows a clean
-local success and a downstream failure: article attribution predicts
-article-margin movement, but article and future attribution do not predict
-relay strength or fixed-token persistence detectably in this 32-feature
-experiment. Bootstrap, leave-one-out, outlier-exclusion, and covariate-adjusted
-analyses preserve that distinction. Graph scores rank influence on
-their stated objectives; they should not be read as evidence that a
-feature's later consequences travel through a particular medium.
+**Attribution is not a channel label.** Independent held-out calibrations at
+270M and 1B show the same local success and downstream non-association: article
+attribution predicts article-margin movement, but article and future attribution
+do not predict relay strength or fixed-token persistence detectably in either
+32-feature panel. Bootstrap, leave-one-out, outlier-exclusion,
+covariate-adjusted, realized-efficacy-conditional, and 1B mediator-gated analyses
+preserve that distinction. Graph scores rank causal pressure on their stated
+objectives; the medium through which later consequences travel is a separate
+closed-loop property. This replicated separation is evidence for an
+identification principle, not merely a negative result from one small model.
 
 **Scale and two-stage validity.** The 1B assays show why local efficacy must
 precede channel interpretation. The original sparse handle is too weak; a

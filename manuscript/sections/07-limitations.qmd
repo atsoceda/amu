@@ -32,10 +32,13 @@ The float32 audit casts only the final normalization and unembedding; it
 does not rerun the transformer or CLT in float32. Natural residual patches
 are full-state transplants selected at one pooled development layer. They
 show private target influence but no article change, so they do not
-establish causal allocation or a public/private regime switch. The
-32-feature attribution calibration has adequate resolution for moderate
-monotone effects, not proof of zero association; its bootstrap intervals are
-wide for downstream outcomes, and its intervention gain remains \(5\times\).
+establish causal allocation or a public/private regime switch. The two
+32-feature attribution calibrations have resolution for moderate monotone
+effects, not proof of zero association; their bootstrap intervals are wide for
+downstream outcomes, their intervention gain remains \(5\times\), and the 1B
+channel analysis excludes one mediator-invalid feature. All 16 1B graphs hit
+the 1,200-node cap, so the calibration establishes held-out validity for the
+retained features rather than equivalence of graph completeness across scale.
 
 **Ethics.** This public-model study uses synthetic prompts and no human or
 personal data. We mitigate overclaiming through scoped conclusions and

@@ -1,0 +1,156 @@
+{
+  "experiment": "gemma_1b_attribution_channel_calibration",
+  "generated_at": "2026-08-29T13:06:07.067175+00:00",
+  "elapsed_sec": 1965.422206878662,
+  "n_features": 32,
+  "n_prompts": 20,
+  "gain": 5.0,
+  "identification_rule": "Channel outcomes are computed only where untreated and treated free next tokens are both a/an.",
+  "diagnostics": {
+    "eligible_candidates": 84,
+    "graph_count": 16,
+    "graph_cap_hits": 16,
+    "mean_active_features": 1981.5,
+    "mean_selected_fraction_of_active": 0.6084295208564079
+  },
+  "correlations": {
+    "article_attribution": {
+      "article_margin_effect": {
+        "rho": 0.43215991171149376,
+        "lo": 0.014040274374212654,
+        "hi": 0.7291803365756645,
+        "n": 32,
+        "resamples": 10000,
+        "loo_min": 0.3753529954443473,
+        "loo_max": 0.47761197915755743,
+        "largest_outcome_excluded_rho": 0.3753529954443473,
+        "partial_spearman_layer_activation_decoder_norm": 0.3515395894428152,
+        "conditional_on_above_median_abs_margin_rho": 0.7941176470588235,
+        "conditional_n": 16
+      },
+      "fixed_mean_tv": {
+        "rho": -0.07661290322580644,
+        "lo": -0.4221567905778432,
+        "hi": 0.29917050691244235,
+        "n": 32,
+        "resamples": 10000,
+        "loo_min": -0.16612903225806452,
+        "loo_max": -0.008467741935483872,
+        "largest_outcome_excluded_rho": -0.16612903225806452,
+        "partial_spearman_layer_activation_decoder_norm": 0.094208211143695,
+        "conditional_on_above_median_abs_margin_rho": -0.17941176470588235,
+        "conditional_n": 16
+      },
+      "total_tv_valid": {
+        "rho": 0.08790322580645162,
+        "lo": -0.25576689599352487,
+        "hi": 0.4250455189156383,
+        "n": 31,
+        "resamples": 10000,
+        "loo_min": -0.006451612903225808,
+        "loo_max": 0.15105672969966633,
+        "largest_outcome_excluded_rho": -0.006451612903225808,
+        "partial_spearman_layer_activation_decoder_norm": 0.05282258064516129,
+        "conditional_on_above_median_abs_margin_rho": -0.014705882352941176,
+        "conditional_n": 16
+      },
+      "mediator_tv_valid": {
+        "rho": 0.042880766647064625,
+        "lo": -0.31569737980761425,
+        "hi": 0.40269971958731954,
+        "n": 31,
+        "resamples": 10000,
+        "loo_min": -0.06195450227518956,
+        "loo_max": 0.10822690908170353,
+        "largest_outcome_excluded_rho": -0.06195450227518956,
+        "partial_spearman_layer_activation_decoder_norm": 0.008467741935483872,
+        "conditional_on_above_median_abs_margin_rho": -0.15798486309055768,
+        "conditional_n": 16
+      },
+      "residual_tv_valid": {
+        "rho": -0.12338709677419354,
+        "lo": -0.4782608695652173,
+        "hi": 0.27961125733954234,
+        "n": 31,
+        "resamples": 10000,
+        "loo_min": -0.2048943270300334,
+        "loo_max": -0.04204671857619578,
+        "largest_outcome_excluded_rho": -0.09187986651835374,
+        "partial_spearman_layer_activation_decoder_norm": 0.012903225806451613,
+        "conditional_on_above_median_abs_margin_rho": -0.11764705882352941,
+        "conditional_n": 16
+      },
+      "article_boundary_crossing_auc": 0.5291666666666667
+    },
+    "future_attribution": {
+      "article_margin_effect": {
+        "rho": 0.08287495973423639,
+        "lo": -0.3143357618149,
+        "hi": 0.4646875134791195,
+        "n": 32,
+        "resamples": 10000,
+        "loo_min": -0.008874546910022181,
+        "loo_max": 0.16901977978633156,
+        "largest_outcome_excluded_rho": -0.008874546910022181,
+        "partial_spearman_layer_activation_decoder_norm": -0.08431085043988268,
+        "conditional_on_above_median_abs_margin_rho": -0.0058823529411764705,
+        "conditional_n": 16
+      },
+      "fixed_mean_tv": {
+        "rho": -0.2609970674486803,
+        "lo": -0.548470328050129,
+        "hi": 0.0803456517742232,
+        "n": 32,
+        "resamples": 10000,
+        "loo_min": -0.307258064516129,
+        "loo_max": -0.1975806451612903,
+        "largest_outcome_excluded_rho": -0.28588709677419355,
+        "partial_spearman_layer_activation_decoder_norm": 0.025659824046920816,
+        "conditional_on_above_median_abs_margin_rho": -0.37941176470588234,
+        "conditional_n": 16
+      },
+      "total_tv_valid": {
+        "rho": -0.024596774193548387,
+        "lo": -0.3981406628940987,
+        "hi": 0.34673162809581803,
+        "n": 31,
+        "resamples": 10000,
+        "loo_min": -0.07986651835372638,
+        "loo_max": 0.06117908787541714,
+        "largest_outcome_excluded_rho": -0.021579532814238047,
+        "partial_spearman_layer_activation_decoder_norm": -0.0012096774193548388,
+        "conditional_on_above_median_abs_margin_rho": -0.020588235294117647,
+        "conditional_n": 16
+      },
+      "mediator_tv_valid": {
+        "rho": 0.050735164498259634,
+        "lo": -0.3301718100669184,
+        "hi": 0.42032309068879986,
+        "n": 31,
+        "resamples": 10000,
+        "loo_min": -0.018692239306375837,
+        "loo_max": 0.14770141797164962,
+        "largest_outcome_excluded_rho": 0.058892112428887415,
+        "partial_spearman_layer_activation_decoder_norm": -0.03790322580645161,
+        "conditional_on_above_median_abs_margin_rho": 0.006195484827080693,
+        "conditional_n": 16
+      },
+      "residual_tv_valid": {
+        "rho": -0.2846774193548387,
+        "lo": -0.5893905648916784,
+        "hi": 0.07866531850353892,
+        "n": 31,
+        "resamples": 10000,
+        "loo_min": -0.34593993325917693,
+        "loo_max": -0.21245828698553954,
+        "largest_outcome_excluded_rho": -0.21245828698553954,
+        "partial_spearman_layer_activation_decoder_norm": 0.06693548387096775,
+        "conditional_on_above_median_abs_margin_rho": -0.31176470588235294,
+        "conditional_n": 16
+      },
+      "article_boundary_crossing_auc": 0.6166666666666667
+    }
+  },
+  "fully_mediator_valid_features": 31,
+  "channel_feature_gate": "Feature must retain a/an top-1 support on all 20 held-out prompts."
+}

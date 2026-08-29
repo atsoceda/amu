@@ -130,7 +130,15 @@ fixed-article TV.
 crosses article and future-content graph-score strata. Outcomes include
 article-margin movement, free-path total TV, token-substitution TV,
 matched-prefix leftover TV, and mean fixed-article TV. Selection and test
-occupations remain disjoint.
+occupations remain disjoint. We repeat this protocol independently at 1B with
+eight features per stratum and the same \(5\times\) single-feature gain. Because
+the effect-matched coalition revealed mediator failure, 1B channel correlations
+exclude any feature that makes a non-article token top-1 on even one of the 20
+held-out prompts; local article-margin and fixed-token outcomes retain all 32
+features. Both scales use feature-level bootstrap, leave-one-feature-out,
+largest-effect exclusion, partial rank correlations controlling layer,
+held-out activation, and decoder norm, and conditioning on realized margin
+movement.
 
 **Cross-scale sparse and residual assays.** On Gemma 3 1B PT with the matched
 affine Gemma Scope 2 CLT, we first repeat the frozen top-four, \(5\times\)

@@ -264,4 +264,30 @@ and 0.027 while private TV remains 0.062 and 0.046. The defensible scale result
 is stronger target-logit efficacy, especially within class, without behavioral
 sufficiency or a demonstrated carrier switch.
 
+The independent 1B feature calibration supplies a stronger cross-scale
+generalization. Article attribution again predicts held-out local margin
+movement across 32 individually amplified features (\(\rho=0.432\), bootstrap
+95\% CI \([0.014,0.729]\)); leave-one-feature-out estimates remain positive
+\([0.375,0.478]\), largest-effect exclusion gives \(0.375\), and the partial
+rank correlation controlling layer, held-out activation, and decoder norm is
+\(0.352\). Conditioning on above-median realized margin movement strengthens
+the estimate to \(0.794\). Thirty-one features preserve `a`/`an` top-1 support
+on every held-out prompt. Within that mediator-valid set, article attribution
+does not predict total, public-relay, or treated-token leftover TV
+(\(\rho=0.088,0.043,-0.123\); all bootstrap intervals include zero), and its
+fixed-token-TV association is likewise undetectable (\(\rho=-0.077\)). Future
+attribution shows no detectable association with local margin or any channel
+outcome. Thus the local-efficacy/channel separation is not peculiar to the
+270M feature panel.
+
+| Scale | Article attribution \(\to\) local margin | \(\to\) public TV | \(\to\) fixed-token TV |
+| --- | ---: | ---: | ---: |
+| 270M (32 features) | \(0.530\ [0.200,0.772]\) | \(-0.176\), CI includes 0 | \(0.026\), CI includes 0 |
+| 1B (32 features) | \(0.432\ [0.014,0.729]\) | \(0.043\), CI includes 0 | \(-0.077\), CI includes 0 |
+
+: Across-scale feature calibration. Values are Spearman correlations; brackets
+give bootstrap 95\% intervals where shown. The 1B channel estimate uses the 31
+features passing the all-prompt mediator-validity gate.
+{#tbl-cross-scale-calibration}
+
 ![Cross-scale natural-residual comparison. Gemma 1B shows somewhat stronger target-logit movement, but private TV is not uniformly larger and top-1 control remains rare.](manuscript/figures/fig_gemma_1b_residual_scale.png){#fig-gemma-1b-residual width=90%}

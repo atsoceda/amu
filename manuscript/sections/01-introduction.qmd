@@ -53,15 +53,17 @@ cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
    enhance the intended noun and partly suppress the source under a fixed
    article, outperform wrong-target and matched-norm controls, but do not
    switch the emitted article in either same- or cross-article-class
-   regimes. Across 32 held-out features, article attribution predicts the
-   local article-margin effect but not subsequent public-versus-private
-   transmission.
+   regimes. Independent 32-feature calibrations at 270M and 1B show that
+   article attribution predicts the local article-margin effect but not
+   subsequent public-versus-private transmission.
 5. **Cross-scale validation.** Separate local efficacy, mediator validity,
    and transmission at Gemma 3 1B. The original sparse handle is weak; an
    effect-matched 24-feature coalition transfers the article margin but usually
    derails to a non-article mediator, so no sparse 1B channel claim is made.
    Independently, matched natural residuals produce somewhat stronger
-   target-logit movement at 1B without uniformly stronger private TV.
+   target-logit movement at 1B without uniformly stronger private TV. The
+   cross-scale feature calibration replicates the separation between local
+   causal pressure and transmission channel.
 
 Family comparisons, S2 forensics, random controls, propagation, and a
 synthetic polarity check are supporting controls. The contribution is an
