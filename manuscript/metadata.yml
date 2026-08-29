@@ -31,9 +31,14 @@ abstract: |
   intervenable causes of noun prediction; S1's large effect is overwhelmingly
   public-relayed, while a target-constructed residual patch establishes
   private-route capacity. Natural residual patches reproduce target-specific
-  fixed-token influence without an article switch, and held-out feature
-  calibration finds that attribution predicts local article efficacy but not
-  the later transmission channel.
+  fixed-token influence without a greedy article switch. At Gemma 3 1B, the
+  same sparse recipe is too weak; a development effect-matched coalition moves
+  the binary article margin but usually makes a non-article token top-1, so its
+  transmission channel is not identified. A matched natural-residual assay
+  shows stronger target-logit movement at 1B without uniformly larger private
+  TV or behavioral sufficiency. Held-out feature calibration predicts local
+  article efficacy but shows no detectable monotone channel association in 32
+  features.
 keywords:
   - mechanistic interpretability
   - latent planning

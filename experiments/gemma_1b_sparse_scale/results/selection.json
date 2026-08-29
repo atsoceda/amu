@@ -1,0 +1,4241 @@
+{
+  "generated_at": "2026-08-29T12:24:01.784844+00:00",
+  "selection_prompt_count": 8,
+  "min_selection_prompt_count": 3,
+  "top_features_per_set": 4,
+  "max_abs_future_direct_effect": 0.05,
+  "max_abs_article_direct_effect": 0.05,
+  "prompt_records": [
+    {
+      "sentence": "Someone who installs and repairs electrical systems is",
+      "listed_word": "electrician",
+      "content_token_text": " electrician",
+      "pre_article_pos": 17,
+      "candidate_counts": {
+        "S1_dual_effect": 32,
+        "S2_article_only": 57,
+        "S3_content_only": 26,
+        "S4_competing_a": 32
+      }
+    },
+    {
+      "sentence": "Someone who designs buildings and structures is",
+      "listed_word": "architect",
+      "content_token_text": " architect",
+      "pre_article_pos": 16,
+      "candidate_counts": {
+        "S1_dual_effect": 39,
+        "S2_article_only": 56,
+        "S3_content_only": 26,
+        "S4_competing_a": 36
+      }
+    },
+    {
+      "sentence": "Someone who manages financial records is",
+      "listed_word": "accountant",
+      "content_token_text": " accountant",
+      "pre_article_pos": 15,
+      "candidate_counts": {
+        "S1_dual_effect": 31,
+        "S2_article_only": 58,
+        "S3_content_only": 29,
+        "S4_competing_a": 39
+      }
+    },
+    {
+      "sentence": "Someone who designs and builds technical systems is",
+      "listed_word": "engineer",
+      "content_token_text": " engineer",
+      "pre_article_pos": 17,
+      "candidate_counts": {
+        "S1_dual_effect": 35,
+        "S2_article_only": 49,
+        "S3_content_only": 29,
+        "S4_competing_a": 36
+      }
+    },
+    {
+      "sentence": "Someone who studies financial systems and markets is",
+      "listed_word": "economist",
+      "content_token_text": " economist",
+      "pre_article_pos": 17,
+      "candidate_counts": {
+        "S1_dual_effect": 34,
+        "S2_article_only": 53,
+        "S3_content_only": 31,
+        "S4_competing_a": 30
+      }
+    },
+    {
+      "sentence": "Someone who administers anesthesia during surgery is",
+      "listed_word": "anesthesiologist",
+      "content_token_text": " anest",
+      "pre_article_pos": 16,
+      "candidate_counts": {
+        "S1_dual_effect": 34,
+        "S2_article_only": 56,
+        "S3_content_only": 27,
+        "S4_competing_a": 36
+      }
+    },
+    {
+      "sentence": "Someone who treats cancer patients is",
+      "listed_word": "oncologist",
+      "content_token_text": " oncologist",
+      "pre_article_pos": 15,
+      "candidate_counts": {
+        "S1_dual_effect": 32,
+        "S2_article_only": 52,
+        "S3_content_only": 24,
+        "S4_competing_a": 35
+      }
+    },
+    {
+      "sentence": "Someone who studies stars and planets is",
+      "listed_word": "astronomer",
+      "content_token_text": " astronomer",
+      "pre_article_pos": 16,
+      "candidate_counts": {
+        "S1_dual_effect": 28,
+        "S2_article_only": 47,
+        "S3_content_only": 27,
+        "S4_competing_a": 36
+      }
+    }
+  ],
+  "sets": {
+    "S1_dual_effect": {
+      "set_id": "S1_dual_effect",
+      "label": "S1 Dual-effect",
+      "rule": "+attr(an) and +attr(future)",
+      "fallback_used": false,
+      "ranked_features": [
+        {
+          "layer": 18,
+          "feature_idx": 5015,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.080780029296875,
+          "mean_direct_effect_a": 0.0443267822265625,
+          "mean_direct_effect_a_minus_an": -0.0364532470703125,
+          "mean_direct_effect_future": 0.102813720703125,
+          "mean_activation": 361.0,
+          "mean_score": 0.078521728515625,
+          "label": "`L18/F5015`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 2289,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.071197509765625,
+          "mean_direct_effect_a": 0.080352783203125,
+          "mean_direct_effect_a_minus_an": 0.0091552734375,
+          "mean_direct_effect_future": 0.134033203125,
+          "mean_activation": 428.75,
+          "mean_score": 0.071197509765625,
+          "label": "`L15/F2289`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6600,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.054931640625,
+          "mean_direct_effect_a": 0.056365966796875,
+          "mean_direct_effect_a_minus_an": 0.001434326171875,
+          "mean_direct_effect_future": 0.04216766357421875,
+          "mean_activation": 258.75,
+          "mean_score": 0.03807830810546875,
+          "label": "`L15/F6600`"
+        },
+        {
+          "layer": 0,
+          "feature_idx": 4438,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14312744140625,
+          "mean_direct_effect_a": 0.1536865234375,
+          "mean_direct_effect_a_minus_an": 0.01055908203125,
+          "mean_direct_effect_future": 0.0325469970703125,
+          "mean_activation": 41.59375,
+          "mean_score": 0.0325469970703125,
+          "label": "`L0/F4438`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 4789,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.037017822265625,
+          "mean_direct_effect_a": 0.0455780029296875,
+          "mean_direct_effect_a_minus_an": 0.0085601806640625,
+          "mean_direct_effect_future": 0.01816558837890625,
+          "mean_activation": 143.5,
+          "mean_score": 0.01816558837890625,
+          "label": "`L3/F4789`"
+        },
+        {
+          "layer": 18,
+          "feature_idx": 8460,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.304931640625,
+          "mean_direct_effect_a": 0.472412109375,
+          "mean_direct_effect_a_minus_an": 0.16748046875,
+          "mean_direct_effect_future": 0.0159454345703125,
+          "mean_activation": 369.0,
+          "mean_score": 0.0159454345703125,
+          "label": "`L18/F8460`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 8249,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.060516357421875,
+          "mean_direct_effect_a": 0.09967041015625,
+          "mean_direct_effect_a_minus_an": 0.039154052734375,
+          "mean_direct_effect_future": 0.007648468017578125,
+          "mean_activation": 159.75,
+          "mean_score": 0.007648468017578125,
+          "label": "`L13/F8249`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 6100,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.011500767299107142,
+          "mean_direct_effect_a": 0.018380301339285716,
+          "mean_direct_effect_a_minus_an": 0.006879534040178571,
+          "mean_direct_effect_future": 0.006962367466517857,
+          "mean_activation": 256.0,
+          "mean_score": 0.006962367466517857,
+          "label": "`L9/F6100`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 2594,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.080078125,
+          "mean_direct_effect_a": 0.07484654017857142,
+          "mean_direct_effect_a_minus_an": -0.005231584821428571,
+          "mean_direct_effect_future": 0.0034931727818080355,
+          "mean_activation": 136.71428571428572,
+          "mean_score": 0.0034931727818080355,
+          "label": "`L13/F2594`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 5100,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0026070731026785715,
+          "mean_direct_effect_a": 0.0023280552455357145,
+          "mean_direct_effect_a_minus_an": -0.00027901785714285713,
+          "mean_direct_effect_future": 0.004558018275669643,
+          "mean_activation": 64.42857142857143,
+          "mean_score": 0.0026070731026785715,
+          "label": "`L3/F5100`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 1867,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0089111328125,
+          "mean_direct_effect_a": 0.008457728794642858,
+          "mean_direct_effect_a_minus_an": -0.00045340401785714287,
+          "mean_direct_effect_future": 0.0026022366115025113,
+          "mean_activation": 176.57142857142858,
+          "mean_score": 0.0026022366115025113,
+          "label": "`L9/F1867`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 2070,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.024640764508928572,
+          "mean_direct_effect_a": 0.0250244140625,
+          "mean_direct_effect_a_minus_an": 0.00038364955357142856,
+          "mean_direct_effect_future": 0.001503263201032366,
+          "mean_activation": 21.142857142857142,
+          "mean_score": 0.001503263201032366,
+          "label": "`L1/F2070`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 4391,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.15437825520833334,
+          "mean_direct_effect_a": 0.18977864583333334,
+          "mean_direct_effect_a_minus_an": 0.035400390625,
+          "mean_direct_effect_future": 0.010701497395833334,
+          "mean_activation": 422.6666666666667,
+          "mean_score": 0.010701497395833334,
+          "label": "`L17/F4391`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1997,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.035359700520833336,
+          "mean_direct_effect_a": 0.035481770833333336,
+          "mean_direct_effect_a_minus_an": 0.0001220703125,
+          "mean_direct_effect_future": 0.00469207763671875,
+          "mean_activation": 210.66666666666666,
+          "mean_score": 0.00469207763671875,
+          "label": "`L13/F1997`"
+        },
+        {
+          "layer": 7,
+          "feature_idx": 9617,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0035807291666666665,
+          "mean_direct_effect_a": 0.00128173828125,
+          "mean_direct_effect_a_minus_an": -0.0022989908854166665,
+          "mean_direct_effect_future": 0.010467529296875,
+          "mean_activation": 180.33333333333334,
+          "mean_score": 0.0034383138020833335,
+          "label": "`L7/F9617`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 2097,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.1703125,
+          "mean_direct_effect_a": 0.06357421875,
+          "mean_direct_effect_a_minus_an": -0.10673828125,
+          "mean_direct_effect_future": 0.0161529541015625,
+          "mean_activation": 454.4,
+          "mean_score": 0.0161529541015625,
+          "label": "`L14/F2097`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 7859,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.10439453125,
+          "mean_direct_effect_a": 0.12412109375,
+          "mean_direct_effect_a_minus_an": 0.0197265625,
+          "mean_direct_effect_future": 0.00662841796875,
+          "mean_activation": 203.2,
+          "mean_score": 0.00662841796875,
+          "label": "`L14/F7859`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 455,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.080859375,
+          "mean_direct_effect_a": 0.07109375,
+          "mean_direct_effect_a_minus_an": -0.009765625,
+          "mean_direct_effect_future": 0.00168914794921875,
+          "mean_activation": 160.6,
+          "mean_score": 0.00168914794921875,
+          "label": "`L11/F455`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 6541,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0816650390625,
+          "mean_direct_effect_a": 0.07354736328125,
+          "mean_direct_effect_a_minus_an": -0.00811767578125,
+          "mean_direct_effect_future": 0.0604248046875,
+          "mean_activation": 294.0,
+          "mean_score": 0.0604248046875,
+          "label": "`L16/F6541`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 86,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.024505615234375,
+          "mean_direct_effect_a": 0.0218505859375,
+          "mean_direct_effect_a_minus_an": -0.002655029296875,
+          "mean_direct_effect_future": 0.003932952880859375,
+          "mean_activation": 97.75,
+          "mean_score": 0.003932952880859375,
+          "label": "`L11/F86`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 3012,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.06622314453125,
+          "mean_direct_effect_a": 0.0281982421875,
+          "mean_direct_effect_a_minus_an": -0.03802490234375,
+          "mean_direct_effect_future": 0.0035762786865234375,
+          "mean_activation": 110.25,
+          "mean_score": 0.0035762786865234375,
+          "label": "`L11/F3012`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 1070,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.003265380859375,
+          "mean_direct_effect_a": -0.0052642822265625,
+          "mean_direct_effect_a_minus_an": -0.0085296630859375,
+          "mean_direct_effect_future": 0.0023088455200195312,
+          "mean_activation": 134.0,
+          "mean_score": 0.0020799636840820312,
+          "label": "`L12/F1070`"
+        },
+        {
+          "layer": 18,
+          "feature_idx": 9440,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.302734375,
+          "mean_direct_effect_a": 0.12581380208333334,
+          "mean_direct_effect_a_minus_an": -0.17692057291666666,
+          "mean_direct_effect_future": 0.134765625,
+          "mean_activation": 944.0,
+          "mean_score": 0.134765625,
+          "label": "`L18/F9440`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 3868,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.067138671875,
+          "mean_direct_effect_a": 0.058186848958333336,
+          "mean_direct_effect_a_minus_an": -0.008951822916666666,
+          "mean_direct_effect_future": 0.038655598958333336,
+          "mean_activation": 151.33333333333334,
+          "mean_score": 0.038655598958333336,
+          "label": "`L8/F3868`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 40,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.046793619791666664,
+          "mean_direct_effect_a": 0.018473307291666668,
+          "mean_direct_effect_a_minus_an": -0.0283203125,
+          "mean_direct_effect_future": 0.029093424479166668,
+          "mean_activation": 176.0,
+          "mean_score": 0.029093424479166668,
+          "label": "`L16/F40`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 186,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.173828125,
+          "mean_direct_effect_a": 0.1494140625,
+          "mean_direct_effect_a_minus_an": -0.0244140625,
+          "mean_direct_effect_future": 0.024922688802083332,
+          "mean_activation": 104.66666666666667,
+          "mean_score": 0.024922688802083332,
+          "label": "`L15/F186`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 1227,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.036295572916666664,
+          "mean_direct_effect_a": 0.028238932291666668,
+          "mean_direct_effect_a_minus_an": -0.008056640625,
+          "mean_direct_effect_future": 0.021077473958333332,
+          "mean_activation": 138.0,
+          "mean_score": 0.021077473958333332,
+          "label": "`L8/F1227`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 5418,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.00677490234375,
+          "mean_direct_effect_a": 0.007436116536458333,
+          "mean_direct_effect_a_minus_an": 0.0006612141927083334,
+          "mean_direct_effect_future": 0.006673177083333333,
+          "mean_activation": 77.08333333333333,
+          "mean_score": 0.006205240885416667,
+          "label": "`L4/F5418`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 4686,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.009541829427083334,
+          "mean_direct_effect_a": 0.005106608072916667,
+          "mean_direct_effect_a_minus_an": -0.004435221354166667,
+          "mean_direct_effect_future": 0.004862467447916667,
+          "mean_activation": 70.0,
+          "mean_score": 0.004862467447916667,
+          "label": "`L6/F4686`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 7392,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.11555989583333333,
+          "mean_direct_effect_a": 0.09830729166666667,
+          "mean_direct_effect_a_minus_an": -0.017252604166666668,
+          "mean_direct_effect_future": 0.004731496175130208,
+          "mean_activation": 334.6666666666667,
+          "mean_score": 0.004731496175130208,
+          "label": "`L12/F7392`"
+        },
+        {
+          "layer": 21,
+          "feature_idx": 4304,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.13736979166666666,
+          "mean_direct_effect_a": -0.3821614583333333,
+          "mean_direct_effect_a_minus_an": -0.51953125,
+          "mean_direct_effect_future": 0.004526774088541667,
+          "mean_activation": 324.0,
+          "mean_score": 0.004526774088541667,
+          "label": "`L21/F4304`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 51,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.2916666666666667,
+          "mean_direct_effect_a": 0.18229166666666666,
+          "mean_direct_effect_a_minus_an": -0.109375,
+          "mean_direct_effect_future": 0.0035807291666666665,
+          "mean_activation": 274.6666666666667,
+          "mean_score": 0.0035807291666666665,
+          "label": "`L17/F51`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 3859,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.06412760416666667,
+          "mean_direct_effect_a": 0.051839192708333336,
+          "mean_direct_effect_a_minus_an": -0.012288411458333334,
+          "mean_direct_effect_future": 0.0021311442057291665,
+          "mean_activation": 327.3333333333333,
+          "mean_score": 0.0021311442057291665,
+          "label": "`L6/F3859`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 6167,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.12255859375,
+          "mean_direct_effect_a": 0.13541666666666666,
+          "mean_direct_effect_a_minus_an": 0.012858072916666666,
+          "mean_direct_effect_future": 0.00128173828125,
+          "mean_activation": 207.33333333333334,
+          "mean_score": 0.00128173828125,
+          "label": "`L13/F6167`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 9120,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.029459635416666668,
+          "mean_direct_effect_a": 0.030029296875,
+          "mean_direct_effect_a_minus_an": 0.0005696614583333334,
+          "mean_direct_effect_future": 0.0011545817057291667,
+          "mean_activation": 110.0,
+          "mean_score": 0.0011545817057291667,
+          "label": "`L6/F9120`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 5378,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.0010986328125,
+          "mean_direct_effect_a": -0.0157470703125,
+          "mean_direct_effect_a_minus_an": -0.016845703125,
+          "mean_direct_effect_future": 0.0027796427408854165,
+          "mean_activation": 594.6666666666666,
+          "mean_score": 0.0010986328125,
+          "label": "`L17/F5378`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 5979,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0615234375,
+          "mean_direct_effect_a": 0.055338541666666664,
+          "mean_direct_effect_a_minus_an": -0.006184895833333333,
+          "mean_direct_effect_future": 0.0009943644205729167,
+          "mean_activation": 97.66666666666667,
+          "mean_score": 0.0009943644205729167,
+          "label": "`L4/F5979`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 3517,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.106689453125,
+          "mean_direct_effect_a": 0.09765625,
+          "mean_direct_effect_a_minus_an": -0.009033203125,
+          "mean_direct_effect_future": 0.0631103515625,
+          "mean_activation": 648.0,
+          "mean_score": 0.0631103515625,
+          "label": "`L17/F3517`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 2897,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.03082275390625,
+          "mean_direct_effect_a": 0.103759765625,
+          "mean_direct_effect_a_minus_an": 0.07293701171875,
+          "mean_direct_effect_future": 0.0869140625,
+          "mean_activation": 636.0,
+          "mean_score": 0.03082275390625,
+          "label": "`L16/F2897`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 1022,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.0252685546875,
+          "mean_direct_effect_a": 0.02020263671875,
+          "mean_direct_effect_a_minus_an": -0.00506591796875,
+          "mean_direct_effect_future": 0.0267333984375,
+          "mean_activation": 129.0,
+          "mean_score": 0.024658203125,
+          "label": "`L14/F1022`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 3342,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0328369140625,
+          "mean_direct_effect_a": 0.03228759765625,
+          "mean_direct_effect_a_minus_an": -0.00054931640625,
+          "mean_direct_effect_future": 0.02008056640625,
+          "mean_activation": 41.5,
+          "mean_score": 0.02008056640625,
+          "label": "`L3/F3342`"
+        },
+        {
+          "layer": 19,
+          "feature_idx": 86,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.02752685546875,
+          "mean_direct_effect_a": 0.005950927734375,
+          "mean_direct_effect_a_minus_an": -0.021575927734375,
+          "mean_direct_effect_future": 0.016143798828125,
+          "mean_activation": 348.0,
+          "mean_score": 0.016143798828125,
+          "label": "`L19/F86`"
+        },
+        {
+          "layer": 19,
+          "feature_idx": 2610,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is"
+          ],
+          "mean_direct_effect_an": 0.076416015625,
+          "mean_direct_effect_a": 0.041015625,
+          "mean_direct_effect_a_minus_an": -0.035400390625,
+          "mean_direct_effect_future": 0.0159912109375,
+          "mean_activation": 338.0,
+          "mean_score": 0.0159912109375,
+          "label": "`L19/F2610`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 3150,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.038330078125,
+          "mean_direct_effect_a": 0.0384521484375,
+          "mean_direct_effect_a_minus_an": 0.0001220703125,
+          "mean_direct_effect_future": 0.00958251953125,
+          "mean_activation": 96.0,
+          "mean_score": 0.00958251953125,
+          "label": "`L13/F3150`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 3867,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.00909423828125,
+          "mean_direct_effect_a": 0.01519775390625,
+          "mean_direct_effect_a_minus_an": 0.006103515625,
+          "mean_direct_effect_future": 0.017425537109375,
+          "mean_activation": 255.0,
+          "mean_score": 0.00909423828125,
+          "label": "`L15/F3867`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 3352,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.1572265625,
+          "mean_direct_effect_a": 0.15576171875,
+          "mean_direct_effect_a_minus_an": -0.00146484375,
+          "mean_direct_effect_future": 0.0052642822265625,
+          "mean_activation": 196.0,
+          "mean_score": 0.0052642822265625,
+          "label": "`L8/F3352`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 485,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0147705078125,
+          "mean_direct_effect_a": 0.015472412109375,
+          "mean_direct_effect_a_minus_an": 0.000701904296875,
+          "mean_direct_effect_future": 0.0050506591796875,
+          "mean_activation": 125.75,
+          "mean_score": 0.0050506591796875,
+          "label": "`L9/F485`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 2262,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0308837890625,
+          "mean_direct_effect_a": 0.019561767578125,
+          "mean_direct_effect_a_minus_an": -0.011322021484375,
+          "mean_direct_effect_future": 0.0036449432373046875,
+          "mean_activation": 100.5,
+          "mean_score": 0.0036449432373046875,
+          "label": "`L9/F2262`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 337,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.03173828125,
+          "mean_direct_effect_a": 0.02838134765625,
+          "mean_direct_effect_a_minus_an": -0.00335693359375,
+          "mean_direct_effect_future": 0.0030364990234375,
+          "mean_activation": 80.0,
+          "mean_score": 0.0030364990234375,
+          "label": "`L9/F337`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 2310,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.025146484375,
+          "mean_direct_effect_a": 0.02349853515625,
+          "mean_direct_effect_a_minus_an": -0.00164794921875,
+          "mean_direct_effect_future": 0.002429962158203125,
+          "mean_activation": 42.75,
+          "mean_score": 0.002429962158203125,
+          "label": "`L4/F2310`"
+        }
+      ],
+      "selected_features": [
+        {
+          "layer": 18,
+          "feature_idx": 5015,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.080780029296875,
+          "mean_direct_effect_a": 0.0443267822265625,
+          "mean_direct_effect_a_minus_an": -0.0364532470703125,
+          "mean_direct_effect_future": 0.102813720703125,
+          "mean_activation": 361.0,
+          "mean_score": 0.078521728515625,
+          "label": "`L18/F5015`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 2289,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.071197509765625,
+          "mean_direct_effect_a": 0.080352783203125,
+          "mean_direct_effect_a_minus_an": 0.0091552734375,
+          "mean_direct_effect_future": 0.134033203125,
+          "mean_activation": 428.75,
+          "mean_score": 0.071197509765625,
+          "label": "`L15/F2289`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6600,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.054931640625,
+          "mean_direct_effect_a": 0.056365966796875,
+          "mean_direct_effect_a_minus_an": 0.001434326171875,
+          "mean_direct_effect_future": 0.04216766357421875,
+          "mean_activation": 258.75,
+          "mean_score": 0.03807830810546875,
+          "label": "`L15/F6600`"
+        },
+        {
+          "layer": 0,
+          "feature_idx": 4438,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14312744140625,
+          "mean_direct_effect_a": 0.1536865234375,
+          "mean_direct_effect_a_minus_an": 0.01055908203125,
+          "mean_direct_effect_future": 0.0325469970703125,
+          "mean_activation": 41.59375,
+          "mean_score": 0.0325469970703125,
+          "label": "`L0/F4438`"
+        }
+      ]
+    },
+    "S2_article_only": {
+      "set_id": "S2_article_only",
+      "label": "S2 Article-only",
+      "rule": "+attr(an), |attr(future)| near zero",
+      "fallback_used": false,
+      "ranked_features": [
+        {
+          "layer": 18,
+          "feature_idx": 8460,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.304931640625,
+          "mean_direct_effect_a": 0.472412109375,
+          "mean_direct_effect_a_minus_an": 0.16748046875,
+          "mean_direct_effect_future": 0.0159454345703125,
+          "mean_activation": 369.0,
+          "mean_score": 0.304931640625,
+          "label": "`L18/F8460`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 399,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.276611328125,
+          "mean_direct_effect_a": 0.2567138671875,
+          "mean_direct_effect_a_minus_an": -0.0198974609375,
+          "mean_direct_effect_future": -0.02040863037109375,
+          "mean_activation": 90.8125,
+          "mean_score": 0.276611328125,
+          "label": "`L1/F399`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 2097,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.155517578125,
+          "mean_direct_effect_a": 0.05841064453125,
+          "mean_direct_effect_a_minus_an": -0.09710693359375,
+          "mean_direct_effect_future": 0.0073337554931640625,
+          "mean_activation": 416.5,
+          "mean_score": 0.155517578125,
+          "label": "`L14/F2097`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 4391,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14923095703125,
+          "mean_direct_effect_a": 0.1829833984375,
+          "mean_direct_effect_a_minus_an": 0.03375244140625,
+          "mean_direct_effect_future": 0.007393836975097656,
+          "mean_activation": 409.5,
+          "mean_score": 0.14923095703125,
+          "label": "`L17/F4391`"
+        },
+        {
+          "layer": 0,
+          "feature_idx": 4438,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14312744140625,
+          "mean_direct_effect_a": 0.1536865234375,
+          "mean_direct_effect_a_minus_an": 0.01055908203125,
+          "mean_direct_effect_future": 0.0325469970703125,
+          "mean_activation": 41.59375,
+          "mean_score": 0.14312744140625,
+          "label": "`L0/F4438`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 6167,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.10968017578125,
+          "mean_direct_effect_a": 0.120574951171875,
+          "mean_direct_effect_a_minus_an": 0.010894775390625,
+          "mean_direct_effect_future": -0.001636505126953125,
+          "mean_activation": 185.5,
+          "mean_score": 0.10968017578125,
+          "label": "`L13/F6167`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 7392,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.1046142578125,
+          "mean_direct_effect_a": 0.0897216796875,
+          "mean_direct_effect_a_minus_an": -0.014892578125,
+          "mean_direct_effect_future": -0.002002239227294922,
+          "mean_activation": 304.0,
+          "mean_score": 0.1046142578125,
+          "label": "`L12/F7392`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 3598,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.10076904296875,
+          "mean_direct_effect_a": 0.10101318359375,
+          "mean_direct_effect_a_minus_an": 0.000244140625,
+          "mean_direct_effect_future": -0.0095977783203125,
+          "mean_activation": 168.5,
+          "mean_score": 0.10076904296875,
+          "label": "`L14/F3598`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 455,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.087158203125,
+          "mean_direct_effect_a": 0.07647705078125,
+          "mean_direct_effect_a_minus_an": -0.01068115234375,
+          "mean_direct_effect_future": -0.0007295608520507812,
+          "mean_activation": 172.875,
+          "mean_score": 0.087158203125,
+          "label": "`L11/F455`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 604,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.085357666015625,
+          "mean_direct_effect_a": 0.08447265625,
+          "mean_direct_effect_a_minus_an": -0.000885009765625,
+          "mean_direct_effect_future": -0.003322601318359375,
+          "mean_activation": 71.0,
+          "mean_score": 0.085357666015625,
+          "label": "`L4/F604`"
+        },
+        {
+          "layer": 20,
+          "feature_idx": 1884,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.06329345703125,
+          "mean_direct_effect_a": 0.00887298583984375,
+          "mean_direct_effect_a_minus_an": -0.05442047119140625,
+          "mean_direct_effect_future": -0.00395965576171875,
+          "mean_activation": 324.5,
+          "mean_score": 0.06329345703125,
+          "label": "`L20/F1884`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 6085,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.063140869140625,
+          "mean_direct_effect_a": 0.017425537109375,
+          "mean_direct_effect_a_minus_an": -0.04571533203125,
+          "mean_direct_effect_future": -0.0261993408203125,
+          "mean_activation": 254.25,
+          "mean_score": 0.063140869140625,
+          "label": "`L12/F6085`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 8249,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.060516357421875,
+          "mean_direct_effect_a": 0.09967041015625,
+          "mean_direct_effect_a_minus_an": 0.039154052734375,
+          "mean_direct_effect_future": 0.007648468017578125,
+          "mean_activation": 159.75,
+          "mean_score": 0.060516357421875,
+          "label": "`L13/F8249`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 3859,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.055419921875,
+          "mean_direct_effect_a": 0.044952392578125,
+          "mean_direct_effect_a_minus_an": -0.010467529296875,
+          "mean_direct_effect_future": -0.0037021636962890625,
+          "mean_activation": 285.0,
+          "mean_score": 0.055419921875,
+          "label": "`L6/F3859`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 4789,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.037017822265625,
+          "mean_direct_effect_a": 0.0455780029296875,
+          "mean_direct_effect_a_minus_an": 0.0085601806640625,
+          "mean_direct_effect_future": 0.01816558837890625,
+          "mean_activation": 143.5,
+          "mean_score": 0.037017822265625,
+          "label": "`L3/F4789`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 728,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.033416748046875,
+          "mean_direct_effect_a": 0.0320892333984375,
+          "mean_direct_effect_a_minus_an": -0.0013275146484375,
+          "mean_direct_effect_future": -0.003185272216796875,
+          "mean_activation": 103.3125,
+          "mean_score": 0.033416748046875,
+          "label": "`L6/F728`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1997,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0333099365234375,
+          "mean_direct_effect_a": 0.0334625244140625,
+          "mean_direct_effect_a_minus_an": 0.000152587890625,
+          "mean_direct_effect_future": 0.0022640228271484375,
+          "mean_activation": 199.75,
+          "mean_score": 0.0333099365234375,
+          "label": "`L13/F1997`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 4933,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0331878662109375,
+          "mean_direct_effect_a": 0.0290069580078125,
+          "mean_direct_effect_a_minus_an": -0.004180908203125,
+          "mean_direct_effect_future": -0.009304046630859375,
+          "mean_activation": 133.875,
+          "mean_score": 0.0331878662109375,
+          "label": "`L6/F4933`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 9120,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0305023193359375,
+          "mean_direct_effect_a": 0.0310821533203125,
+          "mean_direct_effect_a_minus_an": 0.000579833984375,
+          "mean_direct_effect_future": -0.0004124641418457031,
+          "mean_activation": 112.0,
+          "mean_score": 0.0305023193359375,
+          "label": "`L6/F9120`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 3316,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.01505279541015625,
+          "mean_direct_effect_a": 0.01519012451171875,
+          "mean_direct_effect_a_minus_an": 0.0001373291015625,
+          "mean_direct_effect_future": -0.008416175842285156,
+          "mean_activation": 228.75,
+          "mean_score": 0.01505279541015625,
+          "label": "`L11/F3316`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 6100,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.01123809814453125,
+          "mean_direct_effect_a": 0.0179290771484375,
+          "mean_direct_effect_a_minus_an": 0.00669097900390625,
+          "mean_direct_effect_future": 0.006076812744140625,
+          "mean_activation": 250.0,
+          "mean_score": 0.01123809814453125,
+          "label": "`L9/F6100`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 1867,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0091094970703125,
+          "mean_direct_effect_a": 0.008575439453125,
+          "mean_direct_effect_a_minus_an": -0.0005340576171875,
+          "mean_direct_effect_future": 0.0021739602088928223,
+          "mean_activation": 178.0,
+          "mean_score": 0.0091094970703125,
+          "label": "`L9/F1867`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 5100,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.002422332763671875,
+          "mean_direct_effect_a": 0.00214385986328125,
+          "mean_direct_effect_a_minus_an": -0.000278472900390625,
+          "mean_direct_effect_future": 0.0038585662841796875,
+          "mean_activation": 61.25,
+          "mean_score": 0.002422332763671875,
+          "label": "`L3/F5100`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 5378,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0010223388671875,
+          "mean_direct_effect_a": -0.01324462890625,
+          "mean_direct_effect_a_minus_an": -0.0142669677734375,
+          "mean_direct_effect_future": -0.0035696029663085938,
+          "mean_activation": 511.0,
+          "mean_score": 0.0010223388671875,
+          "label": "`L17/F5378`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 2594,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.080078125,
+          "mean_direct_effect_a": 0.07484654017857142,
+          "mean_direct_effect_a_minus_an": -0.005231584821428571,
+          "mean_direct_effect_future": 0.0034931727818080355,
+          "mean_activation": 136.71428571428572,
+          "mean_score": 0.080078125,
+          "label": "`L13/F2594`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 5979,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.060337611607142856,
+          "mean_direct_effect_a": 0.05430385044642857,
+          "mean_direct_effect_a_minus_an": -0.006033761160714286,
+          "mean_direct_effect_future": -0.00026484898158482144,
+          "mean_activation": 96.14285714285714,
+          "mean_score": 0.060337611607142856,
+          "label": "`L4/F5979`"
+        },
+        {
+          "layer": 2,
+          "feature_idx": 2783,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.048374720982142856,
+          "mean_direct_effect_a": 0.04404994419642857,
+          "mean_direct_effect_a_minus_an": -0.004324776785714286,
+          "mean_direct_effect_future": -0.00023869105747767856,
+          "mean_activation": 39.714285714285715,
+          "mean_score": 0.048374720982142856,
+          "label": "`L2/F2783`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 2070,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.024640764508928572,
+          "mean_direct_effect_a": 0.0250244140625,
+          "mean_direct_effect_a_minus_an": 0.00038364955357142856,
+          "mean_direct_effect_future": 0.001503263201032366,
+          "mean_activation": 21.142857142857142,
+          "mean_score": 0.024640764508928572,
+          "label": "`L1/F2070`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 2671,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.020908900669642856,
+          "mean_direct_effect_a": 0.015433175223214286,
+          "mean_direct_effect_a_minus_an": -0.005475725446428571,
+          "mean_direct_effect_future": -0.002455847603934152,
+          "mean_activation": 132.5,
+          "mean_score": 0.020908900669642856,
+          "label": "`L9/F2671`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 1070,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.002986363002232143,
+          "mean_direct_effect_a": -0.004839215959821429,
+          "mean_direct_effect_a_minus_an": -0.007825578962053572,
+          "mean_direct_effect_future": -0.000736236572265625,
+          "mean_activation": 123.85714285714286,
+          "mean_score": 0.002986363002232143,
+          "label": "`L12/F1070`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 7859,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.108642578125,
+          "mean_direct_effect_a": 0.129150390625,
+          "mean_direct_effect_a_minus_an": 0.0205078125,
+          "mean_direct_effect_future": 0.004862467447916667,
+          "mean_activation": 209.33333333333334,
+          "mean_score": 0.108642578125,
+          "label": "`L14/F7859`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6600,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.052083333333333336,
+          "mean_direct_effect_a": 0.053426106770833336,
+          "mean_direct_effect_a_minus_an": 0.0013427734375,
+          "mean_direct_effect_future": 0.029612223307291668,
+          "mean_activation": 242.33333333333334,
+          "mean_score": 0.052083333333333336,
+          "label": "`L15/F6600`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 976,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.008982340494791666,
+          "mean_direct_effect_a": -0.013397216796875,
+          "mean_direct_effect_a_minus_an": -0.022379557291666668,
+          "mean_direct_effect_future": -0.0008805592854817709,
+          "mean_activation": 137.33333333333334,
+          "mean_score": 0.008982340494791666,
+          "label": "`L15/F976`"
+        },
+        {
+          "layer": 7,
+          "feature_idx": 9617,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0035807291666666665,
+          "mean_direct_effect_a": 0.00128173828125,
+          "mean_direct_effect_a_minus_an": -0.0022989908854166665,
+          "mean_direct_effect_future": 0.010467529296875,
+          "mean_activation": 180.33333333333334,
+          "mean_score": 0.0035807291666666665,
+          "label": "`L7/F9617`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 51,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.276953125,
+          "mean_direct_effect_a": 0.173046875,
+          "mean_direct_effect_a_minus_an": -0.10390625,
+          "mean_direct_effect_future": 0.001177978515625,
+          "mean_activation": 261.6,
+          "mean_score": 0.276953125,
+          "label": "`L17/F51`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 3012,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.0640625,
+          "mean_direct_effect_a": 0.0271728515625,
+          "mean_direct_effect_a_minus_an": -0.0368896484375,
+          "mean_direct_effect_future": 0.00206146240234375,
+          "mean_activation": 108.0,
+          "mean_score": 0.0640625,
+          "label": "`L11/F3012`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 1909,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0393310546875,
+          "mean_direct_effect_a": 0.042529296875,
+          "mean_direct_effect_a_minus_an": 0.0031982421875,
+          "mean_direct_effect_future": -0.00615234375,
+          "mean_activation": 121.2,
+          "mean_score": 0.0393310546875,
+          "label": "`L11/F1909`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 3352,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.143798828125,
+          "mean_direct_effect_a": 0.1424560546875,
+          "mean_direct_effect_a_minus_an": -0.0013427734375,
+          "mean_direct_effect_future": 0.0020952224731445312,
+          "mean_activation": 181.0,
+          "mean_score": 0.143798828125,
+          "label": "`L8/F3352`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 34,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.0582275390625,
+          "mean_direct_effect_a": 0.0850830078125,
+          "mean_direct_effect_a_minus_an": 0.02685546875,
+          "mean_direct_effect_future": -0.0050182342529296875,
+          "mean_activation": 117.0,
+          "mean_score": 0.0582275390625,
+          "label": "`L14/F34`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 86,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.024505615234375,
+          "mean_direct_effect_a": 0.0218505859375,
+          "mean_direct_effect_a_minus_an": -0.002655029296875,
+          "mean_direct_effect_future": 0.003932952880859375,
+          "mean_activation": 97.75,
+          "mean_score": 0.024505615234375,
+          "label": "`L11/F86`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 3898,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0167083740234375,
+          "mean_direct_effect_a": 0.020477294921875,
+          "mean_direct_effect_a_minus_an": 0.0037689208984375,
+          "mean_direct_effect_future": -0.007869720458984375,
+          "mean_activation": 80.25,
+          "mean_score": 0.0167083740234375,
+          "label": "`L4/F3898`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5309,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.0138092041015625,
+          "mean_direct_effect_a": 0.014007568359375,
+          "mean_direct_effect_a_minus_an": 0.0001983642578125,
+          "mean_direct_effect_future": -1.811981201171875e-05,
+          "mean_activation": 107.0,
+          "mean_score": 0.0138092041015625,
+          "label": "`L11/F5309`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 4,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.00341796875,
+          "mean_direct_effect_a": -0.005523681640625,
+          "mean_direct_effect_a_minus_an": -0.008941650390625,
+          "mean_direct_effect_future": -0.0020599365234375,
+          "mean_activation": 120.5,
+          "mean_score": 0.00341796875,
+          "label": "`L13/F4`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 8504,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.00213623046875,
+          "mean_direct_effect_a": 0.00347900390625,
+          "mean_direct_effect_a_minus_an": 0.0013427734375,
+          "mean_direct_effect_future": -0.001556396484375,
+          "mean_activation": 81.375,
+          "mean_score": 0.00213623046875,
+          "label": "`L6/F8504`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 186,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.173828125,
+          "mean_direct_effect_a": 0.1494140625,
+          "mean_direct_effect_a_minus_an": -0.0244140625,
+          "mean_direct_effect_future": 0.024922688802083332,
+          "mean_activation": 104.66666666666667,
+          "mean_score": 0.173828125,
+          "label": "`L15/F186`"
+        },
+        {
+          "layer": 21,
+          "feature_idx": 4304,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.13736979166666666,
+          "mean_direct_effect_a": -0.3821614583333333,
+          "mean_direct_effect_a_minus_an": -0.51953125,
+          "mean_direct_effect_future": 0.004526774088541667,
+          "mean_activation": 324.0,
+          "mean_score": 0.13736979166666666,
+          "label": "`L21/F4304`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 2942,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.07088216145833333,
+          "mean_direct_effect_a": 0.067626953125,
+          "mean_direct_effect_a_minus_an": -0.0032552083333333335,
+          "mean_direct_effect_future": -0.0022074381510416665,
+          "mean_activation": 144.0,
+          "mean_score": 0.07088216145833333,
+          "label": "`L14/F2942`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 3868,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.067138671875,
+          "mean_direct_effect_a": 0.058186848958333336,
+          "mean_direct_effect_a_minus_an": -0.008951822916666666,
+          "mean_direct_effect_future": 0.038655598958333336,
+          "mean_activation": 151.33333333333334,
+          "mean_score": 0.067138671875,
+          "label": "`L8/F3868`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 40,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.046793619791666664,
+          "mean_direct_effect_a": 0.018473307291666668,
+          "mean_direct_effect_a_minus_an": -0.0283203125,
+          "mean_direct_effect_future": 0.029093424479166668,
+          "mean_activation": 176.0,
+          "mean_score": 0.046793619791666664,
+          "label": "`L16/F40`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 1227,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.036295572916666664,
+          "mean_direct_effect_a": 0.028238932291666668,
+          "mean_direct_effect_a_minus_an": -0.008056640625,
+          "mean_direct_effect_future": 0.021077473958333332,
+          "mean_activation": 138.0,
+          "mean_score": 0.036295572916666664,
+          "label": "`L8/F1227`"
+        }
+      ],
+      "selected_features": [
+        {
+          "layer": 18,
+          "feature_idx": 8460,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.304931640625,
+          "mean_direct_effect_a": 0.472412109375,
+          "mean_direct_effect_a_minus_an": 0.16748046875,
+          "mean_direct_effect_future": 0.0159454345703125,
+          "mean_activation": 369.0,
+          "mean_score": 0.304931640625,
+          "label": "`L18/F8460`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 399,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.276611328125,
+          "mean_direct_effect_a": 0.2567138671875,
+          "mean_direct_effect_a_minus_an": -0.0198974609375,
+          "mean_direct_effect_future": -0.02040863037109375,
+          "mean_activation": 90.8125,
+          "mean_score": 0.276611328125,
+          "label": "`L1/F399`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 2097,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.155517578125,
+          "mean_direct_effect_a": 0.05841064453125,
+          "mean_direct_effect_a_minus_an": -0.09710693359375,
+          "mean_direct_effect_future": 0.0073337554931640625,
+          "mean_activation": 416.5,
+          "mean_score": 0.155517578125,
+          "label": "`L14/F2097`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 4391,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14923095703125,
+          "mean_direct_effect_a": 0.1829833984375,
+          "mean_direct_effect_a_minus_an": 0.03375244140625,
+          "mean_direct_effect_future": 0.007393836975097656,
+          "mean_activation": 409.5,
+          "mean_score": 0.14923095703125,
+          "label": "`L17/F4391`"
+        }
+      ]
+    },
+    "S3_content_only": {
+      "set_id": "S3_content_only",
+      "label": "S3 Content-only",
+      "rule": "+attr(future), |attr(an)| near zero",
+      "fallback_used": false,
+      "ranked_features": [
+        {
+          "layer": 11,
+          "feature_idx": 1082,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.00756072998046875,
+          "mean_direct_effect_a": -0.01810455322265625,
+          "mean_direct_effect_a_minus_an": -0.0105438232421875,
+          "mean_direct_effect_future": 0.010105133056640625,
+          "mean_activation": 216.375,
+          "mean_score": 0.010105133056640625,
+          "label": "`L11/F1082`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 8388,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0038604736328125,
+          "mean_direct_effect_a": 0.0037841796875,
+          "mean_direct_effect_a_minus_an": 0.0076446533203125,
+          "mean_direct_effect_future": 0.008214950561523438,
+          "mean_activation": 303.0,
+          "mean_score": 0.008214950561523438,
+          "label": "`L8/F8388`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 4789,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.03498186383928571,
+          "mean_direct_effect_a": 0.04295131138392857,
+          "mean_direct_effect_a_minus_an": 0.007969447544642858,
+          "mean_direct_effect_future": 0.016156877790178572,
+          "mean_activation": 134.28571428571428,
+          "mean_score": 0.016156877790178572,
+          "label": "`L3/F4789`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 6100,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.011500767299107142,
+          "mean_direct_effect_a": 0.018380301339285716,
+          "mean_direct_effect_a_minus_an": 0.006879534040178571,
+          "mean_direct_effect_future": 0.006962367466517857,
+          "mean_activation": 256.0,
+          "mean_score": 0.006962367466517857,
+          "label": "`L9/F6100`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 113,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0115966796875,
+          "mean_direct_effect_a": -0.012102399553571428,
+          "mean_direct_effect_a_minus_an": -0.0005057198660714286,
+          "mean_direct_effect_future": 0.006029401506696429,
+          "mean_activation": 280.2857142857143,
+          "mean_score": 0.006029401506696429,
+          "label": "`L14/F113`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 5100,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0026070731026785715,
+          "mean_direct_effect_a": 0.0023280552455357145,
+          "mean_direct_effect_a_minus_an": -0.00027901785714285713,
+          "mean_direct_effect_future": 0.004558018275669643,
+          "mean_activation": 64.42857142857143,
+          "mean_score": 0.004558018275669643,
+          "label": "`L3/F5100`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 1867,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0089111328125,
+          "mean_direct_effect_a": 0.008457728794642858,
+          "mean_direct_effect_a_minus_an": -0.00045340401785714287,
+          "mean_direct_effect_future": 0.0026022366115025113,
+          "mean_activation": 176.57142857142858,
+          "mean_score": 0.0026022366115025113,
+          "label": "`L9/F1867`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 2070,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.024640764508928572,
+          "mean_direct_effect_a": 0.0250244140625,
+          "mean_direct_effect_a_minus_an": 0.00038364955357142856,
+          "mean_direct_effect_future": 0.001503263201032366,
+          "mean_activation": 21.142857142857142,
+          "mean_score": 0.001503263201032366,
+          "label": "`L1/F2070`"
+        },
+        {
+          "layer": 7,
+          "feature_idx": 9617,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0035807291666666665,
+          "mean_direct_effect_a": 0.00128173828125,
+          "mean_direct_effect_a_minus_an": -0.0022989908854166665,
+          "mean_direct_effect_future": 0.010467529296875,
+          "mean_activation": 180.33333333333334,
+          "mean_score": 0.010467529296875,
+          "label": "`L7/F9617`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1997,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.035359700520833336,
+          "mean_direct_effect_a": 0.035481770833333336,
+          "mean_direct_effect_a_minus_an": 0.0001220703125,
+          "mean_direct_effect_future": 0.00469207763671875,
+          "mean_activation": 210.66666666666666,
+          "mean_score": 0.00469207763671875,
+          "label": "`L13/F1997`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 363,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": -0.028173828125,
+          "mean_direct_effect_a": -0.01790771484375,
+          "mean_direct_effect_a_minus_an": 0.01026611328125,
+          "mean_direct_effect_future": 0.0082672119140625,
+          "mean_activation": 69.8,
+          "mean_score": 0.0082672119140625,
+          "label": "`L13/F363`"
+        },
+        {
+          "layer": 2,
+          "feature_idx": 6962,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.040283203125,
+          "mean_direct_effect_a": -0.03505859375,
+          "mean_direct_effect_a_minus_an": 0.005224609375,
+          "mean_direct_effect_future": 0.006683349609375,
+          "mean_activation": 79.95,
+          "mean_score": 0.006683349609375,
+          "label": "`L2/F6962`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5346,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.00174713134765625,
+          "mean_direct_effect_a": 0.03240966796875,
+          "mean_direct_effect_a_minus_an": 0.03415679931640625,
+          "mean_direct_effect_future": 0.075286865234375,
+          "mean_activation": 554.0,
+          "mean_score": 0.075286865234375,
+          "label": "`L16/F5346`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 86,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.024505615234375,
+          "mean_direct_effect_a": 0.0218505859375,
+          "mean_direct_effect_a_minus_an": -0.002655029296875,
+          "mean_direct_effect_future": 0.003932952880859375,
+          "mean_activation": 97.75,
+          "mean_score": 0.003932952880859375,
+          "label": "`L11/F86`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 1070,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.003265380859375,
+          "mean_direct_effect_a": -0.0052642822265625,
+          "mean_direct_effect_a_minus_an": -0.0085296630859375,
+          "mean_direct_effect_future": 0.0023088455200195312,
+          "mean_activation": 134.0,
+          "mean_score": 0.0023088455200195312,
+          "label": "`L12/F1070`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6600,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.036783854166666664,
+          "mean_direct_effect_a": 0.037434895833333336,
+          "mean_direct_effect_a_minus_an": 0.0006510416666666666,
+          "mean_direct_effect_future": 0.021952311197916668,
+          "mean_activation": 170.66666666666666,
+          "mean_score": 0.021952311197916668,
+          "label": "`L15/F6600`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 1227,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.036295572916666664,
+          "mean_direct_effect_a": 0.028238932291666668,
+          "mean_direct_effect_a_minus_an": -0.008056640625,
+          "mean_direct_effect_future": 0.021077473958333332,
+          "mean_activation": 138.0,
+          "mean_score": 0.021077473958333332,
+          "label": "`L8/F1227`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 5418,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.00677490234375,
+          "mean_direct_effect_a": 0.007436116536458333,
+          "mean_direct_effect_a_minus_an": 0.0006612141927083334,
+          "mean_direct_effect_future": 0.006673177083333333,
+          "mean_activation": 77.08333333333333,
+          "mean_score": 0.006673177083333333,
+          "label": "`L4/F5418`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 4686,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.009541829427083334,
+          "mean_direct_effect_a": 0.005106608072916667,
+          "mean_direct_effect_a_minus_an": -0.004435221354166667,
+          "mean_direct_effect_future": 0.004862467447916667,
+          "mean_activation": 70.0,
+          "mean_score": 0.004862467447916667,
+          "label": "`L6/F4686`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 5378,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.0010986328125,
+          "mean_direct_effect_a": -0.0157470703125,
+          "mean_direct_effect_a_minus_an": -0.016845703125,
+          "mean_direct_effect_future": 0.0027796427408854165,
+          "mean_activation": 594.6666666666666,
+          "mean_score": 0.0027796427408854165,
+          "label": "`L17/F5378`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 580,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": -0.035074869791666664,
+          "mean_direct_effect_a": -0.0325927734375,
+          "mean_direct_effect_a_minus_an": 0.0024820963541666665,
+          "mean_direct_effect_future": 0.0021336873372395835,
+          "mean_activation": 95.25,
+          "mean_score": 0.0021336873372395835,
+          "label": "`L13/F580`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 9120,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.029459635416666668,
+          "mean_direct_effect_a": 0.030029296875,
+          "mean_direct_effect_a_minus_an": 0.0005696614583333334,
+          "mean_direct_effect_future": 0.0011545817057291667,
+          "mean_activation": 110.0,
+          "mean_score": 0.0011545817057291667,
+          "label": "`L6/F9120`"
+        },
+        {
+          "layer": 10,
+          "feature_idx": 1406,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.026774088541666668,
+          "mean_direct_effect_a": -0.035074869791666664,
+          "mean_direct_effect_a_minus_an": -0.00830078125,
+          "mean_direct_effect_future": 0.000438690185546875,
+          "mean_activation": 91.83333333333333,
+          "mean_score": 0.000438690185546875,
+          "label": "`L10/F1406`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 9313,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": -0.02764892578125,
+          "mean_direct_effect_a": -0.007049560546875,
+          "mean_direct_effect_a_minus_an": 0.020599365234375,
+          "mean_direct_effect_future": 0.119384765625,
+          "mean_activation": 418.0,
+          "mean_score": 0.119384765625,
+          "label": "`L16/F9313`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5915,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": -0.019134521484375,
+          "mean_direct_effect_a": -0.0401611328125,
+          "mean_direct_effect_a_minus_an": -0.021026611328125,
+          "mean_direct_effect_future": 0.1171875,
+          "mean_activation": 440.0,
+          "mean_score": 0.1171875,
+          "label": "`L16/F5915`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 2897,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.03082275390625,
+          "mean_direct_effect_a": 0.103759765625,
+          "mean_direct_effect_a_minus_an": 0.07293701171875,
+          "mean_direct_effect_future": 0.0869140625,
+          "mean_activation": 636.0,
+          "mean_score": 0.0869140625,
+          "label": "`L16/F2897`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5144,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": -0.015106201171875,
+          "mean_direct_effect_a": -0.00634765625,
+          "mean_direct_effect_a_minus_an": 0.008758544921875,
+          "mean_direct_effect_future": 0.03765869140625,
+          "mean_activation": 200.0,
+          "mean_score": 0.03765869140625,
+          "label": "`L16/F5144`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 2514,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": -0.02032470703125,
+          "mean_direct_effect_a": -0.003570556640625,
+          "mean_direct_effect_a_minus_an": 0.016754150390625,
+          "mean_direct_effect_future": 0.02947998046875,
+          "mean_activation": 242.0,
+          "mean_score": 0.02947998046875,
+          "label": "`L16/F2514`"
+        },
+        {
+          "layer": 18,
+          "feature_idx": 5015,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is"
+          ],
+          "mean_direct_effect_an": 0.0369873046875,
+          "mean_direct_effect_a": 0.02032470703125,
+          "mean_direct_effect_a_minus_an": -0.01666259765625,
+          "mean_direct_effect_future": 0.0279541015625,
+          "mean_activation": 166.0,
+          "mean_score": 0.0279541015625,
+          "label": "`L18/F5015`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 1022,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.0252685546875,
+          "mean_direct_effect_a": 0.02020263671875,
+          "mean_direct_effect_a_minus_an": -0.00506591796875,
+          "mean_direct_effect_future": 0.0267333984375,
+          "mean_activation": 129.0,
+          "mean_score": 0.0267333984375,
+          "label": "`L14/F1022`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 3342,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0328369140625,
+          "mean_direct_effect_a": 0.03228759765625,
+          "mean_direct_effect_a_minus_an": -0.00054931640625,
+          "mean_direct_effect_future": 0.02008056640625,
+          "mean_activation": 41.5,
+          "mean_score": 0.02008056640625,
+          "label": "`L3/F3342`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 3867,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.00909423828125,
+          "mean_direct_effect_a": 0.01519775390625,
+          "mean_direct_effect_a_minus_an": 0.006103515625,
+          "mean_direct_effect_future": 0.017425537109375,
+          "mean_activation": 255.0,
+          "mean_score": 0.017425537109375,
+          "label": "`L15/F3867`"
+        },
+        {
+          "layer": 19,
+          "feature_idx": 86,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.02752685546875,
+          "mean_direct_effect_a": 0.005950927734375,
+          "mean_direct_effect_a_minus_an": -0.021575927734375,
+          "mean_direct_effect_future": 0.016143798828125,
+          "mean_activation": 348.0,
+          "mean_score": 0.016143798828125,
+          "label": "`L19/F86`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 3150,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.038330078125,
+          "mean_direct_effect_a": 0.0384521484375,
+          "mean_direct_effect_a_minus_an": 0.0001220703125,
+          "mean_direct_effect_future": 0.00958251953125,
+          "mean_activation": 96.0,
+          "mean_score": 0.00958251953125,
+          "label": "`L13/F3150`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 6588,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": -0.015838623046875,
+          "mean_direct_effect_a": -0.00823974609375,
+          "mean_direct_effect_a_minus_an": 0.007598876953125,
+          "mean_direct_effect_future": 0.00743865966796875,
+          "mean_activation": 101.0,
+          "mean_score": 0.00743865966796875,
+          "label": "`L8/F6588`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 485,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0147705078125,
+          "mean_direct_effect_a": 0.015472412109375,
+          "mean_direct_effect_a_minus_an": 0.000701904296875,
+          "mean_direct_effect_future": 0.0050506591796875,
+          "mean_activation": 125.75,
+          "mean_score": 0.0050506591796875,
+          "label": "`L9/F485`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 1757,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is"
+          ],
+          "mean_direct_effect_an": -0.0194091796875,
+          "mean_direct_effect_a": -0.02069091796875,
+          "mean_direct_effect_a_minus_an": -0.00128173828125,
+          "mean_direct_effect_future": 0.0040130615234375,
+          "mean_activation": 143.5,
+          "mean_score": 0.0040130615234375,
+          "label": "`L9/F1757`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 2262,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0308837890625,
+          "mean_direct_effect_a": 0.019561767578125,
+          "mean_direct_effect_a_minus_an": -0.011322021484375,
+          "mean_direct_effect_future": 0.0036449432373046875,
+          "mean_activation": 100.5,
+          "mean_score": 0.0036449432373046875,
+          "label": "`L9/F2262`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 337,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.03173828125,
+          "mean_direct_effect_a": 0.02838134765625,
+          "mean_direct_effect_a_minus_an": -0.00335693359375,
+          "mean_direct_effect_future": 0.0030364990234375,
+          "mean_activation": 80.0,
+          "mean_score": 0.0030364990234375,
+          "label": "`L9/F337`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6665,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0367431640625,
+          "mean_direct_effect_a": -0.0274658203125,
+          "mean_direct_effect_a_minus_an": 0.00927734375,
+          "mean_direct_effect_future": 0.0026702880859375,
+          "mean_activation": 192.0,
+          "mean_score": 0.0026702880859375,
+          "label": "`L15/F6665`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 2310,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.025146484375,
+          "mean_direct_effect_a": 0.02349853515625,
+          "mean_direct_effect_a_minus_an": -0.00164794921875,
+          "mean_direct_effect_future": 0.002429962158203125,
+          "mean_activation": 42.75,
+          "mean_score": 0.002429962158203125,
+          "label": "`L4/F2310`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 2657,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": -0.0267333984375,
+          "mean_direct_effect_a": -0.03228759765625,
+          "mean_direct_effect_a_minus_an": -0.00555419921875,
+          "mean_direct_effect_future": 0.001766204833984375,
+          "mean_activation": 92.25,
+          "mean_score": 0.001766204833984375,
+          "label": "`L9/F2657`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5309,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.01312255859375,
+          "mean_direct_effect_a": 0.01336669921875,
+          "mean_direct_effect_a_minus_an": 0.000244140625,
+          "mean_direct_effect_future": 0.001651763916015625,
+          "mean_activation": 95.5,
+          "mean_score": 0.001651763916015625,
+          "label": "`L11/F5309`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 9677,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": -0.04443359375,
+          "mean_direct_effect_a": -0.0494384765625,
+          "mean_direct_effect_a_minus_an": -0.0050048828125,
+          "mean_direct_effect_future": 0.0016078948974609375,
+          "mean_activation": 21.25,
+          "mean_score": 0.0016078948974609375,
+          "label": "`L1/F9677`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 360,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": -0.00677490234375,
+          "mean_direct_effect_a": -0.0043792724609375,
+          "mean_direct_effect_a_minus_an": 0.0023956298828125,
+          "mean_direct_effect_future": 0.001224517822265625,
+          "mean_activation": 59.0,
+          "mean_score": 0.001224517822265625,
+          "label": "`L6/F360`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 4518,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": -0.011749267578125,
+          "mean_direct_effect_a": -0.012603759765625,
+          "mean_direct_effect_a_minus_an": -0.0008544921875,
+          "mean_direct_effect_future": 0.0004372596740722656,
+          "mean_activation": 108.5,
+          "mean_score": 0.0004372596740722656,
+          "label": "`L11/F4518`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 712,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0076446533203125,
+          "mean_direct_effect_a": -0.0052337646484375,
+          "mean_direct_effect_a_minus_an": 0.002410888671875,
+          "mean_direct_effect_future": 0.000263214111328125,
+          "mean_activation": 89.25,
+          "mean_score": 0.000263214111328125,
+          "label": "`L11/F712`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5285,
+          "prompt_count": 1,
+          "prompts": [
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.009765625,
+          "mean_direct_effect_a": 0.001220703125,
+          "mean_direct_effect_a_minus_an": 0.010986328125,
+          "mean_direct_effect_future": 0.189453125,
+          "mean_activation": 440.0,
+          "mean_score": 0.189453125,
+          "label": "`L16/F5285`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 8306,
+          "prompt_count": 1,
+          "prompts": [
+            "Someone who designs buildings and structures is"
+          ],
+          "mean_direct_effect_an": 0.033935546875,
+          "mean_direct_effect_a": 0.0556640625,
+          "mean_direct_effect_a_minus_an": 0.021728515625,
+          "mean_direct_effect_future": 0.138671875,
+          "mean_activation": 512.0,
+          "mean_score": 0.138671875,
+          "label": "`L17/F8306`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 2289,
+          "prompt_count": 1,
+          "prompts": [
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.035400390625,
+          "mean_direct_effect_a": 0.040771484375,
+          "mean_direct_effect_a_minus_an": 0.00537109375,
+          "mean_direct_effect_future": 0.0810546875,
+          "mean_activation": 206.0,
+          "mean_score": 0.0810546875,
+          "label": "`L15/F2289`"
+        }
+      ],
+      "selected_features": [
+        {
+          "layer": 11,
+          "feature_idx": 1082,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.00756072998046875,
+          "mean_direct_effect_a": -0.01810455322265625,
+          "mean_direct_effect_a_minus_an": -0.0105438232421875,
+          "mean_direct_effect_future": 0.010105133056640625,
+          "mean_activation": 216.375,
+          "mean_score": 0.010105133056640625,
+          "label": "`L11/F1082`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 8388,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0038604736328125,
+          "mean_direct_effect_a": 0.0037841796875,
+          "mean_direct_effect_a_minus_an": 0.0076446533203125,
+          "mean_direct_effect_future": 0.008214950561523438,
+          "mean_activation": 303.0,
+          "mean_score": 0.008214950561523438,
+          "label": "`L8/F8388`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 4789,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.03498186383928571,
+          "mean_direct_effect_a": 0.04295131138392857,
+          "mean_direct_effect_a_minus_an": 0.007969447544642858,
+          "mean_direct_effect_future": 0.016156877790178572,
+          "mean_activation": 134.28571428571428,
+          "mean_score": 0.016156877790178572,
+          "label": "`L3/F4789`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 6100,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.011500767299107142,
+          "mean_direct_effect_a": 0.018380301339285716,
+          "mean_direct_effect_a_minus_an": 0.006879534040178571,
+          "mean_direct_effect_future": 0.006962367466517857,
+          "mean_activation": 256.0,
+          "mean_score": 0.006962367466517857,
+          "label": "`L9/F6100`"
+        }
+      ]
+    },
+    "S4_competing_a": {
+      "set_id": "S4_competing_a",
+      "label": "S4 Competing / a-favoring",
+      "rule": "+attr(a-an), |attr(future)| near zero",
+      "fallback_used": false,
+      "ranked_features": [
+        {
+          "layer": 17,
+          "feature_idx": 6057,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -2.1259765625,
+          "mean_direct_effect_a": -1.17041015625,
+          "mean_direct_effect_a_minus_an": 0.95556640625,
+          "mean_direct_effect_future": -0.029937744140625,
+          "mean_activation": 2107.0,
+          "mean_score": 0.95556640625,
+          "label": "`L17/F6057`"
+        },
+        {
+          "layer": 18,
+          "feature_idx": 8460,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.304931640625,
+          "mean_direct_effect_a": 0.472412109375,
+          "mean_direct_effect_a_minus_an": 0.16748046875,
+          "mean_direct_effect_future": 0.0159454345703125,
+          "mean_activation": 369.0,
+          "mean_score": 0.16748046875,
+          "label": "`L18/F8460`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 8249,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.060516357421875,
+          "mean_direct_effect_a": 0.09967041015625,
+          "mean_direct_effect_a_minus_an": 0.039154052734375,
+          "mean_direct_effect_future": 0.007648468017578125,
+          "mean_activation": 159.75,
+          "mean_score": 0.039154052734375,
+          "label": "`L13/F8249`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 4391,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14923095703125,
+          "mean_direct_effect_a": 0.1829833984375,
+          "mean_direct_effect_a_minus_an": 0.03375244140625,
+          "mean_direct_effect_future": 0.007393836975097656,
+          "mean_activation": 409.5,
+          "mean_score": 0.03375244140625,
+          "label": "`L17/F4391`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 9138,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.05462646484375,
+          "mean_direct_effect_a": -0.0428009033203125,
+          "mean_direct_effect_a_minus_an": 0.0118255615234375,
+          "mean_direct_effect_future": 0.0014934539794921875,
+          "mean_activation": 235.875,
+          "mean_score": 0.0118255615234375,
+          "label": "`L13/F9138`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 6167,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.10968017578125,
+          "mean_direct_effect_a": 0.120574951171875,
+          "mean_direct_effect_a_minus_an": 0.010894775390625,
+          "mean_direct_effect_future": -0.001636505126953125,
+          "mean_activation": 185.5,
+          "mean_score": 0.010894775390625,
+          "label": "`L13/F6167`"
+        },
+        {
+          "layer": 0,
+          "feature_idx": 4438,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14312744140625,
+          "mean_direct_effect_a": 0.1536865234375,
+          "mean_direct_effect_a_minus_an": 0.01055908203125,
+          "mean_direct_effect_future": 0.0325469970703125,
+          "mean_activation": 41.59375,
+          "mean_score": 0.01055908203125,
+          "label": "`L0/F4438`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 4789,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.037017822265625,
+          "mean_direct_effect_a": 0.0455780029296875,
+          "mean_direct_effect_a_minus_an": 0.0085601806640625,
+          "mean_direct_effect_future": 0.01816558837890625,
+          "mean_activation": 143.5,
+          "mean_score": 0.0085601806640625,
+          "label": "`L3/F4789`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 8388,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0038604736328125,
+          "mean_direct_effect_a": 0.0037841796875,
+          "mean_direct_effect_a_minus_an": 0.0076446533203125,
+          "mean_direct_effect_future": 0.008214950561523438,
+          "mean_activation": 303.0,
+          "mean_score": 0.0076446533203125,
+          "label": "`L8/F8388`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 6100,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.01123809814453125,
+          "mean_direct_effect_a": 0.0179290771484375,
+          "mean_direct_effect_a_minus_an": 0.00669097900390625,
+          "mean_direct_effect_future": 0.006076812744140625,
+          "mean_activation": 250.0,
+          "mean_score": 0.00669097900390625,
+          "label": "`L9/F6100`"
+        },
+        {
+          "layer": 2,
+          "feature_idx": 6962,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.047210693359375,
+          "mean_direct_effect_a": -0.041229248046875,
+          "mean_direct_effect_a_minus_an": 0.0059814453125,
+          "mean_direct_effect_future": 0.0068817138671875,
+          "mean_activation": 92.84375,
+          "mean_score": 0.0059814453125,
+          "label": "`L2/F6962`"
+        },
+        {
+          "layer": 12,
+          "feature_idx": 255,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0726318359375,
+          "mean_direct_effect_a": -0.0679931640625,
+          "mean_direct_effect_a_minus_an": 0.004638671875,
+          "mean_direct_effect_future": -0.021484375,
+          "mean_activation": 379.0,
+          "mean_score": 0.004638671875,
+          "label": "`L12/F255`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 7252,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.01953125,
+          "mean_direct_effect_a": -0.0170745849609375,
+          "mean_direct_effect_a_minus_an": 0.0024566650390625,
+          "mean_direct_effect_future": -0.01788330078125,
+          "mean_activation": 167.25,
+          "mean_score": 0.0024566650390625,
+          "label": "`L13/F7252`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 9977,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.1751708984375,
+          "mean_direct_effect_a": -0.173095703125,
+          "mean_direct_effect_a_minus_an": 0.0020751953125,
+          "mean_direct_effect_future": -0.0053119659423828125,
+          "mean_activation": 109.375,
+          "mean_score": 0.0020751953125,
+          "label": "`L1/F9977`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 580,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0311126708984375,
+          "mean_direct_effect_a": -0.0292510986328125,
+          "mean_direct_effect_a_minus_an": 0.001861572265625,
+          "mean_direct_effect_future": -0.00173187255859375,
+          "mean_activation": 87.0,
+          "mean_score": 0.001861572265625,
+          "label": "`L13/F580`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 9120,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0305023193359375,
+          "mean_direct_effect_a": 0.0310821533203125,
+          "mean_direct_effect_a_minus_an": 0.000579833984375,
+          "mean_direct_effect_future": -0.0004124641418457031,
+          "mean_activation": 112.0,
+          "mean_score": 0.000579833984375,
+          "label": "`L6/F9120`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 363,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.037632533482142856,
+          "mean_direct_effect_a": -0.02374267578125,
+          "mean_direct_effect_a_minus_an": 0.013889857700892858,
+          "mean_direct_effect_future": 0.014048985072544642,
+          "mean_activation": 93.57142857142857,
+          "mean_score": 0.013889857700892858,
+          "label": "`L13/F363`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 6860,
+          "prompt_count": 7,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": -0.021920340401785716,
+          "mean_direct_effect_a": -0.015816824776785716,
+          "mean_direct_effect_a_minus_an": 0.006103515625,
+          "mean_direct_effect_future": -0.00673675537109375,
+          "mean_activation": 117.42857142857143,
+          "mean_score": 0.006103515625,
+          "label": "`L6/F6860`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 7859,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.108642578125,
+          "mean_direct_effect_a": 0.129150390625,
+          "mean_direct_effect_a_minus_an": 0.0205078125,
+          "mean_direct_effect_future": 0.004862467447916667,
+          "mean_activation": 209.33333333333334,
+          "mean_score": 0.0205078125,
+          "label": "`L14/F7859`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 240,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.015889485677083332,
+          "mean_direct_effect_a": -0.011861165364583334,
+          "mean_direct_effect_a_minus_an": 0.0040283203125,
+          "mean_direct_effect_future": -0.004918416341145833,
+          "mean_activation": 50.916666666666664,
+          "mean_score": 0.0040283203125,
+          "label": "`L6/F240`"
+        },
+        {
+          "layer": 3,
+          "feature_idx": 1075,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.016977945963541668,
+          "mean_direct_effect_a": -0.014790852864583334,
+          "mean_direct_effect_a_minus_an": 0.0021870930989583335,
+          "mean_direct_effect_future": -0.014394124348958334,
+          "mean_activation": 44.416666666666664,
+          "mean_score": 0.0021870930989583335,
+          "label": "`L3/F1075`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6600,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.052083333333333336,
+          "mean_direct_effect_a": 0.053426106770833336,
+          "mean_direct_effect_a_minus_an": 0.0013427734375,
+          "mean_direct_effect_future": 0.029612223307291668,
+          "mean_activation": 242.33333333333334,
+          "mean_score": 0.0013427734375,
+          "label": "`L15/F6600`"
+        },
+        {
+          "layer": 1,
+          "feature_idx": 2070,
+          "prompt_count": 6,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.025044759114583332,
+          "mean_direct_effect_a": 0.025492350260416668,
+          "mean_direct_effect_a_minus_an": 0.0004475911458333333,
+          "mean_direct_effect_future": 0.0016241073608398438,
+          "mean_activation": 21.666666666666668,
+          "mean_score": 0.0004475911458333333,
+          "label": "`L1/F2070`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 1909,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0393310546875,
+          "mean_direct_effect_a": 0.042529296875,
+          "mean_direct_effect_a_minus_an": 0.0031982421875,
+          "mean_direct_effect_future": -0.00615234375,
+          "mean_activation": 121.2,
+          "mean_score": 0.0031982421875,
+          "label": "`L11/F1909`"
+        },
+        {
+          "layer": 2,
+          "feature_idx": 7672,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.008599853515625,
+          "mean_direct_effect_a": -0.006622314453125,
+          "mean_direct_effect_a_minus_an": 0.0019775390625,
+          "mean_direct_effect_future": -0.0059326171875,
+          "mean_activation": 23.725,
+          "mean_score": 0.0019775390625,
+          "label": "`L2/F7672`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 3316,
+          "prompt_count": 5,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.01378173828125,
+          "mean_direct_effect_a": 0.01448974609375,
+          "mean_direct_effect_a_minus_an": 0.0007080078125,
+          "mean_direct_effect_future": -0.008868408203125,
+          "mean_activation": 211.6,
+          "mean_score": 0.0007080078125,
+          "label": "`L11/F3316`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 34,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.0582275390625,
+          "mean_direct_effect_a": 0.0850830078125,
+          "mean_direct_effect_a_minus_an": 0.02685546875,
+          "mean_direct_effect_future": -0.0050182342529296875,
+          "mean_activation": 117.0,
+          "mean_score": 0.02685546875,
+          "label": "`L14/F34`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 3898,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0167083740234375,
+          "mean_direct_effect_a": 0.020477294921875,
+          "mean_direct_effect_a_minus_an": 0.0037689208984375,
+          "mean_direct_effect_future": -0.007869720458984375,
+          "mean_activation": 80.25,
+          "mean_score": 0.0037689208984375,
+          "label": "`L4/F3898`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 8504,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who studies financial systems and markets is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.00213623046875,
+          "mean_direct_effect_a": 0.00347900390625,
+          "mean_direct_effect_a_minus_an": 0.0013427734375,
+          "mean_direct_effect_future": -0.001556396484375,
+          "mean_activation": 81.375,
+          "mean_score": 0.0013427734375,
+          "label": "`L6/F8504`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 3598,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.0811767578125,
+          "mean_direct_effect_a": 0.0821533203125,
+          "mean_direct_effect_a_minus_an": 0.0009765625,
+          "mean_direct_effect_future": -0.00994110107421875,
+          "mean_activation": 137.0,
+          "mean_score": 0.0009765625,
+          "label": "`L14/F3598`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1997,
+          "prompt_count": 4,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.031585693359375,
+          "mean_direct_effect_a": 0.0322265625,
+          "mean_direct_effect_a_minus_an": 0.000640869140625,
+          "mean_direct_effect_future": 0.002002716064453125,
+          "mean_activation": 194.0,
+          "mean_score": 0.000640869140625,
+          "label": "`L13/F1997`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 6665,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs and builds technical systems is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.036865234375,
+          "mean_direct_effect_a": -0.027506510416666668,
+          "mean_direct_effect_a_minus_an": 0.009358723958333334,
+          "mean_direct_effect_future": 0.0008392333984375,
+          "mean_activation": 190.66666666666666,
+          "mean_score": 0.009358723958333334,
+          "label": "`L15/F6665`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 712,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0072021484375,
+          "mean_direct_effect_a": -0.004903157552083333,
+          "mean_direct_effect_a_minus_an": 0.0022989908854166665,
+          "mean_direct_effect_future": -0.00014495849609375,
+          "mean_activation": 83.5,
+          "mean_score": 0.0022989908854166665,
+          "label": "`L11/F712`"
+        },
+        {
+          "layer": 4,
+          "feature_idx": 5418,
+          "prompt_count": 3,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": 0.00677490234375,
+          "mean_direct_effect_a": 0.007436116536458333,
+          "mean_direct_effect_a_minus_an": 0.0006612141927083334,
+          "mean_direct_effect_future": 0.006673177083333333,
+          "mean_activation": 77.08333333333333,
+          "mean_score": 0.0006612141927083334,
+          "label": "`L4/F5418`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5346,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 4.57763671875e-05,
+          "mean_direct_effect_a": 0.019775390625,
+          "mean_direct_effect_a_minus_an": 0.0197296142578125,
+          "mean_direct_effect_future": 0.02655029296875,
+          "mean_activation": 332.0,
+          "mean_score": 0.0197296142578125,
+          "label": "`L16/F5346`"
+        },
+        {
+          "layer": 16,
+          "feature_idx": 2514,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who studies financial systems and markets is"
+          ],
+          "mean_direct_effect_an": -0.02032470703125,
+          "mean_direct_effect_a": -0.003570556640625,
+          "mean_direct_effect_a_minus_an": 0.016754150390625,
+          "mean_direct_effect_future": 0.02947998046875,
+          "mean_activation": 242.0,
+          "mean_score": 0.016754150390625,
+          "label": "`L16/F2514`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 4742,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is"
+          ],
+          "mean_direct_effect_an": 0.031982421875,
+          "mean_direct_effect_a": 0.0399169921875,
+          "mean_direct_effect_a_minus_an": 0.0079345703125,
+          "mean_direct_effect_future": -0.000766754150390625,
+          "mean_activation": 154.0,
+          "mean_score": 0.0079345703125,
+          "label": "`L14/F4742`"
+        },
+        {
+          "layer": 20,
+          "feature_idx": 5111,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.09765625,
+          "mean_direct_effect_a": 0.10546875,
+          "mean_direct_effect_a_minus_an": 0.0078125,
+          "mean_direct_effect_future": -0.003631591796875,
+          "mean_activation": 592.0,
+          "mean_score": 0.0078125,
+          "label": "`L20/F5111`"
+        },
+        {
+          "layer": 8,
+          "feature_idx": 6588,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": -0.015838623046875,
+          "mean_direct_effect_a": -0.00823974609375,
+          "mean_direct_effect_a_minus_an": 0.007598876953125,
+          "mean_direct_effect_future": 0.00743865966796875,
+          "mean_activation": 101.0,
+          "mean_score": 0.007598876953125,
+          "label": "`L8/F6588`"
+        },
+        {
+          "layer": 15,
+          "feature_idx": 3867,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": 0.00909423828125,
+          "mean_direct_effect_a": 0.01519775390625,
+          "mean_direct_effect_a_minus_an": 0.006103515625,
+          "mean_direct_effect_future": 0.017425537109375,
+          "mean_activation": 255.0,
+          "mean_score": 0.006103515625,
+          "label": "`L15/F3867`"
+        },
+        {
+          "layer": 10,
+          "feature_idx": 5893,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who studies financial systems and markets is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0018157958984375,
+          "mean_direct_effect_a": 0.0027313232421875,
+          "mean_direct_effect_a_minus_an": 0.004547119140625,
+          "mean_direct_effect_future": -0.001453399658203125,
+          "mean_activation": 105.75,
+          "mean_score": 0.004547119140625,
+          "label": "`L10/F5893`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 9902,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who manages financial records is"
+          ],
+          "mean_direct_effect_an": -0.03173828125,
+          "mean_direct_effect_a": -0.02813720703125,
+          "mean_direct_effect_a_minus_an": 0.00360107421875,
+          "mean_direct_effect_future": -0.0058135986328125,
+          "mean_activation": 90.0,
+          "mean_score": 0.00360107421875,
+          "label": "`L13/F9902`"
+        },
+        {
+          "layer": 7,
+          "feature_idx": 2678,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs buildings and structures is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": -0.005096435546875,
+          "mean_direct_effect_a": -0.002655029296875,
+          "mean_direct_effect_a_minus_an": 0.00244140625,
+          "mean_direct_effect_future": -0.002086639404296875,
+          "mean_activation": 93.0,
+          "mean_score": 0.00244140625,
+          "label": "`L7/F2678`"
+        },
+        {
+          "layer": 6,
+          "feature_idx": 360,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is"
+          ],
+          "mean_direct_effect_an": -0.00677490234375,
+          "mean_direct_effect_a": -0.0043792724609375,
+          "mean_direct_effect_a_minus_an": 0.0023956298828125,
+          "mean_direct_effect_future": 0.001224517822265625,
+          "mean_activation": 59.0,
+          "mean_score": 0.0023956298828125,
+          "label": "`L6/F360`"
+        },
+        {
+          "layer": 14,
+          "feature_idx": 113,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who designs and builds technical systems is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.015106201171875,
+          "mean_direct_effect_a": -0.01397705078125,
+          "mean_direct_effect_a_minus_an": 0.001129150390625,
+          "mean_direct_effect_future": 0.00732421875,
+          "mean_activation": 322.0,
+          "mean_score": 0.001129150390625,
+          "label": "`L14/F113`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 485,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0147705078125,
+          "mean_direct_effect_a": 0.015472412109375,
+          "mean_direct_effect_a_minus_an": 0.000701904296875,
+          "mean_direct_effect_future": 0.0050506591796875,
+          "mean_activation": 125.75,
+          "mean_score": 0.000701904296875,
+          "label": "`L9/F485`"
+        },
+        {
+          "layer": 11,
+          "feature_idx": 5309,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is"
+          ],
+          "mean_direct_effect_an": 0.015594482421875,
+          "mean_direct_effect_a": 0.01605224609375,
+          "mean_direct_effect_a_minus_an": 0.000457763671875,
+          "mean_direct_effect_future": -0.0001983642578125,
+          "mean_activation": 117.0,
+          "mean_score": 0.000457763671875,
+          "label": "`L11/F5309`"
+        },
+        {
+          "layer": 9,
+          "feature_idx": 1048,
+          "prompt_count": 2,
+          "prompts": [
+            "Someone who manages financial records is",
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": 0.0076904296875,
+          "mean_direct_effect_a": 0.00799560546875,
+          "mean_direct_effect_a_minus_an": 0.00030517578125,
+          "mean_direct_effect_future": -0.006500244140625,
+          "mean_activation": 84.0,
+          "mean_score": 0.00030517578125,
+          "label": "`L9/F1048`"
+        },
+        {
+          "layer": 21,
+          "feature_idx": 2328,
+          "prompt_count": 1,
+          "prompts": [
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -0.0145263671875,
+          "mean_direct_effect_a": 0.032470703125,
+          "mean_direct_effect_a_minus_an": 0.0469970703125,
+          "mean_direct_effect_future": 0.0128173828125,
+          "mean_activation": 160.0,
+          "mean_score": 0.0469970703125,
+          "label": "`L21/F2328`"
+        },
+        {
+          "layer": 22,
+          "feature_idx": 3144,
+          "prompt_count": 1,
+          "prompts": [
+            "Someone who administers anesthesia during surgery is"
+          ],
+          "mean_direct_effect_an": -0.033447265625,
+          "mean_direct_effect_a": 0.012451171875,
+          "mean_direct_effect_a_minus_an": 0.0458984375,
+          "mean_direct_effect_future": -0.0030517578125,
+          "mean_activation": 238.0,
+          "mean_score": 0.0458984375,
+          "label": "`L22/F3144`"
+        }
+      ],
+      "selected_features": [
+        {
+          "layer": 17,
+          "feature_idx": 6057,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": -2.1259765625,
+          "mean_direct_effect_a": -1.17041015625,
+          "mean_direct_effect_a_minus_an": 0.95556640625,
+          "mean_direct_effect_future": -0.029937744140625,
+          "mean_activation": 2107.0,
+          "mean_score": 0.95556640625,
+          "label": "`L17/F6057`"
+        },
+        {
+          "layer": 18,
+          "feature_idx": 8460,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.304931640625,
+          "mean_direct_effect_a": 0.472412109375,
+          "mean_direct_effect_a_minus_an": 0.16748046875,
+          "mean_direct_effect_future": 0.0159454345703125,
+          "mean_activation": 369.0,
+          "mean_score": 0.16748046875,
+          "label": "`L18/F8460`"
+        },
+        {
+          "layer": 13,
+          "feature_idx": 8249,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.060516357421875,
+          "mean_direct_effect_a": 0.09967041015625,
+          "mean_direct_effect_a_minus_an": 0.039154052734375,
+          "mean_direct_effect_future": 0.007648468017578125,
+          "mean_activation": 159.75,
+          "mean_score": 0.039154052734375,
+          "label": "`L13/F8249`"
+        },
+        {
+          "layer": 17,
+          "feature_idx": 4391,
+          "prompt_count": 8,
+          "prompts": [
+            "Someone who installs and repairs electrical systems is",
+            "Someone who designs buildings and structures is",
+            "Someone who manages financial records is",
+            "Someone who designs and builds technical systems is",
+            "Someone who studies financial systems and markets is",
+            "Someone who administers anesthesia during surgery is",
+            "Someone who treats cancer patients is",
+            "Someone who studies stars and planets is"
+          ],
+          "mean_direct_effect_an": 0.14923095703125,
+          "mean_direct_effect_a": 0.1829833984375,
+          "mean_direct_effect_a_minus_an": 0.03375244140625,
+          "mean_direct_effect_future": 0.007393836975097656,
+          "mean_activation": 409.5,
+          "mean_score": 0.03375244140625,
+          "label": "`L17/F4391`"
+        }
+      ]
+    }
+  }
+}

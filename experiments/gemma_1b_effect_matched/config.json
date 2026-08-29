@@ -1,0 +1,33 @@
+{
+  "experiment_name": "gemma_1b_effect_matched",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "transcoder_set": "mwhanna/gemma-scope-2-1b-pt/clt/width_262k_l0_medium_affine",
+  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-1b-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-1b-pt/snapshots/b738dc06961818c011fb2e44a316352ca0f4e873",
+  "backend": "nnsight",
+  "dtype": "bfloat16",
+  "stream_transcoder_load": true,
+  "selection_path": "../gemma_1b_sparse_scale/results/selection.json",
+  "selection_config_path": "../gemma_1b_sparse_scale/config.json",
+  "e1_config_path": "../gemma_1b_sparse_scale/config.json",
+  "e1_selection_path": "../gemma_1b_sparse_scale/results/selection.json",
+  "e1_summary_path": "../gemma_1b_sparse_scale/results/summary.json",
+  "graph_dir": "../gemma_1b_sparse_scale/results/graphs",
+  "demonstration": "Someone who studies living organisms is a biologist.",
+  "k_values": [4, 8, 16, 32],
+  "gain_values": [2.0, 5.0, 10.0, 20.0],
+  "target_mean_margin_movement": 3.3125,
+  "minimum_acceptable_margin_movement": 3.0,
+  "temperatures": [0.1, 0.25, 0.5, 1.0],
+  "top_k": 10,
+  "candidate_top_k": 20,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260829,
+  "max_new_tokens": 4,
+  "runs": [
+    {"id": "S1_original_top4_5x", "feature_set": "S1_dual_effect", "amplify_factor": 5.0, "use_control_features": false},
+    {"id": "S1_margin_top24_20x", "feature_set": "S1_margin_dual_effect", "amplify_factor": 20.0,
+     "ranked_features_path": "results/margin_ranked_features.json", "feature_count": 24}
+  ]
+}

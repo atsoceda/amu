@@ -1,7 +1,10 @@
 # Limitations
 
-Claims are scoped to Gemma 3 270M, one dictionary and task, and lexical
-rather than semantic outcomes. Greedy results are supplemented by exact
+The primary sparse-relay claim is scoped to Gemma 3 270M, one dictionary and
+task, and lexical rather than semantic outcomes. Gemma 3 1B supplies an
+exploratory sparse steerability audit and a matched natural-residual
+replication; it does not supply an identified sparse transmission phenotype.
+Greedy results are supplemented by exact
 two-article stochastic mixtures, not unrestricted vocabulary sampling. S1 was
 attribution-selected and amplified by up to \(5\times\), so we decompose
 this handle rather than a unique ontology; large gain may be off-manifold.
@@ -18,8 +21,12 @@ subthreshold: private-route capacity, not a sparse plan. All 12 pairs are
 consonant-native, so inserted `an` is mismatched for both alternatives.
 Layer selection uses four development pairs. The interaction shows
 article-prefix compatibility, not a meaningful allocation trade-off.
-Scale, model-family, task, sampling, and prompt-controlled route
-allocation remain open.
+Model-family, task, sampling, and prompt-controlled route allocation remain
+open. The effect-matched 1B coalition uses 24 features at \(20\times\), often
+pushes `a/an` below other tokens, and is therefore off-manifold or
+mediator-invalid for the intended channel comparison. All 1B selection graphs
+hit the 1,200-node cap (mean selected/active ratio 0.608), so unequal graph
+coverage remains a plausible contributor to sparse-selection failure.
 
 The float32 audit casts only the final normalization and unembedding; it
 does not rerun the transformer or CLT in float32. Natural residual patches
@@ -27,8 +34,8 @@ are full-state transplants selected at one pooled development layer. They
 show private target influence but no article change, so they do not
 establish causal allocation or a public/private regime switch. The
 32-feature attribution calibration has adequate resolution for moderate
-monotone effects, not proof of zero association, and its intervention gain
-remains \(5\times\).
+monotone effects, not proof of zero association; its bootstrap intervals are
+wide for downstream outcomes, and its intervention gain remains \(5\times\).
 
 **Ethics.** This public-model study uses synthetic prompts and no human or
 personal data. We mitigate overclaiming through scoped conclusions and

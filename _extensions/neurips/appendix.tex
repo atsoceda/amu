@@ -61,6 +61,9 @@ L5/F383 matched-null controls & \texttt{l5\_fixed\_token\_matched\_null/} \\
 Pre-article public/private factorial & \texttt{pre\_article\_public\_private\_factorial/} \\
 Natural residual carrier regimes & \texttt{natural\_residual\_carrier\_regimes/} \\
 Attribution-to-channel calibration & \texttt{attribution\_channel\_calibration/} \\
+Gemma 1B sparse selection baseline & \texttt{gemma\_1b\_sparse\_scale/} \\
+Gemma 1B effect-matched diagnostics/six-cell & \texttt{gemma\_1b\_effect\_matched/} \\
+Gemma 270M--1B natural residual comparison & \texttt{gemma\_1b\_residual\_scale/} \\
 Independent headline reproduction & \texttt{headline\_reproduction/} \\
 Cross-token propagation diagnostic & \texttt{s1\_propagation\_diagnostics/} \\
 Held-out full-residual reference & \texttt{fixed\_article\_residual\_reference/} \\
@@ -75,6 +78,17 @@ Environment: conda Python with PyPI \texttt{circuit-tracer} 0.5.0, NNsight
 snapshot \texttt{b218cd5d69dc2fa71cff448b68d625e6c9702d49}. Experiments ran
 on one Apple M1 (16~GB RAM) workstation with CPU inference; attribution
 runs dominate wall-clock time (typically tens of minutes per graph).
+The 1B model snapshot is
+\texttt{fcf18a2a879aab110ca39f8bffbccd5d49d8eb29}; its Gemma Scope 2 PT
+CLT snapshot is \texttt{b738dc06961818c011fb2e44a316352ca0f4e873}.
+The 16 1B selection graphs all reached the 1,200-node cap, with mean 1,981.5
+active features and mean selected/active fraction 0.608. The top-four 1B S1
+features are L18/F5015, L15/F2289, L15/F6600, and L0/F4438; the frozen
+effect-matched coalition is the first 24 entries in
+\texttt{gemma\_1b\_effect\_matched/results/margin\_ranked\_features.json}.
+Per-prompt activations, decoder norms, selection scores, baselines, graph
+coverage, development sweep, held-out efficacy, six-cell rows, runtimes, and
+raw stochastic decompositions are machine-readable in those directories.
 
 \noindent\textbf{Assets and licenses.}
 Gemma 3 weights are used under the Gemma Terms of Use

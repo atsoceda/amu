@@ -132,6 +132,20 @@ article-margin movement, free-path total TV, token-substitution TV,
 matched-prefix leftover TV, and mean fixed-article TV. Selection and test
 occupations remain disjoint.
 
+**Cross-scale sparse and residual assays.** On Gemma 3 1B PT with the matched
+affine Gemma Scope 2 CLT, we first repeat the frozen top-four, \(5\times\)
+selection recipe. We then diagnose the first stage on the eight development
+occupations using \(k\in\{4,8,16,24\}\) and gains
+\(g\in\{2,5,10,20\}\). A corrected dual-effect ranking requires positive
+attribution to the `an`-minus-`a` margin and to the future noun. We freeze the
+smallest development operating point reaching mean margin movement 3.0 logits;
+this selects \(k=24,g=20\), close to the 270M S1 reference of 3.3125. The 20
+held-out prompts then receive the complete six-cell assay. We separately repeat
+the natural residual protocol without a CLT: all-layer selection on eight
+development pairs, then 12 cross-class and 12 same-class held-out pairs at
+strengths \(0.5,1,1.5\). Stochastic decompositions condition the article
+policy on `a`/`an` at temperatures \(0.1,0.25,0.5,1\).
+
 **Uncertainty.** Primary intervals are prompt-level nonparametric
 bootstrap intervals with 10,000 resamples. The 19 prompts on which S1
 \(5\times\) changes the article are labeled descriptive. The article-position

@@ -189,26 +189,79 @@ effect decomposes into target-logit enhancement (\(+0.526\) cross-class;
 (\(-0.250\) and \(-0.125\)). Target probability rises in both regimes,
 while total occupation-vocabulary mass does not reliably increase.
 
-Crucially, the natural patch changes the article on 0/12 pairs in either
-regime. Consequently token-substitution TV is zero and all observed
-free-path TV---\(0.049\) cross-class and \(0.059\) same-class---survives token
-fixing. This strengthens the evidence for a natural private route, but it
+Crucially, the natural patch changes the greedy article on 0/12 pairs in either
+regime. Under greedy decoding, token-substitution TV is therefore zero and the
+observed free-path TV---\(0.049\) cross-class and \(0.059\) same-class---survives
+token fixing. The stochastic audit qualifies this statement: at
+\(\tau=0.1\), public TV is 0.002 cross-class and 0.000 same-class, but at
+\(\tau=1\) it rises to 0.063 and 0.059 while private TV remains 0.049 and
+0.064. The patch is private-dominant under low-temperature article policies,
+not exclusively private under every policy. This strengthens the evidence for
+a natural private route, but it
 does **not** reveal prompting regimes that reallocate causal state between
 public and private carriers. Same versus cross article class changes
 effect size, not channel identity (@fig-natural-regimes).
 
-![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes, outperform wrong-target and matched-norm controls, but never change the article.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
+![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes and outperform wrong-target and matched-norm controls; no greedy article switch occurs.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
 
 ## Attribution predicts local efficacy, not transmission channel
 
 Across 32 features selected on disjoint occupations, article attribution
-predicts the induced article-margin change (Spearman \(\rho=0.530\),
-two-sided permutation \(p=0.0021\)). It does not predict total TV
-(\(\rho=-0.105\)), token-substitution TV (\(-0.176\)), treated-token
-leftover TV (\(-0.052\)), or mean fixed-token TV (\(0.026\)); future-noun
-attribution likewise predicts none of these interventional outcomes
-(all \(|\rho|\le0.178\), all \(p\ge0.323\)). Attribution is calibrated for
-the local contrast it scores, but does not by itself classify whether a
-later effect will use the public or private route (@fig-attribution-calibration).
+predicts induced article-margin change (Spearman \(\rho=0.530\), bootstrap
+95\% CI \([0.200,0.772]\)); leave-one-feature-out estimates span
+\([0.483,0.594]\), largest-effect exclusion gives \(0.483\), and partial
+rank correlation controlling layer, activation, and decoder norm is
+\(0.560\). For total TV, token-substitution TV, treated-token leftover TV,
+and mean fixed-article TV, the bootstrap intervals all include zero (point
+estimates \(-0.105,-0.176,-0.052,0.026\)). Outlier exclusion, leave-one-out
+analysis, covariate adjustment, and conditioning on above-median realized
+article movement do not reveal a stable monotone channel association; article
+attribution also has boundary-crossing AUC 0.382. We therefore report **no
+detectable monotone channel association in this 32-feature experiment**, not a
+general impossibility result (@fig-attribution-calibration).
 
 ![Held-out calibration of attribution scores against causal outcomes. Article attribution predicts local article-margin movement but not downstream public or private channel strength.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=88%}
+
+## Scale separates sparse steerability from private residual capacity
+
+The frozen 1B top-four/\(5\times\) S1 recipe fails the first stage: on held-out
+prompts it moves the `an`-minus-`a` margin by only 0.075 logits on average and
+crosses toward `an` on 1/20 prompts. The original selection label is also
+miscalibrated to the contrast: it requires positive attribution to `an`, not to
+`an` minus `a`, and several features raise both article logits.
+
+Development-only margin calibration repairs the binary contrast. The frozen
+top-24/\(20\times\) coalition moves the development margin by 3.461 logits and
+the held-out margin by 3.488, closely matching 270M S1. But it fails mediator
+specificity: `a` or `an` remains the top token on only 3/20 held-out prompts;
+17/20 instead begin with alternatives such as `called`. Fixed branches show
+matched-prefix TV 0.097 \([0.069,0.127]\) under inserted `a` and 0.266
+\([0.147,0.394]\) under inserted `an`, but the intended public-token split is
+identified on only two prompts whose off/on free mediators are both articles.
+We therefore do not assign this sparse intervention a 1B transmission
+phenotype.
+
+| Model/intervention | Local efficacy | Mediator validity | Identified channel |
+| --- | ---: | ---: | --- |
+| 270M S1, top-4/\(5\times\) | 3.313-logit mean margin movement | `a/an` 20/20 | Public-relay dominant |
+| 1B original S1, top-4/\(5\times\) | 0.075 | `a/an` 20/20 | Not identified: weak handle |
+| 1B margin S1, top-24/\(20\times\) | 3.488 | `a/an` 3/20 | Not identified: mediator-invalid |
+| 1B natural residual, native strength | target \(\Delta\Delta=0.846/1.312\) | fixed visible article | Private target influence |
+
+: Local efficacy and channel identification are sequential requirements.
+Cross-/same-class natural-residual values are separated by a slash.
+{#tbl-cross-scale-stage}
+
+The natural residual comparison supplies the valid 1B private assay. A pooled
+development sweep selects layer 14/25 (relative depth 0.56). At natural
+strength, held-out target \(\Delta\Delta\) is 0.846 cross-class and 1.312
+same-class, compared with 0.776 and 0.964 at 270M; target top-1 rises only to
+0/12 and 1/12. Private TV is 0.054 and 0.039, versus 0.049 and 0.059 at 270M,
+so scale does not uniformly increase distributional private influence. At
+\(\tau=0.1\), the 1B public component is 0.002 cross-class and zero same-class
+while private TV is 0.055 and 0.039; at \(\tau=1\), public TV rises to 0.074
+and 0.027 while private TV remains 0.062 and 0.046. The defensible scale result
+is stronger target-logit efficacy, especially within class, without behavioral
+sufficiency or a demonstrated carrier switch.
+
+![Cross-scale natural-residual comparison. Gemma 1B shows somewhat stronger target-logit movement, but private TV is not uniformly larger and top-1 control remains rare.](manuscript/figures/fig_gemma_1b_residual_scale.png){#fig-gemma-1b-residual width=90%}

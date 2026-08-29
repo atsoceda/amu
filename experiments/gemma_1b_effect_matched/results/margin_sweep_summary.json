@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-08-29T11:57:48.176673+00:00",
+  "elapsed_sec": 153.45779299736023,
+  "selection_rule": "positive an-minus-a margin attribution and positive future attribution; score=min(means)",
+  "candidate_count": 83,
+  "eligible_prompt_count_ge3": 27,
+  "k_values": [
+    4,
+    8,
+    16,
+    24
+  ],
+  "target_270m_mean_margin_movement": 3.3125,
+  "sweep": [
+    {
+      "k": 4,
+      "gain": 2.0,
+      "mean_margin_movement": 0.09375,
+      "crossed_to_an_rate": 0.125
+    },
+    {
+      "k": 4,
+      "gain": 5.0,
+      "mean_margin_movement": 0.421875,
+      "crossed_to_an_rate": 0.125
+    },
+    {
+      "k": 4,
+      "gain": 10.0,
+      "mean_margin_movement": 0.859375,
+      "crossed_to_an_rate": 0.125
+    },
+    {
+      "k": 4,
+      "gain": 20.0,
+      "mean_margin_movement": 1.359375,
+      "crossed_to_an_rate": 0.375
+    },
+    {
+      "k": 8,
+      "gain": 2.0,
+      "mean_margin_movement": 0.203125,
+      "crossed_to_an_rate": 0.0
+    },
+    {
+      "k": 8,
+      "gain": 5.0,
+      "mean_margin_movement": 0.796875,
+      "crossed_to_an_rate": 0.125
+    },
+    {
+      "k": 8,
+      "gain": 10.0,
+      "mean_margin_movement": 1.375,
+      "crossed_to_an_rate": 0.25
+    },
+    {
+      "k": 8,
+      "gain": 20.0,
+      "mean_margin_movement": 1.328125,
+      "crossed_to_an_rate": 0.125
+    },
+    {
+      "k": 16,
+      "gain": 2.0,
+      "mean_margin_movement": 0.5,
+      "crossed_to_an_rate": 0.25
+    },
+    {
+      "k": 16,
+      "gain": 5.0,
+      "mean_margin_movement": 1.296875,
+      "crossed_to_an_rate": 0.5
+    },
+    {
+      "k": 16,
+      "gain": 10.0,
+      "mean_margin_movement": 1.578125,
+      "crossed_to_an_rate": 0.25
+    },
+    {
+      "k": 16,
+      "gain": 20.0,
+      "mean_margin_movement": 2.078125,
+      "crossed_to_an_rate": 0.875
+    },
+    {
+      "k": 24,
+      "gain": 2.0,
+      "mean_margin_movement": 0.53125,
+      "crossed_to_an_rate": 0.25
+    },
+    {
+      "k": 24,
+      "gain": 5.0,
+      "mean_margin_movement": 1.34375,
+      "crossed_to_an_rate": 0.5
+    },
+    {
+      "k": 24,
+      "gain": 10.0,
+      "mean_margin_movement": 1.90625,
+      "crossed_to_an_rate": 0.5
+    },
+    {
+      "k": 24,
+      "gain": 20.0,
+      "mean_margin_movement": 3.4609375,
+      "crossed_to_an_rate": 0.875
+    }
+  ],
+  "chosen": {
+    "k": 24,
+    "gain": 20.0,
+    "mean_margin_movement": 3.4609375,
+    "crossed_to_an_rate": 0.875
+  }
+}
