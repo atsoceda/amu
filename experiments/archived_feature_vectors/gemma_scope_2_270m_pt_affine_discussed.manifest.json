@@ -1,0 +1,903 @@
+{
+  "generated_at": "2026-08-29T05:59:18.722613+00:00",
+  "model": "google/gemma-3-270m",
+  "model_snapshot": "9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "scope_repo": "google/gemma-scope-2-270m-pt",
+  "scope_snapshot": "b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+  "variant": "clt/width_262k_l0_medium_affine",
+  "vector_file": "gemma_scope_2_270m_pt_affine_discussed.safetensors",
+  "vector_sha256": "5e676f436e18ec753838b803e9aa4c11f5f9be06bb02281ca2bf8263e4a3131b",
+  "n_unique_features": 42,
+  "features": [
+    {
+      "layer": 0,
+      "feature_idx": 774,
+      "roles": [
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L00_F00774__encoder",
+      "decoder_key": "L00_F00774__decoder",
+      "b_enc_key": "L00_F00774__b_enc",
+      "threshold_key": "L00_F00774__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        18,
+        640
+      ]
+    },
+    {
+      "layer": 1,
+      "feature_idx": 375,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L01_F00375__encoder",
+      "decoder_key": "L01_F00375__decoder",
+      "b_enc_key": "L01_F00375__b_enc",
+      "threshold_key": "L01_F00375__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        17,
+        640
+      ]
+    },
+    {
+      "layer": 5,
+      "feature_idx": 383,
+      "roles": [
+        "S2_article_only",
+        "S2_principal_L5_F383"
+      ],
+      "encoder_key": "L05_F00383__encoder",
+      "decoder_key": "L05_F00383__decoder",
+      "b_enc_key": "L05_F00383__b_enc",
+      "threshold_key": "L05_F00383__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        13,
+        640
+      ]
+    },
+    {
+      "layer": 5,
+      "feature_idx": 6024,
+      "roles": [
+        "L5_matched_control"
+      ],
+      "encoder_key": "L05_F06024__encoder",
+      "decoder_key": "L05_F06024__decoder",
+      "b_enc_key": "L05_F06024__b_enc",
+      "threshold_key": "L05_F06024__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        13,
+        640
+      ]
+    },
+    {
+      "layer": 5,
+      "feature_idx": 6996,
+      "roles": [
+        "L5_matched_control"
+      ],
+      "encoder_key": "L05_F06996__encoder",
+      "decoder_key": "L05_F06996__decoder",
+      "b_enc_key": "L05_F06996__b_enc",
+      "threshold_key": "L05_F06996__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        13,
+        640
+      ]
+    },
+    {
+      "layer": 5,
+      "feature_idx": 7486,
+      "roles": [
+        "L5_matched_control"
+      ],
+      "encoder_key": "L05_F07486__encoder",
+      "decoder_key": "L05_F07486__decoder",
+      "b_enc_key": "L05_F07486__b_enc",
+      "threshold_key": "L05_F07486__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        13,
+        640
+      ]
+    },
+    {
+      "layer": 5,
+      "feature_idx": 9107,
+      "roles": [
+        "L5_matched_control"
+      ],
+      "encoder_key": "L05_F09107__encoder",
+      "decoder_key": "L05_F09107__decoder",
+      "b_enc_key": "L05_F09107__b_enc",
+      "threshold_key": "L05_F09107__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        13,
+        640
+      ]
+    },
+    {
+      "layer": 7,
+      "feature_idx": 9355,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L07_F09355__encoder",
+      "decoder_key": "L07_F09355__decoder",
+      "b_enc_key": "L07_F09355__b_enc",
+      "threshold_key": "L07_F09355__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        11,
+        640
+      ]
+    },
+    {
+      "layer": 8,
+      "feature_idx": 143,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L08_F00143__encoder",
+      "decoder_key": "L08_F00143__decoder",
+      "b_enc_key": "L08_F00143__b_enc",
+      "threshold_key": "L08_F00143__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        10,
+        640
+      ]
+    },
+    {
+      "layer": 8,
+      "feature_idx": 4780,
+      "roles": [
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L08_F04780__encoder",
+      "decoder_key": "L08_F04780__decoder",
+      "b_enc_key": "L08_F04780__b_enc",
+      "threshold_key": "L08_F04780__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        10,
+        640
+      ]
+    },
+    {
+      "layer": 9,
+      "feature_idx": 39,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L09_F00039__encoder",
+      "decoder_key": "L09_F00039__decoder",
+      "b_enc_key": "L09_F00039__b_enc",
+      "threshold_key": "L09_F00039__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        9,
+        640
+      ]
+    },
+    {
+      "layer": 9,
+      "feature_idx": 14503,
+      "roles": [
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L09_F14503__encoder",
+      "decoder_key": "L09_F14503__decoder",
+      "b_enc_key": "L09_F14503__b_enc",
+      "threshold_key": "L09_F14503__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        9,
+        640
+      ]
+    },
+    {
+      "layer": 10,
+      "feature_idx": 1015,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L10_F01015__encoder",
+      "decoder_key": "L10_F01015__decoder",
+      "b_enc_key": "L10_F01015__b_enc",
+      "threshold_key": "L10_F01015__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        8,
+        640
+      ]
+    },
+    {
+      "layer": 10,
+      "feature_idx": 2930,
+      "roles": [
+        "S1_dual_effect"
+      ],
+      "encoder_key": "L10_F02930__encoder",
+      "decoder_key": "L10_F02930__decoder",
+      "b_enc_key": "L10_F02930__b_enc",
+      "threshold_key": "L10_F02930__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        8,
+        640
+      ]
+    },
+    {
+      "layer": 10,
+      "feature_idx": 7032,
+      "roles": [
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L10_F07032__encoder",
+      "decoder_key": "L10_F07032__decoder",
+      "b_enc_key": "L10_F07032__b_enc",
+      "threshold_key": "L10_F07032__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        8,
+        640
+      ]
+    },
+    {
+      "layer": 11,
+      "feature_idx": 292,
+      "roles": [
+        "S3_content_only",
+        "S4_competing_a",
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L11_F00292__encoder",
+      "decoder_key": "L11_F00292__decoder",
+      "b_enc_key": "L11_F00292__b_enc",
+      "threshold_key": "L11_F00292__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        7,
+        640
+      ]
+    },
+    {
+      "layer": 11,
+      "feature_idx": 793,
+      "roles": [
+        "S1_dual_effect",
+        "S3_content_only"
+      ],
+      "encoder_key": "L11_F00793__encoder",
+      "decoder_key": "L11_F00793__decoder",
+      "b_enc_key": "L11_F00793__b_enc",
+      "threshold_key": "L11_F00793__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        7,
+        640
+      ]
+    },
+    {
+      "layer": 11,
+      "feature_idx": 6131,
+      "roles": [
+        "S3_content_only"
+      ],
+      "encoder_key": "L11_F06131__encoder",
+      "decoder_key": "L11_F06131__decoder",
+      "b_enc_key": "L11_F06131__b_enc",
+      "threshold_key": "L11_F06131__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        7,
+        640
+      ]
+    },
+    {
+      "layer": 11,
+      "feature_idx": 12690,
+      "roles": [
+        "S2_article_only"
+      ],
+      "encoder_key": "L11_F12690__encoder",
+      "decoder_key": "L11_F12690__decoder",
+      "b_enc_key": "L11_F12690__b_enc",
+      "threshold_key": "L11_F12690__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        7,
+        640
+      ]
+    },
+    {
+      "layer": 12,
+      "feature_idx": 1327,
+      "roles": [
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L12_F01327__encoder",
+      "decoder_key": "L12_F01327__decoder",
+      "b_enc_key": "L12_F01327__b_enc",
+      "threshold_key": "L12_F01327__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        6,
+        640
+      ]
+    },
+    {
+      "layer": 12,
+      "feature_idx": 2672,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L12_F02672__encoder",
+      "decoder_key": "L12_F02672__decoder",
+      "b_enc_key": "L12_F02672__b_enc",
+      "threshold_key": "L12_F02672__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        6,
+        640
+      ]
+    },
+    {
+      "layer": 12,
+      "feature_idx": 2903,
+      "roles": [
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L12_F02903__encoder",
+      "decoder_key": "L12_F02903__decoder",
+      "b_enc_key": "L12_F02903__b_enc",
+      "threshold_key": "L12_F02903__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        6,
+        640
+      ]
+    },
+    {
+      "layer": 12,
+      "feature_idx": 6229,
+      "roles": [
+        "S1_dual_effect",
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L12_F06229__encoder",
+      "decoder_key": "L12_F06229__decoder",
+      "b_enc_key": "L12_F06229__b_enc",
+      "threshold_key": "L12_F06229__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        6,
+        640
+      ]
+    },
+    {
+      "layer": 12,
+      "feature_idx": 11606,
+      "roles": [
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L12_F11606__encoder",
+      "decoder_key": "L12_F11606__decoder",
+      "b_enc_key": "L12_F11606__b_enc",
+      "threshold_key": "L12_F11606__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        6,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 557,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L13_F00557__encoder",
+      "decoder_key": "L13_F00557__decoder",
+      "b_enc_key": "L13_F00557__b_enc",
+      "threshold_key": "L13_F00557__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 568,
+      "roles": [
+        "S3_content_only"
+      ],
+      "encoder_key": "L13_F00568__encoder",
+      "decoder_key": "L13_F00568__decoder",
+      "b_enc_key": "L13_F00568__b_enc",
+      "threshold_key": "L13_F00568__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 819,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L13_F00819__encoder",
+      "decoder_key": "L13_F00819__decoder",
+      "b_enc_key": "L13_F00819__b_enc",
+      "threshold_key": "L13_F00819__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 1744,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L13_F01744__encoder",
+      "decoder_key": "L13_F01744__decoder",
+      "b_enc_key": "L13_F01744__b_enc",
+      "threshold_key": "L13_F01744__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 3297,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L13_F03297__encoder",
+      "decoder_key": "L13_F03297__decoder",
+      "b_enc_key": "L13_F03297__b_enc",
+      "threshold_key": "L13_F03297__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 4939,
+      "roles": [
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L13_F04939__encoder",
+      "decoder_key": "L13_F04939__decoder",
+      "b_enc_key": "L13_F04939__b_enc",
+      "threshold_key": "L13_F04939__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 9129,
+      "roles": [
+        "S4_competing_a",
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L13_F09129__encoder",
+      "decoder_key": "L13_F09129__decoder",
+      "b_enc_key": "L13_F09129__b_enc",
+      "threshold_key": "L13_F09129__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 10231,
+      "roles": [
+        "S1_dual_effect",
+        "S2_article_only",
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L13_F10231__encoder",
+      "decoder_key": "L13_F10231__decoder",
+      "b_enc_key": "L13_F10231__b_enc",
+      "threshold_key": "L13_F10231__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 10304,
+      "roles": [
+        "S4_competing_a",
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L13_F10304__encoder",
+      "decoder_key": "L13_F10304__decoder",
+      "b_enc_key": "L13_F10304__b_enc",
+      "threshold_key": "L13_F10304__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        5,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 149,
+      "roles": [
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L14_F00149__encoder",
+      "decoder_key": "L14_F00149__decoder",
+      "b_enc_key": "L14_F00149__b_enc",
+      "threshold_key": "L14_F00149__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 973,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L14_F00973__encoder",
+      "decoder_key": "L14_F00973__decoder",
+      "b_enc_key": "L14_F00973__b_enc",
+      "threshold_key": "L14_F00973__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 1949,
+      "roles": [
+        "S2_article_only",
+        "S4_competing_a",
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L14_F01949__encoder",
+      "decoder_key": "L14_F01949__decoder",
+      "b_enc_key": "L14_F01949__b_enc",
+      "threshold_key": "L14_F01949__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 3283,
+      "roles": [
+        "calibration_high_article_high_future"
+      ],
+      "encoder_key": "L14_F03283__encoder",
+      "decoder_key": "L14_F03283__decoder",
+      "b_enc_key": "L14_F03283__b_enc",
+      "threshold_key": "L14_F03283__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 5408,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L14_F05408__encoder",
+      "decoder_key": "L14_F05408__decoder",
+      "b_enc_key": "L14_F05408__b_enc",
+      "threshold_key": "L14_F05408__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 5560,
+      "roles": [
+        "calibration_low_article_high_future"
+      ],
+      "encoder_key": "L14_F05560__encoder",
+      "decoder_key": "L14_F05560__decoder",
+      "b_enc_key": "L14_F05560__b_enc",
+      "threshold_key": "L14_F05560__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 14,
+      "feature_idx": 12264,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L14_F12264__encoder",
+      "decoder_key": "L14_F12264__decoder",
+      "b_enc_key": "L14_F12264__b_enc",
+      "threshold_key": "L14_F12264__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        4,
+        640
+      ]
+    },
+    {
+      "layer": 15,
+      "feature_idx": 3304,
+      "roles": [
+        "calibration_low_article_low_future"
+      ],
+      "encoder_key": "L15_F03304__encoder",
+      "decoder_key": "L15_F03304__decoder",
+      "b_enc_key": "L15_F03304__b_enc",
+      "threshold_key": "L15_F03304__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        3,
+        640
+      ]
+    },
+    {
+      "layer": 16,
+      "feature_idx": 42,
+      "roles": [
+        "calibration_high_article_low_future"
+      ],
+      "encoder_key": "L16_F00042__encoder",
+      "decoder_key": "L16_F00042__decoder",
+      "b_enc_key": "L16_F00042__b_enc",
+      "threshold_key": "L16_F00042__threshold",
+      "encoder_shape": [
+        640
+      ],
+      "decoder_shape": [
+        2,
+        640
+      ]
+    }
+  ],
+  "selection_graphs_local_manifest": [
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_administers_anesthesia_during_surgery_is__article.pt",
+      "bytes": 9358237,
+      "sha256": "40e020d37569fb21b999764626cb92f0bfb4b149dc2030717d9473b7acc481bc"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_administers_anesthesia_during_surgery_is__future.pt",
+      "bytes": 9583313,
+      "sha256": "490e3c2bcda570b6a775e3873cf9ee65504f2d38eb00f53632c85d7f99434bb9"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_administers_anesthesia_during_surgery_is__meta.json",
+      "bytes": 431,
+      "sha256": "e46e315cd7dbd6097db243f43c96b4c884327732c74a69bd9d63fd97814911dd"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_designs_and_builds_technical_systems_is__article.pt",
+      "bytes": 9595793,
+      "sha256": "c1cd2f22e45401685394c8c49110e1c87143c0ac265a59bfd3c7a596d72c999d"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_designs_and_builds_technical_systems_is__future.pt",
+      "bytes": 9823685,
+      "sha256": "8e53fbf0fc6ad69f7134e7aa48c88d1b15029f800924aeed9ebd5a09c7cad874"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_designs_and_builds_technical_systems_is__meta.json",
+      "bytes": 423,
+      "sha256": "ed5816d5e533ed8927af2b7323f2c8a938bee3e73c1fdc1d9d699a7480b8cdb2"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_designs_buildings_and_structures_is__article.pt",
+      "bytes": 9358177,
+      "sha256": "64f3b55553acd37c4e19d376500f2e1eceb4fce9817f79309b99ccbc1253f32a"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_designs_buildings_and_structures_is__future.pt",
+      "bytes": 9582933,
+      "sha256": "590ab106cfdd2a6cca4fd0cef629d618e60d213165aefc8ad014c488e8b73e26"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_designs_buildings_and_structures_is__meta.json",
+      "bytes": 413,
+      "sha256": "392440e070171f887035105e1e83198a919692151c6814984aa38607f5dd6001"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_installs_and_repairs_electrical_systems_is__article.pt",
+      "bytes": 9596021,
+      "sha256": "9ec4d5511d9341e824df544512e80b61fb8832bf3c7fbdb423977914762fd39c"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_installs_and_repairs_electrical_systems_is__future.pt",
+      "bytes": 9823401,
+      "sha256": "2e33ab1f9c56caa4279265e9f43e1e2d3251f44477b55978c6414d75d95bb522"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_installs_and_repairs_electrical_systems_is__meta.json",
+      "bytes": 438,
+      "sha256": "61bf4bc2e40a5797ed591d9a80376a82eba5251663ebb8f69011ec50dd80ac8e"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_manages_financial_records_is__article.pt",
+      "bytes": 9124941,
+      "sha256": "47b5f544a205989a67fcffbe4d429be82f625a9bfd059952a923e39e41ae1c5b"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_manages_financial_records_is__future.pt",
+      "bytes": 9347329,
+      "sha256": "ab5e70a77feba3c3e3555e6e9f98f8d02a42fc8582f4749cee4c13227490bf5c"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_manages_financial_records_is__meta.json",
+      "bytes": 394,
+      "sha256": "01471c28838aa848576fa3972938b47d37caec65c74a671949c604fd9012fe2c"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_studies_financial_systems_and_markets_is__article.pt",
+      "bytes": 9594333,
+      "sha256": "93b59c1e132cff07957cc4c3bf51111471bc91ba9cc59d7aba930d8057793024"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_studies_financial_systems_and_markets_is__future.pt",
+      "bytes": 9821969,
+      "sha256": "4f1561d46f7e4c326d4b104f6491f0bcdcec75c77e3396f411ed518dbf7f175e"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_studies_financial_systems_and_markets_is__meta.json",
+      "bytes": 428,
+      "sha256": "9f72eb2527f96df1d7f0a2d2531bbf5f66ed82cc29bd77ed50defd7e8df33c32"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_studies_stars_and_planets_is__article.pt",
+      "bytes": 9358797,
+      "sha256": "ef02802e83823830941eaa84f183443246b1c99857aed64fbc9623d54a2718f9"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_studies_stars_and_planets_is__future.pt",
+      "bytes": 9583681,
+      "sha256": "c0d5b0dafe6cf8fe60c45d8962e92782ccd9fbf24ab5c4ae455608ab3dca1618"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_studies_stars_and_planets_is__meta.json",
+      "bytes": 394,
+      "sha256": "7127f8000cdf768ff448ee553beed5d44709d263accafbfe3f784024dd68ccd7"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_treats_cancer_patients_is__article.pt",
+      "bytes": 9124073,
+      "sha256": "264e91e0a61e23c6882d118fb47e09e6610baf822d9345bbcbc753600958b52b"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_treats_cancer_patients_is__future.pt",
+      "bytes": 9345821,
+      "sha256": "beab816c824bcbb8e21501d7445b3fa9a6785eb43a408891eba7a8ca1b0d2c6d"
+    },
+    {
+      "path": "experiments/selection_criterion_ablation/results/graphs/someone_who_treats_cancer_patients_is__meta.json",
+      "bytes": 385,
+      "sha256": "dfa914079ba79a02382b26709f741d2d8149d676b175a0a98c4b0005d1fa8791"
+    }
+  ],
+  "note": "Graph .pt files remain local and are gitignored; this manifest fixes their paths, sizes, and hashes before CLT cache deletion."
+}

@@ -1,0 +1,4091 @@
+{
+  "experiment": "l5_same_class_lexicality",
+  "generated_at": "2026-08-29T05:57:45.211580+00:00",
+  "elapsed_sec": 72.58272624015808,
+  "target_feature": {
+    "layer": 5,
+    "feature_idx": 383,
+    "id": "L5/F383"
+  },
+  "control_features": [
+    {
+      "layer": 5,
+      "feature_idx": 6024,
+      "mean_activation": 23.75,
+      "activation_distance": 381.75
+    },
+    {
+      "layer": 5,
+      "feature_idx": 6996,
+      "mean_activation": 127.0,
+      "activation_distance": 278.5
+    },
+    {
+      "layer": 5,
+      "feature_idx": 7486,
+      "mean_activation": 15.0,
+      "activation_distance": 390.5
+    },
+    {
+      "layer": 5,
+      "feature_idx": 9107,
+      "mean_activation": 125.5,
+      "activation_distance": 280.0
+    }
+  ],
+  "wrong_target_rule": "cyclic target from another prompt in the same experimental group",
+  "conditions": {
+    "within_consonant__3.0x__L5/F383": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.07258670702576638,
+        "lo": 0.04821183942258358,
+        "hi": 0.09672321602702141,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": -0.475,
+        "lo": -0.6125,
+        "hi": -0.3375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": -0.4125,
+        "lo": -0.7,
+        "hi": -0.1875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.13671875,
+        "lo": -0.03203125,
+        "hi": 0.35234375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": -0.0625,
+        "lo": -0.2875,
+        "hi": 0.1875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.54921875,
+        "lo": 0.3109375,
+        "hi": 0.81796875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.61171875,
+        "lo": -0.903125,
+        "hi": -0.365625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -0.551009114831686,
+        "lo": -0.7415473103523255,
+        "hi": -0.3910264760255814,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.34465487450361254,
+        "lo": 0.24623292088508605,
+        "hi": 0.46390493363142016,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.03227353226393461,
+        "lo": -0.05004231575876474,
+        "hi": 0.11712204962968827,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.3123813422396779,
+        "lo": 0.2509639436379075,
+        "hi": 0.3808091351762414,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.0040462426841259,
+        "lo": 0.0014450866729021072,
+        "hi": 0.007514450699090958,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": -0.0022978272987529635,
+        "lo": -0.006857862882316113,
+        "hi": 0.0022240216843783856,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.0007888853549957275,
+        "lo": -0.02676735520362854,
+        "hi": 0.027404189109802246,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -0.0018175799681557693,
+        "lo": -0.004850161767353711,
+        "hi": -3.3751850423868747e-06,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 1.0,
+      "kind": "target"
+    },
+    "within_consonant__3.0x__L5/F6024": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.007688347715884447,
+        "lo": 0.0012868118472397327,
+        "hi": 0.015342457499355078,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0125,
+        "lo": 0.0,
+        "hi": 0.0375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": 0.0,
+        "hi": 0.0625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.01875,
+        "lo": -0.00625,
+        "hi": 0.05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": -0.0125,
+        "lo": -0.05,
+        "hi": 0.025,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": -0.00625,
+        "lo": -0.040625,
+        "hi": 0.025,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.00625,
+        "lo": -0.034375,
+        "hi": 0.0125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -0.01232638880610466,
+        "lo": -0.03506944477558136,
+        "hi": 0.00503472238779068,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.03609968144446611,
+        "lo": -0.0017712900415062904,
+        "hi": 0.08242924511432648,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.031137230433523656,
+        "lo": -0.002727399580180645,
+        "hi": 0.07008986715227365,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.004962451010942459,
+        "lo": -0.00395660474896431,
+        "hi": 0.018003849685192107,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.08410404622554779,
+        "lo": 0.006936416029930115,
+        "hi": 0.19450867176055908,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": -1.230237539857626e-05,
+        "lo": -0.00024018383119255303,
+        "hi": 0.00016334571409970522,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.0017203003168106078,
+        "lo": -0.006359001994132996,
+        "hi": 0.0015798211097717285,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -0.0003074092822316743,
+        "lo": -0.0008045265555665538,
+        "hi": -1.6846397556946613e-07,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.4,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__3.0x__L5/F6996": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.020809126505628227,
+        "lo": 0.008496816270053387,
+        "hi": 0.03700538692064583,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.075,
+        "lo": 0.0,
+        "hi": 0.15,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": -0.075,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": -0.03125,
+        "lo": -0.08125,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.075,
+        "lo": 0.0,
+        "hi": 0.15,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": -0.03125,
+        "lo": -0.125,
+        "hi": 0.0375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.10625,
+        "lo": 0.04375,
+        "hi": 0.175,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.08539496492594481,
+        "lo": 0.03170572854578495,
+        "hi": 0.14565972238779068,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.011936924559995532,
+        "lo": -0.017613934027031063,
+        "hi": 0.042962823249399665,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": -0.03240809894632548,
+        "lo": -0.07866821407806128,
+        "hi": 0.009411562350578606,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.04434502350632101,
+        "lo": 0.015965982363559304,
+        "hi": 0.0777117885183543,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.4705202281475067,
+        "lo": 0.2329479783773422,
+        "hi": 0.7147398799657821,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.003036625846289098,
+        "lo": 0.00041421742644160987,
+        "hi": 0.00708379193674773,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.00516766905784607,
+        "lo": -0.011954784393310547,
+        "hi": 0.001748335361480713,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -5.796413224743446e-05,
+        "lo": -0.00023160811306297547,
+        "hi": 7.968861991685117e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.7,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__3.0x__L5/F7486": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.0030685152858495714,
+        "lo": 0.0,
+        "hi": 0.009205545857548713,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.00625,
+        "lo": 0.0,
+        "hi": 0.01875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.00625,
+        "lo": 0.0,
+        "hi": 0.01875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.00625,
+        "lo": -0.01875,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.00329861119389534,
+        "lo": 0.0,
+        "hi": 0.00989583358168602,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": -0.003392178565263748,
+        "lo": -0.010176535695791245,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.003456101194024086,
+        "lo": 0.0,
+        "hi": 0.010368303582072257,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.0068482797592878345,
+        "lo": -0.020544839277863502,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.05838150382041931,
+        "lo": 0.0,
+        "hi": 0.17514451146125792,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.00015738755464553834,
+        "lo": 0.0,
+        "hi": 0.000472162663936615,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.00010270476341247558,
+        "lo": 0.0,
+        "hi": 0.00030811429023742677,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 2.5009067030623553e-07,
+        "lo": 0.0,
+        "hi": 7.502720109187067e-07,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.1,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__3.0x__L5/F9107": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.008731228788383305,
+        "lo": 0.0016575194196775556,
+        "hi": 0.019466751045547424,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0375,
+        "lo": 0.0,
+        "hi": 0.075,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": -0.0375,
+        "hi": 0.0375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": -0.008203125,
+        "lo": -0.024609375,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0375,
+        "lo": 0.0,
+        "hi": 0.075,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": -0.008203125,
+        "lo": -0.062109375,
+        "hi": 0.0375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.045703125,
+        "lo": 0.0,
+        "hi": 0.0953125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.0316406253259629,
+        "lo": 0.003125,
+        "hi": 0.06388888889923691,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.00633881613612175,
+        "lo": -0.012513124290853739,
+        "hi": 0.02396550225093961,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.02659698501229286,
+        "lo": 0.008047572523355483,
+        "hi": 0.049088993296027186,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.02025816887617111,
+        "lo": -0.04641769016161561,
+        "hi": -0.0008844304829835892,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.3606936439871788,
+        "lo": 0.11589595526456833,
+        "hi": 0.6225433573126793,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0020498739555478095,
+        "lo": 0.00023788977414369584,
+        "hi": 0.004364307038486004,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.0018173396587371827,
+        "lo": -0.004123324155807495,
+        "hi": -0.00018281340599060058,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -6.78951719237375e-06,
+        "lo": -1.732237869873643e-05,
+        "hi": 2.2638314476353116e-07,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.5,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__5.0x__L5/F383": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.1259479034692049,
+        "lo": 0.08410132005810737,
+        "hi": 0.1678497988730669,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": -0.74375,
+        "lo": -1.01875,
+        "hi": -0.45,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": -0.575,
+        "lo": -1.0125,
+        "hi": -0.225,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.5134765625,
+        "lo": 0.165625,
+        "hi": 0.9009765625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": -0.16875,
+        "lo": -0.475,
+        "hi": 0.1625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 1.0884765625,
+        "lo": 0.6197265625,
+        "hi": 1.65625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -1.2572265625,
+        "lo": -1.759375,
+        "hi": -0.798828125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -1.0843749953433872,
+        "lo": -1.4295138895511628,
+        "hi": -0.7915581554174423,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.8493353068828583,
+        "lo": 0.6836359143257141,
+        "hi": 1.0435129880905152,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.24170421781018375,
+        "lo": 0.1033575139939785,
+        "hi": 0.3773611858487129,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.6076310890726745,
+        "lo": 0.4975437117740512,
+        "hi": 0.7277025672607124,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.0080924853682518,
+        "lo": 0.0011560693383216858,
+        "hi": 0.019364161416888237,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": -0.005108890309929848,
+        "lo": -0.014319761982187628,
+        "hi": 0.0018965191440656782,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.008469557762145996,
+        "lo": -0.035863646864891054,
+        "hi": 0.059616246819496156,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -0.0029066188071737997,
+        "lo": -0.007725461578229442,
+        "hi": -1.6030820916057564e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 1.0,
+      "kind": "target"
+    },
+    "within_consonant__5.0x__L5/F6024": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.011742351786233484,
+        "lo": 0.0004124640254303813,
+        "hi": 0.024223913089372218,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0375,
+        "lo": 0.0,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0125,
+        "lo": -0.0625,
+        "hi": 0.0875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.046875,
+        "lo": 0.0,
+        "hi": 0.125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": 0.0,
+        "hi": 0.075,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.034375,
+        "lo": 0.0,
+        "hi": 0.0875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.009375,
+        "lo": -0.025,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -0.01420966200530529,
+        "lo": -0.03446926474571228,
+        "hi": 0.00225694477558136,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.06790476590394974,
+        "lo": 0.011702768504619598,
+        "hi": 0.1324847608804703,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.045793574303388596,
+        "lo": 0.0,
+        "hi": 0.0976109117269516,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.02211119160056114,
+        "lo": -0.0022317737340927122,
+        "hi": 0.05094367936253548,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.09942196346819401,
+        "lo": 0.007803468033671379,
+        "hi": 0.19653178751468658,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 5.483210552483797e-05,
+        "lo": -0.00010113276075571776,
+        "hi": 0.0002553400816395879,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.004333353042602539,
+        "lo": -0.009000462293624879,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -0.0002908326933720673,
+        "lo": -0.0008011403844648158,
+        "hi": 2.3793035325070377e-06,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.4,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__5.0x__L5/F6996": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.027718198765069247,
+        "lo": 0.010332472715526819,
+        "hi": 0.04948679143562913,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.125,
+        "lo": -0.025,
+        "hi": 0.3,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": -0.1,
+        "hi": 0.15,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": -0.0125,
+        "lo": -0.125,
+        "hi": 0.071875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.1,
+        "lo": 0.0125,
+        "hi": 0.1875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": -0.0375,
+        "lo": -0.109375,
+        "hi": 0.028125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.1375,
+        "lo": 0.05625,
+        "hi": 0.246875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.10950520893093199,
+        "lo": 0.01736111044883728,
+        "hi": 0.21506076713558286,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.07246442437171936,
+        "lo": 0.004339851438999176,
+        "hi": 0.14764368534088135,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": -0.02768086865544319,
+        "lo": -0.10632231533527374,
+        "hi": 0.040749743580818176,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.10014529302716255,
+        "lo": 0.0386314868927002,
+        "hi": 0.16525662764906884,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.40895953625440595,
+        "lo": 0.19971098154783248,
+        "hi": 0.6205202341079712,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0038681401405483485,
+        "lo": 0.000625894870609045,
+        "hi": 0.008915713243186473,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.008448728919029235,
+        "lo": -0.019266507029533385,
+        "hi": 0.0011807382106781006,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -0.00015927845061014523,
+        "lo": -0.0003116106701781973,
+        "hi": -4.410074852785328e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.7,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__5.0x__L5/F7486": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.005086736381053924,
+        "lo": 0.0,
+        "hi": 0.015260209143161774,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0125,
+        "lo": 0.0,
+        "hi": 0.0375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.01875,
+        "lo": 0.0,
+        "hi": 0.05625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0125,
+        "lo": 0.0,
+        "hi": 0.0375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.01875,
+        "lo": 0.0,
+        "hi": 0.05625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.00625,
+        "lo": -0.01875,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.015104166604578495,
+        "lo": 0.0,
+        "hi": 0.04531249981373549,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": -0.004500557854771614,
+        "lo": -0.013501673564314842,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.00665690079331398,
+        "lo": 0.0,
+        "hi": 0.01997070237994194,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.011157458648085594,
+        "lo": -0.03347237594425678,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.09508670568466186,
+        "lo": 0.0,
+        "hi": 0.2852601170539856,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.00040550921112298967,
+        "lo": 0.0,
+        "hi": 0.001216527633368969,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.0008159518241882324,
+        "lo": 0.0,
+        "hi": 0.002447855472564697,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -5.415859050117433e-07,
+        "lo": -1.62475771503523e-06,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.1,
+      "kind": "matched_feature_control"
+    },
+    "within_consonant__5.0x__L5/F9107": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.01668540551327169,
+        "lo": 0.0038957017939537765,
+        "hi": 0.031586972810328004,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0125,
+        "lo": -0.0375,
+        "hi": 0.0625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": -0.0125,
+        "lo": -0.075,
+        "hi": 0.05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.026171875,
+        "lo": -0.04140625,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": 0.0,
+        "hi": 0.0625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.038671875,
+        "lo": -0.04140625,
+        "hi": 0.126171875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.013671875,
+        "lo": -0.069921875,
+        "hi": 0.04765625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -0.00551215261220932,
+        "lo": -0.0553819440305233,
+        "hi": 0.04166666716337204,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.01567031079903245,
+        "lo": -0.015518632158637047,
+        "hi": 0.0509309807792306,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.05928176194429398,
+        "lo": 0.011449962854385376,
+        "hi": 0.12056152485311031,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.04361145114526153,
+        "lo": -0.07802955200895667,
+        "hi": -0.013444220833480357,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.19277456402778625,
+        "lo": 0.05491329431533813,
+        "hi": 0.3554913252592087,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0012615914456546307,
+        "lo": -0.00013853712007403374,
+        "hi": 0.0028015120886266233,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.0056233078241348265,
+        "lo": -0.012389200925827026,
+        "hi": 0.000559455156326294,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 2.4263532668555855e-05,
+        "lo": -1.950408914126456e-05,
+        "hi": 9.55039703512739e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.5,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__3.0x__L5/F383": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.048766808677464725,
+        "lo": 0.028563423454761504,
+        "hi": 0.06967349387705327,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": -0.38125,
+        "lo": -0.55625,
+        "hi": -0.21875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": -0.475,
+        "lo": -0.625,
+        "hi": -0.33125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": -0.221875,
+        "hi": 0.253125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.09375,
+        "lo": -0.0625,
+        "hi": 0.25,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.5,
+        "lo": 0.278125,
+        "hi": 0.7375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.40625,
+        "lo": -0.734375,
+        "hi": -0.1375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -0.3029513874091208,
+        "lo": -0.47274305624887347,
+        "hi": -0.16371527425944804,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.15073506865883246,
+        "lo": 0.04673014492727816,
+        "hi": 0.2627511199563742,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.045386926271021366,
+        "lo": -0.06045698951929808,
+        "hi": 0.175519697368145,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.1053481423878111,
+        "lo": 0.054857172595802695,
+        "hi": 0.15033607084769757,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.05238095400854945,
+        "lo": 0.03238095361739397,
+        "hi": 0.07142857359722257,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": -0.005384968083853891,
+        "lo": -0.03126530162062409,
+        "hi": 0.02142468780893978,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.012898746132850646,
+        "lo": -0.031268545985221864,
+        "hi": 0.006710672378540039,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -6.699647128698416e-05,
+        "lo": -0.0004491532177780755,
+        "hi": 0.00020724680507555604,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 1.0,
+      "kind": "target"
+    },
+    "within_vowel__3.0x__L5/F6024": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__3.0x__L5/F6996": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.01676552111748606,
+        "lo": 0.00696036322042346,
+        "hi": 0.028066829848103225,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.1,
+        "lo": 0.025,
+        "hi": 0.2,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.05,
+        "lo": -0.0125,
+        "hi": 0.1125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.071875,
+        "lo": 0.021875,
+        "hi": 0.125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.05,
+        "lo": -0.01875,
+        "hi": 0.125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.021875,
+        "lo": -0.009375,
+        "hi": 0.053125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.028125,
+        "lo": -0.034375,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.06701389057561755,
+        "lo": -0.0017361100763082504,
+        "hi": 0.14218750288709997,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.032890633400529626,
+        "lo": -0.0062359322793781756,
+        "hi": 0.08320907857269048,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.020851104520261288,
+        "lo": -0.02190319765359163,
+        "hi": 0.07381369210779667,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.012039528880268335,
+        "lo": -0.0033088902942836284,
+        "hi": 0.02831468814983964,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.496190482378006,
+        "lo": 0.27523810118436814,
+        "hi": 0.706666673719883,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.00850536391226342,
+        "lo": 1.2750491441693157e-05,
+        "hi": 0.020022444739879575,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.0009211286902427674,
+        "lo": -0.013826625049114227,
+        "hi": 0.00889367014169693,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -0.0002680566794879269,
+        "lo": -0.0007448844695318258,
+        "hi": -7.813159754732624e-06,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.8,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__3.0x__L5/F7486": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__3.0x__L5/F9107": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.006091651355382055,
+        "lo": 0.0003316568909212947,
+        "hi": 0.01373037212761119,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.05,
+        "lo": -0.0125,
+        "hi": 0.125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": -0.0625,
+        "hi": 0.125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.046875,
+        "lo": -0.009375,
+        "hi": 0.109375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.025,
+        "lo": -0.025,
+        "hi": 0.075,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.021875,
+        "lo": -0.046875,
+        "hi": 0.084375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.003125,
+        "lo": -0.01875,
+        "hi": 0.028125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.0196614570915699,
+        "lo": -0.0010850705206394196,
+        "hi": 0.04383680298924446,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.01099977120757103,
+        "lo": -0.02653147354722023,
+        "hi": 0.044295714050531385,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.011770488694310188,
+        "lo": -0.016270773112773897,
+        "hi": 0.03975948207080364,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.0007707174867391586,
+        "lo": -0.017826317250728606,
+        "hi": 0.01628488227725029,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.31714285910129547,
+        "lo": 0.08476190567016602,
+        "hi": 0.5961904793977737,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0016753033269196749,
+        "lo": -0.002735775522887707,
+        "hi": 0.007626497838646174,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 2.4962425231933594e-05,
+        "lo": -0.003079521656036377,
+        "hi": 0.003497236967086792,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 3.608749102568254e-06,
+        "lo": 0.0,
+        "hi": 7.866889791330323e-06,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.4,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__5.0x__L5/F383": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.09396949810907244,
+        "lo": 0.05250586485490203,
+        "hi": 0.1370101161301136,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": -0.7125,
+        "lo": -1.0,
+        "hi": -0.4625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": -0.8875,
+        "lo": -1.15625,
+        "hi": -0.6375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.140625,
+        "lo": -0.2875,
+        "hi": 0.565625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.175,
+        "lo": -0.14375,
+        "hi": 0.50625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 1.028125,
+        "lo": 0.59375,
+        "hi": 1.509375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.853125,
+        "lo": -1.478125,
+        "hi": -0.346875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": -0.6808159751817584,
+        "lo": -1.0185763861984014,
+        "hi": -0.4125868059694767,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.45522910822182894,
+        "lo": 0.27556306030601263,
+        "hi": 0.6407104434445501,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.3082168877124786,
+        "lo": 0.11435809582471848,
+        "hi": 0.5162152349948883,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.1470122205093503,
+        "lo": 0.07467917948961258,
+        "hi": 0.22737632263451815,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.04285714365541935,
+        "lo": 0.022857143357396126,
+        "hi": 0.06666666697710752,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": -0.007571852203545859,
+        "lo": -0.055113944411277774,
+        "hi": 0.043999948631972076,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.031009331345558167,
+        "lo": -0.06862103641033172,
+        "hi": 0.006059113144874573,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 5.160864093340933e-05,
+        "lo": -0.0004480354386032559,
+        "hi": 0.0005152461410034448,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 1.0,
+      "kind": "target"
+    },
+    "within_vowel__5.0x__L5/F6024": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__5.0x__L5/F6996": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.030417299782857298,
+        "lo": 0.009901045681908726,
+        "hi": 0.05711591625586152,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.1,
+        "lo": 0.0125,
+        "hi": 0.225,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0125,
+        "lo": -0.0875,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.115625,
+        "lo": 0.04375,
+        "hi": 0.19375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0875,
+        "lo": 0.0,
+        "hi": 0.19375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.103125,
+        "lo": 0.0125,
+        "hi": 0.20625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.015625,
+        "lo": -0.125,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.05529513722285628,
+        "lo": -0.028211806807667016,
+        "hi": 0.1411458294838667,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.08743350058794022,
+        "lo": 0.031631091982126235,
+        "hi": 0.15556524246931075,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.08755431990139187,
+        "lo": 0.023412913409993054,
+        "hi": 0.17089407546445728,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.00012081931345164776,
+        "lo": -0.031116330763325095,
+        "hi": 0.026332987099885942,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.36190476939082145,
+        "lo": 0.19142857640981675,
+        "hi": 0.5466666772961617,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.01713907376761199,
+        "lo": 0.0007905948943516706,
+        "hi": 0.04289636705070734,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -0.009655927121639252,
+        "lo": -0.03860812485218048,
+        "hi": 0.007757842540740967,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -4.0376107790507376e-08,
+        "lo": -8.381858497159555e-05,
+        "hi": 9.366310951008927e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.8,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__5.0x__L5/F7486": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "within_vowel__5.0x__L5/F9107": {
+      "fixed_tv": {
+        "n": 10,
+        "mean": 0.006459507765248418,
+        "lo": 0.0006270295009016991,
+        "hi": 0.01401120275259018,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 10,
+        "mean": 0.075,
+        "lo": 0.0,
+        "hi": 0.1875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 10,
+        "mean": 0.0375,
+        "lo": -0.075,
+        "hi": 0.175,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 10,
+        "mean": 0.09375,
+        "lo": 0.0,
+        "hi": 0.190625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 10,
+        "mean": 0.0375,
+        "lo": -0.025,
+        "hi": 0.1,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 10,
+        "mean": 0.05625,
+        "lo": -0.04375,
+        "hi": 0.1625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 10,
+        "mean": -0.01875,
+        "lo": -0.0875,
+        "hi": 0.034375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 10,
+        "mean": 0.001041664183139801,
+        "lo": -0.05598958283662796,
+        "hi": 0.04557291269302368,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.030204031243920328,
+        "lo": -0.003633393719792366,
+        "hi": 0.06827973760664463,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 10,
+        "mean": 0.034827057272195816,
+        "lo": -0.004741055518388748,
+        "hi": 0.08583303466439247,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 10,
+        "mean": -0.00462302602827549,
+        "lo": -0.04048630818724632,
+        "hi": 0.03225170038640499,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 10,
+        "mean": 0.27428571730852125,
+        "lo": 0.042857144773006436,
+        "hi": 0.5466666728258133,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 10,
+        "mean": 0.0016881267540156842,
+        "lo": -0.0027577081695199014,
+        "hi": 0.0075584457255899904,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 10,
+        "mean": -4.854053258895874e-05,
+        "lo": -0.002824339270591736,
+        "hi": 0.0027272582054138185,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 10,
+        "mean": -2.5374305550940334e-06,
+        "lo": -1.7389156710123643e-05,
+        "hi": 8.423376129940152e-06,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 10,
+      "active_rate": 0.4,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__3.0x__L5/F383": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.0418691448867321,
+        "lo": 0.02969049076948847,
+        "hi": 0.05581320343273027,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": -0.26785714285714285,
+        "lo": -0.5,
+        "hi": -0.03571428571428571,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": -0.6964285714285714,
+        "lo": -0.7946428571428571,
+        "hi": -0.5892857142857143,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.07142857142857142,
+        "lo": -0.19642857142857142,
+        "hi": 0.3482142857142857,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.42857142857142855,
+        "lo": 0.26785714285714285,
+        "hi": 0.5803571428571429,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.7678571428571429,
+        "lo": 0.5,
+        "hi": 1.0357142857142858,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": -0.3392857142857143,
+        "lo": -0.6160714285714286,
+        "hi": -0.11607142857142858,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": -0.3616071464493871,
+        "lo": -0.5372023839237434,
+        "hi": -0.19494048186710902,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.19509850894766195,
+        "lo": 0.00395632881139006,
+        "hi": 0.39596471190452576,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0867500826716423,
+        "lo": -0.07215378646339689,
+        "hi": 0.2442067792373044,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.10834842627601964,
+        "lo": 0.042356787249445915,
+        "hi": 0.17704523940171515,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.055782313724713664,
+        "lo": 0.016326531235660826,
+        "hi": 0.1156462597261582,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": -0.0004037001303264073,
+        "lo": -0.01286672055721283,
+        "hi": 0.014311647840908595,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": 0.003411501246903624,
+        "lo": -0.008574984701616424,
+        "hi": 0.014589060630117143,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": -0.013034904620976053,
+        "lo": -0.02798764017643407,
+        "hi": -0.0008418172863977296,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 1.0,
+      "kind": "target"
+    },
+    "cross_class_reference__3.0x__L5/F6024": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__3.0x__L5/F6996": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.017728003473686322,
+        "lo": 0.009120713187647718,
+        "hi": 0.026106070993202075,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": -0.10714285714285714,
+        "hi": 0.10714285714285714,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": -0.03571428571428571,
+        "lo": -0.13392857142857142,
+        "hi": 0.0625,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": -0.044642857142857144,
+        "lo": -0.16964285714285715,
+        "hi": 0.05357142857142857,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.03571428571428571,
+        "lo": -0.017857142857142856,
+        "hi": 0.09821428571428571,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": -0.008928571428571428,
+        "lo": -0.09821428571428571,
+        "hi": 0.08928571428571429,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.044642857142857144,
+        "lo": -0.026785714285714284,
+        "hi": 0.11607142857142858,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.07142857382340091,
+        "lo": 0.012648811297757285,
+        "hi": 0.1383928574089493,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.011498816045267242,
+        "lo": -0.060769425971167426,
+        "hi": 0.06278358665960175,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": -0.024554763920605183,
+        "lo": -0.09475080070218869,
+        "hi": 0.035195019761366506,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.036053579965872426,
+        "lo": 0.0015930087704743659,
+        "hi": 0.07754530704447202,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.37006802963359015,
+        "lo": 0.12653061428240367,
+        "hi": 0.6489795936005456,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.0054929958922522405,
+        "lo": -0.0020309239625930786,
+        "hi": 0.01469886941569192,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": -0.004085417304720197,
+        "lo": -0.007597906248910087,
+        "hi": -0.0010975045817238943,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": -0.0004711721932315933,
+        "lo": -0.0010054191640977348,
+        "hi": -3.7029194312968426e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.8571428571428571,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__3.0x__L5/F7486": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__3.0x__L5/F9107": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.020595870978598083,
+        "lo": 0.010769458687199014,
+        "hi": 0.02912342654807227,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.03571428571428571,
+        "lo": -0.03571428571428571,
+        "hi": 0.125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": 0.017857142857142856,
+        "lo": -0.044642857142857144,
+        "hi": 0.08035714285714286,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.004464285714285714,
+        "lo": -0.049107142857142856,
+        "hi": 0.05803571428571429,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.017857142857142856,
+        "lo": -0.0625,
+        "hi": 0.08928571428571429,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": -0.013392857142857142,
+        "lo": -0.10714285714285714,
+        "hi": 0.05357142857142857,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.03125,
+        "lo": -0.022321428571428572,
+        "hi": 0.08482142857142858,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.04389880956815822,
+        "lo": -0.007440476146127496,
+        "hi": 0.09598214219191245,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": -0.030183681020779268,
+        "lo": -0.07325208093971014,
+        "hi": 0.00530788887824331,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": -0.028413315004269992,
+        "lo": -0.05708809622696468,
+        "hi": -0.0011137843996818577,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": -0.0017703660165092774,
+        "lo": -0.025497268419712782,
+        "hi": 0.02329022197851113,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.6258503539221627,
+        "lo": 0.38231293644223896,
+        "hi": 0.8285714387893677,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.00783637591770717,
+        "lo": 0.0016236858708517893,
+        "hi": 0.013538041285106115,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": -0.001948092132806778,
+        "lo": -0.01100143204842295,
+        "hi": 0.0053654249225343975,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": -0.0013083311995225294,
+        "lo": -0.0038421841870461193,
+        "hi": 8.11014324426651e-05,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.8571428571428571,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__5.0x__L5/F383": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.08003080130687781,
+        "lo": 0.055350496034537046,
+        "hi": 0.10435889820967402,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": -0.48214285714285715,
+        "lo": -0.75,
+        "hi": -0.21428571428571427,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": -1.25,
+        "lo": -1.3303571428571428,
+        "hi": -1.1696428571428572,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.17410714285714285,
+        "lo": -0.29017857142857145,
+        "hi": 0.6875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.7678571428571429,
+        "lo": 0.5,
+        "hi": 1.0267857142857142,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 1.4241071428571428,
+        "lo": 0.9285714285714286,
+        "hi": 1.9598214285714286,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": -0.65625,
+        "lo": -1.1785714285714286,
+        "hi": -0.19642857142857142,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": -0.7321428571428571,
+        "lo": -1.0409226268529892,
+        "hi": -0.431547611951828,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.4800509810447693,
+        "lo": 0.1419539111001151,
+        "hi": 0.834790804556438,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.25274681619235445,
+        "lo": -0.08031389117240906,
+        "hi": 0.607818277818816,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.2273041648524148,
+        "lo": 0.17655014991760254,
+        "hi": 0.2824592867067882,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.039455783021237166,
+        "lo": 0.02040816391152995,
+        "hi": 0.06394557907645192,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": -0.0039032037769045147,
+        "lo": -0.031169222933905467,
+        "hi": 0.024971040231840953,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": 0.003977786882647446,
+        "lo": -0.020606141803520068,
+        "hi": 0.027201542098607336,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": -0.020194840708947077,
+        "lo": -0.04416786224464886,
+        "hi": -0.0010468731966934033,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 1.0,
+      "kind": "target"
+    },
+    "cross_class_reference__5.0x__L5/F6024": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__5.0x__L5/F6996": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.029963903927377293,
+        "lo": 0.015716599034411565,
+        "hi": 0.045400219836405346,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": -0.16071428571428573,
+        "hi": 0.16071428571428573,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": -0.10714285714285714,
+        "lo": -0.29464285714285715,
+        "hi": 0.07142857142857142,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": -0.008928571428571428,
+        "lo": -0.10714285714285714,
+        "hi": 0.09821428571428571,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.10714285714285714,
+        "lo": 0.044642857142857144,
+        "hi": 0.16964285714285715,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.09821428571428571,
+        "lo": -0.08035714285714286,
+        "hi": 0.30357142857142855,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.008928571428571428,
+        "lo": -0.14285714285714285,
+        "hi": 0.15178571428571427,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.061755950429609845,
+        "lo": -0.07738095362271581,
+        "hi": 0.23214285128882953,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.09733898352299418,
+        "lo": 0.004086978201355253,
+        "hi": 0.2061660018350397,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.05557342019996473,
+        "lo": -0.0582699090508478,
+        "hi": 0.18458191704537188,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.04176556332302945,
+        "lo": -0.003820991941860744,
+        "hi": 0.09837849996984005,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.3306122502045972,
+        "lo": 0.10204081822718893,
+        "hi": 0.5986394605466298,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.005215161613055638,
+        "lo": -0.011685609817504883,
+        "hi": 0.02772329534803118,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": -0.006983494785215173,
+        "lo": -0.011635024233588151,
+        "hi": -0.0027763129078916143,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": -0.0006474682616369266,
+        "lo": -0.0012500506148041626,
+        "hi": -0.00010754857794381678,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.8571428571428571,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__5.0x__L5/F7486": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.0,
+      "kind": "matched_feature_control"
+    },
+    "cross_class_reference__5.0x__L5/F9107": {
+      "fixed_tv": {
+        "n": 7,
+        "mean": 0.026199907330530032,
+        "lo": 0.012301004890884672,
+        "hi": 0.03997039182909897,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_logit_change": {
+        "n": 7,
+        "mean": 0.05357142857142857,
+        "lo": -0.07142857142857142,
+        "hi": 0.21428571428571427,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "source_logit_change": {
+        "n": 7,
+        "mean": 0.017857142857142856,
+        "lo": -0.11607142857142858,
+        "hi": 0.16071428571428573,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_target_logit_change": {
+        "n": 7,
+        "mean": 0.044642857142857144,
+        "lo": -0.026785714285714284,
+        "hi": 0.10714285714285714,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_delta_delta": {
+        "n": 7,
+        "mean": 0.03571428571428571,
+        "lo": -0.0625,
+        "hi": 0.13392857142857142,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "wrong_delta_delta": {
+        "n": 7,
+        "mean": 0.026785714285714284,
+        "lo": -0.11607142857142858,
+        "hi": 0.17857142857142858,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity": {
+        "n": 7,
+        "mean": 0.008928571428571428,
+        "lo": -0.11607142857142858,
+        "hi": 0.15178571428571427,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity": {
+        "n": 7,
+        "mean": 0.049107142591050694,
+        "lo": -0.05654761966850076,
+        "hi": 0.18452380863683565,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.02397444228907781,
+        "lo": -0.07645521076795246,
+        "hi": 0.09480578026601247,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mean_logit_change": {
+        "n": 7,
+        "mean": 0.023115862160921097,
+        "lo": -0.0629308649471828,
+        "hi": 0.09147174230643682,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast": {
+        "n": 7,
+        "mean": 0.0008585801281567131,
+        "lo": -0.02372598897532693,
+        "hi": 0.03684918209910393,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_change_percentile_within_class": {
+        "n": 7,
+        "mean": 0.4054421841033867,
+        "lo": 0.14829932472535542,
+        "hi": 0.6802721156605652,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "target_prob_change": {
+        "n": 7,
+        "mean": 0.009872459939547948,
+        "lo": -0.0022156494004385813,
+        "hi": 0.024097372378621782,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change": {
+        "n": 7,
+        "mean": -0.0004288705864122936,
+        "lo": -0.00676097401550838,
+        "hi": 0.008446467508162771,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "opposite_class_mass_change": {
+        "n": 7,
+        "mean": -0.004523000343137288,
+        "lo": -0.010895455788288797,
+        "hi": 0.00012026570454638983,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "n": 7,
+      "active_rate": 0.8571428571428571,
+      "kind": "matched_feature_control"
+    }
+  },
+  "comparisons": {
+    "within_consonant__3.0x": {
+      "target_delta_delta_target_minus_controls": {
+        "n": 10,
+        "mean": -0.0875,
+        "lo": -0.309375,
+        "hi": 0.1375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -0.64658203125,
+        "lo": -0.93173828125,
+        "hi": -0.4048828125,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -0.5780110679916106,
+        "lo": -0.7609103728551417,
+        "hi": -0.4175347222597338,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast_target_minus_controls": {
+        "n": 10,
+        "mean": 0.3068310857692268,
+        "lo": 0.2456165271869395,
+        "hi": 0.3773871936777141,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change_target_minus_controls": {
+        "n": 10,
+        "mean": 0.0013617657124996186,
+        "lo": -0.023732249438762665,
+        "hi": 0.03021118715405464,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "fixed_tv_target_minus_controls": {
+        "n": 10,
+        "mean": 0.06251240245182998,
+        "lo": 0.0411600154126063,
+        "hi": 0.0843480717507191,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      }
+    },
+    "within_consonant__5.0x": {
+      "target_delta_delta_target_minus_controls": {
+        "n": 10,
+        "mean": -0.209375,
+        "lo": -0.5125,
+        "hi": 0.109375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -1.28427734375,
+        "lo": -1.79521484375,
+        "hi": -0.8279296875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -1.110596885572886,
+        "lo": -1.4497136500198393,
+        "hi": -0.8076303988636937,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast_target_minus_controls": {
+        "n": 10,
+        "mean": 0.5907591953640804,
+        "lo": 0.48293636832386255,
+        "hi": 0.7100989349884912,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change_target_minus_controls": {
+        "n": 10,
+        "mean": 0.012866917252540588,
+        "lo": -0.03320472985506058,
+        "hi": 0.06543601006269455,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "fixed_tv_target_minus_controls": {
+        "n": 10,
+        "mean": 0.11063973035779781,
+        "lo": 0.07475510757649317,
+        "hi": 0.14669820610433817,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      }
+    },
+    "within_vowel__3.0x": {
+      "target_delta_delta_target_minus_controls": {
+        "n": 10,
+        "mean": 0.075,
+        "lo": -0.0734375,
+        "hi": 0.221875,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -0.4140625,
+        "lo": -0.740625,
+        "hi": -0.13984375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -0.32462022432591764,
+        "lo": -0.48836805594619365,
+        "hi": -0.18338758619502188,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast_target_minus_controls": {
+        "n": 10,
+        "mean": 0.1025309395394288,
+        "lo": 0.05465609113452956,
+        "hi": 0.14440930181881412,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change_target_minus_controls": {
+        "n": 10,
+        "mean": -0.012674704566597939,
+        "lo": -0.032944434136152265,
+        "hi": 0.010103581473231316,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "fixed_tv_target_minus_controls": {
+        "n": 10,
+        "mean": 0.043052515559247696,
+        "lo": 0.023734710999997334,
+        "hi": 0.061966473469510674,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      }
+    },
+    "within_vowel__5.0x": {
+      "target_delta_delta_target_minus_controls": {
+        "n": 10,
+        "mean": 0.14375,
+        "lo": -0.159375,
+        "hi": 0.459375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -0.84453125,
+        "lo": -1.48203125,
+        "hi": -0.309375,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity_target_minus_controls": {
+        "n": 10,
+        "mean": -0.6949001755332574,
+        "lo": -1.0210720515344291,
+        "hi": -0.4210503467358649,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast_target_minus_controls": {
+        "n": 10,
+        "mean": 0.1481981818447821,
+        "lo": 0.07381355337565765,
+        "hi": 0.2338860343559645,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change_target_minus_controls": {
+        "n": 10,
+        "mean": -0.028583214432001115,
+        "lo": -0.06928033381700516,
+        "hi": 0.013116185367107392,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "fixed_tv_target_minus_controls": {
+        "n": 10,
+        "mean": 0.08475029622204602,
+        "lo": 0.04622157472185791,
+        "hi": 0.12764508710242808,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      }
+    },
+    "cross_class_reference__3.0x": {
+      "target_delta_delta_target_minus_controls": {
+        "n": 7,
+        "mean": 0.41517857142857145,
+        "lo": 0.27232142857142855,
+        "hi": 0.5535714285714286,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity_target_minus_controls": {
+        "n": 7,
+        "mean": -0.35825892857142855,
+        "lo": -0.6149553571428571,
+        "hi": -0.14732142857142858,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity_target_minus_controls": {
+        "n": 7,
+        "mean": -0.39043899229727685,
+        "lo": -0.5684523843228817,
+        "hi": -0.22228423273190856,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast_target_minus_controls": {
+        "n": 7,
+        "mean": 0.09977762278867885,
+        "lo": 0.03530166767969994,
+        "hi": 0.16423080961353012,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change_target_minus_controls": {
+        "n": 7,
+        "mean": 0.004919878606285367,
+        "lo": -0.005127814465335437,
+        "hi": 0.015114370733499527,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "fixed_tv_target_minus_controls": {
+        "n": 7,
+        "mean": 0.032288176273661,
+        "lo": 0.021837325883097947,
+        "hi": 0.04576583565878017,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      }
+    },
+    "cross_class_reference__5.0x": {
+      "target_delta_delta_target_minus_controls": {
+        "n": 7,
+        "mean": 0.7321428571428571,
+        "lo": 0.46875,
+        "hi": 0.9732142857142857,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "lexical_selectivity_target_minus_controls": {
+        "n": 7,
+        "mean": -0.6607142857142857,
+        "lo": -1.1339285714285714,
+        "hi": -0.22767857142857142,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "all_alternatives_selectivity_target_minus_controls": {
+        "n": 7,
+        "mean": -0.7598586303980223,
+        "lo": -1.0695684559510223,
+        "hi": -0.4562872019263783,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "class_mean_logit_contrast_target_minus_controls": {
+        "n": 7,
+        "mean": 0.21664812898961827,
+        "lo": 0.1672552197373339,
+        "hi": 0.2728578436986676,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "same_class_mass_change_target_minus_controls": {
+        "n": 7,
+        "mean": 0.005830878225554313,
+        "lo": -0.01825535297393799,
+        "hi": 0.02743402319694204,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      },
+      "fixed_tv_target_minus_controls": {
+        "n": 7,
+        "mean": 0.06598984849240098,
+        "lo": 0.04366385251549738,
+        "hi": 0.09032985554741961,
+        "resamples": 10000,
+        "method": "prompt-level nonparametric bootstrap"
+      }
+    }
+  }
+}
