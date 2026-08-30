@@ -16,7 +16,25 @@ persistence is not architecturally impossible---later positions can attend
 to earlier residual states---but free-generation evidence cannot separate
 it from self-generated feedback.
 
-The required measurement is a six-cell design. For each prompt we run the
+The required measurement is a six-cell design. More generally, a mechanistic
+claim about a multi-token intervention must climb a **causal-validity ladder**:
+
+$$
+\text{represented}
+\ne
+\text{locally causal}
+\ne
+\text{structurally valid}
+\ne
+\text{transmission identified}.
+$$
+
+Attribution or decodability establishes the first rung; an intervention that
+moves its selected local quantity establishes the second. The third requires
+that the intervention preserve the causal variable under study rather than
+changing the syntactic construction. Only then can a factorial assay identify
+whether later influence is public-token relayed, privately persistent, hybrid,
+or negligible. For each prompt we run the
 intervention off and on, and for each of those we let the model write the
 article or we insert `a` or `an`. The intervention remains active at the
 original pre-article position during noun prediction. The free-generation
@@ -49,21 +67,24 @@ cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
    survives a fixed visible token, exceeds matched-norm random directions,
    and interacts with article identity. This is a target-constructed,
    subthreshold capacity result, not a sparse persistence-dominant plan.
-4. **Natural controls and calibration.** Natural target-state residuals
+4. **Natural controls and predictive calibration.** Natural target-state residuals
    enhance the intended noun and partly suppress the source under a fixed
    article, outperform wrong-target and matched-norm controls, but do not
    switch the emitted article in either same- or cross-article-class
-   regimes. Independent 32-feature calibrations at 270M and 1B show that
-   article attribution predicts the local article-margin effect but not
-   subsequent public-versus-private transmission.
+   regimes. Independent 32-feature calibrations at 270M and 1B show directional
+   transfer of local article-margin calibration. Matched target-specific
+   analyses do not detect a future-attribution/fixed-token association, but the
+   intervals remain wide. A closed-loop gain law instead predicts public
+   influence as local policy movement times continuation-branch leverage.
 5. **Cross-scale validation.** Separate local efficacy, mediator validity,
    and transmission at Gemma 3 1B. The original sparse handle is weak; an
    effect-matched 24-feature coalition transfers the article margin but usually
-   derails to a non-article mediator, so no sparse 1B channel claim is made.
-   Independently, matched natural residuals produce somewhat stronger
-   target-logit movement at 1B without uniformly stronger private TV. The
-   cross-scale feature calibration replicates the separation between local
-   causal pressure and transmission channel.
+   derails to a non-article mediator. A constrained sparse-frontier search finds
+   a valid one-feature handle, but it changes the article on only 1/20 held-out
+   prompts, so no general sparse 1B channel phenotype is assigned. Reconstruction
+   and graph-coverage audits bound measurement explanations. Normalized natural
+   residuals establish private target influence at both scales without a
+   monotone scale effect or robust carrier-regime interaction.
 
 Family comparisons, S2 forensics, random controls, propagation, and a
 synthetic polarity check are supporting controls. The contribution is an

@@ -1,0 +1,5474 @@
+[
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_surgeon_anesthesia",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.0,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.0625,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.0007653896464034915,
+    "target_rank_change": 2,
+    "target_rank_before": 18,
+    "target_rank_after": 16,
+    "patch_norm": 2269.690673828125,
+    "patch_norm_over_natural_rms": 0.5691810362640689,
+    "effect_per_patch_norm": 0.00016522075202763834,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.018027815967798233,
+        "public_tv": 7.405897122225724e-07,
+        "private_tv": 0.018027901649475098,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.031352415680885315,
+        "public_tv": 0.019209986552596092,
+        "private_tv": 0.030924536287784576,
+        "off_article_mass": 0.969977617263794,
+        "on_article_mass": 0.9691373109817505
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_surgeon_anesthesia",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.0,
+    "delta_delta": 0.875,
+    "fraction_gap_closed": 0.14583333333333334,
+    "target_logit_change": 1.0,
+    "target_log_odds_change": 1.0,
+    "target_odds_multiplier": 2.718281828459045,
+    "target_probability_change": 0.002212136867456138,
+    "target_rank_change": 7,
+    "target_rank_before": 18,
+    "target_rank_after": 11,
+    "patch_norm": 4539.38134765625,
+    "patch_norm_over_natural_rms": 1.1383620725281378,
+    "effect_per_patch_norm": 0.00019275754403224473,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.010315894149243832,
+        "public_tv": 3.351543000462698e-06,
+        "private_tv": 0.010313755832612514,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06472458690404892,
+        "public_tv": 0.03990543261170387,
+        "private_tv": 0.041662875562906265,
+        "off_article_mass": 0.969977617263794,
+        "on_article_mass": 0.9386724233627319
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_surgeon_anesthesia",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.0,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.16666666666666666,
+    "target_logit_change": 1.25,
+    "target_log_odds_change": 1.25,
+    "target_odds_multiplier": 3.4903429574618414,
+    "target_probability_change": 0.0028582409722730517,
+    "target_rank_change": 7,
+    "target_rank_before": 18,
+    "target_rank_after": 11,
+    "patch_norm": 6809.072265625,
+    "patch_norm_over_natural_rms": 1.707543170016503,
+    "effect_per_patch_norm": 0.00014686288542543625,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03050546534359455,
+        "public_tv": 7.405897122225724e-07,
+        "private_tv": 0.03050551563501358,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06619112193584442,
+        "public_tv": 0.019209986552596092,
+        "private_tv": 0.06798026710748672,
+        "off_article_mass": 0.969977617263794,
+        "on_article_mass": 0.8398757576942444
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_cardio_oncology",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -9.5,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.06578947368421052,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 2.6006295229308307e-05,
+    "target_rank_change": 49,
+    "target_rank_before": 214,
+    "target_rank_after": 165,
+    "patch_norm": 2584.118896484375,
+    "patch_norm_over_natural_rms": 0.6480316847977318,
+    "effect_per_patch_norm": 0.00024186193632587722,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.029048968106508255,
+        "public_tv": 3.2674076777539085e-09,
+        "private_tv": 0.029048971831798553,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04038842022418976,
+        "public_tv": 0.02599244937300682,
+        "private_tv": 0.029739875346422195,
+        "off_article_mass": 0.9517723917961121,
+        "on_article_mass": 0.9599504470825195
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_cardio_oncology",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -9.5,
+    "delta_delta": 1.3125,
+    "fraction_gap_closed": 0.13815789473684212,
+    "target_logit_change": 1.0625,
+    "target_log_odds_change": 1.0625,
+    "target_odds_multiplier": 2.893595944171761,
+    "target_probability_change": 7.533967436756939e-05,
+    "target_rank_change": 94,
+    "target_rank_before": 214,
+    "target_rank_after": 120,
+    "patch_norm": 5168.23779296875,
+    "patch_norm_over_natural_rms": 1.2960633695954635,
+    "effect_per_patch_norm": 0.00025395503314217107,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06425043195486069,
+        "public_tv": 3.5379528195988996e-09,
+        "private_tv": 0.06425043195486069,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.07888884097337723,
+        "public_tv": 0.047352906316518784,
+        "private_tv": 0.06494913250207901,
+        "off_article_mass": 0.9517723917961121,
+        "on_article_mass": 0.9544667601585388
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_cardio_oncology",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -9.5,
+    "delta_delta": 1.8125,
+    "fraction_gap_closed": 0.19078947368421054,
+    "target_logit_change": 1.4375,
+    "target_log_odds_change": 1.4375,
+    "target_odds_multiplier": 4.21015725614396,
+    "target_probability_change": 0.00012292759492993355,
+    "target_rank_change": 114,
+    "target_rank_before": 214,
+    "target_rank_after": 100,
+    "patch_norm": 7752.357421875,
+    "patch_norm_over_natural_rms": 1.9440952380660836,
+    "effect_per_patch_norm": 0.00023379984969289835,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.11592479050159454,
+        "public_tv": 3.556860139752871e-09,
+        "private_tv": 0.11592479050159454,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.1319182962179184,
+        "public_tv": 0.05649487301707268,
+        "private_tv": 0.11426229774951935,
+        "off_article_mass": 0.9517723917961121,
+        "on_article_mass": 0.9322064518928528
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_neuro_eye",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -12.0,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.041666666666666664,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 2.7655746634991374e-06,
+    "target_rank_change": 37,
+    "target_rank_before": 187,
+    "target_rank_after": 150,
+    "patch_norm": 2687.706787109375,
+    "patch_norm_over_natural_rms": 0.6740089087473294,
+    "effect_per_patch_norm": 0.00018603219755892694,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0036343843676149845,
+        "public_tv": 0.00013913490693084896,
+        "private_tv": 0.0036396903451532125,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06576500833034515,
+        "public_tv": 0.06431296467781067,
+        "private_tv": 0.016544830054044724,
+        "off_article_mass": 0.906751811504364,
+        "on_article_mass": 0.9353291988372803
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_neuro_eye",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -12.0,
+    "delta_delta": 1.25,
+    "fraction_gap_closed": 0.10416666666666667,
+    "target_logit_change": 1.0,
+    "target_log_odds_change": 1.0,
+    "target_odds_multiplier": 2.718281828459045,
+    "target_probability_change": 1.0230153748125304e-05,
+    "target_rank_change": 73,
+    "target_rank_before": 187,
+    "target_rank_after": 114,
+    "patch_norm": 5375.41357421875,
+    "patch_norm_over_natural_rms": 1.3480178174946589,
+    "effect_per_patch_norm": 0.00023254024694865864,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.029264286160469055,
+        "public_tv": 0.006015494000166655,
+        "private_tv": 0.025041528046131134,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.14440752565860748,
+        "public_tv": 0.1392473578453064,
+        "private_tv": 0.0562581866979599,
+        "off_article_mass": 0.906751811504364,
+        "on_article_mass": 0.9350078105926514
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_neuro_eye",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -12.0,
+    "delta_delta": 2.0,
+    "fraction_gap_closed": 0.16666666666666666,
+    "target_logit_change": 1.625,
+    "target_log_odds_change": 1.625,
+    "target_odds_multiplier": 5.0784190371800815,
+    "target_probability_change": 2.587118524388643e-05,
+    "target_rank_change": 103,
+    "target_rank_before": 187,
+    "target_rank_after": 84,
+    "patch_norm": 8063.1201171875,
+    "patch_norm_over_natural_rms": 2.0220266650176923,
+    "effect_per_patch_norm": 0.00024804293758898146,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05394309014081955,
+        "public_tv": 0.02066010981798172,
+        "private_tv": 0.04102855920791626,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.17850443720817566,
+        "public_tv": 0.16603983938694,
+        "private_tv": 0.10121375322341919,
+        "off_article_mass": 0.906751811504364,
+        "on_article_mass": 0.8785994648933411
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_writer_editor",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.25,
+    "delta_delta": 0.1875,
+    "fraction_gap_closed": 0.03,
+    "target_logit_change": 0.1875,
+    "target_log_odds_change": 0.1875,
+    "target_odds_multiplier": 1.2062302494209807,
+    "target_probability_change": 2.1956730051897466e-05,
+    "target_rank_change": 17,
+    "target_rank_before": 156,
+    "target_rank_after": 139,
+    "patch_norm": 1589.2491455078125,
+    "patch_norm_over_natural_rms": 0.39854350460728133,
+    "effect_per_patch_norm": 0.0001179802427643201,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.033754926174879074,
+        "public_tv": 2.9109869501553476e-05,
+        "private_tv": 0.03374851122498512,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03654426708817482,
+        "public_tv": 0.021423449739813805,
+        "private_tv": 0.030737828463315964,
+        "off_article_mass": 0.9074928760528564,
+        "on_article_mass": 0.9291219711303711
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_writer_editor",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.25,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.06,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 4.662317951442674e-05,
+    "target_rank_change": 36,
+    "target_rank_before": 156,
+    "target_rank_after": 120,
+    "patch_norm": 3178.498291015625,
+    "patch_norm_over_natural_rms": 0.7970870092145627,
+    "effect_per_patch_norm": 0.0001179802427643201,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.042924635112285614,
+        "public_tv": 3.7453879485838115e-05,
+        "private_tv": 0.04291395843029022,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.05165040120482445,
+        "public_tv": 0.04152543842792511,
+        "private_tv": 0.04084043204784393,
+        "off_article_mass": 0.9074928760528564,
+        "on_article_mass": 0.9436654448509216
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_writer_editor",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.25,
+    "delta_delta": 0.5625,
+    "fraction_gap_closed": 0.09,
+    "target_logit_change": 0.5625,
+    "target_log_odds_change": 0.5625,
+    "target_odds_multiplier": 1.7550546569602985,
+    "target_probability_change": 8.233312837546691e-05,
+    "target_rank_change": 49,
+    "target_rank_before": 156,
+    "target_rank_after": 107,
+    "patch_norm": 4767.7470703125,
+    "patch_norm_over_natural_rms": 1.1956304219854,
+    "effect_per_patch_norm": 0.00011798025182638961,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06581982225179672,
+        "public_tv": 4.0497983718523756e-05,
+        "private_tv": 0.06582031399011612,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.09239363670349121,
+        "public_tv": 0.07769270241260529,
+        "private_tv": 0.061994437128305435,
+        "off_article_mass": 0.9074928760528564,
+        "on_article_mass": 0.955254077911377
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_programmer_engineer",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -7.875,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.031746031746031744,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 4.5118838897906244e-05,
+    "target_rank_change": 8,
+    "target_rank_before": 48,
+    "target_rank_after": 40,
+    "patch_norm": 1893.871337890625,
+    "patch_norm_over_natural_rms": 0.47493504867484604,
+    "effect_per_patch_norm": 0.00013200474340482258,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.029303301125764847,
+        "public_tv": 0.0,
+        "private_tv": 0.029303301125764847,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.029365617781877518,
+        "public_tv": 0.0,
+        "private_tv": 0.029365617781877518,
+        "off_article_mass": 0.8367164731025696,
+        "on_article_mass": 0.8630409836769104
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_programmer_engineer",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -7.875,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.06349206349206349,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 9.450157813262194e-05,
+    "target_rank_change": 10,
+    "target_rank_before": 48,
+    "target_rank_after": 38,
+    "patch_norm": 3787.74267578125,
+    "patch_norm_over_natural_rms": 0.9498700973496921,
+    "effect_per_patch_norm": 0.00013200474340482258,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05643339455127716,
+        "public_tv": 0.0,
+        "private_tv": 0.05643339455127716,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.060859743505716324,
+        "public_tv": 0.0,
+        "private_tv": 0.060859743505716324,
+        "off_article_mass": 0.8367164731025696,
+        "on_article_mass": 0.8913928270339966
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_programmer_engineer",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -7.875,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.09523809523809523,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.00016721685824450105,
+    "target_rank_change": 11,
+    "target_rank_before": 48,
+    "target_rank_after": 37,
+    "patch_norm": 5681.6142578125,
+    "patch_norm_over_natural_rms": 1.4248052072488342,
+    "effect_per_patch_norm": 0.00013200473773254017,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06457557529211044,
+        "public_tv": 0.0,
+        "private_tv": 0.06457557529211044,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06915208697319031,
+        "public_tv": 0.0,
+        "private_tv": 0.06915208697319031,
+        "off_article_mass": 0.8367164731025696,
+        "on_article_mass": 0.8902616500854492
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_banker_accountant",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.9375,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.10126582278481013,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.0003889284562319517,
+    "target_rank_change": 5,
+    "target_rank_before": 44,
+    "target_rank_after": 39,
+    "patch_norm": 1768.2274169921875,
+    "patch_norm_over_natural_rms": 0.4434267299766705,
+    "effect_per_patch_norm": 0.0002827690574159948,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04771560803055763,
+        "public_tv": 0.001750283408910036,
+        "private_tv": 0.04689767211675644,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.07046696543693542,
+        "public_tv": 0.053875308483839035,
+        "private_tv": 0.044444747269153595,
+        "off_article_mass": 0.9569984674453735,
+        "on_article_mass": 0.9561651945114136
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_banker_accountant",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.9375,
+    "delta_delta": 0.875,
+    "fraction_gap_closed": 0.17721518987341772,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.0010158020304515958,
+    "target_rank_change": 10,
+    "target_rank_before": 44,
+    "target_rank_after": 34,
+    "patch_norm": 3536.454833984375,
+    "patch_norm_over_natural_rms": 0.886853459953341,
+    "effect_per_patch_norm": 0.0002474229252389954,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0592157356441021,
+        "public_tv": 0.0018942425958812237,
+        "private_tv": 0.058466069400310516,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.11808209866285324,
+        "public_tv": 0.1025044173002243,
+        "private_tv": 0.06259778887033463,
+        "off_article_mass": 0.9569984674453735,
+        "on_article_mass": 0.9487640261650085
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_banker_accountant",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.9375,
+    "delta_delta": 1.1875,
+    "fraction_gap_closed": 0.24050632911392406,
+    "target_logit_change": 0.8125,
+    "target_log_odds_change": 0.8125,
+    "target_odds_multiplier": 2.2535347872132085,
+    "target_probability_change": 0.001398382126353681,
+    "target_rank_change": 14,
+    "target_rank_before": 44,
+    "target_rank_after": 30,
+    "patch_norm": 5304.6826171875,
+    "patch_norm_over_natural_rms": 1.3302802817664556,
+    "effect_per_patch_norm": 0.00022385882166680934,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09337712824344635,
+        "public_tv": 0.0019034409197047353,
+        "private_tv": 0.09246835112571716,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.15870550274848938,
+        "public_tv": 0.12466109544038773,
+        "private_tv": 0.0942215546965599,
+        "off_article_mass": 0.9569984674453735,
+        "on_article_mass": 0.9325878024101257
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_statistician_analyst",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -12.25,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.01020408163265306,
+    "target_logit_change": 0.0,
+    "target_log_odds_change": 0.0,
+    "target_odds_multiplier": 1.0,
+    "target_probability_change": 4.1124621930066496e-07,
+    "target_rank_change": -12,
+    "target_rank_before": 230,
+    "target_rank_after": 242,
+    "patch_norm": 1178.2305908203125,
+    "patch_norm_over_natural_rms": 0.2954704428996194,
+    "effect_per_patch_norm": 0.00010609128720123621,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.024249300360679626,
+        "public_tv": 0.0,
+        "private_tv": 0.024249300360679626,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.022871656343340874,
+        "public_tv": 0.0,
+        "private_tv": 0.022871656343340874,
+        "off_article_mass": 0.9248791337013245,
+        "on_article_mass": 0.9188474416732788
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_statistician_analyst",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -12.25,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.01020408163265306,
+    "target_logit_change": 0.0,
+    "target_log_odds_change": 0.0,
+    "target_odds_multiplier": 1.0,
+    "target_probability_change": 4.5614569899044e-07,
+    "target_rank_change": -11,
+    "target_rank_before": 230,
+    "target_rank_after": 241,
+    "patch_norm": 2356.461181640625,
+    "patch_norm_over_natural_rms": 0.5909408857992388,
+    "effect_per_patch_norm": 5.3045643600618103e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.015633676201105118,
+        "public_tv": 0.0004955430049449205,
+        "private_tv": 0.01561681553721428,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04943261295557022,
+        "public_tv": 0.050666727125644684,
+        "private_tv": 0.01808864064514637,
+        "off_article_mass": 0.9248791337013245,
+        "on_article_mass": 0.9062236547470093
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_statistician_analyst",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -12.25,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.01020408163265306,
+    "target_logit_change": 0.0,
+    "target_log_odds_change": 0.0,
+    "target_odds_multiplier": 1.0,
+    "target_probability_change": 4.0659006117493846e-07,
+    "target_rank_change": -14,
+    "target_rank_before": 230,
+    "target_rank_after": 244,
+    "patch_norm": 3534.692138671875,
+    "patch_norm_over_natural_rms": 0.8864114205353024,
+    "effect_per_patch_norm": 3.536375873655789e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.025176377967000008,
+        "public_tv": 0.0005271710106171668,
+        "private_tv": 0.025158017873764038,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.0725027546286583,
+        "public_tv": 0.07396527379751205,
+        "private_tv": 0.026963984593749046,
+        "off_article_mass": 0.9248791337013245,
+        "on_article_mass": 0.895346462726593
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_technician_operator",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -9.6875,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.012903225806451613,
+    "target_logit_change": 0.0,
+    "target_log_odds_change": 0.0,
+    "target_odds_multiplier": 1.0,
+    "target_probability_change": 1.0572748578852043e-06,
+    "target_rank_change": 15,
+    "target_rank_before": 505,
+    "target_rank_after": 490,
+    "patch_norm": 1681.39794921875,
+    "patch_norm_over_natural_rms": 0.4216520947739859,
+    "effect_per_patch_norm": 7.434290023850713e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.033730536699295044,
+        "public_tv": 2.625299885039567e-06,
+        "private_tv": 0.03373030945658684,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03638148680329323,
+        "public_tv": 0.020661458373069763,
+        "private_tv": 0.027090633288025856,
+        "off_article_mass": 0.9600597620010376,
+        "on_article_mass": 0.947721004486084
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_technician_operator",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -9.6875,
+    "delta_delta": 0.1875,
+    "fraction_gap_closed": 0.01935483870967742,
+    "target_logit_change": 0.0625,
+    "target_log_odds_change": 0.0625,
+    "target_odds_multiplier": 1.0644944589178593,
+    "target_probability_change": 2.493354259058833e-06,
+    "target_rank_change": 38,
+    "target_rank_before": 505,
+    "target_rank_after": 467,
+    "patch_norm": 3362.7958984375,
+    "patch_norm_over_natural_rms": 0.8433041895479718,
+    "effect_per_patch_norm": 5.575717517888034e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03988538682460785,
+        "public_tv": 2.625299885039567e-06,
+        "private_tv": 0.03988521918654442,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.041313689202070236,
+        "public_tv": 0.020661458373069763,
+        "private_tv": 0.038206011056900024,
+        "off_article_mass": 0.9600597620010376,
+        "on_article_mass": 0.9299589991569519
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_technician_operator",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -9.6875,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.03870967741935484,
+    "target_logit_change": 0.0,
+    "target_log_odds_change": 0.0,
+    "target_odds_multiplier": 1.0,
+    "target_probability_change": 5.174026227905415e-06,
+    "target_rank_change": 48,
+    "target_rank_before": 505,
+    "target_rank_after": 457,
+    "patch_norm": 5044.19384765625,
+    "patch_norm_over_natural_rms": 1.2649562843219577,
+    "effect_per_patch_norm": 7.434290023850713e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06574166566133499,
+        "public_tv": 1.1822455235233065e-05,
+        "private_tv": 0.06574013829231262,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.0740513950586319,
+        "public_tv": 0.04280468076467514,
+        "private_tv": 0.057538434863090515,
+        "off_article_mass": 0.9600597620010376,
+        "on_article_mass": 0.8951087594032288
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_retailer_auctioneer",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -11.25,
+    "delta_delta": 1.125,
+    "fraction_gap_closed": 0.1,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 1.6337427268808824e-06,
+    "target_rank_change": 485,
+    "target_rank_before": 1534,
+    "target_rank_after": 1049,
+    "patch_norm": 2432.343994140625,
+    "patch_norm_over_natural_rms": 0.6099703766243189,
+    "effect_per_patch_norm": 0.0004625168161699412,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04813869670033455,
+        "public_tv": 0.0,
+        "private_tv": 0.04813869670033455,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.058501627296209335,
+        "public_tv": 0.0,
+        "private_tv": 0.058501627296209335,
+        "off_article_mass": 0.9161387085914612,
+        "on_article_mass": 0.9367936849594116
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_retailer_auctioneer",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -11.25,
+    "delta_delta": 2.3125,
+    "fraction_gap_closed": 0.20555555555555555,
+    "target_logit_change": 1.1875,
+    "target_log_odds_change": 1.1875,
+    "target_odds_multiplier": 3.2788737679386735,
+    "target_probability_change": 6.311691208793491e-06,
+    "target_rank_change": 839,
+    "target_rank_before": 1534,
+    "target_rank_after": 695,
+    "patch_norm": 4864.68798828125,
+    "patch_norm_over_natural_rms": 1.2199407532486377,
+    "effect_per_patch_norm": 0.00047536450550799515,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07862744480371475,
+        "public_tv": 0.004741691518574953,
+        "private_tv": 0.07869066298007965,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.07367698848247528,
+        "public_tv": 0.0287475548684597,
+        "private_tv": 0.08730136603116989,
+        "off_article_mass": 0.9161387085914612,
+        "on_article_mass": 0.9492067098617554
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_retailer_auctioneer",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -11.25,
+    "delta_delta": 3.0625,
+    "fraction_gap_closed": 0.2722222222222222,
+    "target_logit_change": 1.3125,
+    "target_log_odds_change": 1.3125,
+    "target_odds_multiplier": 3.715450737941104,
+    "target_probability_change": 1.3361823107516102e-05,
+    "target_rank_change": 970,
+    "target_rank_before": 1534,
+    "target_rank_after": 564,
+    "patch_norm": 7297.03271484375,
+    "patch_norm_over_natural_rms": 1.829911313545845,
+    "effect_per_patch_norm": 0.00041969114291761495,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.1311330497264862,
+        "public_tv": 0.006500958930701017,
+        "private_tv": 0.13118310272693634,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.11133740842342377,
+        "public_tv": 0.08289900422096252,
+        "private_tv": 0.12979914247989655,
+        "off_article_mass": 0.9161387085914612,
+        "on_article_mass": 0.9430078864097595
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_plumber_electrician",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.75,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.02631578947368421,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.0007445807568728924,
+    "target_rank_change": 3,
+    "target_rank_before": 20,
+    "target_rank_after": 17,
+    "patch_norm": 2031.7191162109375,
+    "patch_norm_over_natural_rms": 0.5095037862635332,
+    "effect_per_patch_norm": 6.152425254191596e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.030397703871130943,
+        "public_tv": 2.6027998956124065e-06,
+        "private_tv": 0.030396735295653343,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03262411057949066,
+        "public_tv": 0.0204413291066885,
+        "private_tv": 0.030343549326062202,
+        "off_article_mass": 0.941413402557373,
+        "on_article_mass": 0.9294103384017944
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_plumber_electrician",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.75,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.10526315789473684,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.002569763455539942,
+    "target_rank_change": 5,
+    "target_rank_before": 20,
+    "target_rank_after": 15,
+    "patch_norm": 4063.438232421875,
+    "patch_norm_over_natural_rms": 1.0190075725270664,
+    "effect_per_patch_norm": 0.00012304850508383191,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.024753985926508904,
+        "public_tv": 1.1680586794682313e-05,
+        "private_tv": 0.02475147694349289,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.057114604860544205,
+        "public_tv": 0.04234868288040161,
+        "private_tv": 0.027177641168236732,
+        "off_article_mass": 0.941413402557373,
+        "on_article_mass": 0.8935673832893372
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_plumber_electrician",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.75,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.13157894736842105,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.0036625717766582966,
+    "target_rank_change": 5,
+    "target_rank_before": 20,
+    "target_rank_after": 15,
+    "patch_norm": 6095.1572265625,
+    "patch_norm_over_natural_rms": 1.5285113281784517,
+    "effect_per_patch_norm": 0.00010254042295681399,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04731125012040138,
+        "public_tv": 1.1680586794682313e-05,
+        "private_tv": 0.047307223081588745,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06321661174297333,
+        "public_tv": 0.04234868288040161,
+        "private_tv": 0.05958893150091171,
+        "off_article_mass": 0.941413402557373,
+        "on_article_mass": 0.818212628364563
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_carpenter_architect",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.1111111111111111,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.005629543215036392,
+    "target_rank_change": 0,
+    "target_rank_before": 7,
+    "target_rank_after": 7,
+    "patch_norm": 2185.07470703125,
+    "patch_norm_over_natural_rms": 0.5479614911422219,
+    "effect_per_patch_norm": 0.0001716188461626987,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.058816466480493546,
+        "public_tv": 3.295087481092196e-06,
+        "private_tv": 0.058814406394958496,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.07229342311620712,
+        "public_tv": 0.03940911218523979,
+        "private_tv": 0.04856729507446289,
+        "off_article_mass": 0.9117127656936646,
+        "on_article_mass": 0.8558862805366516
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_carpenter_architect",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.14814814814814814,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.009076913818717003,
+    "target_rank_change": 0,
+    "target_rank_before": 7,
+    "target_rank_after": 7,
+    "patch_norm": 4370.1494140625,
+    "patch_norm_over_natural_rms": 1.0959229822844438,
+    "effect_per_patch_norm": 0.00011441256410846579,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.056377872824668884,
+        "public_tv": 4.410971814650111e-05,
+        "private_tv": 0.0563487708568573,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 0.9999998807907104
+      },
+      "1.0": {
+        "total_tv": 0.10971534997224808,
+        "public_tv": 0.08465669304132462,
+        "private_tv": 0.04784722253680229,
+        "off_article_mass": 0.9117127656936646,
+        "on_article_mass": 0.7913938760757446
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_carpenter_architect",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.14814814814814814,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.009290670976042747,
+    "target_rank_change": 0,
+    "target_rank_before": 7,
+    "target_rank_after": 7,
+    "patch_norm": 6555.224609375,
+    "patch_norm_over_natural_rms": 1.643884595875258,
+    "effect_per_patch_norm": 7.627503705745209e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05940371751785278,
+        "public_tv": 0.00015471142251044512,
+        "private_tv": 0.05930127575993538,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 0.9999996423721313
+      },
+      "1.0": {
+        "total_tv": 0.1310848444700241,
+        "public_tv": 0.1093871220946312,
+        "private_tv": 0.0455482192337513,
+        "off_article_mass": 0.9117127656936646,
+        "on_article_mass": 0.7556940317153931
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_supervisor_inspector",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -7.9375,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.031496062992125984,
+    "target_logit_change": 0.0625,
+    "target_log_odds_change": 0.0625,
+    "target_odds_multiplier": 1.0644944589178593,
+    "target_probability_change": 7.758003448543604e-07,
+    "target_rank_change": 81,
+    "target_rank_before": 1323,
+    "target_rank_after": 1242,
+    "patch_norm": 2607.669921875,
+    "patch_norm_over_natural_rms": 0.6539376865236447,
+    "effect_per_patch_norm": 9.58710294975684e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03264173865318298,
+        "public_tv": 0.00015350553439930081,
+        "private_tv": 0.03258504346013069,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.07446758449077606,
+        "public_tv": 0.07095781713724136,
+        "private_tv": 0.028108295053243637,
+        "off_article_mass": 0.9613261818885803,
+        "on_article_mass": 0.9373897314071655
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_supervisor_inspector",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -7.9375,
+    "delta_delta": 0.4375,
+    "fraction_gap_closed": 0.05511811023622047,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 1.0676990314095747e-06,
+    "target_rank_change": 139,
+    "target_rank_before": 1323,
+    "target_rank_after": 1184,
+    "patch_norm": 5215.33984375,
+    "patch_norm_over_natural_rms": 1.3078753730472894,
+    "effect_per_patch_norm": 8.388715081037235e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04531120881438255,
+        "public_tv": 0.0066370368003845215,
+        "private_tv": 0.041065946221351624,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.15423141419887543,
+        "public_tv": 0.15363451838493347,
+        "private_tv": 0.03968097269535065,
+        "off_article_mass": 0.9613261818885803,
+        "on_article_mass": 0.9032528400421143
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "between_supervisor_inspector",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -7.9375,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.07874015748031496,
+    "target_logit_change": 0.4375,
+    "target_log_odds_change": 0.4375,
+    "target_odds_multiplier": 1.5488302986341331,
+    "target_probability_change": 1.9227159100410063e-06,
+    "target_rank_change": 210,
+    "target_rank_before": 1323,
+    "target_rank_after": 1113,
+    "patch_norm": 7823.01123046875,
+    "patch_norm_over_natural_rms": 1.9618134269167107,
+    "effect_per_patch_norm": 7.9892509621586e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06344016641378403,
+        "public_tv": 0.0066370368003845215,
+        "private_tv": 0.06045754998922348,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.15564124286174774,
+        "public_tv": 0.15363451838493347,
+        "private_tv": 0.05105947330594063,
+        "off_article_mass": 0.9613261818885803,
+        "on_article_mass": 0.8471059203147888
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_vet_dentist",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.0,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.1875,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.0033553699031472206,
+    "target_rank_change": 13,
+    "target_rank_before": 35,
+    "target_rank_after": 22,
+    "patch_norm": 3576.607666015625,
+    "patch_norm_over_natural_rms": 0.8969227750402015,
+    "effect_per_patch_norm": 0.00020969591021301678,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.036646269261837006,
+        "public_tv": 8.952914853921357e-09,
+        "private_tv": 0.03664626181125641,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03734072297811508,
+        "public_tv": 0.014904909767210484,
+        "private_tv": 0.03708831965923309,
+        "off_article_mass": 0.9500646591186523,
+        "on_article_mass": 0.9560452103614807
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_vet_dentist",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.0,
+    "delta_delta": 1.625,
+    "fraction_gap_closed": 0.40625,
+    "target_logit_change": 1.25,
+    "target_log_odds_change": 1.25,
+    "target_odds_multiplier": 3.4903429574618414,
+    "target_probability_change": 0.010778102092444897,
+    "target_rank_change": 24,
+    "target_rank_before": 35,
+    "target_rank_after": 11,
+    "patch_norm": 7153.21533203125,
+    "patch_norm_over_natural_rms": 1.793845550080403,
+    "effect_per_patch_norm": 0.00022717056939743484,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06189778447151184,
+        "public_tv": 9.431339265120187e-08,
+        "private_tv": 0.06189776584506035,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.07337045669555664,
+        "public_tv": 0.031179701909422874,
+        "private_tv": 0.0643349140882492,
+        "off_article_mass": 0.9500646591186523,
+        "on_article_mass": 0.8870443105697632
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_vet_dentist",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.0,
+    "delta_delta": 2.0,
+    "fraction_gap_closed": 0.5,
+    "target_logit_change": 1.625,
+    "target_log_odds_change": 1.625,
+    "target_odds_multiplier": 5.0784190371800815,
+    "target_probability_change": 0.018061968497931957,
+    "target_rank_change": 27,
+    "target_rank_before": 35,
+    "target_rank_after": 8,
+    "patch_norm": 10729.822265625,
+    "patch_norm_over_natural_rms": 2.690768141447716,
+    "effect_per_patch_norm": 0.00018639637735728162,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.08509450405836105,
+        "public_tv": 3.2223107382378657e-07,
+        "private_tv": 0.08509444445371628,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.10338892787694931,
+        "public_tv": 0.04887733608484268,
+        "private_tv": 0.0883355513215065,
+        "off_article_mass": 0.9500646591186523,
+        "on_article_mass": 0.8149861097335815
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_fire_paramedic",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.5,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.05555555555555555,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.001210749614983797,
+    "target_rank_change": 6,
+    "target_rank_before": 21,
+    "target_rank_after": 15,
+    "patch_norm": 3027.975341796875,
+    "patch_norm_over_natural_rms": 0.7593396592316902,
+    "effect_per_patch_norm": 8.256342003486853e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04291878640651703,
+        "public_tv": 4.124714178033173e-05,
+        "private_tv": 0.042898789048194885,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.058839280158281326,
+        "public_tv": 0.0457557737827301,
+        "private_tv": 0.04233665019273758,
+        "off_article_mass": 0.9251099228858948,
+        "on_article_mass": 0.959037184715271
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_fire_paramedic",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.5,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.05555555555555555,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.0017477357760071754,
+    "target_rank_change": 7,
+    "target_rank_before": 21,
+    "target_rank_after": 14,
+    "patch_norm": 6055.95068359375,
+    "patch_norm_over_natural_rms": 1.5186793184633804,
+    "effect_per_patch_norm": 4.1281710017434265e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.08001880347728729,
+        "public_tv": 4.483170050662011e-05,
+        "private_tv": 0.08000295609235764,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.12292515486478806,
+        "public_tv": 0.10332854092121124,
+        "private_tv": 0.07635661959648132,
+        "off_article_mass": 0.9251099228858948,
+        "on_article_mass": 0.9695886969566345
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_fire_paramedic",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.5,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.05555555555555555,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.001728723756968975,
+    "target_rank_change": 7,
+    "target_rank_before": 21,
+    "target_rank_after": 14,
+    "patch_norm": 9083.927734375,
+    "patch_norm_over_natural_rms": 2.2780194062651433,
+    "effect_per_patch_norm": 2.752113483399488e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0792873427271843,
+        "public_tv": 4.4931362936040387e-05,
+        "private_tv": 0.07926951348781586,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.17991547286510468,
+        "public_tv": 0.17176932096481323,
+        "private_tv": 0.07768549025058746,
+        "off_article_mass": 0.9251099228858948,
+        "on_article_mass": 0.978845477104187
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_librarian_historian",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.375,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.14285714285714285,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.008110683411359787,
+    "target_rank_change": 2,
+    "target_rank_before": 6,
+    "target_rank_after": 4,
+    "patch_norm": 2106.742431640625,
+    "patch_norm_over_natural_rms": 0.5283177369540973,
+    "effect_per_patch_norm": 0.0002966665457595979,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03697357326745987,
+        "public_tv": 2.6021407393272966e-06,
+        "private_tv": 0.036971401423215866,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04770346358418465,
+        "public_tv": 0.02060767263174057,
+        "private_tv": 0.04141579568386078,
+        "off_article_mass": 0.9539974927902222,
+        "on_article_mass": 0.9339939951896667
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_librarian_historian",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.375,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.22857142857142856,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.015357626602053642,
+    "target_rank_change": 2,
+    "target_rank_before": 6,
+    "target_rank_after": 4,
+    "patch_norm": 4213.48486328125,
+    "patch_norm_over_natural_rms": 1.0566354739081947,
+    "effect_per_patch_norm": 0.0002373332366076783,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07047132402658463,
+        "public_tv": 1.1767436262744013e-05,
+        "private_tv": 0.07046154886484146,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.08926689624786377,
+        "public_tv": 0.04269331693649292,
+        "private_tv": 0.07511799037456512,
+        "off_article_mass": 0.9539974927902222,
+        "on_article_mass": 0.8984362483024597
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_librarian_historian",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.375,
+    "delta_delta": 1.25,
+    "fraction_gap_closed": 0.2857142857142857,
+    "target_logit_change": 0.875,
+    "target_log_odds_change": 0.875,
+    "target_odds_multiplier": 2.398875293967098,
+    "target_probability_change": 0.02136434055864811,
+    "target_rank_change": 2,
+    "target_rank_before": 6,
+    "target_rank_after": 4,
+    "patch_norm": 6320.228515625,
+    "patch_norm_over_natural_rms": 1.5849535169837727,
+    "effect_per_patch_norm": 0.0001977776589738368,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09999502450227737,
+        "public_tv": 4.373060437501408e-05,
+        "private_tv": 0.09996671974658966,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.12898452579975128,
+        "public_tv": 0.06623081117868423,
+        "private_tv": 0.10368870943784714,
+        "off_article_mass": 0.9539974927902222,
+        "on_article_mass": 0.859832763671875
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_mechanic_technician",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.07407407407407407,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.006731240078806877,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 2446.649658203125,
+    "patch_norm_over_natural_rms": 0.6135578754801898,
+    "effect_per_patch_norm": 0.0001021805468395527,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.022042158991098404,
+        "public_tv": 4.1491337469778955e-05,
+        "private_tv": 0.02207687869668007,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.045861244201660156,
+        "public_tv": 0.04601160064339638,
+        "private_tv": 0.019301678985357285,
+        "off_article_mass": 0.9286588430404663,
+        "on_article_mass": 0.9465730786323547
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_mechanic_technician",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.1111111111111111,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.010917963460087776,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 4893.29931640625,
+    "patch_norm_over_natural_rms": 1.2271157509603796,
+    "effect_per_patch_norm": 7.663541012966452e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03325607255101204,
+        "public_tv": 4.4135216739960015e-05,
+        "private_tv": 0.033288076519966125,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06892026215791702,
+        "public_tv": 0.06679476797580719,
+        "private_tv": 0.03025835007429123,
+        "off_article_mass": 0.9286588430404663,
+        "on_article_mass": 0.9587596654891968
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_mechanic_technician",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.14814814814814814,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.01525244303047657,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 7339.94921875,
+    "patch_norm_over_natural_rms": 1.8406736876648655,
+    "effect_per_patch_norm": 6.812036229388934e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04414527490735054,
+        "public_tv": 4.508107667788863e-05,
+        "private_tv": 0.0441775843501091,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.10428955405950546,
+        "public_tv": 0.10390625894069672,
+        "private_tv": 0.042254142463207245,
+        "off_article_mass": 0.9286588430404663,
+        "on_article_mass": 0.9673415422439575
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_surgeon_cardio",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.125,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.10204081632653061,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.0010533359600231051,
+    "target_rank_change": 7,
+    "target_rank_before": 23,
+    "target_rank_after": 16,
+    "patch_norm": 2628.3662109375,
+    "patch_norm_over_natural_rms": 0.6591277925549419,
+    "effect_per_patch_norm": 0.000237790303877431,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04122897982597351,
+        "public_tv": 2.406009684818855e-07,
+        "private_tv": 0.0412290021777153,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.04120567813515663,
+        "public_tv": 0.01774493046104908,
+        "private_tv": 0.040342677384614944,
+        "off_article_mass": 0.969977617263794,
+        "on_article_mass": 0.96732097864151
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_surgeon_cardio",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.125,
+    "delta_delta": 0.875,
+    "fraction_gap_closed": 0.14285714285714285,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.001665984163992107,
+    "target_rank_change": 9,
+    "target_rank_before": 23,
+    "target_rank_after": 14,
+    "patch_norm": 5256.732421875,
+    "patch_norm_over_natural_rms": 1.3182555851098838,
+    "effect_per_patch_norm": 0.0001664532127142017,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05874107778072357,
+        "public_tv": 3.3038213587133214e-07,
+        "private_tv": 0.05874103307723999,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06780965626239777,
+        "public_tv": 0.04900791496038437,
+        "private_tv": 0.0587281808257103,
+        "off_article_mass": 0.969977617263794,
+        "on_article_mass": 0.9500807523727417
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_surgeon_cardio",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.125,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.16326530612244897,
+    "target_logit_change": 0.75,
+    "target_log_odds_change": 0.75,
+    "target_odds_multiplier": 2.117000016612675,
+    "target_probability_change": 0.001985012902878225,
+    "target_rank_change": 9,
+    "target_rank_before": 23,
+    "target_rank_after": 14,
+    "patch_norm": 7885.0986328125,
+    "patch_norm_over_natural_rms": 1.9773833776648257,
+    "effect_per_patch_norm": 0.00012682149540129653,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07381045818328857,
+        "public_tv": 3.336243707963149e-07,
+        "private_tv": 0.0738103911280632,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.09180139750242233,
+        "public_tv": 0.07504074275493622,
+        "private_tv": 0.07302404940128326,
+        "off_article_mass": 0.969977617263794,
+        "on_article_mass": 0.912615954875946
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_pharmacist_nutrition",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -5.625,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.17777777777777778,
+    "target_logit_change": 0.875,
+    "target_log_odds_change": 0.875,
+    "target_odds_multiplier": 2.398875293967098,
+    "target_probability_change": 0.0028884451603516936,
+    "target_rank_change": 5,
+    "target_rank_before": 17,
+    "target_rank_after": 12,
+    "patch_norm": 3416.198486328125,
+    "patch_norm_over_natural_rms": 0.856696208409953,
+    "effect_per_patch_norm": 0.0002927230381964259,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.045855697244405746,
+        "public_tv": 8.605188384080975e-08,
+        "private_tv": 0.04585568234324455,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.04826280102133751,
+        "public_tv": 0.01599673368036747,
+        "private_tv": 0.04582678899168968,
+        "off_article_mass": 0.9479333758354187,
+        "on_article_mass": 0.9413750767707825
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_pharmacist_nutrition",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -5.625,
+    "delta_delta": 1.875,
+    "fraction_gap_closed": 0.3333333333333333,
+    "target_logit_change": 1.75,
+    "target_log_odds_change": 1.75,
+    "target_odds_multiplier": 5.754602676005731,
+    "target_probability_change": 0.009289590059779584,
+    "target_rank_change": 8,
+    "target_rank_before": 17,
+    "target_rank_after": 9,
+    "patch_norm": 6832.39697265625,
+    "patch_norm_over_natural_rms": 1.713392416819906,
+    "effect_per_patch_norm": 0.00027442784830914927,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07243341207504272,
+        "public_tv": 8.710604681994027e-09,
+        "private_tv": 0.07243341207504272,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.07369379699230194,
+        "public_tv": 0.014650300145149231,
+        "private_tv": 0.0720355361700058,
+        "off_article_mass": 0.9479333758354187,
+        "on_article_mass": 0.8918325304985046
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_pharmacist_nutrition",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -5.625,
+    "delta_delta": 2.625,
+    "fraction_gap_closed": 0.4666666666666667,
+    "target_logit_change": 2.5,
+    "target_log_odds_change": 2.5,
+    "target_odds_multiplier": 12.182493960703473,
+    "target_probability_change": 0.020335462293587625,
+    "target_rank_change": 10,
+    "target_rank_before": 17,
+    "target_rank_after": 7,
+    "patch_norm": 10248.595703125,
+    "patch_norm_over_natural_rms": 2.570088686454155,
+    "effect_per_patch_norm": 0.000256132652320316,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.11630219221115112,
+        "public_tv": 1.120878323490615e-08,
+        "private_tv": 0.11630219221115112,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.11150170862674713,
+        "public_tv": 0.028016794472932816,
+        "private_tv": 0.1145603358745575,
+        "off_article_mass": 0.9479333758354187,
+        "on_article_mass": 0.8494333624839783
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_journalist_writer",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -2.125,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.058823529411764705,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.009050704538822174,
+    "target_rank_change": 0,
+    "target_rank_before": 4,
+    "target_rank_after": 4,
+    "patch_norm": 2083.9951171875,
+    "patch_norm_over_natural_rms": 0.5226132856110353,
+    "effect_per_patch_norm": 5.9980946677407e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.030268773436546326,
+        "public_tv": 1.0422827472211793e-06,
+        "private_tv": 0.030268177390098572,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06900715827941895,
+        "public_tv": 0.05215143784880638,
+        "private_tv": 0.028809260576963425,
+        "off_article_mass": 0.9627853631973267,
+        "on_article_mass": 0.9425294399261475
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_journalist_writer",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -2.125,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.11764705882352941,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.019105426967144012,
+    "target_rank_change": 1,
+    "target_rank_before": 4,
+    "target_rank_after": 3,
+    "patch_norm": 4167.990234375,
+    "patch_norm_over_natural_rms": 1.0452265712220705,
+    "effect_per_patch_norm": 5.9980946677407e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05830444023013115,
+        "public_tv": 4.4052245357306674e-05,
+        "private_tv": 0.05826948583126068,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.14328449964523315,
+        "public_tv": 0.1172638088464737,
+        "private_tv": 0.05441324785351753,
+        "off_article_mass": 0.9627853631973267,
+        "on_article_mass": 0.898360550403595
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_journalist_writer",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -2.125,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.17647058823529413,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.02868705987930298,
+    "target_rank_change": 2,
+    "target_rank_before": 4,
+    "target_rank_after": 2,
+    "patch_norm": 6251.9853515625,
+    "patch_norm_over_natural_rms": 1.567839856833106,
+    "effect_per_patch_norm": 5.9980946677407e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0765783041715622,
+        "public_tv": 0.000536223582457751,
+        "private_tv": 0.07617581635713577,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999995827674866
+      },
+      "1.0": {
+        "total_tv": 0.19618180394172668,
+        "public_tv": 0.16758577525615692,
+        "private_tv": 0.06925665587186813,
+        "off_article_mass": 0.9627853631973267,
+        "on_article_mass": 0.8145095705986023
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_plumber_carpenter",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.0,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.10416666666666667,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.0008282045600935817,
+    "target_rank_change": 12,
+    "target_rank_before": 48,
+    "target_rank_after": 36,
+    "patch_norm": 3116.080322265625,
+    "patch_norm_over_natural_rms": 0.7814341607694915,
+    "effect_per_patch_norm": 0.00020057249344124028,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04169308766722679,
+        "public_tv": 2.6027998956124065e-06,
+        "private_tv": 0.04169268533587456,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04396640509366989,
+        "public_tv": 0.0204413291066885,
+        "private_tv": 0.03925013169646263,
+        "off_article_mass": 0.941413402557373,
+        "on_article_mass": 0.9353258013725281
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_plumber_carpenter",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.0,
+    "delta_delta": 1.375,
+    "fraction_gap_closed": 0.22916666666666666,
+    "target_logit_change": 1.125,
+    "target_log_odds_change": 1.125,
+    "target_odds_multiplier": 3.080216848918031,
+    "target_probability_change": 0.0026127869496122003,
+    "target_rank_change": 25,
+    "target_rank_before": 48,
+    "target_rank_after": 23,
+    "patch_norm": 6232.16064453125,
+    "patch_norm_over_natural_rms": 1.562868321538983,
+    "effect_per_patch_norm": 0.00022062974278536432,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09366213530302048,
+        "public_tv": 0.0,
+        "private_tv": 0.09366213530302048,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.08190615475177765,
+        "public_tv": 0.0,
+        "private_tv": 0.08190615475177765,
+        "off_article_mass": 0.941413402557373,
+        "on_article_mass": 0.9133493900299072
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_plumber_carpenter",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -6.0,
+    "delta_delta": 1.75,
+    "fraction_gap_closed": 0.2916666666666667,
+    "target_logit_change": 1.375,
+    "target_log_odds_change": 1.375,
+    "target_odds_multiplier": 3.955076722920577,
+    "target_probability_change": 0.004168763640336692,
+    "target_rank_change": 29,
+    "target_rank_before": 48,
+    "target_rank_after": 19,
+    "patch_norm": 9348.2412109375,
+    "patch_norm_over_natural_rms": 2.3443025435327707,
+    "effect_per_patch_norm": 0.0001872009889895106,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.10951919108629227,
+        "public_tv": 0.0,
+        "private_tv": 0.10951919108629227,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.09540040045976639,
+        "public_tv": 0.0,
+        "private_tv": 0.09540040045976639,
+        "off_article_mass": 0.941413402557373,
+        "on_article_mass": 0.8952001333236694
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_biologist_botanist",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.125,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.09090909090909091,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.0052419984713196754,
+    "target_rank_change": 0,
+    "target_rank_before": 4,
+    "target_rank_after": 4,
+    "patch_norm": 2059.81396484375,
+    "patch_norm_over_natural_rms": 0.516549263976818,
+    "effect_per_patch_norm": 0.00018205527605909117,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.014810296706855297,
+        "public_tv": 1.0016238949361878e-09,
+        "private_tv": 0.014810296706855297,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.051787640899419785,
+        "public_tv": 0.04245716705918312,
+        "private_tv": 0.016654275357723236,
+        "off_article_mass": 0.7838436961174011,
+        "on_article_mass": 0.8438400030136108
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_biologist_botanist",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.125,
+    "delta_delta": 1.25,
+    "fraction_gap_closed": 0.30303030303030304,
+    "target_logit_change": 0.875,
+    "target_log_odds_change": 0.875,
+    "target_odds_multiplier": 2.398875293967098,
+    "target_probability_change": 0.02576772030442953,
+    "target_rank_change": 0,
+    "target_rank_before": 4,
+    "target_rank_after": 4,
+    "patch_norm": 4119.6279296875,
+    "patch_norm_over_natural_rms": 1.033098527953636,
+    "effect_per_patch_norm": 0.00030342546009848526,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.06490907818078995,
+        "public_tv": 1.0515221902096528e-06,
+        "private_tv": 0.06490853428840637,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.15995493531227112,
+        "public_tv": 0.1233757808804512,
+        "private_tv": 0.06855422258377075,
+        "off_article_mass": 0.7838436961174011,
+        "on_article_mass": 0.8280389308929443
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_biologist_botanist",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -4.125,
+    "delta_delta": 2.0,
+    "fraction_gap_closed": 0.48484848484848486,
+    "target_logit_change": 1.375,
+    "target_log_odds_change": 1.375,
+    "target_odds_multiplier": 3.955076722920577,
+    "target_probability_change": 0.058766732923686504,
+    "target_rank_change": 1,
+    "target_rank_before": 4,
+    "target_rank_after": 3,
+    "patch_norm": 6179.44140625,
+    "patch_norm_over_natural_rms": 1.549647669481862,
+    "effect_per_patch_norm": 0.00032365384967922235,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.1405436247587204,
+        "public_tv": 0.0018873121589422226,
+        "private_tv": 0.13913819193840027,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.32763078808784485,
+        "public_tv": 0.26720088720321655,
+        "private_tv": 0.13753224909305573,
+        "off_article_mass": 0.7838436961174011,
+        "on_article_mass": 0.8267470002174377
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_historian_sociologist",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.5,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.10714285714285714,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.011181844398379326,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 2735.2744140625,
+    "patch_norm_over_natural_rms": 0.6859376669318699,
+    "effect_per_patch_norm": 0.00013709776177193146,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02015579678118229,
+        "public_tv": 0.0,
+        "private_tv": 0.02015579678118229,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.02302350103855133,
+        "public_tv": 0.0,
+        "private_tv": 0.02302350103855133,
+        "off_article_mass": 0.8918207883834839,
+        "on_article_mass": 0.892207682132721
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_historian_sociologist",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.5,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.21428571428571427,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.026705874130129814,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 5470.548828125,
+    "patch_norm_over_natural_rms": 1.3718753338637397,
+    "effect_per_patch_norm": 0.00013709776177193146,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04528776556253433,
+        "public_tv": 7.755355682093068e-07,
+        "private_tv": 0.04528822749853134,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04828951507806778,
+        "public_tv": 0.006432587746530771,
+        "private_tv": 0.05073422193527222,
+        "off_article_mass": 0.8918207883834839,
+        "on_article_mass": 0.8785883188247681
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_historian_sociologist",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.5,
+    "delta_delta": 0.875,
+    "fraction_gap_closed": 0.25,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.033523062244057655,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 8205.8232421875,
+    "patch_norm_over_natural_rms": 2.0578130007956097,
+    "effect_per_patch_norm": 0.00010663159248928001,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0535157211124897,
+        "public_tv": 1.12253269435314e-06,
+        "private_tv": 0.05351648107171059,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.05364131182432175,
+        "public_tv": 0.027636263519525528,
+        "private_tv": 0.05981308966875076,
+        "off_article_mass": 0.8918207883834839,
+        "on_article_mass": 0.90244460105896
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_musician_conductor",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.0,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.20833333333333334,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.006458648014813662,
+    "target_rank_change": 0,
+    "target_rank_before": 5,
+    "target_rank_after": 5,
+    "patch_norm": 2444.2978515625,
+    "patch_norm_over_natural_rms": 0.6129681018355962,
+    "effect_per_patch_norm": 0.0002556971522928244,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.012276430614292622,
+        "public_tv": 1.183865333587164e-05,
+        "private_tv": 0.01227710209786892,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.047622475773096085,
+        "public_tv": 0.042938705533742905,
+        "private_tv": 0.015323122031986713,
+        "off_article_mass": 0.894193708896637,
+        "on_article_mass": 0.926747739315033
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_musician_conductor",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.0,
+    "delta_delta": 1.25,
+    "fraction_gap_closed": 0.4166666666666667,
+    "target_logit_change": 1.125,
+    "target_log_odds_change": 1.125,
+    "target_odds_multiplier": 3.080216848918031,
+    "target_probability_change": 0.01994614629074931,
+    "target_rank_change": 1,
+    "target_rank_before": 5,
+    "target_rank_after": 4,
+    "patch_norm": 4888.595703125,
+    "patch_norm_over_natural_rms": 1.2259362036711925,
+    "effect_per_patch_norm": 0.0002556971522928244,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05913407355546951,
+        "public_tv": 1.183865333587164e-05,
+        "private_tv": 0.0591423399746418,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06763651221990585,
+        "public_tv": 0.042938705533742905,
+        "private_tv": 0.059894997626543045,
+        "off_article_mass": 0.894193708896637,
+        "on_article_mass": 0.9435388445854187
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_musician_conductor",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -3.0,
+    "delta_delta": 1.75,
+    "fraction_gap_closed": 0.5833333333333334,
+    "target_logit_change": 1.625,
+    "target_log_odds_change": 1.625,
+    "target_odds_multiplier": 5.0784190371800815,
+    "target_probability_change": 0.03697265824303031,
+    "target_rank_change": 1,
+    "target_rank_before": 5,
+    "target_rank_after": 4,
+    "patch_norm": 7332.892578125,
+    "patch_norm_over_natural_rms": 1.838904060609604,
+    "effect_per_patch_norm": 0.0002386507072557539,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07341176271438599,
+        "public_tv": 1.2805441656382754e-05,
+        "private_tv": 0.07341726869344711,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.09207542985677719,
+        "public_tv": 0.07994838804006577,
+        "private_tv": 0.07716561108827591,
+        "off_article_mass": 0.894193708896637,
+        "on_article_mass": 0.95159912109375
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_trainer_coach",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -0.875,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.2857142857142857,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.02899402379989624,
+    "target_rank_change": 1,
+    "target_rank_before": 3,
+    "target_rank_after": 2,
+    "patch_norm": 2057.97265625,
+    "patch_norm_over_natural_rms": 0.5160875103354264,
+    "effect_per_patch_norm": 0.00012147877632910119,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04339566081762314,
+        "public_tv": 0.00015355998766608536,
+        "private_tv": 0.043398015201091766,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.08054802566766739,
+        "public_tv": 0.0709744319319725,
+        "private_tv": 0.04882282391190529,
+        "off_article_mass": 0.9600367546081543,
+        "on_article_mass": 0.9717012047767639
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_trainer_coach",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -0.875,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.42857142857142855,
+    "target_logit_change": 0.875,
+    "target_log_odds_change": 0.875,
+    "target_odds_multiplier": 2.398875293967098,
+    "target_probability_change": 0.03847186267375946,
+    "target_rank_change": 1,
+    "target_rank_before": 3,
+    "target_rank_after": 2,
+    "patch_norm": 4115.9453125,
+    "patch_norm_over_natural_rms": 1.0321750206708529,
+    "effect_per_patch_norm": 9.11090822468259e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07310163974761963,
+        "public_tv": 0.00015691622684244066,
+        "private_tv": 0.0730939731001854,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.12521766126155853,
+        "public_tv": 0.1109447181224823,
+        "private_tv": 0.080123670399189,
+        "off_article_mass": 0.9600367546081543,
+        "on_article_mass": 0.9754658937454224
+      }
+    }
+  },
+  {
+    "model": "gemma_270m",
+    "pair_id": "within_trainer_coach",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 12,
+    "relative_depth": 0.7058823529411765,
+    "baseline_target_minus_source": -0.875,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.42857142857142855,
+    "target_logit_change": 1.0,
+    "target_log_odds_change": 1.0,
+    "target_odds_multiplier": 2.718281828459045,
+    "target_probability_change": 0.04743349552154541,
+    "target_rank_change": 1,
+    "target_rank_before": 3,
+    "target_rank_after": 2,
+    "patch_norm": 6173.91796875,
+    "patch_norm_over_natural_rms": 1.5482625310062794,
+    "effect_per_patch_norm": 6.0739388164550594e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.08707612007856369,
+        "public_tv": 0.00015723280375823379,
+        "private_tv": 0.08709187805652618,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.1613912582397461,
+        "public_tv": 0.14506325125694275,
+        "private_tv": 0.08939731121063232,
+        "off_article_mass": 0.9600367546081543,
+        "on_article_mass": 0.9806627035140991
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_surgeon_anesthesia",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.875,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.03164556962025317,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 4.8720030463300645e-06,
+    "target_rank_change": 31,
+    "target_rank_before": 223,
+    "target_rank_after": 192,
+    "patch_norm": 387.5452880859375,
+    "patch_norm_over_natural_rms": 0.4622802690738038,
+    "effect_per_patch_norm": 0.0008063573719175336,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03075876086950302,
+        "public_tv": 0.0,
+        "private_tv": 0.03075876086950302,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04090242087841034,
+        "public_tv": 0.015467320568859577,
+        "private_tv": 0.03153596073389053,
+        "off_article_mass": 0.938609778881073,
+        "on_article_mass": 0.9310654401779175
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_surgeon_anesthesia",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.875,
+    "delta_delta": 0.6875,
+    "fraction_gap_closed": 0.06962025316455696,
+    "target_logit_change": 0.6875,
+    "target_log_odds_change": 0.6875,
+    "target_odds_multiplier": 1.988737469582292,
+    "target_probability_change": 1.635589615034405e-05,
+    "target_rank_change": 70,
+    "target_rank_before": 223,
+    "target_rank_after": 153,
+    "patch_norm": 775.090576171875,
+    "patch_norm_over_natural_rms": 0.9245605381476076,
+    "effect_per_patch_norm": 0.0008869931091092869,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09519267082214355,
+        "public_tv": 1.1471371812524223e-12,
+        "private_tv": 0.09519267082214355,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.11250060051679611,
+        "public_tv": 0.039879802614450455,
+        "private_tv": 0.0955609604716301,
+        "off_article_mass": 0.938609778881073,
+        "on_article_mass": 0.9294483661651611
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_surgeon_anesthesia",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.875,
+    "delta_delta": 1.0625,
+    "fraction_gap_closed": 0.10759493670886076,
+    "target_logit_change": 1.0625,
+    "target_log_odds_change": 1.0625,
+    "target_odds_multiplier": 2.893595944171761,
+    "target_probability_change": 2.9985028959345073e-05,
+    "target_rank_change": 89,
+    "target_rank_before": 223,
+    "target_rank_after": 134,
+    "patch_norm": 1162.6358642578125,
+    "patch_norm_over_natural_rms": 1.3868408072214116,
+    "effect_per_patch_norm": 0.0009138716881732047,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.1282743662595749,
+        "public_tv": 2.1157814389383134e-10,
+        "private_tv": 0.1282743662595749,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.15992037951946259,
+        "public_tv": 0.07741469889879227,
+        "private_tv": 0.14040200412273407,
+        "off_article_mass": 0.938609778881073,
+        "on_article_mass": 0.928133487701416
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_cardio_oncology",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.0,
+    "delta_delta": 0.1875,
+    "fraction_gap_closed": 0.015625,
+    "target_logit_change": 0.1875,
+    "target_log_odds_change": 0.1875,
+    "target_odds_multiplier": 1.2062302494209807,
+    "target_probability_change": 1.0328303687856533e-06,
+    "target_rank_change": 10,
+    "target_rank_before": 156,
+    "target_rank_after": 146,
+    "patch_norm": 270.4397277832031,
+    "patch_norm_over_natural_rms": 0.3225918466079832,
+    "effect_per_patch_norm": 0.000693315296302578,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0018498334102332592,
+        "public_tv": 0.0,
+        "private_tv": 0.0018498334102332592,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.00251658889465034,
+        "public_tv": 0.0,
+        "private_tv": 0.00251658889465034,
+        "off_article_mass": 0.9115045070648193,
+        "on_article_mass": 0.9231492877006531
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_cardio_oncology",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.0,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.026041666666666668,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 1.7862412278191186e-06,
+    "target_rank_change": 15,
+    "target_rank_before": 156,
+    "target_rank_after": 141,
+    "patch_norm": 540.8794555664062,
+    "patch_norm_over_natural_rms": 0.6451836932159664,
+    "effect_per_patch_norm": 0.000577762746918815,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.012140782549977303,
+        "public_tv": 0.0,
+        "private_tv": 0.012140782549977303,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.01228107139468193,
+        "public_tv": 0.00386251974850893,
+        "private_tv": 0.012565970420837402,
+        "off_article_mass": 0.9115045070648193,
+        "on_article_mass": 0.9436417818069458
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_cardio_oncology",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.0,
+    "delta_delta": 0.5625,
+    "fraction_gap_closed": 0.046875,
+    "target_logit_change": 0.4375,
+    "target_log_odds_change": 0.4375,
+    "target_odds_multiplier": 1.5488302986341331,
+    "target_probability_change": 3.5936659514845815e-06,
+    "target_rank_change": 21,
+    "target_rank_before": 156,
+    "target_rank_after": 135,
+    "patch_norm": 811.3189697265625,
+    "patch_norm_over_natural_rms": 0.9677752850054222,
+    "effect_per_patch_norm": 0.0006933154788548558,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.024542469531297684,
+        "public_tv": 0.0,
+        "private_tv": 0.024542469531297684,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.024490486830472946,
+        "public_tv": 0.005475223995745182,
+        "private_tv": 0.02564403787255287,
+        "off_article_mass": 0.9115045070648193,
+        "on_article_mass": 0.9441958069801331
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_neuro_eye",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -14.0,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.022321428571428572,
+    "target_logit_change": 0.4375,
+    "target_log_odds_change": 0.4375,
+    "target_odds_multiplier": 1.5488302986341331,
+    "target_probability_change": 2.309573687853117e-07,
+    "target_rank_change": 80,
+    "target_rank_before": 560,
+    "target_rank_after": 480,
+    "patch_norm": 324.0780029296875,
+    "patch_norm_over_natural_rms": 0.38657383021004693,
+    "effect_per_patch_norm": 0.0009642740240774704,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04177170246839523,
+        "public_tv": 0.0,
+        "private_tv": 0.04177170246839523,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04245588183403015,
+        "public_tv": 0.0037499326281249523,
+        "private_tv": 0.041363850235939026,
+        "off_article_mass": 0.8969156742095947,
+        "on_article_mass": 0.9003459811210632
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_neuro_eye",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -14.0,
+    "delta_delta": 0.8125,
+    "fraction_gap_closed": 0.05803571428571429,
+    "target_logit_change": 0.9375,
+    "target_log_odds_change": 0.9375,
+    "target_odds_multiplier": 2.553589458062927,
+    "target_probability_change": 7.823212513358158e-07,
+    "target_rank_change": 182,
+    "target_rank_before": 560,
+    "target_rank_after": 378,
+    "patch_norm": 648.156005859375,
+    "patch_norm_over_natural_rms": 0.7731476604200939,
+    "effect_per_patch_norm": 0.0012535562313007115,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.08093791455030441,
+        "public_tv": 0.0,
+        "private_tv": 0.08093791455030441,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.08263968676328659,
+        "public_tv": 0.011360026895999908,
+        "private_tv": 0.07952691614627838,
+        "off_article_mass": 0.8969156742095947,
+        "on_article_mass": 0.914452075958252
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_neuro_eye",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -14.0,
+    "delta_delta": 1.5,
+    "fraction_gap_closed": 0.10714285714285714,
+    "target_logit_change": 1.5,
+    "target_log_odds_change": 1.5,
+    "target_odds_multiplier": 4.4816890703380645,
+    "target_probability_change": 2.0826004742957593e-06,
+    "target_rank_change": 265,
+    "target_rank_before": 560,
+    "target_rank_after": 295,
+    "patch_norm": 972.2340698242188,
+    "patch_norm_over_natural_rms": 1.1597215634354343,
+    "effect_per_patch_norm": 0.001542838341667251,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09205911308526993,
+        "public_tv": 1.1006109625023505e-13,
+        "private_tv": 0.09205911308526993,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.09856344759464264,
+        "public_tv": 0.027386590838432312,
+        "private_tv": 0.09087758511304855,
+        "off_article_mass": 0.8969156742095947,
+        "on_article_mass": 0.9340463876724243
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_writer_editor",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.75,
+    "delta_delta": 0.6875,
+    "fraction_gap_closed": 0.05392156862745098,
+    "target_logit_change": 0.6875,
+    "target_log_odds_change": 0.6875,
+    "target_odds_multiplier": 1.988737469582292,
+    "target_probability_change": 2.638721753100981e-06,
+    "target_rank_change": 82,
+    "target_rank_before": 317,
+    "target_rank_after": 235,
+    "patch_norm": 448.238037109375,
+    "patch_norm_over_natural_rms": 0.5346771249043976,
+    "effect_per_patch_norm": 0.001533783264877725,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.006862307898700237,
+        "public_tv": 1.0653160416040919e-06,
+        "private_tv": 0.0068622916005551815,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.09409002214670181,
+        "public_tv": 0.09394144266843796,
+        "private_tv": 0.0075955563224852085,
+        "off_article_mass": 0.9678471684455872,
+        "on_article_mass": 0.9608121514320374
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_writer_editor",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.75,
+    "delta_delta": 1.5625,
+    "fraction_gap_closed": 0.12254901960784313,
+    "target_logit_change": 1.4375,
+    "target_log_odds_change": 1.4375,
+    "target_odds_multiplier": 4.21015725614396,
+    "target_probability_change": 1.0074298415929661e-05,
+    "target_rank_change": 156,
+    "target_rank_before": 317,
+    "target_rank_after": 161,
+    "patch_norm": 896.47607421875,
+    "patch_norm_over_natural_rms": 1.0693542498087951,
+    "effect_per_patch_norm": 0.001742935528270142,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.011870828457176685,
+        "public_tv": 1.0655621736077592e-06,
+        "private_tv": 0.011870810762047768,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.10592968016862869,
+        "public_tv": 0.10514172911643982,
+        "private_tv": 0.012797797098755836,
+        "off_article_mass": 0.9678471684455872,
+        "on_article_mass": 0.9568866491317749
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_writer_editor",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.75,
+    "delta_delta": 2.125,
+    "fraction_gap_closed": 0.16666666666666666,
+    "target_logit_change": 1.875,
+    "target_log_odds_change": 1.875,
+    "target_odds_multiplier": 6.5208191203301125,
+    "target_probability_change": 1.9520951582308044e-05,
+    "target_rank_change": 178,
+    "target_rank_before": 317,
+    "target_rank_after": 139,
+    "patch_norm": 1344.7138671875,
+    "patch_norm_over_natural_rms": 1.6040310834920186,
+    "effect_per_patch_norm": 0.0015802618325372717,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02033810503780842,
+        "public_tv": 1.0646322152751964e-06,
+        "private_tv": 0.02033907361328602,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.08319301903247833,
+        "public_tv": 0.08158444613218307,
+        "private_tv": 0.02130698412656784,
+        "off_article_mass": 0.9678471684455872,
+        "on_article_mass": 0.9541889429092407
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_programmer_engineer",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -8.75,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.03571428571428571,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 3.078277222812176e-05,
+    "target_rank_change": 1,
+    "target_rank_before": 53,
+    "target_rank_after": 52,
+    "patch_norm": 338.217529296875,
+    "patch_norm_over_natural_rms": 0.40344005011916406,
+    "effect_per_patch_norm": 0.0009239615718607503,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02110513113439083,
+        "public_tv": 9.682261566496496e-18,
+        "private_tv": 0.02110513113439083,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04038708284497261,
+        "public_tv": 0.025814278051257133,
+        "private_tv": 0.024136153981089592,
+        "off_article_mass": 0.9330931901931763,
+        "on_article_mass": 0.9215328693389893
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_programmer_engineer",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -8.75,
+    "delta_delta": 0.875,
+    "fraction_gap_closed": 0.1,
+    "target_logit_change": 0.75,
+    "target_log_odds_change": 0.75,
+    "target_odds_multiplier": 2.117000016612675,
+    "target_probability_change": 0.00010425639629829675,
+    "target_rank_change": 7,
+    "target_rank_before": 53,
+    "target_rank_after": 46,
+    "patch_norm": 676.43505859375,
+    "patch_norm_over_natural_rms": 0.8068801002383281,
+    "effect_per_patch_norm": 0.0012935462006050504,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07656402885913849,
+        "public_tv": 9.799287425948933e-08,
+        "private_tv": 0.07656398415565491,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.15119397640228271,
+        "public_tv": 0.12565545737743378,
+        "private_tv": 0.08298954367637634,
+        "off_article_mass": 0.9330931901931763,
+        "on_article_mass": 0.9121094346046448
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_programmer_engineer",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -8.75,
+    "delta_delta": 1.25,
+    "fraction_gap_closed": 0.14285714285714285,
+    "target_logit_change": 1.0,
+    "target_log_odds_change": 1.0,
+    "target_odds_multiplier": 2.718281828459045,
+    "target_probability_change": 0.00019254772632848471,
+    "target_rank_change": 11,
+    "target_rank_before": 53,
+    "target_rank_after": 42,
+    "patch_norm": 1014.652587890625,
+    "patch_norm_over_natural_rms": 1.2103201503574923,
+    "effect_per_patch_norm": 0.0012319487624810005,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07886307686567307,
+        "public_tv": 4.340599843999371e-05,
+        "private_tv": 0.0788356363773346,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.2328653335571289,
+        "public_tv": 0.22549200057983398,
+        "private_tv": 0.09302425384521484,
+        "off_article_mass": 0.9330931901931763,
+        "on_article_mass": 0.8928766250610352
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_banker_accountant",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -5.1875,
+    "delta_delta": 0.0625,
+    "fraction_gap_closed": 0.012048192771084338,
+    "target_logit_change": 0.1875,
+    "target_log_odds_change": 0.1875,
+    "target_odds_multiplier": 1.2062302494209807,
+    "target_probability_change": 0.00031773000955581665,
+    "target_rank_change": 2,
+    "target_rank_before": 6,
+    "target_rank_after": 4,
+    "patch_norm": 277.4490051269531,
+    "patch_norm_over_natural_rms": 0.3309528065166562,
+    "effect_per_patch_norm": 0.00022526662141535413,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.003463258035480976,
+        "public_tv": 6.153061393732173e-10,
+        "private_tv": 0.0034632578026503325,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.013215006329119205,
+        "public_tv": 0.012358144856989384,
+        "private_tv": 0.005710560828447342,
+        "off_article_mass": 0.9032331705093384,
+        "on_article_mass": 0.9079192876815796
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_banker_accountant",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -5.1875,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.0963855421686747,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.0029070363380014896,
+    "target_rank_change": 2,
+    "target_rank_before": 6,
+    "target_rank_after": 4,
+    "patch_norm": 554.8980102539062,
+    "patch_norm_over_natural_rms": 0.6619056130333124,
+    "effect_per_patch_norm": 0.0009010664856614165,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.019591564312577248,
+        "public_tv": 6.153061393732173e-10,
+        "private_tv": 0.0195915624499321,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03433258458971977,
+        "public_tv": 0.012358144856989384,
+        "private_tv": 0.026561977341771126,
+        "off_article_mass": 0.9032331705093384,
+        "on_article_mass": 0.9096956849098206
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_banker_accountant",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -5.1875,
+    "delta_delta": 0.6875,
+    "fraction_gap_closed": 0.13253012048192772,
+    "target_logit_change": 0.5625,
+    "target_log_odds_change": 0.5625,
+    "target_odds_multiplier": 1.7550546569602985,
+    "target_probability_change": 0.0045644259080290794,
+    "target_rank_change": 2,
+    "target_rank_before": 6,
+    "target_rank_after": 4,
+    "patch_norm": 832.346923828125,
+    "patch_norm_over_natural_rms": 0.9928583103420283,
+    "effect_per_patch_norm": 0.0008259777027084501,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.015396546572446823,
+        "public_tv": 3.1767459773845985e-09,
+        "private_tv": 0.015396544709801674,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.046396639198064804,
+        "public_tv": 0.0259498693048954,
+        "private_tv": 0.028066355735063553,
+        "off_article_mass": 0.9032331705093384,
+        "on_article_mass": 0.9274546504020691
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_statistician_analyst",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.125,
+    "delta_delta": -0.0625,
+    "fraction_gap_closed": -0.0056179775280898875,
+    "target_logit_change": -0.0625,
+    "target_log_odds_change": -0.0625,
+    "target_odds_multiplier": 0.9394130628134758,
+    "target_probability_change": -5.188958311919123e-07,
+    "target_rank_change": -2,
+    "target_rank_before": 133,
+    "target_rank_after": 135,
+    "patch_norm": 396.4014587402344,
+    "patch_norm_over_natural_rms": 0.47284428076196566,
+    "effect_per_patch_norm": -0.00015766844097553346,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.01494315080344677,
+        "public_tv": 6.719448608638601e-11,
+        "private_tv": 0.01494315080344677,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.025046473369002342,
+        "public_tv": 0.024769583716988564,
+        "private_tv": 0.016953807324171066,
+        "off_article_mass": 0.9257074594497681,
+        "on_article_mass": 0.9327194094657898
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_statistician_analyst",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.125,
+    "delta_delta": 0.0,
+    "fraction_gap_closed": 0.0,
+    "target_logit_change": 0.0,
+    "target_log_odds_change": 0.0,
+    "target_odds_multiplier": 1.0,
+    "target_probability_change": 4.322955646784976e-07,
+    "target_rank_change": 2,
+    "target_rank_before": 133,
+    "target_rank_after": 131,
+    "patch_norm": 792.8029174804688,
+    "patch_norm_over_natural_rms": 0.9456885615239313,
+    "effect_per_patch_norm": 0.0,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03281177952885628,
+        "public_tv": 2.45886755401159e-10,
+        "private_tv": 0.03281177952885628,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03623384237289429,
+        "public_tv": 0.03487344831228256,
+        "private_tv": 0.037402402609586716,
+        "off_article_mass": 0.9257074594497681,
+        "on_article_mass": 0.9435386657714844
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_statistician_analyst",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.125,
+    "delta_delta": -0.0625,
+    "fraction_gap_closed": -0.0056179775280898875,
+    "target_logit_change": -0.0625,
+    "target_log_odds_change": -0.0625,
+    "target_odds_multiplier": 0.9394130628134758,
+    "target_probability_change": -3.164168447256088e-07,
+    "target_rank_change": -1,
+    "target_rank_before": 133,
+    "target_rank_after": 134,
+    "patch_norm": 1189.204345703125,
+    "patch_norm_over_natural_rms": 1.4185328058832503,
+    "effect_per_patch_norm": -5.255614834054988e-05,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03331367298960686,
+        "public_tv": 3.2285458750891394e-09,
+        "private_tv": 0.033313676714897156,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06034287065267563,
+        "public_tv": 0.05828074738383293,
+        "private_tv": 0.04280829429626465,
+        "off_article_mass": 0.9257074594497681,
+        "on_article_mass": 0.9535384774208069
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_technician_operator",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.625,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.010752688172043012,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 6.84340648149373e-07,
+    "target_rank_change": 19,
+    "target_rank_before": 427,
+    "target_rank_after": 408,
+    "patch_norm": 268.2952575683594,
+    "patch_norm_over_natural_rms": 0.32003383261990215,
+    "effect_per_patch_norm": 0.00046590461990611613,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02150462195277214,
+        "public_tv": 9.021581348633845e-08,
+        "private_tv": 0.021504558622837067,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.05373023450374603,
+        "public_tv": 0.044604502618312836,
+        "private_tv": 0.020374998450279236,
+        "off_article_mass": 0.9134210348129272,
+        "on_article_mass": 0.9297215938568115
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_technician_operator",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.625,
+    "delta_delta": 0.1875,
+    "fraction_gap_closed": 0.016129032258064516,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 1.1924043974431697e-06,
+    "target_rank_change": 54,
+    "target_rank_before": 427,
+    "target_rank_after": 373,
+    "patch_norm": 536.5905151367188,
+    "patch_norm_over_natural_rms": 0.6400676652398043,
+    "effect_per_patch_norm": 0.0003494284649295871,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02401142008602619,
+        "public_tv": 3.6649880712502636e-06,
+        "private_tv": 0.024008961394429207,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.1035069152712822,
+        "public_tv": 0.10187777876853943,
+        "private_tv": 0.02608560211956501,
+        "off_article_mass": 0.9134210348129272,
+        "on_article_mass": 0.9363027811050415
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_technician_operator",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.625,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.026881720430107527,
+    "target_logit_change": 0.4375,
+    "target_log_odds_change": 0.4375,
+    "target_odds_multiplier": 1.5488302986341331,
+    "target_probability_change": 1.9669701032398734e-06,
+    "target_rank_change": 75,
+    "target_rank_before": 427,
+    "target_rank_after": 352,
+    "patch_norm": 804.8856201171875,
+    "patch_norm_over_natural_rms": 0.9601013158464725,
+    "effect_per_patch_norm": 0.0003882539235258067,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.048166610300540924,
+        "public_tv": 0.00015593641728628427,
+        "private_tv": 0.0480513870716095,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.17558059096336365,
+        "public_tv": 0.172273650765419,
+        "private_tv": 0.04825450852513313,
+        "off_article_mass": 0.9134210348129272,
+        "on_article_mass": 0.9538006782531738
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_retailer_auctioneer",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.59375,
+    "delta_delta": 0.46875,
+    "fraction_gap_closed": 0.03722084367245657,
+    "target_logit_change": 0.34375,
+    "target_log_odds_change": 0.34375,
+    "target_odds_multiplier": 1.4102260349257107,
+    "target_probability_change": 2.0931361177645158e-07,
+    "target_rank_change": 224,
+    "target_rank_before": 1434,
+    "target_rank_after": 1210,
+    "patch_norm": 631.7352905273438,
+    "patch_norm_over_natural_rms": 0.7535603426653945,
+    "effect_per_patch_norm": 0.0007420038218993733,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.024874290451407433,
+        "public_tv": 0.0,
+        "private_tv": 0.024874290451407433,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.030291805043816566,
+        "public_tv": 0.0,
+        "private_tv": 0.030291805043816566,
+        "off_article_mass": 0.947787344455719,
+        "on_article_mass": 0.9309588670730591
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_retailer_auctioneer",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.59375,
+    "delta_delta": 1.65625,
+    "fraction_gap_closed": 0.1315136476426799,
+    "target_logit_change": 1.03125,
+    "target_log_odds_change": 1.03125,
+    "target_odds_multiplier": 2.8045693562372267,
+    "target_probability_change": 1.0989598422384006e-06,
+    "target_rank_change": 589,
+    "target_rank_before": 1434,
+    "target_rank_after": 845,
+    "patch_norm": 1263.4705810546875,
+    "patch_norm_over_natural_rms": 1.507120685330789,
+    "effect_per_patch_norm": 0.0013108734186888927,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07028883695602417,
+        "public_tv": 8.732657374999064e-10,
+        "private_tv": 0.07028883695602417,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.07247364521026611,
+        "public_tv": 0.032074954360723495,
+        "private_tv": 0.08788861334323883,
+        "off_article_mass": 0.947787344455719,
+        "on_article_mass": 0.9080719351768494
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_retailer_auctioneer",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -12.59375,
+    "delta_delta": 2.59375,
+    "fraction_gap_closed": 0.20595533498759305,
+    "target_logit_change": 1.46875,
+    "target_log_odds_change": 1.46875,
+    "target_odds_multiplier": 4.343801993561042,
+    "target_probability_change": 2.6592006179271266e-06,
+    "target_rank_change": 776,
+    "target_rank_before": 1434,
+    "target_rank_after": 658,
+    "patch_norm": 1895.2056884765625,
+    "patch_norm_over_natural_rms": 2.260680809580303,
+    "effect_per_patch_norm": 0.0013685849592847907,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09235760569572449,
+        "public_tv": 3.01876752928365e-07,
+        "private_tv": 0.0923575907945633,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.1344030797481537,
+        "public_tv": 0.09153629094362259,
+        "private_tv": 0.13602322340011597,
+        "off_article_mass": 0.947787344455719,
+        "on_article_mass": 0.8759269714355469
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_plumber_electrician",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.375,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.03333333333333333,
+    "target_logit_change": 0.1875,
+    "target_log_odds_change": 0.1875,
+    "target_odds_multiplier": 1.2062302494209807,
+    "target_probability_change": 2.9226008336991072e-05,
+    "target_rank_change": 12,
+    "target_rank_before": 65,
+    "target_rank_after": 53,
+    "patch_norm": 309.8868713378906,
+    "patch_norm_over_natural_rms": 0.3696460534252524,
+    "effect_per_patch_norm": 0.001008432524588175,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0041293916292488575,
+        "public_tv": 7.550039694999289e-14,
+        "private_tv": 0.0041293916292488575,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.019034355878829956,
+        "public_tv": 0.015470900572836399,
+        "private_tv": 0.00541215343400836,
+        "off_article_mass": 0.9294841885566711,
+        "on_article_mass": 0.9303256869316101
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_plumber_electrician",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.375,
+    "delta_delta": 0.5625,
+    "fraction_gap_closed": 0.06,
+    "target_logit_change": 0.4375,
+    "target_log_odds_change": 0.4375,
+    "target_odds_multiplier": 1.5488302986341331,
+    "target_probability_change": 6.055749690858647e-05,
+    "target_rank_change": 20,
+    "target_rank_before": 65,
+    "target_rank_after": 45,
+    "patch_norm": 619.7737426757812,
+    "patch_norm_over_natural_rms": 0.7392921068505048,
+    "effect_per_patch_norm": 0.0009075892721293574,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.004970062058418989,
+        "public_tv": 2.740415117052919e-10,
+        "private_tv": 0.004970061592757702,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04940706491470337,
+        "public_tv": 0.04571560025215149,
+        "private_tv": 0.007897001691162586,
+        "off_article_mass": 0.9294841885566711,
+        "on_article_mass": 0.9378156065940857
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_plumber_electrician",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.375,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.08,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 8.994130621431395e-05,
+    "target_rank_change": 25,
+    "target_rank_before": 65,
+    "target_rank_after": 40,
+    "patch_norm": 929.6605834960938,
+    "patch_norm_over_natural_rms": 1.1089381238731106,
+    "effect_per_patch_norm": 0.0008067460461532532,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.005330847110599279,
+        "public_tv": 1.2397706861122515e-08,
+        "private_tv": 0.005330836400389671,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.08973360061645508,
+        "public_tv": 0.08628389239311218,
+        "private_tv": 0.01155159529298544,
+        "off_article_mass": 0.9294841885566711,
+        "on_article_mass": 0.9363031387329102
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_carpenter_architect",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.5625,
+    "delta_delta": 0.5625,
+    "fraction_gap_closed": 0.058823529411764705,
+    "target_logit_change": 0.6875,
+    "target_log_odds_change": 0.6875,
+    "target_odds_multiplier": 1.988737469582292,
+    "target_probability_change": 3.715629281941801e-05,
+    "target_rank_change": 26,
+    "target_rank_before": 112,
+    "target_rank_after": 86,
+    "patch_norm": 394.3766784667969,
+    "patch_norm_over_natural_rms": 0.4704290379544916,
+    "effect_per_patch_norm": 0.0014263013781312063,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02794107422232628,
+        "public_tv": 9.352439178655914e-08,
+        "private_tv": 0.02794106863439083,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.11007002741098404,
+        "public_tv": 0.1084710955619812,
+        "private_tv": 0.04387255012989044,
+        "off_article_mass": 0.9278780817985535,
+        "on_article_mass": 0.9097455143928528
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_carpenter_architect",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.5625,
+    "delta_delta": 1.25,
+    "fraction_gap_closed": 0.13071895424836602,
+    "target_logit_change": 1.25,
+    "target_log_odds_change": 1.25,
+    "target_odds_multiplier": 3.4903429574618414,
+    "target_probability_change": 0.00012272785534150898,
+    "target_rank_change": 45,
+    "target_rank_before": 112,
+    "target_rank_after": 67,
+    "patch_norm": 788.7533569335938,
+    "patch_norm_over_natural_rms": 0.9408580759089832,
+    "effect_per_patch_norm": 0.0015847793090346736,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05712505802512169,
+        "public_tv": 0.022431017830967903,
+        "private_tv": 0.05483703315258026,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.35067465901374817,
+        "public_tv": 0.34551435708999634,
+        "private_tv": 0.11902789771556854,
+        "off_article_mass": 0.9278780817985535,
+        "on_article_mass": 0.9134526252746582
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_carpenter_architect",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.5625,
+    "delta_delta": 1.75,
+    "fraction_gap_closed": 0.1830065359477124,
+    "target_logit_change": 1.5,
+    "target_log_odds_change": 1.5,
+    "target_odds_multiplier": 4.4816890703380645,
+    "target_probability_change": 0.00022874746355228126,
+    "target_rank_change": 60,
+    "target_rank_before": 112,
+    "target_rank_after": 52,
+    "patch_norm": 1183.1300048828125,
+    "patch_norm_over_natural_rms": 1.411287077460828,
+    "effect_per_patch_norm": 0.001479127393251543,
+    "article_changed": true,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.7684624195098877,
+        "public_tv": 0.758817195892334,
+        "private_tv": 0.21581247448921204,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.4748835265636444,
+        "public_tv": 0.46644487977027893,
+        "private_tv": 0.16272348165512085,
+        "off_article_mass": 0.9278780817985535,
+        "on_article_mass": 0.9246066212654114
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_supervisor_inspector",
+    "regime": "between",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.5,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.07894736842105263,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 1.6507065083715133e-05,
+    "target_rank_change": 106,
+    "target_rank_before": 381,
+    "target_rank_after": 275,
+    "patch_norm": 546.713623046875,
+    "patch_norm_over_natural_rms": 0.6521429328083587,
+    "effect_per_patch_norm": 0.0013718333847622,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.07463245838880539,
+        "public_tv": 3.0978361564848456e-07,
+        "private_tv": 0.07463222742080688,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.09036717563867569,
+        "public_tv": 0.03324812278151512,
+        "private_tv": 0.06988269090652466,
+        "off_article_mass": 0.9332809448242188,
+        "on_article_mass": 0.9441285729408264
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_supervisor_inspector",
+    "regime": "between",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.5,
+    "delta_delta": 1.75,
+    "fraction_gap_closed": 0.18421052631578946,
+    "target_logit_change": 1.375,
+    "target_log_odds_change": 1.375,
+    "target_odds_multiplier": 3.955076722920577,
+    "target_probability_change": 6.761536860722117e-05,
+    "target_rank_change": 184,
+    "target_rank_before": 381,
+    "target_rank_after": 197,
+    "patch_norm": 1093.42724609375,
+    "patch_norm_over_natural_rms": 1.3042858656167173,
+    "effect_per_patch_norm": 0.0016004722822225666,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.17384321987628937,
+        "public_tv": 3.0978361564848456e-07,
+        "private_tv": 0.173843115568161,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.17043308913707733,
+        "public_tv": 0.03324812278151512,
+        "private_tv": 0.1610356867313385,
+        "off_article_mass": 0.9332809448242188,
+        "on_article_mass": 0.9438416957855225
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "between_supervisor_inspector",
+    "regime": "between",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -9.5,
+    "delta_delta": 2.1875,
+    "fraction_gap_closed": 0.23026315789473684,
+    "target_logit_change": 1.4375,
+    "target_log_odds_change": 1.4375,
+    "target_odds_multiplier": 4.21015725614396,
+    "target_probability_change": 9.354058056487702e-05,
+    "target_rank_change": 194,
+    "target_rank_before": 381,
+    "target_rank_after": 187,
+    "patch_norm": 1640.140869140625,
+    "patch_norm_over_natural_rms": 1.9564287984250759,
+    "effect_per_patch_norm": 0.001333726901852139,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.2156577706336975,
+        "public_tv": 1.19867076264768e-08,
+        "private_tv": 0.2156577706336975,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.21670159697532654,
+        "public_tv": 0.039997030049562454,
+        "private_tv": 0.206055149435997,
+        "off_article_mass": 0.9332809448242188,
+        "on_article_mass": 0.9496632814407349
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_vet_dentist",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.75,
+    "delta_delta": 0.1875,
+    "fraction_gap_closed": 0.015957446808510637,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 1.3460053196467925e-06,
+    "target_rank_change": 29,
+    "target_rank_before": 165,
+    "target_rank_after": 136,
+    "patch_norm": 465.5176086425781,
+    "patch_norm_over_natural_rms": 0.555288922346966,
+    "effect_per_patch_norm": 0.0004027774600121764,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.028742250055074692,
+        "public_tv": 0.0,
+        "private_tv": 0.028742250055074692,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.030011339113116264,
+        "public_tv": 0.002569325501099229,
+        "private_tv": 0.02842383086681366,
+        "off_article_mass": 0.948371946811676,
+        "on_article_mass": 0.9486701488494873
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_vet_dentist",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.75,
+    "delta_delta": 1.0625,
+    "fraction_gap_closed": 0.09042553191489362,
+    "target_logit_change": 1.1875,
+    "target_log_odds_change": 1.1875,
+    "target_odds_multiplier": 3.2788737679386735,
+    "target_probability_change": 1.0013888186222175e-05,
+    "target_rank_change": 79,
+    "target_rank_before": 165,
+    "target_rank_after": 86,
+    "patch_norm": 931.0352172851562,
+    "patch_norm_over_natural_rms": 1.110577844693932,
+    "effect_per_patch_norm": 0.0011412028033678332,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.00932400207966566,
+        "public_tv": 0.0,
+        "private_tv": 0.00932400207966566,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.009177297353744507,
+        "public_tv": 0.006153686437755823,
+        "private_tv": 0.010087340138852596,
+        "off_article_mass": 0.948371946811676,
+        "on_article_mass": 0.9534809589385986
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_vet_dentist",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -11.75,
+    "delta_delta": 2.4375,
+    "fraction_gap_closed": 0.2074468085106383,
+    "target_logit_change": 2.4375,
+    "target_log_odds_change": 2.4375,
+    "target_odds_multiplier": 11.444393964331121,
+    "target_probability_change": 5.4899519909668015e-05,
+    "target_rank_change": 113,
+    "target_rank_before": 165,
+    "target_rank_after": 52,
+    "patch_norm": 1396.552734375,
+    "patch_norm_over_natural_rms": 1.6658666578329577,
+    "effect_per_patch_norm": 0.0017453691078059116,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.009442192502319813,
+        "public_tv": 0.0,
+        "private_tv": 0.009442192502319813,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.015346053056418896,
+        "public_tv": 0.013938973657786846,
+        "private_tv": 0.01108643226325512,
+        "off_article_mass": 0.948371946811676,
+        "on_article_mass": 0.9606818556785583
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_fire_paramedic",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.125,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.09090909090909091,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.004274048842489719,
+    "target_rank_change": 0,
+    "target_rank_before": 4,
+    "target_rank_after": 4,
+    "patch_norm": 459.7582092285156,
+    "patch_norm_over_natural_rms": 0.5484188692391446,
+    "effect_per_patch_norm": 0.0008156461210975617,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.029852626845240593,
+        "public_tv": 0.0,
+        "private_tv": 0.029852626845240593,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03411827236413956,
+        "public_tv": 0.008885952644050121,
+        "private_tv": 0.03084101341664791,
+        "off_article_mass": 0.9312606453895569,
+        "on_article_mass": 0.9469963908195496
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_fire_paramedic",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.125,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.18181818181818182,
+    "target_logit_change": 0.75,
+    "target_log_odds_change": 0.75,
+    "target_odds_multiplier": 2.117000016612675,
+    "target_probability_change": 0.009886879473924637,
+    "target_rank_change": 0,
+    "target_rank_before": 4,
+    "target_rank_after": 4,
+    "patch_norm": 919.5164184570312,
+    "patch_norm_over_natural_rms": 1.0968377384782892,
+    "effect_per_patch_norm": 0.0008156461210975617,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03398570790886879,
+        "public_tv": 0.0,
+        "private_tv": 0.03398570790886879,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04440208524465561,
+        "public_tv": 0.018889829516410828,
+        "private_tv": 0.03665297105908394,
+        "off_article_mass": 0.9312606453895569,
+        "on_article_mass": 0.9597164988517761
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_fire_paramedic",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.125,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.24242424242424243,
+    "target_logit_change": 0.875,
+    "target_log_odds_change": 0.875,
+    "target_odds_multiplier": 2.398875293967098,
+    "target_probability_change": 0.014503292739391327,
+    "target_rank_change": 0,
+    "target_rank_before": 4,
+    "target_rank_after": 4,
+    "patch_norm": 1379.2745361328125,
+    "patch_norm_over_natural_rms": 1.6452564985094937,
+    "effect_per_patch_norm": 0.0007250188224338453,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04629085212945938,
+        "public_tv": 0.0,
+        "private_tv": 0.04629085212945938,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.05473610386252403,
+        "public_tv": 0.02383921854197979,
+        "private_tv": 0.048478517681360245,
+        "off_article_mass": 0.9312606453895569,
+        "on_article_mass": 0.9621425271034241
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_librarian_historian",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -10.5625,
+    "delta_delta": 1.5,
+    "fraction_gap_closed": 0.14201183431952663,
+    "target_logit_change": 1.25,
+    "target_log_odds_change": 1.25,
+    "target_odds_multiplier": 3.4903429574618414,
+    "target_probability_change": 8.813238127913792e-05,
+    "target_rank_change": 19,
+    "target_rank_before": 35,
+    "target_rank_after": 16,
+    "patch_norm": 605.1651000976562,
+    "patch_norm_over_natural_rms": 0.721866305455337,
+    "effect_per_patch_norm": 0.002478662434033197,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0021522475872188807,
+        "public_tv": 0.0,
+        "private_tv": 0.0021522475872188807,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.005107239820063114,
+        "public_tv": 0.0,
+        "private_tv": 0.005107239820063114,
+        "off_article_mass": 0.944119393825531,
+        "on_article_mass": 0.9511239528656006
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_librarian_historian",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -10.5625,
+    "delta_delta": 3.1875,
+    "fraction_gap_closed": 0.30177514792899407,
+    "target_logit_change": 2.8125,
+    "target_log_odds_change": 2.8125,
+    "target_odds_multiplier": 16.651494963610144,
+    "target_probability_change": 0.0005868155221833149,
+    "target_rank_change": 26,
+    "target_rank_before": 35,
+    "target_rank_after": 9,
+    "patch_norm": 1210.3302001953125,
+    "patch_norm_over_natural_rms": 1.443732610910674,
+    "effect_per_patch_norm": 0.002633578836160272,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.004783335607498884,
+        "public_tv": 1.940745958037282e-12,
+        "private_tv": 0.004783335607498884,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.01777336560189724,
+        "public_tv": 0.007061525713652372,
+        "private_tv": 0.012396711856126785,
+        "off_article_mass": 0.944119393825531,
+        "on_article_mass": 0.9510675072669983
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_librarian_historian",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -10.5625,
+    "delta_delta": 3.8125,
+    "fraction_gap_closed": 0.3609467455621302,
+    "target_logit_change": 3.3125,
+    "target_log_odds_change": 3.3125,
+    "target_odds_multiplier": 27.4536739354601,
+    "target_probability_change": 0.001115188288167701,
+    "target_rank_change": 29,
+    "target_rank_before": 35,
+    "target_rank_after": 6,
+    "patch_norm": 1815.4954833984375,
+    "patch_norm_over_natural_rms": 2.1655991347818917,
+    "effect_per_patch_norm": 0.00209997768370283,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.006885789334774017,
+        "public_tv": 1.940745958037282e-12,
+        "private_tv": 0.006885789334774017,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.02216779626905918,
+        "public_tv": 0.007061525713652372,
+        "private_tv": 0.016794798895716667,
+        "off_article_mass": 0.944119393825531,
+        "on_article_mass": 0.9656801223754883
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_mechanic_technician",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.875,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.02564102564102564,
+    "target_logit_change": 0.125,
+    "target_log_odds_change": 0.125,
+    "target_odds_multiplier": 1.1331484530668263,
+    "target_probability_change": 0.0009582745842635632,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 368.2611999511719,
+    "patch_norm_over_natural_rms": 0.43927740018121236,
+    "effect_per_patch_norm": 0.0003394329894557827,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0025351475924253464,
+        "public_tv": 1.9669264827992805e-10,
+        "private_tv": 0.0025351480580866337,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.013441325165331364,
+        "public_tv": 0.011206281371414661,
+        "private_tv": 0.005115218460559845,
+        "off_article_mass": 0.8946335911750793,
+        "on_article_mass": 0.9069629907608032
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_mechanic_technician",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.875,
+    "delta_delta": 0.5,
+    "fraction_gap_closed": 0.10256410256410256,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.0046534365974366665,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 736.5223999023438,
+    "patch_norm_over_natural_rms": 0.8785548003624247,
+    "effect_per_patch_norm": 0.0006788659789115654,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.00803261250257492,
+        "public_tv": 1.9669264827992805e-10,
+        "private_tv": 0.00803261250257492,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.018471617251634598,
+        "public_tv": 0.011206281371414661,
+        "private_tv": 0.010715325362980366,
+        "off_article_mass": 0.8946335911750793,
+        "on_article_mass": 0.9142503142356873
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_mechanic_technician",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.875,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.1282051282051282,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.006228411104530096,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 1104.7835693359375,
+    "patch_norm_over_natural_rms": 1.3178321641409905,
+    "effect_per_patch_norm": 0.0005657216647199728,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.009987305849790573,
+        "public_tv": 0.0,
+        "private_tv": 0.009987305849790573,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.012330368161201477,
+        "public_tv": 0.0,
+        "private_tv": 0.012330368161201477,
+        "off_article_mass": 0.8946335911750793,
+        "on_article_mass": 0.9331235885620117
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_surgeon_cardio",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -7.0625,
+    "delta_delta": 0.25,
+    "fraction_gap_closed": 0.035398230088495575,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 7.990360609255731e-05,
+    "target_rank_change": 11,
+    "target_rank_before": 67,
+    "target_rank_after": 56,
+    "patch_norm": 412.3470458984375,
+    "patch_norm_over_natural_rms": 0.4918648457092018,
+    "effect_per_patch_norm": 0.000606285415372118,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.037696387618780136,
+        "public_tv": 0.0,
+        "private_tv": 0.037696387618780136,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03719215467572212,
+        "public_tv": 0.003216963028535247,
+        "private_tv": 0.03771776333451271,
+        "off_article_mass": 0.938609778881073,
+        "on_article_mass": 0.9374735951423645
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_surgeon_cardio",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -7.0625,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.08849557522123894,
+    "target_logit_change": 0.75,
+    "target_log_odds_change": 0.75,
+    "target_odds_multiplier": 2.117000016612675,
+    "target_probability_change": 0.00019592270837165415,
+    "target_rank_change": 23,
+    "target_rank_before": 67,
+    "target_rank_after": 44,
+    "patch_norm": 824.694091796875,
+    "patch_norm_over_natural_rms": 0.9837296914184036,
+    "effect_per_patch_norm": 0.0007578567692151475,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.04588945209980011,
+        "public_tv": 0.0,
+        "private_tv": 0.04588945209980011,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04589611291885376,
+        "public_tv": 0.006835569627583027,
+        "private_tv": 0.04666759446263313,
+        "off_article_mass": 0.938609778881073,
+        "on_article_mass": 0.9356762766838074
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_surgeon_cardio",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -7.0625,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.1415929203539823,
+    "target_logit_change": 1.125,
+    "target_log_odds_change": 1.125,
+    "target_odds_multiplier": 3.080216848918031,
+    "target_probability_change": 0.0004111998714506626,
+    "target_rank_change": 36,
+    "target_rank_before": 67,
+    "target_rank_after": 31,
+    "patch_norm": 1237.041015625,
+    "patch_norm_over_natural_rms": 1.4755943915170184,
+    "effect_per_patch_norm": 0.0008083806335998989,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.059102416038513184,
+        "public_tv": 0.0,
+        "private_tv": 0.059102416038513184,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.06259548664093018,
+        "public_tv": 0.006835569627583027,
+        "private_tv": 0.06012457236647606,
+        "off_article_mass": 0.938609778881073,
+        "on_article_mass": 0.9300305247306824
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_pharmacist_nutrition",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -8.875,
+    "delta_delta": 0.9375,
+    "fraction_gap_closed": 0.1056338028169014,
+    "target_logit_change": 1.1875,
+    "target_log_odds_change": 1.1875,
+    "target_odds_multiplier": 3.2788737679386735,
+    "target_probability_change": 0.00010462157297297381,
+    "target_rank_change": 33,
+    "target_rank_before": 104,
+    "target_rank_after": 71,
+    "patch_norm": 501.0757141113281,
+    "patch_norm_over_natural_rms": 0.597704121471264,
+    "effect_per_patch_norm": 0.00187097473215736,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.042570311576128006,
+        "public_tv": 0.0,
+        "private_tv": 0.042570311576128006,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04245758801698685,
+        "public_tv": 0.0013667112216353416,
+        "private_tv": 0.04247758537530899,
+        "off_article_mass": 0.9469898343086243,
+        "on_article_mass": 0.9438210129737854
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_pharmacist_nutrition",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -8.875,
+    "delta_delta": 2.75,
+    "fraction_gap_closed": 0.30985915492957744,
+    "target_logit_change": 2.875,
+    "target_log_odds_change": 2.875,
+    "target_odds_multiplier": 17.725424121461643,
+    "target_probability_change": 0.0008729422806936782,
+    "target_rank_change": 71,
+    "target_rank_before": 104,
+    "target_rank_after": 33,
+    "patch_norm": 1002.1514282226562,
+    "patch_norm_over_natural_rms": 1.195408242942528,
+    "effect_per_patch_norm": 0.0027440962738307945,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02340107038617134,
+        "public_tv": 0.0,
+        "private_tv": 0.02340107038617134,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.023568417876958847,
+        "public_tv": 0.004653783980756998,
+        "private_tv": 0.024088885635137558,
+        "off_article_mass": 0.9469898343086243,
+        "on_article_mass": 0.9531831741333008
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_pharmacist_nutrition",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -8.875,
+    "delta_delta": 3.875,
+    "fraction_gap_closed": 0.43661971830985913,
+    "target_logit_change": 4.0,
+    "target_log_odds_change": 4.0,
+    "target_odds_multiplier": 54.598150033144236,
+    "target_probability_change": 0.002807304681482492,
+    "target_rank_change": 92,
+    "target_rank_before": 104,
+    "target_rank_after": 12,
+    "patch_norm": 1503.227294921875,
+    "patch_norm_over_natural_rms": 1.7931125464270257,
+    "effect_per_patch_norm": 0.0025777871470870207,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02681531198322773,
+        "public_tv": 0.0,
+        "private_tv": 0.02681531198322773,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.027664396911859512,
+        "public_tv": 0.00884068664163351,
+        "private_tv": 0.02825957164168358,
+        "off_article_mass": 0.9469898343086243,
+        "on_article_mass": 0.9601625800132751
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_journalist_writer",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 0.1111111111111111,
+    "target_logit_change": 0.375,
+    "target_log_odds_change": 0.375,
+    "target_odds_multiplier": 1.4549914146182013,
+    "target_probability_change": 0.013239217922091484,
+    "target_rank_change": 0,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "patch_norm": 373.3441467285156,
+    "patch_norm_over_natural_rms": 0.4453405522208709,
+    "effect_per_patch_norm": 0.0010044351927999784,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.013856428675353527,
+        "public_tv": 1.0874235539803934e-12,
+        "private_tv": 0.013856428675353527,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.0381883904337883,
+        "public_tv": 0.024627847597002983,
+        "private_tv": 0.01623455435037613,
+        "off_article_mass": 0.9626225233078003,
+        "on_article_mass": 0.9667966365814209
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_journalist_writer",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.625,
+    "fraction_gap_closed": 0.18518518518518517,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.025214074179530144,
+    "target_rank_change": 0,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "patch_norm": 746.6882934570312,
+    "patch_norm_over_natural_rms": 0.8906811044417418,
+    "effect_per_patch_norm": 0.0008370293273333153,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.026719843968749046,
+        "public_tv": 1.0190569099677305e-07,
+        "private_tv": 0.026719750836491585,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.13175489008426666,
+        "public_tv": 0.10365403443574905,
+        "private_tv": 0.04998740926384926,
+        "off_article_mass": 0.9626225233078003,
+        "on_article_mass": 0.9692946672439575
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_journalist_writer",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -3.375,
+    "delta_delta": 0.75,
+    "fraction_gap_closed": 0.2222222222222222,
+    "target_logit_change": 0.625,
+    "target_log_odds_change": 0.625,
+    "target_odds_multiplier": 1.8682459574322223,
+    "target_probability_change": 0.032045209780335426,
+    "target_rank_change": 0,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "patch_norm": 1120.0323486328125,
+    "patch_norm_over_natural_rms": 1.3360215474546724,
+    "effect_per_patch_norm": 0.0006696235166024453,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03581656143069267,
+        "public_tv": 0.0015702180098742247,
+        "private_tv": 0.034527234733104706,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.296404629945755,
+        "public_tv": 0.2537110149860382,
+        "private_tv": 0.10524215549230576,
+        "off_article_mass": 0.9626225233078003,
+        "on_article_mass": 0.9770543575286865
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_plumber_carpenter",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -6.5,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.04807692307692308,
+    "target_logit_change": 0.4375,
+    "target_log_odds_change": 0.4375,
+    "target_odds_multiplier": 1.5488302986341331,
+    "target_probability_change": 0.0005305440863594413,
+    "target_rank_change": 2,
+    "target_rank_before": 8,
+    "target_rank_after": 6,
+    "patch_norm": 452.1589050292969,
+    "patch_norm_over_natural_rms": 0.5393541005579434,
+    "effect_per_patch_norm": 0.0006911287083459124,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0037428014911711216,
+        "public_tv": 8.910862838080492e-16,
+        "private_tv": 0.0037428014911711216,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.008050166070461273,
+        "public_tv": 0.007317850831896067,
+        "private_tv": 0.003813785733655095,
+        "off_article_mass": 0.9294841885566711,
+        "on_article_mass": 0.9246869683265686
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_plumber_carpenter",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -6.5,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.15384615384615385,
+    "target_logit_change": 1.0,
+    "target_log_odds_change": 1.0,
+    "target_odds_multiplier": 2.718281828459045,
+    "target_probability_change": 0.002457140595652163,
+    "target_rank_change": 4,
+    "target_rank_before": 8,
+    "target_rank_after": 4,
+    "patch_norm": 904.3178100585938,
+    "patch_norm_over_natural_rms": 1.0787082011158868,
+    "effect_per_patch_norm": 0.0011058059333534597,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.00545945530757308,
+        "public_tv": 0.0,
+        "private_tv": 0.00545945530757308,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.0058495234698057175,
+        "public_tv": 0.0,
+        "private_tv": 0.0058495234698057175,
+        "off_article_mass": 0.9294841885566711,
+        "on_article_mass": 0.9345523118972778
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_plumber_carpenter",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -6.5,
+    "delta_delta": 1.625,
+    "fraction_gap_closed": 0.25,
+    "target_logit_change": 1.5,
+    "target_log_odds_change": 1.5,
+    "target_odds_multiplier": 4.4816890703380645,
+    "target_probability_change": 0.005789226503111422,
+    "target_rank_change": 6,
+    "target_rank_before": 8,
+    "target_rank_after": 2,
+    "patch_norm": 1356.4766845703125,
+    "patch_norm_over_natural_rms": 1.6180622652711834,
+    "effect_per_patch_norm": 0.0011979564547508217,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.011558083817362785,
+        "public_tv": 0.0,
+        "private_tv": 0.011558083817362785,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.011967944912612438,
+        "public_tv": 0.0,
+        "private_tv": 0.011967944912612438,
+        "off_article_mass": 0.9294841885566711,
+        "on_article_mass": 0.9616785645484924
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_biologist_botanist",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.5625,
+    "delta_delta": 0.6875,
+    "fraction_gap_closed": 0.1506849315068493,
+    "target_logit_change": 0.6875,
+    "target_log_odds_change": 0.6875,
+    "target_odds_multiplier": 1.988737469582292,
+    "target_probability_change": 0.007364620454609394,
+    "target_rank_change": 0,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "patch_norm": 621.6349487304688,
+    "patch_norm_over_natural_rms": 0.7415122314713258,
+    "effect_per_patch_norm": 0.0011059545500201426,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.05720341205596924,
+        "public_tv": 2.1195410010443894e-11,
+        "private_tv": 0.05720341205596924,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.09094499051570892,
+        "public_tv": 0.04166819155216217,
+        "private_tv": 0.0600147545337677,
+        "off_article_mass": 0.7985944747924805,
+        "on_article_mass": 0.8334580063819885
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_biologist_botanist",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.5625,
+    "delta_delta": 2.1875,
+    "fraction_gap_closed": 0.4794520547945205,
+    "target_logit_change": 1.9375,
+    "target_log_odds_change": 1.9375,
+    "target_odds_multiplier": 6.941375821197036,
+    "target_probability_change": 0.05217029806226492,
+    "target_rank_change": 0,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "patch_norm": 1243.2698974609375,
+    "patch_norm_over_natural_rms": 1.4830244629426517,
+    "effect_per_patch_norm": 0.001759473147759318,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.1736922413110733,
+        "public_tv": 2.9952209601447066e-09,
+        "private_tv": 0.1736922413110733,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999996423721313
+      },
+      "1.0": {
+        "total_tv": 0.2304234653711319,
+        "public_tv": 0.08341754227876663,
+        "private_tv": 0.1779046654701233,
+        "off_article_mass": 0.7985944747924805,
+        "on_article_mass": 0.8145000338554382
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_biologist_botanist",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -4.5625,
+    "delta_delta": 3.3125,
+    "fraction_gap_closed": 0.726027397260274,
+    "target_logit_change": 2.6875,
+    "target_log_odds_change": 2.6875,
+    "target_odds_multiplier": 14.694892728788941,
+    "target_probability_change": 0.14492938574403524,
+    "target_rank_change": 1,
+    "target_rank_before": 3,
+    "target_rank_after": 2,
+    "patch_norm": 1864.9046630859375,
+    "patch_norm_over_natural_rms": 2.224536475998097,
+    "effect_per_patch_norm": 0.0017762302092797948,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.2926311194896698,
+        "public_tv": 2.9952209601447066e-09,
+        "private_tv": 0.2926311194896698,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.999987006187439
+      },
+      "1.0": {
+        "total_tv": 0.3357067108154297,
+        "public_tv": 0.08341754227876663,
+        "private_tv": 0.28686559200286865,
+        "off_article_mass": 0.7985944747924805,
+        "on_article_mass": 0.755840539932251
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_historian_sociologist",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -7.5,
+    "delta_delta": 1.0,
+    "fraction_gap_closed": 0.13333333333333333,
+    "target_logit_change": 0.875,
+    "target_log_odds_change": 0.875,
+    "target_odds_multiplier": 2.398875293967098,
+    "target_probability_change": 0.0009267471032217145,
+    "target_rank_change": 3,
+    "target_rank_before": 8,
+    "target_rank_after": 5,
+    "patch_norm": 561.8728637695312,
+    "patch_norm_over_natural_rms": 0.6702255107564361,
+    "effect_per_patch_norm": 0.0017797620502459067,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.003976654727011919,
+        "public_tv": 1.4081903698670573e-10,
+        "private_tv": 0.003976654727011919,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.019461095333099365,
+        "public_tv": 0.006055401172488928,
+        "private_tv": 0.01373271644115448,
+        "off_article_mass": 0.9313483238220215,
+        "on_article_mass": 0.9148287177085876
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_historian_sociologist",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -7.5,
+    "delta_delta": 2.0,
+    "fraction_gap_closed": 0.26666666666666666,
+    "target_logit_change": 1.625,
+    "target_log_odds_change": 1.625,
+    "target_odds_multiplier": 5.0784190371800815,
+    "target_probability_change": 0.0034224732080474496,
+    "target_rank_change": 6,
+    "target_rank_before": 8,
+    "target_rank_after": 2,
+    "patch_norm": 1123.7457275390625,
+    "patch_norm_over_natural_rms": 1.3404510215128722,
+    "effect_per_patch_norm": 0.0017797620502459067,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.011242659762501717,
+        "public_tv": 3.65427688109321e-08,
+        "private_tv": 0.011242624372243881,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552
+      },
+      "1.0": {
+        "total_tv": 0.061159320175647736,
+        "public_tv": 0.012385784648358822,
+        "private_tv": 0.049501337110996246,
+        "off_article_mass": 0.9313483238220215,
+        "on_article_mass": 0.9199215173721313
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_historian_sociologist",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -7.5,
+    "delta_delta": 2.5,
+    "fraction_gap_closed": 0.3333333333333333,
+    "target_logit_change": 1.875,
+    "target_log_odds_change": 1.875,
+    "target_odds_multiplier": 6.5208191203301125,
+    "target_probability_change": 0.005946721532382071,
+    "target_rank_change": 6,
+    "target_rank_before": 8,
+    "target_rank_after": 2,
+    "patch_norm": 1685.6185302734375,
+    "patch_norm_over_natural_rms": 2.0106764594640145,
+    "effect_per_patch_norm": 0.0014831350955749492,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.018432598561048508,
+        "public_tv": 1.8170101157011231e-06,
+        "private_tv": 0.018430914729833603,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.11762794852256775,
+        "public_tv": 0.02364143170416355,
+        "private_tv": 0.09554826468229294,
+        "off_article_mass": 0.9313483238220215,
+        "on_article_mass": 0.9265711307525635
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_musician_conductor",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -6.4375,
+    "delta_delta": 0.3125,
+    "fraction_gap_closed": 0.04854368932038835,
+    "target_logit_change": 0.1875,
+    "target_log_odds_change": 0.1875,
+    "target_odds_multiplier": 1.2062302494209807,
+    "target_probability_change": 0.00041979853995144367,
+    "target_rank_change": 2,
+    "target_rank_before": 10,
+    "target_rank_after": 8,
+    "patch_norm": 495.381591796875,
+    "patch_norm_over_natural_rms": 0.59091193362487,
+    "effect_per_patch_norm": 0.0006308268316278831,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.02866184152662754,
+        "public_tv": 6.506784694382262e-11,
+        "private_tv": 0.02866184152662754,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.03900102525949478,
+        "public_tv": 0.018205756321549416,
+        "private_tv": 0.031374506652355194,
+        "off_article_mass": 0.9454250335693359,
+        "on_article_mass": 0.9181026220321655
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_musician_conductor",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -6.4375,
+    "delta_delta": 0.6875,
+    "fraction_gap_closed": 0.10679611650485436,
+    "target_logit_change": 0.3125,
+    "target_log_odds_change": 0.3125,
+    "target_odds_multiplier": 1.3668379411737963,
+    "target_probability_change": 0.0010570434387773275,
+    "target_rank_change": 4,
+    "target_rank_before": 10,
+    "target_rank_after": 6,
+    "patch_norm": 990.76318359375,
+    "patch_norm_over_natural_rms": 1.18182386724974,
+    "effect_per_patch_norm": 0.0006939095147906715,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.0301838181912899,
+        "public_tv": 5.1140057466536604e-11,
+        "private_tv": 0.0301838181912899,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04218415170907974,
+        "public_tv": 0.009574377909302711,
+        "private_tv": 0.038500383496284485,
+        "off_article_mass": 0.9454250335693359,
+        "on_article_mass": 0.9024435877799988
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_musician_conductor",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -6.4375,
+    "delta_delta": 1.3125,
+    "fraction_gap_closed": 0.20388349514563106,
+    "target_logit_change": 0.6875,
+    "target_log_odds_change": 0.6875,
+    "target_odds_multiplier": 1.988737469582292,
+    "target_probability_change": 0.0027875788509845734,
+    "target_rank_change": 5,
+    "target_rank_before": 10,
+    "target_rank_after": 5,
+    "patch_norm": 1486.1446533203125,
+    "patch_norm_over_natural_rms": 1.772735655264023,
+    "effect_per_patch_norm": 0.0008831576368206424,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03316351771354675,
+        "public_tv": 1.8168311299859852e-10,
+        "private_tv": 0.03316351771354675,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.04507856070995331,
+        "public_tv": 0.010593150742352009,
+        "private_tv": 0.048483844846487045,
+        "off_article_mass": 0.9454250335693359,
+        "on_article_mass": 0.882028341293335
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_trainer_coach",
+    "regime": "within",
+    "strength": 0.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -0.375,
+    "delta_delta": 0.125,
+    "fraction_gap_closed": 0.3333333333333333,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.022065266966819763,
+    "target_rank_change": 0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "patch_norm": 510.8185119628906,
+    "patch_norm_over_natural_rms": 0.6093257392558498,
+    "effect_per_patch_norm": 0.00024470530545118703,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.03286932781338692,
+        "public_tv": 7.589379125150231e-11,
+        "private_tv": 0.03286932781338692,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.05821091681718826,
+        "public_tv": 0.04710977524518967,
+        "private_tv": 0.03357592970132828,
+        "off_article_mass": 0.9340324401855469,
+        "on_article_mass": 0.9375491142272949
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_trainer_coach",
+    "regime": "within",
+    "strength": 1.0,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -0.375,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 1.0,
+    "target_logit_change": 0.25,
+    "target_log_odds_change": 0.25,
+    "target_odds_multiplier": 1.2840254166877414,
+    "target_probability_change": 0.058542340993881226,
+    "target_rank_change": 1,
+    "target_rank_before": 2,
+    "target_rank_after": 1,
+    "patch_norm": 1021.6370239257812,
+    "patch_norm_over_natural_rms": 1.2186514785116995,
+    "effect_per_patch_norm": 0.0003670579581767806,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.09463892132043839,
+        "public_tv": 7.589379125150231e-11,
+        "private_tv": 0.09463892132043839,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.11211932450532913,
+        "public_tv": 0.05703724920749664,
+        "private_tv": 0.09428676962852478,
+        "off_article_mass": 0.9340324401855469,
+        "on_article_mass": 0.9272087812423706
+      }
+    }
+  },
+  {
+    "model": "gemma_1b",
+    "pair_id": "within_trainer_coach",
+    "regime": "within",
+    "strength": 1.5,
+    "layer": 14,
+    "relative_depth": 0.56,
+    "baseline_target_minus_source": -0.375,
+    "delta_delta": 0.375,
+    "fraction_gap_closed": 1.0,
+    "target_logit_change": 0.5,
+    "target_log_odds_change": 0.5,
+    "target_odds_multiplier": 1.6487212707001282,
+    "target_probability_change": 0.05589163303375244,
+    "target_rank_change": 1,
+    "target_rank_before": 2,
+    "target_rank_after": 1,
+    "patch_norm": 1532.4552001953125,
+    "patch_norm_over_natural_rms": 1.827976817338435,
+    "effect_per_patch_norm": 0.000244705359055329,
+    "article_changed": false,
+    "stochastic": {
+      "0.1": {
+        "total_tv": 0.10722265392541885,
+        "public_tv": 7.589379125150231e-11,
+        "private_tv": 0.10722265392541885,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0
+      },
+      "1.0": {
+        "total_tv": 0.12765873968601227,
+        "public_tv": 0.06491579860448837,
+        "private_tv": 0.10627461969852448,
+        "off_article_mass": 0.9340324401855469,
+        "on_article_mass": 0.9127110242843628
+      }
+    }
+  }
+]

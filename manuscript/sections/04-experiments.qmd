@@ -129,16 +129,16 @@ fixed-article TV.
 **Attribution-to-channel calibration.** The 32-feature held-out calibration
 crosses article and future-content graph-score strata. Outcomes include
 article-margin movement, free-path total TV, token-substitution TV,
-matched-prefix leftover TV, and mean fixed-article TV. Selection and test
+matched-prefix leftover TV, signed fixed-article target-logit and
+target-minus-source effects, and continuous conditional-policy public effects.
+Selection and test
 occupations remain disjoint. We repeat this protocol independently at 1B with
-eight features per stratum and the same \(5\times\) single-feature gain. Because
-the effect-matched coalition revealed mediator failure, 1B channel correlations
-exclude any feature that makes a non-article token top-1 on even one of the 20
-held-out prompts; local article-margin and fixed-token outcomes retain all 32
-features. Both scales use feature-level bootstrap, leave-one-feature-out,
-largest-effect exclusion, partial rank correlations controlling layer,
-held-out activation, and decoder norm, and conditioning on realized margin
-movement.
+eight features per stratum and the same \(5\times\) single-feature gain. The
+matched signed analysis retains all features rather than filtering them by
+held-out mediator outcomes. Both scales use feature-level bootstrap and
+leave-one-feature-out prediction. For the public gain law, we compare
+attribution alone, attribution plus baseline margin susceptibility, and the
+same predictor multiplied by intervention-off branch leverage.
 
 **Cross-scale sparse and residual assays.** On Gemma 3 1B PT with the matched
 affine Gemma Scope 2 CLT, we first repeat the frozen top-four, \(5\times\)
@@ -149,6 +149,12 @@ attribution to the `an`-minus-`a` margin and to the future noun. We freeze the
 smallest development operating point reaching mean margin movement 3.0 logits;
 this selects \(k=24,g=20\), close to the 270M S1 reference of 3.3125. The 20
 held-out prompts then receive the complete six-cell assay. We separately repeat
+the search over \(k\in\{1,2,4,8,12,16,20,24\}\) and gains from 1.25 to 20,
+maximizing development margin movement subject to frozen constraints on
+article-domain validity, mean KL, article mass, and feature count. The chosen
+frontier point receives a separate held-out six-cell assay. We audit 1B CLT
+reconstruction, sparse/affine-skip norms, task-logit reconstruction, and one
+representative graph at 1,200 nodes versus its full active graph. We separately repeat
 the natural residual protocol without a CLT: all-layer selection on eight
 development pairs, then 12 cross-class and 12 same-class held-out pairs at
 strengths \(0.5,1,1.5\). Stochastic decompositions condition the article

@@ -204,31 +204,64 @@ effect size, not channel identity (@fig-natural-regimes).
 
 ![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes and outperform wrong-target and matched-norm controls; no greedy article switch occurs.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
 
-## Attribution predicts local efficacy, not transmission channel
+## A closed-loop gain law predicts public influence
 
 Across 32 features selected on disjoint occupations, article attribution
-predicts induced article-margin change (Spearman \(\rho=0.530\), bootstrap
-95\% CI \([0.200,0.772]\)); leave-one-feature-out estimates span
-\([0.483,0.594]\), largest-effect exclusion gives \(0.483\), and partial
-rank correlation controlling layer, activation, and decoder norm is
-\(0.560\). For total TV, token-substitution TV, treated-token leftover TV,
-and mean fixed-article TV, the bootstrap intervals all include zero (point
-estimates \(-0.105,-0.176,-0.052,0.026\)). Outlier exclusion, leave-one-out
-analysis, covariate adjustment, and conditioning on above-median realized
-article movement do not reveal a stable monotone channel association; article
-attribution also has boundary-crossing AUC 0.382. We therefore report **no
-detectable monotone channel association in this 32-feature experiment**, not a
-general impossibility result (@fig-attribution-calibration).
+predicts induced article-margin change at 270M (Spearman \(\rho=0.530\),
+bootstrap 95\% CI \([0.200,0.772]\)) and transfers directionally at 1B
+(\(0.432\ [0.014,0.729]\)). This is evidence for local calibration, not by
+itself a channel label. The earlier TV comparisons also mixed signed,
+target-specific attributions with unsigned distributional distances. In the
+matched reanalysis, signed future attribution versus signed fixed-token
+target-minus-source change is \(0.270\ [-0.100,0.584]\) at 270M and
+\(-0.129\ [-0.451,0.225]\) at 1B; signed target-logit correlations are
+\(0.307\ [-0.047,0.594]\) and \(0.120\ [-0.279,0.473]\). Absolute attribution
+versus absolute target effect is also undetectable. These panels therefore do
+not reliably rank persistent target effects under this protocol, but their wide
+intervals do not establish independence or a general attribution failure.
 
-![Held-out calibration of attribution scores against causal outcomes. Article attribution predicts local article-margin movement but not downstream public or private channel strength.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=88%}
+The public route admits a positive predictive account. Under a conditional
+two-article policy, let \(q_i=P(B=an\mid I=i)\) and let \(Y_a,Y_{an}\) be the
+intervention-off noun distributions under fixed articles. Then
 
-## Scale separates sparse steerability from private residual capacity
+$$
+E_{\mathrm{public}}=(q_1-q_0)(Y_{an}-Y_a),\qquad
+TV(E_{\mathrm{public}})=|q_1-q_0|TV(Y_{an},Y_a).
+$$
+
+Thus downstream public influence factorizes into **policy movement** and
+**continuation leverage**. Policy movement is in turn determined by the
+baseline article margin, intervention-induced margin change, and temperature.
+The identity holds numerically to \(1.3\times10^{-7}\). In leave-one-feature-out
+prediction at 270M, attribution alone has \(R^2=-0.551\) at \(\tau=0.1\);
+adding baseline decoder susceptibility raises it to \(0.828\), and adding
+branch leverage raises it to \(0.839\). Across \(\tau=0.1\) to 1, the full
+attribution-based model gives \(R^2=0.839\)--\(0.875\). At 1B it is only
+\(0.204\) at \(\tau=0.1\) and non-positive at higher temperatures because
+single-feature local calibration and public-effect variance are weak. Using
+measured rather than attribution-predicted margin movement gives
+\(R^2\ge0.957\) before explicit branch leverage and exactly 1 after it at both
+scales. Local causal pressure, boundary susceptibility, and branch leverage are
+therefore distinct measurable factors whose composition determines the public
+downstream effect (@fig-attribution-calibration).
+
+![Held-out calibration of attribution scores against causal outcomes. Article attribution has local article-margin validity; matched future-target associations remain undetectable, while the closed-loop gain law explains why local pressure alone is insufficient to predict public influence.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=88%}
+
+## At 1B, sparse channel identification fails before transmission
 
 The frozen 1B top-four/\(5\times\) S1 recipe fails the first stage: on held-out
 prompts it moves the `an`-minus-`a` margin by only 0.075 logits on average and
 crosses toward `an` on 1/20 prompts. The original selection label is also
 miscalibrated to the contrast: it requires positive attribution to `an`, not to
 `an` minus `a`, and several features raise both article logits.
+
+Re-ranking the frozen 270M development graphs by the corrected positive
+`an-a`-margin plus future-target criterion retains two canonical S1 members
+(L12/F6229 and L13/F10231) and replaces the two weakest-margin members. Thus
+the canonical 270M intervention is not a perfectly harmonized scale comparator,
+although its two dominant corrected-margin features and its held-out relay
+phenotype remain intact. We treat cross-scale sparse comparisons as diagnostic,
+not as a controlled scale effect.
 
 Development-only margin calibration repairs the binary contrast. The frozen
 top-24/\(20\times\) coalition moves the development margin by 3.461 logits and
@@ -241,11 +274,24 @@ identified on only two prompts whose off/on free mediators are both articles.
 We therefore do not assign this sparse intervention a 1B transmission
 phenotype.
 
+A development-only constrained frontier search provides a less destructive
+operating point. We maximize corrected `an-a` margin movement subject to
+100\% article-mediator validity, mean full-vocabulary KL at most 0.1, article
+mass at least 0.5, and small feature count. The frozen optimum is the single
+feature L18/F5015 at \(7.5\times\): development margin movement is 0.859,
+article mass 0.935, and mean KL 0.077. On 20 held-out prompts it preserves an
+`a/an` top token on 20/20 and changes the article on only 1/20. In that one
+descriptive switch, total TV 0.665 is almost entirely public (0.664; leftover
+0.001), but one switch cannot identify a population-level 1B phenotype. The
+frontier therefore repairs structural validity without supplying broad local
+efficacy.
+
 | Model/intervention | Local efficacy | Mediator validity | Identified channel |
 | --- | ---: | ---: | --- |
 | 270M S1, top-4/\(5\times\) | 3.313-logit mean margin movement | `a/an` 20/20 | Public-relay dominant |
 | 1B original S1, top-4/\(5\times\) | 0.075 | `a/an` 20/20 | Not identified: weak handle |
 | 1B margin S1, top-24/\(20\times\) | 3.488 | `a/an` 3/20 | Not identified: mediator-invalid |
+| 1B frontier L18/F5015, \(7.5\times\) | 0.859 on development | `a/an` 20/20; switch 1/20 | Not identified: sparse switch support |
 | 1B natural residual, native strength | target \(\Delta\Delta=0.846/1.312\) | fixed visible article | Private target influence |
 
 : Local efficacy and channel identification are sequential requirements.
@@ -261,33 +307,59 @@ so scale does not uniformly increase distributional private influence. At
 \(\tau=0.1\), the 1B public component is 0.002 cross-class and zero same-class
 while private TV is 0.055 and 0.039; at \(\tau=1\), public TV rises to 0.074
 and 0.027 while private TV remains 0.062 and 0.046. The defensible scale result
-is stronger target-logit efficacy, especially within class, without behavioral
-sufficiency or a demonstrated carrier switch.
+is target-directed movement at both scales without behavioral sufficiency or a
+monotone scale effect. Normalizing by the baseline gap, the 1B patch closes
+0.083 of the cross-class gap and 0.272 within class, versus 0.103 and 0.249 at
+270M. Patch-norm-normalized effects favor 1B, but distributional private TV and
+rank improvement do not; the conclusion depends on the estimand.
 
-The independent 1B feature calibration supplies a stronger cross-scale
+The apparent strength-by-class public recruitment is also not robust. The
+difference-in-differences from strength 0.5 to 1.5 is 0.063 at \(\tau=0.1\)
+and 0.055 at \(\tau=1\), but pair-bootstrap intervals include zero at every
+temperature. The low-temperature contrast is driven by the sole cross-class
+pair whose greedy article switches at strength 1.5; private influence remains
+simultaneously present. We classify this as a suggestive candidate regime, not
+a demonstrated carrier switch.
+
+The independent 1B feature calibration supplies a directional cross-scale
 generalization. Article attribution again predicts held-out local margin
 movement across 32 individually amplified features (\(\rho=0.432\), bootstrap
 95\% CI \([0.014,0.729]\)); leave-one-feature-out estimates remain positive
 \([0.375,0.478]\), largest-effect exclusion gives \(0.375\), and the partial
 rank correlation controlling layer, held-out activation, and decoder norm is
-\(0.352\). Conditioning on above-median realized margin movement strengthens
-the estimate to \(0.794\). Thirty-one features preserve `a`/`an` top-1 support
-on every held-out prompt. Within that mediator-valid set, article attribution
-does not predict total, public-relay, or treated-token leftover TV
-(\(\rho=0.088,0.043,-0.123\); all bootstrap intervals include zero), and its
-fixed-token-TV association is likewise undetectable (\(\rho=-0.077\)). Future
-attribution shows no detectable association with local margin or any channel
-outcome. Thus the local-efficacy/channel separation is not peculiar to the
-270M feature panel.
+\(0.352\). We do not use the previously reported above-median-efficacy subset
+as confirmatory evidence because it conditions on a realized outcome. The
+matched signed target analyses above retain all features and avoid an
+all-held-out-prompt mediator gate.
 
-| Scale | Article attribution \(\to\) local margin | \(\to\) public TV | \(\to\) fixed-token TV |
+| Scale | Article attr. \(\to\) local margin | Future attr. \(\to\) fixed target logit | Future attr. \(\to\) target-source |
 | --- | ---: | ---: | ---: |
-| 270M (32 features) | \(0.530\ [0.200,0.772]\) | \(-0.176\), CI includes 0 | \(0.026\), CI includes 0 |
-| 1B (32 features) | \(0.432\ [0.014,0.729]\) | \(0.043\), CI includes 0 | \(-0.077\), CI includes 0 |
+| 270M (32 features) | \(0.530\ [0.200,0.772]\) | \(0.307\ [-0.047,0.594]\) | \(0.270\ [-0.100,0.584]\) |
+| 1B (32 features) | \(0.432\ [0.014,0.729]\) | \(0.120\ [-0.279,0.473]\) | \(-0.129\ [-0.451,0.225]\) |
 
-: Across-scale feature calibration. Values are Spearman correlations; brackets
-give bootstrap 95\% intervals where shown. The 1B channel estimate uses the 31
-features passing the all-prompt mediator-validity gate.
+: Across-scale matched-estimand feature calibration. Values are feature-level
+Spearman correlations with feature-bootstrap 95\% intervals.
 {#tbl-cross-scale-calibration}
 
-![Cross-scale natural-residual comparison. Gemma 1B shows somewhat stronger target-logit movement, but private TV is not uniformly larger and top-1 control remains rare.](manuscript/figures/fig_gemma_1b_residual_scale.png){#fig-gemma-1b-residual width=90%}
+![Cross-scale natural-residual comparison at aligned relative depth and patch strength. Panel B normalizes target movement by the baseline target-minus-source gap; panels C--D show that public recruitment is pair-specific while fixed-token influence persists at both scales.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-gemma-1b-residual width=96%}
+
+## Measurement audits bound the 1B interpretation
+
+The 1B affine CLT reproduces task logits closely but not every internal state.
+Across four selection prompts and five representative layers, mean MLP-output
+reconstruction cosine is 0.803 and normalized MSE is 0.341. The affine skip
+norm averages 0.714 of the native output norm (sparse and skip terms are not
+orthogonal), while reconstructed article-margin and future-target logits differ
+from native values by only 0.031 and 0.063 logits on average. Layerwise cosine
+ranges from 0.600 at layer 14 to 0.998 at layer 0. Weak sparse control therefore
+cannot be cleanly attributed to model scale rather than dictionary geometry.
+
+Graph coverage is less concerning. On a representative prompt, raising the cap
+from 1,200 to 2,400 includes all 2,085 article-graph and 2,205 future-graph
+active features. The original cap retains 100\% of pre-article absolute margin
+attribution, 99.7\% of future attribution, and 95\% overlap with the full-graph
+top 20. Because 2,400 already saturates both graphs, a 4,800 cap is redundant.
+Direct pre-article ranking over the saturated graph retains the same leading
+corrected-margin candidates, including the frontier feature. These audits make
+simple graph truncation unlikely for this case, while leaving CLT
+reconstruction and intervention construction as live explanations.

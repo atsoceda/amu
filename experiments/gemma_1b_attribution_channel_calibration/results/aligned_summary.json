@@ -1,0 +1,70 @@
+{
+  "experiment": "gemma_1b_aligned_attribution_estimands",
+  "generated_at": "2026-08-30T01:36:19.385198+00:00",
+  "elapsed_sec": 689.2391500473022,
+  "n_features": 32,
+  "n_prompts": 20,
+  "gain": 5.0,
+  "analyses": {
+    "signed_future_vs_signed_fixed_target": {
+      "rho": 0.1199640969653777,
+      "lo": -0.27901054181555296,
+      "hi": 0.4731758092275462,
+      "n": 32,
+      "resamples": 10000
+    },
+    "signed_future_vs_signed_fixed_target_minus_source": {
+      "rho": -0.12922995093439457,
+      "lo": -0.4505588859907249,
+      "hi": 0.2248816128258637,
+      "n": 32,
+      "resamples": 10000
+    },
+    "absolute_future_vs_fixed_target_magnitude": {
+      "rho": -0.047864973816717726,
+      "lo": -0.37528335505277677,
+      "hi": 0.2900213381311509,
+      "n": 32,
+      "resamples": 10000
+    }
+  },
+  "gain_law": {
+    "0.1": {
+      "n": 640,
+      "r2_attribution_only": -0.05872786639052774,
+      "r2_attribution_plus_margin_susceptibility": 0.15801765002536572,
+      "r2_full_gain_law": 0.2039746281218705,
+      "mae_attribution_only": 0.047431015862535654,
+      "mae_susceptibility": 0.024432100897098585,
+      "mae_full_gain_law": 0.023750479712498756
+    },
+    "0.25": {
+      "n": 640,
+      "r2_attribution_only": -0.11345529348079597,
+      "r2_attribution_plus_margin_susceptibility": 0.06554187873445227,
+      "r2_full_gain_law": 0.1107508600798105,
+      "mae_attribution_only": 0.03626860214751678,
+      "mae_susceptibility": 0.021448024197921762,
+      "mae_full_gain_law": 0.020757784956820947
+    },
+    "0.5": {
+      "n": 640,
+      "r2_attribution_only": -0.07112556651930912,
+      "r2_attribution_plus_margin_susceptibility": -0.07107502769128815,
+      "r2_full_gain_law": -0.03161347890168953,
+      "mae_attribution_only": 0.03111814057205988,
+      "mae_susceptibility": 0.0222463100418293,
+      "mae_full_gain_law": 0.021876013262359353
+    },
+    "1.0": {
+      "n": 640,
+      "r2_attribution_only": 0.26686808177757815,
+      "r2_attribution_plus_margin_susceptibility": -0.07825776854444366,
+      "r2_full_gain_law": -0.06346874643977185,
+      "mae_attribution_only": 0.024439587824381537,
+      "mae_susceptibility": 0.024387739762525507,
+      "mae_full_gain_law": 0.024198735651018575
+    }
+  },
+  "exact_gain_law_max_absolute_error": 1.3329454318089518e-07
+}

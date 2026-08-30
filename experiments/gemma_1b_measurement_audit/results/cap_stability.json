@@ -1,0 +1,355 @@
+{
+  "experiment": "gemma_1b_graph_cap_stability",
+  "sentence": "Someone who designs and builds technical systems is",
+  "prearticle_position": 17,
+  "caps": {
+    "1200": {
+      "article_selected": 1200,
+      "article_active": 2085,
+      "future_selected": 1200,
+      "future_active": 2205,
+      "prearticle_abs_margin_mass": 2.653472900390625,
+      "prearticle_abs_future_mass": 1.2789297103881836,
+      "dual_candidate_count": 25,
+      "top20": [
+        {
+          "layer": 18,
+          "feature_idx": 9440,
+          "margin_attribution": 0.185546875,
+          "future_attribution": 0.2421875,
+          "score": 0.185546875,
+          "activation": 984.0
+        },
+        {
+          "layer": 18,
+          "feature_idx": 5015,
+          "margin_attribution": 0.026123046875,
+          "future_attribution": 0.0625,
+          "score": 0.026123046875,
+          "activation": 256.0
+        },
+        {
+          "layer": 20,
+          "feature_idx": 5543,
+          "margin_attribution": 0.03125,
+          "future_attribution": 0.024658203125,
+          "score": 0.024658203125,
+          "activation": 460.0
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5915,
+          "margin_attribution": 0.01788330078125,
+          "future_attribution": 0.06640625,
+          "score": 0.01788330078125,
+          "activation": 328.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 1082,
+          "margin_attribution": 0.01171875,
+          "future_attribution": 0.013916015625,
+          "score": 0.01171875,
+          "activation": 237.0
+        },
+        {
+          "layer": 6,
+          "feature_idx": 1639,
+          "margin_attribution": 0.00860595703125,
+          "future_attribution": 0.022216796875,
+          "score": 0.00860595703125,
+          "activation": 68.5
+        },
+        {
+          "layer": 14,
+          "feature_idx": 1022,
+          "margin_attribution": 0.007080078125,
+          "future_attribution": 0.03271484375,
+          "score": 0.007080078125,
+          "activation": 170.0
+        },
+        {
+          "layer": 8,
+          "feature_idx": 3868,
+          "margin_attribution": 0.005615234375,
+          "future_attribution": 0.031494140625,
+          "score": 0.005615234375,
+          "activation": 106.0
+        },
+        {
+          "layer": 8,
+          "feature_idx": 1227,
+          "margin_attribution": 0.00537109375,
+          "future_attribution": 0.0135498046875,
+          "score": 0.00537109375,
+          "activation": 86.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 2594,
+          "margin_attribution": 0.0048828125,
+          "future_attribution": 0.0059814453125,
+          "score": 0.0048828125,
+          "activation": 135.0
+        },
+        {
+          "layer": 17,
+          "feature_idx": 5378,
+          "margin_attribution": 0.0228271484375,
+          "future_attribution": 0.00421142578125,
+          "score": 0.00421142578125,
+          "activation": 816.0
+        },
+        {
+          "layer": 1,
+          "feature_idx": 9677,
+          "margin_attribution": 0.007568359375,
+          "future_attribution": 0.004150390625,
+          "score": 0.004150390625,
+          "activation": 27.25
+        },
+        {
+          "layer": 6,
+          "feature_idx": 3859,
+          "margin_attribution": 0.013916015625,
+          "future_attribution": 0.0040283203125,
+          "score": 0.0040283203125,
+          "activation": 350.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 1070,
+          "margin_attribution": 0.00732421875,
+          "future_attribution": 0.003753662109375,
+          "score": 0.003753662109375,
+          "activation": 119.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 86,
+          "margin_attribution": 0.0025634765625,
+          "future_attribution": 0.00372314453125,
+          "score": 0.0025634765625,
+          "activation": 86.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1450,
+          "margin_attribution": 0.01263427734375,
+          "future_attribution": 0.0025482177734375,
+          "score": 0.0025482177734375,
+          "activation": 105.5
+        },
+        {
+          "layer": 17,
+          "feature_idx": 51,
+          "margin_attribution": 0.099609375,
+          "future_attribution": 0.00213623046875,
+          "score": 0.00213623046875,
+          "activation": 248.0
+        },
+        {
+          "layer": 4,
+          "feature_idx": 2310,
+          "margin_attribution": 0.001953125,
+          "future_attribution": 0.002960205078125,
+          "score": 0.001953125,
+          "activation": 55.5
+        },
+        {
+          "layer": 9,
+          "feature_idx": 4672,
+          "margin_attribution": 0.0035400390625,
+          "future_attribution": 0.00138092041015625,
+          "score": 0.00138092041015625,
+          "activation": 86.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 7392,
+          "margin_attribution": 0.0166015625,
+          "future_attribution": 0.000766754150390625,
+          "score": 0.000766754150390625,
+          "activation": 324.0
+        }
+      ],
+      "top20_overlap_with_full_graph": 0.95,
+      "margin_mass_fraction_of_full_graph": 1.0,
+      "future_mass_fraction_of_full_graph": 0.9971091711693358
+    },
+    "2400": {
+      "article_selected": 2085,
+      "article_active": 2085,
+      "future_selected": 2205,
+      "future_active": 2205,
+      "prearticle_abs_margin_mass": 2.653472900390625,
+      "prearticle_abs_future_mass": 1.282637596130371,
+      "dual_candidate_count": 26,
+      "top20": [
+        {
+          "layer": 18,
+          "feature_idx": 9440,
+          "margin_attribution": 0.185546875,
+          "future_attribution": 0.2421875,
+          "score": 0.185546875,
+          "activation": 984.0
+        },
+        {
+          "layer": 18,
+          "feature_idx": 5015,
+          "margin_attribution": 0.026123046875,
+          "future_attribution": 0.0625,
+          "score": 0.026123046875,
+          "activation": 256.0
+        },
+        {
+          "layer": 20,
+          "feature_idx": 5543,
+          "margin_attribution": 0.03125,
+          "future_attribution": 0.024658203125,
+          "score": 0.024658203125,
+          "activation": 460.0
+        },
+        {
+          "layer": 16,
+          "feature_idx": 5915,
+          "margin_attribution": 0.01788330078125,
+          "future_attribution": 0.06640625,
+          "score": 0.01788330078125,
+          "activation": 328.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 1082,
+          "margin_attribution": 0.01171875,
+          "future_attribution": 0.013916015625,
+          "score": 0.01171875,
+          "activation": 237.0
+        },
+        {
+          "layer": 6,
+          "feature_idx": 1639,
+          "margin_attribution": 0.00860595703125,
+          "future_attribution": 0.022216796875,
+          "score": 0.00860595703125,
+          "activation": 68.5
+        },
+        {
+          "layer": 14,
+          "feature_idx": 1022,
+          "margin_attribution": 0.007080078125,
+          "future_attribution": 0.03271484375,
+          "score": 0.007080078125,
+          "activation": 170.0
+        },
+        {
+          "layer": 8,
+          "feature_idx": 3868,
+          "margin_attribution": 0.005615234375,
+          "future_attribution": 0.031494140625,
+          "score": 0.005615234375,
+          "activation": 106.0
+        },
+        {
+          "layer": 8,
+          "feature_idx": 1227,
+          "margin_attribution": 0.00537109375,
+          "future_attribution": 0.0135498046875,
+          "score": 0.00537109375,
+          "activation": 86.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 2594,
+          "margin_attribution": 0.0048828125,
+          "future_attribution": 0.0059814453125,
+          "score": 0.0048828125,
+          "activation": 135.0
+        },
+        {
+          "layer": 17,
+          "feature_idx": 5378,
+          "margin_attribution": 0.0228271484375,
+          "future_attribution": 0.00421142578125,
+          "score": 0.00421142578125,
+          "activation": 816.0
+        },
+        {
+          "layer": 1,
+          "feature_idx": 9677,
+          "margin_attribution": 0.007568359375,
+          "future_attribution": 0.004150390625,
+          "score": 0.004150390625,
+          "activation": 27.25
+        },
+        {
+          "layer": 6,
+          "feature_idx": 3859,
+          "margin_attribution": 0.013916015625,
+          "future_attribution": 0.0040283203125,
+          "score": 0.0040283203125,
+          "activation": 350.0
+        },
+        {
+          "layer": 12,
+          "feature_idx": 1070,
+          "margin_attribution": 0.00732421875,
+          "future_attribution": 0.003753662109375,
+          "score": 0.003753662109375,
+          "activation": 119.0
+        },
+        {
+          "layer": 21,
+          "feature_idx": 4304,
+          "margin_attribution": 0.228515625,
+          "future_attribution": 0.0025634765625,
+          "score": 0.0025634765625,
+          "activation": 140.0
+        },
+        {
+          "layer": 11,
+          "feature_idx": 86,
+          "margin_attribution": 0.0025634765625,
+          "future_attribution": 0.00372314453125,
+          "score": 0.0025634765625,
+          "activation": 86.0
+        },
+        {
+          "layer": 13,
+          "feature_idx": 1450,
+          "margin_attribution": 0.01263427734375,
+          "future_attribution": 0.0025482177734375,
+          "score": 0.0025482177734375,
+          "activation": 105.5
+        },
+        {
+          "layer": 17,
+          "feature_idx": 51,
+          "margin_attribution": 0.099609375,
+          "future_attribution": 0.00213623046875,
+          "score": 0.00213623046875,
+          "activation": 248.0
+        },
+        {
+          "layer": 4,
+          "feature_idx": 2310,
+          "margin_attribution": 0.001953125,
+          "future_attribution": 0.002960205078125,
+          "score": 0.001953125,
+          "activation": 55.5
+        },
+        {
+          "layer": 9,
+          "feature_idx": 4672,
+          "margin_attribution": 0.0035400390625,
+          "future_attribution": 0.00138092041015625,
+          "score": 0.00138092041015625,
+          "activation": 86.0
+        }
+      ],
+      "top20_overlap_with_full_graph": 1.0,
+      "margin_mass_fraction_of_full_graph": 1.0,
+      "future_mass_fraction_of_full_graph": 1.0
+    }
+  }
+}

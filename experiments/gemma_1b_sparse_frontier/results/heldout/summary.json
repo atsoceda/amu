@@ -1,0 +1,184 @@
+{
+  "experiment": "gemma_1b_sparse_mediator_valid_frontier_heldout",
+  "generated_at": "2026-08-30T02:02:59.096165+00:00",
+  "elapsed_sec": 190.5890498161316,
+  "model": "google/gemma-3-1b-pt",
+  "transcoder_set": "mwhanna/gemma-scope-2-1b-pt/clt/width_262k_l0_medium_affine",
+  "n_prompts": 20,
+  "runs": [
+    {
+      "id": "S1_margin_frontier_top1_7.5x",
+      "feature_set": "S1_margin_dual_effect_frontier",
+      "amplify_factor": 7.5,
+      "ranked_features_path": "../gemma_1b_effect_matched/results/margin_ranked_features.json",
+      "feature_count": 1,
+      "features": [
+        {
+          "layer": 18,
+          "feature_idx": 5015,
+          "mean_activation": 361.0,
+          "label": "`L18/F5015`",
+          "source": "development_margin_ranked_features"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "S1_margin_frontier_top1_7.5x": {
+      "n_prompts": 20,
+      "rates": {
+        "free_on_article_an": 0.1,
+        "free_on_article_a": 0.9,
+        "free_on_article_other": 0.0,
+        "free_noun_changed": 0.05,
+        "treated_token_top1_reproduction": 1.0
+      },
+      "matched_prefix": {
+        "a": {
+          "n": 20,
+          "mean": 0.01397308342566248,
+          "median": 0.007854855619370937,
+          "lo": 0.007881982796243392,
+          "hi": 0.020643101818859578,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "an": {
+          "n": 20,
+          "mean": 0.016137490430264734,
+          "median": 0.00887178722769022,
+          "lo": 0.008936999621801079,
+          "hi": 0.024258658627513797,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "decomposition_all_articled": {
+        "n": 20,
+        "total_tv": {
+          "n": 20,
+          "mean": 0.04555535380204674,
+          "median": 0.007854855619370937,
+          "lo": 0.008492108553764411,
+          "hi": 0.11441970452142414,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "mediator_tv": {
+          "n": 20,
+          "mean": 0.033218055963516235,
+          "median": 0.0,
+          "lo": 0.0,
+          "hi": 0.0996541678905487,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv": {
+          "n": 20,
+          "mean": 0.012368749853339977,
+          "median": 0.00451074680313468,
+          "lo": 0.0066158432862721385,
+          "hi": 0.01884687082783785,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "cosine_mediator_total": {
+          "n": 20,
+          "mean": 0.049999991059303285,
+          "median": 0.0,
+          "lo": 0.0,
+          "hi": 0.14999997317790986,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "cosine_residual_total": {
+          "n": 20,
+          "mean": 0.7800461739301682,
+          "median": 1.0000001192092896,
+          "lo": 0.6000000894069671,
+          "hi": 0.9500001490116119,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "reconstruction_l1": {
+          "n": 20,
+          "mean": 8.859561972940355e-11,
+          "median": 0.0,
+          "lo": 0.0,
+          "hi": 2.657868591882107e-10,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "descriptive_article_switch_subset": {
+        "n": 1,
+        "total_tv": {
+          "n": 1,
+          "mean": 0.6645950078964233,
+          "median": 0.6645950078964233,
+          "lo": 0.6645950078964233,
+          "hi": 0.6645950078964233,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "mediator_tv": {
+          "n": 1,
+          "mean": 0.6643611192703247,
+          "median": 0.6643611192703247,
+          "lo": 0.6643611192703247,
+          "hi": 0.6643611192703247,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "residual_tv": {
+          "n": 1,
+          "mean": 0.0008629289222881198,
+          "median": 0.0008629289222881198,
+          "lo": 0.0008629289222881198,
+          "hi": 0.0008629289222881198,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "cosine_mediator_total": {
+          "n": 1,
+          "mean": 0.9999998211860657,
+          "median": 0.9999998211860657,
+          "lo": 0.9999998211860657,
+          "hi": 0.9999998211860657,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "generic_article_prefix_tv": {
+        "n": 20,
+        "mean": 0.8809270620346069,
+        "median": 0.9411866664886475,
+        "lo": 0.8116170644760132,
+        "hi": 0.9375144571065903,
+        "method": "prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "pre_specified_twins": {
+        "a": {
+          "n": 7,
+          "mean": 0.026785714285714284,
+          "median": 0.0625,
+          "lo": -0.044642857142857144,
+          "hi": 0.10714285714285714,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "an": {
+          "n": 7,
+          "mean": -0.03571428571428571,
+          "median": 0.0,
+          "lo": -0.08928571428571429,
+          "hi": 0.03571428571428571,
+          "method": "prompt-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      }
+    }
+  },
+  "intervention_equation": "z_f <- amplify_factor * z_f(prompt, P)"
+}

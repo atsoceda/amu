@@ -34,11 +34,15 @@ abstract: |
   fixed-token influence without a greedy article switch. At Gemma 3 1B, the
   same sparse recipe is too weak; a development effect-matched coalition moves
   the binary article margin but usually makes a non-article token top-1, so its
-  transmission channel is not identified. A matched natural-residual assay
-  shows stronger target-logit movement at 1B without uniformly larger private
-  TV or behavioral sufficiency. Independent 32-feature calibrations at both
-  scales show that article attribution predicts local article efficacy but not
-  the downstream public/private transmission phenotype.
+  transmission channel is not identified; a constrained one-feature frontier
+  preserves the article mediator but switches it on only 1/20 prompts. Matched
+  natural-residual assays establish fixed-token target influence at both scales
+  without a monotone scale effect. Independent 32-feature calibrations show
+  directional transfer of local article efficacy, while matched future-target
+  associations remain inconclusive. Public influence instead obeys an exact
+  gain law: article-policy movement times continuation-branch leverage. Together
+  these results motivate a causal-validity ladder separating representation,
+  local efficacy, mediator validity, and transmission identification.
 keywords:
   - mechanistic interpretability
   - latent planning

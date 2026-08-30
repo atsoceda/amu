@@ -1,0 +1,36 @@
+{
+  "experiment": "gemma_270m_aligned_attribution_estimands_from_archived_vectors",
+  "generated_at": "2026-08-30T01:40:46.441154+00:00",
+  "elapsed_sec": 165.75109601020813,
+  "n_features": 32,
+  "n_prompts": 20,
+  "gain": 5.0,
+  "intervention": "Archived encoder/decoder vectors applied directly to native post-feedforward outputs.",
+  "validation": {
+    "rho_direct_patch_vs_replacement_article_effect": 0.9897276020717103,
+    "mean_absolute_article_effect_error": 0.01865234375000001
+  },
+  "analyses": {
+    "signed_future_vs_signed_fixed_target": {
+      "rho": 0.307297299281845,
+      "lo": -0.04704367569276148,
+      "hi": 0.5937821414205771,
+      "n": 32,
+      "resamples": 10000
+    },
+    "signed_future_vs_signed_fixed_target_minus_source": {
+      "rho": 0.270159709383763,
+      "lo": -0.09969046594405624,
+      "hi": 0.5842948024821153,
+      "n": 32,
+      "resamples": 10000
+    },
+    "absolute_future_vs_fixed_target_magnitude": {
+      "rho": -0.19412855801077697,
+      "lo": -0.5441838479698666,
+      "hi": 0.21551929240926013,
+      "n": 32,
+      "resamples": 10000
+    }
+  }
+}

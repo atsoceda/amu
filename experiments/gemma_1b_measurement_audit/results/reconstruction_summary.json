@@ -1,0 +1,25 @@
+{
+  "experiment": "gemma_1b_clt_reconstruction_audit",
+  "generated_at": "2026-08-30T01:45:29.375751+00:00",
+  "elapsed_sec": 172.7770481109619,
+  "sentences": [
+    "Someone who installs and repairs electrical systems is",
+    "Someone who designs buildings and structures is",
+    "Someone who designs and builds technical systems is",
+    "Someone who treats cancer patients is"
+  ],
+  "layers": [
+    0,
+    14,
+    15,
+    18,
+    25
+  ],
+  "position": "pre-article",
+  "mean_reconstruction_cosine": 0.8034973531961441,
+  "mean_normalized_mse": 0.3411416572635062,
+  "mean_skip_norm_fraction": 0.7135509148240089,
+  "mean_sparse_norm_fraction": 0.78770961612463,
+  "mean_abs_article_margin_error": 0.03125,
+  "mean_abs_future_target_logit_error": 0.0625
+}

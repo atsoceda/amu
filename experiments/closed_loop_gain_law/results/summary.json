@@ -1,0 +1,234 @@
+{
+  "identity": "TV_public = |q1-q0| * TV(Y_an,Y_a)",
+  "cross_validation": "leave one feature out",
+  "models": {
+    "gemma_270m": {
+      "0.1": {
+        "attribution_only": {
+          "r2": -0.5507707019054238,
+          "mae": 0.07775620972085036
+        },
+        "attribution_susceptibility": {
+          "r2": 0.8280680304596719,
+          "mae": 0.019986988544695123
+        },
+        "attribution_full": {
+          "r2": 0.8392587531246677,
+          "mae": 0.017831723887812075
+        },
+        "measured_margin_only": {
+          "r2": -0.3259513059916135,
+          "mae": 0.0746518144382146
+        },
+        "measured_susceptibility": {
+          "r2": 0.989166820488545,
+          "mae": 0.0029991483939197355
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.04543268676415802
+      },
+      "0.25": {
+        "attribution_only": {
+          "r2": -0.530459910582388,
+          "mae": 0.08333843245091885
+        },
+        "attribution_susceptibility": {
+          "r2": 0.862459798214436,
+          "mae": 0.0301880682814331
+        },
+        "attribution_full": {
+          "r2": 0.8750296738678907,
+          "mae": 0.02786429501875585
+        },
+        "measured_margin_only": {
+          "r2": -0.2907470615841026,
+          "mae": 0.07358377059870738
+        },
+        "measured_susceptibility": {
+          "r2": 0.9883459363276692,
+          "mae": 0.003984980369785179
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.057171316220430646
+      },
+      "0.5": {
+        "attribution_only": {
+          "r2": -0.19352189678967835,
+          "mae": 0.07254715825500314
+        },
+        "attribution_susceptibility": {
+          "r2": 0.8585676030172303,
+          "mae": 0.03576904805790218
+        },
+        "attribution_full": {
+          "r2": 0.8705855550656715,
+          "mae": 0.03385302899861459
+        },
+        "measured_margin_only": {
+          "r2": 0.02075373957816251,
+          "mae": 0.05687144238708146
+        },
+        "measured_susceptibility": {
+          "r2": 0.9879027936590477,
+          "mae": 0.004372121513816665
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.0633892715076026
+      },
+      "1.0": {
+        "attribution_only": {
+          "r2": 0.394392606542187,
+          "mae": 0.048228509659475935
+        },
+        "attribution_susceptibility": {
+          "r2": 0.8466546150528746,
+          "mae": 0.03053809272837047
+        },
+        "attribution_full": {
+          "r2": 0.856750294382697,
+          "mae": 0.02969604272678624
+        },
+        "measured_margin_only": {
+          "r2": 0.5550476621457427,
+          "mae": 0.02897668760712318
+        },
+        "measured_susceptibility": {
+          "r2": 0.9864462297063116,
+          "mae": 0.003812807720273477
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.05585044228830362
+      }
+    },
+    "gemma_1b": {
+      "0.1": {
+        "attribution_only": {
+          "r2": -0.058727865830318304,
+          "mae": 0.047431017162715125
+        },
+        "attribution_susceptibility": {
+          "r2": 0.1580176687497209,
+          "mae": 0.024432101577842903
+        },
+        "attribution_full": {
+          "r2": 0.20397465360618805,
+          "mae": 0.023750480200333553
+        },
+        "measured_margin_only": {
+          "r2": -0.45095198582366525,
+          "mae": 0.053222241723738385
+        },
+        "measured_susceptibility": {
+          "r2": 0.9656045711570403,
+          "mae": 0.004183451599999028
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.024354831665537844
+      },
+      "0.25": {
+        "attribution_only": {
+          "r2": -0.11345527719449278,
+          "mae": 0.03626860149120198
+        },
+        "attribution_susceptibility": {
+          "r2": 0.06554187211249385,
+          "mae": 0.02144802451774319
+        },
+        "attribution_full": {
+          "r2": 0.11075085821039354,
+          "mae": 0.020757784634660634
+        },
+        "measured_margin_only": {
+          "r2": -0.7512432869124981,
+          "mae": 0.040718592631392284
+        },
+        "measured_susceptibility": {
+          "r2": 0.9676072268871702,
+          "mae": 0.003264461191788197
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.02005883262703776
+      },
+      "0.5": {
+        "attribution_only": {
+          "r2": -0.07112554253329417,
+          "mae": 0.03111814236491704
+        },
+        "attribution_susceptibility": {
+          "r2": -0.0710749343120527,
+          "mae": 0.022246310497556415
+        },
+        "attribution_full": {
+          "r2": -0.03161336371786083,
+          "mae": 0.021876014077072913
+        },
+        "measured_margin_only": {
+          "r2": -1.1855141727271619,
+          "mae": 0.03482618558145565
+        },
+        "measured_susceptibility": {
+          "r2": 0.9641038848765906,
+          "mae": 0.003163539808919179
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.020934731819170268
+      },
+      "1.0": {
+        "attribution_only": {
+          "r2": 0.26686810098956015,
+          "mae": 0.02443958603875825
+        },
+        "attribution_susceptibility": {
+          "r2": -0.0782578427763303,
+          "mae": 0.024387740342193348
+        },
+        "attribution_full": {
+          "r2": -0.0634688227286,
+          "mae": 0.024198736547694395
+        },
+        "measured_margin_only": {
+          "r2": -0.6628592034822938,
+          "mae": 0.02412142083400725
+        },
+        "measured_susceptibility": {
+          "r2": 0.9573083403044553,
+          "mae": 0.0032941979080678223
+        },
+        "measured_full": {
+          "r2": 1.0,
+          "mae": 0.0
+        },
+        "n": 640,
+        "mean_observed_public_tv": 0.023306508693488912
+      }
+    }
+  }
+}
