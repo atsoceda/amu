@@ -1,0 +1,1201 @@
+{
+  "experiment": "closed_loop_gain_law_two_way_validation",
+  "models": {
+    "gemma_270m": {
+      "0.1": {
+        "feature": {
+          "constant": {
+            "r2": -0.04876466712674632,
+            "mae": 0.0806557491102392,
+            "calibration_slope": -30.999999999999986
+          },
+          "attribution_only": {
+            "r2": -0.5507707019054238,
+            "mae": 0.07775620972085036,
+            "calibration_slope": 0.05167785655080522
+          },
+          "susceptibility_only": {
+            "r2": -0.02845911740985696,
+            "mae": 0.07667851013331932,
+            "calibration_slope": 0.020956103681113572
+          },
+          "branch_leverage_only": {
+            "r2": -0.04879488886270256,
+            "mae": 0.08062769779213544,
+            "calibration_slope": -16.7004155853721
+          },
+          "activation_magnitude": {
+            "r2": -0.040831192206194133,
+            "mae": 0.07856768717666232,
+            "calibration_slope": -0.015878766432277116
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.053621482295932665,
+            "mae": 0.04515469406360788,
+            "calibration_slope": 3.780536462858753
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8280680304596719,
+            "mae": 0.019986988544695123,
+            "calibration_slope": 0.9579420523382159
+          },
+          "full_gain_model": {
+            "r2": 0.8392587531246677,
+            "mae": 0.017831723887812075,
+            "calibration_slope": 0.9591037796247016,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.000000000000004
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.003873043688184641,
+            "mae": 0.079488607158119,
+            "calibration_slope": -18.99999999999998
+          },
+          "attribution_only": {
+            "r2": 0.3994588718594736,
+            "mae": 0.055843220601101695,
+            "calibration_slope": 0.9949332531164607
+          },
+          "susceptibility_only": {
+            "r2": -0.033820415903466294,
+            "mae": 0.08032940629868328,
+            "calibration_slope": 0.39218324153360895
+          },
+          "branch_leverage_only": {
+            "r2": -0.004490761980310953,
+            "mae": 0.07967292469540628,
+            "calibration_slope": -1.7335931679582697
+          },
+          "activation_magnitude": {
+            "r2": 0.03953162650085551,
+            "mae": 0.0762976246017986,
+            "calibration_slope": 1.0251921414386327
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.060044017530367366,
+            "mae": 0.04535654918163812,
+            "calibration_slope": 17.223409223386867
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8319284580689991,
+            "mae": 0.019662856456782583,
+            "calibration_slope": 0.9606781675795388
+          },
+          "full_gain_model": {
+            "r2": 0.8440966283912973,
+            "mae": 0.017400274395524447,
+            "calibration_slope": 0.9622965852225398,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000009
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.05189031581691772,
+            "mae": 0.08110676187338779,
+            "calibration_slope": -29.186005861712843
+          },
+          "attribution_only": {
+            "r2": -0.5468337329481647,
+            "mae": 0.07815571565398269,
+            "calibration_slope": 0.054957582413847135
+          },
+          "susceptibility_only": {
+            "r2": -0.08200467514294463,
+            "mae": 0.08178416300165145,
+            "calibration_slope": 0.22929677557860825
+          },
+          "branch_leverage_only": {
+            "r2": -0.052810855670430534,
+            "mae": 0.0812618333903777,
+            "calibration_slope": -14.262557725151739
+          },
+          "activation_magnitude": {
+            "r2": -0.04492207550841143,
+            "mae": 0.07897108320300633,
+            "calibration_slope": -0.06632294651190178
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.05363911942684929,
+            "mae": 0.04514079178205595,
+            "calibration_slope": 4.035967647036407
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8274525963895093,
+            "mae": 0.02007779710168151,
+            "calibration_slope": 0.9582047992935325
+          },
+          "full_gain_model": {
+            "r2": 0.8397075342851523,
+            "mae": 0.017812350410735565,
+            "calibration_slope": 0.9599310322793058,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.000000000000004
+          }
+        }
+      },
+      "0.25": {
+        "feature": {
+          "constant": {
+            "r2": -0.05369228226102263,
+            "mae": 0.08216454286290802,
+            "calibration_slope": -30.99999999999998
+          },
+          "attribution_only": {
+            "r2": -0.530459910582388,
+            "mae": 0.08333843245091885,
+            "calibration_slope": 0.10206759554255417
+          },
+          "susceptibility_only": {
+            "r2": -0.029217510528547708,
+            "mae": 0.07490034018784952,
+            "calibration_slope": 0.011256793218213875
+          },
+          "branch_leverage_only": {
+            "r2": -0.05244753803206015,
+            "mae": 0.08197134431473066,
+            "calibration_slope": -8.963275012770174
+          },
+          "activation_magnitude": {
+            "r2": -0.009889899418984438,
+            "mae": 0.07420299158145009,
+            "calibration_slope": 0.43126189114368607
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.07058636680177854,
+            "mae": 0.05556022626360624,
+            "calibration_slope": 9.004170950545175
+          },
+          "attribution_susceptibility": {
+            "r2": 0.862459798214436,
+            "mae": 0.0301880682814331,
+            "calibration_slope": 0.9709064222049706
+          },
+          "full_gain_model": {
+            "r2": 0.8750296738678907,
+            "mae": 0.02786429501875585,
+            "calibration_slope": 0.9718855038655677,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000016
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.003655906588962088,
+            "mae": 0.0810381021072561,
+            "calibration_slope": -18.999999999999968
+          },
+          "attribution_only": {
+            "r2": 0.4469746024754392,
+            "mae": 0.06181209246112026,
+            "calibration_slope": 0.9950415215676127
+          },
+          "susceptibility_only": {
+            "r2": 0.027052014476857122,
+            "mae": 0.07317715625033466,
+            "calibration_slope": 0.9475283558431867
+          },
+          "branch_leverage_only": {
+            "r2": -0.0033168823142899484,
+            "mae": 0.08096176741678349,
+            "calibration_slope": -0.03934470165474217
+          },
+          "activation_magnitude": {
+            "r2": 0.07548437418830811,
+            "mae": 0.0723731082527721,
+            "calibration_slope": 1.0464083895340932
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.10728681388154526,
+            "mae": 0.056893757587356195,
+            "calibration_slope": 10.661566525523277
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8647676564938453,
+            "mae": 0.029991719178800356,
+            "calibration_slope": 0.9722963552442253
+          },
+          "full_gain_model": {
+            "r2": 0.8784226925322125,
+            "mae": 0.02753676989548106,
+            "calibration_slope": 0.9737914327570601,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000018
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.05684898968585084,
+            "mae": 0.08268510404633025,
+            "calibration_slope": -29.533580828835863
+          },
+          "attribution_only": {
+            "r2": -0.5288965614439132,
+            "mae": 0.0838611901903418,
+            "calibration_slope": 0.10339314988311245
+          },
+          "susceptibility_only": {
+            "r2": -0.02928433601148006,
+            "mae": 0.07505205721239605,
+            "calibration_slope": 0.030133622525776296
+          },
+          "branch_leverage_only": {
+            "r2": -0.05695008763501841,
+            "mae": 0.08257139606827875,
+            "calibration_slope": -6.742204353721296
+          },
+          "activation_magnitude": {
+            "r2": -0.014041888692469806,
+            "mae": 0.07477795784051292,
+            "calibration_slope": 0.4019472857139785
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.0703740603208256,
+            "mae": 0.05554497721292453,
+            "calibration_slope": 9.087748500120055
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8611795231605193,
+            "mae": 0.030347932306863445,
+            "calibration_slope": 0.9702840046862998
+          },
+          "full_gain_model": {
+            "r2": 0.8749537670729418,
+            "mae": 0.027904310691000734,
+            "calibration_slope": 0.97188465896133,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000016
+          }
+        }
+      },
+      "0.5": {
+        "feature": {
+          "constant": {
+            "r2": -0.05671325220776424,
+            "mae": 0.07614357429197234,
+            "calibration_slope": -31.00000000000003
+          },
+          "attribution_only": {
+            "r2": -0.19352189678967835,
+            "mae": 0.07254715825500314,
+            "calibration_slope": 0.36213100671396986
+          },
+          "susceptibility_only": {
+            "r2": -0.04657906692565561,
+            "mae": 0.07273765623858319,
+            "calibration_slope": -1.1039815240524162
+          },
+          "branch_leverage_only": {
+            "r2": -0.05334358711794751,
+            "mae": 0.07567020569722697,
+            "calibration_slope": -4.931211335224842
+          },
+          "activation_magnitude": {
+            "r2": 0.03847650877560416,
+            "mae": 0.062117066830243386,
+            "calibration_slope": 0.6727865301180104
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.10762467622683092,
+            "mae": 0.0612008466206325,
+            "calibration_slope": 14.917225877598755
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8585676030172303,
+            "mae": 0.03576904805790218,
+            "calibration_slope": 0.9667435906989449
+          },
+          "full_gain_model": {
+            "r2": 0.8705855550656715,
+            "mae": 0.03385302899861459,
+            "calibration_slope": 0.9664741304732127,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999974
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.0021426814619489587,
+            "mae": 0.07462994320445215,
+            "calibration_slope": -19.000000000000053
+          },
+          "attribution_only": {
+            "r2": 0.5519448830391416,
+            "mae": 0.05549002123437824,
+            "calibration_slope": 0.997423426366201
+          },
+          "susceptibility_only": {
+            "r2": 0.011987834396193775,
+            "mae": 0.07100837061181159,
+            "calibration_slope": 0.9492821638273378
+          },
+          "branch_leverage_only": {
+            "r2": 0.0012894694137196572,
+            "mae": 0.07399317354160967,
+            "calibration_slope": 0.6171681226624679
+          },
+          "activation_magnitude": {
+            "r2": 0.125566748592711,
+            "mae": 0.06014163775460096,
+            "calibration_slope": 1.0661443030594049
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.17625870758356643,
+            "mae": 0.06299027648522822,
+            "calibration_slope": 9.642888813174629
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8618219758719396,
+            "mae": 0.035446152893776076,
+            "calibration_slope": 0.9689612303010623
+          },
+          "full_gain_model": {
+            "r2": 0.874980590814294,
+            "mae": 0.0334287683975447,
+            "calibration_slope": 0.969191316529888,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999998
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.05846555460384506,
+            "mae": 0.07638891318864229,
+            "calibration_slope": -30.094778014194763
+          },
+          "attribution_only": {
+            "r2": -0.19129853641524597,
+            "mae": 0.07283864502173264,
+            "calibration_slope": 0.36375452708754635
+          },
+          "susceptibility_only": {
+            "r2": -0.04772625305134204,
+            "mae": 0.0729148815760581,
+            "calibration_slope": -1.1682242350289214
+          },
+          "branch_leverage_only": {
+            "r2": -0.0555670814068574,
+            "mae": 0.07571604597935494,
+            "calibration_slope": -3.794165995443888
+          },
+          "activation_magnitude": {
+            "r2": 0.036497743987626285,
+            "mae": 0.062357762609650015,
+            "calibration_slope": 0.6639198862262776
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.10758248521069769,
+            "mae": 0.061182618652117535,
+            "calibration_slope": 14.782529120072356
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8572204700284237,
+            "mae": 0.03590538003494205,
+            "calibration_slope": 0.9661291073748061
+          },
+          "full_gain_model": {
+            "r2": 0.8704467281230257,
+            "mae": 0.03388965997806821,
+            "calibration_slope": 0.9664473453335019,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999974
+          }
+        }
+      },
+      "1.0": {
+        "feature": {
+          "constant": {
+            "r2": -0.060017939035667656,
+            "mae": 0.06455339789763996,
+            "calibration_slope": -31.00000000000005
+          },
+          "attribution_only": {
+            "r2": 0.394392606542187,
+            "mae": 0.048228509659475935,
+            "calibration_slope": 0.7605879335929288
+          },
+          "susceptibility_only": {
+            "r2": -0.05812316904409953,
+            "mae": 0.06414709676145278,
+            "calibration_slope": -5.7815225504078125
+          },
+          "branch_leverage_only": {
+            "r2": -0.056339810834277415,
+            "mae": 0.06421542022379327,
+            "calibration_slope": -4.963348475834734
+          },
+          "activation_magnitude": {
+            "r2": 0.07213248270151695,
+            "mae": 0.05396469311046033,
+            "calibration_slope": 0.7621153842763414
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.1400371267956182,
+            "mae": 0.05404900843134943,
+            "calibration_slope": 22.15634118866931
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8466546150528746,
+            "mae": 0.03053809272837047,
+            "calibration_slope": 0.9634917813708643
+          },
+          "full_gain_model": {
+            "r2": 0.856750294382697,
+            "mae": 0.02969604272678624,
+            "calibration_slope": 0.9624273740384481,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999997
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.000990017983435676,
+            "mae": 0.06293819594181363,
+            "calibration_slope": -19.000000000000213
+          },
+          "attribution_only": {
+            "r2": 0.7148709741662413,
+            "mae": 0.0391907404177016,
+            "calibration_slope": 0.9986425780705491
+          },
+          "susceptibility_only": {
+            "r2": 0.0025722503862896096,
+            "mae": 0.0624927378866041,
+            "calibration_slope": 0.879267713002044
+          },
+          "branch_leverage_only": {
+            "r2": 0.0033237455044246023,
+            "mae": 0.062439999344398346,
+            "calibration_slope": 0.8300813925521493
+          },
+          "activation_magnitude": {
+            "r2": 0.16227348063900482,
+            "mae": 0.051565742651177505,
+            "calibration_slope": 1.0882903113324927
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.2204012800518853,
+            "mae": 0.055505986697155875,
+            "calibration_slope": 8.533126637216961
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8524738066816038,
+            "mae": 0.03023658777603383,
+            "calibration_slope": 0.9691327619500705
+          },
+          "full_gain_model": {
+            "r2": 0.8636103137593323,
+            "mae": 0.02931354953885351,
+            "calibration_slope": 0.9684343659182723,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000007
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.06075240418997696,
+            "mae": 0.06464712163482349,
+            "calibration_slope": -30.55100572871831
+          },
+          "attribution_only": {
+            "r2": 0.39529781901617045,
+            "mae": 0.04830660277479459,
+            "calibration_slope": 0.7611438058200776
+          },
+          "susceptibility_only": {
+            "r2": -0.059223640506598674,
+            "mae": 0.06426145397257595,
+            "calibration_slope": -6.249510977909358
+          },
+          "branch_leverage_only": {
+            "r2": -0.05688791954017547,
+            "mae": 0.06415634887001977,
+            "calibration_slope": -4.238154579460585
+          },
+          "activation_magnitude": {
+            "r2": 0.07146893392066933,
+            "mae": 0.05399340257484917,
+            "calibration_slope": 0.7596745198756644
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.14002924213035373,
+            "mae": 0.05403647832431846,
+            "calibration_slope": 22.005981489147477
+          },
+          "attribution_susceptibility": {
+            "r2": 0.8453474960182636,
+            "mae": 0.030650068975505918,
+            "calibration_slope": 0.9631606868493574
+          },
+          "full_gain_model": {
+            "r2": 0.8564755882268105,
+            "mae": 0.02975525324948055,
+            "calibration_slope": 0.9625245945042362,
+            "mean_vector_cosine": 0.335149863760218,
+            "policy_direction_accuracy": 0.667574931880109
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999997
+          }
+        }
+      }
+    },
+    "gemma_1b": {
+      "0.1": {
+        "feature": {
+          "constant": {
+            "r2": -0.003031874344282093,
+            "mae": 0.04508105772655465,
+            "calibration_slope": -30.99999999999992
+          },
+          "attribution_only": {
+            "r2": -0.058727865830318304,
+            "mae": 0.047431017162715125,
+            "calibration_slope": 0.17211900687171122
+          },
+          "susceptibility_only": {
+            "r2": 0.2821599640299638,
+            "mae": 0.027096077483802227,
+            "calibration_slope": 0.9764661463645669
+          },
+          "branch_leverage_only": {
+            "r2": -0.004110403125523021,
+            "mae": 0.04496364128202708,
+            "calibration_slope": -2.148181328215998
+          },
+          "activation_magnitude": {
+            "r2": 0.028451235658322638,
+            "mae": 0.04443390047551157,
+            "calibration_slope": 1.0147361447318446
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.23513627641042967,
+            "mae": 0.022017762648558956,
+            "calibration_slope": 1.1920467388067555
+          },
+          "attribution_susceptibility": {
+            "r2": 0.1580176687497209,
+            "mae": 0.024432101577842903,
+            "calibration_slope": 0.5831557915974925
+          },
+          "full_gain_model": {
+            "r2": 0.20397465360618805,
+            "mae": 0.023750480200333553,
+            "calibration_slope": 0.6103802531020841,
+            "mean_vector_cosine": 0.4161849710982659,
+            "policy_direction_accuracy": 0.708092485549133
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999996
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.034239768639400925,
+            "mae": 0.04617236893673466,
+            "calibration_slope": -19.00000000000001
+          },
+          "attribution_only": {
+            "r2": -0.026064764464786894,
+            "mae": 0.04576765561128319,
+            "calibration_slope": -0.3493520183458277
+          },
+          "susceptibility_only": {
+            "r2": 0.26652292330822347,
+            "mae": 0.027644839040889352,
+            "calibration_slope": 0.9364700676346038
+          },
+          "branch_leverage_only": {
+            "r2": -0.08883725880137394,
+            "mae": 0.04858397662540776,
+            "calibration_slope": -3.006759320524459
+          },
+          "activation_magnitude": {
+            "r2": -0.021354536455073347,
+            "mae": 0.0459843073321141,
+            "calibration_slope": 0.13207533421920484
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.26763521971718374,
+            "mae": 0.021443675403796644,
+            "calibration_slope": 1.4290189597061682
+          },
+          "attribution_susceptibility": {
+            "r2": 0.403632942997907,
+            "mae": 0.020198609836304622,
+            "calibration_slope": 0.78610331028993
+          },
+          "full_gain_model": {
+            "r2": 0.40022089257496907,
+            "mae": 0.019951496919093332,
+            "calibration_slope": 0.7764921696771084,
+            "mean_vector_cosine": 0.42196531791907516,
+            "policy_direction_accuracy": 0.7109826589595376
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000004
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.035111120233939586,
+            "mae": 0.04619779277352262,
+            "calibration_slope": -18.419599000764602
+          },
+          "attribution_only": {
+            "r2": -0.09047127971194424,
+            "mae": 0.048471758776699125,
+            "calibration_slope": 0.0045356904490259494
+          },
+          "susceptibility_only": {
+            "r2": 0.2703691740693066,
+            "mae": 0.027499023703839397,
+            "calibration_slope": 0.9420543482582567
+          },
+          "branch_leverage_only": {
+            "r2": -0.08982630433522942,
+            "mae": 0.04860280480289323,
+            "calibration_slope": -3.012429709596378
+          },
+          "activation_magnitude": {
+            "r2": -0.02330275560456463,
+            "mae": 0.04614005735195282,
+            "calibration_slope": 0.10351090225524033
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.23299056798294238,
+            "mae": 0.021987325317054003,
+            "calibration_slope": 1.2678473953995038
+          },
+          "attribution_susceptibility": {
+            "r2": 0.14433421350414877,
+            "mae": 0.024632798979218884,
+            "calibration_slope": 0.576453223111813
+          },
+          "full_gain_model": {
+            "r2": 0.19397736217336126,
+            "mae": 0.02393585319512979,
+            "calibration_slope": 0.6061692372999141,
+            "mean_vector_cosine": 0.41040462427745666,
+            "policy_direction_accuracy": 0.7052023121387283
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999996
+          }
+        }
+      },
+      "0.25": {
+        "feature": {
+          "constant": {
+            "r2": -0.0054979755723327806,
+            "mae": 0.03412379497696661,
+            "calibration_slope": -30.999999999999964
+          },
+          "attribution_only": {
+            "r2": -0.11345527719449278,
+            "mae": 0.03626860149120198,
+            "calibration_slope": 0.20959190189624785
+          },
+          "susceptibility_only": {
+            "r2": 0.24479191522079924,
+            "mae": 0.022088093358536558,
+            "calibration_slope": 0.9673097350034626
+          },
+          "branch_leverage_only": {
+            "r2": -0.006863241411322107,
+            "mae": 0.03410783028991539,
+            "calibration_slope": -11.092725905416673
+          },
+          "activation_magnitude": {
+            "r2": 0.03762522342744834,
+            "mae": 0.03304632736521238,
+            "calibration_slope": 0.9986461517907647
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.17263613428669067,
+            "mae": 0.01821717273272386,
+            "calibration_slope": 1.5210974468539493
+          },
+          "attribution_susceptibility": {
+            "r2": 0.06554187211249385,
+            "mae": 0.02144802451774319,
+            "calibration_slope": 0.5247020471582268
+          },
+          "full_gain_model": {
+            "r2": 0.11075085821039354,
+            "mae": 0.020757784634660634,
+            "calibration_slope": 0.5417351605373373,
+            "mean_vector_cosine": 0.4161849710982659,
+            "policy_direction_accuracy": 0.708092485549133
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999987
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.030678332835629485,
+            "mae": 0.03483121938049378,
+            "calibration_slope": -19.00000000000003
+          },
+          "attribution_only": {
+            "r2": -0.008194900073936973,
+            "mae": 0.0342998096281618,
+            "calibration_slope": 0.38421564421676835
+          },
+          "susceptibility_only": {
+            "r2": 0.24230058770048657,
+            "mae": 0.022159594610157655,
+            "calibration_slope": 0.9338435256317688
+          },
+          "branch_leverage_only": {
+            "r2": -0.07727398575380362,
+            "mae": 0.03632767743662435,
+            "calibration_slope": -3.781206250302147
+          },
+          "activation_magnitude": {
+            "r2": -0.0034450541035284665,
+            "mae": 0.034016404607255475,
+            "calibration_slope": 0.4584318749780393
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.18919622139069736,
+            "mae": 0.018065703066919573,
+            "calibration_slope": 1.743112836785762
+          },
+          "attribution_susceptibility": {
+            "r2": 0.40174225881687686,
+            "mae": 0.018057858850992335,
+            "calibration_slope": 0.7152234218486868
+          },
+          "full_gain_model": {
+            "r2": 0.4191436690294458,
+            "mae": 0.017434379335202928,
+            "calibration_slope": 0.7209620603800908,
+            "mean_vector_cosine": 0.42196531791907516,
+            "policy_direction_accuracy": 0.7109826589595376
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999988
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.03403156756013592,
+            "mae": 0.03490011414881361,
+            "calibration_slope": -18.930719433951637
+          },
+          "attribution_only": {
+            "r2": -0.151071754946968,
+            "mae": 0.03706759273710543,
+            "calibration_slope": 0.11672977143053832
+          },
+          "susceptibility_only": {
+            "r2": 0.23790509067177357,
+            "mae": 0.0222274399534015,
+            "calibration_slope": 0.9252533506036124
+          },
+          "branch_leverage_only": {
+            "r2": -0.0807831239688026,
+            "mae": 0.03640343434320887,
+            "calibration_slope": -3.9059756355276876
+          },
+          "activation_magnitude": {
+            "r2": -0.009682502385065517,
+            "mae": 0.03419710236236016,
+            "calibration_slope": 0.37988423166565916
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.16829601376621517,
+            "mae": 0.018264081898653778,
+            "calibration_slope": 1.5614416992465519
+          },
+          "attribution_susceptibility": {
+            "r2": 0.05085430101704447,
+            "mae": 0.02160798809829908,
+            "calibration_slope": 0.5192127145394663
+          },
+          "full_gain_model": {
+            "r2": 0.09880443297742036,
+            "mae": 0.020901997758617768,
+            "calibration_slope": 0.5373470533735849,
+            "mean_vector_cosine": 0.41040462427745666,
+            "policy_direction_accuracy": 0.7052023121387283
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999987
+          }
+        }
+      },
+      "0.5": {
+        "feature": {
+          "constant": {
+            "r2": -0.009833919184621509,
+            "mae": 0.03040913437177383,
+            "calibration_slope": -31.0000000000002
+          },
+          "attribution_only": {
+            "r2": -0.07112554253329417,
+            "mae": 0.03111814236491704,
+            "calibration_slope": 0.3842927602063776
+          },
+          "susceptibility_only": {
+            "r2": 0.19150114436812904,
+            "mae": 0.022118966006062838,
+            "calibration_slope": 0.9415956748557873
+          },
+          "branch_leverage_only": {
+            "r2": -0.011117234854475466,
+            "mae": 0.030446541219585253,
+            "calibration_slope": -8.761967197848557
+          },
+          "activation_magnitude": {
+            "r2": 0.0770382088572098,
+            "mae": 0.027288101322434248,
+            "calibration_slope": 1.0368646465468854
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.08274939096957434,
+            "mae": 0.01955837120541456,
+            "calibration_slope": 1.8638981806186963
+          },
+          "attribution_susceptibility": {
+            "r2": -0.0710749343120527,
+            "mae": 0.022246310497556415,
+            "calibration_slope": 0.4776752960092066
+          },
+          "full_gain_model": {
+            "r2": -0.03161336371786083,
+            "mae": 0.021876014077072913,
+            "calibration_slope": 0.49011574027519883,
+            "mean_vector_cosine": 0.4161849710982659,
+            "policy_direction_accuracy": 0.708092485549133
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999997
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.02566031172987482,
+            "mae": 0.030964254854585215,
+            "calibration_slope": -18.99999999999998
+          },
+          "attribution_only": {
+            "r2": 0.03956569987746228,
+            "mae": 0.029710662889273244,
+            "calibration_slope": 0.7285265325207109
+          },
+          "susceptibility_only": {
+            "r2": 0.20344621492245363,
+            "mae": 0.022198639764849714,
+            "calibration_slope": 0.9333230492721607
+          },
+          "branch_leverage_only": {
+            "r2": -0.050355555967902754,
+            "mae": 0.03162093049118332,
+            "calibration_slope": -6.971370246339913
+          },
+          "activation_magnitude": {
+            "r2": 0.04989396989500883,
+            "mae": 0.02812673861291711,
+            "calibration_slope": 0.8434719283127226
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.09754144149229615,
+            "mae": 0.019417126402308436,
+            "calibration_slope": 2.2290509662894786
+          },
+          "attribution_susceptibility": {
+            "r2": 0.31004018239279574,
+            "mae": 0.019446548743415632,
+            "calibration_slope": 0.6399217232809348
+          },
+          "full_gain_model": {
+            "r2": 0.34941761115456993,
+            "mae": 0.0188017303395075,
+            "calibration_slope": 0.6572932400199336,
+            "mean_vector_cosine": 0.42196531791907516,
+            "policy_direction_accuracy": 0.7109826589595376
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0000000000000013
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.03341629742881591,
+            "mae": 0.031085372657681676,
+            "calibration_slope": -19.980287653240524
+          },
+          "attribution_only": {
+            "r2": -0.11649855092346595,
+            "mae": 0.03174900289283341,
+            "calibration_slope": 0.30991184094112517
+          },
+          "susceptibility_only": {
+            "r2": 0.18515155623274526,
+            "mae": 0.02244445404064075,
+            "calibration_slope": 0.8935414236634703
+          },
+          "branch_leverage_only": {
+            "r2": -0.05856444423593676,
+            "mae": 0.03177380598132841,
+            "calibration_slope": -7.702927239958833
+          },
+          "activation_magnitude": {
+            "r2": 0.03742370707731191,
+            "mae": 0.02831177124497023,
+            "calibration_slope": 0.7593667504085764
+          },
+          "susceptibility_constant_shift": {
+            "r2": 0.07813536270127808,
+            "mae": 0.01960867605421893,
+            "calibration_slope": 1.9041498445045855
+          },
+          "attribution_susceptibility": {
+            "r2": -0.08379617329421873,
+            "mae": 0.02236014666980293,
+            "calibration_slope": 0.4734918126325255
+          },
+          "full_gain_model": {
+            "r2": -0.04109441940744096,
+            "mae": 0.021981035103889608,
+            "calibration_slope": 0.4870382295133874,
+            "mean_vector_cosine": 0.41040462427745666,
+            "policy_direction_accuracy": 0.7052023121387283
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999997
+          }
+        }
+      },
+      "1.0": {
+        "feature": {
+          "constant": {
+            "r2": -0.021512480154320057,
+            "mae": 0.02825736725323702,
+            "calibration_slope": -31.000000000000014
+          },
+          "attribution_only": {
+            "r2": 0.26686810098956015,
+            "mae": 0.02443958603875825,
+            "calibration_slope": 0.9472131340622985
+          },
+          "susceptibility_only": {
+            "r2": 0.07923802230134014,
+            "mae": 0.025349698963228463,
+            "calibration_slope": 0.845998608829422
+          },
+          "branch_leverage_only": {
+            "r2": -0.019336762214156922,
+            "mae": 0.02821918965583229,
+            "calibration_slope": -1.9273813874494032
+          },
+          "activation_magnitude": {
+            "r2": 0.1576528269866917,
+            "mae": 0.022716524193864628,
+            "calibration_slope": 1.0763404352218189
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.05261440601984879,
+            "mae": 0.022413044069436634,
+            "calibration_slope": 1.4581525962822226
+          },
+          "attribution_susceptibility": {
+            "r2": -0.0782578427763303,
+            "mae": 0.024387740342193348,
+            "calibration_slope": 0.4694776160312219
+          },
+          "full_gain_model": {
+            "r2": -0.0634688227286,
+            "mae": 0.024198736547694395,
+            "calibration_slope": 0.4758370339785293,
+            "mean_vector_cosine": 0.4161849710982659,
+            "policy_direction_accuracy": 0.708092485549133
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999981
+          }
+        },
+        "prompt": {
+          "constant": {
+            "r2": -0.015487873310167322,
+            "mae": 0.028275925784689543,
+            "calibration_slope": -18.999999999999968
+          },
+          "attribution_only": {
+            "r2": 0.23284079831968507,
+            "mae": 0.024668260220932707,
+            "calibration_slope": 0.9258136364019215
+          },
+          "susceptibility_only": {
+            "r2": 0.10794449201934608,
+            "mae": 0.025136576879276323,
+            "calibration_slope": 0.9668970917679128
+          },
+          "branch_leverage_only": {
+            "r2": -0.022921505059749103,
+            "mae": 0.02844409621036873,
+            "calibration_slope": -1.2943560575908228
+          },
+          "activation_magnitude": {
+            "r2": 0.16995111981537492,
+            "mae": 0.02269750642416733,
+            "calibration_slope": 1.1016491704899725
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.023373208769941645,
+            "mae": 0.02223840620368786,
+            "calibration_slope": 2.8335015873288305
+          },
+          "attribution_susceptibility": {
+            "r2": 0.2819758488601757,
+            "mae": 0.0214973388984937,
+            "calibration_slope": 0.6307599421952921
+          },
+          "full_gain_model": {
+            "r2": 0.31180249123571147,
+            "mae": 0.020834258718293076,
+            "calibration_slope": 0.6429795643032223,
+            "mean_vector_cosine": 0.42196531791907516,
+            "policy_direction_accuracy": 0.7109826589595376
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 1.0
+          }
+        },
+        "feature_prompt": {
+          "constant": {
+            "r2": -0.03520735322542912,
+            "mae": 0.0285815530133157,
+            "calibration_slope": -23.285015350375488
+          },
+          "attribution_only": {
+            "r2": 0.22962785549563924,
+            "mae": 0.024908480566796985,
+            "calibration_slope": 0.8829496159686763
+          },
+          "susceptibility_only": {
+            "r2": 0.07551505602815733,
+            "mae": 0.025498775321205914,
+            "calibration_slope": 0.8250388247147312
+          },
+          "branch_leverage_only": {
+            "r2": -0.042939678129210845,
+            "mae": 0.028750015677930015,
+            "calibration_slope": -2.678260147672691
+          },
+          "activation_magnitude": {
+            "r2": 0.13446052795418595,
+            "mae": 0.023157775536319286,
+            "calibration_slope": 0.990666084945838
+          },
+          "susceptibility_constant_shift": {
+            "r2": -0.0561513055884757,
+            "mae": 0.02246880651799437,
+            "calibration_slope": 1.4567703470499684
+          },
+          "attribution_susceptibility": {
+            "r2": -0.09252343816702657,
+            "mae": 0.024488244199795776,
+            "calibration_slope": 0.46364761143069433
+          },
+          "full_gain_model": {
+            "r2": -0.07631954881307745,
+            "mae": 0.024300576385446835,
+            "calibration_slope": 0.47071893364383505,
+            "mean_vector_cosine": 0.41040462427745666,
+            "policy_direction_accuracy": 0.7052023121387283
+          },
+          "measured_margin_oracle": {
+            "r2": 1.0,
+            "mae": 0.0,
+            "calibration_slope": 0.9999999999999981
+          }
+        }
+      }
+    }
+  }
+}

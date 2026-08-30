@@ -1,0 +1,28 @@
+{
+  "experiment_name": "is_are_carrier_capacity",
+  "source": {
+    "repository": "https://github.com/hannamw/model-planning-public",
+    "commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+    "path": "is_are/data/animals_dataset.csv",
+    "sha256": "e2167d1a6ed8ca0849fcda75a790f1f2d41c594113cbd342560edcc05e6eeccd"
+  },
+  "dataset_path": "../is_are_behavioral_screen/data/animals_dataset.csv",
+  "models": [
+    {
+      "id": "gemma_270m",
+      "model": "google/gemma-3-270m",
+      "snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1"
+    },
+    {
+      "id": "gemma_1b",
+      "model": "google/gemma-3-1b-pt",
+      "snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29"
+    }
+  ],
+  "dtype": "bfloat16",
+  "development_animals": ["cats", "dogs"],
+  "strengths": [0.5, 1.0, 1.5],
+  "temperatures": [0.1, 0.25, 0.5, 1.0],
+  "bootstrap_seed": 20260831,
+  "bootstrap_resamples": 10000
+}

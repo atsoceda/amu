@@ -1,0 +1,3528 @@
+{
+  "experiment": "is_are_carrier_capacity",
+  "generated_at": "2026-08-30T10:38:21.112015+00:00",
+  "source": {
+    "repository": "https://github.com/hannamw/model-planning-public",
+    "commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+    "path": "is_are/data/animals_dataset.csv",
+    "sha256": "e2167d1a6ed8ca0849fcda75a790f1f2d41c594113cbd342560edcc05e6eeccd"
+  },
+  "pair_design": {
+    "development_animals": [
+      "cats",
+      "dogs"
+    ],
+    "test_animals": [
+      "cows",
+      "elephants",
+      "giraffes",
+      "horses",
+      "lions",
+      "rabbits",
+      "sheep",
+      "tigers"
+    ],
+    "between": "1 to 3 (is to are)",
+    "within": "3 to 5 (are to are)"
+  },
+  "models": [
+    {
+      "model": "gemma_270m",
+      "model_name": "google/gemma-3-270m",
+      "n_layers": 18,
+      "selected_layer": 11,
+      "selected_relative_depth": 0.6470588235294118,
+      "dev_layer_means": {
+        "0": -0.0625,
+        "1": -0.0625,
+        "2": -0.03125,
+        "3": -0.03125,
+        "4": -0.03125,
+        "5": -0.0625,
+        "6": -0.03125,
+        "7": -0.0625,
+        "8": -0.0625,
+        "9": -0.125,
+        "10": -0.03125,
+        "11": 0.0,
+        "12": -0.03125,
+        "13": -0.03125,
+        "14": 0.0,
+        "15": -0.03125,
+        "16": -0.0625,
+        "17": 0.0
+      },
+      "elapsed_sec": 80.83475494384766
+    },
+    {
+      "model": "gemma_1b",
+      "model_name": "google/gemma-3-1b-pt",
+      "n_layers": 26,
+      "selected_layer": 3,
+      "selected_relative_depth": 0.12,
+      "dev_layer_means": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0625,
+        "4": 0.0625,
+        "5": 0.0,
+        "6": 0.0,
+        "7": 0.03125,
+        "8": 0.0,
+        "9": -0.0625,
+        "10": 0.03125,
+        "11": 0.03125,
+        "12": 0.0,
+        "13": 0.0,
+        "14": 0.03125,
+        "15": 0.03125,
+        "16": 0.0,
+        "17": 0.0,
+        "18": 0.03125,
+        "19": 0.03125,
+        "20": 0.03125,
+        "21": 0.0,
+        "22": 0.0,
+        "23": 0.0,
+        "24": 0.0,
+        "25": 0.0
+      },
+      "elapsed_sec": 398.638081073761
+    }
+  ],
+  "conditions": {
+    "gemma_270m_between_0.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": -0.046875,
+        "lo": -0.09375,
+        "hi": 0.0,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.015625,
+        "lo": 0.0,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014834312017228513,
+            "lo": 0.007661895813726005,
+            "hi": 0.02200672822073102,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014834312017228513,
+            "lo": 0.007661895813726005,
+            "hi": 0.02200672822073102,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000596046448,
+            "lo": 0.999999925494194,
+            "hi": 1.000000238418579,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 2.9355287551879883e-06,
+            "lo": 9.834766387939453e-07,
+            "hi": 5.543231964111328e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 5.10578013646068e-07,
+            "lo": 1.8694851711131832e-07,
+            "hi": 9.217368148739524e-07,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014834226347375079,
+            "lo": 0.007661839143111138,
+            "hi": 0.02200661355163902,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014834412262644037,
+            "lo": 0.007661969179025618,
+            "hi": 0.022006855346262455,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.2887889703270048,
+            "lo": 0.10871935589239001,
+            "hi": 0.47675523697398603,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 0.9999998956918716,
+            "hi": 1.0000001192092896,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999997168779373,
+            "lo": 0.9999994784593582,
+            "hi": 0.9999999031424522,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999997839331627,
+            "lo": 0.9999996423721313,
+            "hi": 0.9999998956918716,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0004816576838493347,
+            "lo": 0.00023537129163742065,
+            "hi": 0.0007352381944656372,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 8.587972479290329e-05,
+            "lo": 4.3474341509863734e-05,
+            "hi": 0.00012610188969119918,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014800268441831577,
+            "lo": 0.00764137223814032,
+            "hi": 0.021959164645522833,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014829434743660386,
+            "lo": 0.007659987775696209,
+            "hi": 0.021998881711624563,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.3184260930866003,
+            "lo": 0.1495314985513687,
+            "hi": 0.4911979231983423,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9977900385856628,
+            "lo": 0.9933972284197807,
+            "hi": 0.9999947547912598,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999323770403862,
+            "lo": 0.9990401715040207,
+            "hi": 0.9995504692196846,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9994033724069595,
+            "lo": 0.9992123022675514,
+            "hi": 0.9995552226901054,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.004219360649585724,
+            "lo": 0.0022670403122901917,
+            "hi": 0.005865804851055145,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0007637074741069227,
+            "lo": 0.00040612804878037423,
+            "hi": 0.0010447490931255743,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014332920662127435,
+            "lo": 0.007645640289410949,
+            "hi": 0.021028866060078144,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014667509894934483,
+            "lo": 0.007941214047605172,
+            "hi": 0.021434408612549305,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.4314190596342087,
+            "lo": 0.22124692797660828,
+            "hi": 0.6320764422416687,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9829811751842499,
+            "lo": 0.950991228222847,
+            "hi": 0.9995507374405861,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9511858597397804,
+            "lo": 0.9425938278436661,
+            "hi": 0.958154171705246,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9533176496624947,
+            "lo": 0.946652777493,
+            "hi": 0.9587002247571945,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_270m_between_1.0": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": -0.03125,
+        "lo": -0.078125,
+        "hi": 0.03125,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.015625,
+        "lo": 0.0,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.019150988639012212,
+            "lo": 0.011577307843253948,
+            "hi": 0.026062826393172145,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.019150988639012212,
+            "lo": 0.011577307843253948,
+            "hi": 0.026062826393172145,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.000000037252903,
+            "lo": 0.9999999776482582,
+            "hi": 1.0000000968575478,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 3.844499588012695e-06,
+            "lo": 1.5497207641601562e-06,
+            "hi": 6.5267086029052734e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 6.760904369684795e-07,
+            "lo": 2.9417407887422087e-07,
+            "hi": 1.0987385863359123e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01915089974863804,
+            "lo": 0.011577226294321008,
+            "hi": 0.02606276562437415,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.019150904467096552,
+            "lo": 0.01157723442884162,
+            "hi": 0.026062827790156007,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.0031037450826261193,
+            "lo": -0.24124513639253564,
+            "hi": 0.24875305881141685,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9999996051192284,
+            "lo": 0.9999990463256836,
+            "hi": 0.9999999925494194,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999997168779373,
+            "lo": 0.9999994784593582,
+            "hi": 0.9999999031424522,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999998286366463,
+            "lo": 0.9999996945261955,
+            "hi": 0.999999925494194,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0007127672433853149,
+            "lo": 0.00038955360651016235,
+            "hi": 0.0010270178318023682,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.00012888119454146363,
+            "lo": 7.23112407285953e-05,
+            "hi": 0.0001834581526054535,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.019115841860184446,
+            "lo": 0.01155387400649488,
+            "hi": 0.026013981085270643,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.019121330413327087,
+            "lo": 0.011563600419322029,
+            "hi": 0.02602659771218896,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.09285098034888506,
+            "lo": -0.18902061693370342,
+            "hi": 0.3710521822795272,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9845278710126877,
+            "lo": 0.9629122242331505,
+            "hi": 0.9999892115592957,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999323770403862,
+            "lo": 0.9990401715040207,
+            "hi": 0.9995504692196846,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9994629174470901,
+            "lo": 0.9992626160383224,
+            "hi": 0.9996055290102959,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.006679117679595947,
+            "lo": 0.004002302885055542,
+            "hi": 0.009242773056030273,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0012238378476467915,
+            "lo": 0.0007282190708792768,
+            "hi": 0.00167734576825751,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.018513027083827183,
+            "lo": 0.011077665025368333,
+            "hi": 0.02515098755247891,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.018955081730382517,
+            "lo": 0.012013688363367692,
+            "hi": 0.025235246401280165,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.26759524177759886,
+            "lo": -0.10683414340019226,
+            "hi": 0.6260977564379573,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8772385790944099,
+            "lo": 0.6938150450587273,
+            "hi": 0.9991801977157593,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9511858597397804,
+            "lo": 0.9425938278436661,
+            "hi": 0.958154171705246,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9551669061183929,
+            "lo": 0.948252908885479,
+            "hi": 0.9604040831327438,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_270m_between_1.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": -0.015625,
+        "lo": -0.0625,
+        "hi": 0.03125,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.015625,
+        "lo": 0.0,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01643374570267042,
+            "lo": 0.008482983605063055,
+            "hi": 0.023748788284137845,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01643374570267042,
+            "lo": 0.008482983605063055,
+            "hi": 0.023748788284137845,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000074505806,
+            "lo": 0.9999999776482582,
+            "hi": 1.0000000447034836,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 5.200505256652832e-06,
+            "lo": 2.3692846298217773e-06,
+            "hi": 9.194016456604004e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 9.098445872268712e-07,
+            "lo": 4.392884314086132e-07,
+            "hi": 1.5399441224417387e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.0164337137430266,
+            "lo": 0.008482971956254914,
+            "hi": 0.023748744744807482,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016433653629064793,
+            "lo": 0.008482958837703336,
+            "hi": 0.023748585488647223,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.04504752923094202,
+            "lo": -0.23045841604471207,
+            "hi": 0.15315325725532603,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.999997690320015,
+            "lo": 0.9999936521053314,
+            "hi": 1.0000000074505806,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999997168779373,
+            "lo": 0.9999994784593582,
+            "hi": 0.9999999031424522,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999998509883881,
+            "lo": 0.9999997466802597,
+            "hi": 0.999999925494194,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0010256916284561157,
+            "lo": 0.0006995424628257751,
+            "hi": 0.0013923421502113342,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.00018560621811047895,
+            "lo": 0.00013124737506586825,
+            "hi": 0.00024266231321234955,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.016410232761700172,
+            "lo": 0.008471346722217277,
+            "hi": 0.023718141950666904,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016427954178652726,
+            "lo": 0.008515004061337095,
+            "hi": 0.023719585151411593,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.09116859268397093,
+            "lo": -0.15441998559981585,
+            "hi": 0.3349153771996498,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9685584083199501,
+            "lo": 0.9245050922036171,
+            "hi": 0.9999719187617302,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999323770403862,
+            "lo": 0.9990401715040207,
+            "hi": 0.9995504692196846,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9995093271136284,
+            "lo": 0.9993400052189827,
+            "hi": 0.999642550945282,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.01011330634355545,
+            "lo": 0.00797317922115326,
+            "hi": 0.012111358344554901,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.001859865093138069,
+            "lo": 0.0014795324968872592,
+            "hi": 0.002238991641206667,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01584576614550315,
+            "lo": 0.008235195382439997,
+            "hi": 0.02292531612329185,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016267150960629806,
+            "lo": 0.009395308821694925,
+            "hi": 0.02305256188265048,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.2876397194340825,
+            "lo": -0.025637900456786156,
+            "hi": 0.6312942579388618,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8366869818419218,
+            "lo": 0.6228579916059971,
+            "hi": 0.996145948767662,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9511858597397804,
+            "lo": 0.9425938278436661,
+            "hi": 0.958154171705246,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9565993025898933,
+            "lo": 0.9495142325758934,
+            "hi": 0.9622919484972954,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_270m_within_0.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.046875,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.0625,
+        "hi": 0.0625,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.016412354483918534,
+            "lo": 0.007094931283518235,
+            "hi": 0.025597356958314776,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016412354483918534,
+            "lo": 0.007094931283518235,
+            "hi": 0.025597356958314776,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000003203749657,
+            "lo": 1.0000000521540642,
+            "hi": 1.0000007599592209,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 6.854534149169922e-07,
+            "lo": 1.9371509552001953e-07,
+            "hi": 1.3262033462524414e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 9.290560809560588e-08,
+            "lo": 2.7142979419636504e-08,
+            "hi": 1.753900069623171e-07,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.016412315482966733,
+            "lo": 0.007094919685641798,
+            "hi": 0.02559730946086347,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01641232554470662,
+            "lo": 0.007094919552855572,
+            "hi": 0.025597329658921808,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.02747428260045126,
+            "lo": -0.10920792137039825,
+            "hi": 0.17300226911902428,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9999997690320015,
+            "lo": 0.999999150633812,
+            "hi": 1.0000001192092896,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999998584389687,
+            "lo": 0.9999997615814209,
+            "hi": 0.9999999329447746,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.999999888241291,
+            "lo": 0.9999998435378075,
+            "hi": 0.9999999329447746,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0002132207155227661,
+            "lo": 8.292496204376221e-05,
+            "hi": 0.0003565177321434021,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 2.7928690769840614e-05,
+            "lo": 1.1624160833889619e-05,
+            "hi": 4.586934960570943e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.016389444011110754,
+            "lo": 0.007091098248565686,
+            "hi": 0.025561684858985245,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016393359344874625,
+            "lo": 0.007094164269801695,
+            "hi": 0.025566283031366765,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.10246323049068451,
+            "lo": -0.12370504066348076,
+            "hi": 0.35531512275338173,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9719484746456146,
+            "lo": 0.9158502668142319,
+            "hi": 0.999999150633812,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9995168298482895,
+            "lo": 0.9993626177310944,
+            "hi": 0.999639205634594,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9995349049568176,
+            "lo": 0.9994363486766815,
+            "hi": 0.9996185004711151,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0026312023401260376,
+            "lo": 0.0011252239346504211,
+            "hi": 0.004076503217220306,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0003484122280497104,
+            "lo": 0.0001499456848250702,
+            "hi": 0.0005316378010320477,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01594327723432798,
+            "lo": 0.007149233759264462,
+            "hi": 0.0246333703835262,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.015980633965227753,
+            "lo": 0.007146329415263608,
+            "hi": 0.024685709358891472,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.11293722689151764,
+            "lo": -0.09376637265086174,
+            "hi": 0.3346532993018627,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9857966005802155,
+            "lo": 0.9581917077302933,
+            "hi": 0.999835915863514,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9575003683567047,
+            "lo": 0.9512118175625801,
+            "hi": 0.9625774398446083,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9578832536935806,
+            "lo": 0.9532667621970177,
+            "hi": 0.9620150253176689,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_270m_within_1.0": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.046875,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.0625,
+        "hi": 0.0625,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.015727161616496232,
+            "lo": 0.0078010941685988655,
+            "hi": 0.023410018882714212,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.015727161616496232,
+            "lo": 0.0078010941685988655,
+            "hi": 0.023410018882714212,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000005215406418,
+            "lo": 0.999999925494194,
+            "hi": 1.0000015869736671,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 9.238719940185547e-07,
+            "lo": 5.364418029785156e-07,
+            "hi": 1.4454126358032227e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 1.2510694746836748e-07,
+            "lo": 7.560261394701229e-08,
+            "hi": 1.9337037393540868e-07,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01572713564746664,
+            "lo": 0.00780108370599919,
+            "hi": 0.02340999443549663,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.015727122849057196,
+            "lo": 0.007801084604579955,
+            "hi": 0.023410013178363442,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.14955828886013478,
+            "lo": -0.34457099344581366,
+            "hi": 0.06286200997419655,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9999905228614807,
+            "lo": 0.9999715015292168,
+            "hi": 1.0000000670552254,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999998584389687,
+            "lo": 0.9999997615814209,
+            "hi": 0.9999999329447746,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.999999888241291,
+            "lo": 0.9999998435378075,
+            "hi": 0.9999999403953552,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.00032976269721984863,
+            "lo": 0.00026326626539230347,
+            "hi": 0.0004087314009666443,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 4.3234118493273854e-05,
+            "lo": 3.5496934742695885e-05,
+            "hi": 5.274788645692752e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01570717820709433,
+            "lo": 0.007792842709704928,
+            "hi": 0.023385476088151336,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.015705841812177823,
+            "lo": 0.007802670327691885,
+            "hi": 0.023386996239423752,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.019493568688631058,
+            "lo": -0.36046990379691124,
+            "hi": 0.35945435240864754,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8822406399995089,
+            "lo": 0.6586850192397833,
+            "hi": 0.9999972581863403,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9995168298482895,
+            "lo": 0.9993626177310944,
+            "hi": 0.999639205634594,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9995354562997818,
+            "lo": 0.9994227588176727,
+            "hi": 0.9996231198310852,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0044188424944877625,
+            "lo": 0.003838159143924713,
+            "hi": 0.0051043108105659485,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0005833645482198335,
+            "lo": 0.0005146993426023982,
+            "hi": 0.0006692923489026725,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.015237371847206305,
+            "lo": 0.007669534653132359,
+            "hi": 0.02270155624387371,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.015289286886400077,
+            "lo": 0.007891006607678719,
+            "hi": 0.022668940713629127,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.06454637460410595,
+            "lo": -0.32096386700868607,
+            "hi": 0.49107534624636173,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8806393779814243,
+            "lo": 0.6765438057482243,
+            "hi": 0.9996254444122314,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9575003683567047,
+            "lo": 0.9512118175625801,
+            "hi": 0.9625774398446083,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9577511548995972,
+            "lo": 0.9525906592607498,
+            "hi": 0.9620263054966927,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_270m_within_1.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": 0.015625,
+        "lo": 0.0,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.0625,
+        "hi": 0.0625,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01961158818903641,
+            "lo": 0.013150976897122746,
+            "hi": 0.0253217788413167,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01961158818903641,
+            "lo": 0.013150976897122746,
+            "hi": 0.0253217788413167,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000223517418,
+            "lo": 0.999999925494194,
+            "hi": 1.0000001341104507,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 9.387731552124023e-07,
+            "lo": 5.662441253662109e-07,
+            "hi": 1.4603137969970703e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 1.2891806910886316e-07,
+            "lo": 8.121726047249922e-08,
+            "hi": 1.9544519336278654e-07,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.019611544641520595,
+            "lo": 0.013150940085324692,
+            "hi": 0.025321721099317074,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.019611565920058638,
+            "lo": 0.013150937564205378,
+            "hi": 0.025321741588413715,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.25317102717235684,
+            "lo": -0.008687401656061411,
+            "hi": 0.4538559690117836,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000149011612,
+            "lo": 0.9999999701976776,
+            "hi": 1.0000000596046448,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999998584389687,
+            "lo": 0.9999997615814209,
+            "hi": 0.9999999329447746,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999998807907104,
+            "lo": 0.9999998211860657,
+            "hi": 0.9999999329447746,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0003493651747703552,
+            "lo": 0.0002925693988800049,
+            "hi": 0.0004204660654067993,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 4.624991333912476e-05,
+            "lo": 3.868151270580711e-05,
+            "hi": 5.500183988260687e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.019585408002058102,
+            "lo": 0.013136455449966888,
+            "hi": 0.025288331788033247,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01959488303236867,
+            "lo": 0.013150074374607357,
+            "hi": 0.025293436832726002,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.28591272979974747,
+            "lo": 0.031093917787075043,
+            "hi": 0.4472244791686535,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9922266229987144,
+            "lo": 0.9766830876469612,
+            "hi": 0.9999986886978149,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9995168298482895,
+            "lo": 0.9993626177310944,
+            "hi": 0.999639205634594,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9995034784078598,
+            "lo": 0.9993845298886299,
+            "hi": 0.9996080920100212,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.004791349172592163,
+            "lo": 0.004143856465816498,
+            "hi": 0.005503818392753601,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0006406924803741276,
+            "lo": 0.0005353604356059805,
+            "hi": 0.0007662987263756804,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.0189547513218713,
+            "lo": 0.012779282893461641,
+            "hi": 0.02439180505461991,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.019096467411145568,
+            "lo": 0.01291491067968309,
+            "hi": 0.024549050722271204,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.34974006935954094,
+            "lo": 0.08091221749782562,
+            "hi": 0.5450699031352997,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9758248254656792,
+            "lo": 0.9281774014234543,
+            "hi": 0.999746099114418,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9575003683567047,
+            "lo": 0.9512118175625801,
+            "hi": 0.9625774398446083,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9564196690917015,
+            "lo": 0.9511689320206642,
+            "hi": 0.9610845372080803,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_1b_between_0.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": -0.046875,
+        "lo": -0.09375,
+        "hi": -0.015625,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": -0.03125,
+        "lo": -0.09375,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -1.341104507446289e-07,
+            "lo": -3.129243850708008e-07,
+            "hi": -1.4901161193847656e-08,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 5.309368633632516e-08,
+            "lo": 4.872381165199613e-09,
+            "hi": 1.2776816804560553e-07,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01478151959963725,
+            "lo": 0.006670139769994421,
+            "hi": 0.023191642700112425,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014781558978938847,
+            "lo": 0.00667017807609227,
+            "hi": 0.023191645595943555,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.12783625349402428,
+            "lo": -0.09710293263196945,
+            "hi": 0.39630303531885147,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.999999925494194,
+            "lo": 0.9999998584389687,
+            "hi": 0.9999999925494194,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999999850988388,
+            "lo": 0.999999962747097,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999999850988388,
+            "lo": 0.999999962747097,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -0.0003948882222175598,
+            "lo": -0.0008374229073524475,
+            "hi": -7.377564907073975e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.00015795200488355476,
+            "lo": 2.670502544788178e-05,
+            "hi": 0.00033649616852926556,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014715360181071446,
+            "lo": 0.006645502740866505,
+            "hi": 0.023065464149112813,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014849698363832431,
+            "lo": 0.0067898140114266425,
+            "hi": 0.023085288135916926,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.29127662628889084,
+            "lo": 0.06132087856531143,
+            "hi": 0.580792248249054,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9229489900171757,
+            "lo": 0.7729242853820324,
+            "hi": 0.999943308532238,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999784879386425,
+            "lo": 0.9997006729245186,
+            "hi": 0.9998690858483315,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9997171685099602,
+            "lo": 0.9996014758944511,
+            "hi": 0.9998278245329857,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -0.0038468018174171448,
+            "lo": -0.0075927674770355225,
+            "hi": -0.0010018348693847656,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0015196696331258863,
+            "lo": 0.00036263433867134154,
+            "hi": 0.0030393392662517726,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014243365847505629,
+            "lo": 0.006764803314581513,
+            "hi": 0.021964034531265497,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01573392516002059,
+            "lo": 0.008988206391222775,
+            "hi": 0.02268159668892622,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.3663158342242241,
+            "lo": 0.12059898674488068,
+            "hi": 0.7312221378087997,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9714935943484306,
+            "lo": 0.9286372512578964,
+            "hi": 0.9983366280794144,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9844657927751541,
+            "lo": 0.9810877591371536,
+            "hi": 0.9881032779812813,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9825401976704597,
+            "lo": 0.9786900207400322,
+            "hi": 0.9869035854935646,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -0.006720744073390961,
+            "lo": -0.013261497020721436,
+            "hi": -0.002058647572994232,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0026359647163189948,
+            "lo": 0.0007451663841493428,
+            "hi": 0.005145119677763432,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.013746091688517481,
+            "lo": 0.007870692701544613,
+            "hi": 0.019967687607277185,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016129728173837066,
+            "lo": 0.011121486313641071,
+            "hi": 0.021213900996372104,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.36741214990615845,
+            "lo": 0.12072190642356873,
+            "hi": 0.734309732913971,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9830390438437462,
+            "lo": 0.9598667547106743,
+            "hi": 0.9974333196878433,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.8570261001586914,
+            "lo": 0.8445955216884613,
+            "hi": 0.8722787350416183,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.851494550704956,
+            "lo": 0.8379811197519302,
+            "hi": 0.8682118654251099,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_1b_between_1.0": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": -0.03125,
+        "lo": -0.09375,
+        "hi": 0.03125,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": -0.03125,
+        "lo": -0.09375,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -1.1622905731201172e-06,
+            "lo": -3.5762786865234375e-06,
+            "hi": 1.7881393432617188e-07,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 6.634630480562009e-07,
+            "lo": 2.8852451094962817e-08,
+            "hi": 1.8580097602693968e-06,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.016068515887127433,
+            "lo": 0.007496760383219225,
+            "hi": 0.025010018333887274,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016068381427430722,
+            "lo": 0.007496707065001829,
+            "hi": 0.02500980273271125,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.08200304675847292,
+            "lo": -0.35405505541712046,
+            "hi": 0.08884060848504305,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000819563866,
+            "lo": 0.9999998807907104,
+            "hi": 1.000000387430191,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999999850988388,
+            "lo": 0.999999962747097,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999999850988388,
+            "lo": 0.999999962747097,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -0.0005367621779441833,
+            "lo": -0.0018099769949913025,
+            "hi": 0.0003993809223175049,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0004236123786540702,
+            "lo": 6.286644202191383e-05,
+            "hi": 0.0009772046614671126,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01605137370643206,
+            "lo": 0.007575375057058409,
+            "hi": 0.024892122513847426,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01606773040839471,
+            "lo": 0.007472209341358393,
+            "hi": 0.02500964523642324,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.056116990745067596,
+            "lo": -0.3334091752767563,
+            "hi": 0.14147606492042542,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9995283782482147,
+            "lo": 0.9986611679196358,
+            "hi": 0.9999866262078285,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999784879386425,
+            "lo": 0.9997006729245186,
+            "hi": 0.9998690858483315,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9996972009539604,
+            "lo": 0.9995670393109322,
+            "hi": 0.9998328611254692,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -0.002436414361000061,
+            "lo": -0.008891843259334564,
+            "hi": 0.003165200352668762,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0024199452018365264,
+            "lo": 0.000498205772601068,
+            "hi": 0.0050256522372365,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01582045157556422,
+            "lo": 0.008151207148330286,
+            "hi": 0.023710771347396076,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01647580208373256,
+            "lo": 0.007777570659527555,
+            "hi": 0.02553328321664594,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.0021315328776836395,
+            "lo": -0.2897948585450649,
+            "hi": 0.24740586802363396,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9879739955067635,
+            "lo": 0.9713710620999336,
+            "hi": 0.9982776194810867,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9844657927751541,
+            "lo": 0.9810877591371536,
+            "hi": 0.9881032779812813,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9823887646198273,
+            "lo": 0.9779400080442429,
+            "hi": 0.9871822595596313,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -0.002798110246658325,
+            "lo": -0.010817788541316986,
+            "hi": 0.004846915602684021,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.003224669140763581,
+            "lo": 0.0007629132596775889,
+            "hi": 0.0065322311129421,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.015464153722859919,
+            "lo": 0.009502482833340764,
+            "hi": 0.021660550497472286,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.016045858850702643,
+            "lo": 0.00928155705332756,
+            "hi": 0.02305033174343407,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.028307735919952393,
+            "lo": -0.22538362443447113,
+            "hi": 0.2739618271589279,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9732633084058762,
+            "lo": 0.9453994184732437,
+            "hi": 0.9938244894146919,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.8570261001586914,
+            "lo": 0.8445955216884613,
+            "hi": 0.8722787350416183,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.8520769476890564,
+            "lo": 0.8370141461491585,
+            "hi": 0.8699309527873993,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_1b_between_1.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": -0.015625,
+        "lo": -0.046875,
+        "hi": 0.0,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": -0.03125,
+        "lo": -0.09375,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.014108388582826592,
+            "lo": 0.005819930694997311,
+            "hi": 0.02387729760084767,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.014108388582826592,
+            "lo": 0.005819930694997311,
+            "hi": 0.02387729760084767,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000298023224,
+            "lo": 1.0,
+            "hi": 1.000000074505806,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9999999850988388,
+            "lo": 0.999999962747097,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999999850988388,
+            "lo": 0.999999962747097,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01402903618873097,
+            "lo": 0.005800445156637579,
+            "hi": 0.023729645618004724,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01402903618873097,
+            "lo": 0.005800445156637579,
+            "hi": 0.023729645618004724,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9999999776482582,
+            "lo": 0.9999999329447746,
+            "hi": 1.0000000298023224,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999784879386425,
+            "lo": 0.9997006729245186,
+            "hi": 0.9998690858483315,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9997239634394646,
+            "lo": 0.9996061399579048,
+            "hi": 0.9998402521014214,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.013095028087263927,
+            "lo": 0.0055084639170672745,
+            "hi": 0.022056914487620816,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.013095028087263927,
+            "lo": 0.0055084639170672745,
+            "hi": 0.022056914487620816,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000223517418,
+            "lo": 0.9999999850988388,
+            "hi": 1.0000000596046448,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9844657927751541,
+            "lo": 0.9810877591371536,
+            "hi": 0.9881032779812813,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9829000234603882,
+            "lo": 0.9788437783718109,
+            "hi": 0.9873785972595215,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.011117982074210886,
+            "lo": 0.005147376854438335,
+            "hi": 0.017879863946291152,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.011117982074210886,
+            "lo": 0.005147376854438335,
+            "hi": 0.017879863946291152,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9999999701976776,
+            "lo": 0.999999888241291,
+            "hi": 1.0000000447034836,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.8570261001586914,
+            "lo": 0.8445955216884613,
+            "hi": 0.8722787350416183,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.8527927994728088,
+            "lo": 0.8386624976992607,
+            "hi": 0.8697507381439209,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_1b_within_0.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": 0.03125,
+        "lo": -0.03125,
+        "hi": 0.09375,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.046875,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 9.15760713132347e-12,
+            "lo": 0.0,
+            "hi": 2.7472375236200226e-11,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.02267597755405859,
+            "lo": 0.014634954509915588,
+            "hi": 0.029190058121457696,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.022675977563267224,
+            "lo": 0.014634954537541489,
+            "hi": 0.029190058121457696,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0004665401916357226,
+            "lo": 0.0,
+            "hi": 0.001399604979750002,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000670552254,
+            "lo": 0.9999999105930328,
+            "hi": 1.0000003054738045,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": -1.5124678611755371e-06,
+            "lo": -7.237493991851807e-05,
+            "hi": 5.8650970458984375e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 1.9533213119871107e-05,
+            "lo": 2.5104122869379353e-06,
+            "hi": 4.2249500438629184e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.022672544414490403,
+            "lo": 0.01463255433645827,
+            "hi": 0.02918684110045433,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.022684589389427856,
+            "lo": 0.014665744884950982,
+            "hi": 0.02919271937571466,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.16031190007925034,
+            "lo": -0.03826362267136574,
+            "hi": 0.4281127192080021,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8861712431535125,
+            "lo": 0.6585141839459538,
+            "hi": 0.9999999552965164,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999980092048645,
+            "lo": 0.999968871474266,
+            "hi": 0.9999902099370956,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999816715717316,
+            "lo": 0.9999708831310272,
+            "hi": 0.9999911487102509,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.00013884902000427246,
+            "lo": -0.0015992596745491028,
+            "hi": 0.0017498284578323364,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0005496864341694163,
+            "lo": 9.647355182096362e-05,
+            "hi": 0.0010842875926755369,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.022420503833927796,
+            "lo": 0.014463261277342099,
+            "hi": 0.028842955827713013,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.022698356086038984,
+            "lo": 0.015212760117719881,
+            "hi": 0.028929149266332388,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.17111474461853504,
+            "lo": -0.026305828243494034,
+            "hi": 0.443996399641037,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9191414304077625,
+            "lo": 0.7578662447631359,
+            "hi": 0.9999361932277679,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9951498433947563,
+            "lo": 0.9935119524598122,
+            "hi": 0.996813029050827,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9953728318214417,
+            "lo": 0.9938570857048035,
+            "hi": 0.9968919679522514,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.00042610615491867065,
+            "lo": -0.0051111578941345215,
+            "hi": 0.005963370203971863,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.001803715102141723,
+            "lo": 0.0003824302111752331,
+            "hi": 0.0033113500976469368,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.020595427231455687,
+            "lo": 0.01334833873261232,
+            "hi": 0.02651082701049745,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.0212885009823367,
+            "lo": 0.015008793212473392,
+            "hi": 0.02679738774895668,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.20293280109763145,
+            "lo": 0.007355242967605591,
+            "hi": 0.4566068984568119,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9225694611668587,
+            "lo": 0.7739627435803413,
+            "hi": 0.9987855926156044,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9035004451870918,
+            "lo": 0.8896666169166565,
+            "hi": 0.9201898351311684,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9049017205834389,
+            "lo": 0.892326146364212,
+            "hi": 0.920249380171299,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_1b_within_1.0": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.046875,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.046875,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 2.4905160306624704e-12,
+            "lo": 8.063753657860939e-18,
+            "hi": 7.47108580670991e-12,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.02245320868678391,
+            "lo": 0.01660810224711895,
+            "hi": 0.027752782916650176,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.022453208570368588,
+            "lo": 0.016608102014288306,
+            "hi": 0.027752782916650176,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -3.6536966051270436e-05,
+            "lo": -0.00010962453332424849,
+            "hi": 1.215283873534645e-08,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000223517418,
+            "lo": 0.999999962747097,
+            "hi": 1.000000074505806,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 3.719329833984375e-05,
+            "lo": -3.297626972198486e-05,
+            "hi": 0.00010736286640167236,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 1.938397872436326e-05,
+            "lo": 5.0208245738758706e-06,
+            "hi": 3.4409555155434646e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.022448467556387186,
+            "lo": 0.016603759257122874,
+            "hi": 0.02774579473771155,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.022458508727140725,
+            "lo": 0.0166285855229944,
+            "hi": 0.027755754766985774,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.06113155372440815,
+            "lo": -0.3248058259487152,
+            "hi": 0.4141801595687866,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.999999649822712,
+            "lo": 0.9999992474913597,
+            "hi": 0.999999962747097,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999980092048645,
+            "lo": 0.999968871474266,
+            "hi": 0.9999902099370956,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999828785657883,
+            "lo": 0.9999722093343735,
+            "hi": 0.9999917149543762,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0010084733366966248,
+            "lo": -0.000980660319328308,
+            "hi": 0.002758301794528961,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0005535983800655231,
+            "lo": 0.00015090165834408253,
+            "hi": 0.0009596784802852198,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.022148433839902282,
+            "lo": 0.016341152833774686,
+            "hi": 0.02740999637171626,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.022385481279343367,
+            "lo": 0.016580949304625392,
+            "hi": 0.02771282265894115,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.06998530589044094,
+            "lo": -0.3174995817244053,
+            "hi": 0.4207328371703625,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.999701164662838,
+            "lo": 0.9993613064289093,
+            "hi": 0.999968096613884,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9951498433947563,
+            "lo": 0.9935119524598122,
+            "hi": 0.996813029050827,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9954397305846214,
+            "lo": 0.993948720395565,
+            "hi": 0.9969024062156677,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0031377971172332764,
+            "lo": -0.0031280964612960815,
+            "hi": 0.008444689214229584,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0017484303680248559,
+            "lo": 0.0004160583484917879,
+            "hi": 0.0030152699910104275,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.020197070436552167,
+            "lo": 0.014742978848516941,
+            "hi": 0.025190060026943684,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.02083748480072245,
+            "lo": 0.014997419551946223,
+            "hi": 0.026214708108454943,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.0900831762701273,
+            "lo": -0.2690662331879139,
+            "hi": 0.4353060759603977,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9954420402646065,
+            "lo": 0.9912218153476715,
+            "hi": 0.9986702278256416,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9035004451870918,
+            "lo": 0.8896666169166565,
+            "hi": 0.9201898351311684,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9046179875731468,
+            "lo": 0.8919336050748825,
+            "hi": 0.9202602058649063,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "gemma_1b_within_1.5": {
+      "n": 8,
+      "target_delta_delta_fixed_native": {
+        "n": 8,
+        "mean": 0.015625,
+        "lo": -0.03125,
+        "hi": 0.0625,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "wrong_target_delta_delta": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": -0.046875,
+        "hi": 0.046875,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "verb_switch_rate": 0.0,
+      "stochastic": {
+        "0.1": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0,
+            "lo": 0.0,
+            "hi": 0.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 9.15760713132347e-12,
+            "lo": 0.0,
+            "hi": 2.7472375236200226e-11,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.017948699767657672,
+            "lo": 0.011425094100559363,
+            "hi": 0.023962246719747782,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.017948699769021914,
+            "lo": 0.011425094103287847,
+            "hi": 0.023962246719747782,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": -0.0503541916268464,
+            "lo": -0.15106259286403656,
+            "hi": 1.798349735793181e-08,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 1.0000000149011612,
+            "lo": 0.9999999403953552,
+            "hi": 1.0000001043081284,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 8.493661880493164e-06,
+            "lo": -6.507337093353271e-05,
+            "hi": 6.865710020065308e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 2.2839267060703605e-05,
+            "lo": 5.399152456675438e-06,
+            "hi": 4.442909630597569e-05,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01794801442156313,
+            "lo": 0.011427547302446328,
+            "hi": 0.023961371858604252,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01795054153444653,
+            "lo": 0.011433877789386315,
+            "hi": 0.023961996659636497,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.025179888121783733,
+            "lo": -0.3342526722699404,
+            "hi": 0.3538314076140523,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8967432044446468,
+            "lo": 0.6902307085692883,
+            "hi": 0.9999999031424522,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.999980092048645,
+            "lo": 0.999968871474266,
+            "hi": 0.9999902099370956,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9999838769435883,
+            "lo": 0.9999760687351227,
+            "hi": 0.9999912977218628,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0005234330892562866,
+            "lo": -0.0014721304178237915,
+            "hi": 0.0022401586174964905,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0006767724862584146,
+            "lo": 0.0002186217188864248,
+            "hi": 0.0011834840734081808,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.01784413164750731,
+            "lo": 0.01137229187952471,
+            "hi": 0.023819091729819775,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01799550384748727,
+            "lo": 0.011772583704441786,
+            "hi": 0.0238050619373098,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.05260662536602467,
+            "lo": -0.32191671628970653,
+            "hi": 0.4021491799503565,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.8823150852695107,
+            "lo": 0.6480331672355533,
+            "hi": 0.9998655766248703,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9951498433947563,
+            "lo": 0.9935119524598122,
+            "hi": 0.996813029050827,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.995520755648613,
+            "lo": 0.99421127140522,
+            "hi": 0.9968926385045052,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "delta_q_are": {
+            "n": 8,
+            "mean": 0.0018437430262565613,
+            "lo": -0.0042757391929626465,
+            "hi": 0.0075274184346199036,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.002272171899676323,
+            "lo": 0.0009024181927088648,
+            "hi": 0.0036722469667438418,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.016895672219106928,
+            "lo": 0.010733583883848041,
+            "hi": 0.02251617913134396,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_tv": {
+            "n": 8,
+            "mean": 0.01758760493248701,
+            "lo": 0.012046272400766611,
+            "hi": 0.022951289894990623,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_total_cosine": {
+            "n": 8,
+            "mean": 0.10676516778767109,
+            "lo": -0.25985364615917206,
+            "hi": 0.43774931877851486,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_total_cosine": {
+            "n": 8,
+            "mean": 0.9027214348316193,
+            "lo": 0.7246977835893631,
+            "hi": 0.9965063333511353,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "off_verb_mass": {
+            "n": 8,
+            "mean": 0.9035004451870918,
+            "lo": 0.8896666169166565,
+            "hi": 0.9201898351311684,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "on_verb_mass": {
+            "n": 8,
+            "mean": 0.9050293937325478,
+            "lo": 0.8931058123707771,
+            "hi": 0.919830247759819,
+            "method": "pair/prompt-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    }
+  }
+}

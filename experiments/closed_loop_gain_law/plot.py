@@ -17,13 +17,15 @@ def load(path):
 
 
 def main():
-    gain = load("experiments/closed_loop_gain_law/results/summary.json")["models"]
+    validation = load("experiments/closed_loop_gain_law/results/validation_summary.json")["models"]
+    predictions = load("experiments/closed_loop_gain_law/results/validation_predictions.json")
     aligned = {
         "270M": load("experiments/attribution_channel_calibration/results/aligned_summary.json")["analyses"],
         "1B": load("experiments/gemma_1b_attribution_channel_calibration/results/aligned_summary.json")["analyses"],
     }
     colors = {"270M": "#2878B5", "1B": "#D95319"}
-    fig, axes = plt.subplots(1, 3, figsize=(11.3, 3.45))
+    fig, axes = plt.subplots(2, 2, figsize=(9.5, 7.0))
+    axes = axes.flat
 
     ax = axes[0]
     local = {"270M": (.530, .200, .772), "1B": (.432, .014, .729)}
@@ -45,16 +47,26 @@ def main():
     ax.set(title="B  Matched fixed-token estimands", ylim=(-.65,.75)); ax.legend(frameon=False)
 
     ax = axes[2]
-    models = [("gemma_270m","270M"),("gemma_1b","1B")]
-    xs = np.arange(4); temps = ["0.1","0.25","0.5","1.0"]
-    for key, label in models:
-        ax.plot(xs, [gain[key][t]["attribution_only"]["r2"] for t in temps], ls=":", marker="o",
-                color=colors[label], alpha=.65, label=f"{label}: attribution")
-        ax.plot(xs, [gain[key][t]["attribution_full"]["r2"] for t in temps], ls="-", marker="o",
-                color=colors[label], label=f"{label}: + susceptibility + leverage")
-    ax.axhline(0, color="black", lw=.8); ax.set_xticks(xs, temps)
-    ax.set(xlabel="Article temperature", ylabel="LOFO $R^2$", title="C  Public gain-law prediction", ylim=(-.7,1.0))
-    ax.legend(frameon=False, fontsize=7)
+    subset = [r for r in predictions if r["model"] == "gemma_270m" and r["temperature"] == .1 and r["scheme"] == "feature_prompt"]
+    observed = np.asarray([r["observed"] for r in subset])
+    for key, label, color, marker in (("attribution_only", "Attribution only", "#999999", "x"),
+                                      ("full_gain_model", "Full composition", colors["270M"], "o")):
+        predicted = np.asarray([r["predictions"][key] for r in subset])
+        ax.scatter(predicted, observed, s=12, alpha=.35, color=color, marker=marker, label=label)
+    limit = max(float(observed.max()), max(r["predictions"]["full_gain_model"] for r in subset))
+    ax.plot([0, limit], [0, limit], color="black", lw=.8, ls="--")
+    ax.set(xlabel="Predicted public TV", ylabel="Observed public TV", title="C  270M unseen feature + prompt")
+    ax.legend(frameon=False, fontsize=8)
+
+    ax = axes[3]
+    names = [("constant", "Constant"), ("attribution_only", "Attribution"),
+             ("susceptibility_only", "Susceptibility"), ("full_gain_model", "Full")]
+    x = np.arange(len(names)); width = .36
+    for offset, (key, label) in zip((-.18,.18), (("gemma_270m","270M"),("gemma_1b","1B"))):
+        vals = [validation[key]["0.1"]["feature_prompt"][name]["r2"] for name,_ in names]
+        ax.bar(x+offset, vals, width, color=colors[label], label=label)
+    ax.axhline(0, color="black", lw=.8); ax.set_xticks(x, [label for _,label in names], rotation=18)
+    ax.set(ylabel="Two-way held-out $R^2$", title="D  Baselines at $\\tau=0.1$", ylim=(-.65,1.0)); ax.legend(frameon=False)
     for ax in axes:
         ax.spines[["top", "right"]].set_visible(False); ax.grid(alpha=.18)
     fig.tight_layout(); fig.savefig(OUT, dpi=220, bbox_inches="tight"); print(OUT)

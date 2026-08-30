@@ -10,9 +10,9 @@ Outcomes are lexical / noun-token identity, not semantic-concept rewrite
 changing the token). An internal intervention \(I\) is applied at the last
 prompt position \(P\) and **kept on** during noun prediction.
 
-Two questions are independent (@fig-schematic, left). The first is about
-**content**: does the intervened state at \(P\) represent phonological
-article class, a specific noun token, or a coarser concept? The second is
+Two questions are independent (@fig-schematic B). The first is about
+**candidate content**: is phonological article class, a specific noun token,
+or a coarser concept recoverable or attribution-relevant at \(P\)? The second is
 about **transmission**: after \(I\) is applied, does a later noun change
 travel through the identity of the generated article, or remain after that
 article is held fixed? Generated-token mediation answers the second
@@ -21,7 +21,7 @@ article--noun package and a modular plan can both produce large
 free-generation noun changes that are still carried by the written
 article.
 
-![Public and private routes from the pre-article intervention, and the six-cell assay. Left: \(I_t\) can affect \(Y_{t+2}\) through the visible article \(B_{t+1}\) or through private contextual state \(H_P\); \(\operatorname{do}(B)\) clamps public token identity, while a residual patch at \(P\) intervenes on the private path. Right: intervention off/on crossed with free generation and inserted \(\texttt{a}\) or \(\texttt{an}\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=96%}
+![Causal-validity ladder, public/private routes, and six-cell assay. A: a candidate signal, local causal efficacy, mediator-support validity, and transmission identification require distinct evidence; 1B supplies a failure case at each transition. B: \(I_t\) can affect \(Y_{t+2}\) through generated mediator \(B_{t+1}\) or private context from \(P\). C: intervention off/on crossed with free generation and inserted \(\texttt{a}\) or \(\texttt{an}\).](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=98%}
 
 ## Six-cell design and vector identity
 
@@ -66,6 +66,29 @@ teacher-forced token by token.
 We never write "direct effect" for a leftover without naming the
 fixed article. The leftover \(E_R\) is a controlled contrast under
 treated-article insertion, not Pearl's natural direct effect.
+
+### Mediator-support validity and the general public component
+
+The binary assay is valid for its stated public estimand only when its mediator
+support \(\mathcal B=\{\texttt{a},\texttt{an}\}\) covers the states induced by
+the intervention, or when the article-conditional policy is explicitly defined.
+An intervention that makes `called` top-1 is not intrinsically invalid; it exits
+the support of this binary assay. One must then restrict the scientific claim or
+expand \(\mathcal B\). For a finite mediator support, with
+\(q_i(b)=P(B=b\mid I=i)\) and intervention-off continuation distribution
+\(Y(0,b)\), the public component generalizes to
+
+$$
+E_{\mathrm{public}}
+=
+\sum_{b\in\mathcal B}[q_1(b)-q_0(b)]Y(0,b).
+$$
+
+For a top-\(K\) approximation, omitted policy mass bounds the unmodeled public
+component in \(L_1\): because each continuation distribution has unit norm, the
+error is at most the sum of off/on omitted masses. Our primary binary stochastic
+analyses report retained `a`/`an` mass; the broader expression states the
+estimand needed for arbitrary tokens, delimiters, or tool calls.
 
 ## Non-identifiability of leftover control from free generation
 

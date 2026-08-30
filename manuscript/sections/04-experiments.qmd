@@ -116,7 +116,7 @@ interaction versus the random-interaction distribution. All 16 pairs are
 same-`a` class, so inserted `an` is mismatched for both alternatives.
 Development and test pairs are disjoint.
 
-**Natural residual regimes and controls.** To remove explicit target-noun
+**Natural-state-derived residual regimes and controls.** To remove explicit target-noun
 cues, source and target prompts use natural occupation descriptions. We
 select one pooled layer on eight development pairs, then evaluate 12
 cross-article-class and 12 same-article-class pairs. For every pair we
@@ -151,14 +151,27 @@ this selects \(k=24,g=20\), close to the 270M S1 reference of 3.3125. The 20
 held-out prompts then receive the complete six-cell assay. We separately repeat
 the search over \(k\in\{1,2,4,8,12,16,20,24\}\) and gains from 1.25 to 20,
 maximizing development margin movement subject to frozen constraints on
-article-domain validity, mean KL, article mass, and feature count. The chosen
-frontier point receives a separate held-out six-cell assay. We audit 1B CLT
+mediator-support validity, mean KL, article mass, and feature count. The chosen
+frontier point receives a held-out six-cell assay and a conditional stochastic
+decomposition over all 20 prompts at temperatures \(0.1,0.25,0.5,1\). We audit 1B CLT
 reconstruction, sparse/affine-skip norms, task-logit reconstruction, and one
 representative graph at 1,200 nodes versus its full active graph. We separately repeat
-the natural residual protocol without a CLT: all-layer selection on eight
+the natural-state-derived residual protocol without a CLT: all-layer selection on eight
 development pairs, then 12 cross-class and 12 same-class held-out pairs at
 strengths \(0.5,1,1.5\). Stochastic decompositions condition the article
 policy on `a`/`an` at temperatures \(0.1,0.25,0.5,1\).
+
+**Second mediator task.** We use the pinned `is_are/data/animals_dataset.csv`
+from *Latent Planning Emerges with Scale* at repository commit
+`993cff5` [@hanna2026planningdata]. For each of ten animal categories, source and
+target prompts preserve the initial count while changing the subtraction:
+\(4-3=1\to4-1=3\) crosses `is` to `are`, whereas
+\(6-3=3\to6-1=5\) remains within `are`. Cats and dogs select one pooled layer;
+the other eight animals are held out. At both scales we patch the target-prompt
+residual into the source prompt, clamp the shared formatting-space token, and
+compare number-token distributions under free, fixed-`is`, fixed-`are`, and
+conditional stochastic verb policies at strengths \(0.5,1,1.5\). This task uses
+the released prompts exactly; no synthetic arithmetic examples are introduced.
 
 **Uncertainty.** Primary intervals are prompt-level nonparametric
 bootstrap intervals with 10,000 resamples. The 19 prompts on which S1

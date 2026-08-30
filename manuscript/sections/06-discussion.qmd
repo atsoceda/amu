@@ -1,7 +1,7 @@
 # Discussion
 
 **Main finding.** In autoregressive generation, behavioral intervention
-magnitude can be created at a causal handoff from continuous latent state
+magnitude can be created at a causal handoff from graded latent state
 to a discrete emitted token. Crossing the decoding boundary exposes a
 high-gain public continuation channel, so a large free-generation effect
 need not imply a comparably large persistent latent effect. For the
@@ -25,7 +25,7 @@ native boundary margins reflect bfloat16 readout quantization, not a
 discrete internal state. Yet a float32 head preserves the sharp
 cross-boundary continuation change, and stochastic policies preserve a
 graded version whose magnitude follows article-policy movement. The
-relevant mechanism is therefore decoder gain: continuous latent evidence
+relevant mechanism is therefore decoder gain: graded latent evidence
 controls a public symbolic action whose reuse at the next step strongly
 reshapes the continuation distribution.
 
@@ -55,27 +55,31 @@ two causally usable channels, not experimental control over the medium in
 which the model stores or transmits a computation. Discovering such a
 carrier switch remains the decisive next step.
 
-**A closed-loop gain law replaces a channel-label interpretation.** Article
+**A closed-loop gain composition replaces a channel-label interpretation.** Article
 attribution has held-out validity for local margin movement, directionally at
 both scales. Matched signed future-target analyses remain inconclusive rather
 than demonstrating independence. Public influence is nevertheless predictable:
 it is exactly policy movement times the fixed-branch continuation leverage.
 Attribution estimates one input to that composition; baseline decoder
-susceptibility and branch leverage supply the others. At 270M their combination
-predicts held-out public effects well, whereas weak local calibration and a
-narrow effect range limit prediction at 1B. The positive principle is therefore
+susceptibility and branch leverage supply the others. The factorization itself
+is the elementary algebra of a finite mixture; the empirical contribution is
+measuring its factors separately and showing that the 270M composition predicts
+cells holding out both feature and prompt, while simple baselines do not. Weak
+transferable local calibration limits prediction at 1B. The positive principle is therefore
 that local causal pressure, decoder susceptibility, and continuation leverage
 are separately measurable—not that attribution categorically cannot predict a
 channel.
 
-**The causal-validity ladder.** The 1B assays show why representation, local
-efficacy, structural validity, and transmission identification must be tested
-in order. The original sparse handle is too weak; an effect-matched coalition
-moves the intended contrast but exits the article domain; and a constrained
-one-feature frontier preserves the mediator but rarely switches it. None
-identifies a general sparse 1B transmission phenotype. The target-free natural
-residual assay transfers cleanly and establishes private influence at both
-scales, but normalized estimands do not support a monotone scale effect. The
+**The causal-validity ladder.** The 1B assays show why candidate-signal evidence,
+local efficacy, mediator-support validity, and transmission identification must
+be tested in order. The original sparse handle is too weak; an effect-matched
+coalition moves the intended contrast but exits the binary article support; and
+a constrained one-feature frontier preserves that support. Although the
+frontier changes the greedy article only once, its stochastic assay identifies
+low-amplitude hybrid transmission that becomes public-dominant at softer
+article policies. The target-uncued, natural-state-derived residual assay
+establishes private influence at both scales, but normalized estimands do not
+support a monotone scale effect. The
 strength-by-class interaction is suggestive and single-pair-driven, with
 intervals spanning zero. The cross-scale lesson is thus methodological and
 mechanistic: climb all four rungs before interpreting a route, and compare

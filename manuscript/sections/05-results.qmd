@@ -175,7 +175,7 @@ lexical state between those routes.
 
 ![A pre-article target residual moves held-out nouns under a fixed visible article more than matched random directions; the raw \(2\times 2\) surface and the random-controlled interaction show that article-prefix compatibility modulates the private effect. Error bars are pair-bootstrap 95\% intervals.](manuscript/figures/fig_pre_article_public_private.png){#fig-public-private width=90%}
 
-## Natural residuals isolate private influence but not a carrier switch
+## Natural-state-derived residuals isolate private influence but not a carrier switch
 
 Natural occupation descriptions reproduce target-specific private
 influence without naming the target noun. The pooled development sweep
@@ -232,22 +232,36 @@ $$
 Thus downstream public influence factorizes into **policy movement** and
 **continuation leverage**. Policy movement is in turn determined by the
 baseline article margin, intervention-induced margin change, and temperature.
-The identity holds numerically to \(1.3\times10^{-7}\). In leave-one-feature-out
-prediction at 270M, attribution alone has \(R^2=-0.551\) at \(\tau=0.1\);
-adding baseline decoder susceptibility raises it to \(0.828\), and adding
-branch leverage raises it to \(0.839\). Across \(\tau=0.1\) to 1, the full
-attribution-based model gives \(R^2=0.839\)--\(0.875\). At 1B it is only
-\(0.204\) at \(\tau=0.1\) and non-positive at higher temperatures because
-single-feature local calibration and public-effect variance are weak. Using
-measured rather than attribution-predicted margin movement gives
-\(R^2\ge0.957\) before explicit branch leverage and exactly 1 after it at both
-scales. Local causal pressure, boundary susceptibility, and branch leverage are
-therefore distinct measurable factors whose composition determines the public
-downstream effect (@fig-attribution-calibration).
+This factorization is an elementary consequence of the two-branch mixture, not
+the empirical novelty. The scientific test is whether its factors can be
+measured separately and predict unseen interventions better than attribution or
+decoder context alone. The identity holds numerically to \(1.3\times10^{-7}\).
 
-![Held-out calibration of attribution scores against causal outcomes. Article attribution has local article-margin validity; matched future-target associations remain undetectable, while the closed-loop gain law explains why local pressure alone is insufficient to predict public influence.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=88%}
+At 270M and \(\tau=0.1\), two-way holdout excludes both the test feature and
+test prompt while retaining intervention-off prompt quantities. Constant,
+attribution-only, susceptibility-only, branch-leverage-only, and activation
+baselines have \(R^2=-0.052,-0.547,-0.082,-0.052,-0.045\), respectively.
+Calibrating attribution to local margin movement and composing it with decoder
+susceptibility yields \(0.827\); adding prompt-specific branch leverage yields
+\(0.840\), with calibration slope 0.960. The full model remains
+\(R^2=0.840\)--\(0.875\) across \(\tau=0.1\) to 1 under combined feature--prompt
+holdout. Thus the large gain is not explained by boundary proximity alone.
+Because `a/an` branch leverage is uniformly high, its incremental contribution
+is modest; this task stresses susceptibility more strongly than leverage.
 
-## At 1B, sparse channel identification fails before transmission
+At 1B, susceptibility alone is the strongest simple baseline at low temperature
+(two-way \(R^2=0.270\)), while the full composition reaches only 0.194 and
+becomes non-positive at higher temperatures. Holding out prompts alone is less
+severe (full \(R^2=0.400\) at \(\tau=0.1\)); holding out feature identity exposes
+the weak transferable local calibration. Using measured margin movement and
+actual branch leverage is an accounting oracle with \(R^2=1\), not a predictive
+result. Local causal pressure, boundary susceptibility, and branch leverage are
+therefore distinct measurable factors, but only the 270M panel currently
+supports strong out-of-sample prediction (@fig-attribution-calibration).
+
+![Local and matched-estimand calibration plus public-effect prediction. C compares attribution-only and full-composition predictions with observed public TV for unseen 270M feature--prompt cells at \(\tau=0.1\); D shows that the 270M result survives simple baselines, whereas 1B transfer remains weak.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=92%}
+
+## At 1B, the ladder separates weak, support-invalid, and hybrid sparse handles
 
 The frozen 1B top-four/\(5\times\) S1 recipe fails the first stage: on held-out
 prompts it moves the `an`-minus-`a` margin by only 0.075 logits on average and
@@ -276,29 +290,35 @@ phenotype.
 
 A development-only constrained frontier search provides a less destructive
 operating point. We maximize corrected `an-a` margin movement subject to
-100\% article-mediator validity, mean full-vocabulary KL at most 0.1, article
+100\% article-mediator-support validity, mean full-vocabulary KL at most 0.1, article
 mass at least 0.5, and small feature count. The frozen optimum is the single
 feature L18/F5015 at \(7.5\times\): development margin movement is 0.859,
 article mass 0.935, and mean KL 0.077. On 20 held-out prompts it preserves an
-`a/an` top token on 20/20 and changes the article on only 1/20. In that one
-descriptive switch, total TV 0.665 is almost entirely public (0.664; leftover
-0.001), but one switch cannot identify a population-level 1B phenotype. The
-frontier therefore repairs structural validity without supplying broad local
-efficacy.
+`a/an` top token on 20/20 and changes the greedy article on only 1/20. Greedy
+switch counts are not the final assay: under conditional stochastic policies,
+the held-out margin movement is 0.500 \([0.344,0.675]\) logits. At \(\tau=0.1\),
+mean article-policy movement is 0.039, public TV is 0.026
+\([0.00002,0.078]\), and matched-policy private TV is 0.012
+\([0.007,0.019]\). At \(\tau=1\), policy movement is 0.067, public TV is 0.055
+\([0.037,0.074]\), and private TV remains 0.013 \([0.008,0.019]\); public/total
+vector cosine is 0.767. The gain identity predicts public TV to numerical
+precision. Thus the mediator-valid sparse 1B handle has a low-amplitude hybrid
+effect that becomes public-relay dominant under softer article policies, despite
+only one greedy switch.
 
-| Model/intervention | Local efficacy | Mediator validity | Identified channel |
+| Model/intervention | Local efficacy | Mediator-support validity | Identified channel |
 | --- | ---: | ---: | --- |
 | 270M S1, top-4/\(5\times\) | 3.313-logit mean margin movement | `a/an` 20/20 | Public-relay dominant |
 | 1B original S1, top-4/\(5\times\) | 0.075 | `a/an` 20/20 | Not identified: weak handle |
 | 1B margin S1, top-24/\(20\times\) | 3.488 | `a/an` 3/20 | Not identified: mediator-invalid |
-| 1B frontier L18/F5015, \(7.5\times\) | 0.859 on development | `a/an` 20/20; switch 1/20 | Not identified: sparse switch support |
-| 1B natural residual, native strength | target \(\Delta\Delta=0.846/1.312\) | fixed visible article | Private target influence |
+| 1B frontier L18/F5015, \(7.5\times\) | 0.500 held out | `a/an` 20/20 | Hybrid; public-dominant by \(\tau=1\) |
+| 1B natural-state-derived residual, native strength | target \(\Delta\Delta=0.846/1.312\) | fixed visible article | Private target influence |
 
 : Local efficacy and channel identification are sequential requirements.
 Cross-/same-class natural-residual values are separated by a slash.
 {#tbl-cross-scale-stage}
 
-The natural residual comparison supplies the valid 1B private assay. A pooled
+The natural-state-derived residual comparison supplies the valid 1B private assay. A pooled
 development sweep selects layer 14/25 (relative depth 0.56). At natural
 strength, held-out target \(\Delta\Delta\) is 0.846 cross-class and 1.312
 same-class, compared with 0.776 and 0.964 at 270M; target top-1 rises only to
@@ -341,7 +361,29 @@ all-held-out-prompt mediator gate.
 Spearman correlations with feature-bootstrap 95\% intervals.
 {#tbl-cross-scale-calibration}
 
-![Cross-scale natural-residual comparison at aligned relative depth and patch strength. Panel B normalizes target movement by the baseline target-minus-source gap; panels C--D show that public recruitment is pair-specific while fixed-token influence persists at both scales.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-gemma-1b-residual width=96%}
+![Cross-scale natural-state-derived residual comparison at aligned relative depth and patch strength. Panel B normalizes target movement by the baseline target-minus-source gap; panels C--D show that public recruitment is pair-specific while fixed-token influence persists at both scales.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-gemma-1b-residual width=96%}
+
+## The released `is/are` task fails at local efficacy in these PT models
+
+The second-mediator experiment does not support route recruitment. Development
+selection is itself nearly flat: the best pooled layer has mean target
+\(\Delta\Delta=0\) at 270M and 0.063 at 1B. At frozen natural strength on eight
+held-out animals, the fixed-native-verb target contrast for \(1\to3\) is
+\(-0.031\ [-0.078,0.031]\) at 270M and
+\(-0.031\ [-0.094,0.031]\) at 1B. For \(3\to5\), it is exactly 0 at both
+scales, with intervals \([-0.047,0.047]\). Wrong-target controls are comparable,
+and no greedy verb switches occur at any tested strength.
+
+Distributional movement survives fixed verbs but is not target aligned. At
+\(\tau=1\), native-strength private TV ranges from 0.015 to 0.020 across
+scale/regime cells, whereas public TV ranges only from 0.0006 to 0.0032.
+Because the intervention does not move the intended number contrast, those TVs
+measure generic state perturbation rather than private arithmetic control. This
+negative result is a direct use of the ladder: the experiment stops at local
+efficacy and cannot adjudicate whether `is/are` capacity controls externalization
+in these pretrained models (@fig-is-are).
+
+![Second-mediator stress test on the pinned `is/are` subtraction dataset. Target-derived residual patches do not move the intended number contrast at either scale; small fixed-verb distributional changes are therefore not interpreted as target-specific private transmission.](manuscript/figures/fig_is_are_carrier_capacity.png){#fig-is-are width=90%}
 
 ## Measurement audits bound the 1B interpretation
 

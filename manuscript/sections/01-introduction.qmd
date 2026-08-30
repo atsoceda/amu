@@ -20,19 +20,20 @@ The required measurement is a six-cell design. More generally, a mechanistic
 claim about a multi-token intervention must climb a **causal-validity ladder**:
 
 $$
-\text{represented}
+\text{candidate signal identified}
 \ne
 \text{locally causal}
 \ne
-\text{structurally valid}
+\text{mediator-support valid}
 \ne
 \text{transmission identified}.
 $$
 
-Attribution or decodability establishes the first rung; an intervention that
-moves its selected local quantity establishes the second. The third requires
-that the intervention preserve the causal variable under study rather than
-changing the syntactic construction. Only then can a factorial assay identify
+Decoders, probes, attribution graphs, and sparse feature labels can nominate a
+candidate signal without being equivalent forms of representational evidence.
+An intervention that moves its selected local quantity establishes the second
+rung. The third asks whether the mediator state space used by the assay covers
+the states induced by the intervention. Only then can a factorial assay identify
 whether later influence is public-token relayed, privately persistent, hybrid,
 or negligible. For each prompt we run the
 intervention off and on, and for each of those we let the model write the
@@ -41,7 +42,7 @@ original pre-article position during noun prediction. The free-generation
 change in the noun distribution then splits, as probability vectors, into
 a piece reproduced by inserting the treated article with the intervention
 off and a leftover that remains when the visible article is held fixed.
-Those two questions---what is represented before the article, and how a
+Those two questions---what signal is available before the article, and how a
 later effect is transmitted---are independent (@fig-schematic). Token
 mediation does not disprove a latent plan; it shows that the plan, if any,
 is not identified by free generation.
@@ -49,7 +50,8 @@ is not identified by free generation.
 **Contributions.** On pretrained Gemma 3 270M with Gemma Scope 2 affine
 cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
 
-1. **Identification.** State a six-cell assay and the exact vector identity
+1. **Causal standard.** Introduce the four-stage ladder and a six-cell assay
+   with the exact vector identity
    \(E_T=E_M+E_R\) that decomposes a later-token intervention contrast into
    token substitution and matched-prefix leftover.
 2. **Mechanism.** Show that an attribution-selected sparse S1 intervention
@@ -61,30 +63,17 @@ cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
    float32 final-head audit shows that the previously observed
    \(0/0.125\)-logit boundary steps are bfloat16 quantization, but the
    relay-dominant result survives a 16-fold tighter boundary search and
-   stochastic article policies from temperature \(0.1\) to \(1\).
-3. **Private-route capacity.** Patch a held-out target-cued residual at the
-   original pre-article position. On 12 same-article pairs the patch
-   survives a fixed visible token, exceeds matched-norm random directions,
-   and interacts with article identity. This is a target-constructed,
-   subthreshold capacity result, not a sparse persistence-dominant plan.
-4. **Natural controls and predictive calibration.** Natural target-state residuals
-   enhance the intended noun and partly suppress the source under a fixed
-   article, outperform wrong-target and matched-norm controls, but do not
-   switch the emitted article in either same- or cross-article-class
-   regimes. Independent 32-feature calibrations at 270M and 1B show directional
-   transfer of local article-margin calibration. Matched target-specific
-   analyses do not detect a future-attribution/fixed-token association, but the
-   intervals remain wide. A closed-loop gain law instead predicts public
-   influence as local policy movement times continuation-branch leverage.
-5. **Cross-scale validation.** Separate local efficacy, mediator validity,
-   and transmission at Gemma 3 1B. The original sparse handle is weak; an
-   effect-matched 24-feature coalition transfers the article margin but usually
-   derails to a non-article mediator. A constrained sparse-frontier search finds
-   a valid one-feature handle, but it changes the article on only 1/20 held-out
-   prompts, so no general sparse 1B channel phenotype is assigned. Reconstruction
-   and graph-coverage audits bound measurement explanations. Normalized natural
-   residuals establish private target influence at both scales without a
-   monotone scale effect or robust carrier-regime interaction.
+   stochastic article policies from temperature \(0.1\) to \(1\). We separate
+   the elementary two-branch identity from its empirical use: held-out local
+   calibration, decoder susceptibility, and branch leverage jointly predict
+   public effects substantially better than attribution alone.
+3. **Generality and stress tests.** Natural-state-derived residual patches
+   establish target-relevant private influence at 270M and 1B without a
+   monotone scale effect. At 1B, sparse interventions fail at different ladder
+   stages: one is weak, one exits the binary article support, and a valid
+   frontier handle reveals low-amplitude hybrid transmission under stochastic
+   policies. Reconstruction and graph-coverage audits bound instrumentation
+   explanations.
 
 Family comparisons, S2 forensics, random controls, propagation, and a
 synthetic polarity check are supporting controls. The contribution is an

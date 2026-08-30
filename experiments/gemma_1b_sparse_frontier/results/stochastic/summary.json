@@ -1,0 +1,367 @@
+{
+  "experiment": "gemma_1b_sparse_frontier_stochastic_decomposition",
+  "generated_at": "2026-08-30T10:20:27.207865+00:00",
+  "elapsed_sec": 112.3091561794281,
+  "model": "google/gemma-3-1b-pt",
+  "feature": {
+    "layer": 18,
+    "feature_idx": 5015,
+    "prompt_count": 8,
+    "mean_margin_attribution": 0.0364532470703125,
+    "mean_future_attribution": 0.102813720703125,
+    "mean_activation": 361.0,
+    "mean_score": 0.0364532470703125,
+    "prompts": [
+      "Someone who installs and repairs electrical systems is",
+      "Someone who designs buildings and structures is",
+      "Someone who manages financial records is",
+      "Someone who designs and builds technical systems is",
+      "Someone who studies financial systems and markets is",
+      "Someone who administers anesthesia during surgery is",
+      "Someone who treats cancer patients is",
+      "Someone who studies stars and planets is"
+    ],
+    "label": "`L18/F5015`"
+  },
+  "gain": 7.5,
+  "n_prompts": 20,
+  "margin_movement": {
+    "n": 20,
+    "mean": 0.5,
+    "lo": 0.34375,
+    "hi": 0.675,
+    "method": "pair/prompt-level nonparametric bootstrap",
+    "resamples": 10000
+  },
+  "greedy_switch_count": 1,
+  "temperatures": {
+    "0.1": {
+      "delta_q_an": {
+        "n": 20,
+        "mean": 0.039155480602174136,
+        "lo": 3.276611521822884e-05,
+        "hi": 0.11699159347991092,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_tv": {
+        "n": 20,
+        "mean": 0.026116210721423776,
+        "lo": 2.1431587983686966e-05,
+        "hi": 0.0779289737056732,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_tv": {
+        "n": 20,
+        "mean": 0.012361227624933236,
+        "lo": 0.006554794582189061,
+        "hi": 0.018798599651199767,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 20,
+        "mean": 0.03804832595924381,
+        "lo": 0.008151845089741983,
+        "hi": 0.09096915759146214,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_total_cosine": {
+        "n": 20,
+        "mean": 0.09759435855374932,
+        "lo": -0.08823177320592776,
+        "hi": 0.2984379269182682,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_total_cosine": {
+        "n": 20,
+        "mean": 0.7523600205779075,
+        "lo": 0.5695261493325233,
+        "hi": 0.9192885652184486,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "branch_leverage_tv": {
+        "n": 20,
+        "mean": 0.8809270620346069,
+        "lo": 0.8131675809621811,
+        "hi": 0.9365816593170166,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "gain_law_absolute_error": {
+        "n": 20,
+        "mean": 1.1889310969075664e-08,
+        "lo": 6.01920118765091e-09,
+        "hi": 1.8580718446445578e-08,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "off_article_mass": {
+        "n": 20,
+        "mean": 0.9999999940395355,
+        "lo": 0.9999999850988388,
+        "hi": 1.0,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "on_article_mass": {
+        "n": 20,
+        "mean": 0.9999999880790711,
+        "lo": 0.9999999761581421,
+        "hi": 0.9999999970197677,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "0.25": {
+      "delta_q_an": {
+        "n": 20,
+        "mean": 0.03893576314615643,
+        "lo": 0.005288800379514669,
+        "hi": 0.09704365700454218,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_tv": {
+        "n": 20,
+        "mean": 0.027948294450271405,
+        "lo": 0.004164032516547067,
+        "hi": 0.06810465355592896,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_tv": {
+        "n": 20,
+        "mean": 0.012411150685511529,
+        "lo": 0.00650028137024492,
+        "hi": 0.018706307094544173,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 20,
+        "mean": 0.03640309734619222,
+        "lo": 0.01278269772301428,
+        "hi": 0.07569821099750698,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_total_cosine": {
+        "n": 20,
+        "mean": 0.38896388858556746,
+        "lo": 0.17538149729371072,
+        "hi": 0.6000901773571968,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_total_cosine": {
+        "n": 20,
+        "mean": 0.6122060429304839,
+        "lo": 0.37599717229604723,
+        "hi": 0.8247314184904099,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "branch_leverage_tv": {
+        "n": 20,
+        "mean": 0.8809270620346069,
+        "lo": 0.8130055099725724,
+        "hi": 0.9385617762804032,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "gain_law_absolute_error": {
+        "n": 20,
+        "mean": 1.345108555054968e-08,
+        "lo": 6.66098359134934e-09,
+        "hi": 2.1588846769167408e-08,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "off_article_mass": {
+        "n": 20,
+        "mean": 0.9999793499708176,
+        "lo": 0.9999679058790207,
+        "hi": 0.9999890834093094,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "on_article_mass": {
+        "n": 20,
+        "mean": 0.9999927461147309,
+        "lo": 0.9999884784221649,
+        "hi": 0.9999957352876663,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "0.5": {
+      "delta_q_an": {
+        "n": 20,
+        "mean": 0.05683426049799891,
+        "lo": 0.0271028454095358,
+        "hi": 0.09616709806286963,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_tv": {
+        "n": 20,
+        "mean": 0.0445083774629893,
+        "lo": 0.023088002274744213,
+        "hi": 0.07073384069371969,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_tv": {
+        "n": 20,
+        "mean": 0.012585443459101953,
+        "lo": 0.007142028637463227,
+        "hi": 0.01858665774925612,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 20,
+        "mean": 0.04907079851254821,
+        "lo": 0.02811159915290773,
+        "hi": 0.0744677619310096,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_total_cosine": {
+        "n": 20,
+        "mean": 0.6438037507236004,
+        "lo": 0.44295075461268424,
+        "hi": 0.8301625423133373,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_total_cosine": {
+        "n": 20,
+        "mean": 0.36062809377908706,
+        "lo": 0.12403889149427413,
+        "hi": 0.5887467198073864,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "branch_leverage_tv": {
+        "n": 20,
+        "mean": 0.8809270620346069,
+        "lo": 0.8110744804143906,
+        "hi": 0.9366915076971054,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "gain_law_absolute_error": {
+        "n": 20,
+        "mean": 2.1080021218346235e-08,
+        "lo": 1.21255763475131e-08,
+        "hi": 3.1110219714247654e-08,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "off_article_mass": {
+        "n": 20,
+        "mean": 0.9962522625923157,
+        "lo": 0.9952775329351425,
+        "hi": 0.9971350103616714,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "on_article_mass": {
+        "n": 20,
+        "mean": 0.9977257966995239,
+        "lo": 0.9972560346126557,
+        "hi": 0.9981977492570877,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    },
+    "1.0": {
+      "delta_q_an": {
+        "n": 20,
+        "mean": 0.06699909390881657,
+        "lo": 0.04299779897555709,
+        "hi": 0.09167672302573919,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_tv": {
+        "n": 20,
+        "mean": 0.05538037472870201,
+        "lo": 0.03694048738107085,
+        "hi": 0.07383105203043669,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_tv": {
+        "n": 20,
+        "mean": 0.013005663605872542,
+        "lo": 0.007597862038528547,
+        "hi": 0.018831401475472374,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "total_tv": {
+        "n": 20,
+        "mean": 0.056749513791874054,
+        "lo": 0.03796489699743688,
+        "hi": 0.07569027692079544,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "public_total_cosine": {
+        "n": 20,
+        "mean": 0.7669458001852035,
+        "lo": 0.584536561369896,
+        "hi": 0.9238094031810761,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "private_total_cosine": {
+        "n": 20,
+        "mean": 0.15956271812319756,
+        "lo": -0.038470657914876936,
+        "hi": 0.3610963448882103,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "branch_leverage_tv": {
+        "n": 20,
+        "mean": 0.8809270620346069,
+        "lo": 0.815004312992096,
+        "hi": 0.9375018924474716,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "gain_law_absolute_error": {
+        "n": 20,
+        "mean": 1.6631378596532188e-08,
+        "lo": 1.0136680850258984e-08,
+        "hi": 2.374731669085861e-08,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "off_article_mass": {
+        "n": 20,
+        "mean": 0.9304496288299561,
+        "lo": 0.9219375193119049,
+        "hi": 0.9384233385324479,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "on_article_mass": {
+        "n": 20,
+        "mean": 0.9435532361268997,
+        "lo": 0.9370885580778122,
+        "hi": 0.949274092912674,
+        "method": "pair/prompt-level nonparametric bootstrap",
+        "resamples": 10000
+      }
+    }
+  }
+}
