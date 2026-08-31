@@ -25,5 +25,6 @@ used for the route claim.
 ```bash
 /Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/run.py
 /Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/analyze.py
+/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/simple_effects.py
 /Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/plot.py
 ```

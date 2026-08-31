@@ -1,0 +1,33 @@
+{
+  "experiment_name": "matched_semantic_triads_discovery_batch2",
+  "frozen_before_screening": "2026-08-31T13:05:00+09:00",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "dtype": "bfloat16",
+  "prompt_template": "Answer with an occupation beginning with {initial}. {definition} is",
+  "screening_rule": "Identical to frozen batch 1: all three nouns are single-token readouts; each prompt preserves its intended a/an article; the source prompt favors source over each target; each target prompt favors target over source; no causal outcome enters screening.",
+  "triads": [
+    {"id":"activity_organization","definition":"Someone whose work is arranging and coordinating activities","source_word":"planner","source_article":"a","within_word":"coordinator","within_article":"a","cross_word":"organizer","cross_article":"an"},
+    {"id":"event_organization","definition":"Someone responsible for arranging and running an event","source_word":"host","source_article":"a","within_word":"coordinator","within_article":"a","cross_word":"organizer","cross_article":"an"},
+    {"id":"organization_management","definition":"Someone responsible for directing an organization and its workers","source_word":"manager","source_article":"a","within_word":"supervisor","within_article":"a","cross_word":"executive","cross_article":"an"},
+    {"id":"organization_direction","definition":"Someone responsible for directing an organization","source_word":"director","source_article":"a","within_word":"manager","within_article":"a","cross_word":"executive","cross_article":"an"},
+    {"id":"organization_leadership","definition":"Someone responsible for directing an organization and its workers","source_word":"boss","source_article":"a","within_word":"manager","within_article":"a","cross_word":"executive","cross_article":"an"},
+    {"id":"visual_painting","definition":"Someone whose occupation is creating paintings and visual artwork","source_word":"painter","source_article":"a","within_word":"designer","within_article":"a","cross_word":"artist","cross_article":"an"},
+    {"id":"visual_illustration","definition":"Someone whose occupation is creating illustrations and visual designs","source_word":"designer","source_article":"a","within_word":"painter","within_article":"a","cross_word":"illustrator","cross_article":"an"},
+    {"id":"audience_performance","definition":"Someone whose occupation is performing for an audience","source_word":"performer","source_article":"a","within_word":"singer","within_article":"a","cross_word":"entertainer","cross_article":"an"},
+    {"id":"song_performance","definition":"Someone who performs songs to entertain an audience","source_word":"singer","source_article":"a","within_word":"vocalist","within_article":"a","cross_word":"entertainer","cross_article":"an"},
+    {"id":"business_founder","definition":"Someone who starts and operates a business","source_word":"businessman","source_article":"a","within_word":"founder","within_article":"a","cross_word":"entrepreneur","cross_article":"an"},
+    {"id":"business_sales","definition":"Someone who owns and operates a business selling goods","source_word":"vendor","source_article":"a","within_word":"salesperson","within_article":"a","cross_word":"entrepreneur","cross_article":"an"},
+    {"id":"education","definition":"Someone who teaches students in an educational institution","source_word":"teacher","source_article":"a","within_word":"professor","within_article":"a","cross_word":"educator","cross_article":"an"},
+    {"id":"authorship","definition":"Someone whose occupation is creating written fiction","source_word":"writer","source_article":"a","within_word":"novelist","within_article":"a","cross_word":"author","cross_article":"an"},
+    {"id":"medical_practice","definition":"Someone qualified to diagnose illness and treat patients","source_word":"doctor","source_article":"a","within_word":"physician","within_article":"a","cross_word":"internist","cross_article":"an"},
+    {"id":"legal_practice","definition":"Someone qualified to advise and represent clients in legal matters","source_word":"lawyer","source_article":"a","within_word":"solicitor","within_article":"a","cross_word":"attorney","cross_article":"an"},
+    {"id":"actor_reverse","definition":"Someone whose occupation is performing roles for an audience","source_word":"actor","source_article":"an","within_word":"entertainer","within_article":"an","cross_word":"performer","cross_article":"a"},
+    {"id":"artist_reverse","definition":"Someone whose occupation is creating paintings and visual artwork","source_word":"artist","source_article":"an","within_word":"illustrator","within_article":"an","cross_word":"painter","cross_article":"a"},
+    {"id":"accounting_reverse","definition":"Someone whose job is to inspect and maintain financial records","source_word":"accountant","source_article":"an","within_word":"auditor","within_article":"an","cross_word":"bookkeeper","cross_article":"a"},
+    {"id":"education_reverse","definition":"Someone whose occupation is teaching students","source_word":"educator","source_article":"an","within_word":"instructor","within_article":"an","cross_word":"teacher","cross_article":"a"},
+    {"id":"legal_reverse","definition":"Someone qualified to advise and represent clients in legal matters","source_word":"attorney","source_article":"an","within_word":"advocate","within_article":"an","cross_word":"lawyer","cross_article":"a"},
+    {"id":"assistance_reverse","definition":"Someone whose role is to help another person with their work","source_word":"assistant","source_article":"an","within_word":"aide","within_article":"an","cross_word":"helper","cross_article":"a"},
+    {"id":"management_reverse","definition":"Someone responsible for managing an organization","source_word":"executive","source_article":"an","within_word":"administrator","within_article":"an","cross_word":"manager","cross_article":"a"}
+  ]
+}

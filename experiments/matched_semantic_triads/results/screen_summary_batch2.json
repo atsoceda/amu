@@ -1,0 +1,12 @@
+{
+  "experiment": "matched_semantic_triads_discovery_batch2",
+  "model": "google/gemma-3-1b-pt",
+  "frozen_before_screening": "2026-08-31T13:05:00+09:00",
+  "screening_rule": "Identical to frozen batch 1: all three nouns are single-token readouts; each prompt preserves its intended a/an article; the source prompt favors source over each target; each target prompt favors target over source; no causal outcome enters screening.",
+  "candidates": 22,
+  "admissible": 2,
+  "admissible_ids": [
+    "activity_organization",
+    "event_organization"
+  ]
+}

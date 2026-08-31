@@ -1,0 +1,11 @@
+{
+  "experiment": "matched_semantic_triads",
+  "model": "google/gemma-3-1b-pt",
+  "frozen_before_screening": "2026-08-31T12:40:00+09:00",
+  "screening_rule": "All three nouns are single-token readouts; each prompt preserves its intended a/an article; the source prompt favors source over each target; each target prompt favors its target over source. No causal outcome enters screening.",
+  "candidates": 23,
+  "admissible": 1,
+  "admissible_ids": [
+    "events"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "experiment": "matched_semantic_triads_exhaustive_discovery_batch3",
+  "model": "google/gemma-3-1b-pt",
+  "frozen_before_screening": "2026-08-31T14:05:00+09:00",
+  "screening_rule": "Identical to frozen batches 1-2: all nouns are single-token readouts; each prompt preserves its intended article; the source prompt favors source over both targets; each target prompt favors target over source. At most one triad per family may enter inference, selected by the frozen behavioral-only score.",
+  "candidates": 70,
+  "admissible": 2,
+  "admissible_ids": [
+    "events__coordinator__host__organizer",
+    "events__host__coordinator__organizer"
+  ]
+}

@@ -239,10 +239,33 @@ strength and temperature (@fig-correctness-carriers D). The same-target-letter
 control is appreciable between class (0.172 logits on four available families),
 consistent with the patch carrying coarse orthographic/article information,
 but remains below the target patch; within class it is 0.031 on two available
-families. The result therefore supports the predicted capacity principle: when
-the article distinguishes two correct lexical alternatives, the intervention
-externalizes most downstream influence through that public token; when the
-article is identical, target-aligned influence survives privately.
+families.
+
+The simple effects support the stronger term *double dissociation* only for the
+scientifically primary signed lexical projection. Between classes,
+public-minus-private target influence is (0.352\ [0.200,0.498]\), exact
+one-sided sign-flip (p=0.0156\). Within class, private-minus-public target
+influence is (0.032\ [0.010,0.059]\), (p=0.00391\). For unsigned TV, the
+between-class public-minus-private effect is (0.393\ [0.325,0.445]\),
+(p=0.0156\), but the within-class private-minus-public effect is only
+(0.008\ [-0.003,0.020]\), (p=0.117\). Thus the full-distribution result is a
+route interaction, while the target-aligned result independently establishes
+both simple effects. The evidence supports mediator-relative distinguishability:
+when article identity distinguishes two correct lexical alternatives, the
+intervention recruits a strong public relay; within one article-equivalence
+class, target-aligned influence remains private. It does not imply that all
+private state is transferred into the public token.
+
+We attempted the stricter paired test using the same source noun and semantic
+definition with both a same-article and cross-article target. Three frozen,
+outcome-blind construction banks contained 23, 22, and 70 candidate triples.
+Only the events/organization meaning passed all single-token, article-policy,
+and four lexical-preference rules (the exhaustive bank produced two source
+orderings of that one family). The dominant failures were article-policy
+mismatch and failure of the within-target prompt to favor its intended synonym.
+Because this falls below the predeclared 8--15-family target, we do not run or
+interpret a causal triad assay. This is a behavioral construction failure of the
+current first-letter task, not evidence against the route hypothesis.
 
 ![Correctness-preserving synonym double dissociation in Gemma 3 1B PT. The same cross-validated residual-patch procedure is locally effective in both regimes (A), but between-article distinctions are public-relay dominant whereas within-article distinctions retain target-aligned private influence (B--C). The route interaction is positive across every patch strength and article-policy temperature (D). Error bars and bands are semantic-family bootstrap 95\% intervals.](manuscript/figures/fig_correctness_preserving_carriers.png){#fig-correctness-carriers width=97%}
 

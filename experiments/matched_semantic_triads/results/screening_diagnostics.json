@@ -1,0 +1,56 @@
+{
+  "interpretation": "Behavioral construction audit only. Failure to form enough eligible triads is not a causal null. Counts are nonexclusive because one candidate can fail several rules.",
+  "banks": [
+    {
+      "file": "screen_rows.json",
+      "candidates": 23,
+      "families": 23,
+      "admissible_candidates": 1,
+      "admissible_families": [
+        "events"
+      ],
+      "failure_counts_nonexclusive": {
+        "admissible": 1,
+        "article_policy_mismatch": 18,
+        "nonpositive_cross_over_source": 1,
+        "nonpositive_source_over_within": 4,
+        "nonpositive_within_over_source": 13,
+        "not_all_single_token": 9
+      }
+    },
+    {
+      "file": "screen_rows_batch2.json",
+      "candidates": 22,
+      "families": 22,
+      "admissible_candidates": 2,
+      "admissible_families": [
+        "activity_organization",
+        "event_organization"
+      ],
+      "failure_counts_nonexclusive": {
+        "admissible": 2,
+        "article_policy_mismatch": 10,
+        "nonpositive_source_over_within": 3,
+        "nonpositive_within_over_source": 15,
+        "not_all_single_token": 2
+      }
+    },
+    {
+      "file": "screen_rows_batch3.json",
+      "candidates": 70,
+      "families": 15,
+      "admissible_candidates": 2,
+      "admissible_families": [
+        "events"
+      ],
+      "failure_counts_nonexclusive": {
+        "admissible": 2,
+        "article_policy_mismatch": 50,
+        "nonpositive_source_over_cross": 3,
+        "nonpositive_source_over_within": 32,
+        "nonpositive_within_over_source": 32,
+        "not_all_single_token": 12
+      }
+    }
+  ]
+}
