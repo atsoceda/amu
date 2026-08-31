@@ -1,0 +1,40 @@
+{
+  "experiment": "correctness_preserving_aan",
+  "model": "google/gemma-3-270m",
+  "screen": "article-support and signed lexical-contrast screen under noun-unnamed first-letter constraints",
+  "counts": {
+    "between": {
+      "candidates": 46,
+      "admissible": 17
+    },
+    "within_a": {
+      "candidates": 31,
+      "admissible": 2
+    },
+    "within_an": {
+      "candidates": 14,
+      "admissible": 0
+    }
+  },
+  "admissible_ids": [
+    "writing_writer_author",
+    "assistance_helper_assistant",
+    "assistance_helper_aide",
+    "police_policeman_officer",
+    "police_cop_officer",
+    "speaking_speaker_orator",
+    "planning_planner_organizer",
+    "writing_author_writer",
+    "assistance_assistant_helper",
+    "assistance_aide_helper",
+    "planning_organizer_planner",
+    "academia_professor_academic",
+    "events_coordinator_organizer",
+    "performance_performer_entertainer",
+    "performance_singer_entertainer",
+    "illustration_painter_illustrator",
+    "business_vendor_entrepreneur",
+    "therapy_therapist_counselor",
+    "hair_barber_hairdresser"
+  ]
+}

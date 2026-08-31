@@ -1,0 +1,2228 @@
+[
+  {
+    "id": "planning_planner_organizer",
+    "regime": "between",
+    "definition": "Someone whose work is arranging and coordinating activities",
+    "source_word": "planner",
+    "source_article": "a",
+    "target_word": "organizer",
+    "target_article": "an",
+    "source_prompt": "Answer with an occupation beginning with P. Someone whose work is arranging and coordinating activities is",
+    "target_prompt": "Answer with an occupation beginning with O. Someone whose work is arranging and coordinating activities is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "planner",
+      "noun_id": 47405,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.375
+        },
+        {
+          "token": "an",
+          "logit": 17.125
+        },
+        {
+          "token": "called",
+          "logit": 16.25
+        },
+        {
+          "token": "probably",
+          "logit": 15.25
+        },
+        {
+          "token": "likely",
+          "logit": 15.0625
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "planner",
+          "logit": 16.5
+        },
+        {
+          "token": "project",
+          "logit": 15.4375
+        },
+        {
+          "token": "pa",
+          "logit": 15.25
+        },
+        {
+          "token": "project",
+          "logit": 15.1875
+        },
+        {
+          "token": "",
+          "logit": 15.0625
+        },
+        {
+          "token": "p",
+          "logit": 15.0
+        },
+        {
+          "token": "planner",
+          "logit": 14.9375
+        },
+        {
+          "token": ":",
+          "logit": 14.875
+        },
+        {
+          "token": "psychologist",
+          "logit": 14.625
+        },
+        {
+          "token": "secretary",
+          "logit": 14.5
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "an",
+      "article_id": 614,
+      "noun": "o",
+      "noun_id": 708,
+      "article_top5": [
+        {
+          "token": "an",
+          "logit": 18.375
+        },
+        {
+          "token": "a",
+          "logit": 17.375
+        },
+        {
+          "token": "called",
+          "logit": 16.875
+        },
+        {
+          "token": "likely",
+          "logit": 14.8125
+        },
+        {
+          "token": "probably",
+          "logit": 14.75
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "o",
+          "logit": 17.75
+        },
+        {
+          "token": "organizer",
+          "logit": 17.375
+        },
+        {
+          "token": "office",
+          "logit": 16.5
+        },
+        {
+          "token": "",
+          "logit": 16.25
+        },
+        {
+          "token": "occupational",
+          "logit": 16.25
+        },
+        {
+          "token": "administrator",
+          "logit": 15.9375
+        },
+        {
+          "token": "________",
+          "logit": 15.875
+        },
+        {
+          "token": "____________",
+          "logit": 15.625
+        },
+        {
+          "token": "occupational",
+          "logit": 15.625
+        },
+        {
+          "token": "organizer",
+          "logit": 15.5
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 6.8125,
+    "target_margin_under_intended_article": 6.0,
+    "greedy_admissible": false,
+    "admissible": true,
+    "analysis_regime": "between",
+    "meaning_family": "activity_organization"
+  },
+  {
+    "id": "business_businessman_entrepreneur",
+    "regime": "between",
+    "definition": "Someone who starts and operates a business",
+    "source_word": "businessman",
+    "source_article": "a",
+    "target_word": "entrepreneur",
+    "target_article": "an",
+    "source_prompt": "Answer with an occupation beginning with B. Someone who starts and operates a business is",
+    "target_prompt": "Answer with an occupation beginning with E. Someone who starts and operates a business is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "business",
+      "noun_id": 1960,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.625
+        },
+        {
+          "token": "called",
+          "logit": 18.25
+        },
+        {
+          "token": "an",
+          "logit": 18.0
+        },
+        {
+          "token": "known",
+          "logit": 16.0
+        },
+        {
+          "token": "in",
+          "logit": 15.375
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "business",
+          "logit": 17.5
+        },
+        {
+          "token": "businessman",
+          "logit": 17.0
+        },
+        {
+          "token": "b",
+          "logit": 16.125
+        },
+        {
+          "token": "________",
+          "logit": 15.6875
+        },
+        {
+          "token": "business",
+          "logit": 15.625
+        },
+        {
+          "token": "",
+          "logit": 15.5
+        },
+        {
+          "token": ":",
+          "logit": 15.375
+        },
+        {
+          "token": ".",
+          "logit": 15.25
+        },
+        {
+          "token": "____",
+          "logit": 15.25
+        },
+        {
+          "token": "____________",
+          "logit": 15.1875
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "an",
+      "article_id": 614,
+      "noun": "entrepreneur",
+      "noun_id": 22622,
+      "article_top5": [
+        {
+          "token": "an",
+          "logit": 19.125
+        },
+        {
+          "token": "called",
+          "logit": 18.0
+        },
+        {
+          "token": "a",
+          "logit": 17.875
+        },
+        {
+          "token": "known",
+          "logit": 15.5
+        },
+        {
+          "token": "in",
+          "logit": 15.375
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "entrepreneur",
+          "logit": 20.5
+        },
+        {
+          "token": "entrepreneur",
+          "logit": 19.0
+        },
+        {
+          "token": "e",
+          "logit": 18.5
+        },
+        {
+          "token": "entre",
+          "logit": 17.625
+        },
+        {
+          "token": "",
+          "logit": 17.5
+        },
+        {
+          "token": "e",
+          "logit": 16.75
+        },
+        {
+          "token": "\"",
+          "logit": 16.75
+        },
+        {
+          "token": "employer",
+          "logit": 16.625
+        },
+        {
+          "token": "owner",
+          "logit": 16.375
+        },
+        {
+          "token": "________",
+          "logit": 16.25
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 3.75,
+    "target_margin_under_intended_article": 8.0,
+    "greedy_admissible": false,
+    "admissible": true,
+    "analysis_regime": "between",
+    "meaning_family": "business"
+  },
+  {
+    "id": "direction_director_executive",
+    "regime": "between",
+    "definition": "Someone responsible for directing an organization",
+    "source_word": "director",
+    "source_article": "a",
+    "target_word": "executive",
+    "target_article": "an",
+    "source_prompt": "Answer with an occupation beginning with D. Someone responsible for directing an organization is",
+    "target_prompt": "Answer with an occupation beginning with E. Someone responsible for directing an organization is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "manager",
+      "noun_id": 7616,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.25
+        },
+        {
+          "token": "an",
+          "logit": 17.25
+        },
+        {
+          "token": "called",
+          "logit": 17.25
+        },
+        {
+          "token": "known",
+          "logit": 15.8125
+        },
+        {
+          "token": "the",
+          "logit": 15.6875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "manager",
+          "logit": 16.125
+        },
+        {
+          "token": "d",
+          "logit": 15.75
+        },
+        {
+          "token": "director",
+          "logit": 15.625
+        },
+        {
+          "token": "director",
+          "logit": 15.0625
+        },
+        {
+          "token": "________",
+          "logit": 15.0625
+        },
+        {
+          "token": "",
+          "logit": 14.875
+        },
+        {
+          "token": "____",
+          "logit": 14.625
+        },
+        {
+          "token": ":",
+          "logit": 14.4375
+        },
+        {
+          "token": "chief",
+          "logit": 14.3125
+        },
+        {
+          "token": ".",
+          "logit": 14.3125
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "an",
+      "article_id": 614,
+      "noun": "e",
+      "noun_id": 645,
+      "article_top5": [
+        {
+          "token": "an",
+          "logit": 17.875
+        },
+        {
+          "token": "a",
+          "logit": 17.5
+        },
+        {
+          "token": "called",
+          "logit": 17.0
+        },
+        {
+          "token": "the",
+          "logit": 15.375
+        },
+        {
+          "token": "known",
+          "logit": 15.3125
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "e",
+          "logit": 17.625
+        },
+        {
+          "token": "executive",
+          "logit": 17.5
+        },
+        {
+          "token": "example",
+          "logit": 17.25
+        },
+        {
+          "token": "administrator",
+          "logit": 16.875
+        },
+        {
+          "token": "executive",
+          "logit": 16.5
+        },
+        {
+          "token": "",
+          "logit": 16.25
+        },
+        {
+          "token": "e",
+          "logit": 15.9375
+        },
+        {
+          "token": "entrepreneur",
+          "logit": 15.75
+        },
+        {
+          "token": ":",
+          "logit": 15.5
+        },
+        {
+          "token": "________",
+          "logit": 15.5
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 5.9375,
+    "target_margin_under_intended_article": 7.875,
+    "greedy_admissible": false,
+    "admissible": true,
+    "analysis_regime": "between",
+    "meaning_family": "organization_management"
+  },
+  {
+    "id": "performance_performer_entertainer",
+    "regime": "between",
+    "definition": "Someone whose occupation is performing for an audience",
+    "source_word": "performer",
+    "source_article": "a",
+    "target_word": "entertainer",
+    "target_article": "an",
+    "source_prompt": "Answer with an occupation beginning with P. Someone whose occupation is performing for an audience is",
+    "target_prompt": "Answer with an occupation beginning with E. Someone whose occupation is performing for an audience is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "performer",
+      "noun_id": 56209,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.375
+        },
+        {
+          "token": "an",
+          "logit": 16.625
+        },
+        {
+          "token": "called",
+          "logit": 16.25
+        },
+        {
+          "token": "known",
+          "logit": 15.0
+        },
+        {
+          "token": "probably",
+          "logit": 14.75
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "performer",
+          "logit": 18.0
+        },
+        {
+          "token": "",
+          "logit": 15.5
+        },
+        {
+          "token": "professional",
+          "logit": 14.875
+        },
+        {
+          "token": "per",
+          "logit": 14.8125
+        },
+        {
+          "token": "p",
+          "logit": 14.6875
+        },
+        {
+          "token": ":",
+          "logit": 14.6875
+        },
+        {
+          "token": "musician",
+          "logit": 14.3125
+        },
+        {
+          "token": "____",
+          "logit": 14.25
+        },
+        {
+          "token": "pa",
+          "logit": 14.125
+        },
+        {
+          "token": "________",
+          "logit": 14.0
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "an",
+      "article_id": 614,
+      "noun": "actor",
+      "noun_id": 13387,
+      "article_top5": [
+        {
+          "token": "an",
+          "logit": 18.125
+        },
+        {
+          "token": "a",
+          "logit": 17.375
+        },
+        {
+          "token": "called",
+          "logit": 16.25
+        },
+        {
+          "token": "known",
+          "logit": 15.0
+        },
+        {
+          "token": ":",
+          "logit": 14.6875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "actor",
+          "logit": 19.125
+        },
+        {
+          "token": "entertainer",
+          "logit": 18.875
+        },
+        {
+          "token": "",
+          "logit": 16.75
+        },
+        {
+          "token": "actress",
+          "logit": 16.625
+        },
+        {
+          "token": "actor",
+          "logit": 16.625
+        },
+        {
+          "token": "e",
+          "logit": 16.25
+        },
+        {
+          "token": "artist",
+          "logit": 16.125
+        },
+        {
+          "token": "audience",
+          "logit": 15.875
+        },
+        {
+          "token": "entertain",
+          "logit": 15.625
+        },
+        {
+          "token": "________",
+          "logit": 15.4375
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 7.0625,
+    "target_margin_under_intended_article": 5.875,
+    "greedy_admissible": false,
+    "admissible": true,
+    "analysis_regime": "between",
+    "meaning_family": "performance"
+  },
+  {
+    "id": "teaching_teacher_educator",
+    "regime": "between",
+    "definition": "Someone whose job is to teach students",
+    "source_word": "teacher",
+    "source_article": "a",
+    "target_word": "educator",
+    "target_article": "an",
+    "source_prompt": "Answer with an occupation beginning with T. Someone whose job is to teach students is",
+    "target_prompt": "Answer with an occupation beginning with E. Someone whose job is to teach students is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "teacher",
+      "noun_id": 9800,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 19.25
+        },
+        {
+          "token": "called",
+          "logit": 18.0
+        },
+        {
+          "token": "an",
+          "logit": 17.0
+        },
+        {
+          "token": "known",
+          "logit": 15.4375
+        },
+        {
+          "token": "not",
+          "logit": 14.875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "teacher",
+          "logit": 19.25
+        },
+        {
+          "token": "t",
+          "logit": 16.75
+        },
+        {
+          "token": "teacher",
+          "logit": 16.375
+        },
+        {
+          "token": ":",
+          "logit": 15.8125
+        },
+        {
+          "token": "tutor",
+          "logit": 15.5625
+        },
+        {
+          "token": "",
+          "logit": 15.5
+        },
+        {
+          "token": "____",
+          "logit": 15.0
+        },
+        {
+          "token": ".",
+          "logit": 14.625
+        },
+        {
+          "token": "...",
+          "logit": 14.4375
+        },
+        {
+          "token": "________",
+          "logit": 14.375
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "an",
+      "article_id": 614,
+      "noun": "educator",
+      "noun_id": 72391,
+      "article_top5": [
+        {
+          "token": "an",
+          "logit": 19.125
+        },
+        {
+          "token": "a",
+          "logit": 18.25
+        },
+        {
+          "token": "called",
+          "logit": 17.75
+        },
+        {
+          "token": ":",
+          "logit": 15.375
+        },
+        {
+          "token": "known",
+          "logit": 15.3125
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "educator",
+          "logit": 19.5
+        },
+        {
+          "token": "e",
+          "logit": 18.375
+        },
+        {
+          "token": "english",
+          "logit": 17.875
+        },
+        {
+          "token": "",
+          "logit": 17.125
+        },
+        {
+          "token": "education",
+          "logit": 17.0
+        },
+        {
+          "token": "elementary",
+          "logit": 16.875
+        },
+        {
+          "token": "example",
+          "logit": 16.75
+        },
+        {
+          "token": ":",
+          "logit": 16.375
+        },
+        {
+          "token": "educator",
+          "logit": 16.375
+        },
+        {
+          "token": "educational",
+          "logit": 16.25
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 9.6875,
+    "target_margin_under_intended_article": 6.0,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "between",
+    "meaning_family": "teaching"
+  },
+  {
+    "id": "painting_painter_artist",
+    "regime": "between",
+    "definition": "Someone whose occupation is creating paintings and visual art",
+    "source_word": "painter",
+    "source_article": "a",
+    "target_word": "artist",
+    "target_article": "an",
+    "source_prompt": "Answer with an occupation beginning with P. Someone whose occupation is creating paintings and visual art is",
+    "target_prompt": "Answer with an occupation beginning with A. Someone whose occupation is creating paintings and visual art is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "painter",
+      "noun_id": 42289,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.625
+        },
+        {
+          "token": "called",
+          "logit": 17.125
+        },
+        {
+          "token": "an",
+          "logit": 17.0
+        },
+        {
+          "token": "known",
+          "logit": 15.5625
+        },
+        {
+          "token": "probably",
+          "logit": 15.0
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "painter",
+          "logit": 18.25
+        },
+        {
+          "token": "painter",
+          "logit": 16.375
+        },
+        {
+          "token": "p",
+          "logit": 15.5625
+        },
+        {
+          "token": "",
+          "logit": 15.5625
+        },
+        {
+          "token": "\"",
+          "logit": 15.0
+        },
+        {
+          "token": "visual",
+          "logit": 14.625
+        },
+        {
+          "token": "professional",
+          "logit": 14.4375
+        },
+        {
+          "token": ":",
+          "logit": 14.375
+        },
+        {
+          "token": "pa",
+          "logit": 14.375
+        },
+        {
+          "token": "\u201c",
+          "logit": 14.0
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "an",
+      "article_id": 614,
+      "noun": "artist",
+      "noun_id": 8325,
+      "article_top5": [
+        {
+          "token": "an",
+          "logit": 18.25
+        },
+        {
+          "token": "a",
+          "logit": 17.75
+        },
+        {
+          "token": "called",
+          "logit": 16.75
+        },
+        {
+          "token": "known",
+          "logit": 15.375
+        },
+        {
+          "token": ":",
+          "logit": 14.6875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "artist",
+          "logit": 19.5
+        },
+        {
+          "token": "artist",
+          "logit": 17.625
+        },
+        {
+          "token": "art",
+          "logit": 16.5
+        },
+        {
+          "token": "________",
+          "logit": 16.25
+        },
+        {
+          "token": "art",
+          "logit": 16.25
+        },
+        {
+          "token": "a",
+          "logit": 16.125
+        },
+        {
+          "token": "____________",
+          "logit": 16.0
+        },
+        {
+          "token": "",
+          "logit": 16.0
+        },
+        {
+          "token": "____",
+          "logit": 15.75
+        },
+        {
+          "token": "\"",
+          "logit": 15.3125
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 6.125,
+    "target_margin_under_intended_article": 6.875,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "between",
+    "meaning_family": "visual_art"
+  },
+  {
+    "id": "driving_driver_chauffeur",
+    "regime": "within_a",
+    "definition": "Someone employed to drive other people",
+    "source_word": "driver",
+    "source_article": "a",
+    "target_word": "chauffeur",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with D. Someone employed to drive other people is",
+    "target_prompt": "Answer with an occupation beginning with C. Someone employed to drive other people is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "driver",
+      "noun_id": 7924,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.0
+        },
+        {
+          "token": "an",
+          "logit": 16.5
+        },
+        {
+          "token": "called",
+          "logit": 16.25
+        },
+        {
+          "token": "not",
+          "logit": 14.8125
+        },
+        {
+          "token": "most",
+          "logit": 14.0625
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "driver",
+          "logit": 17.5
+        },
+        {
+          "token": "chauffeur",
+          "logit": 15.375
+        },
+        {
+          "token": "",
+          "logit": 15.125
+        },
+        {
+          "token": ":",
+          "logit": 14.4375
+        },
+        {
+          "token": "bus",
+          "logit": 14.3125
+        },
+        {
+          "token": "\"",
+          "logit": 14.3125
+        },
+        {
+          "token": "taxi",
+          "logit": 14.25
+        },
+        {
+          "token": "coach",
+          "logit": 14.125
+        },
+        {
+          "token": "________",
+          "logit": 14.0625
+        },
+        {
+          "token": "d",
+          "logit": 14.0
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "chauffeur",
+      "noun_id": 169273,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.0
+        },
+        {
+          "token": "an",
+          "logit": 16.375
+        },
+        {
+          "token": "called",
+          "logit": 16.0
+        },
+        {
+          "token": "not",
+          "logit": 15.1875
+        },
+        {
+          "token": "probably",
+          "logit": 14.375
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "chauffeur",
+          "logit": 17.25
+        },
+        {
+          "token": "cab",
+          "logit": 16.75
+        },
+        {
+          "token": "driver",
+          "logit": 15.9375
+        },
+        {
+          "token": "c",
+          "logit": 15.0625
+        },
+        {
+          "token": "coach",
+          "logit": 14.875
+        },
+        {
+          "token": "car",
+          "logit": 14.8125
+        },
+        {
+          "token": "conductor",
+          "logit": 14.8125
+        },
+        {
+          "token": "",
+          "logit": 14.75
+        },
+        {
+          "token": "taxi",
+          "logit": 14.5625
+        },
+        {
+          "token": "\"",
+          "logit": 14.375
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 2.125,
+    "target_margin_under_intended_article": 1.3125,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "driving"
+  },
+  {
+    "id": "hair_barber_hairdresser",
+    "regime": "within_a",
+    "definition": "Someone whose occupation is cutting and styling hair",
+    "source_word": "barber",
+    "source_article": "a",
+    "target_word": "hairdresser",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with B. Someone whose occupation is cutting and styling hair is",
+    "target_prompt": "Answer with an occupation beginning with H. Someone whose occupation is cutting and styling hair is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "barber",
+      "noun_id": 96171,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.75
+        },
+        {
+          "token": "called",
+          "logit": 17.5
+        },
+        {
+          "token": "an",
+          "logit": 15.75
+        },
+        {
+          "token": "known",
+          "logit": 15.0625
+        },
+        {
+          "token": "probably",
+          "logit": 14.6875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "barber",
+          "logit": 18.25
+        },
+        {
+          "token": "hairdresser",
+          "logit": 17.625
+        },
+        {
+          "token": "hairst",
+          "logit": 16.5
+        },
+        {
+          "token": "beaut",
+          "logit": 16.125
+        },
+        {
+          "token": "stylist",
+          "logit": 15.6875
+        },
+        {
+          "token": "barber",
+          "logit": 15.25
+        },
+        {
+          "token": "hair",
+          "logit": 15.25
+        },
+        {
+          "token": "cosmet",
+          "logit": 15.1875
+        },
+        {
+          "token": ":",
+          "logit": 15.0625
+        },
+        {
+          "token": "",
+          "logit": 15.0
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "hairdresser",
+      "noun_id": 162322,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.5
+        },
+        {
+          "token": "called",
+          "logit": 17.25
+        },
+        {
+          "token": "an",
+          "logit": 15.9375
+        },
+        {
+          "token": "known",
+          "logit": 14.625
+        },
+        {
+          "token": "likely",
+          "logit": 14.5625
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "hairdresser",
+          "logit": 18.75
+        },
+        {
+          "token": "hairst",
+          "logit": 17.625
+        },
+        {
+          "token": "barber",
+          "logit": 16.625
+        },
+        {
+          "token": "hair",
+          "logit": 16.375
+        },
+        {
+          "token": "stylist",
+          "logit": 15.75
+        },
+        {
+          "token": "hairst",
+          "logit": 15.5625
+        },
+        {
+          "token": ":",
+          "logit": 15.0
+        },
+        {
+          "token": "h",
+          "logit": 15.0
+        },
+        {
+          "token": "",
+          "logit": 14.9375
+        },
+        {
+          "token": "hair",
+          "logit": 14.8125
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 0.625,
+    "target_margin_under_intended_article": 2.125,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "hair"
+  },
+  {
+    "id": "medicine_doctor_physician",
+    "regime": "within_a",
+    "definition": "Someone qualified to diagnose illness and treat patients",
+    "source_word": "doctor",
+    "source_article": "a",
+    "target_word": "physician",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with D. Someone qualified to diagnose illness and treat patients is",
+    "target_prompt": "Answer with an occupation beginning with P. Someone qualified to diagnose illness and treat patients is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "doctor",
+      "noun_id": 9092,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 19.875
+        },
+        {
+          "token": "called",
+          "logit": 18.0
+        },
+        {
+          "token": "an",
+          "logit": 17.0
+        },
+        {
+          "token": "known",
+          "logit": 15.8125
+        },
+        {
+          "token": "usually",
+          "logit": 14.75
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "doctor",
+          "logit": 18.375
+        },
+        {
+          "token": "physician",
+          "logit": 17.0
+        },
+        {
+          "token": "nurse",
+          "logit": 16.5
+        },
+        {
+          "token": "doctor",
+          "logit": 16.375
+        },
+        {
+          "token": "medical",
+          "logit": 15.625
+        },
+        {
+          "token": "",
+          "logit": 15.5
+        },
+        {
+          "token": "________",
+          "logit": 15.0
+        },
+        {
+          "token": ":",
+          "logit": 14.8125
+        },
+        {
+          "token": ".",
+          "logit": 14.75
+        },
+        {
+          "token": "health",
+          "logit": 14.6875
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "physician",
+      "noun_id": 21355,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 19.625
+        },
+        {
+          "token": "called",
+          "logit": 17.375
+        },
+        {
+          "token": "an",
+          "logit": 16.25
+        },
+        {
+          "token": "known",
+          "logit": 15.0625
+        },
+        {
+          "token": "usually",
+          "logit": 14.875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "physician",
+          "logit": 18.25
+        },
+        {
+          "token": "doctor",
+          "logit": 17.875
+        },
+        {
+          "token": "physician",
+          "logit": 15.875
+        },
+        {
+          "token": "medical",
+          "logit": 15.8125
+        },
+        {
+          "token": "",
+          "logit": 15.8125
+        },
+        {
+          "token": "nurse",
+          "logit": 15.5625
+        },
+        {
+          "token": "doctor",
+          "logit": 15.25
+        },
+        {
+          "token": ":",
+          "logit": 14.8125
+        },
+        {
+          "token": "health",
+          "logit": 14.75
+        },
+        {
+          "token": "\"",
+          "logit": 14.6875
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 1.375,
+    "target_margin_under_intended_article": 0.375,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "medicine"
+  },
+  {
+    "id": "news_reporter_journalist",
+    "regime": "within_a",
+    "definition": "Someone whose job is to investigate and report news",
+    "source_word": "reporter",
+    "source_article": "a",
+    "target_word": "journalist",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with R. Someone whose job is to investigate and report news is",
+    "target_prompt": "Answer with an occupation beginning with J. Someone whose job is to investigate and report news is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "reporter",
+      "noun_id": 28349,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 19.375
+        },
+        {
+          "token": "called",
+          "logit": 17.75
+        },
+        {
+          "token": "an",
+          "logit": 17.75
+        },
+        {
+          "token": "known",
+          "logit": 15.3125
+        },
+        {
+          "token": "usually",
+          "logit": 15.0625
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "reporter",
+          "logit": 18.0
+        },
+        {
+          "token": "journalist",
+          "logit": 17.375
+        },
+        {
+          "token": "",
+          "logit": 16.125
+        },
+        {
+          "token": "news",
+          "logit": 15.8125
+        },
+        {
+          "token": ":",
+          "logit": 15.4375
+        },
+        {
+          "token": "reporter",
+          "logit": 15.0625
+        },
+        {
+          "token": "\"",
+          "logit": 14.75
+        },
+        {
+          "token": ".",
+          "logit": 14.4375
+        },
+        {
+          "token": "journalist",
+          "logit": 14.3125
+        },
+        {
+          "token": "r",
+          "logit": 14.25
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "journalist",
+      "noun_id": 31484,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 19.375
+        },
+        {
+          "token": "called",
+          "logit": 17.75
+        },
+        {
+          "token": "an",
+          "logit": 16.75
+        },
+        {
+          "token": "known",
+          "logit": 15.75
+        },
+        {
+          "token": ":",
+          "logit": 15.25
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "journalist",
+          "logit": 18.75
+        },
+        {
+          "token": "journalist",
+          "logit": 16.25
+        },
+        {
+          "token": "reporter",
+          "logit": 16.25
+        },
+        {
+          "token": "",
+          "logit": 15.8125
+        },
+        {
+          "token": ":",
+          "logit": 15.6875
+        },
+        {
+          "token": "news",
+          "logit": 15.5625
+        },
+        {
+          "token": "j",
+          "logit": 15.125
+        },
+        {
+          "token": ".",
+          "logit": 14.8125
+        },
+        {
+          "token": "________",
+          "logit": 14.5
+        },
+        {
+          "token": "...",
+          "logit": 14.0
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 0.625,
+    "target_margin_under_intended_article": 2.5,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "news"
+  },
+  {
+    "id": "management_supervisor_manager",
+    "regime": "within_a",
+    "definition": "Someone responsible for directing and overseeing workers",
+    "source_word": "supervisor",
+    "source_article": "a",
+    "target_word": "manager",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with S. Someone responsible for directing and overseeing workers is",
+    "target_prompt": "Answer with an occupation beginning with M. Someone responsible for directing and overseeing workers is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "supervisor",
+      "noun_id": 26409,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.125
+        },
+        {
+          "token": "an",
+          "logit": 17.125
+        },
+        {
+          "token": "called",
+          "logit": 16.625
+        },
+        {
+          "token": "known",
+          "logit": 15.375
+        },
+        {
+          "token": "the",
+          "logit": 15.3125
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "supervisor",
+          "logit": 16.25
+        },
+        {
+          "token": "manager",
+          "logit": 14.875
+        },
+        {
+          "token": "foreman",
+          "logit": 14.8125
+        },
+        {
+          "token": "____",
+          "logit": 14.6875
+        },
+        {
+          "token": ":",
+          "logit": 14.5625
+        },
+        {
+          "token": "________",
+          "logit": 14.4375
+        },
+        {
+          "token": "",
+          "logit": 14.3125
+        },
+        {
+          "token": ".",
+          "logit": 13.875
+        },
+        {
+          "token": "secretary",
+          "logit": 13.875
+        },
+        {
+          "token": "(",
+          "logit": 13.625
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "manager",
+      "noun_id": 7616,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.125
+        },
+        {
+          "token": "an",
+          "logit": 16.875
+        },
+        {
+          "token": "called",
+          "logit": 16.875
+        },
+        {
+          "token": "known",
+          "logit": 16.125
+        },
+        {
+          "token": "the",
+          "logit": 15.375
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "manager",
+          "logit": 16.375
+        },
+        {
+          "token": "foreman",
+          "logit": 15.9375
+        },
+        {
+          "token": "supervisor",
+          "logit": 15.0
+        },
+        {
+          "token": "____",
+          "logit": 14.5625
+        },
+        {
+          "token": ":",
+          "logit": 14.4375
+        },
+        {
+          "token": ".",
+          "logit": 14.1875
+        },
+        {
+          "token": "________",
+          "logit": 14.1875
+        },
+        {
+          "token": "",
+          "logit": 14.125
+        },
+        {
+          "token": "(",
+          "logit": 13.75
+        },
+        {
+          "token": "",
+          "logit": 13.3125
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 1.375,
+    "target_margin_under_intended_article": 1.375,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "organization_management"
+  },
+  {
+    "id": "sales_vendor_salesperson",
+    "regime": "within_a",
+    "definition": "Someone whose occupation is selling goods",
+    "source_word": "vendor",
+    "source_article": "a",
+    "target_word": "salesperson",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with V. Someone whose occupation is selling goods is",
+    "target_prompt": "Answer with an occupation beginning with S. Someone whose occupation is selling goods is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "v",
+      "noun_id": 782,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 17.875
+        },
+        {
+          "token": "called",
+          "logit": 16.75
+        },
+        {
+          "token": "an",
+          "logit": 16.25
+        },
+        {
+          "token": ":",
+          "logit": 14.5625
+        },
+        {
+          "token": "known",
+          "logit": 14.5625
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "v",
+          "logit": 16.625
+        },
+        {
+          "token": ":",
+          "logit": 15.1875
+        },
+        {
+          "token": "",
+          "logit": 14.875
+        },
+        {
+          "token": "________",
+          "logit": 14.75
+        },
+        {
+          "token": "____",
+          "logit": 14.5
+        },
+        {
+          "token": "vendor",
+          "logit": 14.375
+        },
+        {
+          "token": "____________",
+          "logit": 14.3125
+        },
+        {
+          "token": "/",
+          "logit": 14.0625
+        },
+        {
+          "token": "(",
+          "logit": 14.0
+        },
+        {
+          "token": "",
+          "logit": 13.9375
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "salesperson",
+      "noun_id": 174790,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 17.75
+        },
+        {
+          "token": "called",
+          "logit": 17.0
+        },
+        {
+          "token": "an",
+          "logit": 16.75
+        },
+        {
+          "token": "known",
+          "logit": 14.8125
+        },
+        {
+          "token": "someone",
+          "logit": 14.5625
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "salesperson",
+          "logit": 16.25
+        },
+        {
+          "token": "salesman",
+          "logit": 16.125
+        },
+        {
+          "token": "seller",
+          "logit": 15.8125
+        },
+        {
+          "token": "sales",
+          "logit": 15.5
+        },
+        {
+          "token": "sales",
+          "logit": 15.375
+        },
+        {
+          "token": "",
+          "logit": 15.3125
+        },
+        {
+          "token": ":",
+          "logit": 14.75
+        },
+        {
+          "token": "merchant",
+          "logit": 14.5
+        },
+        {
+          "token": "\"",
+          "logit": 14.125
+        },
+        {
+          "token": "________",
+          "logit": 14.125
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 0.5,
+    "target_margin_under_intended_article": 5.1875,
+    "greedy_admissible": false,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "sales"
+  },
+  {
+    "id": "therapy_therapist_counselor",
+    "regime": "within_a",
+    "definition": "Someone whose job is to provide psychological guidance and therapy",
+    "source_word": "therapist",
+    "source_article": "a",
+    "target_word": "counselor",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with T. Someone whose job is to provide psychological guidance and therapy is",
+    "target_prompt": "Answer with an occupation beginning with C. Someone whose job is to provide psychological guidance and therapy is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "psychologist",
+      "noun_id": 70095,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 20.0
+        },
+        {
+          "token": "called",
+          "logit": 18.75
+        },
+        {
+          "token": "known",
+          "logit": 17.125
+        },
+        {
+          "token": "an",
+          "logit": 16.125
+        },
+        {
+          "token": "often",
+          "logit": 15.1875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "psychologist",
+          "logit": 18.0
+        },
+        {
+          "token": "therapist",
+          "logit": 17.0
+        },
+        {
+          "token": "",
+          "logit": 16.75
+        },
+        {
+          "token": "psych",
+          "logit": 16.75
+        },
+        {
+          "token": "psychiatrist",
+          "logit": 16.625
+        },
+        {
+          "token": "psychologist",
+          "logit": 16.125
+        },
+        {
+          "token": ":",
+          "logit": 16.125
+        },
+        {
+          "token": "____",
+          "logit": 15.5625
+        },
+        {
+          "token": "________",
+          "logit": 15.4375
+        },
+        {
+          "token": "mental",
+          "logit": 15.25
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "psychologist",
+      "noun_id": 70095,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 20.125
+        },
+        {
+          "token": "called",
+          "logit": 18.625
+        },
+        {
+          "token": "known",
+          "logit": 17.0
+        },
+        {
+          "token": "an",
+          "logit": 16.5
+        },
+        {
+          "token": "often",
+          "logit": 15.125
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "psychologist",
+          "logit": 18.625
+        },
+        {
+          "token": "psychiatrist",
+          "logit": 17.0
+        },
+        {
+          "token": "counselor",
+          "logit": 17.0
+        },
+        {
+          "token": "psych",
+          "logit": 16.625
+        },
+        {
+          "token": "",
+          "logit": 16.5
+        },
+        {
+          "token": "psychologist",
+          "logit": 16.375
+        },
+        {
+          "token": "clinical",
+          "logit": 16.25
+        },
+        {
+          "token": ":",
+          "logit": 16.125
+        },
+        {
+          "token": "____",
+          "logit": 15.6875
+        },
+        {
+          "token": "therapist",
+          "logit": 15.6875
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 1.8125,
+    "target_margin_under_intended_article": 1.3125,
+    "greedy_admissible": false,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "therapy"
+  },
+  {
+    "id": "writing_writer_novelist",
+    "regime": "within_a",
+    "definition": "Someone whose occupation is writing novels and other fiction",
+    "source_word": "writer",
+    "source_article": "a",
+    "target_word": "novelist",
+    "target_article": "a",
+    "source_prompt": "Answer with an occupation beginning with W. Someone whose occupation is writing novels and other fiction is",
+    "target_prompt": "Answer with an occupation beginning with N. Someone whose occupation is writing novels and other fiction is",
+    "source_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "writer",
+      "noun_id": 11456,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.0
+        },
+        {
+          "token": "called",
+          "logit": 16.75
+        },
+        {
+          "token": "an",
+          "logit": 15.75
+        },
+        {
+          "token": "known",
+          "logit": 14.9375
+        },
+        {
+          "token": "W",
+          "logit": 14.875
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "writer",
+          "logit": 17.875
+        },
+        {
+          "token": "novelist",
+          "logit": 17.0
+        },
+        {
+          "token": "w",
+          "logit": 16.375
+        },
+        {
+          "token": "",
+          "logit": 15.5
+        },
+        {
+          "token": ":",
+          "logit": 15.3125
+        },
+        {
+          "token": "________",
+          "logit": 14.75
+        },
+        {
+          "token": ".",
+          "logit": 14.5625
+        },
+        {
+          "token": "wr",
+          "logit": 14.5625
+        },
+        {
+          "token": "fiction",
+          "logit": 14.5
+        },
+        {
+          "token": "____",
+          "logit": 14.3125
+        }
+      ]
+    },
+    "target_generation": {
+      "article": "a",
+      "article_id": 496,
+      "noun": "novelist",
+      "noun_id": 101942,
+      "article_top5": [
+        {
+          "token": "a",
+          "logit": 18.375
+        },
+        {
+          "token": "called",
+          "logit": 17.0
+        },
+        {
+          "token": "an",
+          "logit": 16.375
+        },
+        {
+          "token": "not",
+          "logit": 15.1875
+        },
+        {
+          "token": "known",
+          "logit": 15.0
+        }
+      ],
+      "noun_top10": [
+        {
+          "token": "novelist",
+          "logit": 17.625
+        },
+        {
+          "token": "writer",
+          "logit": 17.5
+        },
+        {
+          "token": ":",
+          "logit": 15.4375
+        },
+        {
+          "token": "",
+          "logit": 15.375
+        },
+        {
+          "token": "novel",
+          "logit": 15.1875
+        },
+        {
+          "token": "fiction",
+          "logit": 15.0
+        },
+        {
+          "token": "________",
+          "logit": 14.875
+        },
+        {
+          "token": ".",
+          "logit": 14.5625
+        },
+        {
+          "token": "____",
+          "logit": 14.5
+        },
+        {
+          "token": "_____",
+          "logit": 14.5
+        }
+      ]
+    },
+    "source_word_single_token": true,
+    "target_word_single_token": true,
+    "source_margin_under_intended_article": 0.875,
+    "target_margin_under_intended_article": 0.125,
+    "greedy_admissible": true,
+    "admissible": true,
+    "analysis_regime": "within",
+    "meaning_family": "writing"
+  }
+]

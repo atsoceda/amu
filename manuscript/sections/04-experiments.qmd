@@ -126,6 +126,42 @@ We separately report target-logit enhancement, source-logit suppression,
 their probabilities, occupation-vocabulary mass, article changes, and
 fixed-article TV.
 
+**Correctness-preserving synonym carriers.** We derive a lexical-realization
+task from the released `a/an` occupation domain [@hanna2026planningdata]. Each
+item fixes one occupational meaning but admits two correct synonyms. A
+noun-unnamed first-letter constraint elicits the source or target realization;
+for example, `teacher`/`educator` crosses `a` to `an`, whereas
+`doctor`/`physician` remains within `a`. Eligibility is determined before any
+patch outcome: both noun readouts must be single tokens, both prompts must keep
+the intended article in the `a/an` support, and each prompt must favor its
+specified synonym over the alternative. We select one pair per independent
+semantic family by the larger minimum screening margin. Reverse directions and
+closely overlapping definitions are one family, not independent observations.
+This yields six between-article and eight within-`a` families at Gemma 3 1B PT.
+Gemma 3 270M admits only two independent within-class families, so it receives
+no causal route analysis; no within-`an` candidate set clears the screen at
+either scale.
+
+At the pre-article position we apply the same natural-state-derived direction
+in both regimes,
+
+$$
+h_P^{(\ell)} \leftarrow h_{P,\mathrm{source}}^{(\ell)}
+ + s\left(h_{P,\mathrm{target}}^{(\ell)}-h_{P,\mathrm{source}}^{(\ell)}\right),
+\qquad s\in\{0.5,1,1.5\}.
+$$
+
+For each held-out semantic family, layer selection excludes that family and
+maximizes the equally weighted mean fixed-target-article lexical effect across
+the remaining between/within families. All folds select layer 18/25. We then
+measure local target-minus-source efficacy, wrong-target, same-target-letter
+where available, and sign-reversed controls; greedy article changes; and the
+conditional `a/an` public/private vector decomposition at
+\(\tau\in\{0.1,0.25,0.5,1\}\). Primary inference resamples semantic families.
+The pre-existing layer-14 choice from disjoint natural pairs is retained as a
+transfer baseline, but it fails local efficacy and is not used for the route
+claim.
+
 **Attribution-to-channel calibration.** The 32-feature held-out calibration
 crosses article and future-content graph-score strata. Outcomes include
 article-margin movement, free-path total TV, token-substitution TV,

@@ -1,0 +1,50 @@
+{
+  "experiment": "correctness_preserving_aan",
+  "model": "google/gemma-3-1b-pt",
+  "screen": "article-support and signed lexical-contrast screen under noun-unnamed first-letter constraints",
+  "counts": {
+    "between": {
+      "candidates": 46,
+      "admissible": 17
+    },
+    "within_a": {
+      "candidates": 31,
+      "admissible": 12
+    },
+    "within_an": {
+      "candidates": 14,
+      "admissible": 0
+    }
+  },
+  "admissible_ids": [
+    "teaching_teacher_educator",
+    "leadership_boss_executive",
+    "painting_painter_artist",
+    "planning_planner_organizer",
+    "management_manager_executive",
+    "direction_director_executive",
+    "teaching_educator_teacher",
+    "painting_artist_painter",
+    "planning_organizer_planner",
+    "events_coordinator_organizer",
+    "events_host_organizer",
+    "performance_performer_entertainer",
+    "performance_singer_entertainer",
+    "illustration_painter_illustrator",
+    "illustration_designer_illustrator",
+    "business_businessman_entrepreneur",
+    "business_vendor_entrepreneur",
+    "medicine_doctor_physician",
+    "news_journalist_reporter",
+    "driving_driver_chauffeur",
+    "therapy_therapist_counselor",
+    "management_manager_supervisor",
+    "sales_salesperson_vendor",
+    "writing_writer_novelist",
+    "news_reporter_journalist",
+    "driving_chauffeur_driver",
+    "management_supervisor_manager",
+    "sales_vendor_salesperson",
+    "hair_barber_hairdresser"
+  ]
+}

@@ -1,0 +1,5420 @@
+[
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "source_word": "planner",
+    "target_word": "organizer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 1.375,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8559187054634094,
+        "target_minus_source": 0.3573150038719177,
+        "desired_cosine": 0.79405677318573
+      },
+      "public": {
+        "tv": 0.8541334867477417,
+        "target_minus_source": 0.3433375358581543,
+        "desired_cosine": 0.779831051826477
+      },
+      "private": {
+        "tv": 0.027004048228263855,
+        "target_minus_source": 0.013977449387311935,
+        "desired_cosine": 0.5989064574241638
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.7772961258888245,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999998211860657,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.66544508934021,
+          "target_minus_source": 0.276439905166626,
+          "desired_cosine": 0.7917122840881348
+        },
+        "public": {
+          "tv": 0.663914680480957,
+          "target_minus_source": 0.26687493920326233,
+          "desired_cosine": 0.7798311710357666
+        },
+        "private": {
+          "tv": 0.02391328662633896,
+          "target_minus_source": 0.009564973413944244,
+          "desired_cosine": 0.5224102139472961
+        },
+        "reconstruction_l1": 2.4807931708892283e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.6157665252685547,
+        "off_article_mass": 0.999791145324707,
+        "on_article_mass": 0.9984526634216309,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.527316689491272,
+          "target_minus_source": 0.21791276335716248,
+          "desired_cosine": 0.7891157865524292
+        },
+        "public": {
+          "tv": 0.5259467363357544,
+          "target_minus_source": 0.21141575276851654,
+          "desired_cosine": 0.7798311710357666
+        },
+        "private": {
+          "tv": 0.02210923656821251,
+          "target_minus_source": 0.006497018039226532,
+          "desired_cosine": 0.4277324676513672
+        },
+        "reconstruction_l1": 8.417178065656117e-09
+      },
+      "0.5": {
+        "delta_q_target_article": 0.48631834983825684,
+        "off_article_mass": 0.9811459183692932,
+        "on_article_mass": 0.9680524468421936,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.41670697927474976,
+          "target_minus_source": 0.17227394878864288,
+          "desired_cosine": 0.788536787033081
+        },
+        "public": {
+          "tv": 0.4153807461261749,
+          "target_minus_source": 0.1669713258743286,
+          "desired_cosine": 0.7798311114311218
+        },
+        "private": {
+          "tv": 0.02155318669974804,
+          "target_minus_source": 0.00530262291431427,
+          "desired_cosine": 0.37575072050094604
+        },
+        "reconstruction_l1": 3.586009933442824e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.3085092604160309,
+        "off_article_mass": 0.7029253244400024,
+        "on_article_mass": 0.7169774174690247,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.2648322880268097,
+          "target_minus_source": 0.11061184108257294,
+          "desired_cosine": 0.7900168299674988
+        },
+        "public": {
+          "tv": 0.2635080814361572,
+          "target_minus_source": 0.10592280328273773,
+          "desired_cosine": 0.779831051826477
+        },
+        "private": {
+          "tv": 0.02127513289451599,
+          "target_minus_source": 0.004689045250415802,
+          "desired_cosine": 0.3448190689086914
+        },
+        "reconstruction_l1": 3.52551210447416e-10
+      }
+    }
+  },
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "source_word": "planner",
+    "target_word": "organizer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.1875,
+    "source_branch_delta_delta": 0.1875,
+    "article_margin_movement": 2.375,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8563039898872375,
+        "target_minus_source": 0.3567643165588379,
+        "desired_cosine": 0.793800413608551
+      },
+      "public": {
+        "tv": 0.8541334867477417,
+        "target_minus_source": 0.3433375358581543,
+        "desired_cosine": 0.779831051826477
+      },
+      "private": {
+        "tv": 0.03385843709111214,
+        "target_minus_source": 0.013426778838038445,
+        "desired_cosine": 0.5746464729309082
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999832510948181,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999998807907104,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.8562896251678467,
+          "target_minus_source": 0.3567584753036499,
+          "desired_cosine": 0.7938005328178406
+        },
+        "public": {
+          "tv": 0.8541191816329956,
+          "target_minus_source": 0.34333181381225586,
+          "desired_cosine": 0.7798311710357666
+        },
+        "private": {
+          "tv": 0.03385806828737259,
+          "target_minus_source": 0.013426673598587513,
+          "desired_cosine": 0.5746496319770813
+        },
+        "reconstruction_l1": 2.3151576655777717e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.982320249080658,
+        "off_article_mass": 0.999791145324707,
+        "on_article_mass": 0.99851393699646,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.8411966562271118,
+          "target_minus_source": 0.35061055421829224,
+          "desired_cosine": 0.7939286231994629
+        },
+        "public": {
+          "tv": 0.8390325307846069,
+          "target_minus_source": 0.3372673988342285,
+          "desired_cosine": 0.7798311710357666
+        },
+        "private": {
+          "tv": 0.033608052879571915,
+          "target_minus_source": 0.013343161903321743,
+          "desired_cosine": 0.5773597955703735
+        },
+        "reconstruction_l1": 2.971892776315599e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.8287923336029053,
+        "off_article_mass": 0.9811459183692932,
+        "on_article_mass": 0.963167130947113,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.710014820098877,
+          "target_minus_source": 0.29725661873817444,
+          "desired_cosine": 0.7953792810440063
+        },
+        "public": {
+          "tv": 0.7078993320465088,
+          "target_minus_source": 0.2845555245876312,
+          "desired_cosine": 0.7798311114311218
+        },
+        "private": {
+          "tv": 0.03211892768740654,
+          "target_minus_source": 0.012701094150543213,
+          "desired_cosine": 0.5996145606040955
+        },
+        "reconstruction_l1": 2.1681662687456082e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.532214879989624,
+        "off_article_mass": 0.7029253244400024,
+        "on_article_mass": 0.7095840573310852,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.45661449432373047,
+          "target_minus_source": 0.19429083168506622,
+          "desired_cosine": 0.8005772829055786
+        },
+        "public": {
+          "tv": 0.4545825123786926,
+          "target_minus_source": 0.1827293336391449,
+          "desired_cosine": 0.779831051826477
+        },
+        "private": {
+          "tv": 0.029792839661240578,
+          "target_minus_source": 0.011561509221792221,
+          "desired_cosine": 0.6454949378967285
+        },
+        "reconstruction_l1": 2.0219657059783458e-08
+      }
+    }
+  },
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "source_word": "planner",
+    "target_word": "organizer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 2.875,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8544865250587463,
+        "target_minus_source": 0.36016377806663513,
+        "desired_cosine": 0.8050997853279114
+      },
+      "public": {
+        "tv": 0.8541334867477417,
+        "target_minus_source": 0.3433375358581543,
+        "desired_cosine": 0.779831051826477
+      },
+      "private": {
+        "tv": 0.04732590913772583,
+        "target_minus_source": 0.01682623289525509,
+        "desired_cosine": 0.4601493179798126
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999961256980896,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999988675117493,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.8544833660125732,
+          "target_minus_source": 0.3601624369621277,
+          "desired_cosine": 0.8050998449325562
+        },
+        "public": {
+          "tv": 0.854130208492279,
+          "target_minus_source": 0.34333622455596924,
+          "desired_cosine": 0.7798311114311218
+        },
+        "private": {
+          "tv": 0.047325897961854935,
+          "target_minus_source": 0.016826217994093895,
+          "desired_cosine": 0.4601490795612335
+        },
+        "reconstruction_l1": 2.866966397618853e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9918059706687927,
+        "off_article_mass": 0.999791145324707,
+        "on_article_mass": 0.9959349036216736,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.8474863767623901,
+          "target_minus_source": 0.35730719566345215,
+          "desired_cosine": 0.8052268624305725
+        },
+        "public": {
+          "tv": 0.8471347689628601,
+          "target_minus_source": 0.34052422642707825,
+          "desired_cosine": 0.7798312902450562
+        },
+        "private": {
+          "tv": 0.047265633940696716,
+          "target_minus_source": 0.01678299531340599,
+          "desired_cosine": 0.45964470505714417
+        },
+        "reconstruction_l1": 3.397173742314408e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.8868148922920227,
+        "off_article_mass": 0.9811459183692932,
+        "on_article_mass": 0.9393777847290039,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.7577750086784363,
+          "target_minus_source": 0.32022804021835327,
+          "desired_cosine": 0.806338369846344
+        },
+        "public": {
+          "tv": 0.7574583292007446,
+          "target_minus_source": 0.30447685718536377,
+          "desired_cosine": 0.7798309922218323
+        },
+        "private": {
+          "tv": 0.04638379067182541,
+          "target_minus_source": 0.015751168131828308,
+          "desired_cosine": 0.44702011346817017
+        },
+        "reconstruction_l1": 2.0964865399264454e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.6127834320068359,
+        "off_article_mass": 0.7029253244400024,
+        "on_article_mass": 0.6743377447128296,
+        "branch_leverage_tv": 0.8541334867477417,
+        "total": {
+          "tv": 0.5235896110534668,
+          "target_minus_source": 0.222479447722435,
+          "desired_cosine": 0.8086400032043457
+        },
+        "public": {
+          "tv": 0.5233988761901855,
+          "target_minus_source": 0.21039153635501862,
+          "desired_cosine": 0.7798311710357666
+        },
+        "private": {
+          "tv": 0.04416045546531677,
+          "target_minus_source": 0.01208791509270668,
+          "desired_cosine": 0.3914400339126587
+        },
+        "reconstruction_l1": 1.882323807933517e-08
+      }
+    }
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "source_word": "businessman",
+    "target_word": "entrepreneur",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.0625,
+    "source_branch_delta_delta": 0.0,
+    "article_margin_movement": 1.25,
+    "controls": {
+      "wrong": -0.0625,
+      "letter_matched": 0.0,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8938256502151489,
+        "target_minus_source": 0.9072531461715698,
+        "desired_cosine": 0.7834737300872803
+      },
+      "public": {
+        "tv": 0.8921557664871216,
+        "target_minus_source": 0.9119312167167664,
+        "desired_cosine": 0.7837499976158142
+      },
+      "private": {
+        "tv": 0.007703288458287716,
+        "target_minus_source": -0.004678097553551197,
+        "desired_cosine": -0.42325055599212646
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9961465001106262,
+        "off_article_mass": 0.9770658612251282,
+        "on_article_mass": 0.999448299407959,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.8903844356536865,
+          "target_minus_source": 0.9037500619888306,
+          "desired_cosine": 0.7834737300872803
+        },
+        "public": {
+          "tv": 0.888717770576477,
+          "target_minus_source": 0.9084171056747437,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.007688611280173063,
+          "target_minus_source": -0.004667029716074467,
+          "desired_cosine": -0.42306041717529297
+        },
+        "reconstruction_l1": 2.9772898813007487e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.8482836484909058,
+        "off_article_mass": 0.8290273547172546,
+        "on_article_mass": 0.9560090899467468,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.758346438407898,
+          "target_minus_source": 0.7693339586257935,
+          "desired_cosine": 0.7834721803665161
+        },
+        "public": {
+          "tv": 0.7568011283874512,
+          "target_minus_source": 0.7735763192176819,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.007481811568140984,
+          "target_minus_source": -0.0042423708364367485,
+          "desired_cosine": -0.4148327708244324
+        },
+        "reconstruction_l1": 2.553894695722647e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.5545997619628906,
+        "off_article_mass": 0.7269269824028015,
+        "on_article_mass": 0.8490784168243408,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.49609434604644775,
+          "target_minus_source": 0.5023578405380249,
+          "desired_cosine": 0.7834619283676147
+        },
+        "public": {
+          "tv": 0.49478936195373535,
+          "target_minus_source": 0.5057567954063416,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.007570983842015266,
+          "target_minus_source": -0.003398943692445755,
+          "desired_cosine": -0.391135036945343
+        },
+        "reconstruction_l1": 1.0871974431836406e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.3027097284793854,
+        "off_article_mass": 0.5629432201385498,
+        "on_article_mass": 0.640947163105011,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.2711634635925293,
+          "target_minus_source": 0.27337491512298584,
+          "desired_cosine": 0.7834061980247498
+        },
+        "public": {
+          "tv": 0.27006426453590393,
+          "target_minus_source": 0.2760504484176636,
+          "desired_cosine": 0.7837499380111694
+        },
+        "private": {
+          "tv": 0.007684827782213688,
+          "target_minus_source": -0.0026755519211292267,
+          "desired_cosine": -0.3582076132297516
+        },
+        "reconstruction_l1": 1.1019087118452342e-12
+      }
+    }
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "source_word": "businessman",
+    "target_word": "entrepreneur",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 2.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": -0.0625,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.9020184278488159,
+        "target_minus_source": 0.9178233742713928,
+        "desired_cosine": 0.7830581068992615
+      },
+      "public": {
+        "tv": 0.8921557664871216,
+        "target_minus_source": 0.9119312167167664,
+        "desired_cosine": 0.7837499976158142
+      },
+      "private": {
+        "tv": 0.014505743980407715,
+        "target_minus_source": 0.005892165005207062,
+        "desired_cosine": 0.4364648461341858
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9980722069740295,
+        "off_article_mass": 0.9770658612251282,
+        "on_article_mass": 0.999987006187439,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.9002984762191772,
+          "target_minus_source": 0.9160653352737427,
+          "desired_cosine": 0.7830567955970764
+        },
+        "public": {
+          "tv": 0.8904358148574829,
+          "target_minus_source": 0.9101731777191162,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.014505736529827118,
+          "target_minus_source": 0.005892171524465084,
+          "desired_cosine": 0.43646565079689026
+        },
+        "reconstruction_l1": 1.997177712098619e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9200717210769653,
+        "off_article_mass": 0.8290273547172546,
+        "on_article_mass": 0.9890560507774353,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.8306705951690674,
+          "target_minus_source": 0.8449356555938721,
+          "desired_cosine": 0.7830055952072144
+        },
+        "public": {
+          "tv": 0.8208472728729248,
+          "target_minus_source": 0.8390421271324158,
+          "desired_cosine": 0.7837499976158142
+        },
+        "private": {
+          "tv": 0.01445994433015585,
+          "target_minus_source": 0.005893527530133724,
+          "desired_cosine": 0.4384758174419403
+        },
+        "reconstruction_l1": 1.763362078577302e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.7172131538391113,
+        "off_article_mass": 0.7269269824028015,
+        "on_article_mass": 0.9073701500892639,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.6491475701332092,
+          "target_minus_source": 0.6599617004394531,
+          "desired_cosine": 0.7829610705375671
+        },
+        "public": {
+          "tv": 0.6398658752441406,
+          "target_minus_source": 0.6540490984916687,
+          "desired_cosine": 0.7837501168251038
+        },
+        "private": {
+          "tv": 0.014135862700641155,
+          "target_minus_source": 0.005912579596042633,
+          "desired_cosine": 0.4663015305995941
+        },
+        "reconstruction_l1": 1.7571641919289505e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.4495415985584259,
+        "off_article_mass": 0.5629432201385498,
+        "on_article_mass": 0.6655542850494385,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.4089725911617279,
+          "target_minus_source": 0.41591155529022217,
+          "desired_cosine": 0.7831636071205139
+        },
+        "public": {
+          "tv": 0.401061087846756,
+          "target_minus_source": 0.40995097160339355,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.013765562325716019,
+          "target_minus_source": 0.005960553884506226,
+          "desired_cosine": 0.530146062374115
+        },
+        "reconstruction_l1": 8.503158177575187e-09
+      }
+    }
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "source_word": "businessman",
+    "target_word": "entrepreneur",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 2.5,
+    "controls": {
+      "wrong": -0.0625,
+      "letter_matched": 0.0,
+      "sign_reversed": -0.1875
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8949049115180969,
+        "target_minus_source": 0.8983699679374695,
+        "desired_cosine": 0.7831690311431885
+      },
+      "public": {
+        "tv": 0.8921557664871216,
+        "target_minus_source": 0.9119312167167664,
+        "desired_cosine": 0.7837499976158142
+      },
+      "private": {
+        "tv": 0.020108528435230255,
+        "target_minus_source": -0.013561251573264599,
+        "desired_cosine": -0.5047481656074524
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9980732798576355,
+        "off_article_mass": 0.9770658612251282,
+        "on_article_mass": 0.999998927116394,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.8931857943534851,
+          "target_minus_source": 0.8966128826141357,
+          "desired_cosine": 0.7831676602363586
+        },
+        "public": {
+          "tv": 0.8904368281364441,
+          "target_minus_source": 0.9101741313934326,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.020108528435230255,
+          "target_minus_source": -0.013561251573264599,
+          "desired_cosine": -0.5047481656074524
+        },
+        "reconstruction_l1": 2.744180704894461e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9235889911651611,
+        "off_article_mass": 0.8290273547172546,
+        "on_article_mass": 0.9959316253662109,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.8267330527305603,
+          "target_minus_source": 0.8287023305892944,
+          "desired_cosine": 0.7831100821495056
+        },
+        "public": {
+          "tv": 0.8239850997924805,
+          "target_minus_source": 0.8422496318817139,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.020101504400372505,
+          "target_minus_source": -0.013547265902161598,
+          "desired_cosine": -0.5045024156570435
+        },
+        "reconstruction_l1": 2.9159687997548644e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.7543225288391113,
+        "off_article_mass": 0.7269269824028015,
+        "on_article_mass": 0.9394930005073547,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.6756680011749268,
+          "target_minus_source": 0.6749107837677002,
+          "desired_cosine": 0.7830216288566589
+        },
+        "public": {
+          "tv": 0.6729732155799866,
+          "target_minus_source": 0.6878902316093445,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.01997915841639042,
+          "target_minus_source": -0.01297946646809578,
+          "desired_cosine": -0.49407702684402466
+        },
+        "reconstruction_l1": 2.1024934682145613e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.5183905363082886,
+        "off_article_mass": 0.5629432201385498,
+        "on_article_mass": 0.6961389780044556,
+        "branch_leverage_tv": 0.8921557664871216,
+        "total": {
+          "tv": 0.46491944789886475,
+          "target_minus_source": 0.4625418484210968,
+          "desired_cosine": 0.7832545042037964
+        },
+        "public": {
+          "tv": 0.4624852240085602,
+          "target_minus_source": 0.47273656725883484,
+          "desired_cosine": 0.783750057220459
+        },
+        "private": {
+          "tv": 0.020962677896022797,
+          "target_minus_source": -0.01019471138715744,
+          "desired_cosine": -0.4287199378013611
+        },
+        "reconstruction_l1": 7.428562209810252e-09
+      }
+    }
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "source_word": "director",
+    "target_word": "executive",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": -0.0625,
+    "article_margin_movement": 0.75,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.1875,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.009563500061631203,
+        "target_minus_source": -0.0006080656312406063,
+        "desired_cosine": -0.07449755072593689
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.009563500061631203,
+        "target_minus_source": -0.0006080656312406063,
+        "desired_cosine": -0.07449755072593689
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.07581278681755066,
+        "off_article_mass": 0.9999545812606812,
+        "on_article_mass": 0.9994890689849854,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.062589131295681,
+          "target_minus_source": 0.01474354974925518,
+          "desired_cosine": 0.37304407358169556
+        },
+        "public": {
+          "tv": 0.06141973286867142,
+          "target_minus_source": 0.015175345353782177,
+          "desired_cosine": 0.4045903980731964
+        },
+        "private": {
+          "tv": 0.00970560871064663,
+          "target_minus_source": -0.0004317956045269966,
+          "desired_cosine": -0.056830164045095444
+        },
+        "reconstruction_l1": 6.843840771875165e-11
+      },
+      "0.25": {
+        "delta_q_target_article": 0.2509552240371704,
+        "off_article_mass": 0.9822235107421875,
+        "on_article_mass": 0.9647258520126343,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.2033994197845459,
+          "target_minus_source": 0.05025023967027664,
+          "desired_cosine": 0.39847439527511597
+        },
+        "public": {
+          "tv": 0.20331141352653503,
+          "target_minus_source": 0.0502333864569664,
+          "desired_cosine": 0.40459027886390686
+        },
+        "private": {
+          "tv": 0.010467677377164364,
+          "target_minus_source": 1.68532133102417e-05,
+          "desired_cosine": 0.0025603733956813812
+        },
+        "reconstruction_l1": 3.1700361780018227e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.25833776593208313,
+        "off_article_mass": 0.8760444521903992,
+        "on_article_mass": 0.8605124950408936,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.20921415090560913,
+          "target_minus_source": 0.05198032781481743,
+          "desired_cosine": 0.39980408549308777
+        },
+        "public": {
+          "tv": 0.20929238200187683,
+          "target_minus_source": 0.051711130887269974,
+          "desired_cosine": 0.4045902490615845
+        },
+        "private": {
+          "tv": 0.01093962136656046,
+          "target_minus_source": 0.00026919692754745483,
+          "desired_cosine": 0.042342398315668106
+        },
+        "reconstruction_l1": 4.2727981153234396e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.1688821017742157,
+        "off_article_mass": 0.5539360046386719,
+        "on_article_mass": 0.5555068254470825,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.13668933510780334,
+          "target_minus_source": 0.034214191138744354,
+          "desired_cosine": 0.3979441523551941
+        },
+        "public": {
+          "tv": 0.13681989908218384,
+          "target_minus_source": 0.033804915845394135,
+          "desired_cosine": 0.40459030866622925
+        },
+        "private": {
+          "tv": 0.011205064132809639,
+          "target_minus_source": 0.0004092752933502197,
+          "desired_cosine": 0.06437582522630692
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "source_word": "director",
+    "target_word": "executive",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.1875,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 1.375,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.25,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.805605411529541,
+        "target_minus_source": 0.2123265266418457,
+        "desired_cosine": 0.4299551844596863
+      },
+      "public": {
+        "tv": 0.8101503252983093,
+        "target_minus_source": 0.20016872882843018,
+        "desired_cosine": 0.4045902192592621
+      },
+      "private": {
+        "tv": 0.026725003495812416,
+        "target_minus_source": 0.012157795950770378,
+        "desired_cosine": 0.5563725829124451
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9769772291183472,
+        "off_article_mass": 0.9999545812606812,
+        "on_article_mass": 0.9999556541442871,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.7870718836784363,
+          "target_minus_source": 0.20750242471694946,
+          "desired_cosine": 0.4300031065940857
+        },
+        "public": {
+          "tv": 0.7914985418319702,
+          "target_minus_source": 0.1955602765083313,
+          "desired_cosine": 0.40459030866622925
+        },
+        "private": {
+          "tv": 0.02641822211444378,
+          "target_minus_source": 0.011942144483327866,
+          "desired_cosine": 0.5589019656181335
+        },
+        "reconstruction_l1": 2.770985396693959e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.7995882034301758,
+        "off_article_mass": 0.9822235107421875,
+        "on_article_mass": 0.9851721525192261,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.6441818475723267,
+          "target_minus_source": 0.17049820721149445,
+          "desired_cosine": 0.43096405267715454
+        },
+        "public": {
+          "tv": 0.6477866172790527,
+          "target_minus_source": 0.1600525677204132,
+          "desired_cosine": 0.40459027886390686
+        },
+        "private": {
+          "tv": 0.02481011301279068,
+          "target_minus_source": 0.010445643216371536,
+          "desired_cosine": 0.5771268010139465
+        },
+        "reconstruction_l1": 1.8815331515043e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.559975802898407,
+        "off_article_mass": 0.8760444521903992,
+        "on_article_mass": 0.9020304083824158,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.45078375935554504,
+          "target_minus_source": 0.12123634666204453,
+          "desired_cosine": 0.4363323748111725
+        },
+        "public": {
+          "tv": 0.4536645710468292,
+          "target_minus_source": 0.1120896264910698,
+          "desired_cosine": 0.4045901596546173
+        },
+        "private": {
+          "tv": 0.02348100207746029,
+          "target_minus_source": 0.009146720170974731,
+          "desired_cosine": 0.5917637944221497
+        },
+        "reconstruction_l1": 4.918510487783578e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.3237251937389374,
+        "off_article_mass": 0.5539360046386719,
+        "on_article_mass": 0.5883546471595764,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.2598472237586975,
+          "target_minus_source": 0.0731344223022461,
+          "desired_cosine": 0.4525158703327179
+        },
+        "public": {
+          "tv": 0.2622660994529724,
+          "target_minus_source": 0.06479965895414352,
+          "desired_cosine": 0.404590368270874
+        },
+        "private": {
+          "tv": 0.022719530388712883,
+          "target_minus_source": 0.008334759622812271,
+          "desired_cosine": 0.5976988673210144
+        },
+        "reconstruction_l1": 2.7073576713831926e-09
+      }
+    }
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "source_word": "director",
+    "target_word": "executive",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 1.75,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.25,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8008465766906738,
+        "target_minus_source": 0.20980125665664673,
+        "desired_cosine": 0.4291419982910156
+      },
+      "public": {
+        "tv": 0.8101503252983093,
+        "target_minus_source": 0.20016872882843018,
+        "desired_cosine": 0.4045902192592621
+      },
+      "private": {
+        "tv": 0.03475247323513031,
+        "target_minus_source": 0.009632522240281105,
+        "desired_cosine": 0.39071154594421387
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9994017481803894,
+        "off_article_mass": 0.9999545812606812,
+        "on_article_mass": 0.9999869465827942,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.8003673553466797,
+          "target_minus_source": 0.2096797078847885,
+          "desired_cosine": 0.42914843559265137
+        },
+        "public": {
+          "tv": 0.8096657991409302,
+          "target_minus_source": 0.20004898309707642,
+          "desired_cosine": 0.4045902192592621
+        },
+        "private": {
+          "tv": 0.03474239632487297,
+          "target_minus_source": 0.009630726650357246,
+          "desired_cosine": 0.3908434808254242
+        },
+        "reconstruction_l1": 2.207564975265086e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9345878958702087,
+        "off_article_mass": 0.9822235107421875,
+        "on_article_mass": 0.9894827008247375,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.7483150959014893,
+          "target_minus_source": 0.19655388593673706,
+          "desired_cosine": 0.4300970435142517
+        },
+        "public": {
+          "tv": 0.7571567296981812,
+          "target_minus_source": 0.18707528710365295,
+          "desired_cosine": 0.40459033846855164
+        },
+        "private": {
+          "tv": 0.03403802588582039,
+          "target_minus_source": 0.009478600695729256,
+          "desired_cosine": 0.4024125933647156
+        },
+        "reconstruction_l1": 1.9272473394948975e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.6983715295791626,
+        "off_article_mass": 0.8760444521903992,
+        "on_article_mass": 0.9077944755554199,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.558260977268219,
+          "target_minus_source": 0.14883260428905487,
+          "desired_cosine": 0.4357725977897644
+        },
+        "public": {
+          "tv": 0.5657858848571777,
+          "target_minus_source": 0.13979212939739227,
+          "desired_cosine": 0.4045902192592621
+        },
+        "private": {
+          "tv": 0.03229568526148796,
+          "target_minus_source": 0.009040473029017448,
+          "desired_cosine": 0.44005852937698364
+        },
+        "reconstruction_l1": 1.4794474090251697e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.41023728251457214,
+        "off_article_mass": 0.5539360046386719,
+        "on_article_mass": 0.5796935558319092,
+        "branch_leverage_tv": 0.8101503252983093,
+        "total": {
+          "tv": 0.3261907994747162,
+          "target_minus_source": 0.09070800989866257,
+          "desired_cosine": 0.4522368013858795
+        },
+        "public": {
+          "tv": 0.3323538601398468,
+          "target_minus_source": 0.08211667090654373,
+          "desired_cosine": 0.40459027886390686
+        },
+        "private": {
+          "tv": 0.03054824098944664,
+          "target_minus_source": 0.008591335266828537,
+          "desired_cosine": 0.4850296676158905
+        },
+        "reconstruction_l1": 7.872807294972972e-09
+      }
+    }
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "source_word": "performer",
+    "target_word": "entertainer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.0,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 1.5,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.0625,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.01212898176163435,
+        "target_minus_source": -0.009359952993690968,
+        "desired_cosine": -0.6706601977348328
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.01212898176163435,
+        "target_minus_source": -0.009359952993690968,
+        "desired_cosine": -0.6706601977348328
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.07585816085338593,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.06901583820581436,
+          "target_minus_source": 0.043884776532649994,
+          "desired_cosine": 0.5338868498802185
+        },
+        "public": {
+          "tv": 0.0688728392124176,
+          "target_minus_source": 0.05253557115793228,
+          "desired_cosine": 0.584418773651123
+        },
+        "private": {
+          "tv": 0.011331755667924881,
+          "target_minus_source": -0.008650793693959713,
+          "desired_cosine": -0.6705172657966614
+        },
+        "reconstruction_l1": 2.689691802615357e-10
+      },
+      "0.25": {
+        "delta_q_target_article": 0.2680303752422333,
+        "off_article_mass": 0.9997943043708801,
+        "on_article_mass": 0.9993241429328918,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.24352805316448212,
+          "target_minus_source": 0.17877864837646484,
+          "desired_cosine": 0.574576199054718
+        },
+        "public": {
+          "tv": 0.2433490753173828,
+          "target_minus_source": 0.185624361038208,
+          "desired_cosine": 0.5844185948371887
+        },
+        "private": {
+          "tv": 0.009313289076089859,
+          "target_minus_source": -0.006845708936452866,
+          "desired_cosine": -0.6698399782180786
+        },
+        "reconstruction_l1": 2.6800199212639875e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.34822845458984375,
+        "off_article_mass": 0.9824120998382568,
+        "on_article_mass": 0.975686252117157,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.316379576921463,
+          "target_minus_source": 0.23533491790294647,
+          "desired_cosine": 0.5780643224716187
+        },
+        "public": {
+          "tv": 0.3161621391773224,
+          "target_minus_source": 0.241165429353714,
+          "desired_cosine": 0.584418535232544
+        },
+        "private": {
+          "tv": 0.008186588063836098,
+          "target_minus_source": -0.005830511450767517,
+          "desired_cosine": -0.6690627932548523
+        },
+        "reconstruction_l1": 1.3393276765416573e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.2897763252258301,
+        "off_article_mass": 0.7070908546447754,
+        "on_article_mass": 0.708126425743103,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.2633343040943146,
+          "target_minus_source": 0.19541749358177185,
+          "desired_cosine": 0.5775135159492493
+        },
+        "public": {
+          "tv": 0.2630924880504608,
+          "target_minus_source": 0.20068441331386566,
+          "desired_cosine": 0.5844183564186096
+        },
+        "private": {
+          "tv": 0.007562336977571249,
+          "target_minus_source": -0.005266930907964706,
+          "desired_cosine": -0.6683833003044128
+        },
+        "reconstruction_l1": 3.7849079426166554e-09
+      }
+    }
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "source_word": "performer",
+    "target_word": "entertainer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 2.5,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.1875,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.9099003672599792,
+        "target_minus_source": 0.7082550525665283,
+        "desired_cosine": 0.5962610244750977
+      },
+      "public": {
+        "tv": 0.9079158902168274,
+        "target_minus_source": 0.6925496459007263,
+        "desired_cosine": 0.5844185948371887
+      },
+      "private": {
+        "tv": 0.017327554523944855,
+        "target_minus_source": 0.01570543646812439,
+        "desired_cosine": 0.6494412422180176
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9994471669197083,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.9093973636627197,
+          "target_minus_source": 0.7078571915626526,
+          "desired_cosine": 0.5962586402893066
+        },
+        "public": {
+          "tv": 0.9074139595031738,
+          "target_minus_source": 0.692166805267334,
+          "desired_cosine": 0.5844185948371887
+        },
+        "private": {
+          "tv": 0.017317362129688263,
+          "target_minus_source": 0.015690386295318604,
+          "desired_cosine": 0.6491794586181641
+        },
+        "reconstruction_l1": 3.150476146629444e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.951663076877594,
+        "off_article_mass": 0.9997943043708801,
+        "on_article_mass": 0.9994667172431946,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.8659254908561707,
+          "target_minus_source": 0.6734889149665833,
+          "desired_cosine": 0.596063494682312
+        },
+        "public": {
+          "tv": 0.864030122756958,
+          "target_minus_source": 0.6590739488601685,
+          "desired_cosine": 0.584418535232544
+        },
+        "private": {
+          "tv": 0.016981229186058044,
+          "target_minus_source": 0.014414986595511436,
+          "desired_cosine": 0.62549889087677
+        },
+        "reconstruction_l1": 3.7079711745491295e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.7882621884346008,
+        "off_article_mass": 0.9824120998382568,
+        "on_article_mass": 0.9759581089019775,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.7173177599906921,
+          "target_minus_source": 0.5566523671150208,
+          "desired_cosine": 0.5957241058349609
+        },
+        "public": {
+          "tv": 0.7156757116317749,
+          "target_minus_source": 0.545910656452179,
+          "desired_cosine": 0.584418535232544
+        },
+        "private": {
+          "tv": 0.016649466007947922,
+          "target_minus_source": 0.01074172556400299,
+          "desired_cosine": 0.5372153520584106
+        },
+        "reconstruction_l1": 1.3783763463948162e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.5311315059661865,
+        "off_article_mass": 0.7070908546447754,
+        "on_article_mass": 0.709408164024353,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.4836050271987915,
+          "target_minus_source": 0.37481093406677246,
+          "desired_cosine": 0.5969713926315308
+        },
+        "public": {
+          "tv": 0.4822225570678711,
+          "target_minus_source": 0.3678348660469055,
+          "desired_cosine": 0.584418535232544
+        },
+        "private": {
+          "tv": 0.016313469037413597,
+          "target_minus_source": 0.0069760605692863464,
+          "desired_cosine": 0.40382423996925354
+        },
+        "reconstruction_l1": 1.884935585394487e-08
+      }
+    }
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "source_word": "performer",
+    "target_word": "entertainer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 3.375,
+    "controls": {
+      "wrong": 0.1875,
+      "letter_matched": 0.3125,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.9085353016853333,
+        "target_minus_source": 0.7078005075454712,
+        "desired_cosine": 0.5969669818878174
+      },
+      "public": {
+        "tv": 0.9079158902168274,
+        "target_minus_source": 0.6925496459007263,
+        "desired_cosine": 0.5844185948371887
+      },
+      "private": {
+        "tv": 0.018411217257380486,
+        "target_minus_source": 0.015250892378389835,
+        "desired_cosine": 0.6388363838195801
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999998807907104,
+        "off_article_mass": 1.0,
+        "on_article_mass": 0.9999999403953552,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.9085351824760437,
+          "target_minus_source": 0.7078004479408264,
+          "desired_cosine": 0.5969669818878174
+        },
+        "public": {
+          "tv": 0.9079158902168274,
+          "target_minus_source": 0.6925495862960815,
+          "desired_cosine": 0.5844185948371887
+        },
+        "private": {
+          "tv": 0.018411217257380486,
+          "target_minus_source": 0.01525089144706726,
+          "desired_cosine": 0.6388363242149353
+        },
+        "reconstruction_l1": 1.753824818706562e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9975877404212952,
+        "off_article_mass": 0.9997943043708801,
+        "on_article_mass": 0.9997935891151428,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.9063445329666138,
+          "target_minus_source": 0.7060832381248474,
+          "desired_cosine": 0.5969696044921875
+        },
+        "public": {
+          "tv": 0.9057258367538452,
+          "target_minus_source": 0.6908790469169617,
+          "desired_cosine": 0.584418535232544
+        },
+        "private": {
+          "tv": 0.01838655211031437,
+          "target_minus_source": 0.015204215422272682,
+          "desired_cosine": 0.6378445625305176
+        },
+        "reconstruction_l1": 4.714844337172508e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9333608150482178,
+        "off_article_mass": 0.9824120998382568,
+        "on_article_mass": 0.9823816418647766,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.8480140566825867,
+          "target_minus_source": 0.660489022731781,
+          "desired_cosine": 0.5971266627311707
+        },
+        "public": {
+          "tv": 0.847413182258606,
+          "target_minus_source": 0.646398663520813,
+          "desired_cosine": 0.584418535232544
+        },
+        "private": {
+          "tv": 0.018205976113677025,
+          "target_minus_source": 0.014090344309806824,
+          "desired_cosine": 0.6128378510475159
+        },
+        "reconstruction_l1": 3.156691974481873e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.6874363422393799,
+        "off_article_mass": 0.7070908546447754,
+        "on_article_mass": 0.7142359614372253,
+        "branch_leverage_tv": 0.9079158902168274,
+        "total": {
+          "tv": 0.6246718764305115,
+          "target_minus_source": 0.4862195551395416,
+          "desired_cosine": 0.598258376121521
+        },
+        "public": {
+          "tv": 0.624134361743927,
+          "target_minus_source": 0.4760837256908417,
+          "desired_cosine": 0.5844184756278992
+        },
+        "private": {
+          "tv": 0.018290920183062553,
+          "target_minus_source": 0.010135844349861145,
+          "desired_cosine": 0.4997842013835907
+        },
+        "reconstruction_l1": 4.392775565520424e-08
+      }
+    }
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "source_word": "teacher",
+    "target_word": "educator",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 1.875,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.1875,
+      "sign_reversed": 0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.015100851655006409,
+        "target_minus_source": 0.013447190634906292,
+        "desired_cosine": 0.659558892250061
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.015100851655006409,
+        "target_minus_source": 0.013447190634906292,
+        "desired_cosine": 0.659558892250061
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.022977370768785477,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9998452663421631,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.032729968428611755,
+          "target_minus_source": 0.03721005842089653,
+          "desired_cosine": 0.8494158983230591
+        },
+        "public": {
+          "tv": 0.019775358960032463,
+          "target_minus_source": 0.023558402433991432,
+          "desired_cosine": 0.9231383800506592
+        },
+        "private": {
+          "tv": 0.015142890624701977,
+          "target_minus_source": 0.013651655986905098,
+          "desired_cosine": 0.6848284602165222
+        },
+        "reconstruction_l1": 1.6535370295223117e-11
+      },
+      "0.25": {
+        "delta_q_target_article": 0.18230211734771729,
+        "off_article_mass": 0.9933076500892639,
+        "on_article_mass": 0.9759048819541931,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.16291408240795135,
+          "target_minus_source": 0.20198269188404083,
+          "desired_cosine": 0.9219914078712463
+        },
+        "public": {
+          "tv": 0.15689760446548462,
+          "target_minus_source": 0.1869124323129654,
+          "desired_cosine": 0.9231381416320801
+        },
+        "private": {
+          "tv": 0.0165785513818264,
+          "target_minus_source": 0.01507025957107544,
+          "desired_cosine": 0.8381351232528687
+        },
+        "reconstruction_l1": 7.811546548497361e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.309834361076355,
+        "off_article_mass": 0.9235035181045532,
+        "on_article_mass": 0.8923814296722412,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.2720170021057129,
+          "target_minus_source": 0.33397144079208374,
+          "desired_cosine": 0.9271586537361145
+        },
+        "public": {
+          "tv": 0.2666577696800232,
+          "target_minus_source": 0.31766992807388306,
+          "desired_cosine": 0.9231380224227905
+        },
+        "private": {
+          "tv": 0.019138528034090996,
+          "target_minus_source": 0.01630154252052307,
+          "desired_cosine": 0.8920103311538696
+        },
+        "reconstruction_l1": 1.9936356732142002e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.31198397278785706,
+        "off_article_mass": 0.6791074872016907,
+        "on_article_mass": 0.6829339265823364,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.2735161781311035,
+          "target_minus_source": 0.3369450569152832,
+          "desired_cosine": 0.9298713803291321
+        },
+        "public": {
+          "tv": 0.268507719039917,
+          "target_minus_source": 0.3198738098144531,
+          "desired_cosine": 0.9231381416320801
+        },
+        "private": {
+          "tv": 0.021591832861304283,
+          "target_minus_source": 0.017071232199668884,
+          "desired_cosine": 0.8803387880325317
+        },
+        "reconstruction_l1": 2.593106840365067e-10
+      }
+    }
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "source_word": "teacher",
+    "target_word": "educator",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.5625,
+    "source_branch_delta_delta": 0.3125,
+    "article_margin_movement": 3.125,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.3125,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.869040310382843,
+        "target_minus_source": 1.0963897705078125,
+        "desired_cosine": 0.9489132165908813
+      },
+      "public": {
+        "tv": 0.8606460690498352,
+        "target_minus_source": 1.0252894163131714,
+        "desired_cosine": 0.9231382012367249
+      },
+      "private": {
+        "tv": 0.09416741132736206,
+        "target_minus_source": 0.07110031694173813,
+        "desired_cosine": 0.6840060949325562
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.999841570854187,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.999998927116394,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.8689037561416626,
+          "target_minus_source": 1.0962167978286743,
+          "desired_cosine": 0.9489129185676575
+        },
+        "public": {
+          "tv": 0.8605097532272339,
+          "target_minus_source": 1.0251269340515137,
+          "desired_cosine": 0.9231381416320801
+        },
+        "private": {
+          "tv": 0.09415251016616821,
+          "target_minus_source": 0.07108988612890244,
+          "desired_cosine": 0.6840140223503113
+        },
+        "reconstruction_l1": 1.3966047873736898e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9705643653869629,
+        "off_article_mass": 0.9933076500892639,
+        "on_article_mass": 0.9960482716560364,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.8436715602874756,
+          "target_minus_source": 1.0642772912979126,
+          "desired_cosine": 0.9488726258277893
+        },
+        "public": {
+          "tv": 0.8353124260902405,
+          "target_minus_source": 0.9951093196868896,
+          "desired_cosine": 0.9231380820274353
+        },
+        "private": {
+          "tv": 0.09143830835819244,
+          "target_minus_source": 0.06916797161102295,
+          "desired_cosine": 0.6855159401893616
+        },
+        "reconstruction_l1": 9.613350115955654e-09
+      },
+      "0.5": {
+        "delta_q_target_article": 0.8409658074378967,
+        "off_article_mass": 0.9235035181045532,
+        "on_article_mass": 0.9468982815742493,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.7320021986961365,
+          "target_minus_source": 0.9235739707946777,
+          "desired_cosine": 0.9489424824714661
+        },
+        "public": {
+          "tv": 0.7237740755081177,
+          "target_minus_source": 0.8622334003448486,
+          "desired_cosine": 0.9231380820274353
+        },
+        "private": {
+          "tv": 0.08069854229688644,
+          "target_minus_source": 0.06134061515331268,
+          "desired_cosine": 0.6925553679466248
+        },
+        "reconstruction_l1": 5.267768088401681e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.6104356050491333,
+        "off_article_mass": 0.6791074872016907,
+        "on_article_mass": 0.7358313202857971,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.5335162281990051,
+          "target_minus_source": 0.6775779128074646,
+          "desired_cosine": 0.9515156745910645
+        },
+        "public": {
+          "tv": 0.5253690481185913,
+          "target_minus_source": 0.6258731484413147,
+          "desired_cosine": 0.9231380224227905
+        },
+        "private": {
+          "tv": 0.06763014197349548,
+          "target_minus_source": 0.051704779267311096,
+          "desired_cosine": 0.7039340138435364
+        },
+        "reconstruction_l1": 2.049279501648016e-08
+      }
+    }
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "source_word": "teacher",
+    "target_word": "educator",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.6875,
+    "source_branch_delta_delta": 0.1875,
+    "article_margin_movement": 3.875,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.4375,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.8711881041526794,
+        "target_minus_source": 1.1061772108078003,
+        "desired_cosine": 0.9518539309501648
+      },
+      "public": {
+        "tv": 0.8606460690498352,
+        "target_minus_source": 1.0252894163131714,
+        "desired_cosine": 0.9231382012367249
+      },
+      "private": {
+        "tv": 0.11275851726531982,
+        "target_minus_source": 0.0808878093957901,
+        "desired_cosine": 0.6773098707199097
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999998807907104,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999999403953552,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.8711880445480347,
+          "target_minus_source": 1.1061770915985107,
+          "desired_cosine": 0.9518539309501648
+        },
+        "public": {
+          "tv": 0.8606460094451904,
+          "target_minus_source": 1.0252892971038818,
+          "desired_cosine": 0.9231381416320801
+        },
+        "private": {
+          "tv": 0.11275850236415863,
+          "target_minus_source": 0.08088777959346771,
+          "desired_cosine": 0.6773098707199097
+        },
+        "reconstruction_l1": 2.6351582249617422e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.998375415802002,
+        "off_article_mass": 0.9933076500892639,
+        "on_article_mass": 0.9990900158882141,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.8697723150253296,
+          "target_minus_source": 1.104377031326294,
+          "desired_cosine": 0.9518579840660095
+        },
+        "public": {
+          "tv": 0.8592478632926941,
+          "target_minus_source": 1.0236237049102783,
+          "desired_cosine": 0.9231380224227905
+        },
+        "private": {
+          "tv": 0.11258946359157562,
+          "target_minus_source": 0.08075336366891861,
+          "desired_cosine": 0.6771979928016663
+        },
+        "reconstruction_l1": 6.429135623875482e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9516861438751221,
+        "off_article_mass": 0.9235035181045532,
+        "on_article_mass": 0.9703861474990845,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.8291774988174438,
+          "target_minus_source": 1.0532978773117065,
+          "desired_cosine": 0.9521512985229492
+        },
+        "public": {
+          "tv": 0.8190650343894958,
+          "target_minus_source": 0.9757537841796875,
+          "desired_cosine": 0.9231382012367249
+        },
+        "private": {
+          "tv": 0.1085648313164711,
+          "target_minus_source": 0.07754416763782501,
+          "desired_cosine": 0.6744173169136047
+        },
+        "reconstruction_l1": 2.9206461249486892e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.7401341199874878,
+        "off_article_mass": 0.6791074872016907,
+        "on_article_mass": 0.7518940567970276,
+        "branch_leverage_tv": 0.8606460690498352,
+        "total": {
+          "tv": 0.6456950306892395,
+          "target_minus_source": 0.8250024318695068,
+          "desired_cosine": 0.9549327492713928
+        },
+        "public": {
+          "tv": 0.6369935274124146,
+          "target_minus_source": 0.7588516473770142,
+          "desired_cosine": 0.9231380820274353
+        },
+        "private": {
+          "tv": 0.09443461149930954,
+          "target_minus_source": 0.06615076959133148,
+          "desired_cosine": 0.6624537706375122
+        },
+        "reconstruction_l1": 3.6050330720627244e-08
+      }
+    }
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "source_word": "painter",
+    "target_word": "artist",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 1.25,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": null,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.02240806259214878,
+        "target_minus_source": 0.016674071550369263,
+        "desired_cosine": 0.6714277267456055
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.02240806259214878,
+        "target_minus_source": 0.016674071550369263,
+        "desired_cosine": 0.6714277267456055
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.022977283224463463,
+        "off_article_mass": 0.9999995827674866,
+        "on_article_mass": 0.9999964237213135,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.03845163434743881,
+          "target_minus_source": 0.045215025544166565,
+          "desired_cosine": 0.9396820664405823
+        },
+        "public": {
+          "tv": 0.020711706951260567,
+          "target_minus_source": 0.02852032519876957,
+          "desired_cosine": 0.9842280745506287
+        },
+        "private": {
+          "tv": 0.02224642224609852,
+          "target_minus_source": 0.016694700345396996,
+          "desired_cosine": 0.6880911588668823
+        },
+        "reconstruction_l1": 1.6085421189471205e-11
+      },
+      "0.25": {
+        "delta_q_target_article": 0.18092432618141174,
+        "off_article_mass": 0.9975255131721497,
+        "on_article_mass": 0.9945103526115417,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.17018069326877594,
+          "target_minus_source": 0.24140892922878265,
+          "desired_cosine": 0.9884517788887024
+        },
+        "public": {
+          "tv": 0.1630852073431015,
+          "target_minus_source": 0.22457066178321838,
+          "desired_cosine": 0.984228253364563
+        },
+        "private": {
+          "tv": 0.021514397114515305,
+          "target_minus_source": 0.016838274896144867,
+          "desired_cosine": 0.8067624568939209
+        },
+        "reconstruction_l1": 3.2730779891965156e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.2834944427013397,
+        "off_article_mass": 0.9499143362045288,
+        "on_article_mass": 0.9433138966560364,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.2600497305393219,
+          "target_minus_source": 0.3688475489616394,
+          "desired_cosine": 0.987135112285614
+        },
+        "public": {
+          "tv": 0.2555418610572815,
+          "target_minus_source": 0.3518846929073334,
+          "desired_cosine": 0.9842280745506287
+        },
+        "private": {
+          "tv": 0.020899159833788872,
+          "target_minus_source": 0.01696285605430603,
+          "desired_cosine": 0.8918719291687012
+        },
+        "reconstruction_l1": 2.455868008954809e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.2428169697523117,
+        "off_article_mass": 0.6593664288520813,
+        "on_article_mass": 0.7015703320503235,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.22351279854774475,
+          "target_minus_source": 0.3184348940849304,
+          "desired_cosine": 0.9872786402702332
+        },
+        "public": {
+          "tv": 0.2188751995563507,
+          "target_minus_source": 0.3013942241668701,
+          "desired_cosine": 0.9842283129692078
+        },
+        "private": {
+          "tv": 0.020541468635201454,
+          "target_minus_source": 0.01704069972038269,
+          "desired_cosine": 0.9195956587791443
+        },
+        "reconstruction_l1": 1.101498753319774e-10
+      }
+    }
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "source_word": "painter",
+    "target_word": "artist",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.1875,
+    "source_branch_delta_delta": 0.3125,
+    "article_margin_movement": 2.125,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": 0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.9056283831596375,
+        "target_minus_source": 1.2577195167541504,
+        "desired_cosine": 0.9843723177909851
+      },
+      "public": {
+        "tv": 0.901400089263916,
+        "target_minus_source": 1.2412405014038086,
+        "desired_cosine": 0.9842281937599182
+      },
+      "private": {
+        "tv": 0.02500152960419655,
+        "target_minus_source": 0.016479022800922394,
+        "desired_cosine": 0.609003484249115
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9933071136474609,
+        "off_article_mass": 0.9999995827674866,
+        "on_article_mass": 0.9999996423721313,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.8996171951293945,
+          "target_minus_source": 1.2495100498199463,
+          "desired_cosine": 0.9843896627426147
+        },
+        "public": {
+          "tv": 0.8953670263290405,
+          "target_minus_source": 1.2329329252243042,
+          "desired_cosine": 0.9842281341552734
+        },
+        "private": {
+          "tv": 0.02503318153321743,
+          "target_minus_source": 0.016577141359448433,
+          "desired_cosine": 0.6165177226066589
+        },
+        "reconstruction_l1": 2.4505879991920665e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.879295825958252,
+        "off_article_mass": 0.9975255131721497,
+        "on_article_mass": 0.9978158473968506,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.7972160577774048,
+          "target_minus_source": 1.1096439361572266,
+          "desired_cosine": 0.9847139716148376
+        },
+        "public": {
+          "tv": 0.7925972938537598,
+          "target_minus_source": 1.091417670249939,
+          "desired_cosine": 0.984228253364563
+        },
+        "private": {
+          "tv": 0.026137134060263634,
+          "target_minus_source": 0.018226243555545807,
+          "desired_cosine": 0.7411712408065796
+        },
+        "reconstruction_l1": 2.9850504290607205e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.6937317252159119,
+        "off_article_mass": 0.9499143362045288,
+        "on_article_mass": 0.9621098041534424,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.6305110454559326,
+          "target_minus_source": 0.8815089464187622,
+          "desired_cosine": 0.9853119254112244
+        },
+        "public": {
+          "tv": 0.6253296732902527,
+          "target_minus_source": 0.8610878586769104,
+          "desired_cosine": 0.9842281341552734
+        },
+        "private": {
+          "tv": 0.02796514332294464,
+          "target_minus_source": 0.020421087741851807,
+          "desired_cosine": 0.8673930764198303
+        },
+        "reconstruction_l1": 1.0617643653176856e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.4579429030418396,
+        "off_article_mass": 0.6593664288520813,
+        "on_article_mass": 0.7479743957519531,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.41918444633483887,
+          "target_minus_source": 0.5904301404953003,
+          "desired_cosine": 0.9862626791000366
+        },
+        "public": {
+          "tv": 0.4127897620201111,
+          "target_minus_source": 0.5684171915054321,
+          "desired_cosine": 0.984228253364563
+        },
+        "private": {
+          "tv": 0.029380714520812035,
+          "target_minus_source": 0.022012948989868164,
+          "desired_cosine": 0.9031338691711426
+        },
+        "reconstruction_l1": 1.6625950616244722e-09
+      }
+    }
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "source_word": "painter",
+    "target_word": "artist",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "article_changed": true,
+    "target_branch_delta_delta": 0.1875,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 2.625,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": 0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.9057655334472656,
+        "target_minus_source": 1.2554466724395752,
+        "desired_cosine": 0.984480082988739
+      },
+      "public": {
+        "tv": 0.901400089263916,
+        "target_minus_source": 1.2412405014038086,
+        "desired_cosine": 0.9842281937599182
+      },
+      "private": {
+        "tv": 0.028607729822397232,
+        "target_minus_source": 0.014206125400960445,
+        "desired_cosine": 0.5571472644805908
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999545216560364,
+        "off_article_mass": 0.9999995827674866,
+        "on_article_mass": 1.0,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.9057247638702393,
+          "target_minus_source": 1.2553908824920654,
+          "desired_cosine": 0.9844802021980286
+        },
+        "public": {
+          "tv": 0.901358962059021,
+          "target_minus_source": 1.2411839962005615,
+          "desired_cosine": 0.9842281341552734
+        },
+        "private": {
+          "tv": 0.02860850654542446,
+          "target_minus_source": 0.014206968247890472,
+          "desired_cosine": 0.5572032928466797
+        },
+        "reconstruction_l1": 3.482012544964164e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9805125594139099,
+        "off_article_mass": 0.9975255131721497,
+        "on_article_mass": 0.9991016983985901,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.8883392214775085,
+          "target_minus_source": 1.2316045761108398,
+          "desired_cosine": 0.984512448310852
+        },
+        "public": {
+          "tv": 0.8838342428207397,
+          "target_minus_source": 1.2170519828796387,
+          "desired_cosine": 0.9842281341552734
+        },
+        "private": {
+          "tv": 0.028965357691049576,
+          "target_minus_source": 0.014552588574588299,
+          "desired_cosine": 0.5794225335121155
+        },
+        "reconstruction_l1": 1.7765927395885228e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.8434701561927795,
+        "off_article_mass": 0.9499143362045288,
+        "on_article_mass": 0.9713094830513,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.7656658291816711,
+          "target_minus_source": 1.063452124595642,
+          "desired_cosine": 0.9847218990325928
+        },
+        "public": {
+          "tv": 0.7603040933609009,
+          "target_minus_source": 1.0469493865966797,
+          "desired_cosine": 0.984228253364563
+        },
+        "private": {
+          "tv": 0.03124452754855156,
+          "target_minus_source": 0.01650279015302658,
+          "desired_cosine": 0.6951829791069031
+        },
+        "reconstruction_l1": 1.6220718990211935e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.5665421485900879,
+        "off_article_mass": 0.6593664288520813,
+        "on_article_mass": 0.7513861656188965,
+        "branch_leverage_tv": 0.901400089263916,
+        "total": {
+          "tv": 0.5183283090591431,
+          "target_minus_source": 0.7226028442382812,
+          "desired_cosine": 0.985223650932312
+        },
+        "public": {
+          "tv": 0.51068115234375,
+          "target_minus_source": 0.7032150030136108,
+          "desired_cosine": 0.9842281341552734
+        },
+        "private": {
+          "tv": 0.03480466455221176,
+          "target_minus_source": 0.019387781620025635,
+          "desired_cosine": 0.7957926392555237
+        },
+        "reconstruction_l1": 8.70630056937216e-09
+      }
+    }
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "source_word": "driver",
+    "target_word": "chauffeur",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.0,
+    "source_branch_delta_delta": 0.0,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": -0.0625,
+      "letter_matched": 0.0625,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.009812526404857635,
+        "target_minus_source": -0.004319377243518829,
+        "desired_cosine": -0.527121365070343
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.009812526404857635,
+        "target_minus_source": -0.004319377243518829,
+        "desired_cosine": -0.527121365070343
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 2.384185791015625e-07,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 0.9999999403953552,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.009812583215534687,
+          "target_minus_source": -0.004319485276937485,
+          "desired_cosine": -0.5271252393722534
+        },
+        "public": {
+          "tv": 1.844272645712408e-07,
+          "target_minus_source": -1.0803341865539551e-07,
+          "desired_cosine": -0.6197024583816528
+        },
+        "private": {
+          "tv": 0.009812525473535061,
+          "target_minus_source": -0.004319377243518829,
+          "desired_cosine": -0.527121365070343
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.000971376895904541,
+        "off_article_mass": 0.9990877509117126,
+        "on_article_mass": 0.9994427561759949,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.010410770773887634,
+          "target_minus_source": -0.004717886447906494,
+          "desired_cosine": -0.5385189652442932
+        },
+        "public": {
+          "tv": 0.0007821397157385945,
+          "target_minus_source": -0.0004051476716995239,
+          "desired_cosine": -0.5966518521308899
+        },
+        "private": {
+          "tv": 0.009803742170333862,
+          "target_minus_source": -0.00431273877620697,
+          "desired_cosine": -0.5270935297012329
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.010098934173583984,
+        "off_article_mass": 0.968080997467041,
+        "on_article_mass": 0.9736984372138977,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.015977727249264717,
+          "target_minus_source": -0.00836639478802681,
+          "desired_cosine": -0.5833353996276855
+        },
+        "public": {
+          "tv": 0.008131318725645542,
+          "target_minus_source": -0.004212193191051483,
+          "desired_cosine": -0.5966523289680481
+        },
+        "private": {
+          "tv": 0.009648635983467102,
+          "target_minus_source": -0.0041542015969753265,
+          "desired_cosine": -0.5263313055038452
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.017909109592437744,
+        "off_article_mass": 0.6926712989807129,
+        "on_article_mass": 0.7018421292304993,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.02011599764227867,
+          "target_minus_source": -0.011061202734708786,
+          "desired_cosine": -0.5933436751365662
+        },
+        "public": {
+          "tv": 0.014419753104448318,
+          "target_minus_source": -0.007469784468412399,
+          "desired_cosine": -0.5966526865959167
+        },
+        "private": {
+          "tv": 0.009219557046890259,
+          "target_minus_source": -0.0035914182662963867,
+          "desired_cosine": -0.5215088129043579
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "source_word": "driver",
+    "target_word": "chauffeur",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.0,
+    "source_branch_delta_delta": 0.0,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.0,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.014534389600157738,
+        "target_minus_source": -0.007531486451625824,
+        "desired_cosine": -0.5767651200294495
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.014534389600157738,
+        "target_minus_source": -0.007531486451625824,
+        "desired_cosine": -0.5767651200294495
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 2.384185791015625e-07,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 0.9999999403953552,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.014534440822899342,
+          "target_minus_source": -0.007531594485044479,
+          "desired_cosine": -0.5767665505409241
+        },
+        "public": {
+          "tv": 1.844272645712408e-07,
+          "target_minus_source": -1.0803341865539551e-07,
+          "desired_cosine": -0.6197024583816528
+        },
+        "private": {
+          "tv": 0.014534389600157738,
+          "target_minus_source": -0.007531486451625824,
+          "desired_cosine": -0.5767651200294495
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.000971376895904541,
+        "off_article_mass": 0.9990877509117126,
+        "on_article_mass": 0.9994339346885681,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.015089115127921104,
+          "target_minus_source": -0.007925242185592651,
+          "desired_cosine": -0.5804535746574402
+        },
+        "public": {
+          "tv": 0.0007821397157385945,
+          "target_minus_source": -0.0004051476716995239,
+          "desired_cosine": -0.5966518521308899
+        },
+        "private": {
+          "tv": 0.01453317143023014,
+          "target_minus_source": -0.0075200945138931274,
+          "desired_cosine": -0.5767799615859985
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.010098934173583984,
+        "off_article_mass": 0.968080997467041,
+        "on_article_mass": 0.9717282652854919,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.020084934309124947,
+          "target_minus_source": -0.011460483074188232,
+          "desired_cosine": -0.5978764295578003
+        },
+        "public": {
+          "tv": 0.008131318725645542,
+          "target_minus_source": -0.004212193191051483,
+          "desired_cosine": -0.5966523289680481
+        },
+        "private": {
+          "tv": 0.014557362534105778,
+          "target_minus_source": -0.007248289883136749,
+          "desired_cosine": -0.5769287347793579
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.017909109592437744,
+        "off_article_mass": 0.6926712989807129,
+        "on_article_mass": 0.6796566247940063,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.023344149813055992,
+          "target_minus_source": -0.013753164559602737,
+          "desired_cosine": -0.6024891138076782
+        },
+        "public": {
+          "tv": 0.014419753104448318,
+          "target_minus_source": -0.007469784468412399,
+          "desired_cosine": -0.5966526865959167
+        },
+        "private": {
+          "tv": 0.014654857106506824,
+          "target_minus_source": -0.006283380091190338,
+          "desired_cosine": -0.5726819634437561
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "source_word": "driver",
+    "target_word": "chauffeur",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.0625,
+    "source_branch_delta_delta": 0.0625,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.0,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.0153787387534976,
+        "target_minus_source": -0.0006422176957130432,
+        "desired_cosine": -0.060466550290584564
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.0153787387534976,
+        "target_minus_source": -0.0006422176957130432,
+        "desired_cosine": -0.060466550290584564
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 3.5762786865234375e-07,
+        "off_article_mass": 0.9999999403953552,
+        "on_article_mass": 1.0,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.015378845855593681,
+          "target_minus_source": -0.0006423778831958771,
+          "desired_cosine": -0.06048059090971947
+        },
+        "public": {
+          "tv": 2.6670386432670057e-07,
+          "target_minus_source": -1.601874828338623e-07,
+          "desired_cosine": -0.6145269274711609
+        },
+        "private": {
+          "tv": 0.0153787387534976,
+          "target_minus_source": -0.0006422176957130432,
+          "desired_cosine": -0.060466550290584564
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0019197463989257812,
+        "off_article_mass": 0.9990877509117126,
+        "on_article_mass": 0.9997787475585938,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.016576386988162994,
+          "target_minus_source": -0.001442544162273407,
+          "desired_cosine": -0.12436343729496002
+        },
+        "public": {
+          "tv": 0.0015457654371857643,
+          "target_minus_source": -0.000800739973783493,
+          "desired_cosine": -0.596656322479248
+        },
+        "private": {
+          "tv": 0.01537919882684946,
+          "target_minus_source": -0.0006418041884899139,
+          "desired_cosine": -0.06046111509203911
+        },
+        "reconstruction_l1": 3.42365649719234e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.024448513984680176,
+        "off_article_mass": 0.968080997467041,
+        "on_article_mass": 0.9795080423355103,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.03117898479104042,
+          "target_minus_source": -0.010823268443346024,
+          "desired_cosine": -0.42483264207839966
+        },
+        "public": {
+          "tv": 0.01968505047261715,
+          "target_minus_source": -0.01019730418920517,
+          "desired_cosine": -0.5966527462005615
+        },
+        "private": {
+          "tv": 0.015458717942237854,
+          "target_minus_source": -0.0006259642541408539,
+          "desired_cosine": -0.060302168130874634
+        },
+        "reconstruction_l1": 2.602753776392852e-11
+      },
+      "1.0": {
+        "delta_q_target_article": 0.049461305141448975,
+        "off_article_mass": 0.6926712989807129,
+        "on_article_mass": 0.6852913498878479,
+        "branch_leverage_tv": 0.8051637411117554,
+        "total": {
+          "tv": 0.04689199477434158,
+          "target_minus_source": -0.021178334951400757,
+          "desired_cosine": -0.5100209712982178
+        },
+        "public": {
+          "tv": 0.03982444852590561,
+          "target_minus_source": -0.02062998339533806,
+          "desired_cosine": -0.596652626991272
+        },
+        "private": {
+          "tv": 0.015914633870124817,
+          "target_minus_source": -0.0005483515560626984,
+          "desired_cosine": -0.0587119422852993
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "source_word": "barber",
+    "target_word": "hairdresser",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.25
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.0348316989839077,
+        "target_minus_source": 0.03961978852748871,
+        "desired_cosine": 0.8315990567207336
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.0348316989839077,
+        "target_minus_source": 0.03961978852748871,
+        "desired_cosine": 0.8315990567207336
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999963045120239,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.0348316989839077,
+          "target_minus_source": 0.03961978852748871,
+          "desired_cosine": 0.8315990567207336
+        },
+        "public": {
+          "tv": 7.220271472721529e-15,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.0348316989839077,
+          "target_minus_source": 0.03961978852748871,
+          "desired_cosine": 0.8315990567207336
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -1.049041748046875e-05,
+        "off_article_mass": 0.9933066368103027,
+        "on_article_mass": 0.9933067560195923,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.03483513370156288,
+          "target_minus_source": 0.039621248841285706,
+          "desired_cosine": 0.8315757513046265
+        },
+        "public": {
+          "tv": 8.246265679190401e-06,
+          "target_minus_source": 2.0563602447509766e-06,
+          "desired_cosine": 0.2934007942676544
+        },
+        "private": {
+          "tv": 0.03483119234442711,
+          "target_minus_source": 0.039619192481040955,
+          "desired_cosine": 0.8315989375114441
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": -0.0015975236892700195,
+        "off_article_mass": 0.9226250052452087,
+        "on_article_mass": 0.922649621963501,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.03531476482748985,
+          "target_minus_source": 0.0397874116897583,
+          "desired_cosine": 0.8279590606689453
+        },
+        "public": {
+          "tv": 0.0012516805436462164,
+          "target_minus_source": 0.00031054019927978516,
+          "desired_cosine": 0.2914908230304718
+        },
+        "private": {
+          "tv": 0.03475716710090637,
+          "target_minus_source": 0.039476871490478516,
+          "desired_cosine": 0.831606388092041
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.012660801410675049,
+        "off_article_mass": 0.6537275314331055,
+        "on_article_mass": 0.6503907442092896,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.038737572729587555,
+          "target_minus_source": 0.039971187710762024,
+          "desired_cosine": 0.7976478338241577
+        },
+        "public": {
+          "tv": 0.00991994608193636,
+          "target_minus_source": 0.002460956573486328,
+          "desired_cosine": 0.29147210717201233
+        },
+        "private": {
+          "tv": 0.033872995525598526,
+          "target_minus_source": 0.037510231137275696,
+          "desired_cosine": 0.8316080570220947
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "source_word": "barber",
+    "target_word": "hairdresser",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.06252848356962204,
+        "target_minus_source": 0.06970325112342834,
+        "desired_cosine": 0.9324657320976257
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.06252848356962204,
+        "target_minus_source": 0.06970325112342834,
+        "desired_cosine": 0.9324657320976257
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999963045120239,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.06252848356962204,
+          "target_minus_source": 0.06970325112342834,
+          "desired_cosine": 0.9324657320976257
+        },
+        "public": {
+          "tv": 2.2632681319356696e-12,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.06252848356962204,
+          "target_minus_source": 0.06970325112342834,
+          "desired_cosine": 0.9324657320976257
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -3.921985626220703e-05,
+        "off_article_mass": 0.9933066368103027,
+        "on_article_mass": 0.9933068752288818,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.0625312477350235,
+          "target_minus_source": 0.06970801949501038,
+          "desired_cosine": 0.9325243234634399
+        },
+        "public": {
+          "tv": 3.07317532133311e-05,
+          "target_minus_source": 7.62939453125e-06,
+          "desired_cosine": 0.2918771207332611
+        },
+        "private": {
+          "tv": 0.06252707540988922,
+          "target_minus_source": 0.06970039010047913,
+          "desired_cosine": 0.9324638247489929
+        },
+        "reconstruction_l1": 3.659419989254786e-12
+      },
+      "0.5": {
+        "delta_q_target_article": -0.004220247268676758,
+        "off_article_mass": 0.9226250052452087,
+        "on_article_mass": 0.922379195690155,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.06330404430627823,
+          "target_minus_source": 0.0701029896736145,
+          "desired_cosine": 0.9380790591239929
+        },
+        "public": {
+          "tv": 0.0033066216856241226,
+          "target_minus_source": 0.0008203089237213135,
+          "desired_cosine": 0.29147183895111084
+        },
+        "private": {
+          "tv": 0.06233079731464386,
+          "target_minus_source": 0.06928268074989319,
+          "desired_cosine": 0.9321792125701904
+        },
+        "reconstruction_l1": 4.951663645086368e-12
+      },
+      "1.0": {
+        "delta_q_target_article": -0.02843230962753296,
+        "off_article_mass": 0.6537275314331055,
+        "on_article_mass": 0.6422308683395386,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.06853456050157547,
+          "target_minus_source": 0.07046280801296234,
+          "desired_cosine": 0.9444580674171448
+        },
+        "public": {
+          "tv": 0.022277219220995903,
+          "target_minus_source": 0.005526602268218994,
+          "desired_cosine": 0.2914735972881317
+        },
+        "private": {
+          "tv": 0.06030512973666191,
+          "target_minus_source": 0.06493620574474335,
+          "desired_cosine": 0.9288528561592102
+        },
+        "reconstruction_l1": 2.1621367890523047e-12
+      }
+    }
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "source_word": "barber",
+    "target_word": "hairdresser",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": -0.125,
+      "letter_matched": null,
+      "sign_reversed": -0.25
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.06574186682701111,
+        "target_minus_source": 0.06999948620796204,
+        "desired_cosine": 0.9333961009979248
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.06574186682701111,
+        "target_minus_source": 0.06999948620796204,
+        "desired_cosine": 0.9333961009979248
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.999987006187439,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.06574186682701111,
+          "target_minus_source": 0.06999948620796204,
+          "desired_cosine": 0.9333961009979248
+        },
+        "public": {
+          "tv": 1.458545922927712e-10,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.06574186682701111,
+          "target_minus_source": 0.06999948620796204,
+          "desired_cosine": 0.9333961009979248
+        },
+        "reconstruction_l1": 8.548717289613705e-15
+      },
+      "0.25": {
+        "delta_q_target_article": -0.00019723176956176758,
+        "off_article_mass": 0.9933066368103027,
+        "on_article_mass": 0.9890140295028687,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.06577147543430328,
+          "target_minus_source": 0.07002532482147217,
+          "desired_cosine": 0.9336615800857544
+        },
+        "public": {
+          "tv": 0.00015456319670192897,
+          "target_minus_source": 3.8370490074157715e-05,
+          "desired_cosine": 0.2916615605354309
+        },
+        "private": {
+          "tv": 0.06573650985956192,
+          "target_minus_source": 0.06998695433139801,
+          "desired_cosine": 0.9333866834640503
+        },
+        "reconstruction_l1": 3.938860088786855e-12
+      },
+      "0.5": {
+        "delta_q_target_article": -0.011591017246246338,
+        "off_article_mass": 0.9226250052452087,
+        "on_article_mass": 0.9030197858810425,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.06811502575874329,
+          "target_minus_source": 0.0713895857334137,
+          "desired_cosine": 0.9441424608230591
+        },
+        "public": {
+          "tv": 0.009081742726266384,
+          "target_minus_source": 0.002253010869026184,
+          "desired_cosine": 0.2914721965789795
+        },
+        "private": {
+          "tv": 0.06538957357406616,
+          "target_minus_source": 0.06913657486438751,
+          "desired_cosine": 0.9327377080917358
+        },
+        "reconstruction_l1": 5.144668371870331e-11
+      },
+      "1.0": {
+        "delta_q_target_article": -0.05926471948623657,
+        "off_article_mass": 0.6537275314331055,
+        "on_article_mass": 0.6201717853546143,
+        "branch_leverage_tv": 0.7835177779197693,
+        "total": {
+          "tv": 0.08385812491178513,
+          "target_minus_source": 0.0749727189540863,
+          "desired_cosine": 0.8974363803863525
+        },
+        "public": {
+          "tv": 0.046434950083494186,
+          "target_minus_source": 0.011519700288772583,
+          "desired_cosine": 0.2914731502532959
+        },
+        "private": {
+          "tv": 0.06308842450380325,
+          "target_minus_source": 0.06345301866531372,
+          "desired_cosine": 0.9274757504463196
+        },
+        "reconstruction_l1": 1.2945995664370713e-10
+      }
+    }
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "source_word": "doctor",
+    "target_word": "physician",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.019831571727991104,
+        "target_minus_source": 0.020849518477916718,
+        "desired_cosine": 0.9593892693519592
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.019831571727991104,
+        "target_minus_source": 0.020849518477916718,
+        "desired_cosine": 0.9593892693519592
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.019831571727991104,
+          "target_minus_source": 0.020849518477916718,
+          "desired_cosine": 0.9593892693519592
+        },
+        "public": {
+          "tv": 3.689675518239732e-18,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.019831571727991104,
+          "target_minus_source": 0.020849518477916718,
+          "desired_cosine": 0.9593892693519592
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 3.933906555175781e-06,
+        "off_article_mass": 0.9994470477104187,
+        "on_article_mass": 0.9996646046638489,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.01983136683702469,
+          "target_minus_source": 0.02084805816411972,
+          "desired_cosine": 0.9593656063079834
+        },
+        "public": {
+          "tv": 3.433700612731627e-06,
+          "target_minus_source": -1.3187527656555176e-06,
+          "desired_cosine": -0.45261049270629883
+        },
+        "private": {
+          "tv": 0.019831489771604538,
+          "target_minus_source": 0.020849376916885376,
+          "desired_cosine": 0.9593890905380249
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0007001161575317383,
+        "off_article_mass": 0.9766584038734436,
+        "on_article_mass": 0.9816664457321167,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.019878089427947998,
+          "target_minus_source": 0.020564816892147064,
+          "desired_cosine": 0.9549092650413513
+        },
+        "public": {
+          "tv": 0.0006058153230696917,
+          "target_minus_source": -0.00023338943719863892,
+          "desired_cosine": -0.4524971544742584
+        },
+        "private": {
+          "tv": 0.019809432327747345,
+          "target_minus_source": 0.020798206329345703,
+          "desired_cosine": 0.9593715071678162
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.005977451801300049,
+        "off_article_mass": 0.8068408966064453,
+        "on_article_mass": 0.809184193611145,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.019877057522535324,
+          "target_minus_source": 0.017872333526611328,
+          "desired_cosine": 0.8984823822975159
+        },
+        "public": {
+          "tv": 0.00517256697639823,
+          "target_minus_source": -0.001992538571357727,
+          "desired_cosine": -0.45247626304626465
+        },
+        "private": {
+          "tv": 0.01945076882839203,
+          "target_minus_source": 0.019864872097969055,
+          "desired_cosine": 0.9587726593017578
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "source_word": "doctor",
+    "target_word": "physician",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.0398717038333416,
+        "target_minus_source": 0.0349254235625267,
+        "desired_cosine": 0.7581010460853577
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.0398717038333416,
+        "target_minus_source": 0.0349254235625267,
+        "desired_cosine": 0.7581010460853577
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.0398717038333416,
+          "target_minus_source": 0.0349254235625267,
+          "desired_cosine": 0.7581010460853577
+        },
+        "public": {
+          "tv": 3.689675518239732e-18,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.0398717038333416,
+          "target_minus_source": 0.0349254235625267,
+          "desired_cosine": 0.7581010460853577
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 7.867813110351562e-06,
+        "off_article_mass": 0.9994470477104187,
+        "on_article_mass": 0.9998766183853149,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.03987268730998039,
+          "target_minus_source": 0.03492271155118942,
+          "desired_cosine": 0.7580376863479614
+        },
+        "public": {
+          "tv": 6.8130048020975664e-06,
+          "target_minus_source": -2.637505531311035e-06,
+          "desired_cosine": -0.4539247155189514
+        },
+        "private": {
+          "tv": 0.039871618151664734,
+          "target_minus_source": 0.034925349056720734,
+          "desired_cosine": 0.7581012845039368
+        },
+        "reconstruction_l1": 2.7200464103316335e-15
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0016714930534362793,
+        "off_article_mass": 0.9766584038734436,
+        "on_article_mass": 0.9886329174041748,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.04006760194897652,
+          "target_minus_source": 0.03431602567434311,
+          "desired_cosine": 0.7443563342094421
+        },
+        "public": {
+          "tv": 0.0014464312698692083,
+          "target_minus_source": -0.0005571916699409485,
+          "desired_cosine": -0.45247992873191833
+        },
+        "private": {
+          "tv": 0.03985422104597092,
+          "target_minus_source": 0.03487321734428406,
+          "desired_cosine": 0.758067786693573
+        },
+        "reconstruction_l1": 5.779239933834113e-13
+      },
+      "1.0": {
+        "delta_q_target_article": 0.016076385974884033,
+        "off_article_mass": 0.8068408966064453,
+        "on_article_mass": 0.8198862671852112,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.04447774216532707,
+          "target_minus_source": 0.02826802432537079,
+          "desired_cosine": 0.6052797436714172
+        },
+        "public": {
+          "tv": 0.013911684975028038,
+          "target_minus_source": -0.005358956754207611,
+          "desired_cosine": -0.4524761438369751
+        },
+        "private": {
+          "tv": 0.03953133895993233,
+          "target_minus_source": 0.0336269810795784,
+          "desired_cosine": 0.7570768594741821
+        },
+        "reconstruction_l1": 2.382607999784625e-13
+      }
+    }
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "source_word": "doctor",
+    "target_word": "physician",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.046611487865448,
+        "target_minus_source": 0.035169027745723724,
+        "desired_cosine": 0.7535356283187866
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.046611487865448,
+        "target_minus_source": 0.035169027745723724,
+        "desired_cosine": 0.7535356283187866
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 1.0,
+        "on_article_mass": 1.0,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.046611487865448,
+          "target_minus_source": 0.035169027745723724,
+          "desired_cosine": 0.7535356283187866
+        },
+        "public": {
+          "tv": 3.689675518239732e-18,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.046611487865448,
+          "target_minus_source": 0.035169027745723724,
+          "desired_cosine": 0.7535356283187866
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 9.298324584960938e-06,
+        "off_article_mass": 0.9994470477104187,
+        "on_article_mass": 0.9999251365661621,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.04661263898015022,
+          "target_minus_source": 0.03516586869955063,
+          "desired_cosine": 0.7534620761871338
+        },
+        "public": {
+          "tv": 8.056908882281277e-06,
+          "target_minus_source": -3.1366944313049316e-06,
+          "desired_cosine": -0.45559096336364746
+        },
+        "private": {
+          "tv": 0.04661145061254501,
+          "target_minus_source": 0.035169005393981934,
+          "desired_cosine": 0.7535357475280762
+        },
+        "reconstruction_l1": 1.3229062810482528e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0022616982460021973,
+        "off_article_mass": 0.9766584038734436,
+        "on_article_mass": 0.9908709526062012,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.04690925031900406,
+          "target_minus_source": 0.03438330441713333,
+          "desired_cosine": 0.7352917790412903
+        },
+        "public": {
+          "tv": 0.001957111991941929,
+          "target_minus_source": -0.0007539093494415283,
+          "desired_cosine": -0.4524785280227661
+        },
+        "private": {
+          "tv": 0.0465916246175766,
+          "target_minus_source": 0.03513721376657486,
+          "desired_cosine": 0.7535033822059631
+        },
+        "reconstruction_l1": 2.4229175957235505e-11
+      },
+      "1.0": {
+        "delta_q_target_article": 0.024091064929962158,
+        "off_article_mass": 0.8068408966064453,
+        "on_article_mass": 0.809862494468689,
+        "branch_leverage_tv": 0.865348219871521,
+        "total": {
+          "tv": 0.056389015167951584,
+          "target_minus_source": 0.02611440420150757,
+          "desired_cosine": 0.5256786346435547
+        },
+        "public": {
+          "tv": 0.02084716595709324,
+          "target_minus_source": -0.008030615746974945,
+          "desired_cosine": -0.45247647166252136
+        },
+        "private": {
+          "tv": 0.04618902504444122,
+          "target_minus_source": 0.03414501994848251,
+          "desired_cosine": 0.7523536086082458
+        },
+        "reconstruction_l1": 5.242013854239724e-12
+      }
+    }
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "source_word": "reporter",
+    "target_word": "journalist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.045679524540901184,
+        "target_minus_source": 0.07083122432231903,
+        "desired_cosine": 0.994826078414917
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.045679524540901184,
+        "target_minus_source": 0.07083122432231903,
+        "desired_cosine": 0.994826078414917
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.9999998211860657,
+        "on_article_mass": 0.9999998807907104,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.045679524540901184,
+          "target_minus_source": 0.07083119451999664,
+          "desired_cosine": 0.994826078414917
+        },
+        "public": {
+          "tv": 8.515257832186762e-08,
+          "target_minus_source": -2.9802322387695312e-08,
+          "desired_cosine": -0.3047563135623932
+        },
+        "private": {
+          "tv": 0.045679524540901184,
+          "target_minus_source": 0.07083122432231903,
+          "desired_cosine": 0.994826078414917
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.00129777193069458,
+        "off_article_mass": 0.9985008835792542,
+        "on_article_mass": 0.9984988570213318,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.045810818672180176,
+          "target_minus_source": 0.0705752968788147,
+          "desired_cosine": 0.9943273067474365
+        },
+        "public": {
+          "tv": 0.0009844108717516065,
+          "target_minus_source": -0.00024165213108062744,
+          "desired_cosine": -0.26631900668144226
+        },
+        "private": {
+          "tv": 0.04567200690507889,
+          "target_minus_source": 0.07081694900989532,
+          "desired_cosine": 0.9948248863220215
+        },
+        "reconstruction_l1": 2.808450303912191e-12
+      },
+      "0.5": {
+        "delta_q_target_article": 0.02326333522796631,
+        "off_article_mass": 0.9630541205406189,
+        "on_article_mass": 0.9622420072555542,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.047819193452596664,
+          "target_minus_source": 0.06551110744476318,
+          "desired_cosine": 0.9598888754844666
+        },
+        "public": {
+          "tv": 0.01764603890478611,
+          "target_minus_source": -0.0043313950300216675,
+          "desired_cosine": -0.26630303263664246
+        },
+        "private": {
+          "tv": 0.04525918886065483,
+          "target_minus_source": 0.06984250247478485,
+          "desired_cosine": 0.9947302341461182
+        },
+        "reconstruction_l1": 1.1675120592524735e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.05782586336135864,
+        "off_article_mass": 0.7577762603759766,
+        "on_article_mass": 0.7544735074043274,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.05452338606119156,
+          "target_minus_source": 0.05256371200084686,
+          "desired_cosine": 0.7856501340866089
+        },
+        "public": {
+          "tv": 0.04386300593614578,
+          "target_minus_source": -0.010766580700874329,
+          "desired_cosine": -0.26630285382270813
+        },
+        "private": {
+          "tv": 0.042590368539094925,
+          "target_minus_source": 0.06333029270172119,
+          "desired_cosine": 0.9936536550521851
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "source_word": "reporter",
+    "target_word": "journalist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.375,
+    "source_branch_delta_delta": 0.375,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.125,
+      "letter_matched": null,
+      "sign_reversed": -0.25
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.07308156788349152,
+        "target_minus_source": 0.10479842126369476,
+        "desired_cosine": 0.9554187059402466
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.07308156788349152,
+        "target_minus_source": 0.10479842126369476,
+        "desired_cosine": 0.9554187059402466
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.9999998211860657,
+        "on_article_mass": 0.9999996423721313,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.07308155298233032,
+          "target_minus_source": 0.10479839146137238,
+          "desired_cosine": 0.9554184079170227
+        },
+        "public": {
+          "tv": 8.527070605168774e-08,
+          "target_minus_source": -2.9802322387695312e-08,
+          "desired_cosine": -0.30467185378074646
+        },
+        "private": {
+          "tv": 0.07308156788349152,
+          "target_minus_source": 0.10479842126369476,
+          "desired_cosine": 0.9554187059402466
+        },
+        "reconstruction_l1": 1.6106907474444654e-14
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0014736652374267578,
+        "off_article_mass": 0.9985008835792542,
+        "on_article_mass": 0.997527003288269,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.07325379550457001,
+          "target_minus_source": 0.10452117025852203,
+          "desired_cosine": 0.9530749917030334
+        },
+        "public": {
+          "tv": 0.0011178124696016312,
+          "target_minus_source": -0.0002743750810623169,
+          "desired_cosine": -0.2663014531135559
+        },
+        "private": {
+          "tv": 0.07307946681976318,
+          "target_minus_source": 0.10479554533958435,
+          "desired_cosine": 0.9554184079170227
+        },
+        "reconstruction_l1": 1.1594981051687991e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.032106876373291016,
+        "off_article_mass": 0.9630541205406189,
+        "on_article_mass": 0.9516688585281372,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.07832589000463486,
+          "target_minus_source": 0.09828019142150879,
+          "desired_cosine": 0.8860199451446533
+        },
+        "public": {
+          "tv": 0.024354174733161926,
+          "target_minus_source": -0.005977988243103027,
+          "desired_cosine": -0.2663036584854126
+        },
+        "private": {
+          "tv": 0.0727928876876831,
+          "target_minus_source": 0.10425817966461182,
+          "desired_cosine": 0.9553573727607727
+        },
+        "reconstruction_l1": 4.152418131564417e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.09696972370147705,
+        "off_article_mass": 0.7577762603759766,
+        "on_article_mass": 0.7364875674247742,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.09334743022918701,
+          "target_minus_source": 0.0797531008720398,
+          "desired_cosine": 0.6555235981941223
+        },
+        "public": {
+          "tv": 0.07355505228042603,
+          "target_minus_source": -0.01805475354194641,
+          "desired_cosine": -0.2663026452064514
+        },
+        "private": {
+          "tv": 0.06971027702093124,
+          "target_minus_source": 0.0978078544139862,
+          "desired_cosine": 0.9542979598045349
+        },
+        "reconstruction_l1": 4.916126949972011e-10
+      }
+    }
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "source_word": "reporter",
+    "target_word": "journalist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.375,
+    "source_branch_delta_delta": 0.375,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.375
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.07493799924850464,
+        "target_minus_source": 0.10502158105373383,
+        "desired_cosine": 0.9580703377723694
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.07493799924850464,
+        "target_minus_source": 0.10502158105373383,
+        "desired_cosine": 0.9580703377723694
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.9999998211860657,
+        "on_article_mass": 0.999998927116394,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.07493801414966583,
+          "target_minus_source": 0.10502155125141144,
+          "desired_cosine": 0.9580701589584351
+        },
+        "public": {
+          "tv": 8.527074157882453e-08,
+          "target_minus_source": -2.9802322387695312e-08,
+          "desired_cosine": -0.30467185378074646
+        },
+        "private": {
+          "tv": 0.07493799924850464,
+          "target_minus_source": 0.10502158105373383,
+          "desired_cosine": 0.9580703377723694
+        },
+        "reconstruction_l1": 3.656906808618965e-12
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0014950037002563477,
+        "off_article_mass": 0.9985008835792542,
+        "on_article_mass": 0.9959275126457214,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.07507671415805817,
+          "target_minus_source": 0.10474254190921783,
+          "desired_cosine": 0.9557971954345703
+        },
+        "public": {
+          "tv": 0.00113403657451272,
+          "target_minus_source": -0.0002783834934234619,
+          "desired_cosine": -0.2663250267505646
+        },
+        "private": {
+          "tv": 0.07493766397237778,
+          "target_minus_source": 0.1050209254026413,
+          "desired_cosine": 0.9580702185630798
+        },
+        "reconstruction_l1": 6.1604896531286535e-12
+      },
+      "0.5": {
+        "delta_q_target_article": 0.034854352474212646,
+        "off_article_mass": 0.9630541205406189,
+        "on_article_mass": 0.9380968809127808,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.08072833716869354,
+          "target_minus_source": 0.09827646613121033,
+          "desired_cosine": 0.8835596442222595
+        },
+        "public": {
+          "tv": 0.02643822878599167,
+          "target_minus_source": -0.006489500403404236,
+          "desired_cosine": -0.26630228757858276
+        },
+        "private": {
+          "tv": 0.07483606040477753,
+          "target_minus_source": 0.10476596653461456,
+          "desired_cosine": 0.958014726638794
+        },
+        "reconstruction_l1": 4.270455933319539e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.11709058284759521,
+        "off_article_mass": 0.7577762603759766,
+        "on_article_mass": 0.7087492942810059,
+        "branch_leverage_tv": 0.7585361003875732,
+        "total": {
+          "tv": 0.10824478417634964,
+          "target_minus_source": 0.07831788063049316,
+          "desired_cosine": 0.5995198488235474
+        },
+        "public": {
+          "tv": 0.08881743252277374,
+          "target_minus_source": -0.02180105447769165,
+          "desired_cosine": -0.2663027346134186
+        },
+        "private": {
+          "tv": 0.07343398034572601,
+          "target_minus_source": 0.10011893510818481,
+          "desired_cosine": 0.9568060040473938
+        },
+        "reconstruction_l1": 1.439485197707313e-09
+      }
+    }
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "source_word": "supervisor",
+    "target_word": "manager",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": 0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.017178770154714584,
+        "target_minus_source": 0.01174977421760559,
+        "desired_cosine": 0.9117860198020935
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.017178770154714584,
+        "target_minus_source": 0.01174977421760559,
+        "desired_cosine": 0.9117860198020935
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 3.24249267578125e-05,
+        "off_article_mass": 0.9999996423721313,
+        "on_article_mass": 0.999998927116394,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.017183247953653336,
+          "target_minus_source": 0.011743992567062378,
+          "desired_cosine": 0.9116215109825134
+        },
+        "public": {
+          "tv": 2.442734330543317e-05,
+          "target_minus_source": -5.640089511871338e-06,
+          "desired_cosine": -0.4128451943397522
+        },
+        "private": {
+          "tv": 0.017178570851683617,
+          "target_minus_source": 0.01174963265657425,
+          "desired_cosine": 0.9117859601974487
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.006999313831329346,
+        "off_article_mass": 0.9975372552871704,
+        "on_article_mass": 0.9958829879760742,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.01884518750011921,
+          "target_minus_source": 0.010404340922832489,
+          "desired_cosine": 0.8496866822242737
+        },
+        "public": {
+          "tv": 0.00527570303529501,
+          "target_minus_source": -0.0012172460556030273,
+          "desired_cosine": -0.4126262962818146
+        },
+        "private": {
+          "tv": 0.01705361157655716,
+          "target_minus_source": 0.011621586978435516,
+          "desired_cosine": 0.9116263389587402
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.02385348081588745,
+        "off_article_mass": 0.9456929564476013,
+        "on_article_mass": 0.9296871423721313,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.022864216938614845,
+          "target_minus_source": 0.00648888573050499,
+          "desired_cosine": 0.495587021112442
+        },
+        "public": {
+          "tv": 0.017979508265852928,
+          "target_minus_source": -0.0041483305394649506,
+          "desired_cosine": -0.4126248359680176
+        },
+        "private": {
+          "tv": 0.01613491214811802,
+          "target_minus_source": 0.01063721626996994,
+          "desired_cosine": 0.9095646142959595
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.023856401443481445,
+        "off_article_mass": 0.612109363079071,
+        "on_article_mass": 0.5932660698890686,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.021802399307489395,
+          "target_minus_source": 0.00474124401807785,
+          "desired_cosine": 0.3963417112827301
+        },
+        "public": {
+          "tv": 0.017981721088290215,
+          "target_minus_source": -0.004148833453655243,
+          "desired_cosine": -0.41262444853782654
+        },
+        "private": {
+          "tv": 0.014514650218188763,
+          "target_minus_source": 0.008890077471733093,
+          "desired_cosine": 0.9000528454780579
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "source_word": "supervisor",
+    "target_word": "manager",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": 0.0
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.019198577851057053,
+        "target_minus_source": 0.009520046412944794,
+        "desired_cosine": 0.7239925265312195
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.019198577851057053,
+        "target_minus_source": 0.009520046412944794,
+        "desired_cosine": 0.7239925265312195
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 4.172325134277344e-05,
+        "off_article_mass": 0.9999996423721313,
+        "on_article_mass": 0.9999963641166687,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.019206412136554718,
+          "target_minus_source": 0.009512759745121002,
+          "desired_cosine": 0.7234245538711548
+        },
+        "public": {
+          "tv": 3.142400237265974e-05,
+          "target_minus_source": -7.245689630508423e-06,
+          "desired_cosine": -0.41238629817962646
+        },
+        "private": {
+          "tv": 0.019198520109057426,
+          "target_minus_source": 0.00952000543475151,
+          "desired_cosine": 0.723991870880127
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.011293411254882812,
+        "off_article_mass": 0.9975372552871704,
+        "on_article_mass": 0.993133544921875,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.022073009982705116,
+          "target_minus_source": 0.0074928030371665955,
+          "desired_cosine": 0.535890519618988
+        },
+        "public": {
+          "tv": 0.008512362837791443,
+          "target_minus_source": -0.0019640177488327026,
+          "desired_cosine": -0.41262462735176086
+        },
+        "private": {
+          "tv": 0.019165163859725,
+          "target_minus_source": 0.009456820785999298,
+          "desired_cosine": 0.7235400676727295
+        },
+        "reconstruction_l1": 1.422551521024218e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.04334479570388794,
+        "off_article_mass": 0.9456929564476013,
+        "on_article_mass": 0.9101699590682983,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.041088785976171494,
+          "target_minus_source": 0.0012653544545173645,
+          "desired_cosine": 0.057017311453819275
+        },
+        "public": {
+          "tv": 0.032671038061380386,
+          "target_minus_source": -0.0075380392372608185,
+          "desired_cosine": -0.41262468695640564
+        },
+        "private": {
+          "tv": 0.01896395906805992,
+          "target_minus_source": 0.008803393691778183,
+          "desired_cosine": 0.7175806760787964
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.04624128341674805,
+        "off_article_mass": 0.612109363079071,
+        "on_article_mass": 0.5820721983909607,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.040870025753974915,
+          "target_minus_source": -0.0006256252527236938,
+          "desired_cosine": -0.027865741401910782
+        },
+        "public": {
+          "tv": 0.034854281693696976,
+          "target_minus_source": -0.008041761815547943,
+          "desired_cosine": -0.4126245379447937
+        },
+        "private": {
+          "tv": 0.018541892990469933,
+          "target_minus_source": 0.007416136562824249,
+          "desired_cosine": 0.6940333843231201
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "source_word": "supervisor",
+    "target_word": "manager",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": null,
+      "sign_reversed": -0.0625
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.023979749530553818,
+        "target_minus_source": 0.006590843200683594,
+        "desired_cosine": 0.42183443903923035
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.023979749530553818,
+        "target_minus_source": 0.006590843200683594,
+        "desired_cosine": 0.42183443903923035
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 4.506111145019531e-05,
+        "off_article_mass": 0.9999996423721313,
+        "on_article_mass": 0.9999869465827942,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.023997381329536438,
+          "target_minus_source": 0.006583012640476227,
+          "desired_cosine": 0.4211648106575012
+        },
+        "public": {
+          "tv": 3.3967218769248575e-05,
+          "target_minus_source": -7.830560207366943e-06,
+          "desired_cosine": -0.4123882055282593
+        },
+        "private": {
+          "tv": 0.02397974207997322,
+          "target_minus_source": 0.006590843200683594,
+          "desired_cosine": 0.4218345582485199
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.01551365852355957,
+        "off_article_mass": 0.9975372552871704,
+        "on_article_mass": 0.9884818196296692,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.032077327370643616,
+          "target_minus_source": 0.0038765743374824524,
+          "desired_cosine": 0.20638161897659302
+        },
+        "public": {
+          "tv": 0.011693373322486877,
+          "target_minus_source": -0.002697974443435669,
+          "desired_cosine": -0.41262632608413696
+        },
+        "private": {
+          "tv": 0.023960232734680176,
+          "target_minus_source": 0.006574548780918121,
+          "desired_cosine": 0.4217313528060913
+        },
+        "reconstruction_l1": 1.8922828581846574e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0717771053314209,
+        "off_article_mass": 0.9456929564476013,
+        "on_article_mass": 0.883154034614563,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.063235804438591,
+          "target_minus_source": -0.006204579025506973,
+          "desired_cosine": -0.16357608139514923
+        },
+        "public": {
+          "tv": 0.05410182848572731,
+          "target_minus_source": -0.012482643127441406,
+          "desired_cosine": -0.41262421011924744
+        },
+        "private": {
+          "tv": 0.02369730919599533,
+          "target_minus_source": 0.006278064101934433,
+          "desired_cosine": 0.4195108115673065
+        },
+        "reconstruction_l1": 1.5842545053601498e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.08651584386825562,
+        "off_article_mass": 0.612109363079071,
+        "on_article_mass": 0.561413049697876,
+        "branch_leverage_tv": 0.7537480592727661,
+        "total": {
+          "tv": 0.07061174511909485,
+          "target_minus_source": -0.009658068418502808,
+          "desired_cosine": -0.22595170140266418
+        },
+        "public": {
+          "tv": 0.06521116942167282,
+          "target_minus_source": -0.015045825392007828,
+          "desired_cosine": -0.4126238226890564
+        },
+        "private": {
+          "tv": 0.022952888160943985,
+          "target_minus_source": 0.00538775697350502,
+          "desired_cosine": 0.4078720211982727
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "source_word": "vendor",
+    "target_word": "salesperson",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.25,
+    "source_branch_delta_delta": 0.25,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": null,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.037197958678007126,
+        "target_minus_source": 0.005253240466117859,
+        "desired_cosine": 0.11813975125551224
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.037197958678007126,
+        "target_minus_source": 0.005253240466117859,
+        "desired_cosine": 0.11813975125551224
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": -3.5762786865234375e-06,
+        "off_article_mass": 0.9999869465827942,
+        "on_article_mass": 0.9994471669197083,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.03719881922006607,
+          "target_minus_source": 0.0052532609552145,
+          "desired_cosine": 0.11813744157552719
+        },
+        "public": {
+          "tv": 2.118041948051541e-06,
+          "target_minus_source": 4.0978193283081055e-08,
+          "desired_cosine": 0.029073011130094528
+        },
+        "private": {
+          "tv": 0.03719783201813698,
+          "target_minus_source": 0.005253219977021217,
+          "desired_cosine": 0.11813970655202866
+        },
+        "reconstruction_l1": 5.551115123125783e-17
+      },
+      "0.25": {
+        "delta_q_target_article": -0.005191624164581299,
+        "off_article_mass": 0.9890233874320984,
+        "on_article_mass": 0.9528679847717285,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.03839658200740814,
+          "target_minus_source": 0.005276767536997795,
+          "desired_cosine": 0.11484294384717941
+        },
+        "public": {
+          "tv": 0.003039134666323662,
+          "target_minus_source": 5.8552250266075134e-05,
+          "desired_cosine": 0.02878539077937603
+        },
+        "private": {
+          "tv": 0.037000495940446854,
+          "target_minus_source": 0.00521821528673172,
+          "desired_cosine": 0.11805936694145203
+        },
+        "reconstruction_l1": 1.693774287492289e-11
+      },
+      "0.5": {
+        "delta_q_target_article": -0.03853124380111694,
+        "off_article_mass": 0.9017707705497742,
+        "on_article_mass": 0.8223410844802856,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.048886094242334366,
+          "target_minus_source": 0.005290815606713295,
+          "desired_cosine": 0.09634984284639359
+        },
+        "public": {
+          "tv": 0.0225557629019022,
+          "target_minus_source": 0.0004345569759607315,
+          "desired_cosine": 0.0287851020693779
+        },
+        "private": {
+          "tv": 0.03513626754283905,
+          "target_minus_source": 0.0048562586307525635,
+          "desired_cosine": 0.11714880913496017
+        },
+        "reconstruction_l1": 2.108194695205068e-11
+      },
+      "1.0": {
+        "delta_q_target_article": -0.05818367004394531,
+        "off_article_mass": 0.5792092084884644,
+        "on_article_mass": 0.5357128381729126,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.05310369282960892,
+          "target_minus_source": 0.004744010046124458,
+          "desired_cosine": 0.08407937735319138
+        },
+        "public": {
+          "tv": 0.034060053527355194,
+          "target_minus_source": 0.0006561959162354469,
+          "desired_cosine": 0.02878498286008835
+        },
+        "private": {
+          "tv": 0.03203190863132477,
+          "target_minus_source": 0.004087814129889011,
+          "desired_cosine": 0.11458972841501236
+        },
+        "reconstruction_l1": 3.552713678800501e-15
+      }
+    }
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "source_word": "vendor",
+    "target_word": "salesperson",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.5,
+    "source_branch_delta_delta": 0.5,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": null,
+      "sign_reversed": -0.1875
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.06856755912303925,
+        "target_minus_source": 0.011241870000958443,
+        "desired_cosine": 0.14318940043449402
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.06856755912303925,
+        "target_minus_source": 0.011241870000958443,
+        "desired_cosine": 0.14318940043449402
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": -1.2874603271484375e-05,
+        "off_article_mass": 0.9999869465827942,
+        "on_article_mass": 0.999841570854187,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.06857045739889145,
+          "target_minus_source": 0.011241870000958443,
+          "desired_cosine": 0.1431834101676941
+        },
+        "public": {
+          "tv": 7.549084330094047e-06,
+          "target_minus_source": 1.434236764907837e-07,
+          "desired_cosine": 0.028477897867560387
+        },
+        "private": {
+          "tv": 0.0685669556260109,
+          "target_minus_source": 0.011241726577281952,
+          "desired_cosine": 0.1431891918182373
+        },
+        "reconstruction_l1": 4.146481769051746e-12
+      },
+      "0.25": {
+        "delta_q_target_article": -0.009485721588134766,
+        "off_article_mass": 0.9890233874320984,
+        "on_article_mass": 0.9709910154342651,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.07068190723657608,
+          "target_minus_source": 0.011226387694478035,
+          "desired_cosine": 0.13884933292865753
+        },
+        "public": {
+          "tv": 0.005552845541387796,
+          "target_minus_source": 0.00010698102414608002,
+          "desired_cosine": 0.02878522127866745
+        },
+        "private": {
+          "tv": 0.06806183606386185,
+          "target_minus_source": 0.011119406670331955,
+          "desired_cosine": 0.14302194118499756
+        },
+        "reconstruction_l1": 2.8464829451846363e-11
+      },
+      "0.5": {
+        "delta_q_target_article": -0.05802255868911743,
+        "off_article_mass": 0.9017707705497742,
+        "on_article_mass": 0.8567308783531189,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.08291278779506683,
+          "target_minus_source": 0.01083345152437687,
+          "desired_cosine": 0.11822201311588287
+        },
+        "public": {
+          "tv": 0.033965736627578735,
+          "target_minus_source": 0.0006543789058923721,
+          "desired_cosine": 0.02878502756357193
+        },
+        "private": {
+          "tv": 0.06419307738542557,
+          "target_minus_source": 0.010179072618484497,
+          "desired_cosine": 0.14160017669200897
+        },
+        "reconstruction_l1": 9.827147429142258e-11
+      },
+      "1.0": {
+        "delta_q_target_article": -0.08056855201721191,
+        "off_article_mass": 0.5792092084884644,
+        "on_article_mass": 0.5546534061431885,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.0847630426287651,
+          "target_minus_source": 0.009418724104762077,
+          "desired_cosine": 0.10520200431346893
+        },
+        "public": {
+          "tv": 0.04716389253735542,
+          "target_minus_source": 0.0009086541831493378,
+          "desired_cosine": 0.028785044327378273
+        },
+        "private": {
+          "tv": 0.05740678310394287,
+          "target_minus_source": 0.00851006992161274,
+          "desired_cosine": 0.13830292224884033
+        },
+        "reconstruction_l1": 2.2278377059814503e-12
+      }
+    }
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "source_word": "vendor",
+    "target_word": "salesperson",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.5625,
+    "source_branch_delta_delta": 0.5625,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": null,
+      "sign_reversed": -0.1875
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.08623276650905609,
+        "target_minus_source": 0.012940965592861176,
+        "desired_cosine": 0.13472743332386017
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.08623276650905609,
+        "target_minus_source": 0.012940965592861176,
+        "desired_cosine": 0.13472743332386017
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": -0.0001583099365234375,
+        "off_article_mass": 0.9999869465827942,
+        "on_article_mass": 0.9994472861289978,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.08626411110162735,
+          "target_minus_source": 0.012940725311636925,
+          "desired_cosine": 0.1346718668937683
+        },
+        "public": {
+          "tv": 9.268472786061466e-05,
+          "target_minus_source": 1.7844140529632568e-06,
+          "desired_cosine": 0.02877233922481537
+        },
+        "private": {
+          "tv": 0.08622518181800842,
+          "target_minus_source": 0.012938940897583961,
+          "desired_cosine": 0.13472434878349304
+        },
+        "reconstruction_l1": 1.5352698279347265e-11
+      },
+      "0.25": {
+        "delta_q_target_article": -0.027811050415039062,
+        "off_article_mass": 0.9890233874320984,
+        "on_article_mass": 0.9538822174072266,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.09296026080846786,
+          "target_minus_source": 0.012879552319645882,
+          "desired_cosine": 0.1253049373626709
+        },
+        "public": {
+          "tv": 0.01628025993704796,
+          "target_minus_source": 0.0003136545419692993,
+          "desired_cosine": 0.028785137459635735
+        },
+        "private": {
+          "tv": 0.084839828312397,
+          "target_minus_source": 0.012565897777676582,
+          "desired_cosine": 0.1341332197189331
+        },
+        "reconstruction_l1": 1.6474004105315743e-10
+      },
+      "0.5": {
+        "delta_q_target_article": -0.11072033643722534,
+        "off_article_mass": 0.9017707705497742,
+        "on_article_mass": 0.8309758305549622,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.11613880097866058,
+          "target_minus_source": 0.012295320630073547,
+          "desired_cosine": 0.10056622326374054
+        },
+        "public": {
+          "tv": 0.06481438875198364,
+          "target_minus_source": 0.0012487061321735382,
+          "desired_cosine": 0.028785040602087975
+        },
+        "private": {
+          "tv": 0.07920371741056442,
+          "target_minus_source": 0.01104661449790001,
+          "desired_cosine": 0.1312815099954605
+        },
+        "reconstruction_l1": 2.0912307996390211e-10
+      },
+      "1.0": {
+        "delta_q_target_article": -0.1296985149383545,
+        "off_article_mass": 0.5792092084884644,
+        "on_article_mass": 0.5382524728775024,
+        "branch_leverage_tv": 0.5853883624076843,
+        "total": {
+          "tv": 0.1173119843006134,
+          "target_minus_source": 0.01063905842602253,
+          "desired_cosine": 0.09021095931529999
+        },
+        "public": {
+          "tv": 0.07592400163412094,
+          "target_minus_source": 0.001462743617594242,
+          "desired_cosine": 0.028785064816474915
+        },
+        "private": {
+          "tv": 0.07258404791355133,
+          "target_minus_source": 0.009176314808428288,
+          "desired_cosine": 0.1264064460992813
+        },
+        "reconstruction_l1": 3.3374916719175474e-10
+      }
+    }
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "source_word": "therapist",
+    "target_word": "counselor",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.0,
+    "source_branch_delta_delta": 0.0,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.0625,
+      "sign_reversed": -0.1875
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.027696039527654648,
+        "target_minus_source": -0.007453456521034241,
+        "desired_cosine": -0.302308589220047
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.027696039527654648,
+        "target_minus_source": -0.007453456521034241,
+        "desired_cosine": -0.302308589220047
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.999998927116394,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.027696039527654648,
+          "target_minus_source": -0.007453456521034241,
+          "desired_cosine": -0.302308589220047
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.027696039527654648,
+          "target_minus_source": -0.007453456521034241,
+          "desired_cosine": -0.302308589220047
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -1.1920928955078125e-07,
+        "off_article_mass": 0.9932971000671387,
+        "on_article_mass": 0.9959236979484558,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.027695994824171066,
+          "target_minus_source": -0.007453443482518196,
+          "desired_cosine": -0.30230817198753357
+        },
+        "public": {
+          "tv": 8.294758657712009e-08,
+          "target_minus_source": 1.30385160446167e-08,
+          "desired_cosine": 0.2158517986536026
+        },
+        "private": {
+          "tv": 0.027696028351783752,
+          "target_minus_source": -0.007453456521034241,
+          "desired_cosine": -0.30230867862701416
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": -0.00012230873107910156,
+        "off_article_mass": 0.9211921095848083,
+        "on_article_mass": 0.9375328421592712,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.02768315002322197,
+          "target_minus_source": -0.007439076900482178,
+          "desired_cosine": -0.3018280565738678
+        },
+        "public": {
+          "tv": 8.711021655471995e-05,
+          "target_minus_source": 1.0201707482337952e-05,
+          "desired_cosine": 0.1599271297454834
+        },
+        "private": {
+          "tv": 0.02768309786915779,
+          "target_minus_source": -0.007449278607964516,
+          "desired_cosine": -0.3023153245449066
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.0026450157165527344,
+        "off_article_mass": 0.6968541145324707,
+        "on_article_mass": 0.7210450172424316,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.027284549549221992,
+          "target_minus_source": -0.007059227675199509,
+          "desired_cosine": -0.29132553935050964
+        },
+        "public": {
+          "tv": 0.0018848252948373556,
+          "target_minus_source": 0.0002207104116678238,
+          "desired_cosine": 0.15993064641952515
+        },
+        "private": {
+          "tv": 0.027274256572127342,
+          "target_minus_source": -0.0072799380868673325,
+          "desired_cosine": -0.302568644285202
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "source_word": "therapist",
+    "target_word": "counselor",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.1875,
+    "source_branch_delta_delta": 0.1875,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.0625,
+      "sign_reversed": -0.25
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.021052397787570953,
+        "target_minus_source": 0.0030899830162525177,
+        "desired_cosine": 0.15481595695018768
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.021052397787570953,
+        "target_minus_source": 0.0030899830162525177,
+        "desired_cosine": 0.15481595695018768
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999996423721313,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.021052397787570953,
+          "target_minus_source": 0.0030899830162525177,
+          "desired_cosine": 0.15481595695018768
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.021052397787570953,
+          "target_minus_source": 0.0030899830162525177,
+          "desired_cosine": 0.15481595695018768
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -2.384185791015625e-07,
+        "off_article_mass": 0.9932971000671387,
+        "on_article_mass": 0.9975237250328064,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.02105231210589409,
+          "target_minus_source": 0.0030899997800588608,
+          "desired_cosine": 0.15481744706630707
+        },
+        "public": {
+          "tv": 2.0727085825456015e-07,
+          "target_minus_source": 1.862645149230957e-08,
+          "desired_cosine": 0.13446392118930817
+        },
+        "private": {
+          "tv": 0.021052395924925804,
+          "target_minus_source": 0.0030899811536073685,
+          "desired_cosine": 0.15481595695018768
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": -0.0002791285514831543,
+        "off_article_mass": 0.9211921095848083,
+        "on_article_mass": 0.9505994915962219,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.02097480557858944,
+          "target_minus_source": 0.003111189231276512,
+          "desired_cosine": 0.15650635957717896
+        },
+        "public": {
+          "tv": 0.00019889655231963843,
+          "target_minus_source": 2.3283064365386963e-05,
+          "desired_cosine": 0.15987089276313782
+        },
+        "private": {
+          "tv": 0.021055230870842934,
+          "target_minus_source": 0.003087906166911125,
+          "desired_cosine": 0.15482959151268005
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.0056250691413879395,
+        "off_article_mass": 0.6968541145324707,
+        "on_article_mass": 0.7372184991836548,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.020668014883995056,
+          "target_minus_source": 0.0034831836819648743,
+          "desired_cosine": 0.19006013870239258
+        },
+        "public": {
+          "tv": 0.0040083592757582664,
+          "target_minus_source": 0.00046939030289649963,
+          "desired_cosine": 0.1599360704421997
+        },
+        "private": {
+          "tv": 0.021187355741858482,
+          "target_minus_source": 0.0030137933790683746,
+          "desired_cosine": 0.15518076717853546
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "source_word": "therapist",
+    "target_word": "counselor",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.1875,
+    "source_branch_delta_delta": 0.1875,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0625,
+      "letter_matched": 0.0625,
+      "sign_reversed": -0.3125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.0298968106508255,
+        "target_minus_source": 0.0023805107921361923,
+        "desired_cosine": 0.10612459480762482
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.0298968106508255,
+        "target_minus_source": 0.0023805107921361923,
+        "desired_cosine": 0.10612459480762482
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999998807907104,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.0298968106508255,
+          "target_minus_source": 0.0023805107921361923,
+          "desired_cosine": 0.10612459480762482
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.0298968106508255,
+          "target_minus_source": 0.0023805107921361923,
+          "desired_cosine": 0.10612459480762482
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -5.960464477539062e-07,
+        "off_article_mass": 0.9932971000671387,
+        "on_article_mass": 0.9984973669052124,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.029896557331085205,
+          "target_minus_source": 0.002380557358264923,
+          "desired_cosine": 0.10612760484218597
+        },
+        "public": {
+          "tv": 4.6169026290954207e-07,
+          "target_minus_source": 5.029141902923584e-08,
+          "desired_cosine": 0.14737288653850555
+        },
+        "private": {
+          "tv": 0.02989680878818035,
+          "target_minus_source": 0.002380507066845894,
+          "desired_cosine": 0.10612446814775467
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": -0.00048047304153442383,
+        "off_article_mass": 0.9211921095848083,
+        "on_article_mass": 0.9614083170890808,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.029767729341983795,
+          "target_minus_source": 0.0024185534566640854,
+          "desired_cosine": 0.10855358093976974
+        },
+        "public": {
+          "tv": 0.00034238697844557464,
+          "target_minus_source": 4.009529948234558e-05,
+          "desired_cosine": 0.15994717180728912
+        },
+        "private": {
+          "tv": 0.029891792684793472,
+          "target_minus_source": 0.00237845815718174,
+          "desired_cosine": 0.10610678046941757
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.0089799165725708,
+        "off_article_mass": 0.6968541145324707,
+        "on_article_mass": 0.7635437250137329,
+        "branch_leverage_tv": 0.7125903964042664,
+        "total": {
+          "tv": 0.027509793639183044,
+          "target_minus_source": 0.003063991665840149,
+          "desired_cosine": 0.15462203323841095
+        },
+        "public": {
+          "tv": 0.006398987956345081,
+          "target_minus_source": 0.0007493328303098679,
+          "desired_cosine": 0.15993580222129822
+        },
+        "private": {
+          "tv": 0.02974807098507881,
+          "target_minus_source": 0.002314658835530281,
+          "desired_cosine": 0.10550941526889801
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "source_word": "writer",
+    "target_word": "novelist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.0,
+    "source_branch_delta_delta": 0.0,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.008653540164232254,
+        "target_minus_source": 0.0020485520362854004,
+        "desired_cosine": 0.3116976320743561
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.008653540164232254,
+        "target_minus_source": 0.0020485520362854004,
+        "desired_cosine": 0.3116976320743561
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999963045120239,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.008653540164232254,
+          "target_minus_source": 0.0020485520362854004,
+          "desired_cosine": 0.3116976320743561
+        },
+        "public": {
+          "tv": 6.889928072517648e-10,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.008653540164232254,
+          "target_minus_source": 0.0020485520362854004,
+          "desired_cosine": 0.3116976320743561
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -0.00021195411682128906,
+        "off_article_mass": 0.9932902455329895,
+        "on_article_mass": 0.9932970404624939,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.00879217404872179,
+          "target_minus_source": 0.0020975470542907715,
+          "desired_cosine": 0.3139072060585022
+        },
+        "public": {
+          "tv": 0.00016962974041234702,
+          "target_minus_source": 4.963576793670654e-05,
+          "desired_cosine": 0.23268623650074005
+        },
+        "private": {
+          "tv": 0.00865087378770113,
+          "target_minus_source": 0.002047911286354065,
+          "desired_cosine": 0.3117043077945709
+        },
+        "reconstruction_l1": 4.44956571588051e-16
+      },
+      "0.5": {
+        "delta_q_target_article": -0.006999313831329346,
+        "off_article_mass": 0.914069414138794,
+        "on_article_mass": 0.9168916940689087,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.013266228139400482,
+          "target_minus_source": 0.0036518126726150513,
+          "desired_cosine": 0.31159669160842896
+        },
+        "public": {
+          "tv": 0.005601485725492239,
+          "target_minus_source": 0.0016393065452575684,
+          "desired_cosine": 0.23272109031677246
+        },
+        "private": {
+          "tv": 0.008536438457667828,
+          "target_minus_source": 0.002012506127357483,
+          "desired_cosine": 0.3118576109409332
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.02385348081588745,
+        "off_article_mass": 0.5424814224243164,
+        "on_article_mass": 0.5689613223075867,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.024475399404764175,
+          "target_minus_source": 0.0073964595794677734,
+          "desired_cosine": 0.2720714211463928
+        },
+        "public": {
+          "tv": 0.019089743494987488,
+          "target_minus_source": 0.005586668848991394,
+          "desired_cosine": 0.23271888494491577
+        },
+        "private": {
+          "tv": 0.008100045844912529,
+          "target_minus_source": 0.0018097907304763794,
+          "desired_cosine": 0.312120258808136
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "source_word": "writer",
+    "target_word": "novelist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.125
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.027417952194809914,
+        "target_minus_source": 0.025136679410934448,
+        "desired_cosine": 0.7368983030319214
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.027417952194809914,
+        "target_minus_source": 0.025136679410934448,
+        "desired_cosine": 0.7368983030319214
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999963045120239,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.027417950332164764,
+          "target_minus_source": 0.025136679410934448,
+          "desired_cosine": 0.7368983030319214
+        },
+        "public": {
+          "tv": 2.5613731136076012e-09,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.027417952194809914,
+          "target_minus_source": 0.025136679410934448,
+          "desired_cosine": 0.7368983030319214
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -0.00042945146560668945,
+        "off_article_mass": 0.9932902455329895,
+        "on_article_mass": 0.9933016300201416,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.027613887563347816,
+          "target_minus_source": 0.02522340416908264,
+          "desired_cosine": 0.7400070428848267
+        },
+        "public": {
+          "tv": 0.00034367319312877953,
+          "target_minus_source": 0.00010058283805847168,
+          "desired_cosine": 0.2327335625886917
+        },
+        "private": {
+          "tv": 0.027405139058828354,
+          "target_minus_source": 0.02512282133102417,
+          "desired_cosine": 0.7368795275688171
+        },
+        "reconstruction_l1": 1.6421143145348843e-14
+      },
+      "0.5": {
+        "delta_q_target_article": -0.01199042797088623,
+        "off_article_mass": 0.914069414138794,
+        "on_article_mass": 0.9187474250793457,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.033138033002614975,
+          "target_minus_source": 0.027368366718292236,
+          "desired_cosine": 0.7779430747032166
+        },
+        "public": {
+          "tv": 0.009595846757292747,
+          "target_minus_source": 0.0028082430362701416,
+          "desired_cosine": 0.23271824419498444
+        },
+        "private": {
+          "tv": 0.026926683261990547,
+          "target_minus_source": 0.024560123682022095,
+          "desired_cosine": 0.7361008524894714
+        },
+        "reconstruction_l1": 9.271416967493451e-12
+      },
+      "1.0": {
+        "delta_q_target_article": -0.03761476278305054,
+        "off_article_mass": 0.5424814224243164,
+        "on_article_mass": 0.5902621150016785,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.04426022619009018,
+          "target_minus_source": 0.03060995042324066,
+          "desired_cosine": 0.6457169055938721
+        },
+        "public": {
+          "tv": 0.030102822929620743,
+          "target_minus_source": 0.008809670805931091,
+          "desired_cosine": 0.23271864652633667
+        },
+        "private": {
+          "tv": 0.024601079523563385,
+          "target_minus_source": 0.02180027961730957,
+          "desired_cosine": 0.7316403985023499
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "source_word": "writer",
+    "target_word": "novelist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "article_changed": false,
+    "target_branch_delta_delta": 0.125,
+    "source_branch_delta_delta": 0.125,
+    "article_margin_movement": 0.0,
+    "controls": {
+      "wrong": 0.0,
+      "letter_matched": null,
+      "sign_reversed": -0.25
+    },
+    "greedy": {
+      "total": {
+        "tv": 0.03867647051811218,
+        "target_minus_source": 0.01871936023235321,
+        "desired_cosine": 0.39886265993118286
+      },
+      "public": {
+        "tv": 0.0,
+        "target_minus_source": 0.0,
+        "desired_cosine": 0.0
+      },
+      "private": {
+        "tv": 0.03867647051811218,
+        "target_minus_source": 0.01871936023235321,
+        "desired_cosine": 0.39886265993118286
+      }
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": -1.1920928955078125e-07,
+        "off_article_mass": 0.9999963045120239,
+        "on_article_mass": 0.9999988675117493,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.03867639973759651,
+          "target_minus_source": 0.018719390034675598,
+          "desired_cosine": 0.39886370301246643
+        },
+        "public": {
+          "tv": 8.520256500332835e-08,
+          "target_minus_source": 4.470348358154297e-08,
+          "desired_cosine": 0.4005134701728821
+        },
+        "private": {
+          "tv": 0.038676463067531586,
+          "target_minus_source": 0.018719345331192017,
+          "desired_cosine": 0.39886245131492615
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -0.0013778209686279297,
+        "off_article_mass": 0.9932902455329895,
+        "on_article_mass": 0.9959278106689453,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.03873155266046524,
+          "target_minus_source": 0.019014328718185425,
+          "desired_cosine": 0.4085058271884918
+        },
+        "public": {
+          "tv": 0.001102666836231947,
+          "target_minus_source": 0.00032272934913635254,
+          "desired_cosine": 0.23274067044258118
+        },
+        "private": {
+          "tv": 0.03863399103283882,
+          "target_minus_source": 0.018691599369049072,
+          "desired_cosine": 0.3988557755947113
+        },
+        "reconstruction_l1": 8.496939046462315e-13
+      },
+      "0.5": {
+        "delta_q_target_article": -0.026340007781982422,
+        "off_article_mass": 0.914069414138794,
+        "on_article_mass": 0.9358047246932983,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.04434298351407051,
+          "target_minus_source": 0.024198219180107117,
+          "desired_cosine": 0.5241159796714783
+        },
+        "public": {
+          "tv": 0.021079691126942635,
+          "target_minus_source": 0.006169065833091736,
+          "desired_cosine": 0.23272009193897247
+        },
+        "private": {
+          "tv": 0.03772975131869316,
+          "target_minus_source": 0.01802915334701538,
+          "desired_cosine": 0.39857831597328186
+        },
+        "reconstruction_l1": 3.077550367325266e-11
+      },
+      "1.0": {
+        "delta_q_target_article": -0.06916695833206177,
+        "off_article_mass": 0.5424814224243164,
+        "on_article_mass": 0.625344455242157,
+        "branch_leverage_tv": 0.8002925515174866,
+        "total": {
+          "tv": 0.06387167423963547,
+          "target_minus_source": 0.03187692165374756,
+          "desired_cosine": 0.4667372703552246
+        },
+        "public": {
+          "tv": 0.055353835225105286,
+          "target_minus_source": 0.016199439764022827,
+          "desired_cosine": 0.2327185869216919
+        },
+        "private": {
+          "tv": 0.03454160690307617,
+          "target_minus_source": 0.01567748188972473,
+          "desired_cosine": 0.3952512741088867
+        },
+        "reconstruction_l1": 1.1668617461157993e-13
+      }
+    }
+  }
+]

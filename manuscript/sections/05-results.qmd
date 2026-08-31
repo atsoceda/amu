@@ -204,6 +204,48 @@ effect size, not channel identity (@fig-natural-regimes).
 
 ![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes and outperform wrong-target and matched-norm controls; no greedy article switch occurs.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
 
+## Correctness-preserving synonyms causally recruit different routes
+
+The matched synonym task removes the earlier correctness confound: both lexical
+realizations answer the same occupational definition. Eligibility and family
+deduplication leave six between-article and eight within-`a` semantic families
+at 1B. Leave-one-family-out selection independently chooses layer 18 in every
+fold. At native strength, the held-out fixed-target-article lexical effect is
+\(0.250\ [0.167,0.375]\) logits between article classes and
+\(0.227\ [0.133,0.328]\) within class. Wrong-target effects are only 0.073
+and 0.055; sign-reversed directions are \(-0.021\) and \(-0.125\).
+Thus both regimes clear local efficacy before route comparison.
+
+The route phenotype then separates sharply. All 6/6 between-class patches
+switch the greedy article, whereas 0/8 within-class patches do. At
+\(\tau=1\), between-class public TV is
+\(0.423\ [0.352,0.483]\), compared with private TV
+\(0.030\ [0.019,0.045]\). Within class, public TV is only
+\(0.030\ [0.018,0.047]\), while private TV is
+\(0.038\ [0.025,0.053]\). Distributional magnitude alone is insufficient, so
+we also project each vector onto the intended target-minus-source noun
+direction. The between-class public component is strongly target aligned
+(0.370 probability contrast, \([0.212,0.523]\)); its private component is
+0.018. Within class the public component is approximately zero and slightly
+negative (\(-0.003\)), while the private component is positive
+(0.029 \([0.008,0.054]\)).
+
+Define each family's route contrast as public TV minus private TV. The
+difference between the between- and within-article route contrasts is
+\(0.401\ [0.335,0.453]\) at native strength and \(\tau=1\); exact
+family-label permutation gives \(p=0.00033\). The target-aligned interaction is
+\(0.384\ [0.229,0.529]\). Both interactions remain positive at every tested
+strength and temperature (@fig-correctness-carriers D). The same-target-letter
+control is appreciable between class (0.172 logits on four available families),
+consistent with the patch carrying coarse orthographic/article information,
+but remains below the target patch; within class it is 0.031 on two available
+families. The result therefore supports the predicted capacity principle: when
+the article distinguishes two correct lexical alternatives, the intervention
+externalizes most downstream influence through that public token; when the
+article is identical, target-aligned influence survives privately.
+
+![Correctness-preserving synonym double dissociation in Gemma 3 1B PT. The same cross-validated residual-patch procedure is locally effective in both regimes (A), but between-article distinctions are public-relay dominant whereas within-article distinctions retain target-aligned private influence (B--C). The route interaction is positive across every patch strength and article-policy temperature (D). Error bars and bands are semantic-family bootstrap 95\% intervals.](manuscript/figures/fig_correctness_preserving_carriers.png){#fig-correctness-carriers width=97%}
+
 ## A closed-loop gain law predicts public influence
 
 Across 32 features selected on disjoint occupations, article attribution
@@ -313,6 +355,7 @@ only one greedy switch.
 | 1B margin S1, top-24/\(20\times\) | 3.488 | `a/an` 3/20 | Not identified: mediator-invalid |
 | 1B frontier L18/F5015, \(7.5\times\) | 0.500 held out | `a/an` 20/20 | Hybrid; public-dominant by \(\tau=1\) |
 | 1B natural-state-derived residual, native strength | target \(\Delta\Delta=0.846/1.312\) | fixed visible article | Private target influence |
+| 1B correctness-preserving synonyms, native strength | target \(\Delta\Delta=0.250/0.227\) | `a/an` support; both synonyms valid | Public/private double dissociation |
 
 : Local efficacy and channel identification are sequential requirements.
 Cross-/same-class natural-residual values are separated by a slash.

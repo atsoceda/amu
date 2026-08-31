@@ -38,22 +38,29 @@ identity and contextual information propagated from the previous position
 are separately intervenable causes of noun prediction. The public token
 behaves as a low-bandwidth discrete relay for coarse class information,
 while a target-constructed residual patch shows that a private contextual
-channel can carry finer target-specific information. These are a
-real-model double phenotype, not a double dissociation between comparable
-sparse mechanisms, and not two independent registers: the observed
+channel can carry finer target-specific information. These are not two
+independent registers: the observed
 interaction shows that the effects are not additive, the patch is applied
 at \(P\) rather than under the article token, and the two factors do not
-carry the same information. The patch is target constructed and
-subthreshold.
+necessarily carry the same information.
 
 Natural target-state patches strengthen the private half of this picture:
 they enhance target logits, partly suppress source logits, reverse sign
 when the direction is reversed, and exceed wrong-target and Gaussian
 controls without explicit noun cues. But neither same- nor cross-class
-prompts convert that state into an article change. We therefore observe
-two causally usable channels, not experimental control over the medium in
-which the model stores or transmits a computation. Discovering such a
-carrier switch remains the decisive next step.
+prompts convert that state into an article change because those targets are
+different meanings and the interventions are subthreshold.
+
+The correctness-preserving synonym assay supplies the missing controlled
+comparison. It holds semantic acceptability constant, uses one residual-patch
+construction, and changes whether the article can encode the distinction
+between two lexical realizations. Cross-article alternatives become
+public-relay dominant; within-article alternatives retain their intended
+lexical movement in the private component. This is a causal double
+dissociation over mediator information capacity. It demonstrates experimental
+control over the dominant transmission medium in a constructed lexical-choice
+task, not a claim that natural prompts dynamically choose a carrier or that a
+sparse mechanism performs the allocation.
 
 **A closed-loop gain composition replaces a channel-label interpretation.** Article
 attribution has held-out validity for local margin movement, directionally at
@@ -79,11 +86,12 @@ frontier changes the greedy article only once, its stochastic assay identifies
 low-amplitude hybrid transmission that becomes public-dominant at softer
 article policies. The target-uncued, natural-state-derived residual assay
 establishes private influence at both scales, but normalized estimands do not
-support a monotone scale effect. The
-strength-by-class interaction is suggestive and single-pair-driven, with
-intervals spanning zero. The cross-scale lesson is thus methodological and
-mechanistic: climb all four rungs before interpreting a route, and compare
-scales only after normalizing the intervention and target gap.
+support a monotone scale effect. The earlier natural-pair strength-by-class
+interaction remains suggestive and single-pair-driven, with intervals spanning
+zero; it is superseded as a carrier test by the correctness-preserving synonym
+design. The cross-scale lesson is thus methodological and mechanistic: climb all
+four rungs before interpreting a route, and compare scales only after
+normalizing the intervention and target gap.
 
 **Closed-loop intervention logic.** The generated article is a
 self-generated consequence of the upstream state. We use closed-loop

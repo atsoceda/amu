@@ -1,0 +1,2787 @@
+{
+  "experiment": "correctness_preserving_aan",
+  "generated_at": "2026-08-31T02:58:30.799187+00:00",
+  "elapsed_sec": 392.11377573013306,
+  "model": {
+    "model": "google/gemma-3-1b-pt",
+    "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29"
+  },
+  "source": {
+    "repository": "https://github.com/hannamw/model-planning-public",
+    "commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+    "path": "a_an/data/a_an_examples.csv",
+    "sha256": "fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c",
+    "derivation": "Occupation definitions are drawn from or closely paraphrase the released a/an task; synonym alternatives and first-letter constraints are a derived correctness-preserving evaluation set."
+  },
+  "frozen_layer": 14,
+  "frozen_layer_provenance": "Selected previously by experiments/gemma_1b_residual_scale on disjoint natural occupation pairs; not selected on the synonym outcomes.",
+  "selection": {
+    "counts": {
+      "between": 6,
+      "within": 8
+    },
+    "audit": [
+      {
+        "regime": "between",
+        "meaning_family": "activity_organization",
+        "selected_id": "planning_planner_organizer",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "planning_planner_organizer",
+          "planning_organizer_planner",
+          "events_host_organizer",
+          "events_coordinator_organizer"
+        ]
+      },
+      {
+        "regime": "between",
+        "meaning_family": "business",
+        "selected_id": "business_businessman_entrepreneur",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "business_businessman_entrepreneur",
+          "business_vendor_entrepreneur"
+        ]
+      },
+      {
+        "regime": "between",
+        "meaning_family": "organization_management",
+        "selected_id": "direction_director_executive",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "direction_director_executive",
+          "management_manager_executive",
+          "leadership_boss_executive"
+        ]
+      },
+      {
+        "regime": "between",
+        "meaning_family": "performance",
+        "selected_id": "performance_performer_entertainer",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "performance_performer_entertainer",
+          "performance_singer_entertainer"
+        ]
+      },
+      {
+        "regime": "between",
+        "meaning_family": "teaching",
+        "selected_id": "teaching_teacher_educator",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "teaching_teacher_educator",
+          "teaching_educator_teacher"
+        ]
+      },
+      {
+        "regime": "between",
+        "meaning_family": "visual_art",
+        "selected_id": "painting_painter_artist",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "painting_painter_artist",
+          "painting_artist_painter",
+          "illustration_designer_illustrator",
+          "illustration_painter_illustrator"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "driving",
+        "selected_id": "driving_driver_chauffeur",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "driving_driver_chauffeur",
+          "driving_chauffeur_driver"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "hair",
+        "selected_id": "hair_barber_hairdresser",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "hair_barber_hairdresser"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "medicine",
+        "selected_id": "medicine_doctor_physician",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "medicine_doctor_physician"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "news",
+        "selected_id": "news_reporter_journalist",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "news_reporter_journalist",
+          "news_journalist_reporter"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "organization_management",
+        "selected_id": "management_supervisor_manager",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "management_supervisor_manager",
+          "management_manager_supervisor"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "sales",
+        "selected_id": "sales_vendor_salesperson",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "sales_vendor_salesperson",
+          "sales_salesperson_vendor"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "therapy",
+        "selected_id": "therapy_therapist_counselor",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "therapy_therapist_counselor"
+        ]
+      },
+      {
+        "regime": "within",
+        "meaning_family": "writing",
+        "selected_id": "writing_writer_novelist",
+        "criterion": "largest minimum source/target signed screen margin",
+        "eligible_ids": [
+          "writing_writer_novelist"
+        ]
+      }
+    ]
+  },
+  "conditions": {
+    "between_0.5": {
+      "target_branch_delta_delta": {
+        "n": 6,
+        "mean": 0.0,
+        "lo": -0.03125,
+        "hi": 0.03125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_branch_delta_delta": {
+        "n": 6,
+        "mean": 0.0,
+        "lo": -0.07291666666666667,
+        "hi": 0.07291666666666667,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_margin_movement": {
+        "n": 6,
+        "mean": 0.125,
+        "lo": -0.020833333333333332,
+        "hi": 0.2916666666666667,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": 0.0,
+      "controls": {
+        "wrong": {
+          "n": 6,
+          "mean": 0.041666666666666664,
+          "lo": -0.03125,
+          "hi": 0.10416666666666667,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "letter_matched": {
+          "n": 4,
+          "mean": 0.0,
+          "lo": -0.09375,
+          "hi": 0.09375,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "sign_reversed": {
+          "n": 6,
+          "mean": 0.041666666666666664,
+          "lo": -0.010416666666666666,
+          "hi": 0.08333333333333333,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "temperatures": {
+        "0.1": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.020733837348719437,
+            "lo": 0.01315290511896213,
+            "hi": 0.02911270580564936,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.0009126039997984966,
+            "lo": -0.006533087619269888,
+            "hi": 0.010175834720333418,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": -0.13606668015321097,
+            "lo": -0.49816834429899853,
+            "hi": 0.2430912802616755,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.0007149947392898204,
+            "lo": 1.937762421670245e-06,
+            "hi": 0.002132354905067283,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.0007259786464904513,
+            "lo": -2.1645118977176026e-06,
+            "hi": 0.0021747623595729237,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.34116287529468536,
+            "lo": -0.06750445067882538,
+            "hi": 0.7366993625958761,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.02024823660030961,
+            "lo": 0.013020987001558145,
+            "hi": 0.028838184662163258,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.00018662551883608103,
+            "lo": -0.006532005461243291,
+            "hi": 0.009020818048156798,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": -0.16860746095577875,
+            "lo": -0.5013169149557749,
+            "hi": 0.19911867876847586,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.0007911078369392163,
+            "lo": -1.4041807353907624e-05,
+            "hi": 0.002383058822863049,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.026073774322867393,
+            "lo": 0.014517820129791895,
+            "hi": 0.03809409433354934,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.00822585471905768,
+            "lo": -0.0066737316859265166,
+            "hi": 0.025340409638981026,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": -0.07791944841543834,
+            "lo": -0.5138356685638428,
+            "hi": 0.37419692675272626,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.008845604803354945,
+            "lo": 0.0009754789086097541,
+            "hi": 0.021255704421491828,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.008352960195528189,
+            "lo": -0.00043080354468353715,
+            "hi": 0.0215287680888044,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.38109443585077923,
+            "lo": -0.04843242963155111,
+            "hi": 0.7766024669011434,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.01996193438147505,
+            "lo": 0.01291892242928346,
+            "hi": 0.028427373928328354,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": -0.00012710558560987314,
+            "lo": -0.0065126448559264345,
+            "hi": 0.008619744020203749,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": -0.182208222647508,
+            "lo": -0.5009537935256958,
+            "hi": 0.17150714496771494,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.0076738629407676244,
+            "lo": -0.002297763162156722,
+            "hi": 0.022122105823655147,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.032596391160041094,
+            "lo": 0.015422373078763485,
+            "hi": 0.05381020810455084,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.0188453074467058,
+            "lo": -0.005951459247929354,
+            "hi": 0.0506218223211666,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.04280587161580721,
+            "lo": -0.43738770360747975,
+            "hi": 0.5508813175062338,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.019817466847598553,
+            "lo": 0.004224803609152635,
+            "hi": 0.037251317563156285,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.019431743615617354,
+            "lo": -0.0003955190380414327,
+            "hi": 0.044234191067516804,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.3810873130957286,
+            "lo": -0.04843942324320475,
+            "hi": 0.776595264673233,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.019018356998761494,
+            "lo": 0.012553204782307148,
+            "hi": 0.026733117488523323,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": -0.0005864361301064491,
+            "lo": -0.0061958483420312405,
+            "hi": 0.007426978088915348,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": -0.20207193369666734,
+            "lo": -0.49579302221536636,
+            "hi": 0.1335472327967485,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.01456827949732542,
+            "lo": -0.006784605793654919,
+            "hi": 0.03788471377144257,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.03368988058840235,
+            "lo": 0.01805114435652892,
+            "hi": 0.057999035343527794,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.023662880373497803,
+            "lo": -0.0020840009674429893,
+            "hi": 0.06306333498408397,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.18011440833409628,
+            "lo": -0.3368039131164551,
+            "hi": 0.6835532685120901,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.023043418613572914,
+            "lo": 0.006642780887583892,
+            "hi": 0.04490535954634348,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.024339522545536358,
+            "lo": 0.002004133847852548,
+            "hi": 0.057990167600413166,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.38108758131663006,
+            "lo": -0.048438966274261475,
+            "hi": 0.776595413684845,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.0177003617088,
+            "lo": 0.012221311995138725,
+            "hi": 0.024204788884768885,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": -0.0006766421720385551,
+            "lo": -0.005057121627032757,
+            "hi": 0.0059737137829264,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": -0.200372243920962,
+            "lo": -0.46886613468329114,
+            "hi": 0.12517371525367102,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.018243514001369476,
+            "lo": -0.006452254951000214,
+            "hi": 0.04594003905852636,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "within_0.5": {
+      "target_branch_delta_delta": {
+        "n": 8,
+        "mean": -0.0234375,
+        "lo": -0.0703125,
+        "hi": 0.03125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_branch_delta_delta": {
+        "n": 8,
+        "mean": -0.0234375,
+        "lo": -0.0703125,
+        "hi": 0.03125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_margin_movement": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": 0.0,
+      "controls": {
+        "wrong": {
+          "n": 8,
+          "mean": -0.0078125,
+          "lo": -0.0625,
+          "hi": 0.046875,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "letter_matched": {
+          "n": 2,
+          "mean": -0.03125,
+          "lo": -0.125,
+          "hi": 0.0625,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "sign_reversed": {
+          "n": 8,
+          "mean": 0.0234375,
+          "lo": -0.0390625,
+          "hi": 0.078125,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "temperatures": {
+        "0.1": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.023634243058040738,
+            "lo": 0.01878359541296959,
+            "hi": 0.02763983584009111,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.0071643313858658075,
+            "lo": -0.015764613635838032,
+            "hi": 0.001315040746703744,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.19239917490631342,
+            "lo": -0.518323359079659,
+            "hi": 0.16918233036994934,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 3.092698565399215e-06,
+            "lo": 1.6222860388381832e-08,
+            "hi": 9.199534391757507e-06,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -7.224734872579575e-07,
+            "lo": -2.132495865225792e-06,
+            "hi": -3.725290298461914e-09,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.17304954770952463,
+            "lo": -0.3357294052839279,
+            "hi": -0.03879624605178833,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.023634043522179127,
+            "lo": 0.018788663437590003,
+            "hi": 0.027589857578277588,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.00716360891237855,
+            "lo": -0.015921428333967924,
+            "hi": 0.0012207357212901115,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.19235408306121826,
+            "lo": -0.5170626435428858,
+            "hi": 0.17018220387399197,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 4.112720489501953e-06,
+            "lo": 2.9802322387695312e-08,
+            "hi": 1.2218952178955078e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.023862671805545688,
+            "lo": 0.019003993598744273,
+            "hi": 0.027736643329262733,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.007392069092020392,
+            "lo": -0.01592676155269146,
+            "hi": 0.000834551639854908,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.20469350833445787,
+            "lo": -0.5195205435156822,
+            "hi": 0.13625558745115995,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0008857710328946666,
+            "lo": 0.00010643611431504496,
+            "hi": 0.002201942167744164,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.00021877232939004898,
+            "lo": -0.0005222889594733715,
+            "hi": -1.527741551399231e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.21139849303290248,
+            "lo": -0.3615298718214035,
+            "hi": -0.0591463022865355,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.02361650054808706,
+            "lo": 0.018772875308059156,
+            "hi": 0.027571114245802164,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.0071732967626303434,
+            "lo": -0.015907182125374675,
+            "hi": 0.0011815712787210941,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.19236790109425783,
+            "lo": -0.5170605173334479,
+            "hi": 0.1701505808159709,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.0011925920844078064,
+            "lo": 0.0001327022910118103,
+            "hi": 0.0029418691992759705,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.025045046000741422,
+            "lo": 0.020209267386235297,
+            "hi": 0.028617284260690212,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.008467282634228468,
+            "lo": -0.016948527889326215,
+            "hi": -0.0005922096315771341,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.2525288127362728,
+            "lo": -0.5277081280946732,
+            "hi": 0.029119431972503662,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.005338933047823957,
+            "lo": 0.0017062698170775548,
+            "hi": 0.00968782701784221,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.0013142272364348173,
+            "lo": -0.002662071492522955,
+            "hi": -0.0002461369149386883,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.20858669327571988,
+            "lo": -0.3614901229739189,
+            "hi": -0.05106179788708687,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.023419140838086605,
+            "lo": 0.018558969721198082,
+            "hi": 0.027385578025132418,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.007153055397793651,
+            "lo": -0.015636256663128734,
+            "hi": 0.0009184477385133505,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.1925564892590046,
+            "lo": -0.5169310988858342,
+            "hi": 0.16935259755700827,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.0073079392313957214,
+            "lo": 0.002268075942993164,
+            "hi": 0.013332545757293701,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.025693294359371066,
+            "lo": 0.0226709540002048,
+            "hi": 0.0284356577321887,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.00893485196866095,
+            "lo": -0.0168704844545573,
+            "hi": -0.0016609432641416788,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.2804705761373043,
+            "lo": -0.5360532309859991,
+            "hi": -0.020284444093704224,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.010150220768991858,
+            "lo": 0.005633912223856896,
+            "hi": 0.014427061309106648,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.0022737167309969664,
+            "lo": -0.004155355971306562,
+            "hi": -0.0007182350382208824,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.20857784757390618,
+            "lo": -0.3614872470498085,
+            "hi": -0.051040034741163254,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.022828897344879806,
+            "lo": 0.01816122850868851,
+            "hi": 0.026635025860741735,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.006661135237663984,
+            "lo": -0.014152581337839365,
+            "hi": 0.0004822472110390663,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.19202248472720385,
+            "lo": -0.513428270816803,
+            "hi": 0.16445114742964506,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.01271241158246994,
+            "lo": 0.004774890840053558,
+            "hi": 0.02068398892879486,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "between_1.0": {
+      "target_branch_delta_delta": {
+        "n": 6,
+        "mean": 0.0,
+        "lo": -0.07291666666666667,
+        "hi": 0.08333333333333333,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_branch_delta_delta": {
+        "n": 6,
+        "mean": 0.0625,
+        "lo": -0.041666666666666664,
+        "hi": 0.19791666666666666,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_margin_movement": {
+        "n": 6,
+        "mean": 0.16666666666666666,
+        "lo": -0.020833333333333332,
+        "hi": 0.4166666666666667,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": 0.0,
+      "controls": {
+        "wrong": {
+          "n": 6,
+          "mean": 0.03125,
+          "lo": -0.052083333333333336,
+          "hi": 0.11458333333333333,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "letter_matched": {
+          "n": 4,
+          "mean": -0.0625,
+          "lo": -0.109375,
+          "hi": -0.015625,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "sign_reversed": {
+          "n": 6,
+          "mean": 0.03125,
+          "lo": -0.03125,
+          "hi": 0.10416666666666667,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "temperatures": {
+        "0.1": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.03169558476656675,
+            "lo": 0.01664506799230973,
+            "hi": 0.05170690858115753,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.01059262406003351,
+            "lo": -0.004319786229946961,
+            "hi": 0.03190635199037691,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.12272765735785167,
+            "lo": -0.3117472430070241,
+            "hi": 0.5257796297470728,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.0007368445303483536,
+            "lo": 4.3769453573020796e-06,
+            "hi": 0.002149827956280048,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.0007560665162600344,
+            "lo": -2.1645118977176026e-06,
+            "hi": 0.0022048502293425067,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.3411843727032344,
+            "lo": -0.06750445067882538,
+            "hi": 0.7367638548215231,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.03139318743099769,
+            "lo": 0.016361243712405365,
+            "hi": 0.052123840587834515,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.009836557876648536,
+            "lo": -0.004400474472883313,
+            "hi": 0.03134364769114958,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.09571222805728515,
+            "lo": -0.3130654493967692,
+            "hi": 0.4928070306777954,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.000815346017928024,
+            "lo": -1.0796598229667609e-05,
+            "hi": 0.0024040514794002967,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.03845080469424526,
+            "lo": 0.018213243844608467,
+            "hi": 0.064208858491232,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.021285536175128073,
+            "lo": -0.004030221820964168,
+            "hi": 0.05358639937670281,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.21602110316356024,
+            "lo": -0.28627488017082214,
+            "hi": 0.6834498966733614,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.011598677532068299,
+            "lo": 0.0009754789086097541,
+            "hi": 0.024488774285903975,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.012143979050354877,
+            "lo": -0.00043080354468353715,
+            "hi": 0.025589503750476677,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.38109440604845685,
+            "lo": -0.04843242963155111,
+            "hi": 0.7766023774941763,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.030911017985393602,
+            "lo": 0.01616379152983427,
+            "hi": 0.0510966704847912,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.009141557791735977,
+            "lo": -0.004658906157904615,
+            "hi": 0.030160818714648485,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.08422730017142992,
+            "lo": -0.3193622365749131,
+            "hi": 0.487388498072202,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.010728077582219461,
+            "lo": -0.002297763162156722,
+            "hi": 0.026307539083063602,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.04933439427986741,
+            "lo": 0.021052371400098007,
+            "hi": 0.09286321668575208,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.038024804554879665,
+            "lo": -0.0036380027110377946,
+            "hi": 0.10020113239685695,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.23798290143410364,
+            "lo": -0.29439664632081985,
+            "hi": 0.7244407162070274,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.027734429575502872,
+            "lo": 0.004224803609152635,
+            "hi": 0.05999821797013283,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.030333505167315405,
+            "lo": -0.0003955190380414327,
+            "hi": 0.07574341942866643,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.3810872932275136,
+            "lo": -0.04843942324320475,
+            "hi": 0.7765952050685883,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.02952000902344783,
+            "lo": 0.015887364745140076,
+            "hi": 0.04760112892836332,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.0076912993875642615,
+            "lo": -0.004726834129542112,
+            "hi": 0.026354186857740085,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.073773761279881,
+            "lo": -0.33861712645739317,
+            "hi": 0.4853536784648895,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.023351234383881092,
+            "lo": -0.006784605793654919,
+            "hi": 0.06306703388690948,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.04941329903279742,
+            "lo": 0.022503345739096403,
+            "hi": 0.0951846946651737,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.041318137819568314,
+            "lo": -0.0012913793325424194,
+            "hi": 0.11041405952225129,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.2547364830970764,
+            "lo": -0.28281935056050617,
+            "hi": 0.7407596707344055,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.030424371051291626,
+            "lo": 0.006642780887583892,
+            "hi": 0.06704821685949962,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.034503202264507614,
+            "lo": 0.002004133847852548,
+            "hi": 0.08848120675732692,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.3810875614484151,
+            "lo": -0.048438966274261475,
+            "hi": 0.7765953540802002,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.02796669319892923,
+            "lo": 0.01585437823086977,
+            "hi": 0.04367763455957174,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.006814935865501563,
+            "lo": -0.004359641733268897,
+            "hi": 0.023123132685820263,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.09496349034210046,
+            "lo": -0.3462502198914687,
+            "hi": 0.5438106196622053,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.026431838671366375,
+            "lo": -0.00627244512240092,
+            "hi": 0.07280040035645167,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "within_1.0": {
+      "target_branch_delta_delta": {
+        "n": 8,
+        "mean": -0.046875,
+        "lo": -0.0859375,
+        "hi": -0.0078125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_branch_delta_delta": {
+        "n": 8,
+        "mean": -0.046875,
+        "lo": -0.0859375,
+        "hi": -0.0078125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_margin_movement": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": 0.0,
+      "controls": {
+        "wrong": {
+          "n": 8,
+          "mean": 0.0625,
+          "lo": 0.015625,
+          "hi": 0.109375,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "letter_matched": {
+          "n": 2,
+          "mean": 0.0625,
+          "lo": 0.0,
+          "hi": 0.125,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "sign_reversed": {
+          "n": 8,
+          "mean": 0.03125,
+          "lo": -0.03125,
+          "hi": 0.09375,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "temperatures": {
+        "0.1": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.028884920524433255,
+            "lo": 0.02324054017663002,
+            "hi": 0.0350161911919713,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.012041151523590088,
+            "lo": -0.02233351650647819,
+            "hi": -0.00321758515201509,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.37904345989227295,
+            "lo": -0.6237198822200298,
+            "hi": -0.12595811486244202,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 3.0938291158068736e-06,
+            "lo": 1.7349408133283496e-08,
+            "hi": 9.200664942165165e-06,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -7.224734872579575e-07,
+            "lo": -2.132495865225792e-06,
+            "hi": -3.725290298461914e-09,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.17252543149515986,
+            "lo": -0.33559972047805786,
+            "hi": -0.038281336426734924,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.02888350235298276,
+            "lo": 0.02328195935115218,
+            "hi": 0.03514119214378297,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.01204042905010283,
+            "lo": -0.022534989984706044,
+            "hi": -0.0031824465841054916,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.3790171593427658,
+            "lo": -0.6200471594929695,
+            "hi": -0.12599357962608337,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 4.112720489501953e-06,
+            "lo": 2.9802322387695312e-08,
+            "hi": 1.2218952178955078e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.029374619014561176,
+            "lo": 0.02366416179575026,
+            "hi": 0.035526984836906195,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.012261491268873215,
+            "lo": -0.022493443684652448,
+            "hi": -0.003470592899248004,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.3840944916009903,
+            "lo": -0.6261852234601974,
+            "hi": -0.13162222877144814,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0009383275930829882,
+            "lo": 0.00011376843620070076,
+            "hi": 0.002256301833519103,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.00022822711616754532,
+            "lo": -0.0005311237182468176,
+            "hi": -2.429378218948841e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.26640490000136197,
+            "lo": -0.4096647873520851,
+            "hi": -0.10719282226637006,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.028874558862298727,
+            "lo": 0.023274119244888425,
+            "hi": 0.03513997024856508,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.01203326415270567,
+            "lo": -0.02253169985488057,
+            "hi": -0.0031837718561291695,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.378991711884737,
+            "lo": -0.6200219709426165,
+            "hi": -0.12597770802676678,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.0012677684426307678,
+            "lo": 0.0001643747091293335,
+            "hi": 0.0030141249299049377,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.031388109317049384,
+            "lo": 0.025531324557960033,
+            "hi": 0.037501249462366104,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.013442687690258026,
+            "lo": -0.02327539841644466,
+            "hi": -0.004845442483201623,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.39890092331916094,
+            "lo": -0.6281525567173958,
+            "hi": -0.1591888889670372,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.006552156581165036,
+            "lo": 0.0025757609619176947,
+            "hi": 0.010905124639975838,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.0015389418695122004,
+            "lo": -0.002784997457638383,
+            "hi": -0.00047476543113589287,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.2651384186465293,
+            "lo": -0.40980189666152,
+            "hi": -0.10350742423906922,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.028830717550590634,
+            "lo": 0.02326781745068729,
+            "hi": 0.0350224613212049,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.011903745820745826,
+            "lo": -0.022390213096514344,
+            "hi": -0.0031655430793762207,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.378399008885026,
+            "lo": -0.6193224750459194,
+            "hi": -0.1256815493106842,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.008979164063930511,
+            "lo": 0.0032227560877799988,
+            "hi": 0.015292540192604065,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.03363701468333602,
+            "lo": 0.028479995438829064,
+            "hi": 0.03923419490456581,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.014280401403084397,
+            "lo": -0.023662529652938247,
+            "hi": -0.006171126617118716,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.4304234702140093,
+            "lo": -0.6295495629310608,
+            "hi": -0.2348412312567234,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.014603528950829059,
+            "lo": 0.009589232213329524,
+            "hi": 0.019760162103921175,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.003146151080727577,
+            "lo": -0.004935506964102387,
+            "hi": -0.0014483053237199783,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.2651375464629382,
+            "lo": -0.4097941182553768,
+            "hi": -0.10351016139611602,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.02870879927650094,
+            "lo": 0.023308620555326343,
+            "hi": 0.03484011581167579,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.01113425032235682,
+            "lo": -0.02113364334218204,
+            "hi": -0.0029230243526399136,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.3739778362214565,
+            "lo": -0.6108250021934509,
+            "hi": -0.12390848249197006,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.01799909770488739,
+            "lo": 0.007486097514629364,
+            "hi": 0.028628379106521606,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "between_1.5": {
+      "target_branch_delta_delta": {
+        "n": 6,
+        "mean": -0.03125,
+        "lo": -0.10416666666666667,
+        "hi": 0.041666666666666664,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_branch_delta_delta": {
+        "n": 6,
+        "mean": 0.041666666666666664,
+        "lo": -0.11458333333333333,
+        "hi": 0.21875,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_margin_movement": {
+        "n": 6,
+        "mean": 0.25,
+        "lo": 0.020833333333333332,
+        "hi": 0.5208333333333334,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": 0.0,
+      "controls": {
+        "wrong": {
+          "n": 6,
+          "mean": 0.08333333333333333,
+          "lo": 0.010416666666666666,
+          "hi": 0.16666666666666666,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "letter_matched": {
+          "n": 4,
+          "mean": -0.109375,
+          "lo": -0.25,
+          "hi": 0.015625,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "sign_reversed": {
+          "n": 6,
+          "mean": 0.03125,
+          "lo": -0.052083333333333336,
+          "hi": 0.13541666666666666,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "temperatures": {
+        "0.1": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.04115915364430597,
+            "lo": 0.01633041639191409,
+            "hi": 0.07317106957392146,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.01669108458251382,
+            "lo": -0.0033540838242818913,
+            "hi": 0.044373448084418975,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.3313078284263611,
+            "lo": -0.04586975773175558,
+            "hi": 0.6658200323581696,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.0032174944188261647,
+            "lo": 4.390887559398611e-06,
+            "hi": 0.009473268405320331,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.00331272100629576,
+            "lo": -2.1531019835189604e-06,
+            "hi": 0.009711626943802306,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.451447789867719,
+            "lo": 0.038906837503115334,
+            "hi": 0.8109162648518881,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.03940601767196009,
+            "lo": 0.015142122826849421,
+            "hi": 0.07216376795743902,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.013378364014594505,
+            "lo": -0.003914106520824134,
+            "hi": 0.04162855048586304,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.24461960792541504,
+            "lo": -0.0860633651415507,
+            "hi": 0.5378092527389526,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.003595167579866887,
+            "lo": -1.0785320652203131e-05,
+            "hi": 0.010612044984129673,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.05595280136913061,
+            "lo": 0.01972864226748546,
+            "hi": 0.09730681497603655,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.03781150723807514,
+            "lo": -0.0036664395593106747,
+            "hi": 0.08492961122343938,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.3665340219934781,
+            "lo": -0.054350756108760834,
+            "hi": 0.7578462461630503,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.02384117505183288,
+            "lo": 0.0011575702907672774,
+            "hi": 0.05461536212048183,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.025605604188361514,
+            "lo": -0.00032026155774171156,
+            "hi": 0.05816501399385743,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.47849442561467487,
+            "lo": 0.048967609802881874,
+            "hi": 0.8536370197931925,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.03840410922809193,
+            "lo": 0.01480031005727748,
+            "hi": 0.069995092228055,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.01220590299150596,
+            "lo": -0.004339982270418356,
+            "hi": 0.03945329205210631,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.2275490090250969,
+            "lo": -0.09292219827572505,
+            "hi": 0.5340562462806702,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.024418711332449067,
+            "lo": -0.0021363787624674537,
+            "hi": 0.05986959088477306,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.06886051874607801,
+            "lo": 0.025757210639615852,
+            "hi": 0.12875327623138824,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.05726768309250474,
+            "lo": -0.001102244791885217,
+            "hi": 0.13916338281705976,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.41882773240407306,
+            "lo": -0.03461651007334391,
+            "hi": 0.8672521909077963,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.04254205757752061,
+            "lo": 0.007585296252121528,
+            "hi": 0.08492660165453951,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.04710858315229416,
+            "lo": 0.0015117546233038108,
+            "hi": 0.1062175949725012,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.4784906208515167,
+            "lo": 0.04896387457847595,
+            "hi": 0.8536352614561716,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.03617219037065903,
+            "lo": 0.014654004946351051,
+            "hi": 0.0637664282694459,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.010159101259584228,
+            "lo": -0.004553220622862379,
+            "hi": 0.034365723840892315,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.2226874977350235,
+            "lo": -0.11836806188027064,
+            "hi": 0.5518948609630266,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.039895237113038697,
+            "lo": -0.003954341014226277,
+            "hi": 0.09157439197103183,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "total_tv": {
+            "n": 6,
+            "mean": 0.06637900943557422,
+            "lo": 0.03251458083589872,
+            "hi": 0.12344169865051906,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 6,
+            "mean": 0.05727043189108372,
+            "lo": 0.003807621697584788,
+            "hi": 0.1396940778940916,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 6,
+            "mean": 0.42988157272338867,
+            "lo": -0.040048827727635704,
+            "hi": 0.8893597523371378,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 6,
+            "mean": 0.04331753154595693,
+            "lo": 0.013600938332577547,
+            "hi": 0.08561552129685879,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 6,
+            "mean": 0.04878799399981896,
+            "lo": 0.006736861541867256,
+            "hi": 0.11155765658865373,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 6,
+            "mean": 0.478490690390269,
+            "lo": 0.04896413286526998,
+            "hi": 0.8536351720492045,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 6,
+            "mean": 0.03413237491622567,
+            "lo": 0.015237121998022,
+            "hi": 0.057729079853743315,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 6,
+            "mean": 0.008482438512146473,
+            "lo": -0.004402822504440944,
+            "hi": 0.029276167042553425,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 6,
+            "mean": 0.21947173898418745,
+            "lo": -0.14825879161556563,
+            "hi": 0.585899135718743,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 6,
+            "mean": 0.040870122611522675,
+            "lo": 0.0005980456868807474,
+            "hi": 0.09342355777819951,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    },
+    "within_1.5": {
+      "target_branch_delta_delta": {
+        "n": 8,
+        "mean": -0.015625,
+        "lo": -0.0625,
+        "hi": 0.03125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "source_branch_delta_delta": {
+        "n": 8,
+        "mean": -0.015625,
+        "lo": -0.0625,
+        "hi": 0.03125,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_margin_movement": {
+        "n": 8,
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "method": "semantic-family-level nonparametric bootstrap",
+        "resamples": 10000
+      },
+      "article_change_rate": 0.0,
+      "controls": {
+        "wrong": {
+          "n": 8,
+          "mean": 0.046875,
+          "lo": -0.015625,
+          "hi": 0.109375,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "letter_matched": {
+          "n": 2,
+          "mean": -0.03125,
+          "lo": -0.125,
+          "hi": 0.0625,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        },
+        "sign_reversed": {
+          "n": 8,
+          "mean": 0.0078125,
+          "lo": -0.046875,
+          "hi": 0.0703125,
+          "method": "semantic-family-level nonparametric bootstrap",
+          "resamples": 10000
+        }
+      },
+      "temperatures": {
+        "0.1": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.042034925892949104,
+            "lo": 0.032921790378168225,
+            "hi": 0.0501338941976428,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.00477516301907599,
+            "lo": -0.01859624357894063,
+            "hi": 0.009796330705285072,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.0932061281055212,
+            "lo": -0.40770912915468216,
+            "hi": 0.2633585799485445,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 3.977467546434815e-06,
+            "lo": 1.737765842335648e-08,
+            "hi": 1.1833468139599751e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -9.296927601099014e-07,
+            "lo": -2.741115167737007e-06,
+            "hi": -3.725290298461914e-09,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.17206056462600827,
+            "lo": -0.3342706710100174,
+            "hi": -0.038281336426734924,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.04203311027958989,
+            "lo": 0.03305141371674836,
+            "hi": 0.05018815794028342,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.00477423332631588,
+            "lo": -0.01861152285709977,
+            "hi": 0.010118720587342978,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.09320210479199886,
+            "lo": -0.41032855212688446,
+            "hi": 0.28072009421885014,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 5.289912223815918e-06,
+            "lo": 2.9802322387695312e-08,
+            "hi": 1.5720725059509277e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.25": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.042776792077347636,
+            "lo": 0.033433422446250916,
+            "hi": 0.051424737088382244,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.0051061837002635,
+            "lo": -0.01910796482115984,
+            "hi": 0.009652226464822888,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.09605642408132553,
+            "lo": -0.4118458032608032,
+            "hi": 0.26085682958364487,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.0014072780033842491,
+            "lo": 0.0001601552989711763,
+            "hi": 0.0035346165279577235,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.00035110441967844963,
+            "lo": -0.0008419649675488472,
+            "hi": -2.2639520466327667e-05,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.2358861556276679,
+            "lo": -0.39775132201611996,
+            "hi": -0.06753107346594334,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.04201405309140682,
+            "lo": 0.03305668639950454,
+            "hi": 0.0501881439704448,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.004755079280585051,
+            "lo": -0.018603794742375612,
+            "hi": 0.010138350306078792,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.09317743219435215,
+            "lo": -0.41028215922415257,
+            "hi": 0.2807295862585306,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.0018886104226112366,
+            "lo": 0.00019811838865280151,
+            "hi": 0.0047119781374931335,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "0.5": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.04562252387404442,
+            "lo": 0.03664563409984112,
+            "hi": 0.05544917657971382,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.006862940965220332,
+            "lo": -0.02085272059775889,
+            "hi": 0.008497843286022544,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.11322695575654507,
+            "lo": -0.4316241703927517,
+            "hi": 0.24910568445920944,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.009321690813521855,
+            "lo": 0.0026978161768056452,
+            "hi": 0.01730862342810724,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.002316267229616642,
+            "lo": -0.004772080574184656,
+            "hi": -0.0003952295519411564,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.23604833404533565,
+            "lo": -0.398584958165884,
+            "hi": -0.06630394421517849,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.041896391194313765,
+            "lo": 0.03313241759315133,
+            "hi": 0.04983813501894474,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.00454667373560369,
+            "lo": -0.018271307926625013,
+            "hi": 0.010155621683225036,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.09266727231442928,
+            "lo": -0.4091189317405224,
+            "hi": 0.28096569515764713,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.012568384408950806,
+            "lo": 0.0033549293875694275,
+            "hi": 0.02365056425333023,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        },
+        "1.0": {
+          "total_tv": {
+            "n": 8,
+            "mean": 0.045849098823964596,
+            "lo": 0.03852587519213557,
+            "hi": 0.0538272256962955,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_target_minus_source": {
+            "n": 8,
+            "mean": -0.008211791748180985,
+            "lo": -0.02139737131074071,
+            "hi": 0.005893496796488762,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "total_desired_cosine": {
+            "n": 8,
+            "mean": -0.149221058934927,
+            "lo": -0.4435243792831898,
+            "hi": 0.18785760179162025,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_tv": {
+            "n": 8,
+            "mean": 0.019453047367278486,
+            "lo": 0.01089712412795052,
+            "hi": 0.02750740386545658,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_target_minus_source": {
+            "n": 8,
+            "mean": -0.004244152922183275,
+            "lo": -0.00788178015500307,
+            "hi": -0.0011974950321018696,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "public_desired_cosine": {
+            "n": 8,
+            "mean": -0.23604724276810884,
+            "lo": -0.39858000352978706,
+            "hi": -0.06630508974194527,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_tv": {
+            "n": 8,
+            "mean": 0.04187339055351913,
+            "lo": 0.03379087126813829,
+            "hi": 0.049363057129085064,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_target_minus_source": {
+            "n": 8,
+            "mean": -0.00396763882599771,
+            "lo": -0.01695827883668244,
+            "hi": 0.010063546942546964,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "private_desired_cosine": {
+            "n": 8,
+            "mean": -0.08917875215411186,
+            "lo": -0.3996298648416996,
+            "hi": 0.28150912187993526,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          },
+          "delta_q_target_article": {
+            "n": 8,
+            "mean": 0.022747904062271118,
+            "lo": 0.006470248103141785,
+            "hi": 0.03858684003353119,
+            "method": "semantic-family-level nonparametric bootstrap",
+            "resamples": 10000
+          }
+        }
+      }
+    }
+  },
+  "interactions": {
+    "strength_0.5": {
+      "0.1": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.004097708962593937,
+          "lo": -0.00575202177929059,
+          "hi": 0.012330793243693962,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": -0.006623533311236922,
+          "lo": -0.018671028507014853,
+          "hi": 0.004410943094020088,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.004097708962593937,
+          "two_sided_p": 0.40792540792540793,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "0.25": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.011614399937072287,
+          "lo": -0.0007445600937974924,
+          "hi": 0.02554068096813822,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.0015255413478977662,
+          "lo": -0.011534597586432938,
+          "hi": 0.016350193492447335,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.011614399937072287,
+          "two_sided_p": 0.09290709290709291,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "0.5": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.018879317639099707,
+          "lo": 0.00496888411908003,
+          "hi": 0.03257483333679071,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.01417935158436497,
+          "lo": -0.003330317636330923,
+          "hi": 0.03335962832594911,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.018879317639099707,
+          "two_sided_p": 0.02097902097902098,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "1.0": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.018021733480660867,
+          "lo": 0.0020449967511619125,
+          "hi": 0.035179005799970284,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.020628746210907895,
+          "lo": -0.0007992044556885958,
+          "hi": 0.046774677777041994,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.018021733480660867,
+          "two_sided_p": 0.048618048618048616,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      }
+    },
+    "strength_1.0": {
+      "0.1": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": -0.001775934376782383,
+          "lo": -0.023899222846327284,
+          "hi": 0.014570681705777647,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": -0.021120197937004072,
+          "lo": -0.04453201418982644,
+          "hi": -0.002914205746492371,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": -0.001775934376782383,
+          "two_sided_p": 0.9004329004329005,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "0.25": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.008623890815890434,
+          "lo": -0.009274201720224085,
+          "hi": 0.026349531404986713,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": -0.008802615777919224,
+          "lo": -0.025886639816841733,
+          "hi": 0.00841127455108411,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.008623890815890434,
+          "two_sided_p": 0.35997335997336,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "0.5": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.02049298152148064,
+          "lo": 0.003250042728420036,
+          "hi": 0.038040508844763586,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.012277401828517515,
+          "lo": -0.01212372692922751,
+          "hi": 0.041332119765381016,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.02049298152148064,
+          "two_sided_p": 0.044622044622044624,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "1.0": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.016562948178034276,
+          "lo": -0.0040416394476778805,
+          "hi": 0.04041009772724162,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.019700167157376807,
+          "lo": -0.0077869997670253115,
+          "hi": 0.05767056532204151,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.016562948178034276,
+          "two_sided_p": 0.17815517815517815,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      }
+    },
+    "strength_1.5": {
+      "0.1": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.005840609558909526,
+          "lo": -0.029476135814157978,
+          "hi": 0.03224395649655961,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": -0.014838946641854514,
+          "lo": -0.046516552349809594,
+          "hi": 0.010825150107242129,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.005840609558909526,
+          "two_sided_p": 0.7555777555777555,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "0.25": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.026043840911763518,
+          "lo": -0.0067600001614636085,
+          "hi": 0.06280901843112001,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.008995726335948953,
+          "lo": -0.01852176538280522,
+          "hi": 0.045301178722487144,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.026043840911763518,
+          "two_sided_p": 0.13986013986013987,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "0.5": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.03894456758765349,
+          "lo": 0.010653688480185034,
+          "hi": 0.06713232307326204,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.034719075386722885,
+          "lo": -0.0019267316286762553,
+          "hi": 0.07566487276926637,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.03894456758765349,
+          "two_sided_p": 0.014985014985014986,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      },
+      "1.0": {
+        "tv_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.0316054998159719,
+          "lo": 0.004175559074307482,
+          "hi": 0.05730338140468423,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "aligned_route_interaction": {
+          "n_left": 6,
+          "n_right": 8,
+          "mean": 0.04058206958385805,
+          "lo": 0.0051925701554864645,
+          "hi": 0.08396725084943076,
+          "method": "independent semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "tv_exact_permutation": {
+          "observed": 0.0316054998159719,
+          "two_sided_p": 0.042624042624042624,
+          "assignments": 3003,
+          "unit": "semantic family"
+        }
+      }
+    }
+  }
+}
