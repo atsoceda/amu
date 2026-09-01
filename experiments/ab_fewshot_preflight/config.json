@@ -1,0 +1,85 @@
+{
+  "experiment_name": "ab_fewshot_mediator_preflight",
+  "protocol_frozen_at": "2026-09-01T11:30:00+09:00",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "dtype": "bfloat16",
+  "code_support_threshold": 0.95,
+  "demonstrations": [
+    {
+      "family": "medicine",
+      "common_context": "In casual conversation, a medical professional who treats patients is being discussed.",
+      "formal_context": "In a formal hospital report, a medical professional who treats patients is being discussed.",
+      "common_term": "doctor",
+      "formal_term": "physician"
+    },
+    {
+      "family": "motor_vehicle",
+      "common_context": "In an everyday conversation, a motor vehicle used for personal travel is being discussed.",
+      "formal_context": "In a formal written report, a motor vehicle used for personal travel is being discussed.",
+      "common_term": "car",
+      "formal_term": "automobile"
+    },
+    {
+      "family": "air_transport",
+      "common_context": "In casual conversation, a powered vehicle that flies through the air is being discussed.",
+      "formal_context": "In a formal aviation report, a powered vehicle that flies through the air is being discussed.",
+      "common_term": "plane",
+      "formal_term": "aircraft"
+    },
+    {
+      "family": "policing",
+      "common_context": "In an informal conversation, a person whose job is enforcing the law is being discussed.",
+      "formal_context": "In a formal police report, a person whose job is enforcing the law is being discussed.",
+      "common_term": "cop",
+      "formal_term": "officer"
+    }
+  ],
+  "label_banks": {
+    "high": [["A", "B"], ["A", "B"], ["A", "B"], ["A", "B"]],
+    "medium": [["A", "B"], ["A", "B"], ["A", "B"], ["B", "A"]],
+    "low": [["A", "A"], ["B", "B"], ["A", "A"], ["B", "B"]]
+  },
+  "heldout": [
+    {
+      "family": "legal",
+      "neutral_context": "A professional who provides legal advice and represents clients is being discussed.",
+      "source_context": "In an everyday conversation with a friend, a professional who provides legal advice and represents clients is being discussed.",
+      "target_context": "In a formal court document, a professional who provides legal advice and represents clients is being discussed.",
+      "common_term": "lawyer",
+      "formal_term": "attorney"
+    },
+    {
+      "family": "education",
+      "neutral_context": "A professional whose work is teaching students is being discussed.",
+      "source_context": "In a casual conversation between parents, a professional whose work is teaching students is being discussed.",
+      "target_context": "In a formal education policy document, a professional whose work is teaching students is being discussed.",
+      "common_term": "teacher",
+      "formal_term": "educator"
+    },
+    {
+      "family": "journalism",
+      "neutral_context": "A professional who investigates and reports news is being discussed.",
+      "source_context": "In an everyday conversation, a professional who investigates and reports news is being discussed.",
+      "target_context": "In a formal media-industry report, a professional who investigates and reports news is being discussed.",
+      "common_term": "reporter",
+      "formal_term": "journalist"
+    },
+    {
+      "family": "cycling",
+      "neutral_context": "A two-wheeled vehicle powered by pedaling is being discussed.",
+      "source_context": "In a casual conversation with a friend, a two-wheeled vehicle powered by pedaling is being discussed.",
+      "target_context": "In a formal transportation document, a two-wheeled vehicle powered by pedaling is being discussed.",
+      "common_term": "bike",
+      "formal_term": "bicycle"
+    },
+    {
+      "family": "cinema",
+      "neutral_context": "A motion picture shown for entertainment is being discussed.",
+      "source_context": "In a casual conversation between friends, a motion picture shown for entertainment is being discussed.",
+      "target_context": "In a formal cinema studies essay, a motion picture shown for entertainment is being discussed.",
+      "common_term": "movie",
+      "formal_term": "film"
+    }
+  ]
+}
