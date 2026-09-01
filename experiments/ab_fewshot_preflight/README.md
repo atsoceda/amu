@@ -18,3 +18,7 @@ is run at this stage.
 /Users/anthony/miniconda3/bin/python experiments/ab_fewshot_preflight/run.py
 ```
 
+The default rerun output is `results_corrected_direct/`. The runner uses direct
+full-prompt inference with `use_cache=False` and atomically checkpoints after
+each bank-family cell. Re-running the command resumes completed cells. The
+historical `results/` directory is retained unchanged for comparison.

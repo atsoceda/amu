@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import json
+import argparse
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -17,6 +19,14 @@ from experiments.lib.aan_protocol import token_id_for_text, write_json
 
 EXP = Path(__file__).resolve().parent
 RESULTS = EXP / "results"
+
+
+def atomic_write_json(path: Path, payload: Any) -> None:
+    """Write a restart-safe checkpoint without exposing a partial JSON file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(json.dumps(payload, indent=2) + "\n")
+    os.replace(temporary, path)
 
 
 def demonstrations(cfg: dict[str, Any], bank: str) -> str:
@@ -63,8 +73,34 @@ def batch_logits(model, tokenizer, prompts: list[str], batch_size: int = 4) -> l
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--results-dir",
+        type=Path,
+        default=EXP / "results_corrected_direct",
+        help="Checkpoint/output directory (historical results are never overwritten by default).",
+    )
+    parser.add_argument("--batch-size", type=int, default=4)
+    args = parser.parse_args()
     cfg = json.loads((EXP / "config.json").read_text())
-    RESULTS.mkdir(parents=True, exist_ok=True)
+    results = args.results_dir.resolve()
+    results.mkdir(parents=True, exist_ok=True)
+    rows_path = results / "rows.json"
+    rows = json.loads(rows_path.read_text()) if rows_path.exists() else []
+    completed = {(r["bank"], r["family"]) for r in rows}
+    run_metadata = {
+        "experiment": cfg["experiment_name"],
+        "started_or_resumed_at": datetime.now(timezone.utc).isoformat(),
+        "model": cfg["model"],
+        "model_snapshot": cfg["model_snapshot"],
+        "dtype": cfg["dtype"],
+        "inference_mode": "direct_full_prompt",
+        "use_cache": False,
+        "batch_size": args.batch_size,
+        "checkpoint_granularity": "one bank-family cell",
+        "config": cfg,
+    }
+    atomic_write_json(results / "run_metadata.json", run_metadata)
     tok = AutoTokenizer.from_pretrained(cfg["model_snapshot"], local_files_only=True)
     tok.padding_side = "left"
     if tok.pad_token_id is None:
@@ -74,10 +110,12 @@ def main() -> None:
         local_files_only=True, low_cpu_mem_usage=True
     ).eval()
     code_ids = {code: token_id_for_text(tok, f" {code}") for code in ("A", "B")}
-    rows = []
     for bank in ("high", "medium", "low"):
         prefix = demonstrations(cfg, bank)
         for item in cfg["heldout"]:
+            if (bank, item["family"]) in completed:
+                print(f"checkpoint already contains {bank} {item['family']}", flush=True)
+                continue
             common_id = first_id(tok, item["common_term"])
             formal_id = first_id(tok, item["formal_term"])
             contexts = {name: item[f"{name}_context"] for name in ("neutral", "source", "target")}
@@ -87,7 +125,7 @@ def main() -> None:
                 prompt_specs.append(("code", context_name, None, cprompt))
                 for code in ("A", "B"):
                     prompt_specs.append(("term", context_name, code, term_prompt(prefix, context, code)))
-            logits_list = batch_logits(model, tok, [x[3] for x in prompt_specs])
+            logits_list = batch_logits(model, tok, [x[3] for x in prompt_specs], batch_size=args.batch_size)
             code_results = {}
             term_results = {name: {} for name in contexts}
             for (kind, context_name, code, prompt_text), logits in zip(prompt_specs, logits_list):
@@ -127,7 +165,14 @@ def main() -> None:
                 "fixed_code_context_effects": fixed_context_effects,
                 "mean_fixed_code_context_effect": sum(fixed_context_effects.values()) / 2,
             })
-            print(f"assayed {bank} {item['family']}", flush=True)
+            atomic_write_json(rows_path, rows)
+            atomic_write_json(results / "progress.json", {
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+                "completed_cells": len(rows),
+                "total_cells": 15,
+                "last_completed": {"bank": bank, "family": item["family"]},
+            })
+            print(f"assayed and checkpointed {bank} {item['family']} ({len(rows)}/15)", flush=True)
 
     summary = {"experiment": cfg["experiment_name"], "generated_at": datetime.now(timezone.utc).isoformat(),
                "model": cfg["model"], "code_support_threshold": cfg["code_support_threshold"], "banks": {}}
@@ -154,8 +199,14 @@ def main() -> None:
         "medium_minus_low_branch_leverage": summary["banks"]["medium"]["neutral_branch_leverage_mean"] - summary["banks"]["low"]["neutral_branch_leverage_mean"],
         "context_effect_survives_low_fixed_code": summary["banks"]["low"]["mean_fixed_code_context_effect"],
     }
-    write_json(RESULTS / "rows.json", rows)
-    write_json(RESULTS / "summary.json", summary)
+    atomic_write_json(rows_path, rows)
+    atomic_write_json(results / "summary.json", summary)
+    atomic_write_json(results / "progress.json", {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "completed_cells": len(rows),
+        "total_cells": 15,
+        "status": "complete",
+    })
     print(json.dumps(summary, indent=2))
 
 

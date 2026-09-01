@@ -1,0 +1,91 @@
+{
+  "experiment": "ab_fewshot_mediator_preflight",
+  "generated_at": "2026-09-01T21:58:01.521917+00:00",
+  "model": "google/gemma-3-1b-pt",
+  "code_support_threshold": 0.95,
+  "banks": {
+    "high": {
+      "families": 5,
+      "code_cells": 15,
+      "ab_mass_mean": 0.9525777618090312,
+      "ab_mass_min": 0.8859113454818726,
+      "ab_mass_threshold_pass_rate": 0.6,
+      "code_top1_valid_rate": 1.0,
+      "neutral_branch_leverage_mean": 0.07063326239585876,
+      "neutral_branch_leverage_by_family": {
+        "legal": 0.05991736054420471,
+        "education": 0.06764185428619385,
+        "journalism": 0.05712208151817322,
+        "cycling": 0.058002769947052,
+        "cinema": 0.11048224568367004
+      },
+      "mean_fixed_code_context_effect": 0.22394968569278717,
+      "fixed_code_context_effect_by_family": {
+        "legal": 0.059242382645606995,
+        "education": 0.2812679708003998,
+        "journalism": 0.25286224484443665,
+        "cycling": 0.09214860200881958,
+        "cinema": 0.43422722816467285
+      },
+      "neutral_term_top1_pair_rate": 1.0,
+      "neutral_term_pair_mass_mean": 0.8261010408401489
+    },
+    "medium": {
+      "families": 5,
+      "code_cells": 15,
+      "ab_mass_mean": 0.8878311157226563,
+      "ab_mass_min": 0.8400752544403076,
+      "ab_mass_threshold_pass_rate": 0.06666666666666667,
+      "code_top1_valid_rate": 1.0,
+      "neutral_branch_leverage_mean": 0.02183886170387268,
+      "neutral_branch_leverage_by_family": {
+        "legal": 0.05905473232269287,
+        "education": 0.07468104362487793,
+        "journalism": -0.056829214096069336,
+        "cycling": -0.01872873306274414,
+        "cinema": 0.05101647973060608
+      },
+      "mean_fixed_code_context_effect": 0.22798396050930023,
+      "fixed_code_context_effect_by_family": {
+        "legal": 0.08867861330509186,
+        "education": 0.2933038920164108,
+        "journalism": 0.25309740006923676,
+        "cycling": 0.08927983045578003,
+        "cinema": 0.4155600666999817
+      },
+      "neutral_term_top1_pair_rate": 1.0,
+      "neutral_term_pair_mass_mean": 0.8286476492881775
+    },
+    "low": {
+      "families": 5,
+      "code_cells": 15,
+      "ab_mass_mean": 0.795531964302063,
+      "ab_mass_min": 0.7379922270774841,
+      "ab_mass_threshold_pass_rate": 0.0,
+      "code_top1_valid_rate": 1.0,
+      "neutral_branch_leverage_mean": 0.031837630271911624,
+      "neutral_branch_leverage_by_family": {
+        "legal": 0.05931249260902405,
+        "education": 0.06281542778015137,
+        "journalism": -0.00018993020057678223,
+        "cycling": 0.0335657000541687,
+        "cinema": 0.0036844611167907715
+      },
+      "mean_fixed_code_context_effect": 0.2448527216911316,
+      "fixed_code_context_effect_by_family": {
+        "legal": 0.08913464844226837,
+        "education": 0.2792109549045563,
+        "journalism": 0.28098660707473755,
+        "cycling": 0.12930215895175934,
+        "cinema": 0.4456292390823364
+      },
+      "neutral_term_top1_pair_rate": 1.0,
+      "neutral_term_pair_mass_mean": 0.8344208121299743
+    }
+  },
+  "preflight_contrasts": {
+    "high_minus_low_branch_leverage": 0.03879563212394714,
+    "medium_minus_low_branch_leverage": -0.009998768568038944,
+    "context_effect_survives_low_fixed_code": 0.2448527216911316
+  }
+}
