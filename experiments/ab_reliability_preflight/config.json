@@ -1,0 +1,46 @@
+{
+  "experiment_name": "ab_reliability_preflight",
+  "protocol_frozen_at": "2026-09-01T15:00:00+09:00",
+  "model": {
+    "name": "google/gemma-3-1b-pt",
+    "snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+    "dtype": "bfloat16"
+  },
+  "generation": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.7-flash",
+    "batches": 16,
+    "families_per_batch": 20,
+    "temperature": 0.8,
+    "seed_base": 20260920
+  },
+  "lexical_screen": {
+    "register_paraphrases": [
+      ["EVERYDAY", "FORMAL"],
+      ["COMMON", "FORMAL"],
+      ["CASUAL", "PROFESSIONAL"]
+    ],
+    "minimum_order_averaged_register_contrast_each_paraphrase": 0.0,
+    "minimum_mean_register_contrast": 0.35,
+    "require_single_token_terms": true,
+    "counterbalance_choice_order": true
+  },
+  "split": {
+    "demonstration_families": 16,
+    "development_families": 8,
+    "confirmatory_families": 20,
+    "seed": 20260921
+  },
+  "reliability": {
+    "levels": [0.5, 0.625, 0.75, 0.875, 1.0],
+    "banks_per_level": 4,
+    "demonstration_orders_per_bank": 3,
+    "label_roles": ["everyday_A", "everyday_B"],
+    "seed": 20260922
+  },
+  "gates": {
+    "ab_support_target": 0.95,
+    "preflight_split": "development",
+    "residual_interventions_allowed": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-09-01T09:06:19.150786+00:00",
+  "candidate_rows_after_deduplication": 281,
+  "single_token_pairs": 252,
+  "eligible_pairs": 49,
+  "thresholds": {
+    "register_paraphrases": [
+      [
+        "EVERYDAY",
+        "FORMAL"
+      ],
+      [
+        "COMMON",
+        "FORMAL"
+      ],
+      [
+        "CASUAL",
+        "PROFESSIONAL"
+      ]
+    ],
+    "minimum_order_averaged_register_contrast_each_paraphrase": 0.0,
+    "minimum_mean_register_contrast": 0.35,
+    "require_single_token_terms": true,
+    "counterbalance_choice_order": true
+  },
+  "route_outcomes_used_for_selection": false
+}

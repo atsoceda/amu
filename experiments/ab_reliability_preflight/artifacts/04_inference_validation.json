@@ -1,0 +1,104 @@
+{
+  "construction": {
+    "label_complement_exact": true,
+    "label_complement_assignment_equal": true,
+    "order_repeat_assignment_equal": true,
+    "order_repeat_prefix_differs": true
+  },
+  "comparisons": [
+    {
+      "kind": "code",
+      "register": "everyday",
+      "forced_code": null,
+      "direct": {
+        "p_A": 0.46654370427131653,
+        "p_B": 0.5286632776260376,
+        "ab_mass": 0.9952069520950317,
+        "B_minus_A_logit": 0.125
+      },
+      "cached": {
+        "p_A": 0.4667058289051056,
+        "p_B": 0.5288469791412354,
+        "ab_mass": 0.9955527782440186,
+        "B_minus_A_logit": 0.125
+      },
+      "max_abs_difference": 0.0003458261489868164
+    },
+    {
+      "kind": "term",
+      "register": "everyday",
+      "forced_code": "A",
+      "direct": {
+        "formal_minus_everyday_logit": -1.25,
+        "formal_pair_probability": 0.22270014882087708
+      },
+      "cached": {
+        "formal_minus_everyday_logit": -1.125,
+        "formal_pair_probability": 0.24508501589298248
+      },
+      "max_abs_difference": 0.125
+    },
+    {
+      "kind": "term",
+      "register": "everyday",
+      "forced_code": "B",
+      "direct": {
+        "formal_minus_everyday_logit": -0.25,
+        "formal_pair_probability": 0.4378235340118408
+      },
+      "cached": {
+        "formal_minus_everyday_logit": -0.25,
+        "formal_pair_probability": 0.4378235340118408
+      },
+      "max_abs_difference": 0.0
+    },
+    {
+      "kind": "code",
+      "register": "formal",
+      "forced_code": null,
+      "direct": {
+        "p_A": 0.4662089943885803,
+        "p_B": 0.5282840132713318,
+        "ab_mass": 0.9944930076599121,
+        "B_minus_A_logit": 0.125
+      },
+      "cached": {
+        "p_A": 0.46620211005210876,
+        "p_B": 0.5282762050628662,
+        "ab_mass": 0.9944783449172974,
+        "B_minus_A_logit": 0.125
+      },
+      "max_abs_difference": 1.4662742614746094e-05
+    },
+    {
+      "kind": "term",
+      "register": "formal",
+      "forced_code": "A",
+      "direct": {
+        "formal_minus_everyday_logit": -1.25,
+        "formal_pair_probability": 0.22270014882087708
+      },
+      "cached": {
+        "formal_minus_everyday_logit": -1.25,
+        "formal_pair_probability": 0.22270014882087708
+      },
+      "max_abs_difference": 0.0
+    },
+    {
+      "kind": "term",
+      "register": "formal",
+      "forced_code": "B",
+      "direct": {
+        "formal_minus_everyday_logit": -0.25,
+        "formal_pair_probability": 0.4378235340118408
+      },
+      "cached": {
+        "formal_minus_everyday_logit": -0.25,
+        "formal_pair_probability": 0.4378235340118408
+      },
+      "max_abs_difference": 0.0
+    }
+  ],
+  "overall_max_abs_difference": 0.125,
+  "passed": false
+}
