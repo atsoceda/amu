@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b00_13_driver_chauffeur",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "driver_chauffeur",
+    "noun_0": "driver",
+    "noun_1": "chauffeur",
+    "shared_definition": "a person employed to drive a passenger motor vehicle",
+    "neutral_stem": "Standing beside the limousine outside the hotel, the guest signaled",
+    "candidate_modifiers": [
+      "licensed",
+      "punctual",
+      "courteous",
+      "experienced",
+      "reliable",
+      "professional",
+      "skilled",
+      "competent",
+      "careful",
+      "attentive",
+      "hired",
+      "dedicated",
+      "sober",
+      "private",
+      "discreet"
+    ],
+    "semantic_notes": "'Chauffeur' denotes luxury, formal livery, and high service expectations, while 'driver' is the general occupational term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        7924
+      ],
+      "noun_1": [
+        169273
+      ]
+    },
+    "modifier_token_ids": {
+      "licensed": [
+        24335
+      ],
+      "punctual": [
+        215660
+      ],
+      "courteous": [
+        103351
+      ],
+      "experienced": [
+        9763
+      ],
+      "reliable": [
+        13451
+      ],
+      "professional": [
+        5707
+      ],
+      "skilled": [
+        23482
+      ],
+      "competent": [
+        31431
+      ],
+      "careful": [
+        15318
+      ],
+      "attentive": [
+        58121
+      ],
+      "hired": [
+        26902
+      ],
+      "dedicated": [
+        11554
+      ],
+      "sober": [
+        54571
+      ],
+      "private": [
+        2147
+      ],
+      "discreet": [
+        96363
+      ]
+    },
+    "forced_projection_span": 0.08260329812765121,
+    "max_noun_pair_mass": 0.6985132098197937,
+    "context_priority_score": 0.057699494916847005,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "sober",
+        "target_modifier": "courteous",
+        "source_projection": -0.17506518959999084,
+        "target_projection": -0.1654207408428192,
+        "forced_modifier_leverage": 0.00964444875717163,
+        "source_pair_mass": 0.26091474294662476,
+        "target_pair_mass": 0.3579627573490143
+      },
+      "medium": {
+        "source_modifier": "dedicated",
+        "target_modifier": "private",
+        "source_projection": -0.29721909761428833,
+        "target_projection": -0.2556722164154053,
+        "forced_modifier_leverage": 0.04154688119888306,
+        "source_pair_mass": 0.5829768776893616,
+        "target_pair_mass": 0.4025389552116394
+      },
+      "high": {
+        "source_modifier": "competent",
+        "target_modifier": "discreet",
+        "source_projection": -0.11351470649242401,
+        "target_projection": -0.030911408364772797,
+        "forced_modifier_leverage": 0.08260329812765121,
+        "source_pair_mass": 0.15780670940876007,
+        "target_pair_mass": 0.16678830981254578
+      }
+    },
+    "context_generation_rank": 77
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "sober",
+      "target_modifier": "courteous",
+      "source_context_dev": [
+        "After a long evening at the gala open bar, the patrons wanted to ensure they would return home safely without any impairment at the wheel.",
+        "With the cocktail reception wrapping up after midnight, everyone was careful about who was handling the late-night commute.",
+        "The celebration had been lively and heavy on drinks, making safety and total alertness the primary concern for the trip home.",
+        "Leaving the banquet after several champagne toasts, the party needed someone completely clear-headed to navigate the foggy roads."
+      ],
+      "target_context_dev": [
+        "The high-profile diplomat appreciated formal etiquette, pleasant greetings, and impeccable hospitality throughout the visit.",
+        "Expecting top-tier luxury hospitality, the executive valued polished manners and a respectful demeanor during arrivals.",
+        "The luxury resort prides itself on refined service, where warm greetings and gentle deference define every interaction.",
+        "Refinement and professional decorum were paramount for the foreign dignitaries arriving for the summit."
+      ],
+      "source_context_test": [
+        "Late-night departures from the downtown tavern always required strict safety checks and clear minds behind the wheel.",
+        "Having indulged in vintage wines throughout the banquet, the revelers sought someone utterly unaffected by alcohol to guide the vehicle.",
+        "The midnight party was winding down, and passengers prioritized roadway vigilance above all else.",
+        "Following the festive evening of toasts and celebration, safety on the return journey depended entirely on finding someone without a drop to drink."
+      ],
+      "target_context_test": [
+        "High-society events demand an atmosphere of polished charm, elegant respect, and flawless etiquette.",
+        "The wealthy patrons placed great stock in gracious manners and refined hospitality when traveling between upscale venues.",
+        "Polished hospitality and polite professionalism were the hallmarks of the grand establishment's transportation service.",
+        "Accustomed to the finest service in Europe, the visiting family expected impeccable manners and dignified treatment at every stop."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (sober driver, sober chauffeur, courteous driver, courteous chauffeur) are fully grammatical and natural in the limousine stem context. The source context highlights alcohol avoidance and alertness after festive events, while the target context highlights formal hospitality, respect, and politeness."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "dedicated",
+      "target_modifier": "private",
+      "source_context_dev": [
+        "Long corporate tours require someone who remains steadfastly committed to the schedule from early dawn until midnight.",
+        "The logistics manager needed someone fully committed to the task who would put in long hours without hesitation.",
+        "Navigating a grueling cross-state itinerary demanded unwavering work ethic and total commitment to the assignment.",
+        "Managing the grueling transport schedule required an individual deeply devoted to fulfilling every route on time."
+      ],
+      "target_context_dev": [
+        "The billionaire family maintained their own exclusive staff and insisted on personal, non-commercial transit.",
+        "For years, the estate had relied exclusively on its own personal staff rather than public transport or rideshares.",
+        "The aristocrat preferred exclusive, non-public arrangements tailored strictly for individual family use.",
+        "The celebrity requested exclusive, personal transport accommodations that were completely off-limits to the public."
+      ],
+      "source_context_test": [
+        "The demanding itinerary across multiple regional offices called for someone deeply committed to the mission.",
+        "Executing a continuous multi-city road tour required tireless focus and steady devotion to the job.",
+        "For the intensive round-the-clock schedule, the team relied on someone whose work ethic was thoroughly committed to the daily run.",
+        "Fulfilling the packed weekend timetable demanded complete devotion to passenger safety and timeliness."
+      ],
+      "target_context_test": [
+        "High-net-worth residents usually retain exclusive personal personnel rather than hailing commercial rides.",
+        "The family estate retained exclusive domestic transport staff reserved solely for immediate household members.",
+        "Rather than booking on-demand services, the magnate relied on personal, exclusive transport arrangements.",
+        "Confidentiality and exclusivity were paramount, requiring staff employed strictly for personal household transport."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (dedicated driver, dedicated chauffeur, private driver, private chauffeur) integrate seamlessly with the limousine stem. The source emphasizes unwavering commitment and work ethic, while the target emphasizes exclusive personal employment and non-public service."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "competent",
+      "target_modifier": "discreet",
+      "source_context_dev": [
+        "Heavy snow and icy mountain roads required exceptional skill, practical capability, and proven navigational mastery.",
+        "Navigating the chaotic downtown rush hour safely required someone with proven road mastery and technical skill.",
+        "The stormy conditions and mechanical challenges demanded someone thoroughly skilled, capable, and adept at vehicle control.",
+        "With treacherous weather threatening the route, the travel planner sought someone highly capable and skilled at the controls."
+      ],
+      "target_context_dev": [
+        "The corporate merger discussions were strictly confidential, requiring someone who would never repeat a word overheard in the back.",
+        "High-profile political negotiations required absolute secrecy and quiet handling regarding all passenger conversations.",
+        "Protecting sensitive trade secrets meant employing someone who practiced total silence and respected client confidentiality.",
+        "Given the sensitive nature of the scandal, the celebrity required absolute secrecy regarding their whereabouts."
+      ],
+      "source_context_test": [
+        "Navigating steep mountain passes during a blizzard demands exceptional mechanical skill and practical capability.",
+        "The obstacle-laden course required sharp reflexes and proven capability behind the wheel.",
+        "Operating under severe storm warnings called for someone thoroughly capable of handling tough transit conditions.",
+        "Severe traffic and hazardous weather meant only someone with proven operational skill could complete the trip safely."
+      ],
+      "target_context_test": [
+        "The sensitive legal settlement negotiations required total silence regarding everything heard during transit.",
+        "When transporting prominent public figures, keeping sensitive conversations confidential is of the utmost importance.",
+        "The covert diplomatic meeting required someone who would keep passenger identities and conversations strictly confidential.",
+        "Sensitive executive deliberations demanded someone who could keep quiet about everything discussed on the road."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (competent driver, competent chauffeur, discreet driver, discreet chauffeur) are semantically and syntactically flawless when completing the stem. Source contexts highlight technical operational proficiency in harsh conditions, whereas target contexts emphasize confidentiality, discretion, and quiet handling of sensitive affairs."
+    }
+  ]
+}

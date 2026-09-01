@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b20_02_coach_trainer",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "coach_trainer",
+    "noun_0": "coach",
+    "noun_1": "trainer",
+    "shared_definition": "a person who instructs and directs athletes or sports teams",
+    "neutral_stem": "The team consulted the",
+    "candidate_modifiers": [
+      "assistant",
+      "certified",
+      "demanding",
+      "experienced",
+      "former",
+      "head",
+      "knowledgeable",
+      "new",
+      "patient",
+      "personal",
+      "professional",
+      "respected",
+      "senior",
+      "strict",
+      "veteran"
+    ],
+    "semantic_notes": "'Coach' emphasizes tactical and strategic leadership in team sports, whereas 'trainer' frequently highlights physical conditioning or individual fitness.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        8505
+      ],
+      "noun_1": [
+        36762
+      ]
+    },
+    "modifier_token_ids": {
+      "assistant": [
+        16326
+      ],
+      "certified": [
+        19743
+      ],
+      "demanding": [
+        29455
+      ],
+      "experienced": [
+        9763
+      ],
+      "former": [
+        4937
+      ],
+      "head": [
+        2228
+      ],
+      "knowledgeable": [
+        41687
+      ],
+      "new": [
+        861
+      ],
+      "patient": [
+        6213
+      ],
+      "personal": [
+        3577
+      ],
+      "professional": [
+        5707
+      ],
+      "respected": [
+        35391
+      ],
+      "senior": [
+        9550
+      ],
+      "strict": [
+        10346
+      ],
+      "veteran": [
+        26896
+      ]
+    },
+    "forced_projection_span": 0.22634181007742882,
+    "max_noun_pair_mass": 0.4474569857120514,
+    "context_priority_score": 0.10127822407785592,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "new",
+        "target_modifier": "former",
+        "source_projection": -0.0754978209733963,
+        "target_projection": -0.05254330486059189,
+        "forced_modifier_leverage": 0.022954516112804413,
+        "source_pair_mass": 0.07963189482688904,
+        "target_pair_mass": 0.05340439826250076
+      },
+      "medium": {
+        "source_modifier": "experienced",
+        "target_modifier": "respected",
+        "source_projection": -0.12237178534269333,
+        "target_projection": -0.007107140962034464,
+        "forced_modifier_leverage": 0.11526464438065886,
+        "source_pair_mass": 0.14024293422698975,
+        "target_pair_mass": 0.008015315048396587
+      },
+      "high": {
+        "source_modifier": "certified",
+        "target_modifier": "personal",
+        "source_projection": 0.013680074363946915,
+        "target_projection": 0.24002188444137573,
+        "forced_modifier_leverage": 0.22634181007742882,
+        "source_pair_mass": 0.02220306545495987,
+        "target_pair_mass": 0.2829500436782837
+      }
+    },
+    "context_generation_rank": 41
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "new",
+      "target_modifier": "former",
+      "source_context_dev": [
+        "A major staff reorganization took place just before preseason camp opened this month. Seeking fresh strategic leadership on the field for the upcoming season, the group needed immediate guidance.",
+        "Following an off-season front-office overhaul, the players were eager to adapt to an unfamiliar playbook and revised tactical system. To understand the revised defensive schemes, the roster gathered together.",
+        "The athletic organization recently brought in fresh leadership to revitalize the entire tactical program. Looking to establish an early rapport and master the updated game plan, the roster scheduled an introductory meeting.",
+        "With an incoming tactical leader appointed just last week, the squad was eager to start fresh after a disappointing year. Prior to their very first practice session, the players gathered."
+      ],
+      "target_context_dev": [
+        "Looking back at their previous championship run, the athletes wanted advice from someone who had guided their physical conditioning in past seasons. To revisit their old regimen, the group reached out.",
+        "Reflecting on past accomplishments, the roster wanted perspective from a retired mentor who had handled their conditioning years ago. Seeking historical insights on workout longevity, the squad initiated contact.",
+        "The veterans wanted to reconnect with someone who had directed their conditioning drills during earlier title runs. Seeking feedback from someone who had stepped down years ago, the athletes arranged a call.",
+        "Before launching into a rigorous preseason, the players sought perspective from someone who previously directed their daily physical regimens. To review what succeeded during past championship campaigns, the squad reached out."
+      ],
+      "source_context_test": [
+        "A comprehensive leadership shift brought fresh approaches to the club during the summer break. Hoping to align with the revised competitive structure, the athletes requested a meeting.",
+        "After the club appointed an unfamiliar face to run the sideline operations, the players needed clarity on tactical adjustments. Wanting to clarify expectations early, the roster assembled.",
+        "Fresh personnel stepped into leadership roles across the clubhouse prior to the opening tournament. To learn the revised approach and clarify individual roles, the squad organized a discussion.",
+        "Following the arrival of fresh personnel to oversee the squad's competitive direction, everyone wanted to make a positive early impression. Before setting the baseline strategy, the players arranged an intake."
+      ],
+      "target_context_test": [
+        "Several seasoned athletes wanted to consult with a veteran specialist who had overseen their fitness plans in prior decades. Seeking historical knowledge on injury avoidance, the roster initiated contact.",
+        "The squad hoped to review historical workout logs with someone who had managed their physical preparation during earlier campaigns. To gain insight from past eras of the franchise, the athletes set up an interview.",
+        "Aiming to draw on decades of institutional knowledge, the veterans looked up the individual who previously oversaw their daily exercise protocols. To discuss past preparation routines, the group held a session.",
+        "Prior to entering a grueling playoff stretch, the players sought guidance from someone who had guided their physical development throughout past championship years. To review historic practices, the squad requested advice."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (new coach, new trainer, former coach, former trainer) remain fully grammatical and coherent across all provided contexts. The source contexts emphasize recent arrivals and strategic leadership, naturally favoring 'new coach', while target contexts evoke historical conditioning and past tenures, favoring 'former trainer'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "experienced",
+      "target_modifier": "respected",
+      "source_context_dev": [
+        "Faced with a high-stakes championship playoff, the squad needed a veteran strategist with decades of game-management wisdom under pressure. Wanting battle-tested tactical insight, the players held a strategy meeting.",
+        "Facing an opponent with an intricate playbook, the players sought someone with extensive years running high-level sideline operations. To ensure their tactical adjustments were backed by seasoned expertise, the squad scheduled a talk.",
+        "With decades of sideline campaigns behind them, the athletic staff held vast situational knowledge for handling critical game scenarios. To tap into that deep well of practical tournament history, the roster gathered.",
+        "The roster needed a veteran tactical mind with extensive years of handling high-pressure game situations. To draw on that wealth of practical knowledge before the finals, the squad requested a formal review."
+      ],
+      "target_context_dev": [
+        "The players held immense admiration for the high-standing fitness specialist whose professional reputation was revered across the league. To seek guidance from this highly esteemed figure, the squad scheduled an appointment.",
+        "Wanting advice from someone widely admired for integrity and peer acclaim throughout the sporting community, the athletes gathered their questions. Seeking input from such an esteemed authority, the roster arranged a meeting.",
+        "The clubhouse held deep reverence for the specialist who had earned widespread peer recognition and admiration throughout the athletic world. Hoping to gain wisdom from such a well-regarded authority, the squad organized a discussion.",
+        "Looking for counsel from an admired figure whose authority in exercise recovery was widely acknowledged across sports medicine, the athletes convened. To consult this revered professional, the roster reached out."
+      ],
+      "source_context_test": [
+        "Entering a decisive championship series, the roster sought wisdom from someone who possessed decades of sideline game management. To refine their scheme through veteran expertise, the squad arranged a strategy session.",
+        "The athletes needed tactical advice derived from decades of tournament competition and critical sideline decisions. Seeking reassurance from extensive career background, the group requested a conference.",
+        "Confronted by complex strategic defenses, the squad looked to a veteran who had navigated dozens of competitive seasons. To draw upon that deep practical background, the players set up an appointment.",
+        "With critical tournament seedings on the line, the players required counsel from someone possessing vast career longevity in competitive directing. To leverage that seasoned background, the squad convened."
+      ],
+      "target_context_test": [
+        "The clubhouse looked up to the physical conditioning authority whose ethics and accomplishments enjoyed immense professional acclaim. Wanting guidance from such an esteemed mentor, the squad gathered.",
+        "Seeking input from someone universally honored and celebrated throughout sports wellness circles, the athletes gathered together. To obtain perspective from this deeply admired figure, the roster made contact.",
+        "The players placed enormous trust in the admired authority whose career had garnered universal acclaim across athletic departments. Hoping to discuss recovery methods with this esteemed specialist, the roster met up.",
+        "A deep sense of honor permeated the squad when preparing to meet the peer-acclaimed authority on athletic health. To receive counsel from this universally admired expert, the athletes scheduled a visit."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (experienced coach, experienced trainer, respected coach, respected trainer) remain completely permissible across all prompts. Source contexts highlight tactical longevity and veteran game management (favoring 'experienced coach'), whereas target contexts emphasize peer admiration and ethical standing within health/conditioning (favoring 'respected trainer')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "certified",
+      "target_modifier": "personal",
+      "source_context_dev": [
+        "The league's regulatory board mandated that every competitive program submit verified credentials demonstrating official compliance with safety regulations. To ensure all formal instructional accreditations were met, the roster set up a formal review.",
+        "Official athletic governing boards recently implemented strict licensing standards requiring verified regulatory compliance for all bench staff. To confirm compliance with these formal credentials, the roster gathered.",
+        "Ahead of the national qualifiers, tournament regulations required that every official mentor possess documented credentials and formal licensing. Seeking a verified specialist with verified qualifications, the squad arranged an evaluation.",
+        "Mandatory association guidelines dictated that all on-field leadership hold formal board-accredited licenses. In order to complete the regulatory paperwork with properly accredited personnel, the athletes assembled."
+      ],
+      "target_context_dev": [
+        "Several players desired customized, one-on-one conditioning tailored exclusively to their individual muscular mechanics and unique body needs. Seeking private individual fitness routines, the athletes organized a consultation.",
+        "Each athlete required private, individualized recovery routines specifically targeted to their own physical weaknesses and biometric profiles. To design tailored, individual exercise regimens, the group initiated an intake session.",
+        "Aiming for individualized exercise plans rather than general squad drills, the athletes wanted custom, one-on-one attention for their physical routines. To establish private workout regimens, the roster scheduled an appointment.",
+        "Wanting customized conditioning sessions customized to individual body mechanics rather than collective practice drills, the athletes needed one-on-one attention. To outline bespoke fitness schedules, the squad met up."
+      ],
+      "source_context_test": [
+        "To meet the new statutory athletic safety guidelines, the organization needed to confirm that their sideline mentors held accredited credentials. Ensuring all formal licensing requirements were satisfied, the squad requested an audit.",
+        "League governance required verified documentation confirming that all directing staff held accredited qualifications recognized by the sports commission. To verify these official licenses, the roster organized an appointment.",
+        "The tournament committee enforced strict standards requiring formally verified licensing for all instructional staff. To ensure full compliance with these accredited requirements, the athletes scheduled a review.",
+        "State athletic associations mandated that all competitive instructors provide verified evidence of formal regulatory licensing. In accordance with these credentialing rules, the squad initiated a conference."
+      ],
+      "target_context_test": [
+        "Looking for one-on-one instruction tailored strictly to individual biometric profiles rather than group workouts, the players sought customized fitness support. To establish dedicated individual regimens, the athletes arranged a meeting.",
+        "The athletes wanted one-on-one conditioning support focused strictly on their distinct individual muscle groups and flexibility goals. To begin tailored, individual bodywork sessions, the roster convened.",
+        "Rather than generic group workouts, the athletes sought individualized exercise regimens built entirely around their personal physiological needs. To coordinate one-on-one private fitness plans, the squad scheduled a talk.",
+        "Seeking customized, individual fitness regimens built around private bodywork rather than collective team practices, the players reached out. To coordinate tailored one-on-one sessions, the athletes held a discussion."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (certified coach, certified trainer, personal coach, personal trainer) are grammatically and semantically sound across all contexts. Source contexts focus on licensing boards and regulatory accreditations (nudging 'certified coach'), whereas target contexts explicitly focus on individualized, one-on-one body conditioning (strongly nudging 'personal trainer')."
+    }
+  ]
+}

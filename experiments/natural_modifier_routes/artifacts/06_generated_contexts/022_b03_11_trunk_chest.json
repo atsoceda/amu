@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_11_trunk_chest",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "trunk_chest",
+    "noun_0": "trunk",
+    "noun_1": "chest",
+    "shared_definition": "a sturdy heavy box with a hinged lid used for storage",
+    "neutral_stem": "In the dusty attic, they unlocked",
+    "candidate_modifiers": [
+      "wooden",
+      "heavy",
+      "antique",
+      "locked",
+      "cedar",
+      "brass",
+      "dusty",
+      "large",
+      "old",
+      "vintage",
+      "solid",
+      "metal",
+      "ornate",
+      "dark",
+      "battered"
+    ],
+    "semantic_notes": "Trunk emphasizes travel or long-term bulk storage, whereas chest can refer to stationary decorative furniture.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        32516
+      ],
+      "noun_1": [
+        15350
+      ]
+    },
+    "modifier_token_ids": {
+      "wooden": [
+        7116
+      ],
+      "heavy": [
+        7274
+      ],
+      "antique": [
+        34323
+      ],
+      "locked": [
+        23555
+      ],
+      "cedar": [
+        80444
+      ],
+      "brass": [
+        28575
+      ],
+      "dusty": [
+        78921
+      ],
+      "large": [
+        2455
+      ],
+      "old": [
+        2255
+      ],
+      "vintage": [
+        11285
+      ],
+      "solid": [
+        5139
+      ],
+      "metal": [
+        6211
+      ],
+      "ornate": [
+        94079
+      ],
+      "dark": [
+        4996
+      ],
+      "battered": [
+        112624
+      ]
+    },
+    "forced_projection_span": 0.31955432891845703,
+    "max_noun_pair_mass": 0.4862454831600189,
+    "context_priority_score": 0.15538184906083075,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "metal",
+        "target_modifier": "large",
+        "source_projection": 0.03927236795425415,
+        "target_projection": 0.07110726833343506,
+        "forced_modifier_leverage": 0.03183490037918091,
+        "source_pair_mass": 0.08498357236385345,
+        "target_pair_mass": 0.2349025011062622
+      },
+      "medium": {
+        "source_modifier": "old",
+        "target_modifier": "brass",
+        "source_projection": -0.15324726700782776,
+        "target_projection": 0.006389646790921688,
+        "forced_modifier_leverage": 0.15963691379874945,
+        "source_pair_mass": 0.27632051706314087,
+        "target_pair_mass": 0.01037054043263197
+      },
+      "high": {
+        "source_modifier": "wooden",
+        "target_modifier": "cedar",
+        "source_projection": 0.1578165590763092,
+        "target_projection": 0.47737088799476624,
+        "forced_modifier_leverage": 0.31955432891845703,
+        "source_pair_mass": 0.1977049708366394,
+        "target_pair_mass": 0.4862454831600189
+      }
+    },
+    "context_generation_rank": 23
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "metal",
+      "target_modifier": "large",
+      "source_context_dev": [
+        "The heavy container featured cold iron banding, reinforced rivets, and industrial latching designed for long cargo voyages. Decades of damp air had oxidized the outer corners without piercing the armored panels.",
+        "Industrial fabrication stamps marked the heavy plate exterior, which had survived years of freight transit unscathed. Heavy iron rivets kept every edge firmly sealed against rough handling.",
+        "Constructed from cold-rolled steel alloy sheets, the rugged footlocker had protected workshop tools through severe weather. Its heavy hinges and welded corners showed only minor oxidation.",
+        "The heavy plating showed tool marks from a nineteenth-century shipyard where sturdy armor plate was standard. Its cold exterior surfaces remained impervious to wear and moisture."
+      ],
+      "target_context_dev": [
+        "The spacious container occupied almost the entire far corner, having been built to swallow vast bundles of bedding and thick quilts. Its immense capacity made it the central storage piece under the eaves.",
+        "Taking up substantial floor space, the bulky piece held multiple winter blankets and entire household wardrobes with room to spare. Its generous footprint dominated the north wall.",
+        "The storage unit was built with expansive interior proportions to hold decades of family heirlooms and heavy woolens. Its sheer scale required two people simply to slide it away from the rafters.",
+        "Designed with an exceptionally roomy interior, the piece could store complete collections of winter quilts and winter coats effortlessly. Its broad silhouette took up nearly half the narrow alcove."
+      ],
+      "source_context_test": [
+        "Cold iron cladding and heavy welded brackets protected the family tools stored securely inside. Thick industrial rivets lined each edge to resist severe cargo impact.",
+        "Built for steamship transport, the reinforced iron-clad container stood resistant against moisture and rodent intrusion. Welded seams kept the internal compartment dry and secure.",
+        "The utilitarian exterior was stamped from thick tinplate and secured with industrial iron rivets along every seam. Its heavy surfaces gave off a distinct cool scent of oxidized iron.",
+        "Industrial galvanized plating wrapped the exterior completely, protecting the contents from water damage during rail transit. Its cold surfaces bore the marks of heavy hammer blows."
+      ],
+      "target_context_test": [
+        "The expansive furniture piece dominated the room, capable of holding voluminous feather beds and oversized wool blankets. Its cavernous interior made it the most imposing piece in the garret.",
+        "Built on a massive scale, the hefty repository occupied most of the floorboards beneath the eastern window. Its interior space was vast enough to house an entire library of photo albums.",
+        "The piece stood prominent in the eaves, providing substantial capacity for decades of accumulated quilts and linens. Its impressive dimensions made standard storage boxes look miniature by comparison.",
+        "Because of its expansive proportions, the unit effortlessly stored generations of heavy coats, quilts, and thick rugs. The sheer physical presence of the piece filled the entire alcove."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All contexts maintain semantic plausibility for all four modifier-noun pairs: 'metal trunk', 'metal chest', 'large trunk', and 'large chest'. Source contexts emphasize metallic fabrication, iron rivets, and cargo durability, which pragmatically favor 'metal trunk'. Target contexts emphasize vast internal volume and substantial dimensions, favoring 'large chest'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "old",
+      "target_modifier": "brass",
+      "source_context_dev": [
+        "Carried across the Atlantic by their great-grandparents in 1888, the antique container preserved nineteenth-century immigration documents. Centuries of handling had worn the leather straps paper-thin.",
+        "Generations of ancestors had stored their vintage keepsakes inside the time-worn piece through multiple family moves. Its aged corners and cracked leather straps reflected over a century of history.",
+        "Dating back to the Victorian era, the weathered footlocker had belonged to a great-aunt during her early travels. The faint patina of history clung to its faded exterior.",
+        "The historic family piece had been packed during the late nineteenth century and untouched for nearly a century. Layers of aged varnish and faded labels told of forgotten voyages."
+      ],
+      "target_context_dev": [
+        "Gleaming yellow alloy hasps and polished golden hardware decorated every corner of the ceremonial piece. Warm golden corner brackets caught the lantern light with a brilliant gleam.",
+        "The ornate sea piece featured gleaming golden alloy latches, polished nautical fixtures, and golden decorative corners. Each polished plate gave off a warm reflective shimmer.",
+        "Bright golden fittings, polished alloy hasps, and ornate maritime hinges adorned the front and lid. The yellow alloy ornamentation had recently been polished to a brilliant mirror finish.",
+        "Warm golden metal corners and polished alloy hasps gave the elegant storage piece a distinctive maritime luster. Even in dim lighting, the yellow alloy plates reflected every candle flame."
+      ],
+      "source_context_test": [
+        "Brought over on an early steam packet in the mid-nineteenth century, the antique piece retained original voyage tags and cracked seals. Decades of age showed in every weathered fiber.",
+        "The venerable piece had survived three generations in the drafty garret without being moved. Its time-worn exterior spoke to decades of long-forgotten family heritage.",
+        "Dating from the early frontier days, the vintage container had weathered decades of family journeys. Its worn surfaces showed the unmistakable passage of a long lifetime.",
+        "Centuries of dust settled over the antique box, which had served the household since the early Victorian period. Decades of wear had softened every corner and handle."
+      ],
+      "target_context_test": [
+        "Polished golden hardware, gleaming alloy hinges, and brilliant nautical corner-plates adorned the front. The bright yellow alloy fittings stood out dramatically against the dark background.",
+        "The decorative container shone with brilliant golden alloy latches and ornamental corner brackets. Every piece of polished hardware sparkled brightly under the lantern.",
+        "Featuring bright golden fixtures and maritime alloy buckles, the piece exhibited intricate metalwork along the edges. The polished alloy hasp glistened warmly in the shadows.",
+        "Warm yellow alloy brackets and polished nautical latches gave the heirloom a distinctive maritime elegance. Its gleaming alloy ornamentation shone with brilliant clarity."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('old trunk', 'old chest', 'brass trunk', 'brass chest') remain valid in all contexts. Source contexts emphasize Victorian heritage, antique provenance, and time-worn antiquity, favoring 'old trunk'. Target contexts emphasize yellow alloy maritime hardware, polished golden fittings, and ornamental hasps, favoring 'brass chest'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "wooden",
+      "target_modifier": "cedar",
+      "source_context_dev": [
+        "Handcrafted by an apprentice joiner, the sturdy timber frame featured tongue-and-groove boards and hand-planed oak panels. The solid grain planks had been joined without a single metal fastener.",
+        "Hewn from solid forest planks, the piece showcased traditional carpenter craftsmanship with dovetail joints and planed boards. The natural grain of the timber showed beneath clear shellac.",
+        "Master craftsmen had joined thick pine boards with mortise-and-tenon corners to create a sturdy storage box. The grain of the heavy planed planks remained visible across every surface.",
+        "Solid timber planks had been carefully joined by a local carpenter using classic tongue-and-groove joinery. The natural grain pattern of the planed boards stood out under the finish."
+      ],
+      "target_context_dev": [
+        "A rich aromatic fragrance filled the surrounding air, naturally deterring moths and keeping wool garments fresh for decades. The reddish interior gave off an unmistakable evergreen scent.",
+        "Built specifically to protect family heirlooms and fine woolen blankets from moth damage, the aromatic reddish lining smelled sweetly of fragrant evergreen resin.",
+        "The aromatic reddish interior radiated a crisp resinous fragrance known for repelling insects and preserving heirloom quilts. Opening the lid released a delightful natural forest perfume.",
+        "Known for its natural moth-repellent properties, the fragrant reddish interior had kept vintage sweaters perfectly preserved without chemical mothballs. The distinctive aromatic scent lingered throughout the attic."
+      ],
+      "source_context_test": [
+        "The piece was assembled entirely from thick timber boards, featuring hand-cut dovetails and smoothed forest planks. The natural grain of the planed panels was sealed with bee wax.",
+        "A nineteenth-century carpenter had hand-planed each thick plank to construct the durable dovetailed box. The natural grain of the thick boards gave the exterior a rustic finish.",
+        "Constructed from heavy timber slabs, the storage box showed visible plane marks and traditional carpenter joinery. The honest grain of the boards remained visible through the varnish.",
+        "The artisan used wide forest planks joined with traditional mortise joints, creating a solid container from natural boards. The pronounced timber grain highlighted the craftsman's careful planing."
+      ],
+      "target_context_test": [
+        "The pungent aromatic scent of resinous evergreen boards drifted through the air, keeping woolens pristine and insect-free. Its reddish interior boards carried a rich natural aroma.",
+        "Specially crafted to deter moths from attacking family blankets, the aromatic reddish lining released an unmistakable evergreen fragrance whenever disturbed.",
+        "Heirloom wool sweaters rested safely inside the aromatic interior, completely protected from insects by the fragrant reddish grain. The sweet resinous smell filled the room instantly.",
+        "The storage piece gave off a strong natural evergreen aroma that had deterred fabric pests for over fifty years. Its reddish interior surfaces retained their sharp fragrant essence."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations ('wooden trunk', 'wooden chest', 'cedar trunk', 'cedar chest') are fully plausible and grammatically valid across all contexts. Source contexts highlight hand-planed timber planks, dovetail joinery, and carpentry, favoring 'wooden trunk'. Target contexts highlight natural moth-deterrence, aromatic resin fragrance, and reddish wood lining for woolens, strongly favoring 'cedar chest'."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_18_event_concert_recital",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_concert_recital",
+    "noun_0": "concert",
+    "noun_1": "recital",
+    "shared_definition": "a live musical performance given before an audience",
+    "neutral_stem": "Music lovers bought tickets for",
+    "candidate_modifiers": [
+      "classical",
+      "flawless",
+      "intimate",
+      "magnificent",
+      "memorable",
+      "solo",
+      "stunning",
+      "superb",
+      "brilliant",
+      "live",
+      "lengthy",
+      "delightful",
+      "splendid",
+      "popular",
+      "annual"
+    ],
+    "semantic_notes": "'Concert' usually implies a larger band, orchestra, or pop act, while 'recital' denotes a small, solo, or student classical performance.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        14603
+      ],
+      "noun_1": [
+        118784
+      ]
+    },
+    "modifier_token_ids": {
+      "classical": [
+        15082
+      ],
+      "flawless": [
+        83943
+      ],
+      "intimate": [
+        32163
+      ],
+      "magnificent": [
+        37065
+      ],
+      "memorable": [
+        31803
+      ],
+      "solo": [
+        8935
+      ],
+      "stunning": [
+        19282
+      ],
+      "superb": [
+        33315
+      ],
+      "brilliant": [
+        21042
+      ],
+      "live": [
+        3892
+      ],
+      "lengthy": [
+        42288
+      ],
+      "delightful": [
+        48151
+      ],
+      "splendid": [
+        54649
+      ],
+      "popular": [
+        4913
+      ],
+      "annual": [
+        7384
+      ]
+    },
+    "forced_projection_span": 0.09202112257480621,
+    "max_noun_pair_mass": 0.6656323671340942,
+    "context_priority_score": 0.0612522376458049,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "annual",
+        "target_modifier": "brilliant",
+        "source_projection": -0.2930523455142975,
+        "target_projection": -0.28277286887168884,
+        "forced_modifier_leverage": 0.010279476642608643,
+        "source_pair_mass": 0.30629363656044006,
+        "target_pair_mass": 0.3015560805797577
+      },
+      "medium": {
+        "source_modifier": "lengthy",
+        "target_modifier": "delightful",
+        "source_projection": -0.39507782459259033,
+        "target_projection": -0.3488207161426544,
+        "forced_modifier_leverage": 0.04625710844993591,
+        "source_pair_mass": 0.40891122817993164,
+        "target_pair_mass": 0.37519291043281555
+      },
+      "high": {
+        "source_modifier": "stunning",
+        "target_modifier": "flawless",
+        "source_projection": -0.2815483808517456,
+        "target_projection": -0.1895272582769394,
+        "forced_modifier_leverage": 0.09202112257480621,
+        "source_pair_mass": 0.31105220317840576,
+        "target_pair_mass": 0.21913032233715057
+      }
+    },
+    "context_generation_rank": 72
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "annual",
+      "target_modifier": "brilliant",
+      "source_context_dev": [
+        "Every winter, the regional conservatory organizes a traditional festive showcase that has marked the community calendar for decades. Patrons eagerly anticipated this year's installment as soon as box office sales opened.",
+        "The city cultural center hosts a recurring seasonal gathering each December to celebrate local symphonic talent. Community members rushed to reserve their usual balcony seats well before opening night.",
+        "It had become a treasured December routine for families across the valley to attend the academy's traditional year-end musical presentation. Subscriptions sold out in record time across every seating tier.",
+        "The municipal orchestra holds a landmark seasonal celebration at the close of every year, drawing large crowds from across the state. Expectation mounted as dates were published in the seasonal bulletin."
+      ],
+      "target_context_dev": [
+        "A celebrated prodigy known for breathtaking keyboard agility and radiant artistry was scheduled to appear for an exclusive evening showcase. Classical music critics expected an exceptionally luminous display of skill.",
+        "Audiences were eager to witness an internationally acclaimed maestro deliver an incandescent masterclass showcase on the stage. The program highlighted complex solo sonatas requiring immense expressive genius.",
+        "The visiting guest virtuoso had gained a stellar reputation for delivering dazzling, emotionally radiant interpretations of romantic repertoire. Connoisseurs were determined not to miss such a scintillating display.",
+        "A renowned solo cellist promised an inspired and glittering evening of chamber pieces showcasing exceptional technical precision. Enthusiasts queued early to secure intimate seating near the stage."
+      ],
+      "source_context_test": [
+        "The downtown arts pavilion prepares its standard holiday tradition every autumn, marking the start of the metropolitan musical season. Subscribers received their priority notices months in advance.",
+        "For thirty years running, the historic auditorium has staged its signature December gala to support youth music programs. Downtown patrons marked their calendars weeks prior to the box office opening.",
+        "The civic arts council organizes a customary yearly showcase that unites classical ensembles from across the territory. Community interest peaked the moment the seasonal schedule went live.",
+        "Every spring, the philharmonic association convenes its benchmark festival gathering to showcase local student ensembles. Families made travel arrangements well before general reservations opened to the public."
+      ],
+      "target_context_test": [
+        "A visiting keyboard sensation renowned for imaginative flair and luminous virtuosity was booked for an intimate conservatory evening. Aficionados eagerly awaited the artist's dazzling interpretation of classical \u00e9tudes.",
+        "The young violin prodigy had earned international acclaim for producing an extraordinarily luminous and technically radiant tone. Chamber enthusiasts snapped up admission within hours of the announcement.",
+        "Acclaimed for sparkling interpretations of baroque partitas, the master lutenist prepared an extraordinary solo showcase for selective listeners. Expectant guests gathered early in the conservatory lobby.",
+        "The conservatory invited a luminous talent whose solo interpretations had garnered rapturous international reviews. Music scholars and patrons alike prepared for an evening of dazzling musicianship."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (annual concert, annual recital, brilliant concert, brilliant recital) are completely natural and grammatically valid. The source contexts evoke recurring seasonal traditions, favoring 'annual', while target contexts emphasize individual prodigy and luminous musicianship, favoring 'brilliant'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "lengthy",
+      "target_modifier": "delightful",
+      "source_context_dev": [
+        "The evening bill featured four multi-movement symphonic works along with several extended encores, spanning well past midnight. Patrons prepared for an endurance test across several uninterrupted hours of music.",
+        "The guest conductor planned an expansive three-hour program exploring an entire cycle of epic tone poems with two intermissions. Season pass holders made arrangements for late-night transit before heading to the hall.",
+        "An ambitious five-part orchestral marathon was scheduled to fill the entire afternoon and evening without prolonged pauses. Attendees knew the exhaustive schedule would demand sustained focus and patience.",
+        "The program directors assembled an extensive compilation of full-scale twentieth-century compositions that stretched across nearly four hours. Audiences were advised that the extended running time would conclude late."
+      ],
+      "target_context_dev": [
+        "The conservatory organized a charming and lighthearted afternoon showcase featuring gentle romantic miniatures and lyrical melodies. Attendees looked forward to a pleasant, uplifting time in the sunlit parlor.",
+        "A warm and inviting atmosphere permeated the small courtyard garden where emerging players presented whimsical salon favorites. Guests smiled happily as they anticipated an enchanting and breezy musical diversion.",
+        "The neighborhood cultural center curated an endearing and sunny afternoon of classical divertimentos and cheerful melodies. Patrons looked forward to an agreeable, heartwarming experience with friends.",
+        "The weekend lineup featured charming sonatinas and playful duets designed to bring smiles to listeners of all ages. Visitors anticipated a cheerful, utterly enjoyable afternoon in the acoustic salon."
+      ],
+      "source_context_test": [
+        "A massive orchestral slate comprising three full symphonies and an extensive overture required an unusually prolonged performance window. Ticket buyers double-checked parking policies regarding late-night departures.",
+        "The university department scheduled an exhaustive retrospective spanning several dense romantic works that would run for hours. Season attendees braced themselves for a prolonged, demanding sit in the grand hall.",
+        "The conductor announced an expansive evening featuring massive choral-orchestral scores that would continue long past the typical closing hour. Patrons coordinated their transport to accommodate the protracted schedule.",
+        "An extensive marathon of avant-garde acoustic works was slated to occupy the entire evening with minimal breaks between movements. Regular concertgoers packed light snacks and prepared for an extended presentation."
+      ],
+      "target_context_test": [
+        "The afternoon program showcased breezy romantic waltzes and sweet lyrical selections designed to create an uplifting mood. Guests arrived in high spirits, eager for an agreeable and sweet artistic experience.",
+        "A joyful chamber gathering in the garden gallery offered lighthearted classical gems and playful string arrangements. Listeners anticipated a thoroughly pleasant and cheerful atmosphere throughout the afternoon.",
+        "The faculty curated an endearing showcase of sparkling miniatures and graceful court dances in the historic salon. Patrons arrived early, anticipating a warm and charming musical escape.",
+        "The conservatory scheduled an agreeable afternoon of melodious piano bagatelles and charming woodwind solos. Patrons took their seats with bright smiles, anticipating an utterly lovely presentation."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (lengthy concert, lengthy recital, delightful concert, delightful recital) are natural. The source contexts stress long multi-hour runtimes, favoring 'lengthy' and 'concert', whereas target contexts emphasize charming, pleasant, uplifting salon music, favoring 'delightful' and 'recital'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "stunning",
+      "target_modifier": "flawless",
+      "source_context_dev": [
+        "The state-of-the-art amphitheater prepared an overwhelming sensory spectacle featuring dramatic arena dynamics and colossal soundscapes. Anticipation soared for what promised to be an awe-inspiring artistic powerhouse.",
+        "The philharmonic hall unveiled an electrifying showcase pairing massive brass fanfares with breathtaking grand hall acoustics. Audiences were prepared to be completely blown away by the sheer magnitude of the sound.",
+        "An immense stage production combining world-class orchestral forces and grand acoustic staging promised a mesmerizing, jaw-dropping spectacle. Ticket lines stretched around the city block on opening morning.",
+        "Promoters hyped an overwhelming, visually dramatic acoustic spectacular that would fill the vast stadium bowl with thunderous resonance. Eager fans secured their passes to witness the breathtaking auditory display."
+      ],
+      "target_context_dev": [
+        "The solo pianist had spent years perfecting every minute nuance, aiming for zero technical errors across difficult Bach fugues. Purists gathered specifically to hear an immaculate, mathematically exact execution.",
+        "Known for impeccable accuracy and pristine string technique, the young violinist had never missed a single pitch in competition. Discriminating critics arrived ready to assess the artist's immaculate precision.",
+        "The conservatory virtuoso had practiced the demanding solo etudes until every single note and dynamic shift sounded pristine. Connoisseurs attended with scores in hand to witness an error-free display of craftsmanship.",
+        "The guest keyboardist possessed a legendary reputation for absolute technical perfection and totally immaculate fingering. Students and faculty packed the front rows to observe the errorless execution firsthand."
+      ],
+      "source_context_test": [
+        "The grand arena announced an overwhelming musical production combining huge acoustic resonance and spectacular sonic grandeur. Excitement reached a fever pitch among patrons eager for a truly jaw-dropping event.",
+        "A legendary maestro assembled an enormous ensemble to deliver a dramatic, earth-shaking sonic masterpiece in the grand hall. Fans rushed to secure seats for what was billed as an astonishing auditory spectacle.",
+        "The municipal hall prepared for a sensational, awe-inspiring evening of powerful orchestral climaxes and sweeping dynamics. Box office servers crashed under the surge of patrons seeking the breathtaking experience.",
+        "The new soundstage opened with an electrifying acoustic extravaganza designed to deliver an unforgettable, spine-tingling impact. Enthusiasts flocked to the venue to experience the extraordinary auditory showcase."
+      ],
+      "target_context_test": [
+        "The master lutenist was famed for immaculate fingering and complete absence of fret noise throughout intricate Renaissance counterpoint. Classical purists arrived expecting nothing short of absolute technical perfection.",
+        "A celebrated cellist prepared a program of unaccompanied Bach suites, demonstrating pristine intonation and immaculate rhythmic control. Discriminating patrons gathered in silence to experience the error-free delivery.",
+        "The visiting keyboard master was revered by scholars for delivering pristine, surgically exact interpretations of complex romantic \u00e9tudes. Connoisseurs secured tickets early to witness the spotless, perfect technique.",
+        "Renowned for absolute accuracy and pristine acoustic tone, the solo violist prepared to perform demanding modern caprices without a blemish. Aficionados anticipated an entirely spotless display of musical control."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations (stunning concert, stunning recital, flawless concert, flawless recital) remain fully natural and sensible. Source contexts highlight grandeur, scale, and breathtaking acoustic power (priming 'stunning' and 'concert'), whereas target contexts emphasize pristine technical perfection, error-free execution, and solo masterworks (priming 'flawless' and 'recital')."
+    }
+  ]
+}

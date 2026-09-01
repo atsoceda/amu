@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b18_15_lesion_wound",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "lesion_wound",
+    "noun_0": "lesion",
+    "noun_1": "wound",
+    "shared_definition": "an area of damaged bodily tissue resulting from injury, disease, or trauma",
+    "neutral_stem": "The surgeon examined the",
+    "candidate_modifiers": [
+      "acute",
+      "chronic",
+      "clean",
+      "deep",
+      "healing",
+      "infected",
+      "inflamed",
+      "internal",
+      "open",
+      "painful",
+      "severe",
+      "superficial",
+      "surgical",
+      "visible"
+    ],
+    "semantic_notes": "'Lesion' is a broad clinical term for any localized abnormal tissue change, while 'wound' specifically denotes damage from external mechanical trauma.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        54856
+      ],
+      "noun_1": [
+        16753
+      ]
+    },
+    "modifier_token_ids": {
+      "acute": [
+        20719
+      ],
+      "chronic": [
+        17044
+      ],
+      "clean": [
+        3980
+      ],
+      "deep": [
+        5268
+      ],
+      "healing": [
+        21123
+      ],
+      "infected": [
+        22458
+      ],
+      "inflamed": [
+        128925
+      ],
+      "internal": [
+        6145
+      ],
+      "open": [
+        1932
+      ],
+      "painful": [
+        27668
+      ],
+      "severe": [
+        12778
+      ],
+      "superficial": [
+        46983
+      ],
+      "surgical": [
+        26764
+      ],
+      "visible": [
+        11325
+      ]
+    },
+    "forced_projection_span": 0.1112554669380188,
+    "max_noun_pair_mass": 0.646521806716919,
+    "context_priority_score": 0.07192908549190236,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "internal",
+        "target_modifier": "acute",
+        "source_projection": 0.0031647293362766504,
+        "target_projection": 0.01524039451032877,
+        "forced_modifier_leverage": 0.01207566517405212,
+        "source_pair_mass": 0.003437224542722106,
+        "target_pair_mass": 0.03702989220619202
+      },
+      "medium": {
+        "source_modifier": "acute",
+        "target_modifier": "deep",
+        "source_projection": 0.01524039451032877,
+        "target_projection": 0.07092767208814621,
+        "forced_modifier_leverage": 0.05568727757781744,
+        "source_pair_mass": 0.03702989220619202,
+        "target_pair_mass": 0.07506928592920303
+      },
+      "high": {
+        "source_modifier": "infected",
+        "target_modifier": "open",
+        "source_projection": 0.5316446423530579,
+        "target_projection": 0.6429001092910767,
+        "forced_modifier_leverage": 0.1112554669380188,
+        "source_pair_mass": 0.5428580641746521,
+        "target_pair_mass": 0.646521806716919
+      }
+    },
+    "context_generation_rank": 63
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "internal",
+      "target_modifier": "acute",
+      "source_context_dev": [
+        "Endoscopic imaging revealed anomalous structural changes situated well beneath the gastrointestinal mucosal lining.",
+        "Diagnostic ultrasound detected an atypical focal pathology located inside the patient's hepatic parenchyma.",
+        "Laparoscopic exploration sought to evaluate visceral damage that remained completely obscured from the surface.",
+        "Preoperative magnetic resonance scans indicated structural tissue degradation hidden within the pelvic floor."
+      ],
+      "target_context_dev": [
+        "The trauma team rushed to stabilize a patient immediately following a sudden high-velocity vehicular collision.",
+        "Emergency personnel arrived with a factory worker injured minutes prior during a sudden mechanical breakdown.",
+        "The patient presented at triage with sudden traumatic damage sustained in a violent sports collision moments earlier.",
+        "Paramedics brought in an individual requiring emergent stabilization right after a sudden industrial explosion."
+      ],
+      "source_context_test": [
+        "Cross-sectional computed tomography demonstrated localized tissue abnormalities positioned far within the thoracic space.",
+        "A minimally invasive camera probe displayed structural deterioration located deep within the subserosal membrane.",
+        "Radiological findings highlighted localized cellular deterioration situated completely under intact outer muscle layers.",
+        "Endosonography confirmed the presence of localized architectural defects housed securely inside the biliary duct."
+      ],
+      "target_context_test": [
+        "The on-call medical team prepared the bay for a victim transported directly from a sudden motorcycle impact.",
+        "First responders reported rapid clinical decline following sudden blunt trauma that occurred less than an hour ago.",
+        "A pedestrian was brought into the emergency bay immediately after sustaining sudden blunt impact at a crosswalk.",
+        "The surgical suite prepared for a patient transferred directly from the field with sudden severe physical trauma."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four permutations ('internal lesion', 'internal wound', 'acute lesion', 'acute wound') represent medically and semantically valid combinations. The source contexts emphasize visceral, subsurface anatomical spaces (priming 'internal' and pathological 'lesion'), while target contexts emphasize rapid sudden-onset trauma (priming 'acute' and physical trauma 'wound')."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "acute",
+      "target_modifier": "deep",
+      "source_context_dev": [
+        "The patient experienced a sudden onset of severe abdominal distress that developed over the past two hours.",
+        "Diagnostic evaluation focused on sudden inflammatory tissue disruption that presented precipitously without prior history.",
+        "A rapid clinical crisis emerged overnight, producing suddenly emergent pathology in the pulmonary lining.",
+        "Emergency monitoring recorded sudden localized structural breakdown that flared up in a matter of minutes."
+      ],
+      "target_context_dev": [
+        "A penetrating puncture had traveled past the subcutaneous fat to breach multiple underlying muscular strata.",
+        "The traumatic injury extended far beneath the surface boundaries, reaching down near the periosteum of the femur.",
+        "Surgical exploration was required because the puncture reached extensive depths into the retroperitoneal tissue.",
+        "A heavy shard of industrial glass penetrated through dense fascial layers into the underlying vascular bed."
+      ],
+      "source_context_test": [
+        "Urgent imaging captured sudden focal deterioration that developed unexpectedly within a single shift.",
+        "The clinical team addressed sudden-onset tissue compromise that materialized rapidly following a systemic crisis.",
+        "Laboratory markers shifted precipitously alongside suddenly emergent tissue failure in the digestive tract.",
+        "Critical care clinicians monitored sudden localized structural changes that manifested during the last hour."
+      ],
+      "target_context_test": [
+        "A mechanical spike breached the superficial dermis and drove extensively into the underlying skeletal muscle.",
+        "Physical examination showed extensive penetration reaching far below the epidermal boundary into connective tissue.",
+        "The blade caused extensive subsurface disruption extending inward through multiple structural tissue planes.",
+        "Exploratory probing revealed extensive penetration passing through the fibrous fascia down to the bony cortex."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('acute lesion', 'acute wound', 'deep lesion', 'deep wound') are well-attested surgical and medical collocations. Source contexts prime rapid sudden temporal development, favoring 'acute' and 'lesion', whereas target contexts emphasize extensive spatial/anatomical penetration into muscle and fascia, favoring 'deep' and 'wound'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "infected",
+      "target_modifier": "open",
+      "source_context_dev": [
+        "Microbial cultures confirmed heavy bacterial colonization accompanied by purulent drainage and spreading erythema.",
+        "The clinical site exhibited classic signs of severe sepsis, marked by foul exudate and localized warmth.",
+        "Pathogenic bacteria had rapidly multiplied within the compromised tissue, yielding purulent discharge and swelling.",
+        "Laboratory tests revealed significant microbial contamination and purulence spreading across the affected area."
+      ],
+      "target_context_dev": [
+        "The torn tissue margins pulled far apart, leaving raw subcutaneous structures exposed to the atmosphere.",
+        "Physical trauma had created gaping, unapproximated edges that left the underlying flesh unsealed.",
+        "The separated borders of the cut had retracted widely, exposing vulnerable subsurface tissue without closure.",
+        "Traumatic disruption left the skin margins unclosed and widely separated, exposing raw underlying flesh."
+      ],
+      "source_context_test": [
+        "Elevated inflammatory markers correlated with heavy purulent fluid and microbial biofilm at the site.",
+        "Hospital staff noted extensive purulence, foul drainage, and spreading bacterial cellulitis near the site.",
+        "Swab analysis identified abundant pathogenic flora amidst necrotic debris and purulent fluid accumulation.",
+        "The patient developed high spiking fevers alongside purulent secretion and localized bacterial inflammation."
+      ],
+      "target_context_test": [
+        "Severe mechanical shearing left gaping tissue borders completely unsealed and exposed to the surrounding air.",
+        "The edges of the split tissue separated broadly, exposing underlying muscular structures to the environment.",
+        "Visual assessment revealed unapproximated, widely gaping tissue margins that exposed vulnerable underlying fascia.",
+        "A severe tear created unclosed, separated tissue borders that exposed raw underlying anatomical structures."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('infected lesion', 'infected wound', 'open lesion', 'open wound') are fully standard and plausible medical descriptors. Source contexts focus strictly on bacteriology, purulence, and microbial colonization (favoring 'infected' and 'lesion'), while target contexts focus on gaping, unclosed, exposed tissue architecture (favoring 'open' and 'wound')."
+    }
+  ]
+}

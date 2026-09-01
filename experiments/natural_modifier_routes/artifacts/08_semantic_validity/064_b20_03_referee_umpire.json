@@ -1,0 +1,26 @@
+{
+  "candidate_id": "referee_umpire",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations ('senior referee', 'senior umpire', 'unbiased referee', 'unbiased umpire') are natural, fluent, and semantically plausible across all contexts without target lexical leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations ('senior referee', 'senior umpire', 'fair referee', 'fair umpire') are fully valid in English. Contexts appropriately bias pragmatic preference between tenure/experience and fairness/impartiality without making the alternative impossible."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations ('blind referee', 'blind umpire', 'neutral referee', 'neutral umpire') are colloquial and semantically sound. Contexts set up clear pragmatic distinctions (missed obvious calls vs. non-affiliated regional neutrality) with zero lexical leakage."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b02_12_ship_vessel",
+    "generation_batch": 2,
+    "domain": "vehicles and transportation",
+    "family_id": "ship_vessel",
+    "noun_0": "ship",
+    "noun_1": "vessel",
+    "shared_definition": "a large seafaring watercraft operating on oceans or deep waterways",
+    "neutral_stem": "The port authority granted docking clearance to the",
+    "candidate_modifiers": [
+      "massive",
+      "foreign",
+      "commercial",
+      "cargo",
+      "damaged",
+      "sinking",
+      "abandoned",
+      "naval",
+      "armored",
+      "flagship",
+      "anchored",
+      "oceanic",
+      "wooden",
+      "historic",
+      "unidentified"
+    ],
+    "semantic_notes": "'Ship' is common parlance for large watercraft, while 'vessel' is the preferred formal, regulatory, and maritime term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        7507
+      ],
+      "noun_1": [
+        16878
+      ]
+    },
+    "modifier_token_ids": {
+      "massive": [
+        12566
+      ],
+      "foreign": [
+        7262
+      ],
+      "commercial": [
+        6635
+      ],
+      "cargo": [
+        20548
+      ],
+      "damaged": [
+        18083
+      ],
+      "sinking": [
+        62540
+      ],
+      "abandoned": [
+        22619
+      ],
+      "naval": [
+        44704
+      ],
+      "armored": [
+        96875
+      ],
+      "flagship": [
+        48725
+      ],
+      "anchored": [
+        72573
+      ],
+      "oceanic": [
+        129724
+      ],
+      "wooden": [
+        7116
+      ],
+      "historic": [
+        17110
+      ],
+      "unidentified": [
+        91126
+      ]
+    },
+    "forced_projection_span": 0.10821652226150036,
+    "max_noun_pair_mass": 0.8341875076293945,
+    "context_priority_score": 0.09027287098964187,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "commercial",
+        "target_modifier": "massive",
+        "source_projection": -0.04396481812000275,
+        "target_projection": -0.03309046849608421,
+        "forced_modifier_leverage": 0.010874349623918533,
+        "source_pair_mass": 0.353548526763916,
+        "target_pair_mass": 0.06213153526186943
+      },
+      "medium": {
+        "source_modifier": "commercial",
+        "target_modifier": "oceanic",
+        "source_projection": -0.04396481812000275,
+        "target_projection": 0.013486521318554878,
+        "forced_modifier_leverage": 0.057451339438557625,
+        "source_pair_mass": 0.353548526763916,
+        "target_pair_mass": 0.02188892476260662
+      },
+      "high": {
+        "source_modifier": "oceanic",
+        "target_modifier": "naval",
+        "source_projection": 0.013486521318554878,
+        "target_projection": 0.12170304358005524,
+        "forced_modifier_leverage": 0.10821652226150036,
+        "source_pair_mass": 0.02188892476260662,
+        "target_pair_mass": 0.4969121217727661
+      }
+    },
+    "context_generation_rank": 52
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "commercial",
+      "target_modifier": "massive",
+      "source_context_dev": [
+        "Heavy freight operations resumed immediately following the conclusion of regional tariff talks. Dockworkers prepared the eastern terminal to process bulk retail goods scheduled for expedited unloading.",
+        "Maritime business operators reported a sudden surge in international merchant activity across standard trade lanes. Logistics managers scrambled to clear terminal bays for lucrative corporate cargo.",
+        "Quarterly freight revenues surged following sustained growth in industrial merchandise deliveries across regional waters. Warehouse managers prepared to offload thousands of standard trade containers by daybreak.",
+        "Private supply chain operators submitted extensive inventory manifests to verify tax compliance on wholesale imports. Ground crews assembled near the freight terminal to oversee routine corporate logistics."
+      ],
+      "target_context_dev": [
+        "The incoming watercraft displaced an unprecedented volume of harbor water as it slowly entered the inner harbor. Harbor pilots adjusted deep-water ballast controls to ensure the gigantic structure could enter without striking the channel bottom.",
+        "Harbor engineers cleared two adjoining berths to accommodate the sheer physical footprint of the colossal arriving unit. Emergency tugs deployed alongside to stabilize the extraordinarily heavy hull against brisk crosswinds.",
+        "Onlookers gathered along the seawall to observe the towering iron hull casting a gigantic shadow over the harbor entrance. Channel controllers suspended all adjacent transit to prevent collisions with the enormous structure.",
+        "Measuring hundreds of meters from bow to stern, the colossal arrival demanded unprecedented turning room within the narrow channel. Harbor engineers configured extra heavy-duty mooring lines to secure the immense displacement safely."
+      ],
+      "source_context_test": [
+        "Routine business supply chains required prompt unloading to fulfill strict seasonal consumer orders. Harbor logisticians cleared the main import pier to receive the valuable consignment of retail goods.",
+        "Exporters sought expedited tariff verification to maintain tight delivery schedules for overseas retail buyers. Distribution supervisors cleared several freight ramps to begin unloading containers immediately.",
+        "Industrial freight networks experienced heavy congestion following an unexpected expansion in global consumer demand. Stevedores stood by at the trade quay to process inbound crates of manufactured goods.",
+        "Wholesale merchandise distribution required uninterrupted harbor access to prevent costly supply disruptions along the coast. Dockside personnel coordinated with trade representatives to handle the incoming inventory."
+      ],
+      "target_context_test": [
+        "The staggering physical bulk of the approaching hull forced port controllers to shut down parallel channel traffic completely. Multiple heavy-duty towing units struggled to steer the colossal hull through the outer breakwater.",
+        "Engineers adjusted channel depth indicators as an extraordinarily heavy steel structure entered shallow harbor boundaries. Line handlers prepared reinforced moorings capable of withstanding the immense inertia of the incoming giant.",
+        "Tide levels were monitored continuously to guarantee adequate clearance underneath the gigantic floating structure. Port dispatchers cleared an expansive deep-water berth specifically reinforced to support such unprecedented dimensions.",
+        "Towering several stories above the harbor crane towers, the immense structure moved at minimal speed into the main basin. Harbor controllers assigned four specialized escort tugs to steady the gigantic floating platform."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All contexts maintain total naturalness and pragmatic plausibility across the 2x2 grid (commercial ship, commercial vessel, massive ship, massive vessel). Contexts strictly avoid forbidden lemmas and direct synonyms of the target words."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "commercial",
+      "target_modifier": "oceanic",
+      "source_context_dev": [
+        "Freight logistics companies demanded immediate quay access to maintain contractual delivery windows for imported consumer electronics. Harbor management prioritized the berthing schedule to sustain regional trade cash flows.",
+        "Global commodity distributors finalized bill-of-lading documents before transferring high-value industrial goods to dockside warehouses. The waterfront authority organized freight ramps to support the profitable retail exchange.",
+        "Private shipping enterprises faced stiff financial penalties for every hour spent idling outside active trade docks. Warehouse coordinators arranged specialized cranes to transfer wholesale pallets straight into freight distribution networks.",
+        "Corporate transport managers verified international tariff compliance prior to docking at the industrial harbor terminal. Dockside operations prioritized the unloading of merchant crates to avoid supply chain disruptions."
+      ],
+      "target_context_dev": [
+        "Having navigated across stormy international deep-water basins for weeks, the weathered bridge crew finally reached coastal waters. Harbor cartographers updated navigational coordinates following the arduous multi-basin voyage.",
+        "Deep-sea researchers completed an extensive trans-basin expedition across remote pelagic zones far beyond continental shelves. Port hydrologists gathered on the pier to welcome the returning long-range scientific expedition.",
+        "Operating thousands of leagues from the nearest shoreline, the pelagic survey team concluded its open-water observation mission. Harbor dispatchers directed the deep-sea transport to an open staging berth near the research center.",
+        "The crew completed an uninterrupted crossing of the open Atlantic expanse under grueling weather conditions. Coastal pilots greeted the long-distance deep-water travelers at the outer navigation marker."
+      ],
+      "source_context_test": [
+        "Dockside customs brokers processed documentation for hundreds of freight containers containing export goods. Terminal administrators cleared valuable warehouse space to facilitate the swift movement of corporate merchandise.",
+        "The regional trade board emphasized the necessity of uninterrupted logistics for international merchant operations. Port planners opened the main freight quay to facilitate routine trade commerce.",
+        "Industrial freight handlers prepared heavy machinery to transport rows of imported retail goods from the pier. Pier operators expedited customs procedures to keep the corporate distribution network on schedule.",
+        "Shipping companies paid priority mooring fees to secure immediate cargo handling for bulk consumer products. Harbor officials assigned specialized stevedoring teams to unload the merchant shipment without delay."
+      ],
+      "target_context_test": [
+        "Extensive journeys across the wide pelagic expanse left the external hull encrusted with deep-water salt deposits. Maritime trackers confirmed that the long-distance open-sea run had officially concluded.",
+        "The long-range deep-water crossing required specialized navigation equipment capable of handling high-seas swells. Harbor authorities prepared a dedicated reception facility for the returning trans-basin expedition.",
+        "Crossing treacherous open pelagic waters far from land, the long-distance voyage finally approached the mainland harbor. Port navigators signaled safe channel coordinates to guide the deep-water arrival into port.",
+        "Scientific teams returned from month-long sampling operations conducted across remote international open waters. Ground staff at the marine observatory mobilized to offload pelagic core samples at the pier."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All contexts maintain semantic flexibility for the full cross product (commercial ship, commercial vessel, oceanic ship, oceanic vessel) while biasing register and collocation according to the experimental design."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "oceanic",
+      "target_modifier": "naval",
+      "source_context_dev": [
+        "A grueling trans-basin crossing concluded as the crew sighted coastal lighthouses after a month in remote pelagic zones. Maritime researchers prepared deep-sea monitoring logs for review by harbor oceanographers.",
+        "Months spent studying pelagic currents across open international expanses came to an end at dawn. Port authorities guided the long-distance open-water expedition into a specialized environmental research slip.",
+        "The long-range crossing traversed thousands of leagues of open sea without encountering any shoreline or island chain. Harbor hydrologists prepared calibration equipment to inspect deep-water instruments upon arrival.",
+        "Navigating through continuous high-seas swells across international pelagic depths, the crew finally entered coastal waters. Port staff prepared docking infrastructure designed for long-range open-sea transports."
+      ],
+      "target_context_dev": [
+        "Armed maritime defense forces concluded an extensive security patrol along sensitive territorial waters. Maritime defense headquarters instructed harbor security to clear the central military pier.",
+        "The defense ministry placed coastal sentries on high alert during the arrival of the heavily armored sovereign defense unit. Military escorts accompanied the armed state escort as it proceeded to a fortified berth.",
+        "Uniformed personnel stood at attention along the secure military dock as the gray defense armada element arrived from patrol. Coastal defense command authorized entry into the restricted military compound.",
+        "Equipped with advanced tactical radar arrays and defense artillery, the armed defense asset completed its maritime sovereignty mission. Harbor defense officers secured the restricted military quay prior to mooring."
+      ],
+      "source_context_test": [
+        "Navigating the vast open pelagic basin tested the limits of long-range navigation equipment far from land. Harbor authorities reserved a deep-draft slip to accommodate the returning trans-basin expedition.",
+        "Pelagic observation teams returned from collecting open-water salinity and current data across international expanses. Harbor hydrographers coordinated dock space to offload sensitive deep-sea instrumentation.",
+        "After weeks spent traversing the remote open-water expanses of the southern latitudes, the travelers entered the bay. Harbor dispatchers allocated a quiet berth to accommodate the weary deep-water exploration crew.",
+        "The trans-pelagic mission completed its scientific survey of deep-water thermal boundaries across open waters. Technicians assembled at the dock to receive data logs gathered across thousands of nautical miles."
+      ],
+      "target_context_test": [
+        "Specialized military escorts maintained a tactical defense perimeter around the armored national patrol asset. Base personnel cleared the defense ministry pier to receive the returning sovereign detachment.",
+        "Armed security detachments blocked public access to the military perimeter as the fleet patrol component entered port. Tactical officers transmitted encrypted authorization codes to confirm clearance at the restricted quay.",
+        "The sovereign coastal defense division concluded an international military deterrence drill in contested waters. Port sentries established armed checkpoints surrounding the defense dock before arrival.",
+        "National defense command directed the camouflaged defense asset to dock within the fortified military basin. Armed guards stood stationed along the pier to enforce strict security protocol."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All contexts maintain semantic compatibility across the full cross product (oceanic ship, oceanic vessel, naval ship, naval vessel) without violating lexical exclusion rules."
+    }
+  ]
+}

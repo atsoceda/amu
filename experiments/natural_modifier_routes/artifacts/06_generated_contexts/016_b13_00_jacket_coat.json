@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b13_00_jacket_coat",
+    "generation_batch": 13,
+    "domain": "clothing and personal items",
+    "family_id": "jacket_coat",
+    "noun_0": "jacket",
+    "noun_1": "coat",
+    "shared_definition": "an outer garment with sleeves worn on the upper body for warmth or fashion",
+    "neutral_stem": "Before stepping out into the brisk morning air, she reached into the closet for the",
+    "candidate_modifiers": [
+      "heavy",
+      "leather",
+      "black",
+      "warm",
+      "padded",
+      "woolen",
+      "tailored",
+      "waterproof",
+      "old",
+      "expensive",
+      "thick",
+      "casual",
+      "stylish",
+      "brown",
+      "winter"
+    ],
+    "semantic_notes": "'Coat' often implies a longer or heavier winter outer garment, whereas 'jacket' usually denotes a waist- or hip-length item.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        16621
+      ],
+      "noun_1": [
+        15674
+      ]
+    },
+    "modifier_token_ids": {
+      "heavy": [
+        7274
+      ],
+      "leather": [
+        13069
+      ],
+      "black": [
+        2764
+      ],
+      "warm": [
+        6962
+      ],
+      "padded": [
+        71009
+      ],
+      "woolen": [
+        160663
+      ],
+      "tailored": [
+        36443
+      ],
+      "waterproof": [
+        35918
+      ],
+      "old": [
+        2255
+      ],
+      "expensive": [
+        11162
+      ],
+      "thick": [
+        7497
+      ],
+      "casual": [
+        15189
+      ],
+      "stylish": [
+        23489
+      ],
+      "brown": [
+        8864
+      ],
+      "winter": [
+        7208
+      ]
+    },
+    "forced_projection_span": 0.25879350304603577,
+    "max_noun_pair_mass": 0.7109642624855042,
+    "context_priority_score": 0.1839929320291649,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "casual",
+        "target_modifier": "expensive",
+        "source_projection": -0.019510418176651,
+        "target_projection": 0.008853590115904808,
+        "forced_modifier_leverage": 0.02836400829255581,
+        "source_pair_mass": 0.050639063119888306,
+        "target_pair_mass": 0.0571233332157135
+      },
+      "medium": {
+        "source_modifier": "tailored",
+        "target_modifier": "stylish",
+        "source_projection": -0.13813742995262146,
+        "target_projection": -0.006626185029745102,
+        "forced_modifier_leverage": 0.13151124492287636,
+        "source_pair_mass": 0.21748825907707214,
+        "target_pair_mass": 0.10615701973438263
+      },
+      "high": {
+        "source_modifier": "heavy",
+        "target_modifier": "winter",
+        "source_projection": 0.24165824055671692,
+        "target_projection": 0.5004517436027527,
+        "forced_modifier_leverage": 0.25879350304603577,
+        "source_pair_mass": 0.38047489523887634,
+        "target_pair_mass": 0.7109642624855042
+      }
+    },
+    "context_generation_rank": 17
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "casual",
+      "target_modifier": "expensive",
+      "source_context_dev": [
+        "She was only running down the street to grab a carton of milk and check the postbox. Dressing up was the furthest thing from her mind on a relaxed Sunday morning.",
+        "A quick stroll around the neighborhood block required minimal effort and no special preparation. She simply wanted to feel comfortable and unbothered during her walk.",
+        "Her weekend schedule was completely clear of meetings, social engagements, or formal plans. Comfort and simplicity dictated everything she chose to put on that morning.",
+        "She planned to spend the morning pottering around the garden shed and sweeping the driveway. Practical, easygoing everyday attire was all she needed for the task."
+      ],
+      "target_context_dev": [
+        "She was on her way to an exclusive charity gala hosted in the ballroom of a five-star hotel. Every single detail of her ensemble had been carefully selected from high-end boutiques.",
+        "The board meeting with the multinational investors demanded an impeccable, elite presentation. She made sure her attire signaled wealth, prestige, and executive authority.",
+        "Attending an upscale auction at the gallery required dressing to match the affluent crowd. She preferred pieces that reflected fine craftsmanship and considerable monetary investment.",
+        "Her evening reservation was at the city's most prestigious Michelin-starred dining room. She deliberately chose items that conveyed luxury, status, and refined taste."
+      ],
+      "source_context_test": [
+        "The corner bakery was just two doors away, so she did not bother styling an elaborate outfit. Low-key ease was her only priority for the short errand.",
+        "She was meeting a lifelong friend for a relaxed coffee on the park bench. There was no need to impress anyone or wear anything delicate.",
+        "A lazy morning spent running basic errands around the village called for unpretentious practicality. She wanted to remain informal and cozy.",
+        "Her plans involved nothing more demanding than walking the dog along the neighborhood trail. Simple, everyday comfort was her only dressing criteria."
+      ],
+      "target_context_test": [
+        "The private equity summit brought together industry titans and prominent dignitaries. Her wardrobe was curated to reflect refined opulence and top-tier standing.",
+        "An invitation to the embassy reception called for attire of the highest pedigree and sophistication. She chose garments that mirrored her premium tastes.",
+        "She was meeting high-profile clients at an exclusive country club lounge for private negotiations. Her entire presentation projected considerable net worth and refinement.",
+        "The opening night premiere at the metropolitan opera was a showcase of grandeur and wealth. She dressed to blend seamlessly among the affluent patrons."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (casual jacket, casual coat, expensive jacket, expensive coat) are natural English collocations and fully compatible with the closet setting and brisk morning air."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "tailored",
+      "target_modifier": "stylish",
+      "source_context_dev": [
+        "She had spent weeks working with a master seamstress to achieve sharp shoulder lines and exact proportions. Precision fit and structured seams were essential to her wardrobe.",
+        "Her discerning eye always noticed bespoke alterations, dart placements, and custom silhouettes. She prized garments specifically modified to align cleanly with her frame.",
+        "The day called for an exacting, professional silhouette with clean, sharp geometric contours. She placed utmost value on expert darting and customized fitting.",
+        "She appreciated the precision craftsmanship of traditional bench fitting and crisp hems. A garment customized precisely to her measurements made her feel commanding."
+      ],
+      "target_context_dev": [
+        "Her look was inspired by the latest runway spreads in international fashion publications. She aimed to make a chic, visually striking impression on her commute.",
+        "She took pride in turning heads with current aesthetics and trend-forward coordination. Dressing with contemporary panache was second nature to her everyday routine.",
+        "The downtown art district was filled with creative tastemakers and trendy influencers. She wanted an ensemble that expressed modern flair and visual sophistication.",
+        "Her personal aesthetic always leaned toward modern elegance and eye-catching urban trends. She loved pairing silhouettes that looked effortlessly fashionable."
+      ],
+      "source_context_test": [
+        "Every piece in her formal rotation had been adjusted by a professional needleworker for a razor-sharp cut. Exacting measurements were non-negotiable for her silhouette.",
+        "She favored garments that flattered her posture through crisp structure and careful craftsmanship. A personalized fitting always lent her confidence.",
+        "Her aesthetic centered on architectural lines, structured shoulders, and bespoke precision. She appreciated the craft of garments shaped specifically to her physique.",
+        "She had taken her favorite garments to a craftsperson to ensure the seams fell with millimeter precision. Sharp, bespoke construction gave her a sharp profile."
+      ],
+      "target_context_test": [
+        "She kept up with the freshest metropolitan trends and loved assembling head-turning outfits. Looking contemporary and effortlessly sleek was her daily goal.",
+        "A stroll through the design district was an opportunity to showcase her keen visual taste. She assembled an aesthetic that was polished, modern, and admired by onlookers.",
+        "She possessed a natural talent for assembling looks that belonged in a high-fashion lookbook. Stepping out looking on-trend brought her genuine delight.",
+        "Her daily wardrobe choices balanced bold flair with contemporary urban refinement. She always made sure her look captured modern fashion sensibility."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (tailored jacket, tailored coat, stylish jacket, stylish coat) are plausible, standard outerwear descriptors that fit grammatically and semantically into the sentence frame."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "heavy",
+      "target_modifier": "winter",
+      "source_context_dev": [
+        "The gale brought dense, biting gusts that cut straight through thin fabrics. She required substantial, thick layering with solid heft to withstand the blustery force.",
+        "Stepping outside meant braving a punishing chill and relentless winds. She needed dense, multi-layered wool with noticeable heft and thermal density.",
+        "The frosty gale was blowing fiercely across the open harbor, threatening to chill anyone unprepared. She sought out the thickest, weightiest layer available.",
+        "A piercing draft whipped through the streets, requiring substantial mass to shield against the gale. She looked for garments offering impenetrable density and weight."
+      ],
+      "target_context_dev": [
+        "The forecast predicted sub-zero blizzards, deep snowdrifts, and icy sleet continuing through January. The seasonal freeze demanded specialized insulation against the arctic blast.",
+        "Snow had been falling steadily since dawn, blanketing the streets in a deep white sheet of frost. Navigating the sub-freezing solstice chill required dedicated cold-weather gear.",
+        "The calendar had turned to the deep freeze of mid-January, bringing record-breaking seasonal lows. She prepared herself for the harsh conditions of the snowy months.",
+        "Icicles hung from the eaves as a polar vortex descended upon the frosted cityscape. Surviving the seasonal freeze meant choosing garments designed for sub-zero snowstorms."
+      ],
+      "source_context_test": [
+        "Harsh, biting winds pushed violently against the windowpanes all morning. She wanted substantial, dense fabric with significant physical heft to block the draft.",
+        "The morning air was notoriously unforgiving and pierced through light textiles. She preferred a thick, hefty outer layer that provided impenetrable physical barrier.",
+        "A forceful chill was sweeping through the mountain pass, demanding robust, thick fabrics. She prioritized dense weight to keep the bitter wind at bay.",
+        "The gusty squalls outside demanded maximum material thickness to withstand the elements. She looked for dense, sturdy apparel with serious mass."
+      ],
+      "target_context_test": [
+        "Fresh powdery snowfall accumulated along the sidewalk under an overcast January sky. Braving the seasonal blizzard required gear meant specifically for frozen conditions.",
+        "The local weather station issued a freeze warning as arctic air swept across the region. She readied herself for the deep cold typical of the frosty months.",
+        "With temperatures plunging below freezing and ice forming on the pavement, seasonal precautions were crucial. She geared up for the severe blizzard conditions outside.",
+        "Snowplows rumbled down the boulevard clearing overnight drifts from the frozen roadway. She prepared for the deep sub-zero conditions of the annual cold snap."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (heavy jacket, heavy coat, winter jacket, winter coat) are highly frequent, semantically robust, and natural within the shared outerwear domain without violating selectional restrictions."
+    }
+  ]
+}

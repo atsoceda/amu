@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b20_03_referee_umpire",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "referee_umpire",
+    "noun_0": "referee",
+    "noun_1": "umpire",
+    "shared_definition": "an official who watches a game to enforce rules and make settling decisions",
+    "neutral_stem": "Players loudly argued with the",
+    "candidate_modifiers": [
+      "alert",
+      "appointed",
+      "blind",
+      "calm",
+      "experienced",
+      "fair",
+      "impartial",
+      "licensed",
+      "neutral",
+      "official",
+      "qualified",
+      "seasoned",
+      "senior",
+      "strict",
+      "unbiased"
+    ],
+    "semantic_notes": "'Referee' is standard in soccer, basketball, and rugby, while 'umpire' is strongly conventional in baseball, cricket, and tennis.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        64048
+      ],
+      "noun_1": [
+        157932
+      ]
+    },
+    "modifier_token_ids": {
+      "alert": [
+        9690
+      ],
+      "appointed": [
+        13857
+      ],
+      "blind": [
+        18261
+      ],
+      "calm": [
+        16680
+      ],
+      "experienced": [
+        9763
+      ],
+      "fair": [
+        5888
+      ],
+      "impartial": [
+        75754
+      ],
+      "licensed": [
+        24335
+      ],
+      "neutral": [
+        12643
+      ],
+      "official": [
+        5125
+      ],
+      "qualified": [
+        15973
+      ],
+      "seasoned": [
+        56677
+      ],
+      "senior": [
+        9550
+      ],
+      "strict": [
+        10346
+      ],
+      "unbiased": [
+        84001
+      ]
+    },
+    "forced_projection_span": 0.10105472803115845,
+    "max_noun_pair_mass": 0.6827952861785889,
+    "context_priority_score": 0.0689996919457343,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "senior",
+        "target_modifier": "unbiased",
+        "source_projection": -0.04320423677563667,
+        "target_projection": -0.03325973451137543,
+        "forced_modifier_leverage": 0.009944502264261246,
+        "source_pair_mass": 0.08112141489982605,
+        "target_pair_mass": 0.5328483581542969
+      },
+      "medium": {
+        "source_modifier": "senior",
+        "target_modifier": "fair",
+        "source_projection": -0.04320423677563667,
+        "target_projection": 0.006913298740983009,
+        "forced_modifier_leverage": 0.05011753551661968,
+        "source_pair_mass": 0.08112141489982605,
+        "target_pair_mass": 0.05559416115283966
+      },
+      "high": {
+        "source_modifier": "blind",
+        "target_modifier": "neutral",
+        "source_projection": 0.03283609449863434,
+        "target_projection": 0.13389082252979279,
+        "forced_modifier_leverage": 0.10105472803115845,
+        "source_pair_mass": 0.13406936824321747,
+        "target_pair_mass": 0.6218042373657227
+      }
+    },
+    "context_generation_rank": 65
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "senior",
+      "target_modifier": "unbiased",
+      "source_context_dev": [
+        "The tournament committee had assigned their longest-serving veteran to supervise the contentious championship final. When a disputed penalty occurred late in the match, tensions boiled over on the pitch.",
+        "Decades on the field had earned the head official immense authority, but this controversial booking provoked immediate outrage. Both captains sprinted across the turf demanding an explanation.",
+        "Managing high-stakes league games requires years of top-tier experience to handle intense pressure from aggressive teams. Following a contentious whistle in extra time, tempers flared along the touchline.",
+        "Having supervised title fixtures for over twenty seasons, the veteran leader expected full deference on every whistle. Instead, several midfielders surrounded him to contest the booking."
+      ],
+      "target_context_dev": [
+        "Both clubs insisted on an independent arbiter with no regional allegiances to oversee the series opener. A disputed strike call on the outside corner instantly ignited frustration in the dugout.",
+        "The league brought in an adjudicator from a non-aligned district to ensure absolute objectivity throughout the playoffs. When a close tag at home plate went against the visiting squad, the dugout cleared.",
+        "Neither manager wanted local favoritism affecting crucial ball-and-strike judgments during the pennant race. After a decisive out was signaled at first base, the whole bench reacted angrily.",
+        "Maintaining total objectivity is vital when evaluating microsecond decisions behind the plate. A controversial safe call at third base brought both coaching staffs onto the infield dirt."
+      ],
+      "source_context_test": [
+        "The seasoned chief adjudicator was chosen specifically to keep control over the heated playoff derby. After a contentious card was shown near the penalty box, chaos erupted across the field.",
+        "With decades of experience overseeing fast-paced professional matches, the veteran official took charge of the physical contest. A controversial foul call quickly incited fierce objections.",
+        "Only the league's most experienced adjudicator could manage such a hostile rivalry match without losing control. When the whistle blew on a game-deciding penalty, bedlam broke out.",
+        "The head match official had supervised hundreds of international fixtures throughout a long career. A disputed offside decision in the final minutes ignited furious pushback from the bench."
+      ],
+      "target_context_test": [
+        "To avoid accusations of home-team favoritism, the league assigned an adjudicator known for detached objectivity. A borderline pitch called for strike three immediately sparked fierce protests.",
+        "An objective arbiter with no vested interest in the outcome was selected to call the championship series. When a pivotal check-swing ruling went against the home team, shouting ensued.",
+        "Equal justice to both dugouts is the hallmark of any top-flight professional officiating crew. An overturned judgment on the basepaths brought furious runners to a sudden halt.",
+        "The governing body ensured the adjudicator stationed behind home plate had zero regional ties. Following a debatable third strike, the batter and manager rushed forward in disbelief."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('senior referee', 'senior umpire', 'unbiased referee', 'unbiased umpire') are standard, natural English phrases that fit smoothly into the sports officiating context. Contexts do not mention forbidden words or trivial identifiers."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "senior",
+      "target_modifier": "fair",
+      "source_context_dev": [
+        "The league appointed its most veteran official to maintain order during the bitter cross-town derby. A contested handball decision in the closing minutes triggered immediate chaos on the pitch.",
+        "With over two decades of professional experience, the head official demanded total respect from both sides. However, a controversial red card near the penalty box caused an instant uproar.",
+        "Years of supervising international tournaments had prepared the seasoned adjudicator for intense sideline pressure. When a critical whistle erased an apparent goal, both squads reacted furiously.",
+        "The veteran crew chief brought extensive authority to what was expected to be a physical contest. A disputed foul in the box during stoppage time provoked hostile confrontations."
+      ],
+      "target_context_dev": [
+        "The league praised the adjudicator for even-handed and just rulings in every inning throughout the season. When a borderline ball count ended the rally, the batting order erupted in dismay.",
+        "Both managers respected the adjudicator's reputation for balanced, equitable judgments behind the plate. Nonetheless, a razor-thin safe call at first base brought the infielders storming over.",
+        "Maintaining honest, equitable standards across every pitch is critical for maintaining order on the diamond. A contested strikeout call during the ninth inning brought immediate fury from the dugout.",
+        "Known across the sport for scrupulous justice and balanced decision-making, the arbiter faced a heated situation. A controversial tag ruling along the baseline sparked vigorous protests."
+      ],
+      "source_context_test": [
+        "Only the association's longest-tenured official was entrusted with officiating the heated cup final. A controversial whistle during a breakaway sparked angry reactions across the turf.",
+        "Having managed hundreds of high-stakes soccer matches, the veteran official rarely faced open rebellion. That changed when a borderline penalty call brought the entire defense to their feet.",
+        "The seasoned match supervisor possessed decades of leadership in high-pressure athletic events. A crucial ruling on a physical collision near the goal line immediately met heavy resistance.",
+        "The governing board relied on their most experienced official to guide the championship without incident. Yet a contentious booking in the second half caused tempers to boil over on the field."
+      ],
+      "target_context_test": [
+        "The adjudicator was widely respected for treating both sides with equal justice regardless of home-field pressure. A pivotal out called on a trapped fly ball in right field incited loud shouting.",
+        "An equitable approach to strike zones and close basepath plays had earned the arbiter widespread admiration. Still, a sudden ejection following a disputed pitch caused absolute pandemonium.",
+        "Both ballclubs counted on just and balanced calls during the decisive game of the pennant series. When a checked swing was ruled a strike on a full count, the manager rushed from the dugout.",
+        "The athletic committee valued adjudicators who enforced regulations with unyielding equality and justice. A disputed call on a tag play at home plate sparked furious objections from the runners."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All 2x2 combinations ('senior referee', 'senior umpire', 'fair referee', 'fair umpire') are semantically and syntactically permissible in English. Contexts subtly steer towards tenure/pitch/cards versus equity/diamond/strike calls without semantic leakage."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "blind",
+      "target_modifier": "neutral",
+      "source_context_dev": [
+        "Spectators were stunned when the official missed an obvious trip right in front of the goalmouth. The blatant oversight left the attacking side completely incredulous as play continued.",
+        "The head official seemed completely oblivious to a blatant handball that occurred directly in front of the net. Believing the call was missed entirely due to terrible positioning, the team erupted.",
+        "How the official failed to notice an aggressive shove inside the penalty area baffled everyone in the arena. Convinced the ruling demonstrated a total lack of attention, the bench went wild.",
+        "The whistle remained silent despite a catastrophic collision right in the middle of the pitch. Fans and athletes alike could not believe such an obvious infringement went unseen."
+      ],
+      "target_context_dev": [
+        "The tournament brought in an independent official from a non-participating state to ensure detached oversight. A tight call on a slide into home plate instantly challenged that authority.",
+        "To prevent accusations of bias during the cross-border series, an outside arbiter with no regional stake was selected. A contested strike call on a high fastball provoked loud complaints.",
+        "The federation assigned a nonpartisan adjudicator who held no affiliation with either participating franchise. Following a razor-thin judgment at second base, the visiting manager stormed out.",
+        "Appointing an impartial out-of-state official was supposed to eliminate partisan disputes in the championship series. Yet a crucial ball-four decision on a full count sparked fierce dissent."
+      ],
+      "source_context_test": [
+        "A glaring offside violation was somehow completely overlooked during the decisive scoring sequence. Convinced that the official had simply failed to watch the play, the defense stormed forward.",
+        "The official completely ignored an egregious foul that occurred in plain sight of thousands of spectators. Frustrated by what appeared to be total incompetence, the players reacted with fury.",
+        "An obvious jersey pull went unpenalized despite happening right under the official's nose. In disbelief that such clear physical contact was missed, the captain marched across the turf.",
+        "Failing to see a clear push in the box during stoppage time sent shockwaves through the stadium. The defensive unit could not comprehend how such a blatant act went completely unnoticed."
+      ],
+      "target_context_test": [
+        "The league office selected an arbiter from a disinterested territory to ensure no perceived favoritism. A contentious safe ruling on a play at the plate brought the fielding side to their feet.",
+        "Operating strictly as an independent party without regional loyalties, the arbiter took position behind the plate. A controversial third-strike call immediately ignited anger from the dugout.",
+        "A non-affiliated adjudicator was assigned to oversee the high-stakes pennant decider without bias. When a close play on the outfield warning track went unreversed, shouting echoed across the diamond.",
+        "To maintain unquestioned nonpartisanship, the athletic board chose an official from an unaffiliated conference. A borderline tag-out call near third base brought immediate pushback from the bench."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All 4 combinations ('blind referee', 'blind umpire', 'neutral referee', 'neutral umpire') are meaningful and colloquial in sports discourse ('blind referee/umpire' being common idioms for missed calls; 'neutral referee/umpire' indicating non-affiliated officiating). None of the trigger words or direct synonyms appear in the contexts."
+    }
+  ]
+}

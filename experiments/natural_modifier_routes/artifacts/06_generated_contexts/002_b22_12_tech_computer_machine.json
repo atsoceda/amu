@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b22_12_tech_computer_machine",
+    "generation_batch": 22,
+    "domain": "technology and computing",
+    "family_id": "tech_computer_machine",
+    "noun_0": "computer",
+    "noun_1": "machine",
+    "shared_definition": "a programmable electronic device capable of processing, storing, and retrieving digital data",
+    "neutral_stem": "The administrator remotely restarted the",
+    "candidate_modifiers": [
+      "powerful",
+      "infected",
+      "personal",
+      "virtual",
+      "sluggish",
+      "configured",
+      "modern",
+      "dormant",
+      "compromised",
+      "standalone",
+      "secure",
+      "faulty",
+      "designated"
+    ],
+    "semantic_notes": "'Computer' is the standard descriptive noun, whereas 'machine' is common in systems engineering jargon to describe nodes or boxes.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        5194
+      ],
+      "noun_1": [
+        5464
+      ]
+    },
+    "modifier_token_ids": {
+      "powerful": [
+        8632
+      ],
+      "infected": [
+        22458
+      ],
+      "personal": [
+        3577
+      ],
+      "virtual": [
+        9144
+      ],
+      "sluggish": [
+        101350
+      ],
+      "configured": [
+        28331
+      ],
+      "modern": [
+        4532
+      ],
+      "dormant": [
+        99010
+      ],
+      "compromised": [
+        56397
+      ],
+      "standalone": [
+        61861
+      ],
+      "secure": [
+        9584
+      ],
+      "faulty": [
+        58615
+      ],
+      "designated": [
+        19295
+      ]
+    },
+    "forced_projection_span": 0.5637368559837341,
+    "max_noun_pair_mass": 0.8042992353439331,
+    "context_priority_score": 0.4534131222029103,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "sluggish",
+        "target_modifier": "compromised",
+        "source_projection": -0.30559176206588745,
+        "target_projection": -0.24825644493103027,
+        "forced_modifier_leverage": 0.05733531713485718,
+        "source_pair_mass": 0.408460795879364,
+        "target_pair_mass": 0.3205752968788147
+      },
+      "medium": {
+        "source_modifier": "infected",
+        "target_modifier": "compromised",
+        "source_projection": -0.5251367688179016,
+        "target_projection": -0.24825644493103027,
+        "forced_modifier_leverage": 0.27688032388687134,
+        "source_pair_mass": 0.6488768458366394,
+        "target_pair_mass": 0.3205752968788147
+      },
+      "high": {
+        "source_modifier": "configured",
+        "target_modifier": "virtual",
+        "source_projection": -0.06485062837600708,
+        "target_projection": 0.49888622760772705,
+        "forced_modifier_leverage": 0.5637368559837341,
+        "source_pair_mass": 0.12720048427581787,
+        "target_pair_mass": 0.5626355409622192
+      }
+    },
+    "context_generation_rank": 3
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "sluggish",
+      "target_modifier": "compromised",
+      "source_context_dev": [
+        "An employee reported extreme input latency and freezing applications at their office desk. After routine diagnostic checks confirmed high memory pressure,",
+        "The accounting department noticed that interactive desktop tasks were taking three times longer than usual. To resolve the excessive lag,",
+        "A staff member submitted a helpdesk ticket regarding severe interface delays and unresponsive UI elements. To free up cached system resources,",
+        "Several graphic design programs had stalled during a local user session due to excessive background throttling. Seeking to restore responsive performance,"
+      ],
+      "target_context_dev": [
+        "Security sensors flagged an anomalous outbound connection indicating unauthorized root-level tampering. To isolate the breached hardware node,",
+        "An automated intrusion detection alert warned that an internal endpoint had been hijacked by threat actors. In an effort to cut off external communication channels,",
+        "Network telemetry showed unapproved privilege escalation and suspicious credential dumping on a backend server. To sever the active backdoor,",
+        "A vulnerability scan revealed that hostile penetration testers had established an interactive reverse shell on the subnet. Prior to initiating containment,"
+      ],
+      "source_context_test": [
+        "A workstation user experienced severe window redraw stuttering and persistent spinning wheels during normal typing. To clear the bottleneck,",
+        "Helpdesk staff observed that basic desktop processes were hanging and dragging down productivity. In order to mitigate the severe unresponsiveness,",
+        "Excessive background bloatware was causing an employee desktop to crawl to an intolerable halt. To refresh memory buffers,",
+        "An office worker complained about frozen windows and unresponsive file menus across their workspace. Hoping to alleviate the severe delay,"
+      ],
+      "target_context_test": [
+        "Incident response identified active command-and-control beacons originating from an internal rack unit. To disrupt the hostile foothold,",
+        "Security audit logs indicated that an adversary had successfully bypassed authentication safeguards on the LAN. To thwart persistent access,",
+        "A critical security alert signaled suspicious lateral movement across an enterprise hardware node. In order to neutralize the ongoing breach,",
+        "Forensic monitoring detected unauthorized registry tampering by an unknown remote entity. To kick out the persistent adversary,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (sluggish computer, sluggish machine, compromised computer, compromised machine) are fully natural and syntactically sound after the stem across performance degradation and security breach scenarios."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "infected",
+      "target_modifier": "compromised",
+      "source_context_dev": [
+        "A staff member accidentally downloaded an attachment packed with active trojan malware. To halt the spreading virus payload,",
+        "Antivirus logs reported that a malicious executable had contaminated several local system directories. To stop the contagion from executing further scripts,",
+        "A user visited a malicious link that dropped aggressive ransomware onto their hard drive. To prevent the virus from encrypting adjacent drives,",
+        "The endpoint scanner triggered immediate quarantine warnings when worms were detected in the temp folder. To isolate the ongoing viral contagion,"
+      ],
+      "target_context_dev": [
+        "Access control logs indicated that illicit credentials were used to bypass security perimeters on the network. To contain the unauthorized intrusion,",
+        "The operations center detected a stealthy backdoor providing adversary access without typical malware signatures. To mitigate the breach,",
+        "Threat hunters found altered permissions and hijacked session tokens on an infrastructure asset. To disrupt the attacker's established foothold,",
+        "An external security audit discovered unauthorized user accounts created on a central hardware box. In response to the hostile breach,"
+      ],
+      "source_context_test": [
+        "The local antivirus agent detected a polymorphic worm attempting to replicate across internal partitions. To suppress the virulent outbreak,",
+        "An employee executed a disguised phishing payload that spawned malicious trojan processes. To prevent the software contagion from propagating,",
+        "Multiple malware signatures were flagged in the operating system directory after an unverified download. In order to stop the virus in its tracks,",
+        "Endpoint monitoring alerted the security team to an active rootkit infection embedded in the boot record. To isolate the toxic payload,"
+      ],
+      "target_context_test": [
+        "Security dashboards lit up after an unauthorized external IP successfully hijacked administrative privileges. To shut down the adversary's session,",
+        "Suspicious data exfiltration revealed that a network node's encryption keys had been stolen by an unknown actor. To address the severe security failure,",
+        "An internal audit showed that sensitive authentication tokens were being exploited across enterprise subnets. To contain the ongoing security incident,",
+        "Telemetry detected an unauthorized actor actively tunneling traffic through a hijacked server. To sever the illicit connection,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (infected computer, infected machine, compromised computer, compromised machine) are standard computing terminology and remain fully valid under both specific malware infection and general security breach contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "configured",
+      "target_modifier": "virtual",
+      "source_context_dev": [
+        "The IT technician finished applying customized system preferences, local policies, and user profiles on the desktop. To apply these tailored settings,",
+        "A newly deployed client terminal required a complete parameter setup to integrate with the local domain. Once the parameters were properly adjusted,",
+        "System properties and startup routines had just been tuned for the new employee onboarding. In order to finalize the customized environment,",
+        "After updating the internal operating parameters and peripheral mappings on the desk setup, the technician needed the changes to take effect. Therefore,"
+      ],
+      "target_context_dev": [
+        "A guest operating system running on the hypervisor cluster was allocating excess cloud resources. To reset the hypervisor guest instance,",
+        "The software-defined sandbox emulation running on the central server became unresponsive to management APIs. To reboot the provisioned image,",
+        "A simulated test node hosted in the private cloud was scheduled for routine maintenance. To restart the guest instance cleanly,",
+        "Several cloud-hosted emulation containers running inside the central datacenter hypervisor needed a fresh state. To recycle the guest environment,"
+      ],
+      "source_context_test": [
+        "The desktop support team adjusted local registry parameters and mapped network drives according to departmental policy. To apply the customized setup,",
+        "An engineer spent the morning tuning software settings and user privileges on an employee workstation. To initialize the tailored environment,",
+        "All required system preferences and network profiles were meticulously installed on the office unit. To activate the newly established parameters,",
+        "Specialized development toolchains and security policies were installed onto the new workstation. To ensure all setup scripts took full effect,"
+      ],
+      "target_context_test": [
+        "The cloud datacenter dashboard displayed high CPU usage on a simulated hypervisor instance. To cycle the emulation container,",
+        "A hypervisor guest slice used for testing beta software builds ceased responding to orchestration commands. To reboot the provisioned image,",
+        "The hypervisor orchestration platform initiated a health check on an unresponsive software-based emulation. To cycle the emulated node,",
+        "Cloud engineers observed an isolated emulation container that had hung during automated integration testing. To reload the guest image,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (configured computer, configured machine, virtual computer, virtual machine) are syntactically and semantically permissible. While 'virtual machine' is a standard high-frequency collocation in cloud contexts and 'configured computer' is natural in workstation setups, the cross-pairings remain clear and meaningful."
+    }
+  ]
+}

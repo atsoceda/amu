@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b22_23_tech_log_journal",
+    "generation_batch": 22,
+    "domain": "technology and computing",
+    "family_id": "tech_log_journal",
+    "noun_0": "log",
+    "noun_1": "journal",
+    "shared_definition": "a chronological record or audit trail tracking operational events, transactions, or system changes",
+    "neutral_stem": "The database engine committed pending transactions to the",
+    "candidate_modifiers": [
+      "system",
+      "audit",
+      "internal",
+      "detailed",
+      "daily",
+      "centralized",
+      "chronological",
+      "encrypted",
+      "raw",
+      "corrupted",
+      "historical",
+      "automated",
+      "immutable",
+      "active",
+      "electronic"
+    ],
+    "semantic_notes": "'Log' is standard across computing for event outputs, while 'journal' specifically describes file system and database write-ahead records.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2212
+      ],
+      "noun_1": [
+        8884
+      ]
+    },
+    "modifier_token_ids": {
+      "system": [
+        1458
+      ],
+      "audit": [
+        24391
+      ],
+      "internal": [
+        6145
+      ],
+      "detailed": [
+        9813
+      ],
+      "daily": [
+        6376
+      ],
+      "centralized": [
+        54809
+      ],
+      "chronological": [
+        111115
+      ],
+      "encrypted": [
+        48970
+      ],
+      "raw": [
+        10445
+      ],
+      "corrupted": [
+        79709
+      ],
+      "historical": [
+        11858
+      ],
+      "automated": [
+        26267
+      ],
+      "immutable": [
+        116621
+      ],
+      "active": [
+        5158
+      ],
+      "electronic": [
+        11165
+      ]
+    },
+    "forced_projection_span": 0.09161264589056373,
+    "max_noun_pair_mass": 0.5136778950691223,
+    "context_priority_score": 0.047059391102777653,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "daily",
+        "target_modifier": "system",
+        "source_projection": -0.03143030032515526,
+        "target_projection": -0.022298650816082954,
+        "forced_modifier_leverage": 0.009131649509072304,
+        "source_pair_mass": 0.07189182937145233,
+        "target_pair_mass": 0.024348167702555656
+      },
+      "medium": {
+        "source_modifier": "raw",
+        "target_modifier": "automated",
+        "source_projection": -0.039669137448072433,
+        "target_projection": 0.007475352380424738,
+        "forced_modifier_leverage": 0.04714448982849717,
+        "source_pair_mass": 0.041350651532411575,
+        "target_pair_mass": 0.02259635739028454
+      },
+      "high": {
+        "source_modifier": "automated",
+        "target_modifier": "electronic",
+        "source_projection": 0.007475352380424738,
+        "target_projection": 0.09908799827098846,
+        "forced_modifier_leverage": 0.09161264589056373,
+        "source_pair_mass": 0.02259635739028454,
+        "target_pair_mass": 0.10947155952453613
+      }
+    },
+    "context_generation_rank": 89
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "daily",
+      "target_modifier": "system",
+      "source_projection": -0.03143030032515526,
+      "target_projection": -0.022298650816082954,
+      "forced_modifier_leverage": 0.009131649509072304,
+      "source_pair_mass": 0.07189182937145233,
+      "target_pair_mass": 0.024348167702555656,
+      "source_context_dev": [
+        "Administrators rotate operational tracking files every twenty-four hours to monitor server activity. At midnight, pending batch insertions are finalized.",
+        "Routine operational records are grouped by calendar date to assist the monitoring staff with auditing. Before the nightly archive begins, disk writes are completed.",
+        "Site reliability engineers maintain a strict twenty-four-hour cycle for recording data modifications. During each routine shift transition, all queued changes are flushed.",
+        "The infrastructure tracks maintenance operations on an interval that resets every morning. Right before the scheduled cutoff, backend operations conclude."
+      ],
+      "target_context_dev": [
+        "Core operating infrastructure processes background tasks at the kernel architecture tier. Deep within the core runtime environment, low-level modifications are saved.",
+        "Internal operating platform components handle persistence directly for low-level architecture layers. During standard runtime execution, core state changes must be preserved.",
+        "Architectural background tasks monitor internal operating state changes across the entire cluster. When internal storage writes occur, consistency across runtime components is enforced.",
+        "The operating software environment coordinates essential infrastructure processes across primary server nodes. Prior to node synchronization, core write operations must complete."
+      ],
+      "source_context_test": [
+        "Maintenance scripts aggregate operational histories on a recurring twenty-four-hour schedule. Prior to archiving the ongoing cycle, the system secures all recent entries.",
+        "Auditing teams inspect enterprise activity records partitioned by each standard working day. Before swapping to the next day's storage partition, all write queues drain.",
+        "The platform maintains per-day operational histories to assist compliance teams during reviews. When finalizing routine overnight procedures, updates must be persisted.",
+        "Administrative policies require routine tracking data to be segmented into separate twenty-four-hour windows. Just before resetting the active storage handle, open write batches are saved."
+      ],
+      "target_context_test": [
+        "Deep inside the foundational operating tier, critical infrastructure daemons coordinate low-level states. During execution across the central software architecture, all updates persist.",
+        "Low-level infrastructure processes handle kernel-level state preservation across operating services. Before closing the persistent runtime handle, central components write their changes.",
+        "Core software architecture layers manage foundational operating persistence to maintain overall health. Whenever foundational state transitions finish, internal persistence operations trigger.",
+        "Operating infrastructure modules monitor architectural dependencies and critical server runtime tasks. As internal write requests execute across nodes, base state is preserved."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (daily log, daily journal, system log, system journal) represent valid technical computing concepts for transactional and auditing data. The source contexts emphasize temporal cadence and 24-hour cycles, biasing toward 'daily log' while keeping 'daily journal', 'system log', and 'system journal' fully plausible. The target contexts emphasize low-level architecture and platform infrastructure, biasing toward 'system journal' or 'system log' while keeping all combinations semantically and syntactically sound."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "raw",
+      "target_modifier": "automated",
+      "source_projection": -0.039669137448072433,
+      "target_projection": 0.007475352380424738,
+      "forced_modifier_leverage": 0.04714448982849717,
+      "source_pair_mass": 0.041350651532411575,
+      "target_pair_mass": 0.02259635739028454,
+      "source_context_dev": [
+        "Unprocessed diagnostic streams capture unformatted binary payloads straight from the network interface. Before parsing or indexing can take place, sequential writes hit the disk.",
+        "The storage driver intercepts unmodified byte sequences directly from physical sectors. To avoid data manipulation or transformation overhead, pending entries are dumped directly.",
+        "Unfiltered binary outputs are collected directly from memory buffers without structural parsing. To preserve the pristine state of incoming packets, direct disk writes occur immediately.",
+        "The data pipeline ingests unformatted event streams directly from disk controllers. To guarantee that unparsed transactional data is never lost, updates are persisted instantly."
+      ],
+      "target_context_dev": [
+        "Self-executing cron routines manage persistent tracking pipelines without any human intervention. Whenever periodic background services run, scheduled persistence routines execute.",
+        "Programmatic background scripts trigger transactional persistence tasks on predetermined schedules. To maintain continuous replication without manual triggers, the pipeline writes updates.",
+        "Unattended background bots orchestrate failover verification across redundant nodes. Without requiring manual supervisor commands, programmatic persistence tasks proceed.",
+        "Autonomous backend services continuously synchronize transactional state across distributed clusters. With zero human involvement, computerized mechanisms record updates immediately."
+      ],
+      "source_context_test": [
+        "Low-level serial interfaces emit unparsed binary streams without any schema transformation. To ensure complete fidelity before any ETL stage, untouched records are written.",
+        "The kernel captures unmodified disk blocks straight from internal storage channels. Prior to any formatting, translation, or sanitization, original transaction bytes are stored.",
+        "Diagnostic pipelines receive uncompressed byte sequences straight from hardware buses. To retain an unmanipulated record of physical inputs, the drive saves the incoming sequence.",
+        "The file system preserves unparsed binary payloads exactly as they arrive over the wire. Before structural parsing routines run, original unformatted writes are secured."
+      ],
+      "target_context_test": [
+        "Self-directed background daemons continuously audit transaction pipelines across primary nodes. As scheduled tasks fire without manual intervention, maintenance processes record state.",
+        "Self-governing persistence workers process high-volume queues across the enterprise deployment. When predetermined operational thresholds trigger, computerized routines commit changes.",
+        "Autonomous synchronization tasks coordinate failover safety across secondary compute instances. Operating entirely through self-running background services, writes are secured immediately.",
+        "Machine-driven ingestion services process incoming event batches throughout the day. To guarantee hands-off continuous operations, programmed routines write state to disk."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "The combinations 'raw log', 'raw journal', 'automated log', and 'automated journal' are all standard technical collocations in database management and system architecture. Source contexts highlight unmodified, unparsed binary data (biasing toward 'raw log'), while target contexts emphasize programmatic, unattended background automation (biasing toward 'automated journal'). All 2x2 combinations remain syntactically and semantically well-formed."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "automated",
+      "target_modifier": "electronic",
+      "source_projection": 0.007475352380424738,
+      "target_projection": 0.09908799827098846,
+      "forced_modifier_leverage": 0.09161264589056373,
+      "source_pair_mass": 0.02259635739028454,
+      "target_pair_mass": 0.10947155952453613,
+      "source_context_dev": [
+        "Autonomous backend daemons handle data replication without any manual oversight. When scheduled cron tasks run, algorithmic handlers flush changes.",
+        "Self-operating services oversee runtime transactions across the server farm without human supervision. When self-directed pipeline tasks finish, the storage controller records state.",
+        "Machine-driven ingestion pipelines process incoming events through self-triggering routines. To ensure unattended continuous recording, programmed mechanisms save updates.",
+        "Self-directed background bots verify data integrity across redundant cluster nodes. Operating entirely through hands-free scripts, programmatic tasks persist state."
+      ],
+      "target_context_dev": [
+        "Regulatory compliance standards require certified digital ledger entries over legacy paper registers. In accordance with digital bookkeeping mandates, the platform stores audit records.",
+        "Financial authorities require modern computerized records rather than physical handwritten ledgers. To satisfy modern digital compliance criteria, the transaction framework persists entries.",
+        "Statutory oversight rules require paperless digital accounting trails for all fiscal mutations. When satisfying regulatory archival standards, the accounting pipeline writes records.",
+        "Formal corporate accounting has transitioned from physical bound ledgers to digital bookkeeping platforms. Following certified paperless audit standards, transactional state is preserved."
+      ],
+      "source_context_test": [
+        "Hands-off runtime monitors coordinate synchronization tasks without requiring technician intervention. As unattended background tasks trigger, computerized routines commit changes.",
+        "Self-executing persistence scripts operate continuously across distributed cluster nodes. Operating without human involvement, background jobs write incoming modifications.",
+        "Autonomous cluster supervisors maintain continuous ledger durability across mirrored storage volumes. When programmatic checks trigger, self-governing mechanisms persist data.",
+        "Unattended background scripts track system state changes through programmed event hooks. With zero human intervention, self-running routines finalize write operations."
+      ],
+      "target_context_test": [
+        "Modern financial accounting mandates computerized recordkeeping to replace physical ledger books. To maintain compliant digital bookkeeping tracks, persistent writes occur immediately.",
+        "Regulatory audit standards demand fully computerized trails rather than hardcopy documentation. Meeting paperless regulatory standards, the platform persists accounting changes.",
+        "Banking compliance guidelines specify paperless digital ledgers for real-time fund tracking. To uphold certified computerized financial standards, transactional state is recorded.",
+        "Audit regulations enforce digital ledger accounting instead of traditional paper-based archives. To conform with computerized fiscal governance frameworks, changes are written to disk."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('automated log', 'automated journal', 'electronic log', 'electronic journal') are valid in database and information management contexts. Source contexts focus on robotic, unattended background computing without human intervention (biasing toward 'automated log'). Target contexts focus on certified digital/paperless accounting and statutory bookkeeping compliance (biasing strongly toward 'electronic journal'). All cross combinations remain grammatically and semantically permissible."
+    }
+  ]
+}

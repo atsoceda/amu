@@ -1,0 +1,26 @@
+{
+  "candidate_id": "baby_infant_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations (tiny baby, tiny infant, helpless baby, helpless infant) are fully grammatical, natural, and pragmatically appropriate completions of the stem across all dev/test contexts with zero target/modifier leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations (helpless baby, helpless infant, precious baby, precious infant) integrate seamlessly with the stem. Contexts successfully bias pragmatic preference without asserting absolute logical exclusivity or leaking candidate words."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations (vulnerable baby, vulnerable infant, fragile baby, fragile infant) are semantically valid and felicitous. The contexts clearly distinguish systemic susceptibility from physical delicacy without violating naturalness or mentioning keywords."
+    }
+  ]
+}

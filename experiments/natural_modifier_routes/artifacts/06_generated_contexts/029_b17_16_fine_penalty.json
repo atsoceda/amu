@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b17_16_fine_penalty",
+    "generation_batch": 17,
+    "domain": "commerce and public services",
+    "family_id": "fine_penalty",
+    "noun_0": "fine",
+    "noun_1": "penalty",
+    "shared_definition": "a financial sanction imposed for an infraction of rules or statutes",
+    "neutral_stem": "The magistrate imposed the",
+    "candidate_modifiers": [
+      "heavy",
+      "severe",
+      "statutory",
+      "mandatory",
+      "nominal",
+      "hefty",
+      "stiff",
+      "standard",
+      "harsh",
+      "punitive",
+      "immediate",
+      "administrative",
+      "financial",
+      "steep",
+      "customary"
+    ],
+    "semantic_notes": "'Fine' refers specifically to a pecuniary punishment, while 'penalty' can be financial, contractual, or operational in nature.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        5851
+      ],
+      "noun_1": [
+        20256
+      ]
+    },
+    "modifier_token_ids": {
+      "heavy": [
+        7274
+      ],
+      "severe": [
+        12778
+      ],
+      "statutory": [
+        31283
+      ],
+      "mandatory": [
+        27979
+      ],
+      "nominal": [
+        35069
+      ],
+      "hefty": [
+        91568
+      ],
+      "stiff": [
+        24807
+      ],
+      "standard": [
+        4077
+      ],
+      "harsh": [
+        31084
+      ],
+      "punitive": [
+        92921
+      ],
+      "immediate": [
+        13258
+      ],
+      "administrative": [
+        15006
+      ],
+      "financial": [
+        4867
+      ],
+      "steep": [
+        25465
+      ],
+      "customary": [
+        57487
+      ]
+    },
+    "forced_projection_span": 0.1563708484172821,
+    "max_noun_pair_mass": 0.8467105627059937,
+    "context_priority_score": 0.13240084905421057,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "customary",
+        "target_modifier": "mandatory",
+        "source_projection": -0.0328841507434845,
+        "target_projection": -0.0178852342069149,
+        "forced_modifier_leverage": 0.014998916536569595,
+        "source_pair_mass": 0.35179129242897034,
+        "target_pair_mass": 0.11539551615715027
+      },
+      "medium": {
+        "source_modifier": "severe",
+        "target_modifier": "statutory",
+        "source_projection": 0.2496025115251541,
+        "target_projection": 0.3275660276412964,
+        "forced_modifier_leverage": 0.07796351611614227,
+        "source_pair_mass": 0.32773691415786743,
+        "target_pair_mass": 0.47625863552093506
+      },
+      "high": {
+        "source_modifier": "statutory",
+        "target_modifier": "financial",
+        "source_projection": 0.3275660276412964,
+        "target_projection": 0.4839368760585785,
+        "forced_modifier_leverage": 0.1563708484172821,
+        "source_pair_mass": 0.47625863552093506,
+        "target_pair_mass": 0.5903007984161377
+      }
+    },
+    "context_generation_rank": 30
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "customary",
+      "target_modifier": "mandatory",
+      "source_projection": -0.0328841507434845,
+      "target_projection": -0.0178852342069149,
+      "forced_modifier_leverage": 0.014998916536569595,
+      "source_pair_mass": 0.35179129242897034,
+      "target_pair_mass": 0.11539551615715027,
+      "source_context_dev": [
+        "In keeping with long-standing local traditions, petty municipal infractions were handled according to established routine.",
+        "The court followed its familiar, habit-based sentencing routine for typical ordinance breaches.",
+        "As had been standard practice for decades, municipal infractions received the routine treatment.",
+        "The bench relied on unwritten community traditions rather than novel measures."
+      ],
+      "target_context_dev": [
+        "The newly enacted state code left zero room for judicial discretion upon conviction.",
+        "Under the strict legislative directive, the bench had no authority to waive or reduce the sentence.",
+        "The statute strictly dictated that a specific punishment must be applied without exception.",
+        "State law dictated a non-negotiable punishment that the bench had to execute immediately."
+      ],
+      "source_context_test": [
+        "Following established bench habits, standard docket items were resolved predictably.",
+        "The court adhered strictly to time-honored procedural habits for common infractions.",
+        "Matters of this nature were routinely settled according to longstanding judicial habit.",
+        "Local tradition guided the bench in determining the appropriate outcome for the municipal breach."
+      ],
+      "target_context_test": [
+        "The updated legal code stripped judges of all leeway regarding sentencing.",
+        "Because the legal directive allowed no exceptions, the bench was legally bound to enact the specified charge.",
+        "The administrative guidelines strictly required the fixed outcome without leniency.",
+        "Judicial flexibility was completely removed by the explicit terms of the binding act."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('customary fine', 'customary penalty', 'mandatory fine', 'mandatory penalty') remain semantically sound and grammatically valid completions after the stem. Source contexts bias toward routine, tradition-based judicial habituation, while target contexts emphasize legally binding, non-discretionary statutory requirements."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "severe",
+      "target_modifier": "statutory",
+      "source_projection": 0.2496025115251541,
+      "target_projection": 0.3275660276412964,
+      "forced_modifier_leverage": 0.07796351611614227,
+      "source_pair_mass": 0.32773691415786743,
+      "target_pair_mass": 0.47625863552093506,
+      "source_context_dev": [
+        "The defendant's blatant disregard for environmental safety provoked an unusually harsh judicial reaction.",
+        "To send a forceful message to repeat offenders, the bench chose an exceptionally harsh outcome.",
+        "The court decided that an aggressive, heavyweight measure was needed to deter future violations.",
+        "Given the egregious scale of the damage, the courtroom prepared for an intensely rigorous ruling."
+      ],
+      "target_context_dev": [
+        "The judicial ruling was strictly dictated by the explicit clauses written in the state legal register.",
+        "The bench consulted the formal legislative code book to determine the codified charge.",
+        "Every aspect of the sanction was drawn verbatim from the formal provisions enacted by parliament.",
+        "The outcome was directly grounded in codified state acts rather than subjective judicial inclination."
+      ],
+      "source_context_test": [
+        "Outraged by the brazen misconduct, the judge sought the most stringent and punishing outcome permissible.",
+        "The bench decided that only an uncompromising, heavy measure would serve justice.",
+        "Faced with widespread public outrage, the court delivered a crushing and harsh ruling.",
+        "The court responded to the gross negligence with an uncommonly stringent punitive measure."
+      ],
+      "target_context_test": [
+        "The judgment was constrained entirely by the express provisions of parliamentary legislation.",
+        "Following the precise terms set forth in the formal lawbooks, the bench administered the codified charge.",
+        "The outcome derived purely from explicit clauses within the established legal codex.",
+        "The bench based its decision strictly on the written sections of the governing state act."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings ('severe fine', 'severe penalty', 'statutory fine', 'statutory penalty') are grammatical and plausible completions. Source contexts emphasize extreme harshness and stringency, whereas target contexts emphasize codified parliamentary authority."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "statutory",
+      "target_modifier": "financial",
+      "source_projection": 0.3275660276412964,
+      "target_projection": 0.4839368760585785,
+      "forced_modifier_leverage": 0.1563708484172821,
+      "source_pair_mass": 0.47625863552093506,
+      "target_pair_mass": 0.5903007984161377,
+      "source_context_dev": [
+        "The presiding official opened the official codex to verify the exact terms enacted by parliament.",
+        "The court had to follow the formal legal code passed by the state legislature without alteration.",
+        "The bench applied the specific formal rule codified in the governmental volume.",
+        "The decision was framed solely around the written provisions of the governing act."
+      ],
+      "target_context_dev": [
+        "Rather than ordering community service or detention, the bench targeted the corporate bank accounts.",
+        "The court sought to drain the violator's monetary profits through substantial monetary levies.",
+        "The bench focused entirely on imposing budget-draining costs rather than physical custody.",
+        "The courtroom discussion centered strictly around wealth extraction and budgetary restitution."
+      ],
+      "source_context_test": [
+        "The judicial outcome was derived word for word from the explicit provisions of the legal code.",
+        "The bench adhered strictly to the enacted legislative chapter governing this category of infraction.",
+        "The ruling was confined directly within the boundaries of formal codification.",
+        "The presiding judge adhered to the explicit terms established in the codified legal register."
+      ],
+      "target_context_test": [
+        "The judicial remedy was specifically designed to extract wealth and drain the offender's treasury.",
+        "The court opted against non-monetary remedies, focusing instead on substantial monetary levies.",
+        "The judge decided that the most effective remedy was to impact the offender's bank balance directly.",
+        "Addressing the corporate crime required imposing a heavy monetary drain on liquid assets."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('statutory fine', 'statutory penalty', 'financial fine', 'financial penalty') are valid collocations and syntactically well-formed. Source contexts highlight legislative codification, while target contexts direct pragmatic attention specifically to monetary and asset-based burdens."
+    }
+  ]
+}

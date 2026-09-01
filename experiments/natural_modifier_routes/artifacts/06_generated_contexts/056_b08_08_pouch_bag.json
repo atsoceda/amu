@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b08_08_pouch_bag",
+    "generation_batch": 8,
+    "domain": "artifacts and manufactured goods",
+    "family_id": "pouch_bag",
+    "noun_0": "pouch",
+    "noun_1": "bag",
+    "shared_definition": "a flexible container made of cloth, leather, or plastic used for carrying items",
+    "neutral_stem": "The traveler opened",
+    "candidate_modifiers": [
+      "small",
+      "leather",
+      "heavy",
+      "empty",
+      "secure",
+      "waterproof",
+      "cloth",
+      "handy",
+      "tied",
+      "sturdy",
+      "zippered",
+      "bulging",
+      "hidden",
+      "velvet",
+      "durable"
+    ],
+    "semantic_notes": "'Pouch' usually indicates a smaller, drawstring or fastened receptacle, whereas 'bag' is broad and applies to carriers of any size.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        62195
+      ],
+      "noun_1": [
+        5693
+      ]
+    },
+    "modifier_token_ids": {
+      "small": [
+        1944
+      ],
+      "leather": [
+        13069
+      ],
+      "heavy": [
+        7274
+      ],
+      "empty": [
+        7738
+      ],
+      "secure": [
+        9584
+      ],
+      "waterproof": [
+        35918
+      ],
+      "cloth": [
+        20182
+      ],
+      "handy": [
+        31380
+      ],
+      "tied": [
+        19240
+      ],
+      "sturdy": [
+        47170
+      ],
+      "zippered": [
+        221923
+      ],
+      "bulging": [
+        187053
+      ],
+      "hidden": [
+        11497
+      ],
+      "velvet": [
+        49757
+      ],
+      "durable": [
+        22937
+      ]
+    },
+    "forced_projection_span": 0.16933685541152954,
+    "max_noun_pair_mass": 0.49732598662376404,
+    "context_priority_score": 0.0842156186893046,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "heavy",
+        "target_modifier": "secure",
+        "source_projection": 0.008191624656319618,
+        "target_projection": 0.024139398708939552,
+        "forced_modifier_leverage": 0.015947774052619934,
+        "source_pair_mass": 0.00820041261613369,
+        "target_pair_mass": 0.02684127353131771
+      },
+      "medium": {
+        "source_modifier": "durable",
+        "target_modifier": "leather",
+        "source_projection": 0.08369497209787369,
+        "target_projection": 0.17034339904785156,
+        "forced_modifier_leverage": 0.08664842694997787,
+        "source_pair_mass": 0.08447375148534775,
+        "target_pair_mass": 0.1850106120109558
+      },
+      "high": {
+        "source_modifier": "waterproof",
+        "target_modifier": "cloth",
+        "source_projection": 0.3051346242427826,
+        "target_projection": 0.47447147965431213,
+        "forced_modifier_leverage": 0.16933685541152954,
+        "source_pair_mass": 0.31652066111564636,
+        "target_pair_mass": 0.49732598662376404
+      }
+    },
+    "context_generation_rank": 57
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "heavy",
+      "target_modifier": "secure",
+      "source_context_dev": [
+        "Feeling the intense downward pull of dense ore gathered during the trek, he set down his walking staff.",
+        "The dense mass of iron coins made the small item sag deeply against his hip belt.",
+        "It dragged downward with surprising mass after being loaded with dense lead pellets.",
+        "The excessive downward strain pulled on the strap as raw minerals weighed it down."
+      ],
+      "target_context_dev": [
+        "Navigating through the pickpocket-infested terminal, he kept a vigilant eye on his tightly fastened gear.",
+        "Having fastened every latch and padlock before boarding the train, he checked the contents once more.",
+        "With thieves lurking near the station platform, he double-checked that his fastened travel pack remained tightly closed.",
+        "To keep the sensitive transit papers protected from street thieves, he had latched all the clasps tightly."
+      ],
+      "source_context_test": [
+        "Loaded to capacity with solid brass ingots, the receptacle pulled firmly toward the dirt.",
+        "The hefty downward strain of raw gemstones made it cumbersome to carry around the waist.",
+        "Full of dense iron tools, the receptacle dragged against his belt with significant downward mass.",
+        "The unexpected downward bulk of collected stones pulled hard on his shoulder strap."
+      ],
+      "target_context_test": [
+        "Wary of opportunistic hands in the bustling bazaar, he had carefully fastened all the buckled clasps.",
+        "The valuable permits had been locked away behind tight straps to deter wandering fingers in the square.",
+        "After fastening each copper buckle to foil local pickpockets, he stepped into the crowded boarding hall.",
+        "He made sure all the latches remained tightly shut to prevent theft while traversing the packed alleyway."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (heavy pouch, heavy bag, secure pouch, secure bag) are syntactically and semantically sound across both contexts. The source contexts bias toward downward weight and compact mass without excluding bags or secure containers, while target contexts bias toward lockable storage without precluding heavy weight or pouches."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "durable",
+      "target_modifier": "leather",
+      "source_context_dev": [
+        "After fifteen seasons of trekking through jagged mountain brush, the rugged item showed no signs of ripping.",
+        "Built to withstand endless abrasion across rocky peaks, the sturdy gear had survived another expedition.",
+        "It had survived years of scuffing against granite boulders without tearing at the seams.",
+        "Engineered for extreme survival, the rugged item withstood thorns, rocks, and constant rough handling."
+      ],
+      "target_context_dev": [
+        "The rich aroma of animal hide treated at the artisan tanyard filled the quiet hotel room.",
+        "Crafted by a traditional saddle artisan from tanned cowhide, it boasted a glossy brown grain.",
+        "The supple, oil-rubbed steer hide had developed a deep golden patina over decades of handling.",
+        "Handcrafted from thick animal hide at an old cobbler workshop, it felt stiff yet flexible."
+      ],
+      "source_context_test": [
+        "Years of scraping against sharp cavern walls had failed to puncture the sturdy material.",
+        "The rugged kit had endured a decade of grueling expeditions across rough alpine gravel without failing.",
+        "Designed to resist friction and repeated tearing, the tough item held up against harsh abrasive rocks.",
+        "Not a single seam had split despite ten years of rough, uncompromising overland travel."
+      ],
+      "target_context_test": [
+        "Polished with mink oil, the tanned hide exterior gleamed with a deep tan luster.",
+        "The distinct fragrance of cured hide and saddle soap wafted up as he unfastened the buckle.",
+        "Fashioned from genuine calfskin by a village tanner, the item retained a supple, polished texture.",
+        "The thick cured hide creaked softly as he adjusted it under the warm lantern glow."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (durable pouch, durable bag, leather pouch, leather bag) are natural. Source contexts foreground resilience to wear and tear, pragmatically priming durability, while target contexts foreground tanned hide craftsmanship, priming leather."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "waterproof",
+      "target_modifier": "cloth",
+      "source_context_dev": [
+        "Emerging soaked from the torrential waterfall, he knew the dry kindling inside remained completely unmoistened.",
+        "Although he had just waded through chest-deep river currents, not a single drop entered the sealed interior.",
+        "Heavy rain battered the riverbank, but the rubberized, hermetically sealed container kept the dry matches safe.",
+        "Navigating the swamp in a downpour, he relied on the moisture-repellent seal to keep his salt perfectly dry."
+      ],
+      "target_context_dev": [
+        "Spun from raw organic fibers on a traditional village loom, the simple woven item was lightweight and breathable.",
+        "Stitched together from plain undyed linen yarn, the humble woven receptacle hung loosely from his arm.",
+        "The rustic cotton weave had softened from repeated washings in the village stream.",
+        "Crafted from coarse hemp canvas threads, the lightweight woven sack was easy to fold and pack."
+      ],
+      "source_context_test": [
+        "After surviving a sudden boat capsize in the rapids, he confirmed the interior stayed bone-dry.",
+        "The driving rainstorm soaked his coat, yet the fully sealed, impermeable exterior repelled every raindrop.",
+        "Submerged during the stream crossing, the moisture-tight gear kept the paper maps entirely free from moisture.",
+        "Torrential monsoons pounded the deck, but the watertight synthetic seal prevented any dampness inside."
+      ],
+      "target_context_test": [
+        "The soft, threaded linen weave had frayed slightly at the hem after many laundry cycles.",
+        "Woven on a foot-pedal loom from natural cotton yarn, the flexible item was airy and light.",
+        "The simple stitched canvas weave smelled faintly of laundered cotton and wild lavender.",
+        "Made from airy woven flax fibers, the rustic stitched carrier folded flat against his hip."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (waterproof pouch, waterproof bag, cloth pouch, cloth bag) are completely valid in standard English. Source contexts depict extreme water immersion requiring impervious containment, while target contexts focus on natural yarn spinning and weaving."
+    }
+  ]
+}

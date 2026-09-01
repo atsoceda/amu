@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b19_10_penalty_punishment",
+    "generation_batch": 19,
+    "domain": "law, government, and civic life",
+    "family_id": "penalty_punishment",
+    "noun_0": "penalty",
+    "noun_1": "punishment",
+    "shared_definition": "a sanction or detriment imposed by authority for a violation of law or regulation",
+    "neutral_stem": "The statutory code prescribes",
+    "candidate_modifiers": [
+      "harsh",
+      "severe",
+      "maximum",
+      "minimum",
+      "appropriate",
+      "standard",
+      "lenient",
+      "stiff",
+      "just",
+      "mandatory",
+      "fair",
+      "drastic",
+      "heavy",
+      "excessive"
+    ],
+    "semantic_notes": "'Penalty' is commonly used in administrative, contractual, and statutory contexts, whereas 'punishment' carries more moral and penological weight.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        20256
+      ],
+      "noun_1": [
+        28376
+      ]
+    },
+    "modifier_token_ids": {
+      "harsh": [
+        31084
+      ],
+      "severe": [
+        12778
+      ],
+      "maximum": [
+        5783
+      ],
+      "minimum": [
+        7081
+      ],
+      "appropriate": [
+        6780
+      ],
+      "standard": [
+        4077
+      ],
+      "lenient": [
+        187931
+      ],
+      "stiff": [
+        24807
+      ],
+      "just": [
+        1164
+      ],
+      "mandatory": [
+        27979
+      ],
+      "fair": [
+        5888
+      ],
+      "drastic": [
+        61647
+      ],
+      "heavy": [
+        7274
+      ],
+      "excessive": [
+        21191
+      ]
+    },
+    "forced_projection_span": 0.13668760657310486,
+    "max_noun_pair_mass": 0.5276457667350769,
+    "context_priority_score": 0.07212263697344845,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "drastic",
+        "target_modifier": "harsh",
+        "source_projection": 0.24427127838134766,
+        "target_projection": 0.2580729126930237,
+        "forced_modifier_leverage": 0.013801634311676025,
+        "source_pair_mass": 0.38458895683288574,
+        "target_pair_mass": 0.4327370524406433
+      },
+      "medium": {
+        "source_modifier": "stiff",
+        "target_modifier": "excessive",
+        "source_projection": -0.04442072659730911,
+        "target_projection": 0.023015743121504784,
+        "forced_modifier_leverage": 0.0674364697188139,
+        "source_pair_mass": 0.14674362540245056,
+        "target_pair_mass": 0.03522331267595291
+      },
+      "high": {
+        "source_modifier": "harsh",
+        "target_modifier": "severe",
+        "source_projection": 0.2580729126930237,
+        "target_projection": 0.39476051926612854,
+        "forced_modifier_leverage": 0.13668760657310486,
+        "source_pair_mass": 0.4327370524406433,
+        "target_pair_mass": 0.5276457667350769
+      }
+    },
+    "context_generation_rank": 62
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "drastic",
+      "target_modifier": "harsh",
+      "source_context_dev": [
+        "In response to sudden currency manipulation, regulators enacted an emergency decree.",
+        "To immediately halt unauthorized offshore capital outflows, international banking authorities overhauled their enforcement playbook.",
+        "The environmental commission took emergency action to curb industrial dumping overnight.",
+        "Facing an immediate collapse of market stability, lawmakers adopted sweeping market interventions."
+      ],
+      "target_context_dev": [
+        "The criminal justice committee debated the moral necessity of retributive sentencing for violent offenders.",
+        "Traditional jurisprudence emphasizes stern judicial consequences to deter repeat criminal offenders.",
+        "In cases involving treason against the state, judicial doctrine demands unyielding penal consequences.",
+        "Society expects the judiciary to deliver uncompromising consequences for heinous crimes."
+      ],
+      "source_context_test": [
+        "When corporate tax evasion surged unexpectedly, parliamentary committees enacted sweeping emergency measures.",
+        "In the wake of an acute financial crisis, the governing board enacted unprecedented oversight rules.",
+        "To combat immediate infrastructure sabotage during wartime, the cabinet authorized radical administrative countermeasures.",
+        "Following an acute security breakdown at maritime ports, custom officials rapidly escalated enforcement protocols."
+      ],
+      "target_context_test": [
+        "Prison reform advocates often challenge the ethical validity of relentless correctional measures.",
+        "When sentencing violent felons, magistrate courts prioritize stern retribution over rehabilitation.",
+        "Legal theorists in the retributivist tradition argue that wrongdoing demands uncompromising judicial measures.",
+        "To ensure general deterrence across society, the criminal justice system mandates stern outcomes for grand theft."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (drastic penalty, drastic punishment, harsh penalty, harsh punishment) fit seamlessly into 'The statutory code prescribes the [modifier] [noun].' The source contexts emphasize rapid, sweeping administrative and regulatory interventions which collocate naturally with 'drastic penalty', while target contexts invoke criminal justice, retribution, and correctional sentencing which strongly evoke 'harsh punishment'. Neither context makes the alternative adjective-noun pairings semantically contradictory or ungrammatical."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "stiff",
+      "target_modifier": "excessive",
+      "source_context_dev": [
+        "Market regulators sought to deter anti-competitive corporate mergers by increasing financial deterrence.",
+        "To keep telecom monopolies from price gouging, the commerce board established vigorous administrative liabilities.",
+        "The securities commission wanted to make insider trading economically unviable for Wall Street firms.",
+        "Commercial shipping syndicates faced increased regulatory costs for violating maritime trade lanes."
+      ],
+      "target_context_dev": [
+        "Appellate defense attorneys argued that the sentence violated constitutional proportionality guarantees.",
+        "Human rights observers documented instances where minor infractions yielded grossly disproportionate legal retributions.",
+        "The constitutional court reviewed whether the mandatory statutory baseline was disproportionately cruel.",
+        "Jurists raised concerns regarding legal consequences that grossly exceed the gravity of the underlying conduct."
+      ],
+      "source_context_test": [
+        "To dissuade pharmaceutical companies from concealing trial data, the oversight agency raised monetary liabilities.",
+        "Antitrust regulators sought to end unlawful price-fixing agreements among major tech conglomerates.",
+        "The central bank updated its compliance framework to deter fraudulent loan origination by commercial lenders.",
+        "Environmental inspectors increased regulatory assessments to discourage illegal factory emissions."
+      ],
+      "target_context_test": [
+        "Civil liberties organizations challenged the statutory sentencing baseline as disproportionately cruel under international standards.",
+        "Legal scholars questioned whether handing down life terms for petty theft crossed constitutional boundaries.",
+        "During appellate review, judges assessed whether the trial court had imposed an unconstitutionally disproportionate sanction.",
+        "The human rights tribunal ruled that sentencing a first-time juvenile offender to hard labor went too far."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (stiff penalty, stiff punishment, excessive penalty, excessive punishment) are syntactically and semantically well-formed after the neutral stem. Source contexts highlight commercial regulation, antitrust deterrence, and corporate compliance where 'stiff penalty' is the conventional idiom. Target contexts center on constitutional proportionality, appellate overreach review, and human rights violations, strongly favoring the evaluative modifier 'excessive' paired with 'punishment', while maintaining full semantic coherence across all cross-combinations."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "harsh",
+      "target_modifier": "severe",
+      "source_context_dev": [
+        "Professional licensing boards must maintain rigorous oversight against corrupt practitioners.",
+        "The national revenue agency announced a sweeping enforcement drive against fraudulent tax shelters.",
+        "Building inspectors issued strict correction orders to developers violating municipal zoning mandates.",
+        "The athletics commission adopted rigorous anti-doping policies to protect competitive integrity."
+      ],
+      "target_context_dev": [
+        "For the most catastrophic national security breaches, the military tribunal tolerates no leniency.",
+        "Premeditated murder trials demand the highest degree of judicial retribution available under federal law.",
+        "When evaluating state-sponsored espionage, prosecutors pursue the absolute maximum penal consequence.",
+        "Convictions for aggravated armed robbery carry maximum sentencing parameters in federal court."
+      ],
+      "source_context_test": [
+        "Aviation authorities tightened regulatory consequences for airlines failing crucial maintenance inspections.",
+        "The health department enforced strict compliance rules on unhygienic commercial kitchens.",
+        "Financial auditors cracked down on accounting irregularities found during annual corporate filings.",
+        "To deter illegal commercial fishing in protected waters, maritime authorities enacted strict statutory guidelines."
+      ],
+      "target_context_test": [
+        "International war crimes tribunals impose uncompromising sentencing on perpetrators of mass atrocities.",
+        "For catastrophic acts of domestic terrorism, federal guidelines require the absolute maximum penal sanction.",
+        "High-level espionage cases trigger the most uncompromising correctional measures permitted by law.",
+        "When organized crime syndicates commit contract killings, state prosecutors seek the ultimate legal retribution."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (harsh penalty, harsh punishment, severe penalty, severe punishment) represent standard English collocations with the fixed stem. Source contexts create a civil/administrative regulatory framing (tax, licensing, municipal codes) where 'harsh penalty' is naturally elicited. Target contexts involve maximum-gravity criminal offenses (espionage, war crimes, murder, terrorism) where 'severe punishment' represents the predominant judicial idiom. All four pairings remain completely grammatical and plausible under every context."
+    }
+  ]
+}

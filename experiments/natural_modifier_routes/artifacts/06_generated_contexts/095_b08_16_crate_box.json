@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b08_16_crate_box",
+    "generation_batch": 8,
+    "domain": "artifacts and manufactured goods",
+    "family_id": "crate_box",
+    "noun_0": "crate",
+    "noun_1": "box",
+    "shared_definition": "a rigid, rectangular container used for storage, shipping, or packing",
+    "neutral_stem": "The workers lifted",
+    "candidate_modifiers": [
+      "wooden",
+      "heavy",
+      "sealed",
+      "cardboard",
+      "unopened",
+      "sturdy",
+      "empty",
+      "large",
+      "reinforced",
+      "dusty",
+      "fragile",
+      "stacked",
+      "packed",
+      "marked",
+      "solid"
+    ],
+    "semantic_notes": "'Crate' typically denotes a sturdy, heavy-duty wooden or plastic shipping enclosure, whereas 'box' is ubiquitous for all containers.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        37073
+      ],
+      "noun_1": [
+        3673
+      ]
+    },
+    "modifier_token_ids": {
+      "wooden": [
+        7116
+      ],
+      "heavy": [
+        7274
+      ],
+      "sealed": [
+        26800
+      ],
+      "cardboard": [
+        41670
+      ],
+      "unopened": [
+        186351
+      ],
+      "sturdy": [
+        47170
+      ],
+      "empty": [
+        7738
+      ],
+      "large": [
+        2455
+      ],
+      "reinforced": [
+        43389
+      ],
+      "dusty": [
+        78921
+      ],
+      "fragile": [
+        48718
+      ],
+      "stacked": [
+        45844
+      ],
+      "packed": [
+        21064
+      ],
+      "marked": [
+        11373
+      ],
+      "solid": [
+        5139
+      ]
+    },
+    "forced_projection_span": 0.1216154545545578,
+    "max_noun_pair_mass": 0.3608635365962982,
+    "context_priority_score": 0.04388658303532411,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "unopened",
+        "target_modifier": "large",
+        "source_projection": 0.15049199759960175,
+        "target_projection": 0.16187137365341187,
+        "forced_modifier_leverage": 0.01137937605381012,
+        "source_pair_mass": 0.1643240600824356,
+        "target_pair_mass": 0.22996175289154053
+      },
+      "medium": {
+        "source_modifier": "stacked",
+        "target_modifier": "packed",
+        "source_projection": 0.016443857923150063,
+        "target_projection": 0.07623635232448578,
+        "forced_modifier_leverage": 0.059792494401335716,
+        "source_pair_mass": 0.027573084458708763,
+        "target_pair_mass": 0.09083487093448639
+      },
+      "high": {
+        "source_modifier": "sealed",
+        "target_modifier": "cardboard",
+        "source_projection": 0.2284531444311142,
+        "target_projection": 0.350068598985672,
+        "forced_modifier_leverage": 0.1216154545545578,
+        "source_pair_mass": 0.2508714497089386,
+        "target_pair_mass": 0.3608635365962982
+      }
+    },
+    "context_generation_rank": 96
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "unopened",
+      "target_modifier": "large",
+      "source_context_dev": [
+        "The morning delivery sat untouched near the loading dock with factory bands intact. Before inspecting what was inside,",
+        "Several delivery units had just arrived from the port and were waiting for initial processing. To begin cataloging the new arrival,",
+        "The cargo had been delivered straight from the manufacturer with the original bindings intact. In preparation for the inventory audit,",
+        "Fresh shipments were left in the intake bay until the manifest could be verified. To clear the receiving area,"
+      ],
+      "target_context_dev": [
+        "The parcel took up an enormous amount of floor space in the mailroom. Because of its massive dimensions,",
+        "A bulky package occupied most of the back corner in the parcel depot. Needing two people to manage the wide load,",
+        "The parcel was too bulky to fit on the standard sorting table. To shift the oversized package out of the aisle,",
+        "An oversized delivery item blocked most of the warehouse corridor. To make room for the handcarts,"
+      ],
+      "source_context_test": [
+        "The freight arrived earlier that morning and remained fully secured from transit. Prior to checking the contents,",
+        "None of the incoming supplies from the overseas supplier had been broken into yet. To prepare the freight for logging,",
+        "A fresh haul was delivered to the depot, untouched since leaving the assembly plant. Before any items were extracted,",
+        "The intake zone was crowded with pristine freight waiting for the supervisor's sign-off. To organize the staging floor,"
+      ],
+      "target_context_test": [
+        "The mail delivery was surprisingly massive, spanning several feet across. Because of its huge physical volume,",
+        "The package was far too wide for one person to carry comfortably down the hallway. To reposition the bulky unit,",
+        "An enormous parcel was dropped off in the dispatch office this morning. To clear a pathway through the storage room,",
+        "A massive parcel dominated the center of the sorting floor. Due to its sheer physical size,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations ('unopened crate', 'unopened box', 'large crate', 'large box') are natural, semantically well-formed English collocations for standard rigid storage and shipping containers. The source contexts evoke pristine, newly arrived, uninspected industrial shipments, which subtly primes 'unopened crate' while remaining completely compatible with 'large crate', 'unopened box', and 'large box'. The target contexts emphasize oversized physical volume and bulky spatial dimensions, which primes 'large box' without rendering 'unopened box', 'large crate', or 'unopened crate' incongruous."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "stacked",
+      "target_modifier": "packed",
+      "source_context_dev": [
+        "Several heavy freight units were piled high in neat vertical columns against the wall. Starting with the top layer,",
+        "The shipping units had been arranged in tall tiers all the way up to the rafters. To retrieve an item from higher up,",
+        "Dozens of heavy storage units rested on top of each other across several warehouse pallets. To begin unpiling the top layer,",
+        "Vertical towers of heavy cargo lined the perimeter of the shipping facility. To dismantle the tallest pile,"
+      ],
+      "target_context_dev": [
+        "Every interior compartment was completely filled to the brim with supplies. Feeling the heavy, dense weight inside,",
+        "The parcel was filled to capacity with fragile glassware and protective foam. Taking care not to jostle the dense contents,",
+        "The shipping unit was loaded full of books and prepped for the office relocation. Moving the tightly stuffed container,",
+        "Items had been tightly stuffed into every available inch of interior space. Dealing with the heavy, full payload,"
+      ],
+      "source_context_test": [
+        "Multiple layers of freight had been organized in high columns to maximize floor space. To dismantle the top tier,",
+        "The cargo had been placed one on top of another in high vertical rows. Reaching for the highest tier,",
+        "Tall columns of industrial storage reached toward the warehouse ceiling. Starting from the uppermost level,",
+        "The inventory was arranged in neat vertical piles across the depot bay. To separate the upper tier,"
+      ],
+      "target_context_test": [
+        "The shipping unit was fully loaded with retail merchandise and ready for transport. To shift the dense, filled payload,",
+        "Every cubic inch of space inside was filled with sorted documents and padding. To relocate the heavily filled unit,",
+        "The container was crammed with heavy equipment parts until nothing more could fit. Feeling the full, concentrated weight,",
+        "The parcel had been tightly filled with delicate goods wrapped in protective lining. To move the fully loaded unit,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('stacked crate', 'stacked box', 'packed crate', 'packed box') are fully grammatical and semantically plausible in warehouse/freight contexts. The source contexts establish a multi-tiered vertical arrangement, favoring 'stacked' and the heavier industrial container 'crate', though packed crates and stacked/packed boxes can also be lifted from a pile. The target contexts describe tightly filled interior contents, naturally priming 'packed box' while remaining compatible with stacked boxes and packed/stacked crates."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "sealed",
+      "target_modifier": "cardboard",
+      "source_context_dev": [
+        "Security tape and metal strapping secured the heavy transport unit against any tampering. To relocate the secured container,",
+        "The industrial freight had been firmly clamped shut and certified watertight for sea transport. To transfer the secured unit,",
+        "Tamper-evident strips were applied across every joint and seam of the heavy unit. Moving the securely closed freight,",
+        "The cargo closure was reinforced with heavy industrial bands and customs stamps. To transport the securely fastened load,"
+      ],
+      "target_context_dev": [
+        "The delivery container was crafted entirely from lightweight fluted paper pulp. To relocate the fluted paper package,",
+        "Several items were packaged within standard fluted paper material with folding flaps. Moving the paper unit,",
+        "The retail goods arrived in simple fluted paper packaging stamped with recycling symbols. To lift the paper container,",
+        "Recyclable paper packaging with folded brown flaps sat waiting on the dispatch counter. To move the paper package,"
+      ],
+      "source_context_test": [
+        "Every opening had been locked down with heavy adhesive tape and protective seals. In order to move the tamper-proof freight,",
+        "The heavy shipping unit was strapped shut with metal bands and verified airtight. To move the locked freight,",
+        "Strict transport protocols required the unit to remain firmly fastened and tamper-evident. Handling the secure cargo,",
+        "Heavy-duty adhesives and security bands held the entire perimeter shut tight. Transporting the firmly secured cargo,"
+      ],
+      "target_context_test": [
+        "The fragile item was housed in a simple fluted paper package with interlocking flaps. To shift the lightweight paper package,",
+        "The shipping unit consisted of brown fluted paper panels taped together. Carefully picking up the paper container,",
+        "An everyday fluted paper container marked with recycling logos lay on the shipping dock. Shifting the brown paper unit,",
+        "The items arrived in standard brown paper packaging with folding top flaps. To transfer the paper package,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('sealed crate', 'sealed box', 'cardboard crate', 'cardboard box') are semantically and syntactically valid; heavy-duty corrugated board crates are widely used in modern logistics, and boxes are frequently sealed. Source contexts focus on airtight, tamper-evident security closure, favoring 'sealed crate'. Target contexts describe fluted paper material and folded flaps, strongly favoring 'cardboard box' without precluding 'sealed box' or 'cardboard crate'."
+    }
+  ]
+}

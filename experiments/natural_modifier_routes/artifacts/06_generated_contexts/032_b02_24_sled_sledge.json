@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b02_24_sled_sledge",
+    "generation_batch": 2,
+    "domain": "vehicles and transportation",
+    "family_id": "sled_sledge",
+    "noun_0": "sled",
+    "noun_1": "sledge",
+    "shared_definition": "a vehicle mounted on runners used for traveling over snow or ice",
+    "neutral_stem": "The arctic explorer hauled supplies across the frozen tundra on the",
+    "candidate_modifiers": [
+      "wooden",
+      "loaded",
+      "heavy",
+      "sturdy",
+      "overturned",
+      "speeding",
+      "traditional",
+      "battered",
+      "empty",
+      "racing",
+      "harnessed",
+      "rudimentary",
+      "lightweight"
+    ],
+    "semantic_notes": "'Sled' is standard in American English for small snow vehicles; 'sledge' is common in British English and polar exploration for heavy cargo.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        68553
+      ],
+      "noun_1": [
+        212690
+      ]
+    },
+    "modifier_token_ids": {
+      "wooden": [
+        7116
+      ],
+      "loaded": [
+        15808
+      ],
+      "heavy": [
+        7274
+      ],
+      "sturdy": [
+        47170
+      ],
+      "overturned": [
+        108679
+      ],
+      "speeding": [
+        74278
+      ],
+      "traditional": [
+        6672
+      ],
+      "battered": [
+        112624
+      ],
+      "empty": [
+        7738
+      ],
+      "racing": [
+        18533
+      ],
+      "harnessed": [
+        195018
+      ],
+      "rudimentary": [
+        160847
+      ],
+      "lightweight": [
+        27472
+      ]
+    },
+    "forced_projection_span": 0.1371864229440689,
+    "max_noun_pair_mass": 0.8419727683067322,
+    "context_priority_score": 0.1155072323003159,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "sturdy",
+        "target_modifier": "lightweight",
+        "source_projection": -0.5106432437896729,
+        "target_projection": -0.4970560669898987,
+        "forced_modifier_leverage": 0.01358717679977417,
+        "source_pair_mass": 0.5717051029205322,
+        "target_pair_mass": 0.5398544669151306
+      },
+      "medium": {
+        "source_modifier": "harnessed",
+        "target_modifier": "battered",
+        "source_projection": -0.49880537390708923,
+        "target_projection": -0.4344446659088135,
+        "forced_modifier_leverage": 0.06436070799827576,
+        "source_pair_mass": 0.5821605324745178,
+        "target_pair_mass": 0.5235522389411926
+      },
+      "high": {
+        "source_modifier": "empty",
+        "target_modifier": "overturned",
+        "source_projection": -0.2787863314151764,
+        "target_projection": -0.14159990847110748,
+        "forced_modifier_leverage": 0.1371864229440689,
+        "source_pair_mass": 0.298541396856308,
+        "target_pair_mass": 0.2167046219110489
+      }
+    },
+    "context_generation_rank": 33
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "sturdy",
+      "target_modifier": "lightweight",
+      "source_context_dev": [
+        "Heavy iron tools and survival crates demanded durable, reinforced gear capable of bearing immense weight over jagged ice.",
+        "Navigating through relentless blizzards with maximum cargo required construction materials that would never buckle or crack under pressure.",
+        "The expedition had to transport dense geological specimens across rough crevasses without risking structural collapse.",
+        "To endure the brutal winter expanse while fully loaded, the traveler relied exclusively on robust, heavy-duty hauling equipment."
+      ],
+      "target_context_dev": [
+        "Traveling solo across long distances meant prioritizing swift movement and ultra-minimal pack mass over bulky equipment.",
+        "Every single ounce of unnecessary bulk had been stripped away to ensure effortless gliding across fragile ice sheets.",
+        "Speed was paramount to outrun the sudden polar storm, favoring nimble and portable transport.",
+        "The solitary researcher selected carbon-fiber trekking gear crafted specifically to keep total pack burden to an absolute minimum."
+      ],
+      "source_context_test": [
+        "With hundreds of pounds of freeze-dried rations loaded up, only the most resilient timber and steel rigging would suffice.",
+        "Severe polar terrain had smashed weaker equipment in previous seasons, forcing the team to prioritize solid resilience.",
+        "Carrying heavy drilling machinery into the arctic interior required exceptionally tough transport built to withstand extreme punishment.",
+        "Deep snowdrifts and heavy ballast called for heavy-set craftsmanship that would hold together under maximum strain."
+      ],
+      "target_context_test": [
+        "To traverse thin ice without breaking through, the scout shed every possible gram of superfluous heft.",
+        "Quick relocation across flat glaciers required aerodynamic efficiency and the sheer ease of dragging featherlight gear.",
+        "The lone ranger preferred swift, unencumbered travel that spared physical energy on steep uphill ascents.",
+        "Minimizing ground friction and personal strain was crucial for the fast-paced reconnaissance mission across the plateau."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {sturdy, lightweight} \u00d7 {sled, sledge} form natural, grammatical, and semantically sound completions across all provided context prompts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "harnessed",
+      "target_modifier": "battered",
+      "source_context_dev": [
+        "The team of energetic huskies barked impatiently in their traces, eager to pull their winter load across the frost.",
+        "Straps and towlines were secured tightly to the working team of draft animals before setting off at dawn.",
+        "Eskimo dogs leaped forward in unison as the guide secured the central pulling bridle.",
+        "The pack of working canines stood ready in their leather traces, waiting for the command to pull forward."
+      ],
+      "target_context_dev": [
+        "Months of scraping against abrasive gravel and jagged seracs had left deep gouges and fractures across the wooden runners.",
+        "Years of harsh exposure had weathered the equipment into a splintered, dented relic that barely held together.",
+        "After surviving two separate avalanches and hundreds of miles of rock-strewn ice, the frame was visibly chipped and worn down.",
+        "Constant impact with frozen boulders had severely warped the surface of the expedition's primary transport."
+      ],
+      "source_context_test": [
+        "Tension pulled taut through the tow ropes as the team of six draft dogs aligned for the grueling journey.",
+        "Connecting the pulling team to the lead rigging required careful adjustment of buckles and cinches.",
+        "With the eager canines hitched into position, the polar guide prepared to traverse the windblown expanse.",
+        "The pulling team stood firmly strapped into their pulling lines, poised to dash across the frozen crust."
+      ],
+      "target_context_test": [
+        "Countless collisions with hidden frozen outcroppings had left the gear heavily scarred and splintered.",
+        "Severe wear and tear from relentless polar gales had chipped away the protective varnish and frayed the edges.",
+        "Past expeditions had clearly taken a heavy toll on the rough, weathered gear, leaving it nicked and degraded.",
+        "The equipment bore the scars of multiple rocky descents, featuring cracked rails and scratched sideboards."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {harnessed, battered} \u00d7 {sled, sledge} remain fully grammatical, pragmatically sensible, and physically coherent within every context."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "empty",
+      "target_modifier": "overturned",
+      "source_context_dev": [
+        "Having already unloaded all survival crates at the forward research station, the traveler set out to fetch more supplies.",
+        "The deck platform stood completely bare after distributing food rations to the remote winter outpost.",
+        "Without a single crate or barrel resting on the transport deck, the runner glide was smooth and effortless.",
+        "The storage area had been stripped clean of all cargo during the morning depot drop."
+      ],
+      "target_context_dev": [
+        "A fierce crosswind swept down the glacial crevasse, suddenly flipping the transport completely onto its side.",
+        "Losing control on a slick ice shelf caused the transport frame to capsize into a snowdrift.",
+        "The sudden swerve around a hidden fissure resulted in the runners rolling upside down into the drift.",
+        "Careening down the icy slope caused the conveyance to roll over completely, spilling the driver into the snow."
+      ],
+      "source_context_test": [
+        "Every piece of equipment had been deposited inside the cabin, leaving the flat surface devoid of all provisions.",
+        "Returning to base camp with zero remaining gear made the journey much faster than the outbound leg.",
+        "All cargo sacks had been unlashed and stored away, leaving nothing tied down onto the carrier bed.",
+        "The traveler was heading out to retrieve a cache, starting the journey without any supplies on board."
+      ],
+      "target_context_test": [
+        "A violent gust of wind caught the side of the rig, tumbling it onto its roof in the deep powder.",
+        "Hitting an uneven snow bank caused the runners to invert, landing the structure on its top rail.",
+        "The sudden slide down the ravine caused the entire apparatus to capsize into the freezing bank.",
+        "An abrupt shift in the ice pack caused the gear carrier to flip upside down along the trail."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {empty, overturned} \u00d7 {sled, sledge} are entirely valid, grammatical, and interpretable across all developmental and test contexts."
+    }
+  ]
+}

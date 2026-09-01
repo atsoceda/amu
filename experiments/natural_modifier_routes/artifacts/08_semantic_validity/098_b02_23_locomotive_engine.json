@@ -1,0 +1,42 @@
+{
+  "candidate_id": "locomotive_engine",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four modifier-noun combinations are natural, standard railway collocations. Contexts effectively establish pragmatic bias toward fuel type vs. physical scale without mentioning candidate targets."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test_3"
+      ],
+      "failure_reasons": [
+        "source_context_test[3] explicitly uses the root candidate lemma 'repair' in 'repair shed'."
+      ],
+      "concise_notes": "The occurrence of 'repair shed' in source_context_test[3] breaches the lexical containment constraint against mentioning candidate terms."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_0",
+        "source_context_dev_1",
+        "source_context_dev_2",
+        "source_context_dev_3",
+        "source_context_test_0",
+        "source_context_test_1",
+        "source_context_test_2",
+        "source_context_test_3"
+      ],
+      "failure_reasons": [
+        "Semantic/pragmatic incoherence: the fixed stem asserts that the engineer 'climbed into the cab', which physically contradicts all source contexts where the train is already hurtling down the tracks at maximum speed/80 mph.",
+        "source_context_test[0] already explicitly places the engineer inside the cab monitoring acceleration, contradicting the stem's entrance event."
+      ],
+      "concise_notes": "A railroad engineer cannot climb into the cab of a locomotive that is actively speeding down the mainline at 80 mph; the stem and source contexts are in direct pragmatic contradiction."
+    }
+  ]
+}

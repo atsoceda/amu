@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b23_21_pot_kettle",
+    "generation_batch": 23,
+    "domain": "mixed high-frequency concrete nouns",
+    "family_id": "pot_kettle",
+    "noun_0": "pot",
+    "noun_1": "kettle",
+    "shared_definition": "a deep metal or ceramic vessel used for boiling water or cooking liquids",
+    "neutral_stem": "She heated",
+    "candidate_modifiers": [
+      "copper",
+      "boiling",
+      "black",
+      "heavy",
+      "hot",
+      "empty",
+      "steaming",
+      "whistling",
+      "scratched",
+      "clean",
+      "greasy",
+      "covered",
+      "shallow"
+    ],
+    "semantic_notes": "Kettle is specifically tailored for boiling water with a spout; pot is generic for stews, soups, and cooking.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2197
+      ],
+      "noun_1": [
+        71603
+      ]
+    },
+    "modifier_token_ids": {
+      "copper": [
+        14561
+      ],
+      "boiling": [
+        31476
+      ],
+      "black": [
+        2764
+      ],
+      "heavy": [
+        7274
+      ],
+      "hot": [
+        3425
+      ],
+      "empty": [
+        7738
+      ],
+      "steaming": [
+        107059
+      ],
+      "whistling": [
+        185989
+      ],
+      "scratched": [
+        94224
+      ],
+      "clean": [
+        3980
+      ],
+      "greasy": [
+        116096
+      ],
+      "covered": [
+        7438
+      ],
+      "shallow": [
+        28855
+      ]
+    },
+    "forced_projection_span": 0.7658345140516758,
+    "max_noun_pair_mass": 0.814959704875946,
+    "context_priority_score": 0.6241242695553673,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "shallow",
+        "target_modifier": "copper",
+        "source_projection": -0.055339157581329346,
+        "target_projection": 0.021555300801992416,
+        "forced_modifier_leverage": 0.07689445838332176,
+        "source_pair_mass": 0.05694074183702469,
+        "target_pair_mass": 0.11630566418170929
+      },
+      "medium": {
+        "source_modifier": "covered",
+        "target_modifier": "copper",
+        "source_projection": -0.1031552106142044,
+        "target_projection": 0.021555300801992416,
+        "forced_modifier_leverage": 0.12471051141619682,
+        "source_pair_mass": 0.12746210396289825,
+        "target_pair_mass": 0.11630566418170929
+      },
+      "high": {
+        "source_modifier": "copper",
+        "target_modifier": "whistling",
+        "source_projection": 0.021555300801992416,
+        "target_projection": 0.7873898148536682,
+        "forced_modifier_leverage": 0.7658345140516758,
+        "source_pair_mass": 0.11630566418170929,
+        "target_pair_mass": 0.814959704875946
+      }
+    },
+    "context_generation_rank": 1
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "shallow",
+      "target_modifier": "copper",
+      "source_context_dev": [
+        "Preparing a quick wine reduction required maximizing the surface area over the burner.",
+        "To simmer the delicate glaze evenly without letting liquid pool too deeply, she needed wide cookware.",
+        "The recipe instructed her to sear the mushrooms in a wide dish with low sides rather than a deep one.",
+        "Before browning the butter rapidly across an open surface, she prepared the stove."
+      ],
+      "target_context_dev": [
+        "She admired the gleaming reddish-orange metal cookware hanging polished above the stove before starting tea.",
+        "Traditional afternoon beverage preparation called for heavy, highly conductive reddish metalware on the stove.",
+        "Her vintage polished bronze-toned metalware heated water faster than any modern stainless steel piece.",
+        "Wanting rapid thermal conduction for boiling beverage water, she selected the antique reddish metal piece."
+      ],
+      "source_context_test": [
+        "Making the syrup thicken quickly meant spreading the liquid thinly over direct heat.",
+        "She wanted the sauce to evaporate fast across a wide bottom rather than steep in a deep vat.",
+        "A broad, low-rimmed vessel was ideal for caramelizing the onions without steaming them.",
+        "Cooking the reduction required maximum liquid exposure to the air while resting on the flame."
+      ],
+      "target_context_test": [
+        "The shiny, polished reddish metalware caught the morning light as she set out to boil water for breakfast.",
+        "She preferred the superior heat conductivity of classic reddish metal for preparing her morning brew.",
+        "An elegant, polished orange-gold metal vessel sat ready on the stove for afternoon tea service.",
+        "For rapid boiling and superior thermal efficiency, she picked the vintage reddish metallic vessel."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('shallow pot', 'shallow kettle', 'copper pot', 'copper kettle') represent valid culinary vessels. A shallow kettle is a recognized wide-base design for camping and fast boiling, while copper pots and kettles are standard traditional cookware."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "covered",
+      "target_modifier": "copper",
+      "source_context_dev": [
+        "To keep the aromatic steam from escaping while stewing the broth, she made sure the lid was firmly in place.",
+        "The stew needed to retain all its moisture, so she secured the matching top securely before turning on the burner.",
+        "Cooking the grains thoroughly required trapping the moisture inside with a tight-fitting lid on the burner.",
+        "She wanted the braising broth to simmer without losing any liquid to evaporation."
+      ],
+      "target_context_dev": [
+        "The classic reddish metalware on the stove was renowned for quick thermal conduction during morning tea.",
+        "She reached for the polished reddish-hued antique metal piece to quickly boil water for tea.",
+        "Appreciating the quick heat distribution of vintage reddish metal, she set up the tea station.",
+        "Her kitchen featured shining reddish metal vessels explicitly chosen for rapid water heating."
+      ],
+      "source_context_test": [
+        "Preventing the braising liquid from boiling off meant keeping a fitted lid on the stove.",
+        "She closed the top piece tightly over the rim to lock in flavor before lighting the range.",
+        "Retaining maximum steam was crucial for softening the root vegetables gently on the range.",
+        "She set the enclosing lid over the rim so the dish would braise evenly without drying out."
+      ],
+      "target_context_test": [
+        "The lustrous reddish metallic piece sat atop the range, ready to bring tea water to a prompt boil.",
+        "She admired the bright reddish metal finish before putting it to work heating her infusion.",
+        "Choosing the classic polished bronze-orange metalware ensured the morning water would heat in seconds.",
+        "For an authentic afternoon tea, she selected the shining reddish metal piece with exceptional conductivity."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('covered pot', 'covered kettle', 'copper pot', 'copper kettle') are completely felicitous in English. Both pots and kettles frequently feature lids and can be manufactured from copper."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "copper",
+      "target_modifier": "whistling",
+      "source_context_dev": [
+        "The chef insisted on unlined reddish metallic cookware for preparing delicate French sauces evenly.",
+        "She relied on the unmatched thermal responsiveness of heavy reddish metal to simmer the custard without curdling.",
+        "Preparing the pastry filling required the precise thermal control that only pure reddish metal pans provide.",
+        "She selected the hefty reddish metal piece from the rack to slowly simmer the savory reduction."
+      ],
+      "target_context_dev": [
+        "She stepped into the other room, waiting for the piercing acoustic steam alarm to alert her when boiling finished.",
+        "The high-pitched acoustic alert would sound through the house as soon as steam built up enough pressure.",
+        "She needed a distinct sonic signal to remind her from the living room when the boil reached its peak.",
+        "Listening for the sharp acoustic spout alert, she set the water on the range and walked away."
+      ],
+      "source_context_test": [
+        "For even sauce reduction, the culinary school always recommended solid reddish metallic cookware.",
+        "The recipe called for gentle heat transfer, so she turned to her favorite heavy reddish metal piece.",
+        "To melt the sugar evenly without burning, she reached for the polished reddish metallic piece.",
+        "She set the traditional reddish metal vessel over low heat to begin stewing the compote."
+      ],
+      "target_context_test": [
+        "She walked down the hall, knowing the shrill steam-driven sound would summon her when boiling finished.",
+        "The vessel was equipped with an audible steam chime so she wouldn't forget it was on the burner.",
+        "Waiting for the unmistakable high-pitched steam blast to echo across the house, she set the burner to high.",
+        "She relied on the loud acoustic vapor signal to notify her the moment the water reached a full rolling boil."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings ('copper pot', 'copper kettle', 'whistling pot', 'whistling kettle') are syntactically and semantically permissible. While 'whistling kettle' is canonical, 'whistling pot' is an established term for vented pressure cookers and milk-boiling pots that sound an audible steam whistle."
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "family": {
+    "candidate_id": "b08_22_shack_hut",
+    "generation_batch": 8,
+    "domain": "artifacts and manufactured goods",
+    "family_id": "shack_hut",
+    "noun_0": "shack",
+    "noun_1": "hut",
+    "shared_definition": "a small, crudely built, single-room shelter or dwelling",
+    "neutral_stem": "The wanderer took shelter inside",
+    "candidate_modifiers": [
+      "wooden",
+      "primitive",
+      "rustic",
+      "small",
+      "abandoned",
+      "weathered",
+      "flimsy",
+      "isolated",
+      "dilapidated",
+      "sturdy",
+      "rundown",
+      "coastal"
+    ],
+    "semantic_notes": "'Shack' carries strong connotations of poverty and disrepair, whereas 'hut' can refer neutrally to traditional or mountainous shelters.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        105020
+      ],
+      "noun_1": [
+        56113
+      ]
+    },
+    "modifier_token_ids": {
+      "wooden": [
+        7116
+      ],
+      "primitive": [
+        34986
+      ],
+      "rustic": [
+        34452
+      ],
+      "small": [
+        1944
+      ],
+      "abandoned": [
+        22619
+      ],
+      "weathered": [
+        93991
+      ],
+      "flimsy": [
+        163341
+      ],
+      "isolated": [
+        4813
+      ],
+      "dilapidated": [
+        176451
+      ],
+      "sturdy": [
+        47170
+      ],
+      "rundown": [
+        127147
+      ],
+      "coastal": [
+        25260
+      ]
+    },
+    "forced_projection_span": 0.3991837501525879,
+    "max_noun_pair_mass": 0.7126259207725525,
+    "context_priority_score": 0.2844686875099285,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "rustic",
+        "target_modifier": "flimsy",
+        "source_projection": 0.09437943994998932,
+        "target_projection": 0.13491976261138916,
+        "forced_modifier_leverage": 0.04054032266139984,
+        "source_pair_mass": 0.09790118038654327,
+        "target_pair_mass": 0.14141860604286194
+      },
+      "medium": {
+        "source_modifier": "rundown",
+        "target_modifier": "small",
+        "source_projection": -0.00883619673550129,
+        "target_projection": 0.19012968242168427,
+        "forced_modifier_leverage": 0.19896587915718555,
+        "source_pair_mass": 0.05701114982366562,
+        "target_pair_mass": 0.20123176276683807
+      },
+      "high": {
+        "source_modifier": "wooden",
+        "target_modifier": "primitive",
+        "source_projection": 0.3091934323310852,
+        "target_projection": 0.7083771824836731,
+        "forced_modifier_leverage": 0.3991837501525879,
+        "source_pair_mass": 0.3325696587562561,
+        "target_pair_mass": 0.7126259207725525
+      }
+    },
+    "context_generation_rank": 10
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "rustic",
+      "target_modifier": "flimsy",
+      "source_context_dev": [
+        "Deep in the pine woods, an old mountain dweller had pieced together a rough dwelling from split logs and river stones.",
+        "The hillside homestead showed signs of handcrafted country carpentry, weathered by decades of mountain seasons.",
+        "Tucked away near the edge of the forest clearing stood a time-worn redoubt built from unpeeled bark and local timber.",
+        "The secluded camp featured coarse hand-hewn woodwork that blended seamlessly with the surrounding wilderness."
+      ],
+      "target_context_dev": [
+        "Howling valley winds threatened to tear apart the thin, wobbly structure made of lightweight scrap.",
+        "The gale battered the delicate, makeshift bivouac until its loose wall panels rattled and bowed.",
+        "With storm gusts intensifying, the rickety framework of dry stalks and canvas threatened to collapse at any moment.",
+        "Strong drafts whipped through wide cracks in the unstable dwelling, which trembled with every sudden squall."
+      ],
+      "source_context_test": [
+        "High up the ridge, a solitary trapper had assembled a rough-hewn redoubt using salvaged cedar and fieldstone.",
+        "The forest glade contained a humble dwelling built with traditional pioneer techniques and raw forest timber.",
+        "Surrounded by ancient pines, the coarse woodland enclosure smelled of pine resin and seasoned woodsmoke.",
+        "The backwoods hideaway was fashioned from thick timber poles and heavy moss stuffed into every groove."
+      ],
+      "target_context_test": [
+        "Fierce winds shook the paper-thin siding of the frail enclosure erected beside the shoreline.",
+        "As the tempest raged, the loose poles of the fragile enclosure shook violently in the mounting gale.",
+        "The frail-walled refuge swayed precariously, barely anchored to the rocky soil against the mountain tempest.",
+        "Constructed hastily from dry branches and brittle reeds, the shaking edifice could barely withstand the storm."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (rustic shack, rustic hut, flimsy shack, flimsy hut) fit seamlessly after the fixed stem. Backcountry crafting cues in source contexts pragmatically favor 'rustic', while windstorm vulnerability cues in target contexts favor 'flimsy', without rendering any combination semantically contradictory."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "rundown",
+      "target_modifier": "small",
+      "source_context_dev": [
+        "Decades of severe weather and neglect had rotted the floorboards and rusted the corrugated tin roof.",
+        "The abandoned enclosure had fallen into total disrepair, its roof sagging and its hinges peeling away.",
+        "Peeling paint and broken siding marked the neglected dwelling, which looked as though it had been forgotten for fifty years.",
+        "Rotting beams and collapsed corners made the dilapidated habitat look like it was on the verge of ruin."
+      ],
+      "target_context_dev": [
+        "Space was extremely limited, leaving just enough floor area for a single cot and a tiny lantern.",
+        "The compact dwelling measured barely six feet across, offering just enough clearance to sit upright.",
+        "With its miniature footprint, the roadside shelter was built for only a single occupant seeking brief relief.",
+        "The cramped enclosure occupied hardly any ground, designed solely to provide a snug, minimal pocket of dry ground."
+      ],
+      "source_context_test": [
+        "Years of total abandonment left the structure covered in mildew, with rusted panels hanging by single nails.",
+        "The decrepit enclosure sagged under the weight of accumulated debris, rotting slowly in the damp marsh.",
+        "Weathered boards hung loosely from their rusted fastenings, leaving the neglected dwelling in utter disarray.",
+        "Neglected by its previous owners, the deteriorating shelter showed collapsed roof sections and water-damaged siding."
+      ],
+      "target_context_test": [
+        "The interior was so tight that there was barely enough clearance to stretch out one's legs.",
+        "Constructed on a tiny footprint, the cozy shelter offered merely a few square paces of indoor floor.",
+        "The miniature enclosure had just enough room to sit out of the rain without touching the low ceiling.",
+        "Designed for a lone traveler, the compact shelter measured only a few paces from corner to corner."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (rundown shack, rundown hut, small shack, small hut) are fully grammatical and coherent. Neglect and structural decay in the source contexts prime 'rundown', while compact dimension cues in the target contexts prime 'small'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "wooden",
+      "target_modifier": "primitive",
+      "source_context_dev": [
+        "Freshly sawed pine planks and cedar posts formed the exterior of the newly constructed mountain shelter.",
+        "The forest dwelling was fashioned entirely out of dried timber, milled boards, and thick cedar shakes.",
+        "Sturdy planks of oak and pine gave the timberland enclosure a solid, aromatic carpentry finish.",
+        "Built from stacked lumber and sawed logs, the carpenter's shelter retained the rich scent of freshly cut pine."
+      ],
+      "target_context_dev": [
+        "The ancient design featured woven grass, mud-plastered walls, and techniques reminiscent of early human settlements.",
+        "Fashioned with prehistoric methods, the rudimentary shelter consisted of bundled reeds, clay, and unshaped branches.",
+        "The primal enclosure looked like something from the stone age, assembled without modern tools or metal fasteners.",
+        "Using prehistoric building customs, the local tribe had fashioned a crude mud-and-thatch dome millennia ago."
+      ],
+      "source_context_test": [
+        "Long cedar planks and rough lumber formed the exterior walls of the carpenter's forest haven.",
+        "The framework was crafted strictly from milled timber, pine shingles, and interlocking logs.",
+        "Scented with freshly cut cedar, the dwelling was raised using heavy timber beams and flat lumber siding.",
+        "Every wall of the enclosure was composed of straight sawed boards and tightly fitted pine studs."
+      ],
+      "target_context_test": [
+        "The dwelling seemed archaic, built with dried peat, bound sticks, and ancestral methods unchanged for centuries.",
+        "Echoing ancient human history, the rudimentary redoubt relied on river mud, woven willow vines, and stones.",
+        "Devoid of modern engineering, the basic enclosure was created using ancient tribal thatch and packed earth.",
+        "Constructed with methods dating to prehistoric eras, the earth-and-branch shelter rose naturally out of the soil."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (wooden shack, wooden hut, primitive shack, primitive hut) are natural in English. The source contexts emphasize lumber, carpentry, and planks (biasing 'wooden' and 'shack'), whereas target contexts emphasize prehistoric, stone-age, and ancestral building styles (biasing 'primitive' and 'hut')."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "candidate_id": "audit_contract_agreement_attorney_drafted",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations ('official/provisional' x 'contract/agreement') are natural, grammatical, and semantically compatible with the stem across all contexts without lexical leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "failure_reasons": [
+        "Aspectual and temporal semantic clash between the stem verb 'drafted' and the target modifier 'signed' (an attorney drafts unsigned texts/amendments, not already-executed/signed instruments in post-closing contexts)."
+      ],
+      "concise_notes": "'The attorney drafted the signed contract/agreement' is semantically anomalous and pragmatically incoherent in execution/archiving contexts."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations ('commercial/bilateral' x 'contract/agreement') are well-formed and natural with the stem, cleanly guided by the respective context biases without leakage."
+    }
+  ]
+}

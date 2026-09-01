@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b07_17_college_university",
+    "generation_batch": 7,
+    "domain": "institutions and organizations",
+    "family_id": "college_university",
+    "noun_0": "college",
+    "noun_1": "university",
+    "shared_definition": "an institution of higher education offering academic coursework and granting degrees",
+    "neutral_stem": "Students enrolled in courses at",
+    "candidate_modifiers": [
+      "accredited",
+      "established",
+      "historic",
+      "independent",
+      "liberal",
+      "prestigious",
+      "private",
+      "prominent",
+      "public",
+      "regional",
+      "residential",
+      "selective",
+      "subsidized",
+      "suburban",
+      "vocational"
+    ],
+    "semantic_notes": "'University' generally implies research infrastructure and graduate schools, while 'college' can denote an undergraduate institution or a constituent academic division.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        8672
+      ],
+      "noun_1": [
+        10467
+      ]
+    },
+    "modifier_token_ids": {
+      "accredited": [
+        57495
+      ],
+      "established": [
+        6697
+      ],
+      "historic": [
+        17110
+      ],
+      "independent": [
+        6829
+      ],
+      "liberal": [
+        21677
+      ],
+      "prestigious": [
+        38624
+      ],
+      "private": [
+        2147
+      ],
+      "prominent": [
+        19942
+      ],
+      "public": [
+        1237
+      ],
+      "regional": [
+        10969
+      ],
+      "residential": [
+        17448
+      ],
+      "selective": [
+        24401
+      ],
+      "subsidized": [
+        145016
+      ],
+      "suburban": [
+        54548
+      ],
+      "vocational": [
+        67435
+      ]
+    },
+    "forced_projection_span": 0.12454982101917267,
+    "max_noun_pair_mass": 0.6555458903312683,
+    "context_priority_score": 0.08164812331061366,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "liberal",
+        "target_modifier": "independent",
+        "source_projection": 0.00030096323462203145,
+        "target_projection": 0.01103893667459488,
+        "forced_modifier_leverage": 0.010737973439972848,
+        "source_pair_mass": 0.0006884056492708623,
+        "target_pair_mass": 0.17685291171073914
+      },
+      "medium": {
+        "source_modifier": "liberal",
+        "target_modifier": "suburban",
+        "source_projection": 0.00030096323462203145,
+        "target_projection": 0.06315329670906067,
+        "forced_modifier_leverage": 0.06285233347443864,
+        "source_pair_mass": 0.0006884056492708623,
+        "target_pair_mass": 0.3407554626464844
+      },
+      "high": {
+        "source_modifier": "private",
+        "target_modifier": "public",
+        "source_projection": 0.23468805849552155,
+        "target_projection": 0.3592378795146942,
+        "forced_modifier_leverage": 0.12454982101917267,
+        "source_pair_mass": 0.4603261351585388,
+        "target_pair_mass": 0.44388654828071594
+      }
+    },
+    "context_generation_rank": 59
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "liberal",
+      "target_modifier": "independent",
+      "source_context_dev": [
+        "Seminar discussions prioritized broad humanistic inquiry and the synthesis of classic literature with modern ethics.",
+        "The curriculum emphasized critical thinking across the humanities rather than narrow vocational preparation.",
+        "Faculty encouraged exploratory writing across diverse disciplines, fostering free discourse and open-minded inquiry.",
+        "Academic culture favored close intellectual mentoring in the arts and social sciences across all four years."
+      ],
+      "target_context_dev": [
+        "The board maintained complete autonomy from external religious bodies and state oversight.",
+        "Operational decisions relied solely on self-sustaining endowment funds and non-affiliated leadership.",
+        "The founding charter established an autonomous academic structure free from government mandates.",
+        "Trustees prioritized institutional autonomy and self-directed oversight across all doctoral divisions."
+      ],
+      "source_context_test": [
+        "Undergraduates were encouraged to explore philosophy, history, and literature before settling on a specialized path.",
+        "Coursework placed a heavy emphasis on critical theory, intellectual freedom, and humanistic debate.",
+        "Small seminar rooms fostered vibrant dialogues centered on broad foundational texts and civic ideas.",
+        "The administration championed an open-ended curriculum designed to cultivate well-rounded global citizens."
+      ],
+      "target_context_test": [
+        "Academic leadership functioned with total institutional autonomy, answering only to its self-governing board.",
+        "Relying on distinct philanthropic endowments, the institution maintained complete autonomy from system-wide directives.",
+        "The charter protected self-directed research programs from any external regulatory interference.",
+        "Administrative operations proceeded without ties to statewide systems or ecclesiastical hierarchies."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (liberal college, liberal university, independent college, independent university) are completely standard and natural English designations for institutions of higher learning. Source contexts focus on broad humanistic inquiry and seminar pedagogy, which naturally biases toward 'liberal' and smaller undergraduate 'college' environments without precluding large or independent research universities. Target contexts emphasize self-governance, non-affiliation, and operational autonomy, priming 'independent' and research-tier 'university' without invalidating independent liberal colleges."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "liberal",
+      "target_modifier": "suburban",
+      "source_context_dev": [
+        "Faculty prioritized comprehensive exposure to the humanities, fine arts, and philosophical dialogue.",
+        "The academic culture nurtured interdisciplinary discourse, broad intellectual inquiry, and critical reading.",
+        "Small-scale seminars explored classic texts, ethical dilemmas, and diverse social perspectives.",
+        "Mentors encouraged students to take exploratory courses spanning music, history, and language."
+      ],
+      "target_context_dev": [
+        "The lush grounds offered peaceful surroundings just outside the bustling metropolitan core.",
+        "Located in a quiet residential district beyond city limits, the manicured grounds accommodated commuter lots.",
+        "Spacious lawns and quiet neighborhoods bordered the peaceful grounds away from downtown congestion.",
+        "Situated in an outlying residential community, the campus provided ample parking and tree-lined walkways."
+      ],
+      "source_context_test": [
+        "The curriculum centered on broad foundational learning and open intellectual debate across humanistic fields.",
+        "Instructors pushed for creative synthesis across art history, literature, and political philosophy.",
+        "Intellectual freedom and diverse foundational coursework formed the core of the undergraduate experience.",
+        "Lectures encouraged open-ended inquiry into classic philosophical thought and global perspectives."
+      ],
+      "target_context_test": [
+        "The perimeter blended into quiet residential neighborhoods several miles outside the city center.",
+        "Spread across landscaped acreage beyond the urban core, the grounds offered a serene commuter setting.",
+        "The grounds occupied a tranquil enclave bordered by residential streets and community parks.",
+        "Situated in a peaceful district just past the beltway, the facilities provided a tranquil retreat."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (liberal college, liberal university, suburban college, suburban university) represent common educational institutions across geographic and curricular dimensions. Source contexts emphasize interdisciplinary humanistic learning, priming 'liberal' alongside 'college'. Target contexts describe outlying residential geographic settings and commuter-friendly landscapes outside city centers, pragmatically leaning toward 'suburban' and expansive campus 'university' settings without rendering any combination incongruous."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "private",
+      "target_modifier": "public",
+      "source_context_dev": [
+        "Operational costs were financed entirely through philanthropic gifts, steep tuition, and endowed funds.",
+        "With no reliance on taxpayer funds, the administration set selective admissions and tuition rates independently.",
+        "Revenue came almost exclusively from alumni endowments and individual family contributions.",
+        "High tuition rates and substantial non-governmental endowments supported specialized research initiatives."
+      ],
+      "target_context_dev": [
+        "State legislative appropriations and taxpayer funding kept in-state tuition affordable for local residents.",
+        "Government subsidies and civic mandates ensured broad access for thousands of state residents.",
+        "Lawmakers allocated state tax revenues to support affordable higher learning across the region.",
+        "Supported by legislative grants, the massive statewide network offered low in-state enrollment fees."
+      ],
+      "source_context_test": [
+        "Relying exclusively on tuition dollars and philanthropic foundations, the institution avoided state oversight.",
+        "Generous alumni gifts and family trust funds financed new facilities without government allocations.",
+        "The admissions office operated selectively, supported by deep family-funded endowments.",
+        "Capital campaigns and personal donations accounted for nearly all building developments."
+      ],
+      "target_context_test": [
+        "Operating under state charters, the system received substantial funding directly from municipal and regional tax bases.",
+        "Statewide legislative funding allowed the campus to serve a vast, diverse regional population affordably.",
+        "Taxpayer subsidies helped maintain lower tuition thresholds for local in-state residents.",
+        "Government appropriations ensured that thousands of local applicants had access to low-cost regional degree programs."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (private college, private university, public college, public university) are primary institutional categories in higher education. Source contexts invoke high tuition, endowment reliance, and absence of taxpayer funding, strongly priming 'private' and selective 'college' environments. Target contexts emphasize state legislative funding, taxpayer support, civic access missions, and large regional enrollments, strongly activating 'public' and large-scale 'university' while maintaining syntactic and semantic coherence across all cross-combinations."
+    }
+  ]
+}

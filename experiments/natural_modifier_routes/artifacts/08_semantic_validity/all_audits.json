@@ -1,0 +1,3444 @@
+[
+  {
+    "candidate_id": "b23_21_pot_kettle",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (shallow pot, shallow kettle, copper pot, copper kettle) are semantically valid and natural with the stem. Contexts establish clean pragmatic bias without forbidden lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (covered pot, covered kettle, copper pot, copper kettle) are fully felicitous. Context cues for lid/steam retention and reddish metallic thermal properties function smoothly across all test and dev sentences."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (copper pot, copper kettle, whistling pot, whistling kettle) are semantically permissible and natural. Acoustic steam whistle cues and conductive metal cues bias preferences cleanly without lexical overlap."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_21_builder_contractor",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations are natural, idiomatic collocations. Contexts establish clean pragmatic contrast (reputation/interpersonal trust vs. operational reliability/consistency) without mentioning candidate lemmas."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test[1]"
+        ],
+        "failure_reasons": [
+          "source_context_test[1] explicitly contains the source modifier candidate word ('seasoned')."
+        ],
+        "concise_notes": "Stimulus fails strict lexical independence criteria due to explicit mention of the modifier 'seasoned' in source_context_test[1]."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations are semantically and syntactically valid in English. Contexts appropriately contrast autonomous/sole-proprietor arrangements against master/prime multi-trade project oversight without lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b22_12_tech_computer_machine",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "The fixed stem contains a duplicated determiner ('restarted the the'), rendering every stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Contexts and cross-combinations are semantically sound, but the fixed stem has a fatal syntactic duplication ('the the')."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          1
+        ],
+        "failure_reasons": [
+          "The fixed stem contains a duplicated determiner ('restarted the the'), rendering completions ungrammatical.",
+          "Target dev context 1 explicitly specifies the absence of malware ('without typical malware signatures'), turning 'infected' into a factual contradiction rather than a pragmatic dispreference."
+        ],
+        "concise_notes": "Fails due to duplicate determiner in the stem and an explicit contradiction with the source modifier in target dev context 1."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "The fixed stem contains a duplicated determiner ('restarted the the'), rendering every stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Modifier pairings and contexts are otherwise valid, but the fixed stem contains a duplicate determiner error."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b19_13_petition_appeal",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of statutory/desperate with petition/appeal integrate seamlessly with the stem. Contexts provide strong pragmatic framing (procedural/legislative framework vs. high-stakes emergency) without lexical leakage or truth-conditional violations."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of official/urgent with petition/appeal are grammatically natural and semantically well-formed. Contexts modulate pragmatic contrast between bureaucratic protocol and imminent temporal emergency without naming target candidates."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of timely/direct with petition/appeal are felicitous with the stem. Source contexts establish calendar and deadline compliance, while target contexts clearly induce immediate/direct superior bench escalation without mentioning the modifiers or nouns."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_10_assignment_task",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of modifier (routine/challenging) and noun (assignment/task) are grammatically sound and semantically natural across all 16 context sentences without lexical leaks or logical contradictions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of modifier (urgent/tedious) and noun (assignment/task) maintain semantic plausibility across both time-sensitive and monotonous labor contexts without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of modifier (tedious/daunting) and noun (assignment/task) seamlessly integrate with both repetitive-task contexts and high-stakes intimidating project contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_17_exam_test",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test_0"
+        ],
+        "failure_reasons": [
+          "The context explicitly includes the candidate noun 'test' ('promised to test endurance to the brink'), violating the constraint that contexts must not mention or trivially name candidate targets."
+        ],
+        "concise_notes": "All four cross combinations are semantically valid and natural, but target_context_test[0] leaks the target noun 'test' as a verb."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('final exam', 'final test', 'crucial exam', 'crucial test') are natural and permissible across all contexts without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('fair exam', 'fair test', 'standardized exam', 'standardized test') are highly natural and fully compatible across all developmental and test contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b21_17_column_piece",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (monthly/satirical \u00d7 column/piece) are grammatically well-formed, natural in journalism, and semantically felicitous across all periodicity and satire contexts without lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (guest/monthly \u00d7 column/piece) are standard publishing collocations and satisfy all pragmatic and semantic criteria across all contributor and frequency contexts."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test[1]"
+        ],
+        "failure_reasons": [
+          "source_context_test[1] includes 'brilliance', which is a direct morphological leak/mention of the candidate source modifier 'brilliant'."
+        ],
+        "concise_notes": "Fails due to lexical leakage of the source modifier root in source_context_test[1] ('rhetorical brilliance')."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_19_formula_equation",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_dev[0]",
+          "target_context_test[2]"
+        ],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('The mathematician derived the the'), making all stem plus completion sequences ungrammatical and unnatural.",
+          "target_context_test[2] explicitly mentions the target modifier 'algebraic' ('Following systematic algebraic manipulations').",
+          "target_context_dev[0] trivially evokes the target modifier via the root derivation 'algebraist'."
+        ],
+        "concise_notes": "Fails due to duplicated determiner in the fixed stem and explicit/trivial naming of the target modifier 'algebraic' in target contexts."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('The mathematician derived the the'), making all stem plus completion sequences ungrammatical and unnatural."
+        ],
+        "concise_notes": "All four cross-combinations and contexts are semantically valid and well-balanced, but fails strictly on the unnatural/ungrammatical duplicated determiner in the fixed stem."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('The mathematician derived the the'), making all stem plus completion sequences ungrammatical and unnatural."
+        ],
+        "concise_notes": "Contexts and cross-combinations are semantically and pragmatically sound, but fails strictly on the duplicated determiner in the fixed stem."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b07_11_federation_alliance",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations with international/regional and federation/alliance are fully grammatical, natural following the stem, and free of lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations with political/military and federation/alliance are valid collocations, semantically sound across all civic and armed contexts without candidate leaks."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations with military/defensive and federation/alliance are grammatical and semantically permissible across unified command and mutual-defense contexts without target mentions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b08_22_shack_hut",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 modifier-noun combinations are fully grammatical and coherent across all contexts. Contexts establish pragmatic bias towards craftsmanship vs. structural instability without creating strict truth-conditional contradictions or lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations are natural and semantically valid across all contexts. Decay cues and spatial compactness cues cleanly alter pragmatic preference without introducing semantic contradictions or candidate leakage."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_dev[3]",
+          "target_context_test[1]",
+          "target_context_test[2]"
+        ],
+        "failure_reasons": [
+          "Direct material contradiction: Target contexts specifying exclusively mud, thatch, and packed earth render 'wooden shack' and 'wooden hut' factually contradictory rather than pragmatically dispreferred."
+        ],
+        "concise_notes": "Explicit non-wood material descriptions (mud-and-thatch, packed earth) create objective truth-conditional clashes when paired with the source modifier 'wooden'."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b16_04_boulder_rock",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {smooth, loose} x {boulder, rock} are natural and semantically valid across all dev and test contexts. Contexts establish pragmatic preference without creating factual contradictions or leaking candidate tokens."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {heavy, loose} x {boulder, rock} are natural and semantically permissible. Source and target contexts clearly manipulate weight/anchorage versus instability pragmatically."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {loose, solid} x {boulder, rock} are valid. The contexts effectively establish pragmatic bias between unstable debris and unbroken/firm terrain."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b06_19_slope_incline",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('up the the'), making the full sentence ungrammatical upon completion."
+        ],
+        "concise_notes": "Modifiers ('gentle' / 'icy') and contexts are semantically valid and well-balanced across both nouns ('slope' / 'incline'), but the fixed stem has a duplicate token ('the the')."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('up the the'), making the full sentence ungrammatical upon completion."
+        ],
+        "concise_notes": "Modifiers ('grassy' / 'muddy') and off-road contexts are semantically valid across both nouns, but the fixed stem contains a syntax error ('the the')."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('up the the'), making the full sentence ungrammatical upon completion."
+        ],
+        "concise_notes": "Modifiers ('sharp' / 'steady') and gradient contexts are semantically and pragmatically sound, but the fixed stem contains a duplicate determiner ('the the')."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_24_towel_cloth",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_dev_2"
+        ],
+        "failure_reasons": [
+          "Lexical leak: target_context_dev[2] explicitly contains the target modifier 'frayed' ('Loose strands hung from their frayed borders.')."
+        ],
+        "concise_notes": "All modifier-noun combinations are semantically valid with the stem, but target_context_dev[2] leaks the target modifier."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations are natural and felicitous across all contexts without lexical leakage or truth-conditional divergence."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations are natural across all contexts; target contexts cleanly establish synthetic/microfiber bias without mentioning candidate words."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_00_finding_discovery",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of (important, unexpected) \u00d7 (finding, discovery) are grammatical and semantically felicitous across all 16 contexts. Contexts establish clean pragmatic bias without leaking target lexemes or altering factual truth conditions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of (early, groundbreaking) \u00d7 (finding, discovery) remain natural and semantically well-formed. Source contexts effectively cue preliminary/nascent stages while target contexts establish paradigm-shifting breakthroughs without naming candidate tokens."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of (groundbreaking, accidental) \u00d7 (finding, discovery) are valid and coherent. Source contexts cue revolutionary scientific leaps and target contexts cue serendipitous, chance laboratory occurrences without lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b14_02_contract_agreement",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('official/provisional' x 'contract/agreement') are natural, grammatical, and semantically compatible with the stem across all contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "failure_reasons": [
+          "Aspectual and temporal semantic clash between the stem verb 'drafted' and the target modifier 'signed' (an attorney drafts unsigned texts/amendments, not already-executed/signed instruments in post-closing contexts)."
+        ],
+        "concise_notes": "'The attorney drafted the signed contract/agreement' is semantically anomalous and pragmatically incoherent in execution/archiving contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('commercial/bilateral' x 'contract/agreement') are well-formed and natural with the stem, cleanly guided by the respective context biases without leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_01_lawyer_attorney",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of senior/principal with lawyer/attorney are grammatical and natural across all source and target contexts with no candidate leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of senior/retained with lawyer/attorney are semantically valid and felicitous across all contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of retained/defense with lawyer/attorney are natural and grammatical, properly establishing pragmatic preferences without truth-conditional failure."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b13_00_jacket_coat",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (casual/expensive \u00d7 jacket/coat) are natural collocations, contexts establish pragmatic contrast without lexical leakage, and completions integrate smoothly into the sentence stem."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (tailored/stylish \u00d7 jacket/coat) are grammatically and semantically sound, with development and test contexts distinctly separating bespoke construction from fashion-forward aesthetics without naming target tokens."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (heavy/winter \u00d7 jacket/coat) are highly standard outerwear collocations; physical heft and seasonal/blizzard framing are cleanly delineated across contexts with no lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b06_01_wood_forest",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('deep wood', 'deep forest', 'damp wood', 'damp forest') are fully grammatical and semantically natural across all development and test contexts. Contexts establish pragmatic preference without candidate leakage or factual contradictions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('peaceful wood', 'peaceful forest', 'dark wood', 'dark forest') are valid and felicitous. Source contexts establish tranquil pastorality while target contexts establish overhead darkness and canopy gloom without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('dense wood', 'dense forest', 'enchanted wood', 'enchanted forest') are natural collocations. Source contexts convey physical brush density and target contexts invoke magical folklore without leaking candidate lexical items."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b10_00_story_tale",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations with 'bizarre'/'inspiring' and 'story'/'tale' are syntactically and semantically sound following the neutral campfire stem. Contexts successfully bias pragmatic salience without lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Cross-combinations with 'fictional'/'inspiring' and 'story'/'tale' are grammatical and natural. Contexts establish inventiveness versus motivational framings without violating semantic compatibility or explicitly naming candidates."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations with 'classic'/'cautionary' and 'story'/'tale' form standard, idiomatic collocations after the stem. Contexts cleanly shift pragmatic framing toward canonical lore versus warning narratives without candidate leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_09_pastor_minister",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 16 context-completion combinations are fully grammatical, natural, and free of lexical leakage or asymmetric constraints."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test[2]"
+        ],
+        "failure_reasons": [
+          "target_context_test[2] contains 'pastoral', an explicit morphological derivative of the candidate noun 'pastor', introducing lexical leakage."
+        ],
+        "concise_notes": "Target test context 2 introduces lexical asymmetry favoring 'pastor' via the root derivative 'pastoral'."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev[1]",
+          "source_context_dev[2]",
+          "source_context_test[1]",
+          "source_context_test[2]"
+        ],
+        "failure_reasons": [
+          "source_context_dev[1], source_context_dev[2], source_context_test[1], and source_context_test[2] contain 'pastoral', directly leaking the stem of candidate noun 'pastor'."
+        ],
+        "concise_notes": "Multiple source development and test contexts contain 'pastoral', causing severe lexical leakage for candidate noun 'pastor'."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b01_10_thief_robber",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('elusive/notorious' \u00d7 'thief/robber') integrate seamlessly with the fixed stem. Contexts induce clear pragmatic preference without explicit lexical leakage or contradiction."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('sneaky/daring' \u00d7 'thief/robber') are natural and fully grammatical. Contexts cleanly manipulate covertness versus audacity without mentioning target lexical items."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('masked/armed' \u00d7 'thief/robber') remain semantically sound across all contexts. Visual concealment and weapon brandishing cleanly guide pragmatic fit without asserting semantic mutual exclusivity."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_00_event_contest_competition",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of international/formal \u00d7 contest/competition integrate seamlessly with the fixed stem across all development and test contexts without semantic anomaly or lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of annual/formal \u00d7 contest/competition are grammatically sound and felicitous across both periodicity and procedural context sets."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of friendly/fierce \u00d7 contest/competition form standard collocations. Contexts modulate interpersonal stakes and tone without rendering any modifier-noun pairing invalid."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_11_trunk_chest",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('metal trunk', 'metal chest', 'large trunk', 'large chest') are grammatical and semantically permissible across all contexts. Contexts modulate pragmatic salience without lexical leakage or truth-conditional clashes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('old trunk', 'old chest', 'brass trunk', 'brass chest') remain valid across all contexts. Context descriptions of provenance vs. yellow alloy fittings steer pragmatic preference without naming candidates or causing semantic conflict."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev[0]",
+          "source_context_dev[2]"
+        ],
+        "failure_reasons": [
+          "source_context_dev[0] specifies 'oak panels' and source_context_dev[2] specifies 'pine boards', establishing an objective factual contradiction with the target modifier 'cedar' rather than a pure pragmatic preference shift."
+        ],
+        "concise_notes": "Fails due to specific wood species identification ('oak' and 'pine') in two source development contexts, making 'cedar trunk' and 'cedar chest' factually contradictory rather than pragmatically disfavored."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_06_stadium_arena",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations across all contexts are grammatical and natural. No candidate noun or modifier tokens appear in the contexts, and the contexts effectively shift pragmatic framing without altering truth conditions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations are fully acceptable and natural. Contexts clearly distinguish historic renown from urban transit centrality without leaking candidate tokens."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          9
+        ],
+        "failure_reasons": [
+          "source_context_test[1] explicitly contains the candidate modifier token 'central' ('Its central setting ensures maximum attendance from the downtown area.'), violating the constraint against mentioning or trivially naming a candidate."
+        ],
+        "concise_notes": "Fails due to lexical leakage of the source modifier 'central' in the second source test context."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_00_doctor_physician",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross combinations are grammatical and semantically natural. Contexts establish clean pragmatic pressure without naming target candidates."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test[3]"
+        ],
+        "failure_reasons": [
+          "Lexical leakage: target_context_test[3] explicitly uses the root/cognate noun 'dedication' for the target modifier 'dedicated'."
+        ],
+        "concise_notes": "Fails strict lexical isolation requirement due to 'dedication' appearing in target_context_test[3]."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations form valid institutional medical titles. Contexts distinguish advisory versus supervisory roles effectively without lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b10_02_song_track",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('melodic song', 'melodic track', 'opening song', 'opening track') are fully grammatical and semantically plausible across all source and target development and test contexts without lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('upbeat song', 'upbeat track', 'energetic song', 'energetic track') are felicitous across all development and test contexts; contexts establish clear pragmatic bias without truth-conditional violation."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('vocal song', 'vocal track', 'bonus song', 'bonus track') are fully well-formed and natural; contexts provide appropriate pragmatic framing without leaking target/source nouns or modifiers."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b01_12_boss_supervisor",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four 2x2 modifier-noun completions integrate naturally with the fixed stem across all source and target contexts with no lexical leakage or semantic violations."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('competent boss', 'competent supervisor', 'direct boss', 'direct supervisor') are grammatical and pragmatically felicitous across all contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations remain natural, grammatical, and well-calibrated across vertical-reporting and proximate-urgency context scenarios."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b19_19_magistrate_judge",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('qualified/strict' \u00d7 'magistrate/judge') are fully grammatical and natural with the fixed stem. Contexts successfully bias pragmatic preference without establishing logical impossibility or leaking target lexemes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('appointed/senior' \u00d7 'magistrate/judge') are standard legal collocations. Contexts provide strong pragmatic framing regarding appointment status vs. long-tenured seniority without lexical contamination."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('sitting/presiding' \u00d7 'magistrate/judge') integrate cleanly with the stem and context sentences. Contexts distinguish between active session holding and panel leadership without direct lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b15_23_custom_tradition",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {local, familial} x {custom, tradition} are fully grammatical and natural following the stem. Contexts successfully bias pragmatic preference without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {sacred, popular} x {custom, tradition} are natural and semantically well-formed. Contexts establish clear thematic divergence between liturgical sanctity and broad civic participation without mentioning forbidden targets."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {honored, longstanding} x {custom, tradition} integrate smoothly with the fixed stem. Contexts effectively isolate public prestige versus multi-century temporal endurance without verbatim candidate leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b17_16_fine_penalty",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_0",
+          "source_context_dev_1",
+          "source_context_dev_2",
+          "source_context_dev_3",
+          "target_context_dev_0",
+          "target_context_dev_1",
+          "target_context_dev_2",
+          "target_context_dev_3",
+          "source_context_test_0",
+          "source_context_test_1",
+          "source_context_test_2",
+          "source_context_test_3",
+          "target_context_test_0",
+          "target_context_test_1",
+          "target_context_test_2",
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('the the'), rendering all stem plus completion sequences syntactically ill-formed and unnatural."
+        ],
+        "concise_notes": "The underlying modifier-noun pairings ('customary/mandatory' \u00d7 'fine/penalty') are semantically appropriate, but the fixed stem 'The magistrate imposed the the' contains a duplicated token causing an ungrammatical completion."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_0",
+          "source_context_dev_1",
+          "source_context_dev_2",
+          "source_context_dev_3",
+          "target_context_dev_0",
+          "target_context_dev_1",
+          "target_context_dev_2",
+          "target_context_dev_3",
+          "source_context_test_0",
+          "source_context_test_1",
+          "source_context_test_2",
+          "source_context_test_3",
+          "target_context_test_0",
+          "target_context_test_1",
+          "target_context_test_2",
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('the the'), rendering all stem plus completion sequences syntactically ill-formed and unnatural."
+        ],
+        "concise_notes": "Contexts and cross-combinations ('severe/statutory' \u00d7 'fine/penalty') are conceptually sound, but the duplicated determiner in the stem invalidates all final sentence completions."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_0",
+          "source_context_dev_1",
+          "source_context_dev_2",
+          "source_context_dev_3",
+          "target_context_dev_0",
+          "target_context_dev_1",
+          "target_context_dev_2",
+          "target_context_dev_3",
+          "source_context_test_0",
+          "source_context_test_1",
+          "source_context_test_2",
+          "source_context_test_3",
+          "target_context_test_0",
+          "target_context_test_1",
+          "target_context_test_2",
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('the the'), rendering all stem plus completion sequences syntactically ill-formed and unnatural."
+        ],
+        "concise_notes": "Stem defect ('the the') renders all completions ungrammatical, alongside minor pleonasm in the collocation 'financial fine'."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b11_10_patio_terrace",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 modifier-noun combinations ('breezy patio', 'breezy terrace', 'rooftop patio', 'rooftop terrace') are fully natural with the fixed stem. Contexts successfully bias the pragmatic interpretation without lexical leakage or truth-conditional exclusion."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('breezy patio', 'breezy terrace', 'tiled patio', 'tiled terrace') are valid, idiomatic, and semantically plausible across all contexts. Contexts mention surface materials/wind appropriately without quoting the target modifier or nouns."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('overlooked patio', 'overlooked terrace', 'sunny patio', 'sunny terrace') are natural and felicitous. Contexts clearly modulate exposure/visibility without candidate word leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_14_platter_tray",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations across all contexts are fully natural, grammatical, and semantically plausible. Contexts effectively guide pragmatic preference between expansive dimensions and physical heft without leaking candidate lexemes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations are valid in all contexts. Surface-shine and precious-metal contexts cleanly bias between 'polished' and 'silver' without violating truth conditions or including lexical giveaways."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations are semantically and pragmatically sound. Timber material contexts and high-capacity fullness contexts cleanly distinguish 'wooden' and 'loaded' without naming candidate tokens."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b02_24_sled_sledge",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of {sturdy, lightweight} \u00d7 {sled, sledge} are natural, grammatical, and semantically plausible across all developmental and test contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of {harnessed, battered} \u00d7 {sled, sledge} form semantically sound completions with the fixed stem and fit the pragmatic shifts in all contexts."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_0",
+          "source_context_dev_1",
+          "source_context_dev_2",
+          "source_context_dev_3",
+          "target_context_dev_0",
+          "target_context_dev_1",
+          "target_context_dev_2",
+          "target_context_dev_3",
+          "source_context_test_0",
+          "source_context_test_1",
+          "source_context_test_2",
+          "source_context_test_3",
+          "target_context_test_0",
+          "target_context_test_1",
+          "target_context_test_2",
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "Semantic contradiction: The fixed stem explicitly states that the explorer 'hauled supplies ... on the [modifier] [noun]', which directly contradicts 'empty' (a vehicle carrying cargo cannot simultaneously be empty).",
+          "Physical/semantic impossibility: Hauling supplies across the tundra on an 'overturned' sled/sledge is physically contradictory and incoherent."
+        ],
+        "concise_notes": "Both 'empty' and 'overturned' create direct semantic contradictions with the action specified in the fixed stem."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b01_11_enemy_foe",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (ruthless/dangerous x enemy/foe) are natural and grammatical. Contexts cleanly manipulate pragmatic preference without lexical leakage or truth-conditional contradictions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (hidden/fierce x enemy/foe) are semantically felicitous and well-supported across all dev and test context items without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (bitter/perilous x enemy/foe) form valid semantic pairings. Contexts successfully bias pragmatic fit while avoiding direct candidate leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_02_specimen_sample",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('collected/contaminated specimen/sample') are highly natural and standard scientific terms. No context mentions target or modifier lexical tokens, and pragmatic modulation across contexts is fully felicitous."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('sterile/contaminated specimen/sample') are valid and grammatical across all aseptic and compromised laboratory contexts. No lexical leakage or invalid truth-conditional contradictions found."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('contaminated/representative specimen/sample') are standard in empirical research contexts. Contexts establish clean pragmatic bias without leaking candidate lexical items or forcing hard semantic anomalies."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b13_03_pouch_purse",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 modifier-noun combinations ('zippered pouch', 'zippered purse', 'drawstring pouch', 'drawstring purse') are natural and semantically compatible with all closure-focused contexts without lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('leather pouch', 'leather purse', 'embroidered pouch', 'embroidered purse') are valid noun phrases fitting the material and crafting cues without naming the candidates."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations ('heavy pouch', 'heavy purse', 'silk pouch', 'silk purse') fit naturally into the coat pocket frame and satisfy weight/texture pragmatics without direct keyword leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b14_16_dossier_file",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (voluminous/classified x dossier/file) are fully grammatical and natural following the fixed stem across all dev and test contexts. Physical bulk and security classification contexts establish clear pragmatic biases without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (organized/complete x dossier/file) are semantically valid and sound. Contexts clearly distinguish internal organizational structure from completeness/elimination of evidence gaps without forcing truth-conditional invalidity."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (extensive/confidential x dossier/file) seamlessly integrate with the stem across all contexts. Scope/depth versus sensitive/privileged inquiry contexts produce the appropriate pragmatic contrast without naming target tokens."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b05_04_serpent_snake",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross combinations (lurking serpent, lurking snake, coiled serpent, coiled snake) are semantically valid and grammatically well-formed across all development and test contexts. No candidate words are verbatim leaked, and pragmatic steering functions effectively."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross combinations (sleeping serpent, sleeping snake, deadly serpent, deadly snake) remain natural and semantically sound across all contexts. Contexts establish appropriate mythical/dormant vs. modern biological threat framing without directly mentioning candidate targets."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross combinations (deadly serpent, deadly snake, poisonous serpent, poisonous snake) integrate smoothly with the fixed stem. Lexical distributions modulate pragmatic preference between epic lethality and biochemical toxicity without violating semantic constraints."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b08_19_casket_coffin",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of modifier and noun are fully grammatical and felicitous across contexts without candidate lexical leakage or truth-conditional violations."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test[1]"
+        ],
+        "failure_reasons": [
+          "Context mentions the target modifier 'polished' directly ('polished marble floor')."
+        ],
+        "concise_notes": "Fails due to verbatim candidate modifier leakage ('polished') in target_context_test[1]."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test[1]",
+          "target_context_test[3]"
+        ],
+        "failure_reasons": [
+          "Context source_context_test[1] mentions the source modifier 'ceremonial' directly ('ceremonial escort').",
+          "Context target_context_test[3] mentions the target modifier 'wooden' directly ('wooden dowels')."
+        ],
+        "concise_notes": "Fails due to verbatim candidate modifier leakage in both test sets ('ceremonial' in source_context_test[1] and 'wooden' in target_context_test[3])."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b11_06_porch_veranda",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('spacious/narrow porch/veranda') are fully grammatical and semantically felicitous following the fixed stem. Contexts provide stylistic and dimensional cues without asserting factual contradictions or mentioning target terms."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('cozy/spacious porch/veranda') integrate naturally into the fixed stem. Contextual framing shifts scale and register pragmatically while preserving truth-conditional compatibility across all variants."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('narrow/charming porch/veranda') form standard, plausible noun phrases with the fixed stem. Contexts modulate architectural tone and spatial affordances cleanly without lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_02_coach_trainer",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (new coach, new trainer, former coach, former trainer) are grammatically and semantically sound across all 16 contexts without modifier or noun leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (experienced coach, experienced trainer, respected coach, respected trainer) remain coherent and natural across all contexts with no lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test[2]"
+        ],
+        "failure_reasons": [
+          "Target modifier 'personal' is explicitly mentioned in target_context_test[2] ('their personal physiological needs')."
+        ],
+        "concise_notes": "The target modifier 'personal' appears verbatim in target_context_test[2], violating the lexical non-mention constraint."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b22_15_tech_backup_snapshot",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (recent backup, recent snapshot, encrypted backup, encrypted snapshot) are fully grammatical, natural, and semantically coherent across all dev and test contexts."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Valid/automated paired with backup/snapshot represent standard enterprise IT terminology and fit all context descriptions without leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Compressed/restored paired with backup/snapshot are semantically permissible across all contexts, distinguishing between compressed archive retrieval and pre-hydrated staging environments."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b15_11_duty_obligation",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "target_context_test[3] contains 'weighed heavily', directly using the morphological derivative/lemma of the target modifier 'heavy', violating the constraint against mentioning or trivially priming candidate tokens."
+        ],
+        "concise_notes": "All four modifier-noun combinations are semantically valid and grammatical with the stem, but target_context_test[3] exhibits lexical leakage with 'heavily'."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 cross-combinations of {heavy, primary} \u00d7 {duty, obligation} are fully grammatical and natural. Contexts clearly modulate pragmatic bias from arduous workload to hierarchical precedence without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {contractual, moral} \u00d7 {duty, obligation} are felicitous and canonical. Contexts establish clear pragmatic contrast between legal pact stipulations and ethical conscience without candidate leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_14_award_prize",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('top award', 'top prize', 'ultimate award', 'ultimate prize') are fully grammatical and semantically natural. Contexts establish appropriate pragmatic bias toward rank vs. career culmination without lexical leakage or truth-conditional divergence."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('prestigious award', 'prestigious prize', 'annual award', 'annual prize') are standard collocations. Contexts neatly contrast institutional prestige against cyclical recurrence with no candidate leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('cash award', 'cash prize', 'grand award', 'grand prize') are natural and idiomatic. Contexts properly modulate monetary disbursement vs. pinnacle/premier scale without leaking target terms."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_18_variable_factor",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('the the'), making every stem-plus-completion sentence ungrammatical."
+        ],
+        "concise_notes": "All four combinations of (primary, critical) \u00d7 (variable, factor) would otherwise be semantically valid, but the fixed stem contains a duplicated token ('the the') that invalidates fluency."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('the the'), making every stem-plus-completion sentence ungrammatical."
+        ],
+        "concise_notes": "Contexts and modifier-noun pairings for (hidden, key) \u00d7 (variable, factor) are semantically sound, but the fixed stem defect renders the completions ungrammatical."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('the the'), making every stem-plus-completion sentence ungrammatical."
+        ],
+        "concise_notes": "The pairings for (dominant, decisive) \u00d7 (variable, factor) are permissible, but the duplicated determiner ('the the') in the fixed stem violates the grammaticality requirement."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b21_05_speech_address",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "failure_reasons": [
+          "Stem contains a duplicated definite article ('the the'), resulting in an ungrammatical and unnatural stem-plus-completion sentence."
+        ],
+        "concise_notes": "All modifier-noun collocations and context pairs are semantically and pragmatically sound, but the fixed stem contains a duplicated token ('the the')."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "failure_reasons": [
+          "Stem contains a duplicated definite article ('the the'), resulting in an ungrammatical and unnatural stem-plus-completion sentence."
+        ],
+        "concise_notes": "Contexts and 2x2 collocations are well-formed, but completion with the provided stem yields ungrammatical syntax ('the the')."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "failure_reasons": [
+          "Stem contains a duplicated definite article ('the the'), resulting in an ungrammatical and unnatural stem-plus-completion sentence."
+        ],
+        "concise_notes": "Pragmatic framing and collocations are valid, but stem concatenation is ungrammatical due to the repeated article in the fixed stem."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b07_19_museum_gallery",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test_3"
+        ],
+        "failure_reasons": [
+          "Lexical leak of candidate modifier: 'Renowned' explicitly appears in source_context_test item 4."
+        ],
+        "concise_notes": "All four cross combinations are semantically valid and natural with the stem, but source_context_test[3] directly contains the source modifier 'Renowned'."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of public/prestigious museum/gallery are fully coherent with the prompt stem and contexts cleanly steer pragmatic preference without explicit candidate lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test_2",
+          "target_context_test_2"
+        ],
+        "failure_reasons": [
+          "Lexical leak: 'celebrated' appears verbatim in source_context_test item 3.",
+          "Lexical leak: 'historic' appears verbatim in target_context_test item 3.",
+          "Stem overlap / stylistic redundancy: Fixed stem already contains 'historic' ('Tourists admired historic artifacts in the historic museum/gallery')."
+        ],
+        "concise_notes": "Direct keyword leaks of both 'celebrated' and 'historic' in test contexts, alongside semantic pleonasm with 'historic' in the fixed stem."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b07_02_firm_company",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('private firm', 'private company', 'small firm', 'small company') are syntactically and semantically well-formed with the stem. Both source and target contexts modulate pragmatic relevance without asserting contradictory presuppositions or leaking candidate lexical items."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('lucrative firm', 'lucrative company', 'private firm', 'private company') integrate cleanly with the stem. Profitability and ownership structure are independent semantic dimensions, ensuring full cross-context compatibility with no lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('multinational firm', 'multinational company', 'struggling firm', 'struggling company') are valid collocations under the stem. Geographic reach and financial distress are orthogonal, maintaining semantic plausibility across both context sets without candidate leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_21_event_chase_pursuit",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('exhausting chase', 'exhausting pursuit', 'risky chase', 'risky pursuit') are grammatically seamless and semantically valid across all dev and test contexts. No lexical leaks or target collisions detected."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('thrilling chase', 'thrilling pursuit', 'frantic chase', 'frantic pursuit') fit the fixed stem naturally and maintain semantic plausibility across all contexts without mentioning candidate lexemes."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('reckless chase', 'reckless pursuit', 'relentless chase', 'relentless pursuit') integrate cleanly with the stem and remain fully coherent under both source and target contexts with clear pragmatic differentiation and zero leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_12_event_fight_brawl",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (ugly fight, ugly brawl, bloody fight, bloody brawl) integrate smoothly with the fixed stem across all 16 context pairings. Source and target contexts cleanly modulate pragmatic fit between personal acrimony and physical trauma without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (vicious fight, vicious brawl, wild fight, wild brawl) are fully grammatical and semantically felicitous. Contexts establish clean pragmatic contrast between calculated malice and chaotic bedlam without naming target/source modifiers or nouns."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (wild fight, wild brawl, drunken fight, drunken brawl) attach naturally to the stem. The contexts effectively bias toward either frenzied structural mayhem or alcohol-induced impairment without violating objective semantic compatibility or mentioning candidate tokens."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b11_00_hallway_corridor",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations are fully grammatical, natural, and semantically felicitous across domestic and institutional contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations seamlessly satisfy acoustic and surface-material contexts without lexical leakage or semantic anomaly."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations integrate cleanly into psychological/infinite and objective linear distance contexts without naming candidates or violating constraints."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b02_12_ship_vessel",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 combinations (commercial/massive x ship/vessel) are fully grammatical and natural across all development and test contexts without candidate lemma leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 combinations (commercial/oceanic x ship/vessel) remain semantically felicitous and pragmatic across contexts without asserting categorical restrictions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 combinations (oceanic/naval x ship/vessel) satisfy grammatical and semantic selectional constraints under all naval/oceanic context prompts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b19_21_precinct_district",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations (prosperous/rural x precinct/district) are grammatical and semantically coherent across all contexts. Contexts establish pragmatic bias toward geographic/demographic scale without strict logical contradiction."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (dense/suburban x precinct/district) integrate smoothly with the fixed stem. Contexts cleanly manipulate spatial density preferences without naming candidate nouns or violating semantic acceptability."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (suburban/electoral x precinct/district) form standard administrative and electoral collocations. Target contexts focus on redistricting and legislative representation without introducing factual inconsistencies."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_20_drug_medication",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations across all contexts are fully grammatical, natural, and pragmatically plausible without lexical leaks of candidate terms or stem components."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_2",
+          "source_context_dev_3",
+          "source_context_test_0",
+          "source_context_test_3"
+        ],
+        "failure_reasons": [
+          "Direct root/lemma leak: contexts explicitly use the word 'synthesis', which trivially primes and shares the exact morphological base of target modifier 'synthetic'."
+        ],
+        "concise_notes": "Multiple source contexts include 'synthesis', violating the constraint against mentioning or trivially naming candidate modifier forms."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test_1",
+          "source_context_test_3",
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "Direct root/lemma leak: source_context_test_1 and source_context_test_3 use inflections of the modifier root ('prevented', 'Preventing') for candidate 'preventive'.",
+          "Stem component repetition: target_context_test_3 includes 'physician', repeating part of the fixed prompt stem."
+        ],
+        "concise_notes": "Lexical leaks of the lemma 'prevent' appear in source test contexts, and target test context 3 repeats the prompt stem subject 'physician'."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b06_09_trail_path",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated definite article ('along the the'), rendering stem plus completion ungrammatical."
+        ],
+        "concise_notes": "All 4 modifier-noun combinations and 8 context sentences are semantically valid and free of candidate leaks, but the prompt stem has a duplicate token ('the the')."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated definite article ('along the the'), rendering stem plus completion ungrammatical."
+        ],
+        "concise_notes": "Contexts cleanly manipulate gradient vs. surface texture without lexical leaks, but the fixed stem contains a duplicated 'the'."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated definite article ('along the the'), rendering stem plus completion ungrammatical."
+        ],
+        "concise_notes": "Cross-combinations ('muddy/beaten' \u00d7 'trail/path') and pragmatic context shifts are fully valid, but the stem fails the naturalness/grammaticality requirement due to 'the the'."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b01_07_baby_infant",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (tiny baby, tiny infant, helpless baby, helpless infant) are fully grammatical, natural, and pragmatically appropriate completions of the stem across all dev/test contexts with zero target/modifier leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (helpless baby, helpless infant, precious baby, precious infant) integrate seamlessly with the stem. Contexts successfully bias pragmatic preference without asserting absolute logical exclusivity or leaking candidate words."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (vulnerable baby, vulnerable infant, fragile baby, fragile infant) are semantically valid and felicitous. The contexts clearly distinguish systemic susceptibility from physical delicacy without violating naturalness or mentioning keywords."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b08_08_pouch_bag",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of heavy/secure \u00d7 pouch/bag are grammatical and semantically felicitous across all source and target contexts without lexical leakage or truth-conditional clashes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of durable/leather \u00d7 pouch/bag fit naturally into the stem across all contexts with no forbidden lemma mentions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of waterproof/cloth \u00d7 pouch/bag are natural and semantically permissible under all contexts, cleanly establishing pragmatic biasing without direct lexical interference."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b21_03_bulletin_alert",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('short bulletin', 'short alert', 'broadcast bulletin', 'broadcast alert') are grammatically and pragmatically valid across all source and target contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('hourly bulletin', 'hourly alert', 'national bulletin', 'national alert') are fully valid; contexts set up clear temporal cadence vs. geographic scale distinctions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('national bulletin', 'national alert', 'emergency bulletin', 'emergency alert') are natural broadcast collocations cleanly differentiated between nationwide scope and acute life-safety urgency."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b07_17_college_university",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 modifier-noun combinations are fully grammatical and natural. Contexts shift pragmatic preference between liberal arts focus and institutional independence without lexical leakage or semantic contradiction."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All pairings of liberal/suburban with college/university form standard educational descriptions. Contexts cleanly manipulate curricular orientation versus geographic setting."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Private and public colleges and universities are completely natural. Funding mechanisms and governance contexts provide clean, robust pragmatic contrast without explicit label disclosure."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b19_05_clause_provision",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations across source and target development and test contexts are grammatical, natural, and pragmatically sound. No target/source modifier or noun leakage detected."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 combinations with ambiguous/specific and clause/provision are semantically and syntactically permissible. Contexts set clear pragmatic bias without factual conflict or lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Both formal/statutory modifiers pair cleanly with clause/provision in all contexts. Background prompts adhere to strict audit guidelines with zero lexical overlap to candidates."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b08_05_sword_blade",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of steel/ceremonial x sword/blade are natural following the stem. No lexical leakage detected in dev or test contexts; pragmatic bias shifts appropriately without forcing truth-conditional impossibility."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 cross-combinations are syntactically and semantically sound. Contexts evoke mythic history vs. physical heft cleanly without using target or noun lexical items."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 pairings form standard collocations. Contexts establish clean thematic divergence (lethality/assassination vs. crescent geometry/cavalry mechanics) without naming the target modifiers or head nouns."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b19_10_penalty_punishment",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (drastic/harsh \u00d7 penalty/punishment) integrate seamlessly with the fixed stem. Contexts provide appropriate pragmatic bias without truth-conditional clashes or candidate keyword leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All modifier-noun pairings (stiff/excessive \u00d7 penalty/punishment) are syntactically and semantically permissible. Source contexts establish administrative/financial deterrence frames, while target contexts induce proportionality review frames without explicit token leaks."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (harsh/severe \u00d7 penalty/punishment) are natural collocations following the neutral stem. Regulatory compliance contexts contrast cleanly with high-severity criminal/tribunal contexts without semantic invalidity across cross-pairings."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b18_15_lesion_wound",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('internal lesion', 'internal wound', 'acute lesion', 'acute wound') are natural and medically valid. Contexts cleanly manipulate pragmatic plausibility without leaking candidate lexemes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('acute lesion', 'acute wound', 'deep lesion', 'deep wound') integrate smoothly with the stem and remain semantically well-formed across all temporal and depth-oriented contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('infected lesion', 'infected wound', 'open lesion', 'open wound') are fully grammatical and valid. Contexts appropriately establish microbial vs. structural exposure framing without naming target tokens."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b17_00_shop_store",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains duplicate determiner ('the the'), causing all completed sentences to be ungrammatical."
+        ],
+        "concise_notes": "Modifier pairs and context pragmatics are valid, but the fixed stem contains a duplicated 'the'."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains duplicate determiner ('the the'), causing all completed sentences to be ungrammatical."
+        ],
+        "concise_notes": "Modifier combinations ('specialty' / 'flagship') are valid across contexts, but the fixed stem is corrupted with duplicate 'the'."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "failure_reasons": [
+          "Fixed stem contains duplicate determiner ('the the'), causing all completed sentences to be ungrammatical.",
+          "Target modifier 'convenient' is an unnatural/incorrect substitution for the conventional noun adjunct 'convenience' (as in 'convenience store/shop') intended by the quick-mart contexts."
+        ],
+        "concise_notes": "Fails due to duplicate determiner in the stem and unidiomatic modifier 'convenient' in place of 'convenience'."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_03_referee_umpire",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('senior referee', 'senior umpire', 'unbiased referee', 'unbiased umpire') are natural, fluent, and semantically plausible across all contexts without target lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('senior referee', 'senior umpire', 'fair referee', 'fair umpire') are fully valid in English. Contexts appropriately bias pragmatic preference between tenure/experience and fairness/impartiality without making the alternative impossible."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('blind referee', 'blind umpire', 'neutral referee', 'neutral umpire') are colloquial and semantically sound. Contexts set up clear pragmatic distinctions (missed obvious calls vs. non-affiliated regional neutrality) with zero lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b12_08_pot_saucepan",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of metal/dirty \u00d7 pot/saucepan are semantically and syntactically natural with the stem. Contexts set pragmatic expectations without leaking target lexical items."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of full/clean \u00d7 pot/saucepan are plausible and well-formed. Contexts modulate volume and cleanliness expectations cleanly without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of stainless/small \u00d7 pot/saucepan fit the stem naturally. Contexts effectively bias material finish vs. diminutive capacity without naming candidate lexemes."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b17_02_client_customer",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of regular/satisfied \u00d7 client/customer are fully grammatical and natural across all routine and satisfaction-focused contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of important/valuable \u00d7 client/customer are semantically valid and felicitous under strategic-priority and high-revenue contexts without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of unhappy/loyal \u00d7 client/customer are coherent and grammatical across grievance and long-standing patronage contexts without lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b01_08_child_kid",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of mischievous/curious \u00d7 child/kid form valid and natural continuations following the stem across all 16 contexts without target leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of talented/clever \u00d7 child/kid seamlessly integrate with the stem across all artistic and problem-solving contexts with no lexical overlap."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of polite/smart \u00d7 child/kid are fully grammatical and semantically felicitous across all etiquette and intellectual contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b06_02_meadow_pasture",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of vast/rolling with meadow/pasture are semantically coherent and grammatical. Contexts set distinct pragmatic expectations regarding spatial expanse versus topography without asserting strict factual constraints or leaking candidate terms."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of peaceful/rolling with meadow/pasture are fully valid across all contexts. Source contexts evoke calm and quiet while target contexts emphasize undulating terrain without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of green/fenced with meadow/pasture remain plausible and natural across both settings. Contexts establish strong thematic framing around chromatic verdure versus containment fencing without direct lexical leakage or logical contradictions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b21_00_article_story",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations (compelling/front \u00d7 article/story) are semantically valid, grammatically sound, and contextually biased without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (original/detailed \u00d7 article/story) are highly natural and exhibit clean pragmatic preference shifts across novelty and granularity contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (front/riveting \u00d7 article/story) pass semantic and syntactic criteria with well-differentiated prominence vs. dramatic tension contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_16_event_assault_attack",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 modifier-noun combinations integrate seamlessly with the fixed stem. Contexts clearly modulate pragmatic bias (speed vs. destructive aftermath) without naming candidates or violating semantic constraints."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations form natural, grammatical completions. Source contexts establish intense physical aggression while target contexts establish stealth and secrecy without leaking target lexical items."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Both planned and sudden pair cleanly with assault and attack. Contexts cleanly shift pragmatic expectations between calculated planning and abrupt surprise while preserving logical compatibility across all completions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_18_event_concert_recital",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of modifier and noun are fully grammatical and natural. No candidate stems, modifiers, or nouns are leaked in context passages."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test[3]"
+        ],
+        "failure_reasons": [
+          "source_context_test[3] contains the lexical derivative 'concertgoers', which directly leaks and primes the candidate noun 'concert'."
+        ],
+        "concise_notes": "Lexical leak in source_context_test[3] ('concertgoers') biases selection toward the candidate noun 'concert'."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations remain semantically and syntactically sound across contexts without direct lexical leakage of targets or candidate nouns."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b14_01_report_study",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of recent/critical with report/study are grammatical and semantically natural under all contexts; contexts pragmatically cue recency vs. critique without candidate word leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of final/preliminary with report/study are valid across closing and exploratory context frames with zero lexical leakage and clean pragmatic biasing."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of critical/empirical with report/study are natural and grammatical; evaluative audit vs. data-driven scientific contexts set appropriate pragmatic preferences without direct token naming."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b10_14_melody_tune",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations across all 16 contexts are grammatically and semantically sound without lexical leakage or truth-value violations."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations fit naturally with the fixed stem under both melancholy and simple contexts; no target or modifier leaks detected."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "High semantic plausibility across all four noun-modifier pairings; contexts shift pragmatic framing without forcing semantic contradictions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_23_medic_paramedic",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 modifier-noun combinations integrate naturally with the fixed stem. Contexts cleanly shift pragmatic preference without truth-conditional failure or lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations are grammatically sound and semantically felicitous. Contextual framing establishes clear differentiation in competence level and operational scope without barring any candidate."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations remain felicitous across all development and test contexts. Pragmatic bias contrasts veteran endurance with formal statutory credentialing without violating semantic admissibility."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b10_13_report_account",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('chilling/reliable' x 'report/account') are fully grammatical and semantically felicitous across all 16 context items with clean pragmatic steering and no lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('official/firsthand' x 'report/account') integrate smoothly across institutional and experiential contexts without inducing truth-conditional invalidity or target leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('firsthand/eyewitness' x 'report/account') remain natural and valid across direct-experiencer vs. third-party onlooker contexts with no candidate token leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_13_driver_chauffeur",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (sober/courteous \u00d7 driver/chauffeur) integrate smoothly with the limousine stem. Contexts provide clear pragmatic differentiation without lexical leakage or truth-conditional exclusion."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (dedicated/private \u00d7 driver/chauffeur) are natural and fully grammatical. Contexts cleanly shift pragmatic relevance between work devotion and exclusive personal employment without mentioning candidate tokens."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (competent/discreet \u00d7 driver/chauffeur) are natural in the stem. Contexts effectively contrast operational driving competence in tough conditions against interpersonal confidentiality and silence without explicit candidate mentions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b12_04_tumbler_glass",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 16 contexts seamlessly integrate with all four modifier-noun completions ('small tumbler', 'small glass', 'crystal tumbler', 'crystal glass'). No candidate words leaked into contexts, and completions remain pragmatic rather than truth-conditional."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('clear tumbler', 'clear glass', 'large tumbler', 'large glass') are fully natural across all dev/test contexts. Contexts establish clean pragmatic bias toward optical transparency vs. high volume without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 combinations ('tall tumbler', 'tall glass', 'frosted tumbler', 'frosted glass') are grammatically and semantically well-formed. Contexts properly modulate vertical height vs. sub-zero freezing characteristics without mentioning target lexical items."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b10_10_show_program",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations are fully grammatical, natural, and pragmatically appropriate across all dev and test contexts with zero lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All completions seamlessly integrate with the stem; contexts effectively establish pragmatic bias without mentioning candidate words or making combinations semantically anomalous."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four pairings form natural, standard collocations across all contexts with clean pragmatic differentiation and no lexical contamination."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_21_basket_hamper",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations across all 16 contexts are fully grammatical, semantically permissible, and natural without trivial noun leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Modifiers 'dusty' and 'light' cross-combine cleanly with both nouns under all development and test contexts with no candidate naming violations."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Contexts cleanly bias toward material vs. capacity limit without asserting objective impossibility for non-target combinations or leaking candidate nouns."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_07_event_demonstration_protest",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of {illegal, massive} \u00d7 {demonstration, protest} are grammatical, natural with the fixed stem, and semantically plausible under all source and target contexts without leaking lexical targets."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of {orderly, violent} \u00d7 {demonstration, protest} integrate naturally with the fixed stem; contexts provide strong pragmatic bias without asserting strict factual contradictions or mentioning candidate words."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of {vocal, silent} \u00d7 {demonstration, protest} are fully grammatical and natural. Contexts effectively modulate acoustic framing without explicit lexical overlap or logical contradiction."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b15_04_method_approach",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 16 contexts across dev and test preserve grammaticality and semantic coherence across all 4 modifier-noun combinations. Contexts modulate pragmatic preference without asserting strict factual presuppositions or mentioning candidate lexemes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {standard, effective} x {method, approach} yield natural completions. Contexts successfully bias toward standard/method or effective/approach via domain framing without candidate lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of {practical, systematic} x {method, approach} are syntactically and semantically permissible under the shared stem. Contexts provide clear pragmatic differentiation without violating truth-conditional constraints."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b11_24_castle_fortress",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (sprawling/massive x castle/fortress) are fully grammatical and natural with the stem. Contexts successfully bias pragmatic preference via spatial extent vs. structural density without leaks or truth-conditional violations."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (ancient/isolated x castle/fortress) integrate cleanly with the stem across all dev and test contexts. Pragmatic bias toward historical longevity vs. geographic seclusion is well-maintained without lexical leaks."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (massive/remote x castle/fortress) fit seamlessly into all contexts. The distinction between colossal architectural scale and frontier isolation is cleanly established without direct lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b15_12_shift_transition",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of decisive/marked x shift/transition are fully grammatical and natural with the stem. Contexts establish clean pragmatic divergence without lexical leakage or truth-conditional invalidation."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of sudden/gradual x shift/transition are natural and semantically well-formed. Contexts establish clear temporal framing without explicit mention of candidate tokens."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of seamless/smooth x shift/transition are highly natural standard collocations. Contexts subtly manipulate technical zero-defect vs. harmonious operational framing without trivial token cues."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_23_event_trial_hearing",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 combinations are grammatically and pragmatically valid; contexts induce pragmatic preference without lexical leakage or truth-value contradictions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations form natural legal proceeding collocations; contexts cleanly modulate tension vs. impartiality without candidate token mentions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All cross-combinations are semantically felicitous with the stem; contexts establish appropriate pragmatic bias toward publicity or urgency without naming targets."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b05_18_canine_dog",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All contexts avoid literal candidate/modifier mentions, establish appropriate register shifts (formal/tactical vs. domestic/devotional), and support all 4 modifier-noun combinations naturally with the stem."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Cognitive laboratory framing and neglect/rescue framing modulate pragmatic preferences without precluding any combination; all 2x2 pairings are semantically valid and grammatical."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "Aggressive security threat contexts and biddable pet training contexts successfully bias between ferocious canine and obedient dog while preserving full semantic coherence across all cross combinations."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b19_23_lawsuit_suit",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('formal lawsuit', 'formal suit', 'civil lawsuit', 'civil suit') integrate seamlessly with the fixed stem. All contexts are well-crafted without lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('major lawsuit', 'major suit', 'contentious lawsuit', 'contentious suit') are grammatically and semantically permissible across all high-stakes and acrimonious litigation contexts without candidate leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('civil lawsuit', 'civil suit', 'defamation lawsuit', 'defamation suit') form natural collocations following the stem and remain plausible across general commercial tort and reputational damage contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_23_climb_ascent",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations across source and target dev/test contexts are grammatical, natural, and free of candidate lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four 2x2 combinations are fully valid and contextually appropriate without naming candidate words or altering truth conditions."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_test_1"
+        ],
+        "failure_reasons": [
+          "target_context_test[1] contains 'rapidly' (direct cognate of target modifier 'rapid') and 'climber' (direct cognate of candidate noun 'climb'), violating the rule against candidate lexical leakage/trivial priming."
+        ],
+        "concise_notes": "Fails due to lexical leakage of both target modifier ('rapidly') and candidate noun ('climber') in the second test context for the target condition."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b22_23_tech_log_journal",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (daily log, daily journal, system log, system journal) are fully grammatical and semantically valid in database contexts. Contexts cleanly modulate pragmatic preference between temporal cadence and architectural tier without mentioning candidate terms."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (raw log, raw journal, automated log, automated journal) are natural technical collocations. Source contexts bias toward unparsed binary capture while target contexts bias toward programmatic background automation without violating semantic constraints."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (automated log, automated journal, electronic log, electronic journal) are semantically valid and natural. Source contexts establish hands-off programmatic execution, while target contexts establish statutory digital audit compliance."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_13_pan_skillet",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of heavy/round x pan/skillet are grammatical, natural, and fully compatible across all source and target contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of wide/dirty x pan/skillet are valid, natural, and felicitous across size and cleanliness contexts without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of stainless/iron x pan/skillet are natural English compound nominals and semantically felicitous across modern and rustic contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b04_01_gadget_device",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations ('novel/small' \u00d7 'gadget/device') are fully grammatical and natural with the stem. Contexts successfully establish pragmatic bias toward novelty or physical compactness without directly using candidate lexemes or imposing strict truth-conditional exclusion."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations ('useful/ingenious' \u00d7 'gadget/device') integrate smoothly with the fixed stem. Contexts contrast practical day-to-day utility with mechanical brilliance via appropriate semantic cues without leaking target words."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations ('ingenious/handheld' \u00d7 'gadget/device') are semantically valid and natural. Source contexts establish engineering brilliance while target contexts establish single-hand manual portability without asserting rigid logical exclusions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_07_sink_basin",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('rustic sink', 'rustic basin', 'porcelain sink', 'porcelain basin') are natural, fully grammatical, and semantically plausible across all source and target contexts without direct lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('shallow sink', 'shallow basin', 'porcelain sink', 'porcelain basin') integrate seamlessly into the fixed stem. Contexts establish appropriate geometric vs. material framing without violating semantic compatibility or mentioning target lemmas."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('stainless sink', 'stainless basin', 'wet sink', 'wet basin') are semantically valid and felicitous with the stem. Industrial metal and damp washroom contexts modulate pragmatic preference without creating logical impossibilities or lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b02_00_car_automobile",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "The fixed stem contains a duplicated determiner ('repairing the the'), making any stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Contexts cleanly avoid lexical leakage and support all 4 modifier-noun combinations pragmatically, but the stem itself contains an invalid repeated token ('the the')."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "The fixed stem contains a duplicated determiner ('repairing the the'), making any stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Contexts appropriately modulate pragmatic bias across all 4 combinations without naming candidates, but the fixed stem is defective due to repeated 'the'."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "The fixed stem contains a duplicated determiner ('repairing the the'), making any stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Contexts are well-formed and semantically sound across all combinations, but the prompt fixed stem has a typographical error ('the the') preventing natural completion."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_13_event_reception_banquet",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {official, grand} x {reception, banquet} are natural with the stem. Contexts provide clean pragmatic bias without leaking target terms."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {luxurious, annual} x {reception, banquet} are fully felicitous and grammatical. Contexts set appropriate stylistic and semantic expectations."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {annual, state} x {reception, banquet} remain semantically sound and grammatical under all context variations."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b12_21_sauce_dressing",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (oily/tangy x sauce/dressing) are fully grammatical and semantically felicitous with the heavy NP shift stem. Contexts provide clean pragmatic bias without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (sweet/sour x sauce/dressing) are grammatical and semantically natural. Contexts establish appropriate culinary flavor contrast without leaking target lexical items."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (homemade/creamy x sauce/dressing) are plausible and grammatical. Contexts manipulate provenance versus rheological texture cleanly without categorical exclusions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b08_16_crate_box",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations ('unopened crate', 'unopened box', 'large crate', 'large box') are natural and semantically well-formed. Contexts establish pragmatic preference without enforcing strict truth-conditional constraints or leaking target lexical items."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations ('stacked crate', 'stacked box', 'packed crate', 'packed box') are fully plausible and grammatical warehouse completions. Contexts steer pragmatic preference cleanly without mentioning candidate terms."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four completions ('sealed crate', 'sealed box', 'cardboard crate', 'cardboard box') are semantically valid and compatible with the stem. Pragmatic bias is cleanly induced by material and closure descriptions without directly naming candidate lexical items."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b05_17_colt_foal",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations (strong/spotted \u00d7 colt/foal) are syntactically and semantically sound across all contexts. Contexts shift pragmatic bias without hard constraints or lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (strong/wild \u00d7 colt/foal) integrate felicitously with the stem and all development/test contexts. No candidate tokens or target modifiers are lexically leaked."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (playful/newborn \u00d7 colt/foal) are natural and semantically well-formed in each context. Contexts clearly distinguish energetic behavior from neonatal assessment without lexical overlap."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b06_22_harbor_port",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of sheltered/quiet \u00d7 harbor/port are fully grammatical and semantically felicitous across all development and test contexts without candidate leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of coastal/spacious \u00d7 harbor/port operate cleanly; coastal contexts cue geographic location while spacious contexts establish spatial capacity without truth-conditional clashes."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of thriving/bustling \u00d7 harbor/port are natural and grammatical; contexts cleanly differentiate economic prosperity from kinetic operational activity."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b02_23_locomotive_engine",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations are natural, standard railway collocations. Contexts effectively establish pragmatic bias toward fuel type vs. physical scale without mentioning candidate targets."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test_3"
+        ],
+        "failure_reasons": [
+          "source_context_test[3] explicitly uses the root candidate lemma 'repair' in 'repair shed'."
+        ],
+        "concise_notes": "The occurrence of 'repair shed' in source_context_test[3] breaches the lexical containment constraint against mentioning candidate terms."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_0",
+          "source_context_dev_1",
+          "source_context_dev_2",
+          "source_context_dev_3",
+          "source_context_test_0",
+          "source_context_test_1",
+          "source_context_test_2",
+          "source_context_test_3"
+        ],
+        "failure_reasons": [
+          "Semantic/pragmatic incoherence: the fixed stem asserts that the engineer 'climbed into the cab', which physically contradicts all source contexts where the train is already hurtling down the tracks at maximum speed/80 mph.",
+          "source_context_test[0] already explicitly places the engineer inside the cab monitoring acceleration, contradicting the stem's entrance event."
+        ],
+        "concise_notes": "A railroad engineer cannot climb into the cab of a locomotive that is actively speeding down the mainline at 80 mph; the stem and source contexts are in direct pragmatic contradiction."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_02_rug_carpet",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {wool, woven} \u00d7 {rug, carpet} are semantically natural and felicitous with the stem. No target or source lexemes appear in the contexts, and the contexts successfully induce pragmatic bias without violating objective compatibility."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {expensive, stained} \u00d7 {rug, carpet} integrate smoothly with the stem across all contexts. Contexts contain no forbidden mentions and cleanly modulate pragmatic preference."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of {stained, soft} \u00d7 {rug, carpet} form fluent, grammatical completions after the stem across both development and test contexts. No candidate terms are leaked in the contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_04_event_meeting_gathering",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 2x2 modifier-noun combinations are grammatical and semantically permissible. Contexts appropriately steer pragmatic bias between planned/meeting and small/gathering without lexical leaks."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of private/public x meeting/gathering integrate seamlessly with the fixed stem. No target lemmas leak into the contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of tense/peaceful x meeting/gathering remain natural and valid across all contexts. Contexts induce strong pragmatic polarity without forcing logical contradictions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_15_cup_mug",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (novelty cup, novelty mug, favorite cup, favorite mug) are natural and semantically well-formed. Contexts establish clean pragmatic bias without leaking target/source lexemes or rendering alternatives ungrammatical or logically impossible."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All cross-combinations (full cup, full mug, favorite cup, favorite mug) are grammatically and pragmatically valid with the fixed stem. Liquid volume framing contrasts effectively with sentimental preference framing without candidate leaks."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (heavy cup, heavy mug, clay cup, clay mug) are standard natural collocations. Dense mass and artisanal earthenware contexts modulate pragmatic plausibility cleanly without containing literal modifier or noun mentions."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b13_18_belt_sash",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (wide/embroidered \u00d7 belt/sash) are grammatical, semantically valid, and pragmatically sound across all contexts with no lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (velvet/scarlet \u00d7 belt/sash) are natural and plausible across all contexts. Context cues properly modulate pragmatic preference without asserting literal truth conditions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (long/ceremonial \u00d7 belt/sash) satisfy syntactic and semantic requirements. No target or noun lemmas are trivially named."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_17_event_dispute_quarrel",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_dev[3]"
+        ],
+        "failure_reasons": [
+          "Lexical leakage: target_context_dev[3] includes 'fiercely', an overt morphological derivative of the target modifier 'fierce'."
+        ],
+        "concise_notes": "All four cross-combinations are semantically natural with the stem, but target_context_dev[3] contains candidate lemma leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations are fully grammatical, felicitous, and free of lexical leakage across all source and target contexts."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations fit naturally across institutional and interpersonal scenarios with proper pragmatic contrast and no lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_01_trophy_cup",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('traditional/custom trophy/cup') are grammatical, semantically coherent, and felicitous across all source and target contexts. No forbidden lexical items appear in the priming contexts."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('massive/prestigious trophy/cup') are fully valid and natural with the stem. Physical heft vs. high-status honor contexts induce clean pragmatic differentiation without leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations ('national/silver trophy/cup') form natural collocations. Domestic competition and shiny white-metal descriptions effectively bias the interpretations without truth-conditional clashes or lexeme naming."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b07_21_commission_board",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of judicial/independent \u00d7 commission/board are standard, natural governance constructs. Contexts cleanly manipulate register toward legal inquiry vs. independent stewardship without candidate leakage or syntactic clash."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of statutory/judicial \u00d7 commission/board are valid administrative entities. Contexts cleanly establish legislative provenance vs. adjudicative oversight without lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of governing/advisory \u00d7 commission/board are fully grammatical and natural. Contexts clearly distinguish binding steering authority from non-binding consultative guidance without trivial naming."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_08_event_show_performance",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (mediocre/memorable \u00d7 show/performance) are fully grammatical and felicitous with the stem. Contexts guide pragmatic contrast without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (masterful/theatrical \u00d7 show/performance) fit naturally across all development and test contexts with no candidate token leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (theatrical/flawless \u00d7 show/performance) are semantically permissible and natural across staging spectacle and technical precision contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b07_03_charity_foundation",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (private/wealthy x charity/foundation) are natural, grammatical, and semantically plausible across all contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (prestigious/wealthy x charity/foundation) fit smoothly with the fixed stem across all contexts, maintaining clear pragmatic bias without strict truth-conditional exclusion."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations (family/philanthropic x charity/foundation) are felicitous, completely natural in English, and free of direct target or modifier lexical leaks."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_01_event_talk_lecture",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('tedious talk', 'tedious lecture', 'brief talk', 'brief lecture') are fully grammatical and natural. Contexts establish pragmatic alignment without lexical leakage or semantic invalidation."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('tedious talk', 'tedious lecture', 'lengthy talk', 'lengthy lecture') are semantically valid and felicitous across all development and test contexts with no candidate leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations ('introductory talk', 'introductory lecture', 'fascinating talk', 'fascinating lecture') fit cleanly into the fixed stem and all contexts without any leakage or pragmatic contradiction."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_10_merchant_trader",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of competent/successful with merchant/trader are fully grammatical, natural, and pragmatically well-differentiated across all contexts."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of local/established with merchant/trader are fully felicitous; contexts cleanly modulate pragmatic fit without lexical leakage or semantic contradictions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations of independent/active with merchant/trader are grammatical and semantically permissible; contexts appropriately create strong pragmatic framing."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_10_tub_bath",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of white/full x tub/bath are syntactically and semantically sound across all 8 contexts without lexical leakage or truth-conditional clashes."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of shallow/warm x tub/bath integrate seamlessly with the low-volume and comfortable-temperature context sets."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of relaxing/luxurious x tub/bath remain natural and grammatically permissible under both calm tranquility and upscale pampering contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b02_03_cab_taxi",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (expensive cab/taxi, empty cab/taxi) are natural and semantically felicitous across all development and test contexts without explicit mentions of target tokens."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (empty cab/taxi, licensed cab/taxi) are fully grammatical and felicitous; contexts cleanly modulate availability versus regulatory compliance."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (unmarked cab/taxi, shared cab/taxi) form valid, natural noun phrases; contexts effectively manipulate pragmatic relevance between discreet livery and pooled transport."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b17_09_subsidy_grant",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (modest/substantial x subsidy/grant) are grammatical and semantically felicitous. Target and source contexts manipulate budgetary scale without leaking target lexical items or violating selectional restrictions."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (governmental/regional x subsidy/grant) are natural in transit administration contexts. Source contexts focus on public-sector administrative mechanisms and target contexts focus on multi-jurisdictional district coordination without literal lexical leakage."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations (conditional/federal x subsidy/grant) are standard, fully grammatical pairings. Contexts successfully establish pragmatic bias via performance-contingent prerequisites versus national/central government jurisdiction without mentioning candidate tokens."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b01_19_buyer_purchaser",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (wealthy/interested x buyer/purchaser) are fully grammatical and natural with the stem across all contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (private/qualified x buyer/purchaser) are plausible and grammatical; contexts cleanly establish pragmatic bias without asserting truth conditions."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four combinations (eager/registered x buyer/purchaser) are semantically valid and felicitous completions of the stem."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_06_cabinet_cupboard",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of painted/locked x cabinet/cupboard are natural, fully grammatical, and semantically plausible across all contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of antique/low x cabinet/cupboard are valid with the fixed stem; contexts set clear pragmatic preferences without naming candidate nouns or modifiers directly."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations of dark/corner x cabinet/cupboard form natural noun phrases in the stem; geometric and lighting descriptions induce clear pragmatic bias without explicit lexical triggers."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_20_event_conference_symposium",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 modifier-noun combinations are fully grammatical, natural, and semantically plausible across all 16 contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 combinations remain valid and natural across all contexts. Contexts modulate pragmatic focus without explicit modifier/noun leakage."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test[1]",
+          "target_context_test[0]"
+        ],
+        "failure_reasons": [
+          "Direct lexical leakage: source_context_test[1] contains the exact source modifier 'specialized' ('specialized mathematical modeling').",
+          "Direct lexical leakage: target_context_test[0] contains the exact target modifier 'formal' ('formal etiquette')."
+        ],
+        "concise_notes": "Fails due to exact target/source modifier word leakage in source_context_test[1] and target_context_test[0]."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b03_12_blind_shade",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [
+          "target_context_dev_0",
+          "target_context_dev_1",
+          "target_context_dev_2",
+          "target_context_dev_3",
+          "target_context_test_0",
+          "target_context_test_1",
+          "target_context_test_2",
+          "target_context_test_3"
+        ],
+        "failure_reasons": [
+          "Semantic presupposition clash: 'lowered the drawn blind/shade' is pragmatically anomalous because a drawn blind/shade is already in the lowered/closed state, making lowering it to block glare contradictory."
+        ],
+        "concise_notes": "The target modifier 'drawn' conflicts semantically with the dynamic predicate 'lowered the [modifier] [noun]' in the fixed stem."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev_0"
+        ],
+        "failure_reasons": [
+          "Direct lexical/morphological leakage of the source modifier: 'cleaning' appears in source_context_dev[0]."
+        ],
+        "concise_notes": "Fails due to modifier stem leakage ('cleaning' in source_context_dev[0])."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All 4 modifier-noun combinations are fully grammatical, natural, and pragmatically appropriate across all contexts with no lexical leakage."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b20_09_tournament_championship",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('The club qualified for the the'), making every stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Contexts and modifier combinations are semantically valid, but the fixed stem 'The club qualified for the the' contains a duplicated token 'the the', causing all completions to fail grammatical naturalness."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_test[3]",
+          "target_context_dev[0]"
+        ],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('The club qualified for the the').",
+          "source_context_test[3] contains 'champions', directly leaking candidate noun 'championship'.",
+          "target_context_dev[0] contains 'continent', trivially naming the base root of modifier 'continental'."
+        ],
+        "concise_notes": "Fails due to ungrammatical stem ('the the') as well as lexical leakage of candidate root words ('champions' in source test 4, 'continent' in target dev 1)."
+      },
+      {
+        "regime": "high",
+        "pass": false,
+        "failed_context_indices": [],
+        "failure_reasons": [
+          "Fixed stem contains a duplicated determiner ('The club qualified for the the'), making every stem plus completion ungrammatical and unnatural."
+        ],
+        "concise_notes": "Combinations across contexts are semantically valid, but the fixed stem contains a duplicate determiner 'the the', rendering the resulting sentences ungrammatical."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b09_02_event_trip_journey",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All combinations of source/target modifiers (safe, long) and nouns (trip, journey) are grammatically well-formed and felicitous across all development and test contexts following the fixed stem."
+      },
+      {
+        "regime": "medium",
+        "pass": false,
+        "failed_context_indices": [
+          "source_context_dev[0]",
+          "source_context_dev[1]",
+          "source_context_dev[2]",
+          "source_context_dev[3]",
+          "source_context_test[0]",
+          "source_context_test[1]",
+          "source_context_test[2]",
+          "source_context_test[3]"
+        ],
+        "failure_reasons": [
+          "Contextual semantic contradiction: Source contexts state that travelers have only seconds/minutes, zero warning, and no time to deliberate, which directly contradicts the fixed stem 'The travelers prepared thoroughly for the'.",
+          "Semantic clash between the stem action ('prepared thoroughly') and the source modifier ('hasty')."
+        ],
+        "concise_notes": "Severe semantic contradiction between the extreme time-pressure/lack of preparation described in the source contexts and the fixed stem asserting thorough preparation."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four cross-combinations (arduous/perilous \u00d7 trip/journey) are fully grammatical, natural, and semantically sound across both physical strain and lethal hazard contexts."
+      }
+    ]
+  },
+  {
+    "candidate_id": "b00_11_supervisor_manager",
+    "constructions": [
+      {
+        "regime": "low",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All four modifier-noun combinations ('diligent/dedicated supervisor/manager') are grammatical, semantically coherent with the stem, and natural across all source and target contexts without lexical leakage."
+      },
+      {
+        "regime": "medium",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All cross-combinations with 'practical' and 'qualified' fit the fixed stem seamlessly. Contexts cleanly shift pragmatic emphasis between pragmatic troubleshooting and credentialed authority."
+      },
+      {
+        "regime": "high",
+        "pass": true,
+        "failed_context_indices": [],
+        "failure_reasons": [],
+        "concise_notes": "All pairings ('effective/senior supervisor/manager') are fully felicitous with the stem. Contexts cleanly differentiate operational performance results from organizational rank without asserting objective selection barriers or leaking candidate terms."
+      }
+    ]
+  }
+]

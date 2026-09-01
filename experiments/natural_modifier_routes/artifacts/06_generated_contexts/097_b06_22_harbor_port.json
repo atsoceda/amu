@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b06_22_harbor_port",
+    "generation_batch": 6,
+    "domain": "locations and geographic features",
+    "family_id": "harbor_port",
+    "noun_0": "harbor",
+    "noun_1": "port",
+    "shared_definition": "a body of water protected from waves and storms where vessels can dock",
+    "neutral_stem": "Dozens of cargo ships were anchored safely within the",
+    "candidate_modifiers": [
+      "busy",
+      "crowded",
+      "sheltered",
+      "deep",
+      "bustling",
+      "commercial",
+      "natural",
+      "coastal",
+      "ancient",
+      "safe",
+      "secure",
+      "quiet",
+      "thriving",
+      "spacious",
+      "historic"
+    ],
+    "semantic_notes": "'Harbor' emphasizes physical shelter and topographical protection for ships, whereas 'port' emphasizes commercial infrastructure, customs, and loading facilities.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        45694
+      ],
+      "noun_1": [
+        2411
+      ]
+    },
+    "modifier_token_ids": {
+      "busy": [
+        13181
+      ],
+      "crowded": [
+        37534
+      ],
+      "sheltered": [
+        103264
+      ],
+      "deep": [
+        5268
+      ],
+      "bustling": [
+        96105
+      ],
+      "commercial": [
+        6635
+      ],
+      "natural": [
+        3756
+      ],
+      "coastal": [
+        25260
+      ],
+      "ancient": [
+        12440
+      ],
+      "safe": [
+        6338
+      ],
+      "secure": [
+        9584
+      ],
+      "quiet": [
+        12010
+      ],
+      "thriving": [
+        55438
+      ],
+      "spacious": [
+        30351
+      ],
+      "historic": [
+        17110
+      ]
+    },
+    "forced_projection_span": 0.0620269775390625,
+    "max_noun_pair_mass": 0.6892111301422119,
+    "context_priority_score": 0.04274968328900286,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "sheltered",
+        "target_modifier": "quiet",
+        "source_projection": -0.1129603311419487,
+        "target_projection": -0.10695278644561768,
+        "forced_modifier_leverage": 0.006007544696331024,
+        "source_pair_mass": 0.2583788335323334,
+        "target_pair_mass": 0.21991541981697083
+      },
+      "medium": {
+        "source_modifier": "coastal",
+        "target_modifier": "spacious",
+        "source_projection": -0.020134499296545982,
+        "target_projection": 0.010499849915504456,
+        "forced_modifier_leverage": 0.030634349212050438,
+        "source_pair_mass": 0.08220890909433365,
+        "target_pair_mass": 0.3361046314239502
+      },
+      "high": {
+        "source_modifier": "thriving",
+        "target_modifier": "bustling",
+        "source_projection": 0.46287214756011963,
+        "target_projection": 0.5248991250991821,
+        "forced_modifier_leverage": 0.0620269775390625,
+        "source_pair_mass": 0.5578104257583618,
+        "target_pair_mass": 0.6892111301422119
+      }
+    },
+    "context_generation_rank": 98
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "sheltered",
+      "target_modifier": "quiet",
+      "source_context_dev": [
+        "Fierce gale winds raged across the open sea, driving towering waves against the rocky outer headlands. Behind the natural stone breakwater, however, the water remained completely calm.",
+        "The incoming hurricane posed a severe threat to any vessel caught out in the unprotected sea. Mariners steered their crafts toward the safety of the inland cove before nightfall.",
+        "Outer shoals took the brunt of the turbulent oceanic surge, absorbing the force of the tide. Inside the protected basin, the surface stayed as smooth as glass.",
+        "Rugged cliffs formed a natural barrier against seasonal squalls and erratic offshore currents. Vessel captains routinely sought refuge here whenever ocean conditions deteriorated."
+      ],
+      "target_context_dev": [
+        "Night had fallen across the maritime district, and the daily clamor of heavy machinery had ceased entirely. Not a single sound echoed across the still water under the moonlight.",
+        "During the midnight hours, all commercial loading operations paused until dawn. A deep, undisturbed stillness settled over the dimly lit docks and surrounding channels.",
+        "The entire maritime basin was serene and undisturbed in the early morning twilight. With the engines switched off, only the gentle lap of small ripples could be heard.",
+        "Far from the noise of the main commercial district, the evening brought an absolute hush over the waters. The surrounding shoreline remained peaceful and completely still."
+      ],
+      "source_context_test": [
+        "High bluffs shielded the inlet from the worst of the seasonal winter tempests. Mariners knew this geological formation provided reliable protection during bad weather.",
+        "Violent oceanic swells battered the offshore reefs, but none penetrated the natural barrier. Inside, smaller vessels and heavy transports alike found a secure haven.",
+        "A curved peninsula effectively blocked the brutal arctic winds blowing across the open strait. Waters on the lee side offered steady refuge from the storm.",
+        "Rough open-ocean chop made navigation perilous throughout the afternoon. Navigators set course for the inlet where surrounding terrain broke the heavy swell."
+      ],
+      "target_context_test": [
+        "Over the weekend, industrial operations came to a temporary standstill across the waterfront. An uncanny silence descended over the water as the work crews dispersed.",
+        "As fog rolled in across the sleepy waterway, all horn blasts and engine noises drifted into stillness. The surrounding environment felt utterly tranquil and dormant.",
+        "No heavy transport vehicles moved along the access ramps, and no cranes were operating. The basin rested in peaceful stillness under the starry sky.",
+        "A calm hush enveloped the waterfront following the conclusion of the evening shift. The gentle lapping of the tide was the only sound audible in the darkness."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings (sheltered harbor, sheltered port, quiet harbor, quiet port) remain syntactically and semantically sound across both storm-protection and nocturnal-calm contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "coastal",
+      "target_modifier": "spacious",
+      "source_context_dev": [
+        "The regional economy depended heavily on maritime routes running along the shoreline. Shipping networks had evolved around key geographical features situated along the ocean border.",
+        "Salt air and ocean mist rolled across the maritime border where land met the open sea. This seaside location served as the primary nexus for regional maritime transport.",
+        "Located at the edge of the continent, the maritime perimeter handled a constant flow of incoming oceanic freight. Sea trade sustained the adjacent communities.",
+        "Navigators followed the continental shoreline until reaching the designated maritime facility. Positioned directly at the ocean fringe, it provided essential access to blue-water routes."
+      ],
+      "target_context_dev": [
+        "The maritime basin covered several hundred square kilometers of deep water, offering immense holding capacity. Planners had designed the area to accommodate vast fleets without overcrowding.",
+        "With an expansive turning basin and miles of perimeter berthing, size was never a constraint. Even the largest ultra-large container carriers had room to maneuver effortlessly.",
+        "The broad, open expanse of deep water provided ample room for maritime traffic to spread out. There was never any shortage of room for incoming convoys to drop anchor.",
+        "Enormous water acreage allowed massive fleets to navigate simultaneously without risk of congestion. Wide waterways extended across the entire maritime terminal."
+      ],
+      "source_context_test": [
+        "Centuries of maritime tradition defined the communities settled along the oceanic littoral. Local infrastructure was built explicitly to harness offshore trade lanes.",
+        "The oceanic perimeter formed a vital link between inland transportation routes and global waters. Facilities along the shoreline operated under constant maritime influence.",
+        "Maritime geography dictated that all heavy commerce concentrate along the seaside boundary. The continental margin provided the ideal setting for major maritime operations.",
+        "Bordering the vast ocean, the maritime zone served as the first point of arrival for international shipping. Its position along the outer shore ensured direct sea access."
+      ],
+      "target_context_test": [
+        "The anchorage zone boasted an exceptionally wide perimeter capable of holding hundreds of massive hulls. Immense surface dimensions eliminated all spatial bottlenecks.",
+        "Navigators appreciated the vast physical footprint of the maritime holding zone. Its wide layout gave ample clearance for even the most massive convoys to maneuver comfortably.",
+        "Extensive deep-water basins stretched out toward the horizon, providing room for fleets of every class. The sheer scale of the anchorage area easily handled peak congestion.",
+        "Engineers laid out the anchorage with grand dimensions to handle future expansions in global vessel sizes. Expanses of open water allowed multiple convoys to anchor with wide separation."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings (coastal harbor, coastal port, spacious harbor, spacious port) are fully natural and grammatical in both maritime-shoreline and high-capacity spatial contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "thriving",
+      "target_modifier": "bustling",
+      "source_context_dev": [
+        "Commercial investments had surged dramatically over the past decade, yielding record-breaking trade profits. The local maritime economy had reached an unprecedented peak of economic success.",
+        "Rapid economic expansion and lucrative trade pacts brought remarkable prosperity to the waterfront zone. Financial success was evident in the newly built facilities and steady revenue growth.",
+        "The maritime enterprise continued to flourish year after year, generating immense capital and attracting global investors. It stood as a premier model of international trade success.",
+        "Booming global demand transformed the regional trading hub into a powerhouse of wealth generation. Commercial success stimulated extensive growth throughout the surrounding economy."
+      ],
+      "target_context_dev": [
+        "Towering gantry cranes swung back and forth continuously while forklift operators raced across the docks. The entire waterfront hummed with relentless, nonstop kinetic activity.",
+        "Dozens of tugboats darted between giant freighters while stevedores worked feverishly along the quays. Motion and noise filled every corner of the frantic loading area.",
+        "Around-the-clock shifts created a scene of constant movement, with sirens wailing and winches whirring without pause. The waterfront was alive with energetic logistical commotion.",
+        "Heavy transport vehicles queued in long, rapid lines as dockworkers rapidly transferred cargo containers. Frantic activity pulsed across every pier from dawn until dusk."
+      ],
+      "source_context_test": [
+        "Years of strategic investment turned the maritime exchange into a wealthy commercial center. The business ecosystem enjoyed extraordinary prosperity and continued financial health.",
+        "Export volumes soared to historic highs as global shipping consortiums established regional headquarters here. Commercial prosperity was unmatched anywhere along the coast.",
+        "The waterfront district evolved into a highly profitable nexus of global commerce and capital flow. Economic vitality fueled constant modernization across the entire facility.",
+        "Robust trade agreements catalyzed remarkable economic growth throughout the maritime commercial center. The resulting financial success bolstered the entire national economy."
+      ],
+      "target_context_test": [
+        "Workers shouted over the roar of diesel engines as heavy winches hoisted freight onto waiting barges. The scene was characterized by hectic movement and constant logistical motion.",
+        "Tugboats chugged vigorously through the channels while deckhands secured mooring lines in rapid succession. High-tempo activity defined every minute of the operational shift.",
+        "Machinery clattered incessantly while convoys of trucks hurried in and out of the loading bays. The atmosphere was dominated by fast-paced physical labor and active transit.",
+        "Flashing amber beacons and the roar of heavy machinery signaled continuous, intense activity across the waterfront. Thousands of personnel moved purposefully through the frantic hub."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings (thriving harbor, thriving port, bustling harbor, bustling port) are natural, grammatical, and appropriate across both economic-prosperity and high-motion operational contexts."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b21_05_speech_address",
+    "generation_batch": 21,
+    "domain": "communication and journalism",
+    "family_id": "speech_address",
+    "noun_0": "speech",
+    "noun_1": "address",
+    "shared_definition": "a formal spoken discourse delivered to an audience",
+    "neutral_stem": "The entire diplomatic corps gathered inside the hall for the",
+    "candidate_modifiers": [
+      "keynote",
+      "opening",
+      "closing",
+      "televised",
+      "formal",
+      "annual",
+      "brief",
+      "presidential",
+      "inspirational",
+      "public",
+      "inaugural",
+      "fiery",
+      "memorable",
+      "farewell"
+    ],
+    "semantic_notes": "'Address' typically implies higher formality and an institutional setting, whereas 'speech' is the broader, everyday term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        10808
+      ],
+      "noun_1": [
+        3421
+      ]
+    },
+    "modifier_token_ids": {
+      "keynote": [
+        71858
+      ],
+      "opening": [
+        8115
+      ],
+      "closing": [
+        16996
+      ],
+      "televised": [
+        135274
+      ],
+      "formal": [
+        10781
+      ],
+      "annual": [
+        7384
+      ],
+      "brief": [
+        8652
+      ],
+      "presidential": [
+        27354
+      ],
+      "inspirational": [
+        45855
+      ],
+      "public": [
+        1237
+      ],
+      "inaugural": [
+        56557
+      ],
+      "fiery": [
+        84004
+      ],
+      "memorable": [
+        31803
+      ],
+      "farewell": [
+        77821
+      ]
+    },
+    "forced_projection_span": 0.11688624322414398,
+    "max_noun_pair_mass": 0.8283054828643799,
+    "context_priority_score": 0.09681751613397793,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "opening",
+        "target_modifier": "formal",
+        "source_projection": -0.012219815514981747,
+        "target_projection": -0.0010249787010252476,
+        "forced_modifier_leverage": 0.011194836813956499,
+        "source_pair_mass": 0.022033575922250748,
+        "target_pair_mass": 0.006613161414861679
+      },
+      "medium": {
+        "source_modifier": "inaugural",
+        "target_modifier": "public",
+        "source_projection": -0.03948553279042244,
+        "target_projection": 0.019974717870354652,
+        "forced_modifier_leverage": 0.05946025066077709,
+        "source_pair_mass": 0.11018478870391846,
+        "target_pair_mass": 0.051844142377376556
+      },
+      "high": {
+        "source_modifier": "presidential",
+        "target_modifier": "keynote",
+        "source_projection": 0.036626264452934265,
+        "target_projection": 0.15351250767707825,
+        "forced_modifier_leverage": 0.11688624322414398,
+        "source_pair_mass": 0.08377677202224731,
+        "target_pair_mass": 0.8283054828643799
+      }
+    },
+    "context_generation_rank": 46
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "opening",
+      "target_modifier": "formal",
+      "source_context_dev": [
+        "The multilateral summit was just getting underway this morning. Delegates took their assigned seats early to hear the welcoming remarks that would frame the week's negotiations.",
+        "A preliminary session was scheduled at nine sharp to inaugurate the multi-day conference. Representatives settled into the gallery eager to hear how the conference hosts would set the agenda.",
+        "The start of the assembly required an introductory presentation to set the collective tone. Observers waited quietly as the presiding officer walked up to the central microphone.",
+        "Organizers planned an early introductory session to launch the five-day summit. Ambassadors and staff quickly filled the auditorium to listen to the introductory remarks."
+      ],
+      "target_context_dev": [
+        "Strict protocol dictated every stage of the state occasion. The assembled dignitaries observed rigid decorum as the ceremonial presentation was about to commence.",
+        "Standard diplomatic conventions governed the solemn afternoon proceedings. Every delegation observed absolute silence to receive the official communication from the host state.",
+        "Elaborate institutional traditions guided the high-level summit. The foreign representatives assembled in complete silence to receive the solemn proclamation from the head of state.",
+        "An atmosphere of solemn propriety filled the grand chamber. The visiting envoys sat in full regalia, awaiting the strictly choreographed communication."
+      ],
+      "source_context_test": [
+        "The initial item on the morning's schedule was designed to launch the bilateral discussions. Envoys gathered promptly to catch the introductory greeting.",
+        "To commence the annual assembly, the conference director stepped toward the podium. Attendees turned their attention forward to listen to the first official remarks.",
+        "The working schedule began at dawn with an introductory session for visiting representatives. Ministers filed into their rows to hear the host nation's welcome.",
+        "Activities for the day kicked off with preliminary remarks from the organizing committee. The hall filled rapidly with delegates eager to begin the summit."
+      ],
+      "target_context_test": [
+        "Established protocol required strict adherence to diplomatic etiquette throughout the morning. The overseas delegations waited respectfully for the official solemn declaration.",
+        "The ceremonial event adhered to centuries-old state rituals and grave decorum. Envoys from across the globe stood attentively to hear the official message from the host nation.",
+        "Rigid diplomatic customs marked the solemn summit gathering. The assembly observed complete stillness while awaiting the solemn delivered declaration.",
+        "Every detail of the solemn occasion was dictated by stringent state etiquette. Dignitaries remained seated in silence for the delivery of the solemn communication."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('opening speech', 'opening address', 'formal speech', 'formal address') are natural and grammatically sound collocations in diplomatic contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "inaugural",
+      "target_modifier": "public",
+      "source_context_dev": [
+        "The newly sworn-in administration was preparing to mark its first official hour in power. Ministers and foreign dignitaries crowded the hall to witness the maiden pronouncement of the mandate.",
+        "An accession ceremony marked the beginning of the newly elected administration's term. Representatives from foreign capitals filled the auditorium to hear the incoming leader's maiden proclamation.",
+        "Following the oath-taking ceremony, the new head of government prepared to outline future policy for the first time. The diplomatic corps assembled to hear the introductory statements of the new administration.",
+        "The transition of state power culminated in a historic ceremony to commence the new term. Foreign delegations arrived early to witness the leader's very first presentation in office."
+      ],
+      "target_context_dev": [
+        "The announcement was broadcast live on national television and streamed worldwide for all citizens to hear. International observers joined the open session alongside civil society groups.",
+        "The session was held openly before the media and ordinary citizens rather than behind closed doors. Foreign envoys and reporters sat side by side as the broad dissemination of policy began.",
+        "Unlike the preceding confidential briefings, this plenary session was entirely unclassified and open to external audiences. Delegates and press members filled the gallery to hear the general declaration.",
+        "The government chose an open, accessible forum to share its foreign policy agenda with the broader population. International envoys took their seats alongside civil society advocates to listen."
+      ],
+      "source_context_test": [
+        "The transfer of executive authority had concluded only minutes earlier. Visiting dignitaries assembled to hear the leader's first official message of the new term.",
+        "Having just taken the oath of office, the newly installed premier stepped up to begin the term. Foreign ministers filled the chamber to witness the maiden remarks.",
+        "The commencement ceremony marked the new leadership's first day in government. International envoys assembled in the main chamber to hear the administration's maiden pronouncement.",
+        "With the swearing-in ritual complete, the new leader stood ready to begin the term. Envoys from around the world observed the historic initial presentation."
+      ],
+      "target_context_test": [
+        "The event was completely transparent, with live television cameras transmitting every word to the world. Envoys sat alongside members of the press to witness the open broadcast.",
+        "The session had been made fully accessible to general audiences and civic representatives. Foreign dignitaries occupied the front rows to hear the widely disseminated presentation.",
+        "Moving beyond closed-door diplomacy, the summit organizers welcomed broadcast cameras into the auditorium. Dignitaries and observers listened as the open communication unfolded.",
+        "The leadership decided that the statement should reach every household directly via broadcast channels. Diplomats and journalists alike filled the hall to observe the open declaration."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('inaugural speech', 'inaugural address', 'public speech', 'public address') form coherent phrases within formal diplomatic and civic discourse."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "presidential",
+      "target_modifier": "keynote",
+      "source_context_dev": [
+        "The nation's commander-in-chief prepared to articulate state policy directly to visiting envoys. Protocol officers ensured that every seat was occupied before the executive stepped to the podium.",
+        "All eyes turned to the executive podium as the head of state prepared to deliver major policy guidance. Diplomatic envoys stood attentively awaiting the supreme leader of the republic.",
+        "The executive branch of the republic had organized a special briefing led personally by the head of state. Foreign ambassadors gathered in full attendance to hear the nation's premier leader.",
+        "The sovereign head of the executive branch was about to present the country's strategic foreign policy. Ambassadors and envoys took their designated places before the nation's leader entered."
+      ],
+      "target_context_dev": [
+        "Organizers had designated this central session as the defining highlight of the annual multilateral summit. Delegates rushed to secure seats for the main thematic presentation that would guide discussions.",
+        "The conference schedule centered entirely on a single pivotal presentation designed to frame the overarching debate. Representatives gathered early to hear the defining thematic statement.",
+        "The main event of the symposium was specifically designed to set the intellectual direction for all subsequent panels. Envoys filled the plenary auditorium to hear the principal guiding presentation.",
+        "The entire multi-day agenda depended on the core presentation that would articulate the primary thesis of the summit. Representatives quickly packed the room to hear the central thematic message."
+      ],
+      "source_context_test": [
+        "The chief executive of the nation arrived with a motorcade to outline the republic's foreign doctrine. Dignitaries rose to their feet as the highest executive authority took the stage.",
+        "The head of the executive mansion scheduled a direct communication with foreign ambassadors. The hall was filled to capacity as envoys awaited the nation's supreme leader.",
+        "The head of state personally led the diplomatic summit from the executive rostrum. Envoys from around the globe assembled to hear the commander-in-chief's guidance.",
+        "High-level envoys gathered to receive guidance directly from the nation's chief executive. The chamber fell quiet as the leader of the republic prepared to speak."
+      ],
+      "target_context_test": [
+        "The summit program was anchored around one paramount presentation that established the core theme of the convention. Envoys took their places to absorb the foundational message.",
+        "Delegates from fifty nations assembled to hear the central guiding lecture of the symposium. The plenary hall was filled to capacity for this primary thematic event.",
+        "The conference organizers highlighted the upcoming session as the intellectual core of the international forum. Diplomats gathered attentively for the summit's central thematic presentation.",
+        "The morning agenda culminated in the central framing presentation of the international congress. Envoys gathered to hear the pivotal message that would shape all subsequent negotiations."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('presidential speech', 'presidential address', 'keynote speech', 'keynote address') are highly conventional, grammatically flawless, and semantically sound across both contexts."
+    }
+  ]
+}

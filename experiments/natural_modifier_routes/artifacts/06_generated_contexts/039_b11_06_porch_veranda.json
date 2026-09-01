@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b11_06_porch_veranda",
+    "generation_batch": 11,
+    "domain": "buildings and architectural spaces",
+    "family_id": "porch_veranda",
+    "noun_0": "porch",
+    "noun_1": "veranda",
+    "shared_definition": "a roofed, open-air platform attached to the exterior of a house",
+    "neutral_stem": "The family sat out on",
+    "candidate_modifiers": [
+      "screened",
+      "wooden",
+      "shady",
+      "spacious",
+      "front",
+      "narrow",
+      "covered",
+      "breezy",
+      "sunny",
+      "quiet",
+      "charming",
+      "tiled",
+      "cozy",
+      "rustic"
+    ],
+    "semantic_notes": "'Veranda' often connotes a long, open gallery in warmer climates or colonial architecture, while 'porch' is the common North American domestic standard.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        46162
+      ],
+      "noun_1": [
+        166685
+      ]
+    },
+    "modifier_token_ids": {
+      "screened": [
+        59237
+      ],
+      "wooden": [
+        7116
+      ],
+      "shady": [
+        93256
+      ],
+      "spacious": [
+        30351
+      ],
+      "front": [
+        3645
+      ],
+      "narrow": [
+        12019
+      ],
+      "covered": [
+        7438
+      ],
+      "breezy": [
+        186743
+      ],
+      "sunny": [
+        17635
+      ],
+      "quiet": [
+        12010
+      ],
+      "charming": [
+        32219
+      ],
+      "tiled": [
+        91627
+      ],
+      "cozy": [
+        37066
+      ],
+      "rustic": [
+        34452
+      ]
+    },
+    "forced_projection_span": 0.13667657226324081,
+    "max_noun_pair_mass": 0.7619602084159851,
+    "context_priority_score": 0.10414210948728142,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "spacious",
+        "target_modifier": "narrow",
+        "source_projection": -0.12074048817157745,
+        "target_projection": -0.10761383175849915,
+        "forced_modifier_leverage": 0.013126656413078308,
+        "source_pair_mass": 0.29336559772491455,
+        "target_pair_mass": 0.22127464413642883
+      },
+      "medium": {
+        "source_modifier": "cozy",
+        "target_modifier": "spacious",
+        "source_projection": -0.19131430983543396,
+        "target_projection": -0.12074048817157745,
+        "forced_modifier_leverage": 0.0705738216638565,
+        "source_pair_mass": 0.23966935276985168,
+        "target_pair_mass": 0.29336559772491455
+      },
+      "high": {
+        "source_modifier": "narrow",
+        "target_modifier": "charming",
+        "source_projection": -0.10761383175849915,
+        "target_projection": 0.02906274050474167,
+        "forced_modifier_leverage": 0.13667657226324081,
+        "source_pair_mass": 0.22127464413642883,
+        "target_pair_mass": 0.15681344270706177
+      }
+    },
+    "context_generation_rank": 40
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "spacious",
+      "target_modifier": "narrow",
+      "source_context_dev": [
+        "The suburban house had a huge front deck area with plenty of room for several rocking chairs and tables. During mild summer evenings, everyone gathered together to enjoy the open breeze.",
+        "Their farmhouse featured an expansive outdoor wooden deck spanning the entire front facade. It provided ample room for the whole gathering to spread out comfortably.",
+        "With so much floor area extending across the front entryway, the outdoor timber deck never felt crowded. The whole household enjoyed gathering there on balmy afternoons.",
+        "The country cottage was known for its wide outdoor living zone extending from the front door. There was plenty of room for dinner parties under the overhanging eaves."
+      ],
+      "target_context_dev": [
+        "The colonial estate featured an elegant, slim walkway bordering the perimeter with slender white balustrades. In the late afternoon, they preferred taking tea along that slender gallery.",
+        "Designed in a refined coastal style, the estate included a slim, shaded promenade along the upper courtyard. It offered just enough width for a single row of wicker seating.",
+        "The tropical villa featured a long, tightly bordered gallery running along the southern facade. It stayed comfortably cool despite having very limited walking depth.",
+        "Along the edge of the historic plantation house ran a slender, graceful platform under ornate eaves. Even with limited floor depth, it remained their favorite place to watch the garden."
+      ],
+      "source_context_test": [
+        "The rural homestead featured an oversized floor deck looking out across the front pasture. It easily accommodated multiple lounge chairs and benches without crowding.",
+        "Their newly remodeled suburban property boasted a sweeping front entrance area with massive floor coverage. Visitors immediately noticed how open and uncluttered the outdoor platform felt.",
+        "Built with entertaining in mind, the front exterior platform stretched deep into the front lawn. It offered plenty of square footage for the entire household to relax at sunset.",
+        "The ranch-style home included an extensive covered timber area out front. There was more than enough room for everyone to sit and watch the sunset together."
+      ],
+      "target_context_test": [
+        "The grand heritage home had a graceful, slender shaded gallery wrapping around the main wing. It preserved the architectural proportions while providing a tight walkway above the garden.",
+        "The ornate seaside residence had a slender outdoor corridor with decorative ironwork railings. Guests appreciated the refined aesthetic despite the minimal walking depth.",
+        "Constructed in classic southern architecture, the plantation home featured a slim elevated promenade along the parlor windows. It served as an intimate walkway for quiet conversation.",
+        "The stately manor featured a slim gallery extending past the French doors. Though minimal in width, the shaded perimeter caught the afternoon breeze perfectly."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (spacious porch, spacious veranda, narrow porch, narrow veranda) are fully grammatical, coherent, and physically plausible outdoor residential structures. Source contexts leverage everyday American vernacular/scale, while target contexts adopt upscale colonial/southern architectural registers and slim dimensions."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "cozy",
+      "target_modifier": "spacious",
+      "source_context_dev": [
+        "The modest wood-frame bungalow featured a small, sheltered wooden entryway framed by flowering honeysuckle. It felt warm, sheltered, and wonderfully intimate after dusk.",
+        "Nestled under low overhanging eaves, the small front platform of the cottage offered a snug nook for relaxing. A pair of padded rocking chairs filled the sheltered space perfectly.",
+        "The quiet neighborhood house had an intimate, sheltered front step landing surrounded by dense shrubs. It offered a peaceful, private retreat from the evening chill.",
+        "With hanging fern baskets and a compact bench, the front deck of the little house felt delightfully snug. The entire household loved gathering in the quiet, sheltered nook."
+      ],
+      "target_context_dev": [
+        "The grand southern mansion possessed an expansive, wrap-around platform framed by towering fluted columns. There was room to host entire receptions across its sweeping footprint.",
+        "The lavish country manor was famous for its expansive outdoor entertaining gallery. The massive timber structure stretched effortlessly along three sides of the house.",
+        "Designed with grand proportions, the sweeping estate gallery featured high ceilings and immense square footage. It offered abundant room for multiple dining setups overlooking the valley.",
+        "The sprawling estate residence had an extensive covered terrace wrapping around the entire garden facade. It easily accommodated large crowds beneath its ornate classical columns."
+      ],
+      "source_context_test": [
+        "The small cabin possessed a snug front platform sheltered beneath cedar rafters. It provided a remarkably warm, intimate spot to drink hot cider together.",
+        "Surrounded by climbing roses, the compact timber landing outside the cottage felt wonderfully snug and private. It was just large enough for a small wooden bench.",
+        "The rustic craftsman home had a tiny, sheltered front deck that kept the wind at bay. The close-knit household enjoyed spending quiet evenings in that intimate spot.",
+        "A dense hedge shielded the small front platform of the village home, creating a snug haven. The family enjoyed gathering closely together on the wooden bench."
+      ],
+      "target_context_test": [
+        "The majestic colonial villa featured an immense shaded gallery that bordered the entire courtyard. Its generous dimensions accommodated multiple seating arrangements with ease.",
+        "With expansive marble flooring and high ceilings, the mansion's sweeping promenade offered vast outdoor capacity. It provided unmatched room for entertaining guests in comfort.",
+        "The sprawling heritage home included an expansive outdoor gallery looking out toward the mountains. There was ample space for a long banqueting table along its polished deck.",
+        "The stately plantation residence featured an open-air promenade with expansive floor coverage. The huge covered perimeter offered plenty of room for lavish outdoor gatherings."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (cozy porch, cozy veranda, spacious porch, spacious veranda) are standard and semantically valid. The source contexts evoke rustic warmth, small scale, and casual domesticity, favoring cozy porch; target contexts evoke high-register estate elegance and large scale, favoring spacious veranda."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "narrow",
+      "target_modifier": "charming",
+      "source_context_dev": [
+        "The modest row house had a tight, linear wooden landing barely two feet deep along the front wall. There was just enough room to set down a single folding chair.",
+        "Space was extremely limited at the front of the simple clapboard cottage, where the raised entrance platform formed a slender strip. People had to walk single-file to reach the steps.",
+        "The urban townhouse featured a slender, tightly boxed timber platform outside the front door. Its minimal depth allowed little more than standing room along the entryway.",
+        "A slim, elevated wooden ledge functioned as the entryway for the compact suburban home. The lack of clearance meant only slender furniture could fit along the exterior wall."
+      ],
+      "target_context_dev": [
+        "The historic estate in the hills was admired for its picturesque outdoor living gallery with hand-carved railings. Every detail delighted visitors who appreciated classic architecture.",
+        "Draped in blooming wisteria and featuring vintage wrought-iron scrollwork, the upscale residence's outdoor promenade was utterly delightful. Guests always remarked on its lovely aesthetic appeal.",
+        "The picturesque colonial manor featured a delightful elevated gallery overlooking lush tropical gardens. Its exquisite moldings gave the whole exterior a timeless, romantic appeal.",
+        "With polished hardwood flooring, ornate lattice screens, and antique lanterns, the stately villa's grand gallery exuded warmth. Visitors found the open-air setting thoroughly delightful."
+      ],
+      "source_context_test": [
+        "The front entry of the compact city house consisted of a slim elevated walkway with tight clearance. Passing through required stepping around the single small stool.",
+        "With almost no clearance between the railing and the front windows, the modest home's exterior platform felt extremely tight. It served strictly as a slim corridor.",
+        "The small wooden platform outside the kitchen door was exceptionally slender and restricted. It offered barely enough width for an adult to step outside comfortably.",
+        "Built onto the front of the narrow cottage was an equally slim wooden deck. Its tight width permitted nothing larger than a single row of small flower pots."
+      ],
+      "target_context_test": [
+        "The beautifully restored heritage villa featured a picturesque open-air gallery adorned with pastel fretwork. The elegant presentation added immense visual delight to the exterior.",
+        "Surrounded by manicured topiary and classical columns, the estate's shaded gallery was exceptionally picturesque. The refined decor provided an enchanting spot for evening teas.",
+        "The historic manor house boasted a delightful open platform with decorative corbels and brass fixtures. The scenic space enchanted everyone who stepped out of the French doors.",
+        "With vintage rattan furnishings and ornate balustrades, the seaside residence's elevated promenade was thoroughly picturesque. It provided an enchanting backdrop for sunset gatherings."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (narrow porch, narrow veranda, charming porch, charming veranda) are completely valid and natural in English. Source contexts emphasize plain utilitarian confinement and small townhomes, favoring narrow porch; target contexts emphasize picturesque elegance and architectural romance, strongly favoring charming veranda."
+    }
+  ]
+}

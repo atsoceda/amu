@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b11_10_patio_terrace",
+    "generation_batch": 11,
+    "domain": "buildings and architectural spaces",
+    "family_id": "patio_terrace",
+    "noun_0": "patio",
+    "noun_1": "terrace",
+    "shared_definition": "a paved outdoor area adjoining a residence used for dining or lounging",
+    "neutral_stem": "We enjoyed dinner on",
+    "candidate_modifiers": [
+      "paved",
+      "sunny",
+      "spacious",
+      "stone",
+      "shaded",
+      "crowded",
+      "outdoor",
+      "breezy",
+      "tiled",
+      "overlooked",
+      "private",
+      "luxurious",
+      "rooftop",
+      "picturesque",
+      "peaceful"
+    ],
+    "semantic_notes": "'Terrace' often implies elevation, multileveled landscaping, or upscale urban dining, while 'patio' is typical ground-level domestic paving.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        34034
+      ],
+      "noun_1": [
+        38506
+      ]
+    },
+    "modifier_token_ids": {
+      "paved": [
+        59842
+      ],
+      "sunny": [
+        17635
+      ],
+      "spacious": [
+        30351
+      ],
+      "stone": [
+        10810
+      ],
+      "shaded": [
+        62913
+      ],
+      "crowded": [
+        37534
+      ],
+      "outdoor": [
+        11690
+      ],
+      "breezy": [
+        186743
+      ],
+      "tiled": [
+        91627
+      ],
+      "overlooked": [
+        44504
+      ],
+      "private": [
+        2147
+      ],
+      "luxurious": [
+        37848
+      ],
+      "rooftop": [
+        66700
+      ],
+      "picturesque": [
+        56849
+      ],
+      "peaceful": [
+        26169
+      ]
+    },
+    "forced_projection_span": 0.15776178240776062,
+    "max_noun_pair_mass": 0.8043870329856873,
+    "context_priority_score": 0.12690153206951216,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "breezy",
+        "target_modifier": "rooftop",
+        "source_projection": 0.0808316171169281,
+        "target_projection": 0.09573934227228165,
+        "forced_modifier_leverage": 0.014907725155353546,
+        "source_pair_mass": 0.4361421763896942,
+        "target_pair_mass": 0.11678177863359451
+      },
+      "medium": {
+        "source_modifier": "breezy",
+        "target_modifier": "tiled",
+        "source_projection": 0.0808316171169281,
+        "target_projection": 0.15917158126831055,
+        "forced_modifier_leverage": 0.07833996415138245,
+        "source_pair_mass": 0.4361421763896942,
+        "target_pair_mass": 0.5258225202560425
+      },
+      "high": {
+        "source_modifier": "overlooked",
+        "target_modifier": "sunny",
+        "source_projection": 0.32107841968536377,
+        "target_projection": 0.4788402020931244,
+        "forced_modifier_leverage": 0.15776178240776062,
+        "source_pair_mass": 0.538384735584259,
+        "target_pair_mass": 0.6523072719573975
+      }
+    },
+    "context_generation_rank": 31
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "breezy",
+      "target_modifier": "rooftop",
+      "source_context_dev": [
+        "After a hot afternoon in the backyard garden, the evening air brought a welcome cool draft.",
+        "The ground-floor dining spot behind our suburban house caught every passing gust of fresh air.",
+        "We stepped just outside the kitchen doors into the yard as twilight gusts cooled the evening down.",
+        "A gentle current of fresh air swept through the backyard garden area right as we sat down to eat."
+      ],
+      "target_context_dev": [
+        "Our downtown apartment building features a lovely gathering platform perched high above the urban streets.",
+        "From the very top floor of the hotel, guests can look out across the entire city skyline during meals.",
+        "The multi-story condominium building has an elevated outdoor dining level overlooking the urban cityscape.",
+        "We rode the elevator up to the building's highest platform to dine overlooking the city lights."
+      ],
+      "source_context_test": [
+        "The open ground-level yard caught a pleasant stream of cool air as evening settled in.",
+        "Sitting just steps from the lawn, we felt a refreshing chill drift through the garden space.",
+        "The lower garden space stayed comfortable thanks to the continuous flow of cooling drafts.",
+        "As night fell in the backyard, a revitalizing current of fresh air swept past the outdoor table."
+      ],
+      "target_context_test": [
+        "The high-rise building offered panoramic views from its open-air gathering level at the very summit.",
+        "To take in the city lights from above, we headed up to the flat platform topping the hotel.",
+        "High above the noisy traffic, the penthouse level provides a spacious platform for evening meals.",
+        "The top tier of the apartment complex provided an unobstructed view of the urban night sky."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('breezy patio', 'breezy terrace', 'rooftop patio', 'rooftop terrace') are fully natural, grammatical, and semantically valid descriptions of outdoor paved dining spaces."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "breezy",
+      "target_modifier": "tiled",
+      "source_context_dev": [
+        "A steady, cooling draft rolled across the backyard garden as the summer heat began to fade.",
+        "We gathered outside near the grass where the evening wind kept the atmosphere crisp and cool.",
+        "The open-air seating area behind the house caught every brisk gust drifting in from the nearby woods.",
+        "Out in the back garden, gentle gusts of wind created a wonderfully refreshing atmosphere for our meal."
+      ],
+      "target_context_dev": [
+        "The Italian villa featured meticulously laid ceramic flagstones beneath the outdoor dining set.",
+        "Polished slate and decorative ceramic mosaics formed a stunning flat floor outside the French doors.",
+        "The newly laid stone squares on the outdoor flooring gave the entire dining area a refined Mediterranean feel.",
+        "Beneath our dining table, handcrafted ceramic squares created a smooth and elegant surface underfoot."
+      ],
+      "source_context_test": [
+        "A refreshing current of air blew across the backyard dining area as dusk descended.",
+        "We sat near the garden shrubs, enjoying the crisp airflow that cooled the humid evening.",
+        "Gentle currents of fresh air rustled the garden foliage surrounding our outdoor meal.",
+        "The open space adjacent to the lawn was filled with a soothing, cool draft throughout dinner."
+      ],
+      "target_context_test": [
+        "The outdoor entertaining space was paved with intricate ceramic squares that stayed smooth and cool.",
+        "Smooth ceramic squares formed a beautifully patterned floor under the outdoor seating area.",
+        "Underneath the dining furniture, polished ceramic masonry gave the space a sleek, finished appearance.",
+        "The architectural plans called for handcrafted ceramic slabs covering the entire outdoor entertaining floor."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('breezy patio', 'breezy terrace', 'tiled patio', 'tiled terrace') are standard, idiomatic phrases designating outdoor residential dining areas."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "overlooked",
+      "target_modifier": "sunny",
+      "source_context_dev": [
+        "The adjacent two-story houses had multiple upstairs windows peering right down onto our small dining area.",
+        "We could see neighbors watching us from their higher apartment balconies directly above our garden spot.",
+        "Because surrounding townhouses towered directly above our backyard, we lacked any real sense of privacy.",
+        "Nearby upper-floor windows gave surrounding residents a completely unobstructed view of our outdoor dining spot."
+      ],
+      "target_context_dev": [
+        "Golden beams of afternoon daylight drenched the open-air dining area in cheerful, radiant warmth.",
+        "Unobstructed by any trees or high walls, the outdoor dining space was bathed in bright, warm daylight.",
+        "The mid-afternoon daylight shone brightly overhead, illuminating the entire outdoor table in warmth.",
+        "With no cloud cover and a wide-open exposure, warm daylight poured down across our meal setting."
+      ],
+      "source_context_test": [
+        "The high windows of neighboring multi-story buildings looked directly down upon our outdoor dining set.",
+        "Surrounding residential units loomed overhead, giving curious neighbors a direct view into our eating area.",
+        "We felt quite exposed as upper-level balconies from the adjacent complex peered down into our garden space.",
+        "The adjacent tall structures stood close enough that nearby residents could easily peer down onto our table."
+      ],
+      "target_context_test": [
+        "Warm, radiant afternoon light fully illuminated our dining table throughout the clear afternoon.",
+        "Bright daylight flooded the outdoor dining space, keeping everyone pleasantly warm as we ate.",
+        "Direct light from the clear sky poured down on our table, creating a cheerful, luminous setting.",
+        "The open dining area caught the full brilliance of the clear afternoon rays without any obstruction."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('overlooked patio', 'overlooked terrace', 'sunny patio', 'sunny terrace') are completely felicitous in English to describe spatial visibility and sun exposure for paved dining grounds."
+    }
+  ]
+}

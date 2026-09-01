@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_01_event_talk_lecture",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_talk_lecture",
+    "noun_0": "talk",
+    "noun_1": "lecture",
+    "shared_definition": "an oral presentation delivered to an audience to inform or instruct",
+    "neutral_stem": "Students gathered in the hall for",
+    "candidate_modifiers": [
+      "brief",
+      "engaging",
+      "formal",
+      "informal",
+      "introductory",
+      "public",
+      "short",
+      "inspiring",
+      "tedious",
+      "fascinating",
+      "lively",
+      "lengthy",
+      "stimulating",
+      "dull",
+      "informative"
+    ],
+    "semantic_notes": "'Talk' is more informal and conversational, while 'lecture' typically implies an academic, instructional, or stern delivery.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2910
+      ],
+      "noun_1": [
+        22939
+      ]
+    },
+    "modifier_token_ids": {
+      "brief": [
+        8652
+      ],
+      "engaging": [
+        21964
+      ],
+      "formal": [
+        10781
+      ],
+      "informal": [
+        33835
+      ],
+      "introductory": [
+        59517
+      ],
+      "public": [
+        1237
+      ],
+      "short": [
+        2822
+      ],
+      "inspiring": [
+        32977
+      ],
+      "tedious": [
+        67271
+      ],
+      "fascinating": [
+        27858
+      ],
+      "lively": [
+        45489
+      ],
+      "lengthy": [
+        42288
+      ],
+      "stimulating": [
+        55384
+      ],
+      "dull": [
+        39212
+      ],
+      "informative": [
+        40564
+      ]
+    },
+    "forced_projection_span": 0.10858096927404404,
+    "max_noun_pair_mass": 0.31788840889930725,
+    "context_priority_score": 0.03451663155927043,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "tedious",
+        "target_modifier": "brief",
+        "source_projection": 0.010697362944483757,
+        "target_projection": 0.021425748243927956,
+        "forced_modifier_leverage": 0.010728385299444199,
+        "source_pair_mass": 0.013048524037003517,
+        "target_pair_mass": 0.03477446734905243
+      },
+      "medium": {
+        "source_modifier": "tedious",
+        "target_modifier": "lengthy",
+        "source_projection": 0.010697362944483757,
+        "target_projection": 0.06618765741586685,
+        "forced_modifier_leverage": 0.055490294471383095,
+        "source_pair_mass": 0.013048524037003517,
+        "target_pair_mass": 0.07802539318799973
+      },
+      "high": {
+        "source_modifier": "introductory",
+        "target_modifier": "fascinating",
+        "source_projection": 0.09913481026887894,
+        "target_projection": 0.20771577954292297,
+        "forced_modifier_leverage": 0.10858096927404404,
+        "source_pair_mass": 0.1378159523010254,
+        "target_pair_mass": 0.31788840889930725
+      }
+    },
+    "context_generation_rank": 109
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "tedious",
+      "target_modifier": "brief",
+      "source_context_dev": [
+        "The visiting speaker had a reputation for droning on endlessly without engaging the audience. Most attendees were already dreading the upcoming session.",
+        "Nobody was looking forward to the afternoon session, as the presenter was notorious for being dull and monotone. The room slowly filled with unenthusiastic attendees.",
+        "The schedule listed a routine update that promised very little excitement. People quietly took their seats, expecting a rather dry and monotonous address.",
+        "Word had spread that the presenter's delivery was dry and utterly devoid of passion. Many participants brought coffee just to stay awake."
+      ],
+      "target_context_dev": [
+        "The department chair had only allotted fifteen minutes between classes for a quick academic overview. Faculty urged everyone to arrive promptly so it could finish on time.",
+        "Because of a tight timetable, the professor promised to deliver a condensed scholarly overview in under ten minutes. The session was intended to provide just a quick summary.",
+        "A short, ten-minute academic presentation was scheduled before the main seminar began. The syllabus noted that the instructor would keep remarks as succinct as possible.",
+        "The guest scholar was given a strict five-minute window to introduce the theoretical framework. Attendees quickly found seats to ensure things started without delay."
+      ],
+      "source_context_test": [
+        "The afternoon program featured an uninspired speaker who tended to repeat the same basic points. The audience braced themselves for a dreary afternoon.",
+        "Past attendees warned that the speaker relied on endless slides and spoke in a flat, unvarying cadence. Very few people entered the room with high expectations.",
+        "A routine administrative overview had been scheduled right after lunch. Everyone anticipated a thoroughly unexciting and sluggish presentation.",
+        "The upcoming session was expected to be painfully dry, given the speaker's history of monotone monologues. People settled in with noticeable reluctance."
+      ],
+      "target_context_test": [
+        "The course syllabus indicated a quick ten-minute theoretical summary before the lab work started. Attendees hurried inside to make the most of the short timeframe.",
+        "With limited time remaining in the academic schedule, the professor planned a concise overview of key concepts. Everyone took their seats swiftly.",
+        "The visiting professor agreed to provide a very short, ten-minute conceptual summary between scheduled classes. People filed in quickly so it could conclude promptly.",
+        "Only a tiny window remained on the academic schedule for the guest researcher to present core findings. Attendees rushed to find seats before the quick address started."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('tedious talk', 'tedious lecture', 'brief talk', 'brief lecture') are fully compatible and natural across all source and target contexts. Source contexts induce a preference for boring or monotonous delivery while leaning informal, whereas target contexts highlight strict time limits and concise academic summaries."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "tedious",
+      "target_modifier": "lengthy",
+      "source_context_dev": [
+        "The afternoon presenter had a reputation for dull, repetitive remarks that always drained the room's energy. Attendees sighed as they prepared for another uninspiring session.",
+        "The topic promised to be dry, and the speaker was well known for speaking in a monotone drone. People slowly drifted in, fully expecting to be bored.",
+        "Previous sessions with this organizer had been notoriously flat, repetitive, and devoid of lively interaction. Everyone settled into their seats with very low expectations.",
+        "An unengaging department update was scheduled immediately after lunch. Most attendees anticipated a sluggish, uninspired address."
+      ],
+      "target_context_dev": [
+        "The syllabus warned that today's comprehensive academic module would stretch across three uninterrupted hours. The professor intended to cover an extensive theoretical syllabus.",
+        "A comprehensive, multi-hour theoretical session on advanced mechanics was slated for the afternoon. Faculty reminded everyone to prepare for an extended academic presentation.",
+        "The visiting scholar had prepared an extensive four-hour academic discourse covering decades of research. Attendees took their seats knowing the session would run quite late.",
+        "The academic symposium scheduled an in-depth, three-hour theoretical overview of the entire curriculum. Students brought full notebooks in anticipation of the protracted session."
+      ],
+      "source_context_test": [
+        "Word had circulated that the speaker's style was monotonous and lacked any sense of dynamism. The audience prepared themselves for a rather dull hour.",
+        "The organizer was known for delivering flat, unenthusiastic updates without any visual aids. Attendees sat down quietly, expecting little excitement.",
+        "The upcoming segment was widely viewed as a chore, given the presenter's habit of reading directly from plain slides. People entered the room with obvious hesitation.",
+        "Anticipating a monotonous delivery of routine information, people entered with heavy eyelids and large cups of coffee. The mood in the room was distinctly unenthusiastic."
+      ],
+      "target_context_test": [
+        "Today's course outline featured a three-hour theoretical deep dive without any scheduled intermissions. Everyone settled in for an extended period of academic instruction.",
+        "The professor planned an exhaustive multi-hour exposition detailing the entire semester's theoretical framework. Attendees prepared for a protracted academic address.",
+        "An extensive academic session spanning several hours was scheduled to review the dense syllabus. The audience took their seats expecting a deep, prolonged dive into the subject.",
+        "The department planned an all-afternoon academic address detailing foundational theories across multiple disciplines. Participants arranged their notes for a marathon session."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('tedious talk', 'tedious lecture', 'lengthy talk', 'lengthy lecture') remain grammatically and semantically sound across both contexts. Source contexts emphasize monotony and dullness, while target contexts emphasize extended duration and formal academic scope."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "introductory",
+      "target_modifier": "fascinating",
+      "source_context_dev": [
+        "The event was organized as a broad overview for complete beginners on their very first day on campus. The speaker planned a friendly, basic orientation.",
+        "Designed specifically for novices, the session aimed to establish basic concepts and ease newcomers into the community. The atmosphere was casual and welcoming.",
+        "The opening day schedule featured a gentle primer intended to familiarize new arrivals with the basics. Attendees gathered expecting an accessible, baseline overview.",
+        "A basic primer had been arranged to give first-year arrivals a simple overview of what to expect. Everyone took their seats for the preliminary address."
+      ],
+      "target_context_dev": [
+        "The renowned scholar was celebrated worldwide for delivering mesmerizing, intellectually thrilling presentations on cutting-edge discoveries. The room was buzzing with eager anticipation.",
+        "Attendees were thrilled to hear from an acclaimed theorist known for mind-bending demonstrations and captivating insights. Excitement was palpable as the audience found their seats.",
+        "The visiting academic was famous for delivering spellbinding discourses that left entire auditoriums utterly captivated. Everyone rushed inside, eager to be thoroughly inspired.",
+        "A distinguished professor was scheduled to share astonishing discoveries from a groundbreaking multi-year study. The atmosphere in the auditorium was electric with intense curiosity."
+      ],
+      "source_context_test": [
+        "The afternoon began with an orientation session tailored strictly for complete beginners. Newcomers took their seats looking forward to an accessible primer.",
+        "Organizers had scheduled an initial, entry-level overview to help newcomers understand the basic terminology. The tone was deliberately informal and beginner-friendly.",
+        "To start off the semester, the department arranged a baseline orientation designed for people with zero background experience. The room filled with eager newcomers.",
+        "The first session on the agenda was a basic welcoming primer intended to outline fundamental points for newcomers. Attendees gathered expecting an easy-to-follow overview."
+      ],
+      "target_context_test": [
+        "A world-renowned academic researcher was about to reveal groundbreaking findings through a thoroughly captivating presentation. People packed the room in high anticipation.",
+        "The keynote speaker was celebrated for delivering mind-expanding, deeply engrossing academic expositions that held audiences spellbound. Anticipation ran exceptionally high.",
+        "Renowned across academia for illuminating complex mysteries with spellbinding clarity, the visiting professor drew a packed crowd. The excitement in the room was unmistakable.",
+        "The academic community had eagerly awaited this thrilling presentation on revolutionary scientific discoveries. Attendees crowded into their seats with palpable enthusiasm."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('introductory talk', 'introductory lecture', 'fascinating talk', 'fascinating lecture') remain completely valid and natural across all source and target contexts. Source contexts prime an introductory, casual orientation for novices, while target contexts establish high excitement and academic intellectual wonder."
+    }
+  ]
+}

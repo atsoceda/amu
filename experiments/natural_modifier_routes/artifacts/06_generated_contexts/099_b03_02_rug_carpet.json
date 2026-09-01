@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_02_rug_carpet",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "rug_carpet",
+    "noun_0": "rug",
+    "noun_1": "carpet",
+    "shared_definition": "a heavy woven fabric floor covering used for warmth and decoration",
+    "neutral_stem": "Before stepping onto the hardwood, he wiped his feet on",
+    "candidate_modifiers": [
+      "soft",
+      "wool",
+      "dirty",
+      "thick",
+      "stained",
+      "antique",
+      "patterned",
+      "colorful",
+      "expensive",
+      "plush",
+      "woven",
+      "small",
+      "clean",
+      "damp",
+      "warm"
+    ],
+    "semantic_notes": "Carpet often suggests fixed, wall-to-wall flooring, whereas rug usually refers to a smaller, movable floor piece.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        17558
+      ],
+      "noun_1": [
+        27100
+      ]
+    },
+    "modifier_token_ids": {
+      "soft": [
+        3538
+      ],
+      "wool": [
+        26112
+      ],
+      "dirty": [
+        24881
+      ],
+      "thick": [
+        7497
+      ],
+      "stained": [
+        38307
+      ],
+      "antique": [
+        34323
+      ],
+      "patterned": [
+        77780
+      ],
+      "colorful": [
+        12815
+      ],
+      "expensive": [
+        11162
+      ],
+      "plush": [
+        60912
+      ],
+      "woven": [
+        46276
+      ],
+      "small": [
+        1944
+      ],
+      "clean": [
+        3980
+      ],
+      "damp": [
+        31225
+      ],
+      "warm": [
+        6962
+      ]
+    },
+    "forced_projection_span": 0.052492253482341766,
+    "max_noun_pair_mass": 0.798436164855957,
+    "context_priority_score": 0.041911713555087715,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "wool",
+        "target_modifier": "woven",
+        "source_projection": -0.3689710199832916,
+        "target_projection": -0.36488866806030273,
+        "forced_modifier_leverage": 0.004082351922988892,
+        "source_pair_mass": 0.798436164855957,
+        "target_pair_mass": 0.4791116714477539
+      },
+      "medium": {
+        "source_modifier": "expensive",
+        "target_modifier": "stained",
+        "source_projection": 0.03412574529647827,
+        "target_projection": 0.05303753912448883,
+        "forced_modifier_leverage": 0.01891179382801056,
+        "source_pair_mass": 0.2744264006614685,
+        "target_pair_mass": 0.4265078902244568
+      },
+      "high": {
+        "source_modifier": "stained",
+        "target_modifier": "soft",
+        "source_projection": 0.05303753912448883,
+        "target_projection": 0.1055297926068306,
+        "forced_modifier_leverage": 0.052492253482341766,
+        "source_pair_mass": 0.4265078902244568,
+        "target_pair_mass": 0.25640785694122314
+      }
+    },
+    "context_generation_rank": 100
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "wool",
+      "target_modifier": "woven",
+      "source_context_dev": [
+        "The rustic mountain cabin featured natural fleece textiles gathered from regional sheep farms. Near the entrance lay an artisanal piece designed to protect the interior planks.",
+        "She admired the lanolin-scented fiber piece resting near the entryway. Its dense, natural animal fleece felt thick underfoot.",
+        "The entryway was decorated with traditional pastoral materials sheared from highland flocks. A small fleece mat rested by the door to catch dirt.",
+        "Natural fleece accents were arranged across the cottage floor. Right at the threshold sat a thick fleece covering made from raw fleece bundles."
+      ],
+      "target_context_dev": [
+        "The artisan spent months operating a heavy handloom to interlace intricate warp and weft threads. The resulting floor textile covered the entire wide entryway.",
+        "Crafted on an industrial loom, the expansive interlocking textile spanned across the wide foyer. Its interlaced threads created a sturdy, decorative surface across the corridor.",
+        "The studio was known for traditional loomwork where warp and weft fibers were meticulously interlaced. A large piece of this interlaced floor covering stretched across the entryway.",
+        "Every square inch of the wide floor textile showcased crisscrossed threaded patterns produced by a foot-powered loom. The expansive textile spanned from wall to wall."
+      ],
+      "source_context_test": [
+        "The foyer featured heavy spun fleece home decor imported from pastoral villages. Right inside the entrance sat a small floor covering made from heavy fleece yarn.",
+        "He prioritized unblended animal fleece when choosing pieces for his alpine chalet. A dense fleece pad sat neatly just past the doorway.",
+        "The country estate showcased natural fleece furnishings sheared from local livestock. A thick, fleecy floor piece greeted guests at the doorway.",
+        "Handmade fleece materials lined the entry vestibule for added insulation against the cold draft. A thick fleece piece lay at the threshold."
+      ],
+      "target_context_test": [
+        "The large entryway runner was produced on an antique loom by crossing hundreds of individual threads. The interlocking fiber construction covered the whole wide corridor.",
+        "Intricate interlaced patterns ran the entire length of the grand hallway. The loom-produced textile formed a continuous, tightly threaded foundation underfoot.",
+        "The broad entrance hall was lined with an expansive textile made by interlacing sturdy structural threads. The loomed fabric stretched along the path to the main hall.",
+        "Textile designers had interlaced individual strands into a vast, structured pattern covering the entire reception area floor from baseboard to baseboard."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (wool rug, wool carpet, woven rug, woven carpet) are entirely natural after the stem. Source contexts bias toward 'wool rug' by highlighting sheep fleece and small entryway pieces. Target contexts bias toward 'woven carpet' by emphasizing loomwork, warp/weft interlacing, and wall-to-wall expansive coverage."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "expensive",
+      "target_modifier": "stained",
+      "source_context_dev": [
+        "The upscale penthouse featured rare designer furnishings purchased at prestigious auctions for tens of thousands of dollars. The owner insisted on extreme care near the lavish antique floor accent.",
+        "A high-priced collector item from a renowned boutique graced the grand vestibule. The valuation was so high that guests were reminded to treat the floor furnishing with utmost caution.",
+        "Every single furnishing in the lavish estate was an exorbitantly priced luxury import. Near the threshold sat a priceless designer floor textile.",
+        "The billionaire's residence displayed museum-grade decor purchased for a small fortune. A costly bespoke floor covering sat prominently inside the entrance."
+      ],
+      "target_context_dev": [
+        "The neglected rental unit had experienced years of beverage spills, dropped food, and heavy mud tracks. A discolored, filthy patch of fabric lay directly in the walkway.",
+        "Years of heavy foot traffic and spilled coffee had left dark, unsightly blemishes across the entrance textile. Nobody had bothered to wash out the deep blotches.",
+        "The entryway floor piece was visibly ruined by spilled wine and dirty rainwater that had permanently darkened the fabric. Ugly blotches covered its entire surface.",
+        "Water leaks and muddy boot prints had left permanent dark rings across the entryway floor fabric. The discolored, blemish-covered piece looked completely ruined."
+      ],
+      "source_context_test": [
+        "The lavish gallery displayed luxury designer floor pieces worth substantial fortunes. An opulent, top-dollar floor textile greeted visitors at the gallery doorway.",
+        "Decorated by an elite interior designer, the stately manor featured high-end luxury decor. An exorbitantly priced floor covering lay right by the front door.",
+        "The celebrity estate spared no expense on opulent floor furnishings commissioned from master craftsmen. A luxury investment piece lay carefully placed at the entrance.",
+        "The exclusive private club was furnished with extravagantly priced antique floor textiles. Guests were careful not to damage the costly piece at the door."
+      ],
+      "target_context_test": [
+        "Old grease marks, pet accidents, and dried coffee spills had darkened the entrance textile over decades of neglect. Dark, smeared blotches covered the fabric.",
+        "The hallway floor fabric was covered in permanent discolored blemishes from years of muddy shoes and dropped groceries. The grimy blotches were impossible to ignore.",
+        "Uncleaned beverage spills had dried into dark, permanent rings on the entryway floor covering. The entire textile was visibly marred by grime and blotches.",
+        "The dingy workshop entrance was littered with grease marks and discolored fluid blotches on the floor fabric. The grimy, blemish-marked textile lay right at the threshold."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (expensive rug, expensive carpet, stained rug, stained carpet) fit seamlessly with the stem. Source contexts bias toward 'expensive rug' via high-end auctions and boutique luxury accents. Target contexts bias toward 'stained carpet' through references to neglected spills, mud tracks, and heavy blemish-covered hallway surfaces."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "stained",
+      "target_modifier": "soft",
+      "source_context_dev": [
+        "The messy workshop entrance was constantly subjected to spilled motor oil and dirty boots. A discolored floor piece covered in dark blotches sat by the doorway.",
+        "Spilled soda and ground-in mud had left ugly, permanent discoloration on the front hallway fabric. The heavily discolored floor piece was overdue for replacement.",
+        "Years of coffee spills and dripping wet umbrellas had ruined the fabric by the front door with dark rings. The blotchy, grime-marked floor textile looked terribly neglected.",
+        "Dark grease spots and discolored water marks covered the entryway fabric from corner to corner. The dirty, blotch-covered floor piece lay directly in the path of incoming guests."
+      ],
+      "target_context_dev": [
+        "The luxurious master suite was designed for absolute comfort, featuring deep, cushiony floor padding that gently yielded under every step. The plush floor covering felt delightfully gentle on bare feet.",
+        "She had chosen an exceptionally fluffy, cushioned floor covering with a deep, velvety pile that felt heavenly to touch. The yielding, deeply cushioned textile covered the threshold.",
+        "The bedroom sanctuary prioritized tactile indulgence, featuring silky, deep-pile floor textiles that offered a cloud-like sensation. A wonderfully cushioned floor covering lay just inside the entrance.",
+        "A deep, downy floor covering greeted visitors, offering an ultra-cushioned and gentle feeling underfoot. The yielding, cloud-like floor textile made walking a delight."
+      ],
+      "source_context_test": [
+        "A leaky radiator had left unsightly yellowed rings and dirt streaks across the entryway floor fabric. The badly discolored floor covering sat right by the entryway.",
+        "Decades of muddy paws and spilled beverages had left dark, permanent splotches on the hallway floor textile. The visibly soiled piece rested before the doorway.",
+        "The front vestibule floor piece was marred by dark, dried grease streaks and discolored coffee drips. The unsightly, blotched fabric lay right by the entrance.",
+        "Water damage and muddy work boots had permanently discolored the fabric near the door with dark blotches. The soiled floor covering sat heavily worn by the threshold."
+      ],
+      "target_context_test": [
+        "The hallway was lined with thick, velvety floor padding that provided a delightfully cushioned, gentle sensation underfoot. The deep, silky textile spread across the floor.",
+        "To ensure maximum cozy comfort, the suite featured high-pile, fluffy floor coverings that yielded smoothly with each step. The silky, cushioned textile was placed right at the entryway.",
+        "The interior designer installed a deeply padded, velvety floor covering that offered a pampering, cloud-like touch. The gentle, cushioned textile lined the doorway.",
+        "Step after step felt exceptionally cozy thanks to the deeply cushioned, downy floor covering laid across the threshold. The plush, velvety textile felt wonderful underfoot."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (stained rug, stained carpet, soft rug, soft carpet) are fully grammatical and natural. Source contexts establish a dirty, spill-marked scene biasing toward 'stained rug'. Target contexts establish a luxurious, deeply cushioned, velvety bedroom/suite environment biasing toward 'soft carpet'."
+    }
+  ]
+}

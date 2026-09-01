@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b03_10_tub_bath",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "tub_bath",
+    "noun_0": "tub",
+    "noun_1": "bath",
+    "shared_definition": "a large receptacle in a bathroom for immersing the body in water",
+    "neutral_stem": "To unwind after a stressful day, she soaked in",
+    "candidate_modifiers": [
+      "hot",
+      "warm",
+      "deep",
+      "porcelain",
+      "clean",
+      "dirty",
+      "full",
+      "soapy",
+      "cold",
+      "luxurious",
+      "wide",
+      "white",
+      "shallow",
+      "relaxing"
+    ],
+    "semantic_notes": "Tub is favored in American English (often shortening bathtub); bath frequently serves in British English for both the fixture and the act.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        8664
+      ],
+      "noun_1": [
+        8088
+      ]
+    },
+    "modifier_token_ids": {
+      "hot": [
+        3425
+      ],
+      "warm": [
+        6962
+      ],
+      "deep": [
+        5268
+      ],
+      "porcelain": [
+        48622
+      ],
+      "clean": [
+        3980
+      ],
+      "dirty": [
+        24881
+      ],
+      "full": [
+        2587
+      ],
+      "soapy": [
+        213776
+      ],
+      "cold": [
+        7445
+      ],
+      "luxurious": [
+        37848
+      ],
+      "wide": [
+        5777
+      ],
+      "white": [
+        2173
+      ],
+      "shallow": [
+        28855
+      ],
+      "relaxing": [
+        26037
+      ]
+    },
+    "forced_projection_span": 0.054411157965660095,
+    "max_noun_pair_mass": 0.6162248849868774,
+    "context_priority_score": 0.03352950955939171,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "white",
+        "target_modifier": "full",
+        "source_projection": 0.006786723155528307,
+        "target_projection": 0.012289123609662056,
+        "forced_modifier_leverage": 0.005502400454133749,
+        "source_pair_mass": 0.017614861950278282,
+        "target_pair_mass": 0.02985912747681141
+      },
+      "medium": {
+        "source_modifier": "shallow",
+        "target_modifier": "warm",
+        "source_projection": -0.003841857425868511,
+        "target_projection": 0.02493446134030819,
+        "forced_modifier_leverage": 0.0287763187661767,
+        "source_pair_mass": 0.024787653237581253,
+        "target_pair_mass": 0.08237085491418839
+      },
+      "high": {
+        "source_modifier": "relaxing",
+        "target_modifier": "luxurious",
+        "source_projection": 0.0921640396118164,
+        "target_projection": 0.1465751975774765,
+        "forced_modifier_leverage": 0.054411157965660095,
+        "source_pair_mass": 0.12318852543830872,
+        "target_pair_mass": 0.19967426359653473
+      }
+    },
+    "context_generation_rank": 111
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "white",
+      "target_modifier": "full",
+      "source_context_dev": [
+        "The newly remodeled bathroom featured spotless porcelain fixtures and minimalist porcelain surfaces.",
+        "Her modern apartment showcased sleek monochrome decor and sparkling clean en-suite ceramics.",
+        "The bathroom remodel was designed entirely around gleaming, pristine porcelain decor.",
+        "Sunlight streamed into the immaculate washroom, highlighting the clean, pristine ceramic fixtures."
+      ],
+      "target_context_dev": [
+        "She let the faucets run continuously until the water reached right below the overflow line.",
+        "The water level rose completely to the brim as steam began to billow across the tiles.",
+        "She turned the taps on high, letting the basin fill completely to the very top edge.",
+        "After waiting for the water to reach maximum capacity near the upper drain, she lit a candle."
+      ],
+      "source_context_test": [
+        "The designer selected pristine ceramic materials to give the minimalist en-suite an airy aesthetic.",
+        "Every surface in the master washroom gleamed with sparkling, unblemished porcelain styling.",
+        "The newly tiled space placed heavy emphasis on spotless porcelain finishes and clean lines.",
+        "Soft morning light illuminated the immaculate ceramic surfaces throughout the newly updated washroom."
+      ],
+      "target_context_test": [
+        "She opened both taps until the water rose nearly to the rim of the overflow valve.",
+        "The water surged upward toward the top edges of the fixture before she finally turned off the taps.",
+        "She watched patiently as the hot water reached the highest allowable level.",
+        "Steam filled the room as the rising waterline approached the maximum limit near the brim."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (white tub, white bath, full tub, full bath) remain completely grammatical and plausible under every context, merely shifting emphasis between the porcelain fixture and water volume."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "shallow",
+      "target_modifier": "warm",
+      "source_context_dev": [
+        "She turned off the tap quickly after barely covering the bottom, wanting only a brief ankle-deep rinse.",
+        "Because time was short, she added only an inch or two of water before turning off the tap.",
+        "Preferring minimal immersion, she kept the water level exceptionally low near the base.",
+        "She only let the spigot run for a few seconds, leaving just a thin layer of water along the bottom."
+      ],
+      "target_context_dev": [
+        "She carefully tested the rising temperature with her wrist until the heat felt cozy and soothing.",
+        "The steaming water was adjusted to a comforting, mild temperature perfect for soothing sore muscles.",
+        "She added extra hot water from the tap to raise the temperature to a cozy, soothing level.",
+        "The rising steam indicated the temperature was comfortably cozy without being scalding."
+      ],
+      "source_context_test": [
+        "She barely turned on the spigot, keeping the water level just high enough to cover the bottom surface.",
+        "Wanting a brief soak with minimal water, she stopped the flow when it barely reached two inches.",
+        "To conserve water, she kept the basin filled only a tiny fraction of the way up.",
+        "She quickly cut off the faucet, leaving just a low waterline across the bottom."
+      ],
+      "target_context_test": [
+        "She checked the faucet output repeatedly to ensure the heat remained mild, soothing, and pleasant.",
+        "Steam rose gently as she adjusted the hot and cold knobs to a comforting, gentle heat.",
+        "The water felt perfectly heated against her fingertips, offering comforting, cozy relaxation.",
+        "She ensured the temperature was delightfully mild and cozy before stepping in."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (shallow tub, shallow bath, warm tub, warm bath) are semantically valid and fluent across both low-depth and comfortable-temperature context sets."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "relaxing",
+      "target_modifier": "luxurious",
+      "source_context_dev": [
+        "After a frantic shift at the hospital, she put on soft ambient music and extinguished all the overhead lights.",
+        "She dimmed the lights, put on quiet instrumental melodies, and focused on releasing all her mental tension.",
+        "To clear her mind of work stress, she placed a lavender diffuser on the counter and breathed deeply.",
+        "She silenced her phone and arranged soothing candles around the room to foster a quiet, tranquil atmosphere."
+      ],
+      "target_context_dev": [
+        "She poured expensive scented oils, sprinkled hand-picked rose petals, and uncorked a bottle of vintage champagne.",
+        "The five-star spa suite featured gold accents, imported body scrubs, and opulent velvet amenities.",
+        "She treated herself to decadent botanical elixirs, fragrant specialty soaps, and an expensive glass of wine.",
+        "Surrounded by high-end eucalyptus salts, plush designer towels, and artisan candles, she prepared for an opulent evening."
+      ],
+      "source_context_test": [
+        "She put away all electronics and lit a gentle vanilla candle to establish a serene, calming environment.",
+        "Longing for peace and quiet, she closed the bathroom door and let soft chimes play in the background.",
+        "She took several deep, calming breaths and set aside her worries from the chaotic workday.",
+        "To soothe her frayed nerves, she chose quiet meditation and dimmed the lamps to a soft glow."
+      ],
+      "target_context_test": [
+        "She added droplets of rare essential essences and laid out silk washcloths alongside imported body creams.",
+        "The lavish five-star hotel suite boasted extravagant artisan salts and a chilled glass of premier champagne.",
+        "She indulged in premium floral infusions and draped plush cashmere robes across the heated towel rack.",
+        "Treating herself like royalty, she infused the water with precious aromatic extracts and imported crystal essences."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (relaxing tub, relaxing bath, luxurious tub, luxurious bath) are standard collocations that fit smoothly into calm decompression contexts and opulent pampering contexts alike."
+    }
+  ]
+}

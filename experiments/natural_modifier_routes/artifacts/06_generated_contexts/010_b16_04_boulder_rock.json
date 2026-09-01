@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b16_04_boulder_rock",
+    "generation_batch": 16,
+    "domain": "natural phenomena and materials",
+    "family_id": "boulder_rock",
+    "noun_0": "boulder",
+    "noun_1": "rock",
+    "shared_definition": "a large, detached mass of solid mineral material",
+    "neutral_stem": "The climbers clambered over the",
+    "candidate_modifiers": [
+      "massive",
+      "heavy",
+      "giant",
+      "jagged",
+      "smooth",
+      "huge",
+      "dark",
+      "loose",
+      "grey",
+      "weathered",
+      "cracked",
+      "solid",
+      "round",
+      "fallen"
+    ],
+    "semantic_notes": "'Boulder' specifically denotes a large, rounded or detached rock, whereas 'rock' spans any size and mass.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        139910
+      ],
+      "noun_1": [
+        5441
+      ]
+    },
+    "modifier_token_ids": {
+      "massive": [
+        12566
+      ],
+      "heavy": [
+        7274
+      ],
+      "giant": [
+        16784
+      ],
+      "jagged": [
+        143087
+      ],
+      "smooth": [
+        7080
+      ],
+      "huge": [
+        7186
+      ],
+      "dark": [
+        4996
+      ],
+      "loose": [
+        20034
+      ],
+      "grey": [
+        13501
+      ],
+      "weathered": [
+        93991
+      ],
+      "cracked": [
+        45027
+      ],
+      "solid": [
+        5139
+      ],
+      "round": [
+        4886
+      ],
+      "fallen": [
+        22303
+      ]
+    },
+    "forced_projection_span": 0.40769127011299133,
+    "max_noun_pair_mass": 0.6553052067756653,
+    "context_priority_score": 0.2671622120620274,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "smooth",
+        "target_modifier": "loose",
+        "source_projection": 0.19972670078277588,
+        "target_projection": 0.2415725290775299,
+        "forced_modifier_leverage": 0.04184582829475403,
+        "source_pair_mass": 0.2148268222808838,
+        "target_pair_mass": 0.24902179837226868
+      },
+      "medium": {
+        "source_modifier": "heavy",
+        "target_modifier": "loose",
+        "source_projection": 0.0401393361389637,
+        "target_projection": 0.2415725290775299,
+        "forced_modifier_leverage": 0.2014331929385662,
+        "source_pair_mass": 0.11200924217700958,
+        "target_pair_mass": 0.24902179837226868
+      },
+      "high": {
+        "source_modifier": "loose",
+        "target_modifier": "solid",
+        "source_projection": 0.2415725290775299,
+        "target_projection": 0.6492637991905212,
+        "forced_modifier_leverage": 0.40769127011299133,
+        "source_pair_mass": 0.24902179837226868,
+        "target_pair_mass": 0.6553052067756653
+      }
+    },
+    "context_generation_rank": 11
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "smooth",
+      "target_modifier": "loose",
+      "source_context_dev": [
+        "Centuries of glacial meltwater had polished the alpine canyon floor into massive, seamless domes. Navigating the rounded monoliths required friction-based footholds along the slick contours.",
+        "The river gorge was carved out of gigantic rounded slabs that had been buffed by seasonal torrents. Ascending the towering geological formation demanded steady balance across its frictionless surface.",
+        "Millennia of rushing water had ground down the colossal formations at the base of the waterfall. Progress stalled as the team searched for traction against the glassy, rounded mass.",
+        "The ancient stream bed was dominated by enormous rounded mounds that offered virtually no edges. Team members relied on rubber grip alone to traverse the polished surface."
+      ],
+      "target_context_dev": [
+        "The crumbling gully was filled with unstable scree that shifted under the slightest pressure. Each step threatened to trigger a cascade of unstable debris down the ravine.",
+        "Years of frost wedging had fractured the cliffside into dangerously unstable fragments. Stepping onto the shifting rubble required extreme vigilance to prevent dangerous slides.",
+        "The steep talus slope consisted of precarious fragments resting delicately on gravel. Every movement risked dislodging pieces from the unstable incline.",
+        "Wind and ice had eroded the slope into precarious debris prone to rolling downward. Moving forward required testing each unstable chunk before placing full bodyweight."
+      ],
+      "source_context_test": [
+        "Glaciers had long ago ground the valley floor into gigantic, polished domes. Scaling the towering formation presented a challenge due to the lack of handholds on its slick curves.",
+        "Torrential currents had worn the riverbed formations into massive, rounded features with seamless curves. The ascent proved tricky because the curved surface offered minimal friction.",
+        "The canyon approach was flanked by titanic geological domes sculpted by seasonal floods. Footwear slipped easily against the buffed, rounded contours during the ascent.",
+        "Deep in the gorge, colossal rounded masses rose from the gorge without sharp ledges. Progress depended entirely on maintaining friction against the frictionless stone surface."
+      ],
+      "target_context_test": [
+        "The decaying ledge was littered with unstable fragments that wobbled at the slightest touch. Navigating the unstable debris field demanded slow, measured footsteps.",
+        "Erosion had broken down the higher ridge into shifting rubble scattered across the gully. A single careless placement could easily send unsecured pieces tumbling downhill.",
+        "The dry wash was choked with fractured detritus that rolled underfoot without warning. Caution was essential across the precarious slope to avoid starting a miniature avalanche.",
+        "Unanchored fragments covered the steep approach, threatening to give way without notice. The mountaineers had to carefully evaluate whether each piece would shift before stepping forward."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (smooth boulder, smooth rock, loose boulder, loose rock) are natural physical descriptions of mineral formations. The source context highlights large-scale polished/rounded formations to pragmatically bias toward 'smooth boulder', while the target context highlights crumbling/unstable scree to bias toward 'loose rock'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "heavy",
+      "target_modifier": "loose",
+      "source_context_dev": [
+        "A gigantic, multi-ton slab had tumbled from the upper peak and settled firmly into the pathway. Moving or dislodging such a massive geological anchor was entirely impossible.",
+        "The valley floor was blocked by a colossal monolith whose immense mass kept it anchored in place. The expedition had to clamber over the stationary giant rather than try to shift it.",
+        "An enormous chunk of bedrock sat embedded deep in the alpine mud, weighing several tons. Its sheer mass ensured it remained completely stationary under the party's weight.",
+        "Blocking the canyon trail was a massive natural monolith that had remained rooted for centuries. Nothing short of heavy machinery could budge the immense mineral deposit."
+      ],
+      "target_context_dev": [
+        "The gravelly chute was strewn with precarious rubble that gave way beneath every boot. Ascending the unstable slope required testing each fragment before committing weight.",
+        "Recent seismic activity had shattered the cliff into dangerously shifting debris. Footing was tenuous because nearly every chunk was prone to sliding down the embankment.",
+        "The trail deteriorated into an unstable talus slope where small fragments detached instantly. Every step risked displacing unsecured stones and triggering a slide.",
+        "A treacherous field of shifting detritus covered the narrow mountain pass. The hikers proceeded cautiously, mindful that any unsecured fragment could slip down the drop-off."
+      ],
+      "source_context_test": [
+        "A massive multi-ton mineral block occupied the middle of the gorge trail. Because the giant mass was far too dense to budge, the party prepared to climb straight over it.",
+        "Centuries ago, an immense chunk of cliff collapsed, leaving a colossal, immovable monolith on the path. Its overwhelming bulk provided an unshakable anchor.",
+        "The route was obstructed by an immense, anchored formation weighing tens of thousands of pounds. The sheer bulk of the stationary mass made bypassing it by foot the only option.",
+        "Deep in the alpine basin lay a massive, dense monolith firmly wedged into the soil. Its colossal mass guaranteed that it would not roll or budge as the party ascended."
+      ],
+      "target_context_test": [
+        "The steep ravine was covered in shifting detritus that slid with the slightest disturbance. Stepping across the unanchored fragments demanded intense focus to avoid slipping.",
+        "Frost and thaw cycles had left the couloir filled with precarious, sliding rubble. Every piece underfoot seemed poised to tumble into the abyss below.",
+        "The hillside consisted of crumbling gravel and unfastened fragments that shifted easily. Moving upward was grueling because the unstable ground yielded under every stride.",
+        "A blanket of unsecured debris covered the precarious mountain ledge. The climbers had to tread lightly across the unstable rubble to prevent a dangerous rockfall."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (heavy boulder, heavy rock, loose boulder, loose rock) remain semantically and physically valid in mountainous climbing scenarios. Source contexts emphasize massive, immovable weight favoring 'heavy boulder', while target contexts emphasize crumbly sliding terrain favoring 'loose rock'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "loose",
+      "target_modifier": "solid",
+      "source_context_dev": [
+        "The steep gully was packed with precarious debris that shifted treacherously under pressure. Each step threatened to dislodge unsecured geological material down the mountain.",
+        "Recent erosion had left the slope covered in detached fragments that rolled away when touched. The party had to step gingerly over every shifting piece along the pathway.",
+        "The trail passed through an unstable scree field where individual pieces gave way beneath their feet. Any sudden movement risked sending unfastened rubble tumbling downhill.",
+        "A fragile talus slope lay ahead, covered in detached mineral chunks that lacked any grounding. The ascent was perilous because nothing on the surface was firmly anchored."
+      ],
+      "target_context_dev": [
+        "The foundation of the mountain consisted of unbroken, monolithic bedrock that offered reliable footing. Every ledge provided a totally secure, unyielding anchor for the ascent.",
+        "The ridge was composed of firm, unyielding bedrock that had withstood centuries of weather without cracking. Ascending was straightforward thanks to the firm, anchored base beneath them.",
+        "The mountaineers reached an exposed section of continuous, unfragmented granite. The intact surface was completely anchored and dependable under heavy climbing boots.",
+        "Ahead rose a continuous, unshakable wall of bedrock with perfectly anchored handholds. The firm, dependable formation provided an ideal structure to scramble across safely."
+      ],
+      "source_context_test": [
+        "The narrow chute was filled with precarious, detached rubble prone to sliding at a touch. Navigating the unstable debris required immense caution to avoid falling.",
+        "Weathering had splintered the hillside into unanchored fragments resting delicately on sand. The party carefully avoided putting full weight on any shifting chunk.",
+        "The gully was littered with fractured mineral deposits that easily slid out of place. Every step across the crumbling terrain threatened to trigger a minor slide.",
+        "Detached detritus covered the steep alpine couloir, shifting and slipping under every boot. Finding a secure position on the unstable slope proved nearly impossible."
+      ],
+      "target_context_test": [
+        "The trail emerged onto a massive expanse of intact bedrock that provided absolute stability. Its unbroken mass gave the party complete confidence in their footing.",
+        "A continuous expanse of unwavering granite formed the spine of the ridge. Climbing over the firmly anchored structure was safe because nothing budged under pressure.",
+        "The incline was forged from unyielding, unbroken bedrock that offered dependable friction. The steadfast mass provided a secure platform for the next leg of the climb.",
+        "Reaching the upper ridge, the team encountered an uninterrupted slab of anchored stone. The uncracked, stable mass provided the most secure footing on the entire route."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (loose boulder, loose rock, solid boulder, solid rock) are standard geological descriptions and fit the neutral climbing stem seamlessly. The source context primes detached/sliding debris, while the target context primes anchored, unyielding, monolithic stone structures."
+    }
+  ]
+}

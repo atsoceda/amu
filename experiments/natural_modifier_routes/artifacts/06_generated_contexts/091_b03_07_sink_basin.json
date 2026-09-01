@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_07_sink_basin",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "sink_basin",
+    "noun_0": "sink",
+    "noun_1": "basin",
+    "shared_definition": "a fixed bowl-shaped plumbing fixture with water drainage for washing",
+    "neutral_stem": "Before drying her hands, she rinsed them in",
+    "candidate_modifiers": [
+      "porcelain",
+      "deep",
+      "clean",
+      "dirty",
+      "white",
+      "stainless",
+      "cracked",
+      "wide",
+      "shallow",
+      "clogged",
+      "marble",
+      "round",
+      "rustic",
+      "wet",
+      "shiny"
+    ],
+    "semantic_notes": "Sink is standard and universal; basin is somewhat more formal, traditional, or associated with bathroom fixtures.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        19326
+      ],
+      "noun_1": [
+        39569
+      ]
+    },
+    "modifier_token_ids": {
+      "porcelain": [
+        48622
+      ],
+      "deep": [
+        5268
+      ],
+      "clean": [
+        3980
+      ],
+      "dirty": [
+        24881
+      ],
+      "white": [
+        2173
+      ],
+      "stainless": [
+        19860
+      ],
+      "cracked": [
+        45027
+      ],
+      "wide": [
+        5777
+      ],
+      "shallow": [
+        28855
+      ],
+      "clogged": [
+        117107
+      ],
+      "marble": [
+        28138
+      ],
+      "round": [
+        4886
+      ],
+      "rustic": [
+        34452
+      ],
+      "wet": [
+        11474
+      ],
+      "shiny": [
+        34954
+      ]
+    },
+    "forced_projection_span": 0.06374706141650677,
+    "max_noun_pair_mass": 0.7217551469802856,
+    "context_priority_score": 0.04600976968223214,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "rustic",
+        "target_modifier": "porcelain",
+        "source_projection": -0.2776052951812744,
+        "target_projection": -0.26947134733200073,
+        "forced_modifier_leverage": 0.008133947849273682,
+        "source_pair_mass": 0.4248473644256592,
+        "target_pair_mass": 0.6547399163246155
+      },
+      "medium": {
+        "source_modifier": "shallow",
+        "target_modifier": "porcelain",
+        "source_projection": -0.3015754520893097,
+        "target_projection": -0.26947134733200073,
+        "forced_modifier_leverage": 0.03210410475730896,
+        "source_pair_mass": 0.4284316599369049,
+        "target_pair_mass": 0.6547399163246155
+      },
+      "high": {
+        "source_modifier": "stainless",
+        "target_modifier": "wet",
+        "source_projection": -0.007603047415614128,
+        "target_projection": 0.05614401400089264,
+        "forced_modifier_leverage": 0.06374706141650677,
+        "source_pair_mass": 0.010801231488585472,
+        "target_pair_mass": 0.4514889717102051
+      }
+    },
+    "context_generation_rank": 92
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "rustic",
+      "target_modifier": "porcelain",
+      "source_context_dev": [
+        "The countryside cabin featured unvarnished timber beams and handmade decor throughout the wash area. A simple country aesthetic defined every corner of the homestead.",
+        "She spent the afternoon cleaning up inside the converted barn workshop. Earthy textures and reclaimed materials decorated the washing station.",
+        "At the remote mountain retreat, handcrafted woodwork and rough-hewn stone surrounded the plumbing area. The room embraced a raw, handcrafted farmhouse charm.",
+        "The historical farmhouse utility corner had been preserved with original nineteenth-century carpentry. Vintage copper piping fed the traditional washing station."
+      ],
+      "target_context_dev": [
+        "The upscale hotel ensuite showcased gleaming ceramic fixtures and delicate gilded mirrors. Every surface reflected an immaculate, polished elegance.",
+        "Stepping into the formal powder room of the historic manor, she admired the fine vitreous glaze and refined craftsmanship. The wash area was meticulously kept.",
+        "The renovated master bathroom was styled with timeless white ceramic elements and polished brass fittings. It felt bright, pristine, and classically appointed.",
+        "Soft lighting illuminated the elegant dressing chamber of the restored estate. Clean, glossy surfaces highlighted the refined decorative accents."
+      ],
+      "source_context_test": [
+        "The log cabin washroom was furnished with rough timber accents and vintage iron hardware. It felt like an authentic pioneer homestead.",
+        "Deep inside the old artisan pottery shed, hand-carved surfaces and natural pine boards lined the wash corner. Dust from dried clay covered the counter.",
+        "The renovated backcountry lodge blended rough textures with antique plumbing accents. Everything about the room evoked woodland simplicity.",
+        "Outside the garden greenhouse, the utility washing area featured weathered planks and reclaimed farm fixtures. The setup was charmingly weathered and homey."
+      ],
+      "target_context_test": [
+        "The boutique spa offered high-end amenities with lustrous white enamel and pristine tilework. The private washing alcove gleamed under soft sconces.",
+        "In the Victorian manor guest quarters, the fine decorative ceramics had been preserved in mint condition. The room exuded timeless grace and hygiene.",
+        "A sparkling clean atmosphere greeted her in the newly tiled luxury washroom. Pristine ceramic glazes complemented the marble countertops.",
+        "The formal restroom of the historic theater was lined with glossy white fixtures and ornate moldings. Every detail emphasized classical sophistication."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('rustic sink', 'rustic basin', 'porcelain sink', 'porcelain basin') are natural, standard English descriptions of bathroom and utility fixtures. Rustic contexts emphasize weathered, cabin-like, or farmhouse surroundings, which pragmatically favor 'rustic sink' while leaving porcelain wash fixtures entirely plausible. Target contexts evoke pristine, formal, or high-end ceramic decor, favoring 'porcelain basin' while maintaining literal coherence for any combination."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "shallow",
+      "target_modifier": "porcelain",
+      "source_context_dev": [
+        "The designer powder room was fitted with contemporary minimalist fixtures designed with a very low depth to prevent standing water. Modern aesthetics emphasized flat planes.",
+        "She entered the compact modern lavatory where low-clearance, sleek fixtures saved vertical space. The minimalist drainage plate sat barely below the rim.",
+        "The ultra-modern guest bathroom featured a sleek, flat-bottomed washing area with minimal rim depth. Water drained swiftly along the low-profile channel.",
+        "In the boutique gallery restroom, avant-garde architecture favored streamlined, low-profile washing fixtures. The surface had hardly any vertical drop."
+      ],
+      "target_context_dev": [
+        "The grand heritage hotel maintained spotless white vitreous china fixtures in every ensuite. The glossy white finish gave the wash area an antique charm.",
+        "Inside the stately manor bathroom, gleaming ceramic potteryware reflected the warm vanity lights. The classic white glazing remained flawlessly smooth.",
+        "The historic bed-and-breakfast washroom was furnished with traditional ceramic washware and delicate floral tilework. Every fixture was polished to perfection.",
+        "She entered the master ensuite where pristine glazed ceramic surfaces matched the classic clawfoot tub. The room conveyed traditional cleanliness and luxury."
+      ],
+      "source_context_test": [
+        "The minimalist urban apartment used space-saving fixtures with minimal depth in the half-bath. The modern low-profile design prevented water from pooling deeply.",
+        "Architectural blueprints for the chic cafe restroom called for flat, low-walled drainage fixtures. The sleek profile kept the washing station compact.",
+        "The contemporary office washroom embraced geometric, low-profile fixtures mounted atop dark granite. The drainage area was flat and unobtrusive.",
+        "Inside the trendy loft bathroom, a flat-bottomed, low-depth washing unit matched the industrial minimalist design. Water flowed smoothly across its flat plane."
+      ],
+      "target_context_test": [
+        "The private dressing room of the opera house was appointed with pristine white ceramic fixtures and brass taps. The glossy finish showed not a single scratch.",
+        "In the classical luxury suite, the vanity featured fine vitreous glaze and refined architectural moldings. The white ceramic finish shone immaculately.",
+        "The vintage farmhouse washroom featured lustrous white glazed ceramic fixtures against pastel wallpaper. Everything looked clean, bright, and traditionally styled.",
+        "A pristine ceramic washing fixture stood prominently in the elegantly restored Edwardian washroom. Its polished white surface radiated spotless hygiene."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('shallow sink', 'shallow basin', 'porcelain sink', 'porcelain basin') are fully grammatical and semantically felicitous fixtures. The source contexts prime shallow geometry and low-profile modern design (aligning with 'shallow sink'), whereas target contexts prime classic glazed ceramic construction (aligning with 'porcelain basin'). No forbidden words or direct stems are used."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "stainless",
+      "target_modifier": "wet",
+      "source_context_dev": [
+        "The commercial culinary facility required durable, non-corrosive metal washing equipment to meet strict health codes. The metallic dishwashing station sparkled under fluorescent lights.",
+        "She stepped off the busy restaurant prep line into the sanitation area lined with heavy-duty brushed metal surfaces. The industrial washing station was built for heavy kitchen use.",
+        "In the professional test kitchen, every food-prep washing fixture was constructed from industrial-grade alloy. The gleaming metal units were sanitized between shifts.",
+        "The butcher shop washing corner was fabricated entirely from heavy-gauge industrial metal for easy sterilization. Shiny brushed-metal surfaces filled the room."
+      ],
+      "target_context_dev": [
+        "Someone had just finished washing up in a hurry, leaving soapy droplets and puddles scattered across the fixture. Moisture covered the entire bowl and deck.",
+        "She noticed that the previous guest had left the faucet running, splashing water all over the interior surface. Damp spray coated the washing area.",
+        "Splashes from the leaky tap had saturated the entire washing station, creating a slippery layer of moisture. Droplets dripped continuously down the drain.",
+        "The children had just finished washing their paintbrushes, leaving pooled liquid and damp residue across the washing station. Droplets clung to the glossy interior."
+      ],
+      "source_context_test": [
+        "The hospital laboratory sanitation room was equipped with heavy-duty metal alloy fixtures designed for chemical resistance. Everything was built from sterile metallic sheets.",
+        "Inside the institutional cafeteria dishroom, the food handlers washed up at a heavy-duty industrial metal fixture. Brushed alloy surfaces lined the back wall.",
+        "The catering kitchen wash area featured non-magnetic alloy fixtures built to withstand boiling water and harsh detergents. The silvery surfaces gleamed brightly.",
+        "The microbrewery sanitation zone was fitted with heavy-duty industrial metal washing stations. The alloy fixtures were scrubbed clean daily."
+      ],
+      "target_context_test": [
+        "A recent burst of water from the faulty aerator had left the entire washing fixture thoroughly soaked and dripping. Puddles accumulated along the bottom curve.",
+        "The bathroom was filled with steam after a hot shower, leaving heavy condensation dripping down the washing fixture. Moisture covered every surface.",
+        "Someone had shaken their soapy hands vigorously, leaving liquid droplets pooling inside the fixture. Damp residue covered the whole area.",
+        "Water was sloshing over the edges after a vigorous hand-scrubbing session. The fixture was thoroughly drenched and covered in damp splashes."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four target phrases ('stainless sink', 'stainless basin', 'wet sink', 'wet basin') are completely valid English descriptions of a plumbing fixture. Source contexts describe professional or industrial metal settings (strongly activating 'stainless sink'), while target contexts describe recently used or dripping washrooms (strongly activating 'wet basin'). Neither condition invalidates the alternative noun or modifier."
+    }
+  ]
+}

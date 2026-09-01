@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b06_19_slope_incline",
+    "generation_batch": 6,
+    "domain": "locations and geographic features",
+    "family_id": "slope_incline",
+    "noun_0": "slope",
+    "noun_1": "incline",
+    "shared_definition": "a surface of land that deviates from the horizontal by rising or falling",
+    "neutral_stem": "The cyclists struggled to maintain their pace up the",
+    "candidate_modifiers": [
+      "steep",
+      "gentle",
+      "gradual",
+      "rocky",
+      "slippery",
+      "grassy",
+      "sharp",
+      "muddy",
+      "dangerous",
+      "icy",
+      "steady",
+      "upward",
+      "downward",
+      "continuous",
+      "exhausting"
+    ],
+    "semantic_notes": "'Slope' is the broad, natural landform descriptor, whereas 'incline' often focuses specifically on the degree or angle of an upward grade.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        17918
+      ],
+      "noun_1": [
+        106184
+      ]
+    },
+    "modifier_token_ids": {
+      "steep": [
+        25465
+      ],
+      "gentle": [
+        14617
+      ],
+      "gradual": [
+        39869
+      ],
+      "rocky": [
+        35016
+      ],
+      "slippery": [
+        85783
+      ],
+      "grassy": [
+        94767
+      ],
+      "sharp": [
+        14658
+      ],
+      "muddy": [
+        75946
+      ],
+      "dangerous": [
+        13588
+      ],
+      "icy": [
+        74693
+      ],
+      "steady": [
+        16932
+      ],
+      "upward": [
+        31097
+      ],
+      "downward": [
+        26876
+      ],
+      "continuous": [
+        8906
+      ],
+      "exhausting": [
+        93646
+      ]
+    },
+    "forced_projection_span": 0.3558799624443054,
+    "max_noun_pair_mass": 0.6703479886054993,
+    "context_priority_score": 0.23856341700954076,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "gentle",
+        "target_modifier": "icy",
+        "source_projection": -0.2320748269557953,
+        "target_projection": -0.19033211469650269,
+        "forced_modifier_leverage": 0.0417427122592926,
+        "source_pair_mass": 0.5638768672943115,
+        "target_pair_mass": 0.23216497898101807
+      },
+      "medium": {
+        "source_modifier": "grassy",
+        "target_modifier": "muddy",
+        "source_projection": -0.27668654918670654,
+        "target_projection": -0.09887579828500748,
+        "forced_modifier_leverage": 0.17781075090169907,
+        "source_pair_mass": 0.32617223262786865,
+        "target_pair_mass": 0.14046740531921387
+      },
+      "high": {
+        "source_modifier": "sharp",
+        "target_modifier": "steady",
+        "source_projection": 0.16945511102676392,
+        "target_projection": 0.5253350734710693,
+        "forced_modifier_leverage": 0.3558799624443054,
+        "source_pair_mass": 0.27502942085266113,
+        "target_pair_mass": 0.6330848932266235
+      }
+    },
+    "context_generation_rank": 12
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "gentle",
+      "target_modifier": "icy",
+      "source_context_dev": [
+        "After miles of flat asphalt, the route wound through rolling farmland where the elevation barely shifted. The evening breeze was calm and the path looked welcoming.",
+        "The park route was designed for beginner riders, featuring only a slight, barely perceptible rise in elevation through the meadows.",
+        "Early in the afternoon ride, the terrain tilted slightly upwards amidst open pastures, presenting what should have been a minor obstacle.",
+        "The route through the rural valley rose with a very gradual rise, giving riders plenty of room to catch their breath."
+      ],
+      "target_context_dev": [
+        "A sudden winter freeze had glazed the mountain pass overnight, leaving zero traction under the wheels. Shivering in the sub-zero chill, the riders lost their grip.",
+        "Cold precipitation had frozen solid across the high-altitude pass just before dawn, coating the pavement in slick crystalline frost.",
+        "Near the summit, freezing fog had coated the entire roadway in a slick, frozen sheen.",
+        "Temperatures plummeted below freezing during the winter stage, leaving the asphalt slicked over with frozen dew."
+      ],
+      "source_context_test": [
+        "As the group approached the nature reserve, the trail began a mild, gradual ascent through the foothills.",
+        "Leaving the riverbank, the paved track eased slightly upward between the quiet suburban lawns.",
+        "The countryside tour featured mostly flat stretches broken by an occasional subtle rise in the road.",
+        "Under the pleasant autumn sun, the road rose just enough to slow coasting riders as they entered the woods."
+      ],
+      "target_context_test": [
+        "At high elevations, the morning frost had crystallized across the road into a slick sheet.",
+        "The sub-zero temperature had turned the damp asphalt near the mountain pass into a frozen surface.",
+        "Winter winds brought a hard freeze to the high pass, coating the asphalt with a treacherous slick layer.",
+        "Riders encountered freezing temperatures at the ridge, where moisture had hardened into a glass-like sheet."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('gentle slope', 'gentle incline', 'icy slope', 'icy incline') are standard English collocations that fit naturally into the stem. Source contexts prime mildness and rolling geography without making winter conditions impossible; target contexts prime sub-zero slippery conditions without ruling out either topographic term."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "grassy",
+      "target_modifier": "muddy",
+      "source_context_dev": [
+        "The cross-country route cut directly across the unpaved meadow where thick green vegetation covered the rising ground.",
+        "Riders took a shortcut over the open pasture, where thick green sod made pedal strokes surprisingly heavy.",
+        "Leaving the beaten path, the race traversed an overgrown rural meadow rising toward the treeline.",
+        "The scenic route diverted riders onto a natural pathway with tall green turf covering the rise."
+      ],
+      "target_context_dev": [
+        "Torrential downpours had turned the unpaved forest trail into thick brown sludge that clogged every tire. Wheels spun uselessly in the wet mire.",
+        "Hours of heavy rain had soaked the dirt route into a deep, churned mire of wet earth.",
+        "The unpaved trail was drenched from the weekend storm, creating a deep quagmire of wet brown earth.",
+        "Persistent rain transformed the mountain pass into a slippery morass of wet, churned earth."
+      ],
+      "source_context_test": [
+        "The course veered across open pastureland where fresh green vegetation blanketed the ground.",
+        "Steering away from the gravel, the riders found themselves traversing a sunlit meadow of untamed green turf.",
+        "The off-road stage climbed through an expansive meadow where the ground was covered in dense lawn.",
+        "Spectators watched as the peloton rode through a lush alpine pasture rising toward the ridge."
+      ],
+      "target_context_test": [
+        "After two days of relentless rainfall, the dirt track had dissolved into a thick, soggy mire.",
+        "The unpaved pass was saturated from the morning deluge, leaving the ground churned into deep wet silt.",
+        "Runoff from the storm had pooled across the dirt road, turning the terrain into a thick, wet bog.",
+        "The rain-soaked trail was slick with wet, churned silt that coated wheels and pedals alike."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('grassy slope', 'grassy incline', 'muddy slope', 'muddy incline') describe plausible outdoor off-road surfaces. The source contexts prime meadow turf/pasture textures while target contexts prime storm-induced silt and mire, leaving the choice between 'slope' and 'incline' grammatically open."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "sharp",
+      "target_modifier": "steady",
+      "source_context_dev": [
+        "The road took an abrupt and punishing upward turn, confronting the peloton with a sudden, acute pitch.",
+        "Rounding the hairpin corner, the riders were hit by an abrupt, wall-like rise in the mountain road.",
+        "Without warning, the flat avenue pitched drastically upward into an acute, punishing vertical rise.",
+        "The topography changed dramatically after the bridge, rising in an abrupt, severe spike."
+      ],
+      "target_context_dev": [
+        "The road rose at an unrelenting, perfectly uniform rate for ten continuous kilometers without a single flat section.",
+        "For miles through the mountain valley, the road rose with a consistent, unchanging rhythm.",
+        "The mountain route maintained an even, continuous rise that tested the endurance of every rider.",
+        "Rather than spiking abruptly, the road climbed with consistent, unbroken uniformity across the plateau."
+      ],
+      "source_context_test": [
+        "The road curved suddenly around the cliff face, rearing upward in a punishing, acute pitch.",
+        "A sudden, violent change in elevation greeted the riders as they rounded the base of the bluff.",
+        "Passing through the gorge, the path pitched upward with an abrupt, severe suddenness.",
+        "The route surprised the pack with an immediate and drastic upward pitch right after the bridge."
+      ],
+      "target_context_test": [
+        "The highway maintained a consistent, continuous rise that stretched unbroken for fifteen miles.",
+        "Riders faced hours of continuous, uniform upward progress along the uninterrupted valley pass.",
+        "The climb maintained an even, continuous vertical progression that never leveled off.",
+        "Stretching straight ahead toward the horizon, the route continued at a uniform, relentless upward rate."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('sharp slope', 'sharp incline', 'steady slope', 'steady incline') are standard collocations for describing gradient geometry. Source contexts emphasize abruptness and acute steepness, whereas target contexts emphasize uniformity, continuous duration, and pacing."
+    }
+  ]
+}

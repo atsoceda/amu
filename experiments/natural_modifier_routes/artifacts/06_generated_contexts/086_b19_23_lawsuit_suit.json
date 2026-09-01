@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b19_23_lawsuit_suit",
+    "generation_batch": 19,
+    "domain": "law, government, and civic life",
+    "family_id": "lawsuit_suit",
+    "noun_0": "lawsuit",
+    "noun_1": "suit",
+    "shared_definition": "a civil legal action brought before a court for the redress of a grievance",
+    "neutral_stem": "The corporate legal department settled",
+    "candidate_modifiers": [
+      "pending",
+      "frivolous",
+      "contentious",
+      "civil",
+      "collective",
+      "costly",
+      "major",
+      "defamation",
+      "unsuccessful",
+      "potential",
+      "lengthy",
+      "massive",
+      "unprecedented",
+      "subsequent",
+      "formal"
+    ],
+    "semantic_notes": "'Lawsuit' is the standard everyday compound noun, whereas 'suit' is traditional, concise legal terminology.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        34656
+      ],
+      "noun_1": [
+        8816
+      ]
+    },
+    "modifier_token_ids": {
+      "pending": [
+        22600
+      ],
+      "frivolous": [
+        151422
+      ],
+      "contentious": [
+        109806
+      ],
+      "civil": [
+        8202
+      ],
+      "collective": [
+        19399
+      ],
+      "costly": [
+        31775
+      ],
+      "major": [
+        3262
+      ],
+      "defamation": [
+        108626
+      ],
+      "unsuccessful": [
+        52963
+      ],
+      "potential": [
+        3435
+      ],
+      "lengthy": [
+        42288
+      ],
+      "massive": [
+        12566
+      ],
+      "unprecedented": [
+        35995
+      ],
+      "subsequent": [
+        13323
+      ],
+      "formal": [
+        10781
+      ]
+    },
+    "forced_projection_span": 0.07196518778800964,
+    "max_noun_pair_mass": 0.6781713366508484,
+    "context_priority_score": 0.04880472759452381,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "formal",
+        "target_modifier": "civil",
+        "source_projection": -0.03545035421848297,
+        "target_projection": -0.029634565114974976,
+        "forced_modifier_leverage": 0.005815789103507996,
+        "source_pair_mass": 0.0558142364025116,
+        "target_pair_mass": 0.4747702181339264
+      },
+      "medium": {
+        "source_modifier": "major",
+        "target_modifier": "contentious",
+        "source_projection": -0.09076853096485138,
+        "target_projection": -0.05318908393383026,
+        "forced_modifier_leverage": 0.03757944703102112,
+        "source_pair_mass": 0.10236723721027374,
+        "target_pair_mass": 0.10432709753513336
+      },
+      "high": {
+        "source_modifier": "civil",
+        "target_modifier": "defamation",
+        "source_projection": -0.029634565114974976,
+        "target_projection": 0.04233062267303467,
+        "forced_modifier_leverage": 0.07196518778800964,
+        "source_pair_mass": 0.4747702181339264,
+        "target_pair_mass": 0.6781713366508484
+      }
+    },
+    "context_generation_rank": 87
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "formal",
+      "target_modifier": "civil",
+      "source_context_dev": [
+        "After months of preliminary posturing, the complainant submitted a verified petition through official judicial channels. To avoid extended discovery under strict statutory deadlines,",
+        "The opposing counsel delivered an officially registered summons accompanied by extensive evidentiary dockets. Rather than allowing the docketed complaint to go before a judge,",
+        "The grievance had progressed past informal mediation into an officially registered courtroom docket. Recognizing that the filed complaint met every statutory requirement,",
+        "Following strict adherence to procedural codes, the plaintiffs lodged verified papers with the clerk of court. Hoping to bypass a lengthy public trial,"
+      ],
+      "target_context_dev": [
+        "A group of former contractors demanded monetary restitution for breach of fiduciary duty rather than seeking state enforcement. To quickly resolve the private financial dispute before trial,",
+        "The disagreement involved private tort damages and commercial liability between independent business partners. Seeking to minimize financial exposure without facing a jury,",
+        "Two competing enterprises were locked in a private commercial dispute over intellectual property damages. Prior to the scheduled hearing on monetary relief,",
+        "The grievance centered entirely on financial restitution and contract breaches between private parties. To resolve the non-criminal monetary claims discreetly,"
+      ],
+      "source_context_test": [
+        "The claimants followed every strict protocol required to enter their verified grievance into the official county registry. Facing rigid judicial deadlines,",
+        "Official paperwork was stamped and entered into the state judicial records following months of preparation. Before the judge began pre-trial hearings on the docketed matter,",
+        "Strict statutory procedures were observed as the opposing firm filed verified documents with the court clerk. To avoid a protracted calendar in open court,",
+        "The complainant adhered to every rigid procedural standard when lodging the certified grievance. Seeking to conclude the matter before oral arguments,"
+      ],
+      "target_context_test": [
+        "The dispute concerned economic harm and contractual indemnification between two private enterprises. To wrap up the private financial battle before trial,",
+        "Plaintiffs sought financial recovery for private business losses rather than initiating public criminal actions. To conclude the private damages dispute out of court,",
+        "The matter was purely a monetary dispute between private entities seeking financial relief under statutory tort codes. Looking to avoid a lengthy hearing over economic damages,",
+        "Seeking economic restitution for alleged commercial wrongdoing, the private claimant demanded monetary redress. Before the monetary claims reached a courtroom jury,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (formal lawsuit, formal suit, civil lawsuit, civil suit) are completely natural and grammatically sound following the fixed stem across institutional filing contexts and private monetary dispute contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "major",
+      "target_modifier": "contentious",
+      "source_context_dev": [
+        "The company faced an unprecedented multi-billion-dollar legal exposure that threatened its annual earnings. To protect enterprise valuation and reassure jittery shareholders,",
+        "A massive legal confrontation posed an existential threat to the corporation's international operations. Looking to neutralize the enormous financial risk before quarterly reports,",
+        "With billions of dollars at stake and industry-wide regulatory attention mounting, the enterprise faced staggering liability. To curb enormous potential losses,",
+        "The ongoing trial carried monumental balance-sheet implications and endangered global supply lines. To eliminate the massive risk hanging over executive leadership,"
+      ],
+      "target_context_dev": [
+        "Both sides traded bitter accusations and hostile rhetoric during deeply antagonistic discovery hearings. To put an end to the toxic fighting before further animosity erupted,",
+        "The dispute had devolved into an intensely acrimonious battle filled with personal vendettas and fierce courtroom clashes. To extinguish the bitter hostility,",
+        "Tensions ran exceptionally high as opposing attorneys exchanged fierce personal insults during depositions. Wanting to de-escalate the venomous fight before entering open court,",
+        "The confrontation became notoriously ill-tempered, with both parties fighting aggressively over every minor motion. In order to stop the hostile warfare,"
+      ],
+      "source_context_test": [
+        "A multi-million-dollar exposure threatened to derail the corporation's pending merger and wipe out earnings. Hoping to defuse the enormous enterprise liability,",
+        "The magnitude of the financial claims placed the firm in severe jeopardy across several global markets. To protect the organization from catastrophic financial exposure,",
+        "Facing an immense threat that spanned several regulatory jurisdictions and jeopardized core assets, executives acted quickly. To remove the massive financial cloud,",
+        "The sheer scale of the legal dispute threatened the entire enterprise with devastating market losses. To protect shareholder value from immense exposure,"
+      ],
+      "target_context_test": [
+        "Bitter exchanges and hostile filings turned the proceedings into an ugly, protracted brawl. To finally quiet the venomous bickering between the parties,",
+        "The dispute was defined by extreme acrimony, with both factions refusing to concede even basic procedural points. To bring an end to the bad-tempered fight,",
+        "The opposing parties harbored intense mutual resentment, resulting in vitriolic attacks in pre-trial conferences. Seeking to halt the fierce and spiteful clash,",
+        "Tempers flared continuously as both legal teams launched angry accusations and hostile motions against each other. To de-escalate the acrimonious hostilities,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (major lawsuit, major suit, contentious lawsuit, contentious suit) fit smoothly into both high-stakes commercial contexts and acrimonious litigation settings."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "civil",
+      "target_modifier": "defamation",
+      "source_context_dev": [
+        "The dispute involved non-criminal liability and economic damages stemming from a commercial disagreement. To resolve the private financial claims without a jury trial,",
+        "A former client sought monetary compensation under private tort law rather than pursuing criminal charges. Seeking to settle the private liability dispute,",
+        "The claimants pursued private financial relief under standard contract and tort principles. Looking to conclude the private damages litigation expeditiously,",
+        "The matter involved a private monetary claim for business damages between corporate entities. Hoping to avoid an extensive jury trial over private liability,"
+      ],
+      "target_context_dev": [
+        "A viral blog post made false assertions that severely damaged the chief executive's public reputation. To counter the fallout from the damaging media smears,",
+        "The firm took action after a competitor published malicious lies and ruined the brand's standing in the press. To resolve the reputational dispute out of court,",
+        "Unsubstantiated smears regarding financial fraud had circulated widely on national television and ruined the founder's credibility. Seeking redress for the malicious falsehoods,",
+        "An investigative reporter broadcast inaccurate allegations that severely tarnished the executive board's integrity. To stop further public damage over the slanderous claims,"
+      ],
+      "source_context_test": [
+        "The disagreement centered on private financial damages and contractual restitution rather than criminal sanctions. To resolve the non-criminal tort claims before trial,",
+        "Plaintiffs demanded financial compensation for private economic losses incurred during the commercial partnership. To close out the private liability claims quietly,",
+        "The confrontation was strictly a private damages dispute between two corporations over monetary terms. In an effort to resolve the private tort action quickly,",
+        "Seeking monetary damages for commercial breach, the private plaintiff avoided any criminal filing. To conclude the private economic dispute out of court,"
+      ],
+      "target_context_test": [
+        "Outrageous falsehoods published in an industry newsletter attacked the company's integrity and destroyed its reputation. To address the destructive character attack,",
+        "The claimant suffered severe professional harm after misleading articles impugned their honesty and character. Seeking to settle the claims regarding the public smear,",
+        "False rumors broadcast across online platforms severely damaged the firm's brand image and reputation. To resolve the bitter conflict over the published lies,",
+        "A series of misleading public statements severely tarnished the executive's good name and business standing. To end the battle over the reputational smears,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Defamation lawsuit, defamation suit, civil lawsuit, and civil suit are all fully standard, natural legal collocations, remaining grammatically and semantically well-formed in both general tort and reputational harm contexts."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b01_07_baby_infant",
+    "generation_batch": 1,
+    "domain": "people and social roles",
+    "family_id": "baby_infant",
+    "noun_0": "baby",
+    "noun_1": "infant",
+    "shared_definition": "a very young human child who has not yet learned to walk or talk",
+    "neutral_stem": "In the quiet nursery, the mother rocked",
+    "candidate_modifiers": [
+      "healthy",
+      "tiny",
+      "sleeping",
+      "crying",
+      "helpless",
+      "newborn",
+      "fragile",
+      "precious",
+      "fussy",
+      "beautiful",
+      "hungry",
+      "calm",
+      "sweet",
+      "vulnerable",
+      "restless"
+    ],
+    "semantic_notes": "'Infant' is preferred in formal, medical, and legal contexts, whereas 'baby' is the warm, informal everyday term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        7205
+      ],
+      "noun_1": [
+        21097
+      ]
+    },
+    "modifier_token_ids": {
+      "healthy": [
+        7644
+      ],
+      "tiny": [
+        16383
+      ],
+      "sleeping": [
+        20537
+      ],
+      "crying": [
+        34955
+      ],
+      "helpless": [
+        58771
+      ],
+      "newborn": [
+        36889
+      ],
+      "fragile": [
+        48718
+      ],
+      "precious": [
+        26419
+      ],
+      "fussy": [
+        226082
+      ],
+      "beautiful": [
+        4148
+      ],
+      "hungry": [
+        33233
+      ],
+      "calm": [
+        16680
+      ],
+      "sweet": [
+        9380
+      ],
+      "vulnerable": [
+        21040
+      ],
+      "restless": [
+        95480
+      ]
+    },
+    "forced_projection_span": 0.10504400730133057,
+    "max_noun_pair_mass": 0.8223174214363098,
+    "context_priority_score": 0.08637951722136705,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "tiny",
+        "target_modifier": "helpless",
+        "source_projection": -0.45768702030181885,
+        "target_projection": -0.4476687014102936,
+        "forced_modifier_leverage": 0.010018318891525269,
+        "source_pair_mass": 0.6821303367614746,
+        "target_pair_mass": 0.7048248052597046
+      },
+      "medium": {
+        "source_modifier": "helpless",
+        "target_modifier": "precious",
+        "source_projection": -0.4476687014102936,
+        "target_projection": -0.39764031767845154,
+        "forced_modifier_leverage": 0.05002838373184204,
+        "source_pair_mass": 0.7048248052597046,
+        "target_pair_mass": 0.5926375985145569
+      },
+      "high": {
+        "source_modifier": "vulnerable",
+        "target_modifier": "fragile",
+        "source_projection": -0.37921416759490967,
+        "target_projection": -0.2741701602935791,
+        "forced_modifier_leverage": 0.10504400730133057,
+        "source_pair_mass": 0.6358668804168701,
+        "target_pair_mass": 0.5377678275108337
+      }
+    },
+    "context_generation_rank": 56
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "tiny",
+      "target_modifier": "helpless",
+      "source_context_dev": [
+        "She marveled at how minuscule the little hands were beneath the blanket. Everything seemed so miniature compared to the adult world.",
+        "The newly fitted knitted cap was barely the size of an apple. It seemed incredible that a person could be so small.",
+        "Looking closely, she noticed the microscopic fingernails and miniature feet. The sheer pettiness of scale filled her with wonder.",
+        "Wrapped in a petite bundle, the sleepy face was no bigger than a teacup. Every garment looked oversized on such a diminutive body."
+      ],
+      "target_context_dev": [
+        "Without someone to feed and swaddle the little being, survival would be impossible. Complete reliance on adult caregiving was evident in every sigh.",
+        "Lacking any power to move independently or communicate in speech, the little being depended entirely on maternal devotion. The utter dependence tugged at her heart.",
+        "Unable to turn over or seek warmth unassisted, the little sleeper relied purely on others for sustenance and safety.",
+        "Every basic human need had to be supplied by external hands. The complete lack of self-sufficiency commanded constant vigilance."
+      ],
+      "source_context_test": [
+        "The wool mittens were so diminutive they fit over just two adult fingertips. She was amazed by such small proportions.",
+        "A soft yawn came from a face that scarcely covered the palm of her hand. The petite frame occupied only a corner of the crib.",
+        "She adjusted the lightweight booties, which were easily dwarfed by a single finger. The minute stature was striking in the cradle.",
+        "Folded into a compact bundle, the little body seemed extraordinarily slight. The smallness made every movement look delicate."
+      ],
+      "target_context_test": [
+        "Utterly incapable of fending for itself, the sleepy soul depended completely on maternal protection. Every breath reflected total vulnerability and need.",
+        "No creature could be more reliant on ongoing human intervention for survival. Without constant supervision, basic well-being could not be assured.",
+        "The inability to regulate warmth or satisfy hunger without assistance made watchful supervision essential. Total reliance filled the room with quiet purpose.",
+        "Left unattended, the little sleeper could not adjust the swaddle or seek comfort alone. Dependence on parental care was absolute."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (tiny baby, tiny infant, helpless baby, helpless infant) are fully grammatical, natural, and semantically valid completions following the stem 'In the quiet nursery, the mother rocked the'. The source context primes physical diminutiveness ('tiny') and casual domestic register ('baby'), while the target context primes complete dependency ('helpless') and clinical/formal register ('infant')."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "helpless",
+      "target_modifier": "precious",
+      "source_context_dev": [
+        "Without the ability to roll over, speak, or defend itself, the little soul was entirely dependent on maternal support. Every need required constant assistance.",
+        "Complete reliance on continuous supervision was obvious in every twitch and sigh. Survival was strictly tethered to adult vigilance.",
+        "Unable to meet basic physical needs alone, the small individual depended purely on guidance and care. The total lack of agency demanded unwavering attention.",
+        "The inability to feed or warm itself made steady parental guardianship imperative. Absolute dependence defined the quiet scene."
+      ],
+      "target_context_dev": [
+        "Years of hope and longing had finally culminated in this treasured blessing. She held the beloved arrival close, cherishing every heartbeat.",
+        "Nothing in the world felt more sacred or deeply cherished than this long-awaited addition to the family. She regarded the sight as a priceless treasure.",
+        "A profound sense of adoration washed over her as she looked at the beloved little being. Every single moment with this miracle was treasured beyond measure.",
+        "Holding what felt like the most valuable gift in existence, she felt her heart overflow with devotion. The beloved presence filled the room with reverence."
+      ],
+      "source_context_test": [
+        "The small sleeper could not lift its head or adjust its blanket without parental help. Such absolute reliance required round-the-clock dedication.",
+        "Being completely incapable of self-preservation, the little sleeper looked to adult care for every necessity. Total dependency was apparent in the gentle rest.",
+        "Without someone to provide food and comfort, survival remained unthinkable. The reliance on maternal intervention was complete.",
+        "The lack of physical autonomy meant that every minor discomfort required watchful assistance. Total dependency dictated every motion."
+      ],
+      "target_context_test": [
+        "After a difficult journey, this adored miracle represented the family's deepest joy. She held the beloved darling with immense pride.",
+        "No earthly treasure could equal the cherished value of the newly arrived family member. Her heart swelled with unreserved love.",
+        "She considered this beloved addition to be the most wonderful blessing ever granted. Every quiet breath was regarded with boundless adoration.",
+        "The beloved little sleeper was the center of all her hopes and dearest dreams. She cradled the cherished bundle with heartfelt tenderness."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (helpless baby, helpless infant, precious baby, precious infant) fit smoothly into the neutral continuation frame. Source contexts emphasize vulnerability and reliance, steering toward 'helpless', whereas target contexts evoke deep adoration and cherished value, favoring 'precious'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "vulnerable",
+      "target_modifier": "fragile",
+      "source_context_dev": [
+        "With no natural defenses against illness or harm, the tiny soul needed absolute protection from the outside environment. Every draft posed a potential hazard.",
+        "Exposure to harsh ambient conditions could easily disrupt such an unprotected young constitution. Guarding against external dangers was the primary duty.",
+        "The little system was wide open to infection and cold, lacking mature defenses. Safeguarding this sensitive being required constant protection.",
+        "Without immune maturity or self-protection mechanisms, safety was entirely in maternal hands. The susceptibility to harm prompted careful shielding."
+      ],
+      "target_context_dev": [
+        "The soft bones and delicate frame seemed as breakable as fine porcelain. The slightest clumsy movement felt like it might cause injury.",
+        "Thin translucent skin covered bones that appeared remarkably light and brittle. The delicate structure demanded the softest touch imaginable.",
+        "Every limb appeared so delicate and easily damaged that she barely dared to apply any pressure. The sensation was akin to handling spun glass.",
+        "Handling the delicate frame required extreme caution, as if holding an exquisite heirloom made of thin crystal. Gentleness was paramount."
+      ],
+      "source_context_test": [
+        "Lacking any internal defenses against the elements, the exposed little body required careful insulation. The susceptibility to cold was an immediate concern.",
+        "Without physical strength or resilience against environmental hazards, safety depended entirely on protective care. The risk of exposure loomed large.",
+        "The immature body was highly susceptible to temperature changes and loud shocks. Shielding the defenseless being was an urgent parental instinct.",
+        "Any sudden disturbance could upset the unprotected little sleeper's equilibrium. Defenselessness against external elements dictated vigilant shelter."
+      ],
+      "target_context_test": [
+        "The ribcage felt as delicate as parchment under the gentle swaddle. She handled the easily breakable structure with utmost care.",
+        "With joints so dainty and bones like slender twigs, the little frame required the most cautious cradling. The fear of causing injury was palpable.",
+        "The impression was that of handling fine crystal that could fracture with the slightest mishandling. Great care attended every movement.",
+        "The delicate skull and slender limbs seemed exceptionally delicate to the touch. She moved softly to avoid jarring the easily breakable frame."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (vulnerable baby, vulnerable infant, fragile baby, fragile infant) are semantically valid and felicitous after the stem. High regime contrast separates systemic susceptibility/defenselessness ('vulnerable') from physical breakability/delicacy of structure ('fragile'), neatly discriminating modifier associations with clinical vs. domestic registers."
+    }
+  ]
+}

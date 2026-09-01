@@ -1,0 +1,30 @@
+{
+  "candidate_id": "climb_ascent",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations across source and target dev/test contexts are grammatical, natural, and free of candidate lexical leaks."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four 2x2 combinations are fully valid and contextually appropriate without naming candidate words or altering truth conditions."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test_1"
+      ],
+      "failure_reasons": [
+        "target_context_test[1] contains 'rapidly' (direct cognate of target modifier 'rapid') and 'climber' (direct cognate of candidate noun 'climb'), violating the rule against candidate lexical leakage/trivial priming."
+      ],
+      "concise_notes": "Fails due to lexical leakage of both target modifier ('rapidly') and candidate noun ('climber') in the second test context for the target condition."
+    }
+  ]
+}

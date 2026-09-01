@@ -1,0 +1,285 @@
+{
+  "valid_token_ids": [
+    1458,
+    1689,
+    1873,
+    2263,
+    4185,
+    5158,
+    5663,
+    5905,
+    6082,
+    6145,
+    7588,
+    7659,
+    8398,
+    10861,
+    10929,
+    12562,
+    129760,
+    13160,
+    15404,
+    15605
+  ],
+  "rejected": [
+    {
+      "token_id": 506,
+      "reason": "determiner, ungrammatical repetition"
+    },
+    {
+      "token_id": 528,
+      "reason": "preposition"
+    },
+    {
+      "token_id": 639,
+      "reason": "single letter fragment"
+    },
+    {
+      "token_id": 1063,
+      "reason": "adverb/noun, unnatural modifier for journal"
+    },
+    {
+      "token_id": 1171,
+      "reason": "ordinal modifier semantically unnatural in continuous database commit contexts"
+    },
+    {
+      "token_id": 1262,
+      "reason": "noun, unnatural modifier for journal in this context"
+    },
+    {
+      "token_id": 1626,
+      "reason": "semantically implausible for routine runtime transaction commits"
+    },
+    {
+      "token_id": 1638,
+      "reason": "requires explicit prior noun referent absent in contexts"
+    },
+    {
+      "token_id": 1676,
+      "reason": "transactions are written/committed to write logs, not read logs"
+    },
+    {
+      "token_id": 1684,
+      "reason": "single letter symbol"
+    },
+    {
+      "token_id": 1695,
+      "reason": "noun, unnatural modifier for log/journal"
+    },
+    {
+      "token_id": 1883,
+      "reason": "noun, unnatural modifier for log/journal"
+    },
+    {
+      "token_id": 2129,
+      "reason": "noun, redundant and unnatural modifier for log/journal"
+    },
+    {
+      "token_id": 2212,
+      "reason": "repetitive noun forming log log"
+    },
+    {
+      "token_id": 2269,
+      "reason": "participle functioning as determiner requiring following text"
+    },
+    {
+      "token_id": 2460,
+      "reason": "database transactions commit to transaction logs rather than event logs/journals"
+    },
+    {
+      "token_id": 2633,
+      "reason": "noun, table log/journal is not a standard structure"
+    },
+    {
+      "token_id": 2651,
+      "reason": "adjective does not naturally collocate with log or journal"
+    },
+    {
+      "token_id": 3104,
+      "reason": "noun, does not form standard log/journal modifier"
+    },
+    {
+      "token_id": 3425,
+      "reason": "colloquial adjective not used to modify log or journal"
+    },
+    {
+      "token_id": 3546,
+      "reason": "noun, indices are not target commit logs/journals"
+    },
+    {
+      "token_id": 3707,
+      "reason": "database engine commits locally/storage rather than network log/journal"
+    },
+    {
+      "token_id": 3739,
+      "reason": "database engine commits to database/system logs, not application log"
+    },
+    {
+      "token_id": 4903,
+      "reason": "verb form"
+    },
+    {
+      "token_id": 5349,
+      "reason": "noun, unnatural modifier for log/journal"
+    },
+    {
+      "token_id": 5941,
+      "reason": "noun, unnatural modifier for log/journal"
+    },
+    {
+      "token_id": 6310,
+      "reason": "noun, storage log/journal is unidiomatic"
+    },
+    {
+      "token_id": 6478,
+      "reason": "noun, unnatural modifier for log/journal"
+    },
+    {
+      "token_id": 6571,
+      "reason": "noun, committed persistence targets disk/journal rather than memory log"
+    },
+    {
+      "token_id": 6623,
+      "reason": "noun, lock log/journal is unidiomatic"
+    },
+    {
+      "token_id": 7157,
+      "reason": "noun/modifier, core log/journal is unidiomatic in this context"
+    },
+    {
+      "token_id": 7444,
+      "reason": "noun, pool log/journal is unidiomatic"
+    },
+    {
+      "token_id": 7948,
+      "reason": "redundant noun modifier with database engine subject"
+    },
+    {
+      "token_id": 8172,
+      "reason": "participle modifier unidiomatic with log/journal"
+    },
+    {
+      "token_id": 8274,
+      "reason": "noun/verb, unidiomatic modifier for journal"
+    },
+    {
+      "token_id": 8884,
+      "reason": "repetitive noun forming journal journal"
+    },
+    {
+      "token_id": 9495,
+      "reason": "participle semantically incompatible with log/journal"
+    },
+    {
+      "token_id": 10941,
+      "reason": "commits target write-ahead/transaction logs during normal processing rather than recovery logs"
+    },
+    {
+      "token_id": 11345,
+      "reason": "noun, buffer is in-memory and unidiomatic modifier for journal"
+    },
+    {
+      "token_id": 11652,
+      "reason": "past participle does not modify log/journal naturally"
+    },
+    {
+      "token_id": 11740,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 12539,
+      "reason": "noun, batch log/journal is unidiomatic"
+    },
+    {
+      "token_id": 13403,
+      "reason": "noun, disk log/journal is unidiomatic"
+    },
+    {
+      "token_id": 13627,
+      "reason": "noun, cluster log/journal is unidiomatic"
+    },
+    {
+      "token_id": 15048,
+      "reason": "noun, queue log/journal is unidiomatic"
+    },
+    {
+      "token_id": 15612,
+      "reason": "noun, transactions are committed to persistent storage, not cache log"
+    },
+    {
+      "token_id": 15963,
+      "reason": "proper noun/acronym, unidiomatic modifier for journal"
+    },
+    {
+      "token_id": 16080,
+      "reason": "acronym noun, database engine commits to DB log rather than OS log/journal"
+    },
+    {
+      "token_id": 16788,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 18706,
+      "reason": "abbreviation, redundant with database engine"
+    },
+    {
+      "token_id": 21609,
+      "reason": "commits are written to active logs, not backup logs/journals"
+    },
+    {
+      "token_id": 25716,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 25725,
+      "reason": "noun, consistency log/journal is unidiomatic"
+    },
+    {
+      "token_id": 27239,
+      "reason": "capitalized noun"
+    },
+    {
+      "token_id": 33563,
+      "reason": "transactions commit to active logs rather than archive logs/journals"
+    },
+    {
+      "token_id": 35726,
+      "reason": "contradictory; database engine cannot commit pending transactions to offline logs"
+    },
+    {
+      "token_id": 38916,
+      "reason": "proper noun"
+    },
+    {
+      "token_id": 44975,
+      "reason": "noun, backend log/journal is unidiomatic"
+    },
+    {
+      "token_id": 57112,
+      "reason": "commits are finalized in redo/transaction logs, not undo logs"
+    },
+    {
+      "token_id": 92016,
+      "reason": "adjective modifies indices/tables, unidiomatic for log/journal"
+    },
+    {
+      "token_id": 94204,
+      "reason": "active database engine commits to active/primary logs rather than standby logs"
+    },
+    {
+      "token_id": 95179,
+      "reason": "noun/modifier, redo journal is unidiomatic"
+    },
+    {
+      "token_id": 166094,
+      "reason": "acronym noun"
+    },
+    {
+      "token_id": 166836,
+      "reason": "transactions committing contradicts writing to rollback log/journal"
+    }
+  ],
+  "candidate_id": "b22_23_tech_log_journal",
+  "regime": "low",
+  "candidate_token_count": 84
+}

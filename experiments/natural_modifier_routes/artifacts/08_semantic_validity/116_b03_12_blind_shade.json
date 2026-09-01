@@ -1,0 +1,41 @@
+{
+  "candidate_id": "blind_shade_window_covering",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_dev_0",
+        "target_context_dev_1",
+        "target_context_dev_2",
+        "target_context_dev_3",
+        "target_context_test_0",
+        "target_context_test_1",
+        "target_context_test_2",
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "Semantic presupposition clash: 'lowered the drawn blind/shade' is pragmatically anomalous because a drawn blind/shade is already in the lowered/closed state, making lowering it to block glare contradictory."
+      ],
+      "concise_notes": "The target modifier 'drawn' conflicts semantically with the dynamic predicate 'lowered the [modifier] [noun]' in the fixed stem."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_0"
+      ],
+      "failure_reasons": [
+        "Direct lexical/morphological leakage of the source modifier: 'cleaning' appears in source_context_dev[0]."
+      ],
+      "concise_notes": "Fails due to modifier stem leakage ('cleaning' in source_context_dev[0])."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 modifier-noun combinations are fully grammatical, natural, and pragmatically appropriate across all contexts with no lexical leakage."
+    }
+  ]
+}

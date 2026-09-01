@@ -1,0 +1,26 @@
+{
+  "candidate_id": "basket_hamper_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations across all 16 contexts are fully grammatical, semantically permissible, and natural without trivial noun leaks."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "Modifiers 'dusty' and 'light' cross-combine cleanly with both nouns under all development and test contexts with no candidate naming violations."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "Contexts cleanly bias toward material vs. capacity limit without asserting objective impossibility for non-target combinations or leaking candidate nouns."
+    }
+  ]
+}

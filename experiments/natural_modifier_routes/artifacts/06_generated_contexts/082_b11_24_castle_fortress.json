@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b11_24_castle_fortress",
+    "generation_batch": 11,
+    "domain": "buildings and architectural spaces",
+    "family_id": "castle_fortress",
+    "noun_0": "castle",
+    "noun_1": "fortress",
+    "shared_definition": "a large, heavily fortified stone building or complex constructed for defense and residence",
+    "neutral_stem": "The army laid siege to",
+    "candidate_modifiers": [
+      "ancient",
+      "medieval",
+      "stone",
+      "imposing",
+      "sprawling",
+      "massive",
+      "ruined",
+      "fortified",
+      "remote",
+      "lofty",
+      "isolated",
+      "stately",
+      "battered",
+      "historic"
+    ],
+    "semantic_notes": "'Castle' denotes a fortified stately residence of nobility, whereas 'fortress' emphasizes military defense, garrisoning, and strategic combat utility.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        23986
+      ],
+      "noun_1": [
+        70509
+      ]
+    },
+    "modifier_token_ids": {
+      "ancient": [
+        12440
+      ],
+      "medieval": [
+        32281
+      ],
+      "stone": [
+        10810
+      ],
+      "imposing": [
+        48783
+      ],
+      "sprawling": [
+        104885
+      ],
+      "massive": [
+        12566
+      ],
+      "ruined": [
+        57717
+      ],
+      "fortified": [
+        98190
+      ],
+      "remote": [
+        10883
+      ],
+      "lofty": [
+        102080
+      ],
+      "isolated": [
+        4813
+      ],
+      "stately": [
+        157421
+      ],
+      "battered": [
+        112624
+      ],
+      "historic": [
+        17110
+      ]
+    },
+    "forced_projection_span": 0.10229523479938507,
+    "max_noun_pair_mass": 0.506350040435791,
+    "context_priority_score": 0.05179719627705737,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "sprawling",
+        "target_modifier": "massive",
+        "source_projection": 0.08325850963592529,
+        "target_projection": 0.09243693947792053,
+        "forced_modifier_leverage": 0.00917842984199524,
+        "source_pair_mass": 0.15012359619140625,
+        "target_pair_mass": 0.498760849237442
+      },
+      "medium": {
+        "source_modifier": "ancient",
+        "target_modifier": "isolated",
+        "source_projection": 0.03636176139116287,
+        "target_projection": 0.08513209968805313,
+        "forced_modifier_leverage": 0.04877033829689026,
+        "source_pair_mass": 0.07868514955043793,
+        "target_pair_mass": 0.15350186824798584
+      },
+      "high": {
+        "source_modifier": "massive",
+        "target_modifier": "remote",
+        "source_projection": 0.09243693947792053,
+        "target_projection": 0.1947321742773056,
+        "forced_modifier_leverage": 0.10229523479938507,
+        "source_pair_mass": 0.498760849237442,
+        "target_pair_mass": 0.2707142233848572
+      }
+    },
+    "context_generation_rank": 83
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "sprawling",
+      "target_modifier": "massive",
+      "source_context_dev": [
+        "The royal domain stretched across dozens of rolling acres, encompassing numerous baileys, manicured gardens, and adjacent residential quarters.",
+        "Generations of monarchs had tacked on supplemental wings, gatehouses, and banquet halls, creating an expansive complex across the valley.",
+        "From the outer perimeter, one could see countless interconnected parapets and domestic quarters extending wide over the plateau.",
+        "The sovereign's seat of power occupied an unusually broad footprint, with outer wards branching off in several directions."
+      ],
+      "target_context_dev": [
+        "Engineers had erected towering bulwarks of solid granite designed to withstand direct bombardment from heavy siege engines.",
+        "The sheer bulk of the monolithic stone defense dwarfed everything around it, presenting an impenetrable facade to attackers.",
+        "Thick, reinforced masonry rose high above the battlefield, built with colossal slabs capable of enduring subterranean sapping.",
+        "The defensive stronghold was renowned for its sheer structural weight, boasting solid bastions of extraordinary thickness."
+      ],
+      "source_context_test": [
+        "Decades of peacetime expansion had caused the aristocratic estate to spread out across the hillside with multiple outer courtyards.",
+        "The provincial lord governed from a grand labyrinth of linked manorial residences, stables, and exterior curtain enclosures.",
+        "Rather than building upward, the early architects had extended the grand complex horizontally over vast grassy meadows.",
+        "The noble family's historic residence covered a wide expanse of land, incorporating several outlying defensive pavilions and halls."
+      ],
+      "target_context_test": [
+        "Constructed with immense blocks of quarried basalt, the garrison's main bastion seemed carved directly out of a mountain.",
+        "Every curtain wall was three fathoms thick, designed specifically to resist the most destructive kinetic artillery of the era.",
+        "The defensive work stood as an imposing monolith of dark rock, built purely to withstand years of enemy bombardment.",
+        "Titan-sized granite slabs formed the base of the ramparts, providing an enormous barrier against invading columns."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'sprawling' and 'massive' fit 'castle' and 'fortress' naturally in all contexts. The source contexts highlight wide territorial footprint and multi-wing layout (sprawling castle/fortress), while target contexts emphasize dense, heavy masonry and colossal bulk (massive fortress/castle)."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "ancient",
+      "target_modifier": "isolated",
+      "source_context_dev": [
+        "Constructed during the dawn of the realm, the time-worn ramparts bore centuries of weather stains and forgotten heraldry.",
+        "For nearly a thousand years, dynastic lords had ruled from the moss-draped towers overlooking the river bend.",
+        "The storied estate held relics of forgotten kings, its foundations having survived several fallen empires.",
+        "Generations of tradition filled the historic stone halls, where medieval tapestries recorded centuries of family rule."
+      ],
+      "target_context_dev": [
+        "Hidden deep in the craggy mountains, the garrison stood miles away from the nearest populated valley or trade route.",
+        "No roads connected the lonely outpost to neighboring settlements, leaving the defenders entirely reliant on mountain passes.",
+        "Surrounded on all sides by treacherous chasms, the high defensive bastion had virtually no contact with the outside realm.",
+        "The bastion was perched on a solitary windswept peak, completely detached from civilized provincial towns."
+      ],
+      "source_context_test": [
+        "Legends from the first millennium spoke of the timeworn stronghold, which had stood through countless dynastic wars.",
+        "Erected by the first high king centuries ago, the weathered ramparts retained their historical grandeur.",
+        "Antiquity seeped through every cracked cornerstone, preserving memories of an era long before the current kingdom was founded.",
+        "The old seat had endured for ten centuries, its crumbling exterior a testament to surviving multiple epochs of conflict."
+      ],
+      "target_context_test": [
+        "Stationed high upon a barren cliffside far from any friendly towns, the garrison guarded an inaccessible mountain gap.",
+        "Snowstorms regularly cut off all overland communication with the lonely defensive garrison for months at a time.",
+        "The sentries watched over a desolate gorge far removed from populated farmlands and central supply chains.",
+        "Set apart from the rest of the kingdom, the solitary strongpoint overlooked a forbidding, uninhabited wasteland."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (ancient castle, ancient fortress, isolated castle, isolated fortress) are semantically and syntactically sound. Source contexts stress age, history, and dynastic heritage, favoring 'ancient castle', while target contexts emphasize seclusion and physical disconnection, favoring 'isolated fortress'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "massive",
+      "target_modifier": "remote",
+      "source_context_dev": [
+        "The imperial architects spared no stone, erecting colossal defensive walls that towered over the surrounding river valley.",
+        "Immense granite gatehouses and oversized bastions projected outwards, underscoring the boundless wealth of the reigning dynasty.",
+        "Constructed on an enormous scale, the heavy stone complex dominated the horizon with towering ramparts and stout towers.",
+        "A gigantic defensive perimeter enveloped the ducal seat, flanked by titanic stone pillars and reinforced curtain walls."
+      ],
+      "target_context_dev": [
+        "Located far beyond the northern borders in uncharted wilderness, the outpost was weeks of travel from the capital.",
+        "The garrison had been established in the furthest reaches of the frontier, where few travelers ever dared to venture.",
+        "Deep in the barren borderlands, far past where formal maps ended, stood a solitary military encampment of stone.",
+        "Constructed on the outer fringe of civilized territory, the distant outpost watched over an untamed tundra."
+      ],
+      "source_context_test": [
+        "The sheer scale of the palace defenses made it visible from miles away, its gargantuan walls dwarfing the adjacent forests.",
+        "Towering stone towers of staggering proportions guarded the entrance to the monarch's grand territorial seat.",
+        "To display his unlimited resources, the sovereign had constructed a monumental defense of unfathomable size and height.",
+        "Enormous slabs of dark granite formed the outer walls, giving the royal bastion an overwhelmingly grand presence."
+      ],
+      "target_context_test": [
+        "Positioned at the edge of the known realm, the far-flung stone bastion guarded an unexplored mountain boundary.",
+        "Orders from the royal court took nearly a month to reach the distant sentries guarding the western badlands.",
+        "The defensive work stood leagues past the last border village, deep in an empty wilderness of rock and ice.",
+        "Perched on the rim of the frontier wastes, the outpost was placed far beyond the reach of imperial reinforcements."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations (massive castle, massive fortress, remote castle, remote fortress) are fully grammatical and natural. Source contexts establish grand architectural scale and monumental fortifications (massive castle/fortress), whereas target contexts emphasize extreme frontier distance and detachment from civilization (remote fortress/castle)."
+    }
+  ]
+}

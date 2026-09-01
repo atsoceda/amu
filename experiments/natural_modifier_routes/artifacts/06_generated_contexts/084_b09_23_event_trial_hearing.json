@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_23_event_trial_hearing",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_trial_hearing",
+    "noun_0": "trial",
+    "noun_1": "hearing",
+    "shared_definition": "a formal legal proceeding before a judge or judicial body",
+    "neutral_stem": "Lawyers prepared their arguments for",
+    "candidate_modifiers": [
+      "contentious",
+      "fair",
+      "formal",
+      "lengthy",
+      "public",
+      "secret",
+      "tense",
+      "urgent",
+      "prolonged",
+      "sensational",
+      "closed",
+      "crucial",
+      "dramatic",
+      "impartial",
+      "special"
+    ],
+    "semantic_notes": "'Trial' denotes a full judicial examination to determine guilt or liability, whereas 'hearing' is often shorter, preliminary, or administrative.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        7464
+      ],
+      "noun_1": [
+        9903
+      ]
+    },
+    "modifier_token_ids": {
+      "contentious": [
+        109806
+      ],
+      "fair": [
+        5888
+      ],
+      "formal": [
+        10781
+      ],
+      "lengthy": [
+        42288
+      ],
+      "public": [
+        1237
+      ],
+      "secret": [
+        6789
+      ],
+      "tense": [
+        54817
+      ],
+      "urgent": [
+        32034
+      ],
+      "prolonged": [
+        35269
+      ],
+      "sensational": [
+        82038
+      ],
+      "closed": [
+        6535
+      ],
+      "crucial": [
+        13832
+      ],
+      "dramatic": [
+        20997
+      ],
+      "impartial": [
+        75754
+      ],
+      "special": [
+        2803
+      ]
+    },
+    "forced_projection_span": 0.06592054665088654,
+    "max_noun_pair_mass": 0.7725031971931458,
+    "context_priority_score": 0.050923833048529765,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "closed",
+        "target_modifier": "impartial",
+        "source_projection": 0.025378528982400894,
+        "target_projection": 0.029662974178791046,
+        "forced_modifier_leverage": 0.004284445196390152,
+        "source_pair_mass": 0.11786077916622162,
+        "target_pair_mass": 0.13775822520256042
+      },
+      "medium": {
+        "source_modifier": "tense",
+        "target_modifier": "impartial",
+        "source_projection": -0.004076424986124039,
+        "target_projection": 0.029662974178791046,
+        "forced_modifier_leverage": 0.033739399164915085,
+        "source_pair_mass": 0.007654003798961639,
+        "target_pair_mass": 0.13775822520256042
+      },
+      "high": {
+        "source_modifier": "public",
+        "target_modifier": "urgent",
+        "source_projection": 0.24798695743083954,
+        "target_projection": 0.3139075040817261,
+        "forced_modifier_leverage": 0.06592054665088654,
+        "source_pair_mass": 0.2894279360771179,
+        "target_pair_mass": 0.4942265748977661
+      }
+    },
+    "context_generation_rank": 85
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "closed",
+      "target_modifier": "impartial",
+      "source_context_dev": [
+        "Sensitive intelligence briefings required strict confidentiality to protect national security.",
+        "Classified government documents were set to be entered into the official record behind guarded doors.",
+        "Given the confidential trade secrets at stake, the bench barred outside spectators from the courtroom proceedings.",
+        "Access to the courtroom was strictly restricted due to the sensitive nature of the state's evidence."
+      ],
+      "target_context_dev": [
+        "The administrative board promised an objective evaluation without preconceived notions.",
+        "Both parties wanted to ensure that the presiding magistrate would evaluate the dispute neutrally.",
+        "The committee chair emphasized that every grievance would receive an even-handed, objective evaluation.",
+        "To avoid allegations of bias, a neutral arbiter was appointed to evaluate the administrative appeal."
+      ],
+      "source_context_test": [
+        "Because sensitive juvenile testimonies were involved, the courtroom remained shielded from outside observers.",
+        "The defense filed motions to restrict attendance, citing protective orders on classified material.",
+        "The litigation involved proprietary corporate algorithms that could not be exposed to competitors or spectators.",
+        "Due to extreme privacy protocols, spectators and journalists were kept outside the courtroom doors."
+      ],
+      "target_context_test": [
+        "The regulatory agency insisted that the review panel must demonstrate complete fairness and neutrality.",
+        "Concerns regarding prior favoritism prompted demands for an objective, even-handed session before the magistrate.",
+        "The municipal board needed an objective panel to evaluate the zoning grievance fairly.",
+        "Representatives on both sides sought an even-handed forum free from prejudice."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (closed trial, closed hearing, impartial trial, impartial hearing) are semantically valid and natural after the stem 'Lawyers prepared their arguments for the'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "tense",
+      "target_modifier": "impartial",
+      "source_context_dev": [
+        "Frustrations boiled over in the hallway as opposing camps traded sharp accusations.",
+        "Bitter personal animosity between the two families created an atmosphere of heavy friction.",
+        "Hostilities ran exceptionally high as contentious accusations were about to be laid before the judge.",
+        "With a multi-million-dollar verdict on the line, the atmosphere inside the courthouse was fraught with anxiety."
+      ],
+      "target_context_dev": [
+        "The regulatory commission stressed the necessity of balanced, unbiased fact-finding.",
+        "An external magistrate was brought in to guarantee that neither side received preferential treatment.",
+        "Procedural fairness demanded a balanced forum free of outside political pressure.",
+        "The civil service commission sought an objective forum where the grievance could be judged fairly."
+      ],
+      "source_context_test": [
+        "Intense friction between the prosecution and the defense was palpable throughout the courthouse corridors.",
+        "Strong emotional reactions and heated disputes marked the run-up to the final courtroom confrontation.",
+        "Antagonism between the disputing partners reached a boiling point after months of bitter litigation.",
+        "Anxious murmurs filled the lobby as everyone anticipated explosive confrontations on the stand."
+      ],
+      "target_context_test": [
+        "Both factions insisted that the presiding examiner maintain strict objectivity throughout the session.",
+        "To prevent accusations of favoritism, the panel pledged an even-handed review of the employment dispute.",
+        "The appeals board emphasized balanced judgment and neutrality in adjudicating the petition.",
+        "Judicial ethics required the assigned magistrate to remain strictly neutral and objective."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (tense trial, tense hearing, impartial trial, impartial hearing) form felicitous legal proceeding descriptions following the fixed stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "public",
+      "target_modifier": "urgent",
+      "source_context_dev": [
+        "Transparency advocates demanded full citizen access and broadcast cameras in the main courtroom.",
+        "High community interest led the court administration to arrange overflow seating for local citizens.",
+        "Because the community demanded total transparency, the courthouse opened its doors to all observers.",
+        "Journalists gathered on the courthouse steps as citizens queued up to witness the proceedings firsthand."
+      ],
+      "target_context_dev": [
+        "An immediate restraining order was required before business assets could be improperly liquidated overnight.",
+        "The emergency injunction petition had to be addressed by the magistrate before sundown.",
+        "With demolition scheduled for dawn, counsel demanded immediate calendar placement from the emergency judge.",
+        "A sudden violation of the preliminary agreement forced counsel to request immediate judicial intervention within hours."
+      ],
+      "source_context_test": [
+        "News cameras lined the gallery as citizen observers packed the benches to watch the full legal dispute.",
+        "The court determined that community interest required open doors and accessible seating for all citizens.",
+        "A broadcast feed was arranged so the broader community could view the litigation unfold.",
+        "Outside monitors were installed in the plaza so the general populace could follow every testimony."
+      ],
+      "target_context_test": [
+        "Counsel filed an expedited motion demanding immediate intervention before the disputed assets disappeared.",
+        "Because the asset transfer was scheduled for tomorrow morning, an emergency docket slot was granted immediately.",
+        "Time was running out to stop the eviction, prompting counsel to petition for an immediate afternoon session.",
+        "Critical safety concerns required an expedited judicial review before the facility opened on Monday."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (public trial, public hearing, urgent trial, urgent hearing) are fully permissible and meaningful legal proceeding collocations."
+    }
+  ]
+}

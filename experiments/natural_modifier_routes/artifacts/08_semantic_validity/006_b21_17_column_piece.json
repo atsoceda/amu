@@ -1,0 +1,30 @@
+{
+  "candidate_id": "column_piece",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations (monthly/satirical \u00d7 column/piece) are grammatically well-formed, natural in journalism, and semantically felicitous across all periodicity and satire contexts without lexical leaks."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations (guest/monthly \u00d7 column/piece) are standard publishing collocations and satisfy all pragmatic and semantic criteria across all contributor and frequency contexts."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test[1]"
+      ],
+      "failure_reasons": [
+        "source_context_test[1] includes 'brilliance', which is a direct morphological leak/mention of the candidate source modifier 'brilliant'."
+      ],
+      "concise_notes": "Fails due to lexical leakage of the source modifier root in source_context_test[1] ('rhetorical brilliance')."
+    }
+  ]
+}

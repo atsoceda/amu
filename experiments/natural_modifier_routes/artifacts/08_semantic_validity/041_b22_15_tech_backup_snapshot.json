@@ -1,0 +1,26 @@
+{
+  "candidate_id": "backup_snapshot",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations (recent backup, recent snapshot, encrypted backup, encrypted snapshot) are fully grammatical, natural, and semantically coherent across all dev and test contexts."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "Valid/automated paired with backup/snapshot represent standard enterprise IT terminology and fit all context descriptions without leakage."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "Compressed/restored paired with backup/snapshot are semantically permissible across all contexts, distinguishing between compressed archive retrieval and pre-hydrated staging environments."
+    }
+  ]
+}

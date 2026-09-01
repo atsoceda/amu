@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b04_01_gadget_device",
+    "generation_batch": 4,
+    "domain": "tools, devices, and machines",
+    "family_id": "gadget_device",
+    "noun_0": "gadget",
+    "noun_1": "device",
+    "shared_definition": "a small mechanical or electronic apparatus designed for a specific purpose",
+    "neutral_stem": "The engineer evaluated",
+    "candidate_modifiers": [
+      "clever",
+      "compact",
+      "useful",
+      "electronic",
+      "mechanical",
+      "ingenious",
+      "portable",
+      "handheld",
+      "expensive",
+      "cheap",
+      "novel",
+      "complex",
+      "modern",
+      "small",
+      "faulty"
+    ],
+    "semantic_notes": "'Gadget' carries a connotation of novelty, ingenuity, or minor utility, while 'device' is neutral, technical, and formal.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        73679
+      ],
+      "noun_1": [
+        4744
+      ]
+    },
+    "modifier_token_ids": {
+      "clever": [
+        32510
+      ],
+      "compact": [
+        11236
+      ],
+      "useful": [
+        6684
+      ],
+      "electronic": [
+        11165
+      ],
+      "mechanical": [
+        12974
+      ],
+      "ingenious": [
+        96308
+      ],
+      "portable": [
+        24282
+      ],
+      "handheld": [
+        81137
+      ],
+      "expensive": [
+        11162
+      ],
+      "cheap": [
+        12907
+      ],
+      "novel": [
+        10132
+      ],
+      "complex": [
+        3996
+      ],
+      "modern": [
+        4532
+      ],
+      "small": [
+        1944
+      ],
+      "faulty": [
+        58615
+      ]
+    },
+    "forced_projection_span": 0.18936189636588097,
+    "max_noun_pair_mass": 0.24629008769989014,
+    "context_priority_score": 0.04663795806297033,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "novel",
+        "target_modifier": "small",
+        "source_projection": 0.0004899845225736499,
+        "target_projection": 0.019622113555669785,
+        "forced_modifier_leverage": 0.019132129033096135,
+        "source_pair_mass": 0.0005168148782104254,
+        "target_pair_mass": 0.02056727558374405
+      },
+      "medium": {
+        "source_modifier": "useful",
+        "target_modifier": "ingenious",
+        "source_projection": 3.088226731051691e-05,
+        "target_projection": 0.05526495352387428,
+        "forced_modifier_leverage": 0.055234071256563766,
+        "source_pair_mass": 3.9878486859379336e-05,
+        "target_pair_mass": 0.06105624511837959
+      },
+      "high": {
+        "source_modifier": "ingenious",
+        "target_modifier": "handheld",
+        "source_projection": 0.05526495352387428,
+        "target_projection": 0.24462684988975525,
+        "forced_modifier_leverage": 0.18936189636588097,
+        "source_pair_mass": 0.06105624511837959,
+        "target_pair_mass": 0.24629008769989014
+      }
+    },
+    "context_generation_rank": 91
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "novel",
+      "target_modifier": "small",
+      "source_context_dev": [
+        "The patent office had recently cleared an unprecedented prototype featuring an unexpected mechanical linkage. It promised an entirely fresh approach to automated kitchen prep.",
+        "A startup had just unveiled an unconventional piece of hardware that reimagined fluid dynamic regulation. Everyone in the workshop was curious about this innovative creation.",
+        "The lab received a prototype boasting an unprecedented mechanism that nobody on the team had encountered before. Its quirky design sparked immediate interest across the floor.",
+        "At the annual tech showcase, an unprecedented consumer contraption drew crowds with its bizarre yet original operating principle. It was unlike anything currently on store shelves."
+      ],
+      "target_context_dev": [
+        "The miniaturization initiative required components that could fit seamlessly into a micro-enclosure. Space constraints inside the housing were exceptionally tight.",
+        "The lab needed a very compact apparatus capable of operating within tight spatial tolerances. Every cubic millimeter of internal volume had to be preserved.",
+        "Space inside the satellite instrumentation bay was extremely limited, requiring a truly miniature piece of hardware. Bulkier alternatives had already been ruled out.",
+        "The wearable assembly could only accommodate minuscule components due to weight and dimension limitations. The assembly line awaited a compact solution."
+      ],
+      "source_context_test": [
+        "An inventor submitted a pioneering consumer mechanism that applied a completely original thermodynamic cycle. The blueprint introduced concepts never seen in prior art.",
+        "The research division finalized a one-of-a-kind apparatus that tackled cable management from a radically fresh perspective. Observers were eager to assess its originality.",
+        "A newly registered prototype introduced an unexpected electronic configuration designed to simplify routine workshop measurements. The concept felt distinctively innovative.",
+        "The incubator showcased an experimental apparatus built around an unheard-of lever geometry. The team gathered to examine how well the new idea performed."
+      ],
+      "target_context_test": [
+        "The latest blueprint demanded an ultra-compact mechanical unit that would barely take up any room in the chassis. Reduced physical dimensions were mandatory.",
+        "Due to severe pocket-size constraints, the medical monitor required an exceptionally tiny piece of hardware. Technicians focused strictly on its reduced footprint.",
+        "The micro-robotics team searched for an ultra-compact module that would not add excess bulk to the frame. The focus was strictly on miniaturized dimensions.",
+        "Fitting the monitoring hardware into a tiny wristwatch casing required an extremely diminutive apparatus. Dimensions took precedence over all other factors."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('novel gadget', 'novel device', 'small gadget', 'small device') are completely natural and grammatically valid. Source contexts highlight novelty/originality without using 'novel' or either noun; target contexts highlight compactness/miniaturization without using 'small' or either noun."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "useful",
+      "target_modifier": "ingenious",
+      "source_context_dev": [
+        "Technicians needed a practical everyday tool to streamline routine calibration tasks on the manufacturing floor. High utility and immediate day-to-day value were the main priorities.",
+        "The maintenance crew asked for a handy piece of hardware that would solve persistent daily assembly bottlenecks. Pragmatic functionality was paramount.",
+        "The workshop team needed a functional and highly effective instrument to speed up repetitive maintenance operations. Everyday practicality outweighed cutting-edge complexity.",
+        "Field operatives requested a pragmatic tool that would reliably assist with regular diagnostic chores. Practical everyday benefit was the chief criterion."
+      ],
+      "target_context_dev": [
+        "The advanced robotics division was captivated by a brilliantly conceived mechanism that bypassed traditional gearing limitations. Its clever architecture was a marvel of creative engineering.",
+        "An exceptionally brilliant mechanism was submitted for review, utilizing complex geometric folding to multiply torque. The sheer creativity behind the design impressed the staff.",
+        "The skunkworks department developed an extraordinarily smart mechanism that solved friction loss through a stroke of design brilliance. Its clever layout fascinated the senior staff.",
+        "A remarkably clever contraption solved the micro-valve sealing problem through an astutely designed magnetic latch. Its brilliant engineering drew praise from the board."
+      ],
+      "source_context_test": [
+        "The inspection team required a convenient piece of hardware that would provide immediate practical assistance during shift changeovers. Utility was the core requirement.",
+        "Plant operators prioritized an instrument that would deliver solid, dependable utility for daily pipeline checks. The goal was simply to make the job easier.",
+        "The repair station lacked a practical apparatus to assist mechanics with stubborn fastener removals. Functional day-to-day effectiveness was the deciding metric.",
+        "A handy hardware unit was requested by floor technicians to speed up routine component sorting. The emphasis was firmly on practical day-to-day utility."
+      ],
+      "target_context_test": [
+        "The R&D group marveled at a masterfully conceived apparatus that achieved silent actuation using shape-memory alloys. The sheer brilliance of the concept was undeniable.",
+        "An astutely designed mechanism utilized centrifugal balance in a manner never before attempted. Its creative sophistication stood out immediately during the demonstration.",
+        "The aerospace team reviewed a brilliantly formulated mechanism that unfolded solar panels with minimal linkage. The clever sophistication of the solution was evident.",
+        "A brilliantly conceived piece of hardware integrated thermal dissipation directly into structural struts. The sheer elegance and creativity of the mechanism drew deep interest."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('useful gadget', 'useful device', 'ingenious gadget', 'ingenious device') remain fully valid and coherent. The source contexts lean toward pragmatic utility, while the target contexts emphasize brilliant mechanical innovation."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "ingenious",
+      "target_modifier": "handheld",
+      "source_context_dev": [
+        "The innovation jury was fascinated by a brilliantly conceived mechanism that solved backlash using magnetic repulsion. Its extraordinary design creativity set it apart.",
+        "The skunkworks lab completed a masterfully clever mechanism capable of self-correcting alignment without external sensors. The creativity behind the design was breathtaking.",
+        "A remarkably smart piece of hardware utilized counterweights in an astutely original way to eliminate vibration. The sheer brilliance of the concept stunned the room.",
+        "The R&D branch celebrated an astutely designed apparatus that harnessed fluid oscillation for continuous self-cleaning. The creative engineering was undeniable."
+      ],
+      "target_context_dev": [
+        "Field inspectors needed portable equipment that could be comfortably operated with one grip during tower inspections. Portability and ergonomic grip were essential.",
+        "The forestry service requested a portable piece of hardware that rangers could carry in one palm while hiking rough terrain. Manual portability was crucial.",
+        "Site surveyors required a portable instrument that easily fit the grip of a single palm during field inspections. Portability was the decisive requirement.",
+        "The emergency rescue crew demanded a palm-operable piece of hardware that first responders could use on the move. Ergonomic single-handed portability was essential."
+      ],
+      "source_context_test": [
+        "An exceptionally brilliant piece of hardware achieved variable transmission through an intricately clever cam profile. The creative insight of the designer was obvious.",
+        "The design team marveled at a brilliantly conceived mechanism that converted thermal gradients into mechanical motion. The astuteness of the engineering was remarkable.",
+        "A wonderfully clever apparatus overcame extreme temperature fluctuations by means of a dynamic bimetallic coil. The brilliance of the design won widespread acclaim.",
+        "The development squad celebrated an astutely engineered mechanism that dynamically balanced high-speed rotors without computer guidance. The ingenuity of the concept stood out."
+      ],
+      "target_context_test": [
+        "The warehouse supervisor insisted on a lightweight portable unit that workers could easily hold in a single palm throughout their shifts. Manual portability was mandatory.",
+        "Technicians on offshore platforms required a palm-portable piece of hardware for quick manual diagnostics. Portability and one-handed operation were the main priorities.",
+        "The utility company procured a portable instrument designed specifically for single-palm operation in cramped manholes. Manual ergonomics was the primary design driver.",
+        "Agricultural inspectors sought a lightweight portable tool that could be operated effortlessly in one palm across large fields. Portable convenience was the defining metric."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('ingenious gadget', 'ingenious device', 'handheld gadget', 'handheld device') are natural and fully grammatical. High regime contrasts creative engineering brilliance with manual palm-portability without mentioning forbidden lexical tokens."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b21_00_article_story",
+    "generation_batch": 21,
+    "domain": "communication and journalism",
+    "family_id": "article_story",
+    "noun_0": "article",
+    "noun_1": "story",
+    "shared_definition": "a piece of journalistic writing published in print or online",
+    "neutral_stem": "The chief editor carefully reviewed the draft before printing the",
+    "candidate_modifiers": [
+      "lead",
+      "front",
+      "investigative",
+      "compelling",
+      "lengthy",
+      "brief",
+      "controversial",
+      "original",
+      "sensational",
+      "detailed",
+      "unpublished",
+      "factual",
+      "riveting",
+      "weekly",
+      "feature"
+    ],
+    "semantic_notes": "'Story' often emphasizes narrative arc or human interest, whereas 'article' leans toward formal journalistic format.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        4676
+      ],
+      "noun_1": [
+        3925
+      ]
+    },
+    "modifier_token_ids": {
+      "lead": [
+        2080
+      ],
+      "front": [
+        3645
+      ],
+      "investigative": [
+        79755
+      ],
+      "compelling": [
+        33348
+      ],
+      "lengthy": [
+        42288
+      ],
+      "brief": [
+        8652
+      ],
+      "controversial": [
+        31332
+      ],
+      "original": [
+        3303
+      ],
+      "sensational": [
+        82038
+      ],
+      "detailed": [
+        9813
+      ],
+      "unpublished": [
+        70680
+      ],
+      "factual": [
+        59893
+      ],
+      "riveting": [
+        185298
+      ],
+      "weekly": [
+        16789
+      ],
+      "feature": [
+        4926
+      ]
+    },
+    "forced_projection_span": 0.09528362168930471,
+    "max_noun_pair_mass": 0.6512664556503296,
+    "context_priority_score": 0.06205502657912035,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "compelling",
+        "target_modifier": "front",
+        "source_projection": -0.009389117360115051,
+        "target_projection": -0.0010231451597064734,
+        "forced_modifier_leverage": 0.008365972200408578,
+        "source_pair_mass": 0.3005494475364685,
+        "target_pair_mass": 0.0011941224802285433
+      },
+      "medium": {
+        "source_modifier": "original",
+        "target_modifier": "detailed",
+        "source_projection": -0.06899630278348923,
+        "target_projection": -0.022205831483006477,
+        "forced_modifier_leverage": 0.04679047130048275,
+        "source_pair_mass": 0.0864352360367775,
+        "target_pair_mass": 0.03228576481342316
+      },
+      "high": {
+        "source_modifier": "front",
+        "target_modifier": "riveting",
+        "source_projection": -0.0010231451597064734,
+        "target_projection": 0.09426047652959824,
+        "forced_modifier_leverage": 0.09528362168930471,
+        "source_pair_mass": 0.0011941224802285433,
+        "target_pair_mass": 0.34393906593322754
+      }
+    },
+    "context_generation_rank": 70
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "compelling",
+      "target_modifier": "front",
+      "source_context_dev": [
+        "The investigative piece presented an argument so persuasive that it immediately captivated the entire editorial board.",
+        "Readers were expected to be deeply moved by the eloquent prose and powerful evidence gathered across months of research.",
+        "The newsroom wanted an analytical expose that would hold readers' attention through its sheer narrative strength.",
+        "The submission stood out because of its gripping rhetoric and undeniable persuasive power."
+      ],
+      "target_context_dev": [
+        "The breaking development occurred right at the publication deadline, demanding top placement above the fold.",
+        "Major news broke late at night, prompting designers to rearrange the primary layout for the morning edition.",
+        "The pressroom needed a headline-worthy centerpiece to occupy the most prominent spot of the morning issue.",
+        "Editors debated which major exclusive deserved the prime exterior real estate on tomorrow's print run."
+      ],
+      "source_context_test": [
+        "The staff spent hours discussing how powerfully the underlying argument resonated with the publication's readership.",
+        "A profound sense of urgency permeated the text, making its central message impossible to ignore.",
+        "The investigative reporter had crafted an uncommonly engaging piece of reportage with strong prose.",
+        "The newsroom recognized that the submission possessed remarkable rhetorical strength and emotional weight."
+      ],
+      "target_context_test": [
+        "A landmark political revelation occurred overnight, requiring an immediate reconfiguration of the main layout.",
+        "The publication's most visible exterior slot had been reserved specifically for this nationwide scoop.",
+        "With minutes left before production, the design department cleared the lead spot for the breaking scoop.",
+        "The graphic designers adjusted the layout grid to ensure the late-breaking revelation received top billing."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (compelling article, compelling story, front article, front story) remain semantically and syntactically sound under all editorial context frames."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "original",
+      "target_modifier": "detailed",
+      "source_context_dev": [
+        "The reporter had unearthed completely unprecedented findings rather than relying on wire services or secondary sources.",
+        "The editorial staff prized fresh reporting and wanted to ensure the piece presented novel insights.",
+        "This piece was not a reprint or a summary, but a fresh investigation generated entirely in-house.",
+        "The submission marked the first time these exclusive findings had ever been compiled for public release."
+      ],
+      "target_context_dev": [
+        "The piece explored every single nuance of the financial scandal, providing exhaustive breakdowns of all records.",
+        "Reporters had gathered extensive documentation to provide a comprehensive, step-by-step examination of the event.",
+        "The editorial mandate called for an in-depth, meticulous exploration of the complex legislative battle.",
+        "Readers required an exhaustive, granular breakdown of the technical data surrounding the municipal audit."
+      ],
+      "source_context_test": [
+        "The newsroom wanted to highlight that this piece of journalism was entirely authentic and newly generated.",
+        "Rather than re-reporting existing rumors, the journalist produced a genuinely new account from firsthand sources.",
+        "The newspaper wanted to celebrate a uniquely crafted debut investigation generated by their own staff.",
+        "The bureau chief verified that the text contained authentic, unprecedented reportage without any rehashed material."
+      ],
+      "target_context_test": [
+        "The investigative team had spent months assembling a comprehensive, micro-level breakdown of the legal proceedings.",
+        "Every timeline, footnote, and transaction was meticulously cataloged for a thorough public examination.",
+        "The publication wanted to provide an exhaustive, multi-faceted breakdown of the historical controversy.",
+        "The editors demanded an in-depth, step-by-step chronicle explaining the complicated policy change."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (original article, original story, detailed article, detailed story) are fully grammatical and natural across both investigative novelty and granularity contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "front",
+      "target_modifier": "riveting",
+      "source_context_dev": [
+        "The headline event was slated for the most prominent position on the morning paper's lead layout.",
+        "With the press deadline looming, the art director needed a lead piece to occupy prime real estate above the fold.",
+        "The editorial board chose this major scoop to occupy the top exterior page of the daily edition.",
+        "Layout specialists rearranged the issue's primary visual space to showcase the day's biggest development."
+      ],
+      "target_context_dev": [
+        "The narrative unfolded with intense drama and breathtaking suspense that kept everyone on the edge of their seats.",
+        "The human interest chronicle was packed with gripping tension and emotional twists from start to finish.",
+        "Staff members could hardly tear their eyes away from the dramatic, heart-pounding narrative account.",
+        "The thrilling chronicle captured an unbelievable saga of survival against impossible odds."
+      ],
+      "source_context_test": [
+        "The morning issue required an eye-catching centerpiece situated at the very top of the publication.",
+        "Graphic designers finalized the lead exterior layout just before the evening print run commenced.",
+        "The late-breaking scoop had earned the coveted top slot on the outer surface of the print edition.",
+        "The production crew cleared the primary layout space to spotlight the city's breaking controversy."
+      ],
+      "target_context_test": [
+        "The dramatic chronicle held the entire newsroom spellbound with its astonishing, suspenseful narrative arc.",
+        "Every paragraph contained high-stakes drama and surprising revelations that left readers breathless.",
+        "The extraordinary tale of courage was filled with suspenseful moments that completely engrossed the staff.",
+        "Nobody in the office could put down the heart-stopping personal account of the rescue mission."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (front article, front story, riveting article, riveting story) are semantically valid and pragmatically standard across both layout-prominence and high-suspense contexts."
+    }
+  ]
+}

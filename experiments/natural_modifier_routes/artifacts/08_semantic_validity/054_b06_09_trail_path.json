@@ -1,0 +1,32 @@
+{
+  "candidate_id": "trail_path",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated definite article ('along the the'), rendering stem plus completion ungrammatical."
+      ],
+      "concise_notes": "All 4 modifier-noun combinations and 8 context sentences are semantically valid and free of candidate leaks, but the prompt stem has a duplicate token ('the the')."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated definite article ('along the the'), rendering stem plus completion ungrammatical."
+      ],
+      "concise_notes": "Contexts cleanly manipulate gradient vs. surface texture without lexical leaks, but the fixed stem contains a duplicated 'the'."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated definite article ('along the the'), rendering stem plus completion ungrammatical."
+      ],
+      "concise_notes": "Cross-combinations ('muddy/beaten' \u00d7 'trail/path') and pragmatic context shifts are fully valid, but the stem fails the naturalness/grammaticality requirement due to 'the the'."
+    }
+  ]
+}

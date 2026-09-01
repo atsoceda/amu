@@ -1,0 +1,30 @@
+{
+  "candidate_id": "stadium_arena",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations across all contexts are grammatical and natural. No candidate noun or modifier tokens appear in the contexts, and the contexts effectively shift pragmatic framing without altering truth conditions."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations are fully acceptable and natural. Contexts clearly distinguish historic renown from urban transit centrality without leaking candidate tokens."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        9
+      ],
+      "failure_reasons": [
+        "source_context_test[1] explicitly contains the candidate modifier token 'central' ('Its central setting ensures maximum attendance from the downtown area.'), violating the constraint against mentioning or trivially naming a candidate."
+      ],
+      "concise_notes": "Fails due to lexical leakage of the source modifier 'central' in the second source test context."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b18_02_specimen_sample",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "specimen_sample",
+    "noun_0": "specimen",
+    "noun_1": "sample",
+    "shared_definition": "a representative portion or individual collected for scientific examination or analysis",
+    "neutral_stem": "The laboratory technician carefully prepared the",
+    "candidate_modifiers": [
+      "biological",
+      "clean",
+      "collected",
+      "contaminated",
+      "dried",
+      "fresh",
+      "frozen",
+      "intact",
+      "labeled",
+      "organic",
+      "preserved",
+      "rare",
+      "representative",
+      "small",
+      "sterile"
+    ],
+    "semantic_notes": "'Specimen' often denotes an entire organism or distinct geological/biological item, while 'sample' implies a measured portion of a larger whole.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        30359
+      ],
+      "noun_1": [
+        5498
+      ]
+    },
+    "modifier_token_ids": {
+      "biological": [
+        15898
+      ],
+      "clean": [
+        3980
+      ],
+      "collected": [
+        10819
+      ],
+      "contaminated": [
+        41939
+      ],
+      "dried": [
+        19555
+      ],
+      "fresh": [
+        5756
+      ],
+      "frozen": [
+        21222
+      ],
+      "intact": [
+        32990
+      ],
+      "labeled": [
+        26777
+      ],
+      "organic": [
+        10293
+      ],
+      "preserved": [
+        27750
+      ],
+      "rare": [
+        8401
+      ],
+      "representative": [
+        14441
+      ],
+      "small": [
+        1944
+      ],
+      "sterile": [
+        41762
+      ]
+    },
+    "forced_projection_span": 0.2637425810098648,
+    "max_noun_pair_mass": 0.42539235949516296,
+    "context_priority_score": 0.11219407883513055,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "collected",
+        "target_modifier": "contaminated",
+        "source_projection": 0.08638991415500641,
+        "target_projection": 0.1134507805109024,
+        "forced_modifier_leverage": 0.027060866355895996,
+        "source_pair_mass": 0.15576983988285065,
+        "target_pair_mass": 0.1337415724992752
+      },
+      "medium": {
+        "source_modifier": "sterile",
+        "target_modifier": "contaminated",
+        "source_projection": -0.008763480931520462,
+        "target_projection": 0.1134507805109024,
+        "forced_modifier_leverage": 0.12221426144242287,
+        "source_pair_mass": 0.02445458248257637,
+        "target_pair_mass": 0.1337415724992752
+      },
+      "high": {
+        "source_modifier": "contaminated",
+        "target_modifier": "representative",
+        "source_projection": 0.1134507805109024,
+        "target_projection": 0.3771933615207672,
+        "forced_modifier_leverage": 0.2637425810098648,
+        "source_pair_mass": 0.1337415724992752,
+        "target_pair_mass": 0.42539235949516296
+      }
+    },
+    "context_generation_rank": 35
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "collected",
+      "target_modifier": "contaminated",
+      "source_context_dev": [
+        "After returning from the coastal wetland expedition, the team cataloged all the gathered biological items. Each item required fixation before microscopy.",
+        "Field researchers spent days in the rainforest harvesting rare botanical tissues for the archive. Back in the workspace, protocols dictated immediate preservation.",
+        "Biologists returned from the deep-sea dive with preserved invertebrate tissues ready for taxonomy. The morning work began with careful handling under the hood.",
+        "The clinical team gathered biopsies during surgery and dispatched them to the pathology suite. Every single piece needed documentation and slide mounting."
+      ],
+      "target_context_dev": [
+        "A breached seal on the holding tank allowed airborne mold spores to infiltrate the batch. The quality assurance team needed to evaluate the extent of the degradation.",
+        "Foreign particulates had accidentally entered the chemical vial during transfer from the storage unit. An assessment was scheduled to quantify the level of impurities.",
+        "Turbidity in the liquid broth indicated bacterial infiltration had compromised the trial vessel. The analyst had to process the spoiled mixture for chemical profiling.",
+        "The chemical reagent had been exposed to ambient dust when an exhaust filter failed. Technicians were instructed to examine the compromised material to isolate the pollutant."
+      ],
+      "source_context_test": [
+        "An ecologist arrived from the alpine valley with freshly harvested fungal cultures. Immediate processing was required before cellular degradation set in.",
+        "The expedition brought back preserved insect tissues from the remote island survey. Standard protocols required systematic sorting and stabilization.",
+        "Surgical staff transferred the newly extracted tumor biopsies directly to the diagnostic station. Standard staging procedures had to be initiated without delay.",
+        "Zoologists returned from the field with harvested tissue vouchers from the rainforest canopy. The team needed to prepare each voucher for genetic sequencing."
+      ],
+      "target_context_test": [
+        "Accidental contact with an unwashed pipette introduced unwanted bacteria into the solution. The lab team needed to measure the degree of adulteration.",
+        "Exposure to open air had compromised the purity of the chemical solution in the tray. Standard diagnostic steps were initiated to identify the foreign particulates.",
+        "Microbial growth had spoiled the water vial after an incubator seal ruptured overnight. Staff prepared the compromised material for diagnostic screening.",
+        "An unexpected reaction indicated that airborne debris had fouled the chemical solution. The team initiated an investigation to analyze the impure mixture."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('collected specimen', 'collected sample', 'contaminated specimen', 'contaminated sample') represent standard scientific terminology and remain completely grammatical and plausible under all context conditions."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "sterile",
+      "target_modifier": "contaminated",
+      "source_context_dev": [
+        "Operating entirely under an aseptic laminar hood, the team maintained an environment completely free of microorganisms. The goal was to preserve the pristine anatomical biopsy.",
+        "To ensure no external microbes could alter the delicate tissue culture, staff sanitized every tool. The pristine biopsy had to remain completely unexposed.",
+        "The pathology workstation was subjected to intense ultraviolet sanitization to eliminate all ambient microbes. Technicians worked diligently to maintain this pristine state for the biopsy.",
+        "Stringent aseptic protocols were enforced throughout the surgical isolation suite to prevent microbial entry. The preserved fungal culture required immaculate processing."
+      ],
+      "target_context_dev": [
+        "An accidental spill of non-purified runoff had leaked into the testing batch overnight. The quality control chemist was tasked with quantifying the impurities.",
+        "Turbid film forming over the liquid reagent showed that unwanted fungal growth had occurred. Staff needed to analyze the compromised chemical mixture.",
+        "The seal on the test vial failed, admitting external dust and airborne microbes into the solution. An assay was initiated to evaluate the fouled mixture.",
+        "Cross-contact with unwashed glassware resulted in foreign particulates infiltrating the chemical assay. The laboratory analyst had to process the tainted liquid."
+      ],
+      "source_context_test": [
+        "Working within an aseptic glove box ensured that no external bacteria could enter the workspace. The pristine anatomical tissue had to be mounted onto a glass slide.",
+        "Rigorous sanitization protocols eliminated all potential microbes from the surgical research bench. Every preserved culture was handled with absolute care.",
+        "The biosafety cabinet was completely decontaminated with alcohol and ultraviolet light prior to the procedure. The virgin biopsy needed to stay free of microbes.",
+        "Maintaining an environment free from all living microorganisms was crucial for the fragile tissue culture. The workstation was prepped for pristine handling."
+      ],
+      "target_context_test": [
+        "A leak in the refrigeration unit allowed foreign matter to seep into the testing solution. The team had to analyze the tainted fluid before disposal.",
+        "The chemical mixture turned cloudy after exposure to dirty ambient air during transfer. Technicians were assigned to isolate the foreign particulates.",
+        "Foreign microbes were detected in the assay tubes after an accidental breach of the containment lid. The corrupted liquid needed immediate diagnostic review.",
+        "A technician noticed sediment at the bottom of the solution where pure solvent should have been. The spoiled chemical fluid was flagged for chemical assessment."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('sterile specimen', 'sterile sample', 'contaminated specimen', 'contaminated sample') represent standard laboratory entities and remain fully grammatical and felicitous across both aseptic and compromised experimental contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "contaminated",
+      "target_modifier": "representative",
+      "source_context_dev": [
+        "The preserved fish tissue showed signs of mold growth after the containment jar cracked during transit. The pathologist needed to examine the compromised biological material.",
+        "A fungal outbreak had ruined the delicate botanical voucher stored in the humidity chamber. Staff prepared to analyze the tainted organism.",
+        "Bacterial rot had set in on the excised organ tissue because of a cooling failure. The team arranged to inspect the compromised anatomical piece.",
+        "Exposure to toxic fumes had fouled the live cell culture in the incubator. The researcher scheduled an evaluation of the damaged biological culture."
+      ],
+      "target_context_dev": [
+        "To assess the overall quality of the massive chemical shipment, the chemist needed a portion that reflected the whole batch accurately. Statistical rigor demanded unbiased selection.",
+        "The environmental survey required a portion of river water that accurately mirrored the overall basin conditions. The analyst selected a balanced fraction for the assay.",
+        "In quality assurance, inspecting a portion that faithfully mirrors the average properties of the entire production run is essential. The chemist began testing the selected fraction.",
+        "Standard analytical protocol called for an aliquot that mirrored the composition of the entire crude oil shipment. The testing team focused on this balanced portion."
+      ],
+      "source_context_test": [
+        "The preserved insect mount was compromised when moisture allowed fungal spores to flourish. Technicians prepared to inspect the ruined biological item.",
+        "Airborne contaminants had degraded the botanical cutting stored in the holding drawer. The team had to examine the spoiled plant material.",
+        "An unexpected microbial bloom had fouled the excised muscle tissue in the transport unit. Researchers prepared to evaluate the tainted biological item.",
+        "The zoological tissue voucher showed visible decay from an unsealed preservative jar. The staff set up the equipment to process the spoiled biological piece."
+      ],
+      "target_context_test": [
+        "The water treatment facility needed an aliquot that accurately mirrored the aggregate water profile across the reservoir. The chemist set up the testing apparatus.",
+        "To ensure quality control for the new plastic resin, analysts required a fraction exhibiting average properties of the bulk lot. The technician prepared to measure its attributes.",
+        "Evaluating the industrial lubricant required an aliquot that accurately reflected the chemical balance of the whole vat. The analyst began the standard evaluation.",
+        "Quality assurance guidelines required selecting a portion that accurately reflected the mean characteristics of the entire manufacturing batch. Testing commenced immediately."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('contaminated specimen', 'contaminated sample', 'representative specimen', 'representative sample') are fully standard and semantically valid in biological, environmental, and chemical assay contexts."
+    }
+  ]
+}

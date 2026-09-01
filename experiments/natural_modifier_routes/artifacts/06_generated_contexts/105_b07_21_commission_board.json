@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b07_21_commission_board",
+    "generation_batch": 7,
+    "domain": "institutions and organizations",
+    "family_id": "commission_board",
+    "noun_0": "commission",
+    "noun_1": "board",
+    "shared_definition": "an authoritative governing body or appointed panel responsible for administrative oversight",
+    "neutral_stem": "Executives presented audits directly to",
+    "candidate_modifiers": [
+      "administrative",
+      "advisory",
+      "appointed",
+      "bipartisan",
+      "executive",
+      "formal",
+      "governing",
+      "independent",
+      "judicial",
+      "municipal",
+      "national",
+      "permanent",
+      "regulatory",
+      "specialized",
+      "statutory"
+    ],
+    "semantic_notes": "'Commission' often signifies public investigation or government regulation panels, whereas 'board' is ubiquitous across corporate governance and trustees.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        10046
+      ],
+      "noun_1": [
+        3905
+      ]
+    },
+    "modifier_token_ids": {
+      "administrative": [
+        15006
+      ],
+      "advisory": [
+        36639
+      ],
+      "appointed": [
+        13857
+      ],
+      "bipartisan": [
+        105703
+      ],
+      "executive": [
+        12153
+      ],
+      "formal": [
+        10781
+      ],
+      "governing": [
+        23972
+      ],
+      "independent": [
+        6829
+      ],
+      "judicial": [
+        24722
+      ],
+      "municipal": [
+        19312
+      ],
+      "national": [
+        4559
+      ],
+      "permanent": [
+        13160
+      ],
+      "regulatory": [
+        17286
+      ],
+      "specialized": [
+        24576
+      ],
+      "statutory": [
+        31283
+      ]
+    },
+    "forced_projection_span": 0.07850411534309387,
+    "max_noun_pair_mass": 0.4575214982032776,
+    "context_priority_score": 0.03591732046689522,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "judicial",
+        "target_modifier": "independent",
+        "source_projection": 0.06153199076652527,
+        "target_projection": 0.06938353925943375,
+        "forced_modifier_leverage": 0.007851548492908478,
+        "source_pair_mass": 0.06939475238323212,
+        "target_pair_mass": 0.0719725713133812
+      },
+      "medium": {
+        "source_modifier": "statutory",
+        "target_modifier": "judicial",
+        "source_projection": 0.023217380046844482,
+        "target_projection": 0.06153199076652527,
+        "forced_modifier_leverage": 0.038314610719680786,
+        "source_pair_mass": 0.024488702416419983,
+        "target_pair_mass": 0.06939475238323212
+      },
+      "high": {
+        "source_modifier": "governing",
+        "target_modifier": "advisory",
+        "source_projection": 0.3757290542125702,
+        "target_projection": 0.45423316955566406,
+        "forced_modifier_leverage": 0.07850411534309387,
+        "source_pair_mass": 0.376171737909317,
+        "target_pair_mass": 0.4575214982032776
+      }
+    },
+    "context_generation_rank": 106
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "judicial",
+      "target_modifier": "independent",
+      "source_context_dev": [
+        "Allegations of institutional misconduct triggered a formal legal inquiry led by senior magistrates. To establish accountability and review evidentiary findings,",
+        "A formal tribunal was convened to evaluate procedural violations across state agencies. Following rigorous evidentiary hearings,",
+        "State prosecutors demanded an inquiry with full subpoena powers to examine systemic fraud. In response to these legal mandates,",
+        "The high court ordered a specialized investigative tribunal to review the enterprise's fiscal reporting. After concluding preliminary cross-examinations,"
+      ],
+      "target_context_dev": [
+        "Shareholders demanded neutral outside oversight free from executive influence. To satisfy investor requests for autonomous corporate stewardship,",
+        "The enterprise formed an arms-length oversight group composed entirely of external trustees. Seeking objective verification,",
+        "To eliminate conflicts of interest, corporate leaders surrendered supervisory power to external trustees. During the annual review,",
+        "Investor groups insisted on creating a separate, non-affiliated supervisory circle to monitor capital expenditures. Before ratifying next year's budget,"
+      ],
+      "source_context_test": [
+        "Legal authorities launched a specialized probe into regulatory non-compliance. Ahead of upcoming courtroom deliberations,",
+        "A special tribunal of retired jurists was tasked with investigating internal compliance failures. During the initial hearing,",
+        "Investigating magistrates demanded full transparency regarding the controversial transactions. Under threat of formal subpoena,",
+        "The supreme appellate court ordered a comprehensive probe into corporate management breaches. In compliance with the magistrate's directive,"
+      ],
+      "target_context_test": [
+        "The corporation introduced neutral outside directors to ensure unbiased financial reporting. At the quarterly meeting,",
+        "Concerns about management bias led to the creation of an autonomous supervision group. To demonstrate complete neutrality,",
+        "External stakeholders required an arms-length group of unaffiliated professionals to oversee internal operations. At the scheduled briefing,",
+        "Institutional investors demanded that an autonomous body of non-executive trustees evaluate fiscal operations. In preparation for the summit,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (judicial commission, judicial board, independent commission, independent board) are standard English phrases referring to institutional oversight bodies. Contexts modulate register toward legal-evidentiary adjudication versus external arms-length governance without violating combinatorial validity."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "statutory",
+      "target_modifier": "judicial",
+      "source_context_dev": [
+        "Parliament passed legislation establishing a permanent public oversight entity to monitor enterprise spending. In strict compliance with the new legal act,",
+        "A newly enacted state law mandated a permanent regulatory agency to scrutinize industry practices. Operating under this legislative mandate,",
+        "Lawmakers enacted formal legislation creating an official public oversight body. In accordance with the newly passed charter,",
+        "Public legislation required all major financial institutions to submit to routine regulatory reviews. Under this legal requirement,"
+      ],
+      "target_context_dev": [
+        "The appellate bench convened a specialized hearing panel to evaluate corporate compliance. Before the magistrates issued their formal ruling,",
+        "A formal tribunal composed of senior legal officers was formed to examine evidence of malfeasance. Seeking a favorable determination,",
+        "Legal authorities assembled an oversight panel of magistrates to arbitrate the dispute. Prior to issuing a binding ruling,",
+        "Court officers organized a specialized legal oversight panel to investigate regulatory infractions. During the formal courtroom proceeding,"
+      ],
+      "source_context_test": [
+        "The legislature created an official public monitoring entity by legislative decree. Fulfilling requirements set by parliamentary law,",
+        "A sweeping reform law established an official public agency charged with systemic supervision. To satisfy the requirements of the legislative act,",
+        "Pursuant to newly ratified national legislation, a specialized state regulatory body began operations. Following the mandatory protocol,",
+        "State lawmakers mandated routine public disclosure to an agency established by parliament. In accordance with the enacted law,"
+      ],
+      "target_context_test": [
+        "A formal legal tribunal was assigned to supervise settlement terms and ongoing compliance. At the start of the hearing,",
+        "Appellate magistrates convened a supervisory panel to review allegations of fraudulent bookkeeping. During the evidentiary session,",
+        "The court system created a dedicated legal oversight group to review questionable financial transactions. To avoid contempt of court,",
+        "Magistrates established a special review panel to examine internal financial controls. In the presence of presiding legal officials,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (statutory commission, statutory board, judicial commission, judicial board) represent established administrative and legal bodies. The source context highlights legislative origin, while the target context highlights courtroom/bench jurisdiction."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "governing",
+      "target_modifier": "advisory",
+      "source_context_dev": [
+        "The organization's supreme administrative authority held full decision-making power over capital allocation. Prior to finalizing major strategic investments,",
+        "Executive leadership was strictly subordinate to the agency's supreme ruling council. Seeking authorization for next quarter's budget,",
+        "Primary steering authority over the public trust rested with its top executive committee. To obtain mandatory formal approval,",
+        "The primary leadership council wielded ultimate authority over institutional policy. Before enacting major organizational changes,"
+      ],
+      "target_context_dev": [
+        "A group of external industry experts was assembled solely to offer non-binding strategic guidance. Seeking constructive feedback on fiscal health,",
+        "Management sought consultative input from an external panel of industry specialists without formal voting power. For non-binding review and recommendations,",
+        "The company formed a consultative group of seasoned mentors to provide strategic suggestions. To receive non-binding counsel on their progress,",
+        "A panel of emeritus scholars and consultants was invited to offer non-binding guidance on operational efficiency. In search of expert feedback,"
+      ],
+      "source_context_test": [
+        "Supreme operational control of the enterprise was held by a central steering council. Seeking mandatory ratification,",
+        "The institution's primary leadership body exercised direct control over operational expenditures. In order to proceed with planned acquisitions,",
+        "Ultimate administrative power was concentrated in the enterprise's supreme leadership committee. To secure official administrative clearance,",
+        "The central management council maintained strict oversight over all corporate spending. Before finalizing the organizational restructuring,"
+      ],
+      "target_context_test": [
+        "An external consultative council was created to provide non-binding recommendations on risk management. Seeking seasoned perspectives,",
+        "To gain strategic perspective, leadership consulted a panel of outside specialists serving in a non-binding capacity. In hopes of receiving helpful feedback,",
+        "A consultative group of experienced industry veterans was formed to give guidance without supervisory power. For expert counsel on fiscal operations,",
+        "Management convened an external group of consultative experts to review operational performance. Wanting objective, non-binding recommendations,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (governing commission, governing board, advisory commission, advisory board) are standard administrative governance terms. Source contexts emphasize executive ruling power, whereas target contexts emphasize non-binding consultative recommendations."
+    }
+  ]
+}

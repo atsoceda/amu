@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b09_16_event_assault_attack",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_assault_attack",
+    "noun_0": "assault",
+    "noun_1": "attack",
+    "shared_definition": "an aggressive physical or military act against a person or place",
+    "neutral_stem": "Defenders attempted to repel",
+    "candidate_modifiers": [
+      "brutal",
+      "coordinated",
+      "deadly",
+      "ferocious",
+      "relentless",
+      "sudden",
+      "vicious",
+      "fierce",
+      "covert",
+      "direct",
+      "planned",
+      "massive",
+      "devastating",
+      "swift"
+    ],
+    "semantic_notes": "'Assault' carries precise legal and military connotations of concentrated force, whereas 'attack' is a widely used general term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        19211
+      ],
+      "noun_1": [
+        4657
+      ]
+    },
+    "modifier_token_ids": {
+      "brutal": [
+        40097
+      ],
+      "coordinated": [
+        42748
+      ],
+      "deadly": [
+        35514
+      ],
+      "ferocious": [
+        141708
+      ],
+      "relentless": [
+        85278
+      ],
+      "sudden": [
+        11059
+      ],
+      "vicious": [
+        65004
+      ],
+      "fierce": [
+        48621
+      ],
+      "covert": [
+        96655
+      ],
+      "direct": [
+        1982
+      ],
+      "planned": [
+        13015
+      ],
+      "massive": [
+        12566
+      ],
+      "devastating": [
+        43267
+      ],
+      "swift": [
+        37884
+      ]
+    },
+    "forced_projection_span": 0.08571016788482666,
+    "max_noun_pair_mass": 0.7176806330680847,
+    "context_priority_score": 0.06151252754795422,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "swift",
+        "target_modifier": "devastating",
+        "source_projection": 0.3077034056186676,
+        "target_projection": 0.31633231043815613,
+        "forced_modifier_leverage": 0.008628904819488525,
+        "source_pair_mass": 0.34214404225349426,
+        "target_pair_mass": 0.3812142312526703
+      },
+      "medium": {
+        "source_modifier": "fierce",
+        "target_modifier": "covert",
+        "source_projection": 0.4316912591457367,
+        "target_projection": 0.47241535782814026,
+        "forced_modifier_leverage": 0.040724098682403564,
+        "source_pair_mass": 0.5038309693336487,
+        "target_pair_mass": 0.5327821373939514
+      },
+      "high": {
+        "source_modifier": "planned",
+        "target_modifier": "sudden",
+        "source_projection": 0.5506537556648254,
+        "target_projection": 0.6363639235496521,
+        "forced_modifier_leverage": 0.08571016788482666,
+        "source_pair_mass": 0.60468989610672,
+        "target_pair_mass": 0.7176806330680847
+      }
+    },
+    "context_generation_rank": 71
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "swift",
+      "target_modifier": "devastating",
+      "source_context_dev": [
+        "Enemy cavalry charged across the open plain at breakneck speed before the garrison could fully man the parapets.",
+        "The vanguard crossed the perimeter in a rapid blitz, moving faster than the fortress spotters anticipated.",
+        "Speed was the invaders' primary advantage as their vanguard raced across the bridge within seconds.",
+        "Rushing forward without pause, the hostile units crossed no-man's-land in record time."
+      ],
+      "target_context_dev": [
+        "Heavy artillery leveled the outer masonry and caused widespread destruction along the perimeter.",
+        "The enemy unleashed ruinous firepower that obliterated entire forward bunkers within minutes.",
+        "Catastrophic explosions ripped through the front lines, leaving total chaos and massive casualties in their wake.",
+        "The hostile onslaught crushed forward barricades, inflicting crippling losses across the citadel."
+      ],
+      "source_context_test": [
+        "Hostile horsemen dashed across the shallow river, giving the watchtower guards barely any time to react.",
+        "Moving with extreme haste, the forward line closed the distance before the alarms had finished ringing.",
+        "The charging regiment relied on sheer momentum, covering the ground in seconds to catch the watchmen unready.",
+        "Speed defined the initial breach as light infantry sprinted through the gap in the palisade."
+      ],
+      "target_context_test": [
+        "Siege batteries reduced the southern rampart to smoldering rubble and left the garrison in disarray.",
+        "A storm of heavy ordnance brought down the fortress towers, fracturing the outer wall into dust.",
+        "The sheer destructive power of the incoming salvo shattered the barricades and caused catastrophic damage.",
+        "Crushing kinetic impacts tore through the citadel gates, inflicting crippling ruin on the forward detachment."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (swift assault, swift attack, devastating assault, devastating attack) are grammatically and semantically coherent after 'Defenders attempted to repel the'. Source contexts emphasize rapid movement and tempo, favoring swift assault; target contexts emphasize ruinous structural destruction, favoring devastating attack."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "fierce",
+      "target_modifier": "covert",
+      "source_context_dev": [
+        "Hostile soldiers surged into the breaches with relentless ferocity and bloodthirsty intensity.",
+        "The combat along the palisade became intensely brutal as invaders fought tooth and nail for every foot of ground.",
+        "A savage press of enemy infantry slammed into the battlements with unyielding fury.",
+        "The frontline erupted in violent hand-to-hand clashes marked by intense aggression."
+      ],
+      "target_context_dev": [
+        "Under cover of darkness, saboteurs slipped past the perimeter wire without raising an alarm.",
+        "A small team of masked infiltrators navigated the drainage conduits to strike from the shadows.",
+        "Silent operatives bypassed the exterior sensors and entered the compound completely undetected.",
+        "Hostile agents disguised as local villagers approached the rear gate under strict radio silence."
+      ],
+      "source_context_test": [
+        "Enraged enemy forces stormed the parapet, unleashing violent fury against the front line.",
+        "The clash at the trenches quickly degraded into brutal, desperate brawling against an aggressive foe.",
+        "Invading shock troops charged with ferocious determination, refusing to back down under heavy fire.",
+        "A furious push by hostile shock units battered the forward trench line in savage close combat."
+      ],
+      "target_context_test": [
+        "Shadowy operatives sneaked through the blind spots of the watchtowers under the midnight fog.",
+        "An unannounced infiltration team scaled the sea wall using muffled grappling hooks.",
+        "Operating in total secrecy, masked saboteurs disabled the exterior spotlights before entering.",
+        "Stealth squads moved through the darkened alleyways to compromise the command post quietly."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (fierce assault, fierce attack, covert assault, covert attack) form valid completions for the neutral stem. Source contexts highlight overt ferocity and brute intensity, whereas target contexts emphasize stealth, silence, and unseen infiltration."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "planned",
+      "target_modifier": "sudden",
+      "source_context_dev": [
+        "General staff had spent months mapping logistics, rehearsing schedules, and coordinating every unit's objective.",
+        "The offensive followed a meticulously drafted blueprint that synchronized artillery, armor, and infantry.",
+        "Every phase of the operation had been systematically charted by hostile strategists weeks in advance.",
+        "Following a strictly timed operational schedule, the invading army executed their predetermined maneuver."
+      ],
+      "target_context_dev": [
+        "Without any warning or prior intelligence, explosions erupted out of nowhere against the citadel.",
+        "The calm afternoon was instantly shattered by an unexpected burst of gunfire right outside the wire.",
+        "Guards were caught completely unprepared when the gates were breached in an instant.",
+        "Out of the blue, hostile forces materialized at the perimeter and opened fire immediately."
+      ],
+      "source_context_test": [
+        "Hostile generals had carefully rehearsed this synchronized multi-phase operation for several months.",
+        "The invasion unfolded according to a rigid tactical schedule drafted deep within high command.",
+        "Strategic diagrams and coordinated timetables guided every hostile division into position.",
+        "A thoroughly calculated scheme dictated the exact timing and positioning of the approaching vanguard."
+      ],
+      "target_context_test": [
+        "An abrupt volley of rockets caught the sentries off guard during a quiet change of watch.",
+        "With zero advance warning, hostile squads burst through the courtyard barricades.",
+        "The fortress went from peaceful silence to full-blown crisis in a split second.",
+        "A completely unpredicted burst of hostility caught the outpost before anyone could sound the siren."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "The 2x2 matrix (planned assault, planned attack, sudden assault, sudden attack) yields well-formed military phrases in all cases. Source contexts establish deliberation and scheduled preparation, favoring planned assault; target contexts emphasize abruptness and absence of warning, favoring sudden attack."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "candidate_id": "doctor_physician",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four cross combinations are grammatical and semantically natural. Contexts establish clean pragmatic pressure without naming target candidates."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test[3]"
+      ],
+      "failure_reasons": [
+        "Lexical leakage: target_context_test[3] explicitly uses the root/cognate noun 'dedication' for the target modifier 'dedicated'."
+      ],
+      "concise_notes": "Fails strict lexical isolation requirement due to 'dedication' appearing in target_context_test[3]."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations form valid institutional medical titles. Contexts distinguish advisory versus supervisory roles effectively without lexical leakage."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b01_10_thief_robber",
+    "generation_batch": 1,
+    "domain": "people and social roles",
+    "family_id": "thief_robber",
+    "noun_0": "thief",
+    "noun_1": "robber",
+    "shared_definition": "a criminal who steals money or property belonging to others",
+    "neutral_stem": "Reviewing the security footage, the detective tracked",
+    "candidate_modifiers": [
+      "cunning",
+      "desperate",
+      "masked",
+      "notorious",
+      "ruthless",
+      "reckless",
+      "daring",
+      "elusive",
+      "armed",
+      "experienced",
+      "violent",
+      "sneaky",
+      "clumsy",
+      "dangerous",
+      "brazen"
+    ],
+    "semantic_notes": "'Robber' strongly collocated with force or confrontation (e.g., bank robbery); 'thief' encompasses stealth and general larceny.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        69947
+      ],
+      "noun_1": [
+        105099
+      ]
+    },
+    "modifier_token_ids": {
+      "cunning": [
+        112018
+      ],
+      "desperate": [
+        38412
+      ],
+      "masked": [
+        72211
+      ],
+      "notorious": [
+        62526
+      ],
+      "ruthless": [
+        97224
+      ],
+      "reckless": [
+        77138
+      ],
+      "daring": [
+        63485
+      ],
+      "elusive": [
+        84322
+      ],
+      "armed": [
+        24723
+      ],
+      "experienced": [
+        9763
+      ],
+      "violent": [
+        23125
+      ],
+      "sneaky": [
+        181294
+      ],
+      "clumsy": [
+        124621
+      ],
+      "dangerous": [
+        13588
+      ],
+      "brazen": [
+        201207
+      ]
+    },
+    "forced_projection_span": 0.31771353259682655,
+    "max_noun_pair_mass": 0.511062502861023,
+    "context_priority_score": 0.16237147316175138,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "elusive",
+        "target_modifier": "notorious",
+        "source_projection": -0.05274854600429535,
+        "target_projection": -0.02198684960603714,
+        "forced_modifier_leverage": 0.03076169639825821,
+        "source_pair_mass": 0.10846111178398132,
+        "target_pair_mass": 0.0897720530629158
+      },
+      "medium": {
+        "source_modifier": "sneaky",
+        "target_modifier": "daring",
+        "source_projection": -0.4792296290397644,
+        "target_projection": -0.32756727933883667,
+        "forced_modifier_leverage": 0.15166234970092773,
+        "source_pair_mass": 0.511062502861023,
+        "target_pair_mass": 0.3902932405471802
+      },
+      "high": {
+        "source_modifier": "masked",
+        "target_modifier": "armed",
+        "source_projection": 0.023212995380163193,
+        "target_projection": 0.34092652797698975,
+        "forced_modifier_leverage": 0.31771353259682655,
+        "source_pair_mass": 0.09477837383747101,
+        "target_pair_mass": 0.42126041650772095
+      }
+    },
+    "context_generation_rank": 21
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "elusive",
+      "target_modifier": "notorious",
+      "source_context_dev": [
+        "The jewelry display had been emptied silently overnight without triggering a single pressure sensor. Investigators were baffled by how someone could vanish into the shadows without leaving any physical evidence behind.",
+        "Several museum exhibits lost precious artifacts over the weekend without any broken locks or alarms sounding. Local precincts had struggled for months to pin down any identifiable pattern.",
+        "A series of quiet residential break-ins left homeowners bewildered as small heirlooms disappeared while families slept upstairs. Patrols could never seem to arrive fast enough before the culprit evaporated into the fog.",
+        "Valuable documents kept vanishing from corporate safes without forcing the electronic locks. Even high-grade motion sensors failed to capture a clear image of who had slipped through."
+      ],
+      "target_context_dev": [
+        "The regional tabloids had splashed headlines across the front pages regarding the string of high-profile bank heists. The entire state recognized the infamous signature moves from previous high-stakes incidents.",
+        "Federal agencies had circulated bulletin alerts across five states following a pattern of bold daylight incursions. Everyone in law enforcement was familiar with this perpetrator's legendary trail of chaotic heists.",
+        "Front-page articles continued to sensationalize the brazen downtown bank raids that paralyzed the commercial sector. The perpetrator's distinctive reputation had become widely recognized among precinct captains.",
+        "The city council convened an emergency press conference after the latest dramatic vault raid made national news. Public outcry grew over the failure to apprehend someone whose criminal record was practically legendary."
+      ],
+      "source_context_test": [
+        "Cash drawers at the luxury boutique had been emptied during operating hours without attracting any attention. Despite extensive patrols around the perimeter, the perpetrator had slipped away clean once again.",
+        "Private vaults throughout the financial district suffered quiet losses that were only discovered days later during routine audits. Law enforcement struggled to find a single fingerprint or footprint at any scene.",
+        "A succession of antique galleries reported missing gemstones with no shattered glass or signs of forced entry. Authorities found it nearly impossible to pinpoint where the phantom suspect would strike next.",
+        "The estate's private collection had lost several priceless miniatures during a crowded evening reception. Nobody heard a sound, and every exit point showed zero signs of disturbance."
+      ],
+      "target_context_test": [
+        "Broadcast news stations continually replayed footage from the massive commercial holdups that terrorized the district. The suspect's widespread infamy made the ongoing investigation a top priority for city hall.",
+        "A string of daylight vault strikes had generated massive media coverage and put federal marshals on high alert. The suspect had built a widely publicized reputation for striking prestigious institutions.",
+        "Evening news reports detailed the high-stakes holdups that had shaken financial institutions across the metropolitan area. The case commanded massive public attention due to the perpetrator's long and recognized history.",
+        "Every officer on the force knew the profile from prior felony bulletins and televised crime specials. The public demanded immediate answers after another sensational daylight heist made national headlines."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (elusive thief, elusive robber, notorious thief, notorious robber) are fully coherent and grammatical across all contexts. Source contexts emphasize vanishing without a trace and avoiding capture, naturally priming elusive/thief while retaining validity for notorious robber. Target contexts highlight high-profile publicity and infamy, favoring notorious/robber without precluding an elusive thief who gained widespread infamy."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "sneaky",
+      "target_modifier": "daring",
+      "source_context_dev": [
+        "Wallets and watches had been quietly lifted from commuter bags throughout the bustling subway terminal. The culprit moved surreptitiously through the dense morning crowds without drawing a second glance.",
+        "Several shoppers noticed their purses unzipped and emptied while browsing the crowded marketplace. The perpetrator relied on clever distractions and underhanded maneuvers to grab valuables undetected.",
+        "Loose change and expensive jewelry kept quietly disappearing from hotel rooms while guests were down at breakfast. The perpetrator picked locks with crafty finesse, leaving no obvious signs of tampering.",
+        "High-end retail boutiques reported that luxury sunglasses and perfumes were vanishing from display cases during busy shifts. Someone was deftly slipping items into hidden pockets when staff turned their backs."
+      ],
+      "target_context_dev": [
+        "The midday raid on the central depository unfolded in broad daylight with shocking audacity right in front of witnesses. The perpetrator brazenly bypassed high-voltage fences and stormed the front desk without hesitation.",
+        "Security guards were stunned when a brazen individual executed a high-risk midday strike on the armored transport. The perpetrator showed total disregard for the heavy security presence and daylight crowds.",
+        "A brazen assault on the luxury watch boutique occurred in the middle of a packed shopping mall at noon. The perpetrator took massive risks by smashing display cases right in front of dozens of onlookers.",
+        "The downtown bullion exchange was hit during peak business hours in a remarkably bold and aggressive raid. Witnesses marveled at the sheer audacity of someone pulling off such a perilous confrontation."
+      ],
+      "source_context_test": [
+        "Commuters at the central transit hub reported missing smartphones that had been deftly swiped from coat pockets. The sly perpetrator blended seamlessly into the crowd while orchestrating quiet distractions.",
+        "Valuable inventory had been quietly siphoned off delivery trucks during brief unloading stops at the loading dock. Someone was covertly crawling beneath the canvas covers to snatch boxes when the driver stepped away.",
+        "Shoppers at the flea market discovered their cash pouches slashed and emptied without feeling a thing. The perpetrator used quiet, underhanded tactics to fleece victims in broad daylight.",
+        "Expensive cosmetics and accessories were regularly disappearing from boutique shelves despite alert floor staff. The culprit used clever sleight of hand to conceal merchandise behind ordinary shopping bags."
+      ],
+      "target_context_test": [
+        "In a spectacular midday confrontation, an intruder breached the main vault entrance in front of dozens of stunned customers. The perpetrator displayed astonishing bravado by executing such a high-risk raid during peak hours.",
+        "The armored van was intercepted at a busy intersection in broad daylight during rush hour traffic. The perpetrator took incredible risks, orchestrating a bold confrontation despite sirens approaching in the distance.",
+        "A brazen raid unfolded at the downtown auction house just moments before the final bidding began. The perpetrator took immense risks by barging straight through the main lobby in full view of the audience.",
+        "The downtown jewelry mart was stormed in the middle of the afternoon despite heavy security patrols outside. The perpetrator's bold and aggressive behavior shocked everyone who witnessed the high-stakes confrontation."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (sneaky thief, sneaky robber, daring thief, daring robber) remain semantically and grammatically sound. Stealth and covert pocketing prime sneaky/thief, whereas high-stakes daylight raids prime daring/robber. Nonetheless, a robber can act sneakily to get into position, and a thief can execute daring burglaries in high-security zones."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "masked",
+      "target_modifier": "armed",
+      "source_context_dev": [
+        "The intruder wore a thick woolen disguise and pulled a hood low to obscure all facial features from view. Eyewitnesses could only confirm that the individual's face was completely covered throughout the night.",
+        "During the midnight warehouse break-in, the perpetrator took great care to hide their visage beneath a dark cloth covering. Not a single camera angle could capture facial structure or hair color.",
+        "The individual who crept into the art storage facility kept their identity concealed behind a dark face covering. Security personnel could only see dark cloth shielding the perpetrator's facial contours.",
+        "The midnight infiltration of the electronics warehouse was carried out by someone with a heavy fabric covering over their entire head. The concealment of facial identity made recognition impossible from the overhead cameras."
+      ],
+      "target_context_dev": [
+        "The cashier was confronted at gunpoint and forced to open the register under the threat of lethal violence. The assailant brandished a heavy pistol throughout the tense confrontation.",
+        "Staff at the credit union were terrified when the intruder pulled out a loaded firearm and demanded the contents of the safe. The perpetrator kept the weapon pointed steadily at the tellers the entire time.",
+        "The perimeter guard was held at gunpoint when an intruder wielded a semi-automatic weapon at the gate. The perpetrator threatened immediate gunfire if anyone attempted to trigger the silent alarm.",
+        "Patrons at the convenience store froze in terror as an intruder brandished a large handgun and barked orders. The perpetrator used the lethal weapon to intimidate the clerk into handing over all available cash."
+      ],
+      "source_context_test": [
+        "A hooded figure with a dark cloth covering over the face slipped through the rear window of the antique shop. The perpetrator ensured every inch of skin was concealed from view to prevent identification.",
+        "The individual who broke into the gallery after hours had wrapped a dense fabric over their head and features. Forensics noted that the perpetrator's entire face remained completely obscured during the intrusion.",
+        "During the overnight break-in at the safe-deposit facility, the perpetrator kept a full head covering drawn tight over the cheeks and nose. Camera operators could not identify any facial markers through the dark disguise.",
+        "The nocturnal intruder who slipped past the rear sensors kept their visage completely hidden beneath a dark fabric hood. Every camera angle revealed only a covered face and concealed facial characteristics."
+      ],
+      "target_context_test": [
+        "The bank tellers surrendered the vault keys after being threatened with a loaded handgun at the counter. The assailant kept the deadly weapon visible to ensure compliance from everyone in the lobby.",
+        "A terrifying confrontation occurred at the currency exchange when the perpetrator drew a firearm on the manager. The assailant brandished the weapon menacingly until the safe was unlocked.",
+        "The gas station attendant was forced to the floor as an intruder brandished a shotgun and demanded the register drawer. The perpetrator kept the lethal weapon aimed at the staff throughout the raid.",
+        "Security officers at the jewelry store were held at gunpoint during the dramatic afternoon holdup. The assailant wielded a high-caliber firearm and threatened lethal force against anyone who moved."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (masked thief, masked robber, armed thief, armed robber) are fully plausible and grammatical across all conditions. Source contexts focus on visual concealment of identity (favoring masked/thief), while target contexts highlight weapon brandishing and direct confrontation (favoring armed/robber). An armed criminal can also be masked, and a thief or robber can possess weapons or disguise their face simultaneously."
+    }
+  ]
+}

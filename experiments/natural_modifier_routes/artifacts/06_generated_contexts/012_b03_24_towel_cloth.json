@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_24_towel_cloth",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "towel_cloth",
+    "noun_0": "towel",
+    "noun_1": "cloth",
+    "shared_definition": "an absorbent piece of fabric used for wiping and drying surfaces or the body",
+    "neutral_stem": "After spilling water on the counter, he grabbed",
+    "candidate_modifiers": [
+      "damp",
+      "clean",
+      "dirty",
+      "wet",
+      "soft",
+      "dry",
+      "thick",
+      "stained",
+      "warm",
+      "cotton",
+      "microfiber",
+      "absorbent",
+      "frayed",
+      "folded",
+      "fresh"
+    ],
+    "semantic_notes": "Towel emphasizes looped or pile absorbent fabric meant for drying, while cloth is a generic term for any textile wiping rag.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        37931
+      ],
+      "noun_1": [
+        20182
+      ]
+    },
+    "modifier_token_ids": {
+      "damp": [
+        31225
+      ],
+      "clean": [
+        3980
+      ],
+      "dirty": [
+        24881
+      ],
+      "wet": [
+        11474
+      ],
+      "soft": [
+        3538
+      ],
+      "dry": [
+        6299
+      ],
+      "thick": [
+        7497
+      ],
+      "stained": [
+        38307
+      ],
+      "warm": [
+        6962
+      ],
+      "cotton": [
+        14538
+      ],
+      "microfiber": [
+        187110
+      ],
+      "absorbent": [
+        80579
+      ],
+      "frayed": [
+        216436
+      ],
+      "folded": [
+        42252
+      ],
+      "fresh": [
+        5756
+      ]
+    },
+    "forced_projection_span": 0.3675536662340164,
+    "max_noun_pair_mass": 0.6205371022224426,
+    "context_priority_score": 0.2280806869560914,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "wet",
+        "target_modifier": "frayed",
+        "source_projection": -0.16498109698295593,
+        "target_projection": -0.1287614107131958,
+        "forced_modifier_leverage": 0.03621968626976013,
+        "source_pair_mass": 0.2974777817726135,
+        "target_pair_mass": 0.15517127513885498
+      },
+      "medium": {
+        "source_modifier": "folded",
+        "target_modifier": "clean",
+        "source_projection": -0.2326483577489853,
+        "target_projection": -0.0483580082654953,
+        "forced_modifier_leverage": 0.18429034948349,
+        "source_pair_mass": 0.2666242718696594,
+        "target_pair_mass": 0.38887685537338257
+      },
+      "high": {
+        "source_modifier": "damp",
+        "target_modifier": "microfiber",
+        "source_projection": -0.02340395748615265,
+        "target_projection": 0.34414970874786377,
+        "forced_modifier_leverage": 0.3675536662340164,
+        "source_pair_mass": 0.3749508261680603,
+        "target_pair_mass": 0.6205371022224426
+      }
+    },
+    "context_generation_rank": 13
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "wet",
+      "target_modifier": "frayed",
+      "source_context_dev": [
+        "The bathroom sink had overflowed minutes earlier during a hurried morning routine. A heavy pile of soaked laundry sat right by the edge of the vanity.",
+        "He had just finished mopping up a large puddle near the shower basin. The sopping terry material was still dripping on the rack nearby.",
+        "The kids had tracked pool water across the entire master bathroom tile. Several thoroughly soaked items had been left in a sodden heap near the washbasin.",
+        "Someone had repeatedly rinsed their face without wringing out any of the thick terry items on the hook. Moisture was already pooling underneath them."
+      ],
+      "target_context_dev": [
+        "The old workshop rag bin was full of ancient textiles showing loose threads and unraveling edges. Most pieces were decades old and coming apart at the seams.",
+        "He kept a basket of heavily worn remnants by the garage sink for messy grease jobs. Every piece was threadbare, shredded, and worn down along the hems.",
+        "The utility drawer contained discarded scraps cut from old linens that had unraveled over years of hard scrubbing. Loose strands hung from their frayed borders.",
+        "A stack of tattered salvage materials sat beside the paint station. The edges were completely worn through from repeated harsh laundering."
+      ],
+      "source_context_test": [
+        "The hand basin had splashed everywhere while washing the dog in the utility room. A saturated piece of plush terry fabric rested on the basin rim.",
+        "Water was dripping from the ceiling into a bucket that had recently overflowed. The thick woven items used to catch the drops were drenched.",
+        "He had stepped out of the tub and inadvertently sloshed liquid over the vanity base. The thick fabric left on the floor was heavy with moisture.",
+        "Condensation was running down the pipes beneath the sink, soaking the heavy pile of bathroom textiles stored directly underneath."
+      ],
+      "target_context_test": [
+        "His collection of shop textiles was nearing the end of its usable life. The rough woven scraps had loose fringe and split borders all around.",
+        "The garage storage box held salvage squares cut from worn-out shirts and curtains. Strings were pulling free from the unhemmed borders.",
+        "He reached toward the bottom of the utility cabinet where the most beaten-up household scraps were kept. Their perimeters were ragged and unthreaded.",
+        "The cleaning bucket contained several overused rags that had seen years of heavy scrubbing. The fibers along the edges were completely coming apart."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (wet towel, wet cloth, frayed towel, frayed cloth) fit smoothly into the stem 'After spilling water on the counter, he grabbed the [modifier] [noun].' The contexts bias bathroom/terry/heavy water scenarios for towel/wet versus workshop/rag-bin/aged-edge scenarios for cloth/frayed without mentioning any taboo lexical items."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "folded",
+      "target_modifier": "clean",
+      "source_context_dev": [
+        "The guest bathroom had just been meticulously staged for weekend visitors. Crisp, neat stacks were aligned symmetrically on the vanity shelf.",
+        "He had spent the afternoon doing laundry and organizing neat rectangular piles in the linen closet. Everything was squared away in tidy bundles.",
+        "The hospitality organizer took pride in presentation, pressing and squaring every bathroom item into crisp layers before setting them out.",
+        "A freshly pressed stack sat squarely on the counter, arranged into neat tiers by the housekeeper earlier that morning."
+      ],
+      "target_context_dev": [
+        "He had just sanitized the kitchen prep area and wanted to avoid cross-contamination. An untouched, freshly washed piece of fabric sat ready on the sanitized rack.",
+        "The kitchen had just undergone a deep chemical scrubbing to prepare for inspection. A freshly laundered and completely sterile piece of material hung on the hook.",
+        "Hygiene was the primary concern when preparing the dining surfaces for guests. He made sure to reach for something untouched by dirt or grease.",
+        "The restaurant staff had strictly separated dirty wash materials from the freshly laundered kitchen textiles stored in the sanitization station."
+      ],
+      "source_context_test": [
+        "The hotel bathroom was organized to perfection, with neat, compact squares arranged on the tier above the sink.",
+        "He liked having everything in its proper geometric alignment on the bathroom shelf, neatly layered and ready for use.",
+        "The linen basket held several perfectly pressed items, creased and squared off for convenient stacking.",
+        "The housekeeping cart was stocked with orderly geometric piles of plush bathroom items, each tucked into a precise rectangle."
+      ],
+      "target_context_test": [
+        "To prevent spreading kitchen grease, he always kept a separate pile of unsoiled, freshly washed utility squares by the stove.",
+        "The food prep counter needed a pristine square of fabric that had never touched raw meat or cooking oils.",
+        "A fresh load had just come out of the high-heat wash cycle, yielding sterile and grease-free wiping squares.",
+        "He needed to ensure that no bacteria remained on the food surface, reaching specifically for unsoiled laundry."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (folded towel, folded cloth, clean towel, clean cloth) are fully felicitous with the stem. The source contexts evoke neatly stacked linen/bathroom aesthetics (folded/towel), while target contexts evoke hygienic food-prep/kitchen sanitization needs (clean/cloth)."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "damp",
+      "target_modifier": "microfiber",
+      "source_context_dev": [
+        "He had just wiped down the shower door, leaving a thick plush textile slightly moist on the bathroom bar. It had enough residual moisture to pick up spills.",
+        "The bathroom hand bar held a thick terry item that had been lightly wetted earlier to wipe away dust. It was still cool and slightly saturated.",
+        "He had run water over the heavy bathroom fabric a few moments prior to soften the pile. It remained slightly moist on the edge of the basin.",
+        "A plush terry item was hanging by the sink after a quick morning rinse, retaining a modest amount of residual humidity."
+      ],
+      "target_context_dev": [
+        "The electronics workstation required specialized synthetic lint-free fabric designed specifically for delicate optical glass and glossy surfaces.",
+        "He kept a stash of ultra-fine synthetic split-weave dusting squares specifically for detailing the delicate quartz kitchen counter without scratching.",
+        "The modern car detailing kit included specialized high-tech synthetic weave squares engineered to lift particles without leaving lint behind.",
+        "He bought a multi-pack of colorful synthetic lint-free squares designed to wipe polished surfaces without leaving streaks or fibers."
+      ],
+      "source_context_test": [
+        "The bathroom wash area had high humidity, and the thick hanging terry piece had retained a moderate amount of moisture from earlier use.",
+        "He had previously moistened the plush fabric to wipe steam off the bathroom mirror, leaving it pleasantly cool and humid.",
+        "The thick loop-knit bathroom item on the rail was not entirely dry after being used to blot the vanity.",
+        "A moist plush item hung next to the bathtub, still holding enough water from the shower to feel cool to the touch."
+      ],
+      "target_context_test": [
+        "The professional polishing kit contained brightly colored synthetic split-filament squares that trapped dust using electrostatic charge.",
+        "He reached toward the cabinet containing modern synthetic lint-free utility squares used for optical lenses and fine kitchen polish.",
+        "For polished stone surfaces, he avoided natural cotton in favor of high-performance engineered synthetic weave squares.",
+        "The detailing supplies included soft, lintless synthetic polymer squares specifically made for streak-free drying on glossy surfaces."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (damp towel, damp cloth, microfiber towel, microfiber cloth) are completely natural and grammatical with the counter-spill stem. Source contexts establish a bathroom/terry/lightly-wet context (damp/towel), while target contexts describe synthetic, lint-free optical/detailing materials (microfiber/cloth)."
+    }
+  ]
+}

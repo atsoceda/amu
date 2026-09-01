@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b01_08_child_kid",
+    "generation_batch": 1,
+    "domain": "people and social roles",
+    "family_id": "child_kid",
+    "noun_0": "child",
+    "noun_1": "kid",
+    "shared_definition": "a young human being below the age of puberty or legal maturity",
+    "neutral_stem": "Sitting on the park bench, the parent watched",
+    "candidate_modifiers": [
+      "energetic",
+      "curious",
+      "playful",
+      "naughty",
+      "frightened",
+      "happy",
+      "smart",
+      "stubborn",
+      "hungry",
+      "clever",
+      "talented",
+      "lonely",
+      "polite",
+      "mischievous",
+      "young"
+    ],
+    "semantic_notes": "'Kid' is colloquial and conversational, whereas 'child' is neutral, standard, and formal.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        1919
+      ],
+      "noun_1": [
+        9989
+      ]
+    },
+    "modifier_token_ids": {
+      "energetic": [
+        36342
+      ],
+      "curious": [
+        23210
+      ],
+      "playful": [
+        60902
+      ],
+      "naughty": [
+        112993
+      ],
+      "frightened": [
+        73820
+      ],
+      "happy": [
+        5293
+      ],
+      "smart": [
+        6538
+      ],
+      "stubborn": [
+        61465
+      ],
+      "hungry": [
+        33233
+      ],
+      "clever": [
+        32510
+      ],
+      "talented": [
+        24856
+      ],
+      "lonely": [
+        40357
+      ],
+      "polite": [
+        54651
+      ],
+      "mischievous": [
+        151251
+      ],
+      "young": [
+        3184
+      ]
+    },
+    "forced_projection_span": 0.1325901374220848,
+    "max_noun_pair_mass": 0.49112677574157715,
+    "context_priority_score": 0.06511856668724114,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "mischievous",
+        "target_modifier": "curious",
+        "source_projection": -0.33449774980545044,
+        "target_projection": -0.32090097665786743,
+        "forced_modifier_leverage": 0.013596773147583008,
+        "source_pair_mass": 0.38018596172332764,
+        "target_pair_mass": 0.3485317826271057
+      },
+      "medium": {
+        "source_modifier": "talented",
+        "target_modifier": "clever",
+        "source_projection": -0.257851779460907,
+        "target_projection": -0.19209741055965424,
+        "forced_modifier_leverage": 0.06575436890125275,
+        "source_pair_mass": 0.27865439653396606,
+        "target_pair_mass": 0.2670513987541199
+      },
+      "high": {
+        "source_modifier": "polite",
+        "target_modifier": "smart",
+        "source_projection": -0.11332622170448303,
+        "target_projection": 0.019263915717601776,
+        "forced_modifier_leverage": 0.1325901374220848,
+        "source_pair_mass": 0.13226410746574402,
+        "target_pair_mass": 0.10394206643104553
+      }
+    },
+    "context_generation_rank": 68
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "mischievous",
+      "target_modifier": "curious",
+      "source_projection": -0.33449774980545044,
+      "target_modifier_projection": -0.32090097665786743,
+      "forced_modifier_leverage": 0.013596773147583008,
+      "source_pair_mass": 0.38018596172332764,
+      "target_pair_mass": 0.3485317826271057,
+      "source_context_dev": [
+        "A playful giggle echoed from behind the bushes where sneaky practical jokes were being plotted. Little footprints led right toward the forbidden flowerbeds.",
+        "Someone was quietly hiding the garden tools behind the rose bushes with a sly grin. Footsteps dashed toward the next spot for another prank.",
+        "Whispers and suppressed laughter signaled another round of harmless trickery near the sandbox. A pair of sneaky eyes peeked out from behind the slide.",
+        "The afternoon had been full of sneaky antics and stolen hats across the playground lawn. Tiny hands were already planning the next silly prank."
+      ],
+      "target_context_dev": [
+        "Over by the old oak, strange bugs and unusual stones were being inspected with intense fascination. Every hollow log held secrets waiting to be uncovered.",
+        "Pebbles were being turned over one by one to see what small critters lived underneath the damp soil. Every unusual leaf prompted a closer look.",
+        "A trail of ants drew rapt attention along the stone pathway near the drinking fountain. Wonder filled the air as every small mystery of nature was examined.",
+        "Magnifying lenses were pointed at tree bark to inspect tiny moss formations and burrowing beetles. Every discovery seemed to invite endless questions about how things work."
+      ],
+      "source_context_test": [
+        "Laughter erupted when a pile of raked autumn leaves was deliberately scattered across the freshly swept walkway. The tiny culprit scurried off to find another playful target.",
+        "A fountain pen had been dipped in soapy water to blow bubbles across the patio table without anyone noticing. Subtle smirks gave away where the next bit of fun would strike.",
+        "Sneaking behind the hedges allowed for sudden surprise jump-outs that startled passing pigeons. Constant cheeky behavior kept the whole courtyard lively.",
+        "Tied shoelaces and hidden picnic napkins pointed to another wave of gentle troublemaking. A quick dash behind the wooden fence concealed the perpetrator."
+      ],
+      "target_context_test": [
+        "The hollow center of a fallen branch offered a fascinating glimpse into woodland ecology. Hours slipped away examining the peculiar textures of lichen.",
+        "Fresh puddles after the morning shower revealed swimming tadpoles that demanded immediate study. Each ripple in the muddy water sparked genuine intrigue.",
+        "Fascinating bird tracks along the sandy edge of the playground were traced carefully into the dirt. An eager gaze followed every movement in the high branches.",
+        "Unfamiliar seed pods scattered on the lawn were being collected and sorted by shape and color. Deep focus was turned toward understanding where they had fallen from."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (mischievous child, mischievous kid, curious child, curious kid) fit seamlessly following the fixed stem across every context. Nuances lean toward literary/playful troublemaking for the source and observational exploration for the target."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "talented",
+      "target_modifier": "clever",
+      "source_projection": -0.257851779460907,
+      "target_modifier_projection": -0.19209741055965424,
+      "forced_modifier_leverage": 0.06575436890125275,
+      "source_pair_mass": 0.27865439653396606,
+      "target_pair_mass": 0.2670513987541199,
+      "source_context_dev": [
+        "A miniature violin melody drifted gracefully across the open lawn, drawing gentle applause from nearby visitors. Natural artistry and dedication shone through every note.",
+        "Sketches drawn in chalk along the promenade displayed remarkable perspective and fine artistic grace. A natural gift for portraiture was already apparent.",
+        "Ballet leaps and flawless spins were performed effortlessly on the open grassy square. Exceptional mastery of movement captivated the strolling onlookers.",
+        "Intricate origami figures folded with rapid precision rested along the picnic table edge. Such remarkable fine motor coordination was rare to behold."
+      ],
+      "target_context_dev": [
+        "A tricky mechanical puzzle that had stumped several adults was solved in less than two minutes. Resourceful thinking and quick problem-solving unlocked the latch.",
+        "A makeshift pulley system fashioned out of jump ropes and twigs successfully hoisted a fallen ball out of the deep drain. Sharp problem-solving saved the game.",
+        "Rules of the strategy board game were quickly deciphered and turned into a winning tactic. Fast reasoning and shrewd choices outsmarted older opponents.",
+        "When the playground gate latch jammed, a sturdy stick was used as a lever to release the catch instantly. Shrewd ingenuity made light work of the barrier."
+      ],
+      "source_context_test": [
+        "Flawless gymnastic flips across the soft turf left spectators in total admiration of such innate physical ability. Years of dedicated practice complemented extraordinary potential.",
+        "A complex classical rhythm was tapped out on improvised wooden blocks with stunning musical precision. Innate virtuosity was unmistakable even in a casual outdoor setting.",
+        "Vibrant watercolor landscapes painted on small paper pads captured the afternoon lighting with astonishing maturity. Rare gifts were blooming with each stroke of color.",
+        "A difficult theatrical monologue was recited with exquisite poise and dramatic depth under the shade of the willow tree. True artistic expression flowed without hesitation."
+      ],
+      "target_context_test": [
+        "Navigating through the intricate hedge maze took merely a moment by following the subtle patterns on the path. Ingenious shortcuts bypassed every dead end.",
+        "A broken scooter handlebar was temporarily secured using an elastic hairband and a wooden peg. Resourceful street smarts turned an accident into a smooth ride.",
+        "Riddles swapped among friends were answered within seconds thanks to sharp mental agility. Keen lateral thinking unraveled every double meaning.",
+        "To retrieve a frisbee stuck in the canopy, a weighted pinecone attached to twine was tossed over the branch to shake it free. Bright ideas always overcame simple obstacles."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (talented child, talented kid, clever child, clever kid) are natural and valid. Source contexts emphasize innate artistic/performative mastery in formal prose; target contexts emphasize quick-witted ingenuity and practical problem-solving in everyday language."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "polite",
+      "target_modifier": "smart",
+      "source_projection": -0.11332622170448303,
+      "target_modifier_projection": 0.019263915717601776,
+      "forced_modifier_leverage": 0.1325901374220848,
+      "source_pair_mass": 0.13226410746574402,
+      "target_pair_mass": 0.10394206643104553,
+      "source_context_dev": [
+        "Courteous greetings and soft apologies were offered whenever someone passed on the narrow walkway. Impeccable manners distinguished every interaction.",
+        "When someone dropped their umbrella, it was promptly retrieved and returned with a respectful bow and a warm smile. Exemplary etiquette was always on display.",
+        "A quiet request for permission preceded every turn taken on the shared playground swings. Gracious consideration for others defined the whole afternoon.",
+        "Holding the garden gate open for elderly visitors brought appreciative nods from everyone nearby. Well-mannered decorum remained constant throughout the day."
+      ],
+      "target_context_dev": [
+        "Complex mental arithmetic problems were calculated instantly during a casual counting contest by the fountain. High cognitive speed outpaced everyone else in the group.",
+        "A heavy nonfiction encyclopedia about astrophysics was read eagerly on the grass, with intricate concepts understood easily. Sharp intellect stood out unmistakably.",
+        "The rules of chess were mastered in a single afternoon, leading to swift checkmates against seasoned neighborhood players. Keen brainpower made every move count.",
+        "Detailed facts about paleontology and prehistoric timelines were recited effortlessly to an astonished group of peers. Extraordinary brightness shone through every explanation."
+      ],
+      "source_context_test": [
+        "Every request was accompanied by a gentle 'please' and followed by a genuine 'thank you' to the park staff. Civil and considerate habits left a pleasant impression on all.",
+        "Offering up the shaded seating spot to a tired grandparent reflected deep respect and good breeding. Proper social etiquette came naturally without prompting.",
+        "Snacks were divided equally and distributed to peers with selfless courtesy before a single bite was taken. Modest and respectful conduct governed every choice.",
+        "Stepping aside on the running track to let faster joggers pass showed admirable awareness and consideration. Deferential decorum made public spaces pleasant for everyone."
+      ],
+      "target_context_test": [
+        "The advanced logic puzzle in the newspaper was solved without making a single eraser mark. Rapid analytical reasoning dismantled the problem effortlessly.",
+        "A nuanced discussion regarding planetary orbits and gravity was conducted with effortless clarity near the gazebo. Remarkable mental sharpness astonished listeners.",
+        "Diagnosing the faulty wiring inside a battery-powered toy took only a quick inspection of the circuit board. Astute analytical capability was apparent from the start.",
+        "A complex trivia quiz covering world capitals and history was answered without a single mistake. Superior memory and intellectual prowess led the entire competition."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (polite child, polite kid, smart child, smart kid) are natural continuations for the fixed stem across all contexts. Source contexts elevate formal manners, etiquette, and social deference; target contexts highlight analytical intellect, trivia mastery, and cognitive sharpness."
+    }
+  ]
+}

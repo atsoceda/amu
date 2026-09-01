@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_12_blind_shade",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "blind_shade",
+    "noun_0": "blind",
+    "noun_1": "shade",
+    "shared_definition": "a window covering used to regulate light and provide privacy",
+    "neutral_stem": "To block the harsh afternoon glare, he lowered",
+    "candidate_modifiers": [
+      "dark",
+      "broken",
+      "bamboo",
+      "wooden",
+      "roller",
+      "white",
+      "dusty",
+      "plastic",
+      "motorized",
+      "fabric",
+      "crooked",
+      "drawn",
+      "vertical",
+      "clean",
+      "opaque"
+    ],
+    "semantic_notes": "Blind frequently implies slatted or louvred mechanisms, whereas shade usually denotes a continuous roll of fabric or paper.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        18261
+      ],
+      "noun_1": [
+        23791
+      ]
+    },
+    "modifier_token_ids": {
+      "dark": [
+        4996
+      ],
+      "broken": [
+        11207
+      ],
+      "bamboo": [
+        41537
+      ],
+      "wooden": [
+        7116
+      ],
+      "roller": [
+        28711
+      ],
+      "white": [
+        2173
+      ],
+      "dusty": [
+        78921
+      ],
+      "plastic": [
+        8901
+      ],
+      "motorized": [
+        136844
+      ],
+      "fabric": [
+        9130
+      ],
+      "crooked": [
+        114116
+      ],
+      "drawn": [
+        9710
+      ],
+      "vertical": [
+        9351
+      ],
+      "clean": [
+        3980
+      ],
+      "opaque": [
+        67885
+      ]
+    },
+    "forced_projection_span": 0.058262914419174194,
+    "max_noun_pair_mass": 0.5144526958465576,
+    "context_priority_score": 0.029973513390821438,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "wooden",
+        "target_modifier": "drawn",
+        "source_projection": 0.03064206801354885,
+        "target_projection": 0.03695015609264374,
+        "forced_modifier_leverage": 0.006308088079094887,
+        "source_pair_mass": 0.03838690370321274,
+        "target_pair_mass": 0.08977854251861572
+      },
+      "medium": {
+        "source_modifier": "clean",
+        "target_modifier": "broken",
+        "source_projection": 0.004732862114906311,
+        "target_projection": 0.03301118314266205,
+        "forced_modifier_leverage": 0.028278321027755737,
+        "source_pair_mass": 0.005703604780137539,
+        "target_pair_mass": 0.03470645844936371
+      },
+      "high": {
+        "source_modifier": "fabric",
+        "target_modifier": "plastic",
+        "source_projection": 0.15128639340400696,
+        "target_projection": 0.20954930782318115,
+        "forced_modifier_leverage": 0.058262914419174194,
+        "source_pair_mass": 0.17195022106170654,
+        "target_pair_mass": 0.21688655018806458
+      }
+    },
+    "context_generation_rank": 117
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "wooden",
+      "target_modifier": "drawn",
+      "source_context_dev": [
+        "The home office featured handcrafted timber shelving and rich mahogany paneling throughout. Every fixture in the study had been selected to match the historic, organic aesthetic.",
+        "Sunlight poured into the rustic mountain cabin, heating up the polished cedar floors. The owner preferred traditional craftsmanship over modern synthetic window treatments.",
+        "The antique library was furnished with heavy oak tables and vintage artisan accents. Slanted slats of afternoon light began creeping across the rare manuscript collection.",
+        "He admired the natural timber joinery framing the study's west-facing bay casement. The room felt warm and earthy, decorated entirely in rich brown tones and sturdy timber accents."
+      ],
+      "target_context_dev": [
+        "The afternoon heat was becoming unbearable inside the west-facing nursery. He stepped over to the window frame to dim the room for naptime.",
+        "The sun's reflection off the neighboring glass high-rise was blinding everyone at the conference table. The presenter paused his slides until the room could be properly dimmed.",
+        "Bright rays illuminated the television screen, making it impossible to watch the movie comfortably. He walked over to the patio doorway to darken the entire living area.",
+        "Working on color-sensitive photo editing required a completely controlled, darkened workspace. He reached toward the window fixture to cut off the ambient sunlight."
+      ],
+      "source_context_test": [
+        "The renovated farmhouse sitting room was accented with reclaimed barn timber and deep cherry millwork. He took pride in sourcing authentic carpentry for every opening.",
+        "The master bedroom featured heavy teak furniture that matched the handmade louvered fixtures. As the sun crested the tree line, golden light poured across his desk.",
+        "The classic law office had dark wainscoting and bespoke carpentry installed along the exterior wall. A harsh beam of light hit the attorney right in the eyes.",
+        "Rich cedar accents gave the cozy den a classic, forested atmosphere. The owner favored heavy, natural materials that complemented the handcrafted cabinetry."
+      ],
+      "target_context_test": [
+        "The baby was struggling to fall asleep with the strong sunlight filtering into the room. He walked quietly over to the glass to create a calming, dim environment.",
+        "A sharp reflection off parked cars outside was interfering with his computer monitor. He stood up from his desk to eliminate the irritating glare.",
+        "The intense summer heat was quickly warming up the top-floor apartment. He wanted to shield the interior space before the room became uncomfortably hot.",
+        "The bright midday sun washed out the projected presentation on the meeting room wall. Someone quickly stepped up to the large exterior casement to help."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('wooden blind', 'wooden shade', 'drawn blind', 'drawn shade') are fully grammatical and natural across both sets of contexts. Wooden blinds and wooden shades refer to authentic timber window coverings, while drawn blind and drawn shade refer to coverings pulled into position. No forbidden words appear."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "clean",
+      "target_modifier": "broken",
+      "source_context_dev": [
+        "The professional maid service had just completed an exhaustive deep cleaning of the luxury penthouse. Every surface and fixture was pristine, spotless, and dust-free.",
+        "The surgical clinic maintained rigorous standards of hygiene in every consultation room. The orderly wiped down all horizontal surfaces before preparing for the afternoon patient.",
+        "Having spent the entire weekend tidying and dusting the guest bedroom, she was proud of its immaculate state. Everything looked immaculate and brand new.",
+        "The newly renovated showroom was wiped down each morning to prevent any buildup of dust. The manager inspected every corner before opening the doors to clients."
+      ],
+      "target_context_dev": [
+        "The cheap studio apartment had suffered from years of neglect by the previous tenant. Several fittings were warped, cracked, and hanging awkwardly from their brackets.",
+        "The abandoned motel room showed clear signs of vandalism and decay. A snapped cord dangled uselessly alongside the tilted, cracked fixture.",
+        "The budget office space was notorious for faulty fixtures that frequently jammed halfway down. The mechanism had been cracked for months without maintenance fixing it.",
+        "The neglected vacation rental was in poor repair, with chipped paint and jammed mechanisms throughout. One side of the window frame sagged precariously."
+      ],
+      "source_context_test": [
+        "The high-end boutique hotel ensured each suite underwent thorough sanitization between guest stays. Not a speck of grime remained on any surface in the room.",
+        "After hours of rigorous scrubbing and polishing, the apartment looked thoroughly rejuvenated. Every single fixture was gleaming and perfectly maintained.",
+        "The laboratory kept all equipment and room fittings completely free of airborne particulates. The technician made sure the workspace was spotless before starting.",
+        "She had just finished wiping away every trace of dust that had settled on the window fixtures. The bright sunlight illuminated a totally spotless living room."
+      ],
+      "target_context_test": [
+        "The dilapidated garage office was full of cracked, malfunctioning furnishings. The cord mechanism was snapped, leaving the window fixture hanging unevenly.",
+        "The derelict boarding house had not seen renovations in decades. Many of the interior window fittings were snapped in half and barely attached to the wall.",
+        "In the run-down workshop, years of rough treatment had left most mechanical fixtures damaged and crooked. The flimsy frame was bent and missing several parts.",
+        "The aging rental unit suffered from persistent landlord neglect. A cracked slat and jammed roller made operating the window fixture a daily frustration."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('clean blind', 'clean shade', 'broken blind', 'broken shade') are valid noun phrases representing condition states. Source contexts emphasize spotless hygiene and maintenance, favoring 'clean'; target contexts emphasize damage and neglect, favoring 'broken'. No forbidden words appear."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "fabric",
+      "target_modifier": "plastic",
+      "source_context_dev": [
+        "The high-end interior designer decorated the boutique hotel using rich textiles, soft woven draperies, and bespoke upholstery. Every accent contributed to a tactile, luxurious warmth.",
+        "The tailor's studio was surrounded by samples of woven linen, wool, and heavy cotton weave. The room felt soft, elegant, and filled with bespoke spun materials.",
+        "She loved decorating with soft woven textures and linen-trimmed home goods. The delicate materials lent a cozy, tactile atmosphere to her quiet reading nook.",
+        "The boutique showroom showcased delicate woven textiles and custom upholstery for elegant residential spaces. Warm, soft-textured goods framed every opening."
+      ],
+      "target_context_dev": [
+        "The industrial warehouse breakroom was outfitted with cheap, synthetic furnishings that were easy to hose down. Everything was made of molded polymers and vinyl.",
+        "The budget student dorm had rigid synthetic fittings that felt lightweight, cheap, and mass-produced. The fixtures were made entirely from rigid white polymers.",
+        "The temporary construction trailer featured functional, synthetic polymer fixtures designed for easy cleaning. The cheap vinyl elements looked stark and strictly utilitarian.",
+        "The discount department store used mass-produced molded polymer fixtures throughout the fitting rooms. The white synthetic components felt rigid, cheap, and artificial."
+      ],
+      "source_context_test": [
+        "The upscale bedroom suite was styled with layered weaves, soft natural canvases, and plush decorative accents. Rich spun textiles gave the space a cozy ambiance.",
+        "The craft workshop was dedicated to textile arts, showcasing handwoven tapestries and delicate linen accents. Soft, woven goods were chosen for every window opening.",
+        "Her interior styling emphasized soft-to-the-touch textures and tailored woven designs. Every piece of decor featured natural woven fibers rather than synthetic polymers.",
+        "The tranquil meditation retreat featured warm, sound-dampening woven materials and organic cotton accents throughout. The decor felt distinctly soft, gentle, and tactile."
+      ],
+      "target_context_test": [
+        "The low-cost rental kitchen was outfitted with inexpensive synthetic polymer goods that could withstand grease and moisture. The fixtures were stiff, shiny, and artificial.",
+        "The chemistry prep room was fitted with molded polymer surfaces that would not absorb chemical fumes. Synthetic white vinyl coverings guarded the outside casements.",
+        "The mobile field office was assembled with utilitarian synthetic materials that were lightweight and cheap to replace. Rigid polymer fixtures hung across each windowpane.",
+        "The discount laundromat had rigid, artificial polymer accessories installed on every wall. The stark, shiny synthetic fittings were chosen strictly for affordability."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('fabric blind', 'fabric shade', 'plastic blind', 'plastic shade') represent standard material classifications for window coverings. Fabric coverings are common soft-treatment variations, while plastic coverings are common synthetic rigid variations. No forbidden words appear."
+    }
+  ]
+}

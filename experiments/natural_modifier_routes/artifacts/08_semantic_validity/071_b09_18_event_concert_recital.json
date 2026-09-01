@@ -1,0 +1,30 @@
+{
+  "candidate_id": "concert_recital_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations of modifier and noun are fully grammatical and natural. No candidate stems, modifiers, or nouns are leaked in context passages."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test[3]"
+      ],
+      "failure_reasons": [
+        "source_context_test[3] contains the lexical derivative 'concertgoers', which directly leaks and primes the candidate noun 'concert'."
+      ],
+      "concise_notes": "Lexical leak in source_context_test[3] ('concertgoers') biases selection toward the candidate noun 'concert'."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations remain semantically and syntactically sound across contexts without direct lexical leakage of targets or candidate nouns."
+    }
+  ]
+}

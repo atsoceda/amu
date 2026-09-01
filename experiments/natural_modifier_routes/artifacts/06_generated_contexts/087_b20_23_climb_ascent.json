@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b20_23_climb_ascent",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "climb_ascent",
+    "noun_0": "climb",
+    "noun_1": "ascent",
+    "shared_definition": "an upward movement or scaling of a mountain, cliff, or hill",
+    "neutral_stem": "The mountaineer finished the",
+    "candidate_modifiers": [
+      "arduous",
+      "brutal",
+      "challenging",
+      "dangerous",
+      "daunting",
+      "difficult",
+      "exhausting",
+      "gradual",
+      "historic",
+      "perilous",
+      "rapid",
+      "rigorous",
+      "solo",
+      "steep",
+      "strenuous"
+    ],
+    "semantic_notes": "'Ascent' is more formal and geographical, while 'climb' is everyday and emphasizes the physical effort or specific route.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        17085
+      ],
+      "noun_1": [
+        96031
+      ]
+    },
+    "modifier_token_ids": {
+      "arduous": [
+        129263
+      ],
+      "brutal": [
+        40097
+      ],
+      "challenging": [
+        14798
+      ],
+      "dangerous": [
+        13588
+      ],
+      "daunting": [
+        69390
+      ],
+      "difficult": [
+        3909
+      ],
+      "exhausting": [
+        93646
+      ],
+      "gradual": [
+        39869
+      ],
+      "historic": [
+        17110
+      ],
+      "perilous": [
+        164077
+      ],
+      "rapid": [
+        7226
+      ],
+      "rigorous": [
+        44928
+      ],
+      "solo": [
+        8935
+      ],
+      "steep": [
+        25465
+      ],
+      "strenuous": [
+        124955
+      ]
+    },
+    "forced_projection_span": 0.06862151622772217,
+    "max_noun_pair_mass": 0.6934509873390198,
+    "context_priority_score": 0.047585658180814505,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "perilous",
+        "target_modifier": "challenging",
+        "source_projection": -0.2089272141456604,
+        "target_projection": -0.2015569806098938,
+        "forced_modifier_leverage": 0.0073702335357666016,
+        "source_pair_mass": 0.42959439754486084,
+        "target_pair_mass": 0.2863409221172333
+      },
+      "medium": {
+        "source_modifier": "rigorous",
+        "target_modifier": "solo",
+        "source_projection": -0.12690134346485138,
+        "target_projection": -0.09148839116096497,
+        "forced_modifier_leverage": 0.035412952303886414,
+        "source_pair_mass": 0.22881607711315155,
+        "target_pair_mass": 0.30223143100738525
+      },
+      "high": {
+        "source_modifier": "gradual",
+        "target_modifier": "rapid",
+        "source_projection": 0.267175555229187,
+        "target_projection": 0.3357970714569092,
+        "forced_modifier_leverage": 0.06862151622772217,
+        "source_pair_mass": 0.6934509873390198,
+        "target_pair_mass": 0.5004673004150391
+      }
+    },
+    "context_generation_rank": 88
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "perilous",
+      "target_modifier": "challenging",
+      "source_context_dev": [
+        "Loose scree and sudden avalanches threatened every foothold along the vertical granite wall. After narrowly dodging falling boulders near the icy couloir, everyone exhaled in relief.",
+        "The sheer overhang was coated in deceptive black ice with hundred-foot drops right below. One wrong placement of an anchor would have meant certain disaster.",
+        "Severe weather and brittle rock faces tested the expedition's survival instincts to their absolute limits. Navigating the exposed precipice required nerves of steel amid howling winds.",
+        "Crumbling handholds and treacherous crevasses made the route notorious among alpine veterans. Escaping the deadly north face intact seemed almost miraculous."
+      ],
+      "target_context_dev": [
+        "The newly mapped alpine track demanded exceptional technical skill and steady physical endurance. While safe from major rockfall, it required continuous problem-solving at every pitch.",
+        "Navigating the intricate maze of fissures called for precision and sophisticated route-finding. The team tested their advanced athletic techniques against the steep incline.",
+        "Although well-protected by modern bolts, the sheer angle demanded peak concentration and stamina. Each difficult pitch pushed the athletes to refine their body positioning.",
+        "The route offered a formidable test of technique without posing unnecessary life-threatening risks. It rewarded methodical tactical movement across complex vertical terrain."
+      ],
+      "source_context_test": [
+        "Raging blizzards and unstable cornices made every single meter on the jagged ridge a gamble with fate. A single slip over the void would have been fatal.",
+        "The crumbling basalt columns offered unreliable protection over a sickening vertical drop. Danger mounted with every gust of sub-zero wind howling across the gully.",
+        "Jagged icicles sheared off above the narrow ledge, threatening to sweep the expedition off the mountainside. Traversing such lethal terrain demanded hypervigilance.",
+        "Unanchored rock slabs threatened to collapse under the slightest pressure near the summit headwall. Surviving the deadly exposure took absolute focus."
+      ],
+      "target_context_test": [
+        "The high-grade technical route pushed modern athletic capabilities with awkward body movements. It stood out as an intellectual puzzle of balance and grip strength.",
+        "Mastering the intricate friction slabs required immense patience and flawless footwork. The difficulty stemmed from subtle balance rather than raw environmental hazards.",
+        "The elevation gain was grueling, demanding seasoned fitness and sharp problem-solving skills throughout the day. It proved to be a demanding athletic milestone.",
+        "Navigating the steep granite overhang required advanced rope management and precise maneuvers. It was widely regarded as a benchmark test of mountaineering prowess."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (perilous climb, perilous ascent, challenging climb, challenging ascent) are grammatically correct and semantically natural in all provided contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "rigorous",
+      "target_modifier": "solo",
+      "source_context_dev": [
+        "Weeks of uncompromising physical conditioning and exhaustive preparation were tested across the grueling terrain. Every muscle burned under the unrelenting physical strain.",
+        "The exhaustive alpine route demanded extreme cardiovascular stamina and relentless muscular endurance. Strict adherence to technical protocols was necessary throughout the exhausting journey.",
+        "Months of structured training prepared the athlete for the brutally taxing elevation gain. Overcoming the punishing physical workload required immense discipline.",
+        "The expedition followed a grueling training regimen to withstand the endless hours of uphill strain. Heavy packs and relentless vertical inclines tested systemic stamina."
+      ],
+      "target_context_dev": [
+        "Leaving all companions and base camp support behind, a lone figure stepped onto the glacier. Complete self-reliance was required without any rope partner.",
+        "Venturing onto the exposed summit ridge without a partner required absolute inner calm. There was nobody else to rely on in case of an emergency.",
+        "Rejecting group expeditions, the mountaineer chose to journey into the high peaks entirely unaccompanied. Every safety decision rested on a single pair of shoulders.",
+        "Operating completely on individual instinct, the isolated adventurer navigated the frozen heights without backup. Total solitude framed the entire expedition."
+      ],
+      "source_context_test": [
+        "The unrelenting incline demanded peak physical stamina and systematic pacing through every elevation zone. The sheer workload pushed human endurance to its boundary.",
+        "Carrying full expedition gear up the steep gradient required disciplined stamina and intense exertion. The arduous routine demanded unrelenting bodily vigor.",
+        "Enduring harsh mountain weather while continuously pushing through muscle fatigue required relentless athletic discipline. The physically exhausting endeavor pushed limits.",
+        "Every segment of the grueling route was designed to test systemic strength and strict conditioning. The sheer physical demand left no room for fatigue."
+      ],
+      "target_context_test": [
+        "Stepping out into the sub-zero dawn without a team, the adventurer relied strictly on individual judgment. No companion stood by to belay or offer assistance.",
+        "Tackling the vast mountain face alone demanded total self-sufficiency in gear and navigation. Silence surrounded the solitary traveler on the icy ridge.",
+        "Choosing an independent line up the face without any secondary support required total composure. The solitary adventurer took responsibility for every move.",
+        "With nobody else on the entire ridge, the mountaineer pressed upward in profound isolation. The individual effort required complete mental independence."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (rigorous climb, rigorous ascent, solo climb, solo ascent) remain fully valid, coherent, and grammatical across both physical discipline and unpartnered contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "gradual",
+      "target_modifier": "rapid",
+      "source_context_dev": [
+        "The gentle trail wound patiently along low-angle ridges and smooth switchbacks over several days. Taking measured steps ensured easy acclimatization to the rising altitude.",
+        "Rather than taking a direct vertical line, the path inclined gently around the mountain base over many hours. The steady, easy grade allowed for an unhurried, comfortable pace.",
+        "The expedition favored an easy, progressive incline that rose almost imperceptibly over vast alpine meadows. Each kilometer added only a modest increase in elevation.",
+        "Winding slowly through gentle foothills, the route prioritized easy acclimatization over speed. The modest pitch ensured a steady, peaceful progression upward."
+      ],
+      "target_context_dev": [
+        "Racing against an oncoming blizzard, the athlete sprinted up the mountainside in record-shattering time. Every split second mattered during the high-speed dash.",
+        "Moving with blistering speed, the skyrunner surged straight up the steep couloir in a single morning. The lightning-fast pace broke all previous summit records.",
+        "The weather window was closing in mere hours, requiring an explosive, high-tempo push straight up the face. Velocity and swift execution were paramount.",
+        "Setting an aggressive tempo from the base, the speed specialist dashed vertically without stopping. The swift journey cut standard approach times by more than half."
+      ],
+      "source_context_test": [
+        "The winding approach gained elevation at an easy, moderate rate across wide switchbacks. It was designed for smooth adaptation rather than swift conquest.",
+        "Following a softly inclined terrace, the path meandered gently upward through the subalpine forest. The steady, low-angle slope required zero sudden exertion.",
+        "The path stretched out across sweeping contours, rising gently with minimal steepness over many miles. It allowed for a relaxed, leisurely rhythm.",
+        "Choosing the longest but mildest route avoided sudden elevation jumps. The smooth, easy-grade track provided an unhurried journey to the higher plateau."
+      ],
+      "target_context_test": [
+        "Aiming for an unprecedented speed record, the athlete charged up the vertical line without pause. The explosive tempo reached the upper ridge in record time.",
+        "With storm clouds gathering rapidly, the climber dashed upward at breakneck speed. The lightning-quick push beat the arrival of heavy gale-force winds.",
+        "Operating in lightweight alpine style, the athlete flew up the vertical ice gully in just a few short hours. The dynamic, high-speed pace left spectators in awe.",
+        "A fast-and-light strategy enabled an astonishingly quick push from the valley floor straight to the top. The breathless speed set a new standard for the route."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (gradual climb, gradual ascent, rapid climb, rapid ascent) are semantically valid and natural across gentle pacing and high-speed temporal contexts."
+    }
+  ]
+}

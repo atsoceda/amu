@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b14_02_contract_agreement",
+    "generation_batch": 14,
+    "domain": "documents and information objects",
+    "family_id": "contract_agreement",
+    "noun_0": "contract",
+    "noun_1": "agreement",
+    "shared_definition": "a formal, legally binding written arrangement between two or more parties",
+    "neutral_stem": "The attorney drafted",
+    "candidate_modifiers": [
+      "binding",
+      "formal",
+      "written",
+      "preliminary",
+      "bilateral",
+      "signed",
+      "legal",
+      "official",
+      "commercial",
+      "exclusive",
+      "revised",
+      "provisional",
+      "confidential",
+      "final",
+      "amended"
+    ],
+    "semantic_notes": "'Contract' specifically implies enforceable legal obligations, whereas 'agreement' can also describe mutual consensus in softer diplomatic or general settings.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        4258
+      ],
+      "noun_1": [
+        7686
+      ]
+    },
+    "modifier_token_ids": {
+      "binding": [
+        11609
+      ],
+      "formal": [
+        10781
+      ],
+      "written": [
+        5267
+      ],
+      "preliminary": [
+        22396
+      ],
+      "bilateral": [
+        40368
+      ],
+      "signed": [
+        10227
+      ],
+      "legal": [
+        6369
+      ],
+      "official": [
+        5125
+      ],
+      "commercial": [
+        6635
+      ],
+      "exclusive": [
+        14417
+      ],
+      "revised": [
+        26885
+      ],
+      "provisional": [
+        75656
+      ],
+      "confidential": [
+        29259
+      ],
+      "final": [
+        1626
+      ],
+      "amended": [
+        22474
+      ]
+    },
+    "forced_projection_span": 0.30035050958395004,
+    "max_noun_pair_mass": 0.7133078575134277,
+    "context_priority_score": 0.21424237849439365,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "official",
+        "target_modifier": "provisional",
+        "source_projection": -0.01971926912665367,
+        "target_projection": 0.011116622015833855,
+        "forced_modifier_leverage": 0.030835891142487526,
+        "source_pair_mass": 0.026357214897871017,
+        "target_pair_mass": 0.02542751096189022
+      },
+      "medium": {
+        "source_modifier": "revised",
+        "target_modifier": "signed",
+        "source_projection": -0.1962077021598816,
+        "target_projection": -0.043647147715091705,
+        "forced_modifier_leverage": 0.1525605544447899,
+        "source_pair_mass": 0.27276545763015747,
+        "target_pair_mass": 0.23550638556480408
+      },
+      "high": {
+        "source_modifier": "commercial",
+        "target_modifier": "bilateral",
+        "source_projection": 0.08062700182199478,
+        "target_projection": 0.3809775114059448,
+        "forced_modifier_leverage": 0.30035050958395004,
+        "source_pair_mass": 0.2663508653640747,
+        "target_pair_mass": 0.6388236284255981
+      }
+    },
+    "context_generation_rank": 15
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "official",
+      "target_modifier": "provisional",
+      "source_context_dev": [
+        "The corporate board required complete institutional validation before releasing funds. Every regulatory formality had to be meticulously satisfied.",
+        "The state agency demanded a legally certified instrument to authorize the public project. All informal understandings were rejected in favor of state-sanctioned documentation.",
+        "To ensure full compliance with statutory standards, the firm sought formal sanction. Everything had to follow recognized administrative procedures.",
+        "The municipal council required fully certified documentation before granting final approval. The file had to meet all rigorous civic standards."
+      ],
+      "target_context_dev": [
+        "The negotiating teams needed a temporary placeholder while awaiting final corporate clearance. This temporary measure allowed operations to continue smoothly.",
+        "Both parties wanted an interim arrangement to bridge the gap until the end of the fiscal quarter. They agreed on a stopgap structure for the intervening months.",
+        "The venture required a short-term workaround while the primary terms were still being debated. Work had to commence under conditional terms immediately.",
+        "The partners established an interim framework to govern daily operations during the transition phase. This placeholder measure kept the factory open."
+      ],
+      "source_context_test": [
+        "The compliance director insisted on formal institutional standing for the joint venture. The documentation had to carry ultimate legal weight.",
+        "The supervisory committee wanted formal validation across all participating entities. They would not accept anything lacking formal administrative backing.",
+        "State regulators demanded formal documentation before issuing the enterprise license. The paperwork needed full institutional legitimacy.",
+        "The department needed a certified instrument to present before the auditing panel. The papers had to reflect strict authoritative compliance."
+      ],
+      "target_context_test": [
+        "The startup founders implemented a temporary bridge mechanism while waiting for venture funding. This interim setup was scheduled to expire upon closing.",
+        "Management established a conditional stopgap to maintain supply chain flow while discussions continued. The arrangement was intended strictly for the short term.",
+        "The merger required an interim governance framework to guide decisions until regulatory approval arrived. The team set up temporary rules for immediate use.",
+        "Because the final structure was still months away, the stakeholders chose a temporary placeholder. It provided operational clarity during the negotiation window."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (official contract, official agreement, provisional contract, provisional agreement) are grammatically valid and semantically well-formed in standard legal English after the prompt stem. The contexts adjust the pragmatic plausibility without ruling out any alternative."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "revised",
+      "target_modifier": "signed",
+      "source_context_dev": [
+        "After reviewing the redlined drafts, the parties incorporated extensive modifications. The latest adjustments addressed every contentious liability clause.",
+        "Several terms had to be updated following unexpected changes in market regulations. The team incorporated all newly submitted corrections.",
+        "The feedback from the auditing committee led to substantial changes in the payment schedule. Multiple sections had to be altered to reflect the new numbers.",
+        "Following the second round of negotiations, several paragraphs were edited for clarity. The parties requested a fresh text reflecting all updated provisions."
+      ],
+      "target_context_dev": [
+        "The deal was fully executed and ready for formal archiving in the corporate repository. Both executive teams had completed all closing formalities.",
+        "The parties concluded their negotiation phase and finalized the execution process. The executed papers were delivered to the escrow agent for safe keeping.",
+        "All required endorsements were successfully gathered from the board members yesterday. The completed paperwork was promptly filed with the records office.",
+        "With all signatures gathered and closing conditions met, the transaction was fully consummated. The file was cataloged in the firm's vault."
+      ],
+      "source_context_test": [
+        "The initial draft contained outdated indemnity clauses that required thorough re-evaluation. The negotiating team prepared an updated version with amended terms.",
+        "Feedback from the operations team necessitated alterations to the delivery timetable. The text was reworked to accommodate these new operational requirements.",
+        "The legal review highlighted ambiguities in the intellectual property section that needed fixing. A freshly modified text was requested before the meeting.",
+        "Substantial adjustments were made to the financial covenants after the debt restructuring talks. The parties needed a corrected text reflecting the modified figures."
+      ],
+      "target_context_test": [
+        "The partners finally executed the paperwork during yesterday afternoon's closing session. The fully executed instruments were distributed to all stakeholders.",
+        "All executive approvals had been secured, leaving only the cataloging of the executed document. The deal was officially consummated.",
+        "The parties completed the formal execution ceremony at the end of the summit. The executed file was submitted directly to the county recorder.",
+        "Every authorized representative had endorsed the final closing packet before the midnight deadline. The executed text was placed into the company records."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (revised contract, revised agreement, signed contract, signed agreement) are fully valid following the stem 'The attorney drafted the'. Contexts bias toward either iterative updating (revised) or post-negotiation finality (signed) while retaining cross-product plausibility."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "commercial",
+      "target_modifier": "bilateral",
+      "source_context_dev": [
+        "The enterprise prepared to launch a multi-million-dollar retail initiative across three continents. The transaction focused purely on corporate enterprise and trade terms.",
+        "The manufacturing conglomerate sought to expand its mercantile footprint through a lucrative supply chain venture. The terms governed merchant sales and revenue sharing.",
+        "The private equity group negotiated a market-driven acquisition of consumer goods assets. The focus was entirely on mercantile profit and corporate asset distribution.",
+        "The logistics provider sought a business-to-business deal to lease warehouse space across several ports. The negotiations were centered on corporate trade rates."
+      ],
+      "target_context_dev": [
+        "Two sovereign states sought to formalize mutual defense and diplomatic commitments. The negotiations involved reciprocal concessions between the two distinct governments.",
+        "Two independent municipalities agreed on a reciprocal water-sharing pact between their districts. The terms established balanced obligations between both participating sides.",
+        "The two neighboring nations established a mutual security understanding along their shared border. The framework bound both entities equally in reciprocal defense.",
+        "Both state institutions sought a mutual cooperation pact to share environmental research. The framework balanced responsibilities equally between the two distinct bodies."
+      ],
+      "source_context_test": [
+        "The retail chain was purchasing wholesale inventory from a primary industrial supplier. The terms addressed purchase volumes, wholesale discounts, and cargo freight.",
+        "The tech enterprise expanded its business portfolio by licensing proprietary software to a fleet of corporate clients. The package centered strictly on mercantile monetization.",
+        "A leading shipping conglomerate closed a corporate transaction involving international merchant cargo. The documentation centered on market pricing and shipping margins.",
+        "The venture capitalists completed an investment dealing with wholesale distribution channels. The main focus was business profit margins and trade obligations."
+      ],
+      "target_context_test": [
+        "The two national delegations met in Geneva to formalize a reciprocal trade pact. Both governments pledged balanced concessions in a joint two-party framework.",
+        "Two allied nations coordinated a mutual cooperation pact to govern offshore fishing rights. The provisions laid out reciprocal duties between both jurisdictions.",
+        "The two municipal authorities established a joint transit system connecting their cities. The responsibilities were shared strictly between the two local bodies.",
+        "Two sovereign partners agreed to harmonize their reciprocal customs inspections. The framework created symmetrical legal duties binding each of the two states."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (commercial contract, commercial agreement, bilateral contract, bilateral agreement) are natural in English. The source context focuses on corporate/mercantile trade, favoring 'commercial', while the target context focuses on symmetric two-party/state-level reciprocity, favoring 'bilateral'."
+    }
+  ]
+}

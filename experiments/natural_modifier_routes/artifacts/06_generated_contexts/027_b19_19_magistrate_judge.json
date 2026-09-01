@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b19_19_magistrate_judge",
+    "generation_batch": 19,
+    "domain": "law, government, and civic life",
+    "family_id": "magistrate_judge",
+    "noun_0": "magistrate",
+    "noun_1": "judge",
+    "shared_definition": "a judicial officer authorized to hear cases and administer the law in court",
+    "neutral_stem": "The defense attorney presented arguments to",
+    "candidate_modifiers": [
+      "appointed",
+      "senior",
+      "presiding",
+      "experienced",
+      "respected",
+      "fair",
+      "sitting",
+      "resident",
+      "capable",
+      "competent",
+      "strict",
+      "impartial",
+      "learned",
+      "independent",
+      "qualified"
+    ],
+    "semantic_notes": "'Magistrate' often refers to lower-court judicial officers handling minor offenses or pretrial matters, whereas 'judge' is the general and higher rank.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        68928
+      ],
+      "noun_1": [
+        12011
+      ]
+    },
+    "modifier_token_ids": {
+      "appointed": [
+        13857
+      ],
+      "senior": [
+        9550
+      ],
+      "presiding": [
+        110287
+      ],
+      "experienced": [
+        9763
+      ],
+      "respected": [
+        35391
+      ],
+      "fair": [
+        5888
+      ],
+      "sitting": [
+        8116
+      ],
+      "resident": [
+        10704
+      ],
+      "capable": [
+        11844
+      ],
+      "competent": [
+        31431
+      ],
+      "strict": [
+        10346
+      ],
+      "impartial": [
+        75754
+      ],
+      "learned": [
+        8683
+      ],
+      "independent": [
+        6829
+      ],
+      "qualified": [
+        15973
+      ]
+    },
+    "forced_projection_span": 0.15073293447494507,
+    "max_noun_pair_mass": 0.9328567981719971,
+    "context_priority_score": 0.1406122426333667,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "qualified",
+        "target_modifier": "strict",
+        "source_projection": 0.02854887768626213,
+        "target_projection": 0.040514007210731506,
+        "forced_modifier_leverage": 0.011965129524469376,
+        "source_pair_mass": 0.0286463163793087,
+        "target_pair_mass": 0.04084651172161102
+      },
+      "medium": {
+        "source_modifier": "appointed",
+        "target_modifier": "senior",
+        "source_projection": 0.5136901140213013,
+        "target_projection": 0.5941668748855591,
+        "forced_modifier_leverage": 0.08047676086425781,
+        "source_pair_mass": 0.5202345848083496,
+        "target_pair_mass": 0.5982067584991455
+      },
+      "high": {
+        "source_modifier": "sitting",
+        "target_modifier": "presiding",
+        "source_projection": 0.7749884724617004,
+        "target_projection": 0.9257214069366455,
+        "forced_modifier_leverage": 0.15073293447494507,
+        "source_pair_mass": 0.8299048542976379,
+        "target_pair_mass": 0.9328567981719971
+      }
+    },
+    "context_generation_rank": 28
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "qualified",
+      "target_modifier": "strict",
+      "source_context_dev": [
+        "During the initial bail review, the legal team confirmed that the bench met every statutory certification standard. Counsel wanted reassurance that the official possessed the requisite legal training for such a determination.",
+        "The courtroom staff verified that the official on duty fulfilled all municipal competency credentials before the hearing began. Legal counsel prepared to establish their client's compliance with local statutory requirements.",
+        "Before addressing the warrant application, counsel reviewed the legal credentials required for the local tribunal. The hearing required someone certified to evaluate preliminary evidentiary thresholds.",
+        "The preliminary proceeding began with an evaluation of jurisdictional authorizations under county bylaws. The advocate wanted to ensure the official had completed the required professional certifications."
+      ],
+      "target_context_dev": [
+        "The legal team was well aware of the court official's uncompromising reputation regarding procedural deadlines. Counsel prepared for an unyielding interpretation of every statutory rule.",
+        "Past records showed this courtroom official consistently handed down the maximum allowable penalties without hesitation. Counsel tailored their delivery to address an exceptionally stern demeanor.",
+        "Known throughout the circuit for having zero tolerance for evidentiary delays, the court official demanded rigorous adherence to courtroom decorum. Counsel carefully vetted every document beforehand.",
+        "The legal representative anticipated an inflexible hearing where no procedural leeway would be granted. Every motion had to satisfy the most demanding interpretation of trial guidelines."
+      ],
+      "source_context_test": [
+        "The defense team ensured that the adjudicator possessed all formal competencies mandated for handling pre-trial matters. The hearing opened once these prerequisite credentials were fully established.",
+        "Because the misdemeanor matter involved specialized licensing statutes, the representative checked that the official held the appropriate jurisdictional authorization. Everything was verified prior to opening remarks.",
+        "Counsel arrived at the local division seeking confirmation that the adjudicator was properly licensed to hear summary motions. With all statutory requirements satisfied, proceedings commenced.",
+        "The legal team noted that the official had passed all specialized vetting standards established for district tribunals. The hearing turned immediately to the evidentiary sufficiency of the charges."
+      ],
+      "target_context_test": [
+        "The courtroom official was renowned for enforcing statutory mandates with absolute rigidity and harsh sentencing. Counsel knew that any minor oversight would be penalized immediately.",
+        "With a well-documented history of denying sentence reductions, the official demanded uncompromising adherence to the penal code. The legal team braced for an austere review.",
+        "Counsel braced for a stern session, knowing this official gave no quarter to tardy filings or lax arguments. Every point had to withstand the fiercest scrutiny.",
+        "The representative knew from prior hearings that this official tolerated no deviations from courtroom protocol. Every request had to conform strictly to legal standards."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('qualified magistrate', 'qualified judge', 'strict magistrate', 'strict judge') form natural, grammatically correct, and semantically coherent noun phrases in every context. 'Qualified' fits both judicial titles when credentialing is highlighted, while 'strict' applies seamlessly to either official when procedural rigor is emphasized."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "appointed",
+      "target_modifier": "senior",
+      "source_context_dev": [
+        "The executive board had recently chosen a new official to fill the vacancy on the local bench. The courtroom welcomed the official selected through this administrative designation process.",
+        "Following a formal nomination by the regional committee, the newly designated official assumed duties in the municipal district. Counsel prepared to open the docket under this administrative placement.",
+        "The municipal council's selection process had placed a new legal official on the county tribunal earlier that month. The advocate stepped forward to open the scheduled hearing.",
+        "Having been officially named to the post by the governor's advisory panel, the official took the bench for the initial docket. The legal advocate prepared the day's motions."
+      ],
+      "target_context_dev": [
+        "Having served for more than three decades, the veteran official commanded immense deference across the entire courthouse. Counsel framed the motion with great respect for this extensive experience.",
+        "The courtroom was managed by an official who had accumulated decades of trial experience and held the highest rank among colleagues. The defense team approached the lectern accordingly.",
+        "With an extensive career spanning decades of trial service, the veteran legal authority guided the complex proceedings with practiced ease. Counsel prepared to present a nuanced argument.",
+        "The seasoned official at the head of the courtroom possessed greater longevity than any other member of the circuit. Counsel took care to address this respected figure with deference."
+      ],
+      "source_context_test": [
+        "The newly commissioned official, installed by executive order to fill an unexpired term, called the session to order. The legal team stood ready to address the designated official.",
+        "After the state advisory board confirmed the administrative placement, the designated official took over the morning calendar. Counsel approached the podium to outline the motion.",
+        "The regional authority had recently delegated judicial powers to this official via a special commissioning decree. The defense team prepared to proceed under this governance arrangement.",
+        "Having received the executive commission just weeks earlier, the official prepared to hear the scheduled calendar. Counsel stepped up to begin the oral presentation."
+      ],
+      "target_context_test": [
+        "The long-tenured legal authority had overseen the division for over twenty-five years and was universally respected. Counsel approached the podium with tailored arguments.",
+        "Due to decades of tenure on the regional bench, the veteran official handled intricate procedural points effortlessly. The defense team organized their exhibits accordingly.",
+        "The highest-ranking veteran of the circuit courthouse called the complex hearing to order. Counsel prepared to deliver their legal analysis to the seasoned authority.",
+        "Recognized for decades of service and deep institutional memory, the veteran legal figure reviewed the case summary. The defense advocate prepared to state their position."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('appointed magistrate', 'appointed judge', 'senior magistrate', 'senior judge') are standard, widely used legal terms. 'Appointed' reflects the commissioning process applicable to both roles, while 'senior' refers naturally to either official with long service."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "sitting",
+      "target_modifier": "presiding",
+      "source_context_dev": [
+        "The official on active duty in the municipal chamber reviewed the calendar for the ongoing daily session. The courtroom doors opened as the active session commenced.",
+        "During the regular morning rotation, the official currently occupying the bench called the next matter on the trial docket. Counsel stood up to address the bench.",
+        "The official currently holding court for the day's routine list called for the next motion. The legal representative approached the lectern without delay.",
+        "As part of the active courtroom roster today, the official occupying the bench sorted through the pending case files. Counsel prepared to address the active bench."
+      ],
+      "target_context_dev": [
+        "The official in charge of leading the multi-member panel formally gaveled the plenary session to order. Counsel stood to address the head of the courtroom.",
+        "As the head of the panel overseeing this complex multi-party trial, the official directed the flow of oral submissions. The legal representative prepared the opening motion.",
+        "The official designated to oversee and direct the entire trial panel called for order in the high-stakes proceeding. Counsel stepped forward to address the leader of the bench.",
+        "Responsible for leading the formal proceedings and coordinating the tribunal, the lead official invited opening remarks. The defense team prepared their opening analysis."
+      ],
+      "source_context_test": [
+        "The official actively holding the morning session signaled that the next criminal matter should begin. The defense advocate rose to deliver the opening statement.",
+        "On duty for the standard calendar rotation, the official on the bench called for the parties to state their appearances. Counsel approached the podium to address the bench.",
+        "The official currently in session in the first-floor chamber prepared to hear arguments on the motion to suppress. The legal advocate stepped forward.",
+        "Occupying the bench for the afternoon list, the active official called the scheduled matter for hearing. The legal representative prepared to speak."
+      ],
+      "target_context_test": [
+        "The official chosen to lead and supervise the collective panel took the central chair in the main courtroom. Counsel prepared to direct their arguments to the leader of the bench.",
+        "Directing the full hearing and managing the order of presentations, the lead official invited the defense team to begin. Counsel stepped up to the lectern.",
+        "The official serving as head of the judicial assembly called the high-profile proceeding to order. The advocate organized their notes before addressing the panel's leader.",
+        "With overall responsibility for directing the court session and coordinating all rulings, the head official called the case. The defense team stepped forward."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('sitting magistrate', 'sitting judge', 'presiding magistrate', 'presiding judge') represent fully grammatical, highly natural legal collocations. 'Sitting' denotes an official currently holding court, while 'presiding' describes the official leading a proceeding or panel, both of which apply equally to magistrates and judges."
+    }
+  ]
+}

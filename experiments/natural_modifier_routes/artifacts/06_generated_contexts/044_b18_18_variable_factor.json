@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b18_18_variable_factor",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "variable_factor",
+    "noun_0": "variable",
+    "noun_1": "factor",
+    "shared_definition": "an element, condition, or quantity that influences an outcome or can change within an experiment",
+    "neutral_stem": "The statistical model controlled for the",
+    "candidate_modifiers": [
+      "confounding",
+      "critical",
+      "crucial",
+      "decisive",
+      "dependent",
+      "dominant",
+      "environmental",
+      "hidden",
+      "independent",
+      "influential",
+      "key",
+      "measurable",
+      "primary",
+      "significant",
+      "unknown"
+    ],
+    "semantic_notes": "'Variable' is formally mathematical/statistical, whereas 'factor' is used more broadly to describe general causal influences.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        6471
+      ],
+      "noun_1": [
+        5415
+      ]
+    },
+    "modifier_token_ids": {
+      "confounding": [
+        169703
+      ],
+      "critical": [
+        6749
+      ],
+      "crucial": [
+        13832
+      ],
+      "decisive": [
+        52297
+      ],
+      "dependent": [
+        14023
+      ],
+      "dominant": [
+        19659
+      ],
+      "environmental": [
+        8646
+      ],
+      "hidden": [
+        11497
+      ],
+      "independent": [
+        6829
+      ],
+      "influential": [
+        36503
+      ],
+      "key": [
+        2307
+      ],
+      "measurable": [
+        49022
+      ],
+      "primary": [
+        5905
+      ],
+      "significant": [
+        3629
+      ],
+      "unknown": [
+        11908
+      ]
+    },
+    "forced_projection_span": 0.13569079339504242,
+    "max_noun_pair_mass": 0.7191791534423828,
+    "context_priority_score": 0.09758598992377188,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "primary",
+        "target_modifier": "critical",
+        "source_projection": -0.006585635244846344,
+        "target_projection": 0.007697529625147581,
+        "forced_modifier_leverage": 0.014283164869993925,
+        "source_pair_mass": 0.07045243680477142,
+        "target_pair_mass": 0.014453085139393806
+      },
+      "medium": {
+        "source_modifier": "hidden",
+        "target_modifier": "key",
+        "source_projection": -0.056507062166929245,
+        "target_projection": 0.009203484281897545,
+        "forced_modifier_leverage": 0.06571054644882679,
+        "source_pair_mass": 0.17080849409103394,
+        "target_pair_mass": 0.04965914040803909
+      },
+      "high": {
+        "source_modifier": "dominant",
+        "target_modifier": "decisive",
+        "source_projection": 0.10131409764289856,
+        "target_projection": 0.23700489103794098,
+        "forced_modifier_leverage": 0.13569079339504242,
+        "source_pair_mass": 0.1269214153289795,
+        "target_pair_mass": 0.2928513288497925
+      }
+    },
+    "context_generation_rank": 45
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "primary",
+      "target_modifier": "critical",
+      "source_context_dev": [
+        "Researchers wanted to isolate baseline fluctuations across the experimental cohorts before assessing treatment responses.",
+        "Before evaluating secondary shifts, the analysts checked the main input parameter that fluctuated continuously throughout the trial.",
+        "Prior to measuring downstream outputs, the lab tracked the main baseline parameter that altered during observation.",
+        "Initial computational routines sought to isolate the central baseline metric that fluctuated across individual trials."
+      ],
+      "target_context_dev": [
+        "A catastrophic failure mode depended entirely on whether environmental stressors exceeded thresholds.",
+        "Safety inspectors noted that system collapse was tightly tied to acute structural vulnerabilities.",
+        "The entire supply chain operation hinged upon an acute bottleneck in transit logistics.",
+        "Clinical outcomes depended heavily on a high-stakes environmental condition during surgical recovery."
+      ],
+      "source_context_test": [
+        "To ensure baseline values did not skew downstream estimates, the team analyzed the main shifting parameter first.",
+        "Before evaluating minor variations, the lab isolated the central fluctuating measurement across groups.",
+        "Analysts aimed to account for the chief fluctuating component before checking secondary responses.",
+        "The initial study design required standardizing the main baseline value that changed over observation cycles."
+      ],
+      "target_context_test": [
+        "The integrity of the bridge rested on an acute stress contributor identified during load testing.",
+        "Investigators realized that mission success depended upon a vital contributing influence during launch.",
+        "System security was undermined by an acute vulnerability condition identified during the security audit.",
+        "Long-term patient survival was largely dictated by an acute risk element present at admission."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings of (primary, critical) x (variable, factor) are fully grammatical and natural following the neutral stem. Source contexts highlight baseline and continuous measurement dynamics (priming primary variable), whereas target contexts emphasize high-stakes vulnerability conditions (priming critical factor)."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "hidden",
+      "target_modifier": "key",
+      "source_context_dev": [
+        "Unobserved latent dynamics were suspected of quietly distorting the time series estimates.",
+        "Data scientists looked into unrecorded fluctuating values that might be operating beneath the surface.",
+        "Analysts realized an unmeasured fluctuating quantity was quietly introducing bias into the regression.",
+        "The investigation focused on latent background measurements that were unobservable in direct sensors."
+      ],
+      "target_context_dev": [
+        "Economic growth in the region was driven primarily by central infrastructural elements.",
+        "The marketing strategy singled out the central driver responsible for customer retention.",
+        "Project leads aimed to address the central contributor influencing total manufacturing delays.",
+        "Public health researchers focused on the central component determining vaccination uptake across counties."
+      ],
+      "source_context_test": [
+        "An unobserved fluctuating quantity was masking the true correlation across sampling rounds.",
+        "Latent shifts operating below the threshold of detection altered subsequent readings.",
+        "Researchers suspected an unrecorded background metric was silently skewing the output distribution.",
+        "Unseen fluctuations within the sensor array caused systematic drift across the longitudinal dataset."
+      ],
+      "target_context_test": [
+        "Regional development reports highlighted the central catalyst driving regional economic disparity.",
+        "Epidemiologists sought to pinpoint the central contributor to transmission patterns.",
+        "The audit pinpointed the central underlying influence on operational overhead costs.",
+        "Organizational productivity gains were attributed to a central driver within workflow coordination."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings of (hidden, key) x (variable, factor) are semantically valid and idiomatic. Source contexts activate latent, unobserved attributes (priming hidden variable), while target contexts activate essential driving elements (priming key factor)."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "dominant",
+      "target_modifier": "decisive",
+      "source_context_dev": [
+        "In ecological modeling, one prevailing fluctuating parameter often overrides all other shifting attributes.",
+        "The simulation showed that a single prevailing metric dictated the majority of variance across iterations.",
+        "One prevailing fluctuating value accounted for over eighty percent of the overall systemic variance.",
+        "Meteorological models indicated that a single prevailing parameter drove the fluctuating weather pattern."
+      ],
+      "target_context_dev": [
+        "In close elections, a single tie-breaking consideration often tips the balance of voting behavior.",
+        "The jury's verdict ultimately turned on one conclusive piece of corroborating evidence.",
+        "The committee's final procurement choice rested on a single game-changing criteria element.",
+        "Arbitrators pointed to a single conclusive element that settled the contract disagreement."
+      ],
+      "source_context_test": [
+        "The physics model revealed that one prevailing continuous measure overwhelmed all smaller fluctuations.",
+        "A single prevailing shifting property commanded the system's dynamic response.",
+        "Data from the wind tunnel showed that one prevailing fluctuating quantity dictated drag.",
+        "In the climate simulation, one prevailing fluctuating feature overrode minor background changes."
+      ],
+      "target_context_test": [
+        "The investment committee's approval hinged upon a single outcome-determining influence.",
+        "Voter turnout research revealed a single conclusive condition that determined electoral shifts.",
+        "The loan approval process rested on a single outcome-determining element in the applicant's record.",
+        "Historical analyses revealed that one conclusive condition tipped the outcome of the campaign."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations of (dominant, decisive) x (variable, factor) fit smoothly into the statistical modeling stem. Source contexts highlight prevailing variance-explaining parameters (priming dominant variable), whereas target contexts highlight tipping-point or conclusive circumstances (priming decisive factor)."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b07_11_federation_alliance",
+    "generation_batch": 7,
+    "domain": "institutions and organizations",
+    "family_id": "federation_alliance",
+    "noun_0": "federation",
+    "noun_1": "alliance",
+    "shared_definition": "a union or formal coalition of multiple organizations, states, or groups",
+    "neutral_stem": "Member delegates signed the charter of",
+    "candidate_modifiers": [
+      "broad",
+      "defensive",
+      "democratic",
+      "enduring",
+      "formal",
+      "fragile",
+      "global",
+      "historic",
+      "international",
+      "loose",
+      "military",
+      "political",
+      "powerful",
+      "regional",
+      "strategic"
+    ],
+    "semantic_notes": "'Federation' implies a unified, centralized constitutional structure, while 'alliance' implies a looser pact among autonomous entities.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        88204
+      ],
+      "noun_1": [
+        37734
+      ]
+    },
+    "modifier_token_ids": {
+      "broad": [
+        6674
+      ],
+      "defensive": [
+        25501
+      ],
+      "democratic": [
+        29810
+      ],
+      "enduring": [
+        60370
+      ],
+      "formal": [
+        10781
+      ],
+      "fragile": [
+        48718
+      ],
+      "global": [
+        4185
+      ],
+      "historic": [
+        17110
+      ],
+      "international": [
+        5251
+      ],
+      "loose": [
+        20034
+      ],
+      "military": [
+        7820
+      ],
+      "political": [
+        5255
+      ],
+      "powerful": [
+        8632
+      ],
+      "regional": [
+        10969
+      ],
+      "strategic": [
+        14971
+      ]
+    },
+    "forced_projection_span": 0.436138391494751,
+    "max_noun_pair_mass": 0.6651949286460876,
+    "context_priority_score": 0.2901170462101703,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "international",
+        "target_modifier": "regional",
+        "source_projection": -0.045310959219932556,
+        "target_projection": -0.0010201705154031515,
+        "forced_modifier_leverage": 0.044290788704529405,
+        "source_pair_mass": 0.04947558790445328,
+        "target_pair_mass": 0.006582137197256088
+      },
+      "medium": {
+        "source_modifier": "political",
+        "target_modifier": "military",
+        "source_projection": 0.010767815634608269,
+        "target_projection": 0.2282736897468567,
+        "forced_modifier_leverage": 0.21750587411224842,
+        "source_pair_mass": 0.022140687331557274,
+        "target_pair_mass": 0.23794984817504883
+      },
+      "high": {
+        "source_modifier": "military",
+        "target_modifier": "defensive",
+        "source_projection": 0.2282736897468567,
+        "target_projection": 0.6644120812416077,
+        "forced_modifier_leverage": 0.436138391494751,
+        "source_pair_mass": 0.23794984817504883,
+        "target_pair_mass": 0.6651949286460876
+      }
+    },
+    "context_generation_rank": 9
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "international",
+      "target_modifier": "regional",
+      "source_context_dev": [
+        "Envoys from every continent gathered in Geneva to establish a worldwide governing body for the sport.",
+        "To harmonize cross-border regulations on a global scale, representatives convened at the universal summit.",
+        "A worldwide network of trade unions sought a unified executive structure spanning across oceans.",
+        "Delegations representing over one hundred countries assembled to construct a global governing body."
+      ],
+      "target_context_dev": [
+        "Neighboring territories along the river basin met to coordinate local cross-border trade.",
+        "Representatives from adjacent bordering provinces sought a localized mutual compact.",
+        "Surrounding nations across the Baltic perimeter aimed to bind their nearby borders together.",
+        "Ministers from contiguous states gathered locally to formalize a shared zone pact."
+      ],
+      "source_context_test": [
+        "Representatives from five continents arrived at the central assembly to establish a worldwide body.",
+        "Global stakeholders sought a unified worldwide institutional structure to coordinate national chapters.",
+        "Universal standards required a worldwide overarching body to coordinate diverse societies across the globe.",
+        "Advocates from around the globe met to form a unified global council with representative rule."
+      ],
+      "target_context_test": [
+        "Bordering jurisdictions in the valley gathered to establish a localized cooperative pact.",
+        "Neighboring coastal states agreed on mutual cooperation within their localized maritime corridor.",
+        "Nearby provincial leaders convened to establish a shared territorial accord for nearby communities.",
+        "Adjacent inland republics sought a localized compact to handle shared border transit."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (international federation, international alliance, regional federation, regional alliance) are fully grammatical and natural following the stem. Worldwide vs. localized framing shifts modifier preference without restricting noun syntax."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "political",
+      "target_modifier": "military",
+      "source_context_dev": [
+        "Civic leaders and party negotiators sought constitutional unity through shared governance and legislative harmony.",
+        "Diplomats aimed to integrate their governmental structures and establish common civil administration.",
+        "Elected representatives assembled to negotiate power-sharing agreements and unified civic institutions.",
+        "Lawmakers worked toward establishing shared legislative councils and centralized civil oversight."
+      ],
+      "target_context_dev": [
+        "Commanders and defense ministers gathered to integrate their armed forces and coordinate joint battlefield operations.",
+        "Facing hostile incursions, generals from partner nations convened to form a joint combat pact.",
+        "Strategic planners assembled at the war college to unify operational commands against external threats.",
+        "Naval and infantry chiefs met to coordinate shared warfighting strategies and deterrence readiness."
+      ],
+      "source_context_test": [
+        "Constitutional architects convened to draft terms for shared civic representation and governance.",
+        "Elected statesmen gathered to build a unified civic apparatus across independent jurisdictions.",
+        "Negotiators focused on consolidating civil authority and legislative procedures across the member territories.",
+        "Civic delegations met to establish shared parliamentary procedures and consolidated governing bodies."
+      ],
+      "target_context_test": [
+        "General staff officers met to align joint combat doctrines and tactical maneuvers.",
+        "Strategic defense officials convened to establish coordinated troop deployments against common adversaries.",
+        "Armored divisions prepared for integrated warfare exercises under a newly unified supreme command.",
+        "Fleet commanders sought a binding pact for collective combat maneuvers across contested seas."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Combinations (political federation, political alliance, military federation, military alliance) are standard English collocations and fully compatible with all contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "military",
+      "target_modifier": "defensive",
+      "source_context_dev": [
+        "Armed forces chiefs assembled to integrate their armed branches under a single supreme high command.",
+        "Generals sought a permanent institutional structure unifying their standing armies and tactical corps.",
+        "Defense ministries coordinated to merge their warfare branches and centralize armed oversight.",
+        "Commanders drafted protocols to permanently integrate soldier divisions into a single unified fighting body."
+      ],
+      "target_context_dev": [
+        "Nations under threat agreed that an armed strike against one territory would be met with immediate joint protection.",
+        "Ministers met to guarantee mutual protection should any signatory face sudden external aggression.",
+        "Border states signed an accord promising reciprocal shielding and immediate aid if invaded.",
+        "Diplomats drafted an agreement focused exclusively on shielding members from hostile invasions."
+      ],
+      "source_context_test": [
+        "Joint chiefs convened to consolidate separate standing combat forces into an integrated high command.",
+        "War departments met to establish a permanent governing council over their combined armed divisions.",
+        "Strategic officers aimed to unify multiple combat branches under an overarching armed apparatus.",
+        "Commanders sought an integrated governing body to manage all combat branches under one supreme authority."
+      ],
+      "target_context_test": [
+        "Delegates formalized a reciprocal shield treaty to safeguard member lands from outside attack.",
+        "Partner states convened to guarantee mutual combat assistance solely if hostile powers launch an invasion.",
+        "Small nations united around a protective pact guaranteeing joint retaliation against incoming aggression.",
+        "Envoys finalized a pact that triggers automatic mutual assistance when any border is breached."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (military federation, military alliance, defensive federation, defensive alliance) remain sound and plausible across both broad warfighting integration contexts and collective defense pact contexts."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "candidate_id": "tumbler_glass_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 16 contexts seamlessly integrate with all four modifier-noun completions ('small tumbler', 'small glass', 'crystal tumbler', 'crystal glass'). No candidate words leaked into contexts, and completions remain pragmatic rather than truth-conditional."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('clear tumbler', 'clear glass', 'large tumbler', 'large glass') are fully natural across all dev/test contexts. Contexts establish clean pragmatic bias toward optical transparency vs. high volume without lexical leakage."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 2x2 combinations ('tall tumbler', 'tall glass', 'frosted tumbler', 'frosted glass') are grammatically and semantically well-formed. Contexts properly modulate vertical height vs. sub-zero freezing characteristics without mentioning target lexical items."
+    }
+  ]
+}

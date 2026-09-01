@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b09_12_event_fight_brawl",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_fight_brawl",
+    "noun_0": "fight",
+    "noun_1": "brawl",
+    "shared_definition": "a physical altercation or violent struggle between people",
+    "neutral_stem": "Bystanders stepped back during",
+    "candidate_modifiers": [
+      "chaotic",
+      "drunken",
+      "vicious",
+      "bloody",
+      "sudden",
+      "violent",
+      "nasty",
+      "wild",
+      "ugly",
+      "brief",
+      "intense",
+      "fierce",
+      "brutal",
+      "senseless"
+    ],
+    "semantic_notes": "'Fight' is generic across physical and verbal disputes, while 'brawl' denotes a noisy, chaotic, typically multi-person physical scuffle.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        6093
+      ],
+      "noun_1": [
+        173974
+      ]
+    },
+    "modifier_token_ids": {
+      "chaotic": [
+        32585
+      ],
+      "drunken": [
+        84908
+      ],
+      "vicious": [
+        65004
+      ],
+      "bloody": [
+        48804
+      ],
+      "sudden": [
+        11059
+      ],
+      "violent": [
+        23125
+      ],
+      "nasty": [
+        57399
+      ],
+      "wild": [
+        6877
+      ],
+      "ugly": [
+        37653
+      ],
+      "brief": [
+        8652
+      ],
+      "intense": [
+        18487
+      ],
+      "fierce": [
+        48621
+      ],
+      "brutal": [
+        40097
+      ],
+      "senseless": [
+        182093
+      ]
+    },
+    "forced_projection_span": 0.21815850399434566,
+    "max_noun_pair_mass": 0.4294997453689575,
+    "context_priority_score": 0.09369902191564417,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "ugly",
+        "target_modifier": "bloody",
+        "source_projection": -0.07863206416368484,
+        "target_projection": -0.056299928575754166,
+        "forced_modifier_leverage": 0.02233213558793068,
+        "source_pair_mass": 0.17015612125396729,
+        "target_pair_mass": 0.07826745510101318
+      },
+      "medium": {
+        "source_modifier": "vicious",
+        "target_modifier": "wild",
+        "source_projection": -0.090793676674366,
+        "target_projection": 0.020041922107338905,
+        "forced_modifier_leverage": 0.1108355987817049,
+        "source_pair_mass": 0.17808619141578674,
+        "target_pair_mass": 0.031554680317640305
+      },
+      "high": {
+        "source_modifier": "wild",
+        "target_modifier": "drunken",
+        "source_projection": 0.020041922107338905,
+        "target_projection": 0.23820042610168457,
+        "forced_modifier_leverage": 0.21815850399434566,
+        "source_pair_mass": 0.031554680317640305,
+        "target_pair_mass": 0.4294997453689575
+      }
+    },
+    "context_generation_rank": 50
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "ugly",
+      "target_modifier": "bloody",
+      "source_context_dev": [
+        "Tensions between the two longtime rivals had turned deeply personal and mean-spirited throughout the evening. When insulting remarks crossed the line, tempers flared into direct hostility.",
+        "The dispute began with spiteful accusations that quickly degraded into mutual hostility. Harsh words and bitter resentment soon gave way to physical violence.",
+        "Animosity had been brewing between the opposing factions for several weeks. The confrontation grew increasingly hostile as both sides began trading blows.",
+        "Personal grievances and spite boiled over in the middle of the hallway. What started as nasty verbal attacks rapidly escalated into physical attacks."
+      ],
+      "target_context_dev": [
+        "Glass shattered across the concrete floor as several punches landed with tremendous force. Multiple participants sustained deep gashes and split lips within seconds.",
+        "Broken bottles were swung in reckless desperation as the clash intensified. Several men collapsed onto the pavement with severe cuts across their faces.",
+        "The impact of heavy punches caused severe facial lacerations and open wounds among the participants. Crimson stains quickly spread across their torn shirts.",
+        "Shattered mugs and sharp shards flew through the air as the clash grew intensely violent. Deep gashes opened up on the combatants before anyone could intervene."
+      ],
+      "source_context_test": [
+        "Resentment between the competitors had festered throughout the tournament, breeding intense malice. The interaction turned toxic before anyone could defuse the hostility.",
+        "Bitter insults were traded across the parking lot until all restraint vanished. The personal animosity between the two men finally erupted into physical violence.",
+        "Old grudges resurfaced during the debate, transforming a civil discussion into an abrasive face-off. The atmosphere turned nasty as blows began to land.",
+        "The exchange was marked by venomous insults and a total breakdown of decorum. Disdain between the rivals quickly manifested in aggressive physical clashes."
+      ],
+      "target_context_test": [
+        "Heavy blows to the head opened severe cuts over the eyes of several combatants. Splatters stained the sidewalk as emergency sirens began to wail in the distance.",
+        "Flesh was torn and noses were broken as the physical encounter turned gruesome. The injured participants left crimson marks along the wall as they stumbled.",
+        "Jagged pieces of broken glassware inflicted deep gashes on everyone involved in the melee. Several people were left visibly wounded and dripping onto the tiles.",
+        "Severe facial injuries and opened wounds quickly resulted from the barrage of heavy strikes. The pavement was slicked with crimson streaks before security arrived."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (ugly fight, ugly brawl, bloody fight, bloody brawl) are fully natural and syntactically valid across all contexts. Source contexts emphasize personal rancor, spite, and unpleasantness without naming the words, whereas target contexts emphasize physical gore, lacerations, and heavy injury."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "vicious",
+      "target_modifier": "wild",
+      "source_context_dev": [
+        "The attacker showed no mercy, repeatedly targeting vulnerable spots with brutal ferocity. It was clear the intent was to inflict severe harm rather than merely defend.",
+        "A sudden wave of savage hostility overtook the two opponents in the alleyway. Each blow was delivered with cruel precision and unbridled malice.",
+        "The confrontation was marked by ruthless aggression and relentless striking. Neither individual hesitated to exploit every opening to cause maximum physical trauma.",
+        "Ferocious aggression dominated the scene as one combatant relentlessly assaulted the other. The sheer malice behind every strike stunned the onlookers."
+      ],
+      "target_context_dev": [
+        "Chairs were knocked over and tables were overturned as a dozen patrons swung indiscriminately in every direction. The commotion quickly engulfed the entire dining room.",
+        "Total pandemonium erupted on the dance floor as bodies collided without any discernible pattern or target. People were tumbling over furniture in complete disarray.",
+        "Uncontrolled chaos swept through the plaza as multiple skirmishes flared up simultaneously. Combatants threw erratic punches in every direction without looking.",
+        "The commotion spiraled entirely out of control, spreading across the patio like a flash fire. Furniture was hurled randomly through the air amid the frenzy."
+      ],
+      "source_context_test": [
+        "One of the men launched an exceptionally cruel assault, showing a complete lack of restraint. The intensity of his malice left no doubt about his destructive intent.",
+        "Relentless hostility drove the two adversaries into an extremely aggressive physical clash. Every movement was calculated to cause maximum damage to the opponent.",
+        "The aggression on display was cold, calculating, and exceptionally brutal. Combatants continued to deliver punishing strikes even after their target was defenseless.",
+        "The encounter turned exceedingly savage as mutual hatred fueled every strike. The severity and brutality of the physical engagement terrified the crowd."
+      ],
+      "target_context_test": [
+        "Disorder spread rapidly across the concourse as shouting patrons stumbled into one another and swung blindly. The scene dissolved into unpredictable mayhem.",
+        "A frantic scramble erupted near the exit, with people flailing their arms and crashing through barricades. The entire area descended into complete bedlam.",
+        "Dozens of people surged forward in a chaotic frenzy, tumbling into booths and knocking down light fixtures. Nobody could tell who was striking whom in the confusion.",
+        "The disturbance became completely unhinged as combatants charged randomly into the crowd. Overturned tables and flying debris added to the mounting bedlam."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (vicious fight, vicious brawl, wild fight, wild brawl) are semantically and grammatically sound in all contexts. Source contexts focus on calculated malice, ruthlessness, and savagery, while target contexts focus on pandemonium, chaos, overturned furniture, and widespread disorder."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "wild",
+      "target_modifier": "drunken",
+      "source_context_dev": [
+        "Complete mayhem broke out as chairs flew across the room and bodies crashed into the walls. The scene descended into chaotic pandemonium with no order whatsoever.",
+        "The clash became completely frantic as combatants lunged unpredictably in every direction. People stumbled over overturned fixtures amidst the sprawling commotion.",
+        "Unrestrained chaos swept across the venue, dragging dozens of unwilling people into the sprawling tumult. Flailing limbs and hurled objects created utter disarray.",
+        "A state of pure frenzy took over the concourse as punches were thrown haphazardly into the throng. The situation deteriorated into an uncontrollable tempest of violence."
+      ],
+      "target_context_dev": [
+        "Patrons at the tavern had been consuming heavy rounds of liquor since the late afternoon. Slurred shouting over unpaid tabs quickly escalated into physical violence.",
+        "After hours of binge drinking at the saloon, several intoxicated men lost all motor control and began swinging at one another. Empty ale pitchers were knocked aside.",
+        "Heavily impaired by alcohol, several customers stumbled over stools before exchanging clumsy blows. The smell of spilled beer covered the floor as tempers flared.",
+        "Multiple rounds of strong whiskey fueled a sudden burst of aggression among the tavern regulars. Inebriated patrons swayed unsteadily while trading heavy swings."
+      ],
+      "source_context_test": [
+        "Pandemonium quickly engulfed the lobby as combatants threw unchecked blows and smashed through partitions. The sheer unpredictability of the commotion paralyzed security.",
+        "The encounter spiraled into absolute turbulence as people leaped over counters and threw random items. It was an erratic and frenzied display of violence.",
+        "Disorder erupted without warning, sending the crowd into a chaotic spiral of colliding bodies. The lack of structure or restraint made the clash impossible to contain.",
+        "A frenzied and unruly skirmish swept through the courtyard, scattering furniture across the lawn. The unpredictable momentum drew in participants from all sides."
+      ],
+      "target_context_test": [
+        "Excessive alcohol consumption throughout the evening severely degraded everyone's judgment and balance. Slurring their words, the patrons began shoving each other aggressively.",
+        "The barroom was rowdy after hours of heavy drinking, leading to slurred threats and unsteady posturing. Spilled spirits soaked the floorboards as fists began flying.",
+        "Impaired by excessive intake at the pub, several customers lost their composure and began grappling clumsily. Their impaired coordination made the skirmish erratic.",
+        "A night of heavy intoxication culminated in an aggressive clash near the taproom counter. Stumbling and shouting incoherently, the inebriated patrons began trading blows."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (wild fight, wild brawl, drunken fight, drunken brawl) form standard, highly acceptable English collocations. Source contexts prime frenetic disorder, unpredictability, and chaotic flailing, whereas target contexts prime tavern atmospheres, heavy intoxication, inebriation, and slurred agitation without using the exact forbidden words."
+    }
+  ]
+}

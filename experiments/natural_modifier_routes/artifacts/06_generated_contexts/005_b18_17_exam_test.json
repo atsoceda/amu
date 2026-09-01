@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b18_17_exam_test",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "exam_test",
+    "noun_0": "exam",
+    "noun_1": "test",
+    "shared_definition": "a formal assessment of a person's knowledge, skills, or physiological state",
+    "neutral_stem": "The candidate prepared thoroughly for the",
+    "candidate_modifiers": [
+      "challenging",
+      "comprehensive",
+      "crucial",
+      "demanding",
+      "difficult",
+      "fair",
+      "final",
+      "formal",
+      "graded",
+      "mandatory",
+      "oral",
+      "practical",
+      "rigorous",
+      "standardized",
+      "written"
+    ],
+    "semantic_notes": "'Exam' implies a major, comprehensive evaluation (academic or medical), whereas 'test' is broader and can refer to minor quizzes or diagnostic procedures.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        3491
+      ],
+      "noun_1": [
+        1594
+      ]
+    },
+    "modifier_token_ids": {
+      "challenging": [
+        14798
+      ],
+      "comprehensive": [
+        13611
+      ],
+      "crucial": [
+        13832
+      ],
+      "demanding": [
+        29455
+      ],
+      "difficult": [
+        3909
+      ],
+      "fair": [
+        5888
+      ],
+      "final": [
+        1626
+      ],
+      "formal": [
+        10781
+      ],
+      "graded": [
+        58324
+      ],
+      "mandatory": [
+        27979
+      ],
+      "oral": [
+        16348
+      ],
+      "practical": [
+        10231
+      ],
+      "rigorous": [
+        44928
+      ],
+      "standardized": [
+        47892
+      ],
+      "written": [
+        5267
+      ]
+    },
+    "forced_projection_span": 0.514889920130372,
+    "max_noun_pair_mass": 0.6710535883903503,
+    "context_priority_score": 0.34551872852950705,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "difficult",
+        "target_modifier": "demanding",
+        "source_projection": -0.1838368922472,
+        "target_projection": -0.13345909118652344,
+        "forced_modifier_leverage": 0.050377801060676575,
+        "source_pair_mass": 0.4771465063095093,
+        "target_pair_mass": 0.346391499042511
+      },
+      "medium": {
+        "source_modifier": "final",
+        "target_modifier": "crucial",
+        "source_projection": -0.49140122532844543,
+        "target_projection": -0.22182941436767578,
+        "forced_modifier_leverage": 0.26957181096076965,
+        "source_pair_mass": 0.5631653666496277,
+        "target_pair_mass": 0.37196385860443115
+      },
+      "high": {
+        "source_modifier": "fair",
+        "target_modifier": "standardized",
+        "source_projection": 0.004780149087309837,
+        "target_projection": 0.5196700692176819,
+        "forced_modifier_leverage": 0.514889920130372,
+        "source_pair_mass": 0.05113755911588669,
+        "target_pair_mass": 0.6710535883903503
+      }
+    },
+    "context_generation_rank": 6
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "difficult",
+      "target_modifier": "demanding",
+      "source_projection": -0.1838368922472,
+      "target_projection": -0.13345909118652344,
+      "forced_modifier_leverage": 0.050377801060676575,
+      "source_pair_mass": 0.4771465063095093,
+      "target_pair_mass": 0.346391499042511,
+      "source_context_dev": [
+        "The academic board was notorious for authoring convoluted problem sets that puzzled even top scholars. Everyone in the lecture hall dreaded the upcoming milestone.",
+        "The syllabus covered months of intricate proofs and dense philosophical treatises. Passing the course required mastering an exceptionally steep intellectual hurdle.",
+        "Previous cohorts warned that the university's comprehensive evaluation contained tricky, multi-layered questions. Review sessions focused entirely on deconstructing these obscure riddles.",
+        "Securing the professional certification required solving intricate case studies with low historical pass rates. Study groups met every evening to review past question papers."
+      ],
+      "target_context_dev": [
+        "The physical training academy subjected trainees to an exhausting marathon of practical drills without breaks. Success required extreme stamina, precision, and relentless focus.",
+        "The corporate intake pathway involved back-to-back presentations, live coding under observation, and rapid psychometric screens. The rigorous schedule pushed every applicant to their physical and cognitive limits.",
+        "The flight instructor warned that the impending evaluation would require hours of uninterrupted concentration in the simulator. One minor slip-up during the intensive battery of simulations could disqualify a pilot.",
+        "The residency admissions committee sought individuals capable of enduring relentless, high-pressure clinical scenarios. The upcoming trial was designed to push participants to absolute exhaustion."
+      ],
+      "source_context_test": [
+        "Graduate students spent weeks untangling abstract algebraic theorems that rarely appeared in standard textbooks. The upcoming academic assessment was reputed to be overwhelmingly intricate.",
+        "The bar council had deliberately crafted an evaluation full of subtle legal ambiguities and obscure case precedents. Candidates were urged to dissect every hypothetical prompt carefully.",
+        "Mastery of the ancient language curriculum involved translating unedited manuscripts under strict time constraints. The department had earned a reputation for exceptionally arduous sit-down milestones.",
+        "The engineering faculty was famous for designing open-ended synthesis prompts that exposed any gaps in foundational theory. Students formed study circles to tackle the most convoluted sample problems."
+      ],
+      "target_context_test": [
+        "The tactical operations unit needed personnel capable of performing complex navigation while carrying heavy gear in rough terrain. The upcoming selection day promised to test endurance to the brink.",
+        "Candidates faced eight continuous hours of rapid data synthesis and live stakeholder interrogations. The schedule demanded boundless energy and unflinching resilience under scrutiny.",
+        "The conservatory's jury required applicants to execute several intricate concertos consecutively without intermission. Performing at such a high technical caliber demanded incredible physical stamina.",
+        "The wilderness survival program concluded with an intense multi-day simulation in sub-zero temperatures. Participants had to show unflagging focus through sustained physical hardship."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('difficult exam', 'difficult test', 'demanding exam', 'demanding test') represent standard English collocations for rigorous assessments. The source contexts evoke traditional intellectual complexity and tricky academic problem-solving (favoring 'difficult exam'), whereas the target contexts emphasize sustained stamina, heavy workload, and endurance (favoring 'demanding test'). Neither noun nor modifier is explicitly named."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "final",
+      "target_modifier": "crucial",
+      "source_projection": -0.49140122532844543,
+      "target_projection": -0.22182941436767578,
+      "forced_modifier_leverage": 0.26957181096076965,
+      "source_pair_mass": 0.5631653666496277,
+      "target_pair_mass": 0.37196385860443115,
+      "source_context_dev": [
+        "The semester had drawn to an end after sixteen weeks of intense lectures and lab work. Only one last assessment remained before degrees could be conferred.",
+        "All term papers had been submitted and grades were finalized for every module except the capstone evaluation. This closing event would conclude the entire undergraduate program.",
+        "Four years of medical schooling came down to the very last sitting of the qualifying board. Once this concluding sitting was finished, the commencement ceremony would follow.",
+        "The winter term concluded on Friday, leaving just one remaining barrier to completing the certification curriculum. The student reviewed all semester materials one last time."
+      ],
+      "target_context_dev": [
+        "Securing the research fellowship depended entirely on passing an unexpected midpoint diagnostic with a stellar score. Failure to reach the cut-off would mean an immediate loss of grant funding.",
+        "The promotion committee made it clear that everything rode on this single performance review benchmark. A single misstep would permanently derail an otherwise promising career.",
+        "The licensing board mandated an essential proficiency milestone that determined whether an applicant could legally practice. It was a high-stakes turning point where second chances were not granted.",
+        "Investor backing hinged on demonstrating technical competence during a pivotal validation session. The stakes were monumental for the survival of the enterprise."
+      ],
+      "source_context_test": [
+        "The academic calendar was in its eighteenth week, and dormitories were already beginning to empty. The last remaining milestone on the university schedule was slated for tomorrow morning.",
+        "With all interim coursework completed, the curriculum culminated in one closing summative exercise. Passing it meant the long collegiate journey would officially end.",
+        "The multi-stage certification cycle was down to its concluding scheduled sitting. After this last hurdle, successful candidates would receive their diplomas.",
+        "Classes ended on Wednesday, and students packed their belongings between study sessions. All that stood between them and graduation was the terminal course evaluation."
+      ],
+      "target_context_test": [
+        "The entire enterprise's regulatory clearance rested on an upcoming compliance audit. Missing the mark would result in an immediate shutdown by federal overseers.",
+        "The scholarship committee made this specific evaluation the sole criterion for renewing tuition aid. The outcome would dictate whether the student could afford to stay enrolled.",
+        "A single diagnostic session would determine whether the athlete was cleared for international competition or benched for the season. The stakes could not have been higher.",
+        "Passing this gateway verification was the singular make-or-break requirement for entering the advanced fellowship. Everything the applicant had worked for hung in the balance."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('final exam', 'final test', 'crucial exam', 'crucial test') are fully acceptable and natural in English. The source contexts highlight terminal timing, semester endings, and graduation caps (boosting 'final exam'), while the target contexts highlight high stakes, make-or-break outcomes, and pivotal turning points (boosting 'crucial test')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "fair",
+      "target_modifier": "standardized",
+      "source_projection": 0.004780149087309837,
+      "target_projection": 0.5196700692176819,
+      "forced_modifier_leverage": 0.514889920130372,
+      "source_pair_mass": 0.05113755911588669,
+      "target_pair_mass": 0.6710535883903503,
+      "source_context_dev": [
+        "The ombudsman ensured that the proctoring rules were applied equitably to all cohorts, with no bias or unreasonable trickery. The institution took great pride in maintaining an unbiased playing field.",
+        "Students had voiced concerns about subjective grading in previous semesters, prompting the department to implement blind double-marking. The committee promised an impartial, transparent assessment for everyone.",
+        "The dispute over ambiguous instructions led the dean to promise a completely just and balanced evaluation. Every question had been independently vetted for balance and equity.",
+        "Appeals regarding grading discrepancies prompted the faculty to adopt a completely balanced rubric where every student received equal consideration. The goal was an honest, balanced trial."
+      ],
+      "target_context_dev": [
+        "Across the country, millions of applicants filled out identical optical answer sheets under synchronized stopwatch timing. Every regional testing center followed the exact same uniform protocol.",
+        "The national admissions council utilized uniform multiple-choice booklets with normed scoring scales to rank applicants across disparate school districts. The procedure was strictly calibrated.",
+        "State regulations mandated identical multiple-choice booklets, rigid timekeeping, and algorithmic percentile scoring across all school districts. The protocol left zero room for institutional variation.",
+        "To ensure nationwide comparability, the ministry dispatched identical sealed envelopes containing calibrated booklets to every regional site. Every detail was governed by a centralized, uniform methodology."
+      ],
+      "source_context_test": [
+        "After allegations of instructor favoritism, an external panel reviewed the scoring criteria to guarantee equal treatment. The aim was an honest, unbiased assessment where merit alone determined the score.",
+        "The academic senate instituted transparent rubrics and anonymized candidate IDs to eliminate any possibility of discriminatory evaluation. Fairness and parity were the top priorities.",
+        "Concerns about grading variance across sections led the faculty to establish a unified, objective scoring scale. The department sought to provide a truly equitable evaluation for every participant.",
+        "The university board reaffirmed its pledge to eliminate trick questions and arbitrary grading policies. Prospective scholars were assured an impartial, well-balanced sitting."
+      ],
+      "target_context_test": [
+        "Thousands of regional centers received identical sealed packages with pre-printed bubble sheets and precise proctoring scripts. The entire country participated in the identical nationwide metric.",
+        "College admissions officers relied on calibrated percentile rankings generated from identical nation-wide forms. Every applicant answered the exact same norm-referenced battery.",
+        "The educational bureau instituted a federally normed evaluation with uniform administration guidelines across every province. The design guaranteed that every score sat on the exact same comparative scale.",
+        "To benchmark performance across diverse districts, administrators administered an identical multiple-choice instrument under strict nationwide timing rules. The results were aggregated into a centralized percentile index."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('fair exam', 'fair test', 'standardized exam', 'standardized test') are completely grammatical and natural English phrases. The source contexts stress impartiality, equitable grading, and unbiased rubrics (aligning with 'fair exam'), whereas the target contexts emphasize nationwide uniformity, bubble sheets, normed percentiles, and synchronized administration protocols (strongly favoring 'standardized test')."
+    }
+  ]
+}

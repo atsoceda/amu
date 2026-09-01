@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b00_01_lawyer_attorney",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "lawyer_attorney",
+    "noun_0": "lawyer",
+    "noun_1": "attorney",
+    "shared_definition": "a professional trained and licensed to practice law and represent clients",
+    "neutral_stem": "Before entering the courtroom, the client consulted with",
+    "candidate_modifiers": [
+      "defense",
+      "retained",
+      "experienced",
+      "senior",
+      "capable",
+      "hired",
+      "principal",
+      "prominent",
+      "dedicated",
+      "competent",
+      "trusted",
+      "young",
+      "brilliant",
+      "tenacious",
+      "skilled"
+    ],
+    "semantic_notes": "'Lawyer' is a general term for legal practitioners, while 'attorney' formally emphasizes representation in legal transactions.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        20086
+      ],
+      "noun_1": [
+        15646
+      ]
+    },
+    "modifier_token_ids": {
+      "defense": [
+        11356
+      ],
+      "retained": [
+        27164
+      ],
+      "experienced": [
+        9763
+      ],
+      "senior": [
+        9550
+      ],
+      "capable": [
+        11844
+      ],
+      "hired": [
+        26902
+      ],
+      "principal": [
+        7647
+      ],
+      "prominent": [
+        19942
+      ],
+      "dedicated": [
+        11554
+      ],
+      "competent": [
+        31431
+      ],
+      "trusted": [
+        26576
+      ],
+      "young": [
+        3184
+      ],
+      "brilliant": [
+        21042
+      ],
+      "tenacious": [
+        201304
+      ],
+      "skilled": [
+        23482
+      ]
+    },
+    "forced_projection_span": 0.3017774373292923,
+    "max_noun_pair_mass": 0.6954756379127502,
+    "context_priority_score": 0.20987885573426457,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "senior",
+        "target_modifier": "principal",
+        "source_projection": 0.01783040165901184,
+        "target_projection": 0.047271478921175,
+        "forced_modifier_leverage": 0.029441077262163162,
+        "source_pair_mass": 0.2856578528881073,
+        "target_pair_mass": 0.0971992164850235
+      },
+      "medium": {
+        "source_modifier": "senior",
+        "target_modifier": "retained",
+        "source_projection": 0.01783040165901184,
+        "target_projection": 0.16486380994319916,
+        "forced_modifier_leverage": 0.14703340828418732,
+        "source_pair_mass": 0.2856578528881073,
+        "target_pair_mass": 0.46005409955978394
+      },
+      "high": {
+        "source_modifier": "retained",
+        "target_modifier": "defense",
+        "source_projection": 0.16486380994319916,
+        "target_projection": 0.46664124727249146,
+        "forced_modifier_leverage": 0.3017774373292923,
+        "source_pair_mass": 0.46005409955978394,
+        "target_pair_mass": 0.6954756379127502
+      }
+    },
+    "context_generation_rank": 16
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "senior",
+      "target_modifier": "principal",
+      "source_context_dev": [
+        "The firm had assigned an experienced veteran practitioner with decades of courtroom trial work. The client felt reassured knowing decades of rank and leadership were on their side.",
+        "A veteran practitioner with decades of leadership at the practice took charge of the high-stakes proceedings. The litigant was eager to hear wisdom honed over thirty years in practice.",
+        "The litigation squad was directed by its most seasoned member who had spent forty years arguing difficult motions. The defendant sought direct strategic insight from the highest-ranking practitioner present.",
+        "An experienced veteran practitioner who had guided the practice through countless trials arrived to supervise. The client waited anxiously for final instructions from the firm's most seasoned leader."
+      ],
+      "target_context_dev": [
+        "The enterprise entrusted its crucial hearing to the lead legal representative heading the corporate litigation team. The board wanted the head representative personally directing the argument.",
+        "The agency's primary outside representative arrived at the courthouse to oversee the multimillion-dollar dispute. A quick briefing was scheduled with the head of the team managing the account.",
+        "Formal institutional matters required the direct presence of the primary representative registered on the official docket. The corporate director met immediately with the designated lead representative.",
+        "To ensure strict adherence to executive mandate, the company summoned its primary legal representative in charge of the file. The corporate officers waited to review the strategy with their lead representative."
+      ],
+      "source_context_test": [
+        "The complex commercial action was assigned to the firm's oldest and most seasoned partner. The defendant prepared to review key evidentiary points with the veteran practitioner.",
+        "With decades of standing in the regional bar, the veteran practitioner took the lead seat at counsel table. The accused sought final clarity on trial tactics from this seasoned leader.",
+        "The firm dispatched its most experienced practitioner whose career spanned four decades of landmark decisions. The client prepared to confer on trial strategy with the veteran litigator.",
+        "A veteran practitioner with extensive institutional memory and unmatched seniority stepped forward to manage the hearing. The client listened carefully to the seasoned litigator's guidance."
+      ],
+      "target_context_test": [
+        "The company's primary outside representative arrived early to review the formal institutional filing. Corporate officers gathered to receive their final briefing from the lead representative.",
+        "Because millions were at stake, the board demanded that their primary legal representative handle the oral argument. The client needed direct strategic clearance from the head representative.",
+        "The formal corporate filings designated a primary representative to act with full signatory authority in the proceeding. The client stepped aside to confirm final terms with this lead representative.",
+        "All major institutional disputes were delegated to the corporate organization's primary legal representative. The executive team waited outside the gallery to confer with their designated lead representative."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'senior' and 'principal' function naturally as prenominal modifiers for both 'lawyer' and 'attorney'. The source context emphasizes extensive experience, hierarchy, and seasoned practice ('senior lawyer'), while the target context emphasizes official primacy, institutional representation, and head status ('principal attorney'). All four modifier-noun pairings remain fully grammatical and felicitous."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "senior",
+      "target_modifier": "retained",
+      "source_context_dev": [
+        "The firm's most seasoned practitioner had spent thirty years mastering civil procedure. The client was eager to draw on decades of institutional experience before stepping inside.",
+        "An experienced veteran with extensive standing in the state bar led the litigation squad. The defendant sought reassurance from someone with decades of trial leadership.",
+        "The long-standing practitioner who managed the firm's major cases arrived to take charge of the morning session. The client waited for final strategic direction from this veteran advocate.",
+        "A seasoned veteran who had mentored generations of practitioners arrived to lead the argument. The litigant was grateful to be guided by such an experienced practitioner."
+      ],
+      "target_context_dev": [
+        "After signing a formal agreement and paying a substantial initial fee, the family secured private legal representation. The defendant met outside the gallery with the privately hired representative.",
+        "The accused chose to engage a private legal representative under contract rather than accept a public appointment. All financial and contractual details had been settled before the hearing.",
+        "Having executed a representation agreement and submitted the required deposit, the business owner finalized the hire. The executive prepared for a final review with the hired representative.",
+        "The defendant declined state-provided counsel, preferring to hire an independent private representative on a paid contract. They stood in the hallway to review the plan with their hired representative."
+      ],
+      "source_context_test": [
+        "A veteran litigator with thirty-five years of experience stepped up to oversee the complex proceeding. The client wanted to hear final advice from the practice's most seasoned practitioner.",
+        "The firm assigned its most experienced partner to lead the courtroom strategy. The defendant gathered their papers and sought direction from the veteran practitioner.",
+        "Having practiced for decades across multiple jurisdictions, the seasoned practitioner knew every nuance of the local rules. The litigant conferred closely with this veteran litigator.",
+        "The most experienced practitioner at the firm took personal control of the opening arguments. The client paused in the corridor to listen to the seasoned advocate's guidance."
+      ],
+      "target_context_test": [
+        "The defendant paid a significant fee under contract to engage private legal counsel for the upcoming trial. The client waited near the doors to speak with the privately hired representative.",
+        "Rather than rely on court-appointed representation, the corporation executed a formal paid contract for representation. The corporate officers met to discuss tactics with their hired representative.",
+        "A substantial monetary deposit was transferred to formalize the engagement agreement for private representation. The client verified the trial strategy with the contracted representative.",
+        "Having privately engaged professional representation under a signed financial agreement, the litigant felt well prepared. The defendant reviewed key points with the contracted representative."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'senior' and 'retained' combine seamlessly with 'lawyer' and 'attorney'. The source context primes seniority and seasoned legal practice ('senior lawyer'), while the target context primes private contractual engagement and payment of fees ('retained attorney'). All cross combinations ('senior lawyer', 'senior attorney', 'retained lawyer', 'retained attorney') are fully natural."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "retained",
+      "target_modifier": "defense",
+      "source_context_dev": [
+        "The family finalized a formal fee agreement and paid the required deposit to secure private legal counsel. The accused met in the hallway with the privately engaged representative.",
+        "Having formally engaged private legal representation through a paid contract, the defendant prepared for the hearing. Final terms were verified with the contracted representative.",
+        "The company executed a private fee agreement to secure outside legal representation for the ongoing litigation. The corporate officers paused to confer with the contracted representative.",
+        "The litigant declined public assistance, paying a private professional fee under a signed contract. The client took a moment to review the plan with the privately hired representative."
+      ],
+      "target_context_dev": [
+        "Facing serious criminal charges brought by the state prosecutor, the accused needed strong opposition strategy. The litigant stood in the hallway preparing responses to the government's claims.",
+        "The state prosecutor had filed multiple counts and was preparing to present evidence against the accused. The accused litigant stepped aside to review arguments aimed at refuting the accusations.",
+        "With the prosecuting team ready to argue for a harsh conviction, the accused prepared to counter every point. The defendant went over the exonerating strategy before facing the prosecution.",
+        "The government had built an aggressive case against the accused, who needed to dispute every allegation. The accused reviewed the cross-examination plan aimed at answering the prosecutor."
+      ],
+      "source_context_test": [
+        "A signed contract and advance payment finalized the engagement of private legal counsel for the trial. The client waited outside the doors to speak with the privately engaged representative.",
+        "The accused paid a substantial engagement fee to obtain dedicated private legal services for the case. The defendant reviewed the morning's schedule with the contracted representative.",
+        "After executing the engagement letter and settling the financial deposit, the client arrived for the hearing. Final preparations were coordinated with the contracted representative.",
+        "The defendant chose to hire private legal counsel under contract rather than rely on the public system. The client stopped in the lobby to confirm the plan with the hired representative."
+      ],
+      "target_context_test": [
+        "The prosecuting authorities were determined to secure a guilty verdict on all counts listed in the indictment. The accused met outside to finalize arguments that would rebut the state's case.",
+        "The state brought formal charges and presented an aggressive indictment against the accused party. The defendant paused in the corridor to organize evidence that would counter the allegations.",
+        "Facing an intense prosecution from the government, the accused needed to shield against heavy penalties. The defendant reviewed the response plan designed to challenge the prosecution's evidence.",
+        "The district prosecutor stood ready to present witness testimony against the accused party. The defendant gathered notes outside the doors to prepare the counterarguments for the trial."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'retained' and 'defense' are standard prenominal modifiers for 'lawyer' and 'attorney'. The source context emphasizes the contractual, fee-paid nature of private representation ('retained lawyer'), whereas the target context emphasizes criminal prosecution, contesting charges, and legal advocacy for the accused ('defense attorney'). All four cross combinations ('retained lawyer', 'retained attorney', 'defense lawyer', 'defense attorney') are completely natural and grammatical."
+    }
+  ]
+}

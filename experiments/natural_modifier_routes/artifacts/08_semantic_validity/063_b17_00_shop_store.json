@@ -1,0 +1,38 @@
+{
+  "candidate_id": "shop_store",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains duplicate determiner ('the the'), causing all completed sentences to be ungrammatical."
+      ],
+      "concise_notes": "Modifier pairs and context pragmatics are valid, but the fixed stem contains a duplicated 'the'."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains duplicate determiner ('the the'), causing all completed sentences to be ungrammatical."
+      ],
+      "concise_notes": "Modifier combinations ('specialty' / 'flagship') are valid across contexts, but the fixed stem is corrupted with duplicate 'the'."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "failure_reasons": [
+        "Fixed stem contains duplicate determiner ('the the'), causing all completed sentences to be ungrammatical.",
+        "Target modifier 'convenient' is an unnatural/incorrect substitution for the conventional noun adjunct 'convenience' (as in 'convenience store/shop') intended by the quick-mart contexts."
+      ],
+      "concise_notes": "Fails due to duplicate determiner in the stem and unidiomatic modifier 'convenient' in place of 'convenience'."
+    }
+  ]
+}

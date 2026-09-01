@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b15_23_custom_tradition",
+    "generation_batch": 15,
+    "domain": "common abstract concepts",
+    "family_id": "custom_tradition",
+    "noun_0": "custom",
+    "noun_1": "tradition",
+    "shared_definition": "an established practice, pattern of behavior, or social convention",
+    "neutral_stem": "The community maintained",
+    "candidate_modifiers": [
+      "ancient",
+      "cherished",
+      "cultural",
+      "distinctive",
+      "enduring",
+      "established",
+      "familial",
+      "honored",
+      "local",
+      "longstanding",
+      "peculiar",
+      "popular",
+      "religious",
+      "sacred",
+      "venerable"
+    ],
+    "semantic_notes": "'Custom' refers to regular habitual practices of a group, while 'tradition' emphasizes historical lineage, preservation, and cultural transmission across generations.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2401
+      ],
+      "noun_1": [
+        14385
+      ]
+    },
+    "modifier_token_ids": {
+      "ancient": [
+        12440
+      ],
+      "cherished": [
+        81018
+      ],
+      "cultural": [
+        9226
+      ],
+      "distinctive": [
+        29039
+      ],
+      "enduring": [
+        60370
+      ],
+      "established": [
+        6697
+      ],
+      "familial": [
+        92609
+      ],
+      "honored": [
+        37240
+      ],
+      "local": [
+        2263
+      ],
+      "longstanding": [
+        104716
+      ],
+      "peculiar": [
+        28511
+      ],
+      "popular": [
+        4913
+      ],
+      "religious": [
+        12352
+      ],
+      "sacred": [
+        31492
+      ],
+      "venerable": [
+        141620
+      ]
+    },
+    "forced_projection_span": 0.21341758966445923,
+    "max_noun_pair_mass": 0.6460669040679932,
+    "context_priority_score": 0.1378820414281705,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "local",
+        "target_modifier": "familial",
+        "source_projection": 0.04044656455516815,
+        "target_projection": 0.06176062673330307,
+        "forced_modifier_leverage": 0.021314062178134918,
+        "source_pair_mass": 0.04177556186914444,
+        "target_pair_mass": 0.06406521052122116
+      },
+      "medium": {
+        "source_modifier": "sacred",
+        "target_modifier": "popular",
+        "source_projection": 0.007019763346761465,
+        "target_projection": 0.11000686138868332,
+        "forced_modifier_leverage": 0.10298709804192185,
+        "source_pair_mass": 0.007550484966486692,
+        "target_pair_mass": 0.12316130846738815
+      },
+      "high": {
+        "source_modifier": "honored",
+        "target_modifier": "longstanding",
+        "source_projection": 0.3401438593864441,
+        "target_projection": 0.5535614490509033,
+        "forced_modifier_leverage": 0.21341758966445923,
+        "source_pair_mass": 0.34505850076675415,
+        "target_pair_mass": 0.6460669040679932
+      }
+    },
+    "context_generation_rank": 29
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "local",
+      "target_modifier": "familial",
+      "source_context_dev": [
+        "Visitors often noticed distinct daily habits confined entirely to this small municipal district. When neighboring villages adopted modern urban habits, residents here chose not to conform.",
+        "Regional pride defined how townsfolk carried out their seasonal festivities. Even as regional commerce grew, the townspeople preserved what belonged strictly to their valley.",
+        "The township developed unique civic ceremonies that differed markedly from those across county borders. To prevent outside influences from diluting these distinct routines, elders continued them unchanged.",
+        "Within the municipality boundaries, unique greeting gestures and town-square exchanges persisted. While larger cities moved toward homogenized interactions, this neighborhood stood firm."
+      ],
+      "target_context_dev": [
+        "Grandparents made certain that each generation understood the household ceremonies started by their ancestors. During holiday gatherings at home, kinship ties guided every interaction.",
+        "Across several households descended from the same lineage, bedtime storytelling remained central. Relatives reunited every autumn to reaffirm their shared domestic heritage.",
+        "Kinship bonds were strengthened by private domestic rituals conducted away from the public gaze. Parents took deliberate care to pass these domestic behaviors to their children.",
+        "Every domestic gathering in the household circle followed rites established by great-grandparents. As descendants grew up and established their own homes, they carried these ties forward."
+      ],
+      "source_context_test": [
+        "Distinct municipal regulations and neighborhood habits distinguished this valley from adjacent provinces. Despite commercial expansion, civic leaders preserved their own way of organizing public gatherings.",
+        "The coastal township possessed singular habits of daily commerce unseen elsewhere in the province. Rather than assimilating into metropolitan patterns, the district held onto its distinct identity.",
+        "Residents of the enclave preferred municipal conventions established within their own city limits. While nearby counties changed their weekly schedules, this settlement preserved its established routine.",
+        "Specific neighborhood ceremonies defined how the village celebrated the harvest season. Surrounding townships adopted modern festivals, but this municipality chose to maintain its indigenous ways."
+      ],
+      "target_context_test": [
+        "Every winter, multiple branches of the extended lineage met to replicate household celebrations from previous generations. Parents carefully taught each child the rituals of their ancestors.",
+        "Domestic ties remained central to the household, reinforced by ancestral dining ceremonies. As new generations emerged, mothers and fathers ensured these private rites continued unbroken.",
+        "The bond between cousins and siblings was nurtured through domestic routines practiced around the hearth. Even after moving apart, relatives gathered annually to preserve their shared domestic legacy.",
+        "Passed down through lines of descent, household rituals provided stability for each succeeding generation. Relatives prioritized these kinship ceremonies above all other secular events."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {local, familial} x {custom, tradition} form grammatical and natural noun phrases after the fixed stem 'The community maintained the'. Contexts emphasize either geographic boundaries or domestic kinship without mentioning forbidden words."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "sacred",
+      "target_modifier": "popular",
+      "source_context_dev": [
+        "The sanctuary precinct required strict solemnity and observance of consecrated rites. High priests presided over dawn ceremonies to preserve holy covenants with the divine.",
+        "Every aspect of the temple service was treated with profound spiritual devotion and quiet reverence. To avoid desecration, worshippers followed strictly prescribed liturgical norms.",
+        "Spiritual leaders warned that worldly concerns must never encroach upon holy ordinances. Dedicated devotees gathered at the altar to ensure divine rites remained pure.",
+        "Consecrated altars required meticulous adherence to solemn spiritual protocol. Worshippers approached the shrine with reverence, determined to keep holy observances intact."
+      ],
+      "target_context_dev": [
+        "The street carnival drew massive crowds of ordinary citizens seeking fun and entertainment. Broad public enthusiasm turned the annual celebration into an energetic civic spectacle.",
+        "Across the broader public, folk dances and lively public music gained tremendous grassroots appeal. Millions of ordinary folks celebrated the festive occasion each spring.",
+        "Widespread secular adoption turned the spring festival into an accessible, beloved public celebration. Millions of everyday citizens gathered in public squares to join the festivities.",
+        "Amateur musicians and common citizens flocked to the square for the widespread annual merriment. Public enthusiasm ensured that the widely favored civic gathering remained vibrant."
+      ],
+      "source_context_test": [
+        "Priestly rites at the ancient shrine were guarded against profane outside influences. Devout pilgrims journeyed to the sanctuary to partake in solemn spiritual devotion.",
+        "Holy liturgy governed each ceremonial act performed within the consecrated chapel walls. Faithful devotees treated each spiritual rite with deep veneration and reverence.",
+        "Elders of the order preserved consecrated invocations passed down through spiritual lineages. At daybreak, the assembly knelt to uphold their divine vows.",
+        "Veneration of holy ground demanded solemn compliance with ecclesiastical ceremonies. To preserve divine favor, temple attendants carried out prescribed spiritual rites faithfully."
+      ],
+      "target_context_test": [
+        "Mass appeal transformed the modest street celebration into a widely embraced public phenomenon. Everyday working people looked forward to the festive street fair all year.",
+        "Crowds of ordinary citizens packed the avenues to participate in universally embraced seasonal dancing. The energetic street festivity enjoyed widespread secular support across the populace.",
+        "Widespread civic affection kept the lighthearted street parade flourishing year after year. Ordinary residents eagerly gathered to enjoy the widely celebrated public merriment.",
+        "Broad grassroots participation made the annual town games an accessible favorite among the populace. Townsfolk of all backgrounds embraced the lively public festivities."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {sacred, popular} x {custom, tradition} remain natural and grammatically fluent after 'The community maintained the'. The contexts emphasize solemn liturgical holiness versus mass public appeal without leaking target vocabulary."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "honored",
+      "target_modifier": "longstanding",
+      "source_context_dev": [
+        "The village council bestowed its highest civic esteem upon ceremonies that recognized community valor. Citizens spoke with reverence of the noble deeds celebrated during the annual ceremony.",
+        "Dignitaries from across the province gathered to pay tribute to heroic deeds of the past. The populace held these commemorative practices in the highest regard.",
+        "Deep societal respect accompanied every stage of the prestigious award ceremony. Municipal leaders ensured that these revered ceremonies received the utmost esteem.",
+        "A deep sense of prestige and reverence surrounded the annual presentation of civic medals. Citizens regarded the celebratory protocol with supreme dignity and pride."
+      ],
+      "target_context_dev": [
+        "Dating back several hundred years, the annual autumn gathering had survived centuries of political change. Archival records proved the ritual had existed uninterrupted since antiquity.",
+        "Centuries of history preserved the ancient harvest feast through plagues, wars, and migrations. Modern citizens continued what their ancestors had begun many centuries ago.",
+        "Old chronicles showed that the midsummer bonfire had been ignited continuously across four centuries. Despite the march of time, this ancient continuity remained unbroken.",
+        "Historical manuscripts recorded that the river-crossing rite originated centuries before the modern era. Through ages of societal transformation, the centuries-old rite endured."
+      ],
+      "source_context_test": [
+        "Civic assemblies bestowed immense prestige on rituals designed to celebrate moral excellence. The entire populace looked upon these esteemed ceremonies with pride and reverence.",
+        "Elders ensured that acts of communal courage were remembered through prestigious civic tributes. High regard and public esteem marked every phase of the formal ceremony.",
+        "Great dignity and societal reverence characterized the formal remembrance of municipal founders. Officials held the commemorative ceremonies in elevated esteem.",
+        "The nobility and prestige attached to the annual memorial elevated it above all ordinary events. Citizens treated the recognized observances with deep public veneration."
+      ],
+      "target_context_test": [
+        "Centuries of continuous practice linked modern residents to their medieval forebears. Historical documents verified that the solstice celebration had persisted through centuries.",
+        "For hundreds of years, unbroken historical continuity defined the spring planting ritual. Despite decades of industrialization, the age-old heritage continued without pause.",
+        "Historical accounts demonstrated that the annual village tournament had survived through multiple centuries. The unbroken timeline of observance remained intact despite sweeping historical shifts.",
+        "Spanning across generations and eras, the ancient midwinter ceremony retained its foundational character. Archival records documented centuries of uninterrupted continuity."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {honored, longstanding} x {custom, tradition} are grammatically sound and meaningful after 'The community maintained the'. The contexts distinguish deep prestige/reverence from temporal endurance spanning centuries, without trivial lexical overlap."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b05_18_canine_dog",
+    "generation_batch": 5,
+    "domain": "animals and biological kinds",
+    "family_id": "canine_dog",
+    "noun_0": "canine",
+    "noun_1": "dog",
+    "shared_definition": "a carnivorous mammal of the genus Canis",
+    "neutral_stem": "Barking loudly behind the tall fence, the mailman approached",
+    "candidate_modifiers": [
+      "aggressive",
+      "ferocious",
+      "loyal",
+      "trained",
+      "domestic",
+      "wild",
+      "slender",
+      "intelligent",
+      "feral",
+      "restless",
+      "obedient",
+      "starving",
+      "muscular",
+      "watchful"
+    ],
+    "semantic_notes": "'Canine' is clinical, formal, or police/zoological register, whereas 'dog' is standard everyday speech.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        76669
+      ],
+      "noun_1": [
+        4799
+      ]
+    },
+    "modifier_token_ids": {
+      "aggressive": [
+        23225
+      ],
+      "ferocious": [
+        141708
+      ],
+      "loyal": [
+        31253
+      ],
+      "trained": [
+        15453
+      ],
+      "domestic": [
+        11451
+      ],
+      "wild": [
+        6877
+      ],
+      "slender": [
+        65094
+      ],
+      "intelligent": [
+        23755
+      ],
+      "feral": [
+        165927
+      ],
+      "restless": [
+        95480
+      ],
+      "obedient": [
+        109461
+      ],
+      "starving": [
+        114505
+      ],
+      "muscular": [
+        39254
+      ],
+      "watchful": [
+        162038
+      ]
+    },
+    "forced_projection_span": 0.08528196811676025,
+    "max_noun_pair_mass": 0.5724464058876038,
+    "context_priority_score": 0.04881935613546062,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "trained",
+        "target_modifier": "loyal",
+        "source_projection": 0.39607858657836914,
+        "target_projection": 0.40518781542778015,
+        "forced_modifier_leverage": 0.00910922884941101,
+        "source_pair_mass": 0.4164190888404846,
+        "target_pair_mass": 0.42470499873161316
+      },
+      "medium": {
+        "source_modifier": "intelligent",
+        "target_modifier": "starving",
+        "source_projection": 0.26377546787261963,
+        "target_projection": 0.30681273341178894,
+        "forced_modifier_leverage": 0.04303726553916931,
+        "source_pair_mass": 0.26970183849334717,
+        "target_pair_mass": 0.30748841166496277
+      },
+      "high": {
+        "source_modifier": "ferocious",
+        "target_modifier": "obedient",
+        "source_projection": 0.48375147581100464,
+        "target_projection": 0.5690334439277649,
+        "forced_modifier_leverage": 0.08528196811676025,
+        "source_pair_mass": 0.49395477771759033,
+        "target_pair_mass": 0.5724464058876038
+      }
+    },
+    "context_generation_rank": 86
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "trained",
+      "target_modifier": "loyal",
+      "source_context_dev": [
+        "The security facility maintained strict protocol records for every animal on patrol. Specialized handlers monitored daily instruction routines to verify readiness.",
+        "Official law enforcement records documented the animal's background in perimeter defense. Regular drills ensured full compliance during property sweeps.",
+        "A professional handler logged the morning conditioning progress in the operational ledger. High performance standards governed the animal's security assignments.",
+        "The security agency conducted routine evaluations along the facility perimeter. Standard operational procedures required certified preparation for every perimeter detail."
+      ],
+      "target_context_dev": [
+        "The neighborhood family cherished their faithful family companion for always staying right by the children's side. The devoted pet never abandoned its post near the yard gate.",
+        "For over a decade, the beloved household pet stood guard over the suburban property with unwavering devotion. The family always relied on its steadfast presence.",
+        "The elderly homeowner felt completely safe because her constant pet companion remained steadfast at her side through thick and thin. Years of shared companionship forged a deep bond.",
+        "Growing up on the quiet lane, the children always counted on their faithful childhood pet to watch over them. The family companion never wavered in protecting the yard."
+      ],
+      "source_context_test": [
+        "Department logs detailed years of structured field preparation for patrol duties. Handlers regularly audited performance metrics before each shift.",
+        "The tactical unit kept comprehensive records on every animal assigned to exterior security. Rigorous instruction routines ensured steady discipline on duty.",
+        "Specialized service animals completed rigorous operational conditioning at the regional academy. Instructors verified their perimeter response protocols each week.",
+        "Operational logs documented the animal's completion of advanced security drills. Field personnel maintained thorough oversight of all perimeter assets."
+      ],
+      "target_context_test": [
+        "The suburban household cherished their constant furry companion for years of steadfast devotion. Nothing could draw the family pet away from safeguarding the front yard.",
+        "Generations of family memories centered around the devoted household companion who never strayed from the front walkway. Its steady presence reassured the entire block.",
+        "The quiet cul-de-sac knew the friendly household pet as a steadfast protector of the family residence. Rain or shine, the devoted companion stood by the front boundary.",
+        "A lifelong companion kept steady watch over the family home with unfailing dedication. The household considered the beloved pet their most devoted guardian."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts emphasize formal institutional registers, tactical conditioning, and protocol compliance to induce mild preference for 'trained canine'. Target contexts utilize informal domestic registers highlighting familial fidelity and devotion to nudge toward 'loyal dog'. All four cross-pairings (trained canine, trained dog, loyal canine, loyal dog) remain completely coherent and grammatical with the subsequent stem."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "intelligent",
+      "target_modifier": "starving",
+      "source_context_dev": [
+        "Cognitive researchers noted the subject's remarkable ability to navigate complex puzzle boxes. The animal's exceptional problem-solving capacity was documented in several journals.",
+        "Behavioral biologists documented the specimen's quick grasp of spatial reasoning tasks. Tests revealed an advanced capability for logical deduction and memory retention.",
+        "The laboratory study highlighted how rapidly the subject devised novel solutions to unfamiliar obstacles. Researchers consistently praised the animal's sharp mental acuity.",
+        "Observations recorded during cognitive trials revealed sophisticated reasoning patterns. The subject consistently outperformed baseline expectations on comprehension tasks."
+      ],
+      "target_context_dev": [
+        "The animal rescue team arrived at the abandoned house where a pet had been left without food for weeks. Ribs showing through a thin coat, the emaciated pet looked desperately for a meal.",
+        "Neighbors noticed that the abandoned pet in the yard had gone without any food or fresh water for days. The skeletal creature eagerly searched the fence line for scraps.",
+        "Neglected by previous owners, the severely malnourished pet had not eaten in days. The desperate backyard companion paced hungrily along the property boundary.",
+        "The community outreach group reported an abandoned pet that had gone without sustenance throughout the cold week. Visible bones and hollow cheeks showed its desperate state."
+      ],
+      "source_context_test": [
+        "Comparative psychology trials documented the subject's advanced problem-solving capabilities. Researchers frequently noted how easily the animal mastered spatial puzzles.",
+        "Scientific records showed that the specimen possessed extraordinary situational awareness and learning speed. Behavioral tests confirmed its high mental aptitude.",
+        "The university study evaluated cognitive metrics across various mammalian subjects. Observers were impressed by the subject's ability to decode complex environmental cues.",
+        "During behavioral experiments, the research team noted how quickly the subject analyzed unfamiliar mechanisms. Its deductive capacity exceeded initial baseline projections."
+      ],
+      "target_context_test": [
+        "Volunteers discovered an abandoned pet left behind in the yard with an empty dish and no food in sight. The frail, malnourished animal paced restlessly near the walkway.",
+        "For days, the neglected pet had been left without any meals or clean water in the overgrown backyard. Severely emaciated, the poor creature searched every corner for food.",
+        "A distressed neighbor called the local shelter about a pet that had been deprived of food for over a week. The hollow-bellied companion waited near the gate for help.",
+        "The neglected yard held a painfully thin pet whose food bowls had sat empty for days. Weak from hunger, the backyard companion eyed every passerby in hope of nourishment."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts invoke scientific/cognitive assessments and formal registers favoring 'intelligent canine'. Target contexts depict neglect, emaciation, and domestic rescue settings favoring 'starving dog'. All 2x2 combinations (intelligent canine, intelligent dog, starving canine, starving dog) remain fully valid and sensible before the fixed neutral stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "ferocious",
+      "target_modifier": "obedient",
+      "source_context_dev": [
+        "Warning placards along the perimeter fence warned of a highly dangerous, violent guard animal inside. Security personnel strictly monitored the hostile creature's aggressive behavior.",
+        "The perimeter security report identified an intensely aggressive specimen with violent territorial instincts. Visitors were warned that the hostile beast would attack intruders on sight.",
+        "Security assessments warned that the aggressive guard specimen posed a severe bite hazard. The violent creature snarled savagely whenever anyone crossed the property boundary.",
+        "Incident reports highlighted an extremely aggressive specimen tasked with area defense. The savage creature snapped violently at anyone who neared the outer barrier."
+      ],
+      "target_context_dev": [
+        "The neighborhood family spent months working on polite manners with their gentle household pet. The submissive companion always yielded to every verbal command immediately.",
+        "At the local park, everyone admired how quickly the well-mannered pet responded to its owner's gentle instructions. The compliant companion never failed to follow direction.",
+        "The family pet had earned top marks in basic household manners and strictly followed all verbal directions. Always submissive, the well-mannered companion waited for permission to move.",
+        "Neighbors praised the well-behaved pet for always heeding its owner's quiet instructions without hesitation. The docile companion remained perfectly compliant at all times."
+      ],
+      "source_context_test": [
+        "Property records warned of a dangerous security specimen known for relentless aggression toward trespassers. The hostile animal maintained an intense, combative posture.",
+        "The facility's hazard disclosure noted a highly volatile, combative animal guarding the compound boundary. Security staff strictly restricted unauthorized access due to its savage temper.",
+        "Official hazard alerts characterized the perimeter guard specimen as exceptionally aggressive and prone to attack. Its savage territorial defense kept all visitors at bay.",
+        "Perimeter warning signs indicated the presence of a hostile, vicious animal bred for intense deterrence. Handlers monitored the creature's dangerous aggression closely."
+      ],
+      "target_context_test": [
+        "The family pet took pride in following household rules, immediately sitting down whenever told. The compliant companion always respected boundaries and listened to instructions.",
+        "In the suburban yard, the well-mannered pet paused instantly whenever its owner spoke a quiet request. The docile companion never broke a household rule.",
+        "Known throughout the neighborhood for flawless manners, the family pet always followed vocal directions on cue. The cooperative companion stayed calm and attentive.",
+        "The household pet had mastered every basic verbal request and responded instantly to its owner's voice. The well-behaved companion never ignored a polite directive."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts introduce severe perimeter danger, aggression, and technical threat terminology favoring 'ferocious canine'. Target contexts focus on gentle domestic training, tractability, and responsiveness to vocal cues favoring 'obedient dog'. All four combinations (ferocious canine, ferocious dog, obedient canine, obedient dog) remain plausible, grammatically seamless, and semantically sound."
+    }
+  ]
+}

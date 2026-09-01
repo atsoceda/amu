@@ -1,0 +1,199 @@
+{
+  "family": {
+    "candidate_id": "b05_04_serpent_snake",
+    "generation_batch": 5,
+    "domain": "animals and biological kinds",
+    "family_id": "serpent_snake",
+    "noun_0": "serpent",
+    "noun_1": "snake",
+    "shared_definition": "a limbless reptile with an elongated body and scaly skin",
+    "neutral_stem": "Coiled beneath the ancient temple stones, the archaeologist found",
+    "candidate_modifiers": [
+      "deadly",
+      "coiled",
+      "giant",
+      "mysterious",
+      "black",
+      "poisonous",
+      "sleeping",
+      "golden",
+      "sacred",
+      "dangerous",
+      "lurking"
+    ],
+    "semantic_notes": "'Serpent' carries strong mythological, biblical, and literary connotations, whereas 'snake' is the neutral, standard biological everyday term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        95625
+      ],
+      "noun_1": [
+        22825
+      ]
+    },
+    "modifier_token_ids": {
+      "deadly": [
+        35514
+      ],
+      "coiled": [
+        115873
+      ],
+      "giant": [
+        16784
+      ],
+      "mysterious": [
+        34640
+      ],
+      "black": [
+        2764
+      ],
+      "poisonous": [
+        71030
+      ],
+      "sleeping": [
+        20537
+      ],
+      "golden": [
+        13935
+      ],
+      "sacred": [
+        31492
+      ],
+      "dangerous": [
+        13588
+      ],
+      "lurking": [
+        120306
+      ]
+    },
+    "forced_projection_span": 0.291806124150753,
+    "max_noun_pair_mass": 0.3620559573173523,
+    "context_priority_score": 0.10565014563046704,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "lurking",
+        "target_modifier": "coiled",
+        "source_projection": 0.0,
+        "target_projection": 0.02797519415616989,
+        "forced_modifier_leverage": 0.02797519415616989,
+        "source_pair_mass": 0.012240410782396793,
+        "target_pair_mass": 0.180495947599411
+      },
+      "medium": {
+        "source_modifier": "sleeping",
+        "target_modifier": "deadly",
+        "source_projection": -0.002490469953045249,
+        "target_projection": 0.037895895540714264,
+        "forced_modifier_leverage": 0.04038636549375951,
+        "source_pair_mass": 0.006949681788682938,
+        "target_pair_mass": 0.057995907962322235
+      },
+      "high": {
+        "source_modifier": "deadly",
+        "target_modifier": "poisonous",
+        "source_projection": 0.037895895540714264,
+        "target_projection": 0.3297020196914673,
+        "forced_modifier_leverage": 0.291806124150753,
+        "source_pair_mass": 0.057995907962322235,
+        "target_pair_mass": 0.3620559573173523
+      }
+    },
+    "context_generation_rank": 38
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "lurking",
+      "target_modifier": "coiled",
+      "source_context_dev": [
+        "The expedition navigated deep into the subterranean ruins where mythic horrors were believed to wait in ambush. Shadows moved ominously in the torchlight as forgotten guardians watched from dark crevices.",
+        "Centuries of superstition warned treasure hunters of hidden terrors concealed within the sacred sanctuary. The eerie stillness suggested something hostile was actively biding its time in the recesses.",
+        "Ancient inscriptions warned that malevolent spirits of vengeance waited silently in the darkness to strike unwary intruders. The chamber possessed an unsettling aura of predatory patience.",
+        "Deep inside the catacombs of the lost pantheon, ominous folkloric tales spoke of watchful terrors hiding in the gloom. The explorer moved cautiously, anticipating an imminent strike from the shadows."
+      ],
+      "target_context_dev": [
+        "The herpetologist cataloged physical postures documented in field notes among the ruined foundations. The cool masonry provided an ideal resting spot for local reptiles wound tightly in repose.",
+        "Excavations in the arid valley uncovered numerous animal burrows woven into the architectural foundation. Modern naturalists noted that cold-blooded species often settled into concentric rings to preserve body heat.",
+        "The research team examined how desert fauna gathered neatly in tight concentric formations beneath the fallen flagstones. A routine biological survey was underway alongside the masonry restoration.",
+        "Field researchers documented the resting habits of indigenous wildlife nestled in the floor cracks of the sanctuary. The cooler subterranean microclimate naturally encouraged spiral body positioning."
+      ],
+      "source_context_test": [
+        "Legends etched into the stone stele spoke of a watchful underworld guardian hidden in the sanctum. An unnerving tension filled the air as if a mythical beast was waiting in shadow.",
+        "The cursed sanctuary was said to harbor archaic monsters lying in wait for trespassers. The air grew cold with the distinct feeling that an unseen menace was poised in the darkness.",
+        "Folklore described the ruined altar as the nesting ground of sinister mythological entities that hid out of sight. Every rustle suggested a predatory fiend waiting to emerge.",
+        "Scholars of the occult believed an ancient vengeful presence remained concealed within the masonry. The atmosphere was thick with the threat of a cloaked ambush."
+      ],
+      "target_context_test": [
+        "The field guide described how local wildlife compacted their bodies into neat loops under damp masonry. Scientists carefully sifted through the substrate during the fauna inventory.",
+        "Ecologists surveying the archaeological site noted the presence of indigenous reptiles wound into spring-like spirals against the chill. The ground temperature was unusually low.",
+        "The wildlife recovery team systematically inspected the shaded gaps between the altar stones. Native specimens frequently retreated there in tight concentric bundles to conserve moisture.",
+        "A standard zoological assessment of the ancient masonry revealed multiple species resting in neat rounded loops. The field team cataloged the habitat characteristics methodically."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (lurking serpent, lurking snake, coiled serpent, coiled snake) are fully plausible across all contexts. Source contexts elevate the mythic/archaic tone favoring 'serpent' and ambuscade imagery favoring 'lurking', while target contexts establish naturalistic field biology favoring 'snake' and spiral resting postures favoring 'coiled'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "sleeping",
+      "target_modifier": "deadly",
+      "source_context_dev": [
+        "The ancient subterranean vault was undisturbed and enveloped in peaceful silence for centuries. Legend told of a slumbering mythical beast resting quietly beneath the altar stones.",
+        "In the tranquil depths of the ruined necropolis, forgotten relics lay undisturbed in absolute stillness. Mythological lore held that an ancient guardian lay dormant in a centuries-long rest.",
+        "The sacred crypt had remained untouched by time, maintaining a serene and unbothered calm. Epic poems spoke of a peaceful resting creature of legend reposing beneath the floor.",
+        "A hush fell over the buried sanctum where mythical protectors were said to rest peacefully through the ages. The quiet sanctuary showed no signs of active movement or aggression."
+      ],
+      "target_context_dev": [
+        "The medical survey team carried anti-venom supplies due to reports of lethal animal attacks in the masonry ruins. Every crevice presented a severe biological hazard capable of inducing rapid fatality.",
+        "Excavators were instructed to wear heavy protective armor because dangerous wildlife in the area posed an immediate threat to human life. Multiple past expeditions had suffered fatal bites.",
+        "Field workers cataloged the lethal risks of local venomous fauna inhabiting the cracked paving stones. Safety protocols required emergency tourniquets and medical evacuation plans on site.",
+        "The tropical excavation zone was notorious for highly hazardous specimens harboring potent neurotoxins. A single defensive bite could prove rapidly fatal to researchers."
+      ],
+      "source_context_test": [
+        "The subterranean burial chamber was calm and quiet, preserving an atmosphere of deep eternal rest. Classical texts described an archaic monster slumbering peacefully in the underworld.",
+        "Centuries of dust blanketed the inner sanctum where legendary guardians rested in uninterrupted repose. The explorer moved softly so as not to disturb the peaceful quiet of the hall.",
+        "Old myths told of a great dormant entity resting peacefully beneath the holy threshold. The still air conveyed a profound sense of hibernation and tranquil rest.",
+        "The subterranean hall remained silent and tranquil, undisturbed since antiquity. Fables recounted how a mystical guardian lay in quiet, motionless slumber under the masonry."
+      ],
+      "target_context_test": [
+        "The expedition physician warned everyone about extremely hazardous biological threats lurking in the floor cracks. Several workers in neighboring trenches had nearly died from lethal venom.",
+        "Safety regulations were strictly enforced due to the presence of fatal venomous wildlife on the dig site. Encounters with these creatures frequently resulted in critical medical emergencies.",
+        "The team was briefed on the lethal potency of local reptiles commonly nesting under stone foundations. Protective boots and venom extractor kits were mandatory for all personnel.",
+        "A biological threat assessment flagged the ancient ruins as a habitat for species capable of delivering a lethal strike. First-aid personnel remained on high alert throughout the dig."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (sleeping serpent, sleeping snake, deadly serpent, deadly snake) remain natural and semantically well-formed in each frame. Source contexts leverage mythical slumber and peaceful dormant lore favoring 'serpent' and 'sleeping', while target contexts emphasize modern medical danger and lethal toxins favoring 'snake' and 'deadly'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "deadly",
+      "target_modifier": "poisonous",
+      "source_context_dev": [
+        "The cursed chamber was renowned in epic mythology for delivering fatal doom to all who crossed the threshold. Sagas spoke of a lethal supernatural monstrosity guarding the sacred relics.",
+        "Grim folklore recorded that the temple grounds were cursed by a lethal mythological terror whose wrath meant certain death. The tomb had earned a sinister reputation for lethal outcomes.",
+        "Archaic scriptures spoke of an unholy guardian whose touch brought sudden doom and eternal destruction to mortal men. The explorer felt the chilling presence of a lethal ancient monster.",
+        "Legends chronicled the fatal doom awaiting anyone who dared disturb the sacred subterranean vault. The mythical guardian was known throughout regional lore as an instrument of lethal retribution."
+      ],
+      "target_context_dev": [
+        "The herpetology department was conducting a biochemical assay on glandular secretions collected from indigenous wildlife. Laboratory tests sought to analyze how toxic biological compounds functioned in local reptiles.",
+        "Modern biological researchers collected venom samples from native reptiles to study cellular toxicity. The research focused specifically on biochemical venom composition and toxic glandular fluids.",
+        "Field biologists carefully extracted organic venom glands from local specimens inhabiting the ruined foundation. The chemical analysis focused on toxic peptides and natural biological delivery mechanisms.",
+        "A scientific field study was underway to isolate biochemical toxins from cold-blooded fauna found under the foundation stones. Strict biological containment protocols were observed."
+      ],
+      "source_context_test": [
+        "Ancient inscriptions warned that trespassers would face lethal destruction from a terrifying mythical entity. The ruined sanctuary held an aura of fatal peril and merciless vengeance.",
+        "The subterranean altar had claimed many lives in historical chronicles, attributed to a lethal supernatural guardian. The explorer prepared for an encounter with a fatal mythological beast.",
+        "Old ballads warned of a lethal creature of darkness that brought swift fatality to desecrators of the temple. The grim atmosphere inside the stone corridor carried a sense of lethal doom.",
+        "Fables warned of a lethal horror guarding the subterranean vault with fatal fury. The grim history of the excavation was marked by stories of sudden doom and lethal encounters."
+      ],
+      "target_context_test": [
+        "Biochemists were analyzing the organic chemical makeup of toxic glandular fluids synthesized by native fauna. The field survey focused on isolating specialized bioactive toxins in reptiles.",
+        "The laboratory team gathered biological samples to evaluate toxic glandular secretions among local species. Standard herpetological safety equipment was deployed to handle toxic specimens.",
+        "Scientists investigated the toxic properties of secretions produced by indigenous species nesting under the floor slabs. The expedition emphasized biochemical pharmacology and toxin extraction.",
+        "A zoological team documented toxic biological secretions among fauna inhabiting the damp stone crevices. Chemical analysis confirmed the presence of highly toxic peptides in local specimens."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (deadly serpent, deadly snake, poisonous serpent, poisonous snake) are grammatically and semantically sound across all prompts. Source contexts leverage archaic/mythic fatality favoring 'serpent' and 'deadly', whereas target contexts emphasize biochemical and zoological toxicity favoring 'snake' and 'poisonous'."
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b01_19_buyer_purchaser",
+    "generation_batch": 1,
+    "domain": "people and social roles",
+    "family_id": "buyer_purchaser",
+    "noun_0": "buyer",
+    "noun_1": "purchaser",
+    "shared_definition": "a person who acquires goods, services, or property by paying money",
+    "neutral_stem": "At the property auction, the broker negotiated with",
+    "candidate_modifiers": [
+      "prospective",
+      "potential",
+      "wealthy",
+      "eager",
+      "interested",
+      "qualified",
+      "cautious",
+      "registered",
+      "motivated",
+      "shrewd",
+      "willing",
+      "private",
+      "foreign",
+      "serious",
+      "hesitant"
+    ],
+    "semantic_notes": "'Purchaser' is formal and legalistic; 'buyer' is standard in commerce and casual dialogue.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        23033
+      ],
+      "noun_1": [
+        49208
+      ]
+    },
+    "modifier_token_ids": {
+      "prospective": [
+        32021
+      ],
+      "potential": [
+        3435
+      ],
+      "wealthy": [
+        40214
+      ],
+      "eager": [
+        27322
+      ],
+      "interested": [
+        7467
+      ],
+      "qualified": [
+        15973
+      ],
+      "cautious": [
+        50799
+      ],
+      "registered": [
+        12314
+      ],
+      "motivated": [
+        27526
+      ],
+      "shrewd": [
+        147573
+      ],
+      "willing": [
+        10788
+      ],
+      "private": [
+        2147
+      ],
+      "foreign": [
+        7262
+      ],
+      "serious": [
+        6205
+      ],
+      "hesitant": [
+        88961
+      ]
+    },
+    "forced_projection_span": 0.06292827799916267,
+    "max_noun_pair_mass": 0.508724570274353,
+    "context_priority_score": 0.032013161183229055,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "wealthy",
+        "target_modifier": "interested",
+        "source_projection": -0.09496723115444183,
+        "target_projection": -0.08791498094797134,
+        "forced_modifier_leverage": 0.0070522502064704895,
+        "source_pair_mass": 0.09874400496482849,
+        "target_pair_mass": 0.09414472430944443
+      },
+      "medium": {
+        "source_modifier": "private",
+        "target_modifier": "qualified",
+        "source_projection": -0.11473193764686584,
+        "target_projection": -0.08371222764253616,
+        "forced_modifier_leverage": 0.03101971000432968,
+        "source_pair_mass": 0.12187691032886505,
+        "target_pair_mass": 0.10991711169481277
+      },
+      "high": {
+        "source_modifier": "eager",
+        "target_modifier": "registered",
+        "source_projection": -0.062096890062093735,
+        "target_projection": 0.0008313879370689392,
+        "forced_modifier_leverage": 0.06292827799916267,
+        "source_pair_mass": 0.06679165363311768,
+        "target_pair_mass": 0.026613039895892143
+      }
+    },
+    "context_generation_rank": 114
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "wealthy",
+      "target_modifier": "interested",
+      "source_projection": -0.09496723115444183,
+      "target_projection": -0.08791498094797134,
+      "forced_modifier_leverage": 0.0070522502064704895,
+      "source_pair_mass": 0.09874400496482849,
+      "target_pair_mass": 0.09414472430944443,
+      "source_context_dev": [
+        "The prime waterfront estate was commanding bids far beyond market estimates. Several individuals in the front row boasted immense personal fortunes and limitless budgets.",
+        "High-end luxury real estate always attracts patrons with deep pockets and lavish spending power. One multi-millionaire stood ready to outbid all competition.",
+        "Opulent estates of this caliber rarely enter the market without attracting high-net-worth investors. The room buzzed with elite bidders holding massive capital reserves.",
+        "Vast family trusts and sovereign wealth portfolios had authorized unlimited acquisitions today. A billionaire investor signaled ready access to enormous funds."
+      ],
+      "target_context_dev": [
+        "Speculators had gathered in the gallery to observe the historic manor hit the market. Several parties actively inquired about the title and expressed genuine curiosity.",
+        "A sizable crowd filled the room to track the opening phases of the bidding process. Many attendees leaned forward attentively to monitor the contract terms.",
+        "The agency had received dozens of preliminary requests for the historic downtown brownstone. A few onlookers stepped forward with serious intent to consider an offer.",
+        "Catalogs and architectural brochures had been distributed across the viewing floor. An attentive attendee reviewed the structural survey before raising a hand."
+      ],
+      "source_context_test": [
+        "The historic penthouse attracted immense financial capital from overseas magnates. A prominent billionaire investor sat quietly evaluating the listing price.",
+        "Substantial liquid wealth dominated the atmosphere as prime commercial blocks were called. One exceptionally affluent bidder commanded the attention of the floor.",
+        "The portfolio featured exclusive country estates destined solely for high-net-worth figures. An ultra-rich patron prepared to commit millions on the spot.",
+        "Luxury properties inevitably draw substantial private funding and affluent collectors. A well-capitalized investor signaled readiness to meet the highest reserve."
+      ],
+      "target_context_test": [
+        "The catalog had drawn substantial curiosity from local property syndicates. An attentive attendee examined the legal covenants before initiating dialogue.",
+        "Multiple parties lingered near the podium to review zoning boundaries and easements. One prospective participant asked detailed questions about the deeds.",
+        "Several attendees followed the reserve announcements with marked curiosity. An attentive observer stepped forward to scrutinize the title deeds closely.",
+        "The sale proceedings generated quiet engagement across the main floor. A curious party approached the rostrum to evaluate the legal declarations."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "The source contexts emphasize high net worth, lavish fortunes, and affluence to prime 'wealthy buyer', while target contexts emphasize attention, curiosity, and exploratory intent to prime 'interested purchaser'. All four combinations (wealthy buyer, wealthy purchaser, interested buyer, interested purchaser) remain completely grammatical and plausible in every context."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "private",
+      "target_modifier": "qualified",
+      "source_projection": -0.11473193764686584,
+      "target_projection": -0.08371222764253616,
+      "forced_modifier_leverage": 0.03101971000432968,
+      "source_pair_mass": 0.12187691032886505,
+      "target_pair_mass": 0.10991711169481277,
+      "source_context_dev": [
+        "The listing was handled under strict confidentiality agreements away from corporate eyes. An individual client acting on personal behalf sought complete discretion.",
+        "Unlike institutional developers, some clients prefer personal acquisitions outside public scrutiny. One non-commercial party demanded strict personal anonymity.",
+        "The transaction involved an off-market residential estate without institutional backing. A discreet individual acting solely for personal reasons stepped forward.",
+        "Commercial entities were barred from bidding on the historic family compound. A personal client operating independently sought to finalize the agreement."
+      ],
+      "target_context_dev": [
+        "Institutional lending rules required strict financial vetting and compliance checks before bidding. Official documentation confirmed full compliance with statutory requirements.",
+        "Legal standards mandated that all participants present verified financial clearance and certified escrows. One pre-screened individual satisfied every strict standard.",
+        "The court-ordered liquidation required rigorous credit checks and verified collateral. An accredited individual met every statutory requirement for the acquisition.",
+        "Participation in the transaction required pre-approved financing and legal standing. An officially vetted candidate presented certified documentation of eligibility."
+      ],
+      "source_context_test": [
+        "The vendor insisted on a direct transaction without corporate intermediaries or public disclosures. A personal client stepped forward seeking complete confidentiality.",
+        "Institutional funds were excluded in favor of non-corporate individual acquisitions. One independent individual sought to secure the property quietly.",
+        "Bidding was restricted to individual home-seekers rather than institutional syndicates. A discrete individual client sought to acquire the premises confidentially.",
+        "The family estate was preserved exclusively for non-commercial residential owners. An individual client acting on personal account initiated discussions."
+      ],
+      "target_context_test": [
+        "All participating parties had to pass rigorous credit examinations and compliance reviews. An officially certified candidate presented valid credentials at the desk.",
+        "The regulatory framework demanded full asset verification prior to the auction bell. One thoroughly vetted individual fulfilled every statutory criterion.",
+        "Strict legal covenants governed the transfer of the municipal development parcel. An accredited candidate produced the required bank guarantees.",
+        "Financial oversight required proof of funds and legal certification before entry. A fully certified participant presented complete underwriting paperwork."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts emphasize confidentiality, personal non-corporate status, and discretion (favoring 'private buyer'), while target contexts establish institutional vetting, accreditation, and pre-approval (favoring 'qualified purchaser'). All 4 cross combinations (private buyer, private purchaser, qualified buyer, qualified purchaser) remain valid English real estate constructions."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "eager",
+      "target_modifier": "registered",
+      "source_projection": -0.062096890062093735,
+      "target_projection": 0.0008313879370689392,
+      "forced_modifier_leverage": 0.06292827799916267,
+      "source_pair_mass": 0.06679165363311768,
+      "target_pair_mass": 0.026613039895892143,
+      "source_context_dev": [
+        "The competition had grown fierce, and several attendees could barely conceal their excitement. One enthusiastic party repeatedly raised a hand without hesitation.",
+        "Emotions ran high across the room as the final closing date drew near. A highly enthusiastic participant leaned forward, impatient to secure the property.",
+        "The excitement on the floor was unmistakable as the opening gavel fell. An impatient participant could hardly wait to raise the opening bid.",
+        "Desire for the landmark site was intense throughout the packed gallery. A highly motivated participant showed visible impatience to close the deal."
+      ],
+      "target_context_dev": [
+        "The front desk had issued official bidder numbers and identity badges earlier that morning. A logged participant presented an official bidding paddle.",
+        "Every attendee had to submit official documentation into the central database before entry. A formally enrolled participant stepped up with badge in hand.",
+        "Official paddles were issued only after identities were entered into the municipal system. A recorded participant stood ready with the assigned badge number.",
+        "The administrative desk checked photographic identification and assigned unique numbers. An enrolled participant displayed the verified numbered badge."
+      ],
+      "source_context_test": [
+        "Bidding enthusiasm reached a fever pitch as the final gavel approached. An enthusiastic participant leaned over the railing, desperate to secure the deal.",
+        "Patience wore thin among the most passionate contenders in the hall. An impatient participant signaled urgently to make an immediate counter-bid.",
+        "The atmosphere buzzed with intense emotional investment and spirited rivalry. A zealous participant showed visible urgency to finalize the agreement.",
+        "Passionate interest drove the floor into an energetic bidding flurry. An enthusiastic participant waved frantically to capture the agent's eye."
+      ],
+      "target_context_test": [
+        "The auction house required formal enrollment and assigned paddles at the front counter. An enrolled participant held up badge number forty-two.",
+        "Identity verification was completed at check-in, entering each participant onto the roster. A listed participant presented official documentation.",
+        "The administrative clerk logged every participant into the official registry before commencement. A formally enrolled party displayed the required credential.",
+        "Bidding was restricted to individuals listed on the authorized master ledger. An enrolled participant presented the official numbered badge."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts emphasize impatience, eagerness, and energetic passion (priming 'eager buyer'), whereas target contexts emphasize administrative logging, official check-in rosters, and bidding paddles (priming 'registered purchaser'). Cross combinations (eager buyer, eager purchaser, registered buyer, registered purchaser) remain completely valid semantically and syntactically."
+    }
+  ]
+}

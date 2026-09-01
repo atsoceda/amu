@@ -1,0 +1,40 @@
+{
+  "candidate_id": null,
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations across all contexts are fully grammatical, natural, and pragmatically plausible without lexical leaks of candidate terms or stem components."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_2",
+        "source_context_dev_3",
+        "source_context_test_0",
+        "source_context_test_3"
+      ],
+      "failure_reasons": [
+        "Direct root/lemma leak: contexts explicitly use the word 'synthesis', which trivially primes and shares the exact morphological base of target modifier 'synthetic'."
+      ],
+      "concise_notes": "Multiple source contexts include 'synthesis', violating the constraint against mentioning or trivially naming candidate modifier forms."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test_1",
+        "source_context_test_3",
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "Direct root/lemma leak: source_context_test_1 and source_context_test_3 use inflections of the modifier root ('prevented', 'Preventing') for candidate 'preventive'.",
+        "Stem component repetition: target_context_test_3 includes 'physician', repeating part of the fixed prompt stem."
+      ],
+      "concise_notes": "Lexical leaks of the lemma 'prevent' appear in source test contexts, and target test context 3 repeats the prompt stem subject 'physician'."
+    }
+  ]
+}

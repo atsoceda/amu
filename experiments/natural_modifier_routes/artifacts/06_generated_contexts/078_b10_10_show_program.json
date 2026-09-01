@@ -1,0 +1,203 @@
+{
+  "family": {
+    "candidate_id": "b10_10_show_program",
+    "generation_batch": 10,
+    "domain": "media and creative works",
+    "family_id": "show_program",
+    "noun_0": "show",
+    "noun_1": "program",
+    "shared_definition": "a broadcast presentation or series produced for radio or television",
+    "neutral_stem": "The network decided to cancel",
+    "candidate_modifiers": [
+      "popular",
+      "successful",
+      "entertaining",
+      "weekly",
+      "daytime",
+      "flagship",
+      "educational",
+      "hit",
+      "innovative",
+      "informative",
+      "controversial",
+      "beloved"
+    ],
+    "semantic_notes": "'Show' is colloquial and emphasizes performance/entertainment, while 'program' is formal and institutional.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        1407
+      ],
+      "noun_1": [
+        1948
+      ]
+    },
+    "modifier_token_ids": {
+      "popular": [
+        4913
+      ],
+      "successful": [
+        6595
+      ],
+      "entertaining": [
+        32549
+      ],
+      "weekly": [
+        16789
+      ],
+      "daytime": [
+        49157
+      ],
+      "flagship": [
+        48725
+      ],
+      "educational": [
+        12524
+      ],
+      "hit": [
+        5524
+      ],
+      "innovative": [
+        14549
+      ],
+      "informative": [
+        40564
+      ],
+      "controversial": [
+        31332
+      ],
+      "beloved": [
+        27867
+      ]
+    },
+    "forced_projection_span": 0.22026165947318077,
+    "max_noun_pair_mass": 0.25781574845314026,
+    "context_priority_score": 0.05678692459260881,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "beloved",
+        "target_modifier": "controversial",
+        "source_projection": -0.017698895186185837,
+        "target_projection": 0.0035291239619255066,
+        "forced_modifier_leverage": 0.021228019148111343,
+        "source_pair_mass": 0.06457999348640442,
+        "target_pair_mass": 0.05653949826955795
+      },
+      "medium": {
+        "source_modifier": "hit",
+        "target_modifier": "innovative",
+        "source_projection": -0.0840381383895874,
+        "target_projection": 0.03558206930756569,
+        "forced_modifier_leverage": 0.11962020769715309,
+        "source_pair_mass": 0.09808170795440674,
+        "target_pair_mass": 0.038852494210004807
+      },
+      "high": {
+        "source_modifier": "innovative",
+        "target_modifier": "educational",
+        "source_projection": 0.03558206930756569,
+        "target_projection": 0.25584372878074646,
+        "forced_modifier_leverage": 0.22026165947318077,
+        "source_pair_mass": 0.038852494210004807,
+        "target_pair_mass": 0.25781574845314026
+      }
+    },
+    "context_generation_rank": 79
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "beloved",
+      "target_modifier": "controversial",
+      "source_context_dev": [
+        "Viewers felt a deep nostalgic attachment to the gentle weekend production. Despite passionate fan campaigns and tearful online tributes, executives moved in another direction.",
+        "The warm family broadcast had comforted multi-generational audiences for over a decade. When production expenses climbed, leadership had to make a painful choice.",
+        "Generations grew up cherishing the endearing characters and heartfelt humor. Nevertheless, executive leadership opted to make room for newer talent.",
+        "The endearing weekend release had built an extraordinarily devoted and affectionate following. Still, declining ad revenue forced a difficult choice."
+      ],
+      "target_context_dev": [
+        "Weekly broadcasts continually triggered advertiser boycotts and heated editorial debates across the country. Following thousands of formal complaints to the federal regulator, leadership met behind closed doors.",
+        "The polarizing late-night broadcast sparked intense moral outrage and divided critics nationwide. After corporate sponsors threatened an immediate pullout, executives intervened.",
+        "Hostile public debate and relentless press backlash surrounded each televised broadcast. When several major affiliates refused to carry the slot, management made a swift decision.",
+        "The combative talk broadcast frequently tested decency standards and prompted fierce public arguments. Facing pressure from the board of directors, management stepped in."
+      ],
+      "source_context_test": [
+        "Audiences held a profound emotional bond with the long-running evening broadcast. Even with viewers flooding the phone lines with support, corporate priorities shifted.",
+        "Fans adored the warmhearted weekly broadcast and its iconic ensemble cast. However, contractual renegotiations reached an insurmountable impasse.",
+        "For years, the sweet-natured afternoon broadcast served as a dependable source of comfort for millions. Rising overhead costs eventually made renewal untenable.",
+        "The delightful broadcast had captured the hearts of audiences across every demographic. Despite stellar audience appreciation scores, corporate realignment took precedence."
+      ],
+      "target_context_test": [
+        "Each installment generated fierce political friction and prompted calls for an official FCC investigation. As affiliate stations expressed deepening unease, senior management acted.",
+        "The abrasive investigative broadcast alienated mainstream viewers and triggered severe public relations headaches. In the wake of mounting advertiser departures, station heads held an emergency meeting.",
+        "Scandalous content and inflammatory rhetoric drew relentless condemnation from watchdog groups. Eager to repair corporate relations, the board voted unanimously.",
+        "The provocative broadcast repeatedly ignited fierce cultural disputes and drew sharp public rebuke. When sponsor boycotts threatened quarterly earnings, executives pulled the plug."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (beloved show, beloved program, controversial show, controversial program) remain natural, grammatical, and semantically sound after each context prompt."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "hit",
+      "target_modifier": "innovative",
+      "source_context_dev": [
+        "The prime-time sensation shattered all previous viewership records and dominated weekly ratings charts. However, soaring salary demands from the lead talent made further production impossible.",
+        "No other broadcast matched the colossal ratings and commercial dominance of the prime-time phenomenon. Yet behind the scenes, creative infighting brought everything to an abrupt halt.",
+        "The prime-time ratings juggernaut had dominated cultural discourse and merchandise sales for consecutive years. Unfortunately, ballooning licensing fees forced an unexpected change.",
+        "The network's highest-rated entertainment broadcast regularly crushed all competing timeslots in total viewers. Still, unforeseen logistical disputes led to a sudden termination."
+      ],
+      "target_context_dev": [
+        "The experimental broadcast utilized pioneering interactive multi-camera techniques and unconventional storytelling. Despite universal acclaim from tech and media critics, broad viewership remained modest.",
+        "Employing avant-garde production methods, the daring broadcast reimagined standard broadcast formatting from scratch. However, the high budget proved unsustainable without a larger mass audience.",
+        "The studio broke new ground by blending artificial intelligence visuals with live theatrical broadcast elements. While praised for creative bravery, the expensive format could not retain general viewers.",
+        "By integrating real-time viewer voting and non-linear narrative structures, the pioneering broadcast broke every traditional mold. Ultimately, niche appeal failed to justify the ongoing technical investment."
+      ],
+      "source_context_test": [
+        "The commercial blockbuster had ruled prime-time ratings and generated billions in advertising revenue. Despite its overwhelming popularity, creative burnout prompted an untimely end.",
+        "Topping the charts every single week, the wildly popular broadcast was a true pop-culture powerhouse. Escalating tension between executive producers and the studio forced a swift cancellation.",
+        "The ratings titan commanded massive audiences and dominated social media trends throughout its multi-year run. However, an unresolvable dispute over syndication rights ended the broadcast.",
+        "The prime-time ratings marvel generated record-breaking viewership figures season after season. When the principal cast walked away, the broadcast could not proceed."
+      ],
+      "target_context_test": [
+        "Critics marveled at the groundbreaking structural format and revolutionary multimedia integration. Nevertheless, mainstream audiences failed to connect with the complex experimental setup.",
+        "The broadcast pushed technological and artistic boundaries by pioneering dynamic augmented reality environments. High production costs and modest ratings made a second run unfeasible.",
+        "Pushing creative boundaries, the bold broadcast experimented with unconventional real-time narrative branches. Though celebrated across the industry for originality, viewership stayed stubbornly low.",
+        "The avant-garde broadcast introduced revolutionary editing techniques and a daring modular format. Despite glowing reviews from avant-garde critics, network executives withdrew financial backing."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (hit show, hit program, innovative show, innovative program) fit naturally into the stem under all dev and test context variations."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "innovative",
+      "target_modifier": "educational",
+      "source_context_dev": [
+        "The broadcast earned widespread acclaim for breaking traditional narrative structures with bold multimedia storytelling. Unfortunately, the steep technical overhead proved too costly to sustain.",
+        "By integrating pioneering digital visuals and interactive formats, the broadcast redefined modern broadcast entertainment. Even so, the niche viewership could not justify continuing the ambitious production.",
+        "Critics celebrated the experimental broadcast for its daring aesthetic choices and unprecedented production design. However, the unusual format confused casual viewers and limited commercial viability.",
+        "The avant-garde creative team continuously challenged conventional production norms with pioneering visual techniques. Despite widespread critical praise, the broadcast was deemed too unconventional."
+      ],
+      "target_context_dev": [
+        "Designed specifically for classroom enrichment and academic literacy, the instructional broadcast taught children fundamental science. However, when federal public-broadcasting grants expired, funding dried up.",
+        "The curriculum-aligned broadcast had provided valuable math and reading instruction to millions of young learners. Following a major strategic pivot toward general entertainment, executives acted.",
+        "Aimed at promoting early childhood development, the informative daytime broadcast helped countless students master foundational skills. Budget reallocations away from public service mandates sealed its fate.",
+        "The instructional broadcast delivered vital tutoring and academic lessons to underserved school districts. When government public interest subsidies were withdrawn, broadcast executives made the difficult call."
+      ],
+      "source_context_test": [
+        "The visionary broadcast blended cutting-edge computer graphics with live theatrical performance in unprecedented ways. High production complexity eventually forced network heads to pull back.",
+        "Audiences were captivated by the pioneering visual aesthetic and revolutionary structural concepts. In the end, the costly technical infrastructure could no longer be maintained.",
+        "By pioneering real-time augmented reality sets, the ground-breaking broadcast pushed the limits of broadcast technology. However, low mainstream ratings doomed the high-concept project.",
+        "The daring broadcast challenged every prevailing industry formula with its inventive narrative architecture. Despite strong support from media futurists, the high budget led to an early exit."
+      ],
+      "target_context_test": [
+        "For years, the informative broadcast taught literacy, history, and scientific reasoning to elementary students nationwide. A shift in corporate priorities toward commercial drama ended its run.",
+        "The structured academic broadcast helped thousands of home-schooled children learn core subjects daily. Following a severe reduction in public service foundation grants, leadership discontinued the broadcast.",
+        "Created in collaboration with pedagogical experts, the instructional broadcast delivered essential learning tools to young minds. Changing broadcast regulations caused the network to drop the slot.",
+        "The civic-minded broadcast provided accessible language training and cultural literacy lessons for new immigrants. Unfortunately, corporate restructuring eliminated the entire public-interest lineup."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (innovative show, innovative program, educational show, educational program) are completely fluent, standard, and semantically plausible in all contexts."
+    }
+  ]
+}

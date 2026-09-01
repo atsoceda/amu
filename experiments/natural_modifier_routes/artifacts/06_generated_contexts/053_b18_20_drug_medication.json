@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b18_20_drug_medication",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "drug_medication",
+    "noun_0": "drug",
+    "noun_1": "medication",
+    "shared_definition": "a chemical substance used for medical treatment, prevention, or diagnosis of disease",
+    "neutral_stem": "The physician prescribed the",
+    "candidate_modifiers": [
+      "approved",
+      "common",
+      "costly",
+      "effective",
+      "experimental",
+      "generic",
+      "injectable",
+      "novel",
+      "oral",
+      "potent",
+      "preventive",
+      "standard",
+      "synthetic"
+    ],
+    "semantic_notes": "'Medication' specifically denotes a therapeutic compound, while 'drug' can also refer to recreational or illicit psychoactive substances.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        5290
+      ],
+      "noun_1": [
+        22137
+      ]
+    },
+    "modifier_token_ids": {
+      "approved": [
+        10833
+      ],
+      "common": [
+        3364
+      ],
+      "costly": [
+        31775
+      ],
+      "effective": [
+        5225
+      ],
+      "experimental": [
+        10037
+      ],
+      "generic": [
+        19920
+      ],
+      "injectable": [
+        204928
+      ],
+      "novel": [
+        10132
+      ],
+      "oral": [
+        16348
+      ],
+      "potent": [
+        30199
+      ],
+      "preventive": [
+        60346
+      ],
+      "standard": [
+        4077
+      ],
+      "synthetic": [
+        22615
+      ]
+    },
+    "forced_projection_span": 0.14310221374034882,
+    "max_noun_pair_mass": 0.6136260032653809,
+    "context_priority_score": 0.08781123947591851,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "costly",
+        "target_modifier": "effective",
+        "source_projection": -0.050565943121910095,
+        "target_projection": -0.036834247410297394,
+        "forced_modifier_leverage": 0.013731695711612701,
+        "source_pair_mass": 0.4066322445869446,
+        "target_pair_mass": 0.23765447735786438
+      },
+      "medium": {
+        "source_modifier": "synthetic",
+        "target_modifier": "generic",
+        "source_projection": -0.3241795599460602,
+        "target_projection": -0.2490433007478714,
+        "forced_modifier_leverage": 0.07513625919818878,
+        "source_pair_mass": 0.35599157214164734,
+        "target_pair_mass": 0.4042028784751892
+      },
+      "high": {
+        "source_modifier": "preventive",
+        "target_modifier": "oral",
+        "source_projection": 0.1573704034090042,
+        "target_projection": 0.300472617149353,
+        "forced_modifier_leverage": 0.14310221374034882,
+        "source_pair_mass": 0.21877436339855194,
+        "target_pair_mass": 0.3764175772666931
+      }
+    },
+    "context_generation_rank": 54
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "costly",
+      "target_modifier": "effective",
+      "source_context_dev": [
+        "The patient's health plan required a detailed explanation before agreeing to cover such an extraordinarily high retail charge. The clinic staff spent hours submitting financial documentation to justify the expense.",
+        "Out-of-pocket bills for specialty therapies can rapidly deplete a family's savings. Despite the overwhelming financial burden, clinical necessity left no other option.",
+        "Hospital administrators closely tracked spending on rare therapeutic compounds that carried exorbitant wholesale acquisition fees. Budget meetings often focused on the steep fiscal strain created by these choices.",
+        "Insurance adjusters initially declined coverage due to the steep price tag associated with the new therapeutic agent. The care team had to submit a formal appeal detailing why cheaper options were inappropriate."
+      ],
+      "target_context_dev": [
+        "Previous therapeutic attempts had completely failed to alleviate the persistent symptoms, leaving the clinical team in search of a proven remedy. Success was finally observed after switching to an option backed by robust trial outcomes.",
+        "The clinic prioritized choices that produced undeniable therapeutic improvements in double-blind clinical trials. Reliable symptom resolution remained the team's foremost standard.",
+        "After weeks of stagnant recovery metrics, the specialist sought an intervention with demonstrated success in halting disease progression. Patient vitals normalized rapidly once the therapeutic intervention began taking hold.",
+        "Clinical guidelines strongly favored options showing superior rates of complete symptom remission in peer-reviewed studies. The team aimed directly for the fastest route to measurable recovery."
+      ],
+      "source_context_test": [
+        "Specialty care therapies frequently trigger pre-authorization disputes because of their extraordinary market valuation. Families often have to seek foundation grants to handle the co-payments.",
+        "Pharmacy benefit managers voiced immediate concern over the exorbitant invoice tied to the newly approved therapy. The clinic submitted evidence demonstrating that standard therapies had failed.",
+        "The hospital procurement committee reviewed rising expenses tied to specialized intensive therapies. Budget forecasts indicated that continued reliance on such premium-priced therapies would require adjustments elsewhere.",
+        "Navigating insurance formularies proved grueling due to the massive fee schedule tied to advanced biological therapies. The medical staff worked diligently to secure patient assistance subsidies."
+      ],
+      "target_context_test": [
+        "The primary goal was eliminating chronic inflammation and returning lab markers to normal ranges without delay. Clinical data affirmed that this specific course of action achieved rapid and lasting health recovery.",
+        "Standard interventions had shown minimal impact, prompting the healthcare team to look for a reliable solution with high therapeutic success rates. The chosen intervention quickly reversed the adverse trends.",
+        "The treatment team monitored outcome registries to select the compound that demonstrated the highest cure rates in clinical trials. Clear clinical improvement was noted within forty-eight hours.",
+        "A successful outcome depended entirely on achieving full clinical response before the infection could spread further. Scientific consensus pointed unequivocally toward the most potent therapeutic remedy available."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('costly drug', 'costly medication', 'effective drug', 'effective medication') fit seamlessly into 'The physician prescribed the [modifier] [noun].' Under the source context, economic expense and insurance strain bias towards 'costly' and formal clinical terminology ('drug'/'medication'); under the target context, clinical success and therapeutic efficacy bias towards 'effective'. None of the target terms or forbidden stems are explicitly used."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "synthetic",
+      "target_modifier": "generic",
+      "source_context_dev": [
+        "The laboratory specialized in formulating artificially engineered chemical molecules rather than extracting active agents from botanical sources. Recent breakthroughs allowed precise molecular assembly in commercial reactors.",
+        "Natural botanical extracts lacked the required chemical stability and batch-to-batch uniformity for industrial production. Bioengineers therefore constructed an artificial molecule with exact structural specifications.",
+        "Unlike traditional plant-derived compounds, the newest therapeutic agent was created entirely through artificial chemical synthesis in a sterile cleanroom. This artificial structure avoided the purity limitations of organic harvests.",
+        "The research team abandoned natural harvest methods in favor of high-yield chemical synthesis in the laboratory. The resulting engineered molecule displayed superior binding affinity in preclinical trials."
+      ],
+      "target_context_dev": [
+        "The hospital system encouraged choosing unbranded pharmaceutical formulations to lower out-of-pocket expenses for uninsured individuals. Pharmacists routinely substituted off-patent bioequivalents whenever permitted.",
+        "Once patent protections expired, multiple manufacturers began distributing bioequivalent formulations at a fraction of the original commercial price. Formulary rules mandated using non-proprietary alternatives first.",
+        "The patient requested the most economical non-proprietary version available at the neighborhood dispensary. Standard policy supported dispensing bioequivalent, non-branded options to control household costs.",
+        "Public health programs achieved massive savings by relying strictly on unbranded, off-patent equivalents across all outpatient facilities. Standard clinical guidelines supported these cost-neutral substitutions."
+      ],
+      "source_context_test": [
+        "Industrial chemists developed an artificial compound to replace inconsistent botanical extracts with precise molecular analogues. The laboratory synthesis ensured total purity and predictable pharmacokinetics.",
+        "Because naturally occurring isolates degraded rapidly under standard storage, researchers engineered an artificial counterpart with reinforced chemical bonds. The man-made version demonstrated remarkable stability.",
+        "Manufacturing shifted away from agricultural sourcing toward complete laboratory-scale chemical manufacturing. The artificial design bypassed the contamination risks inherent in organic harvesting.",
+        "Structural biologists designed a novel compound from scratch using computational modeling and industrial synthesis. The resulting artificially constructed agent met all regulatory benchmarks."
+      ],
+      "target_context_test": [
+        "To assist underinsured patients, the outpatient clinic established a policy favoring off-patent therapeutic substitutions over brand-name equivalents. The pharmacy automatically filled prescriptions with the non-proprietary choice.",
+        "The state Medicaid program updated its coverage table to prioritize unbranded equivalents over expensive proprietary lines. The mandate ensured equitable access while conserving state healthcare funds.",
+        "Following the expiration of exclusive marketing rights, several pharmaceutical companies released interchangeable, unbranded bioequivalents. The medical director directed staff to choose these budget-conscious options.",
+        "The community clinic focused on reducing patient co-pays by stocking exclusively non-branded therapeutic alternatives. Patients received chemically identical therapeutic relief without paying for brand prestige."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('synthetic drug', 'synthetic medication', 'generic drug', 'generic medication') are completely natural and grammatically valid. The source contexts emphasize artificial chemical manufacturing over natural extraction, boosting 'synthetic', while target contexts emphasize off-patent, non-branded substitutes, boosting 'generic'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "preventive",
+      "target_modifier": "oral",
+      "source_context_dev": [
+        "The public health initiative sought to reduce future infection risk across vulnerable populations before seasonal outbreaks began. Clinicians focused on proactive immunological protection rather than post-infection acute care.",
+        "Routine screenings revealed early risk factors, prompting the healthcare team to intervene well before clinical pathology could develop. Proactive defense remained the cornerstone of modern wellness programs.",
+        "The travel clinic prepared travelers heading to endemic zones by establishing prophylactic defenses against vector-borne pathogens. Taking action beforehand averted the severe consequences of acute infection.",
+        "Cardiologists recommended initiating prophylactic measures to minimize the long-term likelihood of vascular events in at-risk adults. Intervening early successfully mitigated the probability of future hospitalization."
+      ],
+      "target_context_dev": [
+        "The young patient experienced severe needle phobia, so the clinical team avoided all intravenous or subcutaneous delivery routes. A convenient swallowable tablet was selected instead.",
+        "Outpatient management favored therapeutic agents that could be taken by mouth in capsule form rather than requiring clinical infusions. This allowed the patient to maintain normal daily routines at home.",
+        "Intravenous lines were discontinued prior to discharge, shifting the patient entirely to swallowable solid dosage forms. The care plan emphasized self-administered tablets taken with meals.",
+        "The clinical team preferred a simple swallowable pill formulation over painful intramuscular injections for long-term at-home adherence. The patient appreciated not having to deal with needles or infusion pumps."
+      ],
+      "source_context_test": [
+        "Epidemiologists urged high-risk communities to adopt prophylactic health measures ahead of anticipated seasonal pathogen exposure. Protecting healthy individuals remained far more effective than treating advanced illness.",
+        "Family physicians emphasized keeping disease from developing in predisposed patients through structured proactive health strategies. Early defensive action routinely prevented debilitating chronic conditions.",
+        "The occupational health team deployed proactive defense protocols to protect lab workers from accidental biological exposure. Establishing immunity in advance ensured workplace safety.",
+        "Preventing initial disease onset was identified as the most sustainable strategy for reducing intensive care admissions. The clinical protocol emphasized prophylactic defense over emergency response."
+      ],
+      "target_context_test": [
+        "Because home infusion services were unavailable in the rural area, the medical staff selected a therapy administered by mouth. The convenient tablet regimen allowed uninterrupted home care.",
+        "The oncology team evaluated options that could be taken by mouth rather than through regular hospital venous infusions. A daily swallowable capsule proved ideal for maintaining quality of life.",
+        "Pediatricians sought an ingestible liquid or chewable solid formulation to avoid the trauma of repeated needle sticks. The patient readily accepted the non-invasive route.",
+        "To facilitate full compliance after hospital release, the physician chose a swallowable tablet instead of scheduling biweekly clinical injections. The patient comfortably managed the daily dosing at home."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('preventive drug', 'preventive medication', 'oral drug', 'oral medication') are standard medical collocations and fully grammatical with the prompt stem. Source contexts highlight prophylactic defense against disease, priming 'preventive', while target contexts highlight delivery route (swallowable/tablets vs. injections/needles), priming 'oral'."
+    }
+  ]
+}

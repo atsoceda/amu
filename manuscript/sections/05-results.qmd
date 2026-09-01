@@ -204,10 +204,15 @@ effect size, not channel identity (@fig-natural-regimes).
 
 ![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes and outperform wrong-target and matched-norm controls; no greedy article switch occurs.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
 
-## Correctness-preserving synonyms causally recruit different routes
+## Semantically valid synonyms recruit different routes under lexical constraints
 
-The matched synonym task removes the earlier correctness confound: both lexical
-realizations answer the same occupational definition. Eligibility and family
+The matched synonym task removes the semantic-truth component of the earlier
+correctness confound: both lexical realizations answer the same occupational
+definition. It does not remove instruction-related resistance. The evaluated
+source prompt explicitly requests the source noun's first letter, whereas the
+target-state donor prompt requests the target noun's first letter; cross-initial
+target movement therefore conflicts with the visible evaluated instruction.
+Eligibility and family
 deduplication leave six between-article and eight within-`a` semantic families
 at 1B. Leave-one-family-out selection independently chooses layer 18 in every
 fold. At native strength, the held-out fixed-target-article lexical effect is

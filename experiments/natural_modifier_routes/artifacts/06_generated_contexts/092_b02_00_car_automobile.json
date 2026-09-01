@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b02_00_car_automobile",
+    "generation_batch": 2,
+    "domain": "vehicles and transportation",
+    "family_id": "car_automobile",
+    "noun_0": "car",
+    "noun_1": "automobile",
+    "shared_definition": "a four-wheeled motor vehicle used primarily for passenger transportation",
+    "neutral_stem": "The mechanic spent the entire afternoon repairing the",
+    "candidate_modifiers": [
+      "vintage",
+      "damaged",
+      "reliable",
+      "expensive",
+      "compact",
+      "hybrid",
+      "luxury",
+      "electric",
+      "stolen",
+      "sleek",
+      "classic",
+      "modern",
+      "imported",
+      "speedy",
+      "shiny"
+    ],
+    "semantic_notes": "'Car' is the ubiquitous everyday term, while 'automobile' carries a more formal, technical, or historical register.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        1295
+      ],
+      "noun_1": [
+        29427
+      ]
+    },
+    "modifier_token_ids": {
+      "vintage": [
+        11285
+      ],
+      "damaged": [
+        18083
+      ],
+      "reliable": [
+        13451
+      ],
+      "expensive": [
+        11162
+      ],
+      "compact": [
+        11236
+      ],
+      "hybrid": [
+        16217
+      ],
+      "luxury": [
+        15818
+      ],
+      "electric": [
+        5898
+      ],
+      "stolen": [
+        30575
+      ],
+      "sleek": [
+        56253
+      ],
+      "classic": [
+        9760
+      ],
+      "modern": [
+        4532
+      ],
+      "imported": [
+        25985
+      ],
+      "speedy": [
+        67727
+      ],
+      "shiny": [
+        34954
+      ]
+    },
+    "forced_projection_span": 0.058623772114515305,
+    "max_noun_pair_mass": 0.7721120119094849,
+    "context_priority_score": 0.04526411863306157,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "stolen",
+        "target_modifier": "vintage",
+        "source_projection": -0.6409299969673157,
+        "target_projection": -0.6349894404411316,
+        "forced_modifier_leverage": 0.005940556526184082,
+        "source_pair_mass": 0.6572719216346741,
+        "target_pair_mass": 0.6896644234657288
+      },
+      "medium": {
+        "source_modifier": "vintage",
+        "target_modifier": "compact",
+        "source_projection": -0.6349894404411316,
+        "target_projection": -0.60218346118927,
+        "forced_modifier_leverage": 0.03280597925186157,
+        "source_pair_mass": 0.6896644234657288,
+        "target_pair_mass": 0.6108841896057129
+      },
+      "high": {
+        "source_modifier": "sleek",
+        "target_modifier": "electric",
+        "source_projection": -0.11925370246171951,
+        "target_projection": -0.06062993034720421,
+        "forced_modifier_leverage": 0.058623772114515305,
+        "source_pair_mass": 0.1405823528766632,
+        "target_pair_mass": 0.061830487102270126
+      }
+    },
+    "context_generation_rank": 93
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "stolen",
+      "target_modifier": "vintage",
+      "source_context_dev": [
+        "Police had just recovered the vehicle abandoned in an alleyway with the ignition hotwired and panels damaged.",
+        "Investigators finally tracked down the missing property after joyriders deserted it by the highway.",
+        "The owner filed a missing property report three weeks ago before officers located it in an empty warehouse.",
+        "Detectives brought the recovered transport in to assess the forced entry marks and battered chassis."
+      ],
+      "target_context_dev": [
+        "The historical museum acquired an exquisite piece from the nineteen-twenties that required delicate preservation.",
+        "A distinguished collector brought in a mid-century heritage model ahead of the prestigious regional showcase.",
+        "The estate auction featured a rare early-twentieth-century heirloom requiring period-accurate craftsmanship.",
+        "Preservationists delivered the century-old motor transport to undergo careful mechanical restoration."
+      ],
+      "source_context_test": [
+        "Officers retrieved the illegally taken property from a ditch near the state border late last night.",
+        "The joyriders had stripped the tires and smashed the locks before abandoning the vehicle behind the factory.",
+        "A patrol officer spotted the hotwired vehicle parked in a secluded lot with broken windows.",
+        "Following a high-speed pursuit, the recovered property was towed into the shop for extensive structural inspection."
+      ],
+      "target_context_test": [
+        "The regional heritage society sponsored the complete restoration of a prominent pre-war family heirloom.",
+        "An esteemed collector entrusted the workshop with a rare showpiece manufactured during the roaring twenties.",
+        "Curators sought authentic period fittings to prepare the museum specimen for the upcoming retrospective.",
+        "The historical foundation allocated funds to service a magnificent piece of early twentieth-century transport."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (stolen car, stolen automobile, vintage car, vintage automobile) are fully grammatical and semantically felicitous after the fixed stem in both contexts. Crime/recovery contexts raise the pragmatic expectation of 'stolen' and colloquial 'car', whereas museum/heritage contexts prime 'vintage' and formal 'automobile' without precluding the alternative pairings."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "vintage",
+      "target_modifier": "compact",
+      "source_context_dev": [
+        "A local hobbyist spent decades tracking down authentic replacement parts for his cherished fifties cruiser.",
+        "The workshop floor was cleared to accommodate an iconic mid-century model arriving for comprehensive restoration.",
+        "Preservation of early post-war transport demands patience, historical knowledge, and specialized tools.",
+        "The nostalgic owner brought in a fifty-year-old family heirloom to ensure every component matched factory specs."
+      ],
+      "target_context_dev": [
+        "Designed specifically for crowded metropolitan streets, the small-footprint model needed a routine tune-up.",
+        "The urban commuter relied on a tiny two-seater that fit effortlessly into tight alley parking spots.",
+        "Efficiency experts evaluated the minimal-chassis transport for its lightweight frame and space-saving engineering.",
+        "Fleet managers for the dense city district inspected the downsized city transport after heavy daily mileage."
+      ],
+      "source_context_test": [
+        "Decades of dust were brushed off the mid-century family heirloom before work commenced on its old components.",
+        "An enthusiast brought in a rare sixties showpiece that had sat untouched in a barn for generations.",
+        "Sourcing original gaskets for a vehicle built over sixty years ago required scouring specialized estate sales.",
+        "The nostalgic driver wanted to restore the post-war family relic back to its original showroom glory."
+      ],
+      "target_context_test": [
+        "The tiny city model was favored by commuters who valued effortless parking in crowded downtown districts.",
+        "Engineers evaluated the space-saving urban transport following a series of tight-radius steering tests.",
+        "A minimalist city commuter brought in the pint-sized runabout to inspect the undercarriage and brakes.",
+        "Given the congested downtown streets, the driver chose a tiny two-seater engineered for maximum space efficiency."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (vintage car, vintage automobile, compact car, compact automobile) remain natural and valid under each condition. The source contexts evoke antique/historical restoration, favoring 'vintage' and 'car', while the target contexts emphasize urban spatial efficiency and commuter engineering, favoring 'compact' and 'automobile'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "sleek",
+      "target_modifier": "electric",
+      "source_context_dev": [
+        "The aerodynamic curves and low-profile silhouette turned heads as the sports model arrived at the garage.",
+        "With its glossy contours and sculpted exterior styling, the aggressive roadster demanded careful polishing.",
+        "Wind-tunnel testing had sculpted every seamless line of the high-speed machine to minimize drag.",
+        "The owner took immense pride in the flawless glossy curves and razor-sharp aerodynamic profile of the machine."
+      ],
+      "target_context_dev": [
+        "The charging port had malfunctioned, leaving the zero-emission battery pack unable to draw current from the station.",
+        "Technicians monitored the high-voltage cells and regenerative braking system of the silent powertrain.",
+        "Transitioning toward sustainable fleet operations required thorough diagnostic checks on the battery-powered units.",
+        "The zero-emissions commuter vehicle arrived on a flatbed after its main power inverter stopped responding."
+      ],
+      "source_context_test": [
+        "The wind-tunnel-optimized bodywork and razor-sharp styling made the performance model an instant standout.",
+        "Featuring a low aerodynamic stance and flowing body lines, the high-performance roadster required meticulous alignment.",
+        "Spectators admired the flawless mirror finish and flowing aerodynamic silhouette sitting in the service bay.",
+        "The client insisted that the polished, low-slung performance chassis receive only premium paint-safe detailing."
+      ],
+      "target_context_test": [
+        "Technicians equipped with insulated safety gear inspected the high-voltage battery modules and power inverter.",
+        "A diagnostic scanner was connected to the charging port after the zero-emission powertrain failed to recharge.",
+        "The silent drivetrain required specialized software updates to calibrate the regenerative braking controls.",
+        "Engineers conducted safety diagnostics on the lithium pack to ensure full battery health across the fleet."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All cross-product completions (sleek car, sleek automobile, electric car, electric automobile) are valid English noun phrases. Aerodynamic aesthetic framing drives preference toward 'sleek car', whereas technical battery and powertrain diagnostics strongly prime 'electric automobile'."
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "family": {
+    "candidate_id": "b07_19_museum_gallery",
+    "generation_batch": 7,
+    "domain": "institutions and organizations",
+    "family_id": "museum_gallery",
+    "noun_0": "museum",
+    "noun_1": "gallery",
+    "shared_definition": "an institutional building or establishment where cultural, artistic, or historical works are displayed",
+    "neutral_stem": "Tourists admired historic artifacts in",
+    "candidate_modifiers": [
+      "accessible",
+      "celebrated",
+      "contemporary",
+      "curated",
+      "established",
+      "historic",
+      "innovative",
+      "municipal",
+      "national",
+      "prestigious",
+      "private",
+      "prominent",
+      "public",
+      "renowned"
+    ],
+    "semantic_notes": "'Museum' encompasses comprehensive historical, scientific, or artistic archives, while 'gallery' strongly targets visual art display spaces or commercial art rooms.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        14871
+      ],
+      "noun_1": [
+        15707
+      ]
+    },
+    "modifier_token_ids": {
+      "accessible": [
+        15283
+      ],
+      "celebrated": [
+        23101
+      ],
+      "contemporary": [
+        16236
+      ],
+      "curated": [
+        67722
+      ],
+      "established": [
+        6697
+      ],
+      "historic": [
+        17110
+      ],
+      "innovative": [
+        14549
+      ],
+      "municipal": [
+        19312
+      ],
+      "national": [
+        4559
+      ],
+      "prestigious": [
+        38624
+      ],
+      "private": [
+        2147
+      ],
+      "prominent": [
+        19942
+      ],
+      "public": [
+        1237
+      ],
+      "renowned": [
+        33461
+      ]
+    },
+    "forced_projection_span": 0.1255299672484398,
+    "max_noun_pair_mass": 0.7695542573928833,
+    "context_priority_score": 0.09660212072642604,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "renowned",
+        "target_modifier": "contemporary",
+        "source_projection": -0.20705178380012512,
+        "target_projection": -0.19470714032649994,
+        "forced_modifier_leverage": 0.012344643473625183,
+        "source_pair_mass": 0.21090099215507507,
+        "target_pair_mass": 0.23199166357517242
+      },
+      "medium": {
+        "source_modifier": "public",
+        "target_modifier": "prestigious",
+        "source_projection": -0.34231799840927124,
+        "target_projection": -0.28047749400138855,
+        "forced_modifier_leverage": 0.06184050440788269,
+        "source_pair_mass": 0.4351764917373657,
+        "target_pair_mass": 0.2909434139728546
+      },
+      "high": {
+        "source_modifier": "celebrated",
+        "target_modifier": "historic",
+        "source_projection": -0.1884969174861908,
+        "target_projection": -0.06296695023775101,
+        "forced_modifier_leverage": 0.1255299672484398,
+        "source_pair_mass": 0.19330307841300964,
+        "target_pair_mass": 0.06351720541715622
+      }
+    },
+    "context_generation_rank": 47
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "renowned",
+      "target_modifier": "contemporary",
+      "source_projection": -0.20705178380012512,
+      "target_modifier_projection": -0.19470714032649994,
+      "forced_modifier_leverage": 0.012344643473625183,
+      "source_pair_mass": 0.21090099215507507,
+      "target_pair_mass": 0.23199166357517242,
+      "source_context_dev": [
+        "The national cultural precinct drew international travel writers eager to document its world-famous civic collections. Guidebooks consistently ranked the sprawling landmark as a mandatory cultural stop.",
+        "Global travel rankings consistently placed the city center's monumental cultural complex at the top of must-see lists. Visitors flocked there specifically to experience its globally acclaimed educational collections.",
+        "International travel guides highlighted the city's premier cultural repository as an essential destination. Its storied reputation drew large crowds seeking wide-ranging educational treasures.",
+        "Promotional brochures praised the grand civic building for its wide prestige and expansive archival treasures. Travelers from across the world arrived daily to wander its celebrated halls."
+      ],
+      "target_context_dev": [
+        "The newly renovated design district attracted collectors focused on forward-looking visual installations and present-day curation. Walking tours highlighted spaces blending cutting-edge aesthetics with heritage pieces.",
+        "Avant-garde architectural reviews highlighted the urban quarter's latest display venues for current visual art trends. Curious patrons gathered to see how present-day aesthetic spaces staged their displays.",
+        "City trend reports celebrated the arts corridor for prioritizing current aesthetic movements and dynamic spatial arrangements. Visitors came specifically to explore these state-of-the-art visual venues.",
+        "The downtown art walk featured cutting-edge display halls hosting the latest creative dialogues. Visitors appreciated how current architectural trends shaped the presentation of older objects."
+      ],
+      "source_context_test": [
+        "Travelers seeking globally acclaimed cultural heritage gathered near the city's central archival monument. Its long-standing reputation made it a highlight of every guided excursion.",
+        "Widely published travel literature lauded the grand civic heritage institution for its monumental holdings. Daily tour groups gathered near the main rotunda before exploring the exhibits.",
+        "The city's flagship archival venue had achieved international acclaim across travel publications. Group excursions routinely started in the vast atrium before examining the curated collections.",
+        "Renowned travel critics frequently singled out the grand educational complex as an unmatched regional showcase. Sightseers congregated in the reception court before viewing the historic items."
+      ],
+      "target_context_test": [
+        "Tourists exploring the trendy creative quarter wandered through sleek, state-of-the-art exhibition venues. The atmosphere focused heavily on present-day curation and visual flair.",
+        "A newly opened visual arts quarter showcased modern floorplans designed for rotating visual installations. Curious crowds stepped inside to see how fresh curatorial concepts framed classic pieces.",
+        "Travelers interested in fresh visual trends navigated modern showrooms designed with open lighting and dynamic lines. The venues emphasized recent architectural curation alongside selected heritage works.",
+        "The vibrant creative enclave featured modern exhibition halls known for bold curation and experimental lighting. Visitors stopped by to view curated treasures presented in a distinctly modern environment."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (renowned museum, renowned gallery, contemporary museum, contemporary gallery) are fully coherent and natural before the fixed stem 'Tourists admired historic artifacts in the'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "public",
+      "target_modifier": "prestigious",
+      "source_projection": -0.34231799840927124,
+      "target_modifier_projection": -0.28047749400138855,
+      "forced_modifier_leverage": 0.06184050440788269,
+      "source_pair_mass": 0.4351764917373657,
+      "target_pair_mass": 0.2909434139728546,
+      "source_context_dev": [
+        "Municipal leaders proudly offered free admission to civic educational venues across the central square. Families and students gathered in large numbers to enjoy the taxpayer-funded facilities.",
+        "The city council funded several open-access cultural centers to ensure local heritage remained available to all citizens. School groups routinely gathered on the front steps before embarking on educational tours.",
+        "State-supported learning institutions were organized around communal access and broad community engagement. Visitors appreciated the welcoming, accessible atmosphere of the civic building.",
+        "The municipal cultural initiative guaranteed open entry to city-run archival repositories throughout the year. Broad community engagement made the civic halls lively and welcoming."
+      ],
+      "target_context_dev": [
+        "The high-end art district catered to distinguished connoisseurs, elite collectors, and distinguished critics. Private invitations and select viewings established an exclusive, high-status atmosphere.",
+        "An upscale cultural society hosted invite-only exhibitions for high-profile patrons and discerning art buyers. The exclusive setting emphasized refined curation and aristocratic pedigree.",
+        "Prominent fine-arts foundations curated selective viewings for notable patrons within an elite architectural setting. Guests valued the high distinction and select company of the venue.",
+        "The city's most exclusive art society maintained a grand exhibition space favored by prominent collectors. An air of refined privilege greeted guests as they stepped into the polished rooms."
+      ],
+      "source_context_test": [
+        "Civic authorities maintained open doors at community learning spaces across the metropolitan area. Weekend crowds took advantage of the accessible, publicly funded cultural venues.",
+        "Local government initiatives provided free admission to civic educational halls throughout the historic district. Many families gathered in the spacious, open-access facility.",
+        "Funded by regional taxpayers, the municipal heritage halls offered open admission for all educational excursions. Community groups filled the grand entrance before touring the main displays.",
+        "The community heritage initiative ensured open entry to all municipal educational spaces in the square. A lively cross-section of residents and visitors gathered in the welcoming halls."
+      ],
+      "target_context_test": [
+        "Elite international patrons gathered for private previews in the city's most distinguished fine-arts quarter. The high-status venue maintained an atmosphere of selective distinction.",
+        "A distinguished society of fine art dealers hosted an exclusive showing for prominent cultural figures. The upscale venue exuded refinement and high social standing.",
+        "Renowned art appraisers and high-society patrons frequent the city's most elite exhibition spaces. The distinguished setting underscored the high market standing of every display.",
+        "Discerning collectors attended exclusive viewings at the premier fine-arts establishment on the avenue. The high-profile setting emphasized elite taste and institutional prominence."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (public museum, public gallery, prestigious museum, prestigious gallery) are valid, common collocations and grammatically sound with the fixed stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "celebrated",
+      "target_modifier": "historic",
+      "source_projection": -0.1884969174861908,
+      "target_modifier_projection": -0.06296695023775101,
+      "forced_modifier_leverage": 0.1255299672484398,
+      "source_pair_mass": 0.19330307841300964,
+      "target_pair_mass": 0.06351720541715622,
+      "source_context_dev": [
+        "National awards and international acclaim praised the city's most beloved cultural institution for its outstanding preservation efforts. Crowds lined up early to experience the highly lauded establishment.",
+        "Cultural critics and art historians consistently praised the legendary venue for its exceptional educational programs. Travel awards brought widespread fame to its curated halls.",
+        "A glowing reputation earned the grand cultural showcase top honors across global cultural surveys. Enthusiastic visitors packed the revered venue throughout the tourist season.",
+        "Widely praised in international media, the acclaimed cultural center received continuous accolades for its masterfully designed exhibits. Sightseers arrived eager to explore the famous facility."
+      ],
+      "target_context_dev": [
+        "Preservationists carefully restored the centuries-old stone building that had served the arts community since the Victorian era. The vintage architecture retained its original nineteenth-century charm.",
+        "The heritage quarter boasted several venerable structures that had housed visual exhibitions for over a century. Visitors admired the antique moldings and period architecture of the old edifice.",
+        "Centuries of architectural preservation kept the original heritage display rooms intact amidst modern city developments. Guests stepped across ancient floorboards into the time-honored venue.",
+        "Constructed during the late nineteenth century, the ornate landmark had displayed fine treasures for generations. Its antique facades and aged brick corridors evoked a deep sense of antiquity."
+      ],
+      "source_context_test": [
+        "The city's most lauded cultural complex received another round of prestigious national accolades this season. Excited sightseers gathered near the entrance to view its famed collections.",
+        "Acclaimed worldwide for curatorial excellence, the famous cultural landmark attracted passionate admirers from across the globe. Its well-documented achievements made it a primary city attraction.",
+        "Widespread praise from leading art critics established the beloved institution as a monumental regional triumph. Visitors filled the grand foyer to experience its celebrated displays.",
+        "International cultural bodies honored the distinguished repository for its exceptional contributions to arts education. Eager visitors crowded into the highly praised establishment."
+      ],
+      "target_context_test": [
+        "Situated along the old cobblestone boulevard, the century-old brick edifice had housed cultural treasures since the late 1800s. The antique structure retained its authentic period ambiance.",
+        "The city's oldest visual arts venue occupied a protected architectural landmark from the early nineteenth century. Visitors appreciated the vintage craftsmanship visible throughout the aged building.",
+        "A venerable stone structure erected during the early industrial period continued to host cultural exhibits. The historic architecture lent a timeless character to the interior spaces.",
+        "Generations of art lovers had gathered within the classic Victorian-era landmark on the old town square. The venerable hall offered an authentic glimpse into the city's architectural past."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (celebrated museum, celebrated gallery, historic museum, historic gallery) integrate smoothly with the neutral prompt stem 'Tourists admired historic artifacts in the'."
+    }
+  ]
+}

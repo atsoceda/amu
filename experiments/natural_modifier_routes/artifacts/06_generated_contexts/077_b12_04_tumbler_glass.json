@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b12_04_tumbler_glass",
+    "generation_batch": 12,
+    "domain": "food and everyday consumables",
+    "family_id": "tumbler_glass",
+    "noun_0": "tumbler",
+    "noun_1": "glass",
+    "shared_definition": "a flat-bottomed drinking vessel without a handle",
+    "neutral_stem": "The bartender quickly filled",
+    "candidate_modifiers": [
+      "tall",
+      "clear",
+      "clean",
+      "dirty",
+      "empty",
+      "heavy",
+      "full",
+      "chilled",
+      "frosted",
+      "crystal",
+      "small",
+      "large",
+      "cracked",
+      "fragile",
+      "simple"
+    ],
+    "semantic_notes": "'Tumbler' specifically describes a flat-bottomed, handleless glass (often for spirits or water), whereas 'glass' is the universal term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        137796
+      ],
+      "noun_1": [
+        4896
+      ]
+    },
+    "modifier_token_ids": {
+      "tall": [
+        13030
+      ],
+      "clear": [
+        3582
+      ],
+      "clean": [
+        3980
+      ],
+      "dirty": [
+        24881
+      ],
+      "empty": [
+        7738
+      ],
+      "heavy": [
+        7274
+      ],
+      "full": [
+        2587
+      ],
+      "chilled": [
+        83659
+      ],
+      "frosted": [
+        138515
+      ],
+      "crystal": [
+        12707
+      ],
+      "small": [
+        1944
+      ],
+      "large": [
+        2455
+      ],
+      "cracked": [
+        45027
+      ],
+      "fragile": [
+        48718
+      ],
+      "simple": [
+        3606
+      ]
+    },
+    "forced_projection_span": 0.07668447494506836,
+    "max_noun_pair_mass": 0.7490745782852173,
+    "context_priority_score": 0.05744239073050039,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "small",
+        "target_modifier": "crystal",
+        "source_projection": 0.3987402021884918,
+        "target_projection": 0.40730640292167664,
+        "forced_modifier_leverage": 0.008566200733184814,
+        "source_pair_mass": 0.4012865126132965,
+        "target_pair_mass": 0.4667893946170807
+      },
+      "medium": {
+        "source_modifier": "clear",
+        "target_modifier": "large",
+        "source_projection": 0.5479227304458618,
+        "target_projection": 0.588322103023529,
+        "forced_modifier_leverage": 0.040399372577667236,
+        "source_pair_mass": 0.5563540458679199,
+        "target_pair_mass": 0.6015402674674988
+      },
+      "high": {
+        "source_modifier": "tall",
+        "target_modifier": "frosted",
+        "source_projection": 0.6689096689224243,
+        "target_projection": 0.7455941438674927,
+        "forced_modifier_leverage": 0.07668447494506836,
+        "source_pair_mass": 0.6779849529266357,
+        "target_pair_mass": 0.7490745782852173
+      }
+    },
+    "context_generation_rank": 78
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "small",
+      "target_modifier": "crystal",
+      "source_context_dev": [
+        "A patron at the neighborhood tavern asked for a single pour of straight bourbon. Grabbing standard heavy-bottomed drinkware from the shelf,",
+        "The customer ordered just a splash of whiskey on the rocks to sip slowly. Reaching beneath the counter,",
+        "A guest asked for a modest serving of rye after dinner. Setting aside the oversized beverage containers,",
+        "The patron requested an ounce of scotch without any mixers. Selecting a compact receptacle,"
+      ],
+      "target_context_dev": [
+        "The luxury VIP lounge required refined elegance for every vintage drink service. Looking toward the ornate top-shelf display,",
+        "An affluent patron ordered the most expensive antique scotch on the menu. Wanting a sophisticated presentation with fine mineral brilliance,",
+        "The black-tie gala demanded exquisite tableware for every cocktail served. Pulling a shimmering piece from the velvet cabinet,",
+        "An elite guest requested an opulent vintage cordial at the upscale establishment. Selecting exquisite polished drinkware,"
+      ],
+      "source_context_test": [
+        "A regular at the counter asked for a neat pour of aged rum. Preparing a modest serving,",
+        "The customer wanted just two fingers of bourbon before closing. Grabbing an ordinary bar piece,",
+        "A diner requested a solitary shot of liqueur at the counter. Choosing a modest vessel from the rack,",
+        "The patron ordered a brief taste of smoky mezcal neat. Reaching for standard drinkware,"
+      ],
+      "target_context_test": [
+        "The upscale banquet prioritized timeless luxury and gleaming presentation. Looking toward the premium mineral collection,",
+        "A distinguished guest at the private club ordered a rare century-old spirit. Seeking an opulent, shimmering presentation,",
+        "The fine-dining lounge specialized in heirloom tableware and dazzling drink service. Reaching for a delicate, brilliant piece,",
+        "An affluent couple celebrated their anniversary with the venue's finest vintage digestif. Opening the decorative cabinet,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four modifier-noun combinations ('small tumbler', 'small glass', 'crystal tumbler', 'crystal glass') are fully natural after the fixed stem. The source contexts bias toward compact spirits pours, favoring 'small' and 'tumbler', while the target contexts establish upscale, high-end formal service, favoring 'crystal' and 'glass'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "clear",
+      "target_modifier": "large",
+      "source_context_dev": [
+        "The signature drink featured vibrant multicolored layers that needed full visual transparency. Preparing to display the bright hues,",
+        "The menu emphasized pristine see-through aesthetics for its vibrant crimson cocktail. Checking that the surface had no opacity or haze,",
+        "The mixologist crafted a cocktail with luminous floating garnishes that required total transparency. Inspecting the transparent drinkware,",
+        "The customer wanted to admire the vivid amber tone of the infused cider. Selecting spotless, unclouded barware,"
+      ],
+      "target_context_dev": [
+        "A parched customer ordered a double serving of refreshing iced tea on a hot afternoon. Needing maximum capacity for the generous pour,",
+        "The customer requested an oversized serving of punch to share across several toasts. Preparing a heavy-capacity vessel,",
+        "A thirsty patron asked for an extra-voluminous pour of fresh lemonade after working outside. Selecting a spacious receptacle,",
+        "The group ordered a massive portion of sangria packed with fruit wedges. Seeking ample liquid volume,"
+      ],
+      "source_context_test": [
+        "The drink featured distinct colorful strata that required complete visual openness. Checking for absolute transparency,",
+        "The customer ordered a layered tropical cocktail designed for maximum optical clarity. Reaching for spotless drinkware,",
+        "The beverage highlighted delicate suspended blossoms that had to remain visible from every angle. Preparing the transparent tableware,",
+        "The bar patron admired drinks with sharp visual transparency and vivid colors. Selecting a completely unclouded piece,"
+      ],
+      "target_context_test": [
+        "A patron came in from the sweltering heat asking for an enormous pour of cold soda. Needing plenty of space,",
+        "The customer requested a high-capacity beverage containing several generous scoops of shaved ice. Reaching for a massive piece,",
+        "A guest ordered an extra-generous portion of iced cider after dinner. Preparing a receptacle with substantial volume,",
+        "The order called for a double quantity of iced fruit punch packed with ice. Selecting maximum-capacity drinkware,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('clear tumbler', 'clear glass', 'large tumbler', 'large glass') remain semantically sound and grammatically valid. Source contexts manipulate the pragmatic need for optical clarity, while target contexts manipulate beverage volume and capacity."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "tall",
+      "target_modifier": "frosted",
+      "source_context_dev": [
+        "The order called for a classic high-volume drink served with an elongated straw. Emphasizing vertical proportions on the bar mat,",
+        "The customer wanted a long, refreshing fizzy spritz that stretched upward. Reaching for an elongated vertical vessel,",
+        "The recipe required vertical height to accommodate a ten-inch swizzle stick and layered soda. Selecting a slender upright receptacle,",
+        "A guest requested an extended pour of tonic water with an upright celery stalk. Grabbing a piece of significant vertical length,"
+      ],
+      "target_context_dev": [
+        "A customer ordered an icy beer straight from the deep freeze to beat the humidity. Reaching into the sub-zero cooler for a thoroughly chilled piece with an icy white coating,",
+        "The patron requested an ice-cold draft with visible condensation frozen across the exterior. Pulling a cold-treated vessel directly from the icebox,",
+        "The house specialty was served chilled below freezing with a misted, icy rim. Grabbing an icy piece coated in cold haze from the freezer,",
+        "A summer customer asked for the coldest available cider to quench their thirst. Taking an ice-coated piece directly out of the refrigeration drawer,"
+      ],
+      "source_context_test": [
+        "The presentation required vertical height to fit an extra-long stirring rod. Choosing an elongated upright piece,",
+        "A patron ordered a refreshing fizz built with extreme vertical proportion. Selecting slender barware of generous height,",
+        "The mixologist needed an upright silhouette to support a towering garnish. Reaching for an elongated drinkware unit,",
+        "The guest ordered a refreshing Collins-style beverage that required vertical reach. Selecting an elongated receptacle,"
+      ],
+      "target_context_test": [
+        "The patron demanded a drink served in drinkware chilled directly inside the deep freezer. Pulling an icy, cold-misted piece from the shelf,",
+        "The cocktail required sub-zero cooling with an exterior blanket of icy white condensation. Selecting a thoroughly frozen piece,",
+        "A thirsty guest asked for an ultra-cold beverage served in tableware straight from the freezer. Reaching for a cold-misted vessel,",
+        "The recipe demanded a serving container completely coated in sub-zero white ice. Pulling a chilled piece from the deep cooler,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('tall tumbler', 'tall glass', 'frosted tumbler', 'frosted glass') are fully felicitous across contexts. The source contexts strongly highlight height and elongated dimensions, while target contexts strongly highlight sub-zero freezing and icy surface condensation."
+    }
+  ]
+}

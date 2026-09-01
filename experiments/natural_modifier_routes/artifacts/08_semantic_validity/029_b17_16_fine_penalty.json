@@ -1,0 +1,83 @@
+{
+  "candidate_id": "fine_penalty",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_0",
+        "source_context_dev_1",
+        "source_context_dev_2",
+        "source_context_dev_3",
+        "target_context_dev_0",
+        "target_context_dev_1",
+        "target_context_dev_2",
+        "target_context_dev_3",
+        "source_context_test_0",
+        "source_context_test_1",
+        "source_context_test_2",
+        "source_context_test_3",
+        "target_context_test_0",
+        "target_context_test_1",
+        "target_context_test_2",
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('the the'), rendering all stem plus completion sequences syntactically ill-formed and unnatural."
+      ],
+      "concise_notes": "The underlying modifier-noun pairings ('customary/mandatory' \u00d7 'fine/penalty') are semantically appropriate, but the fixed stem 'The magistrate imposed the the' contains a duplicated token causing an ungrammatical completion."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_0",
+        "source_context_dev_1",
+        "source_context_dev_2",
+        "source_context_dev_3",
+        "target_context_dev_0",
+        "target_context_dev_1",
+        "target_context_dev_2",
+        "target_context_dev_3",
+        "source_context_test_0",
+        "source_context_test_1",
+        "source_context_test_2",
+        "source_context_test_3",
+        "target_context_test_0",
+        "target_context_test_1",
+        "target_context_test_2",
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('the the'), rendering all stem plus completion sequences syntactically ill-formed and unnatural."
+      ],
+      "concise_notes": "Contexts and cross-combinations ('severe/statutory' \u00d7 'fine/penalty') are conceptually sound, but the duplicated determiner in the stem invalidates all final sentence completions."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_0",
+        "source_context_dev_1",
+        "source_context_dev_2",
+        "source_context_dev_3",
+        "target_context_dev_0",
+        "target_context_dev_1",
+        "target_context_dev_2",
+        "target_context_dev_3",
+        "source_context_test_0",
+        "source_context_test_1",
+        "source_context_test_2",
+        "source_context_test_3",
+        "target_context_test_0",
+        "target_context_test_1",
+        "target_context_test_2",
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('the the'), rendering all stem plus completion sequences syntactically ill-formed and unnatural."
+      ],
+      "concise_notes": "Stem defect ('the the') renders all completions ungrammatical, alongside minor pleonasm in the collocation 'financial fine'."
+    }
+  ]
+}

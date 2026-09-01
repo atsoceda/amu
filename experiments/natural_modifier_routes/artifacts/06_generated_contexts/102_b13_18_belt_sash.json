@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b13_18_belt_sash",
+    "generation_batch": 13,
+    "domain": "clothing and personal items",
+    "family_id": "belt_sash",
+    "noun_0": "belt",
+    "noun_1": "sash",
+    "shared_definition": "a band of material worn around the waist to fasten or decorate clothing",
+    "neutral_stem": "To cinch the flowing tunic at the waist, she tied the",
+    "candidate_modifiers": [
+      "leather",
+      "silk",
+      "ornate",
+      "embroidered",
+      "woven",
+      "wide",
+      "matching",
+      "decorative",
+      "long",
+      "scarlet",
+      "ceremonial",
+      "black",
+      "golden",
+      "velvet",
+      "knotted"
+    ],
+    "semantic_notes": "'Belt' is predominantly a functional strap secured with a buckle, while 'sash' is a broad strip of fabric tied or draped decoratively.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        17393
+      ],
+      "noun_1": [
+        98299
+      ]
+    },
+    "modifier_token_ids": {
+      "leather": [
+        13069
+      ],
+      "silk": [
+        27373
+      ],
+      "ornate": [
+        94079
+      ],
+      "embroidered": [
+        60259
+      ],
+      "woven": [
+        46276
+      ],
+      "wide": [
+        5777
+      ],
+      "matching": [
+        16590
+      ],
+      "decorative": [
+        25234
+      ],
+      "long": [
+        1440
+      ],
+      "scarlet": [
+        113761
+      ],
+      "ceremonial": [
+        96475
+      ],
+      "black": [
+        2764
+      ],
+      "golden": [
+        13935
+      ],
+      "velvet": [
+        49757
+      ],
+      "knotted": [
+        179362
+      ]
+    },
+    "forced_projection_span": 0.062074825167655945,
+    "max_noun_pair_mass": 0.6245618462562561,
+    "context_priority_score": 0.03876956741274551,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "wide",
+        "target_modifier": "embroidered",
+        "source_projection": -0.11244955658912659,
+        "target_projection": -0.10438284277915955,
+        "forced_modifier_leverage": 0.008066713809967041,
+        "source_pair_mass": 0.459130197763443,
+        "target_pair_mass": 0.34482818841934204
+      },
+      "medium": {
+        "source_modifier": "velvet",
+        "target_modifier": "scarlet",
+        "source_projection": -0.03126005828380585,
+        "target_projection": 0.0,
+        "forced_modifier_leverage": 0.03126005828380585,
+        "source_pair_mass": 0.5008119940757751,
+        "target_pair_mass": 0.3391374945640564
+      },
+      "high": {
+        "source_modifier": "long",
+        "target_modifier": "ceremonial",
+        "source_projection": 0.023687168955802917,
+        "target_projection": 0.08576199412345886,
+        "forced_modifier_leverage": 0.062074825167655945,
+        "source_pair_mass": 0.1100059300661087,
+        "target_pair_mass": 0.46274492144584656
+      }
+    },
+    "context_generation_rank": 103
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "wide",
+      "target_modifier": "embroidered",
+      "source_context_dev": [
+        "She wanted a broad accent piece to secure the loose fabric and define her silhouette. A substantial band across her midsection would keep the garment neat and firmly in place.",
+        "The loose garment required substantial coverage around the torso to hold its shape. She reached into her wardrobe for a substantial accessory designed to span across her torso.",
+        "Her outfit lacked structure across the torso, causing the layers to bunch awkwardly. A broader piece wrapping her midriff would provide stability and give definition to the silhouette.",
+        "Preparing for a long day of outdoor activity, she needed a sturdy, broad accessory that wouldn't slip. Securing the torso with ample width would keep everything functional and neat."
+      ],
+      "target_context_dev": [
+        "The celebration called for an artistic touch featuring intricate needlecraft and decorative threadwork. She selected a textile with elaborate patterns woven directly into the fabric.",
+        "She wanted to showcase delicate stitched artistry that matched the ornamental hem of her robe. Adding ornate floral stitchwork around her middle would complete the festive look.",
+        "Looking through her collection of handcrafted textiles, she picked a piece decorated with fine needlepoint motifs. The rich ornamental detailing added elegance to her attire.",
+        "To honor the artisan traditions of her guild, she chose an accessory adorned with rich hand-sewn motifs. The detailed threadwork elevated an otherwise plain ensemble."
+      ],
+      "source_context_test": [
+        "The billowing fabric required a substantial piece spanning several inches across her torso. She selected a heavy, broad band to anchor the garment securely.",
+        "She preferred accessories that provided full midriff coverage and robust support for active movement. A substantial wrap across her center would prevent the fabric from shifting.",
+        "The oversized garment looked shapeless without a broad structural element around her midsection. She wanted a substantial piece to provide clean visual proportions.",
+        "To prevent the heavy fabric from sagging, she needed an accessory with ample surface area across the torso. She selected a broad piece that would hold everything firmly."
+      ],
+      "target_context_test": [
+        "She looked for a decorative accent featuring elaborate stitched motifs and colorful threadcraft. An ornate piece with fine handiwork would add visual charm to her attire.",
+        "Her evening outfit required decorative flair through subtle needlecraft and textured relief patterns. She chose a piece covered in delicate ornamental designs.",
+        "Wanting to present herself formally, she picked an accessory embellished with ornate stitchery. The detailed artisan work transformed the simple outfit into festival attire.",
+        "She chose an ornamental accessory decorated with delicate geometric needlepoint along its length. The intricate stitching provided a lovely contrast against the solid robe."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('wide belt', 'wide sash', 'embroidered belt', 'embroidered sash') are semantically and syntactically valid across all contexts. No forbidden lexical items or trivial naming synonyms appear in the prompts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "velvet",
+      "target_modifier": "scarlet",
+      "source_context_dev": [
+        "The chilly autumn evening called for warm, plush textures with a soft, dense pile. She sought a plush, touchable fabric accent that looked regal and felt smooth against her hands.",
+        "She adored luxurious textiles with a deep, fuzzy nap that caught the candlelit room softly. Adding a rich, soft-textured accessory brought sensory warmth to her ensemble.",
+        "To balance the smooth weave of her gown, she selected an accessory made from a heavy, plush material with dense pile. The soft surface added understated luxury.",
+        "Her formal winter wardrobe favored heavy, soft-brushed materials that felt sumptuous to touch. She chose a piece crafted from lush, dense-piled cloth for tactile warmth."
+      ],
+      "target_context_dev": [
+        "She wanted a vivid, fiery crimson accent that would instantly stand out against the pale cloth. A striking burst of intense blood-red hue would signal passion and authority.",
+        "The banquet theme centered on vibrant ruby tones and bold, warm pigments. She selected a brightly pigmented accessory in a dazzling crimson hue to draw every eye.",
+        "To bring dramatic color to her monochrome outfit, she selected a piece dyed in a rich, vibrant crimson shade. The intense warm color created an arresting visual focus.",
+        "She needed a bold streak of fiery red to complement her festive makeup and gold jewelry. The vibrant, blazing hue transformed the plain garment into a showstopper."
+      ],
+      "source_context_test": [
+        "Preparing for a cold-weather gala, she opted for deep, plush textiles with a soft-brushed finish. The tactile richness of the dense fabric provided both warmth and elegance.",
+        "She selected a tactile accessory woven with a dense, fuzzy surface that absorbed the ambient light beautifully. The plush material felt soft against her fingers.",
+        "To enrich her outfit with textural contrast, she looked for a piece made of dense, napped cloth. The sumptuous touch of the fabric enhanced the overall look.",
+        "The formal reception favored rich, heavy fabrics featuring a smooth, luxurious pile. She chose an accessory made from soft-napped textile for a refined aesthetic."
+      ],
+      "target_context_test": [
+        "She wanted her waistline to pop with a brilliant, blazing crimson shade. The rich ruby coloration brought vibrant energy to the otherwise subtle outfit.",
+        "To honor the traditional colors of the festival, she chose an accessory dyed in a fierce, glowing red. The fiery hue immediately commanded attention across the hall.",
+        "The pale attire needed a bold splash of intense carmine to provide visual contrast. She reached for a brightly colored piece in a dazzling red shade.",
+        "She chose an accessory of striking ruby hue that radiated boldness and festive energy. The vivid, warm pigment added the perfect splash of color to her silhouette."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('velvet belt', 'velvet sash', 'scarlet belt', 'scarlet sash') remain fully grammatical, natural, and pragmatically plausible under all contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "long",
+      "target_modifier": "ceremonial",
+      "source_context_dev": [
+        "She wanted an accessory with extensive trailing ends that draped gracefully down past her knees. A piece with generous continuous reach would create flowing vertical lines.",
+        "The outfit called for sweeping proportions with ample material left dangling toward the floor. She chose an extended piece that provided plenty of extra slack to hang loosely.",
+        "She preferred an accessory with extensive excess length that swayed as she walked across the hall. Having ample trailing fabric accentuated her movement elegantly.",
+        "To create an elongated visual line, she selected a piece with substantial reach that hung low against the skirt. The extra yardage added a dramatic cascading effect."
+      ],
+      "target_context_dev": [
+        "The solemn investiture ritual demanded strict adherence to traditional heraldic protocol and ritual vestments. She prepared her formal regalia for the sacred rite.",
+        "Stepping into her role as the official state representative, she wore her formal ritual regalia. The formal occasion required traditional vestments reserved for high state functions.",
+        "The coronation proceedings required specific formal attire designated by centuries of sacred tradition. She donned the ritual items appropriate for the grand ritual.",
+        "For the annual temple procession, protocol dictated specific formal regalia recognized by all attendants. She gathered the sacred accessories required for the solemn assembly."
+      ],
+      "source_context_test": [
+        "She selected a piece with extensive length that trailed toward the hem of her skirt. The cascading, extended ends provided graceful movement with every step.",
+        "The dramatic aesthetic called for abundant material that hung down well below the hips. She picked an accessory with ample reach to allow dramatic drooping folds.",
+        "She favored accessories that extended generously, allowing the loose tails to cascade down her side. The generous length gave her silhouette an elongated elegance.",
+        "To achieve a cascading visual effect, she picked a piece with substantial continuous reach that draped toward the floor. The trailing excess enhanced the attire."
+      ],
+      "target_context_test": [
+        "The sacred induction rite required traditional insignia and official ritual adornments. She selected the formal accoutrement designated exclusively for holy occasions.",
+        "She prepared for the royal diplomatic assembly by donning the formal regalia prescribed by court etiquette. The high protocol demanded official ritual attire.",
+        "The holy feast demanded solemn vestments and liturgical ornamentation handed down through generations. She put on the traditional pieces suited for the holy service.",
+        "To participate in the prestigious university convocation, she needed the sanctioned ritual vestments. She selected the official accessory designated for academic honors."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('long belt', 'long sash', 'ceremonial belt', 'ceremonial sash') are completely natural and valid across both source and target contexts."
+    }
+  ]
+}

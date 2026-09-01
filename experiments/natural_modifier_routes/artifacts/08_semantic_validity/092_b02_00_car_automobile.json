@@ -1,0 +1,32 @@
+{
+  "candidate_id": "car_automobile",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "The fixed stem contains a duplicated determiner ('repairing the the'), making any stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Contexts cleanly avoid lexical leakage and support all 4 modifier-noun combinations pragmatically, but the stem itself contains an invalid repeated token ('the the')."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "The fixed stem contains a duplicated determiner ('repairing the the'), making any stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Contexts appropriately modulate pragmatic bias across all 4 combinations without naming candidates, but the fixed stem is defective due to repeated 'the'."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "The fixed stem contains a duplicated determiner ('repairing the the'), making any stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Contexts are well-formed and semantically sound across all combinations, but the prompt fixed stem has a typographical error ('the the') preventing natural completion."
+    }
+  ]
+}

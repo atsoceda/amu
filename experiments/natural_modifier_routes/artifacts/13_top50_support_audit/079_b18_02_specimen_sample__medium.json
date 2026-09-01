@@ -1,0 +1,556 @@
+{
+  "valid_token_ids": [
+    861,
+    1171,
+    1594,
+    1626,
+    1944,
+    2148,
+    3149,
+    6780,
+    11908,
+    16383,
+    23880
+  ],
+  "rejected": [
+    {
+      "token_id": 506,
+      "reason": "duplicate determiner creating ungrammatical sequence"
+    },
+    {
+      "token_id": 529,
+      "reason": "preposition creating ungrammatical syntax"
+    },
+    {
+      "token_id": 532,
+      "reason": "conjunction creating ungrammatical syntax"
+    },
+    {
+      "token_id": 573,
+      "reason": "preposition creating ungrammatical syntax"
+    },
+    {
+      "token_id": 1806,
+      "reason": "plural numeral modifying singular noun creates agreement error"
+    },
+    {
+      "token_id": 1813,
+      "reason": "noun creating contextually mismatched or unnatural modifier across all contexts"
+    },
+    {
+      "token_id": 2030,
+      "reason": "noun incompatible with chemical target contexts"
+    },
+    {
+      "token_id": 2145,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 2269,
+      "reason": "adjective syntactically unnatural without cataphoric referent"
+    },
+    {
+      "token_id": 2390,
+      "reason": "plural numeral modifying singular noun creates agreement error"
+    },
+    {
+      "token_id": 2433,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 2495,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 2561,
+      "reason": "noun creating redundant or unnatural modification"
+    },
+    {
+      "token_id": 2742,
+      "reason": "noun modifier incompatible with chemical target contexts"
+    },
+    {
+      "token_id": 2844,
+      "reason": "participle creating unnatural modification of specimen"
+    },
+    {
+      "token_id": 2862,
+      "reason": "noun modifier incompatible with surgical biopsy source contexts"
+    },
+    {
+      "token_id": 3246,
+      "reason": "adjective/noun incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 3336,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 3355,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 3463,
+      "reason": "verb/noun creating ungrammatical or unnatural modification"
+    },
+    {
+      "token_id": 3465,
+      "reason": "noun modifier incompatible with solid anatomical biopsy source contexts"
+    },
+    {
+      "token_id": 3710,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 3874,
+      "reason": "plural noun modifier creating ungrammatical or mismatched syntax"
+    },
+    {
+      "token_id": 4009,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 4077,
+      "reason": "adjective semantically contradictory to accidental/compromised target contexts"
+    },
+    {
+      "token_id": 4338,
+      "reason": "adjective semantically unfitting for accidental contaminated mixture contexts"
+    },
+    {
+      "token_id": 4430,
+      "reason": "noun modifier semantically ungrounded in research contexts"
+    },
+    {
+      "token_id": 4719,
+      "reason": "prefix/fragment creating ungrammatical standalone modifier"
+    },
+    {
+      "token_id": 4796,
+      "reason": "noun modifier creating redundant/unnatural collocation with laboratory"
+    },
+    {
+      "token_id": 4806,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 4896,
+      "reason": "noun modifier incompatible with tissue biopsy contexts"
+    },
+    {
+      "token_id": 4920,
+      "reason": "noun modifier incompatible with tissue biopsy source contexts"
+    },
+    {
+      "token_id": 5274,
+      "reason": "noun modifier creating awkward modification"
+    },
+    {
+      "token_id": 5290,
+      "reason": "noun modifier incompatible with fungal/biopsy source contexts"
+    },
+    {
+      "token_id": 5417,
+      "reason": "plural noun creating agreement and syntactic mismatch"
+    },
+    {
+      "token_id": 5434,
+      "reason": "plural noun creating agreement and syntactic mismatch"
+    },
+    {
+      "token_id": 5498,
+      "reason": "noun identical to completion noun creating tautology"
+    },
+    {
+      "token_id": 5716,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 5756,
+      "reason": "adjective semantically contradictory to overnight/compromised target contexts"
+    },
+    {
+      "token_id": 5842,
+      "reason": "noun creating unnatural modification of specimen/sample"
+    },
+    {
+      "token_id": 5957,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 6213,
+      "reason": "noun modifier incompatible with environmental chemical target contexts"
+    },
+    {
+      "token_id": 6347,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 6508,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 6540,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 6608,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 6921,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 7257,
+      "reason": "participle forming unnatural modification with specimen"
+    },
+    {
+      "token_id": 7365,
+      "reason": "plural noun creating tautology/agreement mismatch"
+    },
+    {
+      "token_id": 7395,
+      "reason": "adjective/noun incompatible with fungal/biopsy source contexts"
+    },
+    {
+      "token_id": 7475,
+      "reason": "abbreviation/fragment creating ungrammatical modifier"
+    },
+    {
+      "token_id": 7759,
+      "reason": "participle creating redundant collocation with prepared"
+    },
+    {
+      "token_id": 7860,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 7921,
+      "reason": "noun modifier incompatible with solid anatomical biopsy source contexts"
+    },
+    {
+      "token_id": 8172,
+      "reason": "participle modifier incompatible with chemical mixture contexts"
+    },
+    {
+      "token_id": 8430,
+      "reason": "noun modifier incompatible with intact biopsy source contexts"
+    },
+    {
+      "token_id": 8897,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 10015,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 10037,
+      "reason": "adjective semantically unfitting for standard QC spill target contexts"
+    },
+    {
+      "token_id": 10139,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 10445,
+      "reason": "adjective semantically contradictory to preserved source contexts"
+    },
+    {
+      "token_id": 10615,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 10625,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 10991,
+      "reason": "adjective semantically contradictory to accidental/compromised target contexts"
+    },
+    {
+      "token_id": 11345,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 11580,
+      "reason": "noun/adjective semantically contradictory to positive biopsy/mixture samples"
+    },
+    {
+      "token_id": 11711,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 11866,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 11945,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 12290,
+      "reason": "noun modifier incompatible with chemical mixture target contexts"
+    },
+    {
+      "token_id": 12539,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 13269,
+      "reason": "plural noun creating syntactic mismatch"
+    },
+    {
+      "token_id": 13307,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 14530,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 14761,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 15127,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 15572,
+      "reason": "noun modifier creating redundant collocation with laboratory technician"
+    },
+    {
+      "token_id": 15769,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 15898,
+      "reason": "adjective incompatible with synthetic chemical target contexts"
+    },
+    {
+      "token_id": 15961,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 18767,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 19022,
+      "reason": "noun modifier incompatible with solid biopsy source contexts"
+    },
+    {
+      "token_id": 20117,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 21346,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 21381,
+      "reason": "adjective semantically unfitting for industrial QC chemical runoff contexts"
+    },
+    {
+      "token_id": 21579,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 21708,
+      "reason": "noun/symbol forming unnatural modifier for specimen"
+    },
+    {
+      "token_id": 21922,
+      "reason": "word fragment"
+    },
+    {
+      "token_id": 22047,
+      "reason": "noun modifier incompatible with biopsy/fungal source contexts"
+    },
+    {
+      "token_id": 23353,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 23680,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 24985,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 25020,
+      "reason": "adjective semantically contradictory to runoff and delicate tissue contexts"
+    },
+    {
+      "token_id": 26181,
+      "reason": "noun modifier creating unnatural collocation with specimen"
+    },
+    {
+      "token_id": 26477,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 26764,
+      "reason": "adjective incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 27312,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 28087,
+      "reason": "adjective incompatible with pristine tissue and chemical contexts"
+    },
+    {
+      "token_id": 28697,
+      "reason": "adjective semantically unfitting for chemical runoff spill contexts"
+    },
+    {
+      "token_id": 29283,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 29332,
+      "reason": "adjective semantically contradictory to pristine/aseptic source contexts"
+    },
+    {
+      "token_id": 29813,
+      "reason": "adjective incompatible with solid anatomical biopsy source contexts"
+    },
+    {
+      "token_id": 30359,
+      "reason": "noun identical to completion noun creating tautology"
+    },
+    {
+      "token_id": 30659,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 34685,
+      "reason": "noun modifier incompatible with chemical runoff contexts"
+    },
+    {
+      "token_id": 35784,
+      "reason": "noun modifier incompatible with anatomical biopsy and chemical contexts"
+    },
+    {
+      "token_id": 38307,
+      "reason": "participle incompatible with unaddressed chemical runoff contexts"
+    },
+    {
+      "token_id": 38983,
+      "reason": "noun modifier creating unnatural modification"
+    },
+    {
+      "token_id": 41033,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 41762,
+      "reason": "adjective semantically contradictory to contaminated/fouled target contexts"
+    },
+    {
+      "token_id": 43556,
+      "reason": "adverb modifying noun creates ungrammatical syntax"
+    },
+    {
+      "token_id": 46981,
+      "reason": "participle semantically unsupported by solid biopsy source contexts"
+    },
+    {
+      "token_id": 47617,
+      "reason": "adjective semantically unfitting for macro-scale chemical runoff batch contexts"
+    },
+    {
+      "token_id": 59351,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 61080,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 65572,
+      "reason": "adjective incompatible with anatomical biopsy and chemical runoff contexts"
+    },
+    {
+      "token_id": 65717,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 67733,
+      "reason": "noun modifier incompatible with fungal and chemical contexts"
+    },
+    {
+      "token_id": 70164,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 79482,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 83250,
+      "reason": "noun modifier incompatible with chemical liquid runoff contexts"
+    },
+    {
+      "token_id": 98081,
+      "reason": "noun modifier incompatible with liquid chemical runoff contexts"
+    },
+    {
+      "token_id": 102962,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 107173,
+      "reason": "word fragment"
+    },
+    {
+      "token_id": 113885,
+      "reason": "noun modifier incompatible with biopsy source contexts"
+    },
+    {
+      "token_id": 114511,
+      "reason": "adjective incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 129758,
+      "reason": "proper noun modifier incompatible with biopsy and chemical runoff contexts"
+    },
+    {
+      "token_id": 138327,
+      "reason": "participle semantically contradictory to contaminated target contexts"
+    },
+    {
+      "token_id": 139905,
+      "reason": "noun modifier incompatible with chemical runoff target contexts"
+    },
+    {
+      "token_id": 172322,
+      "reason": "plural noun creating agreement mismatch"
+    },
+    {
+      "token_id": 191691,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 193251,
+      "reason": "noun creating unnatural modification"
+    },
+    {
+      "token_id": 210683,
+      "reason": "noun modifier incompatible with biopsy and chemical runoff contexts"
+    },
+    {
+      "token_id": 215390,
+      "reason": "noun creating unnatural modification"
+    }
+  ],
+  "candidate_id": "b18_02_specimen_sample",
+  "regime": "medium",
+  "candidate_token_count": 145
+}

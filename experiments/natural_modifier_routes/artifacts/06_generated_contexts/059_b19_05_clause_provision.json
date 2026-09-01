@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b19_05_clause_provision",
+    "generation_batch": 19,
+    "domain": "law, government, and civic life",
+    "family_id": "clause_provision",
+    "noun_0": "clause",
+    "noun_1": "provision",
+    "shared_definition": "a distinct section or stipulation contained within a legal document or contract",
+    "neutral_stem": "The drafting committee debated the exact wording of",
+    "candidate_modifiers": [
+      "standard",
+      "ambiguous",
+      "mandatory",
+      "specific",
+      "disputed",
+      "statutory",
+      "crucial",
+      "restrictive",
+      "controversial",
+      "binding",
+      "protective",
+      "vague",
+      "general",
+      "formal",
+      "optional"
+    ],
+    "semantic_notes": "'Clause' focuses on the structural paragraph or sentence of the text, whereas 'provision' emphasizes the legal measure or effect created.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        20751
+      ],
+      "noun_1": [
+        13313
+      ]
+    },
+    "modifier_token_ids": {
+      "standard": [
+        4077
+      ],
+      "ambiguous": [
+        64426
+      ],
+      "mandatory": [
+        27979
+      ],
+      "specific": [
+        3530
+      ],
+      "disputed": [
+        69164
+      ],
+      "statutory": [
+        31283
+      ],
+      "crucial": [
+        13832
+      ],
+      "restrictive": [
+        56845
+      ],
+      "controversial": [
+        31332
+      ],
+      "binding": [
+        11609
+      ],
+      "protective": [
+        20111
+      ],
+      "vague": [
+        46020
+      ],
+      "general": [
+        2870
+      ],
+      "formal": [
+        10781
+      ],
+      "optional": [
+        19331
+      ]
+    },
+    "forced_projection_span": 0.14443727784964722,
+    "max_noun_pair_mass": 0.5576881170272827,
+    "context_priority_score": 0.0805509535125162,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "standard",
+        "target_modifier": "formal",
+        "source_projection": -0.014654150232672691,
+        "target_projection": -0.00016094201419036835,
+        "forced_modifier_leverage": 0.014493208218482323,
+        "source_pair_mass": 0.014829466119408607,
+        "target_pair_mass": 0.00030218897154554725
+      },
+      "medium": {
+        "source_modifier": "ambiguous",
+        "target_modifier": "specific",
+        "source_projection": -0.17122918367385864,
+        "target_projection": -0.10074914991855621,
+        "forced_modifier_leverage": 0.07048003375530243,
+        "source_pair_mass": 0.1931094229221344,
+        "target_pair_mass": 0.1164855808019638
+      },
+      "high": {
+        "source_modifier": "formal",
+        "target_modifier": "statutory",
+        "source_projection": -0.00016094201419036835,
+        "target_projection": 0.14427633583545685,
+        "forced_modifier_leverage": 0.14443727784964722,
+        "source_pair_mass": 0.00030218897154554725,
+        "target_pair_mass": 0.14901699125766754
+      }
+    },
+    "context_generation_rank": 60
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "standard",
+      "target_modifier": "formal",
+      "source_context_dev": [
+        "Most routine commercial deals rely on customary language rather than bespoke drafting.",
+        "The company typically relies on customary boilerplates when finalizing its supplier agreements.",
+        "During routine transactional reviews, corporate attorneys often prefer familiar, off-the-shelf templates.",
+        "Typical service contracts usually employ routine text to speed up ongoing enterprise negotiations."
+      ],
+      "target_context_dev": [
+        "The interstate treaty required solemn ceremonial phrasing to satisfy diplomatic protocols.",
+        "To ensure compliance with solemn institutional charters, the delegation followed rigid diplomatic customs.",
+        "In drafting the high-level multilateral accord, diplomats insisted on solemn, ceremonious legal phrasing.",
+        "State representatives wanted the sovereign pact to follow strictly solemn protocol rather than informal wording."
+      ],
+      "source_context_test": [
+        "Most commercial agreements follow routine templates to reduce negotiation overhead across regional offices.",
+        "When renewing routine vendor agreements, the legal department relies on typical transactional phrasing.",
+        "The company typically reuses accepted industry templates for ordinary trade transactions.",
+        "In everyday business transactions, attorneys generally default to customary phrasing."
+      ],
+      "target_context_test": [
+        "International delegates took great care to align the summit accord with solemn diplomatic protocol.",
+        "Establishing the intergovernmental covenant required solemn phrasing suitable for sovereign entities.",
+        "The institutional accord was drafted according to ceremonial conventions observed by both member nations.",
+        "Diplomatic envoys insisted that the peace accord reflect the solemn traditions of international governance."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts emphasize routine, template-driven commercial drafting that pragmatically aligns with standard clause. Target contexts emphasize solemn diplomatic ceremony, favoring formal provision. All 2x2 combinations (standard clause, standard provision, formal clause, formal provision) remain fully grammatical and meaningful in every context."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "ambiguous",
+      "target_modifier": "specific",
+      "source_context_dev": [
+        "Two partners clashed over a vague sentence that could easily be interpreted in conflicting ways.",
+        "Conflicting interpretations arose because the drafted wording remained muddy and poorly defined.",
+        "The litigation team discovered that several vague sentences invited multiple contradictory interpretations.",
+        "Confusion arose during the merger review because certain phrases lacked clear boundaries and invited debate."
+      ],
+      "target_context_dev": [
+        "Regulators demanded clear, itemized details outlining every single reporting duty in the filing.",
+        "To avoid future confusion, the oversight agency insisted on highly detailed, step-by-step rules.",
+        "The compliance officer required precise, itemized instructions governing each safety protocol.",
+        "Auditors required a granular breakdown that spelled out every distinct reporting requirement."
+      ],
+      "source_context_test": [
+        "Disagreements flared after both parties realized the contested sentence could mean multiple different things.",
+        "Corporate counsel noted that the vague wording created unforeseen loopholes for both signatories.",
+        "The arbitration panel struggled to resolve a dispute caused by fuzzy, open-ended draft text.",
+        "An oversight during the review process left the exact scope of liability murky and open to dispute."
+      ],
+      "target_context_test": [
+        "The regulatory agency insisted that every individual compliance step be itemized with great detail.",
+        "To prevent any misunderstanding, the board demanded detailed requirements governing safety procedures.",
+        "The financial authorities mandated an itemized, highly detailed rule for annual capital disclosures.",
+        "Environmental inspectors required explicit, itemized criteria regarding industrial emissions."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts highlight interpretive confusion and vague contractual terms, nudging toward ambiguous clause. Target contexts emphasize granularity, itemization, and explicit compliance instructions, favoring specific provision. All four combinations (ambiguous clause, ambiguous provision, specific clause, specific provision) are natural legal collocations."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "formal",
+      "target_modifier": "statutory",
+      "source_context_dev": [
+        "The bilateral accord required solemn phrasing to reflect the dignity of both sovereign signatories.",
+        "Diplomats emphasized ceremonial elegance when drafting the text for the international treaty.",
+        "The constitutional assembly sought solemn and elevated phrasing to match the historical occasion.",
+        "Sovereign representatives insisted on elevated stylistic decorum when drafting the peace pact."
+      ],
+      "target_context_dev": [
+        "State legislators were bound by existing enacted laws and legislative codes when revising the regulatory bill.",
+        "Legal analysts cross-referenced the newly proposed bill against state code and legislative mandates.",
+        "The legislative commission had to harmonize the draft with existing enactments passed by parliament.",
+        "To comply with newly enacted legislation, the regulatory board had to align its text with the public code."
+      ],
+      "source_context_test": [
+        "To reflect the solemn nature of the treaty, the delegates crafted phrasing of the utmost dignity.",
+        "The diplomatic mission sought ceremonial diction suitable for an official state summit.",
+        "Traditional etiquette demanded elevated and ceremonial phrasing for the international pact.",
+        "Representatives chose solemn language fitting the historic dignity of the multilateral pact."
+      ],
+      "target_context_test": [
+        "Lawmakers ensured that the updated government bill matched existing parliamentary enactments.",
+        "The drafting body needed to align the new code with enacted parliamentary legislation.",
+        "State revisors checked every paragraph against existing public laws and parliamentary mandates.",
+        "The reform panel carefully aligned the upcoming enactment with existing legislative mandates."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts focus on ceremonial decorum and high diplomatic protocol, leaning toward formal clause. Target contexts invoke parliamentary codes, legislation, and public enactments, strongly favoring statutory provision. All four pairings (formal clause, formal provision, statutory clause, statutory provision) are semantically valid and grammatically sound under all prompts."
+    }
+  ]
+}

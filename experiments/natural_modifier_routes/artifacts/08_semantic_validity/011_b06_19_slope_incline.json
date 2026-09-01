@@ -1,0 +1,32 @@
+{
+  "candidate_id": "slope_incline",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('up the the'), making the full sentence ungrammatical upon completion."
+      ],
+      "concise_notes": "Modifiers ('gentle' / 'icy') and contexts are semantically valid and well-balanced across both nouns ('slope' / 'incline'), but the fixed stem has a duplicate token ('the the')."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('up the the'), making the full sentence ungrammatical upon completion."
+      ],
+      "concise_notes": "Modifiers ('grassy' / 'muddy') and off-road contexts are semantically valid across both nouns, but the fixed stem contains a syntax error ('the the')."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('up the the'), making the full sentence ungrammatical upon completion."
+      ],
+      "concise_notes": "Modifiers ('sharp' / 'steady') and gradient contexts are semantically and pragmatically sound, but the fixed stem contains a duplicate determiner ('the the')."
+    }
+  ]
+}

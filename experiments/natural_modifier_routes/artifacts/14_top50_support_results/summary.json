@@ -1,0 +1,131 @@
+{
+  "planned_constructions": 301,
+  "audited_constructions": 279,
+  "missing_constructions": 22,
+  "missing": [
+    {
+      "candidate_id": "b01_10_thief_robber",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b02_24_sled_sledge",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b01_11_enemy_foe",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b02_12_ship_vessel",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b02_12_ship_vessel",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b20_03_referee_umpire",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b20_03_referee_umpire",
+      "regime": "high"
+    },
+    {
+      "candidate_id": "b03_21_basket_hamper",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b04_01_gadget_device",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b04_01_gadget_device",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b20_01_trophy_cup",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b20_01_trophy_cup",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b20_01_trophy_cup",
+      "regime": "high"
+    },
+    {
+      "candidate_id": "b07_21_commission_board",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b07_21_commission_board",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b07_21_commission_board",
+      "regime": "high"
+    },
+    {
+      "candidate_id": "b09_08_event_show_performance",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b09_08_event_show_performance",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b09_08_event_show_performance",
+      "regime": "high"
+    },
+    {
+      "candidate_id": "b00_11_supervisor_manager",
+      "regime": "low"
+    },
+    {
+      "candidate_id": "b00_11_supervisor_manager",
+      "regime": "medium"
+    },
+    {
+      "candidate_id": "b00_11_supervisor_manager",
+      "regime": "high"
+    }
+  ],
+  "coverage_by_both_state_mean": {
+    "0.5": 1,
+    "0.8": 0,
+    "0.9": 0,
+    "0.95": 0
+  },
+  "coverage_by_every_dev_prompt": {
+    "0.5": 0,
+    "0.8": 0,
+    "0.9": 0,
+    "0.95": 0
+  },
+  "coverage_bounds_over_all_planned": {
+    "0.5": {
+      "lower": 1,
+      "upper": 23
+    },
+    "0.8": {
+      "lower": 0,
+      "upper": 22
+    },
+    "0.9": {
+      "lower": 0,
+      "upper": 22
+    },
+    "0.95": {
+      "lower": 0,
+      "upper": 22
+    }
+  },
+  "policy_tv_with_other": {
+    "median": 0.05165662517538294,
+    "above_0.05": 144,
+    "above_0.1": 52
+  },
+  "interpretation_guard": "The other bin makes TV descriptive of total captured-vs-omitted movement; route decomposition is valid only for constructions meeting the declared support threshold. No test outcomes used."
+}

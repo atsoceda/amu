@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b12_08_pot_saucepan",
+    "generation_batch": 12,
+    "domain": "food and everyday consumables",
+    "family_id": "pot_saucepan",
+    "noun_0": "pot",
+    "noun_1": "saucepan",
+    "shared_definition": "a deep cooking vessel used on a stove to heat liquid or food",
+    "neutral_stem": "She stirred the stew boiling inside",
+    "candidate_modifiers": [
+      "hot",
+      "heavy",
+      "copper",
+      "metal",
+      "dirty",
+      "clean",
+      "empty",
+      "full",
+      "large",
+      "small",
+      "deep",
+      "steaming",
+      "stainless",
+      "greasy"
+    ],
+    "semantic_notes": "'Pot' is general and typically has two small loop handles, whereas 'saucepan' specifically denotes a vessel with one long handle.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2197
+      ],
+      "noun_1": [
+        107264
+      ]
+    },
+    "modifier_token_ids": {
+      "hot": [
+        3425
+      ],
+      "heavy": [
+        7274
+      ],
+      "copper": [
+        14561
+      ],
+      "metal": [
+        6211
+      ],
+      "dirty": [
+        24881
+      ],
+      "clean": [
+        3980
+      ],
+      "empty": [
+        7738
+      ],
+      "full": [
+        2587
+      ],
+      "large": [
+        2455
+      ],
+      "small": [
+        1944
+      ],
+      "deep": [
+        5268
+      ],
+      "steaming": [
+        107059
+      ],
+      "stainless": [
+        19860
+      ],
+      "greasy": [
+        116096
+      ]
+    },
+    "forced_projection_span": 0.10996030643582344,
+    "max_noun_pair_mass": 0.6230764389038086,
+    "context_priority_score": 0.06851367615480441,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "metal",
+        "target_modifier": "dirty",
+        "source_projection": -0.5056330561637878,
+        "target_projection": -0.49634602665901184,
+        "forced_modifier_leverage": 0.009287029504776001,
+        "source_pair_mass": 0.5960660576820374,
+        "target_pair_mass": 0.5641406774520874
+      },
+      "medium": {
+        "source_modifier": "full",
+        "target_modifier": "clean",
+        "source_projection": -0.2818850874900818,
+        "target_projection": -0.22241763770580292,
+        "forced_modifier_leverage": 0.05946744978427887,
+        "source_pair_mass": 0.33970165252685547,
+        "target_pair_mass": 0.29204219579696655
+      },
+      "high": {
+        "source_modifier": "stainless",
+        "target_modifier": "small",
+        "source_projection": -0.011350814253091812,
+        "target_projection": 0.09860949218273163,
+        "forced_modifier_leverage": 0.10996030643582344,
+        "source_pair_mass": 0.020466681569814682,
+        "target_pair_mass": 0.5320659875869751
+      }
+    },
+    "context_generation_rank": 66
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "metal",
+      "target_modifier": "dirty",
+      "source_context_dev": [
+        "The heavy kitchen cookware clattered against the iron burner grates as the broth simmered.",
+        "Dinner prep required heavy conductive cookware capable of withstanding extreme heat over the open flame.",
+        "A classic industrial-style kitchen always relies on durable, conductive vessels for rich family dinners.",
+        "The chef reached for her most durable cookware to handle the long simmering process on the stovetop."
+      ],
+      "target_context_dev": [
+        "Spattered sauce from the afternoon lunch had encrusted the rims across the entire stovetop.",
+        "She had not had a chance to scrub down the counters or rinse any cooking vessels yet.",
+        "Grease and dried remnants coated the exterior surfaces around the active burner.",
+        "After cooking three separate courses in a hurry, the equipment on the range was heavily soiled."
+      ],
+      "source_context_test": [
+        "The cookware rang loudly whenever her wooden ladle bumped against the conductive interior.",
+        "Preparing a hearty family dinner meant using the heaviest and most durable cookware in the kitchen.",
+        "She chose a durable, heat-conducting vessel that could stay on the burner for hours without scorching.",
+        "The rustic kitchen featured hanging conductive cookware suited for boiling large batches of broth."
+      ],
+      "target_context_test": [
+        "Dried food splatters clung stubbornly to the handles and rims of the active cookware.",
+        "The busy kitchen was in total disarray with unwashed cookware crowding every burner.",
+        "Neglecting the dishwashing pile left every piece of active cookware coated in leftover grease.",
+        "Sticky sauce drips ran down the sides of the cookware sitting atop the crowded range."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('metal pot', 'metal saucepan', 'dirty pot', 'dirty saucepan') are fully natural and plausible cooking vessels containing boiling stew. Contexts shift pragmatic focus toward durable material composition versus post-cooking mess without violating syntactic or semantic selectional restrictions."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "full",
+      "target_modifier": "clean",
+      "source_context_dev": [
+        "She had added broth and vegetables right up to the brim to feed the entire crowd.",
+        "The liquid level rose dangerously close to overflowing as more chopped carrots went in.",
+        "There was barely an inch of space left before the simmering contents would spill over.",
+        "Feeding a hungry party of eight required packing the cookware with ingredients right to the rim."
+      ],
+      "target_context_dev": [
+        "Fresh from the sanitizing cycle in the dishwasher, the cookware gleamed beneath the kitchen lights.",
+        "She grabbed a freshly washed piece of cookware straight off the drying rack for the evening meal.",
+        "Not a speck of residue or grease remained on the polished cookware before dinner began.",
+        "The immaculate cookware had just been scrubbed and placed neatly on the front burner."
+      ],
+      "source_context_test": [
+        "Every cubic inch was packed with root vegetables and savory broth bubbling on high heat.",
+        "She poured in another quart of water, bringing the liquid right up to the very lip.",
+        "The volume of ingredients threatened to spill across the stovetop if stirred too vigorously.",
+        "Having loaded so much meat and broth into the vessel, there was no room to spare."
+      ],
+      "target_context_test": [
+        "She lifted a spotless, freshly rinsed vessel from the drying mat to begin making supper.",
+        "Every piece of cookware on the rack had been thoroughly sterilized and dried beforehand.",
+        "The gleaming vessel had just been polished and showed zero fingerprints or food residue.",
+        "Having spent the morning scrubbing the kitchen gear spotless, she set one piece on the range."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'pot' and 'saucepan' can be either 'full' or 'clean' while cooking stew on a stove. The source contexts evoke large volume and capacity constraints, whereas target contexts emphasize sanitation and gleaming condition before/during meal prep."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "stainless",
+      "target_modifier": "small",
+      "source_context_dev": [
+        "The shiny chrome-finished cookware caught the overhead lighting as the kitchen hummed.",
+        "She preferred rust-resistant, mirror-finish cookware that would never tarnish or leach flavors.",
+        "High-grade silvery cookware lined the commercial range, reflecting the bright fluorescent lights.",
+        "The reflective silvery surface of the vessel mirrored the flames beneath it."
+      ],
+      "target_context_dev": [
+        "She only needed to make a quick single portion on the miniature back burner.",
+        "With limited stove space, she opted for the most compact vessel in the cupboard.",
+        "Cooking just enough for one person required diminutive cookware that heated up rapidly.",
+        "The petite vessel took up very little room next to the larger kitchen equipment."
+      ],
+      "source_context_test": [
+        "Her favorite silvery, rust-proof cookware gleamed brightly on the induction surface.",
+        "She selected an untarnished, mirror-bright vessel designed for acidic recipes.",
+        "The high-end kitchen featured lustrous, rust-resistant cookware hanging from the ceiling rack.",
+        "Light danced across the polished, rust-free silvery finish of the vessel as it heated."
+      ],
+      "target_context_test": [
+        "Preparing an individual serving meant pulling out the most modest-sized cookware available.",
+        "She set a diminutive, lightweight vessel over the lowest flame on the range.",
+        "A single cup of soup required only the most compact cookware in her collection.",
+        "The tiny burner on the side accommodated only the most diminutive cookware in her kitchen."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('stainless pot', 'stainless saucepan', 'small pot', 'small saucepan') are valid kitchen utensils capable of holding boiling stew. Source contexts highlight professional lustrous steel construction, while target contexts emphasize compact dimensions for small portions."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "candidate_id": "sled_sledge",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations of {sturdy, lightweight} \u00d7 {sled, sledge} are natural, grammatical, and semantically plausible across all developmental and test contexts without lexical leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations of {harnessed, battered} \u00d7 {sled, sledge} form semantically sound completions with the fixed stem and fit the pragmatic shifts in all contexts."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev_0",
+        "source_context_dev_1",
+        "source_context_dev_2",
+        "source_context_dev_3",
+        "target_context_dev_0",
+        "target_context_dev_1",
+        "target_context_dev_2",
+        "target_context_dev_3",
+        "source_context_test_0",
+        "source_context_test_1",
+        "source_context_test_2",
+        "source_context_test_3",
+        "target_context_test_0",
+        "target_context_test_1",
+        "target_context_test_2",
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "Semantic contradiction: The fixed stem explicitly states that the explorer 'hauled supplies ... on the [modifier] [noun]', which directly contradicts 'empty' (a vehicle carrying cargo cannot simultaneously be empty).",
+        "Physical/semantic impossibility: Hauling supplies across the tundra on an 'overturned' sled/sledge is physically contradictory and incoherent."
+      ],
+      "concise_notes": "Both 'empty' and 'overturned' create direct semantic contradictions with the action specified in the fixed stem."
+    }
+  ]
+}

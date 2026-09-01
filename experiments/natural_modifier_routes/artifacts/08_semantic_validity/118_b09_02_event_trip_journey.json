@@ -1,0 +1,38 @@
+{
+  "candidate_id": "audit_trip_journey_001",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations of source/target modifiers (safe, long) and nouns (trip, journey) are grammatically well-formed and felicitous across all development and test contexts following the fixed stem."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev[0]",
+        "source_context_dev[1]",
+        "source_context_dev[2]",
+        "source_context_dev[3]",
+        "source_context_test[0]",
+        "source_context_test[1]",
+        "source_context_test[2]",
+        "source_context_test[3]"
+      ],
+      "failure_reasons": [
+        "Contextual semantic contradiction: Source contexts state that travelers have only seconds/minutes, zero warning, and no time to deliberate, which directly contradicts the fixed stem 'The travelers prepared thoroughly for the'.",
+        "Semantic clash between the stem action ('prepared thoroughly') and the source modifier ('hasty')."
+      ],
+      "concise_notes": "Severe semantic contradiction between the extreme time-pressure/lack of preparation described in the source contexts and the fixed stem asserting thorough preparation."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four cross-combinations (arduous/perilous \u00d7 trip/journey) are fully grammatical, natural, and semantically sound across both physical strain and lethal hazard contexts."
+    }
+  ]
+}

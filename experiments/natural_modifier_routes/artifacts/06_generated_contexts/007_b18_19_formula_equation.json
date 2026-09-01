@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b18_19_formula_equation",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "formula_equation",
+    "noun_0": "formula",
+    "noun_1": "equation",
+    "shared_definition": "a mathematical or chemical expression stating a relationship between symbols or quantities",
+    "neutral_stem": "The mathematician derived the",
+    "candidate_modifiers": [
+      "algebraic",
+      "approximated",
+      "basic",
+      "classical",
+      "complex",
+      "differential",
+      "empirical",
+      "exact",
+      "fundamental",
+      "mathematical",
+      "nonlinear",
+      "quadratic",
+      "simplified",
+      "theoretical",
+      "valid"
+    ],
+    "semantic_notes": "'Equation' strictly involves an equality sign between expressions, whereas 'formula' refers broadly to any set rule, recipe, or symbolic relationship.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        6581
+      ],
+      "noun_1": [
+        4901
+      ]
+    },
+    "modifier_token_ids": {
+      "algebraic": [
+        35731
+      ],
+      "approximated": [
+        70034
+      ],
+      "basic": [
+        6079
+      ],
+      "classical": [
+        15082
+      ],
+      "complex": [
+        3996
+      ],
+      "differential": [
+        13992
+      ],
+      "empirical": [
+        31113
+      ],
+      "exact": [
+        4453
+      ],
+      "fundamental": [
+        11001
+      ],
+      "mathematical": [
+        23093
+      ],
+      "nonlinear": [
+        23388
+      ],
+      "quadratic": [
+        31359
+      ],
+      "simplified": [
+        32741
+      ],
+      "theoretical": [
+        16813
+      ],
+      "valid": [
+        4341
+      ]
+    },
+    "forced_projection_span": 0.3451564908027649,
+    "max_noun_pair_mass": 0.9083520174026489,
+    "context_priority_score": 0.31352359474031033,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "complex",
+        "target_modifier": "algebraic",
+        "source_projection": -0.10833161324262619,
+        "target_projection": -0.07416841387748718,
+        "forced_modifier_leverage": 0.03416319936513901,
+        "source_pair_mass": 0.2811734080314636,
+        "target_pair_mass": 0.596434473991394
+      },
+      "medium": {
+        "source_modifier": "mathematical",
+        "target_modifier": "approximated",
+        "source_projection": -0.32366615533828735,
+        "target_projection": -0.14916610717773438,
+        "forced_modifier_leverage": 0.17450004816055298,
+        "source_pair_mass": 0.5095909833908081,
+        "target_pair_mass": 0.26896175742149353
+      },
+      "high": {
+        "source_modifier": "nonlinear",
+        "target_modifier": "differential",
+        "source_projection": 0.4520295262336731,
+        "target_projection": 0.797186017036438,
+        "forced_modifier_leverage": 0.3451564908027649,
+        "source_pair_mass": 0.4738030433654785,
+        "target_pair_mass": 0.825098991394043
+      }
+    },
+    "context_generation_rank": 8
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "complex",
+      "target_modifier": "algebraic",
+      "source_context_dev": [
+        "The theoretical physicist spent weeks unraveling intricate relations across multi-variable systems with imaginary components. After several iterations of manual calculation, a breakthrough emerged.",
+        "Navigating intricate multidimensional manifolds required handling layered, nested expressions with multiple interdependent layers. Progress finally came after hours at the chalkboard.",
+        "The proof required systematically resolving convoluted symbolic relations that spanned multiple domains. After days of intensive analysis, the final structure emerged.",
+        "Untangling the intricate pathways of high-dimensional geometry presented formidable obstacles to the research group. In the final seminar, a clear step forward was presented."
+      ],
+      "target_context_dev": [
+        "Working purely within polynomial rings and finite field structures, the abstract algebraist sought exact root relations. Using classical ring-theoretic techniques, a canonical statement was produced.",
+        "The investigation focused on polynomial operations over commutative fields without using analytic tools. Relying on strict polynomial properties, an exact statement was verified.",
+        "Standard polynomial rings provided the exact structure needed to relate unknown variables. Through systematic polynomial factorization, a solution was reached.",
+        "The research team studied exact polynomial identities governing finite group representations. Applying standard ring operations, a concise statement was established."
+      ],
+      "source_context_test": [
+        "Synthesizing intricate relationships across multiple continuous spaces proved intellectually demanding. After testing several elaborate hypotheses, an essential statement was obtained.",
+        "The investigation required navigating convoluted expressions involving higher-order operations and imaginary quantities. With sustained effort, the primary theoretical bridge was reached.",
+        "Reconciling intricate topological constraints required handling intensely layered and interconnected symbolic terms. At the end of the workshop, an exact statement was formalized.",
+        "Managing the convoluted details of an elaborate abstract framework demanded extreme precision. Through patient symbolic manipulation, an important result was achieved."
+      ],
+      "target_context_test": [
+        "The problem centered on root-finding across finite fields using basic polynomial multiplication and addition. By leveraging familiar group-theoretic axioms, the missing relationship was isolated.",
+        "Focusing on polynomial relations among field elements, the specialist applied classic ring theory. Through formal polynomial reductions, the fundamental statement was identified.",
+        "The investigation examined exact polynomial equalities in multivariate rings over the rational field. Following systematic algebraic manipulations, the core relationship was established.",
+        "Operating strictly within polynomial rings, the team sought to balance terms across unknown quantities. Using elementary ring properties, a definitive statement was established."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (complex formula, complex equation, algebraic formula, algebraic equation) are standard in mathematical English. The contexts bias toward complexity/formula or algebra/equation via topic framing without explicitly naming modifiers or nouns."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "mathematical",
+      "target_modifier": "approximated",
+      "source_context_dev": [
+        "The theoretical foundation of the entire discipline rested on rigorous deductive reasoning and formal logic. To establish the foundational theorem, a precise statement was needed.",
+        "Relying strictly on pure logic and rigorous axiomatic proofs, the team avoided empirical shortcuts. To codify the conceptual framework, a definitive statement was finalized.",
+        "Theoretical purists demanded an exact conceptual proof rather than an empirical heuristic. Guided by strict deductive logic, a foundational statement was constructed.",
+        "Formalizing the core theory required strict adherence to fundamental logic and rigorous deduction. Applying axiomatic reasoning, a definitive relation was codified."
+      ],
+      "target_context_dev": [
+        "Because the exact system could not be solved analytically, numerical analysts sought a close practical estimate. By applying asymptotic expansions, an estimated relation was obtained.",
+        "The physical system proved too chaotic for an exact closed-form solution, forcing researchers to settle for an estimated numerical fit. Through perturbation series, an estimated relation was established.",
+        "Analytical solutions were impossible given the messy boundary conditions, requiring researchers to construct an estimated model. Using series truncation, a close balance was achieved.",
+        "Finding an exact analytical solution was intractable, so the engineering team turned to numerical estimations. By carrying out asymptotic expansions, an estimated relation was established."
+      ],
+      "source_context_test": [
+        "The purity of the theoretical discipline demanded an analytical, deductively proven statement. Drawing upon foundational axioms, the formal relation was completed.",
+        "Axiomatic rigor was paramount, leaving no room for loose intuition or rough heuristics. With strict deductive reasoning, the fundamental statement was completed.",
+        "Establishing the abstract framework required pure deductive reasoning from first principles. By applying rigorous logical deductions, a core statement was formalized.",
+        "The research aimed to build an immutable theoretical foundation using purely formal axioms. Through strict theoretical deductions, a definitive relation was established."
+      ],
+      "target_context_test": [
+        "Closed-form solutions were unavailable for the turbulent flow model, necessitating a numerical estimation. By expanding around a small parameter, an estimated balance was found.",
+        "The messy boundary data ruled out an exact analytic result, prompting the team to seek a close estimate. Through successive numerical iterations, an estimated relation was produced.",
+        "Exact calculations were computationally intractable, forcing the team to build an estimated representation. By retaining only the first few terms of the Taylor series, an estimated relation was derived.",
+        "Faced with intractable integrals, the computational specialists opted for a numerical estimation. Applying perturbation methods, an estimated relation was established."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (mathematical formula, mathematical equation, approximated formula, approximated equation) are widely attested and semantically sound across both theoretical and numerical contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "nonlinear",
+      "target_modifier": "differential",
+      "source_context_dev": [
+        "The dynamic system exhibited severe feedback loops and bifurcations where superposition completely failed. To capture these disproportionate responses, a specialized relation was needed.",
+        "The physical response scaled disproportionately with input magnitude, ruling out simple proportional assumptions. To represent these complex interactions, a state model was framed.",
+        "Phase space portraits revealed chaotic attractors and breakdown of classical proportionality. To describe how outputs scale disproportionately with inputs, a governing statement was created.",
+        "Because the system exhibited dramatic threshold behavior where outputs did not scale linearly with inputs, traditional proportional models failed. A non-proportional model was formulated."
+      ],
+      "target_context_dev": [
+        "The problem required modeling instantaneous rates of change across continuous time and space. By relating functions directly to their continuous derivatives, a governing relation was constructed.",
+        "To model how quantities evolve over time relative to their instantaneous rates of change, calculus-based methods were applied. By linking functions to their derivatives, a relation was established.",
+        "Tracking instantaneous rates of change in continuous media required relating functions to their spatial derivatives. Through infinitesimal calculus, a governing relation was established.",
+        "The physics of wave propagation dictated that dynamic changes depended directly on spatial derivatives. By setting up relationships among continuous derivatives, a key relation was framed."
+      ],
+      "source_context_test": [
+        "The onset of turbulence caused proportional relationships to collapse completely into chaotic feedback regimes. To capture these disproportionate interactions, a state model was produced.",
+        "Superposition principles failed as the system responded disproportionately to small perturbations. To capture this non-proportional behavior, a governing statement was derived.",
+        "The phenomenon exhibited sudden bifurcation points where proportional models were entirely inapplicable. To capture the disproportionate response, a model was constructed.",
+        "System responses scaled disproportionately to applied stress, causing standard linear superposition to break down. To characterize this behavior, a specialized relation was framed."
+      ],
+      "target_context_test": [
+        "The fluid dynamics model centered on tracking infinitesimal fluxes across continuous spatial gradients. Setting up relations between rates of change, a core governing statement was completed.",
+        "Describing the heat distribution over time required relating temperature fields to their continuous spatial gradients. Applying the principles of continuous calculus, a governing relation was established.",
+        "Understanding dynamical flow required establishing relations between state variables and their rates of change over continuous time. By expressing continuous derivatives, a foundational statement was derived.",
+        "The physics problem required relating the second derivative of position directly to continuous forces. Formulating the relationship between derivatives, a governing statement was established."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations (nonlinear formula, nonlinear equation, differential formula, differential equation) are valid, with 'differential equation' being extremely common and 'nonlinear equation' / 'differential formula' fully meaningful in mathematical contexts."
+    }
+  ]
+}

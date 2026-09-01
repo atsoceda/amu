@@ -1,0 +1,35 @@
+{
+  "candidate_id": null,
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "The fixed stem contains a duplicated determiner ('restarted the the'), rendering every stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Contexts and cross-combinations are semantically sound, but the fixed stem has a fatal syntactic duplication ('the the')."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        1
+      ],
+      "failure_reasons": [
+        "The fixed stem contains a duplicated determiner ('restarted the the'), rendering completions ungrammatical.",
+        "Target dev context 1 explicitly specifies the absence of malware ('without typical malware signatures'), turning 'infected' into a factual contradiction rather than a pragmatic dispreference."
+      ],
+      "concise_notes": "Fails due to duplicate determiner in the stem and an explicit contradiction with the source modifier in target dev context 1."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "The fixed stem contains a duplicated determiner ('restarted the the'), rendering every stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Modifier pairings and contexts are otherwise valid, but the fixed stem contains a duplicate determiner error."
+    }
+  ]
+}

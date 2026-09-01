@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b10_02_song_track",
+    "generation_batch": 10,
+    "domain": "media and creative works",
+    "family_id": "song_track",
+    "noun_0": "song",
+    "noun_1": "track",
+    "shared_definition": "a distinct piece of recorded vocal or instrumental music",
+    "neutral_stem": "The radio station repeatedly played",
+    "candidate_modifiers": [
+      "popular",
+      "catchy",
+      "acoustic",
+      "melodic",
+      "upbeat",
+      "haunting",
+      "opening",
+      "emotional",
+      "memorable",
+      "energetic",
+      "original",
+      "bonus",
+      "smooth",
+      "vocal",
+      "rhythmic"
+    ],
+    "semantic_notes": "'Song' implies musicality and often singing, whereas 'track' emphasizes the recorded unit on an album or medium.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        5410
+      ],
+      "noun_1": [
+        4087
+      ]
+    },
+    "modifier_token_ids": {
+      "popular": [
+        4913
+      ],
+      "catchy": [
+        108066
+      ],
+      "acoustic": [
+        34407
+      ],
+      "melodic": [
+        132152
+      ],
+      "upbeat": [
+        111837
+      ],
+      "haunting": [
+        103210
+      ],
+      "opening": [
+        8115
+      ],
+      "emotional": [
+        13690
+      ],
+      "memorable": [
+        31803
+      ],
+      "energetic": [
+        36342
+      ],
+      "original": [
+        3303
+      ],
+      "bonus": [
+        16201
+      ],
+      "smooth": [
+        7080
+      ],
+      "vocal": [
+        28857
+      ],
+      "rhythmic": [
+        81964
+      ]
+    },
+    "forced_projection_span": 0.22330664098262787,
+    "max_noun_pair_mass": 0.6312164068222046,
+    "context_priority_score": 0.14095481554059042,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "melodic",
+        "target_modifier": "opening",
+        "source_projection": -0.058841265738010406,
+        "target_projection": -0.0360121876001358,
+        "forced_modifier_leverage": 0.022829078137874603,
+        "source_pair_mass": 0.06090155243873596,
+        "target_pair_mass": 0.0625360980629921
+      },
+      "medium": {
+        "source_modifier": "upbeat",
+        "target_modifier": "energetic",
+        "source_projection": -0.21738757193088531,
+        "target_projection": -0.10555645078420639,
+        "forced_modifier_leverage": 0.11183112114667892,
+        "source_pair_mass": 0.22259052097797394,
+        "target_pair_mass": 0.11737117916345596
+      },
+      "high": {
+        "source_modifier": "vocal",
+        "target_modifier": "bonus",
+        "source_projection": 0.08367659151554108,
+        "target_projection": 0.30698323249816895,
+        "forced_modifier_leverage": 0.22330664098262787,
+        "source_pair_mass": 0.09674638509750366,
+        "target_pair_mass": 0.6312164068222046
+      }
+    },
+    "context_generation_rank": 26
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "melodic",
+      "target_modifier": "opening",
+      "source_context_dev": [
+        "Listeners immediately fell in love with the smooth harmonies and hummable tune from the new pop album.",
+        "Audiences praised the gentle harmonies and lilting cadence that dominated the artist's latest acoustic release.",
+        "The easy-listening broadcast emphasized sweet harmonic progressions that listeners could hum along with on their commute.",
+        "Warm acoustic harmonies and a lilting lyrical quality made the new single an instant classic on morning drives."
+      ],
+      "target_context_dev": [
+        "Fans were eager to hear what introduced the album when the studio disc finally began to spin.",
+        "The DJ wanted to start off the broadcast by showcasing how the newly released album begins.",
+        "Music critics debated how effectively the very start of the LP established the mood for the entire record.",
+        "To kick off the late-night broadcast, the program director selected the debut number on side A of the record."
+      ],
+      "source_context_test": [
+        "Callers requested the piece known for its lush harmonies, gentle rhythm, and tuneful aesthetic.",
+        "The latest single charmed daytime audiences with its expressive harmony and pleasing cadences.",
+        "Reviewers highlighted the sweet, catchy musicality and soothing refrain that defined the acoustic recording.",
+        "The afternoon broadcast highlighted rich chords and a tuneful phrasing that captured the audience's imagination."
+      ],
+      "target_context_test": [
+        "The morning host decided to launch the exclusive album preview right from the very first entry on the playlist.",
+        "Broadcasters were instructed to sample the initial piece from the album to preview the full record.",
+        "Before diving into the middle of the LP, the producer chose to showcase how the record introduces itself.",
+        "To preview the newly dropped LP, the host spun the initial piece on the playlist."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('melodic song', 'melodic track', 'opening song', 'opening track') remain syntactically and semantically well-formed in every context. Source contexts emphasize musicality and harmonic sweetness, subtly shifting preference toward 'melodic song', whereas target contexts emphasize tracklist ordering and album introductory structure, leaning toward 'opening track'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "upbeat",
+      "target_modifier": "energetic",
+      "source_context_dev": [
+        "Morning commuters wanted something cheery and bright to lift their spirits during the rainy rush hour.",
+        "The daytime host created a feel-good playlist filled with sunny, joyful melodies to brighten the mood.",
+        "Listeners requested a breezy, lighthearted tune designed to keep everyone smiling through their chores.",
+        "The midday show focused on spreading joy with cheerful choruses and positive lyrical themes."
+      ],
+      "target_context_dev": [
+        "Clubbers and gym-goers wanted intense rhythms and powerful pacing to sustain their high-intensity workout.",
+        "The midnight dance mix featured pounding bass lines and intense propulsion built for crowded dance floors.",
+        "Fitness enthusiasts flooded the hotline demanding high-tempo rhythms with vigorous driving momentum.",
+        "The electronic dance show aimed to deliver relentless propulsion, heavy drops, and intense kinetic force."
+      ],
+      "source_context_test": [
+        "To boost audience morale on a dreary Monday, the program selected optimistic tunes with bright refrains.",
+        "The summer playlist needed a sunny, carefree composition that invited everyone to smile and sing along.",
+        "Listeners asked for buoyant, cheerful music to put them in a joyful frame of mind before work.",
+        "The radio personality wanted a bright and cheerful pop number to radiate sunny positivity over the airwaves."
+      ],
+      "target_context_test": [
+        "The late-night club mix relied on aggressive pacing and heavy beats to keep heart rates elevated.",
+        "DJs sought out high-velocity production and intense sonic momentum to pump up the arena crowd.",
+        "For the sprint interval segment of the fitness hour, the broadcast dialed up raw, high-tempo momentum.",
+        "The dance party broadcast required powerful, high-octane production to maintain an electric dance floor vibe."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('upbeat song', 'upbeat track', 'energetic song', 'energetic track') are fully felicitous. Source contexts invoke positivity, cheerfulness, and lighthearted melody (favoring 'upbeat song'), while target contexts establish high BPM, physical drive, and club/workout intensity (favoring 'energetic track')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "vocal",
+      "target_modifier": "bonus",
+      "source_context_dev": [
+        "The acoustic showcase prioritized pure human singing and expressive choral harmonies over synthetic instrumentation.",
+        "Audiences marveled at the lead singer's raw timber and expressive range in the stripped-back recording.",
+        "The program spotlighted impressive acapella harmonies and solo singing that required no instrumental backing.",
+        "During the choir festival, listeners tuned in to hear the lead soloist's pristine, unadorned singing performance."
+      ],
+      "target_context_dev": [
+        "The special deluxe re-issue of the classic album included an unreleased extra cut not found on the original LP.",
+        "Collectors were thrilled when the anniversary edition provided an exclusive supplemental recording appended to the end.",
+        "The studio release surprised fans with an unannounced extra appended after the final listed piece on the CD.",
+        "To reward superfans who bought the special expanded box set, the band included a previously unissued supplemental cut."
+      ],
+      "source_context_test": [
+        "The late-night jazz hour spotlighted the singer's virtuosic microphone performance over subtle bass lines.",
+        "Producers praised the artist's expressive pipes and lyrical breath control in the new stripped-down release.",
+        "The unplugged radio session focused exclusively on the powerhouse delivery of the frontwoman's singing voice.",
+        "To highlight the choir's natural gifts, the station broadcast a recording centered entirely around choral voices."
+      ],
+      "target_context_test": [
+        "The imported Japanese press of the studio album contained a rare additional inclusion appended at the very end.",
+        "Listeners were surprised by an unlisted extra musical addition included exclusively with the limited-edition vinyl.",
+        "The remastered collector edition featured a supplemental outtake originally omitted from the standard release.",
+        "Fans tuned in specifically to hear the rare promotional extra appended to the digital deluxe version."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('vocal song', 'vocal track', 'bonus song', 'bonus track') are natural and grammatically sound. The source contexts bias toward human singing and lyrical delivery ('vocal song'), whereas the target contexts set up deluxe editions, supplemental material, and CD/vinyl extra cuts ('bonus track')."
+    }
+  ]
+}

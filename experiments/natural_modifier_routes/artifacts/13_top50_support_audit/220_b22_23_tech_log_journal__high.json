@@ -1,0 +1,362 @@
+{
+  "valid_token_ids": [
+    1458,
+    1689,
+    1873,
+    2263,
+    2460,
+    2870,
+    3489,
+    3739,
+    4185,
+    5058,
+    5177,
+    5905,
+    6082,
+    6145,
+    7588,
+    7659,
+    7948,
+    8274,
+    10861,
+    10883,
+    10929,
+    10941,
+    12562,
+    13160,
+    15605,
+    18437,
+    21609,
+    24391,
+    129760
+  ],
+  "rejected": [
+    {
+      "token_id": 506,
+      "reason": "determiner causing ungrammatical repetition"
+    },
+    {
+      "token_id": 528,
+      "reason": "preposition cannot modify noun"
+    },
+    {
+      "token_id": 532,
+      "reason": "conjunction cannot modify noun"
+    },
+    {
+      "token_id": 639,
+      "reason": "isolated letter fragment"
+    },
+    {
+      "token_id": 1063,
+      "reason": "adverb/noun not naturally modifying target nouns"
+    },
+    {
+      "token_id": 1171,
+      "reason": "ordinal unnatural for continuous stream committing"
+    },
+    {
+      "token_id": 1262,
+      "reason": "data journal is unnatural compound"
+    },
+    {
+      "token_id": 1345,
+      "reason": "noun does not form standard compound with target nouns"
+    },
+    {
+      "token_id": 1626,
+      "reason": "final journal/log unnatural in ongoing transaction context"
+    },
+    {
+      "token_id": 1638,
+      "reason": "determiner/adjective unnatural without previous referent"
+    },
+    {
+      "token_id": 1657,
+      "reason": "process journal is unnatural compound"
+    },
+    {
+      "token_id": 1676,
+      "reason": "verb form does not modify target nouns"
+    },
+    {
+      "token_id": 1684,
+      "reason": "isolated letter fragment"
+    },
+    {
+      "token_id": 1695,
+      "reason": "background journal is unnatural compound"
+    },
+    {
+      "token_id": 1900,
+      "reason": "order journal/log unnatural in generic transaction context"
+    },
+    {
+      "token_id": 2129,
+      "reason": "file log/file journal unnatural compound"
+    },
+    {
+      "token_id": 2148,
+      "reason": "next log/journal unnatural in ongoing commit context"
+    },
+    {
+      "token_id": 2212,
+      "reason": "tautological with log noun"
+    },
+    {
+      "token_id": 2269,
+      "reason": "participle unnatural in this modifier position"
+    },
+    {
+      "token_id": 2633,
+      "reason": "table log/journal is unnatural compound"
+    },
+    {
+      "token_id": 3355,
+      "reason": "block log/journal is unnatural compound"
+    },
+    {
+      "token_id": 3423,
+      "reason": "record log/journal is redundant/unnatural"
+    },
+    {
+      "token_id": 3425,
+      "reason": "hot log/journal is nonstandard"
+    },
+    {
+      "token_id": 3618,
+      "reason": "message journal is unnatural compound"
+    },
+    {
+      "token_id": 3707,
+      "reason": "network journal is unnatural compound"
+    },
+    {
+      "token_id": 3958,
+      "reason": "engine log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 4083,
+      "reason": "history log/journal is redundant/unnatural"
+    },
+    {
+      "token_id": 4430,
+      "reason": "client journal is nonstandard compound"
+    },
+    {
+      "token_id": 4762,
+      "reason": "store log/journal is unnatural compound"
+    },
+    {
+      "token_id": 4903,
+      "reason": "write log/journal is unnatural compound"
+    },
+    {
+      "token_id": 5194,
+      "reason": "computer log/journal is stylistically unnatural"
+    },
+    {
+      "token_id": 5378,
+      "reason": "past participle verb does not fit context"
+    },
+    {
+      "token_id": 5663,
+      "reason": "contradicts target contexts requiring paperless digital records"
+    },
+    {
+      "token_id": 5941,
+      "reason": "server journal is nonstandard compound"
+    },
+    {
+      "token_id": 6310,
+      "reason": "storage journal is nonstandard compound"
+    },
+    {
+      "token_id": 6425,
+      "reason": "cloud journal is nonstandard compound"
+    },
+    {
+      "token_id": 6478,
+      "reason": "session journal is nonstandard compound"
+    },
+    {
+      "token_id": 6538,
+      "reason": "smart log/journal is nonstandard"
+    },
+    {
+      "token_id": 6571,
+      "reason": "memory journal is nonstandard compound"
+    },
+    {
+      "token_id": 6623,
+      "reason": "lock journal is nonstandard compound"
+    },
+    {
+      "token_id": 6818,
+      "reason": "register log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 7444,
+      "reason": "pool log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 7548,
+      "reason": "payment log is overly specific and contradicts source context"
+    },
+    {
+      "token_id": 7609,
+      "reason": "query journal is nonstandard compound"
+    },
+    {
+      "token_id": 7797,
+      "reason": "chain log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 8172,
+      "reason": "operating journal is nonstandard compound"
+    },
+    {
+      "token_id": 8398,
+      "reason": "external log contradicts internal database engine commit"
+    },
+    {
+      "token_id": 8487,
+      "reason": "processing journal is nonstandard compound"
+    },
+    {
+      "token_id": 8884,
+      "reason": "tautological with journal noun"
+    },
+    {
+      "token_id": 9495,
+      "reason": "waiting log/journal is ungrammatical/nonstandard"
+    },
+    {
+      "token_id": 11345,
+      "reason": "buffer journal is nonstandard compound"
+    },
+    {
+      "token_id": 11652,
+      "reason": "committed log/journal is semantically unnatural modifier"
+    },
+    {
+      "token_id": 12539,
+      "reason": "batch journal is nonstandard compound"
+    },
+    {
+      "token_id": 13403,
+      "reason": "disk journal is nonstandard compound"
+    },
+    {
+      "token_id": 13627,
+      "reason": "cluster journal is nonstandard compound"
+    },
+    {
+      "token_id": 14860,
+      "reason": "execution journal is nonstandard compound"
+    },
+    {
+      "token_id": 15048,
+      "reason": "queue log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 15612,
+      "reason": "cache log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 15963,
+      "reason": "SQL journal is nonstandard compound"
+    },
+    {
+      "token_id": 16788,
+      "reason": "plural noun modifier is ungrammatical"
+    },
+    {
+      "token_id": 18706,
+      "reason": "DB journal is nonstandard compound"
+    },
+    {
+      "token_id": 18922,
+      "reason": "pipeline journal is nonstandard compound"
+    },
+    {
+      "token_id": 19346,
+      "reason": "logging log/journal is redundant/awkward"
+    },
+    {
+      "token_id": 19960,
+      "reason": "settlement log is nonstandard and contradicts source context"
+    },
+    {
+      "token_id": 20387,
+      "reason": "repository log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 22600,
+      "reason": "pending log/journal is semantically contradictory"
+    },
+    {
+      "token_id": 27239,
+      "reason": "capitalized token inappropriate mid-sentence"
+    },
+    {
+      "token_id": 28971,
+      "reason": "blockchain log/journal is nonstandard in generic database engine context"
+    },
+    {
+      "token_id": 33563,
+      "reason": "archive log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 38916,
+      "reason": "proper noun inappropriate in generic context"
+    },
+    {
+      "token_id": 39698,
+      "reason": "registry log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 72280,
+      "reason": "capitalized token inappropriate mid-sentence"
+    },
+    {
+      "token_id": 78019,
+      "reason": "relational log/journal is nonstandard terminology"
+    },
+    {
+      "token_id": 85503,
+      "reason": "ledger log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 92016,
+      "reason": "clustered log/journal is nonstandard terminology"
+    },
+    {
+      "token_id": 94204,
+      "reason": "standby journal is nonstandard compound"
+    },
+    {
+      "token_id": 95179,
+      "reason": "redo journal is nonstandard terminology"
+    },
+    {
+      "token_id": 129767,
+      "reason": "capitalized token inappropriate mid-sentence"
+    },
+    {
+      "token_id": 137099,
+      "reason": "ledger log/journal is nonstandard compound"
+    },
+    {
+      "token_id": 166094,
+      "reason": "ACID log/journal is nonstandard terminology"
+    },
+    {
+      "token_id": 166836,
+      "reason": "rollback log/journal is nonstandard terminology for committing"
+    }
+  ],
+  "candidate_id": "b22_23_tech_log_journal",
+  "regime": "high",
+  "candidate_token_count": 110
+}

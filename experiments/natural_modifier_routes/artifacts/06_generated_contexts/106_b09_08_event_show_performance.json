@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_08_event_show_performance",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_show_performance",
+    "noun_0": "show",
+    "noun_1": "performance",
+    "shared_definition": "a public presentation or staging of entertainment or artistic skill",
+    "neutral_stem": "Audience members applauded loudly after",
+    "candidate_modifiers": [
+      "brilliant",
+      "flawless",
+      "disappointing",
+      "dazzling",
+      "live",
+      "spectacular",
+      "stunning",
+      "memorable",
+      "mediocre",
+      "impressive",
+      "final",
+      "solo",
+      "exceptional",
+      "theatrical",
+      "masterful"
+    ],
+    "semantic_notes": "'Show' is colloquial and encompasses broad spectacles, while 'performance' emphasizes artistic execution and technical delivery.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        1407
+      ],
+      "noun_1": [
+        3736
+      ]
+    },
+    "modifier_token_ids": {
+      "brilliant": [
+        21042
+      ],
+      "flawless": [
+        83943
+      ],
+      "disappointing": [
+        45580
+      ],
+      "dazzling": [
+        88307
+      ],
+      "live": [
+        3892
+      ],
+      "spectacular": [
+        27983
+      ],
+      "stunning": [
+        19282
+      ],
+      "memorable": [
+        31803
+      ],
+      "mediocre": [
+        101662
+      ],
+      "impressive": [
+        15978
+      ],
+      "final": [
+        1626
+      ],
+      "solo": [
+        8935
+      ],
+      "exceptional": [
+        20987
+      ],
+      "theatrical": [
+        68367
+      ],
+      "masterful": [
+        166649
+      ]
+    },
+    "forced_projection_span": 0.04920828342437744,
+    "max_noun_pair_mass": 0.7222927212715149,
+    "context_priority_score": 0.03554278494369356,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "mediocre",
+        "target_modifier": "memorable",
+        "source_projection": 0.4045119285583496,
+        "target_projection": 0.40998589992523193,
+        "forced_modifier_leverage": 0.005473971366882324,
+        "source_pair_mass": 0.4497881531715393,
+        "target_pair_mass": 0.42528438568115234
+      },
+      "medium": {
+        "source_modifier": "masterful",
+        "target_modifier": "theatrical",
+        "source_projection": 0.63387531042099,
+        "target_projection": 0.6590597033500671,
+        "forced_modifier_leverage": 0.02518439292907715,
+        "source_pair_mass": 0.6401557326316833,
+        "target_pair_mass": 0.6908054947853088
+      },
+      "high": {
+        "source_modifier": "theatrical",
+        "target_modifier": "flawless",
+        "source_projection": 0.6590597033500671,
+        "target_projection": 0.7082679867744446,
+        "forced_modifier_leverage": 0.04920828342437744,
+        "source_pair_mass": 0.6908054947853088,
+        "target_pair_mass": 0.7222927212715149
+      }
+    },
+    "context_generation_rank": 107
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "mediocre",
+      "target_modifier": "memorable",
+      "source_context_dev": [
+        "The ticket prices were cheap, but the amateur cast lacked polish and energy throughout the evening.",
+        "While the local improv troupe kept the energy light, several skits fell rather flat.",
+        "The touring musical featured generic choreography and uninspired pacing across both acts.",
+        "The comedy club lineup delivered only a few scattered chuckles with predictable punchlines."
+      ],
+      "target_context_dev": [
+        "The lead soprano poured extraordinary emotion into every aria, moving several listeners to tears.",
+        "Decades of training culminated in a stunning, emotionally resonant evening at the concert hall.",
+        "The seasoned soloist delivered an unforgettable interpretation of the classic concerto.",
+        "Every nuance of the dramatic recital resonated deeply with everyone sitting in the auditorium."
+      ],
+      "source_context_test": [
+        "The regional company mounted a rather bland production that struggled to hold everyone's attention.",
+        "Between missed lighting cues and flat jokes, the evening proved quite unexceptional.",
+        "The community hall hosted an ordinary evening of song and dance that left little impression.",
+        "The circus routine suffered from sluggish pacing and several routine errors during the first half."
+      ],
+      "target_context_test": [
+        "The visiting violinist struck every note with breathtaking emotional power that lingered long afterward.",
+        "A profound artistic depth defined the evening, leaving a lasting impression on all who attended.",
+        "The stage drama featured brilliant character work that will be discussed for years to come.",
+        "The dancer's expressive interpretation created an enchanting, enduring atmosphere in the grand hall."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (mediocre show, mediocre performance, memorable show, memorable performance) fit naturally after the neutral stem across both casual entertainment and serious concert contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "masterful",
+      "target_modifier": "theatrical",
+      "source_context_dev": [
+        "The veteran director demonstrated complete command of pacing, lighting, and stagecraft from start to finish.",
+        "Decades of refined artistry were evident in every seamless transition and elaborate set piece.",
+        "The grand arena production exhibited extraordinary technical prowess and supreme control over the stage.",
+        "The headlining magician handled complex illusions with effortless dexterity and supreme command."
+      ],
+      "target_context_dev": [
+        "The dramatic cast embraced grand gestures, heightened rhetoric, and intense emotional expression onstage.",
+        "The tragedy relied on heightened stylistic elements and bold, exaggerated interpretations of the dialogue.",
+        "Classical stage conventions and expressive, larger-than-life character acting dominated the entire evening.",
+        "The actors delivered their lines with grand dramatic flair, emphasizing bold expressive artistry."
+      ],
+      "source_context_test": [
+        "A stunning display of stagecraft and expert timing captivated everyone in the packed arena.",
+        "The seasoned troupe executed every intricate trick and complex scene with supreme expertise.",
+        "The elaborate Broadway production showcased exquisite technical skill and consummate staging craft.",
+        "Every aspect of the grand spectacle reflected the virtuoso touch of an elite creative team."
+      ],
+      "target_context_test": [
+        "High drama and stylized movements gave the entire stage interpretation a distinctly operatic feel.",
+        "The leading players brought an extravagant, dramatic sensibility to the classical text.",
+        "Expressive staging, elaborate costumes, and grand monologues defined the evening's dramatic tone.",
+        "The ensemble leaned heavily into exaggerated mannerisms and bold dramatic conventions."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations (masterful show, masterful performance, theatrical show, theatrical performance) remain completely coherent and syntactically well-formed following the stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "theatrical",
+      "target_modifier": "flawless",
+      "source_context_dev": [
+        "The grand stage extravaganza was packed with dramatic flair, vibrant costumes, and bold visual effects.",
+        "An elaborate stage production brought the historical drama to life through grand pageantry and bold staging.",
+        "The evening at the playhouse was defined by heightened spectacle, ornate sets, and flamboyant dramatic styling.",
+        "The arena spectacle relied on grand dramatic conventions and bold, larger-than-life visual storytelling."
+      ],
+      "target_context_dev": [
+        "The concert pianist hit every single note with absolute precision, executing each difficult run without error.",
+        "The prima ballerina executed every difficult leap and turn with immaculate precision and zero mistakes.",
+        "Not a single beat was missed as the chamber orchestra played with total technical perfection.",
+        "The gymnast's routine was executed with immaculate technical precision from start to finish."
+      ],
+      "source_context_test": [
+        "Vibrant stage design and dramatic flair made the evening at the playhouse thoroughly captivating.",
+        "The Broadway revival embraced bold melodrama and extravagant staging across all three acts.",
+        "Elaborate costuming and heightened dramatic pacing gave the stage event a grand, operatic atmosphere.",
+        "The troupe's flamboyant style and grand staging choices created a dramatic visual feast."
+      ],
+      "target_context_test": [
+        "The string quartet achieved absolute tonal purity and seamless synchronization throughout the concert.",
+        "Every complex transition was executed without a single misstep or technical error.",
+        "The soloist demonstrated impeccable accuracy, hitting every difficult pitch with effortless perfection.",
+        "The ensemble demonstrated immaculate technical control, rendering every complex passage without flaw."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross pairings (theatrical show, theatrical performance, flawless show, flawless performance) are fully felicitous and standard English collocations under both staging spectacle and precision virtuosity contexts."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "candidate_id": null,
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test_3"
+      ],
+      "failure_reasons": [
+        "Lexical leak of candidate modifier: 'Renowned' explicitly appears in source_context_test item 4."
+      ],
+      "concise_notes": "All four cross combinations are semantically valid and natural with the stem, but source_context_test[3] directly contains the source modifier 'Renowned'."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations of public/prestigious museum/gallery are fully coherent with the prompt stem and contexts cleanly steer pragmatic preference without explicit candidate lexical leakage."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test_2",
+        "target_context_test_2"
+      ],
+      "failure_reasons": [
+        "Lexical leak: 'celebrated' appears verbatim in source_context_test item 3.",
+        "Lexical leak: 'historic' appears verbatim in target_context_test item 3.",
+        "Stem overlap / stylistic redundancy: Fixed stem already contains 'historic' ('Tourists admired historic artifacts in the historic museum/gallery')."
+      ],
+      "concise_notes": "Direct keyword leaks of both 'celebrated' and 'historic' in test contexts, alongside semantic pleonasm with 'historic' in the fixed stem."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b03_21_basket_hamper",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "basket_hamper",
+    "noun_0": "basket",
+    "noun_1": "hamper",
+    "shared_definition": "a woven container used for holding, sorting, or carrying household goods",
+    "neutral_stem": "Before heading to the laundry room, she sorted clothes into",
+    "candidate_modifiers": [
+      "wicker",
+      "woven",
+      "overflowing",
+      "full",
+      "empty",
+      "deep",
+      "tall",
+      "dirty",
+      "light",
+      "round",
+      "sturdy",
+      "large",
+      "wooden",
+      "dusty"
+    ],
+    "semantic_notes": "Hamper usually denotes a tall lidded laundry container or picnic food basket, while basket is the universal woven container term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        11406
+      ],
+      "noun_1": [
+        116693
+      ]
+    },
+    "modifier_token_ids": {
+      "wicker": [
+        125009
+      ],
+      "woven": [
+        46276
+      ],
+      "overflowing": [
+        127701
+      ],
+      "full": [
+        2587
+      ],
+      "empty": [
+        7738
+      ],
+      "deep": [
+        5268
+      ],
+      "tall": [
+        13030
+      ],
+      "dirty": [
+        24881
+      ],
+      "light": [
+        2214
+      ],
+      "round": [
+        4886
+      ],
+      "sturdy": [
+        47170
+      ],
+      "large": [
+        2455
+      ],
+      "wooden": [
+        7116
+      ],
+      "dusty": [
+        78921
+      ]
+    },
+    "forced_projection_span": 0.06353401392698288,
+    "max_noun_pair_mass": 0.8472692370414734,
+    "context_priority_score": 0.05383041550609713,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "dirty",
+        "target_modifier": "large",
+        "source_projection": -0.11425715684890747,
+        "target_projection": -0.10627596080303192,
+        "forced_modifier_leverage": 0.00798119604587555,
+        "source_pair_mass": 0.12184670567512512,
+        "target_pair_mass": 0.2758380174636841
+      },
+      "medium": {
+        "source_modifier": "dusty",
+        "target_modifier": "light",
+        "source_projection": -0.03341711312532425,
+        "target_projection": -0.0004610750766005367,
+        "forced_modifier_leverage": 0.03295603804872371,
+        "source_pair_mass": 0.05603385716676712,
+        "target_pair_mass": 0.000519992783665657
+      },
+      "high": {
+        "source_modifier": "wooden",
+        "target_modifier": "overflowing",
+        "source_projection": 0.03829171508550644,
+        "target_projection": 0.10182572901248932,
+        "forced_modifier_leverage": 0.06353401392698288,
+        "source_pair_mass": 0.20661011338233948,
+        "target_pair_mass": 0.41575324535369873
+      }
+    },
+    "context_generation_rank": 80
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "dirty",
+      "target_modifier": "large",
+      "source_context_dev": [
+        "Muddy soccer uniforms and grimy gardening overalls had accumulated in a messy pile on the mudroom floor. She wanted to keep the heavily soiled items separate from ordinary daily wear.",
+        "The kitchen dishcloths were stained with grease and smelled faintly sour after a weekend of heavy cooking. She gathered every stained rag across the counter.",
+        "After weeding the backyard garden, all the stained work pants and grass-smeared shirts needed immediate attention. She needed a quick holder to carry the grubby garments.",
+        "The children had tracked mud all over their play clothes during recess in the rain. She picked up each damp, stained piece from the entryway."
+      ],
+      "target_context_dev": [
+        "A massive backlog of linens, towels, and bedding from four guest rooms needed to be washed all at once. The pile of laundry was enormous and required maximum holding capacity.",
+        "Three weeks of accumulated household textiles created a towering mountain of fabric in the master closet. She gathered everything into an oversized receptacle designed for bulk loads.",
+        "Hosting the extended family over the holidays left dozens of heavy bath towels and duvet covers waiting to be washed. She needed a tall, spacious unit capable of handling full loads.",
+        "The entire household's weekly wash had to be collected in a single trip down the hallway. A spacious, high-volume unit stood ready in the corner of the bedroom."
+      ],
+      "source_context_test": [
+        "Greasy garage coveralls and engine-oil rags needed to be gathered separately before they stained anything else. She quickly scooped up the grimiest items from the floor.",
+        "Sweaty gym apparel and damp running shorts had been sitting in the workout bag for two days. She grabbed the smelly load to begin treating the stains.",
+        "Food spills and coffee splatters covered the kitchen aprons and table linens after the dinner party. She gathered all the soiled fabrics into a portable organizer.",
+        "A pile of muddy camping gear and soiled trail towels sat near the back entrance. She gathered the grit-covered textiles together to prepare them for a heavy wash cycle."
+      ],
+      "target_context_test": [
+        "Every sheet and blanket from the upstairs bedrooms had been stripped for the seasonal deep clean. The massive bundle of heavy textiles required a receptacle with immense volume.",
+        "Doing laundry for a family of six meant processing multiple bulky loads in a single morning. She turned toward the colossal corner receptacle that stored days of apparel.",
+        "Heavy winter coats, thick fleece throws, and oversized comforters took up substantial space in the hallway. She gathered the bulky heap into an expansive tall container.",
+        "A week of neglected laundry had produced an immense pile of clothing across the dressing room. She dragged over the deep, wide storage unit to fit everything at once."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (dirty basket, dirty hamper, large basket, large hamper) remain natural and semantically compatible with clothes sorting before entering a laundry room. Low leverage reflects subtle thematic shift from soil-focused sorting to bulk-volume accumulation."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "dusty",
+      "target_modifier": "light",
+      "source_context_dev": [
+        "She went up to the neglected attic where spare seasonal linens had been sitting untouched on open rafters for months. A fine layer of grey particles coated the long-stored items.",
+        "Old cloth napkins and vintage aprons were retrieved from the back corner of the unfinished basement storage shelf. Everything smelled faintly of age and was covered in fine grit.",
+        "The guest bedroom quilts had rested undisturbed in the unused wardrobe since last winter, gathering a visible powdery film. She took them down to freshen them up.",
+        "Unwashed drop cloths and forgotten storage covers had rested in the garage corner all through the dry summer. She retrieved the grit-coated fabric to run a refresh cycle."
+      ],
+      "target_context_dev": [
+        "She separated delicate silk blouses and featherweight lace camisoles that required gentle handling and minimal bulk. The entire bundle weighed practically nothing.",
+        "A small batch of breezy summer linens and sheer curtains needed to be carried effortlessly down the stairs. The pale, featherweight batch was easy to lift.",
+        "Only a few thin handkerchiefs, baby garments, and airy scarves needed washing this afternoon. She placed the low-weight assortment into the portable unit.",
+        "Delicate chiffon dresses and featherweight undergarments were gathered for a quick gentle cycle. She needed something that was effortless to carry across the house."
+      ],
+      "source_context_test": [
+        "Retrieving antique tablecloths from the high closet shelf sent a small cloud of grey particles into the air. The vintage fabrics had sat neglected in the dry air for years.",
+        "The curtains from the renovated spare room had absorbed plaster powder and fine debris during the drywall work. She gathered the grimy drapes to be thoroughly shaken out.",
+        "Forgotten winter blankets in the garage cabinet were covered in a fine layer of grey grime after months of neglect. She pulled the stale textiles from the dark corner.",
+        "Old fabric scraps kept in the utility shed had gathered cobwebs and fine powder along their edges. She collected the long-abandoned textiles for an overdue washing."
+      ],
+      "target_context_test": [
+        "Handling fine lace doilies and gossamer nightgowns required sorting them separately from standard clothing. The airy collection had virtually zero heft.",
+        "A quick refresh of baby clothes and airy pastel shirts involved carrying just a couple of ounces of fabric. She packed the featherweight items together.",
+        "She picked out the sheer voile panels and wispy summer scarves for a mild rinse. The entire batch of fabric felt as weightless as a feather in her arms.",
+        "Only two sheer blouses and a few delicate silk scarves made up this afternoon's tiny wash batch. The pale, easy-to-carry assortment was ready for transport."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (dusty basket, dusty hamper, light basket, light hamper) are fully grammatical and contextually plausible. The medium condition shifts focus from neglected, attic-stored storage to delicate, low-weight wash assortments."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "wooden",
+      "target_modifier": "overflowing",
+      "source_context_dev": [
+        "The farmhouse interior featured handcrafted timber furnishings and rustic stave containers arranged neatly throughout the utility area. She appreciated sturdy, natural timber craftsmanship.",
+        "She walked past the carved cedar organizers and timber storage chests that lined the hallway. Her favorite handmade oak carrier sat beside the antique vanity.",
+        "In keeping with the rustic cabin decor, natural timber slats and carved birch accents were used for all storage containers in the master suite.",
+        "The historic homestead was filled with handmade timber wares and carved ash utility goods crafted by local carpenters. She reached for the sturdy timber unit."
+      ],
+      "target_context_dev": [
+        "Garments were tumbling over the brim and spilling onto the floor because laundry had been completely ignored for over two weeks. Piles of apparel surged past the top edges.",
+        "Every single garment from the closet seemed to be spilling past the rim in an uncontrollable cascade of fabric. The container could barely contain the bursting heap.",
+        "Clothes were bursting over the sides and spilling onto the bedroom rug in towering mounds. The excessive load had exceeded its boundaries hours ago.",
+        "Sheets, pants, and sweaters were tumbling out over the edges in a chaotic, bulging heap that threatened to collapse onto the floor."
+      ],
+      "source_context_test": [
+        "Natural grain timber chests and carved cedar storage bins gave the dressing area a warm, handcrafted aesthetic. She admired the solid oak joinery in the corner.",
+        "Her rustic decor relied heavily on polished birch staves and handmade timber crates placed along the dressing room wall. She selected the sturdy timber unit.",
+        "Traditional woodworking was showcased in every room, from carved pine boxes to hand-hewn cedar storage pieces. She turned toward the handsome timber container.",
+        "The mountain lodge was outfitted with handcrafted timber storage boxes made from local pine planks. She moved toward the solid timber holder beside the armoire."
+      ],
+      "target_context_test": [
+        "Apparel was spilling uncontrollably over the edges, creating a teetering mound of garments that cascaded down onto the rug. The capacity had been exceeded completely.",
+        "A bulging mass of fabrics rose well above the rim, with shirts and socks tumbling out onto the hardwood floor. The container was hopelessly stuffed past capacity.",
+        "Dozens of discarded garments formed a teetering pinnacle that leaned precariously over the rim. She tried to balance the spilling mass before it toppled over.",
+        "The laundry pile had swelled so high that sleeves and pant legs were draping down to the carpet on all four sides. The receptacle was bursting past its capacity."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (wooden basket, wooden hamper, overflowing basket, overflowing hamper) are coherent and common in domestic contexts. High leverage leverages structural material properties against capacity limit states."
+    }
+  ]
+}

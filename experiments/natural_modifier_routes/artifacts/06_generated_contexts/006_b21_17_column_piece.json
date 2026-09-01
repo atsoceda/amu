@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b21_17_column_piece",
+    "generation_batch": 21,
+    "domain": "communication and journalism",
+    "family_id": "column_piece",
+    "noun_0": "column",
+    "noun_1": "piece",
+    "shared_definition": "a regular or feature article written for publication in a newspaper or magazine",
+    "neutral_stem": "The senior journalist turned in a draft of the",
+    "candidate_modifiers": [
+      "weekly",
+      "opinion",
+      "guest",
+      "satirical",
+      "syndicated",
+      "provocative",
+      "insightful",
+      "lengthy",
+      "thoughtful",
+      "entertaining",
+      "monthly",
+      "controversial",
+      "polished",
+      "brilliant",
+      "lucid"
+    ],
+    "semantic_notes": "'Column' specifically denotes a recurring section or branded slot, while 'piece' is a versatile newsroom term for any article.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        4321
+      ],
+      "noun_1": [
+        6347
+      ]
+    },
+    "modifier_token_ids": {
+      "weekly": [
+        16789
+      ],
+      "opinion": [
+        8737
+      ],
+      "guest": [
+        15083
+      ],
+      "satirical": [
+        166810
+      ],
+      "syndicated": [
+        163523
+      ],
+      "provocative": [
+        103606
+      ],
+      "insightful": [
+        87833
+      ],
+      "lengthy": [
+        42288
+      ],
+      "thoughtful": [
+        44027
+      ],
+      "entertaining": [
+        32549
+      ],
+      "monthly": [
+        13822
+      ],
+      "controversial": [
+        31332
+      ],
+      "polished": [
+        39372
+      ],
+      "brilliant": [
+        21042
+      ],
+      "lucid": [
+        129054
+      ]
+    },
+    "forced_projection_span": 0.47086674347519875,
+    "max_noun_pair_mass": 0.6704021692276001,
+    "context_priority_score": 0.31567008624290915,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "monthly",
+        "target_modifier": "satirical",
+        "source_projection": -0.05267138406634331,
+        "target_projection": -0.005468383431434631,
+        "forced_modifier_leverage": 0.047203000634908676,
+        "source_pair_mass": 0.05555553361773491,
+        "target_pair_mass": 0.17504552006721497
+      },
+      "medium": {
+        "source_modifier": "guest",
+        "target_modifier": "monthly",
+        "source_projection": -0.28374919295310974,
+        "target_projection": -0.05267138406634331,
+        "forced_modifier_leverage": 0.23107780888676643,
+        "source_pair_mass": 0.28714385628700256,
+        "target_pair_mass": 0.05555553361773491
+      },
+      "high": {
+        "source_modifier": "brilliant",
+        "target_modifier": "opinion",
+        "source_projection": 0.0564841590821743,
+        "target_projection": 0.527350902557373,
+        "forced_modifier_leverage": 0.47086674347519875,
+        "source_pair_mass": 0.060754578560590744,
+        "target_pair_mass": 0.6704021692276001
+      }
+    },
+    "context_generation_rank": 7
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "monthly",
+      "target_modifier": "satirical",
+      "source_context_dev": [
+        "After checking the magazine's strict calendar deadlines, the editor waited for the scheduled submission. The latest installment for the recurring magazine section was finally ready.",
+        "Every four weeks, the editorial desk anticipated the delivery of recurring commentary. The regular submission cycle was nearing its final cutoff hour.",
+        "With the end of the publishing cycle approaching, the press desk prepared for the usual periodic submission. The routine schedule required everything to be formatted promptly.",
+        "The print department maintained a rigid timetable for recurring serials. As the deadline drew near, the latest submission was finalized."
+      ],
+      "target_context_dev": [
+        "The entertainment desk wanted a biting, humorous parody of current politics. Editors gathered around to review the sharp, comedic work.",
+        "The editorial desk sought a lighthearted, humorous spoof of recent cultural fads. The witty parody was meant to make readers laugh and think.",
+        "Readers always looked forward to sharp mockery of pretentious public figures. The witty, mocking submission had just arrived in the editor's inbox.",
+        "The editor specifically requested an irreverent, sharp-witted lampoon of industry trends. The comedic draft promised to stir lively debate."
+      ],
+      "source_context_test": [
+        "The layout team reserved the same two-page spread that ran at the start of each issue. The ongoing series was ready for copyediting.",
+        "Press day arrived on the usual thirty-day rotation, demanding the usual editorial submission. The deadline for the scheduled feature arrived on time.",
+        "The magazine staff tracked recurring contributions on a detailed editorial calendar. Another routine scheduled submission arrived at the desk.",
+        "Maintaining a predictable schedule across multiple issues was essential for the production desk. The periodic write-up had just cleared the final revisions."
+      ],
+      "target_context_test": [
+        "The magazine decided to run a playful parody mocking the vanity of high-society galas. The draft leaned heavily into witty absurdity and mockery.",
+        "To brighten the cultural section, the editors commissioned a tongue-in-cheek ridicule of modern dating rituals. The humorous draft arrived just in time.",
+        "The publication needed a smart, mocking send-up of corporate jargon. The witty writer had crafted an amusing parody.",
+        "An irreverent, comedic take on recent celebrity scandals was slated for publication. The humorous draft was finally completed."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (monthly column, monthly piece, satirical column, satirical piece) represent standard journalistic text types and remain grammatically and semantically sound across all periodic and comedic context frames."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "guest",
+      "target_modifier": "monthly",
+      "source_context_dev": [
+        "An outside specialist was invited to share an external perspective on trade policy. The editorial staff eagerly awaited the visiting contributor's submission.",
+        "The newsroom invited an external scholar to offer specialized insights for a single edition. The visiting contributor finished polishing the text.",
+        "To offer readers a fresh outside voice, the newspaper invited an external analyst for the weekend edition. The visiting writer's contribution was finally ready.",
+        "The editor reached outside the staff to bring in an external industry veteran. The invited contributor submitted the promised text ahead of print."
+      ],
+      "target_context_dev": [
+        "The magazine ran on a strict four-week publishing cycle. The deadline for the recurring periodic submission had arrived.",
+        "Every thirty days, the editorial desk awaited the regular installment for the cultural section. The periodic contribution was ready for review.",
+        "The publication organized its print workflow around a strict calendar schedule. The recurring submission for the new issue was completed.",
+        "With the end of the editorial calendar approaching, the desk needed the routine periodic write-up. The scheduled text was turned in."
+      ],
+      "source_context_test": [
+        "The news team had arranged for an external diplomat to write an analysis from abroad. The visiting contributor sent in the finished text.",
+        "An external scientist was asked to contribute specialized commentary to the science section. The visiting specialist completed the write-up.",
+        "To broaden the publication's viewpoint, the desk invited an external critic to contribute a perspective. The outside author delivered the required draft.",
+        "The editorial team invited an external historian to offer unique historical context. The visiting expert finalized the draft."
+      ],
+      "target_context_test": [
+        "The magazine production team tracked all periodic submissions on a four-week cycle. The scheduled installment was ready for layout.",
+        "The cultural desk prepared for the regular thirty-day publication run. The periodic submission arrived right before the print deadline.",
+        "Every four weeks, a routine installment was scheduled to appear in the print edition. The latest periodic text was submitted.",
+        "The print department maintained a strict calendar of periodic releases. The routine submission arrived on schedule."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (guest column, guest piece, monthly column, monthly piece) are standard publishing collocations and remain fully felicitous across contributor-status and publication-frequency framing."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "brilliant",
+      "target_modifier": "opinion",
+      "source_context_dev": [
+        "The veteran writer was renowned for unmatched wit and dazzling prose. Colleagues gathered to admire the stunning, masterful submission.",
+        "Expectations were immense for a dazzling display of rhetorical mastery and genius. The astonishing, virtuoso submission was delivered to the desk.",
+        "The newsroom anticipated a masterclass in prose from the prize-winning writer. The exceptionally clever and luminous submission was finished.",
+        "Few writers could match such dazzling insight and exquisite prose. The masterfully crafted submission was ready for the front section."
+      ],
+      "target_context_dev": [
+        "The editorial board wanted a strong personal viewpoint on the proposed tax reform. The subjective argumentative submission was ready for review.",
+        "The desk wanted a passionate personal stance on the civic referendum. The argumentative, viewpoint-driven submission was turned in.",
+        "Readers expected a bold subjective stance on the controversial policy debate. The viewpoint-centered submission arrived for the editorial page.",
+        "The editor sought an argumentative take expressing a clear personal perspective on local governance. The viewpoint draft was finalized."
+      ],
+      "source_context_test": [
+        "The publication expected an extraordinary display of intellectual flair and dazzling prose. The masterly written submission arrived at the desk.",
+        "Colleagues praised the writer's exceptional talent and astonishing rhetorical brilliance. The masterwork of writing was completed on time.",
+        "The desk awaited a virtuoso demonstration of elegant prose and sharp intellect. The dazzling submission was finally turned in.",
+        "Known for producing strokes of pure genius on tight deadlines, the writer delivered once again. The masterly craft of the submission was undeniable."
+      ],
+      "target_context_test": [
+        "The publication dedicated a page to subjective commentary and personal viewpoints. The argumentative submission was ready for editing.",
+        "A strong personal stance was needed to challenge the administration's recent policy decisions. The viewpoint submission was submitted to the editor.",
+        "The editorial pages were reserved for subjective argumentation and individual perspectives. The viewpoint-focused draft was completed.",
+        "The news desk requested a persuasive, personal argument regarding the new zoning regulations. The viewpoint draft was handed in."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (brilliant column, brilliant piece, opinion column, opinion piece) are standard and natural in journalism. Evaluative excellence framing and stance-genre framing maintain mutual grammatical and semantic validity."
+    }
+  ]
+}

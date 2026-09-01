@@ -1,0 +1,222 @@
+{
+  "family": {
+    "candidate_id": "b02_03_cab_taxi",
+    "generation_batch": 2,
+    "domain": "vehicles and transportation",
+    "family_id": "cab_taxi",
+    "noun_0": "cab",
+    "noun_1": "taxi",
+    "shared_definition": "a licensed public passenger vehicle for hire with a driver",
+    "neutral_stem": "The traveler hurried out of the terminal and hailed the",
+    "candidate_modifiers": [
+      "yellow",
+      "licensed",
+      "crowded",
+      "waiting",
+      "approaching",
+      "unmarked",
+      "speeding",
+      "empty",
+      "available",
+      "dirty",
+      "expensive",
+      "punctual",
+      "shared"
+    ],
+    "semantic_notes": "'Taxi' is internationally universal, whereas 'cab' is slightly more colloquial and strongly associated with major metropolitan cities.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        6335
+      ],
+      "noun_1": [
+        30189
+      ]
+    },
+    "modifier_token_ids": {
+      "yellow": [
+        7070
+      ],
+      "licensed": [
+        24335
+      ],
+      "crowded": [
+        37534
+      ],
+      "waiting": [
+        9495
+      ],
+      "approaching": [
+        29220
+      ],
+      "unmarked": [
+        163842
+      ],
+      "speeding": [
+        74278
+      ],
+      "empty": [
+        7738
+      ],
+      "available": [
+        2487
+      ],
+      "dirty": [
+        24881
+      ],
+      "expensive": [
+        11162
+      ],
+      "punctual": [
+        215660
+      ],
+      "shared": [
+        7659
+      ]
+    },
+    "forced_projection_span": 0.04069778323173523,
+    "max_noun_pair_mass": 0.8194445371627808,
+    "context_priority_score": 0.033349576143880455,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "expensive",
+        "target_modifier": "empty",
+        "source_projection": 0.2626277208328247,
+        "target_projection": 0.2693224549293518,
+        "forced_modifier_leverage": 0.0066947340965271,
+        "source_pair_mass": 0.3290073275566101,
+        "target_pair_mass": 0.5282593369483948
+      },
+      "medium": {
+        "source_modifier": "empty",
+        "target_modifier": "licensed",
+        "source_projection": 0.2693224549293518,
+        "target_projection": 0.28826940059661865,
+        "forced_modifier_leverage": 0.018946945667266846,
+        "source_pair_mass": 0.5282593369483948,
+        "target_pair_mass": 0.5197792053222656
+      },
+      "high": {
+        "source_modifier": "unmarked",
+        "target_modifier": "shared",
+        "source_projection": 0.45544612407684326,
+        "target_projection": 0.4961439073085785,
+        "forced_modifier_leverage": 0.04069778323173523,
+        "source_pair_mass": 0.5789921283721924,
+        "target_pair_mass": 0.6758795380592346
+      }
+    },
+    "context_generation_rank": 112
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "expensive",
+      "target_modifier": "empty",
+      "source_projection": 0.2626277208328247,
+      "target_modifier_projection": 0.2693224549293518,
+      "forced_modifier_leverage": 0.0066947340965271,
+      "source_pair_mass": 0.3290073275566101,
+      "target_pair_mass": 0.5282593369483948,
+      "source_context_dev": [
+        "Arriving during peak surge pricing meant ground transport fares were through the roof. Still, desperate to avoid the downpour, a ride was needed immediately.",
+        "The city center was in gridlock and rates had quadrupled across every curbside transit rank. Money was no object given the looming business deadline.",
+        "Premium airport surcharges were in full effect, doubling the usual cost of citybound transit. With no patience left for waiting, standard budgetary limits were ignored.",
+        "Stepping outside into the biting cold, high-end private dispatch services were demanding exorbitant fees. The urgent rush to make dinner left no room to bargain."
+      ],
+      "target_context_dev": [
+        "Late evening arrivals found the airport passenger pickup lanes surprisingly clear of crowds. A long line of available vehicles waited with their roof lights illuminated.",
+        "The curbside concourse was quiet past midnight, offering dozens of vacant vehicles lined along the curb. Spotting an unoccupied ride was effortless.",
+        "After deboarding, the queue outside was moving fast as plenty of open automobiles pulled up one after another. Finding a vehicle with no current passengers was simple.",
+        "The terminal exit was breezy and uncrowded, with numerous waiting operators seeking their next fare. An unreserved vehicle was waiting right near the crosswalk."
+      ],
+      "source_context_test": [
+        "Peak-hour airport traffic meant tariffs were steep and private transit operators charged astronomical rates. Reaching the hotel swiftly was the only priority.",
+        "With extreme holiday surcharges actively applied, traveling into downtown was costing a small fortune. Time constraints made the steep bill completely unavoidable.",
+        "Luxury fleet operators at the arrival zone demanded top-tier rates for immediate city transfers. The pressing schedule made economy irrelevant.",
+        "Heavy delays on the rails caused sudden price spikes among curbside passenger services. Comfort and speed were chosen regardless of the premium charge."
+      ],
+      "target_context_test": [
+        "The arrival zone outside the baggage carousel was serene, with line after line of vacant sedans parked along the rank. Selecting an available car took seconds.",
+        "Few travelers were lingering outside, leaving plenty of unoccupied transport options lined up along the boulevard. A vehicle ready for immediate boarding stood nearby.",
+        "The night was peaceful at the pickup island, where numerous open automobiles waited patiently with doors unlocked. An available ride was easily spotted.",
+        "Outside the departure gates, row upon row of idle operators stood by with room for passenger luggage. Securing an unboarded ride required no waiting."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (expensive cab, expensive taxi, empty cab, empty taxi) are fully grammatical and semantically felicitous following 'hailed the'. The context subtly biases towards cost considerations vs vehicle occupancy without explicit mention of forbidden words."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "empty",
+      "target_modifier": "licensed",
+      "source_projection": 0.2693224549293518,
+      "target_modifier_projection": 0.28826940059661865,
+      "forced_modifier_leverage": 0.018946945667266846,
+      "source_pair_mass": 0.5282593369483948,
+      "target_pair_mass": 0.5197792053222656,
+      "source_context_dev": [
+        "The concourse outside was quiet, with vehicle after vehicle lined up along the sidewalk ready to take passengers. A car without riders pulled forward immediately.",
+        "Stepping out onto the sidewalk, dozens of available rides waited with illuminated roof beacons. Finding a completely vacant automobile was quick work.",
+        "The passenger pickup area was void of queues, presenting several open vehicles idling by the curb. An unoccupied automobile stood ready for luggage.",
+        "Outside the baggage reclaim, the rank was fully stocked with available passenger automobiles waiting for fares. One car without any occupants rolled to a halt."
+      ],
+      "target_context_dev": [
+        "Airport safety warnings strictly advised travelers to avoid rogue shuttles and look for formal municipal medallions. Proper authorization and official credentials were key.",
+        "Local transit regulations strongly emphasized boarding only accredited carriers featuring official city oversight seals. Security and regulatory compliance were essential.",
+        "Signage throughout the terminal repeatedly urged visitors to choose recognized municipal fleet operators displaying valid permits. Compliance with city codes ensured safety.",
+        "To prevent scams from unauthorized drivers, safety officers directed passengers toward approved municipal dispatch bays with validated credentials."
+      ],
+      "source_context_test": [
+        "The pickup zone was pleasantly vacant, and a string of open sedans stood waiting for arriving travelers. One vehicle with no riders caught immediate attention.",
+        "Exiting into the calm evening, ample unoccupied options lined the curb with no passengers onboard. An available ride pulled up to the front.",
+        "Traffic outside the terminal had cleared, leaving multiple vacant carriers idling along the passenger platform. An unbooked car was ready to depart.",
+        "The rank outside was calm and filled with ready, open transports waiting for arrivals. A car carrying no travelers approached the stop."
+      ],
+      "target_context_test": [
+        "Airport transit bulletins reminded travelers to verify official municipal permits and standard agency markings before entering any vehicle. Official compliance was critical.",
+        "Safety brochures at the arrival gates recommended only boarding sanctioned city-certified transport displaying legitimate authority badges. Regulation was paramount.",
+        "Strict airport policies cautioned against freelance drivers and encouraged seeking out fully regulated city-approved carriers. Official municipal sanction was verified.",
+        "Authorities patrolled the curb, directing arriving international guests only toward authorized agency fleets possessing proper municipal registration."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (empty cab, empty taxi, licensed cab, licensed taxi) are completely standard and natural after the stem. Contexts establish pragmatic relevance of vehicle availability versus legal compliance/authorization."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "unmarked",
+      "target_modifier": "shared",
+      "source_projection": 0.45544612407684326,
+      "target_modifier_projection": 0.4961439073085785,
+      "forced_modifier_leverage": 0.04069778323173523,
+      "source_pair_mass": 0.5789921283721924,
+      "target_pair_mass": 0.6758795380592346,
+      "source_context_dev": [
+        "Private dispatch services in this region frequently operated without standard roof beacons or bright exterior company logos. A plain sedan pulled up to the curb discreetly.",
+        "The private transfer service used low-profile passenger sedans devoid of advertising or brightly painted city livery. A plain black vehicle approached silently.",
+        "Seeking a discreet departure from the bustling airport, plain-clothed chauffeurs operated plain vehicles lacking conspicuous commercial badging. An unbranded car drew near.",
+        "Certain executive transport providers preferred low-key styling without bright rooftop signs or distinct company decals. A non-distinct vehicle stopped at the pickup island."
+      ],
+      "target_context_dev": [
+        "Traveling on a tight budget, the traveler looked for communal transport services where multiple passengers split the journey along common routes. A group vehicle pulled up.",
+        "To cut emissions and save money, airport signs encouraged pooling rides with fellow voyagers headed to the downtown district. A multi-rider vehicle was ready.",
+        "The low-cost shuttle rank specialized in co-riding arrangements where distinct commuters divide the fare evenly. A multi-passenger carrier pulled into the bay.",
+        "Budget-conscious tourists often selected split-fare arrangements where passenger seats are divided among strangers heading to the city center. A collective ride arrived."
+      ],
+      "source_context_test": [
+        "Executive transfer options outside the terminal featured plain, nondescript automobiles lacking standard colorful decals or rooftop signals. A plain car pulled forward.",
+        "In this district, specialty private fleet operators operated subtle dark sedans without any external emblems or agency lettering. An unbadged automobile stopped.",
+        "Preferring complete discretion, private ground transport used understated passenger vehicles with zero commercial signage. A plain sedan waited at the platform.",
+        "Undercover and private transit services parked quietly along the rank with no noticeable roof signs or distinctive exterior paint. A nondescript automobile approached."
+      ],
+      "target_context_test": [
+        "Conscious of transit costs, the passenger sought group-booking options that allow several riders to divide a single fare toward downtown. A pooled vehicle pulled forward.",
+        "Green transit programs at the airport promoted multi-passenger transit where travelers heading the same direction sit together. A communal automobile stood waiting.",
+        "To save on solo fare rates, the terminal promoted split-trip arrangements where seats are offered jointly to travelers. A collective vehicle approached the rank.",
+        "The budget kiosk arranged co-passenger journeys to ensure cars carried several people along popular corridors. A joint-fare automobile pulled up."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (unmarked cab, unmarked taxi, shared cab, shared taxi) form valid, grammatical collocations in American and British English. Contexts focus on lack of branding/discretion vs ride-pooling/fare-splitting."
+    }
+  ]
+}

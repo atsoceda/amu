@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b00_10_merchant_trader",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "merchant_trader",
+    "noun_0": "merchant",
+    "noun_1": "trader",
+    "shared_definition": "a person engaged in the buying and selling of goods or commodities",
+    "neutral_stem": "At the central commercial exchange, the buyer approached",
+    "candidate_modifiers": [
+      "wealthy",
+      "prosperous",
+      "shrewd",
+      "experienced",
+      "prominent",
+      "honest",
+      "reputable",
+      "established",
+      "independent",
+      "competent",
+      "successful",
+      "foreign",
+      "cunning",
+      "active",
+      "local"
+    ],
+    "semantic_notes": "'Merchant' often connotes physical goods and wholesale retail trade, whereas 'trader' spans financial markets and informal bartering.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        39971
+      ],
+      "noun_1": [
+        58292
+      ]
+    },
+    "modifier_token_ids": {
+      "wealthy": [
+        40214
+      ],
+      "prosperous": [
+        67836
+      ],
+      "shrewd": [
+        147573
+      ],
+      "experienced": [
+        9763
+      ],
+      "prominent": [
+        19942
+      ],
+      "honest": [
+        11481
+      ],
+      "reputable": [
+        66756
+      ],
+      "established": [
+        6697
+      ],
+      "independent": [
+        6829
+      ],
+      "competent": [
+        31431
+      ],
+      "successful": [
+        6595
+      ],
+      "foreign": [
+        7262
+      ],
+      "cunning": [
+        112018
+      ],
+      "active": [
+        5158
+      ],
+      "local": [
+        2263
+      ]
+    },
+    "forced_projection_span": 0.13307765126228333,
+    "max_noun_pair_mass": 0.25440797209739685,
+    "context_priority_score": 0.033856015389122085,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "competent",
+        "target_modifier": "successful",
+        "source_projection": 0.019492486491799355,
+        "target_projection": 0.032632626593112946,
+        "forced_modifier_leverage": 0.013140140101313591,
+        "source_pair_mass": 0.030689628794789314,
+        "target_pair_mass": 0.07464196532964706
+      },
+      "medium": {
+        "source_modifier": "local",
+        "target_modifier": "established",
+        "source_projection": -0.006662793457508087,
+        "target_projection": 0.05964195728302002,
+        "forced_modifier_leverage": 0.0663047507405281,
+        "source_pair_mass": 0.07127788662910461,
+        "target_pair_mass": 0.10000771284103394
+      },
+      "high": {
+        "source_modifier": "independent",
+        "target_modifier": "active",
+        "source_projection": 0.11417452991008759,
+        "target_projection": 0.2472521811723709,
+        "forced_modifier_leverage": 0.13307765126228333,
+        "source_pair_mass": 0.17976023256778717,
+        "target_pair_mass": 0.25440797209739685
+      }
+    },
+    "context_generation_rank": 110
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "competent",
+      "target_modifier": "successful",
+      "source_context_dev": [
+        "Securing rare textiles requires dealing with someone who understands fabric grades and logistics thoroughly. Reliability and procedural skill often matter far more than mere reputation.",
+        "The procurement officer wanted someone capable of managing customs clearance without making costly filing errors. High skill and technical diligence were essential for the transaction.",
+        "Importing delicate ceramics demands rigorous inventory handling and precise accounting. The client prioritized sheer proficiency and careful execution over flashy track records.",
+        "Handling bulk grain contracts requires precise knowledge of moisture testing and harbor tariffs. The purchasing team sought a counterparty known for doing the job correctly."
+      ],
+      "target_context_dev": [
+        "To obtain priority shipping allocations, one must partner with someone who has amassed significant wealth and market influence. High profit margins and widespread acclaim open doors across the industry.",
+        "The corporate investor wanted to deal with a party who had already generated millions in annual turnover. Financial prosperity and visible wealth were the primary criteria.",
+        "Securing large-scale wholesale discounts requires someone with a proven fortune and lucrative connections. The firm wanted to meet the wealthiest seller in the room.",
+        "The client sought out an operator known for turning massive profits across consecutive fiscal quarters. High financial standing and demonstrable wealth signaled stability."
+      ],
+      "source_context_test": [
+        "Navigating intricate maritime transport regulations requires someone with absolute mastery of shipping paperwork. Precise execution was the top priority for the shipment.",
+        "The contract called for someone who could reliably calculate duties and manage cold-storage standards without error. Professional skill was non-negotiable.",
+        "Fulfilling the luxury order depended on someone with exceptional appraisal standards and flawless inventory controls. Methodical diligence mattered most.",
+        "The supply manager sought someone who demonstrated absolute technical proficiency in grading raw silk fibers. Practical expertise was paramount."
+      ],
+      "target_context_test": [
+        "Gaining access to premier vintage wines required negotiating with someone who commanded immense financial backing and lucrative industry prestige. A stellar financial record was essential.",
+        "The venture group insisted on partnering with someone who had consistently realized record profits across international operations. Evident prosperity was mandatory.",
+        "Breaking into prime commercial real estate requires a seller who has built an undisputed financial empire. The buyer looked for someone with proven wealth.",
+        "The overseas delegation chose to do business with an individual whose massive earnings and prosperous ventures dominated the district. Wealth and prestige took precedence."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'merchant' and 'trader' naturally pair with 'competent' and 'successful'. 'Competent' emphasizes technical skill and diligent execution, while 'successful' highlights wealth, lucrative outcomes, and market prestige. All four cross combinations (competent merchant, competent trader, successful merchant, successful trader) remain fully grammatical and felicitous across both contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "local",
+      "target_modifier": "established",
+      "source_context_dev": [
+        "To support neighborhood commerce, the bakery owners sought provisions sourced strictly from the surrounding district. Working with a regional vendor guaranteed fresh arrivals.",
+        "The municipal council prioritized purchasing produce from neighborhood vendors based within walking distance. Community connection took precedence over national suppliers.",
+        "The chef insisted on procuring seasonal herbs grown and harvested right in the immediate valley. Neighborhood roots were the key consideration.",
+        "Sourcing artisanal honey required finding a supplier rooted in the nearby townships rather than international syndicates. Proximity to the town market was essential."
+      ],
+      "target_context_dev": [
+        "Given the scale of the capital project, the consortium needed a partner with decades of continuous market presence and institutional trust. Longstanding stability was crucial.",
+        "The institutional fund required a counterparty with a multi-decade operational history and verified creditworthiness. Proven longevity in the market was paramount.",
+        "To mitigate supply chain risks, the department contracted only with vendors who possessed deeply entrenched industry ties and generational standing. Decades of presence mattered most.",
+        "The overseas enterprise preferred dealing with a firm that held an unbroken legacy in the commercial district since the previous generation. Enduring tenure was required."
+      ],
+      "source_context_test": [
+        "The grocery cooperative aimed to reduce transit emissions by contracting with neighborhood providers situated in town. Geographic proximity was the driving factor.",
+        "For the community harvest festival, organizers sourced crafts solely from native district sellers. Being rooted in the surrounding area was the deciding factor.",
+        "The boutique restaurant wanted farm-fresh cheeses delivered daily from nearby producers within the province. Proximity was prioritized over outside brands.",
+        "The school district enacted a policy favoring nearby vendors residing in the home county. Familiarity with the home district was essential."
+      ],
+      "target_context_test": [
+        "Managing major bullion reserves demanded an alliance with a counterparty possessing decades of unbroken operational stability and venerable stature. Historical standing was crucial.",
+        "The pension board required a partner with longstanding roots and an entrenched institutional footprint spanning several decades. Enduring presence was non-negotiable.",
+        "When ordering essential steel reserves, the state agency relied on firms with a half-century of continuous commercial presence. Time-tested longevity was the primary asset.",
+        "The museum board selected a supplier with decades of verified catalog provenance and longstanding commercial roots. A legacy of stability was essential."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'local' and 'established' naturally modify 'merchant' and 'trader'. 'Local' primes neighborhood proximity and regional identity, whereas 'established' primes long-term tenure, institutional history, and stability. All four cross combinations (local merchant, local trader, established merchant, established trader) fit smoothly across all contexts without semantic contradiction."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "independent",
+      "target_modifier": "active",
+      "source_context_dev": [
+        "The customer intentionally avoided large corporate syndicates and conglomerate-owned storefronts. Finding a standalone operator working free of parent company oversight was key.",
+        "Rather than dealing with state monopolies or commercial chains, the patron sought a standalone proprietor who operated on their own terms. Autonomy was the decisive factor.",
+        "To bypass centralized distribution networks, the buyer sought a private seller operating wholly autonomously without corporate backing. Self-reliance was prized above all.",
+        "The collector preferred buying rare antiques from autonomous, self-governing sellers rather than franchise syndicates. Freedom from corporate affiliation was essential."
+      ],
+      "target_context_dev": [
+        "Given the fast-moving fluctuations in morning spot prices, the fund needed someone continuously executing deals on the floor without pause. High transaction volume was crucial.",
+        "With trading volume spiking rapidly before closing bell, the client sought someone currently participating in high-frequency order flows. Continuous movement was essential.",
+        "The commodity broker needed someone constantly conducting auctions and shifting inventory throughout the business day. Constant daily involvement was the primary focus.",
+        "In a volatile afternoon market, timing is everything, so the investment desk needed someone engaged in nonstop commercial bids. Perpetual hustle on the floor was required."
+      ],
+      "source_context_test": [
+        "The family business preferred dealing with solo proprietors who maintained absolute freedom from corporate conglomerate rules. Institutional detachment was the priority.",
+        "Wanting to support autonomous businesspeople rather than multinational retail networks, the customer looked for an unaffiliated operator. Self-standing independence mattered.",
+        "The procurement officer sought out an unattached proprietor who operated free of franchise mandates. Commercial autonomy was the key selection filter.",
+        "To ensure flexible terms without corporate interference, the purchaser looked for a standalone seller beholden to no parent conglomerate. Complete autonomy was sought."
+      ],
+      "target_context_test": [
+        "To quickly offload perishable cargo, the shipper needed someone vigorously buying and selling on the open floor at that exact moment. Real-time market engagement was vital.",
+        "During an intense surge in morning exchange liquidity, the syndicate sought someone engaged in constant deal-making and brisk turnover. Vigorous participation was critical.",
+        "The portfolio manager required someone bustling with transactions and executing numerous deals per hour. Sustained pace and live involvement were essential.",
+        "With market prices shifting second by second, the desk sought someone who maintained continuous presence on the bidding floor. Tireless operational momentum was key."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "'Independent' contrasts corporate affiliation/syndicates with solo autonomy, favoring traditional solo merchant framing, while 'active' emphasizes energetic, high-frequency execution and dynamic market engagement, favoring modern financial trader framing. All four cross combinations (independent merchant, independent trader, active merchant, active trader) remain fully grammatical and semantically felicitous."
+    }
+  ]
+}

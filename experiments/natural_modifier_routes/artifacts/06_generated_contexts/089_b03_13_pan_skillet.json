@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b03_13_pan_skillet",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "pan_skillet",
+    "noun_0": "pan",
+    "noun_1": "skillet",
+    "shared_definition": "a shallow flat-bottomed metal vessel with a handle used for frying food",
+    "neutral_stem": "Before adding the diced vegetables, she heated",
+    "candidate_modifiers": [
+      "hot",
+      "iron",
+      "heavy",
+      "oiled",
+      "stainless",
+      "wide",
+      "seasoned",
+      "smoking",
+      "shallow",
+      "dirty",
+      "round",
+      "clean",
+      "flat",
+      "copper"
+    ],
+    "semantic_notes": "Skillet strongly collocates with heavy cast-iron frying in American culinary contexts, while pan is a generic cookware term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        3661
+      ],
+      "noun_1": [
+        94534
+      ]
+    },
+    "modifier_token_ids": {
+      "hot": [
+        3425
+      ],
+      "iron": [
+        8603
+      ],
+      "heavy": [
+        7274
+      ],
+      "oiled": [
+        196549
+      ],
+      "stainless": [
+        19860
+      ],
+      "wide": [
+        5777
+      ],
+      "seasoned": [
+        56677
+      ],
+      "smoking": [
+        24264
+      ],
+      "shallow": [
+        28855
+      ],
+      "dirty": [
+        24881
+      ],
+      "round": [
+        4886
+      ],
+      "clean": [
+        3980
+      ],
+      "flat": [
+        6648
+      ],
+      "copper": [
+        14561
+      ]
+    },
+    "forced_projection_span": 0.08213876548688859,
+    "max_noun_pair_mass": 0.5709115266799927,
+    "context_priority_score": 0.046893968003729455,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "heavy",
+        "target_modifier": "round",
+        "source_projection": -0.01344006136059761,
+        "target_projection": -0.006743584759533405,
+        "forced_modifier_leverage": 0.006696476601064205,
+        "source_pair_mass": 0.10807989537715912,
+        "target_pair_mass": 0.008708038367331028
+      },
+      "medium": {
+        "source_modifier": "wide",
+        "target_modifier": "dirty",
+        "source_projection": -0.12964996695518494,
+        "target_projection": -0.0881049782037735,
+        "forced_modifier_leverage": 0.04154498875141144,
+        "source_pair_mass": 0.28055649995803833,
+        "target_pair_mass": 0.10886551439762115
+      },
+      "high": {
+        "source_modifier": "stainless",
+        "target_modifier": "iron",
+        "source_projection": -0.0010426825610920787,
+        "target_projection": 0.08109608292579651,
+        "forced_modifier_leverage": 0.08213876548688859,
+        "source_pair_mass": 0.0013690789928659797,
+        "target_pair_mass": 0.33111438155174255
+      }
+    },
+    "context_generation_rank": 90
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "heavy",
+      "target_modifier": "round",
+      "source_context_dev": [
+        "The thick piece of cookware sat firmly on the burner without wobbling. It required two hands to lift off the storage rack safely.",
+        "She reached into the bottom cabinet for the most substantial piece of cookware in her kitchen. Its substantial base retained heat evenly across the entire surface.",
+        "Cooking a thick stew required durable cookware with plenty of thermal mass. She pulled out the sturdiest piece from the lower shelf.",
+        "The sturdy piece of cookware felt solid and dense as she transferred it to the stovetop. It was built to maintain a steady temperature for a long simmer."
+      ],
+      "target_context_dev": [
+        "She looked for standard circular cookware that would match the shape of the electric heating element. The curved rim made tossing ingredients easy.",
+        "The circular burner on the stovetop called for cookware with an identical outline. She selected a piece with a classic curved profile from the rack.",
+        "Cooking evenly required cookware that matched the exact curvature of the glowing coil below. She selected a standard piece shaped like a circle.",
+        "She wanted a piece of cookware with a familiar curved perimeter so oil would pool evenly in the center. She picked one from the overhead hooks."
+      ],
+      "source_context_test": [
+        "Preparing the dish demanded cookware with substantial heft and a thick base. She retrieved the densest piece from the lower cabinet.",
+        "She chose the thickest piece of cookware on the rack to prevent scorching. Its solid construction ensured that heat would disperse evenly.",
+        "The solid metal piece required a firm grip as she moved it onto the front burner. Its thick bottom was ideal for slow, consistent cooking.",
+        "She needed a sturdy piece of cookware that would sit securely over the high flame. The thick bottom held heat exceptionally well."
+      ],
+      "target_context_test": [
+        "The glowing electric element worked best with cookware of the same circular geometry. She grabbed a classic piece with curved edges.",
+        "She needed a piece of cookware whose curved rim would allow liquids to swirl smoothly. She reached for the classic curved model.",
+        "To ensure even heat distribution over the circular flame, she chose cookware with a matching symmetrical curve.",
+        "The recipe called for swirling butter smoothly around a curved perimeter. She grabbed a classic piece of cookware with matching proportions."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (heavy pan, heavy skillet, round pan, round skillet) remain physically coherent, natural, and grammatically sound under all provided contexts without semantic contradiction."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "wide",
+      "target_modifier": "dirty",
+      "source_context_dev": [
+        "She was preparing a massive batch of food that required maximum surface area for evaporation. She needed enough space to spread out everything in a single layer.",
+        "To avoid steaming the meal, she selected a piece of cookware with an expansive diameter. This gave her plenty of floor space across the burner.",
+        "Crowding the ingredients would ruin the texture, so she looked for a piece with broad dimensions. The large footprint covered almost the entire cooking surface.",
+        "She wanted to cook everything at once across an expansive base rather than in batches. She picked out a piece with plenty of open room."
+      ],
+      "target_context_dev": [
+        "Dinner needed to be ready immediately, so there was no time to wash what was left on the counter. She grabbed the used piece of cookware sitting in the sink.",
+        "She was in a rush and did not bother washing the residue from breakfast off the stove. She simply reached for the uncleaned piece already on the range.",
+        "Rather than washing a fresh piece of cookware, she decided to reuse the one sitting by the sink with leftover grease. It was still coated with lunch remnants.",
+        "The sink was piled high with unwashed dishes from the morning rush. She grabbed an unwashed piece straight from the drying mat without rinsing it."
+      ],
+      "source_context_test": [
+        "A spacious base was essential to ensure the moisture would cook off quickly without boiling. She set the broadest piece of cookware on the stovetop.",
+        "She picked out a piece of cookware offering plenty of surface area so nothing would overlap. The generous footprint took up the entire main burner.",
+        "Spreading the meal out in a single broad layer was crucial for proper browning. She grabbed the piece with the largest diameter.",
+        "She selected a piece of cookware with an oversized surface area to handle a double portion. The broad base covered the front burner completely."
+      ],
+      "target_context_test": [
+        "Running late after work, she skipped washing the dishes that had grease spots from earlier. She placed the unwashed piece back onto the flame.",
+        "She didn't want to scrub another piece of cookware, so she reused the unwashed piece left near the burner. Specks of prior meals remained on the surface.",
+        "There was no time to scrub dishes before cooking the evening meal. She grabbed the used, grimy piece sitting on the countertop.",
+        "She bypassed the dishwasher and grabbed an unrinsed piece sitting with sauce splatters on the counter. Time was too tight for a proper wash."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (wide pan, wide skillet, dirty pan, dirty skillet) remain felicitous across all contexts; size and cleanliness are orthogonal properties applicable to both vessels."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "stainless",
+      "target_modifier": "iron",
+      "source_context_dev": [
+        "The gleaming silver cookware in the professional kitchen shone under the overhead lights. She grabbed the polished, modern piece to prepare the delicate reduction.",
+        "She wanted a piece of cookware that wouldn't react with acidic ingredients like lemon or wine. The bright, shiny silver piece on the hanging rack was pristine.",
+        "In the modern test kitchen, every piece of cookware was polished to a reflective, rust-proof shine. She chose one of the sleek silver pieces for the sauce.",
+        "She needed a non-reactive, shiny piece of cookware that would allow her to see the fond developing on the bottom. She selected the gleaming silver piece."
+      ],
+      "target_context_dev": [
+        "She reached for the dark, traditional piece handed down from her grandmother's rustic country kitchen. The rugged, pitch-black metal held heat for hours.",
+        "The rugged campfire cookout required classic, pitch-black cookware that could withstand blazing wood embers. She picked up the seasoned dark metal piece.",
+        "For cooking cornbread and country hash, nothing beat the traditional pitch-black rustic metal piece. She grabbed the seasoned heirloom cookware.",
+        "She loved using the dark, seasoned heirloom cookware that gave everything a classic country flavor. She lifted the pitch-black metal piece onto the stove."
+      ],
+      "source_context_test": [
+        "She chose the shiny, polished metallic piece that resisted rust and corrosion effortlessly. The reflective silver surface looked spotless.",
+        "To build a clean sauce with white wine, she needed a non-reactive silver piece. She took down the polished metallic cookware from the rack.",
+        "The chef preferred shiny, rust-resistant cookware for searing delicate fish. She placed the gleaming silver piece over the blue flame.",
+        "She retrieved the gleaming, rust-proof metallic piece from the upper rack. Its bright reflective surface made monitoring the caramelization easy."
+      ],
+      "target_context_test": [
+        "The rustic cabin kitchen was stocked with dark, pitch-black cookware seasoned over decades. She reached for the classic rugged metal piece.",
+        "She picked up the pitch-black, seasoned piece that had been passed down through generations. The rugged, dark metal was built for country cooking.",
+        "For true Southern-style frying, she preferred the dark, seasoned metal piece from the campfire set. She moved the pitch-black heirloom to the burner.",
+        "She chose the pitch-black, rustic piece that her family had used over campfires for years. The dark, seasoned metal warmed steadily over the heat."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (stainless pan, stainless skillet, iron pan, iron skillet) are standard kitchen terminology and fully valid across both modern commercial and rustic domestic cooking contexts."
+    }
+  ]
+}

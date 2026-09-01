@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b07_02_firm_company",
+    "generation_batch": 7,
+    "domain": "institutions and organizations",
+    "family_id": "firm_company",
+    "noun_0": "firm",
+    "noun_1": "company",
+    "shared_definition": "a commercial business entity operating to provide goods or professional services",
+    "neutral_stem": "Investors decided to finance",
+    "candidate_modifiers": [
+      "commercial",
+      "consulting",
+      "established",
+      "foreign",
+      "independent",
+      "innovative",
+      "local",
+      "lucrative",
+      "major",
+      "multinational",
+      "private",
+      "promising",
+      "reputable",
+      "small",
+      "struggling"
+    ],
+    "semantic_notes": "'Firm' collocate heavily with professional partnerships like legal, accounting, or consulting practices, whereas 'company' is ubiquitous across general business sectors.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        6218
+      ],
+      "noun_1": [
+        2544
+      ]
+    },
+    "modifier_token_ids": {
+      "commercial": [
+        6635
+      ],
+      "consulting": [
+        31100
+      ],
+      "established": [
+        6697
+      ],
+      "foreign": [
+        7262
+      ],
+      "independent": [
+        6829
+      ],
+      "innovative": [
+        14549
+      ],
+      "local": [
+        2263
+      ],
+      "lucrative": [
+        69937
+      ],
+      "major": [
+        3262
+      ],
+      "multinational": [
+        72878
+      ],
+      "private": [
+        2147
+      ],
+      "promising": [
+        23284
+      ],
+      "reputable": [
+        66756
+      ],
+      "small": [
+        1944
+      ],
+      "struggling": [
+        22684
+      ]
+    },
+    "forced_projection_span": 0.17824596166610718,
+    "max_noun_pair_mass": 0.5401761531829834,
+    "context_priority_score": 0.0962842178931993,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "private",
+        "target_modifier": "small",
+        "source_projection": 0.0987115278840065,
+        "target_projection": 0.11694405972957611,
+        "forced_modifier_leverage": 0.01823253184556961,
+        "source_pair_mass": 0.11520717293024063,
+        "target_pair_mass": 0.1510106772184372
+      },
+      "medium": {
+        "source_modifier": "lucrative",
+        "target_modifier": "private",
+        "source_projection": 0.005029458552598953,
+        "target_projection": 0.0987115278840065,
+        "forced_modifier_leverage": 0.09368206933140755,
+        "source_pair_mass": 0.00576396007090807,
+        "target_pair_mass": 0.11520717293024063
+      },
+      "high": {
+        "source_modifier": "multinational",
+        "target_modifier": "struggling",
+        "source_projection": 0.26598629355430603,
+        "target_projection": 0.4442322552204132,
+        "forced_modifier_leverage": 0.17824596166610718,
+        "source_pair_mass": 0.31043514609336853,
+        "target_pair_mass": 0.5292984247207642
+      }
+    },
+    "context_generation_rank": 48
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "private",
+      "target_modifier": "small",
+      "source_context_dev": [
+        "Rather than seeking capital through public stock exchanges, the founders chose to maintain strict confidentiality and exclusive equity control.",
+        "The partners deliberately avoided initial public offerings to retain full proprietary oversight of their balance sheet.",
+        "External market disclosures were minimized to protect the closed circle of original equity holders.",
+        "Regulatory filings indicated that ownership remained strictly off public exchanges and within a tight syndicate."
+      ],
+      "target_context_dev": [
+        "A modest local outfit operated out of a single suburban workspace with just a handful of staff.",
+        "Operating on a shoestring budget with fewer than ten dedicated employees, the boutique venture needed runway.",
+        "The neighborhood workshop maintained a very limited headcount and focused on neighborhood clients.",
+        "With minimal staffing and modest daily output, the fledgling team sought seed capital to survive."
+      ],
+      "source_context_test": [
+        "The executive committee preferred non-public capital allocation over listing on the open market.",
+        "Maintaining discreet, non-quoted equity holdings allowed the leadership team to operate away from public scrutiny.",
+        "To shield their accounting records from external market traders, the founders rejected open equity listing.",
+        "The founders structured their ownership to avoid equity markets and keep governance strictly internal."
+      ],
+      "target_context_test": [
+        "The localized startup employed fewer than a dozen specialists in an unassuming suburban facility.",
+        "Having launched with only three full-time specialists, the modest enterprise required additional capital.",
+        "The regional workshop was run by a tiny crew working from a shared neighborhood office.",
+        "Operating with an extremely limited operational footprint, the fledgling outfit needed funding."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('private firm', 'private company', 'small firm', 'small company') represent well-formed, natural noun phrases describing commercial business entities. In both unlisted equity scenarios (source) and limited-scale operations (target), a business entity can naturally be described as private or small without semantic or syntactic anomaly."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "lucrative",
+      "target_modifier": "private",
+      "source_context_dev": [
+        "Quarterly returns exceeded sixty percent and generated unprecedented profit margins for the founders.",
+        "The underlying business model yielded remarkable net gains that quickly outperformed market benchmarks.",
+        "Remarkably high operating margins delivered exceptional dividends across every fiscal quarter.",
+        "Substantial cash windfalls and record-setting net yields attracted aggressive capital allocators."
+      ],
+      "target_context_dev": [
+        "The founders insisted on keeping all equity off public trading floors to preserve full autonomy.",
+        "Rather than issuing public shares to retail traders, leadership relied on confidential capital.",
+        "The board rejected public stock listings in order to keep internal governance strictly unlisted.",
+        "To maintain autonomy without public regulatory disclosures, the owners looked for discreet funding."
+      ],
+      "source_context_test": [
+        "Immense return on equity and substantial profit ratios established the venture as a money-making powerhouse.",
+        "Consistent double-digit margins and immense cash generation drew strong interest from venture syndicates.",
+        "The organization produced extraordinarily high yields and generated consistent surplus capital.",
+        "Unmatched operational margins turned the commercial operation into a cash cow."
+      ],
+      "target_context_test": [
+        "Equity remained strictly unquoted and restricted to an exclusive circle of internal stakeholders.",
+        "The enterprise chose not to float shares on public exchanges, opting instead for confidential backing.",
+        "By avoiding the public equities exchange, the founders protected their confidential ownership model.",
+        "A strictly unlisted commercial outfit sought discreet equity injection without launching an IPO."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings ('lucrative firm', 'lucrative company', 'private firm', 'private company') are standard business expressions. High profitability (lucrative) and unlisted ownership structure (private) are orthogonal properties that can both felicitously modify either noun under all supplied financial contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "multinational",
+      "target_modifier": "struggling",
+      "source_context_dev": [
+        "With regional headquarters in Tokyo, London, and New York, the enterprise bridged global markets.",
+        "Operations spanned across four continents, coordinating supply logistics across dozens of sovereign borders.",
+        "The worldwide network managed assets across Europe, Asia, and the Americas simultaneously.",
+        "Cross-border trade and intercontinental distribution hubs formed the core of the global infrastructure."
+      ],
+      "target_context_dev": [
+        "Mounting debt obligations and dwindling cash reserves pushed the enterprise to the brink of insolvency.",
+        "Facing severe liquidity shortfalls and declining revenues, the turnaround team needed an urgent rescue package.",
+        "Creditors were knocking at the door after several consecutive quarters of catastrophic financial losses.",
+        "Severe operational deficits threatened to trigger immediate bankruptcy without emergency cash injections."
+      ],
+      "source_context_test": [
+        "Managing facilities across dozens of foreign territories required complex global currency hedging.",
+        "The enterprise operated sprawling supply chains and regional centers across several continents.",
+        "Its intercontinental footprint spanned multiple oceans and numerous foreign jurisdictions.",
+        "With expansive international branches across North America, Europe, and Asia, operations were worldwide."
+      ],
+      "target_context_test": [
+        "Suffering from depleted cash balances and collapsing consumer demand, the enterprise faced imminent default.",
+        "A cashflow crisis and unpaid vendor bills brought daily operations close to total collapse.",
+        "With deep quarterly deficits and impending loan default, emergency bridge financing was imperative.",
+        "Plummeting revenues and suffocating debt left the enterprise fighting for basic survival."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('multinational firm', 'multinational company', 'struggling firm', 'struggling company') are standard English collocations. A globally active entity can experience severe financial distress, and a distressed entity can possess international operations, preserving semantic validity across all contexts."
+    }
+  ]
+}

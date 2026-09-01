@@ -1,0 +1,26 @@
+{
+  "candidate_id": "boulder_rock_stem_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations of {smooth, loose} x {boulder, rock} are natural and semantically valid across all dev and test contexts. Contexts establish pragmatic preference without creating factual contradictions or leaking candidate tokens."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations of {heavy, loose} x {boulder, rock} are natural and semantically permissible. Source and target contexts clearly manipulate weight/anchorage versus instability pragmatically."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations of {loose, solid} x {boulder, rock} are valid. The contexts effectively establish pragmatic bias between unstable debris and unbroken/firm terrain."
+    }
+  ]
+}

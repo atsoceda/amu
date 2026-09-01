@@ -1,0 +1,37 @@
+{
+  "candidate_id": "pastor_minister",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 16 context-completion combinations are fully grammatical, natural, and free of lexical leakage or asymmetric constraints."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test[2]"
+      ],
+      "failure_reasons": [
+        "target_context_test[2] contains 'pastoral', an explicit morphological derivative of the candidate noun 'pastor', introducing lexical leakage."
+      ],
+      "concise_notes": "Target test context 2 introduces lexical asymmetry favoring 'pastor' via the root derivative 'pastoral'."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev[1]",
+        "source_context_dev[2]",
+        "source_context_test[1]",
+        "source_context_test[2]"
+      ],
+      "failure_reasons": [
+        "source_context_dev[1], source_context_dev[2], source_context_test[1], and source_context_test[2] contain 'pastoral', directly leaking the stem of candidate noun 'pastor'."
+      ],
+      "concise_notes": "Multiple source development and test contexts contain 'pastoral', causing severe lexical leakage for candidate noun 'pastor'."
+    }
+  ]
+}

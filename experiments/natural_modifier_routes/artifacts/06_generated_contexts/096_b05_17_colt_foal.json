@@ -1,0 +1,199 @@
+{
+  "family": {
+    "candidate_id": "b05_17_colt_foal",
+    "generation_batch": 5,
+    "domain": "animals and biological kinds",
+    "family_id": "colt_foal",
+    "noun_0": "colt",
+    "noun_1": "foal",
+    "shared_definition": "a young horse in its early stage of development",
+    "neutral_stem": "Trotting clumsily across the green pasture, the breeder examined",
+    "candidate_modifiers": [
+      "young",
+      "spirited",
+      "playful",
+      "newborn",
+      "healthy",
+      "graceful",
+      "wild",
+      "nervous",
+      "spotted",
+      "strong",
+      "active"
+    ],
+    "semantic_notes": "'Colt' specifically designates a young male horse under four years, whereas 'foal' is sex-neutral for any young horse.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        79830
+      ],
+      "noun_1": [
+        191953
+      ]
+    },
+    "modifier_token_ids": {
+      "young": [
+        3184
+      ],
+      "spirited": [
+        115857
+      ],
+      "playful": [
+        60902
+      ],
+      "newborn": [
+        36889
+      ],
+      "healthy": [
+        7644
+      ],
+      "graceful": [
+        86953
+      ],
+      "wild": [
+        6877
+      ],
+      "nervous": [
+        20100
+      ],
+      "spotted": [
+        32637
+      ],
+      "strong": [
+        3188
+      ],
+      "active": [
+        5158
+      ]
+    },
+    "forced_projection_span": 0.13304904103279114,
+    "max_noun_pair_mass": 0.32811856269836426,
+    "context_priority_score": 0.04365586011207512,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "strong",
+        "target_modifier": "spotted",
+        "source_projection": 0.006960002705454826,
+        "target_projection": 0.0183047316968441,
+        "forced_modifier_leverage": 0.011344728991389275,
+        "source_pair_mass": 0.015919901430606842,
+        "target_pair_mass": 0.07473799586296082
+      },
+      "medium": {
+        "source_modifier": "strong",
+        "target_modifier": "wild",
+        "source_projection": 0.006960002705454826,
+        "target_projection": 0.0726267397403717,
+        "forced_modifier_leverage": 0.06566673703491688,
+        "source_pair_mass": 0.015919901430606842,
+        "target_pair_mass": 0.11434599757194519
+      },
+      "high": {
+        "source_modifier": "playful",
+        "target_modifier": "newborn",
+        "source_projection": 0.1288692057132721,
+        "target_projection": 0.26191824674606323,
+        "forced_modifier_leverage": 0.13304904103279114,
+        "source_pair_mass": 0.17555400729179382,
+        "target_pair_mass": 0.32811856269836426
+      }
+    },
+    "context_generation_rank": 97
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "strong",
+      "target_modifier": "spotted",
+      "source_context_dev": [
+        "The morning assessment centered on pure muscle tone and robust skeletal frame among the thoroughbred yearlings.",
+        "Selecting candidates for heavy endurance training requires checking sturdy bone density and physical power early on.",
+        "The equestrian farm was evaluating sturdy stamina and robust athletic build in the spring crop.",
+        "Looking over the sturdy young stock, the trainer wanted to verify muscular development and vigorous energy."
+      ],
+      "target_context_dev": [
+        "The Appaloosa registry required detailed logging of dappled hide patterns and distinctive coat markings.",
+        "Breeders were documenting unique patches of pigmented hair and mottled markings across the herd.",
+        "Distinctive visual hide patterns and speckled fur were being cataloged for the pedigree record.",
+        "The inspection focused on identifying unique coat markings and distinctive white patches."
+      ],
+      "source_context_test": [
+        "Attention turned toward the most muscular juvenile stock showing remarkable athletic stamina.",
+        "Evaluating the muscular balance and bone density of the equine progeny was top priority.",
+        "Prospective racehorse buyers were strictly looking for vigorous power and sturdy physical frames.",
+        "The farm manager focused his evaluation on vigorous muscle development and athletic heft."
+      ],
+      "target_context_test": [
+        "The rancher specifically checked for distinctive mottled patches and unique coat pigments.",
+        "Special breeding registry marks were evaluated by examining dappled patterns on the hide.",
+        "Recording the exact distribution of multicolored hair patterns was the primary task today.",
+        "The team carefully surveyed the variety of blotched and speckled coats on the open range."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (strong colt, strong foal, spotted colt, spotted foal) are syntactically and semantically well-formed in each context. The source context primes muscular robustness and physical strength, while the target context primes distinctive coat pigmentation and patterning."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "strong",
+      "target_modifier": "wild",
+      "source_context_dev": [
+        "The stable manager checked the athletic vigor and muscular development of the future racers.",
+        "Assessing heavy bone frame and physical power was essential before commencing early halter training.",
+        "The farm's selection process emphasized robust stamina and exceptional physical build.",
+        "A full appraisal of athletic mass and structural robustness was scheduled for this morning."
+      ],
+      "target_context_dev": [
+        "A newly rounded-up herd from the open prairie had never interacted with human handlers before.",
+        "Managing undomesticated mustang bloodlines requires observing their natural untamed herd behaviors.",
+        "Having spent generations on the rugged open range, these feral equines maintained fierce independence.",
+        "The sanctuary had just rescued an untamed group from remote rangelands without any prior domestic contact."
+      ],
+      "source_context_test": [
+        "Vigorous muscle tone and sturdy bone structure were the main criteria for the upcoming sale.",
+        "The team evaluated physical endurance and solid athletic development across the pasture.",
+        "Emphasis was placed on sturdy build, muscular drive, and athletic promise.",
+        "The equine specialist prioritized testing physical robustness and muscular endurance in the young stock."
+      ],
+      "target_context_test": [
+        "Observing the unhandled prairie stock required keeping a safe distance from their untamed instincts.",
+        "The ranch crew was tracking the unmanaged mustang lineage that roams freely across the desert.",
+        "Feral instincts remained sharp among the unhandled equines that arrived from the backcountry.",
+        "The unhandled stock brought in from the open mountains demonstrated raw, untamed herd dynamics."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations (strong colt, strong foal, wild colt, wild foal) are fully felicitous. The source context establishes a focus on muscle, power, and physical conditioning, whereas the target context emphasizes untamed, feral, and unhandled origins on the open range."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "playful",
+      "target_modifier": "newborn",
+      "source_context_dev": [
+        "The spring morning was filled with lively galloping, bucking, and frisky antics across the paddock.",
+        "Several energetic juveniles were frolicking happily in the sun, showing endless enthusiasm.",
+        "The sunny weather sparked an energetic burst of games and lively chasing among the juveniles.",
+        "Watching the lively bouncing and spirited antics in the meadow brought a smile to the staff."
+      ],
+      "target_context_dev": [
+        "The mare had delivered just hours ago at dawn, requiring an immediate postpartum health check.",
+        "Following a late-night labor in the barn, the veterinary team conducted a first-day wellness check.",
+        "The delivery took place only this morning, making the initial neonatal inspection essential.",
+        "Having just arrived into the world at sunrise, the earliest developmental signs needed scrutiny."
+      ],
+      "source_context_test": [
+        "Mischievous leaps and lively chasing behaviors were on full display throughout the turnout area.",
+        "The juveniles were full of spirited energy, happily prancing and nudging each other across the grass.",
+        "High-spirited frolicking and energetic games made assessing their mobility quite entertaining.",
+        "Lively antics and cheerful darting around the meadow showed their active disposition."
+      ],
+      "target_context_test": [
+        "The overnight delivery was successful, and the morning routine began with an initial neonatal assessment.",
+        "A few hours after birth, the first outdoor nursing and movement check was conducted.",
+        "Labor had concluded earlier that dawn, prompting a rapid neonatal health evaluation.",
+        "Just emerged from the womb at sunrise, the latest arrival underwent an immediate physical review."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross pairings (playful colt, playful foal, newborn colt, newborn foal) make complete syntactic and contextual sense. The source context primes spirited, energetic play behavior, while the target context primes extreme youth and immediate postpartum neonatal evaluation."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "candidate_id": "tournament_championship",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('The club qualified for the the'), making every stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Contexts and modifier combinations are semantically valid, but the fixed stem 'The club qualified for the the' contains a duplicated token 'the the', causing all completions to fail grammatical naturalness."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test[3]",
+        "target_context_dev[0]"
+      ],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('The club qualified for the the').",
+        "source_context_test[3] contains 'champions', directly leaking candidate noun 'championship'.",
+        "target_context_dev[0] contains 'continent', trivially naming the base root of modifier 'continental'."
+      ],
+      "concise_notes": "Fails due to ungrammatical stem ('the the') as well as lexical leakage of candidate root words ('champions' in source test 4, 'continent' in target dev 1)."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('The club qualified for the the'), making every stem plus completion ungrammatical and unnatural."
+      ],
+      "concise_notes": "Combinations across contexts are semantically valid, but the fixed stem contains a duplicate determiner 'the the', rendering the resulting sentences ungrammatical."
+    }
+  ]
+}

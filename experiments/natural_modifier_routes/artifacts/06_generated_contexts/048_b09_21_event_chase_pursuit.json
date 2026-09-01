@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b09_21_event_chase_pursuit",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_chase_pursuit",
+    "noun_0": "chase",
+    "noun_1": "pursuit",
+    "shared_definition": "the act of following someone or something rapidly in order to catch them",
+    "neutral_stem": "Officers engaged immediately in",
+    "candidate_modifiers": [
+      "dangerous",
+      "desperate",
+      "frantic",
+      "furious",
+      "relentless",
+      "risky",
+      "swift",
+      "wild",
+      "exhausting",
+      "prolonged",
+      "chaotic",
+      "futile",
+      "reckless",
+      "thrilling"
+    ],
+    "semantic_notes": "'Chase' is the informal, everyday term for physical following, while 'pursuit' is more formal and can denote abstract long-term striving.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        39839
+      ],
+      "noun_1": [
+        34865
+      ]
+    },
+    "modifier_token_ids": {
+      "dangerous": [
+        13588
+      ],
+      "desperate": [
+        38412
+      ],
+      "frantic": [
+        128133
+      ],
+      "furious": [
+        69590
+      ],
+      "relentless": [
+        85278
+      ],
+      "risky": [
+        53321
+      ],
+      "swift": [
+        37884
+      ],
+      "wild": [
+        6877
+      ],
+      "exhausting": [
+        93646
+      ],
+      "prolonged": [
+        35269
+      ],
+      "chaotic": [
+        32585
+      ],
+      "futile": [
+        115207
+      ],
+      "reckless": [
+        77138
+      ],
+      "thrilling": [
+        63375
+      ]
+    },
+    "forced_projection_span": 0.15913033485412598,
+    "max_noun_pair_mass": 0.6033262014389038,
+    "context_priority_score": 0.09600750046124062,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "exhausting",
+        "target_modifier": "risky",
+        "source_projection": 0.004700332880020142,
+        "target_projection": 0.02104639820754528,
+        "forced_modifier_leverage": 0.01634606532752514,
+        "source_pair_mass": 0.006534343585371971,
+        "target_pair_mass": 0.026005646213889122
+      },
+      "medium": {
+        "source_modifier": "thrilling",
+        "target_modifier": "frantic",
+        "source_projection": -0.06434056907892227,
+        "target_projection": 0.01418331265449524,
+        "forced_modifier_leverage": 0.07852388173341751,
+        "source_pair_mass": 0.23476684093475342,
+        "target_pair_mass": 0.05175228416919708
+      },
+      "high": {
+        "source_modifier": "reckless",
+        "target_modifier": "relentless",
+        "source_projection": 0.39915525913238525,
+        "target_projection": 0.5582855939865112,
+        "forced_modifier_leverage": 0.15913033485412598,
+        "source_pair_mass": 0.4383246898651123,
+        "target_pair_mass": 0.6033262014389038
+      }
+    },
+    "context_generation_rank": 49
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "exhausting",
+      "target_modifier": "risky",
+      "source_context_dev": [
+        "The suspect bolted across muddy fields and dense thickets, giving no sign of slowing down even after several miles. Burdened by their heavy tactical gear, the patrol members struggled through the long, draining sprint.",
+        "After hours of running through steep alleyways and crumbling stairwells in the midday heat, everyone involved was on the verge of physical collapse. Spurred by adrenaline, the team pushed through the physical drain.",
+        "The runner dashed over fences and through overgrown ravines, draining every ounce of stamina from the responders. Having already covered several kilometers on foot with heavy equipment, the squad pressed onward.",
+        "The trail stretched across rugged hillside paths where loose rocks gave way under every step. With their lungs burning and muscles cramping from the prolonged effort, the squad pushed forward."
+      ],
+      "target_context_dev": [
+        "The fleeing vehicle veered directly into oncoming highway lanes during rush hour, narrowly dodging oncoming trucks. Given the catastrophic probability of a multi-car collision, commanders weighed every split second carefully.",
+        "Slicing through construction zones with exposed trenches and active heavy machinery, the runaway driver showed total disregard for human life. A single miscalculation on the narrow roadway would cause devastating harm.",
+        "The vehicle blew past red lights at blind intersections and crossed rain-slicked bridges at triple the posted speed limit. Knowing that one wrong maneuver could be lethal to bystanders, the squad had to make critical choices.",
+        "Navigating a foggy mountain pass with no guardrails and sheer drop-offs, the suspect accelerated near the edge. Every sudden turn carried the threat of sending both vehicles over the precipice."
+      ],
+      "source_context_test": [
+        "Mile after mile of swampy terrain wore down everyone involved until uniforms were soaked in sweat and coated with mud. Despite extreme physical fatigue setting in, the patrol could not afford to slow down.",
+        "The fleeing person darted between subway platforms, bounding up steep flights of concrete stairs and across rail yards. The team felt the heavy strain of carrying equipment through the suffocating underground heat.",
+        "After a continuous foot scramble across broken urban lots, both parties were visibly slowing down from dehydration. Still, the patrol squad gritted their teeth and forced their weary legs forward.",
+        "The route wound endlessly through dense forest and steep gullies, testing the physical limits of everyone on duty. Sweating under their body armor, the squad pressed through the undergrowth without hesitation."
+      ],
+      "target_context_test": [
+        "The runaway sedan swerved onto a crowded pedestrian boardwalk, leaving no margin for error or delayed reflexes. Law enforcement faced an immediate threat to public safety if the vehicle lost control.",
+        "Blasting through a busy school zone during dismissal, the suspect created a terrifying hazard for children and parents on the sidewalk. Commanders recognized that a collision at such velocities would be catastrophic.",
+        "The driver entered an active airport taxiway at top speed, weaving dangerously close to fueled aircraft and maintenance crews. One minor collision in that restricted area could trigger an explosive catastrophe.",
+        "Spinning out onto an icy multi-lane expressway during a blizzard, the vehicle barely missed several fuel tankers. Every second spent following the vehicle multiplied the likelihood of a fatal pileup."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Low noun discrimination regime. Source contexts emphasize physical fatigue, distance, and muscle strain to prime 'exhausting' and the informal/foot-oriented 'chase', while target contexts emphasize highway hazards, pedestrian endangerment, and danger to prime 'risky' and the formal tactical 'pursuit'. All 4 pairings (exhausting chase, exhausting pursuit, risky chase, risky pursuit) remain natural and grammatically valid."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "thrilling",
+      "target_modifier": "frantic",
+      "source_context_dev": [
+        "Sirens echoed off downtown skyscrapers as the modified sports car pulled off precision drifts around sharp street corners. Spectators lining the sidewalks watched the electrifying spectacle unfold in awe.",
+        "The speedboats skimmed across the harbor waters at breathtaking velocities, sending enormous white rooster tails into the air. Marine units executed high-stakes maneuvers that felt like scenes from an action blockbuster.",
+        "Darting across interconnected rooftops against the evening skyline, the agile suspect leaped across wide alleyway gaps with death-defying agility. The squad matched each bold leap with jaw-dropping moves of their own.",
+        "The high-powered motorcycle roared along the coastal highway at extreme speed, weaving between obstacles with razor-thin clearance. It was an exhilarating display of precision driving under bright stadium lights."
+      ],
+      "target_context_dev": [
+        "Terrified of capture, the shoplifter panicked, knocking over vendor displays and blindly flailing through a packed market crowd. Screams echoed as shoppers scattered to avoid the disorganized stampede.",
+        "Realizing the exits were sealed, the cornered suspect made a desperate, chaotic break across the terminal lobby. Luggage carts went flying and paperwork scattered into the air during the disorienting confusion.",
+        "In a state of pure hysteria, the driver mashed the accelerator without looking, clipping side mirrors and scraping against curbs. The sudden chaos left bystanders scrambling wildly for cover.",
+        "The suspect wildly threw open random doors in the apartment complex, shrieking in fear as law enforcement closed in. Debris clattered everywhere as people tried to evade the out-of-control scramble."
+      ],
+      "source_context_test": [
+        "The two high-performance vehicles roared down the empty airport runway side by side, engines screaming at peak revs. The dramatic showdown captivated everyone monitoring the live aerial feed.",
+        "Navigating the winding canyon roads at unbelievable speeds, the vehicles drifted inches from the stone cliffs. It was a heart-pounding demonstration of automotive control under extreme pressure.",
+        "Helicopters illuminated the glittering bay as high-speed interceptor craft surged across the open water at fifty knots. The cinematic scene gripped the city as the dramatic maneuver reached its climax.",
+        "Vaulting over barriers and racing across the illuminated suspension bridge, the runners matched each other stride for stride in a breathtaking showcase of athletic power. The crowd watched the unfolding drama with bated breath."
+      ],
+      "target_context_test": [
+        "Overwhelmed by fear, the suspect blindly dashed into the crowded subway car, shrieking incoherently and bowling over commuters. The chaotic struggle sparked immediate alarm among the trapped passengers.",
+        "In an uncontrolled frenzy, the shoplifter threw heavy boxes into the aisle to obstruct the pathway, stumbling over their own feet in panic. The scene dissolved into disarray as onlookers dove out of the way.",
+        "Trapped in the narrow corridor, the panicked suspect threw themselves against locked exits while crying out in terror. Everything became a blur of agitated motions as the squad rushed to contain the situation.",
+        "Losing control of their senses, the driver jerked the steering wheel back and forth, bouncing wildly between guardrails in a desperate bid to break free. The sheer panic created an erratic hazard for everyone nearby."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Medium noun discrimination regime. Source contexts highlight high-speed spectacle, cinematic excitement, and dynamic tension to prime 'thrilling' and 'chase', while target contexts emphasize panicked hysteria, chaotic disarray, and desperate scrambles to prime 'frantic' and 'pursuit'. All 4 pairings (thrilling chase, thrilling pursuit, frantic chase, frantic pursuit) are grammatically and semantically sound."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "reckless",
+      "target_modifier": "relentless",
+      "source_context_dev": [
+        "The stolen truck smashed through barricades and blew past school crossings with total disregard for bystander safety. Such irresponsible behavior behind the wheel demanded immediate intervention before anyone was crushed.",
+        "Driving on the wrong side of the boulevard with the headlights turned off, the suspect careened blindly through red lights. This dangerously negligent conduct forced other motorists to swerve onto the sidewalks.",
+        "The fleeing driver tossed glass bottles from the window while swerving across three lanes of traffic at double the speed limit. Witnessing this brazen display of foolish disregard, the squad acted swiftly.",
+        "With flat tires grinding on bare rims and sparks spraying across nearby front lawns, the runaway vehicle showed no regard for property or life. This wild, careless spree needed to be shut down immediately."
+      ],
+      "target_context_dev": [
+        "No matter how many times the fugitive changed directions or slipped into hidden alleys, the team never let up, following every single lead without pause. Hour after hour, their unwavering determination did not falter.",
+        "Despite freezing temperatures, blinding snow, and severe exhaustion, the search teams maintained steady pressure across the county. They refused to surrender the trail until the target was apprehended.",
+        "For three straight days across state lines, the task force systematically tracked the fugitive without resting or breaking stride. Their persistent, unshakeable focus ensured that the target could never find safe harbor.",
+        "The investigators pushed onward through night and day, never yielding to fatigue or losing sight of their objective. Every attempt by the fugitive to hide was met with unwavering dedication from the squad."
+      ],
+      "source_context_test": [
+        "Ignoring basic road safety, the vehicle cut across gas station parking lots and nearly clipped fuel pumps at high speed. Such wild, hazardous disregard for public wellbeing could not be tolerated.",
+        "The driver sped through active crosswalks without braking, forcing pedestrians to dive out of the way onto the pavement. Given this sheer negligence and lack of control, the squad stepped in without hesitation.",
+        "Shedding pieces of bumper across the freeway and driving over median dividers, the driver treated the road like a playground. This heedless, destructive behavior threatened everyone on the asphalt.",
+        "With open containers tumbling out the window, the vehicle bounced over curbs and smashed through parked bicycles with total apathy. Confronted with such flagrant irresponsibility, the team responded immediately."
+      ],
+      "target_context_test": [
+        "Even as the sun came up and the tracking dog teams reached their physical limits, the searchers refused to break off the operation. Their steady, uncompromising dedication kept the pressure on the suspect.",
+        "Mile after mile, through thick briars and freezing mountain streams, the tracking team refused to slow their advance. Their unyielding focus ensured that the fugitive had zero time to rest or regroup.",
+        "Despite encountering roadblock after roadblock and false trails, the squad maintained an unbroken focus on apprehending the target. Their tireless, steady determination never wavered for a second.",
+        "The task force followed every footprint across miles of barren wasteland, never giving up ground or pausing to rest. Their uncompromising, steadfast effort slowly closed the distance with the fugitive."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "High noun discrimination regime. Source contexts focus on wanton negligence, dangerous disregard, and chaotic behavior to bias toward 'reckless' and 'chase', whereas target contexts emphasize methodical persistence, unyielding tracking, and institutional stamina to bias toward 'relentless' and 'pursuit'. All 4 combinations (reckless chase, reckless pursuit, relentless chase, relentless pursuit) remain fully coherent."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "candidate_id": "method_approach_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 16 contexts across dev and test preserve grammaticality and semantic coherence across all 4 modifier-noun combinations. Contexts modulate pragmatic preference without asserting strict factual presuppositions or mentioning candidate lexemes."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations of {standard, effective} x {method, approach} yield natural completions. Contexts successfully bias toward standard/method or effective/approach via domain framing without candidate lexical leakage."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations of {practical, systematic} x {method, approach} are syntactically and semantically permissible under the shared stem. Contexts provide clear pragmatic differentiation without violating truth-conditional constraints."
+    }
+  ]
+}

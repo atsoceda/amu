@@ -1,0 +1,30 @@
+{
+  "candidate_id": "builder_contractor_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four cross-combinations are natural, idiomatic collocations. Contexts establish clean pragmatic contrast (reputation/interpersonal trust vs. operational reliability/consistency) without mentioning candidate lemmas."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test[1]"
+      ],
+      "failure_reasons": [
+        "source_context_test[1] explicitly contains the source modifier candidate word ('seasoned')."
+      ],
+      "concise_notes": "Stimulus fails strict lexical independence criteria due to explicit mention of the modifier 'seasoned' in source_context_test[1]."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations are semantically and syntactically valid in English. Contexts appropriately contrast autonomous/sole-proprietor arrangements against master/prime multi-trade project oversight without lexical leakage."
+    }
+  ]
+}

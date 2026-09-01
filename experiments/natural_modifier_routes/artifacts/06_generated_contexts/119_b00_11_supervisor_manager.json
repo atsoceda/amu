@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b00_11_supervisor_manager",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "supervisor_manager",
+    "noun_0": "supervisor",
+    "noun_1": "manager",
+    "shared_definition": "a person responsible for overseeing employees and organizational operations",
+    "neutral_stem": "Disappointed by the workplace dispute, the employee asked to see",
+    "candidate_modifiers": [
+      "competent",
+      "demanding",
+      "experienced",
+      "capable",
+      "strict",
+      "direct",
+      "respected",
+      "senior",
+      "qualified",
+      "dedicated",
+      "effective",
+      "fair",
+      "diligent",
+      "practical",
+      "efficient"
+    ],
+    "semantic_notes": "'Supervisor' tends to imply direct operational oversight on the floor, while 'manager' suggests administrative and strategic authority.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        26409
+      ],
+      "noun_1": [
+        7616
+      ]
+    },
+    "modifier_token_ids": {
+      "competent": [
+        31431
+      ],
+      "demanding": [
+        29455
+      ],
+      "experienced": [
+        9763
+      ],
+      "capable": [
+        11844
+      ],
+      "strict": [
+        10346
+      ],
+      "direct": [
+        1982
+      ],
+      "respected": [
+        35391
+      ],
+      "senior": [
+        9550
+      ],
+      "qualified": [
+        15973
+      ],
+      "dedicated": [
+        11554
+      ],
+      "effective": [
+        5225
+      ],
+      "fair": [
+        5888
+      ],
+      "diligent": [
+        103867
+      ],
+      "practical": [
+        10231
+      ],
+      "efficient": [
+        8143
+      ]
+    },
+    "forced_projection_span": 0.04278409481048584,
+    "max_noun_pair_mass": 0.6767622232437134,
+    "context_priority_score": 0.028954659123414217,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "diligent",
+        "target_modifier": "dedicated",
+        "source_projection": 0.21098463237285614,
+        "target_projection": 0.21624188125133514,
+        "forced_modifier_leverage": 0.005257248878479004,
+        "source_pair_mass": 0.4565609097480774,
+        "target_pair_mass": 0.34045854210853577
+      },
+      "medium": {
+        "source_modifier": "practical",
+        "target_modifier": "qualified",
+        "source_projection": 0.08113892376422882,
+        "target_projection": 0.10064563155174255,
+        "forced_modifier_leverage": 0.019506707787513733,
+        "source_pair_mass": 0.15914897620677948,
+        "target_pair_mass": 0.16876274347305298
+      },
+      "high": {
+        "source_modifier": "effective",
+        "target_modifier": "senior",
+        "source_projection": 0.49679291248321533,
+        "target_projection": 0.5395770072937012,
+        "forced_modifier_leverage": 0.04278409481048584,
+        "source_pair_mass": 0.5986886024475098,
+        "target_pair_mass": 0.5710840225219727
+      }
+    },
+    "context_generation_rank": 120
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "diligent",
+      "target_modifier": "dedicated",
+      "source_projection": 0.21098463237285614,
+      "target_modifier_projection": 0.21624188125133514,
+      "forced_modifier_leverage": 0.005257248878479004,
+      "source_pair_mass": 0.4565609097480774,
+      "target_pair_mass": 0.34045854210853577,
+      "source_context_dev": [
+        "The front-line staff needed someone on the floor who meticulously audited daily shift logs and caught every single discrepancy.",
+        "Shift leaders had repeatedly commended the floor lead for reviewing every logbook entry with extreme care and thoroughness.",
+        "The team respected leaders who scrutinized task checklists and paid constant attention to small operational details during a shift.",
+        "Floor personnel appreciated team leads who spent extra hours reviewing error logs and double-checking procedural compliance."
+      ],
+      "target_context_dev": [
+        "The department wanted an organizational leader whose career was defined by deep personal loyalty to company culture.",
+        "Long-term institutional success relied heavily on department heads who showed unconditional passion and commitment to the mission.",
+        "Staff members looked up to department leads whose entire careers reflected wholehearted personal commitment to the organization.",
+        "The company prioritized division leaders who demonstrated an enduring personal allegiance to staff well-being over decades."
+      ],
+      "source_context_test": [
+        "Immediate frontline floor duties always ran smoother when overseen by a person who monitored daily procedures with meticulous care.",
+        "Workers on the shop floor counted on direct team leads who maintained vigilant attention to routine clerical errors.",
+        "Operational staff preferred immediate line leadership that took extra time to ensure every shift rule was obeyed meticulously.",
+        "Team members valued direct operational leaders who painstakingly verified compliance with daily task guidelines."
+      ],
+      "target_context_test": [
+        "The enterprise flourished whenever its administrative leadership displayed profound institutional allegiance and tireless loyalty.",
+        "Company executives sought department leaders whose career records proved a sustained, heartfelt investment in the firm.",
+        "The organization was guided by department leads who consistently placed corporate welfare and staff advocacy above all else.",
+        "Branch operations thrived under departmental leadership characterized by profound personal investment in institutional goals."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('diligent supervisor', 'diligent manager', 'dedicated supervisor', 'dedicated manager') are grammatically correct and semantically natural. Contexts adjust emphasis between shift-level task attentiveness and broader institutional allegiance without restricting semantic compatibility."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "practical",
+      "target_modifier": "qualified",
+      "source_projection": 0.08113892376422882,
+      "target_modifier_projection": 0.10064563155174255,
+      "forced_modifier_leverage": 0.019506707787513733,
+      "source_pair_mass": 0.15914897620677948,
+      "target_pair_mass": 0.16876274347305298,
+      "source_context_dev": [
+        "When shop floor equipment malfunctioned, workers relied on realistic, hands-on trouble-shooters who implemented immediate functional fixes.",
+        "The frontline unit valued pragmatic direct leadership that prioritized quick, realistic solutions over abstract corporate theories.",
+        "Line staff always turned to direct team leads who possessed grounded, down-to-earth problem-solving skills.",
+        "Direct workflow bottlenecks were usually resolved fastest by hands-on leads with a realistic grasp of day-to-day mechanics."
+      ],
+      "target_context_dev": [
+        "Corporate compliance required administrative roles to be filled by individuals holding verified board certifications and advanced degrees.",
+        "The human resources board demanded that upper administrative posts be held solely by individuals with formal credentials.",
+        "Resolving interdepartmental contractual breaches required administrative personnel with verified credentials and legal competencies.",
+        "The corporate governance committee insisted that all departmental administrators possess certified professional credentials."
+      ],
+      "source_context_test": [
+        "Factory personnel trusted frontline leads who approached complex mechanical breakdowns with down-to-earth, sensible methods.",
+        "Direct line workers respected direct leadership that favored functional, hands-on adjustments rather than formal handbooks.",
+        "The assembly unit functioned best under direct leads who emphasized sensible, realistic remedies for daily holdups.",
+        "Shop floor crews responded best to immediate leaders with a grounded, no-nonsense approach to daily operational problems."
+      ],
+      "target_context_test": [
+        "Strict regulatory standards dictated that administrative decisions be handled by individuals with formal professional credentials.",
+        "Institutional policy required departmental administration to be led by personnel possessing validated academic backgrounds.",
+        "Executive oversight mandated that division-level decisions be entrusted only to individuals meeting rigorous professional licensing criteria.",
+        "Corporate bylaws required that complex internal investigations be reviewed by departmental personnel with certified credentials."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('practical supervisor', 'practical manager', 'qualified supervisor', 'qualified manager') are valid and standard corporate phrasing. The contexts vary between hands-on pragmatic problem solving and formal institutional credentialing."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "effective",
+      "target_modifier": "senior",
+      "source_projection": 0.49679291248321533,
+      "target_modifier_projection": 0.5395770072937012,
+      "forced_modifier_leverage": 0.04278409481048584,
+      "source_pair_mass": 0.5986886024475098,
+      "target_pair_mass": 0.5710840225219727,
+      "source_context_dev": [
+        "The production line met its ambitious targets because leadership consistently produced measurable, high-impact results on the floor.",
+        "Floor staff appreciated team leads who successfully eliminated bottlenecks and delivered tangible performance outcomes.",
+        "The unit required immediate leadership that could resolve conflicts quickly and deliver clear, positive team results.",
+        "Frontline operations improved rapidly because leadership introduced methods that produced undeniable, measurable success."
+      ],
+      "target_context_dev": [
+        "The escalating inter-branch conflict could only be settled by reaching out to the highest echelons of corporate hierarchy.",
+        "Final policy determination rested exclusively with the veteran executive tier occupying the highest tier of the organization.",
+        "Navigating the high-stakes organizational impasse required direct intervention from the highest-ranking corporate administration.",
+        "Because the crisis spanned multiple business units, resolution required guidance from the top tier of executive hierarchy."
+      ],
+      "source_context_test": [
+        "Direct floor activities ran smoothly when direct leadership was capable of generating prompt, tangible improvements in output.",
+        "Shift workers placed their trust in frontline leadership that achieved proven results and settled team grievances swiftly.",
+        "Operational performance consistently spiked under direct leads who mastered the art of achieving measurable productivity.",
+        "Floor teams depended on frontline leadership with a demonstrated track record of achieving constructive, concrete resolutions."
+      ],
+      "target_context_test": [
+        "Settling a systemic corporate policy deadlock demanded intervention from higher organizational ranks with decades of authority.",
+        "Resolving multi-departmental budgetary disagreements required authorization from veteran executive leadership at the corporate top.",
+        "The scale of the institutional crisis required arbitration by the most experienced rank within company headquarters.",
+        "Formal corporate restructuring debates required oversight from the uppermost administrative echelon of the enterprise."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Combinations ('effective supervisor', 'effective manager', 'senior supervisor', 'senior manager') are natural in business contexts. Source contexts induce high functional efficacy at the unit/floor level, whereas target contexts induce top-tier corporate hierarchy and organizational rank."
+    }
+  ]
+}

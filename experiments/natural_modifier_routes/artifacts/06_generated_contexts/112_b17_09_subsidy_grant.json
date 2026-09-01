@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b17_09_subsidy_grant",
+    "generation_batch": 17,
+    "domain": "commerce and public services",
+    "family_id": "subsidy_grant",
+    "noun_0": "subsidy",
+    "noun_1": "grant",
+    "shared_definition": "a sum of money awarded from public or institutional funds to support an initiative",
+    "neutral_stem": "The transit operator applied for the",
+    "candidate_modifiers": [
+      "federal",
+      "public",
+      "annual",
+      "substantial",
+      "direct",
+      "conditional",
+      "generous",
+      "regional",
+      "governmental",
+      "valuable",
+      "modest",
+      "crucial",
+      "special",
+      "approved",
+      "vital"
+    ],
+    "semantic_notes": "'Subsidy' often implies ongoing price support or operational aid, while 'grant' typically refers to a discrete, competitive award for a specific project.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        60985
+      ],
+      "noun_1": [
+        7224
+      ]
+    },
+    "modifier_token_ids": {
+      "federal": [
+        7933
+      ],
+      "public": [
+        1237
+      ],
+      "annual": [
+        7384
+      ],
+      "substantial": [
+        14649
+      ],
+      "direct": [
+        1982
+      ],
+      "conditional": [
+        32622
+      ],
+      "generous": [
+        27128
+      ],
+      "regional": [
+        10969
+      ],
+      "governmental": [
+        39954
+      ],
+      "valuable": [
+        12272
+      ],
+      "modest": [
+        30997
+      ],
+      "crucial": [
+        13832
+      ],
+      "special": [
+        2803
+      ],
+      "approved": [
+        10833
+      ],
+      "vital": [
+        12763
+      ]
+    },
+    "forced_projection_span": 0.11740091070532799,
+    "max_noun_pair_mass": 0.27950912714004517,
+    "context_priority_score": 0.03281462607669261,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "modest",
+        "target_modifier": "substantial",
+        "source_projection": -0.03283640742301941,
+        "target_projection": -0.021068722009658813,
+        "forced_modifier_leverage": 0.011767685413360596,
+        "source_pair_mass": 0.07978326827287674,
+        "target_pair_mass": 0.13593538105487823
+      },
+      "medium": {
+        "source_modifier": "governmental",
+        "target_modifier": "regional",
+        "source_projection": -0.06018567085266113,
+        "target_projection": -0.0010586697608232498,
+        "forced_modifier_leverage": 0.05912700109183788,
+        "source_pair_mass": 0.27950912714004517,
+        "target_pair_mass": 0.03388846665620804
+      },
+      "high": {
+        "source_modifier": "conditional",
+        "target_modifier": "federal",
+        "source_projection": 0.04999383166432381,
+        "target_projection": 0.1673947423696518,
+        "forced_modifier_leverage": 0.11740091070532799,
+        "source_pair_mass": 0.053773555904626846,
+        "target_pair_mass": 0.21615798771381378
+      }
+    },
+    "context_generation_rank": 113
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "modest",
+      "target_modifier": "substantial",
+      "source_context_dev": [
+        "With ticket sales falling slightly short of monthly operating targets, minor gap funding was needed to prevent route curtailments. Management drafted a small-scale budget request to stabilize fares across commuter routes.",
+        "The municipal bus network needed a slight infusion of cash to cover unexpected maintenance expenses this quarter. Officials submitted paperwork to bridge the minor fiscal deficit without raising passenger fares.",
+        "A small financial boost was necessary to keep local shuttle operations running through the end of the fiscal year. Agency administrators organized a low-cost assistance petition to offset daily fuel price increases.",
+        "To address a minor short-term revenue shortfall in weekend service, the board sought limited financial relief. Staff prepared an application for baseline budget assistance to sustain regular operating frequencies."
+      ],
+      "target_context_dev": [
+        "The metropolitan rail expansion required hundreds of millions of dollars to acquire new electric trainsets and lay dual tracks. Planners filed a major capital program proposal to finance the massive infrastructure overhaul.",
+        "An ambitious multi-year modernization project called for transformative financial backing to construct new commuter lines. Agency executives submitted extensive documentation seeking heavy institutional funding for the project.",
+        "To overhaul the citywide rapid transit network and build dozens of new passenger terminals, massive capital was imperative. Transportation leadership submitted a multi-million-dollar funding application to support the immense buildout.",
+        "The regional authority faced enormous capital expenditures to completely electrify its aging fleet of hundreds of vehicles. Leadership pursued a major long-term capital allocation to underwrite the massive fleet conversion."
+      ],
+      "source_context_test": [
+        "A minor dip in off-peak farebox returns created a slight deficit in the quarterly operational ledger. Directors submitted an administrative request for limited gap funds to preserve existing timetables.",
+        "Minor price hikes on replacement parts threatened to push the annual vehicle maintenance budget slightly into the red. Fleet supervisors filed an emergency appeal for small-scale financial assistance.",
+        "To balance accounts following minor inflation in traction power costs, the board authorized a low-tier funding appeal. Finance staff completed paperwork requesting brief operating relief for the downtown loop.",
+        "Routine line operations faced a minor budget shortfall after unexpected bad weather suppressed weekday ridership. Administrators quickly sought low-level fiscal assistance to ensure uninterrupted service delivery."
+      ],
+      "target_context_test": [
+        "Building a brand-new underground subway extension required an unprecedented influx of institutional capital. The authority submitted comprehensive engineering dossiers to secure major programmatic financial backing.",
+        "The comprehensive replacement of century-old rail bridges along the entire transit corridor required immense monetary resources. Project managers finalized a major capital application to cover the extensive engineering costs.",
+        "To construct an extensive regional light rail network spanning three counties, the agency needed massive financial backing. Officials submitted a multi-billion-dollar portfolio seeking transformative infrastructure investment.",
+        "Transforming the central station into a massive multi-modal transport hub demanded enormous long-term capital commitments. Executive planners prepared an extensive pitch for transformative financial backing."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('modest subsidy', 'modest grant', 'substantial subsidy', 'substantial grant') are fully grammatical and semantically plausible in both contexts. Modest/subsidy is emphasized in small operational gap contexts, while substantial/grant is emphasized in large capital project contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "governmental",
+      "target_modifier": "regional",
+      "source_context_dev": [
+        "Public transit systems routinely rely on official public-sector assistance programs to balance annual operating budgets. Agency directors coordinated with state and municipal public authorities to formalize their funding request.",
+        "The transit agency faced a systemic deficit requiring formalized public-sector assistance from administrative bodies. Leadership submitted official petitions through regular public-administration channels to support transit operations.",
+        "To maintain public transit equity across urban sectors, civic leaders relied on established public-sector fiscal frameworks. Staff completed standard filings directed at public institutions overseeing community services.",
+        "Sustaining day-to-day operations required steady civic assistance from established public administration budgets. The finance committee finalized formal documents for state-level financial backing."
+      ],
+      "target_context_dev": [
+        "The tri-county transportation alliance created an inter-municipal funding pool to coordinate cross-border commuter links. Staff submitted a joint petition to the multi-jurisdiction planning council for cross-county expansion.",
+        "To synchronize bus corridors across neighboring suburban townships, the local agency engaged multi-township planning bodies. Planners submitted paperwork to the metropolitan district association for joint corridor backing.",
+        "Connecting multiple neighboring municipalities required financing from a collective inter-county development council. The board lodged an application with the metropolitan territory board to link outlying communities.",
+        "The commuter network aimed to integrate route maps across neighboring district lines using combined local-area resources. Administrators prepared formal requests for the multi-county transportation board."
+      ],
+      "source_context_test": [
+        "Public-sector oversight agencies released annual financial assistance forms to sustain public transport accessibility. Executives submitted mandatory filings through the state executive office to secure annual budget allotments.",
+        "To keep public fares low, the city council authorized direct public-sector financial support for transit operations. The operating agency filed official administrative paperwork with civic authorities to draw down the allocation.",
+        "Operating expenses for public mass transit necessitated standard public-sector fiscal intervention. Management completed standard statutory documentation addressed to the state transportation department.",
+        "Public infrastructure mandates required the municipal transit provider to seek public-sector operational support. The agency's finance team submitted formal filings through public treasury channels."
+      ],
+      "target_context_test": [
+        "A newly formed multi-township transit coalition offered shared funding pools to improve inter-suburban connectivity. Planners filed a joint development application with the multi-district transit board.",
+        "Integrating passenger ticketing across three adjacent metropolitan counties required coordination with multi-jurisdiction bodies. The transport director submitted documentation to the inter-county planning commission.",
+        "To expand express transit service across adjacent suburban borders, the authority turned to multi-county development funds. Staff delivered an application package to the metropolitan area council.",
+        "The shared transit alliance between neighboring municipal jurisdictions made special funding available for corridor upgrades. Directors filed an application with the multi-district alliance board."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('governmental subsidy', 'governmental grant', 'regional subsidy', 'regional grant') fit smoothly into all contexts. Governmental contexts emphasize public-sector administration, while regional contexts emphasize multi-county/inter-jurisdictional district coordination."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "conditional",
+      "target_modifier": "federal",
+      "source_context_dev": [
+        "The assistance program required recipients to meet strict environmental metrics and milestone quotas before funds would be disbursed. Planners carefully outlined performance milestones and compliance pledges in their application.",
+        "Financial assistance was tied strictly to achieving specific ridership growth targets and passing quarterly sustainability audits. Agency staff finalized paperwork agreeing to strict operational prerequisites to access the payout.",
+        "To receive the specialized funding package, the transit board had to accept stringent performance benchmarks and reporting criteria. The management team submitted an application confirming adherence to all mandatory prerequisites.",
+        "The funding allocation came with explicit ridership recovery requirements and mandatory cost-efficiency milestones. Administrators submitted formal paperwork agreeing to rigorous performance-contingent terms."
+      ],
+      "target_context_dev": [
+        "The nationwide transportation initiative in the national capital opened a massive funding window for city transit operators. Agency executives flew to Washington to submit formal paperwork for the nationwide program.",
+        "The Department of Transportation launched a nationwide capital initiative to modernize urban infrastructure across all fifty states. The local transit agency submitted comprehensive dossiers to the national cabinet office.",
+        "A major nationwide infrastructure act allocated billions in national funding for sustainable metropolitan transit. Planners prepared documentation for the national transportation ministry to modernize aging assets.",
+        "The national cabinet launched a countrywide capital modernization pool for top-tier urban transport systems. The transit authority submitted detailed engineering files to the central government agency in the capital."
+      ],
+      "source_context_test": [
+        "Disbursement of the transit aid package depended on meeting quarterly service reliability targets and labor benchmarks. The executive director filed a proposal outlining precise compliance timelines and performance guarantees.",
+        "To qualify for assistance, the transportation system was required to prove specific reductions in fleet carbon emissions over two years. Fleet directors submitted the paperwork agreeing to mandatory performance checkpoints.",
+        "The funding structure was subject to stringent efficiency milestones and periodic administrative audits. Agency staff completed application forms accepting all performance-contingent allocation rules.",
+        "Receipt of the financial aid package required strict adherence to route electrification timetables and passenger volume benchmarks. Administrators filed formal application materials agreeing to meet all mandatory metrics."
+      ],
+      "target_context_test": [
+        "Congress passed landmark transportation legislation creating a national funding pipeline for modern transit infrastructure. Transit leadership delivered comprehensive project plans to the national department headquarters.",
+        "The national transportation administration issued a competitive call for projects of national economic significance. Directors submitted full project specifications directly to the cabinet-level transport authorities.",
+        "A countrywide transit initiative administered from the national capital made substantial resources available to urban operators. The agency submitted official requests to the national infrastructure agency.",
+        "To support major transit corridors across the country, national authorities opened an infrastructure funding round. The metropolitan operator filed its capital modernization proposal with the national transport ministry."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('conditional subsidy', 'conditional grant', 'federal subsidy', 'federal grant') are standard, natural English expressions in public finance and transit management. Conditional contexts emphasize performance benchmarks, while federal contexts emphasize nationwide/cabinet-level funding."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b15_11_duty_obligation",
+    "generation_batch": 15,
+    "domain": "common abstract concepts",
+    "family_id": "duty_obligation",
+    "noun_0": "duty",
+    "noun_1": "obligation",
+    "shared_definition": "a legal, moral, or social commitment that one is bound to fulfill",
+    "neutral_stem": "The official fulfilled",
+    "candidate_modifiers": [
+      "absolute",
+      "binding",
+      "civic",
+      "constitutional",
+      "contractual",
+      "ethical",
+      "heavy",
+      "legal",
+      "moral",
+      "official",
+      "paramount",
+      "primary",
+      "professional",
+      "sacred",
+      "solemn"
+    ],
+    "semantic_notes": "'Duty' often conveys an internal moral or role-based responsibility, while 'obligation' emphasizes external compulsion, contract, or debt.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        11133
+      ],
+      "noun_1": [
+        25746
+      ]
+    },
+    "modifier_token_ids": {
+      "absolute": [
+        10298
+      ],
+      "binding": [
+        11609
+      ],
+      "civic": [
+        50549
+      ],
+      "constitutional": [
+        25136
+      ],
+      "contractual": [
+        63493
+      ],
+      "ethical": [
+        30426
+      ],
+      "heavy": [
+        7274
+      ],
+      "legal": [
+        6369
+      ],
+      "moral": [
+        16643
+      ],
+      "official": [
+        5125
+      ],
+      "paramount": [
+        64737
+      ],
+      "primary": [
+        5905
+      ],
+      "professional": [
+        5707
+      ],
+      "sacred": [
+        31492
+      ],
+      "solemn": [
+        55962
+      ]
+    },
+    "forced_projection_span": 0.12625941634178162,
+    "max_noun_pair_mass": 0.7833088040351868,
+    "context_priority_score": 0.09890011241286167,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "constitutional",
+        "target_modifier": "heavy",
+        "source_projection": -0.16399209201335907,
+        "target_projection": -0.157454252243042,
+        "forced_modifier_leverage": 0.006537839770317078,
+        "source_pair_mass": 0.45762157440185547,
+        "target_pair_mass": 0.18044885993003845
+      },
+      "medium": {
+        "source_modifier": "heavy",
+        "target_modifier": "primary",
+        "source_projection": -0.157454252243042,
+        "target_projection": -0.09118840098381042,
+        "forced_modifier_leverage": 0.06626585125923157,
+        "source_pair_mass": 0.18044885993003845,
+        "target_pair_mass": 0.16442200541496277
+      },
+      "high": {
+        "source_modifier": "contractual",
+        "target_modifier": "moral",
+        "source_projection": 0.27309486269950867,
+        "target_projection": 0.3993542790412903,
+        "forced_modifier_leverage": 0.12625941634178162,
+        "source_pair_mass": 0.2890414297580719,
+        "target_pair_mass": 0.7833088040351868
+      }
+    },
+    "context_generation_rank": 43
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "constitutional",
+      "target_modifier": "heavy",
+      "source_context_dev": [
+        "Upon taking the oath of office, the civil servant was bound by the foundational charter of the state. When the legislature requested an emergency review,",
+        "The legal framework of the republic clearly defines what public administrators must carry out during a transition of power. Acting in accordance with these founding tenets,",
+        "State statutes require administrators to protect basic civil liberties above all political interests. In response to the high court's decree,",
+        "The administrative code is rooted in the nation's supreme legal charter. Following established public law procedures,"
+      ],
+      "target_context_dev": [
+        "Years of crisis management had taken a severe emotional and physical toll on the senior administrator. Despite the overwhelming burden of the office,",
+        "Managing the aftermath of the natural disaster placed an exhausting weight on the regional bureau chief. Carrying this profound personal burden,",
+        "The public sector position demanded relentless effort under relentless public scrutiny. Bearing the immense weight of administrative leadership,",
+        "Confronted with an unprecedented civic crisis and severe resource shortages, the regional director faced a grueling assignment. In spite of the massive strain,"
+      ],
+      "source_context_test": [
+        "The founding charter of the commonwealth outlines precise standards for executive conduct during emergencies. Guided by these bedrock legal mandates,",
+        "Every administrative leader is constrained by the provisions established in the nation's supreme charter. Honoring the basic structure of governance,",
+        "The regional magistrate was tasked with executing the fundamental charter provisions without exception. Operating strictly under this governing framework,",
+        "Public servants are instructed to observe the foundational governing rules set down by the republic. Adhering to these established civic statutes,"
+      ],
+      "target_context_test": [
+        "The relentless strain of overseeing the emergency relief effort had pushed the administrative staff to exhaustion. Despite the burdensome nature of the work,",
+        "Few roles in government involve as much psychological pressure and relentless accountability. Enduring the taxing demands of the station,",
+        "The bureau head was burdened with resolving years of administrative mismanagement under intense time pressure. Facing such an arduous load,",
+        "The responsibility for stabilizing the economy during the panic weighed heavily on the treasury director. Shoulder to shoulder with an exhausted team,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings of {constitutional, heavy} \u00d7 {duty, obligation} yield natural and grammatical completions following 'The official fulfilled the...'. Contexts shift pragmatic preference toward state-charter governance versus taxing personal burdens without precluding any combination."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "heavy",
+      "target_modifier": "primary",
+      "source_context_dev": [
+        "The director found the mandate profoundly taxing as public anger continued to escalate. Despite the crushing weight of public expectations,",
+        "Managing the regional crisis demanded an exhausting level of personal stamina and patience. Bearing the immense burden of the role,",
+        "Public scrutiny made every step of the investigation an arduous and demanding undertaking. In spite of the taxing workload,",
+        "The civil commissioner was tasked with a grueling assignment that few colleagues were willing to accept. Shouldering the onerous burden,"
+      ],
+      "target_context_dev": [
+        "Among the numerous tasks assigned to the department, one mandate took precedence over all others. Focusing on this foremost assignment,",
+        "While multiple administrative tasks required attention, the supreme objective remained public safety. Addressing the principal task first,",
+        "The commissioner arranged the agency's goals in order of importance to ensure that the core mission was prioritized. Commencing work on the paramount requirement,",
+        "The mandate explicitly stated that safeguarding public funds was the foremost directive of the department. Addressing the main priority,"
+      ],
+      "source_context_test": [
+        "The sheer volume of complex casework left the administrative staff severely fatigued. Carrying the exhausting burden of the assignment,",
+        "Overseeing the contentious budget cuts involved exceptional emotional strain for the department head. Enduring the oppressive load of the position,",
+        "The task required countless sleepless nights and relentless scrutiny from investigators. Confronting the strenuous load,",
+        "The regional representative faced severe political backlash while implementing the difficult reforms. Despite the burdensome nature of the task,"
+      ],
+      "target_context_test": [
+        "The revised agency protocol required directors to address central goals before attending to ancillary matters. Concentrating on this main requirement,",
+        "Although secondary objectives demanded resources, the agency charter singled out one fundamental mission. Prioritizing this leading aim,",
+        "Department regulations clearly set forth which task was chief among an administrator's responsibilities. To address this cardinal objective,",
+        "The executive order emphasized that one governing mandate stood above all minor administrative routines. Emphasizing this paramount task,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations of {heavy, primary} \u00d7 {duty, obligation} form fluent, standard phrases. Contexts cleanly shift the pragmatic emphasis from arduousness/exhaustion to hierarchical importance/priority without excluding any pairings."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "contractual",
+      "target_modifier": "moral",
+      "source_context_dev": [
+        "The terms of the employment accord specified exact deliverables and strict completion deadlines. Adhering strictly to the formal agreement,",
+        "Before starting the assignment, the appointee signed a formal covenant outlining explicit legal terms. In accordance with the written stipulations,",
+        "The civil appointment was bound by explicit clauses in a negotiated bilateral pact. Honoring the strict provisions of the accord,",
+        "Both parties had signed a legally binding accord specifying clear mutual covenants. Following the negotiated stipulations,"
+      ],
+      "target_context_dev": [
+        "The statute did not require intervention, but conscience demanded swift action to prevent harm. Guided by personal ethics and civic virtue,",
+        "Though technically permitted to walk away, the bureau director knew deep down what was right. Driven by a profound sense of conscience,",
+        "Strict legal standards provided no clear answer, but ethical principles demanded an immediate response. Listening to an inner ethical compass,",
+        "Beyond the written requirements of civil law, human decency prompted the administrator to intervene. Acting purely on ethical convictions,"
+      ],
+      "source_context_test": [
+        "The project terms had been formally negotiated, ratified, and executed by all participating parties. In line with the signed provisions,",
+        "The municipal agreement clearly defined what specific tasks were legally enforceable upon signing. Fulfilling the precise clauses of the pact,",
+        "All civil contractors were bound by the detailed covenants contained in the signed agreement. Respecting the binding covenants,",
+        "The terms were laid out line by line in the signed employment covenant. Abiding by these explicit formal clauses,"
+      ],
+      "target_context_test": [
+        "No formal rule compelled the leader to apologize, but a deep sense of conscience urged it. Motivated by an ethical calling,",
+        "The law was silent on the matter, yet personal principles demanded that restitution be made. Adhering to the promptings of conscience,",
+        "Even without an explicit statutory command, the public administrator felt a profound ethical calling. Responding to inner conscience,",
+        "Setting aside purely technical regulations, the civil servant recognized an inherent ethical necessity to act. Driven by virtuous conviction,"
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations of {contractual, moral} \u00d7 {duty, obligation} are standard in English governance and jurisprudence. Contexts contrast formal legal accords with conscience/ethical motivation without strictly ruling out alternative lexical items."
+    }
+  ]
+}

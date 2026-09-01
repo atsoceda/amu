@@ -1,0 +1,226 @@
+{
+  "family": {
+    "candidate_id": "b09_20_event_conference_symposium",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_conference_symposium",
+    "noun_0": "conference",
+    "noun_1": "symposium",
+    "shared_definition": "a formal academic or professional meeting for discussion of a particular topic",
+    "neutral_stem": "Scholars registered months in advance for",
+    "candidate_modifiers": [
+      "annual",
+      "academic",
+      "international",
+      "major",
+      "national",
+      "prestigious",
+      "regional",
+      "scientific",
+      "specialized",
+      "important",
+      "upcoming",
+      "biennial",
+      "formal",
+      "scholarly"
+    ],
+    "semantic_notes": "'Conference' is broad and common across corporate and academic fields, whereas 'symposium' is more exclusively scholarly and topic-focused.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        9232
+      ],
+      "noun_1": [
+        53751
+      ]
+    },
+    "modifier_token_ids": {
+      "annual": [
+        7384
+      ],
+      "academic": [
+        13434
+      ],
+      "international": [
+        5251
+      ],
+      "major": [
+        3262
+      ],
+      "national": [
+        4559
+      ],
+      "prestigious": [
+        38624
+      ],
+      "regional": [
+        10969
+      ],
+      "scientific": [
+        11639
+      ],
+      "specialized": [
+        24576
+      ],
+      "important": [
+        2132
+      ],
+      "upcoming": [
+        16038
+      ],
+      "biennial": [
+        188275
+      ],
+      "formal": [
+        10781
+      ],
+      "scholarly": [
+        73051
+      ]
+    },
+    "forced_projection_span": 0.05168028827756643,
+    "max_noun_pair_mass": 0.580940842628479,
+    "context_priority_score": 0.03002319021925215,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "academic",
+        "target_modifier": "upcoming",
+        "source_projection": -0.1337745040655136,
+        "target_projection": -0.1285850703716278,
+        "forced_modifier_leverage": 0.005189433693885803,
+        "source_pair_mass": 0.1421053558588028,
+        "target_pair_mass": 0.14205968379974365
+      },
+      "medium": {
+        "source_modifier": "prestigious",
+        "target_modifier": "national",
+        "source_projection": -0.10525529086589813,
+        "target_projection": -0.081060491502285,
+        "forced_modifier_leverage": 0.02419479936361313,
+        "source_pair_mass": 0.11101880669593811,
+        "target_pair_mass": 0.08680451661348343
+      },
+      "high": {
+        "source_modifier": "specialized",
+        "target_modifier": "formal",
+        "source_projection": -0.06618504971265793,
+        "target_projection": -0.014504761435091496,
+        "forced_modifier_leverage": 0.05168028827756643,
+        "source_pair_mass": 0.0758507028222084,
+        "target_pair_mass": 0.021617695689201355
+      }
+    },
+    "context_generation_rank": 116
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "academic",
+      "target_modifier": "upcoming",
+      "source_projection": -0.1337745040655136,
+      "target_projection": -0.1285850703716278,
+      "forced_modifier_leverage": 0.005189433693885803,
+      "source_pair_mass": 0.1421053558588028,
+      "target_pair_mass": 0.14205968379974365,
+      "source_context_dev": [
+        "University departments across the continent pooled their travel budgets to present peer-reviewed findings. The large convention center prepared dozens of lecture halls for the multi-track presentation schedule.",
+        "Doctoral candidates and tenured faculty members finalized their slide decks to share original laboratory research. Organizers coordinated poster sessions and roundtable workshops across several adjoining halls.",
+        "The committee reviewed hundreds of blind-reviewed abstracts submitted by university laboratories worldwide. Attendees arranged travel stipends through their respective departmental chairs to present their papers.",
+        "Scholarly societies coordinated the annual exchange of peer-reviewed monographs and experimental data. Several research institutions sponsored the sprawling multi-day gathering to encourage disciplinary collaboration."
+      ],
+      "target_context_dev": [
+        "The dates on the calendar were fast approaching, prompting delegates to secure travel arrangements before hotel blocks sold out. A tight schedule of roundtable dialogues was slated for early next month.",
+        "With the event scheduled to open in just a few short weeks, the planning committee finalized the agenda for the focused dialogue. Travel bookings increased as the opening plenary session drew near.",
+        "Organizers sent urgent reminders as registration deadlines approached on the shared itinerary. The imminent gathering promised focused panel discussions on targeted research questions.",
+        "Anticipation grew as the approaching weekend on the scholarly calendar drew near. Attendees made sure their travel itineraries were settled for the scheduled panel talks."
+      ],
+      "source_context_test": [
+        "Research institutes funded travel grants so junior investigators could showcase theoretical models before their disciplinary peers. The venue featured sprawling exhibit areas alongside multiple simultaneous paper sessions.",
+        "Higher education institutions organized an extensive program dedicated to methodology and peer critique. Departments supported graduate delegates who were presenting original research papers.",
+        "Multiple scholarly faculties collaborated to evaluate extensive submissions of empirical datasets. The major convention facility configured numerous rooms to host dozens of disciplinary talks.",
+        "University consortia prepared a rigorous program centered entirely on peer evaluation and research dissemination. Faculty members coordinated group travel to attend the extensive multi-track schedule."
+      ],
+      "target_context_test": [
+        "With only weeks remaining on the calendar, participants rushed to lock in early-bird lodging rates. The impending gathering featured intimate single-track discussions among leading theorists.",
+        "The calendar countdown prompted organizers to issue final logistical reminders to all registered attendees. The approaching date promised an intensive day of curated panel presentations.",
+        "As the scheduled opening date approached, travel coordinators confirmed itinerary details for invited speakers. The soon-to-occur assembly focused on targeted deliberations across several key themes.",
+        "The calendar date was fast approaching, and delegates finalized their travel logistics to avoid last-minute delays. A tightly structured day of focused roundtables awaited the participants."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Both 'academic' and 'upcoming' modify 'conference' and 'symposium' naturally. Source contexts focus on university peer-reviewed research and sprawling multi-track schedules (pragmatically tilting toward 'academic conference'), while target contexts emphasize calendar proximity and focused panel assemblies (tilting toward 'upcoming symposium'). Under all contexts, all four combinations (academic conference, academic symposium, upcoming conference, upcoming symposium) are semantically valid and grammatically sound."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "prestigious",
+      "target_modifier": "national",
+      "source_projection": -0.10525529086589813,
+      "target_projection": -0.081060491502285,
+      "forced_modifier_leverage": 0.02419479936361313,
+      "source_pair_mass": 0.11101880669593811,
+      "target_pair_mass": 0.08680451661348343,
+      "source_context_dev": [
+        "Acceptance rates for submitted papers were historically low, and an invitation to speak was considered a career-defining honor. Leading authorities from world-renowned institutes occupied the headline keynote slots.",
+        "The award-winning society maintained extremely selective standards, rejecting nearly ninety percent of submissions. Being selected for an oral presentation conferred significant professional distinction.",
+        "Only the most celebrated luminaries in the discipline were invited to address the plenary session. Securing an invitation to present was universally regarded as a pinnacle accomplishment in the field.",
+        "The highly selective review board accepted only top-tier contributions after rigorous vetting by senior fellows. An appearance on the main stage carried immense professional standing."
+      ],
+      "target_context_dev": [
+        "Delegates arrived from every state and territory across the entire country to discuss federal guidelines. The event brought together regional representatives to harmonize standards from coast to coast.",
+        "Representatives from across the country converged on the capital to coordinate domestic policies. The agenda addressed country-wide developments and cross-state regulatory strategies.",
+        "The governing body invited regional chapter heads from all fifty states to deliberate on domestic priorities. The discussions focused on aligning standards across different territories throughout the country.",
+        "Federal agencies and state-level organizations coordinated an assembly of delegates spanning the entire country. The primary goal was addressing domestic challenges across every internal region."
+      ],
+      "source_context_test": [
+        "Selection for the program was reserved for top-ranked papers that survived an exceptionally rigorous screening process. An invitation to participate signaled elite standing among global researchers.",
+        "Senior fellows celebrated the gathering as the most honored venue for groundbreaking discoveries. Inclusion in the published program was recognized as an exceptional professional milestone.",
+        "The editorial committee upheld elite standards, admitting only a fraction of submitted manuscripts to the main podium. Presenting at the event was widely acknowledged as a hallmark of scholarly excellence.",
+        "The gathering commanded unmatched respect throughout the discipline, drawing Nobel laureates and institute directors. Securing speaking time was regarded as an elite honor across academia."
+      ],
+      "target_context_test": [
+        "State chapters from across the country sent nominated representatives to negotiate uniform domestic benchmarks. The sessions focused on harmonizing regulatory standards nationwide.",
+        "Delegates traveled from across the country to participate in the domestic policy summit. The discussions united leaders from every territory to address shared federal priorities.",
+        "The assembly convened delegates from coast to coast to address country-wide educational standards. Regional representatives shared case studies reflecting diverse domestic jurisdictions.",
+        "State-level leadership gathered in the capital to review domestic data and country-wide initiatives. The meetings united regional representatives seeking common solutions for the entire country."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('prestigious conference', 'prestigious symposium', 'national conference', 'national symposium') remain grammatically and semantically valid. Source contexts emphasize elite exclusivity, low acceptance rates, and reputation (favoring 'prestigious conference'), whereas target contexts emphasize nationwide representation and domestic interstate governance (favoring 'national symposium')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "specialized",
+      "target_modifier": "formal",
+      "source_projection": -0.06618504971265793,
+      "target_projection": -0.014504761435091496,
+      "forced_modifier_leverage": 0.05168028827756643,
+      "source_pair_mass": 0.0758507028222084,
+      "target_pair_mass": 0.021617695689201355,
+      "source_context_dev": [
+        "The workshop tracks focused exclusively on narrow technical methodologies, esoteric algorithms, and bespoke laboratory instrumentation. Attendees brought deep domain-specific expertise to analyze fine-grained experimental datasets.",
+        "The program excluded general overviews in favor of niche sub-field inquiries and highly technical workflows. Only practitioners working on precise biochemical mechanisms participated in the sessions.",
+        "Presentations were targeted strictly at experts working on minute structural variations in condensed matter. The sessions centered on highly tailored laboratory protocols rather than broad disciplinary themes.",
+        "Discussions focused exclusively on niche computational models and bespoke quantitative software. Participants engaged with highly technical sub-discipline issues inaccessible to generalists."
+      ],
+      "target_context_dev": [
+        "The protocol required strict adherence to traditional parliamentary procedure, ceremonial attire, and established decorum. Dignitaries opened the proceedings with an official diplomatic reception.",
+        "Organizers enforced traditional protocol, requiring dark business suits and structured parliamentary motions during each session. The solemn decorum reflected the serious institutional gravity of the meeting.",
+        "The ceremony commenced with traditional opening rites, and participants adhered strictly to parliamentary protocol and rigid seating arrangements. The dignified atmosphere set a deliberate tone of solemn institutional gravity.",
+        "The convention observed traditional institutional etiquette, complete with ceremonial opening addresses and strict dress codes. The decorum followed centuries of established diplomatic custom."
+      ],
+      "source_context_test": [
+        "The agenda was dedicated entirely to niche sub-branches of molecular biology and tailored micro-spectroscopy techniques. Participants delved into intricate domain-specific problems rather than general overviews.",
+        "Organizers restricted the program to highly tailored laboratory methodologies and specialized mathematical modeling. Attendees shared deep domain expertise in narrow sub-disciplines.",
+        "The sessions focused exclusively on niche experimental apparatus and fine-grained empirical data. The program catered strictly to specialists working on hyper-specific analytical tools.",
+        "Presenters bypassed introductory background to focus on technical sub-discipline proofs and niche computational frameworks. The program was designed specifically for deep subject-matter specialists."
+      ],
+      "target_context_test": [
+        "The proceedings opened with ritual fanfare and strict observance of parliamentary rules and official decorum. Attendees observed traditional protocols and formal etiquette throughout the assembly.",
+        "Participants maintained strict decorum under established parliamentary rules, wearing ceremonial attire for the opening banquet. The dignified setting underscored the institutional solemnity of the event.",
+        "Strict parliamentary protocol governed every speech, and attendees followed a traditional dress code for all evening events. The structured etiquette maintained an atmosphere of solemn institutional prestige.",
+        "The gathering adhered to rigid diplomatic etiquette, opening with ceremonial fanfare and prescribed parliamentary motions. Attendees followed established conventions of decorum throughout the proceedings."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('specialized conference', 'specialized symposium', 'formal conference', 'formal symposium') are natural English expressions. Source contexts leverage niche technical domain specificity (biasing toward 'specialized conference'), while target contexts emphasize ceremonial protocol, dress codes, and parliamentary decorum (biasing toward 'formal symposium'). Neither noun nor modifier is explicitly named."
+    }
+  ]
+}

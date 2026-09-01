@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b19_13_petition_appeal",
+    "generation_batch": 19,
+    "domain": "law, government, and civic life",
+    "family_id": "petition_appeal",
+    "noun_0": "petition",
+    "noun_1": "appeal",
+    "shared_definition": "a formal written application or request made to a judicial or administrative authority",
+    "neutral_stem": "The appellate panel formally reviewed",
+    "candidate_modifiers": [
+      "formal",
+      "urgent",
+      "unsuccessful",
+      "pending",
+      "timely",
+      "desperate",
+      "direct",
+      "subsequent",
+      "written",
+      "final",
+      "lengthy",
+      "preliminary",
+      "favorable",
+      "official",
+      "statutory"
+    ],
+    "semantic_notes": "'Petition' is an initial or special formal request for relief, whereas 'appeal' specifically seeks reversal of a prior judicial decision.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        14071
+      ],
+      "noun_1": [
+        12056
+      ]
+    },
+    "modifier_token_ids": {
+      "formal": [
+        10781
+      ],
+      "urgent": [
+        32034
+      ],
+      "unsuccessful": [
+        52963
+      ],
+      "pending": [
+        22600
+      ],
+      "timely": [
+        25558
+      ],
+      "desperate": [
+        38412
+      ],
+      "direct": [
+        1982
+      ],
+      "subsequent": [
+        13323
+      ],
+      "written": [
+        5267
+      ],
+      "final": [
+        1626
+      ],
+      "lengthy": [
+        42288
+      ],
+      "preliminary": [
+        22396
+      ],
+      "favorable": [
+        27661
+      ],
+      "official": [
+        5125
+      ],
+      "statutory": [
+        31283
+      ]
+    },
+    "forced_projection_span": 0.4636758863925934,
+    "max_noun_pair_mass": 0.7952533960342407,
+    "context_priority_score": 0.3687398233128967,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "statutory",
+        "target_modifier": "desperate",
+        "source_projection": 0.011247782036662102,
+        "target_projection": 0.056359946727752686,
+        "forced_modifier_leverage": 0.045112164691090584,
+        "source_pair_mass": 0.012506725266575813,
+        "target_pair_mass": 0.060906872153282166
+      },
+      "medium": {
+        "source_modifier": "official",
+        "target_modifier": "urgent",
+        "source_projection": 0.0023872165475040674,
+        "target_projection": 0.23458436131477356,
+        "forced_modifier_leverage": 0.2321971447672695,
+        "source_pair_mass": 0.0031344995368272066,
+        "target_pair_mass": 0.3261162340641022
+      },
+      "high": {
+        "source_modifier": "timely",
+        "target_modifier": "direct",
+        "source_projection": 0.3268361985683441,
+        "target_projection": 0.7905120849609375,
+        "forced_modifier_leverage": 0.4636758863925934,
+        "source_pair_mass": 0.3369147479534149,
+        "target_pair_mass": 0.7952533960342407
+      }
+    },
+    "context_generation_rank": 4
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "statutory",
+      "target_modifier": "desperate",
+      "source_context_dev": [
+        "The legislature created a standardized channel for citizens challenging agency rulemaking on constitutional grounds. Every submission under this enacted framework requires precise citations to state code.",
+        "Regulatory codes prescribe strict procedural mechanisms for requesting administrative redress against disputed zoning ordinances. Counsel structured the grievance strictly under title four provisions.",
+        "The legal framework mandates specific parliamentary clauses for challenging ministerial declarations. Legal advisors followed the prescribed legislative guidelines when compiling the records.",
+        "Under state law, aggrieved commercial operators must invoke specific legal provisions to seek regulatory relief. Counsel ensured all formal elements satisfied the relevant code."
+      ],
+      "target_context_dev": [
+        "Facing an immediate order of deportation at dawn, the defense team scrambled to file a last-ditch plea before midnight. All standard remedies had been exhausted, leaving this final prayer as their only hope.",
+        "With bankruptcy liquidation scheduled for tomorrow, the business owners made an impassioned last-chance plea to stop the auction. They knew failure would result in immediate ruin.",
+        "The condemned prisoner had exhausted all regular channels and faced imminent execution within hours. In extreme distress, his defense attorneys submitted an eleventh-hour plea for mercy.",
+        "The community clinic faced immediate closure by week's end due to sudden funding cancellation. In panic, neighborhood organizers submitted a frantic final plea to keep operations alive."
+      ],
+      "source_context_test": [
+        "State regulations outline explicit protocols through which civil society groups may challenge administrative decrees. The legal team assembled the formal dossier strictly according to codified rules.",
+        "The municipal code establishes an exact legislative pathway for protesting tax assessments. Property owners complied with every clause of the enabling ordinance.",
+        "According to the administrative governance act, contested licensing decisions must be challenged through established legislative pathways. The corporation submitted its filing in full compliance with the enacted law.",
+        "Legislative reforms established a dedicated pathway for reviewing environmental oversight decisions. The conservation group prepared its filing strictly adhering to the enacted statute."
+      ],
+      "target_context_test": [
+        "With the wrecking ball idling outside the historic landmark, preservationists launched a frantic last-second plea to halt the demolition. Time had completely run out for ordinary deliberation.",
+        "Facing the imminent shutdown of life-saving medical trials, patient advocates made a distressed plea to the authorities. It represented their absolute last chance to prevent disaster.",
+        "The family faced eviction within forty-eight hours and had no other shelter options left. In acute panic, legal aid submitted a last-ditch plea to pause the eviction warrant.",
+        "The sanctuary was surrounded and facing immediate eviction orders within the hour. In profound distress, advocates submitted an eleventh-hour plea to halt the enforcement action."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (statutory petition, statutory appeal, desperate petition, desperate appeal) remain syntactically sound and semantically meaningful across all source and target contexts, with context merely shifting pragmatic emphasis between formal legislative compliance and high-stakes distress."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "official",
+      "target_modifier": "urgent",
+      "source_context_dev": [
+        "The regulatory commission maintains rigorous standards for governmental filings submitted by licensed institutions. Bureaucrats logged the submission into the central registry after validating proper institutional seals.",
+        "State agencies require standardized governmental documentation before considering any formal complaint against a magistrate. The clerk stamped the formal submission and entered it into the public docket.",
+        "The department requires all formal submissions from regional authorities to be validated by authorized signatures. The submission was processed through standard bureaucratic channels.",
+        "Formal institutional protocols govern all contested claims submitted between municipal departments. The submitted paperwork bore every required government seal and validation stamp."
+      ],
+      "target_context_dev": [
+        "A toxic chemical spill threatened the municipal water reservoir, requiring emergency judicial intervention before nightfall. Counsel demanded an immediate expedited hearing.",
+        "Severe flooding threatened to breach the reservoir unless emergency evacuation measures were authorized immediately. Counsel requested fast-track consideration to prevent imminent catastrophe.",
+        "A fast-moving wildfire approached the boundary of the protected habitat, demanding rapid legal authorization for emergency bulldozing. Counsel pressed for immediate action.",
+        "Contaminated infant formula was actively circulating in stores, prompting consumer safety advocates to seek an emergency restraining order. The team demanded immediate same-day judicial review."
+      ],
+      "source_context_test": [
+        "Public administration rules prescribe that any contested administrative decision must be challenged through recognized institutional channels. The submitted documents complied with all bureaucratic guidelines.",
+        "The registrar oversees the logging of all formal governmental submissions originating from municipal councils. Every document in the filing was verified against governmental standards.",
+        "Intergovernmental dispute resolution requires strict adherence to bureaucratic protocols and accredited documentation. The submission met all formal administrative criteria.",
+        "The agency board strictly processes documentation that carries authorized departmental endorsements. The papers were stamped and logged by the chief registry clerk."
+      ],
+      "target_context_test": [
+        "The child was scheduled to be taken out of the country within hours in violation of custody decrees. Family lawyers requested immediate expedited intervention.",
+        "A critical infrastructure failure posed immediate danger to hundreds of residents unless emergency repair access was granted instantly. Counsel sought fast-track review.",
+        "An unexpected industrial freeze threatened to permanently ruin regional crops within twenty-four hours without an immediate variance. Growers demanded instantaneous action.",
+        "Sensitive medical records were about to be released publicly by hackers within hours unless an emergency injunction was granted. Counsel demanded immediate intervention."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (official petition, official appeal, urgent petition, urgent appeal) remain fully felicitous in all context conditions. The contexts adjust the pragmatic salience of bureaucratic protocol versus temporal crisis without violating semantic constraints."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "timely",
+      "target_modifier": "direct",
+      "source_context_dev": [
+        "The litigation guidelines set a thirty-day window for challenging the lower judgment, and counsel submitted the documents on day twenty-nine. The clerk verified that all deadline requirements had been met.",
+        "Procedural regulations impose strict calendar cutoffs for lodging grievances following an administrative determination. Counsel submitted the paperwork well before the cutoff hour.",
+        "The scheduling order strictly forbade any late submissions, warning that tardiness would result in automatic dismissal. The filing arrived safely ahead of the midnight deadline.",
+        "Attorneys kept careful track of the statutory filing calendar to avoid missing the thirty-day limitation window. The submission was successfully lodged two days before the deadline."
+      ],
+      "target_context_dev": [
+        "Bypassing the intermediate regional court entirely, the attorney general brought the constitutional question straight to the superior bench. The case skipped traditional lower-tier progression to resolve the issue swiftly.",
+        "Rather than pursuing protracted hearings through lower administrative forums, the corporation took the matter straight to the supreme bench. This maneuver bypassed every intermediary tribunal.",
+        "The litigants chose not to seek rehearing at the district level, taking their grievance straight to the highest judicial forum. This route circumvented all intermediate review layers.",
+        "To avoid months of delay in lower branches, the state solicitor escalated the matter straight to the supreme bench. The filing skipped the intermediate courts of review entirely."
+      ],
+      "source_context_test": [
+        "The rules of civil procedure emphasize strict compliance with the sixty-day calendar window for post-trial challenges. The submission was lodged on the fifty-eighth day.",
+        "Missing the designated calendar window would forfeit all rights to challenge the decree. Counsel made sure the filing was delivered well before the cutoff.",
+        "The magistrate stressed that prompt action within the ten-day filing period was mandatory for consideration. The paperwork was handed to the registry on day eight.",
+        "The court clerk logged the exact timestamp of the submission to confirm it arrived prior to the statutory calendar deadline. The deadline was met with hours to spare."
+      ],
+      "target_context_test": [
+        "The governor invoked special constitutional prerogatives to bring the jurisdictional dispute straight to the highest tribunal. The filing deliberately skipped the trial court stage.",
+        "Seeking to avoid intermediate tribunal deliberations, the defense escalated the constitutional challenge straight to the top bench. All customary intermediate stages were bypassed.",
+        "The municipality chose to bypass all intermediate administrative tiers and bring the environmental conflict straight to the supreme bench. The filing went straight to the top authority.",
+        "Recognizing the statewide importance of the controversy, counsel bypassed the intermediate bench to take the case straight to the ultimate judicial authority."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (timely petition, timely appeal, direct petition, direct appeal) are grammatically correct and semantically natural. Source contexts emphasize punctuality and adherence to procedural deadlines, while target contexts emphasize non-intermediated, direct escalation to superior authority."
+    }
+  ]
+}

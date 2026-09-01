@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b20_09_tournament_championship",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "tournament_championship",
+    "noun_0": "tournament",
+    "noun_1": "championship",
+    "shared_definition": "a large series of athletic competitions to determine an ultimate winner",
+    "neutral_stem": "The club qualified for the",
+    "candidate_modifiers": [
+      "annual",
+      "continental",
+      "elite",
+      "major",
+      "national",
+      "official",
+      "prestigious",
+      "regional",
+      "seasonal",
+      "summer",
+      "upcoming",
+      "weekend",
+      "winter",
+      "worldwide",
+      "youth"
+    ],
+    "semantic_notes": "'Championship' directly highlights the title or crown at stake, while 'tournament' emphasizes the bracketed structure and elimination process.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        18006
+      ],
+      "noun_1": [
+        21208
+      ]
+    },
+    "modifier_token_ids": {
+      "annual": [
+        7384
+      ],
+      "continental": [
+        49566
+      ],
+      "elite": [
+        28317
+      ],
+      "major": [
+        3262
+      ],
+      "national": [
+        4559
+      ],
+      "official": [
+        5125
+      ],
+      "prestigious": [
+        38624
+      ],
+      "regional": [
+        10969
+      ],
+      "seasonal": [
+        28594
+      ],
+      "summer": [
+        5312
+      ],
+      "upcoming": [
+        16038
+      ],
+      "weekend": [
+        9735
+      ],
+      "winter": [
+        7208
+      ],
+      "worldwide": [
+        15454
+      ],
+      "youth": [
+        10974
+      ]
+    },
+    "forced_projection_span": 0.09124349057674408,
+    "max_noun_pair_mass": 0.32328367233276367,
+    "context_priority_score": 0.029497530710109743,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "seasonal",
+        "target_modifier": "prestigious",
+        "source_projection": -0.14858534932136536,
+        "target_projection": -0.13929903507232666,
+        "forced_modifier_leverage": 0.009286314249038696,
+        "source_pair_mass": 0.3215317726135254,
+        "target_pair_mass": 0.25117042660713196
+      },
+      "medium": {
+        "source_modifier": "continental",
+        "target_modifier": "worldwide",
+        "source_projection": 0.0838453620672226,
+        "target_projection": 0.13110783696174622,
+        "forced_modifier_leverage": 0.04726247489452362,
+        "source_pair_mass": 0.13200898468494415,
+        "target_pair_mass": 0.25715988874435425
+      },
+      "high": {
+        "source_modifier": "worldwide",
+        "target_modifier": "national",
+        "source_projection": 0.13110783696174622,
+        "target_projection": 0.2223513275384903,
+        "forced_modifier_leverage": 0.09124349057674408,
+        "source_pair_mass": 0.25715988874435425,
+        "target_pair_mass": 0.32328367233276367
+      }
+    },
+    "context_generation_rank": 118
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "seasonal",
+      "target_modifier": "prestigious",
+      "source_context_dev": [
+        "Every autumn, after regular league play concludes, the top teams enter a bracketed knockout series based on the calendar cycle.",
+        "Following their strong showing in the spring split, the players earned a spot in the quarterly knockout round.",
+        "With the colder months approaching, the team advanced past regional qualifiers into the annual winter event.",
+        "The squad wrapped up the preliminary phase and prepared for the scheduled fall playoffs."
+      ],
+      "target_context_dev": [
+        "Earning a spot among the elite few has long been considered the ultimate crown in professional athletics.",
+        "Generations of players have dreamed of lifting the sport's most revered and historic trophy.",
+        "Securing entry required defeating top-tier competition in front of an esteemed global audience.",
+        "The athletes dedicated their entire careers to reaching this celebrated, top-tier showcase."
+      ],
+      "source_context_test": [
+        "After months of weekly league matches, the roster secured entry into the concluding phase of the calendar.",
+        "Their high finish during the summer division guaranteed a place in the upcoming bracketed finals.",
+        "Having completed the regular match slate, the athletes advanced into the year-end invitational bracket.",
+        "Consistent results across recent weeks allowed the squad to move into the scheduled term finale."
+      ],
+      "target_context_test": [
+        "Winning this event represents the highest pinnacle of professional achievement in the sport.",
+        "Regarded as the gold standard of athletic glory, this final stage offers immense honor.",
+        "Only the finest squads in history have ever contested this venerable and coveted title match.",
+        "The organization sought the supreme accolade that confers legendary status upon its victors."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('seasonal tournament', 'seasonal championship', 'prestigious tournament', 'prestigious championship') are syntactically and semantically sound across all contexts. Source contexts emphasize cyclical/periodic calendar schedules and bracketed play, subtly nudging 'seasonal tournament', while target contexts emphasize historical pedigree, elite status, and top-tier distinction, nudging 'prestigious championship'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "continental",
+      "target_modifier": "worldwide",
+      "source_context_dev": [
+        "After dominating the domestic league, the team earned the right to face rivals from across the landmass.",
+        "The players traveled across border countries in their landmass to take part in the multi-stage bracket.",
+        "Having bested all local contenders, the squad advanced to the landmass-wide knockout series.",
+        "Their victory in the sub-region earned them passage to compete against neighboring nations."
+      ],
+      "target_context_dev": [
+        "Teams from every continent and hemisphere converged to settle who rules the entire planet.",
+        "Reaching this stage required proving absolute supremacy across every hemisphere on Earth.",
+        "The ultimate contest brings together victors from across all oceans to decide the world's best.",
+        "Athletes traveled across every time zone to compete for the definitive global title."
+      ],
+      "source_context_test": [
+        "The squad prepared for multi-round matches against top clubs from across the landmass.",
+        "A top-two finish in the regional pool qualified the team for the broader landmass playoffs.",
+        "After surviving group stages across the landmass, the athletes secured their entry into the main draw.",
+        "The roster earned the chance to test their mettle against champions from neighboring borders."
+      ],
+      "target_context_test": [
+        "With representatives flying in from all hemispheres, the stage was set for the ultimate planetary clash.",
+        "The squad's dominant season allowed them to vie for ultimate supremacy across all five major landmasses.",
+        "No honor is greater than defeating contenders from across every nation on the globe.",
+        "Contenders from all parts of the globe gathered for the final title bout."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('continental tournament', 'continental championship', 'worldwide tournament', 'worldwide championship') form natural, common athletic collocations. Source contexts frame competition at the landmass/regional multi-nation level, while target contexts focus on global, multi-hemisphere scale and ultimate planetary titles."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "worldwide",
+      "target_modifier": "national",
+      "source_context_dev": [
+        "Competitors from across every ocean were seeded into a multi-round elimination bracket.",
+        "The preliminary rounds spanned five continents before narrowing to a single knockout field.",
+        "Clubs from various hemispheres battled through tiered pool stages to claim a spot in the main draw.",
+        "The open format welcomed entries from across the globe into a single massive bracket."
+      ],
+      "target_context_dev": [
+        "Defending domestic pride required beating the premier squads within the country's borders.",
+        "After sweeping their state division, the players advanced to vie for the title of the realm's best.",
+        "The entire country tuned in to watch the top two domestic squads fight for the domestic crown.",
+        "Having conquered their home region, the squad earned the chance to capture the overall homeland title."
+      ],
+      "source_context_test": [
+        "Having outlasted international contenders across several continents, the team earned a seeded bracket slot.",
+        "The broad field brought together clubs from all hemispheres for an expansive knockout competition.",
+        "After an extensive qualification cycle spanning every continent, the squad reached the multi-stage finals.",
+        "Teams from dozens of distinct countries arrived for the opening rounds of the multi-match draw."
+      ],
+      "target_context_test": [
+        "The squad's remarkable run earned them the right to compete for the ultimate domestic crown.",
+        "Only the top squads from each domestic division qualified for this countrywide title showdown.",
+        "The organization hoped to bring the coveted domestic title back to its home city.",
+        "Fans from coast to coast followed their journey to become the top team in the homeland."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('worldwide tournament', 'worldwide championship', 'national tournament', 'national championship') remain grammatically and semantically valid under all context prompts. Source contexts bias toward global multi-tier open brackets, whereas target contexts bias toward domestic country-level title matches."
+    }
+  ]
+}

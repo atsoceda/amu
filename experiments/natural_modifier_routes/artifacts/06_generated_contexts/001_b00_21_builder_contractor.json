@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b00_21_builder_contractor",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "builder_contractor",
+    "noun_0": "builder",
+    "noun_1": "contractor",
+    "shared_definition": "a professional who constructs, renovates, or oversees building projects",
+    "neutral_stem": "Examining the residential construction site, the homeowner met with",
+    "candidate_modifiers": [
+      "licensed",
+      "reputable",
+      "experienced",
+      "independent",
+      "reliable",
+      "competent",
+      "commercial",
+      "general",
+      "qualified",
+      "trusted",
+      "skilled",
+      "capable",
+      "honest",
+      "seasoned",
+      "established"
+    ],
+    "semantic_notes": "'Builder' emphasizes hands-on construction craft, while 'contractor' emphasizes business contracts and project management.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        17929
+      ],
+      "noun_1": [
+        29226
+      ]
+    },
+    "modifier_token_ids": {
+      "licensed": [
+        24335
+      ],
+      "reputable": [
+        66756
+      ],
+      "experienced": [
+        9763
+      ],
+      "independent": [
+        6829
+      ],
+      "reliable": [
+        13451
+      ],
+      "competent": [
+        31431
+      ],
+      "commercial": [
+        6635
+      ],
+      "general": [
+        2870
+      ],
+      "qualified": [
+        15973
+      ],
+      "trusted": [
+        26576
+      ],
+      "skilled": [
+        23482
+      ],
+      "capable": [
+        11844
+      ],
+      "honest": [
+        11481
+      ],
+      "seasoned": [
+        56677
+      ],
+      "established": [
+        6697
+      ]
+    },
+    "forced_projection_span": 0.5274426639080048,
+    "max_noun_pair_mass": 0.8918779492378235,
+    "context_priority_score": 0.47041448142680586,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "trusted",
+        "target_modifier": "reliable",
+        "source_projection": 0.133169487118721,
+        "target_projection": 0.1896185278892517,
+        "forced_modifier_leverage": 0.0564490407705307,
+        "source_pair_mass": 0.30460405349731445,
+        "target_pair_mass": 0.2901923358440399
+      },
+      "medium": {
+        "source_modifier": "seasoned",
+        "target_modifier": "independent",
+        "source_projection": 0.10196234285831451,
+        "target_projection": 0.3622147738933563,
+        "forced_modifier_leverage": 0.2602524310350418,
+        "source_pair_mass": 0.2845269441604614,
+        "target_pair_mass": 0.40275678038597107
+      },
+      "high": {
+        "source_modifier": "independent",
+        "target_modifier": "general",
+        "source_projection": 0.3622147738933563,
+        "target_projection": 0.8896574378013611,
+        "forced_modifier_leverage": 0.5274426639080048,
+        "source_pair_mass": 0.40275678038597107,
+        "target_pair_mass": 0.8918779492378235
+      }
+    },
+    "context_generation_rank": 2
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "trusted",
+      "target_modifier": "reliable",
+      "source_context_dev": [
+        "After asking neighbors for heartfelt personal recommendations, the family felt reassured about who would oversee their custom home. They prioritized strong community standing and mutual rapport over corporate brochures.",
+        "The clients wanted someone with an unblemished personal reputation who came highly praised by close family friends. A track record of honesty and genuine craftsmanship mattered most to them.",
+        "Selecting an artisan known throughout the valley for integrity gave the owners peace of mind before breaking ground. They valued warmth, word-of-mouth acclaim, and proven goodwill above all else.",
+        "A deep sense of comfort guided the couple during their search for a reputable lead professional. They chose a local figure whose upright character was praised across the neighborhood."
+      ],
+      "target_context_dev": [
+        "Tight milestone deadlines and strict budget caps required unwavering consistency from the project lead. The owners demanded absolute punctuality and predictable day-to-day execution above all else.",
+        "With supply chain delays threatening the schedule, the clients needed a partner who always delivered on commitments without excuses. Dependability and steady work habits were non-negotiable requirements.",
+        "The renovation demanded steadfast adherence to daily work logs and uncompromising adherence to safety timetables. The property owner looked for someone who never missed a morning check-in.",
+        "Having experienced costly delays on a past development, the investor focused strictly on operational dependability. Predictable progress reporting and steadfast performance were the main criteria."
+      ],
+      "source_context_test": [
+        "Seeking a personal connection, the couple turned to recommendations from longtime neighborhood residents. They wanted an established presence known for honorable conduct and caring customer relationships.",
+        "The homeowners sought someone whose name was synonymous with community goodwill and sincere dedication to craft. Knowing their investment was in honest hands mattered far more than flashy marketing.",
+        "Reputation and heartfelt references from previous families sealed the hiring decision early on. The clients felt an immediate sense of faith in the individual heading the custom renovation.",
+        "Finding an upright local artisan with exemplary personal endorsements was the primary objective for the family. They prized ethical standards and proven sincerity above corporate size."
+      ],
+      "target_context_test": [
+        "Every phase of the remodel was pinned to rigorous weekly deliverables and inflexible financial constraints. The client prioritized consistent, timely execution and foolproof operational track records.",
+        "The developer needed someone who consistently honored schedules regardless of weather or material shortages. Steady accountability and predictable turnaround times were the top considerations.",
+        "To avoid unforeseen shutdowns, the homeowner scrutinized historical completion dates across past job sites. They required an operational lead known for unwavering punctuality and steady output.",
+        "The commercial conversion left zero margin for scheduling slippage or unkept promises. The primary requirement was solid, day-in and day-out performance that never deviated from the master plan."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('trusted builder', 'trusted contractor', 'reliable builder', 'reliable contractor') remain fully natural, idiomatic, and valid English collocations following the neutral prompt stem. Contexts modulate subtle pragmatic nuance between interpersonal trust/reputation and functional reliability/punctuality without invalidating either role or adjective."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "seasoned",
+      "target_modifier": "independent",
+      "source_context_dev": [
+        "Decades of handling unexpected foundation shifts and weathered framing made this veteran master irreplaceable on difficult terrain. The owner valued deep experiential wisdom acquired across a lifetime of hands-on work.",
+        "The intricate architectural restoration required extensive veteran insight that only comes from decades in the field. The client sought someone whose long career was defined by master-level problem solving.",
+        "Having spent over thirty years navigating structural anomalies, the project lead brought immense practical know-how to the job. The homeowner felt secure relying on such extensive trade longevity.",
+        "The historic timber-frame restoration demanded profound technical mastery honed over many decades. The client purposely selected a veteran expert who had encountered every possible framing hurdle."
+      ],
+      "target_context_dev": [
+        "Rather than hiring a massive corporate franchise with heavy overhead, the owner sought a solo operator working on a separate contractual basis. They wanted to negotiate directly with an autonomous freelance specialist.",
+        "The client opted for a self-employed professional who operated outside corporate syndicates. This non-affiliated trade specialist offered flexible, direct terms for the custom remodel.",
+        "Seeking a non-corporate arrangement, the homeowner solicited bids from standalone freelance entities rather than bundled enterprise firms. Direct individual accountability was the main selling point.",
+        "The property owner favored a solo freelance arrangement over an all-inclusive corporate firm. They wanted an unaffiliated lead who was personally responsible for their own operations."
+      ],
+      "source_context_test": [
+        "The complex hillside layout called for an old-hand with comprehensive institutional memory and countless completed projects. The homeowner prized decades of field tenure above recent technological trends.",
+        "Decades of practical experience on challenging structural additions made the lead professional's guidance invaluable. The clients sought seasoned judgment forged over a multi-decade career.",
+        "Facing tricky load-bearing modifications, the owner wanted someone with extensive practical longevity in custom carpentry and framing. Thirty years on job sites provided unmatched diagnostic instincts.",
+        "The renovation of the century-old masonry structure required the steady hand of a true trade veteran. Deep field wisdom and decades of hands-on expertise were essential for the job."
+      ],
+      "target_context_test": [
+        "Preferring direct communication, the family bypassed large design-build conglomerates in favor of a freelance sole proprietor. They wanted an autonomous, non-affiliated lead on a bespoke agreement.",
+        "The owner chose to engage a standalone specialist operating without corporate backing or franchise affiliation. The direct freelance structure allowed for tailored scheduling and distinct oversight.",
+        "Bypassing large corporate organizations allowed the client to contract directly with a self-managed, non-corporate professional. An autonomous freelance relationship suited the project's bespoke scope.",
+        "To avoid layers of bureaucratic management, the client hired a standalone operator working under a direct 1099 agreement. This non-affiliated specialist answered directly to the property owner."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('seasoned builder', 'seasoned contractor', 'independent builder', 'independent contractor') are standard, natural construction industry terms. The source context highlights career longevity and veteran skill, while the target context highlights autonomous freelance business structure, maintaining full cross-product plausibility."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "independent",
+      "target_modifier": "general",
+      "source_context_dev": [
+        "Preferring a direct, boutique relationship rather than an institutional firm, the client hired a solo self-employed lead. They sought an autonomous specialist operating outside big corporate structures.",
+        "The homeowner specifically wanted a standalone craftsman running an autonomous business without corporate affiliation. Engaging a freelance practitioner allowed for direct personal communication.",
+        "The client bypassed large corporate franchises to work with a self-managed, autonomous local operative. A boutique, non-affiliated business model perfectly matched their bespoke cottage plans.",
+        "To keep the arrangement flexible and unencumbered by corporate bureaucracy, the owner hired an unaffiliated sole proprietor. The solo freelance setup provided clear, direct accountability."
+      ],
+      "target_context_dev": [
+        "Managing dozens of specialized subcontractors and acquiring broad city permits required an overarching prime project head. The owner needed an executive coordinator to oversee all trades under a single master contract.",
+        "The massive multi-story overhaul required comprehensive site management spanning electrical, plumbing, framing, and roofing crews. The property owner needed a prime coordinator holding overarching legal authority.",
+        "Because the blueprint involved complex multi-trade synchronization and master licensing, someone had to hold overall prime accountability. The owner looked for a comprehensive overseer to run the total site.",
+        "The whole-house build demanded a master supervisor capable of orchestrating varied specialty crews, inspections, and master contracts. The client needed someone to direct the entire operation from top to bottom."
+      ],
+      "source_context_test": [
+        "The client favored an autonomous, self-directed professional rather than a multi-branch corporate group. Working with a freelance boutique operator offered direct financial transparency.",
+        "Wanting direct control over the bespoke project, the homeowner partnered with an unaffiliated sole proprietor. This standalone business setup minimized corporate overhead and red tape.",
+        "The family deliberately avoided regional construction syndicates, choosing an autonomous freelance operator instead. They appreciated the direct, single-point accountability of a boutique practice.",
+        "The small-scale barn conversion was best suited for a self-governing local operator who managed projects without institutional parent companies. An autonomous setup fit the simple scope perfectly."
+      ],
+      "target_context_test": [
+        "The extensive structural expansion required unified coordination across HVAC, masonry, and carpentry divisions. The investor needed a single master director holding prime contractual responsibility for the entire build.",
+        "With several municipal inspections and multiple trades working concurrently, comprehensive prime supervision was indispensable. The owner needed a master coordinator to head the overall job site.",
+        "The scale of the ground-up development made it necessary to appoint an overarching master executive who managed every subcontractor on site. The owner needed a unified lead for the whole build.",
+        "Coordinating dozens of trade specialists and legal permits demanded someone with prime supervisory authority over the whole project. The property owner sought an all-encompassing site director."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('independent builder', 'independent contractor', 'general builder', 'general contractor') are syntactically and semantically well-formed in the stem context. The source context evokes freelance/autonomous scale whereas the target context evokes master/prime coordination of trades, strongly skewing the collocation without violating grammar or truth conditions."
+    }
+  ]
+}

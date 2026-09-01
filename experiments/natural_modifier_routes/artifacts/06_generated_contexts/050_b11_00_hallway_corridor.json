@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b11_00_hallway_corridor",
+    "generation_batch": 11,
+    "domain": "buildings and architectural spaces",
+    "family_id": "hallway_corridor",
+    "noun_0": "hallway",
+    "noun_1": "corridor",
+    "shared_definition": "a long interior passageway giving access to separate rooms",
+    "neutral_stem": "The architect walked slowly down",
+    "candidate_modifiers": [
+      "narrow",
+      "long",
+      "dark",
+      "dim",
+      "empty",
+      "quiet",
+      "bright",
+      "central",
+      "spacious",
+      "endless",
+      "tiled",
+      "modern",
+      "secret"
+    ],
+    "semantic_notes": "'Corridor' frequently appears in formal, institutional, or metaphorical contexts, whereas 'hallway' is the more standard domestic term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        65537
+      ],
+      "noun_1": [
+        47380
+      ]
+    },
+    "modifier_token_ids": {
+      "narrow": [
+        12019
+      ],
+      "long": [
+        1440
+      ],
+      "dark": [
+        4996
+      ],
+      "dim": [
+        4045
+      ],
+      "empty": [
+        7738
+      ],
+      "quiet": [
+        12010
+      ],
+      "bright": [
+        7804
+      ],
+      "central": [
+        6082
+      ],
+      "spacious": [
+        30351
+      ],
+      "endless": [
+        28658
+      ],
+      "tiled": [
+        91627
+      ],
+      "modern": [
+        4532
+      ],
+      "secret": [
+        6789
+      ]
+    },
+    "forced_projection_span": 0.15922804176807404,
+    "max_noun_pair_mass": 0.5766385793685913,
+    "context_priority_score": 0.09181703180078493,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "narrow",
+        "target_modifier": "empty",
+        "source_projection": 0.03789439797401428,
+        "target_projection": 0.05529662221670151,
+        "forced_modifier_leverage": 0.017402224242687225,
+        "source_pair_mass": 0.09207278490066528,
+        "target_pair_mass": 0.15430578589439392
+      },
+      "medium": {
+        "source_modifier": "quiet",
+        "target_modifier": "tiled",
+        "source_projection": -0.0011652763932943344,
+        "target_projection": 0.07830687612295151,
+        "forced_modifier_leverage": 0.07947215251624584,
+        "source_pair_mass": 0.01866869255900383,
+        "target_pair_mass": 0.21851614117622375
+      },
+      "high": {
+        "source_modifier": "endless",
+        "target_modifier": "long",
+        "source_projection": 0.24667106568813324,
+        "target_projection": 0.4058991074562073,
+        "forced_modifier_leverage": 0.15922804176807404,
+        "source_pair_mass": 0.3586428761482239,
+        "target_pair_mass": 0.5766385793685913
+      }
+    },
+    "context_generation_rank": 51
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "narrow",
+      "target_modifier": "empty",
+      "source_context_dev": [
+        "The old Victorian residence had limited floor space, forcing the interior transitions to be remarkably cramped.",
+        "Space constraints in the vintage apartment building had forced builders to shave every possible inch from interior walkways.",
+        "Inside the renovated townhouse, two people could barely pass each other shoulder to shoulder between the bedrooms.",
+        "The layout of the historic cottage was notoriously constricted, leaving little lateral room to maneuver between rooms."
+      ],
+      "target_context_dev": [
+        "After business hours, the sprawling medical complex fell silent with not a single patient or physician present.",
+        "The sprawling government facility had been evacuated hours ago, leaving the vast institutional pathways devoid of staff.",
+        "At midnight, the entire corporate headquarters was deserted, without a single employee remaining between departments.",
+        "The university research wing was completely abandoned for summer break, totally devoid of human activity."
+      ],
+      "source_context_test": [
+        "Because the floor plan was designed for a modest city rowhouse, the passages between bedrooms offered minimal clearance.",
+        "The domestic blueprint favored large bedrooms over generous circulation routes, squeezing the central transit space.",
+        "Within the compact family residence, the space between facing doors felt distinctly tight and constrained.",
+        "Original construction blueprints for the brownstone showed minimal horizontal clearance between private quarters."
+      ],
+      "target_context_test": [
+        "Late on Sunday evening, the municipal office complex was completely deserted without a person in sight.",
+        "Following the decommissioning process, all furniture and personnel had been removed from the institutional facility.",
+        "The regional courthouse stood completely vacated during the holiday weekend, showing zero signs of life.",
+        "Every worker had clocked out for the night, leaving the institutional complex utterly deserted."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross combinations ('narrow hallway', 'narrow corridor', 'empty hallway', 'empty corridor') seamlessly complete the neutral stem across both domestic and institutional contexts without semantic clash or syntactic failure."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "quiet",
+      "target_modifier": "tiled",
+      "source_context_dev": [
+        "A heavy hush had fallen over the sleeping residential wing as everyone slept peacefully.",
+        "Plush carpeting and thick drywall absorbed every footstep, creating a calm, soundless ambiance inside the retreat.",
+        "The acoustic insulation in the luxury residence kept the interior atmosphere completely undisturbed and peaceful.",
+        "Late at night, absolute stillness enveloped the private domestic quarters of the manor."
+      ],
+      "target_context_dev": [
+        "The institutional building featured polished ceramic flooring that produced sharp, clicking echoes with every step.",
+        "Sanitary regulations required glazed porcelain surfaces across all interior walking surfaces in the clinic.",
+        "Gleaming ceramic slabs covered the expansive sub-levels of the transit center to simplify routine mopping.",
+        "The hospital wing was finished with hard, moisture-resistant ceramic paving for easy sanitation."
+      ],
+      "source_context_test": [
+        "Thick carpeting ensured that not a single whisper or footstep broke the peaceful nighttime silence.",
+        "The sanctuary quarters were designed specifically to prevent acoustic reverberation and maintain tranquil stillness.",
+        "Within the tranquil lodge, deep silence reigned uninterrupted as guests rested behind closed doors.",
+        "Specialized sound-dampening panels created an atmosphere of pure serene tranquility throughout the residential structure."
+      ],
+      "target_context_test": [
+        "Reflective ceramic squares had recently been grouted across the entire interior floor of the municipal wing.",
+        "Every floor of the modern laboratory was laid with polished ceramic slabs to resist chemical spills.",
+        "Hard ceramic squares extended from the entrance across the entire clinical wing, accentuating every footfall.",
+        "Sanitation teams had thoroughly waxed the gleaming ceramic flooring that spanned the institutional complex."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings ('quiet hallway', 'quiet corridor', 'tiled hallway', 'tiled corridor') remain fully plausible and felicitous following the fixed stem in both acoustic/residential and material/institutional settings."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "endless",
+      "target_modifier": "long",
+      "source_context_dev": [
+        "The massive subterranean labyrinth seemed to stretch into infinity, vanishing into the perspective horizon without limit.",
+        "Sightlines converged so far in the distance that the interior route appeared to continue indefinitely forever.",
+        "Traversing the gargantuan bunker felt like an infinite journey, with repeating doors that never seemed to terminate.",
+        "The visual repetition of identical arches created a surreal illusion of boundless, limitless extension."
+      ],
+      "target_context_dev": [
+        "The monumental museum wing measured over two hundred meters from one wing terminal to the other.",
+        "Connecting the east and west wings required a linear transit route stretching several hundred yards.",
+        "The blueprint called for an extended linear axis spanning the entire span of the airport terminal.",
+        "Constructed on an extended linear footprint, the new academic facility stretched a considerable distance."
+      ],
+      "source_context_test": [
+        "In the colossal underground vault, the vanishing point seemed impossibly distant, creating an illusion of infinite reach.",
+        "Architectural blueprints showed identical modular units repeating toward infinity without an apparent terminus.",
+        "Staring ahead, the perspective lines receded boundlessly into the dark with no visible end in sight.",
+        "The vast subterranean complex gave the distinct psychological impression of extending indefinitely forever."
+      ],
+      "target_context_test": [
+        "The sprawling administration center was planned along an extended horizontal axis measuring several hundred feet.",
+        "Reaching the far annex required traversing a considerable horizontal distance across the building layout.",
+        "The architectural design featured an extensive horizontal span running parallel to the main boulevard.",
+        "Surveyors noted that the central connecting route extended across the entire property footprint."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('endless hallway', 'endless corridor', 'long hallway', 'long corridor') are standard, idiomatic completions of the stem under both hyperbolic/infinite and objective linear distance contexts."
+    }
+  ]
+}

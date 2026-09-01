@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b12_21_sauce_dressing",
+    "generation_batch": 12,
+    "domain": "food and everyday consumables",
+    "family_id": "sauce_dressing",
+    "noun_0": "sauce",
+    "noun_1": "dressing",
+    "shared_definition": "a seasoned liquid or semi-solid accompaniment served with food",
+    "neutral_stem": "The chef drizzled over the salad",
+    "candidate_modifiers": [
+      "tangy",
+      "creamy",
+      "spicy",
+      "thick",
+      "sweet",
+      "sour",
+      "rich",
+      "garlic",
+      "chilled",
+      "warm",
+      "homemade",
+      "oily",
+      "smooth",
+      "tasty"
+    ],
+    "semantic_notes": "'Dressing' is primarily associated with cold salads, while 'sauce' is broader and covers hot, cooked, and savory culinary reductions.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        16510
+      ],
+      "noun_1": [
+        29387
+      ]
+    },
+    "modifier_token_ids": {
+      "tangy": [
+        177219
+      ],
+      "creamy": [
+        49981
+      ],
+      "spicy": [
+        44018
+      ],
+      "thick": [
+        7497
+      ],
+      "sweet": [
+        9380
+      ],
+      "sour": [
+        21049
+      ],
+      "rich": [
+        8326
+      ],
+      "garlic": [
+        29508
+      ],
+      "chilled": [
+        83659
+      ],
+      "warm": [
+        6962
+      ],
+      "homemade": [
+        31412
+      ],
+      "oily": [
+        71652
+      ],
+      "smooth": [
+        7080
+      ],
+      "tasty": [
+        29136
+      ]
+    },
+    "forced_projection_span": 0.08137129247188568,
+    "max_noun_pair_mass": 0.5433955192565918,
+    "context_priority_score": 0.04421679572534032,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "oily",
+        "target_modifier": "tangy",
+        "source_projection": 0.041296929121017456,
+        "target_projection": 0.04861218482255936,
+        "forced_modifier_leverage": 0.007315255701541901,
+        "source_pair_mass": 0.33209434151649475,
+        "target_pair_mass": 0.262296199798584
+      },
+      "medium": {
+        "source_modifier": "sweet",
+        "target_modifier": "sour",
+        "source_projection": -0.04288751631975174,
+        "target_projection": -0.0025049299001693726,
+        "forced_modifier_leverage": 0.04038258641958237,
+        "source_pair_mass": 0.11967804282903671,
+        "target_pair_mass": 0.01163318008184433
+      },
+      "high": {
+        "source_modifier": "homemade",
+        "target_modifier": "creamy",
+        "source_projection": 0.21999569237232208,
+        "target_projection": 0.30136698484420776,
+        "forced_modifier_leverage": 0.08137129247188568,
+        "source_pair_mass": 0.28886210918426514,
+        "target_pair_mass": 0.5433955192565918
+      }
+    },
+    "context_generation_rank": 95
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "oily",
+      "target_modifier": "tangy",
+      "source_context_dev": [
+        "The Mediterranean plate featured warm charred greens needing a glistening, lipid-rich coat. A sheen of pressed olives was essential to finish the dish.",
+        "To coat the hearty kale leaves evenly, a rich, fat-based liquid had been prepared in a copper pan. The prep cook brought it over to the plating station.",
+        "The rustic grain bowl required an unctuous, golden blend that would cling heavily to the roasted vegetables. Everything was ready for the final layer.",
+        "A slick, lipid-dense mixture was carefully stirred to provide maximum richness across the bitter chicory. The line cook handed over the prep bowl."
+      ],
+      "target_context_dev": [
+        "The bitter arugula needed an assertive, acidic punch from fresh lemons to awaken the palate. The prep station held several chilled bottles ready for service.",
+        "To enliven the crisp romaine hearts, the kitchen wanted a sharp, citrus-forward accent. The cold garnish station stood ready.",
+        "A bright, zesty liquid with fermented notes was selected to cut through the heavy goat cheese crumbles. The plate was set on the counter.",
+        "The vibrant summer greens required a brisk, sharp bite to complement the mild shaved fennel. The kitchen team watched the plating begin."
+      ],
+      "source_context_test": [
+        "The warm spinach bed called for a glossy, dense lipid drizzle to soften the wilted foliage. The bottle rested by the range.",
+        "Heavy, unctuous golden droplets were needed to balance the dry cracked wheat tossed in the bowl. The final step was at hand.",
+        "The roasted beet platter lacked a slippery, rich sheen to unite the earthy flavors. A fresh batch waited at the saut\u00e9 station.",
+        "To impart a full, viscous mouthfeel over the grilled endive, a lipid-forward blend was decanted into a glass cruet."
+      ],
+      "target_context_test": [
+        "A sharp, vinegar-steeped concoction was needed to slice through the rich avocado slices on the platter. The expeditor called for the order.",
+        "The delicate butter lettuce craved a bright, citrusy splash with a punchy kick. Service had just begun for the table.",
+        "To deliver an invigorating, tart zing across the shaved cabbage, a fresh shaker was brought from the walk-in. The plate waited under the heat lamp.",
+        "A pungent, acidic lift was chosen to invigorate the bowl of mild field greens. The final touch remained before sending it out."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (oily sauce, oily dressing, tangy sauce, tangy dressing) remain semantically and syntactically well-formed when appended to the neutral stem under every context. Contexts manipulate culinary register and flavor emphasis without asserting strict categorical constraints or mentioning any target nouns or modifiers."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "sweet",
+      "target_modifier": "sour",
+      "source_context_dev": [
+        "The spicy mustard greens were paired with candied pecans that needed a sugary, honeyed accent to round out the dish.",
+        "To complement the savory prosciutto and ripe figs, the kitchen crafted a nectarous, caramelized blend.",
+        "The bitter radicchio required a dessert-like, sugary balance to soften its sharp edge on the palate.",
+        "A rich maple-infused mixture was prepared to soften the pungent bite of the blue cheese crumbles."
+      ],
+      "target_context_dev": [
+        "The overly rich duck confit salad needed a harsh, tart bite to cut through the rendered poultry fat.",
+        "To balance the bland boiled potatoes and mild greens, a bracingly acidic, puckering accent was formulated.",
+        "A sharp, citrus-acid blend with fermented undertones was selected to give the earthy root vegetables a brisk shock.",
+        "The mild cabbage slaw lacked edge until the kitchen prepared a vinegar-heavy, tartly pungent batch."
+      ],
+      "source_context_test": [
+        "The sliced pear and gorgonzola arrangement called for a syrupy, candied glaze to tie the elements together.",
+        "To offset the salty cured bacon in the bowl, the kitchen provided an intensely sugary, berry-reduced blend.",
+        "A lush, honey-forward recipe was designed to bring a mellow, dessert-style finish to the shaved winter greens.",
+        "The pungent raw onions demanded a sugary counterbalance to make the crunchy bowl palatable."
+      ],
+      "target_context_test": [
+        "The fatty pork belly slices over watercress called for an intensely tart, puckering accent to clean the palate.",
+        "To wake up the flat taste of the steamed grains and greens, a mouth-puckering, acidic liquid was drawn from the pantry.",
+        "A brisk, pickled-brine concoction was measured out to puncture the heavy richness of the egg yolks.",
+        "The dense avocado salad desperately needed a sharp, puckery lift before leaving the kitchen line."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (sweet sauce, sweet dressing, sour sauce, sour dressing) remain grammatical and plausible accompaniments to a salad. The source context primes gustatory sweetness to balance savory or bitter elements, while the target context primes high-acid, tart elements to cut through richness."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "homemade",
+      "target_modifier": "creamy",
+      "source_context_dev": [
+        "Rather than relying on store-bought pantry bottles, the kitchen prepared an artisanal, small-batch batch from scratch this morning.",
+        "The recipe had been passed down through generations of family cooks who insisted on hand-crafting every culinary component in-house.",
+        "Emphasizing rustic, kitchen-crafted authenticity, the establishment avoided commercial premixes and blended fresh local ingredients daily.",
+        "Every single item in the dining room was concocted on the premises by culinary staff following traditional, handcrafted methods."
+      ],
+      "target_context_dev": [
+        "The crisp romaine spears called for a velvety, thick buttermilk-based emulsion that would cling smoothly to every leaf.",
+        "To provide a rich, dairy-infused thickness across the chopped vegetables, a whipped yogurt base was spooned up.",
+        "A luxurious, opaque white blend with a silk-like dairy consistency stood ready in a chilled gravy boat.",
+        "The dry shredded vegetables needed an unctuous, thick dairy-style coat to bind the entire slaw together."
+      ],
+      "source_context_test": [
+        "The farm-to-table bistro took pride in its labor-intensive, hand-crafted preparations made from raw ingredients on site.",
+        "Rejecting industrial shortcuts, the brigade spent hours slowly developing their own artisanal recipes in the prep kitchen.",
+        "The chalkboard menu proudly highlighted culinary recipes whipped up entirely from scratch by the kitchen staff that afternoon.",
+        "An authentic, handcrafted approach defined the bistro, where all pantry condiments were assembled by hand before lunch."
+      ],
+      "target_context_test": [
+        "A lush, dairy-rich emulsion with an ultra-smooth, velvety consistency was whipped in a copper bowl.",
+        "To coat the rough kale ribbons without running to the bottom of the bowl, a heavy, opaque velvet blend was chosen.",
+        "The bitter chicory needed a rich, buttermilk-thickened coat to soften its coarse texture.",
+        "A rich, silky dairy-emulsified condiment was drawn from the chiller to give the greens a smooth, decadent texture."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (homemade sauce, homemade dressing, creamy sauce, creamy dressing) represent natural culinary expressions over a salad. The source context primes provenance and scratch preparation, whereas the target context primes textural, dairy-rich rheology without introducing lexical leakage."
+    }
+  ]
+}

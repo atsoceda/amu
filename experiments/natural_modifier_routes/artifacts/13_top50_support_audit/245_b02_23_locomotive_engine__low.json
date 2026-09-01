@@ -1,0 +1,351 @@
+{
+  "valid_token_ids": [
+    861,
+    1689,
+    2080,
+    2455,
+    2563,
+    5830,
+    7186,
+    7274,
+    8103,
+    8603,
+    8632,
+    12566,
+    16784,
+    24663,
+    26188,
+    33923,
+    45478,
+    82703,
+    108347,
+    112072,
+    129245,
+    144294
+  ],
+  "rejected": [
+    {
+      "token_id": 603,
+      "reason": "single letter identifier not naturally modifying both nouns"
+    },
+    {
+      "token_id": 622,
+      "reason": "single letter identifier not naturally modifying both nouns"
+    },
+    {
+      "token_id": 633,
+      "reason": "single letter identifier not naturally modifying both nouns"
+    },
+    {
+      "token_id": 1156,
+      "reason": "plural number modifying singular noun"
+    },
+    {
+      "token_id": 1171,
+      "reason": "ordinal number not naturally supported across single-unit contexts"
+    },
+    {
+      "token_id": 1295,
+      "reason": "noun forming unnatural compound with locomotive and engine"
+    },
+    {
+      "token_id": 1346,
+      "reason": "adverb or superlative marker requiring an adjective"
+    },
+    {
+      "token_id": 1401,
+      "reason": "adverb modifying an adjective rather than a noun directly"
+    },
+    {
+      "token_id": 1440,
+      "reason": "unnatural attributive descriptor for a locomotive vehicle"
+    },
+    {
+      "token_id": 1494,
+      "reason": "unnatural attributive descriptor for a locomotive vehicle"
+    },
+    {
+      "token_id": 1774,
+      "reason": "ordinal contradicting single or primary unit contexts"
+    },
+    {
+      "token_id": 1806,
+      "reason": "plural number modifying singular noun"
+    },
+    {
+      "token_id": 1822,
+      "reason": "archaic or unnatural modifier for railway traction units"
+    },
+    {
+      "token_id": 1903,
+      "reason": "noun or preposition forming unnatural modifier in this position"
+    },
+    {
+      "token_id": 2066,
+      "reason": "noun forming redundant or unnatural compound modifier"
+    },
+    {
+      "token_id": 2228,
+      "reason": "noun not functioning as a standard single-word adjective here"
+    },
+    {
+      "token_id": 2255,
+      "reason": "contradicts contexts describing newly arrived equipment"
+    },
+    {
+      "token_id": 2263,
+      "reason": "contradicts contexts describing long-haul and cross-country service"
+    },
+    {
+      "token_id": 2301,
+      "reason": "abbreviation or negative particle not an attributive adjective"
+    },
+    {
+      "token_id": 2390,
+      "reason": "plural number modifying singular noun"
+    },
+    {
+      "token_id": 2519,
+      "reason": "redundant noun modifier for locomotive/engine"
+    },
+    {
+      "token_id": 2604,
+      "reason": "unsupported arbitrary color modifier"
+    },
+    {
+      "token_id": 2803,
+      "reason": "vague modifier lacking natural domain usage here"
+    },
+    {
+      "token_id": 2822,
+      "reason": "contradicts immense size and long-haul tonnage contexts"
+    },
+    {
+      "token_id": 3161,
+      "reason": "unnatural quantifier placement after definite article"
+    },
+    {
+      "token_id": 3673,
+      "reason": "noun not forming a standard single-word modifier for both nouns"
+    },
+    {
+      "token_id": 3821,
+      "reason": "contradicts freight and heavy ore contexts"
+    },
+    {
+      "token_id": 3958,
+      "reason": "noun repeating the target noun or forming redundant compound"
+    },
+    {
+      "token_id": 3972,
+      "reason": "unnatural modifier for a single locomotive vehicle"
+    },
+    {
+      "token_id": 4077,
+      "reason": "contradicts contexts describing extraordinary record-breaking size"
+    },
+    {
+      "token_id": 4360,
+      "reason": "noun forming unnatural modifier for locomotive/engine"
+    },
+    {
+      "token_id": 4446,
+      "reason": "unnatural noun modifier compared to diesel/petroleum"
+    },
+    {
+      "token_id": 5464,
+      "reason": "noun forming unnatural compound modifier"
+    },
+    {
+      "token_id": 5569,
+      "reason": "adverb modifying a verb rather than an attributive adjective"
+    },
+    {
+      "token_id": 5898,
+      "reason": "contradicts petroleum and internal combustion contexts"
+    },
+    {
+      "token_id": 6049,
+      "reason": "contradicts stationary pre-departure and inspection contexts"
+    },
+    {
+      "token_id": 6524,
+      "reason": "superlative lacking comparative context across all prompts"
+    },
+    {
+      "token_id": 6648,
+      "reason": "unnatural descriptor for a locomotive or engine"
+    },
+    {
+      "token_id": 6679,
+      "reason": "noun requiring classification number/letter"
+    },
+    {
+      "token_id": 7488,
+      "reason": "superlative lacking universal comparative support"
+    },
+    {
+      "token_id": 7611,
+      "reason": "noun forming unnatural compound modifier"
+    },
+    {
+      "token_id": 7738,
+      "reason": "unnatural descriptor for a locomotive power unit"
+    },
+    {
+      "token_id": 9459,
+      "reason": "redundant noun modifier in this context"
+    },
+    {
+      "token_id": 9685,
+      "reason": "noun referring to undercarriage or distinct vehicle type"
+    },
+    {
+      "token_id": 10886,
+      "reason": "steam locomotive specific term contradicting internal combustion contexts"
+    },
+    {
+      "token_id": 11285,
+      "reason": "contradicts contexts describing newly arrived modern equipment"
+    },
+    {
+      "token_id": 11559,
+      "reason": "contradicts petroleum fuel and internal combustion contexts"
+    },
+    {
+      "token_id": 12019,
+      "reason": "contradicts towering superstructure and heavy tonnage contexts"
+    },
+    {
+      "token_id": 12754,
+      "reason": "unnatural position modifier for standard engineer cab entry"
+    },
+    {
+      "token_id": 13379,
+      "reason": "contradicts petroleum fuel and internal combustion contexts"
+    },
+    {
+      "token_id": 15152,
+      "reason": "adverb unable to modify noun directly"
+    },
+    {
+      "token_id": 15808,
+      "reason": "descriptor applicable to freight cars rather than locomotives"
+    },
+    {
+      "token_id": 17110,
+      "reason": "contradicts contexts describing newly arrived equipment"
+    },
+    {
+      "token_id": 19042,
+      "reason": "noun forming ungrammatical compound with target nouns"
+    },
+    {
+      "token_id": 19519,
+      "reason": "participle forming unnatural modifier for locomotive/engine"
+    },
+    {
+      "token_id": 20933,
+      "reason": "descriptor applicable to cars rather than pulling units"
+    },
+    {
+      "token_id": 20985,
+      "reason": "contradicts freight and ore hauling contexts"
+    },
+    {
+      "token_id": 21071,
+      "reason": "redundant modifier following railroad engineer"
+    },
+    {
+      "token_id": 21870,
+      "reason": "steam terminology inapplicable across contexts"
+    },
+    {
+      "token_id": 26780,
+      "reason": "redundant modifier following railroad engineer"
+    },
+    {
+      "token_id": 27133,
+      "reason": "specific manufacturer acronym unsupported across all contexts"
+    },
+    {
+      "token_id": 27321,
+      "reason": "noun used colloquially rather than standard attributive adjective"
+    },
+    {
+      "token_id": 27379,
+      "reason": "specific locomotive model acronym unsupported across all contexts"
+    },
+    {
+      "token_id": 28962,
+      "reason": "contradicts self-propelled rail vehicle definition"
+    },
+    {
+      "token_id": 29962,
+      "reason": "superlative lacking universal comparative support"
+    },
+    {
+      "token_id": 41954,
+      "reason": "refers to steam road tractors when modifying engine"
+    },
+    {
+      "token_id": 42239,
+      "reason": "noun unable to act as standard attributive modifier"
+    },
+    {
+      "token_id": 42578,
+      "reason": "incomplete word fragment"
+    },
+    {
+      "token_id": 45330,
+      "reason": "contradicts lead cab entry contexts"
+    },
+    {
+      "token_id": 83284,
+      "reason": "target noun repeating identically or unnaturally"
+    },
+    {
+      "token_id": 89371,
+      "reason": "specific mechanical design unsupported across all contexts"
+    },
+    {
+      "token_id": 117307,
+      "reason": "contradicts stationary inspection and preparation contexts"
+    },
+    {
+      "token_id": 118046,
+      "reason": "contradicts idling and cold pre-departure states"
+    },
+    {
+      "token_id": 119944,
+      "reason": "freight car type rather than locomotive modifier"
+    },
+    {
+      "token_id": 120327,
+      "reason": "plural noun modifying singular noun"
+    },
+    {
+      "token_id": 169139,
+      "reason": "yard switching engine contradicts long-haul mountain service"
+    },
+    {
+      "token_id": 185519,
+      "reason": "directional adjective not supported across all contexts"
+    },
+    {
+      "token_id": 190266,
+      "reason": "incomplete word fragment"
+    },
+    {
+      "token_id": 229771,
+      "reason": "directional adjective not supported across all contexts"
+    },
+    {
+      "token_id": 232604,
+      "reason": "directional adjective not supported across all contexts"
+    }
+  ],
+  "candidate_id": "b02_23_locomotive_engine",
+  "regime": "low",
+  "candidate_token_count": 102
+}

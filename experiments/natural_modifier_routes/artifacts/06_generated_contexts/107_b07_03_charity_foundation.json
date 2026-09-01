@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b07_03_charity_foundation",
+    "generation_batch": 7,
+    "domain": "institutions and organizations",
+    "family_id": "charity_foundation",
+    "noun_0": "charity",
+    "noun_1": "foundation",
+    "shared_definition": "a non-profit organization established to provide humanitarian or financial support for public benefit",
+    "neutral_stem": "Generous benefactors donated substantial funds to",
+    "candidate_modifiers": [
+      "established",
+      "family",
+      "generous",
+      "global",
+      "independent",
+      "local",
+      "major",
+      "notable",
+      "philanthropic",
+      "prestigious",
+      "private",
+      "registered",
+      "secular",
+      "struggling",
+      "wealthy"
+    ],
+    "semantic_notes": "'Charity' stresses active relief work and public donation solicitation, whereas 'foundation' implies an endowment-backed grant-making entity.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        21811
+      ],
+      "noun_1": [
+        13916
+      ]
+    },
+    "modifier_token_ids": {
+      "established": [
+        6697
+      ],
+      "family": [
+        2523
+      ],
+      "generous": [
+        27128
+      ],
+      "global": [
+        4185
+      ],
+      "independent": [
+        6829
+      ],
+      "local": [
+        2263
+      ],
+      "major": [
+        3262
+      ],
+      "notable": [
+        24786
+      ],
+      "philanthropic": [
+        115133
+      ],
+      "prestigious": [
+        38624
+      ],
+      "private": [
+        2147
+      ],
+      "registered": [
+        12314
+      ],
+      "secular": [
+        47181
+      ],
+      "struggling": [
+        22684
+      ],
+      "wealthy": [
+        40214
+      ]
+    },
+    "forced_projection_span": 0.042524429038167,
+    "max_noun_pair_mass": 0.8337203860282898,
+    "context_priority_score": 0.03545348339333321,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "private",
+        "target_modifier": "wealthy",
+        "source_projection": 0.002947721630334854,
+        "target_projection": 0.0068705156445503235,
+        "forced_modifier_leverage": 0.003922794014215469,
+        "source_pair_mass": 0.047224950045347214,
+        "target_pair_mass": 0.055250100791454315
+      },
+      "medium": {
+        "source_modifier": "prestigious",
+        "target_modifier": "wealthy",
+        "source_projection": -0.015393020585179329,
+        "target_projection": 0.0068705156445503235,
+        "forced_modifier_leverage": 0.022263536229729652,
+        "source_pair_mass": 0.035209089517593384,
+        "target_pair_mass": 0.055250100791454315
+      },
+      "high": {
+        "source_modifier": "family",
+        "target_modifier": "philanthropic",
+        "source_projection": 0.00980398990213871,
+        "target_projection": 0.05232841894030571,
+        "forced_modifier_leverage": 0.042524429038167,
+        "source_pair_mass": 0.03238743543624878,
+        "target_pair_mass": 0.07608194649219513
+      }
+    },
+    "context_generation_rank": 108
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "private",
+      "target_modifier": "wealthy",
+      "source_context_dev": [
+        "Local civic groups wanted to ensure direct community aid remained free from bureaucratic government oversight.",
+        "Several discreet individuals sought an independent mechanism to channel assistance directly to those in need.",
+        "A quiet grassroots initiative was launched away from public view to support underprivileged neighborhoods.",
+        "Organizers preferred a self-funded model to quickly distribute urgent relief without state intervention."
+      ],
+      "target_context_dev": [
+        "Multi-million-dollar investment portfolios were recently liquidated to capitalize a massive grant-making trust.",
+        "Billionaire tech executives gathered to establish an enormous trust capable of issuing large annual grants.",
+        "Substantial fortunes accumulated during the industrial boom were channeled into a massively funded endowment.",
+        "High-net-worth syndicates pooled their vast capital reserves to finance long-term global health research."
+      ],
+      "source_context_test": [
+        "Rather than relying on municipal programs, local activists established a discreet entity to assist struggling families.",
+        "Independent benefactors aimed to bypass slow public channels by distributing aid on their own terms.",
+        "Concerned citizens worked outside official channels to establish an autonomous support vehicle for local causes.",
+        "A closed circle of donors sought to finance urgent community outreach through non-governmental channels."
+      ],
+      "target_context_test": [
+        "Vast financial assets from a major corporate merger were dedicated to establishing an amply funded global trust.",
+        "An elite circle of venture capitalists committed tens of millions of dollars to seed an expansive grant-giving vehicle.",
+        "Massive estates from several historic dynasties were consolidated into a well-capitalized funding institution.",
+        "Billionaires from around the world pledged huge portions of their net worth to a well-resourced trust."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (private charity, private foundation, wealthy charity, wealthy foundation) are natural and plausible completions for the fixed stem under every context condition."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "prestigious",
+      "target_modifier": "wealthy",
+      "source_context_dev": [
+        "The city honored an internationally acclaimed non-profit known for its Nobel-recognized humanitarian missions.",
+        "An illustrious humanitarian institution with royal patronage celebrated a century of internationally recognized outreach.",
+        "Widely celebrated for exemplary ethical standards, the venerable institution received top global accolades for service.",
+        "The globally recognized non-governmental organization maintained a legendary standing among international relief agencies."
+      ],
+      "target_context_dev": [
+        "A consortium of billionaire investors liquidated substantial real estate portfolios to maximize total financial capital.",
+        "Vast investment windfalls allowed the board to assemble an unprecedented multimillion-dollar cash reserve.",
+        "Heirs to massive tech fortunes pooled billions in liquid assets into an expansive financial trust.",
+        "Enormous capital yields from energy markets were redirected toward an exceptionally well-capitalized trust."
+      ],
+      "source_context_test": [
+        "Decorated with numerous international honors, the historic humanitarian body maintained exceptional standing in global diplomacy.",
+        "The esteemed humanitarian initiative had earned glowing accolades from world leaders across several decades.",
+        "Renowned worldwide for its exemplary field operations, the celebrated organization set the gold standard for disaster relief.",
+        "The prominent institution's century-long record of elite humanitarian service earned it profound international acclaim."
+      ],
+      "target_context_test": [
+        "Venture capitalists consolidated massive market dividends into a giant asset pool dedicated to funding medical innovations.",
+        "The institutional trust maintained massive reserves running into billions, towering over ordinary non-profits.",
+        "Substantial windfall profits from international trade were deposited directly into a deep-pocketed funding trust.",
+        "High-net-worth tycoons funneled billions in stock dividends into a massively funded institutional trust."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (prestigious charity, prestigious foundation, wealthy charity, wealthy foundation) satisfy standard English collocational patterns and fit smoothly following the fixed stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "family",
+      "target_modifier": "philanthropic",
+      "source_context_dev": [
+        "Parents, children, and grandchildren gathered to continue their ancestral tradition of helping struggling communities.",
+        "Three generations of siblings and cousins united their personal inheritances to launch a homegrown aid initiative.",
+        "Honoring their late patriarch's heartfelt wishes, the descendants established a grassroots community fund.",
+        "The close-knit household pooled their shared estate to directly support struggling neighbors in their hometown."
+      ],
+      "target_context_dev": [
+        "Guided by a commitment to human welfare and social progress, the organization sought to eradicate systemic poverty.",
+        "The board designed long-term systemic programs focused entirely on promoting the universal welfare of mankind.",
+        "Devoted strictly to civic uplift and human flourishing, the grant-making institution launched nationwide educational initiatives.",
+        "Driven by high-minded humanitarian ideals, the directors crafted an agenda centered around large-scale altruistic interventions."
+      ],
+      "source_context_test": [
+        "Passed down across multiple generations, the ancestral trust was maintained by surviving relatives to aid local causes.",
+        "Sons and daughters carried forward their parents' lifelong commitment to community service through a dedicated fund.",
+        "A lineage of civic-minded relatives pooled their collective inheritances to support vulnerable regional populations.",
+        "To honor their shared maternal lineage, the siblings created a grassroots vehicle to fund neighborhood improvements."
+      ],
+      "target_context_test": [
+        "Dedicated to advancing universal human welfare, the institution instituted broad structural reforms across developing regions.",
+        "Strategic grants were distributed to tackle root causes of societal inequality in alignment with high humanitarian ideals.",
+        "The institution's charter prioritized systematic societal advancement and the general promotion of human welfare.",
+        "Focused on macroscopic social advancement, the advisory council funded comprehensive programs for societal welfare."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (family charity, family foundation, philanthropic charity, philanthropic foundation) remain fully grammatical and semantically felicitous across all source and target contexts."
+    }
+  ]
+}

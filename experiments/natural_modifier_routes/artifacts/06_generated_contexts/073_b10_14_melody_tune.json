@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b10_14_melody_tune",
+    "generation_batch": 10,
+    "domain": "media and creative works",
+    "family_id": "melody_tune",
+    "noun_0": "melody",
+    "noun_1": "tune",
+    "shared_definition": "a sequence of musical notes forming a recognizable musical theme",
+    "neutral_stem": "The composer hummed",
+    "candidate_modifiers": [
+      "catchy",
+      "haunting",
+      "simple",
+      "familiar",
+      "sweet",
+      "cheerful",
+      "distinctive",
+      "lively",
+      "evocative",
+      "unforgettable",
+      "melancholy",
+      "soothing",
+      "enchanting"
+    ],
+    "semantic_notes": "'Melody' is the formal musical term, whereas 'tune' is colloquial and frequently associated with popular or light music.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        59155
+      ],
+      "noun_1": [
+        27224
+      ]
+    },
+    "modifier_token_ids": {
+      "catchy": [
+        108066
+      ],
+      "haunting": [
+        103210
+      ],
+      "simple": [
+        3606
+      ],
+      "familiar": [
+        10334
+      ],
+      "sweet": [
+        9380
+      ],
+      "cheerful": [
+        46554
+      ],
+      "distinctive": [
+        29039
+      ],
+      "lively": [
+        45489
+      ],
+      "evocative": [
+        164840
+      ],
+      "unforgettable": [
+        58931
+      ],
+      "melancholy": [
+        103409
+      ],
+      "soothing": [
+        65598
+      ],
+      "enchanting": [
+        113428
+      ]
+    },
+    "forced_projection_span": 0.074894979596138,
+    "max_noun_pair_mass": 0.7961366176605225,
+    "context_priority_score": 0.05962663573542315,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "simple",
+        "target_modifier": "soothing",
+        "source_projection": -0.19120842218399048,
+        "target_projection": -0.19069823622703552,
+        "forced_modifier_leverage": 0.0005101859569549561,
+        "source_pair_mass": 0.7807018160820007,
+        "target_pair_mass": 0.6299706697463989
+      },
+      "medium": {
+        "source_modifier": "melancholy",
+        "target_modifier": "simple",
+        "source_projection": -0.23094522953033447,
+        "target_projection": -0.19120842218399048,
+        "forced_modifier_leverage": 0.039736807346343994,
+        "source_pair_mass": 0.6444550156593323,
+        "target_pair_mass": 0.7807018160820007
+      },
+      "high": {
+        "source_modifier": "cheerful",
+        "target_modifier": "catchy",
+        "source_projection": 0.20012430846691132,
+        "target_projection": 0.2750192880630493,
+        "forced_modifier_leverage": 0.074894979596138,
+        "source_pair_mass": 0.6611096262931824,
+        "target_pair_mass": 0.7674441337585449
+      }
+    },
+    "context_generation_rank": 74
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "simple",
+      "target_modifier": "soothing",
+      "source_context_dev": [
+        "Sitting by the piano, she stripped away all orchestral layers to inspect the basic musical motif.",
+        "The workshop required reducing the composition down to its most basic, unadorned acoustic phrase.",
+        "Before adding intricate harmonies, the artist wanted to isolate the foundational acoustic phrase.",
+        "He set aside the complex counterpoint to focus purely on the unadorned musical line."
+      ],
+      "target_context_dev": [
+        "The restless infant in the nursery needed something gentle to help drift off into peaceful sleep.",
+        "After a grueling day at the studio, she looked for a comforting sound that would ease her mind.",
+        "The evening air was calm, and she wanted a gentle phrase to help her relax on the porch.",
+        "To help relieve tension in the quiet room, he looked for a gentle, calming arrangement."
+      ],
+      "source_context_test": [
+        "Looking at the blank score, she sought an unadorned phrase with zero unnecessary embellishments.",
+        "The beginner's handbook emphasized starting every piece with an uncomplicated musical phrase.",
+        "Rather than layering heavy chords, he searched for an unembellished sequence of individual notes.",
+        "She reduced the elaborate score back down to its fundamental, unvarnished acoustic phrase."
+      ],
+      "target_context_test": [
+        "The bedtime routine called for an exceptionally gentle piece to quiet the anxious toddler.",
+        "Seeking tranquility after hours of noise, she wanted an auditory balm to restore inner quiet.",
+        "He softened the piano dampers to produce a tranquil sound capable of inducing deep rest.",
+        "To unwind after a stressful rehearsal, she reached for warm, comforting musical ideas."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (simple melody, simple tune, soothing melody, soothing tune) remain grammatically and semantically coherent after 'The composer hummed the' across all contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "melancholy",
+      "target_modifier": "simple",
+      "source_context_dev": [
+        "Outside the window, a cold rain fell while memories of old heartbreak resurfaced in her thoughts.",
+        "The mournful scene in the script called for music steeped in deep sorrow and longing.",
+        "Overcome with quiet grief, he sat alone in the dim studio reflecting on what was lost.",
+        "The theatrical scene depicted an unbearable loss, requiring music laden with sorrow."
+      ],
+      "target_context_dev": [
+        "Walking down the gravel path, he wanted a casual, uncomplicated phrase he could whistle effortlessly.",
+        "The folk singer preferred an unpretentious acoustic phrase that anyone could easily pick up.",
+        "Stripping away the heavy orchestration, she looked for an unadorned line suitable for a campfire.",
+        "The street performer aimed for an easy, accessible phrase that passersby could immediately grasp."
+      ],
+      "source_context_test": [
+        "The tragic play ended in heartbreak, prompting a somber auditory tribute to lost love.",
+        "Gray skies and nostalgic regret filled the afternoon with an inescapable sense of longing.",
+        "Remembering a departed companion, she wanted the notes to evoke deep sentimental sorrow.",
+        "He stared at the faded black-and-white photograph, filled with lingering sadness."
+      ],
+      "target_context_test": [
+        "She wanted a basic acoustic line with minimal flourishes for the village gathering.",
+        "Looking for something unpretentious, he crafted an uncomplicated phrase to play on a wooden pipe.",
+        "The classroom exercise focused on basic, unadorned phrases that children could reproduce.",
+        "Rather than drafting a dense score, he aimed for a neat, accessible musical phrase for casual listening."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (melancholy melody, melancholy tune, simple melody, simple tune) are natural musical descriptions that seamlessly fit each context."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "cheerful",
+      "target_modifier": "catchy",
+      "source_context_dev": [
+        "Morning sunlight flooded the breakfast nook, filling the air with lively joy and celebration.",
+        "The opening festival scene required bright, festive music filled with genuine happiness.",
+        "Surrounded by playful children in the sunny park, he felt an immediate wave of upbeat delight.",
+        "She was brimming with good news and wanted to express pure, radiant joy."
+      ],
+      "target_context_dev": [
+        "The commercial jingle needed an irresistible pop hook that consumers would never forget.",
+        "Hoping for a massive radio hit, the producer insisted on a memorable hook that stuck in listeners' heads.",
+        "The advertising agency requested an infectious earworm that would instantly grab public attention.",
+        "She aimed to write an unforgettable pop hook that would linger in people's minds all day."
+      ],
+      "source_context_test": [
+        "A bright spring morning inspired a burst of radiant, positive energy.",
+        "The holiday celebration called for an upbeat, ecstatic piece that would spark smiles.",
+        "Feeling jubilant after receiving wonderful news, he leaned toward an upbeat musical expression.",
+        "The animated comedy required an uplifting, joyous musical passage for the sunny finale."
+      ],
+      "target_context_test": [
+        "The radio station wanted an infectious audio hook that would stick effortlessly in listeners' memory.",
+        "Seeking high engagement, the video game developer needed a recurring motif that refused to leave one's head.",
+        "The pop producer searched for a sticky, unforgettable hook to anchor the summer anthem.",
+        "To guarantee broadcast success, the studio demanded an infectious hook that listeners would constantly repeat."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (cheerful melody, cheerful tune, catchy melody, catchy tune) are fully plausible musical collocations following the stem in both celebratory and commercial pop contexts."
+    }
+  ]
+}

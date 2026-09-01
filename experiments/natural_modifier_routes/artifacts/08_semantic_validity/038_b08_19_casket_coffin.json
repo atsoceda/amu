@@ -1,0 +1,36 @@
+{
+  "candidate_id": "casket_coffin",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All combinations of modifier and noun are fully grammatical and felicitous across contexts without candidate lexical leakage or truth-conditional violations."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test[1]"
+      ],
+      "failure_reasons": [
+        "Context mentions the target modifier 'polished' directly ('polished marble floor')."
+      ],
+      "concise_notes": "Fails due to verbatim candidate modifier leakage ('polished') in target_context_test[1]."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test[1]",
+        "target_context_test[3]"
+      ],
+      "failure_reasons": [
+        "Context source_context_test[1] mentions the source modifier 'ceremonial' directly ('ceremonial escort').",
+        "Context target_context_test[3] mentions the target modifier 'wooden' directly ('wooden dowels')."
+      ],
+      "concise_notes": "Fails due to verbatim candidate modifier leakage in both test sets ('ceremonial' in source_context_test[1] and 'wooden' in target_context_test[3])."
+    }
+  ]
+}

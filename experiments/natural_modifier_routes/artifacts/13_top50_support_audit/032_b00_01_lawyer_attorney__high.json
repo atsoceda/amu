@@ -1,0 +1,377 @@
+{
+  "valid_token_ids": [
+    2147,
+    2263,
+    6829,
+    7464,
+    7647,
+    9949,
+    11356,
+    19295,
+    25603,
+    26902,
+    35610,
+    45987
+  ],
+  "rejected": [
+    {
+      "token_id": 528,
+      "reason": "preposition"
+    },
+    {
+      "token_id": 1032,
+      "reason": "requires comparative context not present across all prompts"
+    },
+    {
+      "token_id": 1186,
+      "reason": "determiner/adverb"
+    },
+    {
+      "token_id": 1237,
+      "reason": "contradicts source contexts specifying private legal counsel"
+    },
+    {
+      "token_id": 1589,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 1624,
+      "reason": "unnatural noun modifier in this position"
+    },
+    {
+      "token_id": 1791,
+      "reason": "evaluative superlative not naturally fitting all contexts"
+    },
+    {
+      "token_id": 1883,
+      "reason": "contradicts defense representation contexts"
+    },
+    {
+      "token_id": 1960,
+      "reason": "contradicts criminal defense contexts"
+    },
+    {
+      "token_id": 2228,
+      "reason": "unidiomatic modifier for lawyer/attorney"
+    },
+    {
+      "token_id": 2434,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 2523,
+      "reason": "contradicts corporate litigation context"
+    },
+    {
+      "token_id": 2544,
+      "reason": "contradicts individual and family client contexts"
+    },
+    {
+      "token_id": 2621,
+      "reason": "redundant noun modifier"
+    },
+    {
+      "token_id": 3251,
+      "reason": "contradicts private and criminal defense contexts"
+    },
+    {
+      "token_id": 3577,
+      "reason": "contradicts corporate litigation context"
+    },
+    {
+      "token_id": 3662,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 4054,
+      "reason": "implies court-appointed status contradicting private agreement contexts"
+    },
+    {
+      "token_id": 4258,
+      "reason": "unidiomatic noun modifier compared to participial form"
+    },
+    {
+      "token_id": 4408,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 4430,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 4698,
+      "reason": "contradicts private retainer contexts of individual clients"
+    },
+    {
+      "token_id": 4782,
+      "reason": "unnatural modifier for individual criminal defense contexts"
+    },
+    {
+      "token_id": 5589,
+      "reason": "contradicts criminal defendant context"
+    },
+    {
+      "token_id": 5707,
+      "reason": "redundant modifier with professional legal titles"
+    },
+    {
+      "token_id": 5762,
+      "reason": "capitalized noun"
+    },
+    {
+      "token_id": 6218,
+      "reason": "unnatural noun modifier"
+    },
+    {
+      "token_id": 6369,
+      "reason": "redundant modifier with lawyer/attorney"
+    },
+    {
+      "token_id": 7616,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 7710,
+      "reason": "unnatural modifier for attorney/lawyer"
+    },
+    {
+      "token_id": 8219,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 8657,
+      "reason": "contradicts criminal and corporate contexts"
+    },
+    {
+      "token_id": 8726,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 8883,
+      "reason": "contradicts criminal defendant contexts"
+    },
+    {
+      "token_id": 9092,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 10021,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 10035,
+      "reason": "word fragment"
+    },
+    {
+      "token_id": 10344,
+      "reason": "unidiomatic modifier for lawyer/attorney"
+    },
+    {
+      "token_id": 11434,
+      "reason": "contradicts corporate civil litigation context"
+    },
+    {
+      "token_id": 11961,
+      "reason": "contradicts individual criminal defense contexts"
+    },
+    {
+      "token_id": 12011,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 12153,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 13720,
+      "reason": "contradicts source contexts specifying privately retained counsel"
+    },
+    {
+      "token_id": 13784,
+      "reason": "redundant noun"
+    },
+    {
+      "token_id": 13857,
+      "reason": "contradicts source contexts specifying privately retained counsel"
+    },
+    {
+      "token_id": 14230,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 14441,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 15152,
+      "reason": "adverb"
+    },
+    {
+      "token_id": 15603,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 15646,
+      "reason": "redundant noun"
+    },
+    {
+      "token_id": 16326,
+      "reason": "noun modifier unidiomatic in this context"
+    },
+    {
+      "token_id": 17396,
+      "reason": "contradicts meaning of consulting legal representative"
+    },
+    {
+      "token_id": 18957,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 19278,
+      "reason": "unidiomatic modifier for legal counsel"
+    },
+    {
+      "token_id": 20086,
+      "reason": "redundant noun"
+    },
+    {
+      "token_id": 21844,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 22997,
+      "reason": "capitalized noun"
+    },
+    {
+      "token_id": 25267,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 25940,
+      "reason": "adverb"
+    },
+    {
+      "token_id": 28266,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 28425,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 28767,
+      "reason": "word fragment"
+    },
+    {
+      "token_id": 28820,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 29226,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 31421,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 32096,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 32362,
+      "reason": "contradicts defense client consulting their own counsel"
+    },
+    {
+      "token_id": 32371,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 33199,
+      "reason": "word fragment"
+    },
+    {
+      "token_id": 34915,
+      "reason": "adverb"
+    },
+    {
+      "token_id": 36427,
+      "reason": "plural noun"
+    },
+    {
+      "token_id": 39031,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 41895,
+      "reason": "contradicts client consulting their own legal representation"
+    },
+    {
+      "token_id": 45656,
+      "reason": "contradicts defense client consulting their own counsel"
+    },
+    {
+      "token_id": 47004,
+      "reason": "adverb"
+    },
+    {
+      "token_id": 53088,
+      "reason": "unidiomatic participle modifier"
+    },
+    {
+      "token_id": 63493,
+      "reason": "unidiomatic adjective for modifying lawyer/attorney"
+    },
+    {
+      "token_id": 68065,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 70095,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 72467,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 83759,
+      "reason": "unidiomatic noun modifier for lawyer/attorney"
+    },
+    {
+      "token_id": 88962,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 92759,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 101185,
+      "reason": "contradicts defense client consulting their own counsel"
+    },
+    {
+      "token_id": 110287,
+      "reason": "modifies judges rather than lawyers/attorneys"
+    },
+    {
+      "token_id": 148360,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 158984,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 163843,
+      "reason": "noun that cannot grammatically modify target nouns"
+    },
+    {
+      "token_id": 195445,
+      "reason": "noun that cannot grammatically modify target nouns"
+    }
+  ],
+  "candidate_id": "b00_01_lawyer_attorney",
+  "regime": "high",
+  "candidate_token_count": 101
+}

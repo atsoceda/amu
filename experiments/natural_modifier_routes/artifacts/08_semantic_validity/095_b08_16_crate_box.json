@@ -1,0 +1,26 @@
+{
+  "candidate_id": "crate_box_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four cross-combinations ('unopened crate', 'unopened box', 'large crate', 'large box') are natural and semantically well-formed. Contexts establish pragmatic preference without enforcing strict truth-conditional constraints or leaking target lexical items."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four cross-combinations ('stacked crate', 'stacked box', 'packed crate', 'packed box') are fully plausible and grammatical warehouse completions. Contexts steer pragmatic preference cleanly without mentioning candidate terms."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four completions ('sealed crate', 'sealed box', 'cardboard crate', 'cardboard box') are semantically valid and compatible with the stem. Pragmatic bias is cleanly induced by material and closure descriptions without directly naming candidate lexical items."
+    }
+  ]
+}

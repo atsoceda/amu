@@ -1,0 +1,32 @@
+{
+  "candidate_id": "conference_symposium_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 modifier-noun combinations are fully grammatical, natural, and semantically plausible across all 16 contexts without lexical leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations remain valid and natural across all contexts. Contexts modulate pragmatic focus without explicit modifier/noun leakage."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_test[1]",
+        "target_context_test[0]"
+      ],
+      "failure_reasons": [
+        "Direct lexical leakage: source_context_test[1] contains the exact source modifier 'specialized' ('specialized mathematical modeling').",
+        "Direct lexical leakage: target_context_test[0] contains the exact target modifier 'formal' ('formal etiquette')."
+      ],
+      "concise_notes": "Fails due to exact target/source modifier word leakage in source_context_test[1] and target_context_test[0]."
+    }
+  ]
+}

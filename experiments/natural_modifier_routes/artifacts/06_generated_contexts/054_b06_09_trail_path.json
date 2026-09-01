@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b06_09_trail_path",
+    "generation_batch": 6,
+    "domain": "locations and geographic features",
+    "family_id": "trail_path",
+    "noun_0": "trail",
+    "noun_1": "path",
+    "shared_definition": "a route or track marked out through a wild or natural area for traveling by foot",
+    "neutral_stem": "We decided to follow the signs along the",
+    "candidate_modifiers": [
+      "winding",
+      "narrow",
+      "rocky",
+      "steep",
+      "dusty",
+      "muddy",
+      "rough",
+      "paved",
+      "marked",
+      "beaten",
+      "shaded",
+      "familiar",
+      "rugged",
+      "scenic",
+      "deserted"
+    ],
+    "semantic_notes": "'Trail' is frequently used for wilderness, hiking, or backcountry tracks, whereas 'path' is more general and fits domestic, garden, or urban pedestrian routes as well.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        13234
+      ],
+      "noun_1": [
+        2479
+      ]
+    },
+    "modifier_token_ids": {
+      "winding": [
+        33839
+      ],
+      "narrow": [
+        12019
+      ],
+      "rocky": [
+        35016
+      ],
+      "steep": [
+        25465
+      ],
+      "dusty": [
+        78921
+      ],
+      "muddy": [
+        75946
+      ],
+      "rough": [
+        10887
+      ],
+      "paved": [
+        59842
+      ],
+      "marked": [
+        11373
+      ],
+      "beaten": [
+        35919
+      ],
+      "shaded": [
+        62913
+      ],
+      "familiar": [
+        10334
+      ],
+      "rugged": [
+        52803
+      ],
+      "scenic": [
+        41997
+      ],
+      "deserted": [
+        81433
+      ]
+    },
+    "forced_projection_span": 0.13925713300704956,
+    "max_noun_pair_mass": 0.6217095255851746,
+    "context_priority_score": 0.08657748609616434,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "rugged",
+        "target_modifier": "scenic",
+        "source_projection": 0.0,
+        "target_projection": 0.012482263147830963,
+        "forced_modifier_leverage": 0.012482263147830963,
+        "source_pair_mass": 0.22100241482257843,
+        "target_pair_mass": 0.08053554594516754
+      },
+      "medium": {
+        "source_modifier": "steep",
+        "target_modifier": "rocky",
+        "source_projection": 0.16751331090927124,
+        "target_projection": 0.2372344732284546,
+        "forced_modifier_leverage": 0.06972116231918335,
+        "source_pair_mass": 0.2563624978065491,
+        "target_pair_mass": 0.5133643746376038
+      },
+      "high": {
+        "source_modifier": "muddy",
+        "target_modifier": "beaten",
+        "source_projection": 0.4387526512145996,
+        "target_projection": 0.5780097842216492,
+        "forced_modifier_leverage": 0.13925713300704956,
+        "source_pair_mass": 0.5421377420425415,
+        "target_pair_mass": 0.6217095255851746
+      }
+    },
+    "context_generation_rank": 55
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "rugged",
+      "target_modifier": "scenic",
+      "source_context_dev": [
+        "Our backpacking guide warned us that the backcountry wilderness was demanding and full of rough obstacles.",
+        "Deep in the remote national forest, the wild terrain tested our endurance with unpredictable ground.",
+        "The wilderness map showed an unmaintained route through dense alpine brush and jagged outcrops.",
+        "Venturing past the tree line required heavy boots to handle the unforgiving wilderness."
+      ],
+      "target_context_dev": [
+        "Tourists gathered near the valley overlook to capture panoramic views of the blooming wildflowers.",
+        "The morning light cast a golden glow across the rolling hills and picturesque mountain vistas.",
+        "Local sightseers loved this tranquil reserve for its lovely coastal vistas and serene viewpoints.",
+        "The guidebook praised the majestic canyon outlooks and postcard-perfect greenery throughout the park."
+      ],
+      "source_context_test": [
+        "Heading deeper into the untamed woods, our gear took a beating against the harsh wilderness.",
+        "The park ranger noted that this section of the backcountry was rarely cleared of fallen logs and brush.",
+        "We prepared for a grueling excursion across uncultivated terrain far away from modern comforts.",
+        "Navigating the remote alpine ridge meant enduring rough conditions and demanding footing."
+      ],
+      "target_context_test": [
+        "Families enjoyed walking through the nature sanctuary to admire sweeping views of the azure lake.",
+        "Autumn colors created a stunning visual panorama across the sunlit hillside.",
+        "The afternoon excursion promised sweeping landscape vistas overlooking the cascading river valley.",
+        "Eager photographers set up their tripods to capture the picturesque ridge line at sunset."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (rugged trail, rugged path, scenic trail, scenic path) are valid outdoor descriptions. Source contexts bias toward wilderness difficulty and wildness (aligning with rugged/trail), while target contexts emphasize pleasant visual landscape viewing (aligning with scenic/path)."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "steep",
+      "target_modifier": "rocky",
+      "source_context_dev": [
+        "Our calves burned as the mountain incline pitched upward at an almost vertical angle.",
+        "Gaining five hundred meters of elevation in under an hour required constant uphill exertion.",
+        "The mountain slope rose sheer against the cliff face, testing our leg strength with every upward stride.",
+        "Breathing heavily, we ascended the precipitous slope without any level ground in sight."
+      ],
+      "target_context_dev": [
+        "Loose stones and jagged gravel constantly slipped under our boot soles with every stride.",
+        "Scrambling across the scree field, we had to maneuver around massive granite boulders.",
+        "The ground was littered with sharp shale fragments and uneven bedrock.",
+        "Navigating the boulder-strewn canyon required careful placement across dry cobblestones."
+      ],
+      "source_context_test": [
+        "The sheer vertical ascent pushed our stamina to the absolute limit as we climbed higher.",
+        "Each upward step on the sharp mountain grade demanded steady balance and strong quads.",
+        "Looking up at the towering bluff, we saw a nearly vertical rise leading straight toward the summit.",
+        "The abrupt increase in elevation made the afternoon climb extraordinarily strenuous."
+      ],
+      "target_context_test": [
+        "Shifting scree and cracked slate made the footing underneath our boots treacherous.",
+        "We picked our way through a sprawling expanse of fractured granite slabs and pebbles.",
+        "Jagged limestone outcroppings and scattered stones covered the entire hillside.",
+        "Our hiking poles clicked against endless layers of loose gravel and fractured stones."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (steep trail, steep path, rocky trail, rocky path) are natural English collocations. Source contexts emphasize vertical ascent and gradient, while target contexts focus on geology and stony surface texture."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "muddy",
+      "target_modifier": "beaten",
+      "source_context_dev": [
+        "Heavy seasonal downpours had turned the unpaved forest floor into thick brown sludge.",
+        "Water pooled in every depression, leaving our boots caked in wet, slippery clay.",
+        "Days of torrential rainfall washed away topsoil, creating a saturated, swampy mire.",
+        "Sinking ankle-deep into sticky muck, we struggled to keep our footing after the storm."
+      ],
+      "target_context_dev": [
+        "Thousands of park visitors walk through this popular corridor every weekend.",
+        "Centuries of frequent human foot traffic had smoothed down the well-established dirt line.",
+        "Following the heavily used connection between the cabins made navigation straightforward.",
+        "Years of constant footsteps had firmly packed down the ground through the meadow."
+      ],
+      "source_context_test": [
+        "The sodden forest ground was thoroughly drenched from the melting spring snow.",
+        "Oozing silt and deep puddles made every step a sloshing, slippery challenge.",
+        "Continuous rain showers liquefied the earth, leaving thick brown sludge everywhere.",
+        "Our footwear grew heavy as wet, spongy mire clung to the soles with every step."
+      ],
+      "target_context_test": [
+        "The popular village shortcut showed obvious wear from daily commuter foot traffic.",
+        "Frequent walking tours kept the ground thoroughly packed and easy to follow.",
+        "Generations of local hikers had worn a distinct, heavily traversed line through the forest.",
+        "This heavily frequented corridor saw hundreds of daily strollers moving between landmarks."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (muddy trail, muddy path, beaten trail, beaten path) are fully standard and idiomatic. Source contexts activate soil wetness and rain saturation; target contexts activate high usage frequency and well-worn foot traffic."
+    }
+  ]
+}

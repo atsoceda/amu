@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b17_02_client_customer",
+    "generation_batch": 17,
+    "domain": "commerce and public services",
+    "family_id": "client_customer",
+    "noun_0": "client",
+    "noun_1": "customer",
+    "shared_definition": "a person or organization that purchases goods or receives professional services",
+    "neutral_stem": "The account representative welcomed the",
+    "candidate_modifiers": [
+      "new",
+      "regular",
+      "loyal",
+      "prospective",
+      "valuable",
+      "satisfied",
+      "unhappy",
+      "corporate",
+      "individual",
+      "potential",
+      "difficult",
+      "important",
+      "major",
+      "wealthy",
+      "returning"
+    ],
+    "semantic_notes": "'Client' typically denotes an ongoing professional service relationship, whereas 'customer' usually denotes a transactional retail buyer.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        4430
+      ],
+      "noun_1": [
+        5602
+      ]
+    },
+    "modifier_token_ids": {
+      "new": [
+        861
+      ],
+      "regular": [
+        4841
+      ],
+      "loyal": [
+        31253
+      ],
+      "prospective": [
+        32021
+      ],
+      "valuable": [
+        12272
+      ],
+      "satisfied": [
+        14137
+      ],
+      "unhappy": [
+        46949
+      ],
+      "corporate": [
+        11961
+      ],
+      "individual": [
+        3141
+      ],
+      "potential": [
+        3435
+      ],
+      "difficult": [
+        3909
+      ],
+      "important": [
+        2132
+      ],
+      "major": [
+        3262
+      ],
+      "wealthy": [
+        40214
+      ],
+      "returning": [
+        16228
+      ]
+    },
+    "forced_projection_span": 0.10366728901863098,
+    "max_noun_pair_mass": 0.6574533581733704,
+    "context_priority_score": 0.0681564072980283,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "regular",
+        "target_modifier": "satisfied",
+        "source_projection": 0.26735028624534607,
+        "target_projection": 0.27859431505203247,
+        "forced_modifier_leverage": 0.011244028806686401,
+        "source_pair_mass": 0.36420199275016785,
+        "target_pair_mass": 0.36580413579940796
+      },
+      "medium": {
+        "source_modifier": "important",
+        "target_modifier": "valuable",
+        "source_projection": 0.06536635011434555,
+        "target_projection": 0.11744505912065506,
+        "forced_modifier_leverage": 0.05207870900630951,
+        "source_pair_mass": 0.19758820533752441,
+        "target_pair_mass": 0.3048272728919983
+      },
+      "high": {
+        "source_modifier": "unhappy",
+        "target_modifier": "loyal",
+        "source_projection": 0.3659936785697937,
+        "target_projection": 0.4696609675884247,
+        "forced_modifier_leverage": 0.10366728901863098,
+        "source_pair_mass": 0.5321298241615295,
+        "target_pair_mass": 0.5536602735519409
+      }
+    },
+    "context_generation_rank": 67
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "regular",
+      "target_modifier": "satisfied",
+      "source_context_dev": [
+        "Consultation meetings were scheduled every second Tuesday without exception. When the lobby elevator opened on schedule, the staff recognized the familiar schedule immediately.",
+        "The firm handled recurring advisory retainers on a predictable weekly cadence. As the usual appointment hour arrived, the front desk prepared the standard intake portfolio.",
+        "Every month brought another structured review session for the ongoing business engagement. The front office had already printed the routine portfolio review before the visitor stepped through the entryway.",
+        "Contractually mandated status updates occurred on a strict, continuous schedule throughout the fiscal year. Right at the scheduled morning hour, the door opened for the periodic check-in."
+      ],
+      "target_context_dev": [
+        "Recent post-transaction surveys showed perfect ratings and glowing reviews across the board. The visitor arrived with a wide smile after concluding a seamless purchasing journey.",
+        "Following the flawless delivery of merchandise, the buyer expressed immense gratitude over email. Walking into the main showroom, the visitor radiated delight with the entire purchasing experience.",
+        "The feedback forms were filled with praise regarding the speedy resolution and stellar service quality. When the visitor returned to express personal appreciation, the atmosphere in the lounge was exceptionally positive.",
+        "Having experienced exceptional hospitality during the previous order cycle, the visitor returned in high spirits. The warm reception area was filled with pleasant greetings."
+      ],
+      "source_context_test": [
+        "The scheduled advisory sessions had become an established part of the corporate routine over several fiscal quarters. As the designated morning slot arrived, the staff prepared the recurrent briefing binder.",
+        "Weekly project reviews followed a standardized protocol without any deviation. The front desk team noted the prompt arrival for the standing appointment.",
+        "The ongoing retainer required structured monthly check-ins that were always held on the first business morning. When the bell rang precisely on time, the staff knew the familiar appointment was starting.",
+        "Consistent recurring consultations had taken place every month for over three years. As the habitual appointment time struck, footsteps echoed down the main hallway."
+      ],
+      "target_context_test": [
+        "The transaction had concluded with outstanding scores on every feedback metric provided by the audit. When the shopper returned to pick up the final documentation, the mood was celebratory.",
+        "Every expectation regarding product quality and support responsiveness had been completely surpassed. The purchaser arrived with enthusiastic remarks about the smooth process.",
+        "Positive review submissions poured in following the successful fulfillment of the holiday orders. The delighted buyer entered the reception suite eager to continue the pleasant relationship.",
+        "The buyer felt completely fulfilled with the outcome of the recent purchase agreement and sent a letter of praise. Entering the building for a follow-up visit, the visitor carried an upbeat demeanor."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (regular/satisfied \u00d7 client/customer) remain semantically and syntactically well-formed across both professional consultation and transactional purchasing settings."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "important",
+      "target_modifier": "valuable",
+      "source_context_dev": [
+        "The upcoming multi-million dollar corporate partnership carried decisive weight for the future of the agency. Executive leadership gathered at the entrance to ensure the high-stakes summit went smoothly.",
+        "Critical strategic alliances required direct oversight from the managing director. When the high-priority delegation entered the boardroom foyer, the atmosphere became intensely focused.",
+        "This particular institutional portfolio determined a substantial portion of the firm's annual standing. Top managers personally stood by the doorway as the key stakeholder arrived.",
+        "High-stakes negotiations were about to commence that could define the industry landscape for the next decade. The greeting team arranged the premier conference suite with meticulous care."
+      ],
+      "target_context_dev": [
+        "The buyer's accumulated expenditure placed them in the highest revenue bracket in company history. The VIP hospitality suite was unlocked as the high-yield patron arrived at the premises.",
+        "Historical sales records indicated that this single account produced immense transactional margin and high lifetime spend. Store supervisors made sure that top-tier merchandising perks were ready for the visit.",
+        "The revenue contribution from this commercial buyer outranked almost all other retail patrons this quarter. Staff members were instructed to provide the gold-tier promotional perks immediately upon arrival.",
+        "Substantial capital assets had been generated through this buyer's frequent high-volume orders over the past five years. As the lucrative buyer stepped into the showroom, staff prepared customized reward perks."
+      ],
+      "source_context_test": [
+        "The impending corporate merger review represented a vital milestone for the entire consultancy practice. As the prominent stakeholder arrived at the central lobby, the executive suite was placed on alert.",
+        "Decisions made in today's high-level strategy session would govern regional policy for years to come. The welcoming delegation arranged reserved seating for the influential attendee.",
+        "Maintaining this core enterprise account was critical to meeting the firm's strategic objectives. When the primary corporate sponsor entered the building, staff treated the arrival with paramount priority.",
+        "The enterprise-level agreement held immense significance for the division's annual performance benchmarks. Senior leaders waited near the glass doors to receive the influential party."
+      ],
+      "target_context_test": [
+        "The cumulative lifetime revenue generated by this single account exceeded all corporate targets for the fiscal year. Store personnel gathered the premium reward vouchers before the high-yielding shopper walked in.",
+        "Purchasing analytics highlighted this account as one of the most profitable transactional assets in the entire database. The front counter cleared special checkout lanes as the wealthy patron arrived.",
+        "High aggregate purchase volume and premium margins earned this buyer exclusive membership perks. As the high-spending patron approached the service counter, the staff prepared the premier catalog.",
+        "This buyer's substantial transactional worth accounted for an extraordinary share of annual store profits. When the high-dollar patron entered the main floor, the team offered the reserved executive lounge."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (important/valuable \u00d7 client/customer) remain coherent whether the context emphasizes high-stakes strategic importance or high revenue/spend value."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "unhappy",
+      "target_modifier": "loyal",
+      "source_context_dev": [
+        "Multiple formal grievances had been submitted regarding severe billing errors and neglected service requests. The visitor arrived with a stern expression and a folder full of documented complaints.",
+        "A contentious contract disagreement had led to tense phone calls all morning regarding unacceptable performance. When the frustrated party walked into the lobby, the staff prepared for a difficult grievance session.",
+        "Discontent over repeated project delays had reached a boiling point over the weekend. The visibly irritated visitor marched toward the front desk demanding an immediate resolution to the failure.",
+        "The account had suffered serious service disruptions, resulting in harsh critical emails and escalated dispute filings. As the aggrieved visitor entered the office, tension filled the room."
+      ],
+      "target_context_dev": [
+        "Decade after decade, through multiple brand transitions, this steadfast supporter never shopped anywhere else. The staff always felt deep appreciation when the dedicated patron walked through the front door.",
+        "Unwavering dedication to the store had been demonstrated through continuous visits spanning over fifteen years. The welcoming team smiled warmly as the devoted patron entered the shop.",
+        "Even during economic downturns and product shortages, this committed patron consistently chose this establishment above all competitors. The team prepared a special commemorative gift as the faithful buyer arrived.",
+        "This devoted patron had supported the boutique since its founding day, recommending it enthusiastically to family and friends. The staff greeted the long-standing supporter with genuine fondness."
+      ],
+      "source_context_test": [
+        "Severe operational breakdowns had caused deep dissatisfaction and prompted a sharp demand for restitution. The disgruntled party stepped into the office with a formal letter of grievance in hand.",
+        "Tension had mounted following a series of unfulfilled commitments and broken deadlines. When the indignant visitor arrived at the reception area, the front desk braced for a difficult confrontation.",
+        "A string of unresolved software malfunctions had provoked immense frustration and threat of legal action. The vexed visitor crossed the entryway with an unmistakably disappointed demeanor.",
+        "Repeated delivery errors had resulted in a stern escalation to executive management earlier that morning. The aggrieved party strode into the headquarters lobby demanding accountability."
+      ],
+      "target_context_test": [
+        "For twenty consecutive years, this devoted patron had remained steadfast in purchasing exclusively from this establishment. The entire team beamed with pride as the steadfast buyer stepped into the store.",
+        "Through every market cycle, this committed supporter had consistently favored the brand over every competing alternative. The reception staff gathered by the entrance to honor the enduring relationship.",
+        "A profound history of dedicated patronage had cemented an unbreakable bond with the business. When the faithful visitor arrived for the anniversary sale, staff welcomed them like family.",
+        "Unflinching commitment had defined this patron's shopping habits since the flagship boutique first opened. The staff watched with warm smiles as the steadfast buyer entered the main hall."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (unhappy/loyal \u00d7 client/customer) are grammatically valid and semantically meaningful across both grievance-oriented and loyalty-oriented framing."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b20_01_trophy_cup",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "trophy_cup",
+    "noun_0": "trophy",
+    "noun_1": "cup",
+    "shared_definition": "an ornamental vessel or sculpture awarded as a prize in a competition",
+    "neutral_stem": "The captain proudly hoisted the",
+    "candidate_modifiers": [
+      "bronze",
+      "coveted",
+      "custom",
+      "glittering",
+      "golden",
+      "heavy",
+      "historic",
+      "massive",
+      "national",
+      "prestigious",
+      "seasonal",
+      "shining",
+      "silver",
+      "traditional"
+    ],
+    "semantic_notes": "'Cup' often refers specifically to cup-shaped awards or the tournament itself, whereas 'trophy' covers any physical award statue or figurine.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        48597
+      ],
+      "noun_1": [
+        8578
+      ]
+    },
+    "modifier_token_ids": {
+      "bronze": [
+        30174
+      ],
+      "coveted": [
+        89465
+      ],
+      "custom": [
+        2401
+      ],
+      "glittering": [
+        123127
+      ],
+      "golden": [
+        13935
+      ],
+      "heavy": [
+        7274
+      ],
+      "historic": [
+        17110
+      ],
+      "massive": [
+        12566
+      ],
+      "national": [
+        4559
+      ],
+      "prestigious": [
+        38624
+      ],
+      "seasonal": [
+        28594
+      ],
+      "shining": [
+        36489
+      ],
+      "silver": [
+        10173
+      ],
+      "traditional": [
+        6672
+      ]
+    },
+    "forced_projection_span": 0.06725358229596168,
+    "max_noun_pair_mass": 0.5381460189819336,
+    "context_priority_score": 0.036192247574845626,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "traditional",
+        "target_modifier": "custom",
+        "source_projection": -0.01102600246667862,
+        "target_projection": -0.0010618437081575394,
+        "forced_modifier_leverage": 0.00996415875852108,
+        "source_pair_mass": 0.0160310547798872,
+        "target_pair_mass": 0.003507794812321663
+      },
+      "medium": {
+        "source_modifier": "massive",
+        "target_modifier": "prestigious",
+        "source_projection": -0.22351518273353577,
+        "target_projection": -0.18957926332950592,
+        "forced_modifier_leverage": 0.033935919404029846,
+        "source_pair_mass": 0.23836222290992737,
+        "target_pair_mass": 0.26355069875717163
+      },
+      "high": {
+        "source_modifier": "national",
+        "target_modifier": "silver",
+        "source_projection": -0.00033351045567542315,
+        "target_projection": 0.06692007184028625,
+        "forced_modifier_leverage": 0.06725358229596168,
+        "source_pair_mass": 0.0004737999406643212,
+        "target_pair_mass": 0.5381460189819336
+      }
+    },
+    "context_generation_rank": 105
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "traditional",
+      "target_modifier": "custom",
+      "source_context_dev": [
+        "After decades of history, the tournament committee adhered strictly to heritage and long-established athletic rituals. At the closing ceremony, everyone waited to see the time-honored award presented to the winning team.",
+        "The regional league has celebrated the same end-of-season ritual for over a century. When the final whistle blew, spectators prepared to view the classic championship token passed down through generations.",
+        "Rooted in centuries of sporting folklore, this tournament never deviates from its heritage. The post-match celebration centered on handing over the storied emblem of victory.",
+        "Decade after decade, the closing honors have followed an unyielding conventional protocol. As the final seconds expired, the arena cheered for the familiar, enduring symbol of triumph."
+      ],
+      "target_context_dev": [
+        "For the inaugural anniversary event, organizers commissioned an independent artisan to fabricate a unique, one-off centerpiece. The victorious squad gathered around to reveal this newly fashioned prize.",
+        "A boutique metalsmith spent months designing a bespoke award tailored specifically to the tournament's modern rebranding. As the final concluded, the team gathered to unveil the handcrafted piece.",
+        "Rather than ordering a catalog model, the federation requested an individually tailored creation for this year's champions. All eyes turned to the stage as the newly forged piece was brought out.",
+        "The organizers wanted an exclusive, purpose-built design that reflected the local culture and modern artistic flair. Following the decisive victory, the winning club prepared to receive the specially crafted piece."
+      ],
+      "source_context_test": [
+        "The old sporting guild takes pride in keeping its century-old conventions alive without alteration. When the final game concluded, fans stood to witness the presentation of the customary league award.",
+        "Every winter, the championship relies on its venerable lineage to honor athletic excellence in the classic style. Following their clean sweep, the players waited to raise the historical token of achievement.",
+        "Steeped in decades of folklore, the tournament concluded in the exact manner it has since the founding era. The crowd erupted as officials brought out the long-standing centerpiece of the victory celebration.",
+        "Strict adherence to ancestral conventions defined the end of this year's tournament just like every year before. After sealing the win, the squad prepared to receive the time-tested emblem of victory."
+      ],
+      "target_context_test": [
+        "To mark the league's grand expansion, master craftsmen were hired to build an entirely original, personalized prize. The players gathered excitedly around the one-of-a-kind creation after the match.",
+        "Organizers chose an unconventional path, hiring a local sculptor to construct a personalized award just for this edition. When the final whistle blew, the team prepared to display the distinct, newly commissioned piece.",
+        "A specialty workshop spent weeks shaping a handcrafted piece that had never been seen in past tournaments. The triumphant athletes assembled at midfield to accept the newly fashioned award.",
+        "Rejecting standard off-the-shelf items, the committee unveiled a tailor-made design built exclusively for this final showdown. The victors stepped forward to raise the individualized centerpiece."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('traditional trophy', 'traditional cup', 'custom trophy', 'custom cup') are fully well-formed and felicitous across both contexts. Source contexts prime long-standing conventions and classic heritage, while target contexts prime bespoke, artisan-crafted awards without naming the target or source lexemes."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "massive",
+      "target_modifier": "prestigious",
+      "source_context_dev": [
+        "Constructed from solid dense bronze and standing nearly four feet tall, the prize required immense physical effort just to carry. The crowd marveled at the sheer weight and gigantic scale of the award.",
+        "The winning squad needed two handlers just to carry the enormous, heavy metal piece onto the podium. Spectators gasped at the sheer heft and oversized build of the prize.",
+        "Weighing over fifty pounds of solid casting, the colossal award dominated the entire presentation stage. The players laughed as they prepared to lift the heavy, towering structure together.",
+        "Few awards in sport are as towering or physically overwhelming as this giant, solid metal piece. As the celebration began, the players braced themselves to lift the colossal prize."
+      ],
+      "target_context_dev": [
+        "Regarded as the pinnacle of sporting achievement worldwide, this honor brings instant global acclaim and immortal standing. The victors celebrated winning the most revered accolade in the sport.",
+        "Generations of legends have dreamed of earning this distinguished distinction, considered the ultimate badge of elite excellence. After a grueling campaign, the champions secured the esteemed award.",
+        "No other tournament commands such deep respect or international stature across the sporting world. The winning team stepped forward to receive the celebrated, high-status accolade.",
+        "Earning this supreme honor cements a squad's legacy among the greatest teams in sporting history. When the final concluded, the athletes prepared to claim the illustrious award."
+      ],
+      "source_context_test": [
+        "The sheer physical dimensions of the award made it a monumental task just to move from the presentation table. Fans cheered as the athletes prepared to hoist the gigantic, heavy metal object.",
+        "Fashioned from layers of dense cast bronze, the towering award was renowned for being remarkably heavy and broad. The champions took deep breaths before attempting to raise the colossal object.",
+        "Spectators at the arena were stunned by the gigantic proportions and weighty construction of the award brought out to the stage. It clearly required great upper-body strength to lift such a heavy piece.",
+        "The sheer volume and dense heft of the award commanded everyone's attention on the podium. The squad braced their muscles as they moved to hoist the physically immense piece."
+      ],
+      "target_context_test": [
+        "Winning this world-renowned award represents the absolute summit of professional athletic accomplishment. Following their historic campaign, the club prepared to receive the venerated honor.",
+        "Only the most celebrated champions in history have had the privilege of lifting this distinguished prize. The players embraced each other as they stepped up to claim the highly revered distinction.",
+        "Broadcast to millions of viewers across the globe, this elite final awards the most coveted honor in the discipline. The triumphant squad took the stage to accept the esteemed accolade.",
+        "This tournament holds an unparalleled reputation, drawing the finest competitors from around the globe for its elite crown. The victors rejoiced as they prepared to raise the revered prize."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('massive trophy', 'massive cup', 'prestigious trophy', 'prestigious cup') are completely grammatical and natural in English. Source contexts emphasize colossal physical dimensions and heft, whereas target contexts emphasize elite standing, worldwide renown, and high honor."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "national",
+      "target_modifier": "silver",
+      "source_context_dev": [
+        "After defeating every rival club across all domestic provinces, the team earned top honors across the entire country. The crowd erupted as the countrywide crown was brought out to the field.",
+        "The tournament brought together the top regional teams from every state to decide who ruled the whole country. As fireworks lit up the stadium, the champions stood ready to claim the domestic honor.",
+        "This multi-stage competition spanned clubs from the Atlantic coast to the Pacific border to determine domestic supremacy. The winners gathered to hoist the countrywide award.",
+        "Having emerged victorious against opponents from every region of the homeland, the squad proved themselves the best in the land. The arena cheered as the domestic championship prize was carried forward."
+      ],
+      "target_context_dev": [
+        "Polished to a mirror shine, the gleaming white-metal urn reflected the dazzling stadium floodlights. The team stood around the lustrous metallic prize as it gleamed under the night sky.",
+        "Crafted from lustrous, polished precious white metal, the radiant prize reflected the flashes of dozens of cameras. The players gathered around to raise the gleaming metallic piece.",
+        "The polished, reflective metallic finish shone brilliantly as officials carried the shimmering piece across the stage. The victors reached out to grasp the radiant white-metal prize.",
+        "Beneath the bright arena lights, the lustrous, shimmering metallic surface of the centerpiece dazzled the audience. The squad stood ready to hoist the gleaming polished prize."
+      ],
+      "source_context_test": [
+        "Clubs from every district throughout the republic battled through grueling rounds to win the countrywide championship. At the conclusion of the final, the team stepped up to receive the domestic award.",
+        "Having conquered every domestic league rival across all fifty regions, the team established supreme authority across the homeland. The players assembled to receive the all-country prize.",
+        "The grueling season involved traveling across the entire realm to defeat the finest clubs in the country. Now, the victorious squad stood ready to claim the supreme domestic award.",
+        "Representing the crowning achievement for athletic clubs operating throughout the homeland, this tournament settles domestic dominance. The victors gathered to accept the countrywide honor."
+      ],
+      "target_context_test": [
+        "The polished metallic surface sparkled radiantly as stage spotlights illuminated the gleaming white-metal masterpiece. The athletes cheered as they prepared to touch the shimmering prize.",
+        "A dazzling luster emanated from the mirror-finished, polished metal centerpiece on the winner's podium. The champions reached down to grasp the shining, metallic award.",
+        "Reflecting the bright flashes of the stadium cameras, the gleaming white-metal urn stood proudly on the presentation pedestal. The players stepped forward to hoist the shimmering metallic piece.",
+        "The radiant, polished metal finish gave the prize an unmistakable brilliant gleam under the evening lights. With broad smiles, the winners prepared to raise the lustrous centerpiece."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('national trophy', 'national cup', 'silver trophy', 'silver cup') are standard, natural sports collocations. Source contexts emphasize nationwide scope and domestic competition, while target contexts emphasize the shimmering, polished white-metal material characteristics without naming 'silver', 'national', 'trophy', or 'cup'."
+    }
+  ]
+}

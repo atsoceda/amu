@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b13_03_pouch_purse",
+    "generation_batch": 13,
+    "domain": "clothing and personal items",
+    "family_id": "pouch_purse",
+    "noun_0": "pouch",
+    "noun_1": "purse",
+    "shared_definition": "a small container or bag used to carry money and personal necessities",
+    "neutral_stem": "She reached into her coat to retrieve coins from the",
+    "candidate_modifiers": [
+      "small",
+      "leather",
+      "velvet",
+      "silk",
+      "drawstring",
+      "embroidered",
+      "heavy",
+      "ornate",
+      "zippered",
+      "vintage",
+      "black",
+      "padded",
+      "tiny",
+      "handmade",
+      "antique"
+    ],
+    "semantic_notes": "'Purse' commonly designates a modern woman's handbag or coin wallet, whereas 'pouch' often implies a drawstring or historical style.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        62195
+      ],
+      "noun_1": [
+        47827
+      ]
+    },
+    "modifier_token_ids": {
+      "small": [
+        1944
+      ],
+      "leather": [
+        13069
+      ],
+      "velvet": [
+        49757
+      ],
+      "silk": [
+        27373
+      ],
+      "drawstring": [
+        172316
+      ],
+      "embroidered": [
+        60259
+      ],
+      "heavy": [
+        7274
+      ],
+      "ornate": [
+        94079
+      ],
+      "zippered": [
+        221923
+      ],
+      "vintage": [
+        11285
+      ],
+      "black": [
+        2764
+      ],
+      "padded": [
+        71009
+      ],
+      "tiny": [
+        16383
+      ],
+      "handmade": [
+        29503
+      ],
+      "antique": [
+        34323
+      ]
+    },
+    "forced_projection_span": 0.25044403970241547,
+    "max_noun_pair_mass": 0.44487786293029785,
+    "context_priority_score": 0.11141700916644126,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "zippered",
+        "target_modifier": "drawstring",
+        "source_projection": -0.01627614162862301,
+        "target_projection": 0.008819956332445145,
+        "forced_modifier_leverage": 0.025096097961068153,
+        "source_pair_mass": 0.028263943269848824,
+        "target_pair_mass": 0.07092675566673279
+      },
+      "medium": {
+        "source_modifier": "leather",
+        "target_modifier": "embroidered",
+        "source_projection": 0.004314817488193512,
+        "target_projection": 0.1301295906305313,
+        "forced_modifier_leverage": 0.1258147731423378,
+        "source_pair_mass": 0.1381189525127411,
+        "target_pair_mass": 0.163020059466362
+      },
+      "high": {
+        "source_modifier": "heavy",
+        "target_modifier": "silk",
+        "source_projection": 0.1469178944826126,
+        "target_projection": 0.3973619341850281,
+        "forced_modifier_leverage": 0.25044403970241547,
+        "source_pair_mass": 0.1500166803598404,
+        "target_pair_mass": 0.44487786293029785
+      }
+    },
+    "context_generation_rank": 36
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "zippered",
+      "target_modifier": "drawstring",
+      "source_context_dev": [
+        "The bus fare was exact change only, and she needed to keep the loose change from sliding into the deep lining of her winter jacket.",
+        "She wanted a secure fastener so that none of her change would spill out while navigating the crowded subway platform.",
+        "Before stepping out into the sleet, she checked to ensure all metal tracks and interlocking teeth were shut tightly.",
+        "To prevent metallic rattling during her morning jog, she kept her pocket money sealed within a firmly sliding track."
+      ],
+      "target_context_dev": [
+        "She favored traditional crafting where soft fabric was cinched tight with a looped cord.",
+        "At the historical reenactment market, vendors appreciated when patrons carried rustic woven items tightened with pulling cords.",
+        "She gently untied the gathered ribbon knot that held her spare change secure against the winter chill.",
+        "Her grandmother had taught her to sew small felt coin holders that closed by tugging two cords in opposite directions."
+      ],
+      "source_context_test": [
+        "Rushing toward the train turnstile, she felt along the inner pocket for a metallic slider that kept her small silver pieces locked away.",
+        "To avoid dropping tokens on the escalator, she ensured her pocket money was locked behind an interlocking metal track.",
+        "She preferred modern hardware closures that would never accidentally open while biking across town.",
+        "The vendor asked for exact change, so she felt for the quick metal pull tab nestled in her deep outer pocket."
+      ],
+      "target_context_test": [
+        "She loved antique accessories gathered with braided yarn and adorned with simple cinch ties.",
+        "At the craft fair, she paid the artisan after loosening the cinched cords around her change.",
+        "A rustic textile charm defined her personal style, complete with hand-tied cords gathered around her loose change.",
+        "She felt for the dangling cords inside her coat, ready to loosen the gathered fabric opening."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('zippered pouch', 'zippered purse', 'drawstring pouch', 'drawstring purse') are plausible English noun phrases for carrying coins in a coat pocket across all contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "leather",
+      "target_modifier": "embroidered",
+      "source_context_dev": [
+        "The durable hide scent reminded her of traditional artisan workshops where tough hide goods were crafted to last decades.",
+        "She needed a rugged, tanned animal hide item capable of withstanding rough daily handling in all weather conditions.",
+        "Her outerwear concealed a sturdy, polished hide item passed down from an experienced saddle maker.",
+        "The firm, durable tan skin felt smooth against her fingers as she prepared to pay the street vendor."
+      ],
+      "target_context_dev": [
+        "Intricate floral needlework in bright silk threads adorned her favorite handmade accessory.",
+        "She admired decorative stitch patterns created painstakingly with fine needle and colorful thread.",
+        "Her mother had gifted her a piece detailed with delicate cross-stitch roses for keeping small change.",
+        "She loved showing off ornamental needlecraft featuring vibrant botanical designs stitched across the fabric."
+      ],
+      "source_context_test": [
+        "She appreciated the rugged durability of cured animal skin that aged gracefully with everyday use.",
+        "The rich smell of tanned hide greeted her as she dipped her fingers into her outer jacket pocket.",
+        "For traveling across rugged terrain, she relied on sturdy hide goods that resisted scuffs and wear.",
+        "A polished, thick hide accessory kept her silver pieces well protected inside her pocket."
+      ],
+      "target_context_test": [
+        "Tiny colorful yarn petals and woven decorative stitches made her daily accessory a miniature piece of textile art.",
+        "She carefully handled the delicate ornamental stitching so none of the threaded loops would snag.",
+        "The market stall featured handcrafted items covered in elaborate floral needlework.",
+        "Her pocket held a charming textile keepsake decorated with hand-sewn motifs."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Combinations ('leather pouch', 'leather purse', 'embroidered pouch', 'embroidered purse') remain universally acceptable and natural across all pragmatic descriptions."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "heavy",
+      "target_modifier": "silk",
+      "source_context_dev": [
+        "The dense weight of thick metal coins and solid construction tugged noticeably on her pocket seam.",
+        "She felt the substantial, bulky mass weighing down the left side of her tailored jacket.",
+        "The substantial weight of the thick material and contents gave her reassurance that nothing was lost.",
+        "Carrying a dense and bulky load of bronze tokens caused her coat pocket to sag noticeably."
+      ],
+      "target_context_dev": [
+        "The smooth, lustrous weave spun by cocoons felt featherlight and luxurious to the touch.",
+        "For the formal evening gala, she brought along a shimmering, gossamer-soft textile piece.",
+        "She chose an ultra-fine, lightweight fabric that slipped effortlessly in and out of her satin-lined coat.",
+        "The glossy, delicate sheen of fine mulberry fibers added an elegant touch to her evening attire."
+      ],
+      "source_context_test": [
+        "A dense, weighted mass bounced against her hip as she hurried along the cobblestones.",
+        "The solid bulk felt weighted and hefty as she reached into her jacket.",
+        "She appreciated the thick, ponderous feel of a substantial object packed full of copper tokens.",
+        "The noticeable downward pull of the weighty item made it easy to locate inside her oversized jacket."
+      ],
+      "target_context_test": [
+        "She adored delicate evening accessories tailored from smooth, lustrous spun filament.",
+        "The delicate, whisper-soft weave felt exquisitely smooth as her fingers brushed against it.",
+        "Her refined taste favored featherlight, gleaming textile sheens made from natural mulberry threads.",
+        "The shimmering smooth texture felt almost weightless in her hand as she prepared to pay."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('heavy pouch', 'heavy purse', 'silk pouch', 'silk purse') are semantically and syntactically well-formed across both source and target framing."
+    }
+  ]
+}

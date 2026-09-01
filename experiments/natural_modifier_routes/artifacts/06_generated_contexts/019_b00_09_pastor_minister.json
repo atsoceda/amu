@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b00_09_pastor_minister",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "pastor_minister",
+    "noun_0": "pastor",
+    "noun_1": "minister",
+    "shared_definition": "an ordained leader of a Christian congregation",
+    "neutral_stem": "Following the Sunday morning service, parishioners waited to greet",
+    "candidate_modifiers": [
+      "ordained",
+      "dedicated",
+      "beloved",
+      "compassionate",
+      "devout",
+      "senior",
+      "respected",
+      "trusted",
+      "pious",
+      "inspiring",
+      "experienced",
+      "faithful",
+      "caring",
+      "local"
+    ],
+    "semantic_notes": "'Pastor' emphasizes direct pastoral and shepherd-like community care, whereas 'minister' carries ecclesiastical and liturgical weight.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        40976
+      ],
+      "noun_1": [
+        13933
+      ]
+    },
+    "modifier_token_ids": {
+      "ordained": [
+        100016
+      ],
+      "dedicated": [
+        11554
+      ],
+      "beloved": [
+        27867
+      ],
+      "compassionate": [
+        65229
+      ],
+      "devout": [
+        133081
+      ],
+      "senior": [
+        9550
+      ],
+      "respected": [
+        35391
+      ],
+      "trusted": [
+        26576
+      ],
+      "pious": [
+        129349
+      ],
+      "inspiring": [
+        32977
+      ],
+      "experienced": [
+        9763
+      ],
+      "faithful": [
+        35004
+      ],
+      "caring": [
+        29623
+      ],
+      "local": [
+        2263
+      ]
+    },
+    "forced_projection_span": 0.26240331679582596,
+    "max_noun_pair_mass": 0.6327784061431885,
+    "context_priority_score": 0.1660431525687489,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "devout",
+        "target_modifier": "local",
+        "source_projection": -0.026687363162636757,
+        "target_projection": 0.0,
+        "forced_modifier_leverage": 0.026687363162636757,
+        "source_pair_mass": 0.0648428201675415,
+        "target_pair_mass": 0.26539504528045654
+      },
+      "medium": {
+        "source_modifier": "respected",
+        "target_modifier": "experienced",
+        "source_projection": -0.10379080474376678,
+        "target_projection": 0.007097773253917694,
+        "forced_modifier_leverage": 0.11088857799768448,
+        "source_pair_mass": 0.2374049872159958,
+        "target_pair_mass": 0.2272026240825653
+      },
+      "high": {
+        "source_modifier": "experienced",
+        "target_modifier": "ordained",
+        "source_projection": 0.007097773253917694,
+        "target_projection": 0.26950109004974365,
+        "forced_modifier_leverage": 0.26240331679582596,
+        "source_pair_mass": 0.2272026240825653,
+        "target_pair_mass": 0.45189976692199707
+      }
+    },
+    "context_generation_rank": 20
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "devout",
+      "target_modifier": "local",
+      "source_context_dev": [
+        "The sermon had focused deeply on personal prayer, spiritual discipline, and total dedication to divine grace. The congregation was moved by the earnest piety reflected throughout the morning worship.",
+        "The message emphasized intense private contemplation and constant communion with God. Everyone felt the genuine spiritual depth that guided the pulpit that morning.",
+        "A spirit of heartfelt reverence and quiet holiness filled the chapel during the closing hymn. The flock appreciated such steadfast dedication to the spiritual welfare of the believers.",
+        "The morning homily centered on walking closely with God through sincere devotion and righteous living. Worshipers felt uplifted by the sheer depth of holy conviction in the sanctuary."
+      ],
+      "target_context_dev": [
+        "The church hall hosted a planning meeting for regional civic projects and municipal outreach. Representatives from neighborhood associations gathered to discuss public charity programs.",
+        "Today marked an annual celebration of neighborhood outreach and community partnerships across the borough. Families from surrounding streets gathered to discuss municipal food distribution.",
+        "The bulletin highlighted various neighborhood charity efforts and upcoming town hall forums. Attendees discussed expanding support for regional families in need.",
+        "Residents from the surrounding blocks arrived to participate in a coordinated community revitalization drive. The morning centered on addressing immediate social needs across the town."
+      ],
+      "source_context_test": [
+        "The gathering was deeply stirred by a powerful call to personal sanctity and relentless prayer. Those present felt grateful for such heartfelt spiritual guidance.",
+        "Worship concluded with a solemn plea for genuine holiness and wholehearted commitment to Christ. The assembly lingered, inspired by such unyielding spiritual fidelity.",
+        "Reflections on sacred scripture brought tears to many who sought renewal in their walk of faith. The entire sanctuary resonated with authentic spiritual devotion.",
+        "The morning teaching highlighted the virtue of selfless surrender and lifelong holy service. Believers felt anchored by such sincere and heartfelt commitment to the Gospel."
+      ],
+      "target_context_test": [
+        "Volunteers organized assistance packages for nearby schools and municipal housing centers. The church council aimed to deepen ties with town organizations throughout the district.",
+        "The morning agenda prioritized building stronger relationships between the chapel and surrounding town civic groups. Several district organizers came to offer mutual aid.",
+        "A special presentation highlighted neighborhood revitalization efforts and cross-town youth initiatives. The congregation celebrated its ongoing presence in the immediate township.",
+        "The service highlighted collaborative projects with regional food pantries and district community centers. People from across the municipality came to show their support."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('devout pastor', 'devout minister', 'local pastor', 'local minister') are fully grammatical and semantically natural following the fixed stem. Devout/local shifts register between personal piety/shepherding and municipal/civic presence without precluding any combination."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "respected",
+      "target_modifier": "experienced",
+      "source_context_dev": [
+        "Decades of upright conduct and moral leadership had earned widespread admiration across the entire assembly. Every member held the pulpit in the highest esteem.",
+        "The congregation looked up to the pulpit with deep honor and heartfelt appreciation for years of trustworthy guidance. Dignified leadership had long unified the chapel.",
+        "Tributes were paid to the exemplary character and honorable standing of the pulpit within the broader fellowship. The assembly cherished such a widely admired spiritual presence.",
+        "A legacy of integrity, fairness, and moral fortitude defined the leadership of the sanctuary. Members of all generations admired the unblemished standing of their spiritual shepherd."
+      ],
+      "target_context_dev": [
+        "Having navigated numerous complex institutional changes and decades of administrative challenges, the pulpit provided steady leadership. Many relied on that vast career background.",
+        "With decades spent leading diverse congregations through major transitions and disputes, the pulpit handled every complex situation with ease. The assembly valued such seasoned competence.",
+        "Decades in clerical leadership across various districts had built a deep understanding of ecclesiastical organization. Congregants knew they were guided by extensive career wisdom.",
+        "Decades of navigating delicate congregational crises and institutional restructuring brought steady composure to the pulpit. The church relied heavily on that practical career background."
+      ],
+      "source_context_test": [
+        "Generations of congregants praised the honorable reputation and steadfast integrity guiding their worship. The entire assembly held the leadership in exceptionally high regard.",
+        "The congregation took immense pride in the moral uprightness and distinguished character of the pulpit. Honor and trust had been maintained without compromise.",
+        "Widespread esteem from both the flock and neighboring churches highlighted the morning gathering. People felt fortunate to follow such an admired spiritual leader.",
+        "A long-standing reputation for noble guidance and flawless ethical conduct defined the morning assembly. Congregants showed profound reverence and appreciation."
+      ],
+      "target_context_test": [
+        "Decades of ecclesiastical service across several dioceses provided rare insight during times of institutional growth. The sanctuary benefited from such long career practice.",
+        "Decades spent handling complex congregational governance and structural reform brought immense stability. Members appreciated such long-standing professional seasoning.",
+        "A long record of pastoral appointments and organizational oversight provided steady direction for the assembly. The church drew confidence from that rich career history.",
+        "Having guided multiple parishes through difficult administrative hurdles over thirty years, the pulpit offered immense practical wisdom. Congregants trusted such seasoned guidance."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('respected pastor', 'respected minister', 'experienced pastor', 'experienced minister') fit smoothly after the stem. Respected highlights moral esteem and community admiration, whereas experienced emphasizes institutional longevity and practical tenure."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "experienced",
+      "target_modifier": "ordained",
+      "source_context_dev": [
+        "After decades of guiding assemblies through personal crises, hospital visitations, and family counseling, the pulpit possessed deep practical wisdom. Parishioners valued such seasoned guidance.",
+        "Decades of hands-on congregational care and long familiarity with grief support gave the sermon practical depth. Families felt reassured by such decades of pastoral seasoning.",
+        "Years spent conducting counseling sessions, family interventions, and community care brought a steady hand to the morning service. The flock treasured such long-tested pastoral wisdom.",
+        "Having spent a lifetime walking alongside families through births, deaths, and spiritual crises, the pulpit spoke with practical insight. The flock trusted such long-practiced care."
+      ],
+      "target_context_dev": [
+        "The solemn liturgy included formal sacramental rites, authorized consecrations, and canonical affirmations required by ecclesiastical law. Official clerical credentials validated every ritual act.",
+        "The morning worship emphasized traditional liturgical authority, formal vows, and the sacred governance of the church hierarchy. The rite required fully credentialed clerical standing.",
+        "Official certificates of clerical investiture were displayed during the solemn ecumenical ceremony. The assembly gathered to witness the performance of legitimate sacramental functions.",
+        "The administration of holy sacraments followed the strict canonical traditions and ecclesiastical certifications of the denomination. Proper clerical credentials ensured valid rites."
+      ],
+      "source_context_test": [
+        "Decades of practical family counseling and hands-on crisis support gave the pulpit immense intuitive insight. Parishioners relied on that long-practiced wisdom.",
+        "With decades devoted to the daily care of the flock and comforting the sick, the morning homily resonated deeply. The congregation valued such extensive pastoral mileage.",
+        "Decades of faithful pastoral visitations and seasoned bereavement support gave the pulpit exceptional understanding. Families took comfort in such practical care.",
+        "Decades of attentive shepherding through countless personal hardships brought profound reassurance to the morning service. The flock leaned on such seasoned guidance."
+      ],
+      "target_context_test": [
+        "The liturgy required formal clerical credentials to validate the distribution of communion and sacred blessings. The congregation affirmed the official clerical status.",
+        "Formal ecclesiastical induction and official licensing by the governing board were celebrated during the ceremony. The church honored the newly credentialed spiritual office.",
+        "The solemn service centered on the sacred rites of canonical investiture and authorized clerical succession. Parishioners acknowledged the validity of the clerical appointment.",
+        "Strict denominational protocols dictated that only properly credentialed and sanctioned clergy could administer the morning sacraments. The rites proceeded under formal clerical authority."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('experienced pastor', 'experienced minister', 'ordained pastor', 'ordained minister') remain completely valid and grammatical. Experienced focuses on long tenure and pastoral care, while ordained emphasizes ecclesiastical legitimacy, formal vows, and sacramental licensing."
+    }
+  ]
+}

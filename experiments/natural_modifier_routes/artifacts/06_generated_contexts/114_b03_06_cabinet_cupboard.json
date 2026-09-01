@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_06_cabinet_cupboard",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "cabinet_cupboard",
+    "noun_0": "cabinet",
+    "noun_1": "cupboard",
+    "shared_definition": "a piece of furniture with doors and shelves used for storing domestic goods",
+    "neutral_stem": "Searching for extra dishes, he opened",
+    "candidate_modifiers": [
+      "wooden",
+      "spacious",
+      "empty",
+      "tall",
+      "painted",
+      "locked",
+      "dark",
+      "sturdy",
+      "antique",
+      "dusty",
+      "cluttered",
+      "glass",
+      "corner",
+      "low",
+      "deep"
+    ],
+    "semantic_notes": "Cupboard is frequent in British English and specifically for kitchen food/dish storage, while cabinet is more common in American English.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        18820
+      ],
+      "noun_1": [
+        94111
+      ]
+    },
+    "modifier_token_ids": {
+      "wooden": [
+        7116
+      ],
+      "spacious": [
+        30351
+      ],
+      "empty": [
+        7738
+      ],
+      "tall": [
+        13030
+      ],
+      "painted": [
+        16715
+      ],
+      "locked": [
+        23555
+      ],
+      "dark": [
+        4996
+      ],
+      "sturdy": [
+        47170
+      ],
+      "antique": [
+        34323
+      ],
+      "dusty": [
+        78921
+      ],
+      "cluttered": [
+        173152
+      ],
+      "glass": [
+        4896
+      ],
+      "corner": [
+        9895
+      ],
+      "low": [
+        2708
+      ],
+      "deep": [
+        5268
+      ]
+    },
+    "forced_projection_span": 0.04365403950214386,
+    "max_noun_pair_mass": 0.7064526081085205,
+    "context_priority_score": 0.03083951006076191,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "painted",
+        "target_modifier": "locked",
+        "source_projection": 0.09450725466012955,
+        "target_projection": 0.09587998688220978,
+        "forced_modifier_leverage": 0.0013727322220802307,
+        "source_pair_mass": 0.3122042417526245,
+        "target_pair_mass": 0.5173385143280029
+      },
+      "medium": {
+        "source_modifier": "antique",
+        "target_modifier": "low",
+        "source_projection": -0.12100355327129364,
+        "target_projection": -0.09775078296661377,
+        "forced_modifier_leverage": 0.02325277030467987,
+        "source_pair_mass": 0.2373410016298294,
+        "target_pair_mass": 0.5274326801300049
+      },
+      "high": {
+        "source_modifier": "dark",
+        "target_modifier": "corner",
+        "source_projection": 0.17019601166248322,
+        "target_projection": 0.21385005116462708,
+        "forced_modifier_leverage": 0.04365403950214386,
+        "source_pair_mass": 0.2536577582359314,
+        "target_pair_mass": 0.7064526081085205
+      }
+    },
+    "context_generation_rank": 115
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "painted",
+      "target_modifier": "locked",
+      "source_context_dev": [
+        "The dining room was filled with colorful, hand-finished furnishings from local artisans. Bright pastels covered most of the decorative woodwork.",
+        "She loved decorating the dining area with customized hues and artistic finishes. One particular piece of storage furniture featured a fresh coat of cheerful enamel.",
+        "The quaint cottage kitchen showcased vibrant craftsmanship and colorful wood finishes throughout the dining area. Every storage piece possessed unique brushwork.",
+        "Handmade crafts and tinted wooden furnishings brightened the spacious kitchen. An eye-catching pastel piece held the best serving bowls."
+      ],
+      "target_context_dev": [
+        "The host kept his finest porcelain safely secured behind sturdy keyholes. He reached into his pocket for the small brass key.",
+        "Because valuable vintage porcelain was kept inside, the homeowner secured the storage unit with a bolt. He brought out his key ring to access the plates.",
+        "Valuable glassware was kept safely secured away from guests. After fetching the matching key from the pantry hook, he stepped forward.",
+        "The homeowner secured all delicate heirloom dinnerware behind latched wooden doors. With the master key ready in his hand, he approached."
+      ],
+      "source_context_test": [
+        "The bohemian kitchen was decorated with vivid tones and custom artistic brushwork. One brightly colored piece of furniture held all the festive tableware.",
+        "A splash of decorative pigment coated the rustic storage piece in the breakfast room. Its bright facade stood out against the bare walls.",
+        "Vibrant shades of blue and white coated the artisanal wooden furniture along the dining wall. The newly stained unit held the breakfast settings.",
+        "The designer had revitalized the cottage dining room using pigmented finishes and stenciled borders across the wooden fixtures."
+      ],
+      "target_context_test": [
+        "To prevent accidents during the party, the expensive glassware had been safely latched shut. He pulled out the tiny silver key.",
+        "The family kept their fragile porcelain safely secured behind iron clasps. He slid the brass key into place before reaching inside.",
+        "Valuable ceramic plates were kept secured under heavy latch and key. Having retrieved the appropriate key from the drawer, he stepped over.",
+        "Security latches had been installed on the dining storage units to protect the fine porcelain. He grasped the heavy key firmly."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings of painted/locked with cabinet/cupboard are syntactically and semantically viable across the contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "antique",
+      "target_modifier": "low",
+      "source_context_dev": [
+        "The historic estate was furnished with genuine nineteenth-century heirlooms passed down through generations. A venerable mahogany piece occupied the formal parlor.",
+        "In the Victorian dining room, every fixture was a preserved relic from centuries past. The master of the house treasured these aged family furnishings.",
+        "The manor house preserved timeless wooden artifacts from the eighteenth century. An ornate, aged storage unit held the formal dinner service.",
+        "Surrounded by historic heirlooms and classic period woodwork, the room felt like an authentic museum. He admired the centuries-old woodwork before serving."
+      ],
+      "target_context_dev": [
+        "He crouched down near the floorboards to check the storage units situated beneath the counter. Bending his knees, he reached near the floor.",
+        "Rather than reaching overhead, he knelt toward the baseboards where the under-counter compartments were installed.",
+        "The under-counter fixtures sat just inches above the floorboards in the compact galley. He dropped to his knees to inspect the base storage.",
+        "He crouched downward toward the floor, looking into the bottom compartments installed beneath the chopping board."
+      ],
+      "source_context_test": [
+        "The preserved Victorian mansion boasted authenticated period heirlooms in every dining space. A weathered, century-old structure held the dinner sets.",
+        "Generations of history filled the ancestral estate, where preserved period furnishings housed all the heirloom tableware.",
+        "He stepped into the historic dining salon, which was decorated exclusively with classic eighteenth-century family heirlooms.",
+        "The vintage manor house was known for its preserved historical furnishings and rare collector pieces."
+      ],
+      "target_context_test": [
+        "He bent down toward the floorboards to search the lower storage beneath the countertop.",
+        "All the secondary serving trays had been placed in the bottom compartments beneath the prep table. He knelt right down on the floor.",
+        "He bent his knees to inspect the base-level compartments built beneath the kitchen island.",
+        "Kneeling down by the baseboards, he reached beneath the counter where the lowest storage compartments were located."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings of antique/low with cabinet/cupboard produce completely natural English expressions with the target stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "dark",
+      "target_modifier": "corner",
+      "source_context_dev": [
+        "The unlit pantry hallway was shrouded in deep shadows where the ceiling bulb had burned out. He peered through the gloom toward the shadowy wooden unit.",
+        "With the blinds drawn and no lamps switched on, deep shadows covered the back wall of the kitchen. He squinted into the gloomy space.",
+        "The kitchen corridor was deeply shadowed, receiving no illumination from the dining room windows. He peered into the gloom.",
+        "Night had fallen, and without turning on the overhead bulb, the recessed alcove remained shrouded in shadow."
+      ],
+      "target_context_dev": [
+        "Right where the two adjoining walls met at a sharp angle, a specialized triangular unit filled the diagonal space.",
+        "The kitchen layout featured an angled unit fitted precisely where the perpendicular walls converged.",
+        "In the intersection between the perpendicular counters, a wedge-shaped unit made efficient use of the wall junction.",
+        "He walked past the central island toward the intersection where two walls converged at a ninety-degree angle."
+      ],
+      "source_context_test": [
+        "The pantry alcove had no windows and remained submerged in complete shadow. Squinting through the gloom, he reached forward.",
+        "Because the main light switch was broken, the far wall remained enveloped in deep gloom.",
+        "The hallway lacked lighting, leaving the storage space hidden in murky shadows. He carefully stepped through the dim room.",
+        "Thick evening shadows filled the rear of the unilluminated kitchen, obscuring the furniture along the far wall."
+      ],
+      "target_context_test": [
+        "The designer installed angled storage right where the north and east walls intersected.",
+        "He moved toward the diagonal junction where the two walls joined together in the breakfast nook.",
+        "A wedge-shaped storage fixture had been custom-built to fill the space where the two counters met at an angle.",
+        "He walked over to the intersection of the two kitchen walls where a diagonal unit sat tucked away."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings of dark/corner with cabinet/cupboard are natural and fully interpretable across all source and target contexts."
+    }
+  ]
+}

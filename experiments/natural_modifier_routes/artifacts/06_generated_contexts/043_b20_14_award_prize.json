@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b20_14_award_prize",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "award_prize",
+    "noun_0": "award",
+    "noun_1": "prize",
+    "shared_definition": "something given to honor victory or exceptional achievement in sports",
+    "neutral_stem": "The winner received the",
+    "candidate_modifiers": [
+      "annual",
+      "cash",
+      "coveted",
+      "deserved",
+      "grand",
+      "highest",
+      "honorary",
+      "huge",
+      "prestigious",
+      "rich",
+      "second",
+      "special",
+      "top",
+      "ultimate",
+      "valuable"
+    ],
+    "semantic_notes": "'Prize' often implies a tangible bounty or purse won via competition, while 'award' suggests formal recognition by a committee or governing body.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        8054
+      ],
+      "noun_1": [
+        22068
+      ]
+    },
+    "modifier_token_ids": {
+      "annual": [
+        7384
+      ],
+      "cash": [
+        8216
+      ],
+      "coveted": [
+        89465
+      ],
+      "deserved": [
+        52026
+      ],
+      "grand": [
+        4159
+      ],
+      "highest": [
+        7310
+      ],
+      "honorary": [
+        77129
+      ],
+      "huge": [
+        7186
+      ],
+      "prestigious": [
+        38624
+      ],
+      "rich": [
+        8326
+      ],
+      "second": [
+        1855
+      ],
+      "special": [
+        2803
+      ],
+      "top": [
+        1903
+      ],
+      "ultimate": [
+        17029
+      ],
+      "valuable": [
+        12272
+      ]
+    },
+    "forced_projection_span": 0.11008787155151367,
+    "max_noun_pair_mass": 0.8908543586730957,
+    "context_priority_score": 0.09807226020870985,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "top",
+        "target_modifier": "ultimate",
+        "source_projection": 0.6479425430297852,
+        "target_projection": 0.6639351844787598,
+        "forced_modifier_leverage": 0.01599264144897461,
+        "source_pair_mass": 0.7562198638916016,
+        "target_pair_mass": 0.7433274984359741
+      },
+      "medium": {
+        "source_modifier": "prestigious",
+        "target_modifier": "annual",
+        "source_projection": -0.23198924958705902,
+        "target_projection": -0.17010614275932312,
+        "forced_modifier_leverage": 0.0618831068277359,
+        "source_pair_mass": 0.5636689066886902,
+        "target_pair_mass": 0.5141937732696533
+      },
+      "high": {
+        "source_modifier": "cash",
+        "target_modifier": "grand",
+        "source_projection": 0.7792415618896484,
+        "target_projection": 0.8893294334411621,
+        "forced_modifier_leverage": 0.11008787155151367,
+        "source_pair_mass": 0.8277690410614014,
+        "target_pair_mass": 0.8908543586730957
+      }
+    },
+    "context_generation_rank": 44
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "top",
+      "target_modifier": "ultimate",
+      "source_context_dev": [
+        "After dominating the national athletics championship, the veteran decathlete was recognized for leading all competitors across every discipline.",
+        "The federation gathered at the convention hall to recognize the foremost competitor in track and field.",
+        "Finishing at the pinnacle of the league standings brought immense recognition from the governing council.",
+        "Officials tallied the season points to determine who stood above all other contenders in the division."
+      ],
+      "target_context_dev": [
+        "Decades of grueling training and sacrifice finally culminated in the defining victory of the marathoner's career.",
+        "Securing the championship match was the defining milestone every contender in the arena had dreamed of claiming.",
+        "The brutal multi-stage bicycle race across the mountains concluded with the greatest triumph in the sport.",
+        "Climbing onto the podium represented the final, supreme achievement of a lifelong sporting journey."
+      ],
+      "source_context_test": [
+        "Following an undefeated season, the gymnast stood before the committee to receive accolades for ranking first overall.",
+        "The state sports bureau selected the most accomplished swimmer after an extraordinary display of skill.",
+        "At the conclusion of the tournament, the leading scorer was celebrated by teammates and league dignitaries.",
+        "Having outperformed every rival on the tennis circuit, the seeded athlete was formally honored on stage."
+      ],
+      "target_context_test": [
+        "Winning the final showdown brought the definitive reward that every competitor fought to claim.",
+        "After surviving seven rounds of elimination, the boxing champion reached the zenith of the competition.",
+        "Years of relentless dedication across the international circuit brought the crowning glory of the sport.",
+        "The grueling decathlon ended under the stadium lights with the final honor every athlete covets."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('top award', 'top prize', 'ultimate award', 'ultimate prize') are standard collocations in competitive sports. The source contexts bias toward hierarchical rank and leading performance ('top'), whereas the target contexts emphasize career culmination and supreme milestones ('ultimate')."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "prestigious",
+      "target_modifier": "annual",
+      "source_context_dev": [
+        "The centuries-old athletic society assembled to bestow their most revered and dignified tribute upon the champion.",
+        "Earning recognition from the venerable sports academy carries unparalleled reputation and immense esteem across the globe.",
+        "The elite sporting gala was organized to confer the council's most respected honor to the standout performer.",
+        "Judges and former champions cast ballots to decide who earned the distinguished tribute for sportsmanship."
+      ],
+      "target_context_dev": [
+        "Every December, the regional cycling association convenes to distribute honors for the closing sporting calendar.",
+        "The winter games festival returned to the mountain resort for its regularly scheduled end-of-season ceremony.",
+        "Continuing a tradition held every single autumn, the running club recognized the fastest runner of the season.",
+        "As the league calendar drew to a close, organizers prepared the regular yearly distribution for the champion."
+      ],
+      "source_context_test": [
+        "The historic governing body hosted a black-tie ceremony to honor the most acclaimed rower of the decade.",
+        "A panel of international sports journalists convened to decide who deserved the esteemed tribute.",
+        "The venerable clubhouse opened its banquet hall to confer high honor upon the undefeated fencing master.",
+        "Revered figures from sports history took the stage to recognize the standout competitor of the year."
+      ],
+      "target_context_test": [
+        "Like clockwork at the end of each season, the rowing club presented recognition to the team captain.",
+        "The recurring spring tournament brought competitors together once more for the standard seasonal honor.",
+        "Every twelve months, the archery association honors the highest scoring marksman across the circuit.",
+        "The community sports banquet is held every winter to celebrate the season's foremost competitor."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('prestigious award', 'prestigious prize', 'annual award', 'annual prize') are fully grammatical and natural. Source contexts emphasize institutional stature, veneration, and reputation ('prestigious'), while target contexts establish recurring cyclical temporality ('annual')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "cash",
+      "target_modifier": "grand",
+      "source_context_dev": [
+        "Organizers allocated substantial monetary funds to disburse directly to the fastest sprinter across the finish line.",
+        "The televised gaming championship offered hefty dollar payouts directly deposited into the winner's account.",
+        "Sponsors provided substantial monetary compensation to ensure the winning golfer received a financial windfall.",
+        "The marathon director handed over a massive paper check worth fifty thousand dollars to the champion."
+      ],
+      "target_context_dev": [
+        "Spectators packed the massive stadium to witness the crowning moment of the premier tournament series.",
+        "After battling through fifty preliminary rounds, the master chess player stood ready for the magnificent pinnacle honor.",
+        "The multi-day regatta concluded with an elaborate ceremony honoring the champion of the main showcase.",
+        "Beating all other finalists earned the gymnast the foremost honor of the entire weekend festival."
+      ],
+      "source_context_test": [
+        "To attract elite runners, the meet guaranteed five-figure monetary payouts to those finishing first.",
+        "The esports tournament promised immense financial compensation to whichever squad took first place.",
+        "Along with widespread acclaim, the winning billiard player collected a large envelope filled with dollar bills.",
+        "Organizers funded a hundred-thousand-dollar payout directly for the victor of the open tournament."
+      ],
+      "target_context_test": [
+        "The international derby concluded on the main stage with the magnificent highlight of the equestrian season.",
+        "Surviving the grueling sixty-player bracket qualified the champion for the premier triumph of the tournament.",
+        "The martial arts showcase culminated in a spectacular ceremony to confer the pinnacle honor.",
+        "Fans cheered wildly as the spotlight centered on the victor of the massive championship event."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('cash award', 'cash prize', 'grand award', 'grand prize') are established sporting idioms. Source contexts directly frame monetary disbursement ('cash'), while target contexts evoke large-scale spectacle and overall tournament primacy ('grand')."
+    }
+  ]
+}

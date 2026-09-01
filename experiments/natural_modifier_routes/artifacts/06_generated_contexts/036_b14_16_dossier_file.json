@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b14_16_dossier_file",
+    "generation_batch": 14,
+    "domain": "documents and information objects",
+    "family_id": "dossier_file",
+    "noun_0": "dossier",
+    "noun_1": "file",
+    "shared_definition": "a collection of documents, records, and intelligence concerning a particular person, case, or subject",
+    "neutral_stem": "The investigator opened",
+    "candidate_modifiers": [
+      "confidential",
+      "extensive",
+      "secret",
+      "complete",
+      "thick",
+      "detailed",
+      "classified",
+      "updated",
+      "comprehensive",
+      "personal",
+      "official",
+      "archived",
+      "incriminating",
+      "voluminous",
+      "organized"
+    ],
+    "semantic_notes": "'Dossier' carries strong connotations of espionage, investigative intelligence, and political intrigue, while 'file' is the general administrative term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        70453
+      ],
+      "noun_1": [
+        2129
+      ]
+    },
+    "modifier_token_ids": {
+      "confidential": [
+        29259
+      ],
+      "extensive": [
+        12688
+      ],
+      "secret": [
+        6789
+      ],
+      "complete": [
+        4133
+      ],
+      "thick": [
+        7497
+      ],
+      "detailed": [
+        9813
+      ],
+      "classified": [
+        21296
+      ],
+      "updated": [
+        10448
+      ],
+      "comprehensive": [
+        13611
+      ],
+      "personal": [
+        3577
+      ],
+      "official": [
+        5125
+      ],
+      "archived": [
+        87349
+      ],
+      "incriminating": [
+        202163
+      ],
+      "voluminous": [
+        160527
+      ],
+      "organized": [
+        13957
+      ]
+    },
+    "forced_projection_span": 0.19307303428649902,
+    "max_noun_pair_mass": 0.569520890712738,
+    "context_priority_score": 0.10995912645945793,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "voluminous",
+        "target_modifier": "classified",
+        "source_projection": 0.29285481572151184,
+        "target_projection": 0.3135159909725189,
+        "forced_modifier_leverage": 0.02066117525100708,
+        "source_pair_mass": 0.3037826120853424,
+        "target_pair_mass": 0.31865397095680237
+      },
+      "medium": {
+        "source_modifier": "organized",
+        "target_modifier": "complete",
+        "source_projection": 0.030599920079112053,
+        "target_projection": 0.12670519948005676,
+        "forced_modifier_leverage": 0.09610527940094471,
+        "source_pair_mass": 0.030789295211434364,
+        "target_pair_mass": 0.127884179353714
+      },
+      "high": {
+        "source_modifier": "extensive",
+        "target_modifier": "confidential",
+        "source_projection": 0.3701205849647522,
+        "target_projection": 0.5631936192512512,
+        "forced_modifier_leverage": 0.19307303428649902,
+        "source_pair_mass": 0.37207895517349243,
+        "target_pair_mass": 0.569520890712738
+      }
+    },
+    "context_generation_rank": 37
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "voluminous",
+      "target_modifier": "classified",
+      "source_context_dev": [
+        "Decades of undercover surveillance reports and wiretap transcripts had accumulated into a mountain of paper. Straining under the sheer physical weight of the binder, she prepared to begin her review.",
+        "The subject had been tracked across five continents over forty years, generating thousands of pages of notes. It required two strong hands just to lift the towering stack from the desk.",
+        "Shelves groaned under the mass of accumulated intelligence reports detailing the suspect's entire lifetime. Setting the massive stack onto the desk, she took a deep breath.",
+        "Hundreds of interview transcripts, financial printouts, and photographic logs were bound together into one enormous bound record. Preparing for a marathon reading session, she cleared her desk."
+      ],
+      "target_context_dev": [
+        "Top-secret red warning stamps covered the front cover, warning of federal penalties for unauthorized viewing. She swiped her security badge to gain access to the restricted room.",
+        "Access was strictly restricted to personnel with the highest tier of government clearance. After ensuring the security door was bolted behind her, she sat at the terminal.",
+        "The red security tape across the seal indicated that viewing these materials without special authorization was a felony. She verified her credentials with the guard before proceeding.",
+        "Only agents holding special compartmentalized clearance were allowed to inspect the restricted government records. After closing the blinds of the secure reading room, she broke the seal."
+      ],
+      "source_context_test": [
+        "The agency had amassed a staggering quantity of paperwork on the foreign operative over several decades. Preparing to spend the entire night sifting through the massive mound of pages, she sat down.",
+        "Boxes of archived field reports and intercept summaries filled an entire storage crate. She hauled the hefty bundle of assembled materials over to the examination lamp.",
+        "Years of painstaking reconnaissance had yielded thousands of dense pages documenting every contact the operative ever met. Wiping dust from the enormous stack, she pulled up a chair.",
+        "The sheer bulk of the gathered paperwork was overwhelming, comprising reams of printed logs and transcripts. Ready to begin the exhausting task of reading it all, she unlocked her drawer."
+      ],
+      "target_context_test": [
+        "The folder bore high-level government restriction markers and a strict chain-of-custody log. Having just entered the soundproof SCIF, she verified nobody was watching.",
+        "Unauthorized disclosure of the contents inside would trigger an immediate treason prosecution. She verified her biometric scan at the high-security cabinet.",
+        "Marked with restricted distribution warnings, the sensitive paperwork had been locked inside a vault for years. She confirmed her clearance code before proceeding.",
+        "Strict protocols governed access to the restricted government materials on the operative. Once inside the vault, she prepared to review the sensitive record."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Low discrimination regime. Both 'voluminous' and 'classified' combine seamlessly with 'dossier' and 'file'. Source contexts emphasize physical size, page counts, and weight, biasing toward voluminous dossier/file. Target contexts emphasize security clearances, compartmentalization, and secrecy seals, biasing toward classified file/dossier."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "organized",
+      "target_modifier": "complete",
+      "source_context_dev": [
+        "Every tabbed divider was meticulously color-coded, cross-referenced, and ordered by date of intelligence gathering. The meticulous arrangement made finding specific suspect profiles remarkably easy.",
+        "The analytical unit had painstakingly indexed each background memo, photograph, and timeline entry with custom color tabs. Finding any piece of intelligence took only seconds.",
+        "A master table of contents neatly laid out every section of the intelligence profile, from financial histories to surveillance logs. Admiring the tidy indexing, she prepared to cross-examine the suspect.",
+        "All relevant intelligence materials on the target had been arranged systematically into neat, labeled partitions. She appreciated the methodical indexing of the materials."
+      ],
+      "target_context_dev": [
+        "After weeks of waiting on late submissions, the missing final autopsy and ballistics reports had finally arrived. With nothing left out of the case record, she sat down.",
+        "Not a single report, warrant, or evidentiary log was missing after the clerk tracked down the final elusive transcript. With the entire collection of case materials finally assembled, she pulled up a chair.",
+        "The administrative staff had finally collected every last missing document, ensuring no gaps remained in the record. With the whole story now present from start to finish, she sat down.",
+        "Previous reviews had been hampered by missing witness statements, but every gap was now fully resolved. With all necessary documentation finally gathered in full, she prepared for court."
+      ],
+      "source_context_test": [
+        "Each section of the intelligence profile was arranged by date and cross-indexed with color-coded stickers. The analytical team had turned chaotic paperwork into a tidy system.",
+        "Carefully sorted by chronology and subject matter, the intelligence collection allowed for instant retrieval of any record. She marveled at the precise indexing as she began.",
+        "The materials on the foreign diplomat had been sorted, tagged, and methodically filed behind labeled plastic dividers. She sat down to review the structured breakdown.",
+        "Every intelligence report was neatly bound with indexed tabs matching a master reference guide. She adjusted her reading glasses to examine the orderly system."
+      ],
+      "target_context_test": [
+        "The final missing lab results and court orders had just arrived from the courier, leaving no piece of paperwork omitted. Now that the entire case history was assembled in full, she began her review.",
+        "Investigators had searched for months to locate the missing early records, finally tracking down every single lost document. With no omissions left in the record, she started reading.",
+        "Every supplemental report, photograph, and arrest summary had at last been gathered without a single missing page. With the whole case record fully assembled, she sat at her desk.",
+        "The previous detective had left several blanks, but a thorough audit recovered every missing piece of evidence. Holding the newly unified whole, she prepared her presentation."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Medium discrimination regime. 'Organized' and 'complete' cross-apply naturally to both 'dossier' and 'file'. Source contexts emphasize indexing, tabs, categorization, and orderly arrangement. Target contexts emphasize the elimination of gaps, arrival of final missing pieces, and holistic completeness."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "extensive",
+      "target_modifier": "confidential",
+      "source_context_dev": [
+        "The profile spanned thirty years of the diplomat's overseas postings, financial dealings, and personal associations. It offered a comprehensive, wide-ranging view of his entire public and private life.",
+        "Years of global surveillance had mapped out the entire network, covering countless transactions, associates, and travel logs. The sheer scope and breadth of the gathered intelligence was staggering.",
+        "From early university contacts to recent corporate board appointments, every chapter of the target's life was thoroughly documented. The broad background compilation left no stone unturned.",
+        "The intelligence project had broadened over two decades, covering thousands of pages across multiple jurisdictions. The sprawling background overview was now ready for analysis."
+      ],
+      "target_context_dev": [
+        "The internal inquiry dealt with sensitive allegations against senior officials that could destroy careers if leaked. She ensured her office door was locked before beginning.",
+        "Holding privileged attorney-client correspondence and discreet whistleblower testimonies, the folder was kept strictly off the record. She took extra care to keep it away from prying eyes.",
+        "The internal affairs inquiry involved allegations of bribery that demanded the utmost discretion to protect identities. Alone in her private office with the blinds drawn, she sat down.",
+        "Because the case involved sensitive informant identities, the records were protected by strict privacy rules and kept under lock and key. She made sure no visitors were nearby before looking."
+      ],
+      "source_context_test": [
+        "Spanning multiple decades and jurisdictions, the collection covered nearly every aspect of the oligarch's personal and political network. The deep and wide-reaching background compilation lay before her.",
+        "The intelligence team had spent half a decade tracking the syndicate's far-reaching international footprint across dozens of countries. The wide-ranging background profile sat on the desk.",
+        "From childhood records to recent international bank transfers, the gathered intelligence covered a vast spectrum of the suspect's history. She sat down to study the wide-ranging collection.",
+        "Decades of deep background checks had produced a comprehensive portrait covering every corner of the subject's career. She prepared to dive into the broad compilation."
+      ],
+      "target_context_test": [
+        "The private inquiry contained sensitive personnel records that would cause widespread scandal if made public. She drew the blinds to ensure total privacy before proceeding.",
+        "The folder held delicate whistleblower testimonies that required strict discretion to protect vulnerable witnesses. Checking that nobody was standing near her desk, she prepared to read.",
+        "Containing privileged legal advice and sensitive internal disclosures, the paperwork had to be kept strictly shielded from public view. She locked her office door before sitting down.",
+        "The sensitive probe into executive misconduct was handled with extreme discretion to avoid public panic. Working late after everyone else had gone home, she sat down to work."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "High discrimination regime. 'Extensive' aligns with deep biographical scope, wide investigative reach, and intelligence gathering (dossier). 'Confidential' strongly pairs with delicate internal investigations, privileged records, and discretion (file). All four cross-combinations remain fully grammatical and coherent across all prompts."
+    }
+  ]
+}

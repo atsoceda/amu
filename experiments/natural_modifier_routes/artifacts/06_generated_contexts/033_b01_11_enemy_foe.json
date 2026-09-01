@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b01_11_enemy_foe",
+    "generation_batch": 1,
+    "domain": "people and social roles",
+    "family_id": "enemy_foe",
+    "noun_0": "enemy",
+    "noun_1": "foe",
+    "shared_definition": "a person who is actively opposed or hostile to someone or something",
+    "neutral_stem": "On the battlefield, the soldier confronted",
+    "candidate_modifiers": [
+      "deadly",
+      "formidable",
+      "relentless",
+      "bitter",
+      "ancient",
+      "sworn",
+      "dangerous",
+      "fierce",
+      "ruthless",
+      "powerful",
+      "hidden",
+      "cunning",
+      "perilous"
+    ],
+    "semantic_notes": "'Foe' has a literary, archaic, or elevated poetic register compared to the everyday neutral 'enemy'.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        13550
+      ],
+      "noun_1": [
+        95521
+      ]
+    },
+    "modifier_token_ids": {
+      "deadly": [
+        35514
+      ],
+      "formidable": [
+        57720
+      ],
+      "relentless": [
+        85278
+      ],
+      "bitter": [
+        31374
+      ],
+      "ancient": [
+        12440
+      ],
+      "sworn": [
+        57882
+      ],
+      "dangerous": [
+        13588
+      ],
+      "fierce": [
+        48621
+      ],
+      "ruthless": [
+        97224
+      ],
+      "powerful": [
+        8632
+      ],
+      "hidden": [
+        11497
+      ],
+      "cunning": [
+        112018
+      ],
+      "perilous": [
+        164077
+      ]
+    },
+    "forced_projection_span": 0.12445878982543945,
+    "max_noun_pair_mass": 0.9247246980667114,
+    "context_priority_score": 0.1150901168430778,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "ruthless",
+        "target_modifier": "dangerous",
+        "source_projection": -0.3953239917755127,
+        "target_projection": -0.3852386176586151,
+        "forced_modifier_leverage": 0.010085374116897583,
+        "source_pair_mass": 0.45707130432128906,
+        "target_pair_mass": 0.4344656765460968
+      },
+      "medium": {
+        "source_modifier": "hidden",
+        "target_modifier": "fierce",
+        "source_projection": -0.5653998851776123,
+        "target_projection": -0.5033195614814758,
+        "forced_modifier_leverage": 0.062080323696136475,
+        "source_pair_mass": 0.5944358110427856,
+        "target_pair_mass": 0.5346639752388
+      },
+      "high": {
+        "source_modifier": "bitter",
+        "target_modifier": "perilous",
+        "source_projection": -0.172916978597641,
+        "target_projection": -0.04845818877220154,
+        "forced_modifier_leverage": 0.12445878982543945,
+        "source_pair_mass": 0.19227123260498047,
+        "target_pair_mass": 0.05553501844406128
+      }
+    },
+    "context_generation_rank": 34
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "ruthless",
+      "target_modifier": "dangerous",
+      "source_context_dev": [
+        "The opposing commander was notorious for showing no mercy and executing prisoners without hesitation. War reports described an advance marked by total brutality and unsparing cruelty.",
+        "Intelligence confirmed that the opposing line gave no quarter to retreating units. Every village in their path had been razed with systematic malice.",
+        "The hostile force was driven by unyielding coldness, offering zero compassion to wounded captives. Their tactics were marked by pure, calculated severity.",
+        "Survivors recounted chilling stories of an adversary who never spared a single life. The approaching battalions were known for relentless, cold-blooded violence."
+      ],
+      "target_context_dev": [
+        "The approaching combatants possessed advanced heavy weaponry capable of inflicting severe casualties. Command cautioned the unit about lethal risks during any direct engagement.",
+        "Tactical scouts warned that the opposing squad posed a grave physical threat due to their superior firepower. Every step across the open terrain carried extreme risk.",
+        "The sector was patrolled by heavily armed combatants known to inflict severe harm upon unwary patrols. The mission parameters emphasized the severe life-threatening hazards ahead.",
+        "Reconnaissance reported an adversary equipped with armor-piercing munitions and explosive traps. Entering the valley meant walking straight into severe bodily peril."
+      ],
+      "source_context_test": [
+        "The invading general had ordered his troops to wipe out every captured garrison without exception. Frontline dispatches underscored their absolute lack of leniency.",
+        "Intercepted transmissions revealed strict orders to annihilate all resistance with merciless precision. The opposing units took pride in showing no clemency whatsoever.",
+        "Reports from fallen outposts indicated that the hostile force executed all surrendering personnel on sight. Their campaign was defined by unbridled pitilessness.",
+        "The advancing front showed an utter disregard for humanitarian conventions, leaving devastation in its wake. Their commanders operated with unrelenting, heartless determination."
+      ],
+      "target_context_test": [
+        "Field reports highlighted that the opposing regiment possessed deadly sniper rifles and coordinated artillery support. Approaching their perimeter presented tremendous hazard to all personnel.",
+        "The hostile brigade wielded lethal capabilities that could decimate an entire platoon within moments. Officers advised extreme caution when engaging such a high-threat target.",
+        "The defensive line bristled with landmines and rapid-fire emplacements ready to shred advancing forces. Confronting this unit meant taking on an exceptionally hazardous challenge.",
+        "Reconnaissance warned of a well-equipped strike team capable of delivering catastrophic damage. Any contact in the open sector would expose troops to immense physical danger."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (ruthless enemy, ruthless foe, dangerous enemy, dangerous foe) remain fully natural and grammatically sound across both contexts. Source contexts emphasize pitiless cruelty to prime 'ruthless enemy', while target contexts emphasize physical hazard and lethal capability to prime 'dangerous foe'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "hidden",
+      "target_modifier": "fierce",
+      "source_context_dev": [
+        "The dense jungle and thick fog obscured all opposing troop movements completely. Somewhere beneath the heavy canopy, unseen forces waited silently to spring an ambush.",
+        "Scouts were unable to pinpoint the exact positions of the opposing shooters concealed behind the rocky ridge. Camouflage netting kept the opposing squad completely out of sight.",
+        "The valley was shrouded in smoke, masking the precise location of the opposing skirmishers. Intelligence warned that unseen combatants were lurking inside the abandoned ruins.",
+        "Thermal scans failed to detect the cloaked snipers stationed throughout the dense treeline. The unit had to tread carefully against an adversary concealed from view."
+      ],
+      "target_context_dev": [
+        "The opposing vanguard charged forward with savage intensity and relentless aggression. Their battle cries echoed across the trenches as they launched a furious assault.",
+        "An aggressive detachment assaulted the perimeter with blistering rage and unrelenting tempo. The attackers fought with ferocious passion, refusing to concede an inch.",
+        "The frontline troops were met by an adversary fighting with wild ferocity and unbridled zeal. The onslaught was sudden, violent, and intensely combative.",
+        "Savage combat erupted along the ridge as the opposing shock troops attacked with extreme tenacity. Their violent zeal overwhelmed the forward outposts in minutes."
+      ],
+      "source_context_test": [
+        "Deep inside the subterranean tunnels, opposing squads remained undetectable to aerial surveillance. The patrol knew that cloaked hostiles were waiting in the darkness.",
+        "Thick brush and artificial camouflage rendered the opposing encampment nearly invisible from the path. Every shadow seemed to harbor an unspotted combatant.",
+        "The opposing riflemen blended seamlessly into the snow-covered cliffs, evading all visual identification. The detachment struggled to detect the concealed adversaries.",
+        "Command reported that opposing operatives had burrowed beneath the trench system out of plain sight. The main challenge was identifying where the unseen threat would emerge."
+      ],
+      "target_context_test": [
+        "The opposing warriors fought with wild, ferocious fury, swinging heavy bayonets and firing continuously. Their violent onslaught drove back the initial defensive line.",
+        "A tempest of brutal attacks hit the flank as the opposing assault team struck with blistering savagery. Their combative spirit was intensely aggressive and furious.",
+        "The hostile force pressed their offensive with terrifying intensity, screaming as they breached the parapet. Their unyielding savagery shocked the defending platoon.",
+        "Opposing shock units swarmed the barricade with relentless, aggressive wrath. The confrontation was characterized by unbridled intensity and ferocious clashes."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (hidden enemy, hidden foe, fierce enemy, fierce foe) are semantically valid and felicitous. Source contexts emphasize concealment, camouflage, and obscurity, whereas target contexts highlight aggression, fury, and savage combat."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "bitter",
+      "target_modifier": "perilous",
+      "source_context_dev": [
+        "Decades of generational warfare had bred deep resentment and personal hatred between the two factions. Neither side fought for mere territory, but to settle an ancient, rancorous grudge.",
+        "A long history of bloody conflict had left both armies burning with intense personal animosity. Every encounter between the rival families was fueled by deep-seated rancor.",
+        "The conflict was personal, rooted in centuries of mutual hostility and irreconcilable blood feuds. The opposing factions regarded one another with unyielding resentment.",
+        "Old vendettas reignited across the border, sparking clashes characterized by sheer spite and long-nurtured hatred. The rivalry had soured every diplomatic channel for generations."
+      ],
+      "target_context_dev": [
+        "Navigating the razor-sharp crags under heavy bombardment put the squad at imminent risk of total annihilation. The tactical situation was fraught with catastrophic jeopardy.",
+        "The mission required advancing through a heavily fortified choke point loaded with lethal crossfire and sheer cliffs. Every tactical step was fraught with fatal hazard.",
+        "The defensive stronghold presented an extremely hazardous obstacle, surrounded by deep ravines and explosive obstacles. Confronting this threat risked the lives of the entire platoon.",
+        "The terrain combined unstable precipices with lethal defensive traps that made the offensive operation exceedingly risky. Engaging the fortified force meant courting disaster."
+      ],
+      "source_context_test": [
+        "Generations of border bloodshed had fostered an enduring, acrimonious hatred among the frontline clans. The clash was driven by deep, lingering spite rather than strategic objectives.",
+        "The two opposing banners had despised each other for over a century, nursing ancient grievances with every passing war. The animosity between the two factions was palpably acidic.",
+        "Hostilities had festered for decades, turning every skirmish into an intensely personal settling of scores. Mutual malice and resentment hung heavily over the contested borderland.",
+        "The rival houses had traded slaughter and recrimination for centuries, ensuring no peace could ever take hold. The mutual rancor between their champions ran deeper than politics."
+      ],
+      "target_context_test": [
+        "Surrounded by sheer drop-offs and sweeping artillery arcs, the assault team faced an extraordinarily treacherous confrontation. The tactical posture was loaded with critical danger.",
+        "Breaching the narrow mountain pass exposed the unit to severe crossfires where one misstep meant certain destruction. The entire offensive was steeped in acute jeopardy.",
+        "The opposing fortress was flanked by sheer ravines and covered by overlapping kill zones, presenting a lethal undertaking. Any direct advance was fraught with mortal hazard.",
+        "The confrontation took place across a collapsing rope bridge suspended over a rocky abyss under heavy fire. The nature of the standoff posed extreme, life-threatening jeopardy."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (bitter enemy, bitter foe, perilous enemy, perilous foe) are fully grammatical and natural. Source contexts establish deep-seated acrimony and historical animosity, while target contexts frame the encounter in terms of extreme situational jeopardy and high-risk hazard."
+    }
+  ]
+}

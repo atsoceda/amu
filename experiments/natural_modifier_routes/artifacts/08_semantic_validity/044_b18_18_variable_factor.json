@@ -1,0 +1,32 @@
+{
+  "candidate_id": "variable_factor",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('the the'), making every stem-plus-completion sentence ungrammatical."
+      ],
+      "concise_notes": "All four combinations of (primary, critical) \u00d7 (variable, factor) would otherwise be semantically valid, but the fixed stem contains a duplicated token ('the the') that invalidates fluency."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('the the'), making every stem-plus-completion sentence ungrammatical."
+      ],
+      "concise_notes": "Contexts and modifier-noun pairings for (hidden, key) \u00d7 (variable, factor) are semantically sound, but the fixed stem defect renders the completions ungrammatical."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('the the'), making every stem-plus-completion sentence ungrammatical."
+      ],
+      "concise_notes": "The pairings for (dominant, decisive) \u00d7 (variable, factor) are permissible, but the duplicated determiner ('the the') in the fixed stem violates the grammaticality requirement."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "candidate_id": "dispute_quarrel",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_dev[3]"
+      ],
+      "failure_reasons": [
+        "Lexical leakage: target_context_dev[3] includes 'fiercely', an overt morphological derivative of the target modifier 'fierce'."
+      ],
+      "concise_notes": "All four cross-combinations are semantically natural with the stem, but target_context_dev[3] contains candidate lemma leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations are fully grammatical, felicitous, and free of lexical leakage across all source and target contexts."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations fit naturally across institutional and interpersonal scenarios with proper pragmatic contrast and no lexical leakage."
+    }
+  ]
+}

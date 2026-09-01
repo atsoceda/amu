@@ -1,0 +1,37 @@
+{
+  "candidate_id": "formula_equation",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_dev[0]",
+        "target_context_test[2]"
+      ],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('The mathematician derived the the'), making all stem plus completion sequences ungrammatical and unnatural.",
+        "target_context_test[2] explicitly mentions the target modifier 'algebraic' ('Following systematic algebraic manipulations').",
+        "target_context_dev[0] trivially evokes the target modifier via the root derivation 'algebraist'."
+      ],
+      "concise_notes": "Fails due to duplicated determiner in the fixed stem and explicit/trivial naming of the target modifier 'algebraic' in target contexts."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('The mathematician derived the the'), making all stem plus completion sequences ungrammatical and unnatural."
+      ],
+      "concise_notes": "All four cross-combinations and contexts are semantically valid and well-balanced, but fails strictly on the unnatural/ungrammatical duplicated determiner in the fixed stem."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [],
+      "failure_reasons": [
+        "Fixed stem contains a duplicated determiner ('The mathematician derived the the'), making all stem plus completion sequences ungrammatical and unnatural."
+      ],
+      "concise_notes": "Contexts and cross-combinations are semantically and pragmatically sound, but fails strictly on the duplicated determiner in the fixed stem."
+    }
+  ]
+}

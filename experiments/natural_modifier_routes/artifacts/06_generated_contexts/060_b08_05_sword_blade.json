@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b08_05_sword_blade",
+    "generation_batch": 8,
+    "domain": "artifacts and manufactured goods",
+    "family_id": "sword_blade",
+    "noun_0": "sword",
+    "noun_1": "blade",
+    "shared_definition": "a long edged weapon intended for slashing or thrusting",
+    "neutral_stem": "The warrior quickly drew",
+    "candidate_modifiers": [
+      "sharp",
+      "steel",
+      "ancient",
+      "deadly",
+      "gleaming",
+      "heavy",
+      "curved",
+      "polished",
+      "legendary",
+      "silver",
+      "ornate",
+      "lethal",
+      "forged",
+      "dull",
+      "ceremonial"
+    ],
+    "semantic_notes": "'Blade' is a synecdoche emphasizing the sharp cutting edge, whereas 'sword' denotes the entire weapon including the hilt and guard.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        26114
+      ],
+      "noun_1": [
+        26616
+      ]
+    },
+    "modifier_token_ids": {
+      "sharp": [
+        14658
+      ],
+      "steel": [
+        8103
+      ],
+      "ancient": [
+        12440
+      ],
+      "deadly": [
+        35514
+      ],
+      "gleaming": [
+        153441
+      ],
+      "heavy": [
+        7274
+      ],
+      "curved": [
+        35666
+      ],
+      "polished": [
+        39372
+      ],
+      "legendary": [
+        33195
+      ],
+      "silver": [
+        10173
+      ],
+      "ornate": [
+        94079
+      ],
+      "lethal": [
+        57493
+      ],
+      "forged": [
+        59308
+      ],
+      "dull": [
+        39212
+      ],
+      "ceremonial": [
+        96475
+      ]
+    },
+    "forced_projection_span": 0.09778764843940735,
+    "max_noun_pair_mass": 0.7516208291053772,
+    "context_priority_score": 0.0734992333962925,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "steel",
+        "target_modifier": "ceremonial",
+        "source_projection": -0.587571382522583,
+        "target_projection": -0.5741112232208252,
+        "forced_modifier_leverage": 0.013460159301757812,
+        "source_pair_mass": 0.7260231971740723,
+        "target_pair_mass": 0.5984468460083008
+      },
+      "medium": {
+        "source_modifier": "legendary",
+        "target_modifier": "heavy",
+        "source_projection": -0.6508354544639587,
+        "target_projection": -0.6021046042442322,
+        "forced_modifier_leverage": 0.04873085021972656,
+        "source_pair_mass": 0.7000411152839661,
+        "target_pair_mass": 0.6476259827613831
+      },
+      "high": {
+        "source_modifier": "lethal",
+        "target_modifier": "curved",
+        "source_projection": -0.14084598422050476,
+        "target_projection": -0.04305833578109741,
+        "forced_modifier_leverage": 0.09778764843940735,
+        "source_pair_mass": 0.39303216338157654,
+        "target_pair_mass": 0.6898303031921387
+      }
+    },
+    "context_generation_rank": 61
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "steel",
+      "target_modifier": "ceremonial",
+      "source_context_dev": [
+        "Forged in the blazing heat of the foundry, the armament was tempered for rugged battlefield utility.",
+        "The blacksmith had folded the gray iron many times to guarantee maximum durability in open combat.",
+        "A veteran footman needed practical metallurgy rather than decorative court frippery.",
+        "The armory rack held standard-issue ironwork built purely to withstand violent clashes."
+      ],
+      "target_context_dev": [
+        "The high priest stepped forward to begin the sacred coronation rite before the royal court.",
+        "Gold filigree and precious sapphires adorned the sacred instrument carried for the solemn festival.",
+        "During the traditional temple investiture, an ornamental token of office was presented to the monarch.",
+        "The grand procession required an exquisite display piece rather than an implement of war."
+      ],
+      "source_context_test": [
+        "Standard military kit prioritized hard metal and raw resilience over flashy decoration.",
+        "Prepared for the front lines, the infantry captain selected an arm from the working forge.",
+        "The smith quenched the hardened gray metal in oil to ensure it would not chip in skirmishes.",
+        "Practical soldiers relied on unadorned, heat-treated ironwork that could survive prolonged sieges."
+      ],
+      "target_context_test": [
+        "Surrounded by chanting monks, the grand master prepared for the solstice ritual.",
+        "Carried strictly during diplomatic state banquets, the gilded relic symbolized ancient treaties.",
+        "The coronation protocol dictated that an ornate, gem-encrusted sidearm be presented at the altar.",
+        "Polished silver engravings marked the sacred instrument reserved exclusively for temple rites."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (steel sword, steel blade, ceremonial sword, ceremonial blade) form standard, grammatically sound English collocations following 'The warrior quickly drew the...'. In source contexts, focus on metallurgical utility favors 'steel' and 'sword', while target contexts emphasize ritual and court decorum to favor 'ceremonial' and 'blade', without precluding the alternative combinations."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "legendary",
+      "target_modifier": "heavy",
+      "source_context_dev": [
+        "Fables sung by bards told of a mythical antiquity weapon pulled from the enchanted stone.",
+        "Ancient chronicles described a miraculous arm carried by the ancient mythical kings of old.",
+        "Scholars spent centuries searching for the celebrated relic spoken of in foundational epics.",
+        "The hero stood before the forgotten shrine where the mythic heirloom had rested for ages."
+      ],
+      "target_context_dev": [
+        "The brutish vanguard required immense physical power to wield a massive slab of thick iron.",
+        "Crushing through thick iron armor demanded maximum mass and overwhelming downward momentum.",
+        "The oversized iron slab weighed dozens of pounds, built for cleaving shields with raw force.",
+        "Only a warrior of colossal muscular girth could balance such an unyielding, dense chunk of iron."
+      ],
+      "source_context_test": [
+        "Centuries of folklore surrounded the renowned artifact that saved the kingdom in the first age.",
+        "Told in nursery rhymes and heroic ballads, the celebrated heirloom finally returned to mortal hands.",
+        "The explorer entered the ancient tomb, recognizing the fabled relic praised across the realm.",
+        "Prophesied by ancient seers, the wondrous weapon of the founding patriarch was unearthed at last."
+      ],
+      "target_context_test": [
+        "Splitting solid oak barricades required a thick, hefty iron edge with sheer crushing weight.",
+        "The mercenary favored extreme mass, knowing inertia alone could shatter an opponent's guard.",
+        "The cumbersome, thick slab strained the arms of any soldier lacking immense physical strength.",
+        "Crafted with double the normal thickness, the massive cleaver relied on downward bulk to smash armor."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (legendary sword, legendary blade, heavy sword, heavy blade) are fully valid and natural completions. The source contexts establish a high-fantasy, mythic tone emphasizing historical fame (biasing legendary/sword), while target contexts highlight physical mass, crushing momentum, and brute force (biasing heavy/blade)."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "lethal",
+      "target_modifier": "curved",
+      "source_context_dev": [
+        "The assassin specialized in fatal, single-stroke takedowns that left no chance of survival.",
+        "Designed specifically to inflict mortal trauma in a split second, the weapon struck with deadly precision.",
+        "The assassin coated the edge in venom to ensure that even a slight scratch would cause instantaneous death.",
+        "Facing an executioner known for merciless and fatal efficiency, the prisoner froze in terror."
+      ],
+      "target_context_dev": [
+        "The nomadic cavalry favored an arched, sickle-like profile engineered for sweeping horseback slices.",
+        "Forged with a distinct sweeping crescent contour, the weapon excelled in drawing cuts.",
+        "Desert riders preferred an arched silhouette that sliced cleanly along the arc of a galloping strike.",
+        "The blacksmith bent the heated iron into a graceful crescent arc before quenching."
+      ],
+      "source_context_test": [
+        "The silent killer approached from the shadows, poised to deliver a fatal strike to the target.",
+        "Trained in the art of mortal strikes, the duelist selected an instrument engineered purely for quick kills.",
+        "Every facet of the assassin's craft focused on guaranteed fatalities with zero margin for error.",
+        "The venomous coating guaranteed that any flesh wound would result in immediate demise."
+      ],
+      "target_context_test": [
+        "Mounted horsemen required a crescent, arched geometry to prevent the weapon from lodging in targets.",
+        "The silhouetted arc of the sickle-shaped weapon glinted under the desert moonlight.",
+        "Shaped like a waxing moon, the bent iron arc provided superior leverage on draw cuts.",
+        "The eastern cavalryman carried an arched, crescent-shaped weapon optimized for riding maneuvers."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (lethal sword, lethal blade, curved sword, curved blade) are syntactically and semantically legitimate. Source contexts prime mortal danger and lethal intent (biasing lethal/sword), whereas target contexts prime crescent geometry and equestrian slicing mechanics (biasing curved/blade)."
+    }
+  ]
+}

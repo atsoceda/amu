@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b18_10_assignment_task",
+    "generation_batch": 18,
+    "domain": "science, medicine, and education",
+    "family_id": "assignment_task",
+    "noun_0": "assignment",
+    "noun_1": "task",
+    "shared_definition": "a piece of work allocated to a learner or worker to be completed",
+    "neutral_stem": "The graduate student completed the",
+    "candidate_modifiers": [
+      "challenging",
+      "complex",
+      "daunting",
+      "difficult",
+      "essential",
+      "final",
+      "formal",
+      "graded",
+      "individual",
+      "mandatory",
+      "routine",
+      "simple",
+      "tedious",
+      "urgent",
+      "weekly"
+    ],
+    "semantic_notes": "'Assignment' is strongly associated with formal academic coursework, while 'task' is generic across work, labor, and cognitive duties.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        18327
+      ],
+      "noun_1": [
+        4209
+      ]
+    },
+    "modifier_token_ids": {
+      "challenging": [
+        14798
+      ],
+      "complex": [
+        3996
+      ],
+      "daunting": [
+        69390
+      ],
+      "difficult": [
+        3909
+      ],
+      "essential": [
+        5250
+      ],
+      "final": [
+        1626
+      ],
+      "formal": [
+        10781
+      ],
+      "graded": [
+        58324
+      ],
+      "individual": [
+        3141
+      ],
+      "mandatory": [
+        27979
+      ],
+      "routine": [
+        15668
+      ],
+      "simple": [
+        3606
+      ],
+      "tedious": [
+        67271
+      ],
+      "urgent": [
+        32034
+      ],
+      "weekly": [
+        16789
+      ]
+    },
+    "forced_projection_span": 0.41209676861763,
+    "max_noun_pair_mass": 0.8522623181343079,
+    "context_priority_score": 0.35121454731771884,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "routine",
+        "target_modifier": "challenging",
+        "source_projection": 0.02743532508611679,
+        "target_projection": 0.07109130918979645,
+        "forced_modifier_leverage": 0.04365598410367966,
+        "source_pair_mass": 0.03897585719823837,
+        "target_pair_mass": 0.16261011362075806
+      },
+      "medium": {
+        "source_modifier": "urgent",
+        "target_modifier": "tedious",
+        "source_projection": 0.19028030335903168,
+        "target_projection": 0.3902020752429962,
+        "forced_modifier_leverage": 0.19992177188396454,
+        "source_pair_mass": 0.3912527561187744,
+        "target_pair_mass": 0.4338766634464264
+      },
+      "high": {
+        "source_modifier": "tedious",
+        "target_modifier": "daunting",
+        "source_projection": 0.3902020752429962,
+        "target_projection": 0.8022988438606262,
+        "forced_modifier_leverage": 0.41209676861763,
+        "source_pair_mass": 0.4338766634464264,
+        "target_pair_mass": 0.8522623181343079
+      }
+    },
+    "context_generation_rank": 5
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "routine",
+      "target_modifier": "challenging",
+      "source_context_dev": [
+        "Every Monday morning, the course syllabus required a standard set of review questions to be submitted online.",
+        "The weekly seminar had familiar expectations that students followed like clockwork without any surprises.",
+        "As part of the standard curriculum, regular practice drills were distributed each Wednesday afternoon.",
+        "Following the standard syllabus schedule, basic weekly homework exercises had to be turned in by midnight."
+      ],
+      "target_context_dev": [
+        "The advanced doctoral seminar required building a novel statistical model from scratch under tight constraints.",
+        "The principal investigator presented an ambitious, intellectually rigorous endeavor that tested everyone's limits.",
+        "Navigating the intricate data pipeline demanded advanced technical problem-solving and deep concentration.",
+        "Formulating the proof required grappling with complex mathematical structures and unproven conjectures."
+      ],
+      "source_context_test": [
+        "The introductory lab section had predictable weekly requirements that students handled on autopilot.",
+        "According to the course outline, normal weekly problem sheets were distributed at the start of each session.",
+        "Regularly scheduled coursework was distributed every Friday to reinforce foundational concepts.",
+        "Students were accustomed to the familiar weekly homework exercises handed out during recitation."
+      ],
+      "target_context_test": [
+        "Solving the multifaceted engineering problem pushed the research team far beyond standard classroom methods.",
+        "Designing the complex multi-stage experiment required intense focus and creative troubleshooting.",
+        "The newly proposed methodology presented an intricate hurdle that demanded rigorous critical thinking.",
+        "Synthesizing the conflicting archival evidence proved to be an exceptionally demanding intellectual endeavor."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (routine assignment, routine task, challenging assignment, challenging task) remain grammatically correct and semantically plausible across both standard coursework contexts and demanding research contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "urgent",
+      "target_modifier": "tedious",
+      "source_context_dev": [
+        "With the submission portal closing in less than an hour, there was no time to waste.",
+        "The professor sent an unexpected broadcast requesting that all seminar materials be uploaded immediately.",
+        "An unexpected deadline was pushed forward to midnight, creating an immediate scramble across the department.",
+        "The grading deadline was suddenly moved up, requiring immediate attention before the day ended."
+      ],
+      "target_context_dev": [
+        "Hours were spent manually reformatting hundreds of bibliography entries line by line.",
+        "Entering thousands of repetitive data points into the spreadsheet felt completely mindless and dreary.",
+        "Labeling thousands of blurry images one after another proved to be an exhausting, monotonous chore.",
+        "Checking each row of the dataset for small punctuation errors was numbingly repetitive."
+      ],
+      "source_context_test": [
+        "A sudden emergency notice required all course deliverables to be submitted without delay.",
+        "With the grant portal locking in thirty minutes, the documentation had to be finalized instantly.",
+        "The department chair requested the required paperwork immediately before the afternoon committee convened.",
+        "Time was rapidly running out before the strict midnight cutoff on the course management portal."
+      ],
+      "target_context_test": [
+        "Manually typing in numerical values from stacks of paper forms took an entire mind-numbing afternoon.",
+        "Cleaning the corrupt dataset involved endless, uninspiring rounds of copying and pasting individual cells.",
+        "The afternoon was consumed by the repetitive, mind-numbing chore of renaming hundreds of image files.",
+        "Proofreading thousands of near-identical survey transcripts line by line proved thoroughly unexciting."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (urgent assignment, urgent task, tedious assignment, tedious task) fit naturally after time-pressured prompts and monotonous labor prompts without logical contradiction."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "tedious",
+      "target_modifier": "daunting",
+      "source_context_dev": [
+        "The work required retyping hundreds of bibliographic references by hand without making a single typo.",
+        "Manually checking thousands of survey responses for duplicate entries felt utterly monotonous and dry.",
+        "The homework required copying repetitive statistical tables onto paper row by row.",
+        "Coloring and categorizing hundreds of near-identical microscope slides was a numbingly unstimulating chore."
+      ],
+      "target_context_dev": [
+        "Staring down hundreds of gigabytes of unorganized data seemed like an overwhelming, intimidating barrier.",
+        "The prospect of rebuilding the entire laboratory infrastructure from the ground up was deeply intimidating.",
+        "Faced with a massive stack of incomprehensible source code, the scope of work appeared truly overwhelming.",
+        "Synthesizing a century of conflicting theoretical literature into one coherent model felt immensely intimidating."
+      ],
+      "source_context_test": [
+        "The coursework involved mindlessly transcribing dozens of audio recordings word for word.",
+        "Filling out identical spreadsheet columns for every subject in the study proved utterly dull.",
+        "The seminar requirement consisted of repetitive manual calculations that offered no intellectual spark.",
+        "Manually re-indexing hundreds of syllabus readings was a dull, repetitive slog."
+      ],
+      "target_context_test": [
+        "The prospect of designing a clinical trial with zero prior experience seemed terrifyingly immense.",
+        "Undertaking a comprehensive overhaul of the university archive looked like an overwhelmingly massive endeavor.",
+        "Confronting the immense complexity of the unprocessed satellite data was genuinely intimidating.",
+        "Drafting the multi-million dollar institutional grant proposal from scratch was an overwhelming hurdle."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (tedious assignment, tedious task, daunting assignment, daunting task) are fully coherent across both mind-numbing repetitive tasks and high-stakes intimidating projects."
+    }
+  ]
+}

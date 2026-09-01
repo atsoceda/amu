@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b08_19_casket_coffin",
+    "generation_batch": 8,
+    "domain": "artifacts and manufactured goods",
+    "family_id": "casket_coffin",
+    "noun_0": "casket",
+    "noun_1": "coffin",
+    "shared_definition": "a protective box or case in which a deceased human body is buried",
+    "neutral_stem": "The pallbearers carried",
+    "candidate_modifiers": [
+      "wooden",
+      "heavy",
+      "polished",
+      "closed",
+      "ornate",
+      "mahogany",
+      "plain",
+      "lined",
+      "sealed",
+      "expensive",
+      "open",
+      "dark",
+      "simple",
+      "ceremonial",
+      "bronze"
+    ],
+    "semantic_notes": "'Casket' is standard North American industry euphemism (usually rectangular), while 'coffin' traditionally denotes the six-sided anthropoid shape.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        184491
+      ],
+      "noun_1": [
+        89085
+      ]
+    },
+    "modifier_token_ids": {
+      "wooden": [
+        7116
+      ],
+      "heavy": [
+        7274
+      ],
+      "polished": [
+        39372
+      ],
+      "closed": [
+        6535
+      ],
+      "ornate": [
+        94079
+      ],
+      "mahogany": [
+        113262
+      ],
+      "plain": [
+        14529
+      ],
+      "lined": [
+        31584
+      ],
+      "sealed": [
+        26800
+      ],
+      "expensive": [
+        11162
+      ],
+      "open": [
+        1932
+      ],
+      "dark": [
+        4996
+      ],
+      "simple": [
+        3606
+      ],
+      "ceremonial": [
+        96475
+      ],
+      "bronze": [
+        30174
+      ]
+    },
+    "forced_projection_span": 0.11013337969779968,
+    "max_noun_pair_mass": 0.9484927654266357,
+    "context_priority_score": 0.10446071387534772,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "polished",
+        "target_modifier": "ceremonial",
+        "source_projection": 0.027353227138519287,
+        "target_projection": 0.038822561502456665,
+        "forced_modifier_leverage": 0.011469334363937378,
+        "source_pair_mass": 0.43822118639945984,
+        "target_pair_mass": 0.6219693422317505
+      },
+      "medium": {
+        "source_modifier": "lined",
+        "target_modifier": "polished",
+        "source_projection": -0.02966262400150299,
+        "target_projection": 0.027353227138519287,
+        "forced_modifier_leverage": 0.05701585114002228,
+        "source_pair_mass": 0.47521984577178955,
+        "target_pair_mass": 0.43822118639945984
+      },
+      "high": {
+        "source_modifier": "ceremonial",
+        "target_modifier": "wooden",
+        "source_projection": 0.038822561502456665,
+        "target_projection": 0.14895594120025635,
+        "forced_modifier_leverage": 0.11013337969779968,
+        "source_pair_mass": 0.6219693422317505,
+        "target_pair_mass": 0.803719699382782
+      }
+    },
+    "context_generation_rank": 39
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "polished",
+      "target_modifier": "ceremonial",
+      "source_context_dev": [
+        "Sunlight streamed into the upscale funeral home, glinting brightly across the high-gloss lacquer finish. As the mourning family gathered at the entrance of the chapel, quiet music began to play.",
+        "The funeral director had spent the entire morning buffing every exterior surface to a mirror-like shine. When the family gave the signal, the attendants stepped forward into formation.",
+        "Inside the contemporary memorial chapel, the pristine gleam of smooth mahogany captured the gentle glow of overhead spotlights. The service concluded in respectful silence as guests rose to their feet.",
+        "Great care had been taken to wax the lustrous dark finish until not a single fingerprint remained. Relatives looked on with quiet reverence as the escort team assembled at the front aisle."
+      ],
+      "target_context_dev": [
+        "State dignitaries and military honor guards stood at rigid attention to mark the official day of national mourning. Following strict heraldic traditions, the solemn cortege prepared to proceed down the cathedral steps.",
+        "A bugler sounded the final call as standard-bearers lowered their flags in formal tribute to the fallen leader. The assembled assembly bowed their heads in observance of the ancient public rites.",
+        "Representatives from across the continent gathered beneath cathedral arches to observe the grand state obsequies. With full diplomatic honors established, the designated escort squad began their march.",
+        "Trumpeters announced the commencement of the official national tribute with a low, reverent fanfare. Under the watchful eyes of thousands of spectators lining the courtyard, the honor party advanced."
+      ],
+      "source_context_test": [
+        "Every corner of the chapel gleamed under soft illumination, showcasing flawless craftsmanship and a radiant topcoat. Outside, the hearse stood open and ready along the sunlit driveway.",
+        "The mortuary staff ensured the rich walnut exterior reflected the flickering candlelight with immaculate sheen. A solemn hush fell over the congregation as the closing hymn ended.",
+        "Brushed bronze fittings and a mirror-bright gloss created an air of modern, dignified elegance throughout the sanctuary. Loved ones stood respectfully as the departure team took their positions.",
+        "The smooth surface shimmered faintly under the morning sun as guests filed out of the visitation parlor. In unison, the attendants stepped into position to begin the transfer."
+      ],
+      "target_context_test": [
+        "Flanked by a naval honor guard in dress uniforms, the solemn procession observed full state protocol. The national flag fluttered at half-mast as the official escort stepped forward.",
+        "Centuries of civic ritual governed every phase of the historic magistrate's public farewell. As muffled drums rolled in cadence across the square, the honor detail prepared to move.",
+        "An austere cortege assembled outside the grand basilica under the watchful eyes of the royal guard. Following the strict liturgy of state remembrance, the six escorts began their slow march.",
+        "Bells tolled thirty times in accordance with traditional public mourning guidelines for veteran statesmen. Amidst solemn pageantry and formalized remembrance, the escort squad moved into place."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (polished casket, ceremonial casket, polished coffin, ceremonial coffin) are fully grammatical and semantically felicitous in both context classes. Source contexts emphasize glossy, high-shine surfaces characteristic of modern funeral home preparations (biasing toward 'polished' and 'casket'), while target contexts emphasize state protocol, heraldic tradition, and official pomp (biasing toward 'ceremonial' and 'coffin')."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "lined",
+      "target_modifier": "polished",
+      "source_context_dev": [
+        "Inside the viewing room, guests admired the plush velvet interior and padded white tufting. Soft choral music played overhead as the farewell service drew to a close.",
+        "The interior bedding was tailored with delicate cream-colored satin to provide a soft and comforting resting place. After the final blessing, the attendants moved to the front of the nave.",
+        "Gentle folds of quilted silk framed the deceased during the family's private moments of remembrance. The visitation hours ended, and the escorts took their designated stations beside the bier.",
+        "Heavy embroidered brocade cushioned the interior, creating an ambiance of peaceful and plush repose. Outside, the hearse engine purred softly as the handlers prepared for the procession."
+      ],
+      "target_context_dev": [
+        "Sunlight sparkled off the glossy hardwood finish, highlighting the meticulous grain of the buffed timber. Friends and relatives rose respectfully from the pews as the service concluded.",
+        "The funeral staff had buffed the exterior until it shone like glass under the chapel chandeliers. With steady hands and quiet professionalism, the escort team approached the platform.",
+        "Flawless lacquer reflected the ambient candlelight, giving the exterior an immaculate and lustrous luster. The minister gave the final dismissal, and the carriers stepped forward into formation.",
+        "A brilliant shine gleamed across the outer surface, showing off the master woodworker's hand-rubbed finish. The assembled congregation paused in reverent silence as the handlers advanced."
+      ],
+      "source_context_test": [
+        "Soft padded damask and cushioned trims enveloped the deceased with dignified domestic warmth. The mourners took their seats in the pews while the escort party assembled quietly.",
+        "The seamstress had fitted the inner chamber with plush, tailored crepe for the memorial service. Following the pastor's concluding prayer, the designated escorts stepped forward.",
+        "Tufted fabric and cushioned satin pillows provided an atmosphere of serene comfort during the visitation. As the organ postlude commenced, the handlers assumed their positions.",
+        "Layers of white padded velvet protected the deceased in deep, respectful comfort. The family concluded their private prayers, allowing the funeral crew to begin the transfer."
+      ],
+      "target_context_test": [
+        "The dark oak exterior gleamed with an immaculate sheen under the vaulted cathedral skylights. As the benediction concluded, the six escorts stood ready at the front aisle.",
+        "A hand-waxed gloss illuminated the rich timber, casting subtle reflections across the polished marble floor. The congregation bowed their heads as the escort squad began the descent.",
+        "Careful buffing had brought out the deepest highlights in the smooth, glossy mahogany frame. With rhythmic solemnity, the funeral party stepped up to the catafalque.",
+        "The exterior shone with an unmistakable mirror-like luster beneath the soft lights of the parlor. At the funeral director's discreet nod, the attendants began their coordinated march."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (lined casket, polished casket, lined coffin, polished coffin) are standard and natural descriptions of funeral receptacles. Source contexts focus on internal fabric linings, tufting, and satin cushions (biasing toward 'lined' and the American 'casket'), whereas target contexts emphasize exterior buffing, gloss, and lustrous woodwork (biasing toward 'polished' and 'coffin')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "ceremonial",
+      "target_modifier": "wooden",
+      "source_context_dev": [
+        "An official guard of honor flanked the catafalque as foreign emissaries and civic leaders rendered their final salutes. With formal protocol strictly observed, the cortege prepared to advance.",
+        "The fallen hero received full military honors beneath the vaulted ceilings of the historic national sanctuary. At the sound of the commanding officer's call, the six service members stepped in unison.",
+        "National flags hung at half-mast while state dignitaries gathered to enact centuries-old rites of public mourning. Following the conclusion of the solemn civic tributes, the bearers moved forward.",
+        "A formal detachment stood watch through the night in accordance with strict state funeral protocol. As morning dawned and dignitaries filled the aisles, the escort unit assumed its march formation."
+      ],
+      "target_context_dev": [
+        "The deceased had requested a simple, humble burial crafted entirely from plain forest timber and local pine. Mourners walked quietly along the country churchyard path toward the open grave.",
+        "Hewn by a local carpenter from untreated oak boards, the rustic vessel embodied a life of quiet simplicity. As the village pastor gave the final benediction, the pallbearers stepped forward.",
+        "Planks of natural cedar emitted a faint, earthy fragrance in the quiet woodland cemetery. The small gathering of rural neighbors watched reverently as the carriers approached the resting place.",
+        "Reflecting an eco-friendly ethos, the plain pine construction had no metal hardware or synthetic lacquers. Family members stood in the meadow chapel as the handlers prepared for the interment."
+      ],
+      "source_context_test": [
+        "The official state cortege moved slowly past silent crowds gathered along the grand boulevard. Observing precise military protocol, the elite guard unit prepared to perform the solemn transfer.",
+        "Heraldic banners fluttered beside the bier as high-ranking officials observed the formalized funeral liturgy. The organ struck a solemn chord, signaling the ceremonial escort to advance.",
+        "An elite detachment in full dress regalia stood at rigid attention around the historic catafalque. With solemn precision dictated by public tradition, the service members took up their positions.",
+        "The state farewell concluded with a three-volley salute and the slow lowering of the presidential standard. Under the gaze of television cameras and foreign delegations, the honor party advanced."
+      ],
+      "target_context_test": [
+        "Handcrafted from sturdy planks of native ash, the modest vessel reflected traditional rural craft. The church bells tolled across the farmland as the six neighbors gathered around the bier.",
+        "The simple timber frame retained the warm grain and knots of hand-planed spruce from the family orchard. Relatives wiped away tears as the burial crew moved quietly toward the hillside.",
+        "Unvarnished pine and rough-sawn timber honored the naturalist's lifelong devotion to the wilderness. Under the canopy of the forest cemetery, the escort team prepared to lift the burden.",
+        "Rustic boards of weathered cedar had been joined with wooden dowels rather than modern industrial hardware. The congregation stood in silent prayer as the handlers stepped onto the meadow path."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (ceremonial casket, wooden casket, ceremonial coffin, wooden coffin) are completely felicitous in English. Source contexts foreground formal state funerals, protocol, and military honors (strongly activating 'ceremonial' and 'casket'), while target contexts establish a rustic, natural, hand-hewn carpentry setting (strongly activating 'wooden' and 'coffin')."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b19_21_precinct_district",
+    "generation_batch": 19,
+    "domain": "law, government, and civic life",
+    "family_id": "precinct_district",
+    "noun_0": "precinct",
+    "noun_1": "district",
+    "shared_definition": "a designated administrative or electoral subdivision of a city or region",
+    "neutral_stem": "Voters turned out in large numbers across",
+    "candidate_modifiers": [
+      "electoral",
+      "entire",
+      "central",
+      "urban",
+      "rural",
+      "suburban",
+      "neighboring",
+      "contested",
+      "local",
+      "dense",
+      "diverse",
+      "designated",
+      "outlying",
+      "prosperous",
+      "populated"
+    ],
+    "semantic_notes": "'Precinct' typically denotes the smallest electoral polling or police unit, while 'district' can span municipal, state, or congressional levels.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        72779
+      ],
+      "noun_1": [
+        7905
+      ]
+    },
+    "modifier_token_ids": {
+      "electoral": [
+        41399
+      ],
+      "entire": [
+        4251
+      ],
+      "central": [
+        6082
+      ],
+      "urban": [
+        11321
+      ],
+      "rural": [
+        13023
+      ],
+      "suburban": [
+        54548
+      ],
+      "neighboring": [
+        38477
+      ],
+      "contested": [
+        65959
+      ],
+      "local": [
+        2263
+      ],
+      "dense": [
+        19707
+      ],
+      "diverse": [
+        12801
+      ],
+      "designated": [
+        19295
+      ],
+      "outlying": [
+        218462
+      ],
+      "prosperous": [
+        67836
+      ],
+      "populated": [
+        52475
+      ]
+    },
+    "forced_projection_span": 0.2587236985564232,
+    "max_noun_pair_mass": 0.3409390151500702,
+    "context_priority_score": 0.08820900298181056,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "prosperous",
+        "target_modifier": "rural",
+        "source_projection": 0.004920917097479105,
+        "target_projection": 0.030577754601836205,
+        "forced_modifier_leverage": 0.0256568375043571,
+        "source_pair_mass": 0.0049523417837917805,
+        "target_pair_mass": 0.031183237209916115
+      },
+      "medium": {
+        "source_modifier": "dense",
+        "target_modifier": "suburban",
+        "source_projection": 0.0008654100238345563,
+        "target_projection": 0.06654758006334305,
+        "forced_modifier_leverage": 0.06568217003950849,
+        "source_pair_mass": 0.0010005820076912642,
+        "target_pair_mass": 0.06975305825471878
+      },
+      "high": {
+        "source_modifier": "suburban",
+        "target_modifier": "electoral",
+        "source_projection": 0.06654758006334305,
+        "target_projection": 0.32527127861976624,
+        "forced_modifier_leverage": 0.2587236985564232,
+        "source_pair_mass": 0.06975305825471878,
+        "target_pair_mass": 0.3409390151500702
+      }
+    },
+    "context_generation_rank": 53
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "prosperous",
+      "target_modifier": "rural",
+      "source_context_dev": [
+        "Local wealth management offices and upscale boutiques reported quiet streets on election day. Neighborhood residents showed strong civic engagement at their local polling places.",
+        "High property values and thriving tech investments have reshaped the affluent municipal zone. Community members gathered early at neighborhood ballot boxes to cast their votes.",
+        "The city's wealthiest quarter saw steady foot traffic near its primary voting location. Well-funded civic organizations had mobilized residents throughout the morning.",
+        "Affluent homeowners in the upscale subdivision took time off work to participate in local governance. Community centers accommodated the morning rush without significant delays."
+      ],
+      "target_context_dev": [
+        "Vast agricultural lands and isolated farmsteads stretch across the northern territory. Regional coordinators arranged shuttles to help distant farming families reach polling centers.",
+        "Tractor traffic lined the perimeter roads of the agricultural county during the morning harvest break. Broad territorial representation remained the central topic among county organizers.",
+        "Open prairie and livestock ranches define the sparsely populated jurisdiction. Broad geographic boundaries required residents to drive miles to the nearest ballot station.",
+        "County agricultural boards urged farmers and field workers to take part in deciding territorial policies. Regional officials noted early participation despite the vast distances involved."
+      ],
+      "source_context_test": [
+        "Upscale residential high-rises and luxury storefronts saw brisk pedestrian activity as polls opened. Local volunteers managed long lines in the city's highest-earning neighborhood.",
+        "Financial sector workers and affluent retirees gathered early at the neighborhood community center. Local canvassers had focused their final efforts on these high-income streets.",
+        "Rising household incomes and boutique commercial corridors framed the lively voting atmosphere. Local ward captains coordinated curbside assistance for neighborhood voters.",
+        "The affluent lakeshore community recorded heavy participation at its primary polling station. Neighborhood groups actively encouraged neighbors to cast ballots before midday."
+      ],
+      "target_context_test": [
+        "Sprawling cropland and dispersed hamlets form the backbone of the valley's economy. Broad administrative boundaries meant election workers had to cover hundreds of square miles.",
+        "Farmland acreage dominated the landscape as grain silos stood beside country voting stations. Wide territorial reaches prompted extensive mobile polling operations.",
+        "Remote pastoral communities mobilized early to ensure their agricultural interests were represented. Regional ballot administrators tracked steady arrivals from distant homesteads.",
+        "Scattered farm properties and unpaved country routes led into the central county polling hall. Broad regional boundaries brought together voters from across the wide countryside."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (prosperous precinct, prosperous district, rural precinct, rural district) are fully grammatical and semantically coherent after the stem. No prohibited stems or lexical items appear in the contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "dense",
+      "target_modifier": "suburban",
+      "source_context_dev": [
+        "Tightly packed apartment towers and crowded subway stops saw continuous activity throughout polling hours. Urban ward monitors assisted residents in navigating compact neighborhood voting queues.",
+        "Heavy foot traffic congested the narrow avenues surrounding the city center polling venue. Closely packed high-rises contributed to a brisk morning flow of neighborhood residents.",
+        "In the heavily populated urban core, election workers operated multiple check-in tables within a single school gym. Compact blocks ensured quick walking distances for all local voters.",
+        "Crowded multistory dwellings lined the streets surrounding the neighborhood ballot drop box. Local election marshals efficiently directed the constant stream of metropolitan residents."
+      ],
+      "target_context_dev": [
+        "Cul-de-sacs and single-family houses with manicured lawns framed the route to the community center. Commuter families stopped by the polling booths on their way to the highway.",
+        "Sprawling residential developments outside the city center experienced heavy vehicular traffic near local schools. Civic groups set up directional signs along multi-lane parkways.",
+        "Spacious residential neighborhoods between the urban perimeter and outer countryside recorded brisk morning activity. Voters parked along wide residential drives to cast their ballots.",
+        "Commuter neighborhoods with detached homes and shopping plazas mobilized their local associations. Broad territorial zones required careful coordination across multiple family developments."
+      ],
+      "source_context_test": [
+        "Packed brownstones and towering residential complexes generated substantial morning queues at the corner library. Ward workers managed tight indoor spaces as local turnout surged.",
+        "Metropolitan avenues were filled with voters walking short distances from nearby high-density tenements. Polling volunteers handled heavy volume inside compact neighborhood rooms.",
+        "High population concentration in the downtown core produced a steady influx of voters at the central community hall. Compact neighborhood boundaries minimized travel time.",
+        "Bustling city blocks and crowded transit plazas funneled residents into the neighborhood voting station. Local officials maintained order amid the concentrated urban crowd."
+      ],
+      "target_context_test": [
+        "Planned residential communities and perimeter shopping centers saw steady streams of minivans outside the polling hall. Commuter parents cast their votes before the morning school run.",
+        "Wide arterial avenues connected residential subdivisions to the central regional voting venue. County election staff accommodated heavy vehicle traffic throughout the commuter zone.",
+        "Detached family homes and quiet cul-de-sacs marked the landscape surrounding the polling station. Regional organizers noted high interest among outer residential communities.",
+        "Sprawling commuter developments positioned outside the urban ring road registered continuous participation. Wide regional jurisdictions coordinated parking and shuttle services."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations (dense precinct, dense district, suburban precinct, suburban district) are standard administrative/geographic collocations. Both context streams maintain semantic neutrality while tilting modifier-noun preference."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "suburban",
+      "target_modifier": "electoral",
+      "source_context_dev": [
+        "Quiet residential subdivisions and strip mall parking lots saw steady visitor flow as polls opened. Local neighborhood volunteers directed minivan traffic around the local elementary school.",
+        "Tree-lined parkways and detached family homes defined the peaceful environment near the polling hall. Commuters paused their morning drives to fulfill civic duties in their neighborhood.",
+        "Spacious residential blocks with backyard patios and cul-de-sacs hosted active get-out-the-vote drives. Neighborhood associations coordinated carpools to the local community center.",
+        "Planned family subdivisions outside the urban core generated continuous morning attendance. Polling volunteers efficiently guided neighbors through the community recreation hall."
+      ],
+      "target_context_dev": [
+        "Recent decennial redistricting and parliamentary boundary adjustments heightened public interest in the race. Political strategists closely watched the newly apportioned voting jurisdiction.",
+        "Statutory voting maps and reapportioned legislative boundaries became central talking points for campaigns. Official observers monitored ballot counts to ensure compliance with representation laws.",
+        "Shifting demographic data led authorities to redraw the voting boundaries before this cycle. Campaign headquarters focused extensive resources on securing the critical legislative seat.",
+        "Official political mapmakers recently adjusted the territorial boundaries to balance population numbers. Legal monitors observed operations across the newly redrawn ballot jurisdiction."
+      ],
+      "source_context_test": [
+        "Paved driveways and single-family houses surrounded the neighborhood ballot station at the local library. Local ward coordinators noted consistent turnout from the surrounding subdivisions.",
+        "Commuter belts along the outer highway network showed strong civic participation throughout the morning. Neighborhood groups encouraged residents to vote before evening commutes.",
+        "Subdivision community centers experienced steady traffic as local homeowners walked to the ballot boxes. Ward monitors maintained smooth operations for the residential neighborhood.",
+        "Sprawling family housing developments and local shopping villages saw heavy morning turnout. Neighborhood canvassers had knocked on every residential door in the area."
+      ],
+      "target_context_test": [
+        "Contested legislative representation and high-stakes parliamentary balance dominated the morning headlines. Official voting maps were scrutinized by campaign analysts across the region.",
+        "Apportionment litigation had reshaped the official political map ahead of the general voting contest. Party operatives concentrated canvassing inside the contested territorial boundary.",
+        "Statutory boundary revisions altered the balance of power across several legislative zones. Neutral election observers verified voter rolls throughout the designated political unit.",
+        "The newly redrawn political map provoked vigorous competition between rival political factions. Observers tracked certified returns to determine the outcome of the legislative contest."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (suburban precinct, suburban district, electoral precinct, electoral district) are fully grammatical, common, and sensible completions for the fixed neutral stem."
+    }
+  ]
+}

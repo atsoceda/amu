@@ -1,0 +1,32 @@
+{
+  "candidate_id": "shack_hut_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 modifier-noun combinations are fully grammatical and coherent across all contexts. Contexts establish pragmatic bias towards craftsmanship vs. structural instability without creating strict truth-conditional contradictions or lexical leaks."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations are natural and semantically valid across all contexts. Decay cues and spatial compactness cues cleanly alter pragmatic preference without introducing semantic contradictions or candidate leakage."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_dev[3]",
+        "target_context_test[1]",
+        "target_context_test[2]"
+      ],
+      "failure_reasons": [
+        "Direct material contradiction: Target contexts specifying exclusively mud, thatch, and packed earth render 'wooden shack' and 'wooden hut' factually contradictory rather than pragmatically dispreferred."
+      ],
+      "concise_notes": "Explicit non-wood material descriptions (mud-and-thatch, packed earth) create objective truth-conditional clashes when paired with the source modifier 'wooden'."
+    }
+  ]
+}

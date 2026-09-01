@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b10_00_story_tale",
+    "generation_batch": 10,
+    "domain": "media and creative works",
+    "family_id": "story_tale",
+    "noun_0": "story",
+    "noun_1": "tale",
+    "shared_definition": "an account of real or fictional events told for entertainment or instruction",
+    "neutral_stem": "The campfire crowd listened intently to",
+    "candidate_modifiers": [
+      "classic",
+      "short",
+      "cautionary",
+      "haunting",
+      "tragic",
+      "inspiring",
+      "simple",
+      "fascinating",
+      "familiar",
+      "ancient",
+      "humorous",
+      "bizarre",
+      "compelling",
+      "fictional",
+      "poignant"
+    ],
+    "semantic_notes": "'Tale' often carries connotations of folklore, fantasy, or oral tradition, whereas 'story' is the more generic and neutral term.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        3925
+      ],
+      "noun_1": [
+        22720
+      ]
+    },
+    "modifier_token_ids": {
+      "classic": [
+        9760
+      ],
+      "short": [
+        2822
+      ],
+      "cautionary": [
+        186368
+      ],
+      "haunting": [
+        103210
+      ],
+      "tragic": [
+        44040
+      ],
+      "inspiring": [
+        32977
+      ],
+      "simple": [
+        3606
+      ],
+      "fascinating": [
+        27858
+      ],
+      "familiar": [
+        10334
+      ],
+      "ancient": [
+        12440
+      ],
+      "humorous": [
+        83805
+      ],
+      "bizarre": [
+        50875
+      ],
+      "compelling": [
+        33348
+      ],
+      "fictional": [
+        57728
+      ],
+      "poignant": [
+        113560
+      ]
+    },
+    "forced_projection_span": 0.2965329624712467,
+    "max_noun_pair_mass": 0.5750720500946045,
+    "context_priority_score": 0.17052781864896627,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "bizarre",
+        "target_modifier": "inspiring",
+        "source_projection": -0.09503556787967682,
+        "target_projection": -0.06602036207914352,
+        "forced_modifier_leverage": 0.029015205800533295,
+        "source_pair_mass": 0.2651976943016052,
+        "target_pair_mass": 0.07445666939020157
+      },
+      "medium": {
+        "source_modifier": "fictional",
+        "target_modifier": "inspiring",
+        "source_projection": -0.21206682920455933,
+        "target_projection": -0.06602036207914352,
+        "forced_modifier_leverage": 0.1460464671254158,
+        "source_pair_mass": 0.273843377828598,
+        "target_pair_mass": 0.07445666939020157
+      },
+      "high": {
+        "source_modifier": "classic",
+        "target_modifier": "cautionary",
+        "source_projection": -0.006690356880426407,
+        "target_projection": 0.2898426055908203,
+        "forced_modifier_leverage": 0.2965329624712467,
+        "source_pair_mass": 0.10718506574630737,
+        "target_pair_mass": 0.41176342964172363
+      }
+    },
+    "context_generation_rank": 19
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "bizarre",
+      "target_modifier": "inspiring",
+      "source_context_dev": [
+        "The speaker began describing strange unexplainable sightings in the dense woods. Everyone leaned closer to hear the odd sequence of events unfold.",
+        "A quiet traveler grinned and promised an account filled with peculiar coincidences and unnatural happenings. The whole group gathered tightly around the sparks.",
+        "The narrator spoke of glowing lights that danced over the swamp and vanished without trace. The eerie details kept the listeners captivated in silence.",
+        "Shadows danced along the trees as an eccentric wanderer recounted inexplicable nocturnal phenomena. Curiosity gripped the audience from the very first line."
+      ],
+      "target_context_dev": [
+        "The speaker smiled warmly and recounted how a small community overcame impossible hardship through perseverance. Faces in the circle beamed with renewed hope.",
+        "An elderly mentor spoke softly about enduring grit, personal sacrifice, and eventual triumph against all odds. Warmth spread through the nighttime gathering.",
+        "The guide shared a moving chronicle of ordinary individuals uniting to accomplish heroic feats in the wilderness. The group felt energized and deeply moved.",
+        "Reflecting on moments of courage under pressure, the traveler painted a picture of unwavering determination. Every listener felt an uplifting sense of wonder."
+      ],
+      "source_context_test": [
+        "The traveler cleared their throat to share an uncanny experience involving strange illusions on a deserted trail. The listeners sat motionless with curiosity.",
+        "Under the midnight sky, the host started recounting a series of grotesque and utterly perplexing occurrences. The strange atmosphere quickly drew everyone in.",
+        "A mysterious guest started recounting inexplicable anomalies witnessed during an expedition into the deep hills. Every ear turned toward the strange monologue.",
+        "The storyteller whispered of strange creatures spotted in the mist that defied all ordinary explanation. The group listened with wide eyes."
+      ],
+      "target_context_test": [
+        "The veteran mountaineer recounted an uplifting journey where sheer perseverance conquered insurmountable odds. Hearts in the circle were stirred with purpose.",
+        "An experienced leader described how compassion and courage saved lost hikers during a brutal winter storm. A sense of awe fell across the gathering.",
+        "The speaker spoke passionately about resilience in the face of despair and finding light in darkness. A palpable feeling of hope touched the audience.",
+        "Looking around the glowing embers, the elder shared an account of boundless bravery that changed an entire village. The group found deep motivation in the words."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('bizarre story', 'bizarre tale', 'inspiring story', 'inspiring tale') form syntactically valid and natural completions after 'The campfire crowd listened intently to the'. Contexts bias towards strangeness (source) or uplifting moral elevation (target) without violating semantic compatibility with either noun or modifier."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "fictional",
+      "target_modifier": "inspiring",
+      "source_context_dev": [
+        "The speaker announced that the upcoming piece was completely invented from imagination rather than real life. The audience settled in for an evening of pure make-believe.",
+        "Emphasizing that the characters were entirely made up for amusement, the host began reciting an invented narrative. The circle listened with eager anticipation.",
+        "The performer announced an imaginary creation about mythical kingdoms and invented beasts. Listeners relaxed, knowing none of the events were true history.",
+        "A creative artist stepped forward to present an invented piece of literature set in a faraway, unreal universe. The whole group leaned forward in excitement."
+      ],
+      "target_context_dev": [
+        "The speaker smiled warmly and recounted how a small community overcame impossible hardship through perseverance. Faces in the circle beamed with renewed hope.",
+        "An elderly mentor spoke softly about enduring grit, personal sacrifice, and eventual triumph against all odds. Warmth spread through the nighttime gathering.",
+        "The guide shared a moving chronicle of ordinary individuals uniting to accomplish heroic feats in the wilderness. The group felt energized and deeply moved.",
+        "Reflecting on moments of courage under pressure, the traveler painted a picture of unwavering determination. Every listener felt an uplifting sense of wonder."
+      ],
+      "source_context_test": [
+        "The entertainer clarified that the following piece was drawn solely from fantasy rather than factual memory. The gathering settled down to enjoy the fabricated account.",
+        "The speaker prefaced the reading by explaining it was an invented piece created purely for dramatic amusement. Everyone gathered close around the fire.",
+        "With a wink, the narrator confessed that every detail of the coming performance was fabricated from thin air. The audience waited eagerly to hear it.",
+        "The host announced a completely made-up piece set in a dreamlike kingdom that exists only in books. The whole camp sat back to enjoy the creative piece."
+      ],
+      "target_context_test": [
+        "The veteran mountaineer recounted an uplifting journey where sheer perseverance conquered insurmountable odds. Hearts in the circle were stirred with purpose.",
+        "An experienced leader described how compassion and courage saved lost hikers during a brutal winter storm. A sense of awe fell across the gathering.",
+        "The speaker spoke passionately about resilience in the face of despair and finding light in darkness. A palpable feeling of hope touched the audience.",
+        "Looking around the glowing embers, the elder shared an account of boundless bravery that changed an entire village. The group found deep motivation in the words."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('fictional story', 'fictional tale', 'inspiring story', 'inspiring tale') are fully grammatical and semantically acceptable following the neutral stem. Source contexts establish an explicit inventiveness framing, while target contexts establish an uplifting and motivational framing."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "classic",
+      "target_modifier": "cautionary",
+      "source_context_dev": [
+        "The speaker chose a well-known, time-honored piece passed down across generations in traditional folklore. Most listeners had known the plot since childhood.",
+        "A timeless piece of heritage literature that has defined the culture for centuries was about to be shared. The gathering prepared to hear the familiar words.",
+        "The elder opened a dusty volume of enduring, traditional lore revered as standard reading in every classroom. Everyone listened with nostalgic fondness.",
+        "Everyone smiled as the host began reciting an ageless piece that represents the pinnacle of traditional golden-age narration. The circle sat in comfortable familiarity."
+      ],
+      "target_context_dev": [
+        "The ranger raised a hand to warn everyone about the deadly perils of wandering off marked paths at night. The atmosphere turned solemn and alert.",
+        "A sober elder spoke of tragic mistakes made by reckless explorers who ignored sound advice in the wild. The tone was serious and deliberate.",
+        "The speaker emphasized the grave dangers of hubris and ignoring environmental warning signs in treacherous terrain. The audience paid close attention to avoid making similar blunders.",
+        "Before the hike ended, the leader wanted to impart an instructive reminder about the disastrous outcomes of overconfidence in the mountains. Everyone listened carefully to the warning."
+      ],
+      "source_context_test": [
+        "The narrator announced a piece of timeless heritage that has been recited around hearths for centuries. The whole assembly nodded with quiet recognition.",
+        "An enduring masterpiece of oral tradition was chosen for the evening performance. Listeners of all ages recognized the famous opening lines immediately.",
+        "The speaker revisited a quintessential, beloved piece of folklore known across the entire nation. The audience gathered in eager anticipation of the familiar drama.",
+        "Selecting an ageless standard from the traditional canon, the performer stepped into the center of the ring. Everyone settled in to enjoy the familiar piece."
+      ],
+      "target_context_test": [
+        "The park supervisor wished to remind everyone of the severe consequences that follow ignoring trail safety markers. The crowd listened with utmost gravity.",
+        "The speaker offered a stern warning highlighting how easily arrogance leads to disaster in unfamiliar wilderness. The listeners absorbed the solemn message intently.",
+        "A chilling reminder was shared regarding the fatal errors committed by travelers who underestimated the winter freeze. The entire circle fell silent and attentive.",
+        "The veteran explorer shared an instructive warning about the severe cost of taking dangerous shortcuts through the canyon. Everyone took the advice to heart."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('classic story', 'classic tale', 'cautionary story', 'cautionary tale') are standard, natural English phrases compatible with the stem. Source contexts emphasize timeless, generational, canonical folklore, while target contexts evoke warnings, severe consequences, and lessons about danger."
+    }
+  ]
+}

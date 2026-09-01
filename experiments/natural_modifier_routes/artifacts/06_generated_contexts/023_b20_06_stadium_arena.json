@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b20_06_stadium_arena",
+    "generation_batch": 20,
+    "domain": "sports and recreation",
+    "family_id": "stadium_arena",
+    "noun_0": "stadium",
+    "noun_1": "arena",
+    "shared_definition": "a large structure with tiers of seats for spectators at sporting events",
+    "neutral_stem": "Fans crowded into the",
+    "candidate_modifiers": [
+      "central",
+      "crowded",
+      "empty",
+      "famous",
+      "gigantic",
+      "historic",
+      "indoor",
+      "local",
+      "massive",
+      "modern",
+      "municipal",
+      "outdoor",
+      "packed",
+      "renovated",
+      "roaring"
+    ],
+    "semantic_notes": "'Stadium' typically denotes large, open-air venues for field sports, whereas 'arena' frequently refers to enclosed facilities for court or ice sports.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        29353
+      ],
+      "noun_1": [
+        29451
+      ]
+    },
+    "modifier_token_ids": {
+      "central": [
+        6082
+      ],
+      "crowded": [
+        37534
+      ],
+      "empty": [
+        7738
+      ],
+      "famous": [
+        9639
+      ],
+      "gigantic": [
+        82703
+      ],
+      "historic": [
+        17110
+      ],
+      "indoor": [
+        21469
+      ],
+      "local": [
+        2263
+      ],
+      "massive": [
+        12566
+      ],
+      "modern": [
+        4532
+      ],
+      "municipal": [
+        19312
+      ],
+      "outdoor": [
+        11690
+      ],
+      "packed": [
+        21064
+      ],
+      "renovated": [
+        61529
+      ],
+      "roaring": [
+        118046
+      ]
+    },
+    "forced_projection_span": 0.26907700300216675,
+    "max_noun_pair_mass": 0.557263970375061,
+    "context_priority_score": 0.14994691902960966,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "crowded",
+        "target_modifier": "massive",
+        "source_projection": -0.10461776703596115,
+        "target_projection": -0.07849933207035065,
+        "forced_modifier_leverage": 0.026118434965610504,
+        "source_pair_mass": 0.11798617988824844,
+        "target_pair_mass": 0.3205118775367737
+      },
+      "medium": {
+        "source_modifier": "famous",
+        "target_modifier": "central",
+        "source_projection": -0.0694524496793747,
+        "target_projection": 0.06326049566268921,
+        "forced_modifier_leverage": 0.1327129453420639,
+        "source_pair_mass": 0.09655192494392395,
+        "target_pair_mass": 0.08617757260799408
+      },
+      "high": {
+        "source_modifier": "central",
+        "target_modifier": "indoor",
+        "source_projection": 0.06326049566268921,
+        "target_projection": 0.33233749866485596,
+        "forced_modifier_leverage": 0.26907700300216675,
+        "source_pair_mass": 0.08617757260799408,
+        "target_pair_mass": 0.557263970375061
+      }
+    },
+    "context_generation_rank": 24
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "crowded",
+      "target_modifier": "massive",
+      "source_context_dev": [
+        "Turnstiles clicked continuously as thousands hurried through the gates before kickoff. Every concourse was packed shoulder-to-shoulder with roaring supporters.",
+        "Security guards struggled to manage the overwhelming sea of people squeezing through the narrow entryways. The pre-game festivities had brought out a record gathering.",
+        "Commuters poured out of the subway stations in dense waves, eager to claim their seats before the opening whistle. The atmosphere outside the venue was electric and bursting at the seams.",
+        "Long lines snaked around the perimeter as ticket holders jostled for space near the entrances. Nobody wanted to miss the first minute of play."
+      ],
+      "target_context_dev": [
+        "The colossal architecture loomed over the entire city district, casting a vast shadow across the boulevard. Its immense scale required eight distinct entrances to accommodate the sheer volume of attendees.",
+        "Architects designed the monumental complex with cavernous concourses spanning several city blocks. From miles away, the enormous structure dominated the downtown skyline.",
+        "Constructed to hold tens of thousands beneath its towering structural arches, the grand venue dwarfed neighboring skyscrapers. Its gargantuan footprint made navigation challenging for first-time visitors.",
+        "Urban planners marveled at the sheer scale of the newly unveiled metropolitan complex. The gargantuan build featured sprawling seating decks and endless rows of spectator boxes."
+      ],
+      "source_context_test": [
+        "Buses unloaded dense clusters of jersey-wearing spectators directly into the swelling walkways. Finding standing room near the merchandise stalls was practically impossible.",
+        "The plaza outside the gates was overflowing with impassioned club supporters chanting club anthems. Event staff worked tirelessly to funnel the surging bodies through metal detectors.",
+        "A vibrant sea of team colors pushed forward as the entry gates swung open an hour before game time. Aisles rapidly filled with noisy attendees navigating the cramped passages.",
+        "Spectators bumped shoulders along the narrow corridors while searching for their designated seating sections. The entire perimeter buzzed with an intense, overflowing human presence."
+      ],
+      "target_context_test": [
+        "Spanning more than forty acres of prime commercial real estate, the gigantic sports complex was visible from the highway. Its expansive multi-tiered framework represented an astonishing feat of modern engineering.",
+        "Engineers integrated thousands of tons of reinforced steel to support the soaring roof of the monstrous pavilion. The vast interior chamber echoed with reverberating sound even when half empty.",
+        "The mega-development project required an unprecedented land footprint to accommodate its sweeping spectator galleries. Visiting broadcast crews were stunned by the sheer dimensions of the facility.",
+        "Rising majestically above the suburban landscape, the immense sports hub provided unparalleled seating capacity across multi-level concourses. Its sheer physical bulk anchored the regional district."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('crowded stadium', 'crowded arena', 'massive stadium', 'massive arena') are fully grammatical and natural collocations. Source contexts emphasize intense congestion and packed capacity; target contexts emphasize physical scale, architecture, and gargantuan building dimensions."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "famous",
+      "target_modifier": "central",
+      "source_context_dev": [
+        "Decades of historic championship moments had cemented this iconic venue in sports lore worldwide. Countless television documentaries celebrated its rich legacy and storied heritage.",
+        "Tourists traveled across continents just to photograph the landmark where athletic legends made history. Its name was internationally recognized by multiple generations of sports enthusiasts.",
+        "Prestigious international broadcasts frequently highlighted the celebrated venue's rich history and legendary matches. It remained one of the most culturally renowned landmarks in sports history.",
+        "Every aspiring player dreamed of performing beneath the spotlights of such a legendary, critically acclaimed facility. The location was celebrated globally as holy ground for athletics."
+      ],
+      "target_context_dev": [
+        "Located at the exact intersection of the city's main subway lines and downtown avenues, the facility is easily reachable from all boroughs. Its downtown setting makes it the core hub of metropolitan entertainment.",
+        "Urban developers placed the athletic complex directly in the heart of the business district to anchor neighborhood activity. Commuters from across the city meet at this middle intersection on game nights.",
+        "Positioned equidistant from all major transit corridors, the downtown sports venue serves as the primary focal point of the metropolitan area. Fans appreciate its highly accessible midpoint location.",
+        "City planners intentionally established the complex at the midpoint of the municipal core. Surrounding public squares and intersecting transit networks seamlessly converge on this primary location."
+      ],
+      "source_context_test": [
+        "Posters of unforgettable title bouts and classic games adorned the walls of the world-renowned sports sanctuary. Its prestigious reputation was revered across the athletic world.",
+        "Generations of memorable sports broadcasts originated from this widely recognized and revered complex. Its historic prestige made it a bucket-list destination for traveling fans.",
+        "Few sporting grounds on earth possessed such an illustrious, globally celebrated reputation among diehard supporters. Its legacy as a stage for greatness remained uncontested.",
+        "Documentary filmmakers gathered archival footage celebrating the iconic sports palace where historic records were shattered. The landmark's worldwide recognition remained unmatched."
+      ],
+      "target_context_test": [
+        "Situated at the bustling core of the metropolis, the sports complex anchors the city's commercial and transit grid. Visitors enjoy walking straight from downtown corporate towers into the gate.",
+        "Metropolitan rail lines terminate right below the core district venue, placing it conveniently in the midst of everything. It sits at the absolute focal point of urban life.",
+        "Conveniently situated right in the center of the metropolitan zone, the facility draws crowds from every quadrant of town. Its prime interior placement eliminates long suburban commutes.",
+        "The newly renovated sports venue was anchored in the absolute center of the commercial quarter, surrounded by skyscrapers and transport lines. It serves as the geographic heart of local sports culture."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('famous stadium', 'famous arena', 'central stadium', 'central arena') are grammatically standard and semantically valid. Source contexts emphasize historic renown, fame, and international prestige; target contexts emphasize downtown transit convergence and central municipal geography."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "central",
+      "target_modifier": "indoor",
+      "source_context_dev": [
+        "Positioned directly in the commercial core of the city, the sports complex sits mere steps from the municipal hub. Public transport lines converge right outside its front gates.",
+        "City planners built the municipal sports facility at the focal center of the metropolitan district. Its mid-city coordinates offer balanced travel times for fans coming from all surrounding boroughs.",
+        "Located in the very heart of the downtown grid, the venue acts as a prime meeting hub for urban sports enthusiasts. Office workers simply walk down the avenue after work to attend games.",
+        "The athletic complex sits at the geographic center of the urban landscape, surrounded by city hall and major transit stations. Its core location makes it the focal point of the region."
+      ],
+      "target_context_dev": [
+        "Heavy snowfall blanketed the outside streets, but inside the climate-controlled venue, conditions were warm and dry. The sealed roof protected spectators completely from the freezing storm.",
+        "Engineers designed the sports complex with an enclosed canopy and full air conditioning to shelter athletes from summer heatwaves. Fans enjoyed the fully sheltered environment regardless of rain.",
+        "Torrential rain pelted the metropolitan area, yet play continued uninterrupted beneath the vaulted ceiling. The enclosed facility kept everyone dry and shielded from harsh elements.",
+        "The enclosed complex featured advanced climate control and overhead acoustics beneath its insulated permanent dome. Spectators comfortably shed their heavy winter coats inside the temperature-regulated interior."
+      ],
+      "source_context_test": [
+        "Conveniently situated at the midpoint of the municipal rail network, the sports center serves as the focal hub of downtown life. Commuters can reach the entrances quickly from any urban station.",
+        "Because the facility was placed right in the heart of the metropolitan zone, thousands of nearby residents walk to matches. Its central setting ensures maximum attendance from the downtown area.",
+        "Urban rail lines converge at the midpoint of the metropolitan map, directly beneath the prominent downtown venue. Its prime location at the municipal core guarantees easy access for everyone.",
+        "The facility was built in the core downtown district to anchor municipal development and draw activity to the city's heart. Its midway placement connects effortlessly with every major roadway."
+      ],
+      "target_context_test": [
+        "Spectators stepped out of the pouring rain and into the warmth of the enclosed, climate-controlled complex. The fully covered overhead structure offered complete refuge from the harsh winter weather.",
+        "Constructed entirely under a protective roof, the enclosed sports venue ensured that freezing blizzards never canceled a scheduled match. Spectators enjoyed optimal temperatures inside the protected facility.",
+        "The facility's permanently sealed dome kept external winds and humid weather entirely at bay throughout the tournament. Fans basked in the comfortable temperature of the sheltered interior.",
+        "While freezing sleet fell across the surrounding roads, athletes competed beneath the warm interior lighting of the enclosed pavilion. The fully sheltered environment insulated the crowd from seasonal cold."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('central stadium', 'central arena', 'indoor stadium', 'indoor arena') are completely valid English phrases. Source contexts highlight downtown core location and transport convergence; target contexts highlight climate control, fully covered/enclosed roofs, weatherproofing, and indoor shelter, creating strong pragmatic alignment for 'indoor' while heavily favoring 'arena'."
+    }
+  ]
+}

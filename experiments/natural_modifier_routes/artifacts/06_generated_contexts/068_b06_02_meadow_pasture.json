@@ -1,0 +1,207 @@
+{
+  "family": {
+    "candidate_id": "b06_02_meadow_pasture",
+    "generation_batch": 6,
+    "domain": "locations and geographic features",
+    "family_id": "meadow_pasture",
+    "noun_0": "meadow",
+    "noun_1": "pasture",
+    "shared_definition": "an open tract of grassland",
+    "neutral_stem": "Several dairy cows were grazing peacefully across the",
+    "candidate_modifiers": [
+      "green",
+      "lush",
+      "open",
+      "wide",
+      "grassy",
+      "broad",
+      "fertile",
+      "fenced",
+      "quiet",
+      "rolling",
+      "peaceful",
+      "vast",
+      "flat"
+    ],
+    "semantic_notes": "'Pasture' strongly implies agricultural use for grazing livestock, while 'meadow' often evokes natural wildflowers and poetic landscapes.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        35280
+      ],
+      "noun_1": [
+        57026
+      ]
+    },
+    "modifier_token_ids": {
+      "green": [
+        3826
+      ],
+      "lush": [
+        43461
+      ],
+      "open": [
+        1932
+      ],
+      "wide": [
+        5777
+      ],
+      "grassy": [
+        94767
+      ],
+      "broad": [
+        6674
+      ],
+      "fertile": [
+        65078
+      ],
+      "fenced": [
+        94210
+      ],
+      "quiet": [
+        12010
+      ],
+      "rolling": [
+        19519
+      ],
+      "peaceful": [
+        26169
+      ],
+      "vast": [
+        12529
+      ],
+      "flat": [
+        6648
+      ]
+    },
+    "forced_projection_span": 0.191325381398201,
+    "max_noun_pair_mass": 0.33040666580200195,
+    "context_priority_score": 0.06321518135107596,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "vast",
+        "target_modifier": "rolling",
+        "source_projection": 0.011902902275323868,
+        "target_projection": 0.032464902848005295,
+        "forced_modifier_leverage": 0.020562000572681427,
+        "source_pair_mass": 0.0767975002527237,
+        "target_pair_mass": 0.0496843121945858
+      },
+      "medium": {
+        "source_modifier": "peaceful",
+        "target_modifier": "rolling",
+        "source_projection": -0.06554460525512695,
+        "target_projection": 0.032464902848005295,
+        "forced_modifier_leverage": 0.09800950810313225,
+        "source_pair_mass": 0.19812703132629395,
+        "target_pair_mass": 0.0496843121945858
+      },
+      "high": {
+        "source_modifier": "green",
+        "target_modifier": "fenced",
+        "source_projection": 0.11585710942745209,
+        "target_projection": 0.3071824908256531,
+        "forced_modifier_leverage": 0.191325381398201,
+        "source_pair_mass": 0.23822440207004547,
+        "target_pair_mass": 0.33040666580200195
+      }
+    },
+    "context_generation_rank": 69
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "vast",
+      "target_modifier": "rolling",
+      "source_context_dev": [
+        "The valley opened up into an immense stretch of wild grass extending as far as the eye could see. Not a single tree or building broke the sweeping, limitless horizon.",
+        "Under the wide sky, miles of uninterrupted grassy expanse reached toward the distant mountain range. The morning light highlighted just how boundless the countryside truly was.",
+        "A seemingly endless expanse of open turf dominated the rural landscape, disappearing into the haze at the edge of sight. Travelers often marveled at the sheer scale of the untamed terrain.",
+        "From the elevated ridge, the open grassy floor below looked virtually infinite. The sweeping terrain stretched endlessly between the two borders of the county."
+      ],
+      "target_context_dev": [
+        "Gentle knolls and flowing grassy ridges shaped the local dairy farm's undulating landscape. Warm sunlight highlighted the rhythm of rising crests and shallow dips.",
+        "The agrarian land rose and dipped in soft swells across the agricultural estate. From atop each grassy ridge, another graceful slope descended into the hollow.",
+        "Wavy mounds and sloping contours defined the topography of the local cattle operation. Shadows gathered softly in the hollows between the gentle grassy rises.",
+        "The countryside undulated in sweeping waves of grassy hillocks and dips. The dairy district was famous for these sculptural, undulating ground formations."
+      ],
+      "source_context_test": [
+        "The rural valley broadened into a wide, borderless span of open turf beneath the afternoon sun. Horizon lines faded into the distance without any visible barriers.",
+        "Looking out from the highway, the boundless carpet of wild turf seemed to have no end. The panoramic view offered an uninterrupted line of sight across many leagues.",
+        "Huge swaths of untamed territory covered the lowland plain, providing miles of unbroken openness. The sheer breadth of the surrounding country was breathtaking.",
+        "The landscape unfolded in every direction with boundless reach and unhindered breadth. The open rural terrain seemed to blend right into the distant skyline."
+      ],
+      "target_context_test": [
+        "Softly curving ridges and pleasant grassy hollows characterized the dairy property. Each gentle incline led smoothly to another dip in the undulating farm grounds.",
+        "The agricultural acreage followed the rhythmic rise and fall of the hillside terrain. Grassy crests dipped gradually toward shaded ravines throughout the homestead.",
+        "Curving slopes and undulating turf formed the backbone of the rural homestead. Sunlight played across the continuous series of mounds and shallow swales.",
+        "The topography of the livestock property was defined by rhythmic, undulating swells of ground. Ridges and depressions alternated in smooth succession across the land."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (vast meadow, vast pasture, rolling meadow, rolling pasture) are semantically valid and grammatically sound under all contexts. The source contexts bias toward scale and wild expansiveness, favoring vast/meadow, while target contexts emphasize undulating topography and agrarian terrain, favoring rolling/pasture."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "peaceful",
+      "target_modifier": "rolling",
+      "source_context_dev": [
+        "A tranquil hush settled over the countryside as a soft breeze rustled the wildflowers. The undisturbed afternoon was quiet, without a single harsh sound to break the calm.",
+        "Serenity enveloped the sun-drenched valley where everything felt slow and untroubled. Birds chirped quietly in the calm warmth of the midday air.",
+        "The rustic scenery exuded an atmosphere of gentle stillness and complete relaxation. No noise disturbed the soothing silence that hung over the sunlit grounds.",
+        "A sense of utter calm and tranquil quiet settled over the rural clearing as twilight approached. The warm breeze carried a restorative, tranquil rhythm across the clearing."
+      ],
+      "target_context_dev": [
+        "Gentle knolls and flowing grassy ridges shaped the local dairy farm's undulating landscape. Warm sunlight highlighted the rhythm of rising crests and shallow dips.",
+        "The agrarian land rose and dipped in soft swells across the agricultural estate. From atop each grassy ridge, another graceful slope descended into the hollow.",
+        "Wavy mounds and sloping contours defined the topography of the local cattle operation. Shadows gathered softly in the hollows between the gentle grassy rises.",
+        "The countryside undulated in sweeping waves of grassy hillocks and dips. The dairy district was famous for these sculptural, undulating ground formations."
+      ],
+      "source_context_test": [
+        "Everything was perfectly still and untroubled across the sunlit valley floor. The calming atmosphere created a restful sanctuary far away from town noise.",
+        "A quiet stillness filled the rural air, undisturbed by modern machinery or rush. The gentle calm made the entire landscape feel dreamy and leisurely.",
+        "The late morning brought a soothing calm that hung gently over the sunlit countryside. Not a single sound interrupted the serene stillness of the day.",
+        "Serene quiet and restful calm defined the midday atmosphere across the open rural expanse. The gentle murmur of a distant brook added to the relaxing setting."
+      ],
+      "target_context_test": [
+        "Softly curving ridges and pleasant grassy hollows characterized the dairy property. Each gentle incline led smoothly to another dip in the undulating farm grounds.",
+        "The agricultural acreage followed the rhythmic rise and fall of the hillside terrain. Grassy crests dipped gradually toward shaded ravines throughout the homestead.",
+        "Curving slopes and undulating turf formed the backbone of the rural homestead. Sunlight played across the continuous series of mounds and shallow swales.",
+        "The topography of the livestock property was defined by rhythmic, undulating swells of ground. Ridges and depressions alternated in smooth succession across the land."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (peaceful meadow, peaceful pasture, rolling meadow, rolling pasture) are fully coherent across both contexts. Source contexts highlight stillness, serenity, and natural quietude, which pragmatically favor peaceful/meadow. Target contexts highlight topographical undulations, favoring rolling/pasture."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "green",
+      "target_modifier": "fenced",
+      "source_context_dev": [
+        "Heavy spring showers had invigorated the soil, producing an emerald carpet bursting with fresh vitality. The rich verdure shone vividly beneath the morning sun.",
+        "Lush vegetation coated the countryside in brilliant emerald hues after weeks of gentle rain. The vibrant color of the stalks was strikingly fresh and vivid.",
+        "Vibrant emerald blades sprouted thick and healthy following the unseasonably wet spring. The entire valley glowed with rich, deep, leafy color.",
+        "A blanket of brilliant emerald foliage covered the open expanse in rich, vivid tones. Every blade of turf stood out with fresh, lively color."
+      ],
+      "target_context_dev": [
+        "Sturdy wooden posts and taut wire enclosed the designated perimeter of the property. The clear boundary line ensured the herd remained safely contained within the lot.",
+        "Freshly painted rails marked the secure border around the agricultural enclosure. Sturdy boundary barriers clearly sectioned off this specific parcel from the road.",
+        "Strong timber pickets and protective wiring formed an unbroken perimeter around the enclosure. The carefully maintained enclosure kept the livestock from wandering off.",
+        "The agricultural manager inspected the post-and-rail perimeter surrounding the enclosed paddock. Every section of boundary barrier was securely fastened and intact."
+      ],
+      "source_context_test": [
+        "Recent downpours had turned the countryside into a deep emerald paradise of fresh growth. The intense verdure stretched vibrant and thick under the clear sky.",
+        "The spring climate brought forth an exceptionally vivid emerald blanket across the valley floor. Thick, richly colored vegetation flourished in the humid warmth.",
+        "Rich emerald tones dominated the countryside following days of steady, nourishing rainfall. The vibrant verdure shimmered brightly in the early sunshine.",
+        "A vivid emerald carpet spread across the rural landscape, rich with healthy springtime moisture. The intense botanical color was evident everywhere."
+      ],
+      "target_context_test": [
+        "Tall wooden palings and taut wire boundaries secured the livestock containment area. The entire perimeter was enclosed to keep animals within designated grounds.",
+        "Sturdy post-and-wire barriers formed a tight, protective perimeter around the property. The designated perimeter kept domestic animals safely bounded within the lot.",
+        "A continuous timber border ran along the edge of the bounded agricultural lot. The secure barrier system clearly demarcated where the livestock were kept.",
+        "The farm boundary was fortified with sturdy posts and crossbars lining the perimeter. Every enclosure line remained tightly closed to safeguard the livestock inside."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (green meadow, green pasture, fenced meadow, fenced pasture) remain fully plausible under all contexts. The source contexts bias toward lush verdant color and natural growth, favoring green/meadow, while target contexts focus on containment infrastructure and perimeter boundaries, strongly favoring fenced/pasture."
+    }
+  ]
+}

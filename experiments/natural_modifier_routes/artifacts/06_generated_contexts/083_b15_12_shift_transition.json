@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b15_12_shift_transition",
+    "generation_batch": 15,
+    "domain": "common abstract concepts",
+    "family_id": "shift_transition",
+    "noun_0": "shift",
+    "noun_1": "transition",
+    "shared_definition": "a movement or change from one state, position, or condition to another",
+    "neutral_stem": "The industry managed",
+    "candidate_modifiers": [
+      "abrupt",
+      "broad",
+      "cultural",
+      "decisive",
+      "dramatic",
+      "gradual",
+      "major",
+      "marked",
+      "painful",
+      "rapid",
+      "seamless",
+      "significant",
+      "smooth",
+      "sudden",
+      "swift"
+    ],
+    "semantic_notes": "'Shift' suggests a change in position, direction, or emphasis, while 'transition' highlights the process or passage between two states.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        8633
+      ],
+      "noun_1": [
+        7140
+      ]
+    },
+    "modifier_token_ids": {
+      "abrupt": [
+        45442
+      ],
+      "broad": [
+        6674
+      ],
+      "cultural": [
+        9226
+      ],
+      "decisive": [
+        52297
+      ],
+      "dramatic": [
+        20997
+      ],
+      "gradual": [
+        39869
+      ],
+      "major": [
+        3262
+      ],
+      "marked": [
+        11373
+      ],
+      "painful": [
+        27668
+      ],
+      "rapid": [
+        7226
+      ],
+      "seamless": [
+        12842
+      ],
+      "significant": [
+        3629
+      ],
+      "smooth": [
+        7080
+      ],
+      "sudden": [
+        11059
+      ],
+      "swift": [
+        37884
+      ]
+    },
+    "forced_projection_span": 0.10441875457763672,
+    "max_noun_pair_mass": 0.4886954128742218,
+    "context_priority_score": 0.051028966380130214,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "decisive",
+        "target_modifier": "marked",
+        "source_projection": -0.00925377942621708,
+        "target_projection": 0.0012694476172327995,
+        "forced_modifier_leverage": 0.010523227043449879,
+        "source_pair_mass": 0.021166551858186722,
+        "target_pair_mass": 0.01020841859281063
+      },
+      "medium": {
+        "source_modifier": "sudden",
+        "target_modifier": "gradual",
+        "source_projection": -0.0052077495492994785,
+        "target_projection": 0.04607941210269928,
+        "forced_modifier_leverage": 0.05128716165199876,
+        "source_pair_mass": 0.008199256844818592,
+        "target_pair_mass": 0.13928799331188202
+      },
+      "high": {
+        "source_modifier": "seamless",
+        "target_modifier": "smooth",
+        "source_projection": 0.38227227330207825,
+        "target_projection": 0.48669102787971497,
+        "forced_modifier_leverage": 0.10441875457763672,
+        "source_pair_mass": 0.39033517241477966,
+        "target_pair_mass": 0.4886954128742218
+      }
+    },
+    "context_generation_rank": 84
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "decisive",
+      "target_modifier": "marked",
+      "source_context_dev": [
+        "Faced with mounting regulatory pressures, executives took firm, unhesitating action to pivot their core strategy. Market analysts observed how effectively the leadership executed their strategic realignment.",
+        "Company leaders reached a firm consensus and ended months of internal deliberation on product lines. Their resolute stance dictated how the organization handled the upcoming operational overhaul.",
+        "The governing board committed fully to shutting down legacy factories without leaving room for compromise. Observers noted the resolute posture maintained throughout the pivot.",
+        "Senior executives took clear, unambiguous steps to reallocate capital away from declining segments. Industry observers praised the firm direction taken during the restructuring."
+      ],
+      "target_context_dev": [
+        "Statistical benchmarks highlighted an unmistakable divergence in consumer habits over the prior decade. Analysts pointed to visible metrics that underscored how the sector navigated the overarching realignment.",
+        "Economic reports revealed observable variances in production efficiency across regional facilities. Quarterly audits illustrated how well the sector handled this noticeable realignment.",
+        "Data analysts documented prominent differences between old and new distribution metrics. Industry tracking demonstrated how operators addressed this discernible progression.",
+        "Surveys recorded clear, measurable differences in user engagement following the platform update. Financial analysts highlighted how successfully companies responded to this evident realignment."
+      ],
+      "source_context_test": [
+        "Corporate leadership acted without hesitation to abandon outdated manufacturing standards. Their firm resolve determined the outcome as the sector underwent reorganization.",
+        "Determined to stay ahead of competitors, the steering committee enacted bold, definitive policy changes. Observers tracked how effectively participants enacted the planned pivot.",
+        "The directorate adopted an uncompromising stance regarding carbon emissions targets. Analysts highlighted how the corporate ecosystem embraced this resolute reorganization.",
+        "Executive management ended all ambiguity by selecting an entirely new technological framework. Stakeholders watched closely as organizations implemented the resolute realignment."
+      ],
+      "target_context_test": [
+        "Comparative studies showed notable discrepancies in output between traditional and automated plants. Economic indicators highlighted how manufacturing firms navigated this visible progression.",
+        "Market dashboards displayed observable variations in customer demographics over several quarters. Observers noted how retailers handled this noticeable evolution in demand.",
+        "The latest annual report documented striking contrasts in regional consumption patterns. Supply chain specialists analyzed how companies responded to this clear realignment.",
+        "Financial data revealed pronounced divergence in revenue streams between digital and print divisions. Market watchers evaluated how enterprises accommodated this visible structural evolution."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (decisive shift, decisive transition, marked shift, marked transition) are grammatical and plausible completions for 'The industry managed the [adj] [noun].' Source contexts emphasize deliberate, resolute agency favoring 'decisive shift', while target contexts emphasize measurable, noticeable divergence favoring 'marked transition'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "sudden",
+      "target_modifier": "gradual",
+      "source_context_dev": [
+        "An unexpected disruption caught supply chains completely off guard overnight. Financial commentators evaluated how regional manufacturers responded to the unforeseen upheaval.",
+        "A surprise geopolitical development instantly altered global trade corridors last week. Market observers closely monitored how transport networks accommodated the abrupt realignment.",
+        "Without any prior warning, critical raw material export restrictions took effect immediately. Analysts scrutinized how international conglomerates handled the instant operational realignment.",
+        "An unforeseen software outage instantly paralyzed automated clearing systems worldwide. Financial institutions worked urgently to determine how participants navigated the rapid transformation."
+      ],
+      "target_context_dev": [
+        "Demographic changes unfolded slowly across the workforce over multiple decades. Sociologists documented how institutional employers addressed the incremental evolution.",
+        "Long-term climatic patterns gently reshaped regional agricultural practices year after year. Agronomists evaluated how farming communities adapted to the progressive progression.",
+        "Decade-long consumer trends steadily favored energy efficiency over raw engine power. Automotive analysts examined how legacy manufacturers handled this paced realignment.",
+        "Urban populations steadily dispersed toward suburban communities over several generations. City planners monitored how regional transportation systems accommodated the measured transformation."
+      ],
+      "source_context_test": [
+        "Flash flooding instantly compromised vital energy infrastructure throughout the province. Grid operators held press briefings detailing how utilities handled the abrupt pivot.",
+        "A surprise interest rate spike caused rapid liquidity contractions across credit markets. Banking supervisors reported on how financial institutions weathered the immediate realignment.",
+        "An abrupt regulatory ban on single-use plastics took effect without a grace period. Packaging suppliers mobilized rapidly to examine how factories adapted to the unexpected pivot.",
+        "The abrupt collapse of a major shipping conglomerate sent instant shockwaves through logistics networks. Freight handlers coordinated around the clock to understand how trade routes absorbed the abrupt disruption."
+      ],
+      "target_context_test": [
+        "Step-by-step technological adoption allowed legacy firms to modernize over a prolonged timeframe. Consultants examined how corporate departments navigated the progressive realignment.",
+        "Consumer dietary preferences gently migrated toward plant-based alternatives over several five-year cycles. Food producers published reports detailing how brands managed the slow evolution.",
+        "Over the course of a generation, digital media systematically replaced physical print subscriptions. Publishers shared strategies showing how media groups handled the paced transformation.",
+        "Workplace expectations slowly matured toward flexible scheduling across the last decade. Human resource specialists analyzed how global enterprises accommodated the incremental realignment."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (sudden shift, sudden transition, gradual shift, gradual transition) are standard collocations and fit naturally after 'The industry managed the'. Source contexts focus on abruptness/immediacy, boosting 'sudden shift', whereas target contexts describe slow, multi-stage progressions over time, boosting 'gradual transition'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "seamless",
+      "target_modifier": "smooth",
+      "source_context_dev": [
+        "System architects integrated the new cloud infrastructure without a single microsecond of downtime or observable interface latency. End users never even realized that backend servers had migrated.",
+        "The engineering department merged legacy records into the centralized digital database with zero interrupted workflows. Internal reviews highlighted how perfectly integrated protocols eliminated any visible boundary.",
+        "Automated migration protocols harmonized billing and account databases invisibly behind the scenes. Clients experienced unbroken continuity throughout the entire platform upgrade.",
+        "Technical teams merged two vast telecom networks without dropped calls or data interruptions. Telecommunications analysts praised how flawlessly connected the underlying architecture remained throughout."
+      ],
+      "target_context_dev": [
+        "Experienced negotiators resolved preliminary disputes and ensured steady, harmonious progress during factory consolidations. Plant managers reported that routine daily operations continued without friction or major labor grievances.",
+        "Corporate communications kept employees well informed, calming anxieties and averting morale issues during the acquisition. Executives congratulated departmental supervisors for keeping daily routines steady and trouble-free.",
+        "Careful diplomatic mediation kept labor unions and plant directors working collaboratively throughout the plant modernization. Union delegates acknowledged that workplace relations remained calm and productive.",
+        "Project leads maintained open communication channels and managed minor setbacks early, preventing serious conflicts across regional offices. Department heads reported that daily workflows experienced minimal disturbance."
+      ],
+      "source_context_test": [
+        "Engineers replaced the core banking engine overnight without triggering a single system glitch or service disruption. External auditors commended how perfectly unified the new environment felt.",
+        "The software update unified disparate enterprise platforms without any noticeable interface gap for clients. Business analysts commended how flawlessly connected the overall infrastructure proved to be.",
+        "Logistics software unified regional warehouse inventories into a single real-time ledger without processing lag. Supply chain managers celebrated the completely unbroken continuity of fulfillment operations.",
+        "The multimedia streaming platform merged user accounts across both acquired services with zero authentication errors. Platform engineers highlighted the total absence of friction in the unified user journey."
+      ],
+      "target_context_test": [
+        "Skilled facilitators conducted weekly town halls to address staff concerns and maintain steady workplace harmony throughout reorganization. Team supervisors noted that the process unfolded in an untroubled and well-coordinated manner.",
+        "Interdepartmental committees met regularly to resolve minor logistical snags before they could disrupt plant operations. Operations directors were pleased that the overarching project proceeded without major friction.",
+        "Strong leadership and transparent timelines kept stakeholder relations calm and cooperative during the joint venture merger. Analysts noted that operational milestones were achieved in a steady, drama-free manner.",
+        "Proactive customer support teams resolved early billing questions calmly, preventing public frustration during the account upgrades. Consumer advocacy groups observed that the rollout proceeded in a tranquil and orderly fashion."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (seamless shift, seamless transition, smooth shift, smooth transition) are natural English phrases compatible with the stem. Source contexts emphasize technical zero-defect / uninterrupted integration ('seamless'), while target contexts emphasize steady, harmonious, friction-free human/organizational navigation ('smooth')."
+    }
+  ]
+}

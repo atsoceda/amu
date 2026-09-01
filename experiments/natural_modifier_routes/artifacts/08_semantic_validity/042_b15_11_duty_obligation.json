@@ -1,0 +1,30 @@
+{
+  "candidate_id": "duty_obligation",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test_3"
+      ],
+      "failure_reasons": [
+        "target_context_test[3] contains 'weighed heavily', directly using the morphological derivative/lemma of the target modifier 'heavy', violating the constraint against mentioning or trivially priming candidate tokens."
+      ],
+      "concise_notes": "All four modifier-noun combinations are semantically valid and grammatical with the stem, but target_context_test[3] exhibits lexical leakage with 'heavily'."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 cross-combinations of {heavy, primary} \u00d7 {duty, obligation} are fully grammatical and natural. Contexts clearly modulate pragmatic bias from arduous workload to hierarchical precedence without lexical leakage."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations of {contractual, moral} \u00d7 {duty, obligation} are felicitous and canonical. Contexts establish clear pragmatic contrast between legal pact stipulations and ethical conscience without candidate leakage."
+    }
+  ]
+}

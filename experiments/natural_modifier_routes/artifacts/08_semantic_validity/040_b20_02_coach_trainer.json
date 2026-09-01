@@ -1,0 +1,30 @@
+{
+  "candidate_id": "coach_trainer",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations (new coach, new trainer, former coach, former trainer) are grammatically and semantically sound across all 16 contexts without modifier or noun leakage."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations (experienced coach, experienced trainer, respected coach, respected trainer) remain coherent and natural across all contexts with no lexical leakage."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test[2]"
+      ],
+      "failure_reasons": [
+        "Target modifier 'personal' is explicitly mentioned in target_context_test[2] ('their personal physiological needs')."
+      ],
+      "concise_notes": "The target modifier 'personal' appears verbatim in target_context_test[2], violating the lexical non-mention constraint."
+    }
+  ]
+}

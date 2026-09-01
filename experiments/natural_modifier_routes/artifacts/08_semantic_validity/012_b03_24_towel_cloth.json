@@ -1,0 +1,30 @@
+{
+  "candidate_id": "towel_cloth",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_dev_2"
+      ],
+      "failure_reasons": [
+        "Lexical leak: target_context_dev[2] explicitly contains the target modifier 'frayed' ('Loose strands hung from their frayed borders.')."
+      ],
+      "concise_notes": "All modifier-noun combinations are semantically valid with the stem, but target_context_dev[2] leaks the target modifier."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations are natural and felicitous across all contexts without lexical leakage or truth-conditional divergence."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All 4 combinations are natural across all contexts; target contexts cleanly establish synthetic/microfiber bias without mentioning candidate words."
+    }
+  ]
+}

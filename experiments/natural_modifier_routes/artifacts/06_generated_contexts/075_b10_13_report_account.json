@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b10_13_report_account",
+    "generation_batch": 10,
+    "domain": "media and creative works",
+    "family_id": "report_account",
+    "noun_0": "report",
+    "noun_1": "account",
+    "shared_definition": "a factual or narrative description of an incident or series of events",
+    "neutral_stem": "The journalist verified",
+    "candidate_modifiers": [
+      "eyewitness",
+      "detailed",
+      "accurate",
+      "comprehensive",
+      "chilling",
+      "firsthand",
+      "brief",
+      "unbiased",
+      "graphic",
+      "vivid",
+      "factual",
+      "official",
+      "reliable",
+      "startling",
+      "sobering"
+    ],
+    "semantic_notes": "'Report' leans toward institutional, journalistic, or structured documentation, while 'account' emphasizes narrative storytelling.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2072
+      ],
+      "noun_1": [
+        2881
+      ]
+    },
+    "modifier_token_ids": {
+      "eyewitness": [
+        132832
+      ],
+      "detailed": [
+        9813
+      ],
+      "accurate": [
+        11459
+      ],
+      "comprehensive": [
+        13611
+      ],
+      "chilling": [
+        85842
+      ],
+      "firsthand": [
+        109692
+      ],
+      "brief": [
+        8652
+      ],
+      "unbiased": [
+        84001
+      ],
+      "graphic": [
+        15017
+      ],
+      "vivid": [
+        35094
+      ],
+      "factual": [
+        59893
+      ],
+      "official": [
+        5125
+      ],
+      "reliable": [
+        13451
+      ],
+      "startling": [
+        93404
+      ],
+      "sobering": [
+        227857
+      ]
+    },
+    "forced_projection_span": 0.1649916023015976,
+    "max_noun_pair_mass": 0.35649019479751587,
+    "context_priority_score": 0.058817888444450794,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "chilling",
+        "target_modifier": "reliable",
+        "source_projection": -0.02059212513267994,
+        "target_projection": -0.004628149792551994,
+        "forced_modifier_leverage": 0.015963975340127945,
+        "source_pair_mass": 0.05344662070274353,
+        "target_pair_mass": 0.010015100240707397
+      },
+      "medium": {
+        "source_modifier": "official",
+        "target_modifier": "firsthand",
+        "source_projection": -0.02687990292906761,
+        "target_projection": 0.05465427041053772,
+        "forced_modifier_leverage": 0.08153417333960533,
+        "source_pair_mass": 0.0812520831823349,
+        "target_pair_mass": 0.1525132954120636
+      },
+      "high": {
+        "source_modifier": "firsthand",
+        "target_modifier": "eyewitness",
+        "source_projection": 0.05465427041053772,
+        "target_projection": 0.21964587271213531,
+        "forced_modifier_leverage": 0.1649916023015976,
+        "source_pair_mass": 0.1525132954120636,
+        "target_pair_mass": 0.35649019479751587
+      }
+    },
+    "context_generation_rank": 76
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "chilling",
+      "target_modifier": "reliable",
+      "source_context_dev": [
+        "Disturbing details about the midnight break-in sent shivers through the newsroom. Every sinister detail had to be cross-checked against police logs before publication.",
+        "The leaked dossier contained deeply unsettling allegations about the midnight torture cells. Editors demanded that every disturbing detail be corroborated before going to print.",
+        "Investigators uncovered macabre evidence that pointed toward a calculated serial crime. Every eerie detail required thorough confirmation across independent records.",
+        "A haunting testimony emerged from the abandoned basement where hostages were held. Editors refused to run the frightening story without full corroboration."
+      ],
+      "target_context_dev": [
+        "With so much misinformation circulating online, editors needed bulletproof corroboration. They cross-referenced archival data to ensure total factual accuracy.",
+        "The publication built its reputation on unquestioned accuracy and trustworthy sources. Every single submission had to withstand stringent vetting before print.",
+        "Before running the expos\u00e9, the desk editor demanded ironclad confirmation from multiple trustworthy sources. Accuracy was the top priority.",
+        "Editorial standards required rock-solid evidence rather than vague rumors. The team worked through the night to ensure the data was fully dependable."
+      ],
+      "source_context_test": [
+        "A spine-tingling series of events unfolded in the dark woods behind the estate. News editors insisted on confirming every eerie detail with local investigators.",
+        "The leaked audio revealed horrifying threats made against local whistleblowers. The newsroom paused the story until every frightening allegation was checked.",
+        "Grisly findings at the abandoned warehouse shocked even seasoned detectives. Before broadcasting the terrifying update, editors wanted independent proof.",
+        "Frightening claims regarding systemic abuse emerged during the late-night press briefing. The editorial board demanded rigorous verification of every macabre claim."
+      ],
+      "target_context_test": [
+        "To avoid retractions, the newsroom relied strictly on thoroughly vetted information. Editors scrutinized the archives to confirm every detail was accurate.",
+        "Given the legal risks involved, the desk demanded thoroughly substantiated findings. Investigators worked to ensure the narrative was completely solid.",
+        "The agency prioritized dependable data over breaking the story quickly. Researchers spent days validating the trustworthiness of the material.",
+        "With contradictory rumors spreading fast, editors insisted on dependable confirmation. Every statement was checked against archival records."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('chilling report', 'chilling account', 'reliable report', 'reliable account') are fully compatible with both the horror-evoking and dependability-focused contexts. The source contexts tilt toward atmospheric fear, making 'chilling' prominent, while target contexts emphasize validation rigor."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "official",
+      "target_modifier": "firsthand",
+      "source_context_dev": [
+        "A formal communiqu\u00e9 was released by the ministry following the emergency cabinet summit. Editors wanted to double-check the institutional release against public records.",
+        "The state department issued a formal findings brief regarding the border dispute. Desk editors sought to validate the bureaucratic release before the evening broadcast.",
+        "Government authorities published a comprehensive review detailing the collapse of the dam. The newsroom needed to confirm the state agency findings.",
+        "The municipal council delivered an institutional brief on the municipal budget deficit. Before printing, editors requested confirmation of the bureau's numbers."
+      ],
+      "target_context_dev": [
+        "A resident who survived the chemical spill described the explosion moment by moment. Editors sought to confirm what the survivor actually observed.",
+        "One of the stranded mountain climbers recalled the terrifying descent down the ravine. The editorial board worked to substantiate the personal ordeal.",
+        "A worker on the factory floor shared what took place right as the machinery failed. The newsroom needed to corroborate this direct personal recollection.",
+        "A local shopkeeper spoke about what happened when the protest reached his storefront. The desk cross-checked his personal narrative with nearby security footage."
+      ],
+      "source_context_test": [
+        "The regulatory commission submitted its formal findings to parliament this morning. The desk moved swiftly to corroborate the state-sanctioned brief.",
+        "Following the industrial accident, the safety board issued a formal statement on systemic failures. Editors verified the bureau's documentation immediately.",
+        "The governor's office released a formal summary of the disaster response efforts. Investigators checked the agency release against municipal data.",
+        "A state agency published a formal dossier on the regional power grid failure. The newsroom proceeded to confirm the administration's documentation."
+      ],
+      "target_context_test": [
+        "A passenger who escaped the derailed train gave a vivid recollection of the impact. The team gathered corroborating proof for the survivor's story.",
+        "A doctor stationed inside the field hospital shared her personal perspective during the bombardment. Editors sought to corroborate her lived experience.",
+        "An employee who was inside the vault when the heist began recounted the timeline. The newsroom compared his direct narrative against bank surveillance.",
+        "A volunteer who pulled victims from the floodwaters described the harrowing rescue. The desk cross-checked the volunteer's personal story before publication."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('official report', 'official account', 'firsthand report', 'firsthand account') remain semantically and grammatically sound. The source contexts lean toward formal institutional documentation (priming 'official report'), whereas target contexts emphasize individual lived experience (priming 'firsthand account')."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "firsthand",
+      "target_modifier": "eyewitness",
+      "source_context_dev": [
+        "Having been directly caught in the avalanche, the trekker described escaping the slide. Editors sought to confirm his intimate personal recollection.",
+        "The captured operative described what happened during his own interrogation in captivity. The news desk sought to corroborate his personal ordeal.",
+        "A volunteer doctor who treated patients during the outbreak described her daily routine in the ward. The board checked her personal testimony.",
+        "The lead navigator recalled navigating the damaged vessel through the storm. Editors sought confirmation for his personal recollection."
+      ],
+      "target_context_dev": [
+        "Onlookers gathered near the square watched the motorcade collision happen right before them. Editors sought to corroborate what the crowd saw.",
+        "Several pedestrians who were waiting at the crosswalk observed the reckless driver run the light. The desk sought to confirm what onlookers noticed.",
+        "Spectators in the upper balcony watched the sudden brawl erupt on the floor below. The newsroom worked to confirm what bystanders saw.",
+        "A group of tourists standing across the canal saw the speedboat crash into the pier. Investigators sought to corroborate the bystanders' visual observations."
+      ],
+      "source_context_test": [
+        "The deep-sea diver described surviving a sudden loss of cabin pressure at depth. The newsroom worked to confirm the diver's personal recollection.",
+        "The lead researcher recalled working inside the high-containment laboratory when the alarms sounded. Editors verified the personal experience.",
+        "A soldier caught in the ambush described pulling his squad mates to safety. The desk moved to corroborate his personal narrative.",
+        "The flight engineer recounted managing the engine failure mid-flight. Editors checked the logs to substantiate his personal recollection."
+      ],
+      "target_context_test": [
+        "Commuters standing on the platform watched the suspect leap onto the train tracks. The newsroom worked to verify what the crowd witnessed.",
+        "Shoppers standing outside the boutique saw the getaway car speed away from the scene. The desk sought confirmation of what the onlookers saw.",
+        "Diners seated on the patio observed the explosion across the street from start to finish. Editors checked nearby cameras to confirm what the patrons saw.",
+        "Passersby walking near the park witnessed the confrontation unfold from the sidewalk. The news desk verified the onlookers' visual observations."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('firsthand report', 'firsthand account', 'eyewitness report', 'eyewitness account') are fully acceptable across all contexts. Source contexts highlight direct personal immersion/involvement, whereas target contexts distinctly frame external visual observation by onlookers/bystanders, strongly favoring 'eyewitness account'."
+    }
+  ]
+}

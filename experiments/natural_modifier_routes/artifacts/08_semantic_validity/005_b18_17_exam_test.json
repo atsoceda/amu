@@ -1,0 +1,30 @@
+{
+  "candidate_id": "exam_test",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        "target_context_test_0"
+      ],
+      "failure_reasons": [
+        "The context explicitly includes the candidate noun 'test' ('promised to test endurance to the brink'), violating the constraint that contexts must not mention or trivially name candidate targets."
+      ],
+      "concise_notes": "All four cross combinations are semantically valid and natural, but target_context_test[0] leaks the target noun 'test' as a verb."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('final exam', 'final test', 'crucial exam', 'crucial test') are natural and permissible across all contexts without lexical leakage."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('fair exam', 'fair test', 'standardized exam', 'standardized test') are highly natural and fully compatible across all developmental and test contexts."
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "family": {
+    "candidate_id": "b09_02_event_trip_journey",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_trip_journey",
+    "noun_0": "trip",
+    "noun_1": "journey",
+    "shared_definition": "an act of traveling from one place to another",
+    "neutral_stem": "The travelers prepared thoroughly for",
+    "candidate_modifiers": [
+      "long",
+      "short",
+      "tiring",
+      "dangerous",
+      "pleasant",
+      "unexpected",
+      "arduous",
+      "memorable",
+      "perilous",
+      "safe",
+      "hasty",
+      "exciting",
+      "exhausting",
+      "successful"
+    ],
+    "semantic_notes": "'Trip' usually implies a round-trip or shorter recreational travel, whereas 'journey' suggests greater distance, duration, or metaphorical depth.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        7946
+      ],
+      "noun_1": [
+        9338
+      ]
+    },
+    "modifier_token_ids": {
+      "long": [
+        1440
+      ],
+      "short": [
+        2822
+      ],
+      "tiring": [
+        144426
+      ],
+      "dangerous": [
+        13588
+      ],
+      "pleasant": [
+        23850
+      ],
+      "unexpected": [
+        20173
+      ],
+      "arduous": [
+        129263
+      ],
+      "memorable": [
+        31803
+      ],
+      "perilous": [
+        164077
+      ],
+      "safe": [
+        6338
+      ],
+      "hasty": [
+        152302
+      ],
+      "exciting": [
+        12615
+      ],
+      "exhausting": [
+        93646
+      ],
+      "successful": [
+        6595
+      ]
+    },
+    "forced_projection_span": 0.04230409860610962,
+    "max_noun_pair_mass": 0.68868488073349,
+    "context_priority_score": 0.029134193103086403,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "safe",
+        "target_modifier": "long",
+        "source_projection": 0.1651158630847931,
+        "target_projection": 0.16867178678512573,
+        "forced_modifier_leverage": 0.0035559237003326416,
+        "source_pair_mass": 0.4011853039264679,
+        "target_pair_mass": 0.68868488073349
+      },
+      "medium": {
+        "source_modifier": "hasty",
+        "target_modifier": "successful",
+        "source_projection": -0.03047013282775879,
+        "target_projection": -0.011962905526161194,
+        "forced_modifier_leverage": 0.018507227301597595,
+        "source_pair_mass": 0.4881567358970642,
+        "target_pair_mass": 0.382937490940094
+      },
+      "high": {
+        "source_modifier": "arduous",
+        "target_modifier": "perilous",
+        "source_projection": 0.249779611825943,
+        "target_projection": 0.2920837104320526,
+        "forced_modifier_leverage": 0.04230409860610962,
+        "source_pair_mass": 0.5405114889144897,
+        "target_pair_mass": 0.6320555210113525
+      }
+    },
+    "context_generation_rank": 119
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "safe",
+      "target_modifier": "long",
+      "source_context_dev": [
+        "With young children riding in the back seat, the parents double-checked the child restraints and packed extra emergency medical supplies.",
+        "Local crossing monitors inspected the passenger vans before the weekend family outing to ensure all seatbelts were working properly.",
+        "The neighborhood carpool organizer inspected the brake pads and packed emergency flares before heading out toward the lake.",
+        "Before driving to the nearby county park, the scout leaders reviewed emergency protocols and checked local weather advisories."
+      ],
+      "target_context_dev": [
+        "Crossing multiple continents required months of mapping out waypoints and acquiring international transit permits.",
+        "Navigating across vast oceans and endless mountain ranges demanded thousands of miles of sustained endurance.",
+        "The expedition across vast uncharted territories spanned thousands of leagues across remote outer provinces.",
+        "Traversing the entire expanse of the continent meant spending countless months crossing endless terrain."
+      ],
+      "source_context_test": [
+        "Routine vehicular maintenance on the family minivan was completed right before the weekend excursion began.",
+        "Camp counselors reviewed roadside assistance procedures and ensured every passenger had a functional harness.",
+        "The school group checked tire pressures and verified the vehicle inspection sticker prior to leaving for the regional museum.",
+        "Ensuring everyone was strapped in securely, the chaperone confirmed that all basic first-aid gear was fully stocked."
+      ],
+      "target_context_test": [
+        "Moving across vast steppe territories to reach distant shores required endless hours on winding interstate corridors.",
+        "A trek from the northern tundra all the way down to equatorial outposts required months of provisions.",
+        "Leaving ancestral lands to reach the opposite side of the globe involved traversing thousands of leagues of open land.",
+        "Setting out across vast oceanic stretches and multiple time zones demanded profound physical stamina."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (safe trip, safe journey, long trip, long journey) are semantically and syntactically valid completions following the stem 'The travelers prepared thoroughly for the'. Source contexts emphasize precaution and short-distance passenger security (biasing toward 'safe' and everyday 'trip'), while target contexts emphasize immense geographic scale and multi-continent expanses (biasing toward 'long' and grand 'journey')."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "hasty",
+      "target_modifier": "successful",
+      "source_context_dev": [
+        "An unexpected phone call required an immediate departure within fifteen minutes, leaving barely enough time to throw clothes into a duffel bag.",
+        "Given the sudden deadline across town, there were only five minutes to toss files into a briefcase and run out the door.",
+        "Hearing the urgent news from their hometown, they bolted to the terminal with practically zero warning.",
+        "The last-minute notice forced everyone to gather their coats and dash out to catch the departing express shuttle."
+      ],
+      "target_context_dev": [
+        "Securing international trade rights and meeting all regional dignitaries were the ultimate objectives of this major venture.",
+        "Fulfilling the mission's ambitious objectives and returning with prized scientific data were the team's top priorities.",
+        "The primary objective was to negotiate the peace accord and bring stability to the distant provinces.",
+        "Reaching the summit and documenting new botanical species would ensure the mission achieved its grand goals."
+      ],
+      "source_context_test": [
+        "The sudden alert left no time to deliberate, prompting everyone to grab their keys and rush straight to the vehicle.",
+        "With only seconds to spare before the depot gates closed, the group scrambled to board the direct transport.",
+        "An unplanned emergency summons forced them to bundle into the car without even finishing their morning coffee.",
+        "Receiving an unexpected dispatch across county lines, the couriers shoved their paperwork into satchels and sprinted out."
+      ],
+      "target_context_test": [
+        "Bringing back vital historical artifacts to the academy was the crowning achievement anticipated by the expedition.",
+        "The diplomatic delegation needed to establish lasting commercial alliances across every overseas port.",
+        "Achieving groundbreaking discoveries in the remote interior would prove the historical theories right.",
+        "The trade guild aimed to establish flourishing new merchant outposts in every major port of call."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (hasty trip, hasty journey, successful trip, successful journey) are standard, natural collocations. Source contexts create extreme urgency, time-pressured departure, and localized errand-like tasks, strongly favoring 'hasty trip'. Target contexts focus on high-stakes missions, diplomatic milestones, and goal attainment, naturally priming 'successful journey'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "arduous",
+      "target_modifier": "perilous",
+      "source_context_dev": [
+        "Hauling heavy gear through thick mud and scaling punishing vertical inclines promised exhausting physical strain.",
+        "The relentless uphill climb carrying fifty-pound packs guaranteed days of sheer muscular exhaustion.",
+        "Dragging heavy wooden carts across rocky uphill switchbacks required relentless muscle power and endurance.",
+        "Pushing through knee-deep snowdrifts and dragging sleds over steep mountain passes drained every ounce of stamina."
+      ],
+      "target_context_dev": [
+        "Active combat sectors, armed bandits, and sheer crumbling cliff edges threatened the lives of anyone brave enough to pass.",
+        "Lurking predators, unstable minefields, and venomous wildlife posed lethal threats around every blind turn.",
+        "Navigating pirate-infested straits and uncharted reefs meant one minor miscalculation could prove fatal.",
+        "Hostile raiders and collapsing suspension bridges made survival doubtful for anyone traversing the canyon."
+      ],
+      "source_context_test": [
+        "Tugging overloaded carts through swampy marshes was bound to test the physical stamina of the crew.",
+        "Carrying massive surveying equipment up endless flights of stone steps caused deep muscular fatigue.",
+        "Backbreaking labor and grinding uphill marches characterized the upcoming mountain crossing.",
+        "Endless ascents over rugged boulders with heavy rucksacks promised brutal physical exertion."
+      ],
+      "target_context_test": [
+        "Treacherous quicksand, rogue militias, and extreme exposure threatened the lives of anyone entering the borderlands.",
+        "Sudden blizzards along sheer precipices and frequent rockslides carried a severe risk of fatal catastrophe.",
+        "Facing armed ambushes and navigating uncharted minefields put every single life on the line.",
+        "The territory was infamous for sudden volcanic fissures and toxic gas plumes that proved fatal to past travelers."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings (arduous trip, arduous journey, perilous trip, perilous journey) are fully grammatical and semantically felicitous. Source contexts spotlight strenuous, grinding physical exertion and heavy weight (aligning with 'arduous'), whereas target contexts emphasize mortal danger, lethal traps, and survival threats (aligning with 'perilous')."
+    }
+  ]
+}

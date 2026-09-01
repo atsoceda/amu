@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_17_event_dispute_quarrel",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_dispute_quarrel",
+    "noun_0": "dispute",
+    "noun_1": "quarrel",
+    "shared_definition": "an angry disagreement or argument between parties",
+    "neutral_stem": "Mediators intervened to resolve",
+    "candidate_modifiers": [
+      "bitter",
+      "ongoing",
+      "petty",
+      "prolonged",
+      "sharp",
+      "heated",
+      "ugly",
+      "senseless",
+      "unresolved",
+      "violent",
+      "foolish",
+      "public",
+      "trivial",
+      "tiresome",
+      "fierce"
+    ],
+    "semantic_notes": "'Dispute' is more formal and commonly used in legal/labor contexts, while 'quarrel' often implies domestic, interpersonal, or petty friction.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        25947
+      ],
+      "noun_1": [
+        103445
+      ]
+    },
+    "modifier_token_ids": {
+      "bitter": [
+        31374
+      ],
+      "ongoing": [
+        14335
+      ],
+      "petty": [
+        73661
+      ],
+      "prolonged": [
+        35269
+      ],
+      "sharp": [
+        14658
+      ],
+      "heated": [
+        20067
+      ],
+      "ugly": [
+        37653
+      ],
+      "senseless": [
+        182093
+      ],
+      "unresolved": [
+        100069
+      ],
+      "violent": [
+        23125
+      ],
+      "foolish": [
+        59940
+      ],
+      "public": [
+        1237
+      ],
+      "trivial": [
+        31473
+      ],
+      "tiresome": [
+        227972
+      ],
+      "fierce": [
+        48621
+      ]
+    },
+    "forced_projection_span": 0.07362577319145203,
+    "max_noun_pair_mass": 0.5236915946006775,
+    "context_priority_score": 0.038557198566339324,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "ugly",
+        "target_modifier": "fierce",
+        "source_projection": -0.19769978523254395,
+        "target_projection": -0.19001834094524384,
+        "forced_modifier_leverage": 0.00768144428730011,
+        "source_pair_mass": 0.3315032720565796,
+        "target_pair_mass": 0.25885534286499023
+      },
+      "medium": {
+        "source_modifier": "fierce",
+        "target_modifier": "sharp",
+        "source_projection": -0.19001834094524384,
+        "target_projection": -0.1516048163175583,
+        "forced_modifier_leverage": 0.03841352462768555,
+        "source_pair_mass": 0.25885534286499023,
+        "target_pair_mass": 0.19906248152256012
+      },
+      "high": {
+        "source_modifier": "senseless",
+        "target_modifier": "foolish",
+        "source_projection": -0.021176651120185852,
+        "target_projection": 0.052449122071266174,
+        "forced_modifier_leverage": 0.07362577319145203,
+        "source_pair_mass": 0.22654564678668976,
+        "target_pair_mass": 0.4217761158943176
+      }
+    },
+    "context_generation_rank": 104
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "ugly",
+      "target_modifier": "fierce",
+      "source_context_dev": [
+        "Contract negotiations between the municipal transit union and city hall had deteriorated into malicious mudslinging, leaving both sides entrenched in bitter accusations.",
+        "The land boundary conflict between the two farming cooperatives grew increasingly unpleasant and fraught with hostility as private grievances surfaced in public hearings.",
+        "What began as a simple administrative disagreement over zoning permits descended into a sordid confrontation marked by character assassination and venomous rhetoric.",
+        "Relations between the rival department heads turned profoundly toxic after leaked emails revealed years of backstabbing and bad faith."
+      ],
+      "target_context_dev": [
+        "The siblings clashed with explosive intensity over how to manage their family's estate, trading passionate insults across the dinner table.",
+        "An intensely combative shouting match erupted between the two rival coaches on the sidelines during the championship match.",
+        "Tensions between the long-time business partners reached a boiling point, resulting in violent outbursts and unrelenting personal animosity behind closed doors.",
+        "The heated exchange in the boardroom became wildly aggressive, with each founder fiercely defending their territory and attacking the other's integrity."
+      ],
+      "source_context_test": [
+        "The divorce proceedings turned especially distasteful when both parties began filing vindictive motions meant solely to humiliate each other in court.",
+        "Disagreements over water rights had soured community ties, sparking rancorous town hall sessions filled with slander and spite.",
+        "The corporate buyout triggered an unpleasant clash between executive factions, exposing embarrassing private communications to the press.",
+        "Hostilities between the two neighborhood associations grew increasingly nasty after threats of sabotage were exchanged over community gardens."
+      ],
+      "target_context_test": [
+        "The fiery argument between the two lead actors brought rehearsal to a sudden halt as both shouted with unrestrained fury.",
+        "Passions flared violently among the committee members, turning what should have been a standard policy debate into a ferocious shouting match.",
+        "The exchange between the two former friends became intensely heated, with both trading harsh recriminations and slamming doors.",
+        "Tempers erupted violently at the neighborhood council meeting when two longtime residents confronted each other with aggressive bluster."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('ugly dispute', 'ugly quarrel', 'fierce dispute', 'fierce quarrel') fit seamlessly with 'Mediators intervened to resolve the...' across all contexts. Source contexts emphasize distasteful, toxic, and rancorous institutional/contractual breakdowns; target contexts emphasize fiery, explosive interpersonal antagonism."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "fierce",
+      "target_modifier": "sharp",
+      "source_context_dev": [
+        "The two energy conglomerates engaged in a merciless battle for market dominance, deploying aggressive legal tactics and public relations salvos.",
+        "Tensions along the regional boundary reached dangerous heights as military factions faced off with intense belligerence across the demilitarized zone.",
+        "The confrontation between the striking coal miners and the company security forces became relentlessly combative and fraught with peril.",
+        "An aggressive standoff developed between rival political factions in parliament, paralyzing governance through relentless and fiery opposition."
+      ],
+      "target_context_dev": [
+        "The two literary critics exchanged biting, incisive barbs during the panel discussion, slicing through each other's reputations with surgical wit.",
+        "A stinging, pointed altercation broke out between the co-authors over who deserved credit for the breakthrough chapter.",
+        "The dialogue between the estranged partners was marked by cutting remarks and quick, acid-tongued retorts over dinner.",
+        "During the budget review, the auditor delivered piercing criticisms that prompted quick, acid retorts from the project lead."
+      ],
+      "source_context_test": [
+        "The hostile takeover attempt sparked a ferocious corporate campaign that left both executive boards locked in unrelenting combat.",
+        "Passionate and aggressive clashes between environmental demonstrators and industrial developers dominated the public hearings for months.",
+        "The conflict between the two neighboring provinces intensified rapidly as both governors issued aggressive ultimatums over tax revenues.",
+        "Rival factions within the athletics federation engaged in an all-out power struggle characterized by unyielding, combative behavior."
+      ],
+      "target_context_test": [
+        "The two senior architects exchanged acerbic barbs over structural aesthetics, trading stinging insults across the design table.",
+        "A quick, biting verbal spat between the director and the producer brought filming to an abrupt pause.",
+        "At the faculty reception, two professors engaged in a stinging, witty battle of words that quickly alienated their peers.",
+        "The exchange between the two department heads was brief but cutting, marked by acidic comments about competence."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations ('fierce dispute', 'fierce quarrel', 'sharp dispute', 'sharp quarrel') are fully coherent across both institutional and personal settings. Source contexts evoke high-intensity, aggressive clashes, while target contexts bias toward cutting, biting, and acerbic interpersonal verbal friction."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "senseless",
+      "target_modifier": "foolish",
+      "source_context_dev": [
+        "The labor stoppage dragged on for months over minor procedural grievances, causing massive financial ruin to both the town and the workforce for no rational reason.",
+        "A destructive confrontation over an abandoned parcel of barren land caused immense suffering to both villages without offering any practical benefit to either.",
+        "The trade embargo between the two allied nations produced devastating economic fallout while achieving none of the stated policy aims.",
+        "Years of damaging institutional deadlock over a purely symbolic committee title drained the foundation's endowment to near insolvency."
+      ],
+      "target_context_dev": [
+        "The cousins got into an absurd tiff over who had misplaced an old board game piece during the holiday gathering.",
+        "A petty, childish spat between the roommates over whose turn it was to wash the coffee pot nearly wrecked their friendship.",
+        "The two dinner guests made a ridiculous spectacle of themselves by bickering passionately over trivial restaurant etiquette.",
+        "A silly, trivial misunderstanding regarding seating arrangements at the wedding quickly spiraled into childish pouting and finger-pointing."
+      ],
+      "source_context_test": [
+        "The cross-border economic standoff caused catastrophic supply disruptions for both regions without yielding any strategic gain for anyone involved.",
+        "A totally unprovoked and irrational breakdown in municipal governance paralyzed the public transit system for weeks.",
+        "The two research laboratories engaged in a mutually destructive campaign of sabotage that derailed crucial medical discoveries for zero discernible benefit.",
+        "A tragic and pointless standoff over municipal boundaries resulted in vital public safety services being withheld from residents."
+      ],
+      "target_context_test": [
+        "The two old friends caused an embarrassing scene at the cafe by bickering over a trivial sports trivia question.",
+        "An utterly petty squabble over a minor gardening chore caused the neighbors to stop speaking to each other.",
+        "The heirs ended up in a comical yet exhausting spat over who should inherit a collection of worthless ceramic figurines.",
+        "A ridiculous row broke out between the two choir members regarding who stood slightly closer to the center microphone."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings ('senseless dispute', 'senseless quarrel', 'foolish dispute', 'foolish quarrel') remain strictly grammatical and semantically felicitous across all contexts. Source contexts highlight tragic, irrational, and highly damaging impasses lacking purpose, whereas target contexts center on silly, petty, and trivial interpersonal bickering."
+    }
+  ]
+}

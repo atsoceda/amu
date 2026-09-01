@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_15_cup_mug",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "cup_mug",
+    "noun_0": "cup",
+    "noun_1": "mug",
+    "shared_definition": "a small drinking vessel with a handle used for hot beverages",
+    "neutral_stem": "Before starting work, she took a sip from",
+    "candidate_modifiers": [
+      "hot",
+      "ceramic",
+      "steaming",
+      "warm",
+      "full",
+      "chipped",
+      "heavy",
+      "porcelain",
+      "favorite",
+      "clean",
+      "empty",
+      "stained",
+      "novelty",
+      "personalized",
+      "clay"
+    ],
+    "semantic_notes": "Mug denotes a sturdier, handle-equipped cylinder without a saucer, while cup often implies a more delicate vessel paired with a saucer.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        8578
+      ],
+      "noun_1": [
+        24199
+      ]
+    },
+    "modifier_token_ids": {
+      "hot": [
+        3425
+      ],
+      "ceramic": [
+        25364
+      ],
+      "steaming": [
+        107059
+      ],
+      "warm": [
+        6962
+      ],
+      "full": [
+        2587
+      ],
+      "chipped": [
+        116396
+      ],
+      "heavy": [
+        7274
+      ],
+      "porcelain": [
+        48622
+      ],
+      "favorite": [
+        8126
+      ],
+      "clean": [
+        3980
+      ],
+      "empty": [
+        7738
+      ],
+      "stained": [
+        38307
+      ],
+      "novelty": [
+        70899
+      ],
+      "personalized": [
+        28233
+      ],
+      "clay": [
+        23957
+      ]
+    },
+    "forced_projection_span": 0.045069627463817596,
+    "max_noun_pair_mass": 0.8824864029884338,
+    "context_priority_score": 0.03977333342457312,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "novelty",
+        "target_modifier": "favorite",
+        "source_projection": -0.03304005414247513,
+        "target_projection": -0.026613563299179077,
+        "forced_modifier_leverage": 0.006426490843296051,
+        "source_pair_mass": 0.265695720911026,
+        "target_pair_mass": 0.21401628851890564
+      },
+      "medium": {
+        "source_modifier": "full",
+        "target_modifier": "favorite",
+        "source_projection": -0.04809688404202461,
+        "target_projection": -0.026613563299179077,
+        "forced_modifier_leverage": 0.021483320742845535,
+        "source_pair_mass": 0.1588878035545349,
+        "target_pair_mass": 0.21401628851890564
+      },
+      "high": {
+        "source_modifier": "heavy",
+        "target_modifier": "clay",
+        "source_projection": 0.03324299305677414,
+        "target_projection": 0.07831262052059174,
+        "forced_modifier_leverage": 0.045069627463817596,
+        "source_pair_mass": 0.17936882376670837,
+        "target_pair_mass": 0.4225504398345947
+      }
+    },
+    "context_generation_rank": 102
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "novelty",
+      "target_modifier": "favorite",
+      "source_context_dev": [
+        "She had picked up a quirky souvenir shaped like a cartoon cat during her holiday trip. It sat brightly beside her keyboard, bringing an amused grin to her face.",
+        "Her desk was adorned with a silly gag gift received from the office white elephant exchange. It always provided a quick laugh during early morning meetings.",
+        "She loved collecting whimsical, oddball trinkets from boutique gift shops to brighten her workspace. Today she decided to drink from the latest humorous addition to her collection.",
+        "A colorful conversation starter with a witty slogan printed across the side sat near her monitor. It was far more playful than her standard kitchen drinkware."
+      ],
+      "target_context_dev": [
+        "Every morning began with the one cherished piece of drinkware she had owned for over a decade. It felt like a warm, reliable companion through countless projects.",
+        "She bypassed all the newer dishware in the cabinet to reach for the familiar piece she treasured above all others. Nothing else felt quite as comforting in her hands.",
+        "Out of everything in her cupboard, one specific piece always held pride of place for her morning routine. Holding it brought an immediate sense of calm.",
+        "She had a deep sentimental attachment to the vessel her grandmother had gifted her years ago. It remained her undisputed top choice to start each day."
+      ],
+      "source_context_test": [
+        "Her coworker had gifted her an absurdly oversized piece shaped like a miniature toilet as a joke. She kept it on her desk purely for the comedic value.",
+        "A bizarre souvenir from a roadside attraction had somehow become part of her regular desk setup. Its ridiculous shape never failed to cheer her up.",
+        "She reached for the funny, offbeat piece she had won at the carnival last weekend. Its exaggerated design made her morning coffee break feel lighthearted.",
+        "A quirky piece featuring vibrant neon patterns and a goofy face stood out among her otherwise plain kitchenware. She smiled as she picked it up."
+      ],
+      "target_context_test": [
+        "There were dozens of options in the pantry, but she always defaulted to the one special piece she adored most. It had seen her through college and her entire career.",
+        "She carefully washed and set aside the one treasured piece she refused to let anyone else borrow. Starting the day without it just felt off.",
+        "Her morning beverage always tasted noticeably better when sipped from the piece she held most dear. It had been her trusted companion for years.",
+        "She instinctively picked out the well-loved piece that had been her reliable companion through every major milestone. Nothing compared to its familiar warmth."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (novelty cup, novelty mug, favorite cup, favorite mug) are syntactically and semantically well-formed in English. The contexts steer pragmatic selection through playful/gimmicky gift motifs versus deeply cherished sentimental routine motifs without making alternative combinations incongruous."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "full",
+      "target_modifier": "favorite",
+      "source_context_dev": [
+        "The freshly brewed blend had been poured right up to the brim, requiring steady hands to avoid any spill. Steam rose gently from the surface as she reached out carefully.",
+        "She had topped the dark brew with foamed milk until the liquid reached the absolute upper edge. She leaned over cautiously so nothing sloshed onto her desk.",
+        "The container was brimming with freshly steeped herbal tea, filled completely to the top line. She handled it gingerly to prevent any hot drops from escaping.",
+        "Having just poured an entire kettle's worth of fresh brew, there was not a single millimeter of extra space remaining inside. She lifted it with great care."
+      ],
+      "target_context_dev": [
+        "No other piece in her kitchen provided the exact sense of comfort she sought every single morning. She lovingly selected the one item she held dear above all others.",
+        "She had dozens of drinkware items, but this specific one had been her trusted go-to choice for years. Holding it felt entirely natural and grounding.",
+        "She always reached for the sentimental piece she had purchased during her honeymoon. It remained the one item she preferred above all the rest.",
+        "Her morning routine felt incomplete unless she brewed her beverage into the piece she treasured most. Its familiar shape brought instant calm."
+      ],
+      "source_context_test": [
+        "She had poured the steaming roast until the liquid was level with the rim, leaving zero margin for sudden movement. She watched the surface tension carefully.",
+        "The morning brew sat completely filled to the brim with dark roast and sweet cream. She balanced it steadily with both hands before sitting down.",
+        "Freshly prepared hot liquid reached right up to the ceramic lip, bubbling gently with warmth. She approached it cautiously to avoid a messy spill on her paperwork.",
+        "She had filled the vessel to the very top edge with boiling water and loose leaves. Moving slowly, she prepared to take her first careful taste."
+      ],
+      "target_context_test": [
+        "Among all the options on the shelf, one particular piece held unmatched sentimental value. It was the only item she truly loved using day in and day out.",
+        "She picked out the time-tested piece she had cherished since her university days. It remained her absolute preferred vessel for hot drinks.",
+        "Even when other clean dishes were readily available, she would hand-wash this one specific piece just to use it. It was unequivocally her preferred choice.",
+        "The beautifully decorated piece she had received from her best friend was the one she always singled out. It brought her genuine joy every morning."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (full cup, full mug, favorite cup, favorite mug) are standard natural collocations. Full-brim liquid imagery contrasts with sentimental daily-preference framing while preserving semantic coherence across all cross-product assignments."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "heavy",
+      "target_modifier": "clay",
+      "source_context_dev": [
+        "The vessel had considerable mass and thick, solid walls that felt substantial when lifted. Its dense construction anchored it firmly against the wooden desk.",
+        "She picked up the noticeably hefty, thick-walled piece that required a firm grip to carry. Its weighty feel gave it a durable, grounded quality.",
+        "With its dense, thick base and weighted bottom, the piece was nearly impossible to knock over accidentally. She felt the solid weight settling in her palm.",
+        "The chunky, massive vessel felt noticeably dense compared to delicate fine porcelain. She raised the weighted object carefully using a secure grip."
+      ],
+      "target_context_dev": [
+        "She selected the rustic earthenware piece hand-thrown on a pottery wheel at the weekend craft market. The natural unglazed texture felt earthy under her fingers.",
+        "The piece was crafted from natural baked earth and fired in a traditional wood kiln by a local artisan. Its rustic, terra-cotta feel was unmistakable.",
+        "She admired the authentic pottery piece, shaped by hand from mineral sediment and dried in the sun before baking. Its natural ceramic body retained heat beautifully.",
+        "An artisan potter had hand-sculpted the rustic earthenware piece, leaving visible finger ridges along the unglazed base. It smelled faintly of baked earth."
+      ],
+      "source_context_test": [
+        "The piece was surprisingly solid and bulky, bearing the substantial heft of reinforced ceramic. She could feel the noticeable downward pull as she lifted it.",
+        "She grasped the thick, weighty piece by its wide handle, appreciating its sturdy and massive physical build. It stayed firmly anchored on the tabletop.",
+        "The vessel was built with an exceptionally thick base that added significant downward weight. Holding it required a noticeably strong, steady grip.",
+        "Its hefty, dense walls provided robust thermal insulation and a solid, weighty feel. She lifted the substantial piece with both hands."
+      ],
+      "target_context_test": [
+        "The rustic vessel had been shaped directly from natural sedimentary earth and kiln-hardened by an independent potter. Its raw textured surface felt grounding.",
+        "She pulled down the handcrafted piece sculpted from riverbed silt and fired in a high-temperature kiln. The organic earthenware texture was warm to the touch.",
+        "The earthenware piece showed the natural reddish tones of baked mineral sediment along its unglazed base. She ran her fingers across its handcrafted exterior.",
+        "Crafted by a ceramicist using raw natural mud shaped on a spinning wheel, the rustic piece felt earthy and tactile. She lifted the pottery to take a sip."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (heavy cup, heavy mug, clay cup, clay mug) are fully valid and frequently occurring phrases. Physical weight/density cues separate cleanly from artisanal pottery/earthenware material cues without rendering cross-combinations anomalous."
+    }
+  ]
+}

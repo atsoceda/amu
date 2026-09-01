@@ -1,0 +1,11 @@
+{
+  "audit": "evaluated_prompt_first_letter_consistency",
+  "finding": "The evaluated source prompt contains the source noun's first-letter instruction. The residual direction is derived from a separate target prompt containing the target noun's first-letter instruction. For cross-initial pairs, movement toward the target noun in the evaluated source prompt conflicts with its visible source-initial instruction.",
+  "source_template": "Answer with an occupation beginning with {initial}. {definition} is",
+  "target_template": "Answer with an occupation beginning with {initial}. {definition} is",
+  "code_evidence": {
+    "prompt_construction": "experiments/correctness_preserving_aan/run.py:27-30",
+    "evaluation": "The source prompt sp is used for off/on article and noun distributions; the target prompt tp supplies the target-minus-source residual direction."
+  },
+  "interpretation": "Both lexical alternatives remain semantically valid answers to the occupational definition, but the cross-initial target is not instruction-consistent in the evaluated source prompt. The signed route double dissociation remains an intervention result, but it does not fully eliminate correctness-related resistance and must be described as semantically valid, first-letter-constrained lexical choice."
+}

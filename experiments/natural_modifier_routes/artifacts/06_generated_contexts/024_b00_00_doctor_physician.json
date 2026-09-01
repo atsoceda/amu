@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b00_00_doctor_physician",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "doctor_physician",
+    "noun_0": "doctor",
+    "noun_1": "physician",
+    "shared_definition": "a qualified practitioner of medicine",
+    "neutral_stem": "Following the unexpected medical emergency, the clinic staff immediately paged",
+    "candidate_modifiers": [
+      "attending",
+      "resident",
+      "chief",
+      "experienced",
+      "licensed",
+      "senior",
+      "primary",
+      "consulting",
+      "qualified",
+      "practicing",
+      "competent",
+      "skilled",
+      "distinguished",
+      "dedicated",
+      "young"
+    ],
+    "semantic_notes": "'Doctor' is the broader and more common everyday term, whereas 'physician' is more formal and clinical.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        9092
+      ],
+      "noun_1": [
+        21355
+      ]
+    },
+    "modifier_token_ids": {
+      "attending": [
+        21667
+      ],
+      "resident": [
+        10704
+      ],
+      "chief": [
+        9329
+      ],
+      "experienced": [
+        9763
+      ],
+      "licensed": [
+        24335
+      ],
+      "senior": [
+        9550
+      ],
+      "primary": [
+        5905
+      ],
+      "consulting": [
+        31100
+      ],
+      "qualified": [
+        15973
+      ],
+      "practicing": [
+        36419
+      ],
+      "competent": [
+        31431
+      ],
+      "skilled": [
+        23482
+      ],
+      "distinguished": [
+        23958
+      ],
+      "dedicated": [
+        11554
+      ],
+      "young": [
+        3184
+      ]
+    },
+    "forced_projection_span": 0.18715345859527588,
+    "max_noun_pair_mass": 0.7752766609191895,
+    "context_priority_score": 0.14509570845922326,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "skilled",
+        "target_modifier": "primary",
+        "source_projection": -0.0024234987795352936,
+        "target_projection": 0.01546408236026764,
+        "forced_modifier_leverage": 0.017887581139802933,
+        "source_pair_mass": 0.03882646560668945,
+        "target_pair_mass": 0.2477474957704544
+      },
+      "medium": {
+        "source_modifier": "experienced",
+        "target_modifier": "dedicated",
+        "source_projection": -0.13056421279907227,
+        "target_projection": -0.03658117353916168,
+        "forced_modifier_leverage": 0.09398303925991058,
+        "source_pair_mass": 0.23542064428329468,
+        "target_pair_mass": 0.07521790266036987
+      },
+      "high": {
+        "source_modifier": "consulting",
+        "target_modifier": "attending",
+        "source_projection": 0.2428147792816162,
+        "target_projection": 0.4299682378768921,
+        "forced_modifier_leverage": 0.18715345859527588,
+        "source_pair_mass": 0.5254398584365845,
+        "target_pair_mass": 0.7752766609191895
+      }
+    },
+    "context_generation_rank": 25
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "skilled",
+      "target_modifier": "primary",
+      "source_projection": -0.0024234987795352936,
+      "target_projection": 0.01546408236026764,
+      "forced_modifier_leverage": 0.017887581139802933,
+      "source_pair_mass": 0.03882646560668945,
+      "target_pair_mass": 0.2477474957704544,
+      "source_context_dev": [
+        "The delicate procedure required steady hands and advanced technical precision. Complications arose when the patient's vitals became unstable.",
+        "A complex bedside intervention demanded high-level technical expertise. Suddenly, the patient's condition worsened dramatically.",
+        "The treatment room required advanced manual dexterity and precise clinical technique. An unexpected crisis developed during the procedure.",
+        "Technical mastery of intricate medical equipment was essential for the operation. An acute complication developed without warning."
+      ],
+      "target_context_dev": [
+        "The ambulatory network handles ongoing general outpatient healthcare and routine oversight. An acute incident interrupted a routine visit.",
+        "The community clinic coordinates routine basic healthcare and preventative visits. A sudden health crisis developed in the waiting area.",
+        "The family health center manages everyday preventative wellness and regular checkups. An urgent situation occurred during an exam.",
+        "Routine outpatient management is central to the community care facility's daily operations. An acute breakdown occurred in exam room three."
+      ],
+      "source_context_test": [
+        "Precision execution of the delicate clinical technique was paramount. Without warning, the patient suffered an acute decline.",
+        "Handling the rare anatomical complication demanded extraordinary technical aptitude. The monitor alarms began sounding frantically.",
+        "The minor surgical intervention called for expert hands-on technique. The situation escalated into a life-threatening crisis.",
+        "Careful technical dexterity was required to navigate the difficult catheter placement. The patient's heart rate abruptly plummeted."
+      ],
+      "target_context_test": [
+        "The neighborhood wellness center oversees standard outpatient evaluations and ongoing healthcare plans. An urgent complication arose.",
+        "Comprehensive outpatient preventive medicine forms the cornerstone of this community facility. A sudden critical episode occurred.",
+        "The regional clinic handles everyday preventive screenings and general health maintenance. A patient collapsed unexpectedly.",
+        "General health services and baseline medical screenings are coordinated here. A severe allergic reaction was triggered without warning."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four pairings ('skilled doctor', 'skilled physician', 'primary doctor', 'primary physician') remain fully valid and coherent continuations after the fixed stem in both contexts. Source contexts emphasize technical dexterity and hands-on procedural skill, softly priming 'skilled' and the common-register 'doctor'. Target contexts emphasize general outpatient and preventive health frameworks, softly priming 'primary' and the institutional collocation 'physician'. Neither the nouns nor modifiers are explicitly named."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "experienced",
+      "target_modifier": "dedicated",
+      "source_projection": -0.13056421279907227,
+      "target_projection": -0.03658117353916168,
+      "forced_modifier_leverage": 0.09398303925991058,
+      "source_pair_mass": 0.23542064428329468,
+      "target_pair_mass": 0.07521790266036987,
+      "source_context_dev": [
+        "Navigating this rare clinical pathology demanded decades in practice and extensive background knowledge. The complex case destabilized quickly.",
+        "Handling such unusual clinical presentations requires a long career of diagnostic exposure. The patient's status deteriorated rapidly.",
+        "A long track record of dealing with rare medical anomalies was crucial for resolving the issue. The patient went into sudden distress.",
+        "Years of extensive clinical service are invaluable when facing obscure complications. An unexpected crisis developed during the evaluation."
+      ],
+      "target_context_dev": [
+        "Providing compassionate, tireless patient advocacy requires boundless empathy and commitment. A sudden emergency arose late at night.",
+        "Wholehearted commitment to individual patient welfare defines the facility's mission. A critical situation arose during an evening consult.",
+        "Unwavering devotion to patient support and empathetic bedside care was essential. An acute crisis erupted in the observation unit.",
+        "Passionate personal commitment and steadfast loyalty to vulnerable patients were needed. An unforeseen complication developed."
+      ],
+      "source_context_test": [
+        "Decades of handling unusual medical cases provided critical diagnostic insight. The patient suffered a sudden systemic relapse.",
+        "Extensive background dealing with rare diagnostic puzzles was vital for this case. A severe complication manifested abruptly.",
+        "A seasoned veteran's intuition built over decades in practice was desperately needed. The monitor sounded an urgent alarm.",
+        "Recognizing subtle indicators of this rare illness required vast historical perspective. The patient's breathing became severely labored."
+      ],
+      "target_context_test": [
+        "Tireless devotion to patient well-being and compassionate caregiving guided the team. An acute crisis flared up in the ward.",
+        "Selfless commitment to providing continuous bedside comfort was the hallmark of the clinic. A sudden health hazard occurred.",
+        "Earnest loyalty and deep empathy toward patients characterized the hospital culture. The patient's blood pressure dropped dangerously.",
+        "Unyielding dedication to empathetic care ensured patients felt supported. An unexpected medical event required rapid intervention."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('experienced doctor', 'experienced physician', 'dedicated doctor', 'dedicated physician') are natural and grammatically sound following the fixed stem. Source contexts highlight extensive practice, longevity, and rare case familiarity to favor 'experienced'. Target contexts highlight commitment, advocacy, and steadfast empathy to favor 'dedicated'. No target tokens appear in the text."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "consulting",
+      "target_modifier": "attending",
+      "source_projection": 0.2428147792816162,
+      "target_projection": 0.4299682378768921,
+      "forced_modifier_leverage": 0.18715345859527588,
+      "source_pair_mass": 0.5254398584365845,
+      "target_pair_mass": 0.7752766609191895,
+      "source_context_dev": [
+        "The clinical team sought a formal external expert opinion to advise on diagnostic nuances. Suddenly, an acute complication emerged.",
+        "An outside subspecialty advisory opinion was requested to review the complex case notes. The patient's condition became unstable.",
+        "A secondary independent advisory evaluation was arranged to assess the treatment plan. An urgent crisis interrupted the review.",
+        "External advisory expertise was brought in to provide clinical guidance on the rare condition. A sudden health scare occurred."
+      ],
+      "target_context_dev": [
+        "The supervising senior clinician holds ultimate institutional responsibility for the entire inpatient unit. An acute crisis erupted on the floor.",
+        "The supervising hospital faculty member holds primary administrative authority over all clinical rounds. A critical emergency occurred.",
+        "The senior practitioner overseeing the clinical service leads the ward team directly. A sudden life-threatening event occurred.",
+        "Ultimate managerial oversight of the medical floor rests with the supervising clinician. The patient experienced acute distress."
+      ],
+      "source_context_test": [
+        "An independent advisory specialist was asked to review the patient's differential diagnosis. The patient abruptly deteriorated.",
+        "Formal external advisory input was solicited regarding the ambiguous test results. An acute medical event occurred shortly thereafter.",
+        "The department sought expert advisory recommendations regarding surgical alternatives. An unexpected critical event happened.",
+        "An outside clinical advisor was called in to provide a second opinion on the case. The patient went into shock without warning."
+      ],
+      "target_context_test": [
+        "The senior practitioner in charge of ward rounds exercises primary legal oversight for all inpatients. A sudden complication arose.",
+        "Direct institutional authority over inpatient medical management is held by the supervising staff leader. The patient crashed suddenly.",
+        "The supervising departmental lead maintains overall responsibility for patient management on the service. A crisis flared up.",
+        "The fully licensed senior hospital staff member directing the inpatient team was needed on site. A critical alarm sounded."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('consulting doctor', 'consulting physician', 'attending doctor', 'attending physician') are fully standard, valid medical collocations following the prompt stem. Source contexts prime an advisory/external role ('consulting'), whereas target contexts prime supervisory/ward-leadership hierarchy ('attending'). Institutional framing naturally increases the projection for 'physician'."
+    }
+  ]
+}

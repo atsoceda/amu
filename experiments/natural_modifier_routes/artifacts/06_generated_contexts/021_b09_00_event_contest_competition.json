@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_00_event_contest_competition",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_contest_competition",
+    "noun_0": "contest",
+    "noun_1": "competition",
+    "shared_definition": "an organized event in which participants strive against each other for a prize or title",
+    "neutral_stem": "Many talented entrants signed up for",
+    "candidate_modifiers": [
+      "annual",
+      "national",
+      "fierce",
+      "friendly",
+      "international",
+      "local",
+      "regional",
+      "upcoming",
+      "intense",
+      "popular",
+      "formal",
+      "prestigious",
+      "tough",
+      "exciting",
+      "major"
+    ],
+    "semantic_notes": "'Competition' often carries a broader economic or abstract sense, whereas 'contest' is frequently used for specific staged matches or judged games.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        14779
+      ],
+      "noun_1": [
+        8105
+      ]
+    },
+    "modifier_token_ids": {
+      "annual": [
+        7384
+      ],
+      "national": [
+        4559
+      ],
+      "fierce": [
+        48621
+      ],
+      "friendly": [
+        10841
+      ],
+      "international": [
+        5251
+      ],
+      "local": [
+        2263
+      ],
+      "regional": [
+        10969
+      ],
+      "upcoming": [
+        16038
+      ],
+      "intense": [
+        18487
+      ],
+      "popular": [
+        4913
+      ],
+      "formal": [
+        10781
+      ],
+      "prestigious": [
+        38624
+      ],
+      "tough": [
+        12609
+      ],
+      "exciting": [
+        12615
+      ],
+      "major": [
+        3262
+      ]
+    },
+    "forced_projection_span": 0.19792050123214722,
+    "max_noun_pair_mass": 0.8036512732505798,
+    "context_priority_score": 0.15905906281760807,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "international",
+        "target_modifier": "formal",
+        "source_projection": 0.10243401676416397,
+        "target_projection": 0.12098274379968643,
+        "forced_modifier_leverage": 0.01854872703552246,
+        "source_pair_mass": 0.3383902609348297,
+        "target_pair_mass": 0.22716042399406433
+      },
+      "medium": {
+        "source_modifier": "annual",
+        "target_modifier": "formal",
+        "source_projection": 0.018875405192375183,
+        "target_projection": 0.12098274379968643,
+        "forced_modifier_leverage": 0.10210733860731125,
+        "source_pair_mass": 0.1517888754606247,
+        "target_pair_mass": 0.22716042399406433
+      },
+      "high": {
+        "source_modifier": "friendly",
+        "target_modifier": "fierce",
+        "source_projection": 0.45247530937194824,
+        "target_projection": 0.6503958106040955,
+        "forced_modifier_leverage": 0.19792050123214722,
+        "source_pair_mass": 0.5752154588699341,
+        "target_pair_mass": 0.8036512732505798
+      }
+    },
+    "context_generation_rank": 22
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "international",
+      "target_modifier": "formal",
+      "source_context_dev": [
+        "Delegations arrived from over thirty countries, each eager to showcase their skills on a worldwide stage.",
+        "Organizers worked across multiple time zones to coordinate participants representing five continents.",
+        "Translators were stationed throughout the arena to assist delegations traveling from abroad.",
+        "Flight bookings surged as representatives from dozens of nations landed in the host city."
+      ],
+      "target_context_dev": [
+        "Strict adjudicators strictly enforced the established bylaws and certified code of conduct.",
+        "Official decorum and black-tie attire were strictly mandated by the governing committee.",
+        "Presiding judges swore an oath to uphold standardized procedural guidelines during every session.",
+        "An official memorandum detailed the rigorous parliamentary procedures required of each candidate."
+      ],
+      "source_context_test": [
+        "Global broadcasts carried live coverage across several continents to millions of viewers.",
+        "Envoys from around the globe gathered at the venue, bringing diverse regional traditions together.",
+        "Passports and entry visas were verified at the reception desk for overseas attendees.",
+        "Cultural exchange was celebrated as delegates from various sovereign territories assembled."
+      ],
+      "target_context_test": [
+        "Every submission had to be notarized and stamped according to standard institutional statutes.",
+        "The oversight panel required full compliance with institutional protocol and standardized rubrics.",
+        "Dressed in ceremonial robes, the head evaluators reviewed the codified bylaws before proceedings began.",
+        "Strict compliance with regulatory standards was monitored throughout the adjudicated proceedings."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings (international contest, international competition, formal contest, formal competition) are natural collocations following the neutral stem. Cross-combinations remain plausible across all geopolitical and procedural contexts without semantic anomaly."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "annual",
+      "target_modifier": "formal",
+      "source_context_dev": [
+        "Every autumn, the community gathers to celebrate a tradition that has spanned decades.",
+        "Marking its fiftieth consecutive gathering this season, the historic event returned to the town square.",
+        "Like clockwork each spring, organizers opened the registration ledger for another seasonal cycle.",
+        "The recurring gathering has become a staple of the municipal calendar every summer."
+      ],
+      "target_context_dev": [
+        "Strict decorum and standardized codes of conduct were required by the presiding board.",
+        "The executive panel strictly observed standardized procedural rules throughout each round.",
+        "Official credentials and notarized documentation had to be submitted prior to the proceedings.",
+        "Adjudicators followed an exacting statutory rubric to assess every presentation."
+      ],
+      "source_context_test": [
+        "Celebrated once every twelve months, the town tradition brought out residents of all ages.",
+        "After months of anticipation since last year's gathering, the scheduled season opened anew.",
+        "A year had passed since the last trophy was awarded, and preparations were underway once again.",
+        "The calendar date approached quickly, marking twelve months of patient training."
+      ],
+      "target_context_test": [
+        "Dressed in standardized attire, the panel maintained rigorous protocol during the sessions.",
+        "Institutional bylaws required sworn compliance from all registered candidates.",
+        "The governing board enforced strict procedural decorum across all official stages.",
+        "Regulatory standards were meticulously documented and verified by certified officials."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All pairings (annual contest, annual competition, formal contest, formal competition) are standard English phrases. Periodicity contexts and institutional/protocol contexts comfortably permit any of the four combinations."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "friendly",
+      "target_modifier": "fierce",
+      "source_context_dev": [
+        "Neighbors gathered in the backyard to share laughs and enjoy good-natured ribbing over homemade pies.",
+        "Smiling participants clapped warmly for one another regardless of who held the early lead.",
+        "The atmosphere remained lighthearted and convivial as neighbors shared jokes between rounds.",
+        "High spirits and supportive cheers resonated across the park during the casual afternoon gathering."
+      ],
+      "target_context_dev": [
+        "Hardened rivals stared down each other with unyielding grit, ready to fight for every inch.",
+        "Tensions were palpable in the locker room as relentless adversaries prepared for an intense showdown.",
+        "The atmosphere turned electric with aggressive posturing and high-stakes pressure.",
+        "Bitter adversaries clashed with relentless intensity, desperate to defeat their opponents."
+      ],
+      "source_context_test": [
+        "Laughter and warm embraces set a welcoming mood for everyone gathered on the lawn.",
+        "Good humor and camaraderie were on full display as friends exchanged playful banter.",
+        "The gathering prioritized neighborly warmth and lighthearted fun over any serious rivalry.",
+        "Wholesome encouragement and smiles filled the pavilion throughout the pleasant afternoon."
+      ],
+      "target_context_test": [
+        "Ruthless ambition drove the adversaries to push past physical exhaustion in a brutal showdown.",
+        "Unforgiving pressure mounted as longstanding rivals refused to concede even the slightest advantage.",
+        "An intense, cutthroat atmosphere permeated the arena as adversaries battled for supremacy.",
+        "With reputations on the line, the opponents engaged in a relentless and aggressive struggle."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (friendly contest, friendly competition, fierce contest, fierce competition) are fully grammatical and semantically felicitous. Contexts modulate interpersonal tone and rivalry levels without precluding either noun or modifier."
+    }
+  ]
+}

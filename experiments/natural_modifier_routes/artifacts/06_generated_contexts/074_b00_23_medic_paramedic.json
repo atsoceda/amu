@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b00_23_medic_paramedic",
+    "generation_batch": 0,
+    "domain": "occupations and professional roles",
+    "family_id": "medic_paramedic",
+    "noun_0": "medic",
+    "noun_1": "paramedic",
+    "shared_definition": "a trained emergency medical practitioner providing pre-hospital care",
+    "neutral_stem": "Arriving at the scene of the highway collision, the firefighter directed",
+    "candidate_modifiers": [
+      "certified",
+      "trained",
+      "experienced",
+      "skilled",
+      "calm",
+      "responsive",
+      "capable",
+      "dedicated",
+      "competent",
+      "seasoned",
+      "courageous",
+      "alert",
+      "qualified",
+      "efficient",
+      "tireless"
+    ],
+    "semantic_notes": "'Medic' is often military, colloquial, or broad, while 'paramedic' denotes specific advanced civilian emergency certification.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        6992
+      ],
+      "noun_1": [
+        133725
+      ]
+    },
+    "modifier_token_ids": {
+      "certified": [
+        19743
+      ],
+      "trained": [
+        15453
+      ],
+      "experienced": [
+        9763
+      ],
+      "skilled": [
+        23482
+      ],
+      "calm": [
+        16680
+      ],
+      "responsive": [
+        30415
+      ],
+      "capable": [
+        11844
+      ],
+      "dedicated": [
+        11554
+      ],
+      "competent": [
+        31431
+      ],
+      "seasoned": [
+        56677
+      ],
+      "courageous": [
+        89152
+      ],
+      "alert": [
+        9690
+      ],
+      "qualified": [
+        15973
+      ],
+      "efficient": [
+        8143
+      ],
+      "tireless": [
+        167473
+      ]
+    },
+    "forced_projection_span": 0.16205643117427826,
+    "max_noun_pair_mass": 0.3634296655654907,
+    "context_priority_score": 0.05889611458440491,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "experienced",
+        "target_modifier": "seasoned",
+        "source_projection": 0.1012311652302742,
+        "target_projection": 0.11938686668872833,
+        "forced_modifier_leverage": 0.018155701458454132,
+        "source_pair_mass": 0.15492425858974457,
+        "target_pair_mass": 0.2241639345884323
+      },
+      "medium": {
+        "source_modifier": "capable",
+        "target_modifier": "seasoned",
+        "source_projection": 0.037960417568683624,
+        "target_projection": 0.11938686668872833,
+        "forced_modifier_leverage": 0.08142644912004471,
+        "source_pair_mass": 0.04755497723817825,
+        "target_pair_mass": 0.2241639345884323
+      },
+      "high": {
+        "source_modifier": "seasoned",
+        "target_modifier": "certified",
+        "source_projection": 0.11938686668872833,
+        "target_projection": 0.2814432978630066,
+        "forced_modifier_leverage": 0.16205643117427826,
+        "source_pair_mass": 0.2241639345884323,
+        "target_pair_mass": 0.3634296655654907
+      }
+    },
+    "context_generation_rank": 75
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "experienced",
+      "target_modifier": "seasoned",
+      "source_context_dev": [
+        "The chaotic multicar pileup demanded someone with a long background in field triage who had seen severe trauma many times before. Personnel who had handled years of frontline trauma were immediately prioritized.",
+        "With several victims trapped under crushed steel, dispatch sought a frontline caregiver with a rich history of handling messy roadside emergencies. Extensive tenure in high-stress triage was crucial.",
+        "The incident commander wanted personnel who had spent countless hours practicing field stabilization in critical emergencies. Practical familiarity with mass-casualty incidents made all the difference.",
+        "Managing the severe crush injuries required an instinctive clinician who had spent years handling acute roadside trauma. Decades of direct casualty management were needed on the asphalt."
+      ],
+      "target_context_dev": [
+        "Highway patrol called for an advanced ambulance specialist who had weathered decades of county ambulance service and gruesome highway wrecks. Longstanding familiarity with advanced life support transports was essential.",
+        "The complex extrication on the interstate required an ambulance clinician with extensive tenure navigating specialized mobile trauma units. Decades on the regional rescue truck brought invaluable poise.",
+        "Dispatch specifically requested an advanced mobile clinician who had survived decades of grueling shifts on the county response unit. That deep institutional background on the road proved indispensable.",
+        "The massive pileup called for a mobile intensive-care responder with decades of real-world ambulance service behind them. Long-term familiarity with highway dispatch protocols was vital."
+      ],
+      "source_context_test": [
+        "The wreckage across three lanes required a field triage worker who had spent years handling acute physical trauma. True depth of practice in emergency stabilization was desperately needed.",
+        "Faced with rapidly destabilizing casualties, the rescue crew relied on a frontline clinician with years of practical exposure to disaster scenes. Proven familiarity with chaotic scenes mattered most.",
+        "A chaotic roadside rescue requires someone who has managed traumatic injuries through dozens of past deployments. Extensive field practice was necessary to keep victims stable.",
+        "Severe bleeding from the crushed vehicle demanded a rapid-care clinician who had developed strong instincts over a long career. Decades of hands-on casualty triage were essential."
+      ],
+      "target_context_test": [
+        "The regional command requested an advanced transport specialist with decades of grueling highway emergency runs on record. Decades on the municipal ambulance squad gave them unmatched composure.",
+        "Managing the multi-vehicle disaster called for an advanced mobile life-support provider who had weathered many harsh years on the road. Extensive tenure on high-speed interstate responses was vital.",
+        "The complex extrication on the freeway needed an ambulance clinician who had spent decades navigating high-speed arterial collisions. A long career on regional rescue rigs made them ideal.",
+        "Dispatch coordinated with an advanced trauma transport worker who had survived decades of high-acuity mobile emergencies. That deep road background kept the triage area running smoothly."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (experienced medic, experienced paramedic, seasoned medic, seasoned paramedic) are grammatically and pragmatically felicitous across roadside collision contexts. Source contexts highlight general hands-on trauma background favoring experienced medic, while target contexts emphasize decades of highway ambulance transport service favoring seasoned paramedic."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "capable",
+      "target_modifier": "seasoned",
+      "source_context_dev": [
+        "The incident required an emergency clinician who possessed the necessary skills to perform rapid bleeding control and splinting without hesitation. Basic competence in field trauma management was essential.",
+        "First responders needed a reliable frontline caregiver who could adequately execute basic roadside stabilization under pressure. Demonstrated baseline competence was all that command required.",
+        "The primary goal was finding a field worker fully able to handle emergency triage and maintain airway support effectively. Command needed reliable, competent hands at the crash site.",
+        "With multiple injuries reported, dispatch sent an emergency clinician possessing the practical competence to manage stabilizing procedures efficiently. Basic procedural adequacy was crucial."
+      ],
+      "target_context_dev": [
+        "The massive interstate collision required an advanced ambulance clinician who had navigated decades of horrific vehicular crashes. Decades of grueling tenure on municipal life-support rigs made a difference.",
+        "Command specifically called for an advanced mobile transport specialist who had weathered years of high-speed transit disasters. A long, battle-tested career on the highway unit was needed.",
+        "The sheer scale of the multicar pileup demanded an advanced life-support provider with decades of high-stakes road experience. Decades of tenure in mobile trauma response proved essential.",
+        "Handling the severe entrapment on the turnpike required an advanced ambulance provider with decades of regional road experience. Extensive weathering in emergency transit was indispensable."
+      ],
+      "source_context_test": [
+        "The collision site called for an emergency clinician who was fully qualified and able to execute frontline trauma protocols properly. Practical, dependable skill was the top priority.",
+        "With victims awaiting extraction, the crew looked for a frontline caregiver able to carry out essential wound care and triage effectively. Sound procedural competence was critical.",
+        "Command asked for a field responder who had the solid ability to manage urgent roadside injuries without stumbling. Reliable, foundational aptitude was needed immediately.",
+        "The scene required a frontline health worker fully equipped with the functional skills to stabilize shock and blood loss promptly. Competent execution of urgent care was vital."
+      ],
+      "target_context_test": [
+        "The catastrophic multi-lane wreck demanded an advanced mobile clinician who had weathered decades of harrowing ambulance runs. Longstanding tenure in mobile life support proved vital.",
+        "Dispatch directed an advanced transport clinician who had accumulated decades of frontline ambulance response to the highway disaster. Decades on regional trauma rigs provided crucial insight.",
+        "Coordinating the trauma staging area required an advanced transport provider who had navigated decades of chaotic roadside rescues. Extensive time spent on county ambulance trucks proved invaluable.",
+        "The interstate disaster required an advanced mobile trauma clinician with decades of high-speed collision experience behind them. Long-term service on municipal rescue rigs was essential."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (capable medic, capable paramedic, seasoned medic, seasoned paramedic) are fully well-formed. Source contexts focus on general competence and functional capability in frontline stabilization, favoring capable medic; target contexts focus on long career weathering on highway mobile ambulance units, favoring seasoned paramedic."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "seasoned",
+      "target_modifier": "certified",
+      "source_context_dev": [
+        "Decades of facing severe trauma on regional roadways gave the veteran field clinician an instinctive edge during chaotic extractions. That deep well of long-term field exposure kept panic at bay.",
+        "Handling the multi-vehicle pileup required a frontline emergency worker who had weathered decades of gruesome roadside scenes. Long-term familiarity with catastrophic emergencies was vital.",
+        "The rescue team relied on an emergency responder who had spent decades managing horrific trauma scenes in the field. Decades of hard-earned practical endurance made them indispensable.",
+        "With panic spreading among the victims, command sought a veteran field worker who had navigated decades of disaster scenes. That long history of weathering frontline trauma brought calm."
+      ],
+      "target_context_dev": [
+        "Performing invasive life-support interventions and roadside drug administration required an advanced clinician with formal state licensure and verified credentials. Accredited legal qualification was mandatory.",
+        "To administer advanced pharmacological protocols at the crash site, regulations required an emergency practitioner holding accredited, officially validated board credentials. Verified licensure was non-negotiable.",
+        "The complex extrication required an advanced mobile practitioner possessing state-approved credentials for endotracheal intubation and cardiac support. Explicit formal certification was strictly enforced.",
+        "Due to strict medical oversight laws, only a mobile clinician with verified state licensure and formal advanced qualifications could clear the drug box. Official credentials were fully audited."
+      ],
+      "source_context_test": [
+        "The carnage on the highway called for a frontline trauma responder who had weathered decades of high-stress field operations. Long tenure on chaotic accident scenes proved invaluable.",
+        "Managing severe crush injuries in the pouring rain demanded a field caregiver who had spent decades working under extreme conditions. A lifetime of weathering messy emergencies was required.",
+        "Command placed their trust in a field practitioner who had navigated decades of disaster response and heavy trauma. Decades of weathering acute crises gave them steady hands.",
+        "Extracting the trapped victims called for a frontline clinician who had accumulated decades of practical field experience. Longstanding exposure to severe highway collisions was essential."
+      ],
+      "target_context_test": [
+        "State statutory guidelines mandated that pre-hospital medication delivery be authorized solely by a fully accredited clinician with verified board licensure. Formal credentialing was strictly checked.",
+        "Administering advanced life-support procedures at the highway wreck required a practitioner holding formal state-issued credentials and legal accreditation. Proper documentation of qualifications was vital.",
+        "The trauma protocol demanded an advanced transport provider whose specialized professional licensure had been officially validated by the state health board. Documented legal credentialing was essential.",
+        "To perform rapid sequence intubation on the asphalt, the team required an advanced mobile clinician with accredited legal qualifications. Rigorous professional credentials were required."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (seasoned medic, seasoned paramedic, certified medic, certified paramedic) are semantically and syntactically valid in English. Source contexts emphasize decades of field endurance (favoring seasoned medic), while target contexts strongly demand formal statutory state licensure and accredited advanced life support credentials (favoring certified paramedic)."
+    }
+  ]
+}

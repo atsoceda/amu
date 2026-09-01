@@ -1,0 +1,47 @@
+{
+  "candidate_id": "speech_address",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": false,
+      "failed_context_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "failure_reasons": [
+        "Stem contains a duplicated definite article ('the the'), resulting in an ungrammatical and unnatural stem-plus-completion sentence."
+      ],
+      "concise_notes": "All modifier-noun collocations and context pairs are semantically and pragmatically sound, but the fixed stem contains a duplicated token ('the the')."
+    },
+    {
+      "regime": "medium",
+      "pass": false,
+      "failed_context_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "failure_reasons": [
+        "Stem contains a duplicated definite article ('the the'), resulting in an ungrammatical and unnatural stem-plus-completion sentence."
+      ],
+      "concise_notes": "Contexts and 2x2 collocations are well-formed, but completion with the provided stem yields ungrammatical syntax ('the the')."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "failure_reasons": [
+        "Stem contains a duplicated definite article ('the the'), resulting in an ungrammatical and unnatural stem-plus-completion sentence."
+      ],
+      "concise_notes": "Pragmatic framing and collocations are valid, but stem concatenation is ungrammatical due to the repeated article in the fixed stem."
+    }
+  ]
+}

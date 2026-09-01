@@ -1,0 +1,230 @@
+{
+  "family": {
+    "candidate_id": "b21_03_bulletin_alert",
+    "generation_batch": 21,
+    "domain": "communication and journalism",
+    "family_id": "bulletin_alert",
+    "noun_0": "bulletin",
+    "noun_1": "alert",
+    "shared_definition": "a brief official notice or message broadcast to inform the public quickly",
+    "neutral_stem": "The broadcast network interrupted regular programming to issue the",
+    "candidate_modifiers": [
+      "urgent",
+      "special",
+      "emergency",
+      "late",
+      "hourly",
+      "critical",
+      "immediate",
+      "short",
+      "national",
+      "preliminary",
+      "flashed",
+      "vital",
+      "routine",
+      "broadcast",
+      "unexpected"
+    ],
+    "semantic_notes": "'Alert' highlights the urgency or danger prompting action, while 'bulletin' denotes the concise news item itself.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        63515
+      ],
+      "noun_1": [
+        9690
+      ]
+    },
+    "modifier_token_ids": {
+      "urgent": [
+        32034
+      ],
+      "special": [
+        2803
+      ],
+      "emergency": [
+        11996
+      ],
+      "late": [
+        5226
+      ],
+      "hourly": [
+        51599
+      ],
+      "critical": [
+        6749
+      ],
+      "immediate": [
+        13258
+      ],
+      "short": [
+        2822
+      ],
+      "national": [
+        4559
+      ],
+      "preliminary": [
+        22396
+      ],
+      "flashed": [
+        90982
+      ],
+      "vital": [
+        12763
+      ],
+      "routine": [
+        15668
+      ],
+      "broadcast": [
+        17245
+      ],
+      "unexpected": [
+        20173
+      ]
+    },
+    "forced_projection_span": 0.25943876057863235,
+    "max_noun_pair_mass": 0.319421648979187,
+    "context_priority_score": 0.08287035671314325,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "short",
+        "target_modifier": "broadcast",
+        "source_projection": -0.004538696724921465,
+        "target_projection": 0.021149160340428352,
+        "forced_modifier_leverage": 0.025687857065349817,
+        "source_pair_mass": 0.013719489797949791,
+        "target_pair_mass": 0.02403786964714527
+      },
+      "medium": {
+        "source_modifier": "hourly",
+        "target_modifier": "national",
+        "source_projection": -0.0077394102700054646,
+        "target_projection": 0.050427667796611786,
+        "forced_modifier_leverage": 0.05816707806661725,
+        "source_pair_mass": 0.02159690484404564,
+        "target_pair_mass": 0.05476967990398407
+      },
+      "high": {
+        "source_modifier": "national",
+        "target_modifier": "emergency",
+        "source_projection": 0.050427667796611786,
+        "target_projection": 0.30986642837524414,
+        "forced_modifier_leverage": 0.25943876057863235,
+        "source_pair_mass": 0.05476967990398407,
+        "target_pair_mass": 0.319421648979187
+      }
+    },
+    "context_generation_rank": 58
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "short",
+      "target_modifier": "broadcast",
+      "source_projection": -0.004538696724921465,
+      "target_projection": 0.021149160340428352,
+      "forced_modifier_leverage": 0.025687857065349817,
+      "source_pair_mass": 0.013719489797949791,
+      "target_pair_mass": 0.02403786964714527,
+      "source_context_dev": [
+        "Viewers were told to expect a momentary update that would last only a few seconds before the movie resumed.",
+        "The master control room prepared a concise statement designed to take up minimal on-air time.",
+        "A quick thirty-second transmission was lined up so daytime television schedules would not be disrupted.",
+        "The anchor had only a fleeting segment prepared to share the latest preliminary details."
+      ],
+      "target_context_dev": [
+        "Engineers prepared to send the warning out over all regional television transmitters and radio airwaves simultaneously.",
+        "The transmission booth synchronized all digital frequencies to ensure maximum coverage across home receivers.",
+        "Station managers prepared to push the signal across every available channel and satellite feed.",
+        "The operations crew calibrated the over-the-air frequencies to deliver the urgent message across the regional telecommunications grid."
+      ],
+      "source_context_test": [
+        "Producers queued a minimal on-screen statement so viewers could quickly return to the sporting event.",
+        "The studio manager requested a very brief text crawl that would not delay the prime-time lineup.",
+        "The newsroom prepared a ten-second announcement to give immediate facts without cutting away for long.",
+        "Control room staff queued a succinct reading that would take less than half a minute of scheduled airtime."
+      ],
+      "target_context_test": [
+        "The engineering desk routed the feed through primary television transmitters and public airwave repeaters.",
+        "Technicians prepared to distribute the urgent announcement across all synchronized television and radio stations.",
+        "Signal operators ensured the message would propagate cleanly across all standard home video feeds and frequencies.",
+        "The network operations center readied all regional television feeds for an immediate live distribution."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('short bulletin', 'short alert', 'broadcast bulletin', 'broadcast alert') are grammatically and pragmatically valid in public broadcasting contexts. Contexts shift stylistic emphasis toward brevity (source) vs. transmission mode/medium reach (target) without precluding either modifier-noun pairing."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "hourly",
+      "target_modifier": "national",
+      "source_projection": -0.0077394102700054646,
+      "target_projection": 0.050427667796611786,
+      "forced_modifier_leverage": 0.05816707806661725,
+      "source_pair_mass": 0.02159690484404564,
+      "target_pair_mass": 0.05476967990398407,
+      "source_context_dev": [
+        "The news desk maintained a strict sixty-minute cadence to keep the audience informed as the storm developed.",
+        "Producers set a recurring interval at the top of every clock cycle throughout the afternoon.",
+        "Station guidelines mandated a periodic scheduled segment at the beginning of each dynamic broadcast hour.",
+        "The reporting staff refreshed their compiled findings every sixty minutes as new data arrived from the field."
+      ],
+      "target_context_dev": [
+        "Federal authorities coordinated with major media conglomerates across all fifty states to reach the entire population.",
+        "The development carried widespread implications spanning from coast to coast across the entire country.",
+        "Government officials requested immediate cross-state coverage that encompassed all major domestic markets.",
+        "The event required unified dissemination across the whole country rather than a localized market."
+      ],
+      "source_context_test": [
+        "The control booth queued the regular scheduled recap that aired at the start of every sixty-minute window.",
+        "Staff prepared their routine periodic readout scheduled to appear regularly on the hour.",
+        "The studio maintained its standard cyclical update pattern as the ongoing situation evolved.",
+        "Editors refreshed the live summary on a strict cyclical interval throughout the morning."
+      ],
+      "target_context_test": [
+        "Central regulatory bodies ordered a synchronized transmission spanning all domestic territories from coast to coast.",
+        "The situation affected citizens throughout the entire homeland, prompting unified cross-market coverage.",
+        "Federal oversight agencies coordinated with networks nationwide to reach the entire country simultaneously.",
+        "The critical notice carried widespread public ramifications that reached across every state border."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Combinations ('hourly bulletin', 'hourly alert', 'national bulletin', 'national alert') remain semantically sound. Source context highlights temporal frequency/interval, while target context highlights geographic scope (federal/nationwide)."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "national",
+      "target_modifier": "emergency",
+      "source_projection": 0.050427667796611786,
+      "target_projection": 0.30986642837524414,
+      "forced_modifier_leverage": 0.25943876057863235,
+      "source_pair_mass": 0.05476967990398407,
+      "target_pair_mass": 0.319421648979187,
+      "source_context_dev": [
+        "Federal authorities requested uniform coverage across every major domestic media market from coast to coast.",
+        "The situation affected citizens throughout all fifty states, prompting unified homeland coordination.",
+        "Government regulators directed television syndicates across the entire country to synchronize their messaging.",
+        "The development carried widespread domestic importance that spanned all regional administrative territories."
+      ],
+      "target_context_dev": [
+        "Sirens sounded as an immediate life-threatening hazard threatened sudden disaster across populated areas.",
+        "Civil protection authorities warned of imminent peril and urged citizens to take protective cover immediately.",
+        "A severe crisis escalated rapidly, demanding immediate protective action to prevent imminent casualties.",
+        "First responders reported catastrophic hazards requiring instantaneous public intervention and shelter."
+      ],
+      "source_context_test": [
+        "Central agencies coordinated with broadcasters across all domestic time zones to inform the country as a whole.",
+        "The announcement was addressed to the entire country, spanning major markets from the Atlantic to the Pacific.",
+        "Federal oversight departments initiated cross-state distribution across all domestic network affiliates.",
+        "The news desk synchronized feeds to ensure equal and concurrent domestic reach across all fifty states."
+      ],
+      "target_context_test": [
+        "Urgent danger threatened local infrastructure, requiring residents to act immediately to preserve safety.",
+        "Civil safety dispatchers flagged an acute, life-safety hazard that demanded instant defensive measures.",
+        "Disaster management teams initiated immediate protective protocols in response to an acute crisis.",
+        "A sudden catastrophic threat left officials with no choice but to demand instant public sheltering."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('national bulletin', 'national alert', 'emergency bulletin', 'emergency alert') are fully coherent and standard broadcast collocations. Source emphasizes countrywide jurisdiction/scope; target emphasizes severe crisis/imminent danger."
+    }
+  ]
+}

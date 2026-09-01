@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b14_01_report_study",
+    "generation_batch": 14,
+    "domain": "documents and information objects",
+    "family_id": "report_study",
+    "noun_0": "report",
+    "noun_1": "study",
+    "shared_definition": "a detailed written account of an investigation, analysis, or research project",
+    "neutral_stem": "The committee reviewed",
+    "candidate_modifiers": [
+      "annual",
+      "preliminary",
+      "comprehensive",
+      "detailed",
+      "independent",
+      "recent",
+      "scientific",
+      "exhaustive",
+      "internal",
+      "final",
+      "critical",
+      "empirical",
+      "special",
+      "extensive",
+      "statistical"
+    ],
+    "semantic_notes": "'Report' emphasizes the act of delivering findings to stakeholders, while 'study' highlights the research methodology and analytical process.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        2072
+      ],
+      "noun_1": [
+        2748
+      ]
+    },
+    "modifier_token_ids": {
+      "annual": [
+        7384
+      ],
+      "preliminary": [
+        22396
+      ],
+      "comprehensive": [
+        13611
+      ],
+      "detailed": [
+        9813
+      ],
+      "independent": [
+        6829
+      ],
+      "recent": [
+        4803
+      ],
+      "scientific": [
+        11639
+      ],
+      "exhaustive": [
+        74383
+      ],
+      "internal": [
+        6145
+      ],
+      "final": [
+        1626
+      ],
+      "critical": [
+        6749
+      ],
+      "empirical": [
+        31113
+      ],
+      "special": [
+        2803
+      ],
+      "extensive": [
+        12688
+      ],
+      "statistical": [
+        18090
+      ]
+    },
+    "forced_projection_span": 0.09160450473427773,
+    "max_noun_pair_mass": 0.6550284624099731,
+    "context_priority_score": 0.060003557885921044,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "recent",
+        "target_modifier": "critical",
+        "source_projection": -0.0550113245844841,
+        "target_projection": -0.04501574486494064,
+        "forced_modifier_leverage": 0.009995579719543457,
+        "source_pair_mass": 0.06891553103923798,
+        "target_pair_mass": 0.04764430969953537
+      },
+      "medium": {
+        "source_modifier": "final",
+        "target_modifier": "preliminary",
+        "source_projection": -0.34799179434776306,
+        "target_projection": -0.30339929461479187,
+        "forced_modifier_leverage": 0.04459249973297119,
+        "source_pair_mass": 0.3481523096561432,
+        "target_pair_mass": 0.32633742690086365
+      },
+      "high": {
+        "source_modifier": "critical",
+        "target_modifier": "empirical",
+        "source_projection": -0.04501574486494064,
+        "target_projection": 0.04658875986933708,
+        "forced_modifier_leverage": 0.09160450473427773,
+        "source_pair_mass": 0.04764430969953537,
+        "target_pair_mass": 0.04989008232951164
+      }
+    },
+    "context_generation_rank": 73
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "recent",
+      "target_modifier": "critical",
+      "source_context_dev": [
+        "The board reconvened this morning after fresh paperwork arrived from the field office late yesterday.",
+        "New documentation regarding municipal expenditures had just been uploaded to the shared portal hours earlier.",
+        "Fresh feedback from regional managers was submitted only moments before the morning session commenced.",
+        "Updated oversight files arrived in the inbox just prior to the scheduled executive session."
+      ],
+      "target_context_dev": [
+        "Scholars had identified numerous methodological flaws in the prevailing literature and offered severe evaluations.",
+        "External evaluators voiced strong concerns and provided a severe evaluative appraisal of current clinical practices.",
+        "Independent scholars raised serious questions about systemic risks and offered rigorous, evaluative assessments.",
+        "Specialists conducted a thorough evaluation that questioned existing foundational assumptions across the discipline."
+      ],
+      "source_context_test": [
+        "The department received newly drafted paperwork detailing the municipal budget just minutes before the briefing.",
+        "Freshly uploaded documentation from the branch directors was distributed right as the session opened.",
+        "Administrative files arrived from the regional branch earlier today with up-to-date figures.",
+        "Staff gathered around the conference table to examine documentation that had landed on their desks this morning."
+      ],
+      "target_context_test": [
+        "Independent specialists questioned traditional methodologies and offered sharp disciplinary evaluations.",
+        "Several evaluators took issue with previous laboratory conclusions and submitted serious evaluative objections.",
+        "Academic researchers identified severe deficiencies in clinical protocol and presented a decisive appraisal.",
+        "An external oversight panel voiced deep skepticism regarding prevailing models in their evaluative overview."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('recent report', 'recent study', 'critical report', 'critical study') remain fully grammatical, natural, and semantically plausible when preceded by the neutral stem across all contextual frames."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "final",
+      "target_modifier": "preliminary",
+      "source_context_dev": [
+        "The multi-year project had officially drawn to a close, and all closing documentation was ready for archiving.",
+        "After years of investigation, the task force concluded its mandate and submitted its closing synthesis.",
+        "The audit reached its conclusion this week, leaving the agency to present its concluding balance.",
+        "With all phases officially completed, the oversight panel prepared its concluding summation for leadership."
+      ],
+      "target_context_dev": [
+        "Laboratory researchers were still in the opening stages of exploring the compound and shared initial observations.",
+        "The scientific team had just begun examining the phenomenon and shared their initial exploratory observations.",
+        "Exploratory trials were ongoing, yielding early indications about the biological mechanism.",
+        "The academic lab had only started investigating the anomaly, producing initial exploratory findings."
+      ],
+      "source_context_test": [
+        "Having wrapped up all contractual obligations, the oversight team submitted its concluding documentation.",
+        "The working group concluded its multi-year mandate and delivered its comprehensive concluding summation.",
+        "The enterprise reached its terminal stage, prompting managers to distribute the closing operational summary.",
+        "With the inquiry officially closed, investigators assembled their definitive concluding documentation."
+      ],
+      "target_context_test": [
+        "The university team shared early observations from the opening phase of their scientific investigation.",
+        "Field researchers were in the earliest phase of tracking wildlife patterns and offered initial observations.",
+        "Initial trial data were emerging from the laboratory, giving specialists an early glimpse into the trend.",
+        "Having just launched the investigation into cellular responses, the academic team shared early findings."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "The 2x2 design ('final report', 'final study', 'preliminary report', 'preliminary study') is uniformly valid and standard across corporate, government, and scientific review contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "critical",
+      "target_modifier": "empirical",
+      "source_context_dev": [
+        "Government auditors found widespread irregularities and leveled sharp, evaluative judgments against the agency.",
+        "Inspectors identified major structural violations across facilities and offered severe evaluative objections.",
+        "The oversight commission uncovered severe compliance failures and drafted a severe, evaluative indictment.",
+        "External reviewers identified glaring procedural errors and formulated severe evaluative reprimands."
+      ],
+      "target_context_dev": [
+        "Laboratory scientists gathered quantitative evidence and extensive observational dataset measurements across multiple trials.",
+        "Academic researchers tested hypotheses using observed data and quantitative measurements collected in the field.",
+        "Statistical analysts gathered concrete observational data and experimental observations across thousands of subjects.",
+        "Researchers relied strictly on observed numerical evidence and statistical measurements from controlled experiments."
+      ],
+      "source_context_test": [
+        "Regulators discovered significant operational deficiencies and prepared a severe evaluative reprimand.",
+        "Independent evaluators documented severe mismanagement and issued sharp, evaluative assessments.",
+        "The watchdog group condemned regulatory lapses and drafted a severe evaluative overview of the department.",
+        "Safety monitors identified severe lapses across all sites, delivering a sharp evaluative appraisal."
+      ],
+      "target_context_test": [
+        "University researchers based their conclusions on measured quantitative data and concrete observational metrics.",
+        "The research team presented data-driven evidence and quantitative experimental measurements gathered across trials.",
+        "Statisticians verified their scientific hypotheses using observational data collected from real-world testing.",
+        "The laboratory investigation relied on quantitative observational measurements rather than theoretical speculation."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Combinations ('critical report', 'critical study', 'empirical report', 'empirical study') are fully coherent in institutional review contexts where committees evaluate both investigative audits and observational scientific findings."
+    }
+  ]
+}

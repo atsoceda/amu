@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_07_event_demonstration_protest",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_demonstration_protest",
+    "noun_0": "demonstration",
+    "noun_1": "protest",
+    "shared_definition": "a public display of collective feeling or opposition toward an issue",
+    "neutral_stem": "Thousands of citizens mobilized for",
+    "candidate_modifiers": [
+      "massive",
+      "peaceful",
+      "violent",
+      "silent",
+      "angry",
+      "spontaneous",
+      "illegal",
+      "orderly",
+      "vocal",
+      "widespread",
+      "turbulent",
+      "powerful",
+      "disruptive",
+      "organized",
+      "growing"
+    ],
+    "semantic_notes": "'Demonstration' is somewhat more formal and broad, whereas 'protest' directly highlights grievance, dissent, and opposition.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        29528
+      ],
+      "noun_1": [
+        13456
+      ]
+    },
+    "modifier_token_ids": {
+      "massive": [
+        12566
+      ],
+      "peaceful": [
+        26169
+      ],
+      "violent": [
+        23125
+      ],
+      "silent": [
+        24782
+      ],
+      "angry": [
+        23186
+      ],
+      "spontaneous": [
+        41512
+      ],
+      "illegal": [
+        18454
+      ],
+      "orderly": [
+        77474
+      ],
+      "vocal": [
+        28857
+      ],
+      "widespread": [
+        25581
+      ],
+      "turbulent": [
+        44569
+      ],
+      "powerful": [
+        8632
+      ],
+      "disruptive": [
+        76349
+      ],
+      "organized": [
+        13957
+      ],
+      "growing": [
+        6730
+      ]
+    },
+    "forced_projection_span": 0.11227584630250931,
+    "max_noun_pair_mass": 0.4717891216278076,
+    "context_priority_score": 0.0529705229070796,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "illegal",
+        "target_modifier": "massive",
+        "source_projection": 0.006712228059768677,
+        "target_projection": 0.018047332763671875,
+        "forced_modifier_leverage": 0.011335104703903198,
+        "source_pair_mass": 0.04330729320645332,
+        "target_pair_mass": 0.2891332507133484
+      },
+      "medium": {
+        "source_modifier": "orderly",
+        "target_modifier": "violent",
+        "source_projection": -0.024362966418266296,
+        "target_projection": 0.031903356313705444,
+        "forced_modifier_leverage": 0.05626632273197174,
+        "source_pair_mass": 0.15718983113765717,
+        "target_pair_mass": 0.10539256036281586
+      },
+      "high": {
+        "source_modifier": "vocal",
+        "target_modifier": "silent",
+        "source_projection": 0.09481828659772873,
+        "target_projection": 0.20709413290023804,
+        "forced_modifier_leverage": 0.11227584630250931,
+        "source_pair_mass": 0.26459139585494995,
+        "target_pair_mass": 0.44814205169677734
+      }
+    },
+    "context_generation_rank": 81
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "illegal",
+      "target_modifier": "massive",
+      "source_context_dev": [
+        "City officials had explicitly denied all assembly permits and warned that any public gatherings in the civic square would violate municipal ordinances.",
+        "Despite the emergency injunction passed by the magistrate late yesterday evening, grassroots networks continued rallying participants downtown.",
+        "The local council declared an official ban prohibiting all public gatherings across the central district.",
+        "Law enforcement announced that no authorization had been granted for civic assemblies along the government boulevard."
+      ],
+      "target_context_dev": [
+        "Discontent had reached unprecedented levels across the country after the controversial policy reform was signed into law.",
+        "Nationwide dissatisfaction brought historic crowds into metropolitan centers across every major region.",
+        "Frustration over the newly imposed economic measures spread rapidly from regional towns to the capital city.",
+        "Civil society coalitions coordinated efforts across dozens of municipalities to demand the immediate repeal of the statute."
+      ],
+      "source_context_test": [
+        "The prefect issued a formal edict forbidding unsanctioned assemblies across the capital district this weekend.",
+        "Municipal authorities warned that gathering in the historic district without authorization would result in immediate legal penalties.",
+        "A district judge issued a restraining order barring any collective gatherings outside the administrative headquarters.",
+        "Defying official bans and zoning restrictions, organizers urged the public to fill the main avenues."
+      ],
+      "target_context_test": [
+        "Resentment toward the newly ratified legislation triggered widespread civic engagement spanning all fifty districts.",
+        "A wave of public indignation swept the country, uniting diverse labor unions and student organizations.",
+        "Public outrage reached a boiling point after the senate passed the contentious budgetary package.",
+        "Broad coalitions across the nation united to contest the sudden change in social security policy."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "The source context frames the event around municipal bans and missing permits (favoring illegal / demonstration), while the target context emphasizes nationwide scale and broad societal mobilization (favoring massive / protest). All four modifier-noun pairings ('illegal demonstration', 'illegal protest', 'massive demonstration', 'massive protest') remain perfectly grammatical and plausible in both contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "orderly",
+      "target_modifier": "violent",
+      "source_context_dev": [
+        "Organizers distributed route maps and designated trained safety marshals to ensure the march proceeded calmly down the designated corridor.",
+        "Community liaisons coordinated closely with municipal traffic directors to keep the procession moving smoothly without disruption.",
+        "The civic association urged attendees to maintain discipline and adhere strictly to designated walking paths.",
+        "Experienced volunteers wearing bright armbands were stationed at every intersection to manage pedestrian flow peacefully."
+      ],
+      "target_context_dev": [
+        "Simmering hostility between opposing factions boiled over after security forces erected fortified barricades downtown.",
+        "Tensions flared sharply across the city center following heated confrontations between rival groups earlier that morning.",
+        "Tempers reached a fever pitch as opposing groups converged near the barricaded parliament building.",
+        "Severe friction between activists and riot squads created an explosive atmosphere in the downtown quarter."
+      ],
+      "source_context_test": [
+        "Planners scheduled precise walking lanes and deployed de-escalation monitors along the downtown route.",
+        "Participants were instructed to walk in designated columns and follow the guidance of safety marshals throughout the afternoon.",
+        "Route coordinators ensured that family-friendly zones and medical tents were positioned along the designated avenue.",
+        "Event stewards worked alongside neighborhood representatives to maintain a calm and structured civic event."
+      ],
+      "target_context_test": [
+        "Simmering anger against government austerity measures turned hostile as rival crowds faced off near the prefecture.",
+        "Aggressive posturing and incendiary speeches at the central plaza stoked fears of destructive unrest.",
+        "Volatile conditions rapidly deteriorated when skirmishes broke out near the government perimeter.",
+        "Heightened animosity between opposing factions pushed the capital toward the brink of civil unrest."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts emphasize disciplined stewarding, traffic compliance, and de-escalation (priming orderly / demonstration). Target contexts depict mounting hostility, riot barricades, and skirmishes (priming violent / protest). All 2x2 cross combinations ('orderly demonstration', 'orderly protest', 'violent demonstration', 'violent protest') are natural collocations and semantically valid under each context."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "vocal",
+      "target_modifier": "silent",
+      "source_context_dev": [
+        "Activists distributed bullhorns and lyric sheets to ensure their collective demands echoed across the entire administrative plaza.",
+        "Chants and rhythmic drumbeats resonated off the marble facades of government buildings as crowds gathered at noon.",
+        "Campaigners brought loudspeakers and noise-making instruments to maximize the sound of their message outside parliament.",
+        "Rousing speeches and resonant cheers reverberated through the central avenue as participants made their presence heard."
+      ],
+      "target_context_dev": [
+        "Attendees wore black armbands and carried unlit candles in somber stillness to remember the victims of the disaster.",
+        "A hushed solemnity fell over the crowd as thousands gathered without speaking a word outside city hall.",
+        "The organizers requested total quiet from the assembly, asking participants to hold symbolic banners in stillness.",
+        "In an atmosphere of solemn contemplation, mourners assembled along the memorial walkway without uttering a sound."
+      ],
+      "source_context_test": [
+        "Amplified sound systems and unison chants carried the community's urgent message across several city blocks.",
+        "Chants of defiance and blaring brass instruments filled the public square as the crowd assembled.",
+        "Acoustic equipment and loud megaphones were set up across the plaza to project the grievances of the crowd.",
+        "Resonant anthems and thunderous chants echoed throughout the downtown shopping corridor."
+      ],
+      "target_context_test": [
+        "Participants taped their lips shut and walked in complete stillness through the administrative center.",
+        "A quiet stillness enveloped the plaza as participants held placards in solemn remembrance.",
+        "The assembly maintained total quiet while holding hands in a continuous line across the central boulevard.",
+        "Holding white ribbons in absolute stillness, the gathering stood in quiet remembrance before the monument."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts feature amplified chanting, megaphones, and acoustic resonance (priming vocal / demonstration). Target contexts center on solemn vigils, tape over mouths, and quiet remembrance (priming silent / protest). All four combinations ('vocal demonstration', 'vocal protest', 'silent demonstration', 'silent protest') remain fully grammatical, coherent, and established English phrases across all contexts."
+    }
+  ]
+}

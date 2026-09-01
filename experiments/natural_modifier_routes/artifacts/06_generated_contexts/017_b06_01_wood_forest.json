@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b06_01_wood_forest",
+    "generation_batch": 6,
+    "domain": "locations and geographic features",
+    "family_id": "wood_forest",
+    "noun_0": "wood",
+    "noun_1": "forest",
+    "shared_definition": "a dense growth of trees and underbrush covering an area of land",
+    "neutral_stem": "A narrow path wound through the middle of the",
+    "candidate_modifiers": [
+      "dark",
+      "dense",
+      "ancient",
+      "quiet",
+      "deep",
+      "thick",
+      "shadowy",
+      "peaceful",
+      "vast",
+      "green",
+      "enchanted",
+      "silent",
+      "wild",
+      "damp",
+      "gloomy"
+    ],
+    "semantic_notes": "'Forest' usually denotes a much larger, wilder expanse of timberland, whereas 'wood' can refer to a smaller, more localized tract.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        3863
+      ],
+      "noun_1": [
+        6426
+      ]
+    },
+    "modifier_token_ids": {
+      "dark": [
+        4996
+      ],
+      "dense": [
+        19707
+      ],
+      "ancient": [
+        12440
+      ],
+      "quiet": [
+        12010
+      ],
+      "deep": [
+        5268
+      ],
+      "thick": [
+        7497
+      ],
+      "shadowy": [
+        184923
+      ],
+      "peaceful": [
+        26169
+      ],
+      "vast": [
+        12529
+      ],
+      "green": [
+        3826
+      ],
+      "enchanted": [
+        144044
+      ],
+      "silent": [
+        24782
+      ],
+      "wild": [
+        6877
+      ],
+      "damp": [
+        31225
+      ],
+      "gloomy": [
+        91819
+      ]
+    },
+    "forced_projection_span": 0.22420763969421387,
+    "max_noun_pair_mass": 0.7957090139389038,
+    "context_priority_score": 0.17840403989865194,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "deep",
+        "target_modifier": "damp",
+        "source_projection": 0.18046759068965912,
+        "target_projection": 0.2036634236574173,
+        "forced_modifier_leverage": 0.02319583296775818,
+        "source_pair_mass": 0.19100548326969147,
+        "target_pair_mass": 0.22968821227550507
+      },
+      "medium": {
+        "source_modifier": "peaceful",
+        "target_modifier": "dark",
+        "source_projection": 0.15477006137371063,
+        "target_projection": 0.2669127285480499,
+        "forced_modifier_leverage": 0.1121426671743393,
+        "source_pair_mass": 0.15924932062625885,
+        "target_pair_mass": 0.37105873227119446
+      },
+      "high": {
+        "source_modifier": "dense",
+        "target_modifier": "enchanted",
+        "source_projection": 0.5120986700057983,
+        "target_projection": 0.7363063097000122,
+        "forced_modifier_leverage": 0.22420763969421387,
+        "source_pair_mass": 0.5269194841384888,
+        "target_pair_mass": 0.7957090139389038
+      }
+    },
+    "context_generation_rank": 18
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "deep",
+      "target_modifier": "damp",
+      "source_context_dev": [
+        "Miles away from any modern settlement, the rustic landscape stretched endlessly under an overcast sky.",
+        "After hours of walking inward from the village perimeter, the surrounding wilderness became total and immersive.",
+        "Far beyond the rural township border, the terrain grew remote and tucked away from civilization.",
+        "Traveling inward past the outer farmlands, the surrounding wilderness felt vast and completely isolated."
+      ],
+      "target_context_dev": [
+        "Moisture clung heavily to every hanging leaf as a thick mist rose from the soaked soil.",
+        "Recent rainfall had left the expansive landscape dripping wet, filling the air with the smell of wet soil and moss.",
+        "A persistent morning fog coated the vast wilderness with condensation and dewy droplets.",
+        "Trickles of rainwater dripped down the bark, saturating the sprawling green expanse with humid moisture."
+      ],
+      "source_context_test": [
+        "Leaving the provincial highway behind, our expedition pressed inward into the interior heart of the country.",
+        "Well past the clearing at the edge of town, the untamed wilderness surrounded the travelers on all sides.",
+        "Miles from the perimeter fence, the expansive natural reserve enveloped the wandering hikers.",
+        "Penetrating far beyond the outer boundary markers, the terrain felt vast and wholly submerged in nature."
+      ],
+      "target_context_test": [
+        "Heavy precipitation had soaked the vast canopy overnight, leaving puddles and soggy moss everywhere.",
+        "A blanket of humid mist rolled across the vast landscape, saturating the undergrowth with morning dew.",
+        "Wet fog hung suspended over the expansive wilderness, bathing every branch in cold condensation.",
+        "Continuous rainfall had thoroughly saturated the terrain, leaving the sprawling greenery soaked through."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations ('deep wood', 'deep forest', 'damp wood', 'damp forest') are fully natural and grammatical across every context. Source contexts emphasize inward spatial penetration and isolation without explicitly using the word deep or wood, while target contexts emphasize moisture, condensation, and rain without using the word damp or forest."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "peaceful",
+      "target_modifier": "dark",
+      "source_context_dev": [
+        "Soft birdsong echoed gently across the calm countryside as a warm breeze rustled the leaves.",
+        "The tranquil grove offered a soothing respite from the noisy bustle of town.",
+        "Gentle sunlight filtered through the quiet canopy while small creatures scampered without fear.",
+        "A soothing stillness hung in the afternoon air, inviting quiet contemplation."
+      ],
+      "target_context_dev": [
+        "Black shadows stretched across the vast landscape as twilight blocked nearly all incoming sunlight.",
+        "Heavy overhanging canopies shut out the sky above, plunging the vast expanse into gloomy shadow.",
+        "As night approached, impenetrable blackness settled across the sprawling landscape.",
+        "An ominous gloom enveloped the extensive territory, where barely any daylight could penetrate."
+      ],
+      "source_context_test": [
+        "Mild breezes stirred the leafy boughs, creating a serene and restful ambiance along the trail.",
+        "The atmosphere was completely tranquil, broken only by the gentle murmuring of a nearby brook.",
+        "Away from all city noise, a calm harmony settled over the natural surroundings.",
+        "Everything felt still and harmonious, bathed in the soft glow of mid-afternoon light."
+      ],
+      "target_context_test": [
+        "The thick overhead canopy choked out the afternoon sun, casting the vast region into total gloom.",
+        "Night fell swiftly over the expansive wilderness, masking every landmark in heavy shadow.",
+        "A brooding murk settled across the vast natural reserve, obscuring the terrain in pitch-black gloom.",
+        "Pitch blackness descended upon the sprawling wilderness, swallowing whatever light remained."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('peaceful wood', 'peaceful forest', 'dark wood', 'dark forest') remain semantically and syntactically permissible. Source contexts invoke tranquil pastorality, gently nudging towards 'peaceful wood', while target contexts establish deep canopy shadows and nighttime gloom, nudging towards 'dark forest'."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "dense",
+      "target_modifier": "enchanted",
+      "source_context_dev": [
+        "Tightly packed boughs and tangled briars created an almost impassable wall of green.",
+        "The thickets were woven so tightly together that pushing through required constant effort.",
+        "Layer upon layer of intertwined branches and thick undergrowth crowded every square foot of land.",
+        "Compact clusters of growth choked the landscape, leaving scarcely any open space between the trunks."
+      ],
+      "target_context_dev": [
+        "Legends told of magical spirits and glowing fairy lights wandering across the vast realm.",
+        "Mysterious shimmering auras and ancient sorcery seemed to linger within the vast mythical landscape.",
+        "Local folklore warned travelers of mystical wonders, bewitching charms, and supernatural phenomena in the vast wild.",
+        "Soft, ethereal glows floated between the ancient trunks, hinting at secret wonders and arcane power across the vast expanse."
+      ],
+      "source_context_test": [
+        "Interlocking branches and impenetrable brush made navigating the overgrown thicket a grueling task.",
+        "Tangled undergrowth grew so tightly packed together that daylight struggled to reach the ground.",
+        "The growth was heavily crowded with intertwined vines, blocking straightforward travel.",
+        "Brambles and tightly clustered foliage choked the natural expanse from every angle."
+      ],
+      "target_context_test": [
+        "Mythical whispers and sorcerous energy permeated every corner of the vast, legendary wilderness.",
+        "Fables spoke of magical beings that cast wondrous spells upon travelers in the boundless realm.",
+        "A supernatural aura of mystery and sorcery hung over the sprawling landscape, straight out of a fairy tale.",
+        "Gossamer lights shimmered with arcane magic, creating a wondrous ambiance across the vast realm."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations ('dense wood', 'dense forest', 'enchanted wood', 'enchanted forest') are valid English collocations following the stem. Source contexts prime physical impenetrability and tight vegetation without using 'dense', while target contexts establish fairy-tale magic and mythical lore without explicitly naming 'enchanted'."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b22_15_tech_backup_snapshot",
+    "generation_batch": 22,
+    "domain": "technology and computing",
+    "family_id": "tech_backup_snapshot",
+    "noun_0": "backup",
+    "noun_1": "snapshot",
+    "shared_definition": "a preserved digital state or copy of data created to ensure recovery after failure or corruption",
+    "neutral_stem": "The disaster recovery team restored the system from the",
+    "candidate_modifiers": [
+      "recent",
+      "daily",
+      "automated",
+      "incremental",
+      "complete",
+      "scheduled",
+      "compressed",
+      "valid",
+      "consistent",
+      "encrypted",
+      "restored",
+      "fresh",
+      "reliable",
+      "hourly",
+      "archived"
+    ],
+    "semantic_notes": "'Backup' represents a general redundant duplicate, while 'snapshot' specifically refers to point-in-time state capture in virtualized environments.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        21609
+      ],
+      "noun_1": [
+        35756
+      ]
+    },
+    "modifier_token_ids": {
+      "recent": [
+        4803
+      ],
+      "daily": [
+        6376
+      ],
+      "automated": [
+        26267
+      ],
+      "incremental": [
+        56296
+      ],
+      "complete": [
+        4133
+      ],
+      "scheduled": [
+        14812
+      ],
+      "compressed": [
+        34659
+      ],
+      "valid": [
+        4341
+      ],
+      "consistent": [
+        9958
+      ],
+      "encrypted": [
+        48970
+      ],
+      "restored": [
+        28251
+      ],
+      "fresh": [
+        5756
+      ],
+      "reliable": [
+        13451
+      ],
+      "hourly": [
+        51599
+      ],
+      "archived": [
+        87349
+      ]
+    },
+    "forced_projection_span": 0.1238037683069706,
+    "max_noun_pair_mass": 0.8011354207992554,
+    "context_priority_score": 0.0991835840191384,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "recent",
+        "target_modifier": "encrypted",
+        "source_projection": -0.5199102163314819,
+        "target_projection": -0.5057886242866516,
+        "forced_modifier_leverage": 0.014121592044830322,
+        "source_pair_mass": 0.5315912961959839,
+        "target_pair_mass": 0.5083022713661194
+      },
+      "medium": {
+        "source_modifier": "valid",
+        "target_modifier": "automated",
+        "source_projection": -0.6295257210731506,
+        "target_projection": -0.5671161413192749,
+        "forced_modifier_leverage": 0.06240957975387573,
+        "source_pair_mass": 0.6357631087303162,
+        "target_pair_mass": 0.5790777206420898
+      },
+      "high": {
+        "source_modifier": "compressed",
+        "target_modifier": "restored",
+        "source_projection": -0.17274324595928192,
+        "target_projection": -0.048939477652311325,
+        "forced_modifier_leverage": 0.1238037683069706,
+        "source_pair_mass": 0.17425279319286346,
+        "target_pair_mass": 0.057692352682352066
+      }
+    },
+    "context_generation_rank": 42
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "recent",
+      "target_modifier": "encrypted",
+      "source_context_dev": [
+        "The server crashed just minutes after the evening maintenance cycle completed without errors. Engineers checked the repository to verify which archive contained the freshest transaction records.",
+        "A database glitch corrupted several tables late last night. To minimize data loss, administrators prioritized images captured within the past few hours.",
+        "The staging cluster failed right after the final hourly sync ran successfully. Operators were eager to find the newest image available in storage.",
+        "An unexpected power outage interrupted file operations during peak business hours. Technicians focused on retrieving the most up-to-date image preserved prior to the disruption."
+      ],
+      "target_context_dev": [
+        "Strict compliance standards mandated that all secondary archives store data under high-grade mathematical ciphers to prevent interception. Audits required security keys before accessing any stored image.",
+        "Following a breach attempt, the infosec department mandated that all retained images be protected with robust cryptographic algorithms at rest. Recovery personnel prepared their decryption keys accordingly.",
+        "The corporate safety policy required high-level secrecy protocols for any off-site digital archives. Infrastructure staff verified their credentials before retrieving any locked repository assets.",
+        "To protect sensitive personal identifiers, all retained system images were locked using strong cryptographic safeguards. The engineers needed clearance to access the protected files."
+      ],
+      "source_context_test": [
+        "The database cluster abruptly halted shortly after the midnight syncing job finished. Technicians immediately searched for the image generated closest to the failure point.",
+        "A software bug damaged multiple storage volumes late in the afternoon. Recovery specialists looked for files created mere minutes before the incident.",
+        "Operations ground to a halt following a late-morning transaction failure. The team immediately targeted the newest state captured on disk.",
+        "A network disruption derailed processing right after the morning data refresh completed. IT staff wanted to pull the most temporally relevant image in the repository."
+      ],
+      "target_context_test": [
+        "Regulations dictated that all stored data points remain indecipherable to unauthorized actors without specialized cryptographic tokens. Technicians supplied their digital certificates to open the repository.",
+        "After the ransomware incident, all retained filesystem states were shielded with advanced algorithmic privacy protection. Engineers had to supply authorization keys to access the images.",
+        "The infrastructure framework enforced mandatory cryptographic wrapping across every off-site repository. Staff gathered the essential decryption tokens prior to initiating retrieval.",
+        "Security standards required all stored system states to be safeguarded with robust mathematical encoding. Recovery personnel authenticated their credentials before accessing the target asset."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (recent backup, recent snapshot, encrypted backup, encrypted snapshot) are fully coherent and standard IT terms across all context scenarios."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "valid",
+      "target_modifier": "automated",
+      "source_context_dev": [
+        "Integrity tests discovered corruption across several storage blocks, so administrators ran rigorous parity checks. They filtered out any corrupted records until finding an uncorrupted image.",
+        "A file system check showed that several secondary archives had failed verification tests. The engineering crew made sure to select an image confirmed to be free of errors.",
+        "Several disk images were rejected because their checksum hashes did not match expected values. Technicians verified the integrity reports to pick an authenticated, working image.",
+        "Storage faults introduced inconsistencies into several archived files over the weekend. Staff combed through the catalog to isolate an image that had passed all compliance tests."
+      ],
+      "target_context_dev": [
+        "The infrastructure pipeline had been configured with scheduled cron jobs that preserved system state without human intervention. Technicians inspected the job queue to verify routine creation times.",
+        "A continuous deployment workflow generated routine filesystem states on a fixed schedule. Operators checked the unattended pipeline outputs when the main service dropped.",
+        "System maintenance routines ran programmatic image captures every evening without manual oversight. When the database failed, staff checked the outputs produced by the scheduled scripts.",
+        "Platform engineers relied entirely on background scheduler services to preserve storage states at predefined intervals. Recovery personnel reviewed the cron logs to select an unattended output."
+      ],
+      "source_context_test": [
+        "Parity verification detected anomalies in several data stores following the crash. Staff checked diagnostic logs to ensure they only accessed an image confirmed to be intact.",
+        "Multiple archival points were flagged as damaged during the quarterly audit. Technicians carefully selected an image that successfully satisfied every consistency rule.",
+        "The system logs flagged corrupted headers in several secondary images across the storage cluster. Recovery engineers verified the checksum hashes to select an uncorrupted asset.",
+        "After discovering transmission errors in two archive files, engineers ran verification scripts across the cluster. They waited for an image that cleared every diagnostic test."
+      ],
+      "target_context_test": [
+        "Scheduled task runners continuously captured state images on the storage cluster without administrative intervention. The incident team consulted the job logs to find an unassisted generation.",
+        "A programmatic maintenance daemon regularly cloned filesystem volumes according to strict time triggers. When downtime struck, engineers reviewed the scheduler dashboard for candidates.",
+        "Unattended background jobs were programmed to record disk states at the top of every hour. The team navigated the scheduled output folder to proceed with the recovery.",
+        "The operational pipeline relied on self-executing routines to periodically preserve the entire environment. Technicians retrieved the latest image produced by the background script."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (valid backup, valid snapshot, automated backup, automated snapshot) are standard enterprise storage terminology and grammatically natural in all contexts."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "compressed",
+      "target_modifier": "restored",
+      "source_context_dev": [
+        "To conserve space on the archival cluster, data streams had been passed through high-ratio deduplication and zipping algorithms. The team prepared decompression tools before deployment.",
+        "Storage limits forced the engineering team to minimize image sizes using aggressive byte-reduction utilities. Technicians unpacked the reduced volume before mounting it.",
+        "The archival server applied dense packing codecs to shrink stored images down to a fraction of their original footprint. Operators initiated extraction procedures immediately.",
+        "Because storage quotas were nearly exceeded, administrators applied lossless zipping to all stored environment states. The response team had to unpack the minimized asset first."
+      ],
+      "target_context_dev": [
+        "A secondary testing environment had previously been re-established and verified in a sandbox before production rollout. The engineers decided to reuse this pre-initialized, verified environment image.",
+        "Technicians had already rebuilt and initialized an alternate system state in an isolated staging network earlier that morning. They decided to pull from this newly reinstated instance.",
+        "An offline replica had just undergone full reconstruction and health validation in the test lab. Incident managers chose to promote this pre-assembled image directly into the production cluster.",
+        "A recovery drill yesterday successfully rebuilt a complete operating environment in an isolated partition. The response crew chose to deploy the already re-established asset."
+      ],
+      "source_context_test": [
+        "High storage costs required every secondary image to undergo dense mathematical packing before transfer to cold storage. Technicians readied the extraction pipeline.",
+        "The server images had been compacted using high-efficiency compression algorithms to save local disk bandwidth. Recovery personnel prepared to decompress the asset.",
+        "Storage constraints necessitated running all archived files through heavy lossless compaction scripts. The crew prepared the decompression utility to unpack the asset.",
+        "Every environment image was processed through tight data-shrinking routines prior to being deposited in the archival pool. Technicians started the inflation process."
+      ],
+      "target_context_test": [
+        "An auxiliary testbed had already been re-established and confirmed fully functional in staging. Finding it ready, the operations staff decided to clone that already recovered asset.",
+        "A secondary environment was previously re-initialized and brought back to life during an earlier maintenance cycle. The team elected to load that preexisting, revived state.",
+        "Specialists had previously reconstructed an alternate environment in an offline lab for staging tests. When production failed, they simply grabbed that pre-rebuilt image.",
+        "An identical instance had been reconstituted in the disaster lab just an hour prior. The engineers chose to rely on that already regenerated entity to save time."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (compressed backup, compressed snapshot, restored backup, restored snapshot) are valid, natural technical phrases across all given context conditions."
+    }
+  ]
+}

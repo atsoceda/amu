@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b15_04_method_approach",
+    "generation_batch": 15,
+    "domain": "common abstract concepts",
+    "family_id": "method_approach",
+    "noun_0": "method",
+    "noun_1": "approach",
+    "shared_definition": "a way of doing something or dealing with a task",
+    "neutral_stem": "The scientists adopted",
+    "candidate_modifiers": [
+      "alternative",
+      "classical",
+      "creative",
+      "direct",
+      "effective",
+      "efficient",
+      "experimental",
+      "flexible",
+      "formal",
+      "innovative",
+      "logical",
+      "novel",
+      "practical",
+      "standard",
+      "systematic"
+    ],
+    "semantic_notes": "'Method' implies a structured, step-by-step procedure, while 'approach' refers more to a general perspective or style of tackling a task.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        1996
+      ],
+      "noun_1": [
+        4313
+      ]
+    },
+    "modifier_token_ids": {
+      "alternative": [
+        9302
+      ],
+      "classical": [
+        15082
+      ],
+      "creative": [
+        9578
+      ],
+      "direct": [
+        1982
+      ],
+      "effective": [
+        5225
+      ],
+      "efficient": [
+        8143
+      ],
+      "experimental": [
+        10037
+      ],
+      "flexible": [
+        14887
+      ],
+      "formal": [
+        10781
+      ],
+      "innovative": [
+        14549
+      ],
+      "logical": [
+        23420
+      ],
+      "novel": [
+        10132
+      ],
+      "practical": [
+        10231
+      ],
+      "standard": [
+        4077
+      ],
+      "systematic": [
+        26285
+      ]
+    },
+    "forced_projection_span": 0.07789286971092224,
+    "max_noun_pair_mass": 0.6699249148368835,
+    "context_priority_score": 0.05218237410749005,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "direct",
+        "target_modifier": "alternative",
+        "source_projection": -0.036323368549346924,
+        "target_projection": -0.02846638113260269,
+        "forced_modifier_leverage": 0.007856987416744232,
+        "source_pair_mass": 0.5819304585456848,
+        "target_pair_mass": 0.15359565615653992
+      },
+      "medium": {
+        "source_modifier": "standard",
+        "target_modifier": "effective",
+        "source_projection": -0.08429276943206787,
+        "target_projection": -0.04496227949857712,
+        "forced_modifier_leverage": 0.03933048993349075,
+        "source_pair_mass": 0.14134222269058228,
+        "target_pair_mass": 0.16405904293060303
+      },
+      "high": {
+        "source_modifier": "practical",
+        "target_modifier": "systematic",
+        "source_projection": 0.37160468101501465,
+        "target_projection": 0.4494975507259369,
+        "forced_modifier_leverage": 0.07789286971092224,
+        "source_pair_mass": 0.5279183387756348,
+        "target_pair_mass": 0.6699249148368835
+      }
+    },
+    "context_generation_rank": 82
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "direct",
+      "target_modifier": "alternative",
+      "source_context_dev": [
+        "To minimize measurement lag, the laboratory team sought an immediate route from sample acquisition to molecular sequencing without intermediate reagents.",
+        "Rather than relying on secondary proxies, the research group focused on straightforward, unmediated observation of cellular division in real time.",
+        "The investigation required bypassing complex computational simulations in favor of immediate benchtop validation on physical specimens.",
+        "To eliminate signal degradation during transmission, the telemetry team chose an unmediated physical link between the sensors and the processing hub."
+      ],
+      "target_context_dev": [
+        "When traditional chemical synthesis stalled due to high reagent toxicity, the biochemists explored unconventional pathways for compound formation.",
+        "Established economic models failed to account for sudden market shocks, prompting researchers to seek out fresh conceptual perspectives.",
+        "Since traditional mechanical cooling failed to dissipate heat at nanoscale dimensions, the engineering team turned toward an unorthodox thermal paradigm.",
+        "Confronted with recurring flaws in classical macro-level modeling, the climate team investigated surrogate conceptual frameworks."
+      ],
+      "source_context_test": [
+        "Looking to streamline data collection, the field crew discarded convoluted multi-stage filtering in favor of immediate on-site verification.",
+        "When assessing catalyst activity, the synthesis team favored unmediated gas chromatography over multi-phase chemical assays.",
+        "Because external intermediaries introduced confounding latency, the quantum optics team connected the detector seamlessly to the laser cavity.",
+        "To establish baseline chemical purity, the assay team utilized an unmediated extraction protocol rather than relying on surrogate markers."
+      ],
+      "target_context_test": [
+        "After initial attempts utilizing conventional catalysts yielded negligible output, the organic chemistry unit considered novel substitute paths.",
+        "Standard cosmological models could not resolve the observational discrepancy, pushing the astrophysicists toward non-mainstream theoretical angles.",
+        "When typical pharmacological compounds produced adverse reactions in early trials, the medical team pursued an unconventional line of reasoning.",
+        "Given that traditional high-pressure synthesis repeatedly failed, the materials lab investigated substitute angles of structural synthesis."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts emphasize immediacy, elimination of intermediaries, and straight procedural links, favoring direct/method. Target contexts highlight exploratory, unconventional, and substitute orientations, favoring alternative/approach. All four modifier-noun pairings (direct method, direct approach, alternative method, alternative approach) remain syntactically sound and semantically coherent after 'The scientists adopted the'."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "standard",
+      "target_modifier": "effective",
+      "source_context_dev": [
+        "For regulatory certification, the lab needed to reproduce earlier baseline data using widely recognized laboratory protocols.",
+        "To ensure cross-laboratory reproducibility across international testing facilities, strict adherence to established protocols was mandatory.",
+        "When evaluating water quality across urban reservoirs, state compliance auditors required conformance to recognized routine procedures.",
+        "Before introducing novel computational tools, the verification committee calibrated the software against established historical benchmarks."
+      ],
+      "target_context_dev": [
+        "Faced with tight launch deadlines, the engineering team needed a strategy guaranteed to resolve thermal dissipation issues promptly.",
+        "After several unsuccessful attempts to inhibit tumor proliferation, the oncology team sought a strategy capable of producing robust clinical results.",
+        "To successfully curtail invasive beetle infestations without harming local flora, the agricultural team prioritized high-impact, proven strategies.",
+        "Previous mitigation strategies had barely reduced acoustic noise in the cabin, forcing acoustics engineers to seek a truly fruitful strategy."
+      ],
+      "source_context_test": [
+        "Cross-institutional verification required every participating laboratory to follow identical, universally recognized experimental guidelines.",
+        "In order to satisfy strict safety regulations, the pharmaceutical team carried out the trial in alignment with conventional industry norms.",
+        "Baseline ecological measurements across disparate wetlands necessitated using uniformly established monitoring protocols.",
+        "Before filing their patent application, the battery team validated energy density metrics against conventional test benchmarks."
+      ],
+      "target_context_test": [
+        "Previous chemical interventions had failed to lower toxin concentrations, so the environmental team sought a strategy that reliably achieved remediation.",
+        "After numerous trials yielded mediocre crystal growth, the condensed-matter group sought an overarching strategy that reliably delivered high yields.",
+        "Because previous optimization attempts failed to curb computational bottlenecks, the algorithm developers needed a demonstrably fruitful strategy.",
+        "With existing therapies showing minimal reduction in viral load, the virologists searched for a strategy that produced substantial therapeutic impact."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts center on institutional standardization, regulatory norms, and formal baseline procedures, which elevate standard/method. Target contexts prioritize efficacy, goal attainment, and overarching impact, which elevate effective/approach. All cross combinations (standard method, standard approach, effective method, effective approach) form valid English noun phrases in the shared stem."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "practical",
+      "target_modifier": "systematic",
+      "source_context_dev": [
+        "Operating under harsh field conditions with limited electricity and sparse tools, the geologists needed a down-to-earth procedure that worked reliably in the mud.",
+        "Because theoretical mathematical proofs offered little guidance for shop-floor technicians, the manufacturing unit focused on realistic, workable execution.",
+        "With limited grant funding and basic benchtop equipment, the biology students prioritized a feasible, hands-on procedure over costly idealizations.",
+        "When deployed to remote wilderness regions, the botanical expedition needed a pragmatic, low-tech way to preserve delicate plant tissues."
+      ],
+      "target_context_dev": [
+        "To catalogue every biochemical interaction across the entire metabolic pathway, the team organized an exhaustive, step-by-step investigation covering all variables.",
+        "Searching for hidden security vulnerabilities in millions of lines of code required an orderly, highly structured overview of every component.",
+        "To ensure no environmental contaminant went unrecorded across the watershed, the ecologists planned an exhaustive, step-by-step screening routine.",
+        "Isolating the root cause of underlying avionics failures required a structured, step-by-step analytical framework covering all subsystems."
+      ],
+      "source_context_test": [
+        "Confronted with rugged terrain and minimal computing hardware, the ecological team prioritized a workable, field-ready procedure for soil sampling.",
+        "Rather than pursuing theoretically pure but unworkable laboratory ideals, the factory engineers sought a realistic, down-to-earth procedure.",
+        "Budget cutbacks forced the aerospace laboratory to favor a feasible, hands-on testing procedure that utilized readily available parts.",
+        "Due to severe time constraints during disaster relief operations, the medical team relied on a down-to-earth, realistic procedure to purify drinking water."
+      ],
+      "target_context_test": [
+        "Characterizing thousands of gene variants associated with rare cardiac disorders necessitated an orderly, comprehensive scheme covering every chromosomal site.",
+        "To uncover every subtle vulnerability in the network infrastructure, the cybersecurity unit implemented an exhaustive, step-by-step auditing paradigm.",
+        "Mapping the neural circuitry of the entire organism required a highly structured, step-by-step investigative framework.",
+        "Resolving complex multidimensional optimization errors across all flight parameters demanded an orderly, exhaustive analytical scheme."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "Source contexts highlight real-world constraints, hands-on feasibility, and pragmatic utility, strongly biasing toward practical/method. Target contexts emphasize exhaustive, ordered, and rigorous structural schemes, strongly biasing toward systematic/approach. All combinations (practical method, practical approach, systematic method, systematic approach) remain fully natural and sensible across all test and dev prompts."
+    }
+  ]
+}

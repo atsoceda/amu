@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_13_event_reception_banquet",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_reception_banquet",
+    "noun_0": "reception",
+    "noun_1": "banquet",
+    "shared_definition": "a formal social gathering where guests are served food and drinks",
+    "neutral_stem": "Dignitaries arrived in evening attire for",
+    "candidate_modifiers": [
+      "lavish",
+      "formal",
+      "grand",
+      "official",
+      "elegant",
+      "private",
+      "costly",
+      "magnificent",
+      "splendid",
+      "annual",
+      "exclusive",
+      "luxurious",
+      "festive",
+      "state",
+      "opulent"
+    ],
+    "semantic_notes": "'Reception' often centers on greeting guests (e.g., weddings, openings), while 'banquet' specifically denotes a large, formal, seated feast.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        22774
+      ],
+      "noun_1": [
+        72637
+      ]
+    },
+    "modifier_token_ids": {
+      "lavish": [
+        83839
+      ],
+      "formal": [
+        10781
+      ],
+      "grand": [
+        4159
+      ],
+      "official": [
+        5125
+      ],
+      "elegant": [
+        19185
+      ],
+      "private": [
+        2147
+      ],
+      "costly": [
+        31775
+      ],
+      "magnificent": [
+        37065
+      ],
+      "splendid": [
+        54649
+      ],
+      "annual": [
+        7384
+      ],
+      "exclusive": [
+        14417
+      ],
+      "luxurious": [
+        37848
+      ],
+      "festive": [
+        37017
+      ],
+      "state": [
+        1883
+      ],
+      "opulent": [
+        180002
+      ]
+    },
+    "forced_projection_span": 0.18451747857034206,
+    "max_noun_pair_mass": 0.24203091859817505,
+    "context_priority_score": 0.04465893483579897,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "official",
+        "target_modifier": "grand",
+        "source_projection": -0.0314360149204731,
+        "target_projection": -0.012870902195572853,
+        "forced_modifier_leverage": 0.018565112724900246,
+        "source_pair_mass": 0.049493927508592606,
+        "target_pair_mass": 0.02646504156291485
+      },
+      "medium": {
+        "source_modifier": "luxurious",
+        "target_modifier": "annual",
+        "source_projection": -0.0610646978020668,
+        "target_projection": 0.016320252791047096,
+        "forced_modifier_leverage": 0.0773849505931139,
+        "source_pair_mass": 0.15849271416664124,
+        "target_pair_mass": 0.04554183781147003
+      },
+      "high": {
+        "source_modifier": "annual",
+        "target_modifier": "state",
+        "source_projection": 0.016320252791047096,
+        "target_projection": 0.20083773136138916,
+        "forced_modifier_leverage": 0.18451747857034206,
+        "source_pair_mass": 0.04554183781147003,
+        "target_pair_mass": 0.24203091859817505
+      }
+    },
+    "context_generation_rank": 94
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "official",
+      "target_modifier": "grand",
+      "source_context_dev": [
+        "The ministry issued strict protocol guidelines for welcoming the foreign delegation. Staff organized a structured receiving line in the embassy foyer.",
+        "Diplomatic aides verified each credential at the security checkpoint before granting entry. The bilateral liaison office oversaw the greeting procedures.",
+        "Government representatives convened to exchange formal greetings following the conclusion of bilateral talks. Strict adherence to administrative code governed the evening schedule.",
+        "The foreign service host committee reviewed the verified guest roster for the bilateral greeting assembly. Every handshake adhered to strict diplomatic procedure."
+      ],
+      "target_context_dev": [
+        "The palatial ballroom was outfitted with towering floral arrangements and crystal chandeliers for hundreds of distinguished guests. Multi-tier staging and magnificent decor framed the massive hall.",
+        "Preparations inside the historic palace encompassed three massive dining halls and a full philharmonic orchestra. The sheer scale and magnificence of the hall impressed arriving patrons.",
+        "Golden tapestries and monumental ice sculptures lined the sweeping marble staircase leading to the main hall. Organizers planned an evening of unmatched spectacle and opulence.",
+        "A massive hall with soaring vaulted ceilings welcomed hundreds of international guests for an opulent dinner. Lavish centerpieces and elaborate architectural lighting set an imposing scene."
+      ],
+      "source_context_test": [
+        "The diplomatic mission finalized protocol arrangements for meeting the visiting delegation. Embassy personnel monitored the designated receiving area carefully.",
+        "Civil service protocol officers managed the entrance queue to ensure appropriate diplomatic decorum. Credentials were confirmed before anyone proceeded into the foyer.",
+        "The bilateral liaison team structured the evening around formal greetings and diplomatic handshakes. Procedural decorum was maintained throughout the entryway.",
+        "Delegates gathered following the summit to participate in the scheduled diplomatic greeting. The liaison desk managed the orderly procession of arriving envoys."
+      ],
+      "target_context_test": [
+        "Magnificent silk draperies and towering candelabras transformed the Great Hall into an awe-inspiring venue. Thousands of seated diners filled the cavernous historic pavilion.",
+        "The sovereign's residence opened its largest dining salon to host an extraordinarily elaborate multi-course meal. Sweeping orchestral music echoed through the towering rotunda.",
+        "Catering crews prepared a massive multi-course service across dozens of long tables beneath gilded arches. The sheer magnitude of the historic venue was breathtaking.",
+        "Flamboyant floral displays and monumental chandeliers illuminated the cathedral-sized dining pavilion. Hundreds of prominent patrons gathered to marvel at the immense decor."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (official reception, official banquet, grand reception, grand banquet) fit naturally with the fixed stem under both contexts."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "luxurious",
+      "target_modifier": "annual",
+      "source_context_dev": [
+        "Champagne flowed freely as waiters circulated silver platters laden with caviar and truffles. Velvet lounge seating and bespoke decor offered an intensely lavish atmosphere for socializing.",
+        "Top-tier vintage wines and imported delicacies were served in the boutique salon overlooking the harbor. Organizers spared no expense to provide an exquisitely opulent experience.",
+        "Gilded furnishings, fine silk drapes, and premium vintage spirits set a mood of peerless extravagance. High-society patrons mingled amid refined comfort and lavish hospitality.",
+        "Guests were treated to gold-leaf appetizers and vintage champagne served in hand-cut crystal flutes. The private lounge was transformed into a showcase of pure indulgence."
+      ],
+      "target_context_dev": [
+        "According to long-standing tradition, the institution gathers every December to review the year's milestones. It remains the most anticipated recurring milestone on the civic calendar.",
+        "Members gathered once again for the traditional year-end celebration that has taken place since the charter was signed. The recurring dinner brings delegates together every autumn.",
+        "The calendar marked the return of the organization's benchmark yearly assembly. Delegates gathered once again to honor their long-running seasonal tradition.",
+        "Every autumn, the society reconvenes to celebrate the culmination of its yearly work program. This well-established recurring event has taken place for over a century."
+      ],
+      "source_context_test": [
+        "Bespoke cocktails and rare vintage wines were poured into crystal glasses beneath soft ambient lighting. Guests reclined on plush velvet banquettes surrounded by opulent floral displays.",
+        "The private penthouse suite featured gourmet hors d'oeuvres curated by a world-renowned chef. Every detail reflected an uncompromising standard of high-end indulgence.",
+        "Imported delicacies and handcrafted chocolates filled the gilded buffet stations in the exclusive salon. The lavish hospitality ensured an evening of unmatched comfort and sophistication.",
+        "Attendees enjoyed top-shelf spirits and exquisite canapes while mingling in the lavishly furnished salon. Opulent styling and refined amenities delighted the distinguished attendees."
+      ],
+      "target_context_test": [
+        "The organization held its regularly scheduled milestone celebration, marking another completed year of service. This cherished periodic tradition continues without interruption.",
+        "Following tradition, the foundation hosted its regular year-end dinner to honor achievements over the past twelve months. The predictable autumn gathering welcomed familiar faces.",
+        "Every winter, the guild convenes its members for a recurring commemorative dinner. The historic tradition represents the highlight of their yearly schedule.",
+        "The council assembled for its customary year-end dinner, a scheduled fixture on the civic calendar for decades. Delegates looked forward to renewing their regular seasonal ties."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (luxurious reception, luxurious banquet, annual reception, annual banquet) remain fully grammatical and semantically felicitous."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "annual",
+      "target_modifier": "state",
+      "source_context_dev": [
+        "The society's traditional year-end celebration returned to the municipal hall right on schedule. Members reconvened to observe their regular calendar tradition.",
+        "Every December, the association hosts a gathering to celebrate its year-long milestones. Delegates arrived for this anticipated recurring fixture on their social calendar.",
+        "The recurring yearly gathering took place as customary, bringing together members who meet once every twelve months. It marked the continuous observance of their seasonal tradition.",
+        "Marking the close of another cycle, the organization prepared its standard yearly celebration. Attendees looked forward to their anticipated recurring seasonal gathering."
+      ],
+      "target_context_dev": [
+        "The palace rolled out the red carpet to honor the visiting monarch following high-level treaty negotiations. Government leaders gathered to observe top-level sovereign protocol.",
+        "The foreign ministry and presidential palace organized the sovereign dinner to commemorate a historic bilateral defense pact. Heads of government took their places at the head table.",
+        "National flags from both countries flew alongside the presidential guard lining the grand hall of government. The sovereign dinner cemented diplomatic alliances at the highest level of government.",
+        "The head of government hosted the visiting prime minister for formal dinner proceedings in the presidential hall. High sovereign honors and bilateral diplomatic toasts were prepared."
+      ],
+      "source_context_test": [
+        "As is customary each autumn, the federation brought together delegates for its signature milestone gathering. The recurring calendar event celebrated another completed term.",
+        "The association's predictable yearly gathering commenced with remarks summarizing the past twelve months. Long-time attendees gathered to uphold their regular seasonal tradition.",
+        "The calendar marked the regular return of the guild's traditional celebration. Members congregated to renew friendships at this anticipated yearly function.",
+        "Every spring, the governing board hosts a regular gathering to honor member contributions over the past year. The periodic milestone dinner drew a dedicated crowd."
+      ],
+      "target_context_test": [
+        "The president hosted a formal dinner in the executive mansion to honor the visiting sovereign. Royal guards stood at attention as international leaders entered the hall.",
+        "Heads of government and foreign ministers gathered at the presidential palace following the ratification of the peace treaty. The sovereign dinner marked a historic milestone.",
+        "The sovereign's residence hosted the formal diplomatic dinner in honor of the visiting foreign head of government. Strict national protocol governed the seating arrangement.",
+        "Government leaders convened at the presidential palace for the sovereign dinner honoring the visiting premier. The highest level of national diplomatic protocol was observed."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (annual reception, annual banquet, state reception, state banquet) are completely valid and natural across all context conditions."
+    }
+  ]
+}

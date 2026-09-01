@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b03_14_platter_tray",
+    "generation_batch": 3,
+    "domain": "household objects and furniture",
+    "family_id": "platter_tray",
+    "noun_0": "platter",
+    "noun_1": "tray",
+    "shared_definition": "a large flat dish or board used for serving food and beverages",
+    "neutral_stem": "Carrying refreshments into the dining room, he balanced",
+    "candidate_modifiers": [
+      "silver",
+      "wooden",
+      "heavy",
+      "serving",
+      "loaded",
+      "flat",
+      "rectangular",
+      "polished",
+      "decorative",
+      "full",
+      "empty",
+      "brass",
+      "wide",
+      "round",
+      "plastic"
+    ],
+    "semantic_notes": "Platter specifically denotes a broad serving plate for food, whereas tray denotes a rimmed flat surface used to carry multiple items.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        93559
+      ],
+      "noun_1": [
+        26293
+      ]
+    },
+    "modifier_token_ids": {
+      "silver": [
+        10173
+      ],
+      "wooden": [
+        7116
+      ],
+      "heavy": [
+        7274
+      ],
+      "serving": [
+        12284
+      ],
+      "loaded": [
+        15808
+      ],
+      "flat": [
+        6648
+      ],
+      "rectangular": [
+        30777
+      ],
+      "polished": [
+        39372
+      ],
+      "decorative": [
+        25234
+      ],
+      "full": [
+        2587
+      ],
+      "empty": [
+        7738
+      ],
+      "brass": [
+        28575
+      ],
+      "wide": [
+        5777
+      ],
+      "round": [
+        4886
+      ],
+      "plastic": [
+        8901
+      ]
+    },
+    "forced_projection_span": 0.20184648036956787,
+    "max_noun_pair_mass": 0.610883891582489,
+    "context_priority_score": 0.1233047634303901,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "wide",
+        "target_modifier": "heavy",
+        "source_projection": 0.3069097101688385,
+        "target_projection": 0.32595619559288025,
+        "forced_modifier_leverage": 0.019046485424041748,
+        "source_pair_mass": 0.3792280852794647,
+        "target_pair_mass": 0.3522532284259796
+      },
+      "medium": {
+        "source_modifier": "polished",
+        "target_modifier": "silver",
+        "source_projection": 0.14617455005645752,
+        "target_projection": 0.2473696619272232,
+        "forced_modifier_leverage": 0.10119511187076569,
+        "source_pair_mass": 0.15198779106140137,
+        "target_pair_mass": 0.3438901901245117
+      },
+      "high": {
+        "source_modifier": "wooden",
+        "target_modifier": "loaded",
+        "source_projection": 0.40225058794021606,
+        "target_projection": 0.6040970683097839,
+        "forced_modifier_leverage": 0.20184648036956787,
+        "source_pair_mass": 0.4392223358154297,
+        "target_pair_mass": 0.610883891582489
+      }
+    },
+    "context_generation_rank": 32
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "wide",
+      "target_modifier": "heavy",
+      "source_context_dev": [
+        "The buffet centerpiece required expansive surface area to showcase the assortment of cheeses and cured meats.",
+        "An elaborate cold buffet arrangement demanded maximum diameter to display every delicacy without overlap.",
+        "The chef had prepared a sprawling spread of hors d'oeuvres that spread outward across a broad circumference.",
+        "Setting up the banquet required an expansive spread that could hold several rows of appetizers side by side."
+      ],
+      "target_context_dev": [
+        "The dinner service involved thick stone vessels and cast-iron cookware that strained his forearms.",
+        "Multiple iron dishes and dense pewter flagons made transportation unusually strenuous for the server.",
+        "Dense crystal decanters and thick stoneware mugs added tremendous mass to the evening order.",
+        "He felt the severe downward pull from several dense ceramic bowls full of hot soup."
+      ],
+      "source_context_test": [
+        "The host insisted on an expansive layout so guests could view every single pastry at a glance.",
+        "Accommodating dozens of sliced canap\u00e9s required an unusually expansive diameter.",
+        "Arranging the fruit feast called for an expansive surface where dozens of figs and grapes could spread out.",
+        "A magnificent banquet display needed significant horizontal span to exhibit every smoked fish garnish."
+      ],
+      "target_context_test": [
+        "Shifting the full iron tureen and several solid ceramic jugs demanded immense wrist strength.",
+        "The sheer mass of multiple solid marble ramekins and brass goblets tested his grip.",
+        "Transporting dense earthenware full of roasted root vegetables required steady muscular effort.",
+        "The immense mass of the cast-metal dinnerware made every step across the parquet floor deliberate."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All combinations (wide platter, wide tray, heavy platter, heavy tray) are grammatically correct and semantically valid in hospitality contexts. Source contexts emphasize horizontal expanse and broad surface spread; target contexts emphasize physical heft and dense cookware."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "polished",
+      "target_modifier": "silver",
+      "source_context_dev": [
+        "Every piece of tableware in the salon had been rubbed with cloth until it gleamed mirror-bright under the chandeliers.",
+        "The butler meticulously buffed every formal serving piece to ensure a spotless, reflective sheen before dinner.",
+        "After hours of careful buffing, the dining ware sparkled with a dazzling, streak-free gloss.",
+        "The footman took great pride in buffing the service ware until the ambient candlelight sparkled off every edge."
+      ],
+      "target_context_dev": [
+        "The stately manor preserved an heirloom metallic tea set crafted from hallmarked precious metal.",
+        "The aristocratic household preferred opulent heirloom metalware stamped with nineteenth-century hallmarks.",
+        "To impress the visiting dignitaries, the butler brought out the antique precious-metal service ware from the vault.",
+        "The antique metallic tea service gleamed with the unmistakable cool gray luster of authentic heirloom metal."
+      ],
+      "source_context_test": [
+        "The host insisted that every item brought from the scullery possess a radiant, buffed shine.",
+        "Before the banquet began, the staff rubbed every surface clean of smudges until it sparkled flawlessly.",
+        "The head steward inspected each serving ware piece to verify a mirror-smooth, high-gloss luster.",
+        "Meticulously conditioned dining ware reflected the warm flicker of nearby fireplace embers."
+      ],
+      "target_context_test": [
+        "In aristocratic households, fine hallmarked precious metalware remains the standard for banquet service.",
+        "The estate steward unlocked the vault to retrieve precious gray metal tableware crafted by royal metalworkers.",
+        "An opulent banquet required authentic precious metal serving ware to match the antique cutlery.",
+        "The heirloom metal tea service bore intricate engravings typical of fine metalwork from the Victorian era."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four cross-combinations (polished platter, polished tray, silver platter, silver tray) represent natural dining and hospitality collocations. Source contexts prime reflective surface buffing, whereas target contexts prime noble metal material composition."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "wooden",
+      "target_modifier": "loaded",
+      "source_context_dev": [
+        "The rustic tavern emphasized farmhouse charm with handcrafted timber tableware and artisanal sourdough.",
+        "Forest-timber tableware carved from sturdy forest oak matched the lodge's cozy mountain aesthetic.",
+        "The country kitchen specialized in carved timber dishware that complemented its rustic charcuterie boards.",
+        "Authentic farmhouse hospitality favored natural timber serving ware carved directly from aged maple."
+      ],
+      "target_context_dev": [
+        "The kitchen staff had stacked every square inch of space with heaping bowls of stew and towering pints of ale.",
+        "Piled high with dozens of steaming appetizers, the service piece had no empty space left.",
+        "So many full wine goblets and side dishes were packed onto the surface that nothing more could fit.",
+        "The server struggled to find balance as dozens of full tumblers and side plates were piled to the brim."
+      ],
+      "source_context_test": [
+        "The artisan bistro preferred handcrafted timber dining pieces made by local carpenters.",
+        "Natural oak dishware and rough-hewn timber accents defined the rustic aesthetic of the harvest banquet.",
+        "The rustic banquet celebrated rural traditions with handcrafted timber tableware carved from fallen ash trees.",
+        "To match the alpine cabin decor, the hosts served their appetizers exclusively on carved timber ware."
+      ],
+      "target_context_test": [
+        "Towering tiers of roast meats and crowded beverage cups occupied every available centimeter of the flat surface.",
+        "The kitchen staff crammed dozens of filled ramekins and overflowing flagons onto a single serving piece.",
+        "Piled to capacity with steaming banquet fare, the dish required delicate footwork to prevent spills.",
+        "With every inch occupied by heaping dishes of roast game and filled goblets, carrying it was precarious."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All cross pairs (wooden platter, wooden tray, loaded platter, loaded tray) are fully natural. Source contexts establish a rustic timber material setting, while target contexts establish a high-capacity state of abundance."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "candidate_id": "chase_pursuit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four modifier-noun combinations ('exhausting chase', 'exhausting pursuit', 'risky chase', 'risky pursuit') are grammatically seamless and semantically valid across all dev and test contexts. No lexical leaks or target collisions detected."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('thrilling chase', 'thrilling pursuit', 'frantic chase', 'frantic pursuit') fit the fixed stem naturally and maintain semantic plausibility across all contexts without mentioning candidate lexemes."
+    },
+    {
+      "regime": "high",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('reckless chase', 'reckless pursuit', 'relentless chase', 'relentless pursuit') integrate cleanly with the stem and remain fully coherent under both source and target contexts with clear pragmatic differentiation and zero leakage."
+    }
+  ]
+}

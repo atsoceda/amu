@@ -1,0 +1,68 @@
+{
+  "experiment_name": "natural_modifier_route_crossover",
+  "protocol_frozen_at": "2026-08-31T16:00:00+09:00",
+  "model": {
+    "name": "google/gemma-3-1b-pt",
+    "snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+    "dtype": "bfloat16"
+  },
+  "generation": {
+    "provider": "Google Gemini API",
+    "model": "gemini-3.7-flash",
+    "batches": 24,
+    "pairs_per_batch": 25,
+    "modifiers_per_pair": 15,
+    "temperature": 0.8,
+    "seed_base": 20260910
+  },
+  "generic_instruction": "Complete the sentence with exactly two words: one adjective followed by one noun.",
+  "completion_template": "{context}\n{stem} the",
+  "candidate_domains": [
+    "occupations and professional roles",
+    "people and social roles",
+    "vehicles and transportation",
+    "household objects and furniture",
+    "tools, devices, and machines",
+    "animals and biological kinds",
+    "locations and geographic features",
+    "institutions and organizations",
+    "artifacts and manufactured goods",
+    "events and activities",
+    "media and creative works",
+    "buildings and architectural spaces",
+    "food and everyday consumables",
+    "clothing and personal items",
+    "documents and information objects",
+    "common abstract concepts",
+    "natural phenomena and materials",
+    "commerce and public services",
+    "science, medicine, and education",
+    "law, government, and civic life",
+    "sports and recreation",
+    "communication and journalism",
+    "technology and computing",
+    "mixed high-frequency concrete nouns"
+  ],
+  "semantic_validity": {
+    "all_four_modifier_noun_combinations_valid_under_both_contexts": true,
+    "contexts_must_not_mention_candidates": true,
+    "contexts_change_preference_not_truth": true
+  },
+  "support": {
+    "target_valid_modifier_mass": 0.95,
+    "reject_if_task_support_mass_below": 0.8
+  },
+  "route_thresholds": {
+    "public_dominant_D_min": 0.3333333333,
+    "private_dominant_D_max": -0.3333333333,
+    "hybrid_abs_D_max": 0.3333333333,
+    "epsilon": 1e-08,
+    "route_presence_requires_control_floor": true
+  },
+  "confirmation_targets": {
+    "families_per_regime_min": 8,
+    "families_per_regime_target": 10,
+    "development_paraphrases_per_state": 4,
+    "untouched_test_paraphrases_per_state": 4
+  }
+}

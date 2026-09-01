@@ -1,0 +1,31 @@
+{
+  "candidate_id": "trunk_chest_audit",
+  "constructions": [
+    {
+      "regime": "low",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('metal trunk', 'metal chest', 'large trunk', 'large chest') are grammatical and semantically permissible across all contexts. Contexts modulate pragmatic salience without lexical leakage or truth-conditional clashes."
+    },
+    {
+      "regime": "medium",
+      "pass": true,
+      "failed_context_indices": [],
+      "failure_reasons": [],
+      "concise_notes": "All four combinations ('old trunk', 'old chest', 'brass trunk', 'brass chest') remain valid across all contexts. Context descriptions of provenance vs. yellow alloy fittings steer pragmatic preference without naming candidates or causing semantic conflict."
+    },
+    {
+      "regime": "high",
+      "pass": false,
+      "failed_context_indices": [
+        "source_context_dev[0]",
+        "source_context_dev[2]"
+      ],
+      "failure_reasons": [
+        "source_context_dev[0] specifies 'oak panels' and source_context_dev[2] specifies 'pine boards', establishing an objective factual contradiction with the target modifier 'cedar' rather than a pure pragmatic preference shift."
+      ],
+      "concise_notes": "Fails due to specific wood species identification ('oak' and 'pine') in two source development contexts, making 'cedar trunk' and 'cedar chest' factually contradictory rather than pragmatically disfavored."
+    }
+  ]
+}

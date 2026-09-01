@@ -1,0 +1,215 @@
+{
+  "family": {
+    "candidate_id": "b09_04_event_meeting_gathering",
+    "generation_batch": 9,
+    "domain": "events and activities",
+    "family_id": "event_meeting_gathering",
+    "noun_0": "meeting",
+    "noun_1": "gathering",
+    "shared_definition": "an assembly of people brought together for a specific purpose",
+    "neutral_stem": "The organizer called everyone together for",
+    "candidate_modifiers": [
+      "brief",
+      "formal",
+      "informal",
+      "secret",
+      "large",
+      "small",
+      "peaceful",
+      "urgent",
+      "private",
+      "public",
+      "regular",
+      "planned",
+      "spontaneous",
+      "tense",
+      "quiet"
+    ],
+    "semantic_notes": "'Meeting' strongly implies business, governance, or formal structure, whereas 'gathering' evokes social, familial, or informal assemblies.",
+    "generation_format_valid": true,
+    "noun_token_ids": {
+      "noun_0": [
+        5395
+      ],
+      "noun_1": [
+        22658
+      ]
+    },
+    "modifier_token_ids": {
+      "brief": [
+        8652
+      ],
+      "formal": [
+        10781
+      ],
+      "informal": [
+        33835
+      ],
+      "secret": [
+        6789
+      ],
+      "large": [
+        2455
+      ],
+      "small": [
+        1944
+      ],
+      "peaceful": [
+        26169
+      ],
+      "urgent": [
+        32034
+      ],
+      "private": [
+        2147
+      ],
+      "public": [
+        1237
+      ],
+      "regular": [
+        4841
+      ],
+      "planned": [
+        13015
+      ],
+      "spontaneous": [
+        41512
+      ],
+      "tense": [
+        54817
+      ],
+      "quiet": [
+        12010
+      ]
+    },
+    "forced_projection_span": 0.047359004616737366,
+    "max_noun_pair_mass": 0.8419085144996643,
+    "context_priority_score": 0.0398719492250601,
+    "context_generation_eligible": true,
+    "constructions": {
+      "low": {
+        "source_modifier": "planned",
+        "target_modifier": "small",
+        "source_projection": -0.5913577079772949,
+        "target_projection": -0.5870476365089417,
+        "forced_modifier_leverage": 0.0043100714683532715,
+        "source_pair_mass": 0.5946890115737915,
+        "target_pair_mass": 0.6010980010032654
+      },
+      "medium": {
+        "source_modifier": "private",
+        "target_modifier": "public",
+        "source_projection": -0.6767607927322388,
+        "target_projection": -0.653717041015625,
+        "forced_modifier_leverage": 0.02304375171661377,
+        "source_pair_mass": 0.6808198690414429,
+        "target_pair_mass": 0.654770016670227
+      },
+      "high": {
+        "source_modifier": "tense",
+        "target_modifier": "peaceful",
+        "source_projection": -0.15494483709335327,
+        "target_projection": -0.1075858324766159,
+        "forced_modifier_leverage": 0.047359004616737366,
+        "source_pair_mass": 0.1559983193874359,
+        "target_pair_mass": 0.13293671607971191
+      }
+    },
+    "context_generation_rank": 101
+  },
+  "constructions": [
+    {
+      "regime": "low",
+      "source_modifier": "planned",
+      "target_modifier": "small",
+      "source_context_dev": [
+        "The corporate calendar had locked in this date several weeks in advance. Detailed itineraries were circulated to all department leads yesterday.",
+        "Schedules had been aligned across three time zones well ahead of time. Every milestone on the roadmap pointed directly to this morning's session.",
+        "The conference room was reserved months ago to ensure complete team alignment. Agendas and slide decks were finalized by Friday afternoon.",
+        "Timelines had been strictly mapped out during the previous quarter. All participants had prepared their presentations strictly according to schedule."
+      ],
+      "target_context_dev": [
+        "Only a handful of close neighborhood friends decided to drop by the patio. There was plenty of extra seating around the modest fire pit.",
+        "The host invited just three coworkers for an informal chat over tea. Space was limited, so the circle remained tight and cozy.",
+        "A tiny circle of volunteers huddled in the corner of the recreation hall. Seating was arranged for barely six people in total.",
+        "Just a few nearby residents walked over to share updates in the backyard. The attendance was intentionally kept very limited."
+      ],
+      "source_context_test": [
+        "Formal invitations were dispatched a month ago with specific agenda points attached. Every stakeholder had blocked out their afternoon itinerary.",
+        "Project leads coordinated their calendars well in advance for this milestone review. Background documents and discussion notes were pre-distributed.",
+        "The executive board established the timetable for this strategic session at the start of the fiscal year. Preparatory briefings were completed days ahead.",
+        "Logistics and time slots were arranged weeks prior to ensure full administrative oversight. Handouts and review sheets were printed in advance."
+      ],
+      "target_context_test": [
+        "A modest circle of local artisans came together around a single workbench. The quiet setting fostered an intimate, low-key exchange.",
+        "Only four committee members were available to chat in the coffee break area. The informal circle barely took up one table.",
+        "The quiet workshop was arranged to accommodate just five or six participants. Space was tight, creating an intimate, cozy atmosphere.",
+        "A compact group of neighbors stopped by the porch to exchange garden seeds. With only a few chairs filled, the tone remained quiet and low-key."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (planned meeting, planned gathering, small meeting, small gathering) fit seamlessly after the fixed stem in both contexts. Corporate foresight naturally biases toward planned/meeting, while intimate group sizes bias toward small/gathering without precluding any combination."
+    },
+    {
+      "regime": "medium",
+      "source_modifier": "private",
+      "target_modifier": "public",
+      "source_context_dev": [
+        "Confidential contract negotiations required the utmost discretion and closed doors. Security personnel ensured non-cleared staff remained outside the boardroom.",
+        "Proprietary trade secrets were slated for discussion behind heavy curtains. Attendees were asked to surrender all electronic recording devices at the door.",
+        "Sensitive executive restructuring matters could not be leaked to the press under any circumstances. Access to the suite was restricted to badge holders.",
+        "Personal family grievances needed to be sorted out away from curious onlookers. The discussion was cordoned off in an undisclosed back room."
+      ],
+      "target_context_dev": [
+        "Town residents and open-access media packed the central plaza to capacity. Megaphones and community flyers welcomed everyone from the municipality.",
+        "The municipal park welcomed visitors of all backgrounds for the open civic forum. Banners invited anyone walking along the boulevard to join in.",
+        "Citizens across the district arrived at the open auditorium with no ticket requirements. Livestream cameras were set up for general broadcast.",
+        "The doors to the civic center were unlocked for all interested community members. Handouts were distributed freely along the pedestrian sidewalk."
+      ],
+      "source_context_test": [
+        "Sensitive intellectual property discussions demanded absolute secrecy behind locked doors. Non-disclosure agreements were verified prior to entry.",
+        "High-stakes personnel deliberations were concealed from the rest of the company. Key stakeholders assembled away from open office view.",
+        "Exclusive deliberations regarding the merger were shielded from external observers. Strict security protocols governed access to the inner chamber.",
+        "Confidential financial audits required a secluded venue far from the general staff. Entry was strictly limited to authorized personnel."
+      ],
+      "target_context_test": [
+        "Open invitations had been posted on community bulletin boards throughout town. Pedestrians and local reporters filled the municipal courtyard.",
+        "The civic square bustled with interested citizens seeking an open discussion on transit. Admission was unrestricted and broadcast to the region.",
+        "Residents from across the valley flooded into the open amphitheater. The event was advertised openly on municipal radio and flyers.",
+        "Free access was granted to all neighborhood members at the central recreational park. Microphones were placed for anyone who wanted to speak."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (private meeting, private gathering, public meeting, public gathering) remain fully natural and grammatical. Secrecy and institutional security steer selection toward private/meeting, whereas civic open-access cues favor public/gathering."
+    },
+    {
+      "regime": "high",
+      "source_modifier": "tense",
+      "target_modifier": "peaceful",
+      "source_context_dev": [
+        "Hostility simmered as rival union factions glared across the negotiation table. One wrong word threatened to trigger an explosive argument.",
+        "Deep resentment and sharp accusations had been escalating throughout the afternoon. Frustrated voices echoed down the hall as tempers flared.",
+        "Bitter labor disputes had brought both opposing sides to the brink of a complete breakdown. Sharp glances and clenched fists filled the corridor.",
+        "Simmering grievances reached a critical boiling point between the feuding departments. Anxiety and friction gripped everyone entering the room."
+      ],
+      "target_context_dev": [
+        "Gentle acoustic music drifted across the sunlit garden lawn. A spirit of calm harmony and mutual goodwill embraced the afternoon crowd.",
+        "Soft afternoon sunlight washed over the tranquil courtyard as soft laughter resonated. All previous conflicts had been fully resolved with grace.",
+        "A serene and warm atmosphere settled over the picturesque lakeside pavilion. Old friends shared fond smiles and relaxed under the shade.",
+        "Quiet harmony filled the meditative retreat center as attendees relaxed without stress. The overall mood was deeply soothing and tranquil."
+      ],
+      "source_context_test": [
+        "Rival faction leaders exchanged severe looks across the long conference table. The friction in the room was thick enough to cut with a knife.",
+        "Contentious salary disputes pushed both factions into an uneasy standoff. Harsh words and unresolved disputes cast a heavy, stressful pall.",
+        "Deep-seated animosity boiled beneath the surface as conflicting parties took their seats. The threat of immediate confrontation hung in the air.",
+        "Acrimonious debates left both sides exhausted, bitter, and on edge. Every participant braced for uncomfortable confrontations and sharp rebukes."
+      ],
+      "target_context_test": [
+        "Warm smiles and relaxed conversation drifted across the sun-dappled lawn. The entire afternoon radiated calmness, warmth, and fellowship.",
+        "A soothing breeze swept through the quiet orchard as attendees sat together harmoniously. Everyone appreciated the quiet unity and calm.",
+        "Serenity and heartfelt goodwill defined the atmosphere beside the tranquil pond. Participants felt completely at ease and unhurried.",
+        "Gentle sunlight illuminated the serene park meadow where attendees mingled in quiet fellowship. Stress and conflict were nowhere to be found."
+      ],
+      "four_cross_combinations_valid": true,
+      "semantic_audit_notes": "All four combinations (tense meeting, tense gathering, peaceful meeting, peaceful gathering) are entirely valid across all contexts. High conflict and institutional stakes boost tense/meeting, while pastoral calmness promotes peaceful/gathering."
+    }
+  ]
+}
