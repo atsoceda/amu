@@ -13,19 +13,26 @@ The repository treats manuscript prose as a view over frozen machine-readable
 artifacts. The principal claims can be recomputed from the following experiment
 directories.
 
-| Claim | Experiment artifact |
-|---|---|
-| Six-cell S1 split | `experiments/s1_article_factorial/results/` |
-| S1 planning-feature audit | `experiments/s1_planning_feature_audit/results/audit.json` |
-| Replay and rescue | `experiments/s1_replay_rescue/results/` |
-| Decoder boundary and precision | `experiments/boundary_precision_policy/results/` |
-| Private residual references | `experiments/natural_residual_carrier_regimes/results/` and `experiments/cross_scale_normalized_residual/results/` |
-| Neutral synonym routing | `experiments/neutral_synonym_repair/results/` |
-| Matched semantic-triad routing | `experiments/matched_semantic_triads_repaired/results/` |
-| Matched component and policy audits | `experiments/matched_semantic_triads_repaired/results/component_diagnostic.json` and `article_policy_audit.json` |
-| Independent Figure 4 recomputation | `experiments/neutral_synonym_repair/results/independent_recomputation.json` |
-| Closed-loop gain | `experiments/closed_loop_gain_law/results/` |
-| Sparse 1B stress tests | `experiments/gemma_1b_effect_matched/results/` and `experiments/gemma_1b_sparse_frontier/results/` |
+```{=latex}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.69\linewidth}@{}}
+\toprule
+Claim & Experiment artifact \\
+\midrule
+\endhead
+Six-cell S1 split & \path{experiments/s1_article_factorial/results/} \\
+S1 planning-feature audit & \path{experiments/s1_planning_feature_audit/results/audit.json} \\
+Replay and rescue & \path{experiments/s1_replay_rescue/results/} \\
+Decoder boundary and precision & \path{experiments/boundary_precision_policy/results/} \\
+Private residual references & \path{experiments/natural_residual_carrier_regimes/results/} and \path{experiments/cross_scale_normalized_residual/results/} \\
+Neutral synonym routing & \path{experiments/neutral_synonym_repair/results/} \\
+Matched semantic-triad routing & \path{experiments/matched_semantic_triads_repaired/results/} \\
+Matched component and policy audits & \path{experiments/matched_semantic_triads_repaired/results/component_diagnostic.json} and \path{experiments/matched_semantic_triads_repaired/results/article_policy_audit.json} \\
+Independent Figure 4 recomputation & \path{experiments/neutral_synonym_repair/results/independent_recomputation.json} \\
+Closed-loop gain & \path{experiments/closed_loop_gain_law/results/} \\
+Sparse 1B stress tests & \path{experiments/gemma_1b_effect_matched/results/} and \path{experiments/gemma_1b_sparse_frontier/results/} \\
+\bottomrule
+\end{longtable}
+```
 
 All summary JSON files record model identifiers, sample sizes, interval methods,
 and primary settings. Plotting scripts read those artifacts rather than values
