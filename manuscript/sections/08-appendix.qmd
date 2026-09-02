@@ -11,6 +11,7 @@ directories.
 | Claim | Experiment artifact |
 |---|---|
 | Six-cell S1 split | `experiments/s1_article_factorial/results/` |
+| S1 planning-feature audit | `experiments/s1_planning_feature_audit/results/audit.json` |
 | Replay and rescue | `experiments/s1_replay_rescue/results/` |
 | Decoder boundary and precision | `experiments/boundary_precision_policy/results/` |
 | Private residual references | `experiments/natural_residual_carrier_regimes/results/` and `experiments/cross_scale_normalized_residual/results/` |
@@ -27,6 +28,16 @@ copied from manuscript prose. The 270M model snapshot is
 dictionary snapshot is `b218cd5d69dc2fa71cff448b68d625e6c9702d49` with configuration
 `width_262k_l0_medium_affine`. Discussed decoder/encoder vectors and selection
 metadata are archived under `experiments/archived_feature_vectors/`.
+
+The frozen S1 audit checks its relationship to the planning-feature motivation
+without rerunning inference. Each of the four selected features is active at the
+pre-article position and has positive direct attribution to the intended future
+noun on all eight selection prompts. This establishes a future-noun-contributing
+causal handle. It does not establish noun-specific semantic identity: the same
+features recur across distinct future nouns, and S1 selection jointly required
+positive article attribution. We therefore retain the term
+``attribution-selected S1 features'' rather than claiming an independently
+selected Hanna-style semantic planning feature.
 
 ## Exact six-cell measurements
 

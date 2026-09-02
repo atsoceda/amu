@@ -1,0 +1,100 @@
+{
+  "audit": "S1 relationship to future-noun planning-feature motivation",
+  "source": "experiments/selection_criterion_ablation/results/selection.json",
+  "model_inference_rerun": false,
+  "selection_rule": "+attr(an) and +attr(future)",
+  "selection_was_route_independent": false,
+  "same_features_recur_across_distinct_future_nouns": true,
+  "scoped_criterion": "active at the pre-article position on every frozen prompt and positive direct attribution to each intended future noun",
+  "feature_count": 4,
+  "selection_prompt_count": 8,
+  "all_features_pass_scoped_causal_contribution_criterion": true,
+  "features": [
+    {
+      "layer": 12,
+      "feature_idx": 6229,
+      "active_at_pre_article_prompt_count": 8,
+      "expected_prompt_count": 8,
+      "active_at_pre_article_all_prompts": true,
+      "mean_activation": 1442.0,
+      "mean_direct_effect_future_noun": 0.1431884765625,
+      "positive_future_noun_direct_effect_all_prompts": true,
+      "mean_direct_effect_an": 0.2559814453125,
+      "selection_prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ]
+    },
+    {
+      "layer": 10,
+      "feature_idx": 2930,
+      "active_at_pre_article_prompt_count": 8,
+      "expected_prompt_count": 8,
+      "active_at_pre_article_all_prompts": true,
+      "mean_activation": 119.5,
+      "mean_direct_effect_future_noun": 0.024379730224609375,
+      "positive_future_noun_direct_effect_all_prompts": true,
+      "mean_direct_effect_an": 0.096893310546875,
+      "selection_prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ]
+    },
+    {
+      "layer": 13,
+      "feature_idx": 10231,
+      "active_at_pre_article_prompt_count": 8,
+      "expected_prompt_count": 8,
+      "active_at_pre_article_all_prompts": true,
+      "mean_activation": 890.0,
+      "mean_direct_effect_future_noun": 0.019838333129882812,
+      "positive_future_noun_direct_effect_all_prompts": true,
+      "mean_direct_effect_an": 0.86083984375,
+      "selection_prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ]
+    },
+    {
+      "layer": 11,
+      "feature_idx": 793,
+      "active_at_pre_article_prompt_count": 8,
+      "expected_prompt_count": 8,
+      "active_at_pre_article_all_prompts": true,
+      "mean_activation": 287.375,
+      "mean_direct_effect_future_noun": 0.01972198486328125,
+      "positive_future_noun_direct_effect_all_prompts": true,
+      "mean_direct_effect_an": 0.0283355712890625,
+      "selection_prompts": [
+        "Someone who installs and repairs electrical systems is",
+        "Someone who designs buildings and structures is",
+        "Someone who manages financial records is",
+        "Someone who designs and builds technical systems is",
+        "Someone who studies financial systems and markets is",
+        "Someone who administers anesthesia during surgery is",
+        "Someone who treats cancer patients is",
+        "Someone who studies stars and planets is"
+      ]
+    }
+  ],
+  "conclusion": "S1 is a future-noun-contributing pre-article causal handle, but the frozen evidence does not establish a noun-specific semantic feature selected independently of article influence.",
+  "claim_not_licensed": "S1 is a Hanna-style noun-semantic planning feature"
+}
