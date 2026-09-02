@@ -1,215 +1,64 @@
-# Experimental setup
+# Two causal endpoints: public relay and private persistence
 
-**Model stack.** Primary results use pretrained `google/gemma-3-270m` with
-Gemma Scope 2 PT CLT `width_262k_l0_medium_affine`, `circuit-tracer` 0.5.0,
-and the NNsight backend [@gemma3; @gemmascope2; @fiotto2025nnsight].
-Pinned snapshots, Transformers 4.57.3, and licenses are in Appendix B.
-We prefer pretrained+affine over instruction-tuned stacks for this task:
-Appendix J of @hanna2026latent finds base models slightly stronger on
-\(a\)/\(an\), and Hub IT `medium_affine` layer 0 was unavailable in our
-setup. All reported feature IDs are for the PT+affine stack. This model
-strongly prefers majority `a` and sits below the scale where
-@hanna2026latent report reliable behavioral planning success.
+## S1's future-noun effect is overwhelmingly public
 
-**Task.** Occupation prompts of the form `Someone who ... is` with a
-fixed one-shot demonstration. Early mismatch discovery and the held-out
-transfer that first broke a wrapper reading are summarized in Appendix A.
-The main text starts from free-generation coordination and the six-cell
-split. The source dataset is `hannamw/model-planning-public`
-[@hanna2026planningdata] at pinned commit
-`993cff51450f43e8e86c254f761cc48c008b8dab`; the checked-in
-`a_an_examples.csv` copy matches that commit and SHA-256
-`fdc65578873d8f3ed1f364c221a32f5c75c64c109f0b25a1a4660d35c5df134c`.
-Selection/test partitions and lexical twins are derived from that source
-and recorded in experiment configs.
+At \(5\times\), S1 changes the free article from `a` to `an` on 19/20 held-out
+prompts and changes the top noun on the same 19. Across all 20 prompts, total
+noun-distribution change is 0.893 TV. Replaying the treated article with the
+intervention off produces 0.891 TV in the same direction; the matched
+treated-article leftover is \(0.028\ [0.021,0.035]\). The exact vector
+reconstruction error is below \(10^{-7}\). Thus the striking noun rewrite is
+almost entirely reproduced by substituting the article token.
 
-**Feature families.** From attribution graphs on eight selection
-occupations we construct \(k{=}4\) feature sets (@tbl-families).
-**S1** is dual-effect (positive on `an` *and* on the future noun);
-**S2** is article-ish (positive on `an`, near-zero on future content);
-**S3** is content-ish (positive on future content, near-zero on `an`);
-**S4** is competing / `a`-favoring. An activation-matched random control
-uses four frozen features whose mean activations match the S1 set
-(\(\texttt{L11/F2954}\), \(\texttt{L11/F5451}\), \(\texttt{L11/F14119}\),
-\(\texttt{L12/F6421}\)). The sets are not disjoint: S3 shares
-\(\texttt{L11/F793}\) with S1, S2 shares \(\texttt{L13/F10231}\) with S1,
-and S4 shares \(\texttt{L14/F1949}\) with S2 and \(\texttt{L11/F292}\)
-with S3. Default amplification is \(5\times\) prompt-specific activation
-at \(P\).
+The top-1 falsification is even more direct (@fig-s1 A). Treated-article replay
+recreates the S1-on top noun on 20/20 prompts. Restoring the baseline article
+while leaving S1 active restores the baseline top noun on 20/20 prompts.
+Phenocopy and rescue residual TVs are only 0.028 and 0.030. The `pilot` example
+therefore reads as a causal sequence: S1 changes `a` to `an`; `an` licenses the
+`aviator` continuation; returning `a` restores `pilot`.
 
-| Set | Selection rule | Features |
-| --- | --- | --- |
-| S1 | Dual-effect | L12/F6229, L10/F2930, L13/F10231, L11/F793 |
-| S2 | Article-ish | L14/F1949, L13/F10231, L5/F383, L11/F12690 |
-| S3 | Content-ish | L11/F292, L11/F793, L11/F6131, L13/F568 |
-| S4 | Competing (`a`) | L13/F10304, L14/F1949, L13/F9129, L11/F292 |
+![The sparse S1 intervention is an extreme public endpoint. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
 
-: Feature sets used in the six-cell sweep. IDs are PT+affine Gemma Scope 2.
-{#tbl-families}
+The magnitude is created at the latent-to-symbol boundary. On 19 bracketed
+prompts, gains separated by at most 0.0039 straddle the article argmax. The
+free-path noun distribution moves 0.938 TV and article substitution alone
+moves 0.939, with vector cosine 0.9998. Over that same interval, fixed
+`a` and fixed `an` distributions each move only 0.014 TV (@fig-s1 C). A
+16-fold tighter float32-head search yields the same qualitative result, showing
+that coarse bfloat16 logit levels are not the mechanism. Exact two-article
+mixtures from \(\tau=0.1\) to 1 replace the greedy discontinuity with graded
+public influence, but the policy component remains aligned with the total.
 
-**Six-cell sweep.** We evaluate all 20 held-out E1 prompts for S1 at
-\(1.5\times\), \(3\times\), and \(5\times\); for S2, S3, and S4 at
-\(5\times\); and for the S1 random control at \(5\times\). Intervention-off
-cells are shared across handles. Attention is recomputed. Forced cells
-keep the intervention active at \(P\) during noun prediction. The original
-S1 \(5\times\) factorial also ran `circuit-tracer`'s
-`freeze_attention=True` path as an ablation.
+This is a transmission result, not evidence against latent planning. S1 may
+reflect future-relevant state at the pre-article position. What the assay rules
+out is interpreting its large free-generation noun effect as comparably large
+private persistence.
 
-**Replay, rescue, and prompt-aligned boundary.** On the same 20 prompts we
-replay the treated article with S1 off and restore the baseline article
-with S1 on. Separately, for each held-out prompt we binary-search S1 gain
-over \([1,5]\) for the zero crossing of
-\(\operatorname{logit}(\texttt{an})-\operatorname{logit}(\texttt{a})\).
-At the final below/above bracket, whose width is the search tolerance
-\(0.0039\) rather than an estimated physical transition width, we evaluate
-both inserted articles under greedy decoding.
+## Target information can remain privately effective
 
-**Precision and stochastic-policy audit.** We record every relevant tensor
-dtype, recompute final-head logits in float32, and use dense native/float32
-grids around three fixed crossings. At each prompt's original boundary we
-then replace greedy article choice by temperatures
-\(\tau\in\{0.1,0.25,0.5,1\}\), evaluating both fixed-article branches and
-the resulting policy mixture exactly.
+Public dominance in S1 does not imply that a fixed article blocks upstream
+influence. A dense residual sensitivity reference first establishes
+reachability: on held-out same-article pairs, a target residual patch changes
+the target-minus-source noun logit by \(6.44\ [4.19,10.06]\), versus 0.14
+for matched-norm random directions.
 
-**Article-prefix baseline.** Independently of sparse features, we insert
-`a` versus `an` on the same 20 held-out prompts and on 95 released
-`an`-target occupation prompts from a broader screen, using a
-transformers-only forward with no transcoder.
+More conservative natural-state-derived directions provide the primary private
+evidence. At 270M and native strength, fixed-article target-minus-source movement
+is \(0.77\ [0.47,1.13]\) logits for 12 between-class pairs and
+\(0.96\ [0.67,1.27]\) for 12 within-class pairs. Wrong-target effects are 0.15 and
+0.13; sign reversal moves the contrast in the opposite direction. The
+greedy article changes on 0/24 pairs, so the observed greedy free-path changes
+survive article fixing. Under \(\tau=0.1\), public TV is 0.002 or less while
+private TV is 0.043--0.064, depending on condition. At \(\tau=1\), a
+graded public component also appears, so these patches are private-dominant at
+low temperature rather than exclusively private under every policy.
 
-**Synthetic method check.** Two known autoregressive mechanisms with eight
-occupation cues share vocabulary and article--noun coupling. In the
-mediated mechanism, \(I\) changes only article logits. In the direct
-mechanism, \(I\) also injects a persistent plan bias that continues to
-move the noun after the article is fixed. Acceptance requires near-zero
-matched-prefix leftover for the mediated model and large leftover TV
-under inserted `a` (\(\ge 0.40\)) with a non-collapsing \(k\)-curve for
-the direct model.
+The normalized assay replicates private target influence at Gemma 3 1B. Effect
+sizes do not increase monotonically with scale, and we make no scale-law claim.
+Together with target, wrong-target, reverse, and random controls, the result
+establishes a second causal endpoint: target-relevant upstream state can affect
+the noun while visible article identity is held constant. S1 and the residual
+patches need not implement the same mechanism; they demonstrate that both
+routes are available in the model-task system.
 
-**Earlier sensitivity checks.** Appendix F reports cross-token propagation and
-the prior article-position residual reference on disjoint four/four pairs.
-
-**S2 forensics and feature decomposition.** We reanalyze S2's free and
-fixed-`an` cells for orthographic article-class consistency, forced-prefix top-1
-stability, and the seven pre-specified twin contrasts. A continuation is
-consistent if the greedy article is `a` or `an` and the following noun's first
-letter matches that article class. This is a task-specific orthographic
-audit, not a general English grammaticality test; all released occupation
-nouns were manually audited for exceptions. We then run the four S2 features
-individually and in four leave-one-out combinations on the same 20
-held-out prompts. This decomposition is **exploratory**: the principal
-carrier is identified and evaluated on the same 20 prompts. For that
-feature we freeze every eligible nonselected same-layer control matched by
-mean activation on the eight selection prompts; sparsity leaves four
-eligible controls, fewer than the 20 requested, so the empirical
-resolution is no better than \(p=0.20\).
-
-**Pre-article public/private factorial.** Source and target cues share an
-occupation sentence and name two consonant-initial lexical alternatives.
-We patch the complete target-cued decoder-layer output residual at the
-original pre-article position \(P\), not at the article position. Layer
-selection uses four fixed development pairs under inserted `a`. Layer 12
-is then evaluated on 12 held-out pairs under both inserted `a` and `an`,
-against ten matched-norm random directions per pair. Primary readouts are
-paired target-minus-random \(\Delta\Delta\), full-vocabulary TV, baseline
-lexical gap, target rank, target top-1 rate, and the public/private
-interaction versus the random-interaction distribution. All 16 pairs are
-same-`a` class, so inserted `an` is mismatched for both alternatives.
-Development and test pairs are disjoint.
-
-**Natural-state-derived residual regimes and controls.** To remove explicit target-noun
-cues, source and target prompts use natural occupation descriptions. We
-select one pooled layer on eight development pairs, then evaluate 12
-cross-article-class and 12 same-article-class pairs. For every pair we
-patch the target residual, a sign-reversed residual, the reverse-direction
-patch, a shuffled wrong target, and ten matched-norm Gaussian directions.
-We separately report target-logit enhancement, source-logit suppression,
-their probabilities, occupation-vocabulary mass, article changes, and
-fixed-article TV.
-
-**Correctness-preserving synonym carriers.** We derive a lexical-realization
-task from the released `a/an` occupation domain [@hanna2026planningdata]. Each
-item fixes one occupational meaning but admits two correct synonyms; for
-example, `teacher`/`educator` crosses `a` to `an`, whereas
-`doctor`/`physician` remains within `a`. We separate donor construction from
-evaluation. Source and target donors explicitly name the intended synonym in
-otherwise matched templates. The evaluated prompt contains an unrelated
-occupation-format demonstration followed by the shared occupational definition;
-it names neither tested synonym, initial, nor lexical constraint, so both
-synonyms remain valid while `a/an` remains the supported mediator domain. We reuse the six between-article
-and eight within-`a` independent semantic families selected by the prior
-outcome-blind lexical screen; reverse directions and closely overlapping
-definitions remain one family.
-
-At the pre-article position we add the same donor-derived direction to the
-neutral evaluated state
-in both regimes,
-
-$$
-h_P^{(\ell)} \leftarrow h_{P,\mathrm{neutral}}^{(\ell)}
- + s\left(h_{P,\mathrm{target\ donor}}^{(\ell)}-h_{P,\mathrm{source\ donor}}^{(\ell)}\right),
-\qquad s\in\{0.5,1,1.5\}.
-$$
-
-For each held-out semantic family, layer selection excludes that semantic family and
-maximizes the equally weighted mean fixed-target-article lexical effect across
-the remaining between/within families. All folds select layer 17/25. We then
-measure local target-minus-source efficacy, wrong-target and sign-reversed
-controls; greedy article changes; and the
-conditional `a/an` public/private vector decomposition at
-\(\tau\in\{0.1,0.25,0.5,1\}\). Primary inference resamples semantic families.
-The pre-existing layer-14 choice from disjoint natural pairs is retained as a
-transfer baseline, but it fails local efficacy and is not used for the route
-claim.
-
-**Attribution-to-channel calibration.** The 32-feature held-out calibration
-crosses article and future-content graph-score strata. Outcomes include
-article-margin movement, free-path total TV, token-substitution TV,
-matched-prefix leftover TV, signed fixed-article target-logit and
-target-minus-source effects, and continuous conditional-policy public effects.
-Selection and test
-occupations remain disjoint. We repeat this protocol independently at 1B with
-eight features per stratum and the same \(5\times\) single-feature gain. The
-matched signed analysis retains all features rather than filtering them by
-held-out mediator outcomes. Both scales use feature-level bootstrap and
-leave-one-feature-out prediction. For the public gain law, we compare
-attribution alone, attribution plus baseline margin susceptibility, and the
-same predictor multiplied by intervention-off branch leverage.
-
-**Cross-scale sparse and residual assays.** On Gemma 3 1B PT with the matched
-affine Gemma Scope 2 CLT, we first repeat the frozen top-four, \(5\times\)
-selection recipe. We then diagnose the first stage on the eight development
-occupations using \(k\in\{4,8,16,24\}\) and gains
-\(g\in\{2,5,10,20\}\). A corrected dual-effect ranking requires positive
-attribution to the `an`-minus-`a` margin and to the future noun. We freeze the
-smallest development operating point reaching mean margin movement 3.0 logits;
-this selects \(k=24,g=20\), close to the 270M S1 reference of 3.3125. The 20
-held-out prompts then receive the complete six-cell assay. We separately repeat
-the search over \(k\in\{1,2,4,8,12,16,20,24\}\) and gains from 1.25 to 20,
-maximizing development margin movement subject to frozen constraints on
-mediator-support validity, mean KL, article mass, and feature count. The chosen
-frontier point receives a held-out six-cell assay and a conditional stochastic
-decomposition over all 20 prompts at temperatures \(0.1,0.25,0.5,1\). We audit 1B CLT
-reconstruction, sparse/affine-skip norms, task-logit reconstruction, and one
-representative graph at 1,200 nodes versus its full active graph. We separately repeat
-the natural-state-derived residual protocol without a CLT: all-layer selection on eight
-development pairs, then 12 cross-class and 12 same-class held-out pairs at
-strengths \(0.5,1,1.5\). Stochastic decompositions condition the article
-policy on `a`/`an` at temperatures \(0.1,0.25,0.5,1\).
-
-**Second mediator task.** We use the pinned `is_are/data/animals_dataset.csv`
-from *Latent Planning Emerges with Scale* at repository commit
-`993cff5` [@hanna2026planningdata]. For each of ten animal categories, source and
-target prompts preserve the initial count while changing the subtraction:
-\(4-3=1\to4-1=3\) crosses `is` to `are`, whereas
-\(6-3=3\to6-1=5\) remains within `are`. Cats and dogs select one pooled layer;
-the other eight animals are held out. At both scales we patch the target-prompt
-residual into the source prompt, clamp the shared formatting-space token, and
-compare number-token distributions under free, fixed-`is`, fixed-`are`, and
-conditional stochastic verb policies at strengths \(0.5,1,1.5\). This task uses
-the released prompts exactly; no synthetic arithmetic examples are introduced.
-
-**Uncertainty.** Primary intervals are prompt-level nonparametric
-bootstrap intervals with 10,000 resamples. The 19 prompts on which S1
-\(5\times\) changes the article are labeled descriptive. The article-position
-reference uses disjoint four/four development/test pairs; the pre-article
-factorial uses disjoint four/12 pairs.
+![Natural-state-derived target residuals alter the intended noun under a fixed article and exceed wrong-target and sign-reversed controls. The intervention establishes private-route capacity at both Gemma scales, not a spontaneous carrier switch.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-private width=82%}

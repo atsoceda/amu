@@ -1,90 +1,65 @@
 # Introduction
 
-Mechanistic interpretability increasingly asks whether language models
-*plan*: whether internal representations of future content causally shape
-earlier tokens that license that content [@hanna2026latent]. On
-article--noun tasks such as choosing \(a\) versus \(an\) before an
-occupation noun, sparse features that affect both article logits and
-future-noun attributions look like planning features. Under free
-generation, amplifying them can flip `a pilot` into `an aviator`.
+Language-model outputs are usually treated as readouts of internal computation.
+In an autoregressive model they are also interventions on the model's future:
+each sampled token is appended to context and processed again. This feedback
+creates two causal routes from an internal state to a later prediction. Influence
+can remain **private**, propagated through contextual hidden state, or become
+**public**, projected into a generated symbol and returned as a high-leverage
+input. A later-token change observed under free generation does not say which
+route carried it.
 
-That observation does not identify leftover internal control of the noun.
-In an autoregressive model the written article is part of the input to
-noun prediction. An intervention can change the noun solely by changing
-the article. We call this **generated-token mediation**. Direct
-persistence is not architecturally impossible---later positions can attend
-to earlier residual states---but free-generation evidence cannot separate
-it from self-generated feedback.
+This ambiguity is acute in work on latent planning. On prompts that require an
+article followed by an occupation, internal features can influence both the
+article and the future noun [@hanna2026latent]. Amplifying such a feature may
+rewrite `a pilot` as `an aviator`. That is consistent with persistent latent
+control of the noun. It is equally consistent with a simpler closed loop: the
+intervention changes `a` to `an`, and the generated article changes which noun
+the model predicts next. The two mechanisms agree under free generation and
+diverge only when article identity is controlled.
 
-The required measurement is a six-cell design. More generally, a mechanistic
-claim about a multi-token intervention must climb a **causal-validity ladder**:
+We develop an intervention framework that separates them. A six-cell assay
+crosses intervention off/on with free generation, forced `a`, and forced `an`.
+It decomposes the downstream probability-vector change into a component
+reproduced by public-token substitution and a matched-token component that
+persists privately. A four-stage **causal-validity ladder** additionally requires
+that a candidate signal be locally causal, that the mediator states induced by
+the intervention lie within the assay's support, and only then that its
+transmission route be interpreted.
 
-$$
-\text{candidate signal identified}
-\ne
-\text{locally causal}
-\ne
-\text{mediator-support valid}
-\ne
-\text{transmission identified}.
-$$
+The experiments reveal a coherent organization of causal state.
 
-Decoders, probes, attribution graphs, and sparse feature labels can nominate a
-candidate signal without being equivalent forms of representational evidence.
-An intervention that moves its selected local quantity establishes the second
-rung. The third asks whether the mediator state space used by the assay covers
-the states induced by the intervention. Only then can a factorial assay identify
-whether later influence is public-token relayed, privately persistent, hybrid,
-or negligible. For each prompt we run the
-intervention off and on, and for each of those we let the model write the
-article or we insert `a` or `an`. The intervention remains active at the
-original pre-article position during noun prediction. The free-generation
-change in the noun distribution then splits, as probability vectors, into
-a piece reproduced by inserting the treated article with the intervention
-off and a leftover that remains when the visible article is held fixed.
-Those two questions---what signal is available before the article, and how a
-later effect is transmitted---are independent (@fig-schematic). Token
-mediation does not disprove a latent plan; it shows that the plan, if any,
-is not identified by free generation.
+1. **Public projection can dominate apparent future-token control.** In Gemma 3
+   270M, an attribution-selected sparse intervention produces a 0.893-TV noun
+   rewrite, of which 0.891 is reproduced by article substitution; only 0.028 TV
+   remains with the treated article fixed. Article replay and rescue recover the
+   corresponding top noun on every one of 20 held-out prompts.
+2. **Private target information remains causally effective.** Natural-state-
+   derived residual patches move target nouns while article identity is fixed at
+   both 270M and 1B. Public mediation is therefore not the only available route.
+3. **Routing is mediator-relative.** In a neutral-prompt 1B synonym assay, both
+   lexical alternatives remain correct. When the alternatives require different
+   articles, target-aligned influence is public-dominant; when both require `a`,
+   it is private-dominant. All 14 semantic families have the predicted sign.
+4. **Public effects have closed-loop gain.** Once a distinction enters the
+   public route, its downstream magnitude is the product of mediator-policy
+   movement and continuation-branch leverage. At 270M, local causal pressure,
+   decoder susceptibility, and leverage predict held-out public effects far
+   better than attribution alone.
 
-**Contributions.** On pretrained Gemma 3 270M with Gemma Scope 2 affine
-cross-layer transcoders [@gemmascope2; @hanna2025circuittracer], we:
+The resulting claim is not that hidden computation is absent, nor that the
+model spontaneously chooses between two independent memories. Rather, a
+generated token is a **lossy public projection** of future-relevant state.
+Distinctions visible in that projection can acquire a public causal route;
+distinctions collapsed by it cannot travel through token identity and remain
+target-aligned through private context in our controlled assay. Mechanistic
+claims about future tokens must therefore identify both **routing**---where the
+causal influence travels---and **gain**---how the decoding loop amplifies it.
 
-1. **Causal standard.** Introduce the four-stage ladder and a six-cell assay
-   with the exact vector identity
-   \(E_T=E_M+E_R\) that decomposes a later-token intervention contrast into
-   token substitution and matched-prefix leftover.
-2. **Mechanism.** Show that an attribution-selected sparse S1 intervention
-   is relay-dominant and decoding-boundary-amplified: treated-article replay
-   and baseline-article rescue recover the corresponding top-1 noun on 20/20
-   prompts, leftover TV is \(0.028\), and a prompt-aligned article-boundary
-   jump of \(0.938\) TV under greedy decoding is almost entirely token
-   substitution, while either fixed-article path moves \(0.014\). A
-   float32 final-head audit shows that the previously observed
-   \(0/0.125\)-logit boundary steps are bfloat16 quantization, but the
-   relay-dominant result survives a 16-fold tighter boundary search and
-   stochastic article policies from temperature \(0.1\) to \(1\). We separate
-   the elementary two-branch identity from its empirical use: held-out local
-   calibration, decoder susceptibility, and branch leverage jointly predict
-   public effects substantially better than attribution alone.
-3. **Generality and stress tests.** Natural-state-derived residual patches
-   establish target-relevant private influence at 270M and 1B without a
-   monotone scale effect. A correctness-preserving 1B synonym assay holds
-   semantic validity constant and varies whether `a/an` can encode the lexical
-   distinction; one cross-validated residual-patch procedure produces a
-   neutral-evaluation public/private route double dissociation across independent semantic
-   families. At 1B, sparse interventions also fail at different ladder
-   stages: one is weak, one exits the binary article support, and a valid
-   frontier handle reveals low-amplitude hybrid transmission under stochastic
-   policies. Reconstruction and graph-coverage audits bound instrumentation
-   explanations.
-
-Family comparisons, S2 forensics, random controls, propagation, and a
-synthetic polarity check are supporting controls. The contribution is an
-identification standard together with evidence that, in this model and
-task, noun prediction is separately causally sensitive to visible article
-identity and to target-related contextual information from the preceding
-position. The S1 case identifies a high-gain public relay; the residual
-patch establishes private-route capacity.
-The synonym assay further shows that mediator-relative distinguishability can control
-which route dominates when both lexical outcomes remain correct.
+This extends prior distinctions between decodable and causally used planning
+signals [@ma2026plan], and complements work showing that hidden state beneath
+fixed visible scratchpad tokens can matter [@shih2026registers]. Generated-token
+mediation itself is not new [@vig2020mediation; @paul2024reasoning]. Our
+contribution is to turn it into an operational validity standard for internal
+mechanistic interventions and to show public dominance, private persistence,
+and mediator-relative route reversal within one controlled setting.

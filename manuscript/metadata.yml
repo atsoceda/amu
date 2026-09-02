@@ -1,47 +1,37 @@
-title: "The Output Is Part of the Circuit: A Causal-Validity Ladder for Autoregressive Interventions"
+title: "The Output Is Part of the Circuit: Public and Private Causal Routes in Autoregressive Models"
 author:
   - name: Anonymous Authors
     affiliations:
       - name: Anonymous Institution
 abstract: |
-  An autoregressive language model does not merely compute a hidden state and
-  then reveal it through text: its own outputs become part of its future causal
-  environment. This creates two distinct ways for an internal intervention to
-  affect a later prediction. Information can persist through the model's hidden
-  computation, or it can be externalized into a generated token and then
-  re-enter the network as a high-leverage input. We develop an intervention
-  framework that separates these routes and ask which one actually carries
-  apparent "future-token control."
+  Autoregressive generation closes a causal loop: a model's output becomes part
+  of its next input. A future-relevant intervention can therefore act through
+  two routes. Its influence may persist privately in contextual state, or be
+  projected into a public token and re-enter the model through feedback. We
+  introduce a six-cell intervention assay and a four-stage causal-validity
+  ladder that distinguish these routes.
 
-  In Gemma 3 270M, a sparse feature intervention that seems to coordinate an
-  article with a future noun is overwhelmingly carried by the generated article
-  rather than by strong persistent latent control. Replaying the treated article
-  reproduces the later noun change, restoring the baseline article rescues the
-  original noun, and the residual effect under a fixed article is small. Near the
-  article decision boundary, a tiny additional change in intervention strength
-  produces an approximately 0.94-TV jump in the noun distribution, while the
-  fixed-article paths barely move. The large behavioral effect is therefore
-  created at a latent-to-symbol handoff: the intervention changes a discrete
-  public action whose downstream continuation branches already differ
-  enormously.
+  In Gemma 3 270M, an attribution-selected sparse intervention that rewrites
+  `a pilot` as `an aviator` is almost entirely public. Replaying the treated
+  article reproduces the noun, restoring the baseline article rescues it, and
+  token substitution accounts for 0.891 TV of a 0.893-TV total change, leaving
+  0.028 TV under the fixed treated article. Near the article boundary, a gain
+  change of at most 0.0039 produces a 0.938-TV noun jump while either
+  fixed-article path moves only 0.014. Yet private target information is also
+  causally effective: natural-state-derived residual patches alter later noun
+  predictions while the article is fixed at both 270M and 1B.
 
-  At the same time, the model is not limited to this public relay. Independent
-  residual-state interventions at the pre-article position can bias later noun
-  prediction toward specific targets even when the article itself is clamped,
-  and analogous private influence is present at both 270M and 1B. In a
-  semantically valid neutral-prompt synonym assay at 1B, a donor-derived
-  residual direction yields a double dissociation: lexical alternatives that require different
-  articles are transmitted primarily through the public article, whereas
-  alternatives sharing `a` retain target-aligned influence in private state.
-  These results
-  suggest that causal influence in autoregressive models is distributed across a
-  closed loop linking internal state, decoding policy, generated symbols, and
-  later computation. We formalize this with a causal-validity ladder and a gain
-  decomposition showing that downstream public effects depend jointly on local
-  causal pressure, decoder susceptibility, and continuation-branch leverage. The
-  resulting picture is not simply "features cause future tokens," but a more
-  general account of where causal state resides and how it is transformed during
-  generation.
+  A neutral-prompt synonym assay at 1B reveals mediator-relative routing. When
+  two correct alternatives require different articles, target-aligned influence
+  is public-dominant (0.189 public versus 0.019 private); when both require `a`,
+  it is private-dominant (approximately 0 public versus 0.093 private). Every one
+  of 14 semantic families has the predicted route sign. Thus a generated token
+  acts as a lossy public projection: distinctions it expresses can recruit a
+  public relay, while distinctions it collapses remain causally available in
+  private context in this controlled assay. Finally, public effect magnitude
+  factorizes into mediator-policy movement and continuation leverage. Together,
+  the results replace undifferentiated "future-token control" with an account of
+  routing and gain in the autoregressive feedback circuit.
 keywords:
   - mechanistic interpretability
   - latent planning

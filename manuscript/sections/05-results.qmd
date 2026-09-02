@@ -1,474 +1,96 @@
-# Results
+# Mediator-relative routing
 
-## The article is already a strong noun lever
+The two endpoints leave a deeper question: what determines whether an
+intervention recruits the public route? The neutral synonym assay changes one
+property---whether article identity distinguishes the intended lexical
+alternatives---while keeping both alternatives correct.
 
-With the intervention off, inserting `an` versus `a` moves the
-full-vocabulary noun distribution by TV \(0.937\) \([0.891,0.975]\) on
-the 20 held-out prompts. A transformers-only baseline, with no sparse
-intervention, gives TV \(0.940\) \([0.893,0.976]\) on the same 20 prompts
-and TV \(0.975\) \([0.964,0.983]\) on 95 released `an`-target occupations;
-the top-1 noun changes on every prompt in both splits. Any sparse handle
-that flips the article therefore has a large, generic continuation
-channel available before leftover internal control is considered.
+All 14 donor-derived directions pass held-out local efficacy. At native
+strength, fixed-target-article target-minus-source movement is
+\(0.406\ [0.281,0.604]\) logits across six between-class families and
+\(0.414\ [0.297,0.555]\) across eight within-class families. Wrong-target
+controls yield 0.125 and 0.008; reversed directions yield -0.385 and -0.344.
+Intervention-off `a/an` policy mass averages 0.909 (minimum 0.854) and remains
+0.899 after intervention. The comparison therefore clears local efficacy and
+mediator-support validity without the source-initial conflict of the earlier
+prompt construction.
 
-## Free generation looks coordinated; replay and rescue split it
+Routing then reverses by mediator equivalence class (@fig-routing). For
+between-class alternatives, every family increases the target-article policy;
+mean target-article movement is 0.182 and 2/6 switch the greedy article. At
+\(\tau=1\), public TV is \(0.176\ [0.108,0.243]\) and private TV is only
+\(0.021\ [0.012,0.033]\). Their target-aligned effects are
+\(0.189\ [0.065,0.326]\) and 0.019. For within-class alternatives, no family
+switches the article and mean policy movement is 0.009. Public TV is
+\(0.009\ [0.003,0.018]\), whereas private TV is
+\(0.061\ [0.046,0.075]\). More importantly, public target-aligned influence is
+approximately zero \(-0.001\ [-0.003,0.001]\), while private target-aligned
+influence is \(0.093\ [0.062,0.124]\).
 
-Amplifying S1 at \(5\times\) moves every held-out prompt to `an` and
-changes the greedy noun on 19/20 prompts (@tbl-packaging). Concrete twins
-include `a pilot`\(\rightarrow\)`an aviator` and
-`a lawyer`\(\rightarrow\)`an attorney`. Matched random features and S3 do
-not produce this switch. Those free-generation rates show that S1 is a
-specific handle on orthographically article-class-consistent completions. They do not identify
-the transmission route.
+![Mediator-relative route recruitment in Gemma 3 1B. A: between-class synonyms differ in public article identity; within-class synonyms do not. B: each family's signed route contrast \(R=P-H\) has the predicted sign. C: group estimates show both arms of the double dissociation.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
 
-| Condition | \(N\) | \(\Delta\) art.\ logit favors `an` | Noun token preserved | Class shift | Wrapper-like | Package-like | Twin match |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| S1 \(5\times\) | 20 | 1.00 | 0.05 | 0.95 | 0.00 | 0.95 | 0.35 |
-| S1 control | 20 | 0.70 | 1.00 | 0.00 | 0.00 | 0.00 | 0.00 |
-| S3 \(5\times\) | 20 | 0.70 | 0.95 | 0.05 | 0.00 | 0.05 | 0.00 |
+The primary signed simple effects support a double dissociation. Between
+classes, public-minus-private target influence is
+\(0.170\ [0.049,0.296]\), exact one-sided sign-flip \(p=0.0156\). Within class,
+private-minus-public influence is \(0.094\ [0.060,0.126]\), \(p=0.00391\).
+Every one of six between-class families has \(P-H>0\), and every one of eight
+within-class families has \(P-H<0\) (@fig-routing B). The between-minus-within
+route interaction is \(0.264\ [0.137,0.399]\); exact family-label permutation
+gives \(p=0.00033\). It remains positive at all tested strengths and
+temperatures.
 
-: Free-generation metrics (held-out occupations). Wrapper-like = generated
-article moves and noun token stays; package-like = article-class-consistent
-switch. These rates do not identify leftover noun control.
-{#tbl-packaging}
+The result supports a precise causal statement. When article identity can
+express the distinction between two correct alternatives, the intervention
+recruits a target-aligned public relay. When the article maps both alternatives
+to one equivalence class, token identity cannot carry their lexical difference,
+and target-aligned influence persists privately. A generated token is therefore
+a lossy public projection relative to the downstream distinction of interest.
+The experiment does **not** show that a natural online mechanism spontaneously
+chooses a carrier: the residual direction is explicitly constructed from named
+donors, and between- and within-class sets contain different semantic families.
 
-The six-cell split does. S1 at \(5\times\) selects `an` on 20/20 prompts.
-Inserting that treated article with the intervention **off** reproduces
-the S1-on top-1 noun on 20/20 prompts. Across all 20 prompts, total TV is
-\(0.893\), token-substitution TV is \(0.891\), and matched-prefix leftover
-TV is \(0.028\) \([0.021,0.035]\) (@tbl-mediation; @fig-mediation A).
-Cosine of \(E_M\) with \(E_T\) is \(0.949\) \([0.849,1.000]\); cosine of
-\(E_R\) with \(E_T\) is \(0.124\) \([-0.112,0.355]\). Reconstruction
-\(\|E_T-(E_M+E_R)\|_1\) is numerically zero (implementation check).
-Frozen attention in the original S1 factorial yields the same qualitative
-split.
+# Closed-loop gain
 
-| Attention | Total TV | Token-substitution TV | Leftover TV under treated article | Treated-token top-1 |
-| --- | ---: | ---: | ---: | ---: |
-| Recomputed (primary) | 0.893 | 0.891 | 0.028 [0.021, 0.035] | 1.00 |
-| Frozen (ablation) | 0.893 | 0.891 | 0.026 [0.020, 0.033] | 1.00 |
+Mediator visibility explains which distinctions can travel publicly. Equation 1
+explains how large the public effect becomes once that route is engaged. The
+effect is the product of policy movement \(|q_1-q_0|\) and continuation leverage
+\(TV(Y_{an},Y_a)\). Policy movement itself depends on local intervention
+pressure, the baseline article margin, and temperature. Thus a feature's
+downstream effect is not a property of the feature alone.
 
-: S1 \(5\times\) six-cell split on all 20 held-out prompts. Intervals are
-prompt-bootstrap 95\% intervals.
-{#tbl-mediation}
+Across 32 held-out 270M features, article attribution predicts local
+intervention-induced margin change (Spearman
+\(\rho=0.530\ [0.200,0.772]\)). Attribution alone does not predict public TV
+under combined feature-and-prompt holdout at \(\tau=0.1\)
+(\(R^2=-0.547\)). Susceptibility alone, leverage alone, activation magnitude,
+and a constant baseline also have negative \(R^2\). Calibrating attribution to
+local margin pressure and composing it with decoder susceptibility gives
+\(R^2=0.827\); adding intervention-off branch leverage gives 0.840, with
+calibration slope 0.960. The full composition remains
+\(R^2=0.840\)--0.875 across \(\tau=0.1\) to 1. Because `a/an` branch leverage
+is uniformly large, its incremental gain over susceptibility is modest; the
+task primarily stresses decoder sensitivity.
 
-The remaining forced cell supplies the complementary rescue. Restoring the
-baseline article while leaving S1 active restores the baseline top noun on
-20/20 prompts; the on/off distributional difference under that restored
-article is TV \(0.030\) \([0.025,0.036]\) (@fig-mediation B). Thus the
-treated article is sufficient to phenocopy the treated top noun, and the
-baseline article is sufficient to rescue the baseline top noun despite the
-upstream intervention. The leftover is not exactly zero: on seven listed
-twins, target-minus-source \(\Delta\Delta\) is \(0.018\)
-\([-0.071,0.107]\) under inserted `a` and \(0.089\) \([0.027,0.152]\)
-under inserted `an`.
+![Observed and predicted public effects under held-out feature--prompt evaluation. Attribution supplies local causal pressure; decoder susceptibility and continuation leverage convert it into downstream public influence. Transfer is strong at 270M and weak for the available 1B sparse handles.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=82%}
 
-![S1 vector split, treated-token phenocopy and baseline-token rescue, and the prompt-aligned article-boundary jump under greedy decoding.](manuscript/figures/fig_mediation_decomposition.png){#fig-mediation width=92%}
+The identity itself is the law of total probability, not the novelty. The
+empirical contribution is identifying its mechanistically meaningful factors,
+measuring them separately, and showing out-of-sample prediction beyond simple
+baselines. The same attribution calibration transfers weakly at 1B, where the
+full model is not reliably predictive under combined holdout. We therefore claim
+a validated 270M gain account, not a universal predictor.
 
-## Prompt-aligned boundaries expose discrete causal amplification
+# Validity stress test at 1B
 
-We binary-search each prompt's S1 gain until its article margin is
-bracketed by two gains separated by at most \(0.0039\), the chosen search
-tolerance rather than an estimated physical width. Nineteen of 20 prompts
-cross between gains 1 and 5. Under greedy decoding, the cross-boundary
-noun change is TV \(0.938\) \([0.889,0.978]\); token substitution alone is
-TV \(0.939\) \([0.889,0.977]\), with cosine \(0.9998\) \([0.9996,0.9999]\)
-to the total (@fig-mediation C). Over the same interval, the fixed-`a`
-distribution moves TV \(0.014\) \([0.009,0.019]\) and the fixed-`an`
-distribution moves TV \(0.014\) \([0.010,0.017]\). The existence of an
-argmax discontinuity is architectural and therefore unsurprising; the
-empirical result is that this particular boundary exposes an approximately
-\(0.94\)-TV continuation change while the two fixed-prefix paths remain
-locally smooth. Greedy decoding therefore converts a tiny continuous
-change into a nearly maximal downstream jump: a discrete causal
-amplification, not a comparably large persistent latent rewrite.
-
-The equal-looking endpoint margins in the original table require a
-correction. Model, CLT, residual, and native logits are bfloat16; the
-native dense grids contain only three distinct article margins. With the
-same upstream states but a float32 normalization/unembedding readout, the
-three audited grids contain 43 distinct margins across 51 gains and all
-three cross zero. A float32 binary search narrows the bracket to
-\(0.000244\); cross-boundary free TV remains \(0.992\)
-\([0.989,0.997]\), whereas fixed-`a` and fixed-`an` TV are \(0.009\) and
-\(0.004\), respectively. Thus \(0/0.125\) was a finite-precision artifact,
-not evidence for a physical logit quantum; the high-gain argmax relay is
-the robust result.
-
-Nor is relay dominance confined to greedy decoding. Across article
-temperatures \(0.1,0.25,0.5,1\), total TV declines smoothly from \(0.456\)
-to \(0.057\), and the component produced by changing only the article
-policy declines from \(0.454\) to \(0.055\). The matched-policy leftover
-stays near \(0.015\); policy/total vector cosine ranges from \(0.999\) to
-\(0.957\). At \(\tau=1\), `a`/`an` retain about 90% of article probability
-mass. The public route is therefore a temperature-dependent gain channel,
-not merely an argmax pathology (@fig-boundary-policy).
-
-![Finite-precision audit and stochastic article-policy decomposition. Float32 final-head readout resolves the native bfloat16 plateaus; policy-mediated TV tracks total TV across temperature while the matched-policy leftover remains small.](manuscript/figures/fig_boundary_precision_policy.png){#fig-boundary-policy width=92%}
-
-## Supporting controls: dose, families, and exploratory S2 localization
-
-At \(1.5\times\), S1 writes `an` on only \(2/20\) prompts and total TV
-collapses to \(0.065\). The leftover under inserted `an` is already
-present: TV \(0.015\) and twin \(\Delta\Delta\) \(0.098\)
-\([0.027,0.161]\). At \(3\times\), free `an` rises to \(0.90\), total TV
-to \(0.802\), and token substitution still dominates. The dramatic
-free-generation rewrite is therefore gated by whether the gain is large
-enough to engage the article boundary of TV \(0.937\). The small leftover
-under `an` is not created only by \(5\times\).
-
-Appendix H compares \(5\times\) handles. Only S1 produces a large
-free-generation article+noun switch, and that switch remains
-token-substitution dominated. S3 does not move nouns. S2 never writes
-`an`; greedy strings often derail, but under fixed `an` all seven twins
-move toward their target (\(\Delta\Delta=+0.830\)). We classify S2 as
-**exploratory evidence for a sparse fixed-token, vowel-class-aligned
-effect mixed with free-generation disruption**. The S1 leftover under
-`an` overlaps the random control, so we do not claim a specific noun plan
-from that residual. An exploratory within-set decomposition identifies
-L5/F383 as the principal carrier on the same 20 evaluation prompts
-(Appendix I); it may encode vowel class, and only four matched controls
-exist (\(p=0.20\)).
-
-Appendices E--G establish cross-token reachability, stack sensitivity, and
-estimand polarity: S1 changes later CLT activations; a layer-12 full-residual
-reference moves target logits; and known article-only versus persistent
-generators yield leftover TV \(0\) versus \(0.667\), respectively.
-
-## Target-specific influence survives from the pre-article position
-
-The stronger pre-article reference tests the missing
-\(t\rightarrow t+2\) route. Layer 12 is selected on four development
-pairs (Appendix J). On 12 disjoint same-article-class pairs, patching the
-target-cued full residual at \(P\) while inserting the shared native
-article `a` shifts the target-minus-source contrast by \(+1.339\) logits
-\([1.021,1.677]\), compared with \(+0.215\) \([0.081,0.357]\) for ten
-matched-norm random directions averaged within pair. The paired difference
-is \(D=1.123\) \([0.858,1.440]\) (@fig-public-private A). The mean
-full-vocabulary TV is \(0.073\) \([0.054,0.095]\). Before the patch the
-mean target-minus-source gap is \(-4.302\) logits
-\([-5.214,-3.422]\); the patch closes \(0.312\) \([0.265,0.371]\) of that
-gap and moves mean target rank from \(12.2\) to \(4.4\), with top-10 entry
-rising from \(8/12\) to \(11/12\). The target does not become top-1 on any
-held-out pair, so this is target-specific private-state capacity, not
-persistence-dominant behavioral control.
-
-The same patch remains target-aligned under inserted `an`:
-\(\Delta\Delta=+0.703\) \([0.526,0.875]\), versus \(+0.120\)
-\([0.029,0.215]\) for matched random directions; the paired difference is
-\(D=0.583\) \([0.417,0.761]\). Crossing public article with private patch
-yields a public effect of \(+0.609\) logits \([0.224,0.984]\) with the
-private patch off and \(-0.026\) \([-0.385,0.359]\) with it on
-(@fig-public-private B). The interaction is
-\(\Gamma=-0.635\) \([-0.839,-0.448]\). Matched random patches have a small
-positive interaction \(+0.095\) \([0.019,0.171]\); the paired
-target-minus-random interaction is \(-0.731\) \([-0.971,-0.498]\)
-(@fig-public-private C). Article-prefix compatibility therefore modulates
-the private target-state effect. Inserted `an` is mismatched for both
-consonant-initial alternatives, so the negative interaction may reflect
-grammatical mismatch, saturation, or support shifts toward other
-vowel-initial nouns; we do not interpret it as an allocation trade-off
-between two registers. Public token identity and private upstream state
-are separately intervenable and non-additive in this target-constructed
-reference. This does not show that a sparse feature allocates the same
-lexical state between those routes.
-
-![A pre-article target residual moves held-out nouns under a fixed visible article more than matched random directions; the raw \(2\times 2\) surface and the random-controlled interaction show that article-prefix compatibility modulates the private effect. Error bars are pair-bootstrap 95\% intervals.](manuscript/figures/fig_pre_article_public_private.png){#fig-public-private width=90%}
-
-## Natural-state-derived residuals isolate private influence but not a carrier switch
-
-Natural occupation descriptions reproduce target-specific private
-influence without naming the target noun. The pooled development sweep
-selects layer 12. Under a fixed article, target patches move the
-target-minus-source logit by \(0.776\) \([0.484,1.115]\) on 12
-cross-class pairs and \(0.964\) \([0.667,1.266]\) on 12 same-class pairs.
-Wrong-target patches yield only \(0.146\) and \(0.130\), respectively;
-sign-reversed patches move the contrast in the opposite direction. The
-effect decomposes into target-logit enhancement (\(+0.526\) cross-class;
-\(+0.839\) same-class) plus smaller source suppression
-(\(-0.250\) and \(-0.125\)). Target probability rises in both regimes,
-while total occupation-vocabulary mass does not reliably increase.
-
-Crucially, the natural patch changes the greedy article on 0/12 pairs in either
-regime. Under greedy decoding, token-substitution TV is therefore zero and the
-observed free-path TV---\(0.049\) cross-class and \(0.059\) same-class---survives
-token fixing. The stochastic audit qualifies this statement: at
-\(\tau=0.1\), public TV is 0.002 cross-class and 0.000 same-class, but at
-\(\tau=1\) it rises to 0.063 and 0.059 while private TV remains 0.049 and
-0.064. The patch is private-dominant under low-temperature article policies,
-not exclusively private under every policy. This strengthens the evidence for
-a natural private route, but it
-does **not** reveal prompting regimes that reallocate causal state between
-public and private carriers. Same versus cross article class changes
-effect size, not channel identity (@fig-natural-regimes).
-
-![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes and outperform wrong-target and matched-norm controls; no greedy article switch occurs.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
-
-## Neutral synonym evaluation preserves the route double dissociation
-
-Both lexical realizations answer the same occupational definition, and the
-evaluated prompt now contains only an unrelated occupation-format demonstration
-and neither a first-letter instruction nor either synonym. Explicit source and target donors define a lexical residual direction,
-which is added to the neutral evaluated state rather than transplanted
-wholesale. Direct donor separation is positive in 13/14 families; critically,
-all 14 donor-derived directions have positive held-out local efficacy on the
-neutral evaluated prompt.
-Leave-one-semantic-family-out selection independently chooses layer 17 in every
-fold. At native strength, all 6/6 between-class and 8/8 within-class families
-clear local efficacy. The fixed-target-article target-minus-source effect is
-\(0.406\ [0.281,0.604]\) logits between article classes and
-\(0.414\ [0.297,0.555]\) within class. Wrong-target effects are 0.125 and
-0.008; sign-reversed directions are \(-0.385\) and \(-0.344\).
-Intervention-off `a/an` support is 0.909 on average (minimum 0.854), and remains
-0.899 after intervention, satisfying mediator-support validity.
-
-The route phenotype then separates sharply. At native strength, 2/6
-between-class patches switch the greedy article and all six increase the
-conditional target-article probability (mean \(0.182\)); 0/8 within-class
-patches switch the article and their mean policy movement is \(0.009\). At
-\(\tau=1\), between-class public TV is
-\(0.176\ [0.108,0.243]\), compared with private TV
-\(0.021\ [0.012,0.033]\). Within class, public TV is only
-\(0.009\ [0.003,0.018]\), while private TV is
-\(0.061\ [0.046,0.075]\). Distributional magnitude alone is insufficient, so
-we also project each vector onto the intended target-minus-source noun
-direction. The between-class public component is strongly target aligned
-\(0.189\) probability contrast, \([0.065,0.326]\)); its private component is
-0.019. Within class the public component is approximately zero
-(\(-0.001\ [-0.003,0.001]\)), while the private component is positive
-(\(0.093\ [0.062,0.124]\)).
-
-Define each family's route contrast as public TV minus private TV. The
-difference between the between- and within-article route contrasts is
-\(0.264\ [0.137,0.399]\) at native strength and \(\tau=1\); exact
-family-label permutation gives \(p=0.00033\). The target-aligned interaction is
-Both interactions remain positive at every tested strength and temperature
-(@fig-neutral-synonym-repair C).
-
-The simple effects support the stronger term *double dissociation* for the
-scientifically primary signed lexical projection. Between classes,
-public-minus-private target influence is \(0.170\ [0.049,0.296]\), exact
-one-sided sign-flip \(p=0.0156\). Within class, private-minus-public target
-influence is \(0.094\ [0.060,0.126]\), \(p=0.00391\). Every family has the
-predicted sign for both simple effects. The target-aligned result therefore
-independently establishes both arms. The evidence supports mediator-relative distinguishability:
-when article identity distinguishes two correct lexical alternatives, the
-intervention recruits a strong public relay; within one article-equivalence
-class, target-aligned influence remains private. It does not imply that all
-private state is transferred into the public token.
-
-We attempted the stricter paired test using the same source noun and semantic
-definition with both a same-article and cross-article target. Three frozen,
-outcome-blind construction banks contained 23, 22, and 70 candidate triples.
-Only the events/organization meaning passed all single-token, article-policy,
-and four lexical-preference rules (the exhaustive bank produced two source
-orderings of that one family). The dominant failures were article-policy
-mismatch and failure of the within-target prompt to favor its intended synonym.
-Because this falls below the predeclared 8--15-family target, we do not run or
-interpret a causal triad assay. This is a behavioral construction failure of the
-original first-letter task, not evidence against the route hypothesis.
-
-![Neutral-test synonym repair in Gemma 3 1B PT. Donor-derived directions are added to neutral evaluated states. Between-article distinctions are public-relay dominant, within-article distinctions retain target-aligned private influence, and the signed interaction remains positive across every patch strength and article-policy temperature. Error bars and bands are semantic-family bootstrap 95\% intervals.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-neutral-synonym-repair width=97%}
-
-## A closed-loop gain law predicts public influence
-
-Across 32 features selected on disjoint occupations, article attribution
-predicts induced article-margin change at 270M (Spearman \(\rho=0.530\),
-bootstrap 95\% CI \([0.200,0.772]\)) and transfers directionally at 1B
-(\(0.432\ [0.014,0.729]\)). This is evidence for local calibration, not by
-itself a channel label. The earlier TV comparisons also mixed signed,
-target-specific attributions with unsigned distributional distances. In the
-matched reanalysis, signed future attribution versus signed fixed-token
-target-minus-source change is \(0.270\ [-0.100,0.584]\) at 270M and
-\(-0.129\ [-0.451,0.225]\) at 1B; signed target-logit correlations are
-\(0.307\ [-0.047,0.594]\) and \(0.120\ [-0.279,0.473]\). Absolute attribution
-versus absolute target effect is also undetectable. These panels therefore do
-not reliably rank persistent target effects under this protocol, but their wide
-intervals do not establish independence or a general attribution failure.
-
-The public route admits a positive predictive account. Under a conditional
-two-article policy, let \(q_i=P(B=an\mid I=i)\) and let \(Y_a,Y_{an}\) be the
-intervention-off noun distributions under fixed articles. Then
-
-$$
-E_{\mathrm{public}}=(q_1-q_0)(Y_{an}-Y_a),\qquad
-TV(E_{\mathrm{public}})=|q_1-q_0|TV(Y_{an},Y_a).
-$$
-
-Thus downstream public influence factorizes into **policy movement** and
-**continuation leverage**. Policy movement is in turn determined by the
-baseline article margin, intervention-induced margin change, and temperature.
-This factorization is an elementary consequence of the two-branch mixture, not
-the empirical novelty. The scientific test is whether its factors can be
-measured separately and predict unseen interventions better than attribution or
-decoder context alone. The identity holds numerically to \(1.3\times10^{-7}\).
-
-At 270M and \(\tau=0.1\), two-way holdout excludes both the test feature and
-test prompt while retaining intervention-off prompt quantities. Constant,
-attribution-only, susceptibility-only, branch-leverage-only, and activation
-baselines have \(R^2=-0.052,-0.547,-0.082,-0.052,-0.045\), respectively.
-Calibrating attribution to local margin movement and composing it with decoder
-susceptibility yields \(0.827\); adding prompt-specific branch leverage yields
-\(0.840\), with calibration slope 0.960. The full model remains
-\(R^2=0.840\)--\(0.875\) across \(\tau=0.1\) to 1 under combined feature--prompt
-holdout. Thus the large gain is not explained by boundary proximity alone.
-Because `a/an` branch leverage is uniformly high, its incremental contribution
-is modest; this task stresses susceptibility more strongly than leverage.
-
-At 1B, susceptibility alone is the strongest simple baseline at low temperature
-(two-way \(R^2=0.270\)), while the full composition reaches only 0.194 and
-becomes non-positive at higher temperatures. Holding out prompts alone is less
-severe (full \(R^2=0.400\) at \(\tau=0.1\)); holding out feature identity exposes
-the weak transferable local calibration. Using measured margin movement and
-actual branch leverage is an accounting oracle with \(R^2=1\), not a predictive
-result. Local causal pressure, boundary susceptibility, and branch leverage are
-therefore distinct measurable factors, but only the 270M panel currently
-supports strong out-of-sample prediction (@fig-attribution-calibration).
-
-![Local and matched-estimand calibration plus public-effect prediction. C compares attribution-only and full-composition predictions with observed public TV for unseen 270M feature--prompt cells at \(\tau=0.1\); D shows that the 270M result survives simple baselines, whereas 1B transfer remains weak.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-attribution-calibration width=92%}
-
-## At 1B, the ladder separates weak, support-invalid, and hybrid sparse handles
-
-The frozen 1B top-four/\(5\times\) S1 recipe fails the first stage: on held-out
-prompts it moves the `an`-minus-`a` margin by only 0.075 logits on average and
-crosses toward `an` on 1/20 prompts. The original selection label is also
-miscalibrated to the contrast: it requires positive attribution to `an`, not to
-`an` minus `a`, and several features raise both article logits.
-
-Re-ranking the frozen 270M development graphs by the corrected positive
-`an-a`-margin plus future-target criterion retains two canonical S1 members
-(L12/F6229 and L13/F10231) and replaces the two weakest-margin members. Thus
-the canonical 270M intervention is not a perfectly harmonized scale comparator,
-although its two dominant corrected-margin features and its held-out relay
-phenotype remain intact. We treat cross-scale sparse comparisons as diagnostic,
-not as a controlled scale effect.
-
-Development-only margin calibration repairs the binary contrast. The frozen
-top-24/\(20\times\) coalition moves the development margin by 3.461 logits and
-the held-out margin by 3.488, closely matching 270M S1. But it fails mediator
-specificity: `a` or `an` remains the top token on only 3/20 held-out prompts;
-17/20 instead begin with alternatives such as `called`. Fixed branches show
-matched-prefix TV 0.097 \([0.069,0.127]\) under inserted `a` and 0.266
-\([0.147,0.394]\) under inserted `an`, but the intended public-token split is
-identified on only two prompts whose off/on free mediators are both articles.
-We therefore do not assign this sparse intervention a 1B transmission
-phenotype.
-
-A development-only constrained frontier search provides a less destructive
-operating point. We maximize corrected `an-a` margin movement subject to
-100\% article-mediator-support validity, mean full-vocabulary KL at most 0.1, article
-mass at least 0.5, and small feature count. The frozen optimum is the single
-feature L18/F5015 at \(7.5\times\): development margin movement is 0.859,
-article mass 0.935, and mean KL 0.077. On 20 held-out prompts it preserves an
-`a/an` top token on 20/20 and changes the greedy article on only 1/20. Greedy
-switch counts are not the final assay: under conditional stochastic policies,
-the held-out margin movement is 0.500 \([0.344,0.675]\) logits. At \(\tau=0.1\),
-mean article-policy movement is 0.039, public TV is 0.026
-\([0.00002,0.078]\), and matched-policy private TV is 0.012
-\([0.007,0.019]\). At \(\tau=1\), policy movement is 0.067, public TV is 0.055
-\([0.037,0.074]\), and private TV remains 0.013 \([0.008,0.019]\); public/total
-vector cosine is 0.767. The gain identity predicts public TV to numerical
-precision. Thus the mediator-valid sparse 1B handle has a low-amplitude hybrid
-effect that becomes public-relay dominant under softer article policies, despite
-only one greedy switch.
-
-| Model/intervention | Local efficacy | Mediator-support validity | Identified channel |
-| --- | ---: | ---: | --- |
-| 270M S1, top-4/\(5\times\) | 3.313-logit mean margin movement | `a/an` 20/20 | Public-relay dominant |
-| 1B original S1, top-4/\(5\times\) | 0.075 | `a/an` 20/20 | Not identified: weak handle |
-| 1B margin S1, top-24/\(20\times\) | 3.488 | `a/an` 3/20 | Not identified: mediator-invalid |
-| 1B frontier L18/F5015, \(7.5\times\) | 0.500 held out | `a/an` 20/20 | Hybrid; public-dominant by \(\tau=1\) |
-| 1B natural-state-derived residual, native strength | target \(\Delta\Delta=0.846/1.312\) | fixed visible article | Private target influence |
-| 1B correctness-preserving synonyms, native strength | target \(\Delta\Delta=0.250/0.227\) | `a/an` support; both synonyms valid | Public/private double dissociation |
-
-: Local efficacy and channel identification are sequential requirements.
-Cross-/same-class natural-residual values are separated by a slash.
-{#tbl-cross-scale-stage}
-
-The natural-state-derived residual comparison supplies the valid 1B private assay. A pooled
-development sweep selects layer 14/25 (relative depth 0.56). At natural
-strength, held-out target \(\Delta\Delta\) is 0.846 cross-class and 1.312
-same-class, compared with 0.776 and 0.964 at 270M; target top-1 rises only to
-0/12 and 1/12. Private TV is 0.054 and 0.039, versus 0.049 and 0.059 at 270M,
-so scale does not uniformly increase distributional private influence. At
-\(\tau=0.1\), the 1B public component is 0.002 cross-class and zero same-class
-while private TV is 0.055 and 0.039; at \(\tau=1\), public TV rises to 0.074
-and 0.027 while private TV remains 0.062 and 0.046. The defensible scale result
-is target-directed movement at both scales without behavioral sufficiency or a
-monotone scale effect. Normalizing by the baseline gap, the 1B patch closes
-0.083 of the cross-class gap and 0.272 within class, versus 0.103 and 0.249 at
-270M. Patch-norm-normalized effects favor 1B, but distributional private TV and
-rank improvement do not; the conclusion depends on the estimand.
-
-The apparent strength-by-class public recruitment is also not robust. The
-difference-in-differences from strength 0.5 to 1.5 is 0.063 at \(\tau=0.1\)
-and 0.055 at \(\tau=1\), but pair-bootstrap intervals include zero at every
-temperature. The low-temperature contrast is driven by the sole cross-class
-pair whose greedy article switches at strength 1.5; private influence remains
-simultaneously present. We classify this as a suggestive candidate regime, not
-a demonstrated carrier switch.
-
-The independent 1B feature calibration supplies a directional cross-scale
-generalization. Article attribution again predicts held-out local margin
-movement across 32 individually amplified features (\(\rho=0.432\), bootstrap
-95\% CI \([0.014,0.729]\)); leave-one-feature-out estimates remain positive
-\([0.375,0.478]\), largest-effect exclusion gives \(0.375\), and the partial
-rank correlation controlling layer, held-out activation, and decoder norm is
-\(0.352\). We do not use the previously reported above-median-efficacy subset
-as confirmatory evidence because it conditions on a realized outcome. The
-matched signed target analyses above retain all features and avoid an
-all-held-out-prompt mediator gate.
-
-| Scale | Article attr. \(\to\) local margin | Future attr. \(\to\) fixed target logit | Future attr. \(\to\) target-source |
-| --- | ---: | ---: | ---: |
-| 270M (32 features) | \(0.530\ [0.200,0.772]\) | \(0.307\ [-0.047,0.594]\) | \(0.270\ [-0.100,0.584]\) |
-| 1B (32 features) | \(0.432\ [0.014,0.729]\) | \(0.120\ [-0.279,0.473]\) | \(-0.129\ [-0.451,0.225]\) |
-
-: Across-scale matched-estimand feature calibration. Values are feature-level
-Spearman correlations with feature-bootstrap 95\% intervals.
-{#tbl-cross-scale-calibration}
-
-![Cross-scale natural-state-derived residual comparison at aligned relative depth and patch strength. Panel B normalizes target movement by the baseline target-minus-source gap; panels C--D show that public recruitment is pair-specific while fixed-token influence persists at both scales.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-gemma-1b-residual width=96%}
-
-## The released `is/are` task fails at local efficacy in these PT models
-
-The second-mediator experiment does not support route recruitment. Development
-selection is itself nearly flat: the best pooled layer has mean target
-\(\Delta\Delta=0\) at 270M and 0.063 at 1B. At frozen natural strength on eight
-held-out animals, the fixed-native-verb target contrast for \(1\to3\) is
-\(-0.031\ [-0.078,0.031]\) at 270M and
-\(-0.031\ [-0.094,0.031]\) at 1B. For \(3\to5\), it is exactly 0 at both
-scales, with intervals \([-0.047,0.047]\). Wrong-target controls are comparable,
-and no greedy verb switches occur at any tested strength.
-
-Distributional movement survives fixed verbs but is not target aligned. At
-\(\tau=1\), native-strength private TV ranges from 0.015 to 0.020 across
-scale/regime cells, whereas public TV ranges only from 0.0006 to 0.0032.
-Because the intervention does not move the intended number contrast, those TVs
-measure generic state perturbation rather than private arithmetic control. This
-negative result is a direct use of the ladder: the experiment stops at local
-efficacy and cannot adjudicate whether `is/are` capacity controls externalization
-in these pretrained models (@fig-is-are).
-
-![Second-mediator stress test on the pinned `is/are` subtraction dataset. Target-derived residual patches do not move the intended number contrast at either scale; small fixed-verb distributional changes are therefore not interpreted as target-specific private transmission.](manuscript/figures/fig_is_are_carrier_capacity.png){#fig-is-are width=90%}
-
-## Measurement audits bound the 1B interpretation
-
-The 1B affine CLT reproduces task logits closely but not every internal state.
-Across four selection prompts and five representative layers, mean MLP-output
-reconstruction cosine is 0.803 and normalized MSE is 0.341. The affine skip
-norm averages 0.714 of the native output norm (sparse and skip terms are not
-orthogonal), while reconstructed article-margin and future-target logits differ
-from native values by only 0.031 and 0.063 logits on average. Layerwise cosine
-ranges from 0.600 at layer 14 to 0.998 at layer 0. Weak sparse control therefore
-cannot be cleanly attributed to model scale rather than dictionary geometry.
-
-Graph coverage is less concerning. On a representative prompt, raising the cap
-from 1,200 to 2,400 includes all 2,085 article-graph and 2,205 future-graph
-active features. The original cap retains 100\% of pre-article absolute margin
-attribution, 99.7\% of future attribution, and 95\% overlap with the full-graph
-top 20. Because 2,400 already saturates both graphs, a 4,800 cap is redundant.
-Direct pre-article ranking over the saturated graph retains the same leading
-corrected-margin candidates, including the frontier feature. These audits make
-simple graph truncation unlikely for this case, while leaving CLT
-reconstruction and intervention construction as live explanations.
+The sparse 1B campaign illustrates why the ladder's rungs cannot be collapsed.
+Attribution-selected candidates exist, but the frozen top-four intervention is
+locally weak: mean article-margin movement is 0.075 logits. An effect-matched
+24-feature coalition moves the margin but often makes `called` outrank both
+articles, exiting the binary assay's support. A constrained frontier feature
+preserves `a/an` support on all 20 prompts; it rarely changes the greedy article
+but its stochastic assay reveals low-amplitude hybrid transmission. These are
+three different scientific outcomes---weak handle, support-invalid estimand,
+and valid hybrid route---that would be conflated by reporting only free
+generation. Reconstruction and graph-coverage audits reduce, but do not remove,
+instrumentation uncertainty. We use this campaign as a validity demonstration,
+not evidence that scale reorganizes sparse planning mechanisms.

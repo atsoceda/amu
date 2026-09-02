@@ -1,66 +1,97 @@
-# Background and related work
+# Public projection and private persistence
 
-**Latent planning.** @hanna2026latent define latent planning as internal
-representations that (i)~cause a specific future token or concept
-(forward planning) and (ii)~shape preceding context to license it
-(backward planning). On \(a\)/\(an\) they report that reliable behavioral
-success emerges mainly at larger scales. They already use two controls
-close to ours. First, they insert the correct or incorrect article and
-measure whether the intended noun survives disagreement with the article
-(their Fig.~13). Second, in rhyming they feed back intermediate context
-generated under steering and then turn steering off (their Fig.~5). We do
-not claim to invent token insertion or context replay. We add a complete
-six-cell design for an *internal* sparse intervention, full-vocabulary
-noun distributions, both article backgrounds, an additive vector split,
-dose, and a comparison across selection families. Our local question is
-not whether planning exists at scale. It is whether a planning-like
-sparse intervention on a small model identifies leftover noun control
-after the generated article is held fixed.
+Let \(X\) end immediately before a generated mediator, let
+\(B\in\{\texttt{a},\texttt{an}\}\) be its public token identity, and let \(Y\)
+be the next-token distribution over the first noun token. An internal
+intervention \(I\) acts at the last position of \(X\) and remains active during
+noun prediction. Its effect can reach \(Y\) through two paths
+(@fig-schematic A): by changing \(B\), which is appended and re-embedded, or by
+changing contextual state available after \(B\) is fixed. We call these public
+projection and private persistence. The names refer to experimentally separable
+routes, not independent registers or claims about semantic encoding.
 
-**Causal state at generated positions.** @ma2026plan distinguish future
-information that is linearly decodable from information that is causally used,
-and identify a localized handoff to a line-boundary representation in one
-large-model rhyme setting. @shih2026registers hold visible scratchpad text
-fixed while editing the hidden representation at a written state token; the
-edit causally changes the next state update in trained state-writing models.
-These interventions complement ours. They establish that private contextual
-state beneath a fixed written token can matter; our replay design measures how
-much of an upstream intervention's effect is carried by the public token itself.
-Together they motivate treating a generated position as two potential causal
-routes: its public discrete identity and private contextual state propagated
-from earlier positions. Our private intervention is applied at the pre-article
-position, not as a direct edit of the hidden state underneath the written
-article.
+![Autoregressive feedback and the causal-validity ladder. A: an upstream intervention can affect a later prediction through public mediator identity or private contextual state. Fixing or replaying the mediator separates the routes. B: candidate identification, local efficacy, mediator-support validity, and route identification are distinct claims.](manuscript/figures/fig_hypotheses_protocol.png){#fig-schematic width=98%}
 
-**Causal mediation in NLP.** @vig2020mediation formulate total, direct,
-and indirect effects for neural NLP and intervene on internal mediators.
-@paul2024reasoning treat generated chain-of-thought tokens as mediators of
-final answers. The broad claim that generated text can mediate later
-outputs is therefore not new. The narrower claim here is that generated
-output tokens can mediate the downstream behavioral effect of an
-*internal mechanistic intervention*, so matched-token controls are
-required before later-token change is read as persistent internal
-control. @geiger2025abstraction unifies activation patching, mediation,
-causal scrubbing, circuits, sparse features, and steering under causal
-abstraction. @chan2022scrubbing test a mechanistic hypothesis by
-interventions that should preserve behavior if the hypothesis is
-correct. Treated-article insertion with the intervention off is a simple
-instance: if the later noun change is carried by the article token,
-substituting that token into an unintervened run should recreate most of
-the change. @wu2024plan distinguish *pre-caching* (features computed for
-future use) from *breadcrumbs* (present-token features that remain useful
-later). Our assay does not decide why a representation was computed; it
-measures whether an intervention's later effect still exists after the
-generated token is controlled.
+## Six cells identify transmission
 
-**Feature circuits and steering.** Attribution graphs over sparse
-autoencoders / transcoders estimate contributions among features and
-logits [@ameisen2025attribution; @lindsey2025biology;
-@dunefsky2024transcoders; @marks2025sparse]. We use `circuit-tracer` 0.5.0
-with the NNsight backend [@hanna2025circuittracer; @fiotto2025nnsight] and
-Gemma Scope 2 cross-layer transcoders [@gemmascope2] to select features and
-intervene. Affine skip connections improve reconstruction but allow MLP
-computation to bypass sparse features; we therefore also test a dense
-residual reference. Graph edges to future tokens are selection criteria,
-not already-identified leftover control; the six cells test that
-distinction.
+For every prompt we evaluate
+
+$$
+I\in\{0,1\}\times
+B\in\{\text{free},\operatorname{do}(\texttt{a}),
+\operatorname{do}(\texttt{an})\}.
+$$
+
+Free generation is a policy rather than a third assigned value of \(B\). Let
+\(B_0,B_1\) denote the greedy articles under intervention off/on and let
+\(Y(i,b)\) be the noun distribution. Define
+
+$$
+\begin{aligned}
+E_{\rm total}&=Y(1,B_1)-Y(0,B_0),\\
+E_{\rm public}&=Y(0,B_1)-Y(0,B_0),\\
+E_{\rm private}&=Y(1,B_1)-Y(0,B_1).
+\end{aligned}
+$$
+
+These are full probability vectors and satisfy
+\(E_{\rm total}=E_{\rm public}+E_{\rm private}\) exactly. Their total-variation
+norms are not additive, so we report each norm, vector alignment, and numerical
+reconstruction rather than a scalar "percent mediated." \(E_{\rm public}\) is a
+treated-token replay contrast. \(E_{\rm private}\) is what remains under the
+fixed treated article; it is not Pearl's natural direct effect. We also measure
+the matched contrast under the other article.
+
+Under a stochastic mediator policy with support \(\mathcal B\),
+
+$$
+E_{\rm public}=\sum_{b\in\mathcal B}
+[q_1(b)-q_0(b)]Y(0,b),
+\qquad q_i(b)=P(B=b\mid I=i).
+$$
+
+For the binary article policy this becomes
+
+$$
+E_{\rm public}=(q_1-q_0)(Y_{an}-Y_a),\qquad
+TV(E_{\rm public})=|q_1-q_0|TV(Y_{an},Y_a). \tag{1}
+$$
+
+Equation 1 is an algebraic identity. Its empirical use is to separate local
+policy movement from the leverage of the continuation branches.
+
+## A causal-validity ladder
+
+A downstream change supports a route claim only after four checks
+(@fig-schematic B):
+
+1. **Candidate signal identified.** A probe, attribution graph, sparse feature,
+   or residual contrast nominates a signal; these are not equivalent claims that
+   a semantic representation exists.
+2. **Locally causal.** The intervention moves the quantity it was selected to
+   affect on held-out examples.
+3. **Mediator-support valid.** The assay's mediator state space covers states
+   induced by the intervention. If `called` outranks both articles, a binary
+   `a/an` decomposition is incomplete rather than the intervention intrinsically
+   invalid.
+4. **Transmission identified.** Only a complete free/fixed assay distinguishes
+   public, private, hybrid, and negligible effects.
+
+This ladder extends the established separation of decodability from causal use
+[@ma2026plan] by making intervention validity and downstream route identification
+explicit. It also aligns activation patching, sparse steering, and causal
+scrubbing with a common causal-abstraction view [@geiger2025abstraction;
+@chan2022scrubbing].
+
+## Mediator-relative distinguishability
+
+Let \(m(y)\) be the public mediator licensed by lexical outcome \(y\), and define
+\(y_1\sim_m y_2\) when \(m(y_1)=m(y_2)\). `Teacher` and `educator` lie in
+different article classes (`a` versus `an`), whereas `doctor` and `physician`
+lie in the same class (`a`). A between-class distinction is visible in article
+identity; a within-class distinction is collapsed by it. This motivates a
+causal prediction: when two valid lexical alternatives cross mediator classes,
+an intervention can recruit a public relay; when they remain in one class,
+target-specific influence cannot be conveyed by that token identity and must
+remain elsewhere if it survives. This is a mediator-relative routing hypothesis,
+not a general bit-capacity law.

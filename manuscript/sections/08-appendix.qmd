@@ -1,0 +1,170 @@
+\appendix
+
+# Supplementary methods and results
+
+## Reproducibility map
+
+The repository treats manuscript prose as a view over frozen machine-readable
+artifacts. The principal claims can be recomputed from the following experiment
+directories.
+
+| Claim | Experiment artifact |
+|---|---|
+| Six-cell S1 split | `experiments/s1_article_factorial/results/` |
+| Replay and rescue | `experiments/s1_replay_rescue/results/` |
+| Decoder boundary and precision | `experiments/boundary_precision_policy/results/` |
+| Private residual references | `experiments/natural_residual_carrier_regimes/results/` and `experiments/cross_scale_normalized_residual/results/` |
+| Neutral synonym routing | `experiments/neutral_synonym_repair/results/` |
+| Closed-loop gain | `experiments/closed_loop_gain_law/results/` |
+| Sparse 1B stress tests | `experiments/gemma_1b_effect_matched/results/` and `experiments/gemma_1b_sparse_frontier/results/` |
+
+All summary JSON files record model identifiers, sample sizes, interval methods,
+and primary settings. Plotting scripts read those artifacts rather than values
+copied from manuscript prose. The 270M model snapshot is
+`9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1`; the affine Gemma Scope 2
+dictionary snapshot is `b218cd5d69dc2fa71cff448b68d625e6c9702d49` with configuration
+`width_262k_l0_medium_affine`. Discussed decoder/encoder vectors and selection
+metadata are archived under `experiments/archived_feature_vectors/`.
+
+## Exact six-cell measurements
+
+For each fixed article, the intervention remains active at its original
+pre-article position during noun prediction. This differs from deleting the
+intervention after the article is inserted. We compute full-sequence forwards
+with `use_cache=False`; multi-token noun likelihoods are teacher-forced one token
+at a time. Full-vocabulary TV is
+\(TV(p,q)=\frac12\sum_v|p_v-q_v|\). We additionally record Jensen--Shannon
+divergence, top-\(k\) overlap, target-minus-source logits for prespecified lexical
+twins, vector cosine, and
+\(\|E_{\rm total}-E_{\rm public}-E_{\rm private}\|_1\).
+
+The S1 decomposition over all 20 held-out prompts is:
+
+| Quantity | Mean | 95% interval |
+|---|---:|---:|
+| Total noun TV | 0.893 | [0.784, 0.969] |
+| Treated-token replay TV | 0.891 | [0.776, 0.969] |
+| Matched treated-token leftover TV | 0.028 | [0.021, 0.035] |
+| Replay--total cosine | 0.950 | [0.903, 0.979] |
+
+Nineteen prompts switch article and noun. On that descriptive switched subset,
+total, replay, and leftover TVs are 0.940, 0.937, and 0.029. We use the all-prompt
+values in the headline to avoid post-selection.
+
+## Boundary and stochastic-policy audits
+
+Native model, CLT, and residual tensors are bfloat16. A diagnostic head casts
+the final normalized residual and unembedding to float32 without rerunning the
+transformer in float32. Across three prespecified prompts, a search of width
+\(2.44\times10^{-4}\) still produces 0.992 free-path TV while fixed `a` and
+`an` move 0.009 and 0.004. The audit shows that native 0/0.125-logit steps reflect
+final-readout quantization, while the continuation discontinuity under greedy
+article choice is real.
+
+For stochastic policies we renormalize over `a/an` and mix the two fixed-article
+noun distributions. Retained article mass exceeds 0.998 at low temperature in
+the boundary assay. Policy-vector alignment with the total remains at least
+0.99 across tested temperatures; the private component remains small. These
+calculations evaluate the exact conditional mixture and introduce no sampling
+variance.
+
+## Private-route controls and scale
+
+Natural-state-derived patches are constructed from target-uncued descriptions.
+The pooled development sweep selects decoder layer 12 at 270M and layer 14 at
+1B. At each scale and route condition we report raw target-minus-source movement,
+fraction of the baseline lexical gap closed, target-odds multiplier, patch norm
+relative to natural residual RMS, and stochastic public/private TVs. Controls
+include a semantic wrong target and sign reversal. The target effect is positive
+at both scales, while normalized comparisons do not support a monotone increase
+at 1B.
+
+The stronger dense residual reference patches the decoder-layer output at the
+inserted article position. Four development pairs select layer 12; four held-out
+same-article pairs yield 6.44 target-specific logits versus 0.14 for ten
+matched-norm random directions. This is a reachability and stack-sensitivity
+control, not evidence that S1 represents the same lexical direction.
+
+## Neutral synonym assay details
+
+The bare neutral prompt `{definition} is` was rejected before route inference:
+`called` frequently outranked both articles, mean `a/an` mass was approximately
+0.27, and only 7/14 prompts had an article top token. The frozen evaluated format
+therefore uses one unrelated demonstration:
+
+> Someone who studies living organisms is a biologist. [definition] is
+
+Donor prompts append `Use exactly the word [word]` to the same format. The
+demonstration names neither tested synonym, initial letter, nor tested article
+class. Leave-one-family-out development selection chooses layer 17 in all folds.
+All 14 directions have positive local efficacy on the neutral evaluated prompt,
+despite direct donor separation being positive in 13/14.
+
+At \(s=1,\tau=1\), the main route quantities are:
+
+| Regime | Public TV | Private TV | Public target effect | Private target effect |
+|---|---:|---:|---:|---:|
+| Between article classes (N=6) | 0.176 | 0.021 | 0.189 | 0.019 |
+| Within `a` class (N=8) | 0.009 | 0.061 | -0.001 | 0.093 |
+
+Both signed simple effects have the predicted direction under exact sign flips,
+and the independent family-label interaction has exact two-sided
+\(p=0.00033\) over 3,003 assignments. The interaction remains positive for all
+12 strength-temperature settings. We archive the rejected bare-neutral output
+under `results_bare_neutral_invalid_support/` rather than silently replacing it.
+
+## Closed-loop gain validation
+
+The two-branch identity holds to numerical precision. Prediction fits a mapping
+from attribution to local article-margin movement on training features and
+prompts, then evaluates public TV after composition with intervention-off
+susceptibility and branch leverage. Combined feature-and-prompt holdout results
+for 270M are:
+
+| Temperature | Attribution only \(R^2\) | + susceptibility | Full composition |
+|---:|---:|---:|---:|
+| 0.10 | -0.547 | 0.827 | 0.840 |
+| 0.25 | -0.529 | 0.861 | 0.875 |
+| 0.50 | -0.191 | 0.857 | 0.870 |
+| 1.00 | 0.395 | 0.851 | 0.864 |
+
+At \(\tau=0.1\), constant, susceptibility-only, leverage-only, and activation
+baselines have \(R^2=-0.052,-0.082,-0.053,-0.045\). The measured-margin/full-
+leverage calculation has \(R^2=1\) by identity and is not a prediction. At 1B,
+combined-holdout transfer is weak; we report that failure rather than pool scales.
+
+## Sparse 1B ladder failures
+
+The original four-feature sparse intervention was independently selected from
+1,200-node attribution graphs but moved the held-out article margin only 0.075
+logits. A 24-feature effect-matched coalition increased local movement but made
+non-article tokens such as `called` dominate, invalidating the binary mediator
+estimand. A constrained frontier feature at layer 18, feature 5015, preserved
+article support on 20/20 prompts. At \(7.5\times\) it changed only one greedy
+article, but its exact stochastic decomposition showed low-amplitude hybrid
+influence. Reconstruction audits reveal uneven CLT fidelity and a substantial
+affine-skip contribution; graph-cap audits make simple truncation a less likely
+sole explanation. These results motivate the ladder but do not establish a
+scale-dependent reorganization.
+
+## Negative and superseded studies
+
+S2 frequently leaves the intended article domain and is retained only as a
+forensic warning. A sparse layer-5 feature produces exploratory fixed-token
+movement but has weak matched controls and may encode vowel class. The released
+`is/are` subtraction task fails behavioral and local-efficacy prerequisites in
+both models, so it cannot test mediator capacity. Earlier first-letter synonym
+prompts are superseded because the evaluated source cue contradicted the target
+synonym. An arbitrary A/B few-shot pilot does show that context can alter target
+nouns with the code fixed (effects 0.224--0.245 across reliability banks), but
+the visible context itself remains available and the task is less mechanistically
+clean than the neutral synonym assay; it is not part of the main argument.
+
+## NeurIPS checklist notes
+
+The study uses public pretrained models and synthetic prompts. No personal data,
+human subjects, or newly collected sensitive data are involved. Compute was run
+locally on Apple silicon. Code, frozen configurations, checkpoints, invalidated
+outputs, and machine-readable summaries accompany the submission. Confidence
+intervals, exact tests, sample sizes, development/evaluation separation, and
+known post-selection are stated with each claim.
