@@ -1,0 +1,4496 @@
+[
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "source_word": "planner",
+    "target_word": "organizer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.4375,
+    "target_rank_before": 7,
+    "target_rank_after": 6,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.1875,
+      "sign_reversed": -0.1875
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.4999999701976776,
+        "off_article_mass": 0.9994471669197083,
+        "on_article_mass": 0.960575520992279,
+        "total": {
+          "tv": 0.346198171377182,
+          "target_minus_source": 0.03650016337633133,
+          "desired_cosine": 0.22708044946193695
+        },
+        "public": {
+          "tv": 0.35052597522735596,
+          "target_minus_source": 0.031117040663957596,
+          "desired_cosine": 0.1904950737953186
+        },
+        "private": {
+          "tv": 0.020489247515797615,
+          "target_minus_source": 0.0053831227123737335,
+          "desired_cosine": 0.5246692895889282
+        },
+        "reconstruction_l1": 1.2014286232542304e-09
+      },
+      "0.25": {
+        "delta_q_target_article": 0.49908894300460815,
+        "off_article_mass": 0.9523724317550659,
+        "on_article_mass": 0.844376802444458,
+        "total": {
+          "tv": 0.34555956721305847,
+          "target_minus_source": 0.03644346818327904,
+          "desired_cosine": 0.22714753448963165
+        },
+        "public": {
+          "tv": 0.34988728165626526,
+          "target_minus_source": 0.031060345470905304,
+          "desired_cosine": 0.1904950737953186
+        },
+        "private": {
+          "tv": 0.020489247515797615,
+          "target_minus_source": 0.0053831227123737335,
+          "desired_cosine": 0.5246692895889282
+        },
+        "reconstruction_l1": 3.052738950515277e-09
+      },
+      "0.5": {
+        "delta_q_target_article": 0.47068777680397034,
+        "off_article_mass": 0.8060554265975952,
+        "on_article_mass": 0.7550458908081055,
+        "total": {
+          "tv": 0.3256501257419586,
+          "target_minus_source": 0.03467594459652901,
+          "desired_cosine": 0.22936925292015076
+        },
+        "public": {
+          "tv": 0.3299766182899475,
+          "target_minus_source": 0.029292821884155273,
+          "desired_cosine": 0.1904950886964798
+        },
+        "private": {
+          "tv": 0.020489247515797615,
+          "target_minus_source": 0.0053831227123737335,
+          "desired_cosine": 0.5246692895889282
+        },
+        "reconstruction_l1": 2.44878295418971e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.35195279121398926,
+        "off_article_mass": 0.5025629997253418,
+        "on_article_mass": 0.5390651822090149,
+        "total": {
+          "tv": 0.24241742491722107,
+          "target_minus_source": 0.027286581695079803,
+          "desired_cosine": 0.24254783987998962
+        },
+        "public": {
+          "tv": 0.24673718214035034,
+          "target_minus_source": 0.02190345898270607,
+          "desired_cosine": 0.1904950886964798
+        },
+        "private": {
+          "tv": 0.020489247515797615,
+          "target_minus_source": 0.0053831227123737335,
+          "desired_cosine": 0.5246692895889282
+        },
+        "reconstruction_l1": 2.9867324169430276e-09
+      }
+    }
+  },
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "source_word": "planner",
+    "target_word": "organizer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 1.0625,
+    "target_rank_before": 7,
+    "target_rank_after": 3,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.1875,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999963045120239,
+        "off_article_mass": 0.9994471669197083,
+        "on_article_mass": 0.9998415112495422,
+        "total": {
+          "tv": 0.6908936500549316,
+          "target_minus_source": 0.08380527794361115,
+          "desired_cosine": 0.25766247510910034
+        },
+        "public": {
+          "tv": 0.7010494470596313,
+          "target_minus_source": 0.06223385035991669,
+          "desired_cosine": 0.1904950588941574
+        },
+        "private": {
+          "tv": 0.044229499995708466,
+          "target_minus_source": 0.02157142199575901,
+          "desired_cosine": 0.6086270809173584
+        },
+        "reconstruction_l1": 1.6029893856739363e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9923961162567139,
+        "off_article_mass": 0.9523724317550659,
+        "on_article_mass": 0.970861554145813,
+        "total": {
+          "tv": 0.6856382489204407,
+          "target_minus_source": 0.08323138952255249,
+          "desired_cosine": 0.25788915157318115
+        },
+        "public": {
+          "tv": 0.6957212686538696,
+          "target_minus_source": 0.06176086515188217,
+          "desired_cosine": 0.1904950737953186
+        },
+        "private": {
+          "tv": 0.04411783814430237,
+          "target_minus_source": 0.021470526233315468,
+          "desired_cosine": 0.609687864780426
+        },
+        "reconstruction_l1": 1.621406653384838e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.8948295712471008,
+        "off_article_mass": 0.8060554265975952,
+        "on_article_mass": 0.8564174175262451,
+        "total": {
+          "tv": 0.6179919838905334,
+          "target_minus_source": 0.0761161744594574,
+          "desired_cosine": 0.26191380620002747
+        },
+        "public": {
+          "tv": 0.6273220777511597,
+          "target_minus_source": 0.055688899010419846,
+          "desired_cosine": 0.1904950737953186
+        },
+        "private": {
+          "tv": 0.04300805553793907,
+          "target_minus_source": 0.02042727917432785,
+          "desired_cosine": 0.6210311651229858
+        },
+        "reconstruction_l1": 2.2208984873373083e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.6292526721954346,
+        "off_article_mass": 0.5025629997253418,
+        "on_article_mass": 0.6037614941596985,
+        "total": {
+          "tv": 0.4334128797054291,
+          "target_minus_source": 0.05737336724996567,
+          "desired_cosine": 0.2818946838378906
+        },
+        "public": {
+          "tv": 0.44113877415657043,
+          "target_minus_source": 0.039160966873168945,
+          "desired_cosine": 0.19049514830112457
+        },
+        "private": {
+          "tv": 0.04084981977939606,
+          "target_minus_source": 0.01821240410208702,
+          "desired_cosine": 0.646827757358551
+        },
+        "reconstruction_l1": 1.0851276321943715e-08
+      }
+    }
+  },
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "source_word": "planner",
+    "target_word": "organizer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 1.3125,
+    "target_rank_before": 7,
+    "target_rank_after": 3,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.1875,
+      "sign_reversed": -0.3125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.0,
+        "off_article_mass": 0.9994471669197083,
+        "on_article_mass": 0.9999963045120239,
+        "total": {
+          "tv": 0.6773465871810913,
+          "target_minus_source": 0.08558892458677292,
+          "desired_cosine": 0.27085164189338684
+        },
+        "public": {
+          "tv": 0.7010520100593567,
+          "target_minus_source": 0.06223408132791519,
+          "desired_cosine": 0.1904950588941574
+        },
+        "private": {
+          "tv": 0.06645423918962479,
+          "target_minus_source": 0.02335483953356743,
+          "desired_cosine": 0.5152345895767212
+        },
+        "reconstruction_l1": 2.531793974469565e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9988855123519897,
+        "off_article_mass": 0.9523724317550659,
+        "on_article_mass": 0.9933071732521057,
+        "total": {
+          "tv": 0.6765705347061157,
+          "target_minus_source": 0.08551628887653351,
+          "desired_cosine": 0.2709304988384247
+        },
+        "public": {
+          "tv": 0.7002706527709961,
+          "target_minus_source": 0.062164727598428726,
+          "desired_cosine": 0.1904950886964798
+        },
+        "private": {
+          "tv": 0.0664476677775383,
+          "target_minus_source": 0.023351561278104782,
+          "desired_cosine": 0.5152590274810791
+        },
+        "reconstruction_l1": 2.2464671900479516e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9566241502761841,
+        "off_article_mass": 0.8060554265975952,
+        "on_article_mass": 0.9229929447174072,
+        "total": {
+          "tv": 0.6472979784011841,
+          "target_minus_source": 0.08266249299049377,
+          "desired_cosine": 0.2737102508544922
+        },
+        "public": {
+          "tv": 0.6706432700157166,
+          "target_minus_source": 0.059534624218940735,
+          "desired_cosine": 0.1904950886964798
+        },
+        "private": {
+          "tv": 0.0660070851445198,
+          "target_minus_source": 0.02312786690890789,
+          "desired_cosine": 0.5169365406036377
+        },
+        "reconstruction_l1": 2.356542161408015e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.7452622056007385,
+        "off_article_mass": 0.5025629997253418,
+        "on_article_mass": 0.672469437122345,
+        "total": {
+          "tv": 0.5014868378639221,
+          "target_minus_source": 0.06801367551088333,
+          "desired_cosine": 0.29066798090934753
+        },
+        "public": {
+          "tv": 0.5224674940109253,
+          "target_minus_source": 0.04638070985674858,
+          "desired_cosine": 0.1904950588941574
+        },
+        "private": {
+          "tv": 0.06310947239398956,
+          "target_minus_source": 0.021632961928844452,
+          "desired_cosine": 0.5288317799568176
+        },
+        "reconstruction_l1": 1.836151852785406e-08
+      }
+    }
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "source_word": "businessman",
+    "target_word": "entrepreneur",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.25,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.1875,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9994468688964844,
+        "off_article_mass": 4.539786823443137e-05,
+        "on_article_mass": 0.0001585232384968549,
+        "total": {
+          "tv": 0.9792055487632751,
+          "target_minus_source": 0.9913023710250854,
+          "desired_cosine": 0.6912966966629028
+        },
+        "public": {
+          "tv": 0.9789266586303711,
+          "target_minus_source": 0.9919109344482422,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.0022111251018941402,
+          "target_minus_source": -0.000608581118285656,
+          "desired_cosine": -0.1941228210926056
+        },
+        "reconstruction_l1": 2.365706386342481e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9501014947891235,
+        "off_article_mass": 0.01797856204211712,
+        "on_article_mass": 0.03050333820283413,
+        "total": {
+          "tv": 0.9309154748916626,
+          "target_minus_source": 0.9427932500839233,
+          "desired_cosine": 0.6914559602737427
+        },
+        "public": {
+          "tv": 0.9305945038795471,
+          "target_minus_source": 0.9429377317428589,
+          "desired_cosine": 0.691358745098114
+        },
+        "private": {
+          "tv": 0.0031919709872454405,
+          "target_minus_source": -0.00014443951658904552,
+          "desired_cosine": -0.04544278606772423
+        },
+        "reconstruction_l1": 2.0020811675180994e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.7701485753059387,
+        "off_article_mass": 0.11547747254371643,
+        "on_article_mass": 0.1572955995798111,
+        "total": {
+          "tv": 0.7547779083251953,
+          "target_minus_source": 0.7655339241027832,
+          "desired_cosine": 0.692051351070404
+        },
+        "public": {
+          "tv": 0.7543362379074097,
+          "target_minus_source": 0.7643415927886963,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.006139142904430628,
+          "target_minus_source": 0.0011923452839255333,
+          "desired_cosine": 0.2401071935892105
+        },
+        "reconstruction_l1": 1.6097775557000205e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.4967532157897949,
+        "off_article_mass": 0.1839446872472763,
+        "on_article_mass": 0.21616744995117188,
+        "total": {
+          "tv": 0.48711955547332764,
+          "target_minus_source": 0.4955703318119049,
+          "desired_cosine": 0.6933180689811707
+        },
+        "public": {
+          "tv": 0.4865540564060211,
+          "target_minus_source": 0.493007630109787,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.009169511497020721,
+          "target_minus_source": 0.0025626998394727707,
+          "desired_cosine": 0.3286624550819397
+        },
+        "reconstruction_l1": 5.815420145438566e-09
+      }
+    }
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "source_word": "businessman",
+    "target_word": "entrepreneur",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.4375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.1875,
+      "sign_reversed": -0.3125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999997019767761,
+        "off_article_mass": 4.539786823443137e-05,
+        "on_article_mass": 0.4999886751174927,
+        "total": {
+          "tv": 0.980571985244751,
+          "target_minus_source": 0.9965623617172241,
+          "desired_cosine": 0.6916210055351257
+        },
+        "public": {
+          "tv": 0.9794681072235107,
+          "target_minus_source": 0.9924595952033997,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.004358971491456032,
+          "target_minus_source": 0.004102745559066534,
+          "desired_cosine": 0.6785503625869751
+        },
+        "reconstruction_l1": 1.5207657355631454e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9974039793014526,
+        "off_article_mass": 0.01797856204211712,
+        "on_article_mass": 0.4952118992805481,
+        "total": {
+          "tv": 0.9780296087265015,
+          "target_minus_source": 0.9939875602722168,
+          "desired_cosine": 0.6916225552558899
+        },
+        "public": {
+          "tv": 0.976925790309906,
+          "target_minus_source": 0.989883542060852,
+          "desired_cosine": 0.691358745098114
+        },
+        "private": {
+          "tv": 0.004359105601906776,
+          "target_minus_source": 0.004104050807654858,
+          "desired_cosine": 0.6788292527198792
+        },
+        "reconstruction_l1": 3.9383397876235904e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9415872097015381,
+        "off_article_mass": 0.11547747254371643,
+        "on_article_mass": 0.45579198002815247,
+        "total": {
+          "tv": 0.9233613014221191,
+          "target_minus_source": 0.9387066960334778,
+          "desired_cosine": 0.6917230486869812
+        },
+        "public": {
+          "tv": 0.9222549200057983,
+          "target_minus_source": 0.9344875812530518,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.004588231910020113,
+          "target_minus_source": 0.00421914691105485,
+          "desired_cosine": 0.7027761340141296
+        },
+        "reconstruction_l1": 3.1551813606256474e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.72222501039505,
+        "off_article_mass": 0.1839446872472763,
+        "on_article_mass": 0.3124927580356598,
+        "total": {
+          "tv": 0.7085206508636475,
+          "target_minus_source": 0.7218924760818481,
+          "desired_cosine": 0.6926902532577515
+        },
+        "public": {
+          "tv": 0.7073965072631836,
+          "target_minus_source": 0.7167794108390808,
+          "desired_cosine": 0.691358745098114
+        },
+        "private": {
+          "tv": 0.0065462649799883366,
+          "target_minus_source": 0.005113060120493174,
+          "desired_cosine": 0.8314448595046997
+        },
+        "reconstruction_l1": 2.538310361899221e-08
+      }
+    }
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "source_word": "businessman",
+    "target_word": "entrepreneur",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.5,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.375
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999997019767761,
+        "off_article_mass": 4.539786823443137e-05,
+        "on_article_mass": 0.9933034777641296,
+        "total": {
+          "tv": 0.9807731509208679,
+          "target_minus_source": 0.9977228045463562,
+          "desired_cosine": 0.6916979551315308
+        },
+        "public": {
+          "tv": 0.9794681072235107,
+          "target_minus_source": 0.9924595952033997,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.005530053749680519,
+          "target_minus_source": 0.005263186059892178,
+          "desired_cosine": 0.6769002676010132
+        },
+        "reconstruction_l1": 1.7278008357379804e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9975250959396362,
+        "off_article_mass": 0.01797856204211712,
+        "on_article_mass": 0.8752589225769043,
+        "total": {
+          "tv": 0.978349506855011,
+          "target_minus_source": 0.9952669143676758,
+          "desired_cosine": 0.6916986703872681
+        },
+        "public": {
+          "tv": 0.977044403553009,
+          "target_minus_source": 0.9900037050247192,
+          "desired_cosine": 0.6913588047027588
+        },
+        "private": {
+          "tv": 0.005530062131583691,
+          "target_minus_source": 0.005263217259198427,
+          "desired_cosine": 0.6769044399261475
+        },
+        "reconstruction_l1": 3.12837578064773e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9510729312896729,
+        "off_article_mass": 0.11547747254371643,
+        "on_article_mass": 0.6709822416305542,
+        "total": {
+          "tv": 0.9328522682189941,
+          "target_minus_source": 0.949180543422699,
+          "desired_cosine": 0.691718339920044
+        },
+        "public": {
+          "tv": 0.9315459728240967,
+          "target_minus_source": 0.943901777267456,
+          "desired_cosine": 0.691358745098114
+        },
+        "private": {
+          "tv": 0.0055808196775615215,
+          "target_minus_source": 0.005278757307678461,
+          "desired_cosine": 0.6795341372489929
+        },
+        "reconstruction_l1": 2.505638008187816e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.7802475690841675,
+        "off_article_mass": 0.1839446872472763,
+        "on_article_mass": 0.3792259097099304,
+        "total": {
+          "tv": 0.7655618190765381,
+          "target_minus_source": 0.7800146341323853,
+          "desired_cosine": 0.6918911933898926
+        },
+        "public": {
+          "tv": 0.7642278075218201,
+          "target_minus_source": 0.7743644118309021,
+          "desired_cosine": 0.691358745098114
+        },
+        "private": {
+          "tv": 0.0071130902506411076,
+          "target_minus_source": 0.005650228820741177,
+          "desired_cosine": 0.7204886674880981
+        },
+        "reconstruction_l1": 2.3730798659471475e-08
+      }
+    }
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "source_word": "director",
+    "target_word": "executive",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.3125,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.1875
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.22270013391971588,
+        "off_article_mass": 0.0066914912313222885,
+        "on_article_mass": 0.00020359366317279637,
+        "total": {
+          "tv": 0.2044697403907776,
+          "target_minus_source": 0.06436538696289062,
+          "desired_cosine": 0.552535355091095
+        },
+        "public": {
+          "tv": 0.20422086119651794,
+          "target_minus_source": 0.05351211875677109,
+          "desired_cosine": 0.4771104156970978
+        },
+        "private": {
+          "tv": 0.02131703868508339,
+          "target_minus_source": 0.010853271931409836,
+          "desired_cosine": 0.8279434442520142
+        },
+        "reconstruction_l1": 2.065744519885726e-10
+      },
+      "0.25": {
+        "delta_q_target_article": 0.3768309950828552,
+        "off_article_mass": 0.11371435225009918,
+        "on_article_mass": 0.04177519679069519,
+        "total": {
+          "tv": 0.3459600806236267,
+          "target_minus_source": 0.10559112578630447,
+          "desired_cosine": 0.5348057150840759
+        },
+        "public": {
+          "tv": 0.34556224942207336,
+          "target_minus_source": 0.09054788947105408,
+          "desired_cosine": 0.47711026668548584
+        },
+        "private": {
+          "tv": 0.02512793056666851,
+          "target_minus_source": 0.015043232589960098,
+          "desired_cosine": 0.7802789211273193
+        },
+        "reconstruction_l1": 8.156833541939079e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.4118661880493164,
+        "off_article_mass": 0.19792194664478302,
+        "on_article_mass": 0.14725318551063538,
+        "total": {
+          "tv": 0.3781479299068451,
+          "target_minus_source": 0.11564087867736816,
+          "desired_cosine": 0.5342394113540649
+        },
+        "public": {
+          "tv": 0.3776901960372925,
+          "target_minus_source": 0.09896641224622726,
+          "desired_cosine": 0.47711044549942017
+        },
+        "private": {
+          "tv": 0.02661227621138096,
+          "target_minus_source": 0.01667446456849575,
+          "desired_cosine": 0.7602960467338562
+        },
+        "reconstruction_l1": 5.677611714105524e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.3284544050693512,
+        "off_article_mass": 0.13772065937519073,
+        "on_article_mass": 0.12618574500083923,
+        "total": {
+          "tv": 0.301688551902771,
+          "target_minus_source": 0.09643600881099701,
+          "desired_cosine": 0.5496098399162292
+        },
+        "public": {
+          "tv": 0.3011997640132904,
+          "target_minus_source": 0.07892357558012009,
+          "desired_cosine": 0.4771104156970978
+        },
+        "private": {
+          "tv": 0.02737494371831417,
+          "target_minus_source": 0.017512435093522072,
+          "desired_cosine": 0.7508371472358704
+        },
+        "reconstruction_l1": 3.286086736054017e-09
+      }
+    }
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "source_word": "director",
+    "target_word": "executive",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0625,
+      "sign_reversed": -0.125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.999987006187439,
+        "off_article_mass": 0.0066914912313222885,
+        "on_article_mass": 0.49937114119529724,
+        "total": {
+          "tv": 0.9237444400787354,
+          "target_minus_source": 0.2743319869041443,
+          "desired_cosine": 0.519722044467926
+        },
+        "public": {
+          "tv": 0.917009711265564,
+          "target_minus_source": 0.24028465151786804,
+          "desired_cosine": 0.4771103858947754
+        },
+        "private": {
+          "tv": 0.045563437044620514,
+          "target_minus_source": 0.03404732793569565,
+          "desired_cosine": 0.6652604937553406
+        },
+        "reconstruction_l1": 2.5139920367678315e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9883034229278564,
+        "off_article_mass": 0.11371435225009918,
+        "on_article_mass": 0.46367570757865906,
+        "total": {
+          "tv": 0.9129566550254822,
+          "target_minus_source": 0.2712291479110718,
+          "desired_cosine": 0.5198007822036743
+        },
+        "public": {
+          "tv": 0.9062957167625427,
+          "target_minus_source": 0.23747724294662476,
+          "desired_cosine": 0.477110356092453
+        },
+        "private": {
+          "tv": 0.045342523604631424,
+          "target_minus_source": 0.03375190868973732,
+          "desired_cosine": 0.6667943596839905
+        },
+        "reconstruction_l1": 2.6580085688010513e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.878693163394928,
+        "off_article_mass": 0.19792194664478302,
+        "on_article_mass": 0.3396016061306,
+        "total": {
+          "tv": 0.8118751645088196,
+          "target_minus_source": 0.24262019991874695,
+          "desired_cosine": 0.5213567614555359
+        },
+        "public": {
+          "tv": 0.8057807087898254,
+          "target_minus_source": 0.21113921701908112,
+          "desired_cosine": 0.477110356092453
+        },
+        "private": {
+          "tv": 0.043865837156772614,
+          "target_minus_source": 0.031480979174375534,
+          "desired_cosine": 0.6792870759963989
+        },
+        "reconstruction_l1": 2.924947217763929e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.6145787239074707,
+        "off_article_mass": 0.13772065937519073,
+        "on_article_mass": 0.15884259343147278,
+        "total": {
+          "tv": 0.5686712265014648,
+          "target_minus_source": 0.17512604594230652,
+          "desired_cosine": 0.5301139950752258
+        },
+        "public": {
+          "tv": 0.5635820627212524,
+          "target_minus_source": 0.1476757675409317,
+          "desired_cosine": 0.477110356092453
+        },
+        "private": {
+          "tv": 0.04127145931124687,
+          "target_minus_source": 0.02745027467608452,
+          "desired_cosine": 0.704404890537262
+        },
+        "reconstruction_l1": 2.418548028515488e-08
+      }
+    }
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "source_word": "director",
+    "target_word": "executive",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.5625,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.0625
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.0,
+        "off_article_mass": 0.0066914912313222885,
+        "on_article_mass": 0.999437153339386,
+        "total": {
+          "tv": 0.9225412607192993,
+          "target_minus_source": 0.29143697023391724,
+          "desired_cosine": 0.5394546389579773
+        },
+        "public": {
+          "tv": 0.9170216917991638,
+          "target_minus_source": 0.24028778076171875,
+          "desired_cosine": 0.4771103858947754
+        },
+        "private": {
+          "tv": 0.061596959829330444,
+          "target_minus_source": 0.05114920064806938,
+          "desired_cosine": 0.6689106822013855
+        },
+        "reconstruction_l1": 2.031129220370076e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9990290999412537,
+        "off_article_mass": 0.11371435225009918,
+        "on_article_mass": 0.9278866052627563,
+        "total": {
+          "tv": 0.9216494560241699,
+          "target_minus_source": 0.291192889213562,
+          "desired_cosine": 0.539493203163147
+        },
+        "public": {
+          "tv": 0.9161313772201538,
+          "target_minus_source": 0.24005448818206787,
+          "desired_cosine": 0.477110356092453
+        },
+        "private": {
+          "tv": 0.06158792972564697,
+          "target_minus_source": 0.05113840103149414,
+          "desired_cosine": 0.6689437627792358
+        },
+        "reconstruction_l1": 3.9053510647590883e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.958136260509491,
+        "off_article_mass": 0.19792194664478302,
+        "on_article_mass": 0.5661517977714539,
+        "total": {
+          "tv": 0.8840639591217041,
+          "target_minus_source": 0.2807196378707886,
+          "desired_cosine": 0.5409218072891235
+        },
+        "public": {
+          "tv": 0.8786317110061646,
+          "target_minus_source": 0.23022842407226562,
+          "desired_cosine": 0.477110356092453
+        },
+        "private": {
+          "tv": 0.06135238707065582,
+          "target_minus_source": 0.050491221249103546,
+          "desired_cosine": 0.6709339618682861
+        },
+        "reconstruction_l1": 2.2552010037202308e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.746868371963501,
+        "off_article_mass": 0.13772065937519073,
+        "on_article_mass": 0.18235574662685394,
+        "total": {
+          "tv": 0.6897945404052734,
+          "target_minus_source": 0.2259465754032135,
+          "desired_cosine": 0.5493813157081604
+        },
+        "public": {
+          "tv": 0.6848944425582886,
+          "target_minus_source": 0.17946334183216095,
+          "desired_cosine": 0.477110356092453
+        },
+        "private": {
+          "tv": 0.060255128890275955,
+          "target_minus_source": 0.04648324102163315,
+          "desired_cosine": 0.6833849549293518
+        },
+        "reconstruction_l1": 3.1507646269801626e-08
+      }
+    }
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "source_word": "performer",
+    "target_word": "entertainer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.4375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.3125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.999998927116394,
+        "off_article_mass": 0.7772995233535767,
+        "on_article_mass": 0.7772994041442871,
+        "total": {
+          "tv": 0.6462650299072266,
+          "target_minus_source": 0.40188395977020264,
+          "desired_cosine": 0.7256209850311279
+        },
+        "public": {
+          "tv": 0.6303644180297852,
+          "target_minus_source": 0.3580922484397888,
+          "desired_cosine": 0.6879397034645081
+        },
+        "private": {
+          "tv": 0.049900121986866,
+          "target_minus_source": 0.043791692703962326,
+          "desired_cosine": 0.652841329574585
+        },
+        "reconstruction_l1": 9.497399311442223e-09
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9958065152168274,
+        "off_article_mass": 0.6212306022644043,
+        "on_article_mass": 0.621820330619812,
+        "total": {
+          "tv": 0.6435604095458984,
+          "target_minus_source": 0.40022721886634827,
+          "desired_cosine": 0.7256606817245483
+        },
+        "public": {
+          "tv": 0.6277216672897339,
+          "target_minus_source": 0.35659098625183105,
+          "desired_cosine": 0.6879397630691528
+        },
+        "private": {
+          "tv": 0.049708835780620575,
+          "target_minus_source": 0.04363622888922691,
+          "desired_cosine": 0.6531708240509033
+        },
+        "reconstruction_l1": 1.132275251336523e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.928926408290863,
+        "off_article_mass": 0.5408507585525513,
+        "on_article_mass": 0.5514419674873352,
+        "total": {
+          "tv": 0.6005499362945557,
+          "target_minus_source": 0.37413763999938965,
+          "desired_cosine": 0.7265591025352478
+        },
+        "public": {
+          "tv": 0.5855628252029419,
+          "target_minus_source": 0.33264172077178955,
+          "desired_cosine": 0.6879397630691528
+        },
+        "private": {
+          "tv": 0.047116030007600784,
+          "target_minus_source": 0.04149593040347099,
+          "desired_cosine": 0.657971203327179
+        },
+        "reconstruction_l1": 1.0869987576711537e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.702837347984314,
+        "off_article_mass": 0.35664692521095276,
+        "on_article_mass": 0.37001916766166687,
+        "total": {
+          "tv": 0.45587795972824097,
+          "target_minus_source": 0.28776171803474426,
+          "desired_cosine": 0.7322669625282288
+        },
+        "public": {
+          "tv": 0.4430440664291382,
+          "target_minus_source": 0.2516808807849884,
+          "desired_cosine": 0.6879396438598633
+        },
+        "private": {
+          "tv": 0.04075871780514717,
+          "target_minus_source": 0.03608085960149765,
+          "desired_cosine": 0.6728014945983887
+        },
+        "reconstruction_l1": 2.1733134403234544e-08
+      }
+    }
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "source_word": "performer",
+    "target_word": "entertainer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.6875,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.5
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.0,
+        "off_article_mass": 0.7772995233535767,
+        "on_article_mass": 0.9770216345787048,
+        "total": {
+          "tv": 0.6618719696998596,
+          "target_minus_source": 0.447420597076416,
+          "desired_cosine": 0.7539226412773132
+        },
+        "public": {
+          "tv": 0.6303651332855225,
+          "target_minus_source": 0.35809263586997986,
+          "desired_cosine": 0.6879396438598633
+        },
+        "private": {
+          "tv": 0.0946962982416153,
+          "target_minus_source": 0.08932795375585556,
+          "desired_cosine": 0.6548047661781311
+        },
+        "reconstruction_l1": 1.272568717070044e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9998551607131958,
+        "off_article_mass": 0.6212306022644043,
+        "on_article_mass": 0.8146626353263855,
+        "total": {
+          "tv": 0.661780059337616,
+          "target_minus_source": 0.44736701250076294,
+          "desired_cosine": 0.7539282441139221
+        },
+        "public": {
+          "tv": 0.6302737593650818,
+          "target_minus_source": 0.35804077982902527,
+          "desired_cosine": 0.6879397630691528
+        },
+        "private": {
+          "tv": 0.09469433128833771,
+          "target_minus_source": 0.08932622522115707,
+          "desired_cosine": 0.6548061370849609
+        },
+        "reconstruction_l1": 1.8566760573435204e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9844034910202026,
+        "off_article_mass": 0.5408507585525513,
+        "on_article_mass": 0.6383511424064636,
+        "total": {
+          "tv": 0.6519029140472412,
+          "target_minus_source": 0.44146716594696045,
+          "desired_cosine": 0.7544748187065125
+        },
+        "public": {
+          "tv": 0.6205335855484009,
+          "target_minus_source": 0.35250765085220337,
+          "desired_cosine": 0.6879397630691528
+        },
+        "private": {
+          "tv": 0.09427780658006668,
+          "target_minus_source": 0.08895951509475708,
+          "desired_cosine": 0.655109703540802
+        },
+        "reconstruction_l1": 7.717098959858504e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.8409355878829956,
+        "off_article_mass": 0.35664692521095276,
+        "on_article_mass": 0.3548360764980316,
+        "total": {
+          "tv": 0.5596956014633179,
+          "target_minus_source": 0.38536831736564636,
+          "desired_cosine": 0.7597113847732544
+        },
+        "public": {
+          "tv": 0.5300964117050171,
+          "target_minus_source": 0.30113282799720764,
+          "desired_cosine": 0.6879396438598633
+        },
+        "private": {
+          "tv": 0.0890175923705101,
+          "target_minus_source": 0.08423548191785812,
+          "desired_cosine": 0.6592597961425781
+        },
+        "reconstruction_l1": 2.653377073613683e-08
+      }
+    }
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "source_word": "performer",
+    "target_word": "entertainer",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.875,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.125,
+      "sign_reversed": -0.625
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.0,
+        "off_article_mass": 0.7772995233535767,
+        "on_article_mass": 0.9770123958587646,
+        "total": {
+          "tv": 0.676006555557251,
+          "target_minus_source": 0.47516313195228577,
+          "desired_cosine": 0.7634885311126709
+        },
+        "public": {
+          "tv": 0.6303651332855225,
+          "target_minus_source": 0.35809263586997986,
+          "desired_cosine": 0.6879396438598633
+        },
+        "private": {
+          "tv": 0.1224503368139267,
+          "target_minus_source": 0.11707049608230591,
+          "desired_cosine": 0.6624457240104675
+        },
+        "reconstruction_l1": 1.2989004538610516e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9998751878738403,
+        "off_article_mass": 0.6212306022644043,
+        "on_article_mass": 0.8072876930236816,
+        "total": {
+          "tv": 0.6759281158447266,
+          "target_minus_source": 0.4751182794570923,
+          "desired_cosine": 0.7634938955307007
+        },
+        "public": {
+          "tv": 0.6302863955497742,
+          "target_minus_source": 0.3580479621887207,
+          "desired_cosine": 0.6879397630691528
+        },
+        "private": {
+          "tv": 0.12245016545057297,
+          "target_minus_source": 0.11707032471895218,
+          "desired_cosine": 0.6624457836151123
+        },
+        "reconstruction_l1": 1.789917369876548e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9878435730934143,
+        "off_article_mass": 0.5408507585525513,
+        "on_article_mass": 0.5949159264564514,
+        "total": {
+          "tv": 0.668317437171936,
+          "target_minus_source": 0.4706827402114868,
+          "desired_cosine": 0.763974130153656
+        },
+        "public": {
+          "tv": 0.6227021217346191,
+          "target_minus_source": 0.35373950004577637,
+          "desired_cosine": 0.6879396438598633
+        },
+        "private": {
+          "tv": 0.12231176346540451,
+          "target_minus_source": 0.11694321781396866,
+          "desired_cosine": 0.6624960899353027
+        },
+        "reconstruction_l1": 1.640057334384437e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.8715646266937256,
+        "off_article_mass": 0.35664692521095276,
+        "on_article_mass": 0.2935090959072113,
+        "total": {
+          "tv": 0.5937837362289429,
+          "target_minus_source": 0.42557135224342346,
+          "desired_cosine": 0.7683132290840149
+        },
+        "public": {
+          "tv": 0.5494038462638855,
+          "target_minus_source": 0.3121008574962616,
+          "desired_cosine": 0.6879397034645081
+        },
+        "private": {
+          "tv": 0.11858368664979935,
+          "target_minus_source": 0.11347047984600067,
+          "desired_cosine": 0.6639137268066406
+        },
+        "reconstruction_l1": 1.1864687898821558e-08
+      }
+    }
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "source_word": "teacher",
+    "target_word": "educator",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.1875,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.1875,
+      "sign_reversed": -0.125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9241418242454529,
+        "off_article_mass": 0.022977370768785477,
+        "on_article_mass": 0.00723825441673398,
+        "total": {
+          "tv": 0.8222780227661133,
+          "target_minus_source": 0.9405653476715088,
+          "desired_cosine": 0.9321888089179993
+        },
+        "public": {
+          "tv": 0.821499764919281,
+          "target_minus_source": 0.9166538119316101,
+          "desired_cosine": 0.9204210042953491
+        },
+        "private": {
+          "tv": 0.029512986540794373,
+          "target_minus_source": 0.023911546915769577,
+          "desired_cosine": 0.6720566153526306
+        },
+        "reconstruction_l1": 1.6056047158485853e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.7308551669120789,
+        "off_article_mass": 0.18230238556861877,
+        "on_article_mass": 0.15585702657699585,
+        "total": {
+          "tv": 0.6495627164840698,
+          "target_minus_source": 0.7431144118309021,
+          "desired_cosine": 0.9324202537536621
+        },
+        "public": {
+          "tv": 0.6496809720993042,
+          "target_minus_source": 0.7249332666397095,
+          "desired_cosine": 0.9204209446907043
+        },
+        "private": {
+          "tv": 0.024836285039782524,
+          "target_minus_source": 0.018181130290031433,
+          "desired_cosine": 0.6418924927711487
+        },
+        "reconstruction_l1": 4.405069642388071e-09
+      },
+      "0.5": {
+        "delta_q_target_article": 0.6083956956863403,
+        "off_article_mass": 0.31160926818847656,
+        "on_article_mass": 0.3527364134788513,
+        "total": {
+          "tv": 0.5402151942253113,
+          "target_minus_source": 0.6184241771697998,
+          "desired_cosine": 0.9328725934028625
+        },
+        "public": {
+          "tv": 0.5408228039741516,
+          "target_minus_source": 0.6034661531448364,
+          "desired_cosine": 0.9204210638999939
+        },
+        "private": {
+          "tv": 0.022217730060219765,
+          "target_minus_source": 0.014958053827285767,
+          "desired_cosine": 0.615725040435791
+        },
+        "reconstruction_l1": 1.4323239261315734e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.4554859399795532,
+        "off_article_mass": 0.26480168104171753,
+        "on_article_mass": 0.3187773823738098,
+        "total": {
+          "tv": 0.40410903096199036,
+          "target_minus_source": 0.46496421098709106,
+          "desired_cosine": 0.9354323148727417
+        },
+        "public": {
+          "tv": 0.4048962891101837,
+          "target_minus_source": 0.4517952501773834,
+          "desired_cosine": 0.9204208850860596
+        },
+        "private": {
+          "tv": 0.02076907828450203,
+          "target_minus_source": 0.013168945908546448,
+          "desired_cosine": 0.596396267414093
+        },
+        "reconstruction_l1": 7.360076992313225e-09
+      }
+    }
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "source_word": "teacher",
+    "target_word": "educator",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9999998807907104,
+        "off_article_mass": 0.022977370768785477,
+        "on_article_mass": 0.9770225882530212,
+        "total": {
+          "tv": 0.8940699100494385,
+          "target_minus_source": 1.0552672147750854,
+          "desired_cosine": 0.9465151429176331
+        },
+        "public": {
+          "tv": 0.8889325857162476,
+          "target_minus_source": 0.9918972253799438,
+          "desired_cosine": 0.9204208850860596
+        },
+        "private": {
+          "tv": 0.06970108300447464,
+          "target_minus_source": 0.06336992233991623,
+          "desired_cosine": 0.6762383580207825
+        },
+        "reconstruction_l1": 1.419892914356069e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9982953667640686,
+        "off_article_mass": 0.18230238556861877,
+        "on_article_mass": 0.8171515464782715,
+        "total": {
+          "tv": 0.8925372958183289,
+          "target_minus_source": 1.0534656047821045,
+          "desired_cosine": 0.9465221166610718
+        },
+        "public": {
+          "tv": 0.8874173760414124,
+          "target_minus_source": 0.9902064800262451,
+          "desired_cosine": 0.9204208850860596
+        },
+        "private": {
+          "tv": 0.06960073113441467,
+          "target_minus_source": 0.06325910985469818,
+          "desired_cosine": 0.6760543584823608
+        },
+        "reconstruction_l1": 2.4651779284567965e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.948609471321106,
+        "off_article_mass": 0.31160926818847656,
+        "on_article_mass": 0.664923906326294,
+        "total": {
+          "tv": 0.8479647636413574,
+          "target_minus_source": 1.0015368461608887,
+          "desired_cosine": 0.9469102621078491
+        },
+        "public": {
+          "tv": 0.843250036239624,
+          "target_minus_source": 0.940923273563385,
+          "desired_cosine": 0.9204209446907043
+        },
+        "private": {
+          "tv": 0.06732235848903656,
+          "target_minus_source": 0.06061365082859993,
+          "desired_cosine": 0.6714792847633362
+        },
+        "reconstruction_l1": 2.55760621570289e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.7287929654121399,
+        "off_article_mass": 0.26480168104171753,
+        "on_article_mass": 0.4095485210418701,
+        "total": {
+          "tv": 0.6511721014976501,
+          "target_minus_source": 0.7741096019744873,
+          "desired_cosine": 0.9500752091407776
+        },
+        "public": {
+          "tv": 0.6478478908538818,
+          "target_minus_source": 0.7228877544403076,
+          "desired_cosine": 0.9204209446907043
+        },
+        "private": {
+          "tv": 0.06037110835313797,
+          "target_minus_source": 0.05122179538011551,
+          "desired_cosine": 0.6518095135688782
+        },
+        "reconstruction_l1": 3.5715967072746935e-08
+      }
+    }
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "source_word": "teacher",
+    "target_word": "educator",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.4375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.3125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.0,
+        "off_article_mass": 0.022977370768785477,
+        "on_article_mass": 0.999841570854187,
+        "total": {
+          "tv": 0.8933912515640259,
+          "target_minus_source": 1.0782904624938965,
+          "desired_cosine": 0.9547302722930908
+        },
+        "public": {
+          "tv": 0.8889326453208923,
+          "target_minus_source": 0.9918973445892334,
+          "desired_cosine": 0.9204208850860596
+        },
+        "private": {
+          "tv": 0.08854709565639496,
+          "target_minus_source": 0.08639305084943771,
+          "desired_cosine": 0.6799489259719849
+        },
+        "reconstruction_l1": 1.6184831252985532e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9997511506080627,
+        "off_article_mass": 0.18230238556861877,
+        "on_article_mass": 0.9701455235481262,
+        "total": {
+          "tv": 0.8931699395179749,
+          "target_minus_source": 1.0780404806137085,
+          "desired_cosine": 0.9547357559204102
+        },
+        "public": {
+          "tv": 0.8887115120887756,
+          "target_minus_source": 0.9916505217552185,
+          "desired_cosine": 0.9204209446907043
+        },
+        "private": {
+          "tv": 0.08854309469461441,
+          "target_minus_source": 0.0863899290561676,
+          "desired_cosine": 0.6799551248550415
+        },
+        "reconstruction_l1": 1.2182926667492211e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9792435169219971,
+        "off_article_mass": 0.31160926818847656,
+        "on_article_mass": 0.8269875645637512,
+        "total": {
+          "tv": 0.874912440776825,
+          "target_minus_source": 1.0572413206100464,
+          "desired_cosine": 0.9551159739494324
+        },
+        "public": {
+          "tv": 0.8704816102981567,
+          "target_minus_source": 0.9713090658187866,
+          "desired_cosine": 0.9204210042953491
+        },
+        "private": {
+          "tv": 0.08805675059556961,
+          "target_minus_source": 0.08593223989009857,
+          "desired_cosine": 0.6808637976646423
+        },
+        "reconstruction_l1": 2.2943845934264573e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.8174512386322021,
+        "off_article_mass": 0.26480168104171753,
+        "on_article_mass": 0.45915383100509644,
+        "total": {
+          "tv": 0.7307450771331787,
+          "target_minus_source": 0.891997754573822,
+          "desired_cosine": 0.9581000804901123
+        },
+        "public": {
+          "tv": 0.7266591191291809,
+          "target_minus_source": 0.8108276724815369,
+          "desired_cosine": 0.9204210042953491
+        },
+        "private": {
+          "tv": 0.08325999230146408,
+          "target_minus_source": 0.08117008209228516,
+          "desired_cosine": 0.6909939646720886
+        },
+        "reconstruction_l1": 1.2945745808679021e-08
+      }
+    }
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "source_word": "painter",
+    "target_word": "artist",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.3125,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0625,
+      "sign_reversed": -0.0625
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.9994460940361023,
+        "off_article_mass": 0.22269968688488007,
+        "on_article_mass": 0.7773949503898621,
+        "total": {
+          "tv": 0.9611372351646423,
+          "target_minus_source": 1.163142204284668,
+          "desired_cosine": 0.9276676774024963
+        },
+        "public": {
+          "tv": 0.9578016996383667,
+          "target_minus_source": 1.1505436897277832,
+          "desired_cosine": 0.9289381504058838
+        },
+        "private": {
+          "tv": 0.01396882999688387,
+          "target_minus_source": 0.012598537839949131,
+          "desired_cosine": 0.6471213102340698
+        },
+        "reconstruction_l1": 2.3010622740571307e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9485039710998535,
+        "off_article_mass": 0.3766707181930542,
+        "on_article_mass": 0.632060706615448,
+        "total": {
+          "tv": 0.9121810793876648,
+          "target_minus_source": 1.1053553819656372,
+          "desired_cosine": 0.9282563924789429
+        },
+        "public": {
+          "tv": 0.9089822173118591,
+          "target_minus_source": 1.0918999910354614,
+          "desired_cosine": 0.9289380311965942
+        },
+        "private": {
+          "tv": 0.014540956355631351,
+          "target_minus_source": 0.013455372303724289,
+          "desired_cosine": 0.7206457257270813
+        },
+        "reconstruction_l1": 3.037313334175451e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.7574877738952637,
+        "off_article_mass": 0.4193691611289978,
+        "on_article_mass": 0.5775052309036255,
+        "total": {
+          "tv": 0.7287305593490601,
+          "target_minus_source": 0.8879284858703613,
+          "desired_cosine": 0.9304215908050537
+        },
+        "public": {
+          "tv": 0.725925087928772,
+          "target_minus_source": 0.8720057010650635,
+          "desired_cosine": 0.9289379715919495
+        },
+        "private": {
+          "tv": 0.016334576532244682,
+          "target_minus_source": 0.015922747552394867,
+          "desired_cosine": 0.8886664509773254
+        },
+        "reconstruction_l1": 1.9985858301652115e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.47736549377441406,
+        "off_article_mass": 0.29481175541877747,
+        "on_article_mass": 0.38086530566215515,
+        "total": {
+          "tv": 0.459877073764801,
+          "target_minus_source": 0.5679864883422852,
+          "desired_cosine": 0.9349105358123779
+        },
+        "public": {
+          "tv": 0.45747479796409607,
+          "target_minus_source": 0.5495341420173645,
+          "desired_cosine": 0.9289380311965942
+        },
+        "private": {
+          "tv": 0.018405111506581306,
+          "target_minus_source": 0.018452294170856476,
+          "desired_cosine": 0.940079927444458
+        },
+        "reconstruction_l1": 1.1396394938856247e-08
+      }
+    }
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "source_word": "painter",
+    "target_word": "artist",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.4375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.999998927116394,
+        "off_article_mass": 0.22269968688488007,
+        "on_article_mass": 0.9999545812606812,
+        "total": {
+          "tv": 0.9613555073738098,
+          "target_minus_source": 1.1610950231552124,
+          "desired_cosine": 0.9279832243919373
+        },
+        "public": {
+          "tv": 0.9583314657211304,
+          "target_minus_source": 1.1511800289154053,
+          "desired_cosine": 0.928938090801239
+        },
+        "private": {
+          "tv": 0.012646001763641834,
+          "target_minus_source": 0.009915030561387539,
+          "desired_cosine": 0.6127427220344543
+        },
+        "reconstruction_l1": 2.9611726404255023e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9957264065742493,
+        "off_article_mass": 0.3766707181930542,
+        "on_article_mass": 0.9818211793899536,
+        "total": {
+          "tv": 0.9572605490684509,
+          "target_minus_source": 1.1561858654022217,
+          "desired_cosine": 0.9279838800430298
+        },
+        "public": {
+          "tv": 0.9542370438575745,
+          "target_minus_source": 1.1462616920471191,
+          "desired_cosine": 0.9289380311965942
+        },
+        "private": {
+          "tv": 0.01264963112771511,
+          "target_minus_source": 0.009924287907779217,
+          "desired_cosine": 0.6134467720985413
+        },
+        "reconstruction_l1": 2.0353722263166674e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9258497357368469,
+        "off_article_mass": 0.4193691611289978,
+        "on_article_mass": 0.8626323938369751,
+        "total": {
+          "tv": 0.8902638554573059,
+          "target_minus_source": 1.076375961303711,
+          "desired_cosine": 0.9282596707344055
+        },
+        "public": {
+          "tv": 0.8872717618942261,
+          "target_minus_source": 1.0658208131790161,
+          "desired_cosine": 0.9289378523826599
+        },
+        "private": {
+          "tv": 0.013104875572025776,
+          "target_minus_source": 0.010555175133049488,
+          "desired_cosine": 0.660394549369812
+        },
+        "reconstruction_l1": 2.497490214636855e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.6914961934089661,
+        "off_article_mass": 0.29481175541877747,
+        "on_article_mass": 0.5066214203834534,
+        "total": {
+          "tv": 0.665463387966156,
+          "target_minus_source": 0.8108087778091431,
+          "desired_cosine": 0.9311021566390991
+        },
+        "public": {
+          "tv": 0.6626831889152527,
+          "target_minus_source": 0.7960374355316162,
+          "desired_cosine": 0.9289380311965942
+        },
+        "private": {
+          "tv": 0.01634562760591507,
+          "target_minus_source": 0.014771271497011185,
+          "desired_cosine": 0.8759748339653015
+        },
+        "reconstruction_l1": 2.4130107689757097e-08
+      }
+    }
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "source_word": "painter",
+    "target_word": "artist",
+    "source_article": "a",
+    "target_article": "an",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "an",
+    "target_branch_delta_delta": 0.5,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.125,
+      "sign_reversed": -0.125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.999998927116394,
+        "off_article_mass": 0.22269968688488007,
+        "on_article_mass": 0.999998927116394,
+        "total": {
+          "tv": 0.9620147943496704,
+          "target_minus_source": 1.1558033227920532,
+          "desired_cosine": 0.9279444217681885
+        },
+        "public": {
+          "tv": 0.9583314657211304,
+          "target_minus_source": 1.1511800289154053,
+          "desired_cosine": 0.928938090801239
+        },
+        "private": {
+          "tv": 0.014977802522480488,
+          "target_minus_source": 0.004623293876647949,
+          "desired_cosine": 0.2818833589553833
+        },
+        "reconstruction_l1": 1.667389959436605e-08
+      },
+      "0.25": {
+        "delta_q_target_article": 0.9959197044372559,
+        "off_article_mass": 0.3766707181930542,
+        "on_article_mass": 0.9957612156867981,
+        "total": {
+          "tv": 0.9581055045127869,
+          "target_minus_source": 1.1511081457138062,
+          "desired_cosine": 0.9279404878616333
+        },
+        "public": {
+          "tv": 0.954422116279602,
+          "target_minus_source": 1.146484136581421,
+          "desired_cosine": 0.9289380311965942
+        },
+        "private": {
+          "tv": 0.01497825887054205,
+          "target_minus_source": 0.004624031484127045,
+          "desired_cosine": 0.2819311022758484
+        },
+        "reconstruction_l1": 2.8807843222011797e-08
+      },
+      "0.5": {
+        "delta_q_target_article": 0.9367406368255615,
+        "off_article_mass": 0.4193691611289978,
+        "on_article_mass": 0.9214555621147156,
+        "total": {
+          "tv": 0.9013828039169312,
+          "target_minus_source": 1.0831998586654663,
+          "desired_cosine": 0.9279819130897522
+        },
+        "public": {
+          "tv": 0.8977089524269104,
+          "target_minus_source": 1.0783582925796509,
+          "desired_cosine": 0.9289379119873047
+        },
+        "private": {
+          "tv": 0.015133397653698921,
+          "target_minus_source": 0.004841591697186232,
+          "desired_cosine": 0.29612985253334045
+        },
+        "reconstruction_l1": 2.519855080151956e-08
+      },
+      "1.0": {
+        "delta_q_target_article": 0.7447834610939026,
+        "off_article_mass": 0.29481175541877747,
+        "on_article_mass": 0.5489654541015625,
+        "total": {
+          "tv": 0.7172728776931763,
+          "target_minus_source": 0.8656784296035767,
+          "desired_cosine": 0.9298679232597351
+        },
+        "public": {
+          "tv": 0.7137500643730164,
+          "target_minus_source": 0.857380747795105,
+          "desired_cosine": 0.928938090801239
+        },
+        "private": {
+          "tv": 0.017719056457281113,
+          "target_minus_source": 0.00829773023724556,
+          "desired_cosine": 0.49961569905281067
+        },
+        "reconstruction_l1": 2.4797412123689355e-08
+      }
+    }
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "source_word": "driver",
+    "target_word": "chauffeur",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.125,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.1875
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 3.6954879760742188e-06,
+        "off_article_mass": 0.9236696362495422,
+        "on_article_mass": 0.9232592582702637,
+        "total": {
+          "tv": 0.019038546830415726,
+          "target_minus_source": 0.014428898692131042,
+          "desired_cosine": 0.7634367942810059
+        },
+        "public": {
+          "tv": 3.3699880077620037e-06,
+          "target_minus_source": -2.086162567138672e-07,
+          "desired_cosine": -0.10178878158330917
+        },
+        "private": {
+          "tv": 0.019037814810872078,
+          "target_minus_source": 0.014429107308387756,
+          "desired_cosine": 0.7634643912315369
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.005781829357147217,
+        "off_article_mass": 0.7039121389389038,
+        "on_article_mass": 0.695175051689148,
+        "total": {
+          "tv": 0.02025037817656994,
+          "target_minus_source": 0.014083996415138245,
+          "desired_cosine": 0.7122852206230164
+        },
+        "public": {
+          "tv": 0.005263431929051876,
+          "target_minus_source": -0.00033205002546310425,
+          "desired_cosine": -0.10362517088651657
+        },
+        "private": {
+          "tv": 0.019024597480893135,
+          "target_minus_source": 0.014416046440601349,
+          "desired_cosine": 0.7634629607200623
+        },
+        "reconstruction_l1": 1.2913271840719887e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.04654592275619507,
+        "off_article_mass": 0.484838604927063,
+        "on_article_mass": 0.46637386083602905,
+        "total": {
+          "tv": 0.046728573739528656,
+          "target_minus_source": 0.011335954070091248,
+          "desired_cosine": 0.32839393615722656
+        },
+        "public": {
+          "tv": 0.04237274453043938,
+          "target_minus_source": -0.002673111855983734,
+          "desired_cosine": -0.10362408310174942
+        },
+        "private": {
+          "tv": 0.018687674775719643,
+          "target_minus_source": 0.014009065926074982,
+          "desired_cosine": 0.7634065747261047
+        },
+        "reconstruction_l1": 3.176056639908609e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.07465285062789917,
+        "off_article_mass": 0.17852135002613068,
+        "on_article_mass": 0.16544979810714722,
+        "total": {
+          "tv": 0.06821586191654205,
+          "target_minus_source": 0.008020296692848206,
+          "desired_cosine": 0.1693829894065857
+        },
+        "public": {
+          "tv": 0.06795969605445862,
+          "target_minus_source": -0.004287257790565491,
+          "desired_cosine": -0.10362354665994644
+        },
+        "private": {
+          "tv": 0.017295552417635918,
+          "target_minus_source": 0.012307554483413696,
+          "desired_cosine": 0.7625126838684082
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "source_word": "driver",
+    "target_word": "chauffeur",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.25,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.1875
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 3.6954879760742188e-06,
+        "off_article_mass": 0.9236696362495422,
+        "on_article_mass": 0.9767391681671143,
+        "total": {
+          "tv": 0.031815990805625916,
+          "target_minus_source": 0.03140634298324585,
+          "desired_cosine": 0.9060443639755249
+        },
+        "public": {
+          "tv": 3.3811907087510917e-06,
+          "target_minus_source": -2.086162567138672e-07,
+          "desired_cosine": -0.10130364447832108
+        },
+        "private": {
+          "tv": 0.03181461617350578,
+          "target_minus_source": 0.031406551599502563,
+          "desired_cosine": 0.9060545563697815
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.006489396095275879,
+        "off_article_mass": 0.7039121389389038,
+        "on_article_mass": 0.7884541153907776,
+        "total": {
+          "tv": 0.03468776121735573,
+          "target_minus_source": 0.031027525663375854,
+          "desired_cosine": 0.8836256265640259
+        },
+        "public": {
+          "tv": 0.00590757979080081,
+          "target_minus_source": -0.00037267059087753296,
+          "desired_cosine": -0.10362045466899872
+        },
+        "private": {
+          "tv": 0.03180975466966629,
+          "target_minus_source": 0.03140019625425339,
+          "desired_cosine": 0.9060541987419128
+        },
+        "reconstruction_l1": 1.942927763121105e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.06179457902908325,
+        "off_article_mass": 0.484838604927063,
+        "on_article_mass": 0.5143471956253052,
+        "total": {
+          "tv": 0.06149880960583687,
+          "target_minus_source": 0.027417905628681183,
+          "desired_cosine": 0.543647050857544
+        },
+        "public": {
+          "tv": 0.05625421553850174,
+          "target_minus_source": -0.003548823297023773,
+          "desired_cosine": -0.10362383723258972
+        },
+        "private": {
+          "tv": 0.03171016275882721,
+          "target_minus_source": 0.030966728925704956,
+          "desired_cosine": 0.905938446521759
+        },
+        "reconstruction_l1": 2.8836490972850015e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.11600953340530396,
+        "off_article_mass": 0.17852135002613068,
+        "on_article_mass": 0.1677408069372177,
+        "total": {
+          "tv": 0.10625062137842178,
+          "target_minus_source": 0.021407559514045715,
+          "desired_cosine": 0.2822173535823822
+        },
+        "public": {
+          "tv": 0.10560840368270874,
+          "target_minus_source": -0.0066623687744140625,
+          "desired_cosine": -0.10362403839826584
+        },
+        "private": {
+          "tv": 0.03135362267494202,
+          "target_minus_source": 0.028069928288459778,
+          "desired_cosine": 0.8991358280181885
+        },
+        "reconstruction_l1": 1.9864481171083526e-09
+      }
+    }
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "source_word": "driver",
+    "target_word": "chauffeur",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.4375,
+    "target_rank_before": 2,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0625,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 3.6954879760742188e-06,
+        "off_article_mass": 0.9236696362495422,
+        "on_article_mass": 0.9760248064994812,
+        "total": {
+          "tv": 0.054199207574129105,
+          "target_minus_source": 0.05766771733760834,
+          "desired_cosine": 0.9353467226028442
+        },
+        "public": {
+          "tv": 3.381380111022736e-06,
+          "target_minus_source": -2.086162567138672e-07,
+          "desired_cosine": -0.10129602998495102
+        },
+        "private": {
+          "tv": 0.054198361933231354,
+          "target_minus_source": 0.05766792595386505,
+          "desired_cosine": 0.9353516101837158
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0065694451332092285,
+        "off_article_mass": 0.7039121389389038,
+        "on_article_mass": 0.7675735354423523,
+        "total": {
+          "tv": 0.05680839717388153,
+          "target_minus_source": 0.05728355050086975,
+          "desired_cosine": 0.9250205159187317
+        },
+        "public": {
+          "tv": 0.0059804474003612995,
+          "target_minus_source": -0.0003772750496864319,
+          "desired_cosine": -0.10362263023853302
+        },
+        "private": {
+          "tv": 0.054192785173654556,
+          "target_minus_source": 0.05766082555055618,
+          "desired_cosine": 0.9353513717651367
+        },
+        "reconstruction_l1": 3.225339995083232e-10
+      },
+      "0.5": {
+        "delta_q_target_article": 0.06487125158309937,
+        "off_article_mass": 0.484838604927063,
+        "on_article_mass": 0.4716867506504059,
+        "total": {
+          "tv": 0.08103452622890472,
+          "target_minus_source": 0.05331066995859146,
+          "desired_cosine": 0.736542284488678
+        },
+        "public": {
+          "tv": 0.05905505269765854,
+          "target_minus_source": -0.0037255212664604187,
+          "desired_cosine": -0.10362402349710464
+        },
+        "private": {
+          "tv": 0.053903501480817795,
+          "target_minus_source": 0.05703619122505188,
+          "desired_cosine": 0.9353081583976746
+        },
+        "reconstruction_l1": 1.199452759337305e-09
+      },
+      "1.0": {
+        "delta_q_target_article": 0.12735062837600708,
+        "off_article_mass": 0.17852135002613068,
+        "on_article_mass": 0.1484830677509308,
+        "total": {
+          "tv": 0.11849744617938995,
+          "target_minus_source": 0.044871799647808075,
+          "desired_cosine": 0.4784233868122101
+        },
+        "public": {
+          "tv": 0.11593270301818848,
+          "target_minus_source": -0.007313661277294159,
+          "desired_cosine": -0.10362376272678375
+        },
+        "private": {
+          "tv": 0.05214476212859154,
+          "target_minus_source": 0.052185460925102234,
+          "desired_cosine": 0.9335929155349731
+        },
+        "reconstruction_l1": 3.078385102384118e-09
+      }
+    }
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "source_word": "barber",
+    "target_word": "hairdresser",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.0,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": false,
+    "controls": {
+      "wrong": -0.125,
+      "sign_reversed": -0.375
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.7772998809814453,
+        "on_article_mass": 0.977022647857666,
+        "total": {
+          "tv": 0.006033027078956366,
+          "target_minus_source": 0.0005283951759338379,
+          "desired_cosine": 0.11704825609922409
+        },
+        "public": {
+          "tv": 5.109797134028593e-13,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.006033027078956366,
+          "target_minus_source": 0.0005283951759338379,
+          "desired_cosine": 0.11704825609922409
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -1.9669532775878906e-05,
+        "off_article_mass": 0.6220849752426147,
+        "on_article_mass": 0.8171558976173401,
+        "total": {
+          "tv": 0.006023402325809002,
+          "target_minus_source": 0.0005266070365905762,
+          "desired_cosine": 0.11695589870214462
+        },
+        "public": {
+          "tv": 1.643282303120941e-05,
+          "target_minus_source": -1.8477439880371094e-06,
+          "desired_cosine": -0.13667160272598267
+        },
+        "private": {
+          "tv": 0.006032897159457207,
+          "target_minus_source": 0.0005284547805786133,
+          "desired_cosine": 0.11706209927797318
+        },
+        "reconstruction_l1": 1.734723475976807e-18
+      },
+      "0.5": {
+        "delta_q_target_article": -0.002419114112854004,
+        "off_article_mass": 0.5476521253585815,
+        "on_article_mass": 0.6610391736030579,
+        "total": {
+          "tv": 0.0053956881165504456,
+          "target_minus_source": 0.00031016767024993896,
+          "desired_cosine": 0.09751945734024048
+        },
+        "public": {
+          "tv": 0.0020224780309945345,
+          "target_minus_source": -0.00022521615028381348,
+          "desired_cosine": -0.13541051745414734
+        },
+        "private": {
+          "tv": 0.006050068885087967,
+          "target_minus_source": 0.0005353838205337524,
+          "desired_cosine": 0.11872419714927673
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.017216086387634277,
+        "off_article_mass": 0.37131810188293457,
+        "on_article_mass": 0.4099672734737396,
+        "total": {
+          "tv": 0.013131682761013508,
+          "target_minus_source": -0.0009837448596954346,
+          "desired_cosine": -0.11845780164003372
+        },
+        "public": {
+          "tv": 0.014393141493201256,
+          "target_minus_source": -0.0016027241945266724,
+          "desired_cosine": -0.13540489971637726
+        },
+        "private": {
+          "tv": 0.006303746718913317,
+          "target_minus_source": 0.0006189793348312378,
+          "desired_cosine": 0.13852715492248535
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "source_word": "barber",
+    "target_word": "hairdresser",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.5
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.7772998809814453,
+        "on_article_mass": 0.9980732202529907,
+        "total": {
+          "tv": 0.055929917842149734,
+          "target_minus_source": 0.0960351973772049,
+          "desired_cosine": 0.9982149600982666
+        },
+        "public": {
+          "tv": 3.879647297866384e-11,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.055929917842149734,
+          "target_minus_source": 0.0960351973772049,
+          "desired_cosine": 0.9982149600982666
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -0.00011551380157470703,
+        "off_article_mass": 0.6220849752426147,
+        "on_article_mass": 0.9235865473747253,
+        "total": {
+          "tv": 0.05590713769197464,
+          "target_minus_source": 0.09601294994354248,
+          "desired_cosine": 0.9982434511184692
+        },
+        "public": {
+          "tv": 9.657071495894343e-05,
+          "target_minus_source": -1.074373722076416e-05,
+          "desired_cosine": -0.1352871060371399
+        },
+        "private": {
+          "tv": 0.05592397227883339,
+          "target_minus_source": 0.09602369368076324,
+          "desired_cosine": 0.9982144832611084
+        },
+        "reconstruction_l1": 4.2593600630032313e-14
+      },
+      "0.5": {
+        "delta_q_target_article": -0.008185982704162598,
+        "off_article_mass": 0.5476521253585815,
+        "on_article_mass": 0.7537680864334106,
+        "total": {
+          "tv": 0.05487474426627159,
+          "target_minus_source": 0.09424974024295807,
+          "desired_cosine": 0.9986116290092468
+        },
+        "public": {
+          "tv": 0.006843759678304195,
+          "target_minus_source": -0.0007620900869369507,
+          "desired_cosine": -0.13540734350681305
+        },
+        "private": {
+          "tv": 0.05546741932630539,
+          "target_minus_source": 0.09501183032989502,
+          "desired_cosine": 0.9981779456138611
+        },
+        "reconstruction_l1": 2.210076219255619e-11
+      },
+      "1.0": {
+        "delta_q_target_article": -0.04501885175704956,
+        "off_article_mass": 0.37131810188293457,
+        "on_article_mass": 0.4465406835079193,
+        "total": {
+          "tv": 0.06584584712982178,
+          "target_minus_source": 0.08296270668506622,
+          "desired_cosine": 0.9500289559364319
+        },
+        "public": {
+          "tv": 0.03763709217309952,
+          "target_minus_source": -0.004191040992736816,
+          "desired_cosine": -0.13540564477443695
+        },
+        "private": {
+          "tv": 0.0519593209028244,
+          "target_minus_source": 0.08715374767780304,
+          "desired_cosine": 0.9977871179580688
+        },
+        "reconstruction_l1": 3.1045088375036833e-13
+      }
+    }
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "source_word": "barber",
+    "target_word": "hairdresser",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.375,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.125,
+      "sign_reversed": -0.75
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.7772998809814453,
+        "on_article_mass": 0.9994471669197083,
+        "total": {
+          "tv": 0.06320865452289581,
+          "target_minus_source": 0.08872866630554199,
+          "desired_cosine": 0.934260904788971
+        },
+        "public": {
+          "tv": 1.8402833701358645e-09,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.06320865452289581,
+          "target_minus_source": 0.08872866630554199,
+          "desired_cosine": 0.934260904788971
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -0.0005449652671813965,
+        "off_article_mass": 0.6220849752426147,
+        "on_article_mass": 0.951896607875824,
+        "total": {
+          "tv": 0.06315793842077255,
+          "target_minus_source": 0.08863034844398499,
+          "desired_cosine": 0.9339378476142883
+        },
+        "public": {
+          "tv": 0.0004555711057037115,
+          "target_minus_source": -5.075335502624512e-05,
+          "desired_cosine": -0.1354643702507019
+        },
+        "private": {
+          "tv": 0.06318525224924088,
+          "target_minus_source": 0.08868110179901123,
+          "desired_cosine": 0.9342619776725769
+        },
+        "reconstruction_l1": 4.088030098898382e-13
+      },
+      "0.5": {
+        "delta_q_target_article": -0.020176410675048828,
+        "off_article_mass": 0.5476521253585815,
+        "on_article_mass": 0.7896413803100586,
+        "total": {
+          "tv": 0.06588796526193619,
+          "target_minus_source": 0.08487285673618317,
+          "desired_cosine": 0.9121624231338501
+        },
+        "public": {
+          "tv": 0.016868095844984055,
+          "target_minus_source": -0.0018783360719680786,
+          "desired_cosine": -0.13540613651275635
+        },
+        "private": {
+          "tv": 0.06227657198905945,
+          "target_minus_source": 0.08675119280815125,
+          "desired_cosine": 0.9342929720878601
+        },
+        "reconstruction_l1": 5.2203245198834125e-11
+      },
+      "1.0": {
+        "delta_q_target_article": -0.0826336145401001,
+        "off_article_mass": 0.37131810188293457,
+        "on_article_mass": 0.46234071254730225,
+        "total": {
+          "tv": 0.07917605340480804,
+          "target_minus_source": 0.06959277391433716,
+          "desired_cosine": 0.7172817587852478
+        },
+        "public": {
+          "tv": 0.06908417493104935,
+          "target_minus_source": -0.007692769169807434,
+          "desired_cosine": -0.13540512323379517
+        },
+        "private": {
+          "tv": 0.057877860963344574,
+          "target_minus_source": 0.07728554308414459,
+          "desired_cosine": 0.9339218139648438
+        },
+        "reconstruction_l1": 2.576336644022348e-10
+      }
+    }
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "source_word": "doctor",
+    "target_word": "physician",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.125,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.125
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.7771877646446228,
+        "on_article_mass": 0.9770056009292603,
+        "total": {
+          "tv": 0.022848859429359436,
+          "target_minus_source": 0.02187006175518036,
+          "desired_cosine": 0.9213516116142273
+        },
+        "public": {
+          "tv": 9.100925524307968e-08,
+          "target_minus_source": -1.4901161193847656e-08,
+          "desired_cosine": -0.234439417719841
+        },
+        "private": {
+          "tv": 0.022848907858133316,
+          "target_minus_source": 0.021870076656341553,
+          "desired_cosine": 0.9213520288467407
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0007915496826171875,
+        "off_article_mass": 0.6002718806266785,
+        "on_article_mass": 0.8017483949661255,
+        "total": {
+          "tv": 0.023069996386766434,
+          "target_minus_source": 0.02177944779396057,
+          "desired_cosine": 0.918329119682312
+        },
+        "public": {
+          "tv": 0.0007666648016311228,
+          "target_minus_source": -7.513165473937988e-05,
+          "desired_cosine": -0.14024828374385834
+        },
+        "private": {
+          "tv": 0.02283545769751072,
+          "target_minus_source": 0.02185457944869995,
+          "desired_cosine": 0.9213517904281616
+        },
+        "reconstruction_l1": 2.370611302746073e-13
+      },
+      "0.5": {
+        "delta_q_target_article": 0.011369526386260986,
+        "off_article_mass": 0.42650529742240906,
+        "on_article_mass": 0.5465206503868103,
+        "total": {
+          "tv": 0.026185767725110054,
+          "target_minus_source": 0.020223692059516907,
+          "desired_cosine": 0.8350480198860168
+        },
+        "public": {
+          "tv": 0.01101265475153923,
+          "target_minus_source": -0.0010789036750793457,
+          "desired_cosine": -0.14020571112632751
+        },
+        "private": {
+          "tv": 0.02238704264163971,
+          "target_minus_source": 0.021302595734596252,
+          "desired_cosine": 0.9213418960571289
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.024180173873901367,
+        "off_article_mass": 0.19207186996936798,
+        "on_article_mass": 0.23352473974227905,
+        "total": {
+          "tv": 0.028099367395043373,
+          "target_minus_source": 0.016507431864738464,
+          "desired_cosine": 0.6410431861877441
+        },
+        "public": {
+          "tv": 0.023421207442879677,
+          "target_minus_source": -0.0022945255041122437,
+          "desired_cosine": -0.1402035653591156
+        },
+        "private": {
+          "tv": 0.020390314981341362,
+          "target_minus_source": 0.018801957368850708,
+          "desired_cosine": 0.9211112260818481
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "source_word": "doctor",
+    "target_word": "physician",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.375,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.7771877646446228,
+        "on_article_mass": 0.9994433522224426,
+        "total": {
+          "tv": 0.05070170387625694,
+          "target_minus_source": 0.07084469497203827,
+          "desired_cosine": 0.9907028079032898
+        },
+        "public": {
+          "tv": 9.690033664355724e-08,
+          "target_minus_source": -1.4901161193847656e-08,
+          "desired_cosine": -0.2205180525779724
+        },
+        "private": {
+          "tv": 0.050701748579740524,
+          "target_minus_source": 0.07084470987319946,
+          "desired_cosine": 0.9907028079032898
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0012399554252624512,
+        "off_article_mass": 0.6002718806266785,
+        "on_article_mass": 0.9437292218208313,
+        "total": {
+          "tv": 0.05119592696428299,
+          "target_minus_source": 0.07070854306221008,
+          "desired_cosine": 0.991034746170044
+        },
+        "public": {
+          "tv": 0.0012010450009256601,
+          "target_minus_source": -0.00011764466762542725,
+          "desired_cosine": -0.14018183946609497
+        },
+        "private": {
+          "tv": 0.05069087818264961,
+          "target_minus_source": 0.07082618772983551,
+          "desired_cosine": 0.9907026886940002
+        },
+        "reconstruction_l1": 3.122970979041462e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.021420538425445557,
+        "off_article_mass": 0.42650529742240906,
+        "on_article_mass": 0.6973393559455872,
+        "total": {
+          "tv": 0.059515561908483505,
+          "target_minus_source": 0.06768542528152466,
+          "desired_cosine": 0.9766868352890015
+        },
+        "public": {
+          "tv": 0.02074814960360527,
+          "target_minus_source": -0.002032667398452759,
+          "desired_cosine": -0.14020460844039917
+        },
+        "private": {
+          "tv": 0.050282370299100876,
+          "target_minus_source": 0.06971809267997742,
+          "desired_cosine": 0.9906741976737976
+        },
+        "reconstruction_l1": 1.0964541080626944e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.051721036434173584,
+        "off_article_mass": 0.19207186996936798,
+        "on_article_mass": 0.28999438881874084,
+        "total": {
+          "tv": 0.07218235731124878,
+          "target_minus_source": 0.05794766545295715,
+          "desired_cosine": 0.8680620193481445
+        },
+        "public": {
+          "tv": 0.05009758472442627,
+          "target_minus_source": -0.004907965660095215,
+          "desired_cosine": -0.14020392298698425
+        },
+        "private": {
+          "tv": 0.04786790534853935,
+          "target_minus_source": 0.06285563111305237,
+          "desired_cosine": 0.9890628457069397
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "source_word": "doctor",
+    "target_word": "physician",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.375,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.375
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.7771877646446228,
+        "on_article_mass": 0.999985933303833,
+        "total": {
+          "tv": 0.0538700707256794,
+          "target_minus_source": 0.07077451050281525,
+          "desired_cosine": 0.9905328154563904
+        },
+        "public": {
+          "tv": 9.740413986492058e-08,
+          "target_minus_source": -1.4901161193847656e-08,
+          "desired_cosine": -0.2193467617034912
+        },
+        "private": {
+          "tv": 0.05387011915445328,
+          "target_minus_source": 0.07077452540397644,
+          "desired_cosine": 0.9905328154563904
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0014263391494750977,
+        "off_article_mass": 0.6002718806266785,
+        "on_article_mass": 0.9843776822090149,
+        "total": {
+          "tv": 0.054417602717876434,
+          "target_minus_source": 0.0706338882446289,
+          "desired_cosine": 0.9907822608947754
+        },
+        "public": {
+          "tv": 0.0013815461425110698,
+          "target_minus_source": -0.00013534724712371826,
+          "desired_cosine": -0.14020468294620514
+        },
+        "private": {
+          "tv": 0.0538669154047966,
+          "target_minus_source": 0.07076923549175262,
+          "desired_cosine": 0.9905328750610352
+        },
+        "reconstruction_l1": 3.16258859378582e-11
+      },
+      "0.5": {
+        "delta_q_target_article": 0.028749406337738037,
+        "off_article_mass": 0.42650529742240906,
+        "on_article_mass": 0.8123762607574463,
+        "total": {
+          "tv": 0.06569965183734894,
+          "target_minus_source": 0.06743960082530975,
+          "desired_cosine": 0.959976851940155
+        },
+        "public": {
+          "tv": 0.027846990153193474,
+          "target_minus_source": -0.0027281194925308228,
+          "desired_cosine": -0.14020399749279022
+        },
+        "private": {
+          "tv": 0.053539395332336426,
+          "target_minus_source": 0.07016772031784058,
+          "desired_cosine": 0.9905303716659546
+        },
+        "reconstruction_l1": 7.844148108837601e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.0794174075126648,
+        "off_article_mass": 0.19207186996936798,
+        "on_article_mass": 0.35840147733688354,
+        "total": {
+          "tv": 0.0938594713807106,
+          "target_minus_source": 0.05721810460090637,
+          "desired_cosine": 0.7423514127731323
+        },
+        "public": {
+          "tv": 0.07692459970712662,
+          "target_minus_source": -0.007536172866821289,
+          "desired_cosine": -0.14020416140556335
+        },
+        "private": {
+          "tv": 0.05065980553627014,
+          "target_minus_source": 0.06475427746772766,
+          "desired_cosine": 0.9904205203056335
+        },
+        "reconstruction_l1": 1.0609629494395811e-11
+      }
+    }
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "source_word": "reporter",
+    "target_word": "journalist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.25,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.006692850962281227,
+        "on_article_mass": 0.07585818320512772,
+        "total": {
+          "tv": 0.042369503527879715,
+          "target_minus_source": 0.06755602359771729,
+          "desired_cosine": 0.9683820605278015
+        },
+        "public": {
+          "tv": 8.722658879911638e-12,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.042369503527879715,
+          "target_minus_source": 0.06755602359771729,
+          "desired_cosine": 0.9683820605278015
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 4.7326087951660156e-05,
+        "off_article_mass": 0.11917494982481003,
+        "on_article_mass": 0.26883643865585327,
+        "total": {
+          "tv": 0.0423911027610302,
+          "target_minus_source": 0.06756804883480072,
+          "desired_cosine": 0.9682886600494385
+        },
+        "public": {
+          "tv": 3.6527999327518046e-05,
+          "target_minus_source": 1.3813376426696777e-05,
+          "desired_cosine": 0.3572903573513031
+        },
+        "private": {
+          "tv": 0.042368367314338684,
+          "target_minus_source": 0.06755423545837402,
+          "desired_cosine": 0.968383252620697
+        },
+        "reconstruction_l1": 6.776263578034403e-21
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0033574700355529785,
+        "off_article_mass": 0.2661760449409485,
+        "on_article_mass": 0.3719424307346344,
+        "total": {
+          "tv": 0.04377371445298195,
+          "target_minus_source": 0.06818649172782898,
+          "desired_cosine": 0.9615299105644226
+        },
+        "public": {
+          "tv": 0.0025930264964699745,
+          "target_minus_source": 0.0009811818599700928,
+          "desired_cosine": 0.35740235447883606
+        },
+        "private": {
+          "tv": 0.042153824120759964,
+          "target_minus_source": 0.06720530986785889,
+          "desired_cosine": 0.9686272740364075
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.017552316188812256,
+        "off_article_mass": 0.3172675371170044,
+        "on_article_mass": 0.3543274998664856,
+        "total": {
+          "tv": 0.04804015904664993,
+          "target_minus_source": 0.06814746558666229,
+          "desired_cosine": 0.9254897236824036
+        },
+        "public": {
+          "tv": 0.013556183315813541,
+          "target_minus_source": 0.005129456520080566,
+          "desired_cosine": 0.35740017890930176
+        },
+        "private": {
+          "tv": 0.03958649933338165,
+          "target_minus_source": 0.06301800906658173,
+          "desired_cosine": 0.9709759950637817
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "source_word": "reporter",
+    "target_word": "journalist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.5,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.5
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.006692850962281227,
+        "on_article_mass": 0.5,
+        "total": {
+          "tv": 0.0795159563422203,
+          "target_minus_source": 0.12727610766887665,
+          "desired_cosine": 0.9694879651069641
+        },
+        "public": {
+          "tv": 8.829628868334272e-12,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.0795159563422203,
+          "target_minus_source": 0.12727610766887665,
+          "desired_cosine": 0.9694879651069641
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 6.473064422607422e-05,
+        "off_article_mass": 0.11917494982481003,
+        "on_article_mass": 0.4997709393501282,
+        "total": {
+          "tv": 0.07954646646976471,
+          "target_minus_source": 0.12729378044605255,
+          "desired_cosine": 0.9694225788116455
+        },
+        "public": {
+          "tv": 4.9980662879534066e-05,
+          "target_minus_source": 1.8924474716186523e-05,
+          "desired_cosine": 0.35761743783950806
+        },
+        "private": {
+          "tv": 0.07951515167951584,
+          "target_minus_source": 0.12727485597133636,
+          "desired_cosine": 0.969488263130188
+        },
+        "reconstruction_l1": 1.7145397396349212e-16
+      },
+      "0.5": {
+        "delta_q_target_article": 0.005404829978942871,
+        "off_article_mass": 0.2661760449409485,
+        "on_article_mass": 0.4911891520023346,
+        "total": {
+          "tv": 0.08189106732606888,
+          "target_minus_source": 0.12845325469970703,
+          "desired_cosine": 0.9638079404830933
+        },
+        "public": {
+          "tv": 0.004174285102635622,
+          "target_minus_source": 0.0015794634819030762,
+          "desired_cosine": 0.357395201921463
+        },
+        "private": {
+          "tv": 0.07926744222640991,
+          "target_minus_source": 0.12687379121780396,
+          "desired_cosine": 0.9695942401885986
+        },
+        "reconstruction_l1": 7.102294447003388e-11
+      },
+      "1.0": {
+        "delta_q_target_article": 0.03169572353363037,
+        "off_article_mass": 0.3172675371170044,
+        "on_article_mass": 0.390296071767807,
+        "total": {
+          "tv": 0.0906979963183403,
+          "target_minus_source": 0.12976714968681335,
+          "desired_cosine": 0.9292091727256775
+        },
+        "public": {
+          "tv": 0.02447952702641487,
+          "target_minus_source": 0.009262695908546448,
+          "desired_cosine": 0.35740017890930176
+        },
+        "private": {
+          "tv": 0.07535286992788315,
+          "target_minus_source": 0.1205044537782669,
+          "desired_cosine": 0.9712316989898682
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "source_word": "reporter",
+    "target_word": "journalist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.5,
+    "target_rank_before": 1,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.625
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.006692850962281227,
+        "on_article_mass": 0.977022647857666,
+        "total": {
+          "tv": 0.09251921623945236,
+          "target_minus_source": 0.13713306188583374,
+          "desired_cosine": 0.9334014058113098
+        },
+        "public": {
+          "tv": 8.829628868334272e-12,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.09251921623945236,
+          "target_minus_source": 0.13713306188583374,
+          "desired_cosine": 0.9334014058113098
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 7.11679458618164e-05,
+        "off_article_mass": 0.11917494982481003,
+        "on_article_mass": 0.8173180222511292,
+        "total": {
+          "tv": 0.09255316853523254,
+          "target_minus_source": 0.13715337216854095,
+          "desired_cosine": 0.93331378698349
+        },
+        "public": {
+          "tv": 5.4917807574383914e-05,
+          "target_minus_source": 2.078711986541748e-05,
+          "desired_cosine": 0.35755789279937744
+        },
+        "private": {
+          "tv": 0.09251890331506729,
+          "target_minus_source": 0.13713258504867554,
+          "desired_cosine": 0.933401346206665
+        },
+        "reconstruction_l1": 4.691669755062418e-15
+      },
+      "0.5": {
+        "delta_q_target_article": 0.006650745868682861,
+        "off_article_mass": 0.2661760449409485,
+        "on_article_mass": 0.6659998297691345,
+        "total": {
+          "tv": 0.09556607156991959,
+          "target_minus_source": 0.138813778758049,
+          "desired_cosine": 0.9250321388244629
+        },
+        "public": {
+          "tv": 0.005136563908308744,
+          "target_minus_source": 0.0019435882568359375,
+          "desired_cosine": 0.3573986887931824
+        },
+        "private": {
+          "tv": 0.09235280752182007,
+          "target_minus_source": 0.13687019050121307,
+          "desired_cosine": 0.9334293007850647
+        },
+        "reconstruction_l1": 8.842360177396813e-11
+      },
+      "1.0": {
+        "delta_q_target_article": 0.04301130771636963,
+        "off_article_mass": 0.3172675371170044,
+        "on_article_mass": 0.43891650438308716,
+        "total": {
+          "tv": 0.10986931622028351,
+          "target_minus_source": 0.1439608931541443,
+          "desired_cosine": 0.8737748265266418
+        },
+        "public": {
+          "tv": 0.03321888670325279,
+          "target_minus_source": 0.012569501996040344,
+          "desired_cosine": 0.35739922523498535
+        },
+        "private": {
+          "tv": 0.08915746957063675,
+          "target_minus_source": 0.13139137625694275,
+          "desired_cosine": 0.9340262413024902
+        },
+        "reconstruction_l1": 9.11815848519959e-12
+      }
+    }
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "source_word": "supervisor",
+    "target_word": "manager",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.3125,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.4327602982521057,
+        "on_article_mass": 0.759401261806488,
+        "total": {
+          "tv": 0.03855494409799576,
+          "target_minus_source": 0.04372260719537735,
+          "desired_cosine": 0.8410252332687378
+        },
+        "public": {
+          "tv": 1.0624905399936324e-07,
+          "target_minus_source": -7.450580596923828e-09,
+          "desired_cosine": -0.10227477550506592
+        },
+        "private": {
+          "tv": 0.03855491802096367,
+          "target_minus_source": 0.04372261464595795,
+          "desired_cosine": 0.8410252332687378
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0007572770118713379,
+        "off_article_mass": 0.34185442328453064,
+        "on_article_mass": 0.4971184730529785,
+        "total": {
+          "tv": 0.03893402963876724,
+          "target_minus_source": 0.04359852522611618,
+          "desired_cosine": 0.841194212436676
+        },
+        "public": {
+          "tv": 0.0006897664279676974,
+          "target_minus_source": -7.300823926925659e-05,
+          "desired_cosine": -0.1560044288635254
+        },
+        "private": {
+          "tv": 0.038523897528648376,
+          "target_minus_source": 0.04367153346538544,
+          "desired_cosine": 0.841031551361084
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.00900179147720337,
+        "off_article_mass": 0.25715920329093933,
+        "on_article_mass": 0.31835734844207764,
+        "total": {
+          "tv": 0.042452700436115265,
+          "target_minus_source": 0.04141011834144592,
+          "desired_cosine": 0.8391605019569397
+        },
+        "public": {
+          "tv": 0.00819950457662344,
+          "target_minus_source": -0.0008678063750267029,
+          "desired_cosine": -0.155992329120636
+        },
+        "private": {
+          "tv": 0.03793145716190338,
+          "target_minus_source": 0.042277924716472626,
+          "desired_cosine": 0.841063380241394
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.017183363437652588,
+        "off_article_mass": 0.14821785688400269,
+        "on_article_mass": 0.16000580787658691,
+        "total": {
+          "tv": 0.04214885085821152,
+          "target_minus_source": 0.035249821841716766,
+          "desired_cosine": 0.8272370100021362
+        },
+        "public": {
+          "tv": 0.015651900321245193,
+          "target_minus_source": -0.00165654718875885,
+          "desired_cosine": -0.15599285066127777
+        },
+        "private": {
+          "tv": 0.03575707599520683,
+          "target_minus_source": 0.036906369030475616,
+          "desired_cosine": 0.8376247882843018
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "source_word": "supervisor",
+    "target_word": "manager",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.5,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.0625,
+      "sign_reversed": -0.5
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.4327602982521057,
+        "on_article_mass": 0.4966357946395874,
+        "total": {
+          "tv": 0.05615941062569618,
+          "target_minus_source": 0.06718754768371582,
+          "desired_cosine": 0.871025562286377
+        },
+        "public": {
+          "tv": 1.0624905399936324e-07,
+          "target_minus_source": -7.450580596923828e-09,
+          "desired_cosine": -0.10227477550506592
+        },
+        "private": {
+          "tv": 0.05615939944982529,
+          "target_minus_source": 0.06718755513429642,
+          "desired_cosine": 0.871025562286377
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0007572770118713379,
+        "off_article_mass": 0.34185442328453064,
+        "on_article_mass": 0.431611031293869,
+        "total": {
+          "tv": 0.05652293562889099,
+          "target_minus_source": 0.06703612208366394,
+          "desired_cosine": 0.8712791800498962
+        },
+        "public": {
+          "tv": 0.0006897664279676974,
+          "target_minus_source": -7.300823926925659e-05,
+          "desired_cosine": -0.1560044288635254
+        },
+        "private": {
+          "tv": 0.056108225136995316,
+          "target_minus_source": 0.0671091303229332,
+          "desired_cosine": 0.8710271120071411
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.00900179147720337,
+        "off_article_mass": 0.25715920329093933,
+        "on_article_mass": 0.30827969312667847,
+        "total": {
+          "tv": 0.05972858890891075,
+          "target_minus_source": 0.0641009509563446,
+          "desired_cosine": 0.8718922734260559
+        },
+        "public": {
+          "tv": 0.00819950457662344,
+          "target_minus_source": -0.0008678063750267029,
+          "desired_cosine": -0.155992329120636
+        },
+        "private": {
+          "tv": 0.05484312027692795,
+          "target_minus_source": 0.06496875733137131,
+          "desired_cosine": 0.8710522651672363
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.017183363437652588,
+        "off_article_mass": 0.14821785688400269,
+        "on_article_mass": 0.1590304672718048,
+        "total": {
+          "tv": 0.058178115636110306,
+          "target_minus_source": 0.0550624281167984,
+          "desired_cosine": 0.8649666905403137
+        },
+        "public": {
+          "tv": 0.015651900321245193,
+          "target_minus_source": -0.00165654718875885,
+          "desired_cosine": -0.15599285066127777
+        },
+        "private": {
+          "tv": 0.05003640428185463,
+          "target_minus_source": 0.05671897530555725,
+          "desired_cosine": 0.8707196116447449
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "source_word": "supervisor",
+    "target_word": "manager",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.625,
+    "target_rank_before": 3,
+    "target_rank_after": 3,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.5625
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 1.1920928955078125e-07,
+        "off_article_mass": 0.4327602982521057,
+        "on_article_mass": 0.4993390738964081,
+        "total": {
+          "tv": 0.0638202577829361,
+          "target_minus_source": 0.08154416084289551,
+          "desired_cosine": 0.9256736636161804
+        },
+        "public": {
+          "tv": 1.1340911498791684e-07,
+          "target_minus_source": -7.450580596923828e-09,
+          "desired_cosine": -0.09273409098386765
+        },
+        "private": {
+          "tv": 0.06382027268409729,
+          "target_minus_source": 0.0815441682934761,
+          "desired_cosine": 0.9256736040115356
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.001015782356262207,
+        "off_article_mass": 0.34185442328453064,
+        "on_article_mass": 0.45942819118499756,
+        "total": {
+          "tv": 0.06439162790775299,
+          "target_minus_source": 0.08137207478284836,
+          "desired_cosine": 0.9263852834701538
+        },
+        "public": {
+          "tv": 0.0009252185118384659,
+          "target_minus_source": -9.793788194656372e-05,
+          "desired_cosine": -0.15601767599582672
+        },
+        "private": {
+          "tv": 0.06377797573804855,
+          "target_minus_source": 0.08147001266479492,
+          "desired_cosine": 0.9256775975227356
+        },
+        "reconstruction_l1": 2.300945892153017e-13
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0127754807472229,
+        "off_article_mass": 0.25715920329093933,
+        "on_article_mass": 0.3357807397842407,
+        "total": {
+          "tv": 0.07020983099937439,
+          "target_minus_source": 0.07792633026838303,
+          "desired_cosine": 0.932084321975708
+        },
+        "public": {
+          "tv": 0.011636903509497643,
+          "target_minus_source": -0.0012316033244132996,
+          "desired_cosine": -0.1559915542602539
+        },
+        "private": {
+          "tv": 0.06272099912166595,
+          "target_minus_source": 0.07915793359279633,
+          "desired_cosine": 0.925743818283081
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.025240957736968994,
+        "off_article_mass": 0.14821785688400269,
+        "on_article_mass": 0.16628317534923553,
+        "total": {
+          "tv": 0.07034292817115784,
+          "target_minus_source": 0.0670587420463562,
+          "desired_cosine": 0.9332364201545715
+        },
+        "public": {
+          "tv": 0.022991415113210678,
+          "target_minus_source": -0.002433307468891144,
+          "desired_cosine": -0.15599088370800018
+        },
+        "private": {
+          "tv": 0.058339741080999374,
+          "target_minus_source": 0.06949204951524734,
+          "desired_cosine": 0.92436283826828
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "source_word": "vendor",
+    "target_word": "salesperson",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.5625,
+    "target_rank_before": 5,
+    "target_rank_after": 4,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.0625,
+      "sign_reversed": -0.875
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.07585818320512772,
+        "on_article_mass": 0.006692850962281227,
+        "total": {
+          "tv": 0.03220267966389656,
+          "target_minus_source": 0.010819533839821815,
+          "desired_cosine": 0.44822511076927185
+        },
+        "public": {
+          "tv": 6.427729459801412e-10,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.03220267966389656,
+          "target_minus_source": 0.010819533839821815,
+          "desired_cosine": 0.44822511076927185
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.00012230873107910156,
+        "off_article_mass": 0.26893946528434753,
+        "on_article_mass": 0.11922598630189896,
+        "total": {
+          "tv": 0.03220364451408386,
+          "target_minus_source": 0.010818700306117535,
+          "desired_cosine": 0.4485732316970825
+        },
+        "public": {
+          "tv": 7.024082151474431e-05,
+          "target_minus_source": 3.771856427192688e-06,
+          "desired_cosine": 0.09034369140863419
+        },
+        "private": {
+          "tv": 0.032196126878261566,
+          "target_minus_source": 0.010814928449690342,
+          "desired_cosine": 0.4481872320175171
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0026450157165527344,
+        "off_article_mass": 0.37506935000419617,
+        "on_article_mass": 0.26848864555358887,
+        "total": {
+          "tv": 0.03202569857239723,
+          "target_minus_source": 0.010683665052056313,
+          "desired_cosine": 0.45442643761634827
+        },
+        "public": {
+          "tv": 0.0015196006279438734,
+          "target_minus_source": 8.163508027791977e-05,
+          "desired_cosine": 0.09037686139345169
+        },
+        "private": {
+          "tv": 0.031904734671115875,
+          "target_minus_source": 0.010602029040455818,
+          "desired_cosine": 0.4462995231151581
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.007041454315185547,
+        "off_article_mass": 0.3349229097366333,
+        "on_article_mass": 0.2923433780670166,
+        "total": {
+          "tv": 0.029902592301368713,
+          "target_minus_source": 0.009689808823168278,
+          "desired_cosine": 0.45068565011024475
+        },
+        "public": {
+          "tv": 0.004045399371534586,
+          "target_minus_source": 0.00021732039749622345,
+          "desired_cosine": 0.09037476032972336
+        },
+        "private": {
+          "tv": 0.03036961704492569,
+          "target_minus_source": 0.009472488425672054,
+          "desired_cosine": 0.4313785135746002
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "source_word": "vendor",
+    "target_word": "salesperson",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.75,
+    "target_rank_before": 5,
+    "target_rank_after": 4,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.0625,
+      "sign_reversed": -1.6875
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.07585818320512772,
+        "on_article_mass": 0.000552778597921133,
+        "total": {
+          "tv": 0.04443686082959175,
+          "target_minus_source": 0.015822172164916992,
+          "desired_cosine": 0.44718360900878906
+        },
+        "public": {
+          "tv": 1.1899445873098102e-09,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.044436853379011154,
+          "target_minus_source": 0.015822172164916992,
+          "desired_cosine": 0.44718360900878906
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.00029158592224121094,
+        "off_article_mass": 0.26893946528434753,
+        "on_article_mass": 0.04743439331650734,
+        "total": {
+          "tv": 0.044459596276283264,
+          "target_minus_source": 0.01582707092165947,
+          "desired_cosine": 0.44784876704216003
+        },
+        "public": {
+          "tv": 0.00016751946532167494,
+          "target_minus_source": 8.996576070785522e-06,
+          "desired_cosine": 0.09034726023674011
+        },
+        "private": {
+          "tv": 0.04442986100912094,
+          "target_minus_source": 0.015818074345588684,
+          "desired_cosine": 0.4471772611141205
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.007070958614349365,
+        "off_article_mass": 0.37506935000419617,
+        "on_article_mass": 0.182261660695076,
+        "total": {
+          "tv": 0.044875647872686386,
+          "target_minus_source": 0.01579093746840954,
+          "desired_cosine": 0.46257027983665466
+        },
+        "public": {
+          "tv": 0.004062369465827942,
+          "target_minus_source": 0.00021823309361934662,
+          "desired_cosine": 0.09037517756223679
+        },
+        "private": {
+          "tv": 0.044021837413311005,
+          "target_minus_source": 0.015572704374790192,
+          "desired_cosine": 0.44676387310028076
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.020168840885162354,
+        "off_article_mass": 0.3349229097366333,
+        "on_article_mass": 0.24651840329170227,
+        "total": {
+          "tv": 0.04357559606432915,
+          "target_minus_source": 0.014675606042146683,
+          "desired_cosine": 0.4839876592159271
+        },
+        "public": {
+          "tv": 0.011587229557335377,
+          "target_minus_source": 0.000622469000518322,
+          "desired_cosine": 0.09037473052740097
+        },
+        "private": {
+          "tv": 0.04156818985939026,
+          "target_minus_source": 0.01405313704162836,
+          "desired_cosine": 0.44274958968162537
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "source_word": "vendor",
+    "target_word": "salesperson",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.6875,
+    "target_rank_before": 5,
+    "target_rank_after": 4,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.0625,
+      "sign_reversed": -2.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.07585818320512772,
+        "on_article_mass": 0.00015843621804378927,
+        "total": {
+          "tv": 0.05096578970551491,
+          "target_minus_source": 0.015863465145230293,
+          "desired_cosine": 0.4368720054626465
+        },
+        "public": {
+          "tv": 1.3359202633012046e-09,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.05096578970551491,
+          "target_minus_source": 0.015863465145230293,
+          "desired_cosine": 0.4368720054626465
+        },
+        "reconstruction_l1": 1.3877787807814457e-17
+      },
+      "0.25": {
+        "delta_q_target_article": 0.00039440393447875977,
+        "off_article_mass": 0.26893946528434753,
+        "on_article_mass": 0.029314685612916946,
+        "total": {
+          "tv": 0.05099452659487724,
+          "target_minus_source": 0.015873143449425697,
+          "desired_cosine": 0.4374859929084778
+        },
+        "public": {
+          "tv": 0.00022657137014903128,
+          "target_minus_source": 1.2171454727649689e-05,
+          "desired_cosine": 0.09037814289331436
+        },
+        "private": {
+          "tv": 0.050962720066308975,
+          "target_minus_source": 0.015860971063375473,
+          "desired_cosine": 0.4368501305580139
+        },
+        "reconstruction_l1": 1.5175794648714103e-14
+      },
+      "0.5": {
+        "delta_q_target_article": 0.010545670986175537,
+        "off_article_mass": 0.37506935000419617,
+        "on_article_mass": 0.1473512351512909,
+        "total": {
+          "tv": 0.051897235214710236,
+          "target_minus_source": 0.01599339209496975,
+          "desired_cosine": 0.45018288493156433
+        },
+        "public": {
+          "tv": 0.006058630999177694,
+          "target_minus_source": 0.00032547395676374435,
+          "desired_cosine": 0.09037553519010544
+        },
+        "private": {
+          "tv": 0.050731442868709564,
+          "target_minus_source": 0.01566791906952858,
+          "desired_cosine": 0.4350922107696533
+        },
+        "reconstruction_l1": 6.52811138479592e-14
+      },
+      "1.0": {
+        "delta_q_target_article": 0.0320855975151062,
+        "off_article_mass": 0.3349229097366333,
+        "on_article_mass": 0.22024790942668915,
+        "total": {
+          "tv": 0.05160081759095192,
+          "target_minus_source": 0.015266931615769863,
+          "desired_cosine": 0.44716542959213257
+        },
+        "public": {
+          "tv": 0.01843356527388096,
+          "target_minus_source": 0.0009902510792016983,
+          "desired_cosine": 0.09037433564662933
+        },
+        "private": {
+          "tv": 0.049120381474494934,
+          "target_minus_source": 0.014276680536568165,
+          "desired_cosine": 0.41883584856987
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "source_word": "therapist",
+    "target_word": "counselor",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.125,
+    "target_rank_before": 7,
+    "target_rank_after": 7,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.49951785802841187,
+        "on_article_mass": 0.49951785802841187,
+        "total": {
+          "tv": 0.03026081994175911,
+          "target_minus_source": 0.0027421973645687103,
+          "desired_cosine": 0.08845733106136322
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.03026081994175911,
+          "target_minus_source": 0.0027421973645687103,
+          "desired_cosine": 0.08845733106136322
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 3.5762786865234375e-07,
+        "off_article_mass": 0.48026448488235474,
+        "on_article_mass": 0.4802532196044922,
+        "total": {
+          "tv": 0.03026091493666172,
+          "target_minus_source": 0.002742178738117218,
+          "desired_cosine": 0.08845628798007965
+        },
+        "public": {
+          "tv": 2.78716441926008e-07,
+          "target_minus_source": -1.1175870895385742e-08,
+          "desired_cosine": -0.03967303782701492
+        },
+        "private": {
+          "tv": 0.030260786414146423,
+          "target_minus_source": 0.0027421899139881134,
+          "desired_cosine": 0.08845722675323486
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0001372694969177246,
+        "off_article_mass": 0.43477383255958557,
+        "on_article_mass": 0.4342502951622009,
+        "total": {
+          "tv": 0.03029903583228588,
+          "target_minus_source": 0.0027344711124897003,
+          "desired_cosine": 0.08809638768434525
+        },
+        "public": {
+          "tv": 0.00011373942834325135,
+          "target_minus_source": -4.932284355163574e-06,
+          "desired_cosine": -0.04448162391781807
+        },
+        "private": {
+          "tv": 0.030231334269046783,
+          "target_minus_source": 0.002739403396844864,
+          "desired_cosine": 0.08846212923526764
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.0019421577453613281,
+        "off_article_mass": 0.3550703823566437,
+        "on_article_mass": 0.3517032563686371,
+        "total": {
+          "tv": 0.03033600188791752,
+          "target_minus_source": 0.00258832611143589,
+          "desired_cosine": 0.0833805575966835
+        },
+        "public": {
+          "tv": 0.0016093342565000057,
+          "target_minus_source": -6.980635225772858e-05,
+          "desired_cosine": -0.044490616768598557
+        },
+        "private": {
+          "tv": 0.029387911781668663,
+          "target_minus_source": 0.0026581324636936188,
+          "desired_cosine": 0.08861281722784042
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "source_word": "therapist",
+    "target_word": "counselor",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.25,
+    "target_rank_before": 7,
+    "target_rank_after": 7,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.5
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.49951785802841187,
+        "on_article_mass": 0.49951785802841187,
+        "total": {
+          "tv": 0.03264443948864937,
+          "target_minus_source": 0.010905329138040543,
+          "desired_cosine": 0.3213559091091156
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.03264443948864937,
+          "target_minus_source": 0.010905329138040543,
+          "desired_cosine": 0.3213559091091156
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.48026448488235474,
+        "on_article_mass": 0.4802238643169403,
+        "total": {
+          "tv": 0.032644424587488174,
+          "target_minus_source": 0.01090531051158905,
+          "desired_cosine": 0.3213554918766022
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.032644424587488174,
+          "target_minus_source": 0.01090531051158905,
+          "desired_cosine": 0.3213554918766022
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.43477383255958557,
+        "on_article_mass": 0.43295958638191223,
+        "total": {
+          "tv": 0.03261890262365341,
+          "target_minus_source": 0.010892648249864578,
+          "desired_cosine": 0.3213360607624054
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.03261890262365341,
+          "target_minus_source": 0.010892648249864578,
+          "desired_cosine": 0.3213360607624054
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.3550703823566437,
+        "on_article_mass": 0.3440803289413452,
+        "total": {
+          "tv": 0.0319514237344265,
+          "target_minus_source": 0.010546358302235603,
+          "desired_cosine": 0.32075512409210205
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.0319514237344265,
+          "target_minus_source": 0.010546358302235603,
+          "desired_cosine": 0.32075512409210205
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "source_word": "therapist",
+    "target_word": "counselor",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "a",
+    "greedy_article_on": "a",
+    "target_branch_delta_delta": 0.25,
+    "target_rank_before": 7,
+    "target_rank_after": 6,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.125,
+      "sign_reversed": -0.75
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.49951785802841187,
+        "on_article_mass": 0.49832117557525635,
+        "total": {
+          "tv": 0.035453468561172485,
+          "target_minus_source": 0.007977534085512161,
+          "desired_cosine": 0.24737641215324402
+        },
+        "public": {
+          "tv": 0.0,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.035453468561172485,
+          "target_minus_source": 0.007977534085512161,
+          "desired_cosine": 0.24737641215324402
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": -8.344650268554688e-07,
+        "off_article_mass": 0.48026448488235474,
+        "on_article_mass": 0.4681450426578522,
+        "total": {
+          "tv": 0.03545306622982025,
+          "target_minus_source": 0.007977548986673355,
+          "desired_cosine": 0.2473805844783783
+        },
+        "public": {
+          "tv": 7.052204296087439e-07,
+          "target_minus_source": 3.3527612686157227e-08,
+          "desired_cosine": 0.04836978763341904
+        },
+        "private": {
+          "tv": 0.03545340895652771,
+          "target_minus_source": 0.007977515459060669,
+          "desired_cosine": 0.24737641215324402
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.5": {
+        "delta_q_target_article": -0.00033169984817504883,
+        "off_article_mass": 0.43477383255958557,
+        "on_article_mass": 0.41560813784599304,
+        "total": {
+          "tv": 0.03530145436525345,
+          "target_minus_source": 0.007977593690156937,
+          "desired_cosine": 0.24900901317596436
+        },
+        "public": {
+          "tv": 0.00027485479949973524,
+          "target_minus_source": 1.1920928955078125e-05,
+          "desired_cosine": 0.04448594152927399
+        },
+        "private": {
+          "tv": 0.03541192039847374,
+          "target_minus_source": 0.007965672761201859,
+          "desired_cosine": 0.24741004407405853
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": -0.004240989685058594,
+        "off_article_mass": 0.3550703823566437,
+        "on_article_mass": 0.325930118560791,
+        "total": {
+          "tv": 0.033011674880981445,
+          "target_minus_source": 0.00783485732972622,
+          "desired_cosine": 0.2696075737476349
+        },
+        "public": {
+          "tv": 0.0035141899716109037,
+          "target_minus_source": 0.00015242025256156921,
+          "desired_cosine": 0.04448697715997696
+        },
+        "private": {
+          "tv": 0.034437812864780426,
+          "target_minus_source": 0.00768243707716465,
+          "desired_cosine": 0.2482224702835083
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "source_word": "writer",
+    "target_word": "novelist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 0.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.0,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": false,
+    "controls": {
+      "wrong": 0.0,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.006692850962281227,
+        "on_article_mass": 0.022977368906140327,
+        "total": {
+          "tv": 0.004393687471747398,
+          "target_minus_source": -0.0001614093780517578,
+          "desired_cosine": -0.08012951165437698
+        },
+        "public": {
+          "tv": 2.059577575153071e-08,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.004393703304231167,
+          "target_minus_source": -0.0001614093780517578,
+          "desired_cosine": -0.080129474401474
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.000738978385925293,
+        "off_article_mass": 0.11903677880764008,
+        "on_article_mass": 0.18208375573158264,
+        "total": {
+          "tv": 0.004964742809534073,
+          "target_minus_source": -0.0002017766237258911,
+          "desired_cosine": -0.08601874113082886
+        },
+        "public": {
+          "tv": 0.0006319416570477188,
+          "target_minus_source": -4.050135612487793e-05,
+          "desired_cosine": -0.05594255402684212
+        },
+        "private": {
+          "tv": 0.004397054202854633,
+          "target_minus_source": -0.00016127526760101318,
+          "desired_cosine": -0.0801120325922966
+        },
+        "reconstruction_l1": 1.3574484960567068e-13
+      },
+      "0.5": {
+        "delta_q_target_article": 0.012753605842590332,
+        "off_article_mass": 0.25319987535476685,
+        "on_article_mass": 0.304156631231308,
+        "total": {
+          "tv": 0.014198464341461658,
+          "target_minus_source": -0.0008546113967895508,
+          "desired_cosine": -0.06712976843118668
+        },
+        "public": {
+          "tv": 0.010906415060162544,
+          "target_minus_source": -0.000698581337928772,
+          "desired_cosine": -0.0559084415435791
+        },
+        "private": {
+          "tv": 0.004602336790412664,
+          "target_minus_source": -0.0001560300588607788,
+          "desired_cosine": -0.07519155740737915
+        },
+        "reconstruction_l1": 0.0
+      },
+      "1.0": {
+        "delta_q_target_article": 0.030182063579559326,
+        "off_article_mass": 0.19223526120185852,
+        "on_article_mass": 0.22228071093559265,
+        "total": {
+          "tv": 0.027218470349907875,
+          "target_minus_source": -0.0017814487218856812,
+          "desired_cosine": -0.06640489399433136
+        },
+        "public": {
+          "tv": 0.02581063285470009,
+          "target_minus_source": -0.0016532093286514282,
+          "desired_cosine": -0.05590769648551941
+        },
+        "private": {
+          "tv": 0.006405472755432129,
+          "target_minus_source": -0.00012823939323425293,
+          "desired_cosine": -0.027705516666173935
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "source_word": "writer",
+    "target_word": "novelist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.0,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.125,
+    "target_rank_before": 2,
+    "target_rank_after": 2,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.125,
+      "sign_reversed": -0.25
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.006692850962281227,
+        "on_article_mass": 0.022977368906140327,
+        "total": {
+          "tv": 0.024128567427396774,
+          "target_minus_source": 0.026109248399734497,
+          "desired_cosine": 0.8153722286224365
+        },
+        "public": {
+          "tv": 2.1774809511043713e-08,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.024128548800945282,
+          "target_minus_source": 0.026109248399734497,
+          "desired_cosine": 0.8153722286224365
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0009082555770874023,
+        "off_article_mass": 0.11903677880764008,
+        "on_article_mass": 0.18206162750720978,
+        "total": {
+          "tv": 0.024331221356987953,
+          "target_minus_source": 0.02605268359184265,
+          "desired_cosine": 0.8092136383056641
+        },
+        "public": {
+          "tv": 0.0007767364149913192,
+          "target_minus_source": -4.9754977226257324e-05,
+          "desired_cosine": -0.05591101571917534
+        },
+        "private": {
+          "tv": 0.02412261813879013,
+          "target_minus_source": 0.02610243856906891,
+          "desired_cosine": 0.8153685331344604
+        },
+        "reconstruction_l1": 2.5686243496775285e-12
+      },
+      "0.5": {
+        "delta_q_target_article": 0.017179548740386963,
+        "off_article_mass": 0.25319987535476685,
+        "on_article_mass": 0.30469727516174316,
+        "total": {
+          "tv": 0.02813085727393627,
+          "target_minus_source": 0.024754732847213745,
+          "desired_cosine": 0.6454458832740784
+        },
+        "public": {
+          "tv": 0.014691323973238468,
+          "target_minus_source": -0.0009410083293914795,
+          "desired_cosine": -0.05590810999274254
+        },
+        "private": {
+          "tv": 0.023998307064175606,
+          "target_minus_source": 0.025695741176605225,
+          "desired_cosine": 0.8151150941848755
+        },
+        "reconstruction_l1": 1.2322318512780761e-11
+      },
+      "1.0": {
+        "delta_q_target_article": 0.04330945014953613,
+        "off_article_mass": 0.19223526120185852,
+        "on_article_mass": 0.2277958244085312,
+        "total": {
+          "tv": 0.045729465782642365,
+          "target_minus_source": 0.020804643630981445,
+          "desired_cosine": 0.3852587640285492
+        },
+        "public": {
+          "tv": 0.037036675959825516,
+          "target_minus_source": -0.0023722797632217407,
+          "desired_cosine": -0.055908314883708954
+        },
+        "private": {
+          "tv": 0.023307813331484795,
+          "target_minus_source": 0.023176923394203186,
+          "desired_cosine": 0.8107450604438782
+        },
+        "reconstruction_l1": 0.0
+      }
+    }
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "source_word": "writer",
+    "target_word": "novelist",
+    "source_article": "a",
+    "target_article": "a",
+    "strength": 1.5,
+    "layer": 18,
+    "greedy_article_off": "called",
+    "greedy_article_on": "called",
+    "target_branch_delta_delta": 0.25,
+    "target_rank_before": 2,
+    "target_rank_after": 1,
+    "local_efficacy_pass": true,
+    "controls": {
+      "wrong": -0.125,
+      "sign_reversed": -0.375
+    },
+    "stochastic": {
+      "0.1": {
+        "delta_q_target_article": 0.0,
+        "off_article_mass": 0.006692850962281227,
+        "on_article_mass": 0.07585814595222473,
+        "total": {
+          "tv": 0.04025660827755928,
+          "target_minus_source": 0.05466771125793457,
+          "desired_cosine": 0.9857714772224426
+        },
+        "public": {
+          "tv": 2.2192001125631577e-08,
+          "target_minus_source": 0.0,
+          "desired_cosine": 0.0
+        },
+        "private": {
+          "tv": 0.040256623178720474,
+          "target_minus_source": 0.05466771125793457,
+          "desired_cosine": 0.9857714772224426
+        },
+        "reconstruction_l1": 0.0
+      },
+      "0.25": {
+        "delta_q_target_article": 0.0010734200477600098,
+        "off_article_mass": 0.11903677880764008,
+        "on_article_mass": 0.26817587018013,
+        "total": {
+          "tv": 0.040612149983644485,
+          "target_minus_source": 0.05460365116596222,
+          "desired_cosine": 0.985009491443634
+        },
+        "public": {
+          "tv": 0.0009179387707263231,
+          "target_minus_source": -5.879998207092285e-05,
+          "desired_cosine": -0.05591218173503876
+        },
+        "private": {
+          "tv": 0.04025382176041603,
+          "target_minus_source": 0.05466245114803314,
+          "desired_cosine": 0.9857718348503113
+        },
+        "reconstruction_l1": 3.672075664373775e-12
+      },
+      "0.5": {
+        "delta_q_target_article": 0.02337747812271118,
+        "off_article_mass": 0.25319987535476685,
+        "on_article_mass": 0.3561181426048279,
+        "total": {
+          "tv": 0.04823588579893112,
+          "target_minus_source": 0.05285803973674774,
+          "desired_cosine": 0.8976075053215027
+        },
+        "public": {
+          "tv": 0.019991565495729446,
+          "target_minus_source": -0.0012805014848709106,
+          "desired_cosine": -0.05590822175145149
+        },
+        "private": {
+          "tv": 0.039995837956666946,
+          "target_minus_source": 0.05413854122161865,
+          "desired_cosine": 0.9858018159866333
+        },
+        "reconstruction_l1": 6.325714951849193e-10
+      },
+      "1.0": {
+        "delta_q_target_article": 0.06601184606552124,
+        "off_article_mass": 0.19223526120185852,
+        "on_article_mass": 0.2463122010231018,
+        "total": {
+          "tv": 0.06504813581705093,
+          "target_minus_source": 0.04614117741584778,
+          "desired_cosine": 0.5798183083534241
+        },
+        "public": {
+          "tv": 0.05645094811916351,
+          "target_minus_source": -0.0036157965660095215,
+          "desired_cosine": -0.055908165872097015
+        },
+        "private": {
+          "tv": 0.03785213828086853,
+          "target_minus_source": 0.0497569739818573,
+          "desired_cosine": 0.9851845502853394
+        },
+        "reconstruction_l1": 1.582599069155366e-14
+      }
+    }
+  }
+]

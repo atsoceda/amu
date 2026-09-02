@@ -204,58 +204,54 @@ effect size, not channel identity (@fig-natural-regimes).
 
 ![Natural target-residual patches produce target-specific fixed-token effects in both article-class regimes and outperform wrong-target and matched-norm controls; no greedy article switch occurs.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-natural-regimes width=91%}
 
-## Semantically valid synonyms recruit different routes under lexical constraints
+## Neutral synonym evaluation preserves the route double dissociation
 
-The matched synonym task removes the semantic-truth component of the earlier
-correctness confound: both lexical realizations answer the same occupational
-definition. It does not remove instruction-related resistance. The evaluated
-source prompt explicitly requests the source noun's first letter, whereas the
-target-state donor prompt requests the target noun's first letter; cross-initial
-target movement therefore conflicts with the visible evaluated instruction.
-Eligibility and family
-deduplication leave six between-article and eight within-`a` semantic families
-at 1B. Leave-one-family-out selection independently chooses layer 18 in every
-fold. At native strength, the held-out fixed-target-article lexical effect is
-\(0.250\ [0.167,0.375]\) logits between article classes and
-\(0.227\ [0.133,0.328]\) within class. Wrong-target effects are only 0.073
-and 0.055; sign-reversed directions are \(-0.021\) and \(-0.125\).
-Thus both regimes clear local efficacy before route comparison.
+Both lexical realizations answer the same occupational definition, and the
+evaluated prompt now contains only an unrelated occupation-format demonstration
+and neither a first-letter instruction nor either synonym. Explicit source and target donors define a lexical residual direction,
+which is added to the neutral evaluated state rather than transplanted
+wholesale. Direct donor separation is positive in 13/14 families; critically,
+all 14 donor-derived directions have positive held-out local efficacy on the
+neutral evaluated prompt.
+Leave-one-semantic-family-out selection independently chooses layer 17 in every
+fold. At native strength, all 6/6 between-class and 8/8 within-class families
+clear local efficacy. The fixed-target-article target-minus-source effect is
+\(0.406\ [0.281,0.604]\) logits between article classes and
+\(0.414\ [0.297,0.555]\) within class. Wrong-target effects are 0.125 and
+0.008; sign-reversed directions are \(-0.385\) and \(-0.344\).
+Intervention-off `a/an` support is 0.909 on average (minimum 0.854), and remains
+0.899 after intervention, satisfying mediator-support validity.
 
-The route phenotype then separates sharply. All 6/6 between-class patches
-switch the greedy article, whereas 0/8 within-class patches do. At
+The route phenotype then separates sharply. At native strength, 2/6
+between-class patches switch the greedy article and all six increase the
+conditional target-article probability (mean \(0.182\)); 0/8 within-class
+patches switch the article and their mean policy movement is \(0.009\). At
 \(\tau=1\), between-class public TV is
-\(0.423\ [0.352,0.483]\), compared with private TV
-\(0.030\ [0.019,0.045]\). Within class, public TV is only
-\(0.030\ [0.018,0.047]\), while private TV is
-\(0.038\ [0.025,0.053]\). Distributional magnitude alone is insufficient, so
+\(0.176\ [0.108,0.243]\), compared with private TV
+\(0.021\ [0.012,0.033]\). Within class, public TV is only
+\(0.009\ [0.003,0.018]\), while private TV is
+\(0.061\ [0.046,0.075]\). Distributional magnitude alone is insufficient, so
 we also project each vector onto the intended target-minus-source noun
 direction. The between-class public component is strongly target aligned
-(0.370 probability contrast, \([0.212,0.523]\)); its private component is
-0.018. Within class the public component is approximately zero and slightly
-negative (\(-0.003\)), while the private component is positive
-(0.029 \([0.008,0.054]\)).
+\(0.189\) probability contrast, \([0.065,0.326]\)); its private component is
+0.019. Within class the public component is approximately zero
+(\(-0.001\ [-0.003,0.001]\)), while the private component is positive
+(\(0.093\ [0.062,0.124]\)).
 
 Define each family's route contrast as public TV minus private TV. The
 difference between the between- and within-article route contrasts is
-\(0.401\ [0.335,0.453]\) at native strength and \(\tau=1\); exact
+\(0.264\ [0.137,0.399]\) at native strength and \(\tau=1\); exact
 family-label permutation gives \(p=0.00033\). The target-aligned interaction is
-\(0.384\ [0.229,0.529]\). Both interactions remain positive at every tested
-strength and temperature (@fig-correctness-carriers D). The same-target-letter
-control is appreciable between class (0.172 logits on four available families),
-consistent with the patch carrying coarse orthographic/article information,
-but remains below the target patch; within class it is 0.031 on two available
-families.
+Both interactions remain positive at every tested strength and temperature
+(@fig-neutral-synonym-repair C).
 
-The simple effects support the stronger term *double dissociation* only for the
+The simple effects support the stronger term *double dissociation* for the
 scientifically primary signed lexical projection. Between classes,
-public-minus-private target influence is (0.352\ [0.200,0.498]\), exact
-one-sided sign-flip (p=0.0156\). Within class, private-minus-public target
-influence is (0.032\ [0.010,0.059]\), (p=0.00391\). For unsigned TV, the
-between-class public-minus-private effect is (0.393\ [0.325,0.445]\),
-(p=0.0156\), but the within-class private-minus-public effect is only
-(0.008\ [-0.003,0.020]\), (p=0.117\). Thus the full-distribution result is a
-route interaction, while the target-aligned result independently establishes
-both simple effects. The evidence supports mediator-relative distinguishability:
+public-minus-private target influence is \(0.170\ [0.049,0.296]\), exact
+one-sided sign-flip \(p=0.0156\). Within class, private-minus-public target
+influence is \(0.094\ [0.060,0.126]\), \(p=0.00391\). Every family has the
+predicted sign for both simple effects. The target-aligned result therefore
+independently establishes both arms. The evidence supports mediator-relative distinguishability:
 when article identity distinguishes two correct lexical alternatives, the
 intervention recruits a strong public relay; within one article-equivalence
 class, target-aligned influence remains private. It does not imply that all
@@ -270,9 +266,9 @@ orderings of that one family). The dominant failures were article-policy
 mismatch and failure of the within-target prompt to favor its intended synonym.
 Because this falls below the predeclared 8--15-family target, we do not run or
 interpret a causal triad assay. This is a behavioral construction failure of the
-current first-letter task, not evidence against the route hypothesis.
+original first-letter task, not evidence against the route hypothesis.
 
-![Correctness-preserving synonym double dissociation in Gemma 3 1B PT. The same cross-validated residual-patch procedure is locally effective in both regimes (A), but between-article distinctions are public-relay dominant whereas within-article distinctions retain target-aligned private influence (B--C). The route interaction is positive across every patch strength and article-policy temperature (D). Error bars and bands are semantic-family bootstrap 95\% intervals.](manuscript/figures/fig_correctness_preserving_carriers.png){#fig-correctness-carriers width=97%}
+![Neutral-test synonym repair in Gemma 3 1B PT. Donor-derived directions are added to neutral evaluated states. Between-article distinctions are public-relay dominant, within-article distinctions retain target-aligned private influence, and the signed interaction remains positive across every patch strength and article-policy temperature. Error bars and bands are semantic-family bootstrap 95\% intervals.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-neutral-synonym-repair width=97%}
 
 ## A closed-loop gain law predicts public influence
 

@@ -1,0 +1,14 @@
+{
+  "experiment_name": "neutral_test_synonym_repair",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "dtype": "bfloat16",
+  "selected_pairs_path": "../correctness_preserving_aan/results/selected_pairs.json",
+  "strengths": [0.5, 1.0, 1.5],
+  "temperatures": [0.1, 0.25, 0.5, 1.0],
+  "bootstrap_seed": 20260902,
+  "bootstrap_resamples": 10000,
+  "neutral_template": "Someone who studies living organisms is a biologist. {definition} is",
+  "donor_template": "Someone who studies living organisms is a biologist. Use exactly the word {word}. {definition} is",
+  "local_efficacy_gate": "native-strength fixed-target-article target-minus-source delta > 0"
+}

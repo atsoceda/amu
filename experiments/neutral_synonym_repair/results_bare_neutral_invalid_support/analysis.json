@@ -1,0 +1,193 @@
+{
+  "primary_setting": {
+    "strength": 1.0,
+    "temperature": 1.0
+  },
+  "effects": {
+    "between": {
+      "direction": "public minus private",
+      "tv": {
+        "interval": {
+          "n": 6,
+          "mean": 0.5497238272024939,
+          "lo": 0.4654204888890187,
+          "hi": 0.6340271655159692,
+          "method": "semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "randomization": {
+          "observed": 0.5497238272024939,
+          "one_sided_positive_p": 0.015625,
+          "two_sided_p": 0.03125,
+          "assignments": 64,
+          "method": "exact within-family sign-flip"
+        },
+        "values": [
+          0.4002889543771744,
+          0.7008502422831953,
+          0.5223106034100056,
+          0.441078819334507,
+          0.5874767825007439,
+          0.6463375613093376
+        ]
+      },
+      "target_aligned": {
+        "interval": {
+          "n": 6,
+          "mean": 0.42044497925477725,
+          "lo": 0.1807604730129242,
+          "hi": 0.6478927810676396,
+          "method": "semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "randomization": {
+          "observed": 0.42044497925477725,
+          "one_sided_positive_p": 0.015625,
+          "two_sided_p": 0.03125,
+          "assignments": 64,
+          "method": "exact within-family sign-flip"
+        },
+        "values": [
+          0.020948562771081924,
+          0.7116663507185876,
+          0.12022549286484718,
+          0.21689734607934952,
+          0.6716659590601921,
+          0.781266164034605
+        ]
+      }
+    },
+    "within": {
+      "direction": "private minus public",
+      "tv": {
+        "interval": {
+          "n": 8,
+          "mean": 0.008912392077036202,
+          "lo": -0.019279054598882794,
+          "hi": 0.03163228917401284,
+          "method": "semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "randomization": {
+          "observed": 0.008912392077036202,
+          "one_sided_positive_p": 0.2734375,
+          "two_sided_p": 0.546875,
+          "assignments": 256,
+          "method": "exact within-family sign-flip"
+        },
+        "values": [
+          -0.07425478100776672,
+          0.014322228729724884,
+          -0.002229679375886917,
+          0.05087334290146828,
+          0.034384503960609436,
+          0.029980960302054882,
+          0.0319514237344265,
+          -0.013728862628340721
+        ]
+      },
+      "target_aligned": {
+        "interval": {
+          "n": 8,
+          "mean": 0.05162302404642105,
+          "lo": 0.02891863277181983,
+          "hi": 0.07636074186302722,
+          "method": "semantic-family bootstrap",
+          "resamples": 10000
+        },
+        "randomization": {
+          "observed": 0.05162302404642105,
+          "one_sided_positive_p": 0.00390625,
+          "two_sided_p": 0.0078125,
+          "assignments": 256,
+          "method": "exact within-family sign-flip"
+        },
+        "values": [
+          0.03473229706287384,
+          0.09134478867053986,
+          0.06776359677314758,
+          0.11124175786972046,
+          0.0583755224943161,
+          0.013430668041110039,
+          0.010546358302235603,
+          0.025549203157424927
+        ]
+      }
+    }
+  },
+  "audits": {
+    "between": {
+      "local_efficacy": {
+        "n": 6,
+        "mean": 0.5625,
+        "lo": 0.3958333333333333,
+        "hi": 0.78125,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      },
+      "local_efficacy_pass_n": 6,
+      "n": 6,
+      "wrong_target": {
+        "n": 6,
+        "mean": 0.11458333333333333,
+        "lo": 0.0625,
+        "hi": 0.16666666666666666,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      },
+      "sign_reversed": {
+        "n": 6,
+        "mean": -0.28125,
+        "lo": -0.375,
+        "hi": -0.19791666666666666,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      },
+      "donor_separation": {
+        "n": 6,
+        "mean": 15.5,
+        "lo": 14.583333333333334,
+        "hi": 16.21875,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      }
+    },
+    "within": {
+      "local_efficacy": {
+        "n": 8,
+        "mean": 0.390625,
+        "lo": 0.265625,
+        "hi": 0.515625,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      },
+      "local_efficacy_pass_n": 8,
+      "n": 8,
+      "wrong_target": {
+        "n": 8,
+        "mean": -0.03125,
+        "lo": -0.0625,
+        "hi": -0.0078125,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      },
+      "sign_reversed": {
+        "n": 8,
+        "mean": -0.546875,
+        "lo": -0.9140625,
+        "hi": -0.3125,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      },
+      "donor_separation": {
+        "n": 8,
+        "mean": 5.3828125,
+        "lo": 3.53125,
+        "hi": 7.828125,
+        "method": "semantic-family bootstrap",
+        "resamples": 10000
+      }
+    }
+  },
+  "terminology_decision": "double dissociation"
+}

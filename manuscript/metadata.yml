@@ -29,8 +29,8 @@ abstract: |
   residual-state interventions at the pre-article position can bias later noun
   prediction toward specific targets even when the article itself is clamped,
   and analogous private influence is present at both 270M and 1B. In a
-  semantically valid, first-letter-constrained synonym assay at 1B, the same
-  residual-patch procedure yields a double dissociation: lexical alternatives that require different
+  semantically valid neutral-prompt synonym assay at 1B, a donor-derived
+  residual direction yields a double dissociation: lexical alternatives that require different
   articles are transmitted primarily through the public article, whereas
   alternatives sharing `a` retain target-aligned influence in private state.
   These results

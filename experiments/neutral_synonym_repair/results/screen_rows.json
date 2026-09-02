@@ -1,0 +1,520 @@
+[
+  {
+    "pair_id": "planning_planner_organizer",
+    "meaning_family": "activity_organization",
+    "regime": "between",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose work is arranging and coordinating activities is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word planner. Someone whose work is arranging and coordinating activities is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word organizer. Someone whose work is arranging and coordinating activities is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 15.9375,
+      "target_logit": 11.8125,
+      "target_minus_source": -4.125,
+      "source_prob": 0.0388629324734211,
+      "target_prob": 0.0006281607784330845,
+      "target_rank": 72,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 15.8125,
+      "target_logit": 12.3125,
+      "target_minus_source": -3.5,
+      "source_prob": 0.26249510049819946,
+      "target_prob": 0.007926665246486664,
+      "target_rank": 14,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 12.5625,
+      "target_logit": 17.75,
+      "target_minus_source": 5.1875,
+      "source_prob": 0.0012779358075931668,
+      "target_prob": 0.22877664864063263,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "donor_separation": 8.6875
+  },
+  {
+    "pair_id": "business_businessman_entrepreneur",
+    "meaning_family": "business",
+    "regime": "between",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone who starts and operates a business is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word businessman. Someone who starts and operates a business is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word entrepreneur. Someone who starts and operates a business is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 18.875,
+      "target_logit": 17.0,
+      "target_minus_source": -1.875,
+      "source_prob": 0.3853285610675812,
+      "target_prob": 0.05909205228090286,
+      "target_rank": 3,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 18.625,
+      "target_logit": 15.6875,
+      "target_minus_source": -2.9375,
+      "source_prob": 0.6591175198554993,
+      "target_prob": 0.03493195027112961,
+      "target_rank": 3,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 14.875,
+      "target_logit": 20.875,
+      "target_minus_source": 6.0,
+      "source_prob": 0.002302278531715274,
+      "target_prob": 0.928805410861969,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 8.9375
+  },
+  {
+    "pair_id": "direction_director_executive",
+    "meaning_family": "organization_management",
+    "regime": "between",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone responsible for directing an organization is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word director. Someone responsible for directing an organization is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word executive. Someone responsible for directing an organization is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 16.375,
+      "target_logit": 13.625,
+      "target_minus_source": -2.75,
+      "source_prob": 0.019631488248705864,
+      "target_prob": 0.0012549991952255368,
+      "target_rank": 28,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 16.125,
+      "target_logit": 12.25,
+      "target_minus_source": -3.875,
+      "source_prob": 0.1428115963935852,
+      "target_prob": 0.0029639601707458496,
+      "target_rank": 29,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 11.6875,
+      "target_logit": 20.0,
+      "target_minus_source": 8.3125,
+      "source_prob": 0.00012528446677606553,
+      "target_prob": 0.510469913482666,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 12.1875
+  },
+  {
+    "pair_id": "performance_performer_entertainer",
+    "meaning_family": "performance",
+    "regime": "between",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose occupation is performing for an audience is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word performer. Someone whose occupation is performing for an audience is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word entertainer. Someone whose occupation is performing for an audience is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 19.75,
+      "target_logit": 14.625,
+      "target_minus_source": -5.125,
+      "source_prob": 0.6237480044364929,
+      "target_prob": 0.0037089413963258266,
+      "target_rank": 15,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 17.625,
+      "target_logit": 12.3125,
+      "target_minus_source": -5.3125,
+      "source_prob": 0.4929092824459076,
+      "target_prob": 0.0024298392236232758,
+      "target_rank": 31,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 14.5625,
+      "target_logit": 21.0,
+      "target_minus_source": 6.4375,
+      "source_prob": 0.0012127116788178682,
+      "target_prob": 0.7577540874481201,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 11.75
+  },
+  {
+    "pair_id": "teaching_teacher_educator",
+    "meaning_family": "teaching",
+    "regime": "between",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose job is to teach students is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word teacher. Someone whose job is to teach students is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word educator. Someone whose job is to teach students is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 21.75,
+      "target_logit": 13.3125,
+      "target_minus_source": -8.4375,
+      "source_prob": 0.7612424492835999,
+      "target_prob": 0.00016487823450006545,
+      "target_rank": 38,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 19.875,
+      "target_logit": 13.0,
+      "target_minus_source": -6.875,
+      "source_prob": 0.5901349782943726,
+      "target_prob": 0.0006097850855439901,
+      "target_rank": 22,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 15.5625,
+      "target_logit": 21.25,
+      "target_minus_source": 5.6875,
+      "source_prob": 0.002562916139140725,
+      "target_prob": 0.7564570307731628,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 12.5625
+  },
+  {
+    "pair_id": "painting_painter_artist",
+    "meaning_family": "visual_art",
+    "regime": "between",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose occupation is creating paintings and visual art is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word painter. Someone whose occupation is creating paintings and visual art is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word artist. Someone whose occupation is creating paintings and visual art is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 19.75,
+      "target_logit": 15.625,
+      "target_minus_source": -4.125,
+      "source_prob": 0.6672150492668152,
+      "target_prob": 0.010784526355564594,
+      "target_rank": 7,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 18.75,
+      "target_logit": 14.6875,
+      "target_minus_source": -4.0625,
+      "source_prob": 0.769444465637207,
+      "target_prob": 0.01323902327567339,
+      "target_rank": 4,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 15.3125,
+      "target_logit": 21.5,
+      "target_minus_source": 6.1875,
+      "source_prob": 0.0019165081903338432,
+      "target_prob": 0.9326266050338745,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 10.25
+  },
+  {
+    "pair_id": "driving_driver_chauffeur",
+    "meaning_family": "driving",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone employed to drive other people is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word driver. Someone employed to drive other people is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word chauffeur. Someone employed to drive other people is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 18.75,
+      "target_logit": 17.875,
+      "target_minus_source": -0.875,
+      "source_prob": 0.47168752551078796,
+      "target_prob": 0.1966286152601242,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 18.25,
+      "target_logit": 17.5,
+      "target_minus_source": -0.75,
+      "source_prob": 0.46050459146499634,
+      "target_prob": 0.21752695739269257,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 17.0,
+      "target_logit": 17.25,
+      "target_minus_source": 0.25,
+      "source_prob": 0.26139357686042786,
+      "target_prob": 0.3356359899044037,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 1.0
+  },
+  {
+    "pair_id": "hair_barber_hairdresser",
+    "meaning_family": "hair",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose occupation is cutting and styling hair is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word barber. Someone whose occupation is cutting and styling hair is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word hairdresser. Someone whose occupation is cutting and styling hair is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 20.25,
+      "target_logit": 21.0,
+      "target_minus_source": 0.75,
+      "source_prob": 0.22012430429458618,
+      "target_prob": 0.4660031795501709,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "source_donor": {
+      "source_logit": 18.75,
+      "target_logit": 18.75,
+      "target_minus_source": 0.0,
+      "source_prob": 0.3653438687324524,
+      "target_prob": 0.3653438687324524,
+      "target_rank": 1,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 17.125,
+      "target_logit": 19.375,
+      "target_minus_source": 2.25,
+      "source_prob": 0.06416434049606323,
+      "target_prob": 0.6087743043899536,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 2.25
+  },
+  {
+    "pair_id": "medicine_doctor_physician",
+    "meaning_family": "medicine",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone qualified to diagnose illness and treat patients is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word doctor. Someone qualified to diagnose illness and treat patients is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word physician. Someone qualified to diagnose illness and treat patients is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 21.875,
+      "target_logit": 21.125,
+      "target_minus_source": -0.75,
+      "source_prob": 0.6049908995628357,
+      "target_prob": 0.2857774496078491,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 19.75,
+      "target_logit": 18.625,
+      "target_minus_source": -1.125,
+      "source_prob": 0.639505922794342,
+      "target_prob": 0.20761717855930328,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 19.25,
+      "target_logit": 18.625,
+      "target_minus_source": -0.625,
+      "source_prob": 0.527594268321991,
+      "target_prob": 0.28240087628364563,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "donor_separation": 0.5
+  },
+  {
+    "pair_id": "news_reporter_journalist",
+    "meaning_family": "news",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose job is to investigate and report news is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word reporter. Someone whose job is to investigate and report news is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word journalist. Someone whose job is to investigate and report news is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 20.75,
+      "target_logit": 22.0,
+      "target_minus_source": 1.25,
+      "source_prob": 0.21312327682971954,
+      "target_prob": 0.7438732981681824,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "source_donor": {
+      "source_logit": 17.625,
+      "target_logit": 19.5,
+      "target_minus_source": 1.875,
+      "source_prob": 0.11518001556396484,
+      "target_prob": 0.7510679960250854,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "target_donor": {
+      "source_logit": 18.75,
+      "target_logit": 18.375,
+      "target_minus_source": -0.375,
+      "source_prob": 0.483560711145401,
+      "target_prob": 0.332346111536026,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "donor_separation": -2.25
+  },
+  {
+    "pair_id": "management_supervisor_manager",
+    "meaning_family": "organization_management",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone responsible for directing and overseeing workers is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word supervisor. Someone responsible for directing and overseeing workers is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word manager. Someone responsible for directing and overseeing workers is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 18.5,
+      "target_logit": 19.625,
+      "target_minus_source": 1.125,
+      "source_prob": 0.13943922519683838,
+      "target_prob": 0.42950305342674255,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "source_donor": {
+      "source_logit": 16.5,
+      "target_logit": 16.875,
+      "target_minus_source": 0.375,
+      "source_prob": 0.209019735455513,
+      "target_prob": 0.3041219115257263,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "target_donor": {
+      "source_logit": 16.0,
+      "target_logit": 17.25,
+      "target_minus_source": 1.25,
+      "source_prob": 0.1308692842721939,
+      "target_prob": 0.4567786753177643,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 0.875
+  },
+  {
+    "pair_id": "sales_vendor_salesperson",
+    "meaning_family": "sales",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose occupation is selling goods is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word vendor. Someone whose occupation is selling goods is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word salesperson. Someone whose occupation is selling goods is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 13.625,
+      "target_logit": 17.5,
+      "target_minus_source": 3.875,
+      "source_prob": 0.0018254624446853995,
+      "target_prob": 0.08795570582151413,
+      "target_rank": 3,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 15.625,
+      "target_logit": 15.375,
+      "target_minus_source": -0.25,
+      "source_prob": 0.07839225977659225,
+      "target_prob": 0.061051949858665466,
+      "target_rank": 5,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 11.375,
+      "target_logit": 17.75,
+      "target_minus_source": 6.375,
+      "source_prob": 0.0007973405299708247,
+      "target_prob": 0.468027263879776,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 6.625
+  },
+  {
+    "pair_id": "therapy_therapist_counselor",
+    "meaning_family": "therapy",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose job is to provide psychological guidance and therapy is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word therapist. Someone whose job is to provide psychological guidance and therapy is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word counselor. Someone whose job is to provide psychological guidance and therapy is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 19.125,
+      "target_logit": 19.25,
+      "target_minus_source": 0.125,
+      "source_prob": 0.05446784943342209,
+      "target_prob": 0.06172015145421028,
+      "target_rank": 4,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 17.875,
+      "target_logit": 17.75,
+      "target_minus_source": -0.125,
+      "source_prob": 0.04984782263636589,
+      "target_prob": 0.04399054870009422,
+      "target_rank": 5,
+      "target_top1": false
+    },
+    "target_donor": {
+      "source_logit": 17.875,
+      "target_logit": 18.25,
+      "target_minus_source": 0.375,
+      "source_prob": 0.06103053316473961,
+      "target_prob": 0.08879891037940979,
+      "target_rank": 3,
+      "target_top1": false
+    },
+    "donor_separation": 0.5
+  },
+  {
+    "pair_id": "writing_writer_novelist",
+    "meaning_family": "writing",
+    "regime": "within",
+    "neutral_prompt": "Someone who studies living organisms is a biologist. Someone whose occupation is writing novels and other fiction is",
+    "source_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word writer. Someone whose occupation is writing novels and other fiction is",
+    "target_donor_prompt": "Someone who studies living organisms is a biologist. Use exactly the word novelist. Someone whose occupation is writing novels and other fiction is",
+    "neutral_source_article": "a",
+    "neutral_source_branch": {
+      "source_logit": 21.25,
+      "target_logit": 21.125,
+      "target_minus_source": -0.125,
+      "source_prob": 0.4903273284435272,
+      "target_prob": 0.4327123463153839,
+      "target_rank": 2,
+      "target_top1": false
+    },
+    "source_donor": {
+      "source_logit": 19.0,
+      "target_logit": 19.5,
+      "target_minus_source": 0.5,
+      "source_prob": 0.31628769636154175,
+      "target_prob": 0.5214702486991882,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "target_donor": {
+      "source_logit": 18.5,
+      "target_logit": 19.375,
+      "target_minus_source": 0.875,
+      "source_prob": 0.24479597806930542,
+      "target_prob": 0.5872350335121155,
+      "target_rank": 1,
+      "target_top1": true
+    },
+    "donor_separation": 0.375
+  }
+]
