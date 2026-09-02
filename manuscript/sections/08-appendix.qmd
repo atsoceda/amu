@@ -1,5 +1,10 @@
 \appendix
 
+```{=latex}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+```
+
 # Supplementary methods and results
 
 ## Reproducibility map
@@ -17,6 +22,7 @@ directories.
 | Private residual references | `experiments/natural_residual_carrier_regimes/results/` and `experiments/cross_scale_normalized_residual/results/` |
 | Neutral synonym routing | `experiments/neutral_synonym_repair/results/` |
 | Matched semantic-triad routing | `experiments/matched_semantic_triads_repaired/results/` |
+| Matched component and policy audits | `experiments/matched_semantic_triads_repaired/results/component_diagnostic.json` and `article_policy_audit.json` |
 | Independent Figure 4 recomputation | `experiments/neutral_synonym_repair/results/independent_recomputation.json` |
 | Closed-loop gain | `experiments/closed_loop_gain_law/results/` |
 | Sparse 1B stress tests | `experiments/gemma_1b_effect_matched/results/` and `experiments/gemma_1b_sparse_frontier/results/` |
@@ -152,6 +158,22 @@ sign. The paired interaction remains positive at every combination of three
 strengths and four temperatures. This is the primary control for semantic-family
 composition in the mediator-relative claim.
 
+The component decomposition makes the source of this route shift explicit.
+Within class, mean public and private target effects are respectively
+\(-0.0017\ [-0.0108,0.0097]\) and
+\(0.0307\ [0.0142,0.0509]\); across classes they are
+\(0.0998\ [0.0581,0.1446]\) and \(0.0127\ [0.0041,0.0217]\).
+Consequently, the paired changes are \(\Delta P=0.1015\
+[0.0625,0.1423]\) and \(\Delta H=-0.0180\ [-0.0389,-0.0003]\):
+the larger public component accounts for most of the change in \(R\), with a
+smaller reduction in private influence. A deterministic 28-cell audit recovers
+the missing conditional article probabilities and exactly reconstructs every
+frozen public effect (maximum absolute error zero). Mean target-article policy
+movement is 0.0007 within class and 0.0993 across classes; their paired
+difference is \(0.0986\ [0.0549,0.1418]\), positive in 12/14 families. Thus
+the public increase accompanies stronger recruitment of the target article,
+not continuation leverage alone.
+
 The outcome-blind potency audit does not find stronger cross-article
 interventions. Mean cross versus within direction norms are 699 versus 761
 (paired difference \(-62\ [-188,60]\)); fixed-article local efficacies are
@@ -159,7 +181,10 @@ interventions. Mean cross versus within direction norms are 699 versus 761
 support is 0.912 versus 0.913. Cross targets do have a higher baseline
 target-minus-source lexical gap (paired difference 7.01 logits), so target-word
 identity is not held fixed; this is disclosed rather than interpreted as route
-evidence. Because neither direction norm nor fixed-mediator causal potency
+evidence. Familywise gap differences do not predict the paired route shift
+(Pearson \(r=-0.005\), Spearman \(\rho=-0.015\), 100,000-permutation
+two-sided \(p=0.986\)); leave-one-family-out Pearson correlations range from
+-0.104 to 0.148. Because neither direction norm nor fixed-mediator causal potency
 favors the cross arm, no outcome-blind efficacy rescaling is triggered.
 
 All 22 candidates and their route-blind screening outcomes are shown below.
@@ -224,7 +249,8 @@ At \(\tau=0.1\), constant, susceptibility-only, leverage-only, and activation
 baselines have \(R^2=-0.052,-0.082,-0.053,-0.045\). The measured-margin/full-
 leverage calculation has \(R^2=1\) by identity and is not a prediction. At 1B,
 combined-holdout transfer is weak; we report that failure rather than pool
-scales. @fig-app-gain shows the complete diagnostic set: attribution has
+scales. @fig-app-gain and @fig-app-gain-tail show the complete diagnostic set:
+attribution has
 moderate local calibration (A), fixed-token attribution correlations are
 inconclusive (B), the full 270M composition outperforms simple baselines (C),
 bin means expose calibration across the dynamic range (D), tail removal exposes
@@ -240,7 +266,9 @@ gives aggregate \(R^2=0.840\ [-0.293,0.986]\) and MAE
 variance even faster, making \(R^2\) strongly negative without implying large
 absolute mistakes.
 
-![Closed-loop gain diagnostics. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines. D: equal-count predicted-versus-observed calibration with crossed feature--prompt bootstrap intervals. E: R2 and MAE respond differently when the largest observed effects are excluded because the remaining outcome variance is tiny. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
+![Closed-loop gain diagnostics I. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
+
+![Closed-loop gain diagnostics II. D: equal-count predicted-versus-observed calibration with crossed feature--prompt bootstrap intervals. E: R2 and MAE respond differently when the largest observed effects are excluded because the remaining outcome variance is tiny. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix_tail.png){#fig-app-gain-tail width=98%}
 
 ## Sparse 1B ladder failures
 

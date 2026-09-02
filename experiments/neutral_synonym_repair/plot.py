@@ -18,8 +18,8 @@ def native_rows(regime):return [r for r in ROWS if r["regime"]==regime and r["st
 def main():
     fig=plt.figure(figsize=(12.0,4.0));gs=fig.add_gridspec(1,3,width_ratios=(.95,1.45,1.25),wspace=.45)
     ax=fig.add_subplot(gs[0]);ax.axis("off");ax.set_title("A  What can the article express?",loc="left",weight="bold",fontsize=11)
-    examples=[(.74,"BETWEEN classes","teacher  →  educator","a  →  an",PUBLIC,"public-visible"),
-              (.28,"WITHIN one class","doctor  →  physician","a  →  a",PRIVATE,"publicly collapsed")]
+    examples=[(.74,"CROSS class","teacher  →  educator","a  →  an",PUBLIC,"article distinguishes"),
+              (.28,"WITHIN class","teacher  →  tutor","a  →  a",PRIVATE,"article collapses")]
     for y,heading,words,articles,color,note in examples:
         ax.text(.02,y+.14,heading,color=color,weight="bold",fontsize=9.2);ax.text(.02,y,words,fontsize=9.5,weight="bold")
         ax.text(.02,y-.13,articles,fontsize=13,color=color,weight="bold");ax.text(.02,y-.23,note,fontsize=8.2,color="#455a64")

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 RESULTS = ROOT / "experiments/closed_loop_gain_law/results"
 MAIN_OUT = ROOT / "manuscript/figures/fig_attribution_channel_calibration.png"
 APP_OUT = ROOT / "manuscript/figures/fig_gain_diagnostics_appendix.png"
+APP_OUT_2 = ROOT / "manuscript/figures/fig_gain_diagnostics_appendix_tail.png"
 BLUE, ORANGE, PURPLE = "#1769aa", "#d96c21", "#7b3fb2"
 
 
@@ -76,33 +77,36 @@ def plot_main(predictions, diagnostics):
 
 def plot_appendix(validation, predictions, diagnostics, aligned):
     colors = {"270M": BLUE, "1B": ORANGE}
-    fig, axes = plt.subplots(2, 3, figsize=(11.4, 6.8))
-    ax = axes[0, 0]
+    fig, axes = plt.subplots(1, 3, figsize=(11.4, 3.15))
+    ax = axes[0]
     local = {"270M": (.530,.200,.772), "1B": (.432,.014,.729)}
     for i, model in enumerate(("270M", "1B")):
         value, lo, hi = local[model]; ax.errorbar(i, value, yerr=[[value-lo],[hi-value]], fmt="o", ms=7, capsize=4, color=colors[model])
     ax.axhline(0,color="black",lw=.8); ax.set_xticks([0,1],["270M","1B"]); ax.set(ylabel="Spearman $\\rho$",title="A  Attribution → local margin",ylim=(-.2,.9))
 
-    ax = axes[0, 1]
+    ax = axes[1]
     metrics=[("signed_future_vs_signed_fixed_target","Target logit"),("signed_future_vs_signed_fixed_target_minus_source","Target-source")]
     for j,(key,label) in enumerate(metrics):
         for offset,model in ((-.1,"270M"),(.1,"1B")):
             d=aligned[model][key]; ax.errorbar(j+offset,d["rho"],yerr=[[d["rho"]-d["lo"]],[d["hi"]-d["rho"]]],fmt="o",capsize=4,color=colors[model],label=model if j==0 else None)
     ax.axhline(0,color="black",lw=.8);ax.set_xticks(range(2),[x[1] for x in metrics]);ax.set(title="B  Fixed-token attribution",ylim=(-.65,.75));ax.legend(frameon=False,fontsize=8)
 
-    ax=axes[0,2]; names=[("constant","Constant"),("attribution_only","Attribution"),("susceptibility_only","Susceptibility"),("full_gain_model","Full")]
+    ax=axes[2]; names=[("constant","Constant"),("attribution_only","Attribution"),("susceptibility_only","Susceptibility"),("full_gain_model","Full")]
     x=np.arange(len(names));width=.36
     for offset,(key,label) in zip((-.18,.18),(("gemma_270m","270M"),("gemma_1b","1B"))):
         vals=[validation[key]["0.1"]["feature_prompt"][name]["r2"] for name,_ in names];ax.bar(x+offset,vals,width,color=colors[label],label=label)
     ax.axhline(0,color="black",lw=.8);ax.set_xticks(x,[label for _,label in names],rotation=18);ax.set(ylabel="Held-out $R^2$",title="C  Predictive baselines",ylim=(-.7,1));ax.legend(frameon=False,fontsize=8)
+    for axis in axes: axis.spines[["top","right"]].set_visible(False);axis.grid(alpha=.15);axis.tick_params(labelsize=8);axis.title.set_fontsize(10)
+    fig.tight_layout();fig.savefig(APP_OUT,dpi=240,bbox_inches="tight");plt.close(fig)
 
-    ax=axes[1,0]; bins=diagnostics["binned_calibration"]
+    fig, axes = plt.subplots(1, 3, figsize=(11.4, 3.15))
+    ax=axes[0]; bins=diagnostics["binned_calibration"]
     bx=np.asarray([b["mean_predicted"] for b in bins]);by=np.asarray([b["mean_observed"] for b in bins])
     yerr=np.asarray([[b["mean_observed"]-b["observed_lo"] for b in bins],[b["observed_hi"]-b["mean_observed"] for b in bins]])
     eps=1e-7;ax.errorbar(bx+eps,by+eps,yerr=yerr,fmt="o",capsize=3,color=ORANGE)
     lim=max(bx.max(),by.max())*1.2;ax.plot([eps,lim],[eps,lim],ls="--",lw=.8,color="black");ax.set_xscale("log");ax.set_yscale("log");ax.set(xlabel="Mean predicted public TV",ylabel="Mean observed public TV",title="D  Predicted vs observed: five bins")
 
-    ax=axes[1,1]; keys=["exclude_top_0pct","exclude_top_5pct","exclude_top_10pct"]; vals=[diagnostics["tail_sensitivity"][k]["r2"] for k in keys]
+    ax=axes[1]; keys=["exclude_top_0pct","exclude_top_5pct","exclude_top_10pct"]; vals=[diagnostics["tail_sensitivity"][k]["r2"] for k in keys]
     maes=[diagnostics["tail_sensitivity"][k]["mae"] for k in keys]
     bars=ax.bar(range(3),vals,color=[BLUE,"#b85c3a","#8b1a1a"],alpha=.82,label="$R^2$");ax.axhline(0,color="black",lw=.8)
     ax.set_yscale("symlog",linthresh=1);ax.set_ylim(-50,2)
@@ -112,12 +116,12 @@ def plot_appendix(validation, predictions, diagnostics, aligned):
         ax.text(bar.get_x()+bar.get_width()/2, label_y, f"{value:.2f}", ha="center", va="bottom", fontsize=7)
     ax2=ax.twinx();ax2.plot(range(3),maes,color=ORANGE,marker="o",lw=1.5,label="MAE");ax2.set_ylabel("MAE",color=ORANGE,fontsize=8);ax2.tick_params(axis="y",labelcolor=ORANGE,labelsize=7);ax2.set_ylim(0,.022)
 
-    ax=axes[1,2]; temps=(.1,.25,.5,1.0)
+    ax=axes[2]; temps=(.1,.25,.5,1.0)
     for model,label in (("gemma_270m","270M"),("gemma_1b","1B")):
         vals=[validation[model][str(t)]["feature_prompt"]["full_gain_model"]["r2"] for t in temps];ax.plot(temps,vals,marker="o",color=colors[label],label=label)
     ax.axhline(0,color="black",lw=.8);ax.set_xscale("log");ax.set_xticks(temps,[".1",".25",".5","1"]);ax.set(xlabel="Article temperature",ylabel="Held-out $R^2$",title="F  Temperature and scale");ax.legend(frameon=False,fontsize=8)
-    for ax in axes.flat: ax.spines[["top","right"]].set_visible(False);ax.grid(alpha=.15);ax.tick_params(labelsize=8);ax.title.set_fontsize(10)
-    fig.tight_layout();fig.savefig(APP_OUT,dpi=240,bbox_inches="tight");plt.close(fig)
+    for axis in axes: axis.spines[["top","right"]].set_visible(False);axis.grid(alpha=.15);axis.tick_params(labelsize=8);axis.title.set_fontsize(10)
+    fig.tight_layout();fig.savefig(APP_OUT_2,dpi=240,bbox_inches="tight");plt.close(fig)
 
 
 def main():
@@ -127,7 +131,7 @@ def main():
     aligned={"270M":load(ROOT/"experiments/attribution_channel_calibration/results/aligned_summary.json")["analyses"],
              "1B":load(ROOT/"experiments/gemma_1b_attribution_channel_calibration/results/aligned_summary.json")["analyses"]}
     plot_main(predictions,diagnostics);plot_appendix(validation,predictions,diagnostics,aligned)
-    print(MAIN_OUT);print(APP_OUT)
+    print(MAIN_OUT);print(APP_OUT);print(APP_OUT_2)
 
 
 if __name__=="__main__":main()

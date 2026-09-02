@@ -1,0 +1,352 @@
+{
+  "audit": "matched-triad target-article policy movement",
+  "model": "google/gemma-3-1b-pt",
+  "fixed_layer": 17,
+  "primary_strength": 1.0,
+  "primary_temperature": 1.0,
+  "conditional_policy_support": [
+    "a",
+    "an"
+  ],
+  "n_triads": 14,
+  "max_public_effect_reconstruction_error": 0.0,
+  "rows": [
+    {
+      "triad_id": "teaching",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.9399133324623108,
+        "q1_target_article": 0.9149009585380554,
+        "target_article_policy_movement": -0.02501237392425537,
+        "stored_public_target_minus_source": 0.01301468163728714,
+        "reconstructed_public_target_minus_source": 0.01301468163728714,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.06008664891123772,
+        "q1_target_article": 0.18242551386356354,
+        "target_article_policy_movement": 0.12233886122703552,
+        "stored_public_target_minus_source": 0.162693589925766,
+        "reconstructed_public_target_minus_source": 0.162693589925766,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.1473512351512909
+    },
+    {
+      "triad_id": "writing",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.8933094143867493,
+        "q1_target_article": 0.8933094143867493,
+        "target_article_policy_movement": 0.0,
+        "stored_public_target_minus_source": 0.0,
+        "reconstructed_public_target_minus_source": 0.0,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.10669060051441193,
+        "q1_target_article": 0.2018132209777832,
+        "target_article_policy_movement": 0.09512262046337128,
+        "stored_public_target_minus_source": 0.17129987478256226,
+        "reconstructed_public_target_minus_source": 0.17129987478256226,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.09512262046337128
+    },
+    {
+      "triad_id": "performance",
+      "within": {
+        "target_article": "an",
+        "q0_target_article": 0.24508501589298248,
+        "q1_target_article": 0.24508501589298248,
+        "target_article_policy_movement": 0.0,
+        "stored_public_target_minus_source": 0.0,
+        "reconstructed_public_target_minus_source": 0.0,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "a",
+        "q0_target_article": 0.7549149990081787,
+        "q1_target_article": 0.8807970285415649,
+        "target_article_policy_movement": 0.12588202953338623,
+        "stored_public_target_minus_source": 0.13334232568740845,
+        "reconstructed_public_target_minus_source": 0.13334232568740845,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.12588202953338623
+    },
+    {
+      "triad_id": "events",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.7549149990081787,
+        "q1_target_article": 0.7310585975646973,
+        "target_article_policy_movement": -0.023856401443481445,
+        "stored_public_target_minus_source": -0.00854666531085968,
+        "reconstructed_public_target_minus_source": -0.00854666531085968,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.24508501589298248,
+        "q1_target_article": 0.4073334336280823,
+        "target_article_policy_movement": 0.1622484177350998,
+        "stored_public_target_minus_source": 0.10278190672397614,
+        "reconstructed_public_target_minus_source": 0.10278190672397614,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.18610481917858124
+    },
+    {
+      "triad_id": "leadership",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.7981867790222168,
+        "q1_target_article": 0.7772998809814453,
+        "target_article_policy_movement": -0.020886898040771484,
+        "stored_public_target_minus_source": 0.00031588878482580185,
+        "reconstructed_public_target_minus_source": 0.00031588878482580185,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.2018132209777832,
+        "q1_target_article": 0.2689414322376251,
+        "target_article_policy_movement": 0.06712821125984192,
+        "stored_public_target_minus_source": 0.005005169659852982,
+        "reconstructed_public_target_minus_source": 0.005005169659852982,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.0880151093006134
+    },
+    {
+      "triad_id": "academia",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.8933094143867493,
+        "q1_target_article": 0.8519527316093445,
+        "target_article_policy_movement": -0.041356682777404785,
+        "stored_public_target_minus_source": -0.022270575165748596,
+        "reconstructed_public_target_minus_source": -0.022270575165748596,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.10669060051441193,
+        "q1_target_article": 0.16451646387577057,
+        "target_article_policy_movement": 0.05782586336135864,
+        "stored_public_target_minus_source": 0.006864312570542097,
+        "reconstructed_public_target_minus_source": 0.006864312570542097,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.09918254613876343
+    },
+    {
+      "triad_id": "art",
+      "within": {
+        "target_article": "an",
+        "q0_target_article": 0.5,
+        "q1_target_article": 0.4378235340118408,
+        "target_article_policy_movement": -0.06217646598815918,
+        "stored_public_target_minus_source": 0.0575711652636528,
+        "reconstructed_public_target_minus_source": 0.0575711652636528,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "a",
+        "q0_target_article": 0.5,
+        "q1_target_article": 0.7057850360870361,
+        "target_article_policy_movement": 0.20578503608703613,
+        "stored_public_target_minus_source": 0.2524404227733612,
+        "reconstructed_public_target_minus_source": 0.2524404227733612,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.2679615020751953
+    },
+    {
+      "triad_id": "police",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.9740425944328308,
+        "q1_target_article": 0.977022647857666,
+        "target_article_policy_movement": 0.002980053424835205,
+        "stored_public_target_minus_source": 0.0006897198036313057,
+        "reconstructed_public_target_minus_source": 0.0006897198036313057,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.02595735527575016,
+        "q1_target_article": 0.03308597952127457,
+        "target_article_policy_movement": 0.007128624245524406,
+        "stored_public_target_minus_source": 0.0006822042632848024,
+        "reconstructed_public_target_minus_source": 0.0006822042632848024,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.004148570820689201
+    },
+    {
+      "triad_id": "speaking",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.8933094143867493,
+        "q1_target_article": 0.9046505093574524,
+        "target_article_policy_movement": 0.011341094970703125,
+        "stored_public_target_minus_source": -0.006111074239015579,
+        "reconstructed_public_target_minus_source": -0.006111074239015579,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.10669060051441193,
+        "q1_target_article": 0.3208213150501251,
+        "target_article_policy_movement": 0.2141307145357132,
+        "stored_public_target_minus_source": 0.25579217076301575,
+        "reconstructed_public_target_minus_source": 0.25579217076301575,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.20278961956501007
+    },
+    {
+      "triad_id": "employment",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.622459352016449,
+        "q1_target_article": 0.7057850360870361,
+        "target_article_policy_movement": 0.08332568407058716,
+        "stored_public_target_minus_source": -0.003034532070159912,
+        "reconstructed_public_target_minus_source": -0.003034532070159912,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.3775406777858734,
+        "q1_target_article": 0.4073334336280823,
+        "target_article_policy_movement": 0.029792755842208862,
+        "stored_public_target_minus_source": 0.03487825393676758,
+        "reconstructed_public_target_minus_source": 0.03487825393676758,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": -0.053532928228378296
+    },
+    {
+      "triad_id": "ownership",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.9149009585380554,
+        "q1_target_article": 0.9324532747268677,
+        "target_article_policy_movement": 0.017552316188812256,
+        "stored_public_target_minus_source": -0.0004698989796452224,
+        "reconstructed_public_target_minus_source": -0.0004698989796452224,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.08509904891252518,
+        "q1_target_article": 0.09534946084022522,
+        "target_article_policy_movement": 0.010250411927700043,
+        "stored_public_target_minus_source": 0.0022650808095932007,
+        "reconstructed_public_target_minus_source": 0.0022650808095932007,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": -0.007301904261112213
+    },
+    {
+      "triad_id": "invention",
+      "within": {
+        "target_article": "an",
+        "q0_target_article": 0.4073334336280823,
+        "q1_target_article": 0.4378235340118408,
+        "target_article_policy_movement": 0.030490100383758545,
+        "stored_public_target_minus_source": -0.02514108456671238,
+        "reconstructed_public_target_minus_source": -0.02514108456671238,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "a",
+        "q0_target_article": 0.5926666259765625,
+        "q1_target_article": 0.7310585975646973,
+        "target_article_policy_movement": 0.13839197158813477,
+        "stored_public_target_minus_source": 0.11725006997585297,
+        "reconstructed_public_target_minus_source": 0.11725006997585297,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.10790187120437622
+    },
+    {
+      "triad_id": "students",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.9525741338729858,
+        "q1_target_article": 0.9525741338729858,
+        "target_article_policy_movement": 0.0,
+        "stored_public_target_minus_source": 0.0,
+        "reconstructed_public_target_minus_source": 0.0,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.04742587357759476,
+        "q1_target_article": 0.13296423852443695,
+        "target_article_policy_movement": 0.0855383649468422,
+        "stored_public_target_minus_source": 0.08787883818149567,
+        "reconstructed_public_target_minus_source": 0.08787883818149567,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.0855383649468422
+    },
+    {
+      "triad_id": "management",
+      "within": {
+        "target_article": "a",
+        "q0_target_article": 0.8670357465744019,
+        "q1_target_article": 0.9046505093574524,
+        "target_article_policy_movement": 0.03761476278305054,
+        "stored_public_target_minus_source": -0.029228033497929573,
+        "reconstructed_public_target_minus_source": -0.029228033497929573,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross": {
+        "target_article": "an",
+        "q0_target_article": 0.13296423852443695,
+        "q1_target_article": 0.2018132209777832,
+        "target_article_policy_movement": 0.06884898245334625,
+        "stored_public_target_minus_source": 0.06471601873636246,
+        "reconstructed_public_target_minus_source": 0.06471601873636246,
+        "absolute_reconstruction_error": 0.0
+      },
+      "cross_minus_within_policy_movement": 0.031234219670295715
+    }
+  ],
+  "summaries": {
+    "within_target_article_policy_movement": {
+      "n": 14,
+      "mean": 0.0007153706891196114,
+      "lo": -0.01697720374379839,
+      "hi": 0.019697219133377075,
+      "positive_n": 6,
+      "method": "paired semantic-triad bootstrap",
+      "resamples": 10000
+    },
+    "cross_target_article_policy_movement": {
+      "n": 14,
+      "mean": 0.09931520465761423,
+      "lo": 0.06701173739773887,
+      "hi": 0.13384650062237466,
+      "positive_n": 14,
+      "method": "paired semantic-triad bootstrap",
+      "resamples": 10000
+    },
+    "paired_cross_minus_within": {
+      "n": 14,
+      "mean": 0.09859983396849462,
+      "lo": 0.05488658802849906,
+      "hi": 0.1418058824326311,
+      "positive_n": 12,
+      "method": "paired semantic-triad bootstrap",
+      "resamples": 10000
+    }
+  }
+}

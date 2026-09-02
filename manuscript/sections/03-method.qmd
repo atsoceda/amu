@@ -4,7 +4,9 @@
 
 We study pretrained Gemma 3 270M and 1B. Sparse experiments use the matching
 Gemma Scope 2 pretrained affine cross-layer transcoders
-[@gemmascope2] through `circuit-tracer` [@hanna2025circuittracer]. The primary
+[@gemmascope2], building on transcoder feature-circuit methods
+[@dunefsky2024transcoders; @ameisen2025attribution], through `circuit-tracer`
+[@hanna2025circuittracer]. The primary
 prompts and occupation definitions follow the released materials of *Latent
 Planning Emerges with Scale* [@hanna2026latent]; synonym families are screened
 from the same occupation domain. Model, dictionary, package snapshots, prompts,

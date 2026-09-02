@@ -28,6 +28,8 @@ Submission audits:
 python experiments/matched_semantic_triads_repaired/analyze.py
 python experiments/matched_semantic_triads_repaired/make_appendix_table.py
 python experiments/neutral_synonym_repair/recompute_headlines.py
+python experiments/matched_semantic_triads_repaired/component_diagnostic.py
+/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads_repaired/article_policy_audit.py
 ```
 
 `potency_audit.py` recomputes donor-direction norms and baseline lexical gaps
@@ -35,3 +37,9 @@ and combines them with frozen fixed-article efficacy, support, and total-effect
 measurements. The independent Figure 4 runner separately reconstructs every
 candidate eligibility decision and paired result without importing this
 experiment's analysis code.
+
+`component_diagnostic.py` is artifact-only: it decomposes the paired shift and
+tests its association with the baseline lexical-gap difference.
+`article_policy_audit.py` deterministically replays only the 28 retained primary
+cells, recovers conditional target-article policy movement, and verifies exact
+reconstruction of every frozen public effect.

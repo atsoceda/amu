@@ -38,9 +38,11 @@ The experiments reveal a coherent organization of causal state.
    derived residual patches move target nouns while article identity is fixed at
    both 270M and 1B. Public mediation is therefore not the only available route.
 3. **Routing is mediator-relative.** In a neutral-prompt 1B synonym assay, both
-   lexical alternatives remain correct. When the alternatives require different
-   articles, target-aligned influence is public-dominant; when both require `a`,
-   it is private-dominant. All 14 semantic families have the predicted sign.
+   lexical alternatives remain correct. In a matched 14-family assay holding
+   semantic family and source state fixed, crossing the article-equivalence
+   boundary shifts causal influence toward the public route in 13/14 families;
+   an independent-family assay shows the corresponding public/private double
+   dissociation in all 14 families.
 4. **Public effects have closed-loop gain.** Once a distinction enters the
    public route, its downstream magnitude is the product of mediator-policy
    movement and continuation-branch leverage. At 270M, composing local causal

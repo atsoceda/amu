@@ -34,7 +34,14 @@ if reference_page is None:
 elif reference_page > 10:
     errors.append(f"main text exceeds nine pages: References begins on page {reference_page}")
 
-for phrase in ("13/14 families", "0.00092", "0.000122", "future-noun-attributed pre-article causal handles"):
+for phrase in (
+    "13/14 families",
+    "0.00092",
+    "0.000122",
+    "0.1015",
+    "0.0986",
+    "future-noun-attributed pre-article causal handles",
+):
     if phrase not in text:
         errors.append(f"required rendered phrase missing: {phrase!r}")
 
