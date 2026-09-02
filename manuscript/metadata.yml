@@ -4,34 +4,7 @@ author:
     affiliations:
       - name: Anonymous Institution
 abstract: |
-  Autoregressive generation closes a causal loop: a model's output becomes part
-  of its next input. A future-relevant intervention can therefore act through
-  two routes. Its influence may persist privately in contextual state, or be
-  projected into a public token and re-enter the model through feedback. We
-  introduce a six-cell intervention assay and a four-stage causal-validity
-  ladder that distinguish these routes.
-
-  In Gemma 3 270M, an attribution-selected sparse intervention that rewrites
-  `a pilot` as `an aviator` is almost entirely public. Replaying the treated
-  article reproduces the noun, restoring the baseline article rescues it, and
-  token substitution accounts for 0.891 TV of a 0.893-TV total change, leaving
-  0.028 TV under the fixed treated article. Near the article boundary, a gain
-  change of at most 0.0039 produces a 0.938-TV noun jump while either
-  fixed-article path moves only 0.014. Yet private target information is also
-  causally effective: natural-state-derived residual patches alter later noun
-  predictions while the article is fixed at both 270M and 1B.
-
-  A neutral-prompt synonym assay at 1B reveals mediator-relative routing. When
-  two correct alternatives require different articles, target-aligned influence
-  is public-dominant (0.189 public versus 0.019 private); when both require `a`,
-  it is private-dominant (approximately 0 public versus 0.093 private). Every one
-  of 14 semantic families has the predicted route sign. Thus a generated token
-  acts as a lossy public projection: distinctions it expresses can recruit a
-  public relay, while distinctions it collapses remain causally available in
-  private context in this controlled assay. Finally, public effect magnitude
-  factorizes into mediator-policy movement and continuation leverage. Together,
-  the results replace undifferentiated "future-token control" with an account of
-  routing and gain in the autoregressive feedback circuit.
+  Mechanistic interventions on autoregressive language models are often interpreted as evidence that internal state directly controls later tokens. But generation closes a causal loop: an intermediate output becomes the model’s next input, so the same downstream change can arise either from contextual influence that persists after the intermediate token is fixed or from feedback through the model’s own generated token. We introduce a six-cell intervention assay and a four-stage causal-validity ladder that separate these public and private routes. In Gemma 3 270M, an attribution-selected sparse intervention with both article and future-noun influence rewrites completions such as *a pilot* to *an aviator* through an almost entirely public route: replaying the treated article reproduces the noun, restoring the baseline article rescues it, and article substitution reproduces almost all of the noun-distribution change. Yet target-directed residual interventions still shift later nouns with the article fixed at both 270M and 1B, establishing a distinct private route. A neutral-prompt synonym assay at 1B then reveals mediator-relative routing: when two valid alternatives require different articles, target-directed influence is public-dominant; when they share the same article, it is private-dominant, with all 14 tested semantic families showing the predicted route sign. Finally, for the binary article mediator, public effect magnitude factorizes exactly into mediator-policy movement and continuation leverage: near an article decision boundary, a tiny change in intervention strength produces a large noun-distribution jump while either fixed-article path moves very little. Future-token control is therefore a closed-loop causal quantity: mechanistic claims must identify not only what internal state changes, but where that influence travels and how generation amplifies it.
 keywords:
   - mechanistic interpretability
   - latent planning
