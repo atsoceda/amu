@@ -29,7 +29,7 @@ def main():
     bars=ax.bar(np.arange(3),vals,color=[total,public,private],width=.68)
     for b,v in zip(bars,vals):ax.text(b.get_x()+b.get_width()/2,v+.025,f"{v:.3f}",ha="center",fontsize=9,weight="bold")
     ax.set_xticks(np.arange(3),["Total","Public\nreplay","Private\nleftover"],fontsize=8);ax.set_ylim(0,1.02)
-    ax.set_ylabel("Noun-distribution TV",fontsize=8.5);ax.set_title("B  Almost all change is public",loc="left",weight="bold",fontsize=11)
+    ax.set_ylabel("Noun-distribution TV",fontsize=8.5);ax.set_title("B  Public replay nearly matches total",loc="left",weight="bold",fontsize=11)
     ax=axes[2];b=BOUND["native_boundary_reference"]
     vals=[b["total_tv"]["mean"],b["token_substitution_tv"]["mean"],b["fixed_a_residual_tv"]["mean"],b["fixed_an_residual_tv"]["mean"]]
     bars=ax.bar(np.arange(4),vals,color=[total,public,private,"#a477c8"],width=.68)

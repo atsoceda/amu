@@ -2,15 +2,16 @@
 
 ## Models, prompts, and inference
 
-We study pretrained Gemma 3 270M and 1B. Sparse experiments use the matching
+We study pretrained Gemma 3 270M and 1B [@gemma3]. Sparse experiments use the matching
 Gemma Scope 2 pretrained affine cross-layer transcoders
 [@gemmascope2], building on transcoder feature-circuit methods
 [@dunefsky2024transcoders; @ameisen2025attribution], through `circuit-tracer`
-[@hanna2025circuittracer]. The primary
+[@hanna2025circuittracer] and NNsight [@fiotto2025nnsight]. The primary
 prompts and occupation definitions follow the released materials of *Latent
 Planning Emerges with Scale* [@hanna2026latent]; synonym families are screened
-from the same occupation domain. Model, dictionary, package snapshots, prompts,
-feature identifiers, frozen splits, and machine-readable results are released.
+from the same occupation domain. Appendix A.1 records model, dictionary, and
+package snapshots and maps each claim to its frozen configuration and
+machine-readable result artifact.
 
 Unless stated otherwise, we recompute the full prompt with caching disabled,
 use bfloat16 model inference, and measure full-vocabulary next-token
@@ -19,8 +20,8 @@ activations at the pre-article position. Residual interventions add a
 source-to-target direction at a specified decoder layer. Development prompts
 select features, layers, or strengths; headline estimates use disjoint held-out
 prompts or leave-one-semantic-family-out selection. Intervals are 10,000-sample
-prompt- or family-bootstrap 95% intervals. Exact sign-flip or label-permutation
-tests are used where the family count permits.
+prompt- or family-bootstrap 95% intervals. Exact paired sign and sign-flip tests,
+or independent-group label permutations, are used where family counts permit.
 
 ## Public endpoint: the sparse S1 intervention
 
@@ -68,8 +69,9 @@ require positive held-out target-minus-source movement and high retained
 `a/an` policy mass. Controls use a wrong target and the reversed direction.
 
 For each family we project public and private probability vectors onto the
-intended target-minus-source contrast. Let \(P\) and \(H\) denote those signed
-effects and define route contrast \(R=P-H\). Cross-class families predict
+intended target-minus-source contrast. Let \(P\) and \(H\) denote the signed
+public and fixed-token private effects, respectively, and define route contrast
+\(R=P-H\). Cross-class families predict
 \(R>0\); within-class families predict \(R<0\). The interaction compares the two
 groups, while exact within-family sign flips test each simple effect separately.
 
@@ -80,8 +82,9 @@ source donor, and evaluated prompt fixed while comparing one same-article and
 one cross-article target. Its route-blind admissibility screen uses only
 single-token lexical realization, positive fixed-target-article local efficacy,
 and retained article support. The prespecified paired estimand is
-\(R_{\rm cross}-R_{\rm within}\), tested by a paired semantic-family bootstrap
-and an exact one-sided sign-flip test. Fourteen of 22 frozen candidate triads
+\(R_{\rm cross}-R_{\rm within}\), tested by a paired semantic-family bootstrap,
+an exact one-sided binomial sign test, and an exact paired sign-flip randomization
+test. Fourteen of 22 frozen candidate triads
 pass the screen, exceeding the minimum gate of eight.
 
 ## Closed-loop gain prediction

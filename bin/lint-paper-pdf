@@ -30,6 +30,10 @@ checks = {
     "obsolete extreme-effect wording": r"\bextreme\b",
     "obsolete mediator-class terminology": r"\bbetween-(?:article|class)\b",
     "obsolete minute-effect wording": r"\bminute additional\b",
+    "obsolete tiny-effect wording": r"\ba tiny change in intervention strength\b",
+    "obsolete Figure 2 title": r"Almost all change is public",
+    "stale appendix citation": r"Appendix\s+B\b",
+    "nonstandard randomization name": r"magnitude-sensitive sign-randomization",
 }
 for label, pattern in checks.items():
     match = re.search(pattern, text, flags=re.IGNORECASE)
@@ -59,6 +63,10 @@ for phrase in (
     "occupation-completion task adapted from prior latent-planning work",
     "Transmission route is orthogonal",
     "Mueller",
+    "demonstrating private-route capacity",
+    "TV magnitudes are shown separately and are not additive",
+    "Responsible use and checklist notes",
+    "Assets and licenses",
 ):
     if phrase not in normalized_text and phrase.replace("-", "") not in canonical_text:
         errors.append(f"required rendered phrase missing: {phrase!r}")

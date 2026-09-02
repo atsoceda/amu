@@ -1,13 +1,13 @@
 # Two causal endpoints: public relay and private persistence
 
-## S1's future-noun effect is overwhelmingly public
+## S1's future-noun effect is predominantly public
 
 At \(5\times\), S1 changes the free article from `a` to `an` on 19/20 held-out
 prompts and changes the top noun on the same 19. Across all 20 prompts, total
 noun-distribution change is 0.893 TV. Replaying the treated article with the
 intervention off produces 0.891 TV in the same direction; the matched
 treated-article leftover is \(0.028\ [0.021,0.035]\). The exact vector
-reconstruction error is below \(10^{-7}\). Thus the striking noun rewrite is
+reconstruction error is below \(10^{-7}\). Thus the large noun rewrite is
 almost entirely reproduced by substituting the article token.
 
 The top-1 falsification is even more direct (@fig-s1 A). Treated-article replay
@@ -22,7 +22,7 @@ top-token coincidence: public substitution reproduces nearly all of the total
 noun-distribution movement, whereas the matched fixed-token residual is small
 (@fig-s1 B).
 
-![The sparse S1 intervention is strongly public-dominant. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
+![The sparse S1 intervention is strongly public-dominant. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change; TV magnitudes are shown separately and are not additive. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
 
 The magnitude is created at the latent-to-symbol boundary. On 19 bracketed
 prompts, gains separated by at most 0.0039 straddle the article argmax. The
@@ -39,8 +39,8 @@ pre-article handle affects both the licensing article and a future noun. A
 frozen-artifact audit confirms that all four features are active pre-article and
 have positive direct attribution to the intended future noun on all eight
 selection prompts. Because the features recur across nouns and selection also
-required article influence, S1 is not independently identified as a noun-
-specific semantic planning representation. Our result concerns transmission:
+required article influence, S1 is not independently identified as a
+noun-specific semantic planning representation. Our result concerns transmission:
 its large free-generation noun effect travels primarily through the article,
 not through comparably large fixed-token persistence.
 

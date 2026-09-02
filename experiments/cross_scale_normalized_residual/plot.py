@@ -31,6 +31,7 @@ def main():
     colors = {"gemma_270m": "#2878B5", "gemma_1b": "#D95319"}
     labels = {"gemma_270m": "Gemma 270M", "gemma_1b": "Gemma 1B"}
     styles = {"between": "-", "within": "--"}
+    regime_labels = {"between": "cross-class", "within": "within-class"}
     fig, axes = plt.subplots(2, 2, figsize=(10.2, 7.0))
 
     ax = axes[0, 0]
@@ -53,7 +54,7 @@ def main():
                 xs = sorted(k[2] for k in means if k[0] == model and k[1] == regime)
                 ax.plot(xs, [means[(model, regime, x)] for x in xs], color=colors[model],
                         ls=styles[regime], marker="o", lw=2,
-                        label=f"{labels[model]}, {regime}")
+                        label=f"{labels[model]}, {regime_labels[regime]}")
         ax.set(xlabel="Patch strength", ylabel=ylabel, title=title)
     axes[0, 1].legend(frameon=False, fontsize=8, ncol=2)
     for ax in axes.flat:

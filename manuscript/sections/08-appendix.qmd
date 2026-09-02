@@ -41,6 +41,11 @@ copied from manuscript prose. The 270M model snapshot is
 dictionary snapshot is `b218cd5d69dc2fa71cff448b68d625e6c9702d49` with configuration
 `width_262k_l0_medium_affine`. Discussed decoder/encoder vectors and selection
 metadata are archived under `experiments/archived_feature_vectors/`.
+Experiments ran on one Apple M1 workstation with 16 GB RAM and no external GPU
+or cluster compute. Individual timed runs are recorded in their result summaries
+or logs. Summing those records, including the six-hour 1B attribution campaign,
+gives approximately 13 workstation-hours; this is a lower bound because some
+early exploratory and failed runs predated systematic timing.
 
 The frozen S1 audit checks its relationship to the planning-feature motivation
 without rerunning inference. Each of the four selected features is active at the
@@ -64,6 +69,17 @@ at a time. Full-vocabulary TV is
 divergence, top-\(k\) overlap, target-minus-source logits for prespecified lexical
 twins, vector cosine, and
 \(\|E_{\rm total}-E_{\rm public}-E_{\rm private}\|_1\).
+
+For stochastic mediator support \(\mathcal B\), the complete policy-weighted
+decomposition is
+
+$$
+\begin{aligned}
+E_{\rm public}&=\sum_{b\in\mathcal B}[q_1(b)-q_0(b)]Y(0,b),\\
+E_{\rm private}&=\sum_{b\in\mathcal B}q_1(b)[Y(1,b)-Y(0,b)],\\
+E_{\rm total}&=E_{\rm public}+E_{\rm private}.
+\end{aligned}
+$$
 
 The S1 decomposition over all 20 held-out prompts is:
 
@@ -140,8 +156,8 @@ At \(s=1,\tau=1\), the main route quantities are:
 
 | Regime | Public TV | Private TV | Public target effect | Private target effect |
 |---|---:|---:|---:|---:|
-| Cross article classes (N=6) | 0.176 | 0.021 | 0.189 | 0.019 |
-| Within `a` class (N=8) | 0.009 | 0.061 | -0.001 | 0.093 |
+| Cross-class (N=6) | 0.176 | 0.021 | 0.189 | 0.019 |
+| Within-class (N=8) | 0.009 | 0.061 | -0.001 | 0.093 |
 
 Both signed simple effects have the predicted direction under exact sign flips,
 and the independent family-label interaction has exact two-sided
@@ -159,7 +175,7 @@ target. At \(s=1,\tau=1\), within-class \(R=P-H\) is
 \(-0.032\ [-0.057,-0.010]\), cross-class \(R\) is
 \(0.087\ [0.046,0.132]\), and their paired difference is
 \(0.120\ [0.077,0.161]\). Thirteen of 14 paired shifts are positive (one-sided
-sign test \(p=0.00092\); exact magnitude-sensitive sign-randomization
+binomial sign test \(p=0.00092\); exact paired sign-flip randomization
 \(p=0.000122\)); eight have the strict double-dissociation
 sign. The paired interaction remains positive at every combination of three
 strengths and four temperatures. This is the primary control for semantic-family
@@ -170,7 +186,7 @@ Within class, mean public and private target effects are respectively
 \(-0.0017\ [-0.0108,0.0097]\) and
 \(0.0307\ [0.0142,0.0509]\); across classes they are
 \(0.0998\ [0.0581,0.1446]\) and \(0.0127\ [0.0041,0.0217]\).
-Consequently, the paired changes are \(\Delta P=0.1015
+Consequently, the paired changes are \(\Delta P=0.1015\,
 [0.0625,0.1423]\) and \(\Delta H=-0.0180\ [-0.0389,-0.0003]\):
 the larger public component accounts for most of the change in \(R\), with a
 smaller reduction in private influence. A deterministic 28-cell audit recovers
@@ -311,11 +327,29 @@ nouns with the code fixed (effects 0.224--0.245 across reliability banks), but
 the visible context itself remains available and the task is less mechanistically
 clean than the neutral synonym assay; it is not part of the main argument.
 
-## NeurIPS checklist notes
+## Responsible use and checklist notes
 
 The study uses public pretrained models and synthetic prompts. No personal data,
 human subjects, or newly collected sensitive data are involved. Compute was run
 locally on Apple silicon. Code, frozen configurations, checkpoints, invalidated
-outputs, and machine-readable summaries accompany the submission. Confidence
+outputs, and machine-readable summaries are retained for release after review;
+the anonymous submission does not include the working repository because its
+frozen logs and metadata contain identifying local paths. Confidence
 intervals, exact tests, sample sizes, development/evaluation separation, and
 known post-selection are stated with each claim.
+
+The principal positive impact is improving the validity of mechanistic claims
+about model computation. A potential negative impact is overconfidence in
+mechanistic interpretations if route-identification assumptions are ignored or
+generalized beyond their validated scope; this work has no direct deployment path.
+
+## Assets and licenses
+
+| Asset | Version or snapshot | License or terms |
+|---|---|---|
+| Gemma 3 270M/1B PT | `9b0cf...e0ca1`; `fcf18...8eb29` | Gemma Terms of Use |
+| Gemma Scope 2 PT CLTs | `b218c...02d49`; `b738d...e873` | CC BY 4.0 |
+| `circuit-tracer` | 0.5.0 | MIT |
+| Transformers | 4.57.3 | Apache-2.0 |
+| NNsight | 0.7.0 | MIT |
+| Hanna--Ameisen prompts | commit `993cff5...8dab` | MIT |
