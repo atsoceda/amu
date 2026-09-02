@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+"""Fail on known rendered-PDF defects and unresolved manuscript tokens."""
+from __future__ import annotations
+
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+pdf = Path(sys.argv[1] if len(sys.argv) > 1 else "dist/neurips-submission/paper.pdf")
+if not pdf.is_file():
+    raise SystemExit(f"missing PDF: {pdf}")
+text = subprocess.run(
+    ["pdftotext", "-layout", str(pdf), "-"], check=True, capture_output=True, text=True
+).stdout
+
+errors = []
+checks = {
+    "persisted bare-prompt typo": r"\bis was rejected\b",
+    "persisted S1 quote glitch": r"attribution-selected S1 features[’']\s*[’']",
+    "unresolved cross-reference": r"(?:Figure|Table|Appendix|Section)\s+\?",
+    "unresolved placeholder": r"\?\?|\b(?:TODO|FIXME|TBD)\b|X{3,}",
+    "non-finite result": r"(?<![A-Za-z])(?:NaN|Inf)(?![A-Za-z])",
+}
+for label, pattern in checks.items():
+    match = re.search(pattern, text, flags=re.IGNORECASE)
+    if match:
+        errors.append(f"{label}: {match.group(0)!r}")
+
+pages = text.split("\f")
+reference_page = next((index + 1 for index, page in enumerate(pages) if re.search(r"^\s*(?:\d+\s+)?References\s*$", page, re.MULTILINE)), None)
+if reference_page is None:
+    errors.append("References heading not found")
+elif reference_page > 10:
+    errors.append(f"main text exceeds nine pages: References begins on page {reference_page}")
+
+for phrase in ("13/14 families", "0.00092", "0.000122", "future-noun-attributed pre-article causal handles"):
+    if phrase not in text:
+        errors.append(f"required rendered phrase missing: {phrase!r}")
+
+if errors:
+    print("PDF lint FAILED")
+    for error in errors:
+        print(f"- {error}")
+    raise SystemExit(1)
+print(f"PDF lint passed: {pdf} ({len(pages)} extracted pages; References page {reference_page})")

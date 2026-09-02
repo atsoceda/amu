@@ -236,5 +236,1421 @@
     "mean_on_mass": 0.8986281624862126,
     "minimum_on_mass": 0.8385310769081116
   },
+  "matched_triads": {
+    "candidate_ids": [
+      "teaching",
+      "legal",
+      "medicine",
+      "writing",
+      "performance",
+      "assistance",
+      "events",
+      "leadership",
+      "academia",
+      "agriculture",
+      "business",
+      "art",
+      "police",
+      "speaking",
+      "employment",
+      "ownership",
+      "invention",
+      "students",
+      "driving",
+      "aviation",
+      "accounts",
+      "management"
+    ],
+    "eligibility": {
+      "teaching": true,
+      "legal": false,
+      "medicine": false,
+      "writing": true,
+      "performance": true,
+      "assistance": false,
+      "events": true,
+      "leadership": true,
+      "academia": true,
+      "agriculture": false,
+      "business": false,
+      "art": true,
+      "police": true,
+      "speaking": true,
+      "employment": true,
+      "ownership": true,
+      "invention": true,
+      "students": true,
+      "driving": false,
+      "aviation": false,
+      "accounts": false,
+      "management": true
+    },
+    "retained_ids": [
+      "academia",
+      "art",
+      "employment",
+      "events",
+      "invention",
+      "leadership",
+      "management",
+      "ownership",
+      "performance",
+      "police",
+      "speaking",
+      "students",
+      "teaching",
+      "writing"
+    ],
+    "candidate_n": 22,
+    "retained_n": 14,
+    "settings": {
+      "0.5": {
+        "0.1": {
+          "within": {
+            "n": 14,
+            "mean": 0.0023033921856300105,
+            "lo": -0.02990041284855189,
+            "hi": 0.047762321457932036,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.041001778176775715,
+            "lo": -0.004149471718847053,
+            "hi": 0.12329150037840009,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.03869838599114571,
+            "lo": 0.008489745279803174,
+            "hi": 0.08603547492046866,
+            "resamples": 10000
+          },
+          "positive_shift_n": 12,
+          "strict_sign_reversal_n": 4,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.0445631667971611,
+              "cross": -0.011374143523426028,
+              "difference": 0.033189023273735074
+            },
+            {
+              "triad_id": "art",
+              "within": 0.2525364882312715,
+              "cross": 0.5590831339359283,
+              "difference": 0.30654664570465684
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.00021478533744812012,
+              "cross": 0.01966659352183342,
+              "difference": 0.01988137885928154
+            },
+            {
+              "triad_id": "events",
+              "within": -0.09812767058610916,
+              "cross": -0.006103668129071593,
+              "difference": 0.09202400245703757
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.05519932135939598,
+              "cross": -0.0009802896529436111,
+              "difference": 0.05421903170645237
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.002483042422682047,
+              "cross": -0.002249858691357076,
+              "difference": 0.00023318373132497072
+            },
+            {
+              "triad_id": "management",
+              "within": -0.027423707768321037,
+              "cross": -0.02644452464301139,
+              "difference": 0.0009791831253096461
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0007794477278366685,
+              "cross": -0.002790858969092369,
+              "difference": -0.0020114112412557006
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.0017863335087895393,
+              "cross": 0.01647438108921051,
+              "difference": 0.01826071459800005
+            },
+            {
+              "triad_id": "police",
+              "within": -0.01246610190719366,
+              "cross": -0.00036904599983245134,
+              "difference": 0.01209705590736121
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.000542227178812027,
+              "cross": 0.00031403452157974243,
+              "difference": 0.0008562617003917694
+            },
+            {
+              "triad_id": "students",
+              "within": -0.000585680827498436,
+              "cross": -0.000994199639535509,
+              "difference": -0.0004085188120370731
+            },
+            {
+              "triad_id": "teaching",
+              "within": 0.025645621120929718,
+              "cross": 0.027428910601884127,
+              "difference": 0.0017832894809544086
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.0017631333321332932,
+              "cross": 0.0023644300526939332,
+              "difference": 0.004127563384827226
+            }
+          ]
+        },
+        "0.25": {
+          "within": {
+            "n": 14,
+            "mean": -0.010472268949212906,
+            "lo": -0.03446249760288213,
+            "hi": 0.014764193175194253,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.040231917629431076,
+            "lo": 0.004058434841681446,
+            "hi": 0.09625128773885601,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.050704186578643985,
+            "lo": 0.015267803164403761,
+            "hi": 0.09451648335418993,
+            "resamples": 10000
+          },
+          "positive_shift_n": 12,
+          "strict_sign_reversal_n": 6,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.04461943358182907,
+              "cross": -0.01133176363146049,
+              "difference": 0.03328766995036858
+            },
+            {
+              "triad_id": "art",
+              "within": 0.10752181429415941,
+              "cross": 0.3682658076286316,
+              "difference": 0.2607439933344722
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.00164070725440979,
+              "cross": 0.07217630743980408,
+              "difference": 0.07381701469421387
+            },
+            {
+              "triad_id": "events",
+              "within": -0.09886941313743591,
+              "cross": 0.03283483535051346,
+              "difference": 0.13170424848794937
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.08402883261442184,
+              "cross": 0.07178301177918911,
+              "difference": 0.15581184439361095
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.0024729561991989613,
+              "cross": -0.002133158006472513,
+              "difference": 0.0003397981927264482
+            },
+            {
+              "triad_id": "management",
+              "within": -0.02758343331515789,
+              "cross": -0.025536115746945143,
+              "difference": 0.0020473175682127476
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0007802031759638339,
+              "cross": -0.002781852148473263,
+              "difference": -0.002001648972509429
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.004397901706397533,
+              "cross": 0.027091514319181442,
+              "difference": 0.031489416025578976
+            },
+            {
+              "triad_id": "police",
+              "within": -0.01246607257053256,
+              "cross": -0.0003690143366839038,
+              "difference": 0.012097058233848657
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.0005853027105331421,
+              "cross": 0.002871244912967086,
+              "difference": 0.003456547623500228
+            },
+            {
+              "triad_id": "students",
+              "within": -0.0005856803618371487,
+              "cross": -0.0009263324391213246,
+              "difference": -0.0003406520772841759
+            },
+            {
+              "triad_id": "teaching",
+              "within": 0.02565944194793701,
+              "cross": 0.027667533664498478,
+              "difference": 0.0020080917165614665
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.0017630849033594131,
+              "cross": 0.003634828026406467,
+              "difference": 0.00539791292976588
+            }
+          ]
+        },
+        "0.5": {
+          "within": {
+            "n": 14,
+            "mean": -0.014014499929284543,
+            "lo": -0.032757519578029005,
+            "hi": 0.00339983451704029,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.04033403986977646,
+            "lo": 0.01527903610154421,
+            "hi": 0.07231682548964662,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.054348539799061006,
+            "lo": 0.026803682330604976,
+            "hi": 0.08565870293283037,
+            "resamples": 10000
+          },
+          "positive_shift_n": 13,
+          "strict_sign_reversal_n": 7,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.04588422179222107,
+              "cross": -0.010278252884745598,
+              "difference": 0.03560596890747547
+            },
+            {
+              "triad_id": "art",
+              "within": 0.0510644419118762,
+              "cross": 0.20264257490634918,
+              "difference": 0.15157813299447298
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.0017877370119094849,
+              "cross": 0.056779250502586365,
+              "difference": 0.05856698751449585
+            },
+            {
+              "triad_id": "events",
+              "within": -0.09501118212938309,
+              "cross": 0.0705394297838211,
+              "difference": 0.1655506119132042
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.060075679793953896,
+              "cross": 0.06524458527565002,
+              "difference": 0.12532026506960392
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.0023340946063399315,
+              "cross": -0.0019660210236907005,
+              "difference": 0.00036807358264923096
+            },
+            {
+              "triad_id": "management",
+              "within": -0.03080887906253338,
+              "cross": -0.012532362714409828,
+              "difference": 0.01827651634812355
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0008246086363214999,
+              "cross": -0.0024114688858389854,
+              "difference": -0.0015868602495174855
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.020425651222467422,
+              "cross": 0.0850568599998951,
+              "difference": 0.10548251122236252
+            },
+            {
+              "triad_id": "police",
+              "within": -0.012422890402376652,
+              "cross": -0.0003493420808808878,
+              "difference": 0.012073548321495764
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.002192918211221695,
+              "cross": 0.03723086044192314,
+              "difference": 0.039423778653144836
+            },
+            {
+              "triad_id": "students",
+              "within": -0.0005794253665953875,
+              "cross": 0.004968750057742,
+              "difference": 0.005548175424337387
+            },
+            {
+              "triad_id": "teaching",
+              "within": 0.026838485151529312,
+              "cross": 0.04004889167845249,
+              "difference": 0.01321040652692318
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.0017586378380656242,
+              "cross": 0.02970280312001705,
+              "difference": 0.031461440958082676
+            }
+          ]
+        },
+        "1.0": {
+          "within": {
+            "n": 14,
+            "mean": -0.015435046335499334,
+            "lo": -0.03111473740344601,
+            "hi": -0.0009055739376760487,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.042419188655912876,
+            "lo": 0.022231255192309618,
+            "hi": 0.06387783187840666,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.057854234991412214,
+            "lo": 0.035230705620571304,
+            "hi": 0.08242450541625398,
+            "resamples": 10000
+          },
+          "positive_shift_n": 12,
+          "strict_sign_reversal_n": 8,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.04605710133910179,
+              "cross": -0.00803678436204791,
+              "difference": 0.03802031697705388
+            },
+            {
+              "triad_id": "art",
+              "within": 0.022062399424612522,
+              "cross": 0.0991104394197464,
+              "difference": 0.07704803999513388
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.0011917352676391602,
+              "cross": 0.02959778904914856,
+              "difference": 0.03078952431678772
+            },
+            {
+              "triad_id": "events",
+              "within": -0.0803716629743576,
+              "cross": 0.05386011302471161,
+              "difference": 0.1342317759990692
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.03878987394273281,
+              "cross": 0.032365307211875916,
+              "difference": 0.07115518115460873
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.0019827682990580797,
+              "cross": -0.0033111991360783577,
+              "difference": -0.001328430837020278
+            },
+            {
+              "triad_id": "management",
+              "within": -0.034848107025027275,
+              "cross": 0.005082855001091957,
+              "difference": 0.03993096202611923
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0009668148413766176,
+              "cross": -0.001853901892900467,
+              "difference": -0.0008870870515238494
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.045573897659778595,
+              "cross": 0.11240743100643158,
+              "difference": 0.15798132866621017
+            },
+            {
+              "triad_id": "police",
+              "within": -0.01149032823741436,
+              "cross": -3.407103940844536e-05,
+              "difference": 0.011456257198005915
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.0065913014113903046,
+              "cross": 0.07948971539735794,
+              "difference": 0.08608101680874825
+            },
+            {
+              "triad_id": "students",
+              "within": -0.0004645339213311672,
+              "cross": 0.03464268147945404,
+              "difference": 0.03510721540078521
+            },
+            {
+              "triad_id": "teaching",
+              "within": 0.03190440218895674,
+              "cross": 0.08432302251458168,
+              "difference": 0.05241862032562494
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.0017293253913521767,
+              "cross": 0.07622524350881577,
+              "difference": 0.07795456890016794
+            }
+          ]
+        }
+      },
+      "1.0": {
+        "0.1": {
+          "within": {
+            "n": 14,
+            "mean": -0.004539217700117401,
+            "lo": -0.05482798385699945,
+            "hi": 0.06633173634431191,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.03911014525744706,
+            "lo": -0.007959551660470814,
+            "hi": 0.12241968826284781,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.04364936295756446,
+            "lo": 0.017831558056059293,
+            "hi": 0.07605323548289432,
+            "resamples": 10000
+          },
+          "positive_shift_n": 11,
+          "strict_sign_reversal_n": 6,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.06973032653331757,
+              "cross": -0.01733517169850529,
+              "difference": 0.052395154834812274
+            },
+            {
+              "triad_id": "art",
+              "within": 0.3889186391606927,
+              "cross": 0.5596014074981213,
+              "difference": 0.17068276833742857
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.036974161863327026,
+              "cross": 0.01793566718697548,
+              "difference": 0.054909829050302505
+            },
+            {
+              "triad_id": "events",
+              "within": -0.1736604943871498,
+              "cross": -0.005729234777390957,
+              "difference": 0.16793125960975885
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.06595520302653313,
+              "cross": -0.004303533583879471,
+              "difference": 0.061651669442653656
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.005156543105840683,
+              "cross": -0.0026335105940233916,
+              "difference": 0.0025230325118172914
+            },
+            {
+              "triad_id": "management",
+              "within": -0.037279754877090454,
+              "cross": -0.044397419318556786,
+              "difference": -0.0071176644414663315
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0020809490233659744,
+              "cross": -0.0036390828900039196,
+              "difference": -0.0015581338666379452
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.0029511330649256706,
+              "cross": 0.021542667178437114,
+              "difference": 0.024493800243362784
+            },
+            {
+              "triad_id": "police",
+              "within": -0.038037557154893875,
+              "cross": 5.160377622814849e-05,
+              "difference": 0.038089160931122024
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.007352430373430252,
+              "cross": 0.00011508876923471689,
+              "difference": 0.007467519142664969
+            },
+            {
+              "triad_id": "students",
+              "within": 0.0014910297468304634,
+              "cross": -0.003995167004177347,
+              "difference": -0.00548619675100781
+            },
+            {
+              "triad_id": "teaching",
+              "within": -0.00520072178915143,
+              "cross": 0.02547200449043885,
+              "difference": 0.03067272627959028
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.009579441510140896,
+              "cross": 0.004856714571360499,
+              "difference": 0.014436156081501395
+            }
+          ]
+        },
+        "0.25": {
+          "within": {
+            "n": 14,
+            "mean": -0.020203195266991054,
+            "lo": -0.05821765611679958,
+            "hi": 0.023999041191668118,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.06110811101111072,
+            "lo": 0.009032787304412133,
+            "hi": 0.14103448848527478,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.08131130627810178,
+            "lo": 0.03281312129027875,
+            "hi": 0.13915956851477468,
+            "resamples": 10000
+          },
+          "positive_shift_n": 11,
+          "strict_sign_reversal_n": 8,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.07004905492067337,
+              "cross": -0.01718191895633936,
+              "difference": 0.05286713596433401
+            },
+            {
+              "triad_id": "art",
+              "within": 0.20498497784137726,
+              "cross": 0.5253952257335186,
+              "difference": 0.32041024789214134
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.03895124793052673,
+              "cross": 0.0713275820016861,
+              "difference": 0.11027882993221283
+            },
+            {
+              "triad_id": "events",
+              "within": -0.17305073142051697,
+              "cross": 0.08473319187760353,
+              "difference": 0.2577839232981205
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.09582548774778843,
+              "cross": 0.11543663218617439,
+              "difference": 0.21126211993396282
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.005082478281110525,
+              "cross": -0.0018060338916257024,
+              "difference": 0.0032764443894848228
+            },
+            {
+              "triad_id": "management",
+              "within": -0.03760879673063755,
+              "cross": -0.04104207456111908,
+              "difference": -0.0034332778304815292
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.002082158869598061,
+              "cross": -0.0036327275447547436,
+              "difference": -0.0015505686751566827
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.006490807980298996,
+              "cross": 0.03278381936252117,
+              "difference": 0.03927462734282017
+            },
+            {
+              "triad_id": "police",
+              "within": -0.038037527818232775,
+              "cross": 5.1673765483428724e-05,
+              "difference": 0.0380892015837162
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.007394641637802124,
+              "cross": 0.05256419628858566,
+              "difference": 0.05995883792638779
+            },
+            {
+              "triad_id": "students",
+              "within": 0.001491029979661107,
+              "cross": -0.003469968738500029,
+              "difference": -0.004960998718161136
+            },
+            {
+              "triad_id": "teaching",
+              "within": -0.005170007701963186,
+              "cross": 0.0285923327319324,
+              "difference": 0.03376234043389559
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.009577800519764423,
+              "cross": 0.01176162390038371,
+              "difference": 0.021339424420148134
+            }
+          ]
+        },
+        "0.5": {
+          "within": {
+            "n": 14,
+            "mean": -0.027748096210416406,
+            "lo": -0.057529669845410226,
+            "hi": 0.0009289566992915102,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.0822057538628412,
+            "lo": 0.034130306694091166,
+            "hi": 0.1416386203636648,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.1099538500732576,
+            "lo": 0.06203358356391878,
+            "hi": 0.16130687955592293,
+            "resamples": 10000
+          },
+          "positive_shift_n": 13,
+          "strict_sign_reversal_n": 9,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.0759354904294014,
+              "cross": -0.01459320797584951,
+              "difference": 0.06134228245355189
+            },
+            {
+              "triad_id": "art",
+              "within": 0.10153180081397295,
+              "cross": 0.38608336448669434,
+              "difference": 0.2845515636727214
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.03576914966106415,
+              "cross": 0.05669619143009186,
+              "difference": 0.092465341091156
+            },
+            {
+              "triad_id": "events",
+              "within": -0.16156771779060364,
+              "cross": 0.11584319174289703,
+              "difference": 0.27741090953350067
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.0724577009677887,
+              "cross": 0.14609361812472343,
+              "difference": 0.21855131909251213
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.004527468699961901,
+              "cross": 0.0003973408602178097,
+              "difference": 0.00492480956017971
+            },
+            {
+              "triad_id": "management",
+              "within": -0.04618663340806961,
+              "cross": -0.008776269853115082,
+              "difference": 0.03741036355495453
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.002160082454793155,
+              "cross": -0.0034957248717546463,
+              "difference": -0.001335642416961491
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.033702194690704346,
+              "cross": 0.1019811499863863,
+              "difference": 0.13568334467709064
+            },
+            {
+              "triad_id": "police",
+              "within": -0.0379802193492651,
+              "cross": 8.44002643134445e-05,
+              "difference": 0.03806461961357854
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.008929144591093063,
+              "cross": 0.18776662647724152,
+              "difference": 0.19669577106833458
+            },
+            {
+              "triad_id": "students",
+              "within": 0.001488446956500411,
+              "cross": 0.015556031372398138,
+              "difference": 0.014067584415897727
+            },
+            {
+              "triad_id": "teaching",
+              "within": -0.0028126887045800686,
+              "cross": 0.08034135028719902,
+              "difference": 0.08315403899177909
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.009465103968977928,
+              "cross": 0.08690249174833298,
+              "difference": 0.0963675957173109
+            }
+          ]
+        },
+        "1.0": {
+          "within": {
+            "n": 14,
+            "mean": -0.03238024814137524,
+            "lo": -0.05684523673595062,
+            "hi": -0.009910715477807181,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.08717559199846749,
+            "lo": 0.045505839050747454,
+            "hi": 0.13155571795401297,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.11955584013984273,
+            "lo": 0.07724897714797407,
+            "hi": 0.16109721522246087,
+            "resamples": 10000
+          },
+          "positive_shift_n": 13,
+          "strict_sign_reversal_n": 8,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.08186811208724976,
+              "cross": -0.010556957218796015,
+              "difference": 0.07131115486845374
+            },
+            {
+              "triad_id": "art",
+              "within": 0.04410562291741371,
+              "cross": 0.2145845741033554,
+              "difference": 0.1704789511859417
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.029093697667121887,
+              "cross": 0.02999342978000641,
+              "difference": 0.059087127447128296
+            },
+            {
+              "triad_id": "events",
+              "within": -0.13564816117286682,
+              "cross": 0.07384225353598595,
+              "difference": 0.20949041470885277
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.051496801897883415,
+              "cross": 0.09128013253211975,
+              "difference": 0.14277693443000317
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.0036939792335033417,
+              "cross": -0.0007314393296837807,
+              "difference": 0.002962539903819561
+            },
+            {
+              "triad_id": "management",
+              "within": -0.06294870190322399,
+              "cross": 0.02280457317829132,
+              "difference": 0.08575327508151531
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0024117250577546656,
+              "cross": -0.004750527441501617,
+              "difference": -0.002338802383746952
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.08199984580278397,
+              "cross": 0.14495780691504478,
+              "difference": 0.22695765271782875
+            },
+            {
+              "triad_id": "police",
+              "within": -0.036474152468144894,
+              "cross": 0.00041669211350381374,
+              "difference": 0.03689084458164871
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.012760046869516373,
+              "cross": 0.2326950579881668,
+              "difference": 0.24545510485768318
+            },
+            {
+              "triad_id": "students",
+              "within": 0.001441543223336339,
+              "cross": 0.0751185268163681,
+              "difference": 0.07367698359303176
+            },
+            {
+              "triad_id": "teaching",
+              "within": 0.008236955851316452,
+              "cross": 0.1774437576532364,
+              "difference": 0.16920680180191994
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.008712371811270714,
+              "cross": 0.1733604073524475,
+              "difference": 0.18207277916371822
+            }
+          ],
+          "exact_sign_randomization": {
+            "observed": 0.11955584013984273,
+            "one_sided_p": 0.0001220703125,
+            "two_sided_p": 0.000244140625,
+            "assignments": 16384
+          },
+          "one_sided_binomial_sign_test_p": 0.00091552734375
+        }
+      },
+      "1.5": {
+        "0.1": {
+          "within": {
+            "n": 14,
+            "mean": -0.01859735379860337,
+            "lo": -0.08226180859907929,
+            "hi": 0.06605462660081685,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.07050473447608445,
+            "lo": -0.003240264532515929,
+            "hi": 0.1662472310929713,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.08910208827468782,
+            "lo": 0.025142829023544828,
+            "hi": 0.16845896337041008,
+            "resamples": 10000
+          },
+          "positive_shift_n": 12,
+          "strict_sign_reversal_n": 5,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.07826361060142517,
+              "cross": -0.023655145614611683,
+              "difference": 0.05460846498681349
+            },
+            {
+              "triad_id": "art",
+              "within": 0.43837151816114783,
+              "cross": 0.5447820276021957,
+              "difference": 0.1064105094410479
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.07461154460906982,
+              "cross": 0.2718467265367508,
+              "difference": 0.3464582711458206
+            },
+            {
+              "triad_id": "events",
+              "within": -0.20814728736877441,
+              "cross": 0.24275614321231842,
+              "difference": 0.45090343058109283
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.19314708933234215,
+              "cross": -0.012163953855633736,
+              "difference": 0.1809831354767084
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.006922448985278606,
+              "cross": -0.004586453374940902,
+              "difference": 0.0023359956103377044
+            },
+            {
+              "triad_id": "management",
+              "within": -0.07264849543571472,
+              "cross": -0.06916323106270283,
+              "difference": 0.003485264373011887
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0031708385795354843,
+              "cross": -0.005475581623613834,
+              "difference": -0.00230474304407835
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.003961545880883932,
+              "cross": 0.021265674149617553,
+              "difference": 0.025227220030501485
+            },
+            {
+              "triad_id": "police",
+              "within": -0.03780857473611832,
+              "cross": -0.00019154073379468173,
+              "difference": 0.037617034002323635
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.004856616258621216,
+              "cross": 0.0039016157388687134,
+              "difference": 0.00875823199748993
+            },
+            {
+              "triad_id": "students",
+              "within": 0.0014855649787932634,
+              "cross": -0.004996004161512246,
+              "difference": -0.00648156914030551
+            },
+            {
+              "triad_id": "teaching",
+              "within": -0.006141692865639925,
+              "cross": 0.02536887989845127,
+              "difference": 0.031510572764091194
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.010540291666984558,
+              "cross": -0.0026228740462101996,
+              "difference": 0.007917417620774359
+            }
+          ]
+        },
+        "0.25": {
+          "within": {
+            "n": 14,
+            "mean": -0.030000508270209787,
+            "lo": -0.0828956841287436,
+            "hi": 0.03141774894486714,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.09965690120718916,
+            "lo": 0.024921252051301832,
+            "hi": 0.19116282326077844,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.12965740947739895,
+            "lo": 0.05424104644381649,
+            "hi": 0.21400430109731264,
+            "resamples": 10000
+          },
+          "positive_shift_n": 12,
+          "strict_sign_reversal_n": 7,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.0788484439253807,
+              "cross": -0.023218719143187627,
+              "difference": 0.05562972478219308
+            },
+            {
+              "triad_id": "art",
+              "within": 0.28333666175603867,
+              "cross": 0.5370418205857277,
+              "difference": 0.253705158829689
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.07673335075378418,
+              "cross": 0.3165794014930725,
+              "difference": 0.3933127522468567
+            },
+            {
+              "triad_id": "events",
+              "within": -0.20862004160881042,
+              "cross": 0.23580433428287506,
+              "difference": 0.4444243758916855
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.19125457853078842,
+              "cross": 0.11948306858539581,
+              "difference": 0.31073764711618423
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.0067421612329781055,
+              "cross": -0.0022463726345449686,
+              "difference": 0.004495788598433137
+            },
+            {
+              "triad_id": "management",
+              "within": -0.07303940504789352,
+              "cross": -0.06327213766053319,
+              "difference": 0.009767267387360334
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.003171489661326632,
+              "cross": -0.0054685818031430244,
+              "difference": -0.0022970921418163925
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.006986154243350029,
+              "cross": 0.032857753336429596,
+              "difference": 0.039843907579779625
+            },
+            {
+              "triad_id": "police",
+              "within": -0.037808545399457216,
+              "cross": -0.0001913939013320487,
+              "difference": 0.03761715149812517
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.004925545305013657,
+              "cross": 0.1819685399532318,
+              "difference": 0.18689408525824547
+            },
+            {
+              "triad_id": "students",
+              "within": 0.0014837211929261684,
+              "cross": 0.000975088682025671,
+              "difference": -0.0005086325109004974
+            },
+            {
+              "triad_id": "teaching",
+              "within": -0.006085428409278393,
+              "cross": 0.04819047078490257,
+              "difference": 0.054275899194180965
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.01061235461384058,
+              "cross": 0.016693344339728355,
+              "difference": 0.027305698953568935
+            }
+          ]
+        },
+        "0.5": {
+          "within": {
+            "n": 14,
+            "mean": -0.03747404385233365,
+            "lo": -0.0769794340012595,
+            "hi": 0.0025968478252512534,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.12922789540191712,
+            "lo": 0.06258425909410496,
+            "hi": 0.20512107400489704,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.16670193925425078,
+            "lo": 0.09938627139074795,
+            "hi": 0.2339989495563454,
+            "resamples": 10000
+          },
+          "positive_shift_n": 13,
+          "strict_sign_reversal_n": 8,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.08795594051480293,
+              "cross": -0.018523578997701406,
+              "difference": 0.06943236151710153
+            },
+            {
+              "triad_id": "art",
+              "within": 0.14877138659358025,
+              "cross": 0.4570078030228615,
+              "difference": 0.30823641642928123
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.0710405707359314,
+              "cross": 0.20997613668441772,
+              "difference": 0.2810167074203491
+            },
+            {
+              "triad_id": "events",
+              "within": -0.1963338479399681,
+              "cross": 0.18236194550991058,
+              "difference": 0.3786957934498787
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.12758768908679485,
+              "cross": 0.18934617936611176,
+              "difference": 0.3169338684529066
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.005730269942432642,
+              "cross": 0.0011904677376151085,
+              "difference": 0.0069207376800477505
+            },
+            {
+              "triad_id": "management",
+              "within": -0.08481603488326073,
+              "cross": -0.01806432008743286,
+              "difference": 0.06675171479582787
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0032003871456254274,
+              "cross": -0.005274796858429909,
+              "difference": -0.0020744097128044814
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.036582738161087036,
+              "cross": 0.11615173146128654,
+              "difference": 0.15273446962237358
+            },
+            {
+              "triad_id": "police",
+              "within": -0.03775140829384327,
+              "cross": -0.00013028812827542424,
+              "difference": 0.037621120165567845
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.007767930626869202,
+              "cross": 0.3201788365840912,
+              "difference": 0.3279467672109604
+            },
+            {
+              "triad_id": "students",
+              "within": 0.0010853784624487162,
+              "cross": 0.06024831347167492,
+              "difference": 0.0591629350092262
+            },
+            {
+              "triad_id": "teaching",
+              "within": -0.0024754945188760757,
+              "cross": 0.17167756706476212,
+              "difference": 0.1741530615836382
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.013251067139208317,
+              "cross": 0.14304453879594803,
+              "difference": 0.15629560593515635
+            }
+          ]
+        },
+        "1.0": {
+          "within": {
+            "n": 14,
+            "mean": -0.04403728083083739,
+            "lo": -0.07535930568285819,
+            "hi": -0.013921017326148493,
+            "resamples": 10000
+          },
+          "cross": {
+            "n": 14,
+            "mean": 0.13001963078776108,
+            "lo": 0.07092631990755242,
+            "hi": 0.19064171302930585,
+            "resamples": 10000
+          },
+          "paired_shift": {
+            "n": 14,
+            "mean": 0.17405691161859846,
+            "lo": 0.11646303689173822,
+            "hi": 0.22773320901407196,
+            "resamples": 10000
+          },
+          "positive_shift_n": 13,
+          "strict_sign_reversal_n": 9,
+          "paired_rows": [
+            {
+              "triad_id": "academia",
+              "within": -0.09690815210342407,
+              "cross": -0.013477180153131485,
+              "difference": 0.08343097195029259
+            },
+            {
+              "triad_id": "art",
+              "within": 0.06465384364128113,
+              "cross": 0.28709104657173157,
+              "difference": 0.22243720293045044
+            },
+            {
+              "triad_id": "employment",
+              "within": -0.05850650370121002,
+              "cross": 0.11812779307365417,
+              "difference": 0.1766342967748642
+            },
+            {
+              "triad_id": "events",
+              "within": -0.16477173194289207,
+              "cross": 0.0875067412853241,
+              "difference": 0.25227847322821617
+            },
+            {
+              "triad_id": "invention",
+              "within": -0.08216861262917519,
+              "cross": 0.14274082705378532,
+              "difference": 0.2249094396829605
+            },
+            {
+              "triad_id": "leadership",
+              "within": -0.004574026446789503,
+              "cross": -0.0015718219801783562,
+              "difference": 0.003002204466611147
+            },
+            {
+              "triad_id": "management",
+              "within": -0.11151232570409775,
+              "cross": 0.019280724227428436,
+              "difference": 0.13079304993152618
+            },
+            {
+              "triad_id": "ownership",
+              "within": -0.0031812569650355726,
+              "cross": -0.006088638678193092,
+              "difference": -0.0029073817131575197
+            },
+            {
+              "triad_id": "performance",
+              "within": -0.0977250263094902,
+              "cross": 0.20192374661564827,
+              "difference": 0.2996487729251385
+            },
+            {
+              "triad_id": "police",
+              "within": -0.036251927725970745,
+              "cross": 0.0005361197981983423,
+              "difference": 0.03678804752416909
+            },
+            {
+              "triad_id": "speaking",
+              "within": -0.01604638248682022,
+              "cross": 0.3062761127948761,
+              "difference": 0.3223224952816963
+            },
+            {
+              "triad_id": "students",
+              "within": -0.0022863687481731176,
+              "cross": 0.14528438821434975,
+              "difference": 0.14757075696252286
+            },
+            {
+              "triad_id": "teaching",
+              "within": 0.012789996806532145,
+              "cross": 0.2878432720899582,
+              "difference": 0.27505327528342605
+            },
+            {
+              "triad_id": "writing",
+              "within": -0.020033457316458225,
+              "cross": 0.24480170011520386,
+              "difference": 0.2648351574316621
+            }
+          ]
+        }
+      }
+    },
+    "all_12_paired_interactions_positive": true
+  },
   "all_checks_passed": true
 }

@@ -1,6 +1,7 @@
 {
   "experiment_name": "matched_semantic_triads_repaired_neutral",
   "frozen_before_model_screening": "2026-09-02T00:00:00+09:00",
+  "candidate_construction": "The 22 candidate triples were semantically curated before freezing, tokenization, model screening, or any route-outcome computation.",
   "model": "google/gemma-3-1b-pt",
   "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
   "dtype": "bfloat16",
@@ -15,7 +16,7 @@
   "bootstrap_resamples": 10000,
   "neutral_template": "Someone who studies living organisms is a biologist. {definition} is",
   "donor_template": "Someone who studies living organisms is a biologist. Use exactly the word {word}. {definition} is",
-  "screening_rule": "Frozen and route-blind: human-curated semantic equivalence, single-token lexical realizations, intervention-off and intervention-on a/an mass at least 0.8 with an article top token, and positive native-strength fixed-target-article target-minus-source movement for both arms. Route contrast signs are not computed during screening.",
+  "screening_rule": "Frozen and route-blind: pre-model semantic-equivalence curation, single-token lexical realizations, intervention-off and intervention-on a/an mass at least 0.8 with an article top token, and positive native-strength fixed-target-article target-minus-source movement for both arms. Route contrast signs are not computed during screening.",
   "triads": [
     {"id":"teaching","definition":"Someone whose occupation is teaching students","source_word":"teacher","source_article":"a","within_word":"tutor","within_article":"a","cross_word":"educator","cross_article":"an"},
     {"id":"legal","definition":"Someone qualified to give legal advice and represent clients","source_word":"lawyer","source_article":"a","within_word":"counsel","within_article":"a","cross_word":"attorney","cross_article":"an"},

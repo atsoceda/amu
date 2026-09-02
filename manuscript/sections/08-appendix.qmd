@@ -32,11 +32,12 @@ metadata are archived under `experiments/archived_feature_vectors/`.
 The frozen S1 audit checks its relationship to the planning-feature motivation
 without rerunning inference. Each of the four selected features is active at the
 pre-article position and has positive direct attribution to the intended future
-noun on all eight selection prompts. This establishes a future-noun-contributing
-causal handle. It does not establish noun-specific semantic identity: the same
+noun on all eight selection prompts. Together with the intervention results,
+this establishes future-noun-attributed pre-article causal handles. It does not
+establish noun-specific semantic identity: the same
 features recur across distinct future nouns, and S1 selection jointly required
 positive article attribution. We therefore retain the term
-``attribution-selected S1 features'' rather than claiming an independently
+*attribution-selected S1 features* rather than claiming an independently
 selected Hanna-style semantic planning feature.
 
 ## Exact six-cell measurements
@@ -108,7 +109,8 @@ control, not evidence that S1 represents the same lexical direction.
 
 ## Neutral synonym assay details
 
-The bare neutral prompt `{definition} is` was rejected before route inference:
+The bare neutral template ending immediately after the definition failed
+mediator-support screening before route inference:
 `called` frequently outranked both articles, mean `a/an` mass was approximately
 0.27, and only 7/14 prompts had an article top token. The frozen evaluated format
 therefore uses one unrelated demonstration:
@@ -143,23 +145,67 @@ source word and neutral prompt with one same-article and one cross-article
 target. At \(s=1,\tau=1\), within-class \(R=P-H\) is
 \(-0.032\ [-0.057,-0.010]\), cross-class \(R\) is
 \(0.087\ [0.046,0.132]\), and their paired difference is
-\(0.120\ [0.077,0.161]\). Thirteen of 14 paired shifts are positive (exact
-one-sided sign-flip \(p=0.00012\)); eight have the strict double-dissociation
+\(0.120\ [0.077,0.161]\). Thirteen of 14 paired shifts are positive (one-sided
+sign test \(p=0.00092\); exact magnitude-sensitive sign-randomization
+\(p=0.000122\)); eight have the strict double-dissociation
 sign. The paired interaction remains positive at every combination of three
 strengths and four temperatures. This is the primary control for semantic-family
 composition in the mediator-relative claim.
+
+The outcome-blind potency audit does not find stronger cross-article
+interventions. Mean cross versus within direction norms are 699 versus 761
+(paired difference \(-62\ [-188,60]\)); fixed-article local efficacies are
+0.353 versus 0.415 (difference \(-0.063\ [-0.174,0.063]\)); and treated article
+support is 0.912 versus 0.913. Cross targets do have a higher baseline
+target-minus-source lexical gap (paired difference 7.01 logits), so target-word
+identity is not held fixed; this is disclosed rather than interpreted as route
+evidence. Because neither direction norm nor fixed-mediator causal potency
+favors the cross arm, no outcome-blind efficacy rescaling is triggered.
+
+All 22 candidates and their route-blind screening outcomes are shown below.
+Semantic validity was assessed during pre-model curation before this candidate
+set was frozen and before tokenization, model screening, or route computation.
+
+| Family | Source | Same-article target | Cross-article target | Retained | Route-blind failure reason |
+|---|---|---|---|:---:|---|
+| teaching | a teacher | a tutor | an educator | yes | -- |
+| legal | a lawyer | a counsel | an attorney | no | cross local efficacy |
+| medicine | a doctor | a physician | an internist | no | tokenization |
+| writing | a writer | a novelist | an author | yes | -- |
+| performance | an actor | an entertainer | a performer | yes | -- |
+| assistance | an aide | an assistant | a helper | no | within/cross treated support |
+| events | a coordinator | a planner | an organizer | yes | -- |
+| leadership | a leader | a boss | an executive | yes | -- |
+| academia | a researcher | a scientist | an academic | yes | -- |
+| agriculture | a farmer | a grower | an agriculturist | no | tokenization |
+| business | a founder | a businessperson | an entrepreneur | no | tokenization |
+| art | an artist | an illustrator | a painter | yes | -- |
+| police | a cop | a policeman | an officer | yes | -- |
+| speaking | a speaker | a presenter | an orator | yes | -- |
+| employment | a worker | a laborer | an employee | yes | -- |
+| ownership | a proprietor | a holder | an owner | yes | -- |
+| invention | an inventor | an innovator | a creator | yes | -- |
+| students | a student | a pupil | an undergraduate | yes | -- |
+| driving | a driver | a motorist | an operator | no | cross local efficacy |
+| aviation | an aviator | an airman | a pilot | no | tokenization |
+| accounts | an accountant | an auditor | a bookkeeper | no | tokenization |
+| management | a manager | a director | an executive | yes | -- |
 
 An independent, artifact-only recomputation imports none of the experiment's
 analysis or plotting code. Starting from frozen row-level outputs, it reproduces
 all 14 local-efficacy checks, article-support statistics, per-family route
 effects, 6/6 and 8/8 original signs, bootstrap summaries, exact sign-flip tests,
 the 0.264 independent-group interaction, and its exact \(p=0.00033\) label
-permutation test. It fails if any recomputed headline differs from the frozen
-summary beyond \(10^{-12}\).
+permutation test. The same independent runner also reconstructs all 22 triad
+eligibility decisions, the exact retained set, every paired route contrast,
+both headline tests, and all 12 robustness settings. It fails if any recomputed
+headline differs from the frozen summary beyond \(10^{-12}\).
 
-![Synonym-route robustness. Each cell is the between-minus-within signed route interaction across three patch strengths and four article-policy temperatures. All 12 prespecified settings are positive.](manuscript/figures/fig_neutral_synonym_robustness.png){#fig-app-synonym-robustness width=78%}
+![Synonym-route robustness. A: the initial independent-family interaction. B: the matched-triad paired shift. Every strength--temperature cell is positive in both assays.](manuscript/figures/fig_neutral_synonym_robustness.png){#fig-app-synonym-robustness width=92%}
 
 ## Closed-loop gain validation
+
+![Closed-loop gain and held-out prediction at Gemma 3 270M. A: attribution is calibrated to local causal pressure, then composed with decoder susceptibility and continuation leverage. B: the composition captures the high-gain regime; orange cells have both observed and predicted article-policy movement above 0.9, while the inset resolves the low-effect cloud. Holdout excludes feature and prompt identity from causal-pressure calibration; intervention-off decoder susceptibility and branch leverage of the held-out prompt are permitted observed inputs. Aggregate R2 is tail-sensitive and is not a claim of uniformly precise cell-level prediction.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=92%}
 
 The two-branch identity holds to numerical precision. Prediction fits a mapping
 from attribution to local article-margin movement on training features and
@@ -197,6 +243,12 @@ absolute mistakes.
 ![Closed-loop gain diagnostics. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines. D: equal-count predicted-versus-observed calibration with crossed feature--prompt bootstrap intervals. E: R2 and MAE respond differently when the largest observed effects are excluded because the remaining outcome variance is tiny. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
 
 ## Sparse 1B ladder failures
+
+| Sparse handle | Local efficacy | `a/an` support | What follows? |
+|---|---:|---:|---|
+| Frozen top four | No: 0.075-logit mean movement | Yes | No route claim |
+| Effect-matched 24 | Yes | No: `called` often dominates | No binary route claim |
+| Constrained frontier | Yes | Yes: 20/20 prompts | Low-amplitude hybrid route |
 
 The original four-feature sparse intervention was independently selected from
 1,200-node attribution graphs but moved the held-out article margin only 0.075

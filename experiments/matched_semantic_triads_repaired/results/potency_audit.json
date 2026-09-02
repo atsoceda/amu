@@ -1,0 +1,607 @@
+{
+  "audit": "matched-triad intervention potency and normalization",
+  "model": "google/gemma-3-1b-pt",
+  "fixed_layer": 17,
+  "primary_strength": 1.0,
+  "primary_temperature": 1.0,
+  "route_outcomes_used_for_calibration": false,
+  "n_triads": 14,
+  "rows": [
+    {
+      "triad_id": "teaching",
+      "within": {
+        "direction_l2": 672.6193237304688,
+        "baseline_target_minus_source_gap": -4.875,
+        "fixed_target_article_efficacy": 0.5,
+        "intervention_on_article_support": 0.9356460571289062,
+        "total_target_aligned_effect": 0.017792407423257828,
+        "total_tv": 0.029161246493458748,
+        "route_contrast": 0.008236955851316452
+      },
+      "cross": {
+        "direction_l2": 657.6759033203125,
+        "baseline_target_minus_source_gap": 6.125,
+        "fixed_target_article_efficacy": 0.25,
+        "intervention_on_article_support": 0.912952184677124,
+        "total_target_aligned_effect": 0.1479434221982956,
+        "total_tv": 0.12160778045654297,
+        "route_contrast": 0.1774437576532364
+      },
+      "cross_minus_within": {
+        "direction_l2": -14.94342041015625,
+        "baseline_target_minus_source_gap": 11.0,
+        "fixed_target_article_efficacy": -0.25,
+        "intervention_on_article_support": -0.022693872451782227,
+        "total_target_aligned_effect": 0.13015101477503777,
+        "total_tv": 0.09244653396308422,
+        "route_contrast": 0.16920680180191994
+      }
+    },
+    {
+      "triad_id": "writing",
+      "within": {
+        "direction_l2": 809.6707763671875,
+        "baseline_target_minus_source_gap": -4.75,
+        "fixed_target_article_efficacy": 0.5,
+        "intervention_on_article_support": 0.8853524923324585,
+        "total_target_aligned_effect": 0.008712371811270714,
+        "total_tv": 0.007542131468653679,
+        "route_contrast": -0.008712371811270714
+      },
+      "cross": {
+        "direction_l2": 461.96697998046875,
+        "baseline_target_minus_source_gap": 4.875,
+        "fixed_target_article_efficacy": 0.25,
+        "intervention_on_article_support": 0.9306141138076782,
+        "total_target_aligned_effect": 0.169239342212677,
+        "total_tv": 0.0935196503996849,
+        "route_contrast": 0.1733604073524475
+      },
+      "cross_minus_within": {
+        "direction_l2": -347.70379638671875,
+        "baseline_target_minus_source_gap": 9.625,
+        "fixed_target_article_efficacy": -0.25,
+        "intervention_on_article_support": 0.04526162147521973,
+        "total_target_aligned_effect": 0.1605269704014063,
+        "total_tv": 0.08597751893103123,
+        "route_contrast": 0.18207277916371822
+      }
+    },
+    {
+      "triad_id": "performance",
+      "within": {
+        "direction_l2": 967.2192993164062,
+        "baseline_target_minus_source_gap": 0.125,
+        "fixed_target_article_efficacy": 0.75,
+        "intervention_on_article_support": 0.9563876390457153,
+        "total_target_aligned_effect": 0.08199984580278397,
+        "total_tv": 0.06324337422847748,
+        "route_contrast": -0.08199984580278397
+      },
+      "cross": {
+        "direction_l2": 911.1835327148438,
+        "baseline_target_minus_source_gap": 5.375,
+        "fixed_target_article_efficacy": 0.5,
+        "intervention_on_article_support": 0.974102258682251,
+        "total_target_aligned_effect": 0.12172684818506241,
+        "total_tv": 0.13091446459293365,
+        "route_contrast": 0.14495780691504478
+      },
+      "cross_minus_within": {
+        "direction_l2": -56.0357666015625,
+        "baseline_target_minus_source_gap": 5.25,
+        "fixed_target_article_efficacy": -0.25,
+        "intervention_on_article_support": 0.017714619636535645,
+        "total_target_aligned_effect": 0.03972700238227844,
+        "total_tv": 0.06767109036445618,
+        "route_contrast": 0.22695765271782875
+      }
+    },
+    {
+      "triad_id": "events",
+      "within": {
+        "direction_l2": 888.431884765625,
+        "baseline_target_minus_source_gap": 1.75,
+        "fixed_target_article_efficacy": 0.875,
+        "intervention_on_article_support": 0.947962760925293,
+        "total_target_aligned_effect": 0.11855483800172806,
+        "total_tv": 0.1152631938457489,
+        "route_contrast": -0.13564816117286682
+      },
+      "cross": {
+        "direction_l2": 675.0847778320312,
+        "baseline_target_minus_source_gap": 9.0625,
+        "fixed_target_article_efficacy": 0.4375,
+        "intervention_on_article_support": 0.9433351755142212,
+        "total_target_aligned_effect": 0.13172155618667603,
+        "total_tv": 0.15864190459251404,
+        "route_contrast": 0.07384225353598595
+      },
+      "cross_minus_within": {
+        "direction_l2": -213.34710693359375,
+        "baseline_target_minus_source_gap": 7.3125,
+        "fixed_target_article_efficacy": -0.4375,
+        "intervention_on_article_support": -0.004627585411071777,
+        "total_target_aligned_effect": 0.013166718184947968,
+        "total_tv": 0.04337871074676514,
+        "route_contrast": 0.20949041470885277
+      }
+    },
+    {
+      "triad_id": "leadership",
+      "within": {
+        "direction_l2": 379.3873291015625,
+        "baseline_target_minus_source_gap": -1.5,
+        "fixed_target_article_efficacy": 0.4375,
+        "intervention_on_article_support": 0.9158270359039307,
+        "total_target_aligned_effect": 0.004325756803154945,
+        "total_tv": 0.02170528657734394,
+        "route_contrast": -0.0036939792335033417
+      },
+      "cross": {
+        "direction_l2": 543.7238159179688,
+        "baseline_target_minus_source_gap": 8.375,
+        "fixed_target_article_efficacy": 0.3125,
+        "intervention_on_article_support": 0.908082127571106,
+        "total_target_aligned_effect": 0.010741778649389744,
+        "total_tv": 0.06904252618551254,
+        "route_contrast": -0.0007314393296837807
+      },
+      "cross_minus_within": {
+        "direction_l2": 164.33648681640625,
+        "baseline_target_minus_source_gap": 9.875,
+        "fixed_target_article_efficacy": -0.125,
+        "intervention_on_article_support": -0.007744908332824707,
+        "total_target_aligned_effect": 0.006416021846234798,
+        "total_tv": 0.0473372396081686,
+        "route_contrast": 0.002962539903819561
+      }
+    },
+    {
+      "triad_id": "academia",
+      "within": {
+        "direction_l2": 533.380615234375,
+        "baseline_target_minus_source_gap": 2.25,
+        "fixed_target_article_efficacy": 0.5,
+        "intervention_on_article_support": 0.8875113725662231,
+        "total_target_aligned_effect": 0.037326961755752563,
+        "total_tv": 0.047583043575286865,
+        "route_contrast": -0.08186811208724976
+      },
+      "cross": {
+        "direction_l2": 593.6133422851562,
+        "baseline_target_minus_source_gap": 4.3125,
+        "fixed_target_article_efficacy": 0.625,
+        "intervention_on_article_support": 0.8823854923248291,
+        "total_target_aligned_effect": 0.024285582825541496,
+        "total_tv": 0.04807095229625702,
+        "route_contrast": -0.010556957218796015
+      },
+      "cross_minus_within": {
+        "direction_l2": 60.23272705078125,
+        "baseline_target_minus_source_gap": 2.0625,
+        "fixed_target_article_efficacy": 0.125,
+        "intervention_on_article_support": -0.005125880241394043,
+        "total_target_aligned_effect": -0.013041378930211067,
+        "total_tv": 0.0004879087209701538,
+        "route_contrast": 0.07131115486845374
+      }
+    },
+    {
+      "triad_id": "art",
+      "within": {
+        "direction_l2": 973.8630981445312,
+        "baseline_target_minus_source_gap": -3.75,
+        "fixed_target_article_efficacy": 0.5,
+        "intervention_on_article_support": 0.8955186605453491,
+        "total_target_aligned_effect": 0.07103670388460159,
+        "total_tv": 0.06711091101169586,
+        "route_contrast": 0.04410562291741371
+      },
+      "cross": {
+        "direction_l2": 534.2245483398438,
+        "baseline_target_minus_source_gap": 3.125,
+        "fixed_target_article_efficacy": 0.3125,
+        "intervention_on_article_support": 0.8883265256881714,
+        "total_target_aligned_effect": 0.2902962565422058,
+        "total_tv": 0.20348171889781952,
+        "route_contrast": 0.2145845741033554
+      },
+      "cross_minus_within": {
+        "direction_l2": -439.6385498046875,
+        "baseline_target_minus_source_gap": 6.875,
+        "fixed_target_article_efficacy": -0.1875,
+        "intervention_on_article_support": -0.007192134857177734,
+        "total_target_aligned_effect": 0.21925955265760422,
+        "total_tv": 0.13637080788612366,
+        "route_contrast": 0.1704789511859417
+      }
+    },
+    {
+      "triad_id": "police",
+      "within": {
+        "direction_l2": 672.4007568359375,
+        "baseline_target_minus_source_gap": 3.625,
+        "fixed_target_article_efficacy": 0.1875,
+        "intervention_on_article_support": 0.9073777198791504,
+        "total_target_aligned_effect": 0.03785359114408493,
+        "total_tv": 0.04639275372028351,
+        "route_contrast": -0.036474152468144894
+      },
+      "cross": {
+        "direction_l2": 488.7206115722656,
+        "baseline_target_minus_source_gap": 7.6875,
+        "fixed_target_article_efficacy": 0.0625,
+        "intervention_on_article_support": 0.9236568808555603,
+        "total_target_aligned_effect": 0.0009477164130657911,
+        "total_tv": 0.008531470783054829,
+        "route_contrast": 0.00041669211350381374
+      },
+      "cross_minus_within": {
+        "direction_l2": -183.68014526367188,
+        "baseline_target_minus_source_gap": 4.0625,
+        "fixed_target_article_efficacy": -0.125,
+        "intervention_on_article_support": 0.016279160976409912,
+        "total_target_aligned_effect": -0.03690587473101914,
+        "total_tv": -0.03786128293722868,
+        "route_contrast": 0.03689084458164871
+      }
+    },
+    {
+      "triad_id": "speaking",
+      "within": {
+        "direction_l2": 578.55078125,
+        "baseline_target_minus_source_gap": -2.875,
+        "fixed_target_article_efficacy": 0.125,
+        "intervention_on_article_support": 0.9804297685623169,
+        "total_target_aligned_effect": 0.0005378983914852142,
+        "total_tv": 0.013517077080905437,
+        "route_contrast": -0.012760046869516373
+      },
+      "cross": {
+        "direction_l2": 856.4677734375,
+        "baseline_target_minus_source_gap": 5.125,
+        "fixed_target_article_efficacy": 0.625,
+        "intervention_on_article_support": 0.9744855165481567,
+        "total_target_aligned_effect": 0.2788892686367035,
+        "total_tv": 0.20618391036987305,
+        "route_contrast": 0.2326950579881668
+      },
+      "cross_minus_within": {
+        "direction_l2": 277.9169921875,
+        "baseline_target_minus_source_gap": 8.0,
+        "fixed_target_article_efficacy": 0.5,
+        "intervention_on_article_support": -0.005944252014160156,
+        "total_target_aligned_effect": 0.2783513702452183,
+        "total_tv": 0.1926668332889676,
+        "route_contrast": 0.24545510485768318
+      }
+    },
+    {
+      "triad_id": "employment",
+      "within": {
+        "direction_l2": 561.4547119140625,
+        "baseline_target_minus_source_gap": -0.125,
+        "fixed_target_article_efficacy": 0.125,
+        "intervention_on_article_support": 0.8716192245483398,
+        "total_target_aligned_effect": 0.023024633526802063,
+        "total_tv": 0.08058670908212662,
+        "route_contrast": -0.029093697667121887
+      },
+      "cross": {
+        "direction_l2": 660.3937377929688,
+        "baseline_target_minus_source_gap": 6.125,
+        "fixed_target_article_efficacy": 0.25,
+        "intervention_on_article_support": 0.8443890810012817,
+        "total_target_aligned_effect": 0.03976307809352875,
+        "total_tv": 0.03292824700474739,
+        "route_contrast": 0.02999342978000641
+      },
+      "cross_minus_within": {
+        "direction_l2": 98.93902587890625,
+        "baseline_target_minus_source_gap": 6.25,
+        "fixed_target_article_efficacy": 0.125,
+        "intervention_on_article_support": -0.027230143547058105,
+        "total_target_aligned_effect": 0.016738444566726685,
+        "total_tv": -0.04765846207737923,
+        "route_contrast": 0.059087127447128296
+      }
+    },
+    {
+      "triad_id": "ownership",
+      "within": {
+        "direction_l2": 1187.29296875,
+        "baseline_target_minus_source_gap": -4.3125,
+        "fixed_target_article_efficacy": 0.25,
+        "intervention_on_article_support": 0.9151880145072937,
+        "total_target_aligned_effect": 0.0014719271566718817,
+        "total_tv": 0.043236929923295975,
+        "route_contrast": -0.0024117250577546656
+      },
+      "cross": {
+        "direction_l2": 737.3250122070312,
+        "baseline_target_minus_source_gap": 5.8125,
+        "fixed_target_article_efficacy": 0.25,
+        "intervention_on_article_support": 0.8919312953948975,
+        "total_target_aligned_effect": 0.009280689060688019,
+        "total_tv": 0.014622066169977188,
+        "route_contrast": -0.004750527441501617
+      },
+      "cross_minus_within": {
+        "direction_l2": -449.96795654296875,
+        "baseline_target_minus_source_gap": 10.125,
+        "fixed_target_article_efficacy": 0.0,
+        "intervention_on_article_support": -0.02325671911239624,
+        "total_target_aligned_effect": 0.007808761904016137,
+        "total_tv": -0.028614863753318787,
+        "route_contrast": -0.002338802383746952
+      }
+    },
+    {
+      "triad_id": "invention",
+      "within": {
+        "direction_l2": 1150.369140625,
+        "baseline_target_minus_source_gap": -4.375,
+        "fixed_target_article_efficacy": 0.625,
+        "intervention_on_article_support": 0.9362809658050537,
+        "total_target_aligned_effect": 0.0012146332301199436,
+        "total_tv": 0.022240793332457542,
+        "route_contrast": -0.051496801897883415
+      },
+      "cross": {
+        "direction_l2": 1195.30908203125,
+        "baseline_target_minus_source_gap": -2.0625,
+        "fixed_target_article_efficacy": 0.4375,
+        "intervention_on_article_support": 0.9490780234336853,
+        "total_target_aligned_effect": 0.14322000741958618,
+        "total_tv": 0.14069896936416626,
+        "route_contrast": 0.09128013253211975
+      },
+      "cross_minus_within": {
+        "direction_l2": 44.93994140625,
+        "baseline_target_minus_source_gap": 2.3125,
+        "fixed_target_article_efficacy": -0.1875,
+        "intervention_on_article_support": 0.012797057628631592,
+        "total_target_aligned_effect": 0.14200537418946624,
+        "total_tv": 0.11845817603170872,
+        "route_contrast": 0.14277693443000317
+      }
+    },
+    {
+      "triad_id": "students",
+      "within": {
+        "direction_l2": 522.5698852539062,
+        "baseline_target_minus_source_gap": -6.0625,
+        "fixed_target_article_efficacy": 0.0625,
+        "intervention_on_article_support": 0.859621524810791,
+        "total_target_aligned_effect": -0.001441543223336339,
+        "total_tv": 0.002263055182993412,
+        "route_contrast": 0.001441543223336339
+      },
+      "cross": {
+        "direction_l2": 843.1626586914062,
+        "baseline_target_minus_source_gap": 0.25,
+        "fixed_target_article_efficacy": 0.25,
+        "intervention_on_article_support": 0.8550016283988953,
+        "total_target_aligned_effect": 0.10063914954662323,
+        "total_tv": 0.07069778442382812,
+        "route_contrast": 0.0751185268163681
+      },
+      "cross_minus_within": {
+        "direction_l2": 320.5927734375,
+        "baseline_target_minus_source_gap": 6.3125,
+        "fixed_target_article_efficacy": 0.1875,
+        "intervention_on_article_support": -0.004619896411895752,
+        "total_target_aligned_effect": 0.10208069276995957,
+        "total_tv": 0.06843472924083471,
+        "route_contrast": 0.07367698359303176
+      }
+    },
+    {
+      "triad_id": "management",
+      "within": {
+        "direction_l2": 756.293701171875,
+        "baseline_target_minus_source_gap": -3.5,
+        "fixed_target_article_efficacy": 0.375,
+        "intervention_on_article_support": 0.8915839195251465,
+        "total_target_aligned_effect": 0.004492634907364845,
+        "total_tv": 0.03606657683849335,
+        "route_contrast": -0.06294870190322399
+      },
+      "cross": {
+        "direction_l2": 626.6243896484375,
+        "baseline_target_minus_source_gap": 5.625,
+        "fixed_target_article_efficacy": 0.375,
+        "intervention_on_article_support": 0.8899209499359131,
+        "total_target_aligned_effect": 0.1066274642944336,
+        "total_tv": 0.09072709083557129,
+        "route_contrast": 0.02280457317829132
+      },
+      "cross_minus_within": {
+        "direction_l2": -129.6693115234375,
+        "baseline_target_minus_source_gap": 9.125,
+        "fixed_target_article_efficacy": 0.0,
+        "intervention_on_article_support": -0.0016629695892333984,
+        "total_target_aligned_effect": 0.10213482938706875,
+        "total_tv": 0.05466051399707794,
+        "route_contrast": 0.08575327508151531
+      }
+    }
+  ],
+  "summaries": {
+    "direction_l2": {
+      "within": {
+        "n": 14,
+        "mean": 760.9645908900669,
+        "lo": 639.6148725237165,
+        "hi": 888.2371128627232,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "cross": {
+        "n": 14,
+        "mean": 698.9625832693918,
+        "lo": 605.770756312779,
+        "hi": 807.0603114536831,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "paired_cross_minus_within": {
+        "n": 14,
+        "mean": -62.00200762067522,
+        "lo": -187.74204799107142,
+        "hi": 59.78709411621094,
+        "positive_n": 6,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      }
+    },
+    "baseline_target_minus_source_gap": {
+      "within": {
+        "n": 14,
+        "mean": -2.0267857142857144,
+        "lo": -3.5223214285714284,
+        "hi": -0.44642857142857145,
+        "positive_n": 4,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "cross": {
+        "n": 14,
+        "mean": 4.986607142857143,
+        "lo": 3.3705357142857144,
+        "hi": 6.370535714285714,
+        "positive_n": 13,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "paired_cross_minus_within": {
+        "n": 14,
+        "mean": 7.013392857142857,
+        "lo": 5.540178571428571,
+        "hi": 8.415178571428571,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      }
+    },
+    "fixed_target_article_efficacy": {
+      "within": {
+        "n": 14,
+        "mean": 0.41517857142857145,
+        "lo": 0.29464285714285715,
+        "hi": 0.5401785714285714,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "cross": {
+        "n": 14,
+        "mean": 0.35267857142857145,
+        "lo": 0.2767857142857143,
+        "hi": 0.4330357142857143,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "paired_cross_minus_within": {
+        "n": 14,
+        "mean": -0.0625,
+        "lo": -0.17410714285714285,
+        "hi": 0.0625,
+        "positive_n": 4,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      }
+    },
+    "intervention_on_article_support": {
+      "within": {
+        "n": 14,
+        "mean": 0.9133076540061406,
+        "lo": 0.896107724734715,
+        "hi": 0.9312263429164886,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "cross": {
+        "n": 14,
+        "mean": 0.9120186609881265,
+        "lo": 0.8914100357464382,
+        "hi": 0.9320568484919411,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "paired_cross_minus_within": {
+        "n": 14,
+        "mean": -0.0012889930180140904,
+        "lo": -0.010645721639905657,
+        "hi": 0.009130763156073434,
+        "positive_n": 4,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      }
+    },
+    "total_target_aligned_effect": {
+      "within": {
+        "n": 14,
+        "mean": 0.0290644757582673,
+        "lo": 0.01180580519472382,
+        "hi": 0.04915132188969957,
+        "positive_n": 13,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "cross": {
+        "n": 14,
+        "mean": 0.11252301144746266,
+        "lo": 0.06744018032415104,
+        "hi": 0.16156475345737167,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "paired_cross_minus_within": {
+        "n": 14,
+        "mean": 0.08345853568919535,
+        "lo": 0.03815779954727207,
+        "hi": 0.13312448291773243,
+        "positive_n": 12,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      }
+    },
+    "total_tv": {
+      "within": {
+        "n": 14,
+        "mean": 0.042565220168658664,
+        "lo": 0.027640528245163814,
+        "hi": 0.05944575036742857,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "cross": {
+        "n": 14,
+        "mean": 0.0992620383123202,
+        "lo": 0.06732983241922089,
+        "hi": 0.13175953904699003,
+        "positive_n": 14,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      },
+      "paired_cross_minus_within": {
+        "n": 14,
+        "mean": 0.05669681814366153,
+        "lo": 0.02228826144710183,
+        "hi": 0.0913926084259791,
+        "positive_n": 11,
+        "method": "paired semantic-triad bootstrap",
+        "resamples": 10000
+      }
+    }
+  }
+}

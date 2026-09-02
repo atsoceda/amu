@@ -29,20 +29,10 @@ switches the article and mean policy movement is 0.009. Public TV is
 approximately zero \(-0.001\ [-0.003,0.001]\), while private target-aligned
 influence is \(0.093\ [0.062,0.124]\).
 
-![Mediator-relative route recruitment in Gemma 3 1B. A: between-class synonyms differ in public article identity; within-class synonyms do not. B: each family's signed route contrast \(R=P-H\) has the predicted sign in the original independent-family assay. C: a repaired paired assay compares same- and cross-article targets for each of 14 semantic families; lines connect measurements sharing the same neutral prompt, source state, and source word. Diamonds and bars show means and paired-bootstrap 95% intervals.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
+![Mediator-relative route recruitment in Gemma 3 1B. A: the article can distinguish cross-class but not same-class alternatives. B: the matched assay compares same- and cross-article targets within each of 14 semantic families; lines share a neutral prompt, source state, and source word. Diamonds and bars show means and paired-bootstrap 95% intervals. C: the initial independent-family assay provides convergent evidence.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
 
-The original primary signed simple effects support a double dissociation. Between
-classes, public-minus-private target influence is
-\(0.170\ [0.049,0.296]\), exact one-sided sign-flip \(p=0.0156\). Within class,
-private-minus-public influence is \(0.094\ [0.060,0.126]\), \(p=0.00391\).
-Every one of six between-class families has \(P-H>0\), and every one of eight
-within-class families has \(P-H<0\) (@fig-routing B). The between-minus-within
-route interaction is \(0.264\ [0.137,0.399]\); exact family-label permutation
-gives \(p=0.00033\). It remains positive at all tested strengths and
-temperatures.
-
-A repaired paired test removes the remaining semantic-family confound
-(@fig-routing C). Fourteen neutral prompts each share the same definition,
+A matched-triad test asks whether the reversal could reflect between-family
+semantic composition (@fig-routing B). Fourteen neutral prompts each share the same definition,
 source word, source donor, and evaluated state across one same-article and one
 cross-article target; screening used only tokenization, local efficacy, and
 mediator support, never route sign. At the fixed primary setting
@@ -50,11 +40,20 @@ mediator support, never route sign. At the fixed primary setting
 \(-0.032\ [-0.057,-0.010]\) within class to
 \(0.087\ [0.046,0.132]\) across classes. The paired shift is
 \(0.120\ [0.077,0.161]\): 13/14 families shift in the predicted direction
-(exact one-sided sign-flip \(p=0.00012\)), and 8/14 individually show the strict
+(one-sided sign test \(p=0.00092\)); an exact sign-randomization test using the
+paired magnitudes gives \(p=0.000122\). Eight of 14 individually show the strict
 sign reversal \(R_{\rm within}<0<R_{\rm cross}\). The mean paired interaction
 remains positive at all 12 tested strength--temperature settings. Thus crossing
 the article mediator's equivalence boundary changes route dominance on average
 while holding semantic family and source realization fixed.
+
+Across the initial independent-family assay, public-minus-private target
+influence is \(0.170\ [0.049,0.296]\) between classes, whereas
+private-minus-public influence is \(0.094\ [0.060,0.126]\) within class. All six
+between-class and all eight within-class families have the predicted sign
+(@fig-routing C). Their between-minus-within interaction is
+\(0.264\ [0.137,0.399]\), with exact family-label permutation \(p=0.00033\),
+providing convergent evidence across a broader set of lexical pairs.
 
 The result supports a precise causal statement. When article identity can
 express the distinction between two correct alternatives, the intervention
@@ -72,63 +71,24 @@ controlled interventions, not a sparse endogenous routing controller.
 
 # Closed-loop gain
 
-Mediator visibility explains which distinctions can travel publicly. But two
-interventions with equal local causal strength need not have equal behavioral
-effects: a decoder far from its decision boundary is insensitive to a modest
-margin shift, whereas a near-balanced decoder can amplify it, especially when
-the two continuation branches strongly disagree. Equation 1 makes this
-intuition exact. Public effect is local pressure translated through decoder
-susceptibility and multiplied by continuation leverage (@fig-gain A). Thus a
-feature's downstream effect is not a property of the feature alone.
-
-Across 32 held-out 270M features, article attribution predicts local
-intervention-induced margin change (Spearman
-\(\rho=0.530\ [0.200,0.772]\)). Attribution alone does not predict public TV
-under combined feature-and-prompt holdout at \(\tau=0.1\)
-(\(R^2=-0.547\)). Susceptibility alone, leverage alone, activation magnitude,
-and a constant baseline also have negative \(R^2\). Calibrating attribution to
-local margin pressure and composing it with decoder susceptibility gives
-\(R^2=0.827\); adding intervention-off branch leverage gives 0.840, with
-calibration slope 0.960. The full composition remains
-\(R^2=0.840\)--0.875 across \(\tau=0.1\) to 1. Because `a/an` branch leverage
-is uniformly large, its incremental gain over susceptibility is modest; the
-task primarily stresses decoder sensitivity. At \(\tau=0.1\), however, rank
-correlation is only \(\rho=0.368\), and removing the largest 5% of observed
-effects reduces \(R^2\) to -1.34 even as mean absolute error falls from 0.0178
-to 0.0113. The impressive aggregate \(R^2\) therefore chiefly reflects correct
-identification and sizing of the high-effect regime, not uniformly accurate
-ranking of small effects (@fig-gain B; full diagnostics in @fig-app-gain).
-The 20 visually near-diagonal effects are not accounting-oracle leakage: every
-one has both observed and predicted article-policy movement above 0.9, so both
-axes reduce approximately to the same prompt-specific continuation leverage.
-None uses the measured intervention margin or numerical clipping. A crossed
-feature-and-prompt bootstrap gives a wide 95% interval for aggregate \(R^2\),
-\([-0.293,0.986]\), reflecting that these large effects come from only two
-sparse features; the result therefore identifies a mechanistically coherent
-high-gain regime but does not establish broad feature-population precision.
-
-![Closed-loop gain and held-out prediction at Gemma 3 270M. A: attribution is calibrated to local causal pressure, then composed with decoder susceptibility and continuation leverage. B: the composition captures the high-gain regime; orange cells have both observed and predicted article-policy movement above 0.9, while the inset resolves the low-effect cloud. Holdout excludes feature and prompt identity from causal-pressure calibration; intervention-off decoder susceptibility and branch leverage of the held-out prompt are permitted observed inputs. Aggregate R2 is tail-sensitive and is not a claim of uniformly precise cell-level prediction.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=96%}
-
-The identity itself is the law of total probability, not the novelty. The
-empirical contribution is identifying its mechanistically meaningful factors,
-measuring them separately, and showing out-of-sample prediction beyond simple
-baselines. The same attribution calibration transfers weakly at 1B, where the
-full model is not reliably predictive under combined holdout. We therefore claim
-limited predictive validation of a mechanistically coherent 270M high-gain
-regime, not a universal predictor.
+Mediator visibility explains which distinctions can travel publicly, while
+Equation 1 explains their gain: local pressure changes a decoder policy, and
+continuation leverage determines the downstream consequence. Across 32 held-out
+270M features, attribution moderately predicts local margin movement
+(\(\rho=0.530\)), but attribution alone fails to predict public TV. Composing
+calibrated local pressure with intervention-off decoder susceptibility and
+branch leverage identifies and sizes the decisive-policy regime
+(aggregate \(R^2=0.840\)); prediction among small effects is weak and crossed
+feature--prompt uncertainty is wide \([-0.293,0.986]\) (@fig-gain). We therefore
+claim limited predictive validation of a mechanistically coherent 270M
+high-gain regime, not a universal predictor; full diagnostics are in
+@fig-app-gain.
 
 # Validity stress test at 1B
 
-The sparse 1B campaign illustrates why the ladder's rungs cannot be collapsed.
-
-| Sparse handle | Local efficacy | `a/an` support | What follows? |
-|---|---:|---:|---|
-| Frozen top four | No: 0.075-logit mean movement | Yes | No route claim |
-| Effect-matched 24 | Yes | No: `called` often dominates | No binary route claim |
-| Constrained frontier | Yes | Yes: 20/20 prompts | Low-amplitude hybrid route |
-
-These distinct outcomes---weak handle, support-invalid estimand, and valid
-hybrid route---would be conflated by reporting only free generation.
-Reconstruction and graph-coverage audits reduce, but do not remove,
-instrumentation uncertainty. We use this campaign as a validity demonstration,
+The sparse 1B campaign illustrates why the ladder's rungs cannot be collapsed:
+the frozen top four are too weak, an effect-matched coalition leaves the binary
+article support, and a mediator-valid frontier yields only low-amplitude hybrid
+influence. Reporting only free generation would conflate these failure modes
+(full table in the appendix). We use the campaign as a validity demonstration,
 not evidence that scale reorganizes sparse planning mechanisms.

@@ -12,6 +12,7 @@ import random
 from pathlib import Path
 
 RESULTS = Path(__file__).resolve().parent / "results"
+TRIAD_EXP = Path(__file__).resolve().parent.parent / "matched_semantic_triads_repaired"
 TOLERANCE = 1e-12
 RESAMPLES = 10_000
 
@@ -159,6 +160,101 @@ def main():
         "mean_on_mass": mean([r["on_article_mass"] for r in all_primary]),
         "minimum_on_mass": min(r["on_article_mass"] for r in all_primary),
     }
+
+    # Independently recompute the stronger matched-triad result from its frozen
+    # config, screening rows, and assay rows. No triad analysis module is imported.
+    triad_cfg = json.loads((TRIAD_EXP / "config.json").read_text())
+    triad_screen = json.loads((TRIAD_EXP / "results/screen_rows.json").read_text())
+    triad_rows = json.loads((TRIAD_EXP / "results/rows.json").read_text())
+    triad_frozen = json.loads((TRIAD_EXP / "results/analysis.json").read_text())
+    triad_summary = json.loads((TRIAD_EXP / "results/summary.json").read_text())
+    candidate_ids = [triad["id"] for triad in triad_cfg["triads"]]
+    if len(candidate_ids) != 22 or len(set(candidate_ids)) != 22:
+        raise AssertionError("Matched-triad config must contain 22 unique frozen candidate IDs")
+    recomputed_eligibility = {}
+    for row in triad_screen:
+        eligible = (
+            all(row["single_token"].values())
+            and row["arms"]["within"]["off_support"]["article_top"]
+            and row["arms"]["within"]["off_support"]["article_mass"] >= triad_cfg["minimum_article_mass"]
+            and all(row["arms"][arm]["local_target_minus_source_effect"] > 0 for arm in ("within", "cross"))
+            and all(row["arms"][arm]["on_support"]["article_top"] for arm in ("within", "cross"))
+            and all(row["arms"][arm]["on_support"]["article_mass"] >= triad_cfg["minimum_article_mass"] for arm in ("within", "cross"))
+        )
+        if eligible != row["admissible"]:
+            raise AssertionError(f"{row['triad_id']}: independently recomputed eligibility disagrees")
+        recomputed_eligibility[row["triad_id"]] = eligible
+    if set(recomputed_eligibility) != set(candidate_ids):
+        raise AssertionError("Screen rows do not cover the exact frozen candidate set")
+    retained_ids = sorted(key for key, value in recomputed_eligibility.items() if value)
+    if len(retained_ids) != 14:
+        raise AssertionError(f"Expected 14 retained triads, found {len(retained_ids)}")
+
+    triad_output = {
+        "candidate_ids": candidate_ids,
+        "eligibility": recomputed_eligibility,
+        "retained_ids": retained_ids,
+        "candidate_n": 22,
+        "retained_n": 14,
+        "settings": {},
+    }
+    for strength_index, strength in enumerate(triad_cfg["strengths"]):
+        triad_output["settings"][str(strength)] = {}
+        for temperature_index, temperature in enumerate(triad_cfg["temperatures"]):
+            paired = []
+            for triad_id in retained_ids:
+                arms = {
+                    row["arm"]: row for row in triad_rows
+                    if row["triad_id"] == triad_id and row["strength"] == strength
+                }
+                if set(arms) != {"within", "cross"}:
+                    raise AssertionError(f"{triad_id}, strength {strength}: missing paired arm")
+                contrasts = {}
+                for arm in ("within", "cross"):
+                    cell = arms[arm]["stochastic"][str(temperature)]
+                    contrasts[arm] = cell["public"]["target_minus_source"] - cell["private"]["target_minus_source"]
+                paired.append({
+                    "triad_id": triad_id,
+                    "within": contrasts["within"],
+                    "cross": contrasts["cross"],
+                    "difference": contrasts["cross"] - contrasts["within"],
+                })
+            recomputed = {
+                "within": interval([row["within"] for row in paired], 20260903),
+                "cross": interval([row["cross"] for row in paired], 20260904),
+                "paired_shift": interval([row["difference"] for row in paired], 20260905),
+                "positive_shift_n": sum(row["difference"] > 0 for row in paired),
+                "strict_sign_reversal_n": sum(row["within"] < 0 < row["cross"] for row in paired),
+                "paired_rows": paired,
+            }
+            expected = triad_frozen["settings"][str(strength)][str(temperature)]
+            for new_key, old_key in (("within", "within_route"), ("cross", "cross_route"), ("paired_shift", "paired_interaction")):
+                for field in ("mean", "lo", "hi"):
+                    assert_close(
+                        f"triad {strength}/{temperature} {new_key} {field}",
+                        recomputed[new_key][field], expected[old_key][field]
+                    )
+            if recomputed["positive_shift_n"] != expected["positive_interaction_n"]:
+                raise AssertionError("Matched-triad positive-shift count disagreement")
+            if recomputed["strict_sign_reversal_n"] != expected["full_double_dissociation_n"]:
+                raise AssertionError("Matched-triad sign-reversal count disagreement")
+            triad_output["settings"][str(strength)][str(temperature)] = recomputed
+
+    primary_triad = triad_output["settings"][str(triad_cfg["primary_strength"])][str(triad_cfg["primary_temperature"])]
+    exact = exact_sign_flip([row["difference"] for row in primary_triad["paired_rows"]])
+    for field in ("observed", "one_sided_p", "two_sided_p", "assignments"):
+        assert_close(f"triad exact sign-randomization {field}", exact[field], triad_summary["paired_interaction_exact_sign_flip"][field])
+    positive = primary_triad["positive_shift_n"]
+    n = len(primary_triad["paired_rows"])
+    sign_test_p = sum(math.comb(n, k) for k in range(positive, n + 1)) / 2**n
+    primary_triad["exact_sign_randomization"] = exact
+    primary_triad["one_sided_binomial_sign_test_p"] = sign_test_p
+    triad_output["all_12_paired_interactions_positive"] = all(
+        cell["paired_shift"]["mean"] > 0
+        for strength_cells in triad_output["settings"].values()
+        for cell in strength_cells.values()
+    )
+    output["matched_triads"] = triad_output
     output["all_checks_passed"] = True
     (RESULTS / "independent_recomputation.json").write_text(json.dumps(output, indent=2) + "\n")
     print(json.dumps(output, indent=2))
