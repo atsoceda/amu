@@ -9,14 +9,14 @@ can remain **private**, propagated through contextual hidden state, or become
 input. A later-token change observed under free generation does not say which
 route carried it.
 
-This ambiguity is acute in work on latent planning. On prompts that require an
-article followed by an occupation, internal features can influence both the
-article and the future noun [@hanna2026latent]. Amplifying such a feature may
-rewrite `a pilot` as `an aviator`. That is consistent with persistent latent
-control of the noun. It is equally consistent with a simpler closed loop: the
-intervention changes `a` to `an`, and the generated article changes which noun
-the model predicts next. The two mechanisms agree under free generation and
-diverge only when article identity is controlled.
+This ambiguity is acute in work on latent planning. Hanna and Ameisen define it
+as an internal representation that both causes a specific future token or
+concept and shapes preceding context to license it [@hanna2026latent]. Those
+criteria do not distinguish whether the future effect persists privately or is
+transmitted through the preceding context the representation caused. Thus a
+rewrite from `a pilot` to `an aviator` could reflect persistent noun control or
+a closed loop in which changing `a` to `an` changes the next prediction. Our
+question is not whether such a signal is causal, but how its influence travels.
 
 We develop an intervention framework that separates them. A six-cell assay
 crosses intervention off/on with free generation, forced `a`, and forced `an`.
@@ -46,10 +46,9 @@ The experiments reveal a coherent organization of causal state.
 4. **Public effects have closed-loop gain.** Once a distinction enters the
    public route, its downstream magnitude is the product of mediator-policy
    movement and continuation-branch leverage. At 270M, composing local causal
-   pressure with decoder susceptibility and leverage identifies and
-   quantitatively captures the high-public-effect regime under held-out
-   feature--prompt evaluation, whereas attribution alone does not. Prediction
-   among the many small-effect cells remains weak.
+   pressure with decoder susceptibility and leverage provides limited
+   predictive validation in the decisive-policy regime, whereas attribution
+   alone does not; prediction among small effects remains weak.
 
 The resulting claim is not that hidden computation is absent, nor that the
 model spontaneously chooses between two independent memories. Rather, a
@@ -67,3 +66,6 @@ mediation itself is not new [@vig2020mediation; @paul2024reasoning]. Our
 contribution is to turn it into an operational validity standard for internal
 mechanistic interventions and to show public dominance, private persistence,
 and mediator-relative route reversal within one controlled setting.
+Transmission route is orthogonal to functional interpretation: a state may
+satisfy a latent-planning definition while its future effect is public, private,
+or hybrid.

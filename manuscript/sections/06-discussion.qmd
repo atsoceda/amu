@@ -16,8 +16,9 @@ recruitment to what the mediator can distinguish.
 **Public routing has closed-loop gain.** Once an intervention moves mediator
 policy, the written token is fed back through the model. Its effect is amplified
 when the decoder is near a policy boundary and the continuation branches have
-high leverage. S1 is an extreme endpoint: a minute additional gain changes a
-public action, and that action selects almost disjoint noun distributions. The
+high leverage. S1 provides a high-gain, public-dominant case: a small change in
+intervention strength near the article-policy boundary changes the public
+action, which selects almost disjoint noun distributions. The
 large behavioral rewrite lives at the latent-to-symbol-to-continuation handoff,
 not in a similarly large fixed-token residual.
 
@@ -30,11 +31,14 @@ whether article identity resolves its intended alternatives. Candidate content,
 local causal action, route, and behavioral magnitude are different questions.
 
 This perspective sharpens mechanistic claims about planning, chain-of-thought,
-tool calls, delimiters, and scratchpads. An output token may be evidence of an
-upstream computation, a causal action that changes later computation, or both.
+tool calls, delimiters, and scratchpads. Route describes transmission rather
+than cognitive function: a representation satisfying a latent-planning
+criterion can still affect a future token through a generated intermediate.
+An output token may be evidence of an upstream computation, a causal action, or both.
 If an intervention changes a later answer, replaying its intermediate output
 tests whether the output phenocopies the effect; restoring the baseline output
-tests whether it rescues behavior; fixed-output cells measure what remains.
+tests whether it rescues behavior; fixed-output cells distinguish that public
+realization from influence that persists after the output is fixed.
 For larger mediator vocabularies, the same policy-weighted decomposition applies,
 with an omitted-mass bound for top-\(K\) approximations.
 

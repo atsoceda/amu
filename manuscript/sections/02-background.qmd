@@ -86,14 +86,15 @@ This ladder extends the established separation of decodability from causal use
 [@ma2026plan] by making intervention validity and downstream route identification
 explicit. It also aligns activation patching, sparse steering, and causal
 scrubbing with a common causal-abstraction view [@geiger2025abstraction;
-@chan2022scrubbing].
+@chan2022scrubbing], complementing calls to match mechanistic evaluations to
+explicitly specified causal mediators [@mueller2026mediator].
 
 ## Mediator-relative distinguishability
 
 Let \(m(y)\) be the public mediator licensed by lexical outcome \(y\), and define
 \(y_1\sim_m y_2\) when \(m(y_1)=m(y_2)\). `Teacher` and `educator` lie in
 different article classes (`a` versus `an`), whereas `doctor` and `physician`
-lie in the same class (`a`). A between-class distinction is visible in article
+lie in the same class (`a`). A cross-class distinction is visible in article
 identity; a within-class distinction is collapsed by it. This motivates a
 causal prediction: when two valid lexical alternatives cross mediator classes,
 an intervention can recruit a public relay; when they remain in one class,

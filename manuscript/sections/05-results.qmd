@@ -9,7 +9,7 @@ regimes are shown in @fig-routing A.
 
 All 14 donor-derived directions pass held-out local efficacy. At native
 strength, fixed-target-article target-minus-source movement is
-\(0.406\ [0.281,0.604]\) logits across six between-class families and
+\(0.406\ [0.281,0.604]\) logits across six cross-class families and
 \(0.414\ [0.297,0.555]\) across eight within-class families. Wrong-target
 controls yield 0.125 and 0.008; reversed directions yield -0.385 and -0.344.
 Intervention-off `a/an` policy mass averages 0.909 (minimum 0.854) and remains
@@ -18,7 +18,7 @@ mediator-support validity without the source-initial conflict of the earlier
 prompt construction.
 
 Routing then reverses by mediator equivalence class (@fig-routing). For
-between-class alternatives, every family increases the target-article policy;
+cross-class alternatives, every family increases the target-article policy;
 mean target-article movement is 0.182 and 2/6 switch the greedy article. At
 \(\tau=1\), public TV is \(0.176\ [0.108,0.243]\) and private TV is only
 \(0.021\ [0.012,0.033]\). Their target-aligned effects are
@@ -29,7 +29,7 @@ switches the article and mean policy movement is 0.009. Public TV is
 approximately zero \(-0.001\ [-0.003,0.001]\), while private target-aligned
 influence is \(0.093\ [0.062,0.124]\).
 
-![Mediator-relative route recruitment in Gemma 3 1B. A: the article can distinguish cross-class but not same-class alternatives. B: the matched assay compares same- and cross-article targets within each of 14 semantic families; lines share a neutral prompt, source state, and source word. Diamonds and bars show means and paired-bootstrap 95% intervals. C: the initial independent-family assay provides convergent evidence.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
+![Mediator-relative route recruitment in Gemma 3 1B. A: the article can distinguish cross-class but not within-class alternatives. B: the matched assay compares within- and cross-article targets within each of 14 semantic families; lines share a neutral prompt, source state, and source word. Diamonds and bars show means and paired-bootstrap 95% intervals. C: the initial independent-family assay provides convergent evidence.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
 
 A matched-triad test asks whether the reversal could reflect between-family
 semantic composition (@fig-routing B). Fourteen neutral prompts each share the same definition,
@@ -47,16 +47,16 @@ remains positive at all 12 tested strength--temperature settings. Thus crossing
 the article mediator's equivalence boundary systematically shifts the balance
 of target-aligned influence toward the public route while holding semantic
 family and source realization fixed. Component decomposition shows that this
-shift is chiefly increased public influence: \(\Delta P=0.102\
+shift is chiefly increased public influence: \(\Delta P=0.102
 [0.062,0.142]\), while \(\Delta H=-0.018\ [-0.039,-0.0003]\). The
 target-article policy itself moves by an additional \(0.099\ [0.055,0.142]\)
 in the cross arm, directly linking the public increase to mediator recruitment.
 
 Across the initial independent-family assay, public-minus-private target
-influence is \(0.170\ [0.049,0.296]\) between classes, whereas
+influence is \(0.170\ [0.049,0.296]\) across classes, whereas
 private-minus-public influence is \(0.094\ [0.060,0.126]\) within class. All six
-between-class and all eight within-class families have the predicted sign
-(@fig-routing C). Their between-minus-within interaction is
+cross-class and all eight within-class families have the predicted sign
+(@fig-routing C). Their cross-minus-within interaction is
 \(0.264\ [0.137,0.399]\), with exact family-label permutation \(p=0.00033\),
 providing convergent evidence across a broader set of lexical pairs.
 
@@ -67,7 +67,7 @@ token identity cannot carry their lexical difference; in the independent-family
 group means, the cross-class condition is public-dominant and the within-class
 condition is private-dominant. A generated token is therefore a lossy public
 projection relative to the downstream distinction of interest.
-We interpret the between-class effect as selective recruitment of an additional
+We interpret the cross-class effect as selective recruitment of an additional
 public causal route, not conservation or transfer of a fixed information
 quantity between public and private channels.
 The experiment does **not** show that a natural online mechanism spontaneously

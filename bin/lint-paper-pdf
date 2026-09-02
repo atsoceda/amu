@@ -13,6 +13,12 @@ if not pdf.is_file():
 text = subprocess.run(
     ["pdftotext", "-layout", str(pdf), "-"], check=True, capture_output=True, text=True
 ).stdout
+normalized_text = " ".join(
+    re.sub(r"^\s*\d+\s+", "", line).strip() for line in text.splitlines()
+)
+normalized_text = re.sub(r"-\s+", "", normalized_text)
+normalized_text = re.sub(r"\s+", " ", normalized_text)
+canonical_text = normalized_text.replace("-", "")
 
 errors = []
 checks = {
@@ -21,6 +27,9 @@ checks = {
     "unresolved cross-reference": r"(?:Figure|Table|Appendix|Section)\s+\?",
     "unresolved placeholder": r"\?\?|\b(?:TODO|FIXME|TBD)\b|X{3,}",
     "non-finite result": r"(?<![A-Za-z])(?:NaN|Inf)(?![A-Za-z])",
+    "obsolete extreme-effect wording": r"\bextreme\b",
+    "obsolete mediator-class terminology": r"\bbetween-(?:article|class)\b",
+    "obsolete minute-effect wording": r"\bminute additional\b",
 }
 for label, pattern in checks.items():
     match = re.search(pattern, text, flags=re.IGNORECASE)
@@ -33,6 +42,12 @@ if reference_page is None:
     errors.append("References heading not found")
 elif reference_page > 10:
     errors.append(f"main text exceeds nine pages: References begins on page {reference_page}")
+else:
+    reference_match = re.search(
+        r"^\s*(?:\d+\s+)?References\s*$", pages[reference_page - 1], re.MULTILINE
+    )
+    if reference_match and re.search(r"[A-Za-z]", pages[reference_page - 1][: reference_match.start()]):
+        errors.append("main-text prose appears above References on its opening page")
 
 for phrase in (
     "13/14 families",
@@ -41,8 +56,11 @@ for phrase in (
     "0.1015",
     "0.0986",
     "future-noun-attributed pre-article causal handles",
+    "occupation-completion task adapted from prior latent-planning work",
+    "Transmission route is orthogonal",
+    "Mueller",
 ):
-    if phrase not in text:
+    if phrase not in normalized_text and phrase.replace("-", "") not in canonical_text:
         errors.append(f"required rendered phrase missing: {phrase!r}")
 
 if errors:

@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 import numpy as np
 
 EXP=Path(__file__).resolve().parent
@@ -18,8 +19,8 @@ def native_rows(regime):return [r for r in ROWS if r["regime"]==regime and r["st
 def main():
     fig=plt.figure(figsize=(12.0,4.0));gs=fig.add_gridspec(1,3,width_ratios=(.95,1.45,1.25),wspace=.45)
     ax=fig.add_subplot(gs[0]);ax.axis("off");ax.set_title("A  What can the article express?",loc="left",weight="bold",fontsize=11)
-    examples=[(.74,"CROSS class","teacher  →  educator","a  →  an",PUBLIC,"article distinguishes"),
-              (.28,"WITHIN class","teacher  →  tutor","a  →  a",PRIVATE,"article collapses")]
+    examples=[(.74,"CROSS-CLASS","teacher  →  educator","a  →  an",PUBLIC,"article distinguishes"),
+              (.28,"WITHIN-CLASS","teacher  →  tutor","a  →  a",PRIVATE,"article collapses")]
     for y,heading,words,articles,color,note in examples:
         ax.text(.02,y+.14,heading,color=color,weight="bold",fontsize=9.2);ax.text(.02,y,words,fontsize=9.5,weight="bold")
         ax.text(.02,y-.13,articles,fontsize=13,color=color,weight="bold");ax.text(.02,y-.23,note,fontsize=8.2,color="#455a64")
@@ -28,13 +29,19 @@ def main():
         for r in native_rows(regime):
             st=r["stochastic"]["1.0"];values.append(st["public"]["target_minus_source"]-st["private"]["target_minus_source"])
             labels.append(f"{r['source_word']} → {r['target_word']}");colors.append(PUBLIC if regime=="between" else PRIVATE)
-    y=np.arange(len(values))[::-1];ax.axvline(0,color="#111111",lw=1.5);ax.scatter(values,y,c=colors,s=30,zorder=3)
+    y=np.arange(len(values))[::-1]
+    ax.set_xlim(-.20,.45)
+    ax.axvspan(-.20,0,color=PRIVATE,alpha=.08,zorder=0)
+    ax.axvspan(0,.45,color=PUBLIC,alpha=.08,zorder=0)
+    ax.axvline(0,color="#78909c",lw=1.1,ls=(0,(1.2,2.0)),zorder=2)
+    ax.scatter(values,y,c=colors,s=30,zorder=3)
     ax.set_yticks(y);ax.set_yticklabels([]);ax.set_xlabel("Route contrast  $R=P-H$",fontsize=8.5)
     ax.set_title("C  Independent-family convergence",loc="left",weight="bold",fontsize=11)
-    ax.text(.76,.02,"PUBLIC-DOMINANT  →",transform=ax.transAxes,color=PUBLIC,fontsize=7.3,ha="center",weight="bold")
-    ax.text(.20,.02,"←  PRIVATE-DOMINANT",transform=ax.transAxes,color=PRIVATE,fontsize=7.3,ha="center",weight="bold")
-    ax.text(.02,.98,"Between  $n=6$",transform=ax.transAxes,color=PUBLIC,fontsize=7.5,va="top",weight="bold")
-    ax.text(.02,.53,"Within  $n=8$",transform=ax.transAxes,color=PRIVATE,fontsize=7.5,va="top",weight="bold")
+    handles=[Line2D([],[],marker="o",ls="",color=PUBLIC,label="Cross-class  $n=6$"),
+             Line2D([],[],marker="o",ls="",color=PRIVATE,label="Within-class  $n=8$")]
+    ax.legend(handles=handles,loc="lower right",ncol=1,frameon=True,fontsize=7.5,
+              handletextpad=.3,borderpad=.35,facecolor="white",edgecolor="none",
+              framealpha=.82)
     ax=fig.add_subplot(gs[1]);primary=TRIAD_ANALYSIS["settings"]["1.0"]["1.0"]
     for row in primary["rows"]:
         ax.plot([0,1],[row["within"],row["cross"]],color="#78909c",alpha=.55,lw=1)
@@ -44,7 +51,7 @@ def main():
         block=primary[key]
         ax.errorbar(x0,block["mean"],yerr=[[block["mean"]-block["lo"]],[block["hi"]-block["mean"]]],
                     fmt="D",ms=6,capsize=4,color=color,mec="white",mew=.5,zorder=5)
-    ax.axhline(0,color="#263238",lw=1.2);ax.set_xlim(-.22,1.22);ax.set_xticks([0,1],["Within class\n(same article)","Cross class\n(other article)"],fontsize=8)
+    ax.axhline(0,color="#263238",lw=1.2);ax.set_xlim(-.22,1.22);ax.set_xticks([0,1],["Within-class\n(same article)","Cross-class\n(other article)"],fontsize=8)
     ax.set_ylabel("Route contrast  $R=P-H$",fontsize=8.5);ax.set_title("B  Matched within-family test ($n=14$)",loc="left",weight="bold",fontsize=11)
     effect=primary["paired_interaction"]
     ax.text(.5,-.22,f"mean $\\Delta R$ = {effect['mean']:.3f}  [{effect['lo']:.3f}, {effect['hi']:.3f}]",transform=ax.transAxes,ha="center",fontsize=8,weight="bold")

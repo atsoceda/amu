@@ -22,7 +22,7 @@ top-token coincidence: public substitution reproduces nearly all of the total
 noun-distribution movement, whereas the matched fixed-token residual is small
 (@fig-s1 B).
 
-![The sparse S1 intervention is an extreme public endpoint. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
+![The sparse S1 intervention is strongly public-dominant. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
 
 The magnitude is created at the latent-to-symbol boundary. On 19 bracketed
 prompts, gains separated by at most 0.0039 straddle the article argmax. The
@@ -34,16 +34,15 @@ that coarse bfloat16 logit levels are not the mechanism. Exact two-article
 mixtures from \(\tau=0.1\) to 1 replace the greedy discontinuity with graded
 public influence, but the policy component remains aligned with the total.
 
-This is a transmission result, not evidence against latent planning. A frozen-
-artifact audit confirms that all four S1 features are active at the pre-article
-position and have positive direct attribution to the intended future noun on
-all eight selection prompts. Together with their intervention effects, this
-establishes them as future-noun-attributed pre-article causal handles. Because
-the same features recur across distinct nouns and selection also required
-article influence, we do not relabel them as noun-specific
-semantic planning features selected independently of route. What the assay
-rules out is interpreting their large free-generation noun effect as comparably
-large private persistence.
+Thus S1 reproduces the causal pattern motivating latent-planning analyses: a
+pre-article handle affects both the licensing article and a future noun. A
+frozen-artifact audit confirms that all four features are active pre-article and
+have positive direct attribution to the intended future noun on all eight
+selection prompts. Because the features recur across nouns and selection also
+required article influence, S1 is not independently identified as a noun-
+specific semantic planning representation. Our result concerns transmission:
+its large free-generation noun effect travels primarily through the article,
+not through comparably large fixed-token persistence.
 
 ## Target information can remain privately effective
 
@@ -59,7 +58,7 @@ for matched-norm random directions.
 
 More conservative natural-state-derived directions provide the primary private
 evidence. At 270M and native strength, fixed-article target-minus-source movement
-is \(0.77\ [0.47,1.13]\) logits for 12 between-class pairs and
+is \(0.77\ [0.47,1.13]\) logits for 12 cross-class pairs and
 \(0.96\ [0.67,1.27]\) for 12 within-class pairs. Wrong-target effects are 0.15 and
 0.13; sign reversal moves the contrast in the opposite direction. The
 greedy article changes on 0/24 pairs, so the target-directed noun movement
