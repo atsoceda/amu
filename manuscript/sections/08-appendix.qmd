@@ -85,7 +85,7 @@ at 1B. The fuller normalized comparison in @fig-app-private-scale shows both the
 cross-scale replication and the absence of a monotone scale trend; the control
 directions remain much weaker than the intended target direction.
 
-![Full cross-scale private-route comparison. Target-state-derived residual patches produce target-specific fixed-article effects at both Gemma 3 270M and 1B, while wrong-target and sign-reversed controls delimit specificity. Normalization does not support a monotone increase with scale.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-app-private-scale width=95%}
+![Full cross-scale private-route comparison. A: development layer profiles. B: normalized target efficacy across patch strengths. C--D: public and fixed-token effect magnitudes across strength. The target effect is present at both Gemma 3 270M and 1B, but normalization does not support a monotone increase with scale. Specificity controls appear in @fig-private.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-app-private-scale width=95%}
 
 The stronger dense residual reference patches the decoder-layer output at the
 inserted article position. Four development pairs select layer 12; four held-out
@@ -151,7 +151,16 @@ bin means expose calibration across the dynamic range (D), tail removal exposes
 the aggregate \(R^2\)'s dependence on large effects (E), and temperature and
 scale checks delimit transfer (F).
 
-![Closed-loop gain diagnostics. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines. D: equal-count binned calibration. E: sensitivity of R2 to excluding the largest observed effects. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
+The calibration intervals in panel D use 10,000 crossed bootstrap resamples:
+feature and prompt identities are sampled independently with replacement and
+their multiplicities are crossed into cell weights. The same blocked procedure
+gives aggregate \(R^2=0.840\ [-0.293,0.986]\) and MAE
+\(0.0178\ [0.0036,0.0377]\). Panel E reports MAE alongside tail-trimmed
+\(R^2\): removing large effects shrinks absolute error but collapses outcome
+variance even faster, making \(R^2\) strongly negative without implying large
+absolute mistakes.
+
+![Closed-loop gain diagnostics. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines. D: equal-count predicted-versus-observed calibration with crossed feature--prompt bootstrap intervals. E: R2 and MAE respond differently when the largest observed effects are excluded because the remaining outcome variance is tiny. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
 
 ## Sparse 1B ladder failures
 

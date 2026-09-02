@@ -19,10 +19,12 @@ task did not pass local target efficacy and cannot adjudicate mediator capacity.
 
 Greedy claims are supplemented by exact conditional `a/an` mixtures, not
 unrestricted sampling over all tokens. The binary estimand is valid only when
-article support is retained. The gain identity is algebraic, and its predictive
-validation is strong at 270M but weak at 1B; `a/an` also offers limited
-variation in branch leverage. All intervals reflect the finite prompt or
-semantic-family sets, not a population of tasks.
+article support is retained. The gain identity is algebraic. At 270M its
+predictive validation identifies the high-gain regime, but ranking among small
+effects is weak and crossed feature--prompt uncertainty is wide; transfer is
+also weak at 1B. `a/an` offers limited variation in branch leverage. All
+intervals reflect the finite prompt, feature, or semantic-family sets, not a
+population of tasks.
 
 Within those bounds, the conclusion is clear. Autoregressive output is part of
 the circuit. Future-relevant causal influence can persist in private context or

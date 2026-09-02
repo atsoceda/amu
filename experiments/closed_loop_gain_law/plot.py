@@ -7,6 +7,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -48,23 +49,27 @@ def plot_main(predictions, diagnostics):
     ax.text(.5, .11, "How different are the noun continuations it selects?", ha="center", fontsize=8.5, color=PURPLE)
 
     ax = axes[1]
-    ax.scatter(pred, obs, s=13, alpha=.25, color=BLUE, edgecolors="none", label="Held-out cells")
+    observed_dq = np.asarray([abs(r["observed_delta_q"]) for r in subset])
+    predicted_dq = np.asarray([abs(r["predicted_delta_q"]) for r in subset])
+    decisive = (observed_dq >= .9) & (predicted_dq >= .9)
+    ax.scatter(pred[~decisive], obs[~decisive], s=13, alpha=.22, color="#78909c", edgecolors="none", label="Remaining cells")
+    ax.scatter(pred[decisive], obs[decisive], s=24, alpha=.9, color=ORANGE, edgecolors="white", linewidths=.3,
+               label=f"Decisive policy movement ($N={decisive.sum()}$)")
     limit = max(float(obs.max()), float(pred.max()))
     ax.plot([0, limit], [0, limit], color="#263238", lw=1, ls="--", label="Perfect prediction")
-    bins = diagnostics["binned_calibration"]
-    bx = np.asarray([b["mean_predicted"] for b in bins]); by = np.asarray([b["mean_observed"] for b in bins])
-    xerr = np.asarray([[b["mean_predicted"]-b["predicted_lo"] for b in bins], [b["predicted_hi"]-b["mean_predicted"] for b in bins]])
-    yerr = np.asarray([[b["mean_observed"]-b["observed_lo"] for b in bins], [b["observed_hi"]-b["mean_observed"] for b in bins]])
-    ax.errorbar(bx, by, xerr=xerr, yerr=yerr, fmt="o", ms=6, capsize=2.5, color=ORANGE, label="Five equal-count bins")
     d = diagnostics["full_gain_model"]; tail = diagnostics["tail_sensitivity"]["exclude_top_5pct"]
     ax.text(.03, .96, f"overall $R^2$={d['r2']:.3f}   $\\rho$={d['spearman_rho']:.3f}\nMAE={d['mae']:.4f}   median AE={d['median_absolute_error']:.5f}",
             transform=ax.transAxes, va="top", fontsize=8.5,
             bbox=dict(facecolor="white", edgecolor="none", alpha=.82, pad=2))
-    ax.text(.97, .05, f"excluding top 5%: $R^2$={tail['r2']:.2f}", transform=ax.transAxes,
-            ha="right", fontsize=8, color="#8b1a1a")
+    zoom = inset_axes(ax, width="38%", height="38%", loc="lower right", borderpad=1.25)
+    zoom.scatter(pred[~decisive], obs[~decisive], s=8, alpha=.24, color="#78909c", edgecolors="none")
+    zoom.plot([0,.1],[0,.1],color="#263238",lw=.7,ls="--")
+    zoom.set_xlim(0,.1); zoom.set_ylim(0,.1); zoom.set_xticks([0,.05,.1]); zoom.set_yticks([0,.05,.1])
+    zoom.tick_params(labelsize=6); zoom.grid(alpha=.12)
+    zoom.set_title(f"Low-effect zoom\n$\\rho$={tail['spearman_rho']:.2f}, MAE={tail['mae']:.3f}",fontsize=7)
     ax.set(xlabel="Predicted public noun TV", ylabel="Observed public noun TV",
            title="B  Unseen 270M feature × prompt cells ($N=640$)")
-    ax.legend(frameon=False, fontsize=7.5, loc="center right")
+    ax.legend(frameon=False, fontsize=7.2, loc="upper center", bbox_to_anchor=(.72,.98))
     ax.spines[["top", "right"]].set_visible(False); ax.grid(alpha=.15)
     fig.tight_layout(); fig.savefig(MAIN_OUT, dpi=240, bbox_inches="tight"); plt.close(fig)
 
@@ -95,15 +100,17 @@ def plot_appendix(validation, predictions, diagnostics, aligned):
     bx=np.asarray([b["mean_predicted"] for b in bins]);by=np.asarray([b["mean_observed"] for b in bins])
     yerr=np.asarray([[b["mean_observed"]-b["observed_lo"] for b in bins],[b["observed_hi"]-b["mean_observed"] for b in bins]])
     eps=1e-7;ax.errorbar(bx+eps,by+eps,yerr=yerr,fmt="o",capsize=3,color=ORANGE)
-    lim=max(bx.max(),by.max())*1.2;ax.plot([eps,lim],[eps,lim],ls="--",lw=.8,color="black");ax.set_xscale("log");ax.set_yscale("log");ax.set(xlabel="Mean predicted TV",ylabel="Mean observed TV",title="D  Five-bin calibration")
+    lim=max(bx.max(),by.max())*1.2;ax.plot([eps,lim],[eps,lim],ls="--",lw=.8,color="black");ax.set_xscale("log");ax.set_yscale("log");ax.set(xlabel="Mean predicted public TV",ylabel="Mean observed public TV",title="D  Predicted vs observed: five bins")
 
     ax=axes[1,1]; keys=["exclude_top_0pct","exclude_top_5pct","exclude_top_10pct"]; vals=[diagnostics["tail_sensitivity"][k]["r2"] for k in keys]
-    bars=ax.bar(range(3),vals,color=[BLUE,"#b85c3a","#8b1a1a"]);ax.axhline(0,color="black",lw=.8)
+    maes=[diagnostics["tail_sensitivity"][k]["mae"] for k in keys]
+    bars=ax.bar(range(3),vals,color=[BLUE,"#b85c3a","#8b1a1a"],alpha=.82,label="$R^2$");ax.axhline(0,color="black",lw=.8)
     ax.set_yscale("symlog",linthresh=1);ax.set_ylim(-50,2)
     ax.set_xticks(range(3),["All","Drop top 5%","Drop top 10%"],rotation=15);ax.set(ylabel="$R^2$ (symlog)",title="E  High-effect-tail sensitivity")
     label_positions=[1.05,-1.0,-18.0]
     for bar,value,label_y in zip(bars,vals,label_positions):
         ax.text(bar.get_x()+bar.get_width()/2, label_y, f"{value:.2f}", ha="center", va="bottom", fontsize=7)
+    ax2=ax.twinx();ax2.plot(range(3),maes,color=ORANGE,marker="o",lw=1.5,label="MAE");ax2.set_ylabel("MAE",color=ORANGE,fontsize=8);ax2.tick_params(axis="y",labelcolor=ORANGE,labelsize=7);ax2.set_ylim(0,.022)
 
     ax=axes[1,2]; temps=(.1,.25,.5,1.0)
     for model,label in (("gemma_270m","270M"),("gemma_1b","1B")):

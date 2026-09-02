@@ -84,8 +84,16 @@ effects reduces \(R^2\) to -1.34 even as mean absolute error falls from 0.0178
 to 0.0113. The impressive aggregate \(R^2\) therefore chiefly reflects correct
 identification and sizing of the high-effect regime, not uniformly accurate
 ranking of small effects (@fig-gain B; full diagnostics in @fig-app-gain).
+The 20 visually near-diagonal effects are not accounting-oracle leakage: every
+one has both observed and predicted article-policy movement above 0.9, so both
+axes reduce approximately to the same prompt-specific continuation leverage.
+None uses the measured intervention margin or numerical clipping. A crossed
+feature-and-prompt bootstrap gives a wide 95% interval for aggregate \(R^2\),
+\([-0.293,0.986]\), reflecting that these large effects come from only two
+sparse features; the result therefore identifies a mechanistically coherent
+high-gain regime but does not establish broad feature-population precision.
 
-![Closed-loop gain and held-out prediction at Gemma 3 270M. A: attribution is calibrated to local causal pressure, then composed with decoder susceptibility and continuation leverage. B: the composition captures the large-effect regime under combined feature--prompt holdout; binned means include bootstrap intervals. Its high aggregate R2 is tail-sensitive, so it is not a claim of uniformly precise cell-level prediction.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=96%}
+![Closed-loop gain and held-out prediction at Gemma 3 270M. A: attribution is calibrated to local causal pressure, then composed with decoder susceptibility and continuation leverage. B: the composition captures the high-gain regime; orange cells have both observed and predicted article-policy movement above 0.9, while the inset resolves the low-effect cloud. Holdout excludes feature and prompt identity from causal-pressure calibration; intervention-off decoder susceptibility and branch leverage of the held-out prompt are permitted observed inputs. Aggregate R2 is tail-sensitive and is not a claim of uniformly precise cell-level prediction.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=96%}
 
 The identity itself is the law of total probability, not the novelty. The
 empirical contribution is identifying its mechanistically meaningful factors,
