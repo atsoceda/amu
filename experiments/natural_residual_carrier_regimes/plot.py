@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Main Figure 3: target-specific private influence under a fixed article."""
 from __future__ import annotations
 
 import json
@@ -7,49 +8,43 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
+EXP=Path(__file__).resolve().parent;ROOT=EXP.parents[1]
+OUT=ROOT/"manuscript/figures/fig_natural_carrier_regimes.png"
+BLUE,ORANGE="#1769aa","#d96c21"
 
-EXP_DIR = Path(__file__).resolve().parent
-ROOT = EXP_DIR.parents[1]
+def interval(values,seed):
+    values=np.asarray(values,dtype=float);rng=np.random.default_rng(seed)
+    draws=rng.choice(values,size=(10_000,values.size),replace=True).mean(axis=1)
+    return float(values.mean()),float(np.quantile(draws,.025)),float(np.quantile(draws,.975))
 
+def main():
+    rows270=json.loads((EXP/"results/rows.json").read_text())
+    rows1b=json.loads((ROOT/"experiments/gemma_1b_residual_scale/results/rows.json").read_text())
+    rows1b=[r for r in rows1b if r["strength"]==1.0]
+    data={"270M":rows270,"1B":rows1b};colors={"270M":BLUE,"1B":ORANGE}
+    fig,axes=plt.subplots(1,2,figsize=(10.8,3.55),gridspec_kw={"width_ratios":[1.35,1]})
 
-def main() -> None:
-    summary = json.loads((EXP_DIR / "results/summary.json").read_text())
-    regimes = ["between", "within"]
-    fig, axes = plt.subplots(1, 3, figsize=(10.4, 3.05))
-    x = np.arange(2)
-    axes[0].bar(x - .2, [summary["regimes"][r]["mediator_tv"]["mean"] for r in regimes], .4, label="Public-token relay")
-    axes[0].bar(x + .2, [summary["regimes"][r]["residual_tv"]["mean"] for r in regimes], .4, label="Fixed-token residual")
-    axes[0].set_xticks(x, ["Between class", "Within class"])
-    axes[0].set_ylabel("TV-vector magnitude")
-    axes[0].set_title("A  Same natural patch")
-    axes[0].legend(frameon=False, fontsize=7)
+    ax=axes[0];conditions=[("target_delta_delta","Target direction"),("wrong_target_delta_delta","Wrong target"),("sign_reversed_delta_delta","Sign reversed")]
+    x=np.arange(3);offsets={"270M":-.15,"1B":.15};rng=np.random.default_rng(20260902)
+    for model,rows in data.items():
+        for j,(key,_) in enumerate(conditions):
+            vals=np.asarray([r[key] for r in rows],dtype=float);jitter=rng.uniform(-.055,.055,size=vals.size)
+            ax.scatter(np.full(vals.size,x[j]+offsets[model])+jitter,vals,s=15,alpha=.38,color=colors[model])
+            mean,lo,hi=interval(vals,100+j+(0 if model=="270M" else 10))
+            ax.errorbar(x[j]+offsets[model],mean,yerr=[[mean-lo],[hi-mean]],fmt="o",ms=7,capsize=4,color=colors[model],label=model if j==0 else None,zorder=4)
+    ax.axhline(0,color="#263238",lw=.9);ax.set_xticks(x,[label for _,label in conditions]);ax.set_ylabel("Fixed-article target-minus-source change (logits)")
+    ax.set_title("A  Target-specific private control replicates",loc="left",weight="bold");ax.legend(frameon=False,title="Gemma 3")
 
-    keys = ["target_delta_delta", "wrong_target_delta_delta", "sign_reversed_delta_delta"]
-    labels = ["Target", "Wrong target", "Sign reversed"]
-    width = .24
-    for idx, (key, label) in enumerate(zip(keys, labels)):
-        axes[1].bar(x + (idx - 1) * width, [summary["regimes"][r][key]["mean"] for r in regimes], width, label=label)
-    axes[1].axhline(0, color="black", lw=.7)
-    axes[1].set_xticks(x, ["Between", "Within"])
-    axes[1].set_ylabel("Target-minus-source ΔΔ")
-    axes[1].set_title("B  Natural controls")
-    axes[1].legend(frameon=False, fontsize=7)
+    ax=axes[1];x=np.arange(2);width=.32
+    for i,model in enumerate(("270M","1B")):
+        rows=data[model];t=[r["target_logit_change"] for r in rows];s=[r["source_logit_change"] for r in rows]
+        for j,(vals,label,color) in enumerate(((t,"Target enhancement",BLUE),(s,"Source change","#7b3fb2"))):
+            mean,lo,hi=interval(vals,300+i*10+j);pos=x[i]+(j-.5)*width
+            ax.bar(pos,mean,width,color=color,label=label if i==0 else None)
+            ax.errorbar(pos,mean,yerr=[[mean-lo],[hi-mean]],fmt="none",ecolor="black",capsize=3,lw=1)
+    ax.axhline(0,color="#263238",lw=.9);ax.set_xticks(x,["270M","1B"]);ax.set_ylabel("Absolute noun-logit change")
+    ax.set_title("B  Mainly target enhancement",loc="left",weight="bold");ax.legend(frameon=False,fontsize=8)
+    for ax in axes:ax.spines[["top","right"]].set_visible(False);ax.grid(axis="y",alpha=.16);ax.tick_params(labelsize=8)
+    fig.tight_layout();fig.savefig(OUT,dpi=240,bbox_inches="tight");print(OUT)
 
-    width = .34
-    axes[2].bar(x - width/2, [summary["regimes"][r]["target_logit_change"]["mean"] for r in regimes], width, label="Target logit")
-    axes[2].bar(x + width/2, [summary["regimes"][r]["source_logit_change"]["mean"] for r in regimes], width, label="Source logit")
-    axes[2].axhline(0, color="black", lw=.7)
-    axes[2].set_xticks(x, ["Between", "Within"])
-    axes[2].set_ylabel("Absolute logit change")
-    axes[2].set_title("C  Enhancement vs suppression")
-    axes[2].legend(frameon=False, fontsize=7)
-    for ax in axes:
-        ax.spines[["top", "right"]].set_visible(False)
-    fig.tight_layout()
-    out = ROOT / "manuscript/figures/fig_natural_carrier_regimes.png"
-    fig.savefig(out, dpi=220, bbox_inches="tight")
-    print(out)
-
-
-if __name__ == "__main__":
-    main()
+if __name__=="__main__":main()

@@ -17,6 +17,11 @@ Phenocopy and rescue residual TVs are only 0.028 and 0.030. The `pilot` example
 therefore reads as a causal sequence: S1 changes `a` to `an`; `an` licenses the
 `aviator` continuation; returning `a` restores `pilot`.
 
+Across prompts, the vector decomposition confirms that this is not merely a
+top-token coincidence: public substitution reproduces nearly all of the total
+noun-distribution movement, whereas the matched fixed-token residual is small
+(@fig-s1 B).
+
 ![The sparse S1 intervention is an extreme public endpoint. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
 
 The magnitude is created at the latent-to-symbol boundary. On 19 bracketed
@@ -36,8 +41,12 @@ private persistence.
 
 ## Target information can remain privately effective
 
-Public dominance in S1 does not imply that a fixed article blocks upstream
-influence. A dense residual sensitivity reference first establishes
+The S1 result could still suggest that this task is fundamentally public:
+perhaps once the article is fixed, upstream state has little remaining control
+over the noun. We therefore ask the complementary question directly. Holding
+article identity fixed, can target-specific state at the pre-article position
+still alter the later lexical prediction? It can. A dense residual sensitivity
+reference first establishes
 reachability: on held-out same-article pairs, a target residual patch changes
 the target-minus-source noun logit by \(6.44\ [4.19,10.06]\), versus 0.14
 for matched-norm random directions.
@@ -53,7 +62,11 @@ private TV is 0.043--0.064, depending on condition. At \(\tau=1\), a
 graded public component also appears, so these patches are private-dominant at
 low temperature rather than exclusively private under every policy.
 
-The normalized assay replicates private target influence at Gemma 3 1B. Effect
+The target direction shifts the later noun substantially more than the
+wrong-target or sign-reversed controls at both scales (@fig-private A), and the
+movement arises primarily by enhancing the intended target rather than merely
+suppressing the source (@fig-private B). The normalized assay replicates private
+target influence at Gemma 3 1B. Effect
 sizes do not increase monotonically with scale, and we make no scale-law claim.
 Together with target, wrong-target, reverse, and random controls, the result
 establishes a second causal endpoint: target-relevant upstream state can affect
@@ -61,4 +74,4 @@ the noun while visible article identity is held constant. S1 and the residual
 patches need not implement the same mechanism; they demonstrate that both
 routes are available in the model-task system.
 
-![Natural-state-derived target residuals alter the intended noun under a fixed article and exceed wrong-target and sign-reversed controls. The intervention establishes private-route capacity at both Gemma scales, not a spontaneous carrier switch.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-private width=82%}
+![Target-specific private causal control. A: with article identity fixed, natural-state-derived target directions shift the target-minus-source noun contrast more than wrong-target and sign-reversed controls at both scales. B: the effect is primarily target enhancement rather than source suppression. Points are semantic families; intervals bootstrap families. These targeted patches establish private-route capacity, not a spontaneous carrier switch.](manuscript/figures/fig_natural_carrier_regimes.png){#fig-private width=94%}

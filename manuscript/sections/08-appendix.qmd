@@ -66,7 +66,11 @@ noun distributions. Retained article mass exceeds 0.998 at low temperature in
 the boundary assay. Policy-vector alignment with the total remains at least
 0.99 across tested temperatures; the private component remains small. These
 calculations evaluate the exact conditional mixture and introduce no sampling
-variance.
+variance. The strength-boundary and temperature sweeps make the same point
+visually: the total effect tracks the public component while the fixed-token
+leftover stays small (@fig-app-boundary).
+
+![S1 boundary and stochastic-policy robustness. A: a float32 final-head audit resolves the article margin more finely around the boundary. B: softening the article policy turns the discrete switch into graded probability movement. C: total influence shrinks with temperature, with the public component tracking it and the fixed-token residual remaining small.](manuscript/figures/fig_boundary_precision_policy.png){#fig-app-boundary width=95%}
 
 ## Private-route controls and scale
 
@@ -77,7 +81,11 @@ fraction of the baseline lexical gap closed, target-odds multiplier, patch norm
 relative to natural residual RMS, and stochastic public/private TVs. Controls
 include a semantic wrong target and sign reversal. The target effect is positive
 at both scales, while normalized comparisons do not support a monotone increase
-at 1B.
+at 1B. The fuller normalized comparison in @fig-app-private-scale shows both the
+cross-scale replication and the absence of a monotone scale trend; the control
+directions remain much weaker than the intended target direction.
+
+![Full cross-scale private-route comparison. Target-state-derived residual patches produce target-specific fixed-article effects at both Gemma 3 270M and 1B, while wrong-target and sign-reversed controls delimit specificity. Normalization does not support a monotone increase with scale.](manuscript/figures/fig_cross_scale_normalized_residual.png){#fig-app-private-scale width=95%}
 
 The stronger dense residual reference patches the decoder-layer output at the
 inserted article position. Four development pairs select layer 12; four held-out
@@ -110,8 +118,12 @@ At \(s=1,\tau=1\), the main route quantities are:
 Both signed simple effects have the predicted direction under exact sign flips,
 and the independent family-label interaction has exact two-sided
 \(p=0.00033\) over 3,003 assignments. The interaction remains positive for all
-12 strength-temperature settings. We archive the rejected bare-neutral output
+12 strength-temperature settings (@fig-app-synonym-robustness). This visual
+check shows that the sign reversal is not peculiar to one chosen strength or
+article-policy temperature. We archive the rejected bare-neutral output
 under `results_bare_neutral_invalid_support/` rather than silently replacing it.
+
+![Synonym-route robustness. Each cell is the between-minus-within signed route interaction across three patch strengths and four article-policy temperatures. All 12 prespecified settings are positive.](manuscript/figures/fig_neutral_synonym_robustness.png){#fig-app-synonym-robustness width=78%}
 
 ## Closed-loop gain validation
 
@@ -131,7 +143,15 @@ for 270M are:
 At \(\tau=0.1\), constant, susceptibility-only, leverage-only, and activation
 baselines have \(R^2=-0.052,-0.082,-0.053,-0.045\). The measured-margin/full-
 leverage calculation has \(R^2=1\) by identity and is not a prediction. At 1B,
-combined-holdout transfer is weak; we report that failure rather than pool scales.
+combined-holdout transfer is weak; we report that failure rather than pool
+scales. @fig-app-gain shows the complete diagnostic set: attribution has
+moderate local calibration (A), fixed-token attribution correlations are
+inconclusive (B), the full 270M composition outperforms simple baselines (C),
+bin means expose calibration across the dynamic range (D), tail removal exposes
+the aggregate \(R^2\)'s dependence on large effects (E), and temperature and
+scale checks delimit transfer (F).
+
+![Closed-loop gain diagnostics. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines. D: equal-count binned calibration. E: sensitivity of R2 to excluding the largest observed effects. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
 
 ## Sparse 1B ladder failures
 

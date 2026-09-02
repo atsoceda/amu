@@ -9,6 +9,7 @@ EXP=Path(__file__).resolve().parent
 S=json.loads((EXP/"results/summary.json").read_text())
 ROWS=json.loads((EXP/"results/rows.json").read_text())
 OUT=EXP.parents[1]/"manuscript/figures/fig_neutral_synonym_repair.png"
+ROBUST_OUT=EXP.parents[1]/"manuscript/figures/fig_neutral_synonym_robustness.png"
 PUBLIC,PRIVATE="#1769aa","#7b3fb2"
 
 def native_rows(regime):return [r for r in ROWS if r["regime"]==regime and r["strength"]==1.0]
@@ -26,11 +27,13 @@ def main():
         for r in native_rows(regime):
             st=r["stochastic"]["1.0"];values.append(st["public"]["target_minus_source"]-st["private"]["target_minus_source"])
             labels.append(f"{r['source_word']} → {r['target_word']}");colors.append(PUBLIC if regime=="between" else PRIVATE)
-    y=np.arange(len(values))[::-1];ax.axvline(0,color="#263238",lw=.9);ax.scatter(values,y,c=colors,s=30,zorder=3)
+    y=np.arange(len(values))[::-1];ax.axvline(0,color="#111111",lw=1.5);ax.scatter(values,y,c=colors,s=30,zorder=3)
     ax.set_yticks(y,labels,fontsize=6.8);ax.set_xlabel("Route contrast  $R=P-H$",fontsize=8.5)
     ax.set_title("B  Every family has the predicted sign",loc="left",weight="bold",fontsize=11)
-    ax.text(.76,.02,"public-dominant  →",transform=ax.transAxes,color=PUBLIC,fontsize=7.5,ha="center")
-    ax.text(.20,.02,"←  private-dominant",transform=ax.transAxes,color=PRIVATE,fontsize=7.5,ha="center")
+    ax.text(.76,.02,"PUBLIC-DOMINANT  →",transform=ax.transAxes,color=PUBLIC,fontsize=7.3,ha="center",weight="bold")
+    ax.text(.20,.02,"←  PRIVATE-DOMINANT",transform=ax.transAxes,color=PRIVATE,fontsize=7.3,ha="center",weight="bold")
+    ax.text(.02,.98,"Between  $n=6$",transform=ax.transAxes,color=PUBLIC,fontsize=7.5,va="top",weight="bold")
+    ax.text(.02,.53,"Within  $n=8$",transform=ax.transAxes,color=PRIVATE,fontsize=7.5,va="top",weight="bold")
     ax=fig.add_subplot(gs[2]);x=np.arange(2);width=.34
     for j,route in enumerate(("public","private")):
         blocks=[S["conditions"][f"{r}_1.0"]["temperatures"]["1.0"][f"{route}_target_minus_source"] for r in ("between","within")]
@@ -40,6 +43,15 @@ def main():
     ax.set_ylabel("Target-aligned probability effect",fontsize=8.5);ax.set_title("C  Signed double dissociation",loc="left",weight="bold",fontsize=11)
     ax.legend(frameon=False,fontsize=8);ax.text(.5,-.22,"interaction = .264  [.137, .399]",transform=ax.transAxes,ha="center",fontsize=8,weight="bold")
     for ax in fig.axes[1:]:ax.spines[["top","right"]].set_visible(False);ax.grid(axis="x" if ax is fig.axes[1] else "y",alpha=.16);ax.tick_params(labelsize=7.5)
-    fig.savefig(OUT,dpi=240,bbox_inches="tight");print(OUT)
+    fig.savefig(OUT,dpi=240,bbox_inches="tight");plt.close(fig);print(OUT)
+
+    strengths=(.5,1.0,1.5);taus=(.1,.25,.5,1.0)
+    heat=np.asarray([[S["interactions"][f"strength_{strength}"][str(tau)]["aligned_route_interaction"]["mean"] for tau in taus] for strength in strengths])
+    fig,ax=plt.subplots(figsize=(6.3,2.8));image=ax.imshow(heat,aspect="auto",cmap="PuBu",vmin=0)
+    for i in range(len(strengths)):
+        for j in range(len(taus)):ax.text(j,i,f"{heat[i,j]:.3f}",ha="center",va="center",color="white" if heat[i,j]>.16 else "#263238",fontsize=9,weight="bold")
+    ax.set_xticks(range(len(taus)),[str(t) for t in taus]);ax.set_yticks(range(len(strengths)),[str(s) for s in strengths]);ax.set_xlabel("Article-policy temperature");ax.set_ylabel("Patch strength")
+    ax.set_title("Between-minus-within target-aligned route interaction\n(all 12 settings are positive)",weight="bold",fontsize=10)
+    fig.colorbar(image,ax=ax,label="Route interaction",fraction=.05,pad=.04);fig.tight_layout();fig.savefig(ROBUST_OUT,dpi=240,bbox_inches="tight");plt.close(fig);print(ROBUST_OUT)
 
 if __name__=="__main__":main()

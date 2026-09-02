@@ -1,9 +1,11 @@
 # Mediator-relative routing
 
 The two endpoints leave a deeper question: what determines whether an
-intervention recruits the public route? The neutral synonym assay changes one
-property---whether article identity distinguishes the intended lexical
-alternatives---while keeping both alternatives correct.
+intervention recruits the public route? The neutral synonym assay compares two
+regimes defined by whether article identity distinguishes the intended lexical
+alternatives, while keeping both alternatives semantically correct and using
+the same intervention procedure. Concrete examples of the two mediator-relative
+regimes are shown in @fig-routing A.
 
 All 14 donor-derived directions pass held-out local efficacy. At native
 strength, fixed-target-article target-minus-source movement is
@@ -37,7 +39,9 @@ Every one of six between-class families has \(P-H>0\), and every one of eight
 within-class families has \(P-H<0\) (@fig-routing B). The between-minus-within
 route interaction is \(0.264\ [0.137,0.399]\); exact family-label permutation
 gives \(p=0.00033\). It remains positive at all tested strengths and
-temperatures.
+temperatures. The group estimates in @fig-routing C show that this interaction
+contains both arms of the predicted double dissociation rather than only one
+unusually strong group.
 
 The result supports a precise causal statement. When article identity can
 express the distinction between two correct alternatives, the intervention
@@ -45,18 +49,23 @@ recruits a target-aligned public relay. When the article maps both alternatives
 to one equivalence class, token identity cannot carry their lexical difference,
 and target-aligned influence persists privately. A generated token is therefore
 a lossy public projection relative to the downstream distinction of interest.
+We interpret the between-class effect as selective recruitment of an additional
+public causal route, not conservation or transfer of a fixed information
+quantity between public and private channels.
 The experiment does **not** show that a natural online mechanism spontaneously
 chooses a carrier: the residual direction is explicitly constructed from named
 donors, and between- and within-class sets contain different semantic families.
 
 # Closed-loop gain
 
-Mediator visibility explains which distinctions can travel publicly. Equation 1
-explains how large the public effect becomes once that route is engaged. The
-effect is the product of policy movement \(|q_1-q_0|\) and continuation leverage
-\(TV(Y_{an},Y_a)\). Policy movement itself depends on local intervention
-pressure, the baseline article margin, and temperature. Thus a feature's
-downstream effect is not a property of the feature alone.
+Mediator visibility explains which distinctions can travel publicly. But two
+interventions with equal local causal strength need not have equal behavioral
+effects: a decoder far from its decision boundary is insensitive to a modest
+margin shift, whereas a near-balanced decoder can amplify it, especially when
+the two continuation branches strongly disagree. Equation 1 makes this
+intuition exact. Public effect is local pressure translated through decoder
+susceptibility and multiplied by continuation leverage (@fig-gain A). Thus a
+feature's downstream effect is not a property of the feature alone.
 
 Across 32 held-out 270M features, article attribution predicts local
 intervention-induced margin change (Spearman
@@ -69,9 +78,14 @@ local margin pressure and composing it with decoder susceptibility gives
 calibration slope 0.960. The full composition remains
 \(R^2=0.840\)--0.875 across \(\tau=0.1\) to 1. Because `a/an` branch leverage
 is uniformly large, its incremental gain over susceptibility is modest; the
-task primarily stresses decoder sensitivity.
+task primarily stresses decoder sensitivity. At \(\tau=0.1\), however, rank
+correlation is only \(\rho=0.368\), and removing the largest 5% of observed
+effects reduces \(R^2\) to -1.34 even as mean absolute error falls from 0.0178
+to 0.0113. The impressive aggregate \(R^2\) therefore chiefly reflects correct
+identification and sizing of the high-effect regime, not uniformly accurate
+ranking of small effects (@fig-gain B; full diagnostics in @fig-app-gain).
 
-![Observed and predicted public effects under held-out feature--prompt evaluation. Attribution supplies local causal pressure; decoder susceptibility and continuation leverage convert it into downstream public influence. Transfer is strong at 270M and weak for the available 1B sparse handles.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=82%}
+![Closed-loop gain and held-out prediction at Gemma 3 270M. A: attribution is calibrated to local causal pressure, then composed with decoder susceptibility and continuation leverage. B: the composition captures the large-effect regime under combined feature--prompt holdout; binned means include bootstrap intervals. Its high aggregate R2 is tail-sensitive, so it is not a claim of uniformly precise cell-level prediction.](manuscript/figures/fig_attribution_channel_calibration.png){#fig-gain width=96%}
 
 The identity itself is the law of total probability, not the novelty. The
 empirical contribution is identifying its mechanistically meaningful factors,
@@ -83,14 +97,15 @@ a validated 270M gain account, not a universal predictor.
 # Validity stress test at 1B
 
 The sparse 1B campaign illustrates why the ladder's rungs cannot be collapsed.
-Attribution-selected candidates exist, but the frozen top-four intervention is
-locally weak: mean article-margin movement is 0.075 logits. An effect-matched
-24-feature coalition moves the margin but often makes `called` outrank both
-articles, exiting the binary assay's support. A constrained frontier feature
-preserves `a/an` support on all 20 prompts; it rarely changes the greedy article
-but its stochastic assay reveals low-amplitude hybrid transmission. These are
-three different scientific outcomes---weak handle, support-invalid estimand,
-and valid hybrid route---that would be conflated by reporting only free
-generation. Reconstruction and graph-coverage audits reduce, but do not remove,
+
+| Sparse handle | Local efficacy | `a/an` support | What follows? |
+|---|---:|---:|---|
+| Frozen top four | No: 0.075-logit mean movement | Yes | No route claim |
+| Effect-matched 24 | Yes | No: `called` often dominates | No binary route claim |
+| Constrained frontier | Yes | Yes: 20/20 prompts | Low-amplitude hybrid route |
+
+These distinct outcomes---weak handle, support-invalid estimand, and valid
+hybrid route---would be conflated by reporting only free generation.
+Reconstruction and graph-coverage audits reduce, but do not remove,
 instrumentation uncertainty. We use this campaign as a validity demonstration,
 not evidence that scale reorganizes sparse planning mechanisms.
