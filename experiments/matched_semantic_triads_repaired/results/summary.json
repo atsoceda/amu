@@ -1,0 +1,125 @@
+{
+  "experiment": "matched_semantic_triads_repaired_neutral",
+  "primary_setting": {
+    "layer": 17,
+    "strength": 1.0,
+    "temperature": 1.0
+  },
+  "n_triads": 14,
+  "paired_rows": [
+    {
+      "triad_id": "teaching",
+      "within_route_contrast": 0.008236955851316452,
+      "cross_route_contrast": 0.1774437576532364,
+      "paired_interaction": 0.16920680180191994,
+      "predicted_double_dissociation": false
+    },
+    {
+      "triad_id": "writing",
+      "within_route_contrast": -0.008712371811270714,
+      "cross_route_contrast": 0.1733604073524475,
+      "paired_interaction": 0.18207277916371822,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "performance",
+      "within_route_contrast": -0.08199984580278397,
+      "cross_route_contrast": 0.14495780691504478,
+      "paired_interaction": 0.22695765271782875,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "events",
+      "within_route_contrast": -0.13564816117286682,
+      "cross_route_contrast": 0.07384225353598595,
+      "paired_interaction": 0.20949041470885277,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "leadership",
+      "within_route_contrast": -0.0036939792335033417,
+      "cross_route_contrast": -0.0007314393296837807,
+      "paired_interaction": 0.002962539903819561,
+      "predicted_double_dissociation": false
+    },
+    {
+      "triad_id": "academia",
+      "within_route_contrast": -0.08186811208724976,
+      "cross_route_contrast": -0.010556957218796015,
+      "paired_interaction": 0.07131115486845374,
+      "predicted_double_dissociation": false
+    },
+    {
+      "triad_id": "art",
+      "within_route_contrast": 0.04410562291741371,
+      "cross_route_contrast": 0.2145845741033554,
+      "paired_interaction": 0.1704789511859417,
+      "predicted_double_dissociation": false
+    },
+    {
+      "triad_id": "police",
+      "within_route_contrast": -0.036474152468144894,
+      "cross_route_contrast": 0.00041669211350381374,
+      "paired_interaction": 0.03689084458164871,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "speaking",
+      "within_route_contrast": -0.012760046869516373,
+      "cross_route_contrast": 0.2326950579881668,
+      "paired_interaction": 0.24545510485768318,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "employment",
+      "within_route_contrast": -0.029093697667121887,
+      "cross_route_contrast": 0.02999342978000641,
+      "paired_interaction": 0.059087127447128296,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "ownership",
+      "within_route_contrast": -0.0024117250577546656,
+      "cross_route_contrast": -0.004750527441501617,
+      "paired_interaction": -0.002338802383746952,
+      "predicted_double_dissociation": false
+    },
+    {
+      "triad_id": "invention",
+      "within_route_contrast": -0.051496801897883415,
+      "cross_route_contrast": 0.09128013253211975,
+      "paired_interaction": 0.14277693443000317,
+      "predicted_double_dissociation": true
+    },
+    {
+      "triad_id": "students",
+      "within_route_contrast": 0.001441543223336339,
+      "cross_route_contrast": 0.0751185268163681,
+      "paired_interaction": 0.07367698359303176,
+      "predicted_double_dissociation": false
+    },
+    {
+      "triad_id": "management",
+      "within_route_contrast": -0.06294870190322399,
+      "cross_route_contrast": 0.02280457317829132,
+      "paired_interaction": 0.08575327508151531,
+      "predicted_double_dissociation": true
+    }
+  ],
+  "paired_interaction": {
+    "n": 14,
+    "mean": 0.11955584013984273,
+    "lo": 0.07845150615737241,
+    "hi": 0.16127613753945166,
+    "method": "paired semantic-triad bootstrap",
+    "resamples": 10000
+  },
+  "paired_interaction_exact_sign_flip": {
+    "observed": 0.11955584013984273,
+    "one_sided_p": 0.0001220703125,
+    "two_sided_p": 0.000244140625,
+    "assignments": 16384
+  },
+  "double_dissociation_n": 8,
+  "route_outcomes_used_for_selection": false
+}

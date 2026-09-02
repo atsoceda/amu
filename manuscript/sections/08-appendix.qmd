@@ -15,6 +15,8 @@ directories.
 | Decoder boundary and precision | `experiments/boundary_precision_policy/results/` |
 | Private residual references | `experiments/natural_residual_carrier_regimes/results/` and `experiments/cross_scale_normalized_residual/results/` |
 | Neutral synonym routing | `experiments/neutral_synonym_repair/results/` |
+| Matched semantic-triad routing | `experiments/matched_semantic_triads_repaired/results/` |
+| Independent Figure 4 recomputation | `experiments/neutral_synonym_repair/results/independent_recomputation.json` |
 | Closed-loop gain | `experiments/closed_loop_gain_law/results/` |
 | Sparse 1B stress tests | `experiments/gemma_1b_effect_matched/results/` and `experiments/gemma_1b_sparse_frontier/results/` |
 
@@ -122,6 +124,27 @@ and the independent family-label interaction has exact two-sided
 check shows that the sign reversal is not peculiar to one chosen strength or
 article-policy temperature. We archive the rejected bare-neutral output
 under `results_bare_neutral_invalid_support/` rather than silently replacing it.
+
+The repaired paired extension freezes 22 candidate semantic triads before
+screening. Fourteen pass the route-blind tokenization, local-efficacy, and
+article-support criteria. Each retained definition is evaluated from the same
+source word and neutral prompt with one same-article and one cross-article
+target. At \(s=1,\tau=1\), within-class \(R=P-H\) is
+\(-0.032\ [-0.057,-0.010]\), cross-class \(R\) is
+\(0.087\ [0.046,0.132]\), and their paired difference is
+\(0.120\ [0.077,0.161]\). Thirteen of 14 paired shifts are positive (exact
+one-sided sign-flip \(p=0.00012\)); eight have the strict double-dissociation
+sign. The paired interaction remains positive at every combination of three
+strengths and four temperatures. This is the primary control for semantic-family
+composition in the mediator-relative claim.
+
+An independent, artifact-only recomputation imports none of the experiment's
+analysis or plotting code. Starting from frozen row-level outputs, it reproduces
+all 14 local-efficacy checks, article-support statistics, per-family route
+effects, 6/6 and 8/8 original signs, bootstrap summaries, exact sign-flip tests,
+the 0.264 independent-group interaction, and its exact \(p=0.00033\) label
+permutation test. It fails if any recomputed headline differs from the frozen
+summary beyond \(10^{-12}\).
 
 ![Synonym-route robustness. Each cell is the between-minus-within signed route interaction across three patch strengths and four article-policy temperatures. All 12 prespecified settings are positive.](manuscript/figures/fig_neutral_synonym_robustness.png){#fig-app-synonym-robustness width=78%}
 

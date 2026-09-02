@@ -1,0 +1,240 @@
+{
+  "runner": "independent artifact-only Figure 4 recomputation",
+  "inputs": [
+    "results/rows.json",
+    "results/screen_rows.json"
+  ],
+  "imports_experiment_code": false,
+  "primary_setting": {
+    "strength": 1.0,
+    "temperature": 1.0
+  },
+  "groups": {
+    "between": {
+      "n": 6,
+      "local_efficacy_pass_n": 6,
+      "local_efficacy": {
+        "n": 6,
+        "mean": 0.40625,
+        "lo": 0.28125,
+        "hi": 0.6041666666666666,
+        "resamples": 10000
+      },
+      "mean_off_article_mass": 0.9160466194152832,
+      "minimum_off_article_mass": 0.8871256113052368,
+      "mean_on_article_mass": 0.9082583089669546,
+      "public_target_effect": 0.18913513080527386,
+      "private_target_effect": 0.01877725962549448,
+      "route_contrasts": [
+        0.007548246532678604,
+        0.41382063925266266,
+        0.0033172816038131714,
+        0.20155982673168182,
+        0.07263264060020447,
+        0.3232685923576355
+      ],
+      "predicted_sign_n": 6,
+      "signed_simple_effect": {
+        "n": 6,
+        "mean": 0.17035787117977938,
+        "lo": 0.04932058726747831,
+        "hi": 0.29563976389666397,
+        "resamples": 10000
+      },
+      "signed_simple_exact": {
+        "observed": 0.17035787117977938,
+        "one_sided_p": 0.015625,
+        "two_sided_p": 0.03125,
+        "assignments": 64
+      },
+      "families": [
+        {
+          "pair_id": "planning_planner_organizer",
+          "public_target_effect": 0.020473090931773186,
+          "private_target_effect": 0.012924844399094582,
+          "route_contrast_public_minus_private": 0.007548246532678604,
+          "off_article_mass": 0.9286868572235107,
+          "on_article_mass": 0.9289591312408447,
+          "local_efficacy": 0.875
+        },
+        {
+          "pair_id": "business_businessman_entrepreneur",
+          "public_target_effect": 0.4302957057952881,
+          "private_target_effect": 0.016475066542625427,
+          "route_contrast_public_minus_private": 0.41382063925266266,
+          "off_article_mass": 0.8871256113052368,
+          "on_article_mass": 0.8785828351974487,
+          "local_efficacy": 0.25
+        },
+        {
+          "pair_id": "direction_director_executive",
+          "public_target_effect": 0.010923441499471664,
+          "private_target_effect": 0.007606159895658493,
+          "route_contrast_public_minus_private": 0.0033172816038131714,
+          "off_article_mass": 0.887387752532959,
+          "on_article_mass": 0.8869357705116272,
+          "local_efficacy": 0.375
+        },
+        {
+          "pair_id": "performance_performer_entertainer",
+          "public_target_effect": 0.2498578429222107,
+          "private_target_effect": 0.04829801619052887,
+          "route_contrast_public_minus_private": 0.20155982673168182,
+          "off_article_mass": 0.9553595781326294,
+          "on_article_mass": 0.9263328909873962,
+          "local_efficacy": 0.375
+        },
+        {
+          "pair_id": "teaching_teacher_educator",
+          "public_target_effect": 0.08026988804340363,
+          "private_target_effect": 0.007637247443199158,
+          "route_contrast_public_minus_private": 0.07263264060020447,
+          "off_article_mass": 0.9394680261611938,
+          "on_article_mass": 0.9087091684341431,
+          "local_efficacy": 0.25
+        },
+        {
+          "pair_id": "painting_painter_artist",
+          "public_target_effect": 0.34299081563949585,
+          "private_target_effect": 0.01972222328186035,
+          "route_contrast_public_minus_private": 0.3232685923576355,
+          "off_article_mass": 0.8982518911361694,
+          "on_article_mass": 0.9200300574302673,
+          "local_efficacy": 0.3125
+        }
+      ]
+    },
+    "within": {
+      "n": 8,
+      "local_efficacy_pass_n": 8,
+      "local_efficacy": {
+        "n": 8,
+        "mean": 0.4140625,
+        "lo": 0.296875,
+        "hi": 0.5546875,
+        "resamples": 10000
+      },
+      "mean_off_article_mass": 0.9038235023617744,
+      "minimum_off_article_mass": 0.8537607192993164,
+      "mean_on_article_mass": 0.8914055526256561,
+      "public_target_effect": -0.0008560263813706115,
+      "private_target_effect": 0.09328074380755424,
+      "route_contrasts": [
+        -0.14411985874176025,
+        -0.09695062041282654,
+        -0.10138523578643799,
+        -0.07855185866355896,
+        -0.11162165552377701,
+        -0.03881288191769272,
+        -0.014762859791517258,
+        -0.16688919067382812
+      ],
+      "predicted_sign_n": 8,
+      "signed_simple_effect": {
+        "n": 8,
+        "mean": 0.09413677018892486,
+        "lo": 0.06003221728315111,
+        "hi": 0.12631593365222216,
+        "resamples": 10000
+      },
+      "signed_simple_exact": {
+        "observed": 0.09413677018892486,
+        "one_sided_p": 0.00390625,
+        "two_sided_p": 0.0078125,
+        "assignments": 256
+      },
+      "families": [
+        {
+          "pair_id": "driving_driver_chauffeur",
+          "public_target_effect": -0.00725245475769043,
+          "private_target_effect": 0.13686740398406982,
+          "route_contrast_public_minus_private": -0.14411985874176025,
+          "off_article_mass": 0.8939134478569031,
+          "on_article_mass": 0.8924089670181274,
+          "local_efficacy": 0.5
+        },
+        {
+          "pair_id": "hair_barber_hairdresser",
+          "public_target_effect": 0.0,
+          "private_target_effect": 0.09695062041282654,
+          "route_contrast_public_minus_private": -0.09695062041282654,
+          "off_article_mass": 0.8537607192993164,
+          "on_article_mass": 0.8425503969192505,
+          "local_efficacy": 0.375
+        },
+        {
+          "pair_id": "medicine_doctor_physician",
+          "public_target_effect": 0.0,
+          "private_target_effect": 0.10138523578643799,
+          "route_contrast_public_minus_private": -0.10138523578643799,
+          "off_article_mass": 0.940782368183136,
+          "on_article_mass": 0.9310028553009033,
+          "local_efficacy": 0.25
+        },
+        {
+          "pair_id": "news_reporter_journalist",
+          "public_target_effect": 0.0,
+          "private_target_effect": 0.07855185866355896,
+          "route_contrast_public_minus_private": -0.07855185866355896,
+          "off_article_mass": 0.9368342161178589,
+          "on_article_mass": 0.9326645135879517,
+          "local_efficacy": 0.25
+        },
+        {
+          "pair_id": "management_supervisor_manager",
+          "public_target_effect": 0.0,
+          "private_target_effect": 0.11162165552377701,
+          "route_contrast_public_minus_private": -0.11162165552377701,
+          "off_article_mass": 0.9193851351737976,
+          "on_article_mass": 0.9179175496101379,
+          "local_efficacy": 0.5
+        },
+        {
+          "pair_id": "sales_vendor_salesperson",
+          "public_target_effect": 0.0018952538957819343,
+          "private_target_effect": 0.040708135813474655,
+          "route_contrast_public_minus_private": -0.03881288191769272,
+          "off_article_mass": 0.894951581954956,
+          "on_article_mass": 0.8385310769081116,
+          "local_efficacy": 0.8125
+        },
+        {
+          "pair_id": "therapy_therapist_counselor",
+          "public_target_effect": 0.0,
+          "private_target_effect": 0.014762859791517258,
+          "route_contrast_public_minus_private": -0.014762859791517258,
+          "off_article_mass": 0.8721068501472473,
+          "on_article_mass": 0.8569129705429077,
+          "local_efficacy": 0.25
+        },
+        {
+          "pair_id": "writing_writer_novelist",
+          "public_target_effect": -0.0014910101890563965,
+          "private_target_effect": 0.16539818048477173,
+          "route_contrast_public_minus_private": -0.16688919067382812,
+          "off_article_mass": 0.9188537001609802,
+          "on_article_mass": 0.9192560911178589,
+          "local_efficacy": 0.375
+        }
+      ]
+    }
+  },
+  "interaction": {
+    "mean": 0.26449464136870426,
+    "lo": 0.13721435454984507,
+    "hi": 0.39934404054656625,
+    "exact_permutation": {
+      "observed": 0.26449464136870426,
+      "two_sided_p": 0.000333000333000333,
+      "assignments": 3003
+    }
+  },
+  "article_support": {
+    "n": 14,
+    "mean_off_mass": 0.9090619810989925,
+    "minimum_off_mass": 0.8537607192993164,
+    "mean_on_mass": 0.8986281624862126,
+    "minimum_on_mass": 0.8385310769081116
+  },
+  "all_checks_passed": true
+}

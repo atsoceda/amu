@@ -29,9 +29,9 @@ switches the article and mean policy movement is 0.009. Public TV is
 approximately zero \(-0.001\ [-0.003,0.001]\), while private target-aligned
 influence is \(0.093\ [0.062,0.124]\).
 
-![Mediator-relative route recruitment in Gemma 3 1B. A: between-class synonyms differ in public article identity; within-class synonyms do not. B: each family's signed route contrast \(R=P-H\) has the predicted sign. C: group estimates show both arms of the double dissociation.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
+![Mediator-relative route recruitment in Gemma 3 1B. A: between-class synonyms differ in public article identity; within-class synonyms do not. B: each family's signed route contrast \(R=P-H\) has the predicted sign in the original independent-family assay. C: a repaired paired assay compares same- and cross-article targets for each of 14 semantic families; lines connect measurements sharing the same neutral prompt, source state, and source word. Diamonds and bars show means and paired-bootstrap 95% intervals.](manuscript/figures/fig_neutral_synonym_repair.png){#fig-routing width=100%}
 
-The primary signed simple effects support a double dissociation. Between
+The original primary signed simple effects support a double dissociation. Between
 classes, public-minus-private target influence is
 \(0.170\ [0.049,0.296]\), exact one-sided sign-flip \(p=0.0156\). Within class,
 private-minus-public influence is \(0.094\ [0.060,0.126]\), \(p=0.00391\).
@@ -39,9 +39,22 @@ Every one of six between-class families has \(P-H>0\), and every one of eight
 within-class families has \(P-H<0\) (@fig-routing B). The between-minus-within
 route interaction is \(0.264\ [0.137,0.399]\); exact family-label permutation
 gives \(p=0.00033\). It remains positive at all tested strengths and
-temperatures. The group estimates in @fig-routing C show that this interaction
-contains both arms of the predicted double dissociation rather than only one
-unusually strong group.
+temperatures.
+
+A repaired paired test removes the remaining semantic-family confound
+(@fig-routing C). Fourteen neutral prompts each share the same definition,
+source word, source donor, and evaluated state across one same-article and one
+cross-article target; screening used only tokenization, local efficacy, and
+mediator support, never route sign. At the fixed primary setting
+\(\ell=17,s=1,\tau=1\), mean \(R\) changes from
+\(-0.032\ [-0.057,-0.010]\) within class to
+\(0.087\ [0.046,0.132]\) across classes. The paired shift is
+\(0.120\ [0.077,0.161]\): 13/14 families shift in the predicted direction
+(exact one-sided sign-flip \(p=0.00012\)), and 8/14 individually show the strict
+sign reversal \(R_{\rm within}<0<R_{\rm cross}\). The mean paired interaction
+remains positive at all 12 tested strength--temperature settings. Thus crossing
+the article mediator's equivalence boundary changes route dominance on average
+while holding semantic family and source realization fixed.
 
 The result supports a precise causal statement. When article identity can
 express the distinction between two correct alternatives, the intervention
@@ -54,7 +67,8 @@ public causal route, not conservation or transfer of a fixed information
 quantity between public and private channels.
 The experiment does **not** show that a natural online mechanism spontaneously
 chooses a carrier: the residual direction is explicitly constructed from named
-donors, and between- and within-class sets contain different semantic families.
+donors. The paired result identifies mediator-relative route recruitment under
+controlled interventions, not a sparse endogenous routing controller.
 
 # Closed-loop gain
 
@@ -100,7 +114,8 @@ empirical contribution is identifying its mechanistically meaningful factors,
 measuring them separately, and showing out-of-sample prediction beyond simple
 baselines. The same attribution calibration transfers weakly at 1B, where the
 full model is not reliably predictive under combined holdout. We therefore claim
-a validated 270M gain account, not a universal predictor.
+limited predictive validation of a mechanistically coherent 270M high-gain
+regime, not a universal predictor.
 
 # Validity stress test at 1B
 

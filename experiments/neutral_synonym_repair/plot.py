@@ -10,6 +10,7 @@ S=json.loads((EXP/"results/summary.json").read_text())
 ROWS=json.loads((EXP/"results/rows.json").read_text())
 OUT=EXP.parents[1]/"manuscript/figures/fig_neutral_synonym_repair.png"
 ROBUST_OUT=EXP.parents[1]/"manuscript/figures/fig_neutral_synonym_robustness.png"
+TRIAD_ANALYSIS=json.loads((EXP.parent/"matched_semantic_triads_repaired/results/analysis.json").read_text())
 PUBLIC,PRIVATE="#1769aa","#7b3fb2"
 
 def native_rows(regime):return [r for r in ROWS if r["regime"]==regime and r["strength"]==1.0]
@@ -34,14 +35,18 @@ def main():
     ax.text(.20,.02,"←  PRIVATE-DOMINANT",transform=ax.transAxes,color=PRIVATE,fontsize=7.3,ha="center",weight="bold")
     ax.text(.02,.98,"Between  $n=6$",transform=ax.transAxes,color=PUBLIC,fontsize=7.5,va="top",weight="bold")
     ax.text(.02,.53,"Within  $n=8$",transform=ax.transAxes,color=PRIVATE,fontsize=7.5,va="top",weight="bold")
-    ax=fig.add_subplot(gs[2]);x=np.arange(2);width=.34
-    for j,route in enumerate(("public","private")):
-        blocks=[S["conditions"][f"{r}_1.0"]["temperatures"]["1.0"][f"{route}_target_minus_source"] for r in ("between","within")]
-        means=[b["mean"] for b in blocks];errors=np.array([[b["mean"]-b["lo"] for b in blocks],[b["hi"]-b["mean"] for b in blocks]])
-        ax.bar(x+(j-.5)*width,means,width,yerr=errors,capsize=3,color=PUBLIC if route=="public" else PRIVATE,label=route.title())
-    ax.axhline(0,color="#263238",lw=.8);ax.set_xticks(x,["Between\n(a → an)","Within\n(a → a)"],fontsize=8)
-    ax.set_ylabel("Target-aligned probability effect",fontsize=8.5);ax.set_title("C  Signed double dissociation",loc="left",weight="bold",fontsize=11)
-    ax.legend(frameon=False,fontsize=8);ax.text(.5,-.22,"interaction = .264  [.137, .399]",transform=ax.transAxes,ha="center",fontsize=8,weight="bold")
+    ax=fig.add_subplot(gs[2]);primary=TRIAD_ANALYSIS["settings"]["1.0"]["1.0"]
+    for row in primary["rows"]:
+        ax.plot([0,1],[row["within"],row["cross"]],color="#78909c",alpha=.55,lw=1)
+        ax.scatter([0],[row["within"]],color=PRIVATE,s=15,alpha=.75,zorder=3)
+        ax.scatter([1],[row["cross"]],color=PUBLIC,s=15,alpha=.75,zorder=3)
+    for x0,key,color in ((0,"within_route",PRIVATE),(1,"cross_route",PUBLIC)):
+        block=primary[key]
+        ax.errorbar(x0,block["mean"],yerr=[[block["mean"]-block["lo"]],[block["hi"]-block["mean"]]],
+                    fmt="D",ms=6,capsize=4,color=color,mec="white",mew=.5,zorder=5)
+    ax.axhline(0,color="#263238",lw=1.2);ax.set_xlim(-.22,1.22);ax.set_xticks([0,1],["Within class\n(same article)","Cross class\n(other article)"],fontsize=8)
+    ax.set_ylabel("Route contrast  $R=P-H$",fontsize=8.5);ax.set_title("C  Paired within-family test ($n=14$)",loc="left",weight="bold",fontsize=11)
+    effect=primary["paired_interaction"];ax.text(.5,-.22,f"paired shift = {effect['mean']:.3f}  [{effect['lo']:.3f}, {effect['hi']:.3f}]",transform=ax.transAxes,ha="center",fontsize=8,weight="bold")
     for ax in fig.axes[1:]:ax.spines[["top","right"]].set_visible(False);ax.grid(axis="x" if ax is fig.axes[1] else "y",alpha=.16);ax.tick_params(labelsize=7.5)
     fig.savefig(OUT,dpi=240,bbox_inches="tight");plt.close(fig);print(OUT)
 

@@ -71,6 +71,15 @@ effects and define route contrast \(R=P-H\). Between-class families predict
 \(R>0\); within-class families predict \(R<0\). The interaction compares the two
 groups, while exact within-family sign flips test each simple effect separately.
 
+The repaired matched-triad test holds semantic family, definition, source word,
+source donor, and evaluated prompt fixed while comparing one same-article and
+one cross-article target. Its route-blind admissibility screen uses only
+single-token lexical realization, positive fixed-target-article local efficacy,
+and retained article support. The prespecified paired estimand is
+\(R_{\rm cross}-R_{\rm within}\), tested by a paired semantic-family bootstrap
+and an exact one-sided sign-flip test. Fourteen of 22 frozen candidate triads
+pass the screen, exceeding the minimum gate of eight.
+
 ## Closed-loop gain prediction
 
 For 32 sparse features selected on disjoint occupations, attribution is

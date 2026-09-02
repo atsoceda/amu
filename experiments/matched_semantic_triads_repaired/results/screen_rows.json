@@ -1,0 +1,1388 @@
+[
+  {
+    "triad_id": "teaching",
+    "definition": "Someone whose occupation is teaching students",
+    "words": {
+      "source": "teacher",
+      "within": "tutor",
+      "cross": "educator"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.5,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9327670335769653,
+          "article_top": true,
+          "a_logit": 21.75,
+          "an_logit": 19.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9356460571289062,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 19.0
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9327670335769653,
+          "article_top": true,
+          "a_logit": 21.75,
+          "an_logit": 19.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.912952184677124,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 19.5
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "legal",
+    "definition": "Someone qualified to give legal advice and represent clients",
+    "words": {
+      "source": "lawyer",
+      "within": "counsel",
+      "cross": "attorney"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9214171171188354,
+          "article_top": true,
+          "a_logit": 22.5,
+          "an_logit": 20.375
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9104994535446167,
+          "article_top": true,
+          "a_logit": 22.375,
+          "an_logit": 20.875
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.0,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9214171171188354,
+          "article_top": true,
+          "a_logit": 22.5,
+          "an_logit": 20.375
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9356249570846558,
+          "article_top": true,
+          "a_logit": 22.125,
+          "an_logit": 21.125
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "medicine",
+    "definition": "Someone qualified to practice medicine and treat patients",
+    "words": {
+      "source": "doctor",
+      "within": "physician",
+      "cross": "internist"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": false
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9078363180160522,
+          "article_top": true,
+          "a_logit": 22.5,
+          "an_logit": 17.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9105339646339417,
+          "article_top": true,
+          "a_logit": 22.125,
+          "an_logit": 17.25
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.6875,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9078363180160522,
+          "article_top": true,
+          "a_logit": 22.5,
+          "an_logit": 17.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9041907787322998,
+          "article_top": true,
+          "a_logit": 21.625,
+          "an_logit": 18.75
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "writing",
+    "definition": "Someone whose job is to create written works",
+    "words": {
+      "source": "writer",
+      "within": "novelist",
+      "cross": "author"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.5,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9225390553474426,
+          "article_top": true,
+          "a_logit": 21.625,
+          "an_logit": 19.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8853524923324585,
+          "article_top": true,
+          "a_logit": 21.875,
+          "an_logit": 19.75
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9225390553474426,
+          "article_top": true,
+          "a_logit": 21.625,
+          "an_logit": 19.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9306141138076782,
+          "article_top": true,
+          "a_logit": 21.875,
+          "an_logit": 20.5
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "performance",
+    "definition": "Someone whose occupation is performing for an audience",
+    "words": {
+      "source": "actor",
+      "within": "entertainer",
+      "cross": "performer"
+    },
+    "articles": {
+      "source": "an",
+      "within": "an",
+      "cross": "a"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.75,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9553595781326294,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 19.875
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9563876390457153,
+          "article_top": true,
+          "a_logit": 20.875,
+          "an_logit": 19.75
+        }
+      },
+      "cross": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.5,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9553595781326294,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 19.875
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.974102258682251,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.5
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "assistance",
+    "definition": "Someone whose role is to help another person with their work",
+    "words": {
+      "source": "aide",
+      "within": "assistant",
+      "cross": "helper"
+    },
+    "articles": {
+      "source": "an",
+      "within": "an",
+      "cross": "a"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8334949612617493,
+          "article_top": true,
+          "a_logit": 20.875,
+          "an_logit": 18.625
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.7991328835487366,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 18.75
+        }
+      },
+      "cross": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.4375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8334949612617493,
+          "article_top": true,
+          "a_logit": 20.875,
+          "an_logit": 18.625
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.7655385136604309,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 17.5
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "events",
+    "definition": "Someone whose job is arranging and coordinating events",
+    "words": {
+      "source": "coordinator",
+      "within": "planner",
+      "cross": "organizer"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.875,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9258562922477722,
+          "article_top": true,
+          "a_logit": 20.5,
+          "an_logit": 19.375
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.947962760925293,
+          "article_top": true,
+          "a_logit": 20.875,
+          "an_logit": 19.875
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.4375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9258562922477722,
+          "article_top": true,
+          "a_logit": 20.5,
+          "an_logit": 19.375
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9433351755142212,
+          "article_top": true,
+          "a_logit": 20.375,
+          "an_logit": 20.0
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "leadership",
+    "definition": "Someone who directs an organization and its workers",
+    "words": {
+      "source": "leader",
+      "within": "boss",
+      "cross": "executive"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.4375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9235244393348694,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 19.875
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9158270359039307,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 20.125
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.3125,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9235244393348694,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 19.875
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.908082127571106,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 20.0
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "academia",
+    "definition": "Someone who conducts systematic study to create knowledge",
+    "words": {
+      "source": "researcher",
+      "within": "scientist",
+      "cross": "academic"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.5,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8836023211479187,
+          "article_top": true,
+          "a_logit": 21.125,
+          "an_logit": 19.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8875113725662231,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.75
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.625,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8836023211479187,
+          "article_top": true,
+          "a_logit": 21.125,
+          "an_logit": 19.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8823854923248291,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 19.625
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "agriculture",
+    "definition": "Someone whose occupation is cultivating land and raising crops",
+    "words": {
+      "source": "farmer",
+      "within": "grower",
+      "cross": "agriculturist"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": false
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.3125,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8715193867683411,
+          "article_top": true,
+          "a_logit": 21.75,
+          "an_logit": 19.25
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8712614178657532,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 19.0
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8715193867683411,
+          "article_top": true,
+          "a_logit": 21.75,
+          "an_logit": 19.25
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8340723514556885,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 19.375
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "business",
+    "definition": "Someone who establishes and operates a business",
+    "words": {
+      "source": "founder",
+      "within": "businessperson",
+      "cross": "entrepreneur"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": false,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.1875,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9074308276176453,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 20.25
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9028537273406982,
+          "article_top": true,
+          "a_logit": 21.875,
+          "an_logit": 20.0
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.0625,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9074308276176453,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 20.25
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8476738929748535,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 21.0
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "art",
+    "definition": "Someone whose occupation is creating visual artwork",
+    "words": {
+      "source": "artist",
+      "within": "illustrator",
+      "cross": "painter"
+    },
+    "articles": {
+      "source": "an",
+      "within": "an",
+      "cross": "a"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.5,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9090346097946167,
+          "article_top": true,
+          "a_logit": 21.125,
+          "an_logit": 21.125
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8955186605453491,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 20.5
+        }
+      },
+      "cross": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.3125,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9090346097946167,
+          "article_top": true,
+          "a_logit": 21.125,
+          "an_logit": 21.125
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8883265256881714,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 19.875
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "police",
+    "definition": "Someone whose job is to enforce the law",
+    "words": {
+      "source": "cop",
+      "within": "policeman",
+      "cross": "officer"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.1875,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9211403727531433,
+          "article_top": true,
+          "a_logit": 22.125,
+          "an_logit": 18.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9073777198791504,
+          "article_top": true,
+          "a_logit": 22.25,
+          "an_logit": 18.5
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.0625,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9211403727531433,
+          "article_top": true,
+          "a_logit": 22.125,
+          "an_logit": 18.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9236568808555603,
+          "article_top": true,
+          "a_logit": 22.25,
+          "an_logit": 18.875
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "speaking",
+    "definition": "Someone who addresses an audience",
+    "words": {
+      "source": "speaker",
+      "within": "presenter",
+      "cross": "orator"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.125,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9804051518440247,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.375
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9804297685623169,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.25
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.625,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9804051518440247,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.375
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9744855165481567,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 20.0
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "employment",
+    "definition": "Someone employed to perform labor for an organization",
+    "words": {
+      "source": "worker",
+      "within": "laborer",
+      "cross": "employee"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.125,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8581572771072388,
+          "article_top": true,
+          "a_logit": 20.375,
+          "an_logit": 19.875
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8716192245483398,
+          "article_top": true,
+          "a_logit": 20.25,
+          "an_logit": 19.375
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8581572771072388,
+          "article_top": true,
+          "a_logit": 20.375,
+          "an_logit": 19.875
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8443890810012817,
+          "article_top": true,
+          "a_logit": 20.25,
+          "an_logit": 19.875
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "ownership",
+    "definition": "Someone who possesses a business or property",
+    "words": {
+      "source": "proprietor",
+      "within": "holder",
+      "cross": "owner"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.886688768863678,
+          "article_top": true,
+          "a_logit": 20.375,
+          "an_logit": 18.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9151880145072937,
+          "article_top": true,
+          "a_logit": 20.625,
+          "an_logit": 18.0
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.886688768863678,
+          "article_top": true,
+          "a_logit": 20.375,
+          "an_logit": 18.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8919312953948975,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 18.5
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "invention",
+    "definition": "Someone who creates an original device or method",
+    "words": {
+      "source": "inventor",
+      "within": "innovator",
+      "cross": "creator"
+    },
+    "articles": {
+      "source": "an",
+      "within": "an",
+      "cross": "a"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.625,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9337060451507568,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 21.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9362809658050537,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 20.75
+        }
+      },
+      "cross": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.4375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9337060451507568,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 21.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9490780234336853,
+          "article_top": true,
+          "a_logit": 22.0,
+          "an_logit": 21.0
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "students",
+    "definition": "Someone who is studying at a school or university",
+    "words": {
+      "source": "student",
+      "within": "pupil",
+      "cross": "undergraduate"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.0625,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8827040195465088,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 18.25
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.859621524810791,
+          "article_top": true,
+          "a_logit": 21.0,
+          "an_logit": 18.0
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8827040195465088,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 18.25
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8550016283988953,
+          "article_top": true,
+          "a_logit": 20.75,
+          "an_logit": 18.875
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "driving",
+    "definition": "Someone who operates and controls a motor vehicle",
+    "words": {
+      "source": "driver",
+      "within": "motorist",
+      "cross": "operator"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9205588102340698,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9255215525627136,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 18.5
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.0,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9205588102340698,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9252610802650452,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 18.625
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "aviation",
+    "definition": "Someone trained to fly and control an aircraft",
+    "words": {
+      "source": "aviator",
+      "within": "airman",
+      "cross": "pilot"
+    },
+    "articles": {
+      "source": "an",
+      "within": "an",
+      "cross": "a"
+    },
+    "single_token": {
+      "source": false,
+      "within": false,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8896179795265198,
+          "article_top": true,
+          "a_logit": 21.875,
+          "an_logit": 20.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8782718181610107,
+          "article_top": true,
+          "a_logit": 21.75,
+          "an_logit": 19.875
+        }
+      },
+      "cross": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8896179795265198,
+          "article_top": true,
+          "a_logit": 21.875,
+          "an_logit": 20.0
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8842667937278748,
+          "article_top": true,
+          "a_logit": 22.125,
+          "an_logit": 19.625
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "accounts",
+    "definition": "Someone whose job is to maintain and examine financial records",
+    "words": {
+      "source": "accountant",
+      "within": "auditor",
+      "cross": "bookkeeper"
+    },
+    "articles": {
+      "source": "an",
+      "within": "an",
+      "cross": "a"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": false
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.25,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.885929524898529,
+          "article_top": true,
+          "a_logit": 21.625,
+          "an_logit": 19.75
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8939648866653442,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 19.25
+        }
+      },
+      "cross": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.125,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.885929524898529,
+          "article_top": true,
+          "a_logit": 21.625,
+          "an_logit": 19.75
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.9110864400863647,
+          "article_top": true,
+          "a_logit": 21.5,
+          "an_logit": 19.0
+        }
+      }
+    },
+    "admissible": false,
+    "route_outcomes_computed_during_screening": false
+  },
+  {
+    "triad_id": "management",
+    "definition": "Someone responsible for directing an organization or department",
+    "words": {
+      "source": "manager",
+      "within": "director",
+      "cross": "executive"
+    },
+    "articles": {
+      "source": "a",
+      "within": "a",
+      "cross": "an"
+    },
+    "single_token": {
+      "source": true,
+      "within": true,
+      "cross": true
+    },
+    "arms": {
+      "within": {
+        "fixed_target_article": "a",
+        "local_target_minus_source_effect": 0.375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8879684805870056,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 19.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8915839195251465,
+          "article_top": true,
+          "a_logit": 21.625,
+          "an_logit": 19.375
+        }
+      },
+      "cross": {
+        "fixed_target_article": "an",
+        "local_target_minus_source_effect": 0.375,
+        "off_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8879684805870056,
+          "article_top": true,
+          "a_logit": 21.375,
+          "an_logit": 19.5
+        },
+        "on_support": {
+          "top_token": 496,
+          "top_text": "a",
+          "article_mass": 0.8899209499359131,
+          "article_top": true,
+          "a_logit": 21.25,
+          "an_logit": 19.875
+        }
+      }
+    },
+    "admissible": true,
+    "route_outcomes_computed_during_screening": false
+  }
+]
