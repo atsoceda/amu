@@ -66,3 +66,18 @@ Reading: at 0.6B the published planning nodes have no interpretable effect on
 the noun; the small effect of amplifying them travels through the article.
 This matches the authors' report that planning is weak at this scale. Full
 table: `results/report.md`; rows: `results/Qwen3-0.6B/six_cell_rows.jsonl`.
+
+### Qwen3-1.7B (2026-09-25)
+
+Selection matched the authors' counts exactly on 338/349 prompts (237 vs 235
+prompts with nodes; 559 vs 560 nodes). Six-cell assay on 237 prompts:
+
+- Greedy article switches: at most 1/237 in any condition; noun TV again at
+  random-control level (zeroed 0.017 vs 0.019; 5x 0.035 vs 0.041).
+- Target-specific effects on the planned word's log-probability at \(\tau=1\)
+  are public: 5x +0.045 [0.022, 0.073] (random +0.009 [-0.003, 0.023]); zeroed
+  -0.010 [-0.018, -0.005] (random -0.002). Private parts are about zero
+  (5x -0.002 [-0.019, 0.013]; zeroed -0.004 [-0.013, 0.006]).
+
+Reading: as at 0.6B, published planning nodes change the planned word only
+slightly, in both directions, and only through the article.
