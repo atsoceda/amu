@@ -20,10 +20,13 @@ bin/render-paper iclr submission
 bin/render-paper iclr camera-ready
 ```
 
-The `iclr` profile currently uses a plain `article` class because the official
-ICLR 2027 style files are not yet vendored under `_extensions/iclr/`. Its PDF is
-therefore not yet in ICLR format. The `icml` and `neurips` profiles remain for
-reference and for rebuilding the tagged workshop version.
+The `iclr` profiles use the official ICLR 2027 files vendored unmodified under
+`_extensions/iclr/`. Fonts the style requires (Helvetica, Courier) come from TeX
+Live packages vendored under `_extensions/texmf/fonts/`, which the render script
+exposes via `TEXMFHOME`; the `.bst` is exposed to BibTeX as
+`_extensions/texmf/bibtex/bst/iclr2027conference.bst` (a symlink, because Quarto
+escapes underscores in `biblio-style`). The `icml` and `neurips` profiles remain
+for reference and for rebuilding the tagged workshop version.
 
 Each build writes a PDF, generated `.tex`, and `build-manifest.json` under
 `dist/<target>-<mode>/`.

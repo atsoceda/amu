@@ -6,6 +6,9 @@ format:
     keep-tex: true
     pdf-engine: latexmk
     documentclass: article
+    biblio-style: iclr2027conference
+    include-in-header:
+      - _extensions/iclr/header-submission.tex
 
 params:
   target: iclr

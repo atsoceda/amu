@@ -76,11 +76,13 @@ Use the Quarto publishing workflow:
 
    Outputs go to `dist/iclr-submission/` (`paper.pdf`, `paper.tex`,
    `build-manifest.json`); camera-ready builds use `iclr camera-ready`.
-4. **Known gap:** the `iclr` profile currently uses a plain `article` class. The
-   official ICLR 2027 style files are not yet vendored under `_extensions/iclr/`,
-   so its PDF is not yet in ICLR format and its page count is not the ICLR
-   page count. Vendor the official files (see [`docs/publishing.md`](docs/publishing.md))
-   before relying on the layout or judging page limits.
+4. The `iclr` profiles use the official, unmodified ICLR 2027 style files
+   vendored under [`_extensions/iclr/`](_extensions/iclr/) (see its README).
+   The Helvetica and Courier fonts the style needs are vendored in the
+   repo-local TeX tree `_extensions/texmf/`, which `bin/render-paper` sets as
+   `TEXMFHOME`. ICLR 2027 allows **9 pages of main text** at submission (10 for
+   rebuttal/camera-ready), with unlimited pages for references and appendix.
+   Report the main-text page count to the user; do not trim text to fit.
 5. The manuscript still contains NeurIPS-specific material (for example the
    NeurIPS paper checklist and checklist notes in the appendix). Adapt these to
    ICLR requirements as part of the extension, never by editing the frozen copy.
