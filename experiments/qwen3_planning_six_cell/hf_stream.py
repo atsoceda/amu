@@ -94,27 +94,40 @@ def load_feature_index(index_path: Path) -> dict:
 
 
 def fetch_feature_records(repo: str, index: dict, layer: int, feats: list[int],
-                          max_gap_bytes: int = 1 << 20) -> dict[int, dict | None]:
-    """Fetch and decode visualization records (same binary format as the authors' loader)."""
+                          max_gap_bytes: int = 1 << 16, workers: int = 16) -> dict[int, dict | None]:
+    """Fetch and decode visualization records (same binary format as the authors' loader).
+
+    Nearby records are merged into one range request; groups are fetched concurrently.
+    """
+    from concurrent.futures import ThreadPoolExecutor
     layer_info = index[str(layer)]
     offsets, fname = layer_info["offsets"], layer_info["filename"]
     u = url(repo, f"features/{fname}")
-    out: dict[int, dict | None] = {}
     feats = sorted(set(feats))
-    i = 0
+    groups, i = [], 0
     while i < len(feats):
         j = i
         while j + 1 < len(feats) and offsets[feats[j + 1]] - offsets[feats[j] + 1] <= max_gap_bytes:
             j += 1
-        lo, hi = offsets[feats[i]], offsets[feats[j] + 1]
+        groups.append(feats[i : j + 1])
+        i = j + 1
+
+    def get(group):
+        lo, hi = offsets[group[0]], offsets[group[-1] + 1]
         blob = fetch_range(u, lo, hi - 1) if hi > lo else b""
-        for f in feats[i : j + 1]:
+        res = {}
+        for f in group:
             a, b = offsets[f] - lo, offsets[f + 1] - lo
             if a == b:
-                out[f] = None
+                res[f] = None
                 continue
             chunk = blob[a:b]
             n = struct.unpack("<I", chunk[:4])[0]
-            out[f] = json.loads(gzip.decompress(chunk[4 : 4 + n]).decode("utf-8"))
-        i = j + 1
+            res[f] = json.loads(gzip.decompress(chunk[4 : 4 + n]).decode("utf-8"))
+        return res
+
+    out: dict[int, dict | None] = {}
+    with ThreadPoolExecutor(workers) as ex:
+        for res in ex.map(get, groups):
+            out.update(res)
     return out

@@ -71,3 +71,8 @@ docs/collaborator-report/From Stalling*.docx
 
 # Third-party clones and downloaded metadata
 external/
+
+# Workstream A large/re-derivable intermediates (re-created by select_features.py)
+experiments/qwen3_planning_six_cell/results/*/mlp_in_last.pt
+experiments/qwen3_planning_six_cell/results/*/cards/
+experiments/qwen3_planning_six_cell/results/*/headers/
