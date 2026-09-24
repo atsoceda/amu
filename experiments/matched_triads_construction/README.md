@@ -67,3 +67,30 @@ model converting the lexical target into an article choice downstream of layer
 The first-order caveat above applies: this shows the component is sufficient
 and, to first order, necessary for the route shift; it does not exclude article
 information elsewhere in the vector that later layers could use but here do not.
+
+## Extension: independent-family assay (paper Fig. 4C), frozen 2026-09-25 before running
+
+`independent_families.py` applies the same three constructions to the 14
+frozen pairs of `experiments/neutral_synonym_repair` (6 cross-class, 8
+within-class) at their selected layer (17 in every fold), with the original
+strengths, temperatures, bootstrap and exact family-label permutation. Primary:
+the between-minus-within interaction of \(R\) at \(s=1,\tau=1\) for
+`article_removed` against `named`; `named` must reproduce the published 0.264.
+
+### Results: independent-family assay
+
+`named` reproduces the published interaction exactly (0.264 [0.137, 0.399];
+exact permutation p = 0.00033; 6/6 cross-class positive, 8/8 within-class
+negative). At \(s=1,\tau=1\):
+
+| Construction | Interaction | p | Cross R > 0 | Within R < 0 | Efficacy |
+|---|---|---:|---:|---:|---:|
+| `named` | 0.264 [0.137, 0.399] | 0.0003 | 6/6 | 8/8 | 0.411 |
+| `article_removed` | 0.057 [0.017, 0.093] | 0.026 | 1/6 | 8/8 | 0.388 |
+| `article_only` | 0.191 [0.067, 0.320] | 0.0003 | 6/6 | 6/8 | 0.004 |
+
+Without the article-readout component, cross-class families are no longer
+public-dominant; within-class families stay private-dominant. The published
+public/private double dissociation depends on article information injected by
+the named-donor construction. What survives is private target influence under
+a fixed article in both regimes.
