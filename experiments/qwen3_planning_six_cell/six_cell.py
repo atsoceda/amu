@@ -6,7 +6,7 @@ For every prompt with at least one selected planning node, and for each conditio
 the same position), we evaluate intervention off/on x {free, do(a), do(an)} and
 record the next-token distribution at the first noun position. The intervention
 edits the selected features' activations at the pre-article position and stays
-active while the noun is predicted (full recomputation, no cache).
+in effect while the noun is predicted (full recomputation, no cache).
 
 Estimands (Y(i,b) = noun distribution; B_i = greedy article, q_i = a/an policy):
   total   = Y(1,B1) - Y(0,B0)
@@ -62,10 +62,10 @@ class Steer:
             h.remove()
 
 
-def run(model_name: str, limit: int | None) -> None:
+def run(model_name: str, limit: int | None, out: str | None = None) -> None:
     from transformers import AutoModelForCausalLM, AutoTokenizer
     p = paths(model_name)
-    out_path = p["out"] / "six_cell_rows.jsonl"
+    out_path = Path(out) if out else p["out"] / "six_cell_rows.jsonl"
     done = set()
     if out_path.exists():
         done = {(r["prompt_index"], r["condition"]) for r in map(json.loads, out_path.read_text().splitlines())}
@@ -79,14 +79,21 @@ def run(model_name: str, limit: int | None) -> None:
     rng = random.Random(SEED)
     todo = [s for s in selection if s["nodes"]][: limit or None]
 
-    def dist(ids, steer):
-        h = Steer(m, steer, steer_pos) if steer else None
-        try:
-            with torch.no_grad():
-                return torch.softmax(m(ids).logits[0, -1].float(), -1).cpu()
-        finally:
-            if h:
-                h.remove()
+    def cells(steer):
+        """Full recomputation of the prompt and both forced-article sequences.
+        (A KV-cache shortcut was tried and rejected: in bf16 it shifted noun TV by
+        up to 0.016 and planned log-prob by up to 0.12 on 0.6B, the same size as
+        the effects measured.)"""
+        res = {}
+        for k, ids in seqs.items():
+            h = Steer(m, steer, steer_pos) if steer else None
+            try:
+                with torch.no_grad():
+                    res[k] = torch.softmax(m(ids).logits[0, -1].float(), -1).cpu()
+            finally:
+                if h:
+                    h.remove()
+        return res
 
     need_random_dec = {}
     with out_path.open("a") as fh:
@@ -106,7 +113,7 @@ def run(model_name: str, limit: int | None) -> None:
                           "multiplied_5x": [(l, f, a, 5 * a) for l, f, a in nodes],
                           "random_zeroed": [(l, f, a, 0.0) for l, f, a in rand_nodes],
                           "random_multiplied_5x": [(l, f, a, 5 * a) for l, f, a in rand_nodes]}
-            off = {k: dist(v, None) for k, v in seqs.items()}
+            off = cells(None)
             for cond, spec in conditions.items():
                 if (i, cond) in done or not spec:
                     continue
@@ -122,7 +129,7 @@ def run(model_name: str, limit: int | None) -> None:
                 for l, f, a, target in spec:
                     steer[l] = steer.get(l, 0) + (target - a) * decoders[(l, f)].float()
                 steer = {l: v.to("mps") for l, v in steer.items()}
-                on = {k: dist(v, steer) for k, v in seqs.items()}
+                on = cells(steer)
                 rec = {"prompt_index": i, "condition": cond, "planned": row["planned"], "article": row["article"],
                        "n_nodes": len(spec)}
                 for tag, d in (("off", off), ("on", on)):
@@ -163,5 +170,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("model")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--out")
     a = ap.parse_args()
-    run(a.model, a.limit)
+    run(a.model, a.limit, a.out)
