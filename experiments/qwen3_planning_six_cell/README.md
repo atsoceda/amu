@@ -45,3 +45,24 @@ card represents the planned word. The rule has no article term.
 
 Outputs go to `results/<model>/`. Streaming the encoders takes about 25 minutes
 for 0.6B and 75 minutes for 4B at about 7 MB/s.
+
+## Results
+
+### Qwen3-0.6B (2026-09-24)
+
+Selection matched the authors' released node counts exactly on 344/349 prompts
+(115 prompts with nodes, 166 nodes). Six-cell assay on the 115 prompts:
+
+- No condition switched the greedy article on any prompt.
+- Noun-distribution TV is at random-control level: zeroed 0.016 vs random
+  0.018; 5x 0.033 vs random 0.037. All of it sits in the fixed-article (private)
+  cell, because the article never changed.
+- The only target-specific effect: at 5x, the planned word's log-probability
+  rises by 0.068 at \(\tau=1\), mostly through the public route (0.059 [0.020,
+  0.105]; random control -0.007 [-0.018, 0.004]); the private part is 0.009
+  [-0.016, 0.034]. Zeroing has no effect (-0.003).
+
+Reading: at 0.6B the published planning nodes have no interpretable effect on
+the noun; the small effect of amplifying them travels through the article.
+This matches the authors' report that planning is weak at this scale. Full
+table: `results/report.md`; rows: `results/Qwen3-0.6B/six_cell_rows.jsonl`.
