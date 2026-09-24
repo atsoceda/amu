@@ -27,11 +27,36 @@ When writing math in chat or docs:
 - Avoid `$...$` for inline math in chat; it may show raw delimiters instead of rendering.
 - Do not put math inside fenced code blocks like ` ```latex `.
 
-## NeurIPS paper drafting and publishing
+## Paper versions and venue targets
 
-When the user gives a high-level request such as “generate an updated draft of
-our results as a complete paper in NeurIPS format,” treat this as a manuscript
-editing plus render task, not as a DOCX or Google Docs task.
+There are two versions of the paper. Keep them separate.
+
+| Version | Status | Where it lives |
+| --- | --- | --- |
+| **NeurIPS 2026 workshop submission (v35)** | **Submitted and frozen.** Never edit, re-render, or replace it. | [`submissions/neurips-2026-workshop-v35/`](submissions/neurips-2026-workshop-v35/) (exact submitted PDF, generated `.tex`, manifest, `SHA256SUMS`, all read-only). Source: Git tag `neurips-2026-workshop-v35` (commit `e7e1372`). |
+| **ICLR 2027 main-track extension** | **Active target.** All new manuscript work goes here. | The live source: [`paper.qmd`](paper.qmd), [`manuscript/sections/`](manuscript/sections/), [`manuscript/references.bib`](manuscript/references.bib). Render target `iclr`. |
+
+Rules:
+
+- Treat any request to update, extend, or render "the paper" as ICLR 2027 work
+  unless the user explicitly names the NeurIPS workshop version.
+- Do **not** run `bin/render-paper neurips ...`. The live source is now the ICLR
+  extension, so a NeurIPS render would write ICLR content into
+  `dist/neurips-submission/` and blur the two versions. To inspect the submitted
+  version, open the frozen folder. To rebuild it, check out the tag in a separate
+  worktree (link the untracked `.tools/` and `.home/` into it) and render there;
+  that reproduces the frozen `paper.tex` byte for byte.
+- Do not edit `dist/neurips-submission/`. Its versioned PDFs (`...-v14.pdf`
+  through `...-v35.pdf`) are historical drafts; v35 is the submitted one.
+- Do not shorten, condense, or delete manuscript text just to meet a page limit.
+  Write corrections at the length the content needs, and report any page-limit
+  overflow to the user.
+
+## ICLR paper drafting and publishing
+
+When the user gives a high-level request such as "generate an updated draft of
+our results as a complete paper," treat it as a manuscript editing plus render
+task for the ICLR 2027 main track, not as a DOCX or Google Docs task.
 
 Use the Quarto publishing workflow:
 
@@ -39,37 +64,35 @@ Use the Quarto publishing workflow:
    - Main entry point: [`paper.qmd`](paper.qmd)
    - Body sections: [`manuscript/sections/`](manuscript/sections/)
    - Bibliography: [`manuscript/references.bib`](manuscript/references.bib)
-   - Figures/assets: use repository-relative paths.
+   - Figures/assets: use repository-relative paths. Figures are tracked in Git,
+     so the tag preserves the NeurIPS versions; updating a figure for ICLR is fine.
 2. Do **not** edit generated files under `dist/` or root-level generated
-   `paper.tex` files. Generated `.tex` is an output artifact for inspection or
-   venue upload, not the source of truth.
-3. Use the vendored NeurIPS files under [`_extensions/neurips/`](_extensions/neurips/).
-   The current target is NeurIPS 2026. Official style loading and local TeX
-   compatibility notes live in [`_extensions/neurips/README.md`](_extensions/neurips/README.md).
-4. Render with:
+   `paper.tex` files. Generated `.tex` is an output artifact, not the source of truth.
+3. Render with:
 
    ```bash
-   bin/render-paper neurips submission
+   bin/render-paper iclr submission
    ```
 
-   For camera-ready output, use:
-
-   ```bash
-   bin/render-paper neurips camera-ready
-   ```
-
-5. Expected outputs:
-   - `dist/neurips-submission/paper.pdf`
-   - `dist/neurips-submission/paper.tex`
-   - `dist/neurips-submission/build-manifest.json`
-   - analogous files under `dist/neurips-camera-ready/` for camera-ready builds.
+   Outputs go to `dist/iclr-submission/` (`paper.pdf`, `paper.tex`,
+   `build-manifest.json`); camera-ready builds use `iclr camera-ready`.
+4. **Known gap:** the `iclr` profile currently uses a plain `article` class. The
+   official ICLR 2027 style files are not yet vendored under `_extensions/iclr/`,
+   so its PDF is not yet in ICLR format and its page count is not the ICLR
+   page count. Vendor the official files (see [`docs/publishing.md`](docs/publishing.md))
+   before relying on the layout or judging page limits.
+5. The manuscript still contains NeurIPS-specific material (for example the
+   NeurIPS paper checklist and checklist notes in the appendix). Adapt these to
+   ICLR requirements as part of the extension, never by editing the frozen copy.
 6. Before reporting completion, verify that the render command succeeds and
-   mention any remaining manuscript TODOs, especially NeurIPS checklist items.
+   mention any remaining manuscript TODOs.
 
 The helper script configures repo-local Quarto, `latexmk`, and TeX search paths.
 Do not install a new TeX environment or create a Python virtual environment
 unless the render fails for a reason that cannot be solved with the vendored
 workflow. Additional publishing notes live in [`docs/publishing.md`](docs/publishing.md).
+The vendored NeurIPS 2026 assets remain under [`_extensions/neurips/`](_extensions/neurips/)
+only so that the tagged workshop version can be rebuilt.
 
 ## Google Drive / `.gdoc` workflow
 

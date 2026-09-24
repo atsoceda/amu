@@ -27,7 +27,11 @@ or independent-group label permutations, are used where family counts permit.
 
 At 270M, attribution graphs on eight selection occupations nominate four S1
 features with positive article and future-noun paths. The feature set is frozen
-before evaluation on 20 held-out occupations and amplified \(5\times\). We run
+before evaluation on 20 held-out occupations and amplified \(5\times\). One
+member, L13/F10231, carries the largest article attribution in the selection
+panel but ranks 12th of 32 by future-noun attribution; we therefore also report
+it alone. The \(5\times\) strength was chosen after a 1.5--8\(\times\) dose screen
+on the same occupation set. We run
 the six cells, then two direct falsification tests: **phenocopy**, which replays
 the treated article with S1 off, and **rescue**, which restores the baseline
 article while S1 remains on. A prompt-aligned binary search brackets each
@@ -75,8 +79,14 @@ public and fixed-token private effects, respectively, and define route contrast
 \(R>0\); within-class families predict \(R<0\). The interaction compares the two
 groups, while exact within-family sign flips test each simple effect separately.
 
-Before any model or route measurement, we semantically curated and froze 22
-candidate triads whose three words were intended as valid alternatives for one definition.
+The matched test is not a blind first encounter with this vocabulary. Earlier
+route assays on overlapping occupation-synonym pairs (under a superseded
+first-letter prompt, and the independent-family assay above) and three
+behavioral triad screens had already been run (Appendix A.8). Before any model
+or route measurement on the final list, we semantically curated and froze 22
+candidate triads whose three words were intended as valid alternatives for one
+definition; the freeze is timestamped in the configuration, but its first Git
+commit followed execution.
 The repaired matched-triad test holds semantic family, definition, source word,
 source donor, and evaluated prompt fixed while comparing one same-article and
 one cross-article target. Its route-blind admissibility screen uses only

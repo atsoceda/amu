@@ -58,6 +58,15 @@ positive article attribution. We therefore retain the term
 *attribution-selected S1 features* rather than claiming an independently
 selected Hanna-style semantic planning feature.
 
+The four members contribute very unequally. L13/F10231 has mean direct
+attribution 0.861 to `an` but only 0.020 to the future noun (L12/F6229: 0.256
+and 0.143). Amplified alone at \(5\times\) on the same 20 held-out prompts
+(`experiments/attribution_channel_calibration/results/rows.json`), it gives
+total TV 0.893, replay TV 0.891, fixed-article leftover 0.016, and 19/20
+article switches; its per-prompt total TV differs from the four-feature set's by
+at most 0.010 (mean 0.0016). The S1 public relay is therefore effectively a
+single strongly article-attributed feature.
+
 ## Exact six-cell measurements
 
 For each fixed article, the intervention remains active at its original
@@ -168,7 +177,12 @@ article-policy temperature. We archive the rejected bare-neutral output
 under `results_bare_neutral_invalid_support/` rather than silently replacing it.
 
 The repaired paired extension freezes 22 candidate semantic triads before
-screening. Fourteen pass the route-blind tokenization, local-efficacy, and
+screening. The freeze follows earlier contact with overlapping vocabulary: the
+superseded first-letter route assay, three behavioral triad screens, and the
+independent-family neutral assay above (Appendix A.8). The configuration
+records a freeze time of 2026-09-02 00:00 JST, the screen finished at 15:57 JST,
+and the first Git commit containing the configuration (16:39 JST) followed
+execution. Fourteen pass the route-blind tokenization, local-efficacy, and
 article-support criteria. Each retained definition is evaluated from the same
 source word and neutral prompt with one same-article and one cross-article
 target. At \(s=1,\tau=1\), within-class \(R=P-H\) is
@@ -211,8 +225,9 @@ two-sided \(p=0.986\)); leave-one-family-out Pearson correlations range from
 favors the cross arm, no outcome-blind efficacy rescaling is triggered.
 
 All 22 candidates and their route-blind screening outcomes are shown below.
-Semantic validity was assessed during pre-model curation before this candidate
-set was frozen and before tokenization, model screening, or route computation.
+Semantic validity was assessed during curation before this candidate set was
+frozen and before its tokenization, model screening, or route computation;
+several words had appeared in the earlier screens listed in Appendix A.8.
 
 | Family | Source | Same-article target | Cross-article target | Retained | Route-blind failure reason |
 |---|---|---|---|:---:|---|
@@ -290,6 +305,16 @@ gives aggregate \(R^2=0.840\ [-0.293,0.986]\) and MAE
 variance even faster, making \(R^2\) strongly negative without implying large
 absolute mistakes.
 
+The high-effect tail is concentrated in one feature. Of the 24 held-out cells at
+\(\tau=0.1\) with observed public TV of at least 0.5, 19 use L13/F10231; the
+remaining five use five different features. Recomputing the combined
+feature-and-prompt holdout from the frozen predictions without L13/F10231 gives
+full-composition \(R^2=0.276\) (attribution plus susceptibility: 0.267), and
+also excluding its mirror feature L13/F10304 gives 0.133. All six simple
+baselines remain below zero on both subsets. The composition therefore retains
+some held-out signal beyond S1, but most of the headline \(R^2\) comes from one
+feature's saturated article flips.
+
 ![Closed-loop gain diagnostics I. A: attribution-to-local-efficacy calibration. B: fixed-token target correlations with broad intervals. C: predictive baselines.](manuscript/figures/fig_gain_diagnostics_appendix.png){#fig-app-gain width=98%}
 
 ![Closed-loop gain diagnostics II. D: equal-count predicted-versus-observed calibration with crossed feature--prompt bootstrap intervals. E: R2 and MAE respond differently when the largest observed effects are excluded because the remaining outcome variance is tiny. F: temperature robustness at 270M and weak transfer for available 1B handles.](manuscript/figures/fig_gain_diagnostics_appendix_tail.png){#fig-app-gain-tail width=98%}
@@ -314,18 +339,53 @@ affine-skip contribution; graph-cap audits make simple truncation a less likely
 sole explanation. These results motivate the ladder but do not establish a
 scale-dependent reorganization.
 
-## Negative and superseded studies
+## Attempt ledger
 
-S2 frequently leaves the intended article domain and is retained only as a
-forensic warning. A sparse layer-5 feature produces exploratory fixed-token
-movement but has weak matched controls and may encode vowel class. The released
-`is/are` subtraction task fails behavioral and local-efficacy prerequisites in
-both models, so it cannot test mediator capacity. Earlier first-letter synonym
-prompts are superseded because the evaluated source cue contradicted the target
-synonym. An arbitrary A/B few-shot pilot does show that context can alter target
-nouns with the code fixed (effects 0.224--0.245 across reliability banks), but
-the visible context itself remains available and the task is less mechanistically
-clean than the neutral synonym assay; it is not part of the main argument.
+This ledger lists every attempt in the experiment archive that bears on the
+paper's claims, including failures and superseded designs. We found no
+additional route experiment on this vocabulary outside `experiments/` in the
+accessible artifacts; interactive commands that were never saved cannot be
+ruled out.
+
+**Handles selected for future-noun influence without a positive article criterion.**
+
+| Attempt (model) | Selection rule | Outcome | Status |
+|---|---|---|---|
+| S3 content-only (270M) | +future attribution, \(|\)article attribution\(|\le0.05\) | 5\(\times\): total TV 0.025, no noun changes; random control 0.019 | Null |
+| Calibration panel re-ranked by future attribution (270M) | Top four of 32 by future attribution | Free noun TV 0.001--0.026, no article switches | Null |
+| Per-noun rules, fixed article (270M) | +target attribution, small article attribution | No within-class noun switches; best \(\Delta\Delta\) 0.29 | Null |
+| Dense MLP-input difference direction (270M) | Target-minus-source prompt contrast | Not distinguishable from matched random directions | Null |
+| S3 content-only (1B) | As at 270M | \(\Delta\)(an\(-\)a) within 0.02 of control | Null |
+| Calibration panel re-ranked by future attribution (1B) | Top five of 32 | Total TV at most 0.064; one article switch each | Null |
+
+**Other sparse handles.** S2 (article-only, 270M) changes the top noun on 14/20
+prompts with zero public TV (total 0.109), but frequently leaves the intended
+article domain, so we make no route claim. S4 (competing article) changes the
+noun on 7/20 prompts through the fixed-article route (0.028 TV). A layer-5
+feature produces exploratory fixed-token movement but has weak matched controls
+and may encode vowel class. S1 was screened at 1.5, 2, 3, 5, and 8\(\times\) on
+the same occupations (trajectory-change rates 0.10--0.95) before \(5\times\) was
+used.
+
+**Non-article mediators.** The released `is/are` task fails behavioral
+prerequisites (number accuracy 4.2% over 360 rows) and local efficacy at both
+scales. A modifier-to-noun mediator failed support: none of 279 audited
+constructions reached 0.8 valid-mediator mass in both states. Country-to-city
+"commitment" handles produced strong wrong-answer contamination, and
+`the`-stall suppression was inconclusive. An arbitrary A/B few-shot code shows
+context effects on target nouns with the code fixed (0.224--0.245 across
+reliability banks) but did not pass all support and leverage gates and was
+never run as a confirmatory route assay.
+
+**Synonym-routing history (Gemma 3 1B), in order.**
+
+| Date (JST) | Attempt | Outcome |
+|---|---|---|
+| Aug 31 | Independent-family assay with a first-letter prompt | Public TV 0.423 across vs 0.030 within classes (\(s=1,\tau=1\)); superseded because the prompt's letter cue conflicted with the target |
+| Aug 31 | Three behavioral triad screens (23, 22, 70 candidates) | 1, 2, and 2 admissible; no inference possible; no route outcome computed |
+| Sep 2 | Bare neutral template | Failed article support (mean `a/an` mass about 0.27); archived |
+| Sep 2 (committed 09:10) | Neutral independent-family assay (Section 5) | Reported |
+| Sep 2 (frozen 00:00, committed 16:39) | Matched 22-triad assay (Section 5) | Reported; 14 admissible |
 
 ## Responsible use and checklist notes
 

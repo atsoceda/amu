@@ -1,0 +1,1731 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+
+\usepackage[dblblindworkshop]{_extensions/neurips/neurips_2026}
+\workshoptitle{Interpretability as a Science}
+\renewcommand{\sfdefault}{cmss}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Closing the Causal Loop: Public and Private Routes in Autoregressive Models},
+  pdfauthor={Anonymous Authors},
+  pdfkeywords={mechanistic interpretability, latent planning, causal
+mediation, feature circuits, cross-layer transcoders},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Closing the Causal Loop: Public and Private Routes in
+Autoregressive Models}
+\author{Anonymous Authors}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Mechanistic interventions on autoregressive language models are often
+interpreted as evidence that internal state directly controls later
+tokens. But generation closes a causal loop: an intermediate output
+becomes the model's next input, so the same downstream change can arise
+either from contextual influence that persists after the intermediate
+token is fixed or from feedback through the model's own generated token.
+We introduce a six-cell intervention assay and a four-stage
+causal-validity ladder that separate these public and private routes. On
+an occupation-completion task adapted from prior latent-planning work,
+an attribution-selected sparse intervention in Gemma 3 270M with both
+article and future-noun influence rewrites completions such as \emph{a
+pilot} to \emph{an aviator} through an almost entirely public route:
+replaying the treated article reproduces the noun, restoring the
+baseline article rescues it, and article substitution reproduces almost
+all of the noun-distribution change. Yet target-directed residual
+interventions still shift later nouns with the article fixed at both
+270M and 1B, demonstrating private-route capacity. A neutral-prompt
+synonym assay at 1B then reveals mediator-relative routing: when two
+valid alternatives require different articles, target-directed influence
+is public-dominant; when they share the same article, it is
+private-dominant. In a matched 14-family extension holding semantic
+family and source state fixed, crossing the article boundary shifts
+route dominance toward the public path in 13/14 families. Finally, for
+the binary article mediator, public effect magnitude factorizes exactly
+into mediator-policy movement and continuation leverage: near an article
+decision boundary, crossing the boundary produces a large
+noun-distribution jump while either fixed-article path moves very
+little. Future-token control is therefore a closed-loop causal quantity:
+mechanistic claims must identify not only what internal state changes,
+but where that influence travels and how generation amplifies it.
+\end{abstract}
+
+
+\section{Introduction}\label{introduction}
+
+Language-model outputs are usually treated as readouts of internal
+computation. In an autoregressive model they are also interventions on
+the model's future: each sampled token is appended to context and
+processed again. This feedback creates two causal routes from an
+internal state to a later prediction. Influence can remain
+\textbf{private}, propagated through contextual hidden state, or become
+\textbf{public}, projected into a generated symbol and returned as a
+high-leverage input. A later-token change observed under free generation
+does not say which route carried it.
+
+This ambiguity is acute in work on latent planning. Hanna and Ameisen
+define it as an internal representation that both causes a specific
+future token or concept and shapes preceding context to license it
+\citep{hanna2026latent}. Those criteria do not distinguish whether the
+future effect persists privately or is transmitted through the preceding
+context the representation caused. Thus a rewrite from \texttt{a\ pilot}
+to \texttt{an\ aviator} could reflect persistent noun control or a
+closed loop in which changing \texttt{a} to \texttt{an} changes the next
+prediction. Our question is not whether such a signal is causal, but how
+its influence travels.
+
+We develop an intervention framework that separates them. A six-cell
+assay crosses intervention off/on with free generation, forced
+\texttt{a}, and forced \texttt{an}. It decomposes the downstream
+probability-vector change into a component reproduced by public-token
+substitution and a matched-token component that persists privately. A
+four-stage \textbf{causal-validity ladder} additionally requires that a
+candidate signal be locally causal, that the mediator states induced by
+the intervention lie within the assay's support, and only then that its
+transmission route be interpreted.
+
+The experiments reveal a coherent organization of causal state.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Public projection can dominate apparent future-token control.}
+  In Gemma 3 270M, an attribution-selected sparse intervention produces
+  a 0.893-TV noun rewrite, of which 0.891 is reproduced by article
+  substitution; only 0.028 TV remains with the treated article fixed.
+  Article replay and rescue recover the corresponding top noun on every
+  one of 20 held-out prompts.
+\item
+  \textbf{Private target information remains causally effective.}
+  Natural-state-derived residual patches move target nouns while article
+  identity is fixed at both 270M and 1B. Public mediation is therefore
+  not the only available route.
+\item
+  \textbf{Routing is mediator-relative.} In a neutral-prompt 1B synonym
+  assay, both lexical alternatives remain correct. In a matched
+  14-family assay holding semantic family and source state fixed,
+  crossing the article-equivalence boundary shifts causal influence
+  toward the public route in 13/14 families; an independent-family assay
+  shows the corresponding public/private double dissociation in all 14
+  families.
+\item
+  \textbf{Public effects have closed-loop gain.} Once a distinction
+  enters the public route, its downstream magnitude is the product of
+  mediator-policy movement and continuation-branch leverage. At 270M,
+  composing local causal pressure with decoder susceptibility and
+  leverage provides limited predictive validation in the decisive-policy
+  regime, whereas attribution alone does not; prediction among small
+  effects remains weak.
+\end{enumerate}
+
+The resulting claim is not that hidden computation is absent, nor that
+the model spontaneously chooses between two independent memories.
+Rather, a generated token is a \textbf{lossy public projection} of
+future-relevant state. Distinctions visible in that projection can
+acquire a public causal route; distinctions collapsed by it cannot
+travel through token identity and remain target-aligned through private
+context in our controlled assay. Mechanistic claims about future tokens
+must therefore identify both \textbf{routing}---where the causal
+influence travels---and \textbf{gain}---how the decoding loop amplifies
+it.
+
+This extends prior distinctions between decodable and causally used
+planning signals \citep{ma2026plan}, and complements work showing that
+hidden state beneath fixed visible scratchpad tokens can matter
+\citep{shih2026registers}. Generated-token mediation itself is not new
+\citep{vig2020mediation, paul2024reasoning}. Our contribution is to turn
+it into an operational validity standard for internal mechanistic
+interventions and to show public dominance, private persistence, and
+mediator-relative route reversal within one controlled setting.
+Transmission route is orthogonal to functional interpretation: a state
+may satisfy a latent-planning definition while its future effect is
+public, private, or hybrid.
+
+\section{Public projection and private
+persistence}\label{public-projection-and-private-persistence}
+
+Let \(X\) end immediately before a generated mediator, let
+\(B\in\{\texttt{a},\texttt{an}\}\) be its public token identity, and let
+\(Y\) be the next-token distribution over the first noun token. An
+internal intervention \(I\) acts at the last position of \(X\) and
+remains active during noun prediction. Its effect can reach \(Y\)
+through two paths (Figure~\ref{fig-schematic} A): by changing \(B\),
+which is appended and re-embedded, or by changing contextual state
+available after \(B\) is fixed. We call these public projection and
+private persistence. The names refer to experimentally separable routes,
+not independent registers or claims about semantic encoding.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.98\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_hypotheses_protocol.png}
+
+}
+
+\caption{\label{fig-schematic}Autoregressive feedback and the
+causal-validity ladder. A: an upstream intervention can affect a later
+prediction through public mediator identity or private contextual state.
+Fixing or replaying the mediator separates the routes. B: candidate
+identification, local efficacy, mediator-support validity, and route
+identification are distinct claims.}
+
+\end{figure}%
+
+We use \emph{projection} in the functional sense of a discrete public
+readout, not to imply a linear projection operator. The private branch
+denotes contextual influence from the earlier intervention that survives
+mediator control; it does not posit or localize a single hidden register
+beneath the generated article.
+
+\subsection{Six cells identify
+transmission}\label{six-cells-identify-transmission}
+
+For every prompt we evaluate
+
+\[
+I\in\{0,1\}\times
+B\in\{\text{free},\operatorname{do}(\texttt{a}),
+\operatorname{do}(\texttt{an})\}.
+\]
+
+Free generation is a policy rather than a third assigned value of \(B\).
+Let \(B_0,B_1\) denote the greedy articles under intervention off/on and
+let \(Y(i,b)\) be the noun distribution. Define
+
+\[
+\begin{aligned}
+E_{\rm total}&=Y(1,B_1)-Y(0,B_0),\\
+E_{\rm public}&=Y(0,B_1)-Y(0,B_0),\\
+E_{\rm private}&=Y(1,B_1)-Y(0,B_1).
+\end{aligned}
+\]
+
+These are full probability vectors and satisfy
+\(E_{\rm total}=E_{\rm public}+E_{\rm private}\) exactly. Their
+total-variation norms are not additive, so we report each norm, vector
+alignment, and numerical reconstruction rather than a scalar ``percent
+mediated.'' \(E_{\rm public}\) is a treated-token replay contrast.
+\(E_{\rm private}\) is what remains under the fixed treated article; it
+is not Pearl's natural direct effect. We also measure the matched
+contrast under the other article.
+
+Under a stochastic mediator policy with support \(\mathcal B\),
+
+\[
+E_{\rm public}=\sum_{b\in\mathcal B}
+[q_1(b)-q_0(b)]Y(0,b),\qquad q_i(b)=P(B=b\mid I=i).
+\]
+
+The policy-weighted private term and exact total identity are given in
+Appendix A.2.
+
+For the binary article policy this becomes
+
+\[
+E_{\rm public}=(q_1-q_0)(Y_{an}-Y_a),\qquad
+TV(E_{\rm public})=|q_1-q_0|TV(Y_{an},Y_a). \tag{1}
+\]
+
+Equation 1 is an algebraic identity. Its empirical use is to separate
+local policy movement from the leverage of the continuation branches.
+
+\subsection{A causal-validity ladder}\label{a-causal-validity-ladder}
+
+A downstream change supports a route claim only after four checks
+(Figure~\ref{fig-schematic} B):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Candidate signal identified.} A probe, attribution graph,
+  sparse feature, or residual contrast nominates a signal; these are not
+  equivalent claims that a semantic representation exists.
+\item
+  \textbf{Locally causal.} The intervention moves the quantity it was
+  selected to affect on held-out examples.
+\item
+  \textbf{Mediator-support valid.} The assay's mediator state space
+  covers states induced by the intervention. If \texttt{called} outranks
+  both articles, a binary \texttt{a/an} decomposition is incomplete
+  rather than the intervention intrinsically invalid.
+\item
+  \textbf{Transmission identified.} Only a complete free/fixed assay
+  distinguishes public, private, hybrid, and negligible effects.
+\end{enumerate}
+
+This ladder extends the established separation of decodability from
+causal use \citep{ma2026plan} by making intervention validity and
+downstream route identification explicit. It also aligns activation
+patching, sparse steering, and causal scrubbing with a common
+causal-abstraction view
+\citep{geiger2025abstraction, chan2022scrubbing}, complementing calls to
+match mechanistic evaluations to explicitly specified causal mediators
+\citep{mueller2026mediator}.
+
+\subsection{Mediator-relative
+distinguishability}\label{mediator-relative-distinguishability}
+
+Let \(m(y)\) be the public mediator licensed by lexical outcome \(y\),
+and define \(y_1\sim_m y_2\) when \(m(y_1)=m(y_2)\). \texttt{Teacher}
+and \texttt{educator} lie in different article classes (\texttt{a}
+versus \texttt{an}), whereas \texttt{doctor} and \texttt{physician} lie
+in the same class (\texttt{a}). A cross-class distinction is visible in
+article identity; a within-class distinction is collapsed by it. This
+motivates a causal prediction: when two valid lexical alternatives cross
+mediator classes, an intervention can recruit a public relay; when they
+remain in one class, target-specific influence cannot be conveyed by
+that token identity and must remain elsewhere if it survives. This is a
+mediator-relative routing hypothesis, not a general bit-capacity law.
+
+\section{Experimental design}\label{experimental-design}
+
+\subsection{Models, prompts, and
+inference}\label{models-prompts-and-inference}
+
+We study pretrained Gemma 3 270M and 1B \citep{gemma3}. Sparse
+experiments use the matching Gemma Scope 2 pretrained affine cross-layer
+transcoders \citep{gemmascope2}, building on transcoder feature-circuit
+methods \citep{dunefsky2024transcoders, ameisen2025attribution}, through
+\texttt{circuit-tracer} \citep{hanna2025circuittracer} and NNsight
+\citep{fiotto2025nnsight}. The primary prompts and occupation
+definitions follow the released materials of \emph{Latent Planning
+Emerges with Scale} \citep{hanna2026latent}; synonym families are
+screened from the same occupation domain. Appendix A.1 records model,
+dictionary, and package snapshots and maps each claim to its frozen
+configuration and machine-readable result artifact.
+
+Unless stated otherwise, we recompute the full prompt with caching
+disabled, use bfloat16 model inference, and measure full-vocabulary
+next-token distributions. Sparse interventions multiply prompt-specific
+feature activations at the pre-article position. Residual interventions
+add a source-to-target direction at a specified decoder layer.
+Development prompts select features, layers, or strengths; headline
+estimates use disjoint held-out prompts or leave-one-semantic-family-out
+selection. Intervals are 10,000-sample prompt- or family-bootstrap 95\%
+intervals. Exact paired sign and sign-flip tests, or independent-group
+label permutations, are used where family counts permit.
+
+\subsection{Public endpoint: the sparse S1
+intervention}\label{public-endpoint-the-sparse-s1-intervention}
+
+At 270M, attribution graphs on eight selection occupations nominate four
+S1 features with positive article and future-noun paths. The feature set
+is frozen before evaluation on 20 held-out occupations and amplified
+\(5\times\). We run the six cells, then two direct falsification tests:
+\textbf{phenocopy}, which replays the treated article with S1 off, and
+\textbf{rescue}, which restores the baseline article while S1 remains
+on. A prompt-aligned binary search brackets each article argmax
+transition and compares free and fixed-article noun distributions over
+the same gain interval. Float32 final-head and stochastic-policy audits
+test whether the conclusion depends on bfloat16 logits or greedy
+decoding.
+
+\subsection{Private-route references}\label{private-route-references}
+
+To establish that later nouns remain sensitive to upstream state after
+article identity is fixed, we patch natural-state-derived residual
+directions at the pre-article position. Source and target states come
+from occupation descriptions that do not name the tested noun. A pooled
+development sweep selects a layer; held-out target patches are compared
+with wrong-target, sign-reversed, and matched-norm random controls. We
+run the same normalized construction at 270M and 1B. These are
+target-directed full-residual capacity interventions, not a claim that
+the sparse S1 features naturally carry the same state.
+
+\subsection{Neutral synonym routing
+assay}\label{neutral-synonym-routing-assay}
+
+The mediator-relative test uses six cross-article and eight
+within-article occupation-synonym families. For example,
+\texttt{teacher}/\texttt{educator} cross article classes, whereas
+\texttt{doctor}/\texttt{physician} do not. Both alternatives correctly
+answer one occupational definition. The evaluated prompt contains an
+unrelated occupation-format demonstration followed by the neutral
+definition; it contains neither tested synonym nor a first-letter
+instruction. Explicit donor prompts name each source or target word and
+define
+
+\[
+\delta=h_{\rm target}^{(\ell)}-h_{\rm source}^{(\ell)},\qquad
+h_{\rm eval}^{(\ell)}\leftarrow h_{\rm eval}^{(\ell)}+s\delta.
+\]
+
+Leave-one-family-out selection chooses layer 17/25 in every fold. The
+primary setting is native strength \(s=1\) and article-policy
+temperature \(\tau=1\), with \(s\in\{0.5,1,1.5\}\) and
+\(\tau\in\{0.1,0.25,0.5,1\}\) as robustness checks. Before route
+inference we require positive held-out target-minus-source movement and
+high retained \texttt{a/an} policy mass. Controls use a wrong target and
+the reversed direction.
+
+For each family we project public and private probability vectors onto
+the intended target-minus-source contrast. Let \(P\) and \(H\) denote
+the signed public and fixed-token private effects, respectively, and
+define route contrast \(R=P-H\). Cross-class families predict \(R>0\);
+within-class families predict \(R<0\). The interaction compares the two
+groups, while exact within-family sign flips test each simple effect
+separately.
+
+Before any model or route measurement, we semantically curated and froze
+22 candidate triads whose three words were intended as valid
+alternatives for one definition. The repaired matched-triad test holds
+semantic family, definition, source word, source donor, and evaluated
+prompt fixed while comparing one same-article and one cross-article
+target. Its route-blind admissibility screen uses only single-token
+lexical realization, positive fixed-target-article local efficacy, and
+retained article support. The prespecified paired estimand is
+\(R_{\rm cross}-R_{\rm within}\), tested by a paired semantic-family
+bootstrap, an exact one-sided binomial sign test, and an exact paired
+sign-flip randomization test. Fourteen of 22 frozen candidate triads
+pass the screen, exceeding the minimum gate of eight.
+
+\subsection{Closed-loop gain
+prediction}\label{closed-loop-gain-prediction}
+
+For 32 sparse features selected on disjoint occupations, attribution is
+calibrated to intervention-induced article-margin movement. Equation 1
+then combines predicted movement with intervention-off decoder
+susceptibility and fixed-branch continuation leverage. We compare
+constant, attribution-only, susceptibility-only, leverage-only,
+activation-magnitude, and constant-shift baselines. Combined
+feature-and-prompt holdout excludes both identities from the calibration
+fold while permitting intervention-off quantities for the held-out
+prompt. A measured-margin version is reported only as an accounting
+oracle.
+
+\section{Two causal endpoints: public relay and private
+persistence}\label{two-causal-endpoints-public-relay-and-private-persistence}
+
+\subsection{S1's future-noun effect is predominantly
+public}\label{s1s-future-noun-effect-is-predominantly-public}
+
+At \(5\times\), S1 changes the free article from \texttt{a} to
+\texttt{an} on 19/20 held-out prompts and changes the top noun on the
+same 19. Across all 20 prompts, total noun-distribution change is 0.893
+TV. Replaying the treated article with the intervention off produces
+0.891 TV in the same direction; the matched treated-article leftover is
+\(0.028\ [0.021,0.035]\). The exact vector reconstruction error is below
+\(10^{-7}\). Thus the large noun rewrite is almost entirely reproduced
+by substituting the article token.
+
+The top-1 falsification is even more direct (Figure~\ref{fig-s1} A).
+Treated-article replay recreates the S1-on top noun on 20/20 prompts.
+Restoring the baseline article while leaving S1 active restores the
+baseline top noun on 20/20 prompts. Phenocopy and rescue residual TVs
+are only 0.028 and 0.030. The \texttt{pilot} example therefore reads as
+a causal sequence: S1 changes \texttt{a} to \texttt{an}; \texttt{an}
+licenses the \texttt{aviator} continuation; returning \texttt{a}
+restores \texttt{pilot}.
+
+Across prompts, the vector decomposition confirms that this is not
+merely a top-token coincidence: public substitution reproduces nearly
+all of the total noun-distribution movement, whereas the matched
+fixed-token residual is small (Figure~\ref{fig-s1} B).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.98\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_mediation_decomposition.png}
+
+}
+
+\caption{\label{fig-s1}The sparse S1 intervention is strongly
+public-dominant. A: treated-article replay phenocopies the noun and
+baseline-article restoration rescues it. B: public token substitution
+reproduces almost all free-path change; TV magnitudes are shown
+separately and are not additive. C: around each prompt's article
+boundary, the free noun distribution jumps while fixed-article paths
+barely move.}
+
+\end{figure}%
+
+The magnitude is created at the latent-to-symbol boundary. On 19
+bracketed prompts, gains separated by at most 0.0039 straddle the
+article argmax. The free-path noun distribution moves 0.938 TV and
+article substitution alone moves 0.939, with vector cosine 0.9998. Over
+that same interval, fixed \texttt{a} and fixed \texttt{an} distributions
+each move only 0.014 TV (Figure~\ref{fig-s1} C). A 16-fold tighter
+float32-head search yields the same qualitative result, showing that
+coarse bfloat16 logit levels are not the mechanism. Exact two-article
+mixtures from \(\tau=0.1\) to 1 replace the greedy discontinuity with
+graded public influence, but the policy component remains aligned with
+the total.
+
+Thus S1 reproduces the causal pattern motivating latent-planning
+analyses: a pre-article handle affects both the licensing article and a
+future noun. A frozen-artifact audit confirms that all four features are
+active pre-article and have positive direct attribution to the intended
+future noun on all eight selection prompts. Because the features recur
+across nouns and selection also required article influence, S1 is not
+independently identified as a noun-specific semantic planning
+representation. Our result concerns transmission: its large
+free-generation noun effect travels primarily through the article, not
+through comparably large fixed-token persistence.
+
+\subsection{Target information can remain privately
+effective}\label{target-information-can-remain-privately-effective}
+
+The S1 result could still suggest that this task is fundamentally
+public: perhaps once the article is fixed, upstream state has little
+remaining control over the noun. We therefore ask the complementary
+question directly. Holding article identity fixed, can target-specific
+state at the pre-article position still alter the later lexical
+prediction? It can. A dense residual sensitivity reference first
+establishes reachability: on held-out same-article pairs, a target
+residual patch changes the target-minus-source noun logit by
+\(6.44\ [4.19,10.06]\), versus 0.14 for matched-norm random directions.
+
+More conservative natural-state-derived directions provide the primary
+private evidence. At 270M and native strength, fixed-article
+target-minus-source movement is \(0.77\ [0.47,1.13]\) logits for 12
+cross-class pairs and \(0.96\ [0.67,1.27]\) for 12 within-class pairs.
+Wrong-target effects are 0.15 and 0.13; sign reversal moves the contrast
+in the opposite direction. The greedy article changes on 0/24 pairs, so
+the target-directed noun movement cannot be attributed to greedy article
+switching. Under \(\tau=0.1\), public TV is 0.002 or less while private
+TV is 0.043--0.064, depending on condition. At \(\tau=1\), a graded
+public component also appears, so these patches are private-dominant at
+low temperature rather than exclusively private under every policy.
+
+The target direction shifts the later noun substantially more than the
+wrong-target or sign-reversed controls at both scales
+(Figure~\ref{fig-private} A), and the movement arises primarily by
+enhancing the intended target rather than merely suppressing the source
+(Figure~\ref{fig-private} B). The normalized assay replicates private
+target influence at Gemma 3 1B. Effect sizes do not increase
+monotonically with scale, and we make no scale-law claim. Together with
+target, wrong-target, reverse, and random controls, the result
+establishes a second causal endpoint: target-relevant upstream state can
+affect the noun while visible article identity is held constant. S1 and
+the residual patches need not implement the same mechanism; they
+demonstrate that both routes are available in the model-task system.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.94\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_natural_carrier_regimes.png}
+
+}
+
+\caption{\label{fig-private}Target-specific private causal control. A:
+with article identity fixed, natural-state-derived target directions
+shift the target-minus-source noun contrast more than wrong-target and
+sign-reversed controls at both scales. B: the effect is primarily target
+enhancement rather than source suppression. Points are semantic
+families; intervals bootstrap families. These targeted patches establish
+private-route capacity, not a spontaneous carrier switch.}
+
+\end{figure}%
+
+\section{Mediator-relative routing}\label{mediator-relative-routing}
+
+The two endpoints leave a deeper question: what determines whether an
+intervention recruits the public route? The neutral synonym assay
+compares two regimes defined by whether article identity distinguishes
+the intended lexical alternatives, while keeping both alternatives
+semantically correct and using the same intervention procedure. Concrete
+examples of the two mediator-relative regimes are shown in
+Figure~\ref{fig-routing} A.
+
+All 14 donor-derived directions pass held-out local efficacy. At native
+strength, fixed-target-article target-minus-source movement is
+\(0.406\ [0.281,0.604]\) logits across six cross-class families and
+\(0.414\ [0.297,0.555]\) across eight within-class families.
+Wrong-target controls yield 0.125 and 0.008; reversed directions yield
+-0.385 and -0.344. Intervention-off \texttt{a/an} policy mass averages
+0.909 (minimum 0.854) and remains 0.899 after intervention. The
+comparison therefore clears local efficacy and mediator-support validity
+without the source-initial conflict of the earlier prompt construction.
+
+Routing then reverses by mediator equivalence class
+(Figure~\ref{fig-routing}). For cross-class alternatives, every family
+increases the target-article policy; mean target-article movement is
+0.182 and 2/6 switch the greedy article. At \(\tau=1\), public TV is
+\(0.176\ [0.108,0.243]\) and private TV is only
+\(0.021\ [0.012,0.033]\). Their target-aligned effects are
+\(0.189\ [0.065,0.326]\) and 0.019. For within-class alternatives, no
+family switches the article and mean policy movement is 0.009. Public TV
+is \(0.009\ [0.003,0.018]\), whereas private TV is
+\(0.061\ [0.046,0.075]\). More importantly, public target-aligned
+influence is approximately zero \(-0.001\ [-0.003,0.001]\), while
+private target-aligned influence is \(0.093\ [0.062,0.124]\).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_neutral_synonym_repair.png}
+
+}
+
+\caption{\label{fig-routing}Mediator-relative route recruitment in Gemma
+3 1B. A: the article can distinguish cross-class but not within-class
+alternatives. B: the matched assay compares within- and cross-article
+targets within each of 14 semantic families; lines share a neutral
+prompt, source state, and source word. Diamonds and bars show means and
+paired-bootstrap 95\% intervals. C: the initial independent-family assay
+provides convergent evidence.}
+
+\end{figure}%
+
+A matched-triad test asks whether the reversal could reflect
+between-family semantic composition (Figure~\ref{fig-routing} B).
+Fourteen neutral prompts each share the same definition, source word,
+source donor, and evaluated state across one same-article and one
+cross-article target; screening used only tokenization, local efficacy,
+and mediator support, never route sign. At the fixed primary setting
+\(\ell=17,s=1,\tau=1\), mean \(R\) changes from
+\(-0.032\ [-0.057,-0.010]\) within class to \(0.087\ [0.046,0.132]\)
+across classes. The paired shift is \(0.120\ [0.077,0.161]\): 13/14
+families shift in the predicted direction (one-sided binomial sign test
+\(p=0.00092\)); an exact paired sign-flip randomization test using the
+paired magnitudes gives \(p=0.000122\). Eight of 14 individually show
+the strict sign reversal \(R_{\rm within}<0<R_{\rm cross}\). The mean
+paired interaction remains positive at all 12 tested
+strength--temperature settings. Thus crossing the article mediator's
+equivalence boundary systematically shifts the balance of target-aligned
+influence toward the public route while holding semantic family and
+source realization fixed. Component decomposition shows that this shift
+is chiefly increased public influence: \(\Delta P=0.102\,
+[0.062,0.142]\), while \(\Delta H=-0.018\ [-0.039,-0.0003]\). The
+target-article policy itself moves by an additional
+\(0.099\ [0.055,0.142]\) in the cross arm, directly linking the public
+increase to mediator recruitment.
+
+Across the initial independent-family assay, public-minus-private target
+influence is \(0.170\ [0.049,0.296]\) across classes, whereas
+private-minus-public influence is \(0.094\ [0.060,0.126]\) within class.
+All six cross-class and all eight within-class families have the
+predicted sign (Figure~\ref{fig-routing} C). Their cross-minus-within
+interaction is \(0.264\ [0.137,0.399]\), with exact family-label
+permutation \(p=0.00033\), providing convergent evidence across a
+broader set of lexical pairs.
+
+The result supports a precise causal statement. Mediator
+distinguishability systematically shifts the balance of target-aligned
+causal influence toward the public route. When the article maps two
+alternatives to one equivalence class, token identity cannot carry their
+lexical difference; in the independent-family group means, the
+cross-class condition is public-dominant and the within-class condition
+is private-dominant. A generated token is therefore a lossy public
+projection relative to the downstream distinction of interest. We
+interpret the cross-class effect as selective recruitment of an
+additional public causal route, not conservation or transfer of a fixed
+information quantity between public and private channels. The experiment
+does \textbf{not} show that a natural online mechanism spontaneously
+chooses a carrier: the residual direction is explicitly constructed from
+named donors. The paired result identifies mediator-relative route
+recruitment under controlled interventions, not a sparse endogenous
+routing controller.
+
+\section{Closed-loop gain}\label{closed-loop-gain}
+
+Mediator visibility explains which distinctions can travel publicly,
+while Equation 1 explains their gain: local pressure changes a decoder
+policy, and continuation leverage determines the downstream consequence.
+Across 32 held-out 270M features, attribution moderately predicts local
+margin movement (\(\rho=0.530\)), but attribution alone fails to predict
+public TV. Composing calibrated local pressure with intervention-off
+decoder susceptibility and branch leverage identifies and sizes the
+decisive-policy regime (aggregate \(R^2=0.840\)); prediction among small
+effects is weak and crossed feature--prompt uncertainty is wide
+\([-0.293,0.986]\) (Figure~\ref{fig-gain}). We therefore claim limited
+predictive validation of a mechanistically coherent 270M high-gain
+regime, not a universal predictor; full diagnostics are in
+Figure~\ref{fig-app-gain} and Figure~\ref{fig-app-gain-tail}.
+
+\section{Validity stress test at 1B}\label{validity-stress-test-at-1b}
+
+The sparse 1B campaign illustrates why the ladder's rungs cannot be
+collapsed: the frozen top four are too weak, an effect-matched coalition
+leaves the binary article support, and a mediator-valid frontier yields
+only low-amplitude hybrid influence. Reporting only free generation
+would conflate these failure modes (full table in the appendix). We use
+the campaign as a validity demonstration, not evidence that scale
+reorganizes sparse planning mechanisms.
+
+\section{Discussion}\label{discussion}
+
+The experiments support a two-part account of autoregressive causal
+organization.
+
+\textbf{Routing is mediator-relative.} A public token does not expose
+the model's entire future-relevant state. It projects that state into
+one vocabulary item. Relative to a target distinction, the projection
+may preserve information---as \texttt{a/an} does for consonant- versus
+vowel-initial alternatives---or collapse it, as \texttt{a} does for two
+consonant-initial synonyms. The neutral assay shows that this difference
+systematically shifts the balance of target-aligned causal influence
+toward the public route. This is stronger than observing that a token
+mediates a later effect: it connects route recruitment to what the
+mediator can distinguish.
+
+\textbf{Public routing has closed-loop gain.} Once an intervention moves
+mediator policy, the written token is fed back through the model. Its
+effect is amplified when the decoder is near a policy boundary and the
+continuation branches have high leverage. S1 provides a high-gain,
+public-dominant case: a small change in intervention strength near the
+article-policy boundary changes the public action, which selects almost
+disjoint noun distributions. The large behavioral rewrite lives at the
+latent-to-symbol-to-continuation handoff, not in a similarly large
+fixed-token residual.
+
+These principles reconcile results that otherwise appear contradictory.
+The S1 intervention can be selected by future-noun attribution yet
+transmit its downstream effect almost entirely through the article.
+Natural residual state can also influence a later noun under that same
+fixed article. And a constructed lexical direction can become
+public-dominant or private-dominant depending on whether article
+identity resolves its intended alternatives. Candidate content, local
+causal action, route, and behavioral magnitude are different questions.
+
+This perspective sharpens mechanistic claims about planning,
+chain-of-thought, tool calls, delimiters, and scratchpads. Route
+describes transmission rather than cognitive function: a representation
+satisfying a latent-planning criterion can still affect a future token
+through a generated intermediate. An output token may be evidence of an
+upstream computation, a causal action, or both. If an intervention
+changes a later answer, replaying its intermediate output tests whether
+the output phenocopies the effect; restoring the baseline output tests
+whether it rescues behavior; fixed-output cells distinguish that public
+realization from influence that persists after the output is fixed. For
+larger mediator vocabularies, the same policy-weighted decomposition
+applies, with an omitted-mass bound for top-\(K\) approximations.
+
+Our use of ``public'' and ``private'' is functional. Public state is
+readable from generated token identity and re-enters through the
+ordinary input channel. Private state is upstream contextual influence
+that remains after that identity is controlled. We do not localize a
+distinct hidden register, claim that the two routes are independent, or
+infer why the model computed the state. Indeed, public and private
+interventions interact, and fixed-token persistence may be distributed
+across attention paths.
+
+The closest planning work already forces intermediate tokens and replays
+steered contexts \citep{hanna2026latent}, distinguishes decodability
+from causal use \citep{ma2026plan}, and demonstrates hidden influence
+beneath fixed scratchpad text \citep{shih2026registers}. The present
+synthesis adds a complete vector decomposition, mediator-support
+validity, a mediator-relative route reversal, and an empirically
+supported closed-loop gain account with limited predictive validation.
+Its methodological implication is simple: a future-token effect is not
+yet a future-state mechanism. One must show that the intervention works
+locally, that the mediator estimand remains valid, and how the closed
+loop transmits and amplifies the effect.
+
+\section{Scope, limitations, and
+conclusion}\label{scope-limitations-and-conclusion}
+
+The sparse public-relay result concerns one Gemma 3 270M feature set,
+dictionary, and mediator. S1 is amplified \(5\times\) and was not
+independently selected as a noun-specific semantic planning
+representation under Hanna and Ameisen's criterion; we identify its
+route, not a unique natural ontology.
+
+Full-residual assays establish causal capacity, not a natural sparse
+carrier or monotone scaling. Explicit synonym donors test routing, not
+spontaneous plan formation; only 8/14 families show strict sign
+reversal. Neither result establishes a routing controller or
+universality across models and mediators.
+
+Greedy claims use exact conditional \texttt{a/an} mixtures, not
+unrestricted sampling; the binary estimand requires retained article
+support. The gain identity is algebraic: its 270M validation identifies
+the high-gain regime, but small-effect ranking, crossed feature--prompt
+precision, and 1B transfer are weak. Intervals describe finite prompt,
+feature, or family sets, not a task population.
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\renewcommand{\bibsection}{}
+\bibliography{manuscript/references.bib}
+
+\appendix
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+
+\section{Supplementary methods and
+results}\label{supplementary-methods-and-results}
+
+\subsection{Reproducibility map}\label{reproducibility-map}
+
+The repository treats manuscript prose as a view over frozen
+machine-readable artifacts. The principal claims can be recomputed from
+the following experiment directories.
+
+\begin{longtable*}{@{}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.69\linewidth}@{}}
+\toprule
+Claim & Experiment artifact \\
+\midrule
+\endhead
+Six-cell S1 split & \path{experiments/s1_article_factorial/results/} \\
+S1 planning-feature audit & \path{experiments/s1_planning_feature_audit/results/audit.json} \\
+Replay and rescue & \path{experiments/s1_replay_rescue/results/} \\
+Decoder boundary and precision & \path{experiments/boundary_precision_policy/results/} \\
+Private residual references & \path{experiments/natural_residual_carrier_regimes/results/} and \path{experiments/cross_scale_normalized_residual/results/} \\
+Neutral synonym routing & \path{experiments/neutral_synonym_repair/results/} \\
+Matched semantic-triad routing & \path{experiments/matched_semantic_triads_repaired/results/} \\
+Matched component and policy audits & \path{experiments/matched_semantic_triads_repaired/results/component_diagnostic.json} and \path{experiments/matched_semantic_triads_repaired/results/article_policy_audit.json} \\
+Independent Figure 4 recomputation & \path{experiments/neutral_synonym_repair/results/independent_recomputation.json} \\
+Closed-loop gain & \path{experiments/closed_loop_gain_law/results/} \\
+Sparse 1B stress tests & \path{experiments/gemma_1b_effect_matched/results/} and \path{experiments/gemma_1b_sparse_frontier/results/} \\
+\bottomrule
+\end{longtable*}
+
+All summary JSON files record model identifiers, sample sizes, interval
+methods, and primary settings. Plotting scripts read those artifacts
+rather than values copied from manuscript prose. The 270M model snapshot
+is \texttt{9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1}; the affine Gemma
+Scope 2 dictionary snapshot is
+\texttt{b218cd5d69dc2fa71cff448b68d625e6c9702d49} with configuration
+\texttt{width\_262k\_l0\_medium\_affine}. Discussed decoder/encoder
+vectors and selection metadata are archived under
+\texttt{experiments/archived\_feature\_vectors/}. Experiments ran on one
+Apple M1 workstation with 16 GB RAM and no external GPU or cluster
+compute. Individual timed runs are recorded in their result summaries or
+logs. Summing those records, including the six-hour 1B attribution
+campaign, gives approximately 13 workstation-hours; this is a lower
+bound because some early exploratory and failed runs predated systematic
+timing.
+
+The frozen S1 audit checks its relationship to the planning-feature
+motivation without rerunning inference. Each of the four selected
+features is active at the pre-article position and has positive direct
+attribution to the intended future noun on all eight selection prompts.
+Together with the intervention results, this establishes
+future-noun-attributed pre-article causal handles. It does not establish
+noun-specific semantic identity: the same features recur across distinct
+future nouns, and S1 selection jointly required positive article
+attribution. We therefore retain the term \emph{attribution-selected S1
+features} rather than claiming an independently selected Hanna-style
+semantic planning feature.
+
+\subsection{Exact six-cell
+measurements}\label{exact-six-cell-measurements}
+
+For each fixed article, the intervention remains active at its original
+pre-article position during noun prediction. This differs from deleting
+the intervention after the article is inserted. We compute full-sequence
+forwards with \texttt{use\_cache=False}; multi-token noun likelihoods
+are teacher-forced one token at a time. Full-vocabulary TV is
+\(TV(p,q)=\frac12\sum_v|p_v-q_v|\). We additionally record
+Jensen--Shannon divergence, top-\(k\) overlap, target-minus-source
+logits for prespecified lexical twins, vector cosine, and
+\(\|E_{\rm total}-E_{\rm public}-E_{\rm private}\|_1\).
+
+For stochastic mediator support \(\mathcal B\), the complete
+policy-weighted decomposition is
+
+\[
+\begin{aligned}
+E_{\rm public}&=\sum_{b\in\mathcal B}[q_1(b)-q_0(b)]Y(0,b),\\
+E_{\rm private}&=\sum_{b\in\mathcal B}q_1(b)[Y(1,b)-Y(0,b)],\\
+E_{\rm total}&=E_{\rm public}+E_{\rm private}.
+\end{aligned}
+\]
+
+The S1 decomposition over all 20 held-out prompts is:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrr@{}}
+\toprule\noalign{}
+Quantity & Mean & 95\% interval \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Total noun TV & 0.893 & {[}0.784, 0.969{]} \\
+Treated-token replay TV & 0.891 & {[}0.776, 0.969{]} \\
+Matched treated-token leftover TV & 0.028 & {[}0.021, 0.035{]} \\
+Replay--total cosine & 0.950 & {[}0.903, 0.979{]} \\
+\end{longtable}
+}
+
+Nineteen prompts switch article and noun. On that descriptive switched
+subset, total, replay, and leftover TVs are 0.940, 0.937, and 0.029. We
+use the all-prompt values in the headline to avoid post-selection.
+
+\subsection{Boundary and stochastic-policy
+audits}\label{boundary-and-stochastic-policy-audits}
+
+Native model, CLT, and residual tensors are bfloat16. A diagnostic head
+casts the final normalized residual and unembedding to float32 without
+rerunning the transformer in float32. Across three prespecified prompts,
+a search of width \(2.44\times10^{-4}\) still produces 0.992 free-path
+TV while fixed \texttt{a} and \texttt{an} move 0.009 and 0.004. The
+audit shows that native 0/0.125-logit steps reflect final-readout
+quantization, while the continuation discontinuity under greedy article
+choice is real.
+
+For stochastic policies we renormalize over \texttt{a/an} and mix the
+two fixed-article noun distributions. Retained article mass exceeds
+0.998 at low temperature in the boundary assay. Policy-vector alignment
+with the total remains at least 0.99 across tested temperatures; the
+private component remains small. These calculations evaluate the exact
+conditional mixture and introduce no sampling variance. The
+strength-boundary and temperature sweeps make the same point visually:
+the total effect tracks the public component while the fixed-token
+leftover stays small (Figure~\ref{fig-app-boundary}).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_boundary_precision_policy.png}
+
+}
+
+\caption{\label{fig-app-boundary}S1 boundary and stochastic-policy
+robustness. A: a float32 final-head audit resolves the article margin
+more finely around the boundary. B: softening the article policy turns
+the discrete switch into graded probability movement. C: total influence
+shrinks with temperature, with the public component tracking it and the
+fixed-token residual remaining small.}
+
+\end{figure}%
+
+\subsection{Private-route controls and
+scale}\label{private-route-controls-and-scale}
+
+Natural-state-derived patches are constructed from target-uncued
+descriptions. The pooled development sweep selects decoder layer 12 at
+270M and layer 14 at 1B. At each scale and route condition we report raw
+target-minus-source movement, fraction of the baseline lexical gap
+closed, target-odds multiplier, patch norm relative to natural residual
+RMS, and stochastic public/private TVs. Controls include a semantic
+wrong target and sign reversal. The target effect is positive at both
+scales, while normalized comparisons do not support a monotone increase
+at 1B. The fuller normalized comparison in
+Figure~\ref{fig-app-private-scale} shows both the cross-scale
+replication and the absence of a monotone scale trend; the control
+directions remain much weaker than the intended target direction.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.95\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_cross_scale_normalized_residual.png}
+
+}
+
+\caption{\label{fig-app-private-scale}Full cross-scale private-route
+comparison. A: development layer profiles. B: normalized target efficacy
+across patch strengths. C--D: public and fixed-token effect magnitudes
+across strength. The target effect is present at both Gemma 3 270M and
+1B, but normalization does not support a monotone increase with scale.
+Specificity controls appear in Figure~\ref{fig-private}.}
+
+\end{figure}%
+
+The stronger dense residual reference patches the decoder-layer output
+at the inserted article position. Four development pairs select layer
+12; four held-out same-article pairs yield 6.44 target-specific logits
+versus 0.14 for ten matched-norm random directions. This is a
+reachability and stack-sensitivity control, not evidence that S1
+represents the same lexical direction.
+
+\subsection{Neutral synonym assay
+details}\label{neutral-synonym-assay-details}
+
+The bare neutral template ending immediately after the definition failed
+mediator-support screening before route inference: \texttt{called}
+frequently outranked both articles, mean \texttt{a/an} mass was
+approximately 0.27, and only 7/14 prompts had an article top token. The
+frozen evaluated format therefore uses one unrelated demonstration:
+
+\begin{quote}
+Someone who studies living organisms is a biologist. {[}definition{]} is
+\end{quote}
+
+Donor prompts append \texttt{Use\ exactly\ the\ word\ {[}word{]}} to the
+same format. The demonstration names neither tested synonym, initial
+letter, nor tested article class. Leave-one-family-out development
+selection chooses layer 17 in all folds. All 14 directions have positive
+local efficacy on the neutral evaluated prompt, despite direct donor
+separation being positive in 13/14.
+
+At \(s=1,\tau=1\), the main route quantities are:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1579}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2105}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2105}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2105}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2105}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Regime
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Public TV
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Private TV
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Public target effect
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Private target effect
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cross-class (N=6) & 0.176 & 0.021 & 0.189 & 0.019 \\
+Within-class (N=8) & 0.009 & 0.061 & -0.001 & 0.093 \\
+\end{longtable}
+}
+
+Both signed simple effects have the predicted direction under exact sign
+flips, and the independent family-label interaction has exact two-sided
+\(p=0.00033\) over 3,003 assignments. The interaction remains positive
+for all 12 strength-temperature settings
+(Figure~\ref{fig-app-synonym-robustness}). This visual check shows that
+the sign reversal is not peculiar to one chosen strength or
+article-policy temperature. We archive the rejected bare-neutral output
+under \texttt{results\_bare\_neutral\_invalid\_support/} rather than
+silently replacing it.
+
+The repaired paired extension freezes 22 candidate semantic triads
+before screening. Fourteen pass the route-blind tokenization,
+local-efficacy, and article-support criteria. Each retained definition
+is evaluated from the same source word and neutral prompt with one
+same-article and one cross-article target. At \(s=1,\tau=1\),
+within-class \(R=P-H\) is \(-0.032\ [-0.057,-0.010]\), cross-class \(R\)
+is \(0.087\ [0.046,0.132]\), and their paired difference is
+\(0.120\ [0.077,0.161]\). Thirteen of 14 paired shifts are positive
+(one-sided binomial sign test \(p=0.00092\); exact paired sign-flip
+randomization \(p=0.000122\)); eight have the strict double-dissociation
+sign. The paired interaction remains positive at every combination of
+three strengths and four temperatures. This is the primary control for
+semantic-family composition in the mediator-relative claim.
+
+The component decomposition makes the source of this route shift
+explicit. Within class, mean public and private target effects are
+respectively \(-0.0017\ [-0.0108,0.0097]\) and
+\(0.0307\ [0.0142,0.0509]\); across classes they are
+\(0.0998\ [0.0581,0.1446]\) and \(0.0127\ [0.0041,0.0217]\).
+Consequently, the paired changes are \(\Delta P=0.1015\,
+[0.0625,0.1423]\) and \(\Delta H=-0.0180\ [-0.0389,-0.0003]\): the
+larger public component accounts for most of the change in \(R\), with a
+smaller reduction in private influence. A deterministic 28-cell audit
+recovers the missing conditional article probabilities and exactly
+reconstructs every frozen public effect (maximum absolute error zero).
+Mean target-article policy movement is 0.0007 within class and 0.0993
+across classes; their paired difference is \(0.0986\ [0.0549,0.1418]\),
+positive in 12/14 families. Thus the public increase accompanies
+stronger recruitment of the target article, not continuation leverage
+alone.
+
+The outcome-blind potency audit does not find stronger cross-article
+interventions. Mean cross versus within direction norms are 699 versus
+761 (paired difference \(-62\ [-188,60]\)); fixed-article local
+efficacies are 0.353 versus 0.415 (difference
+\(-0.063\ [-0.174,0.063]\)); and treated article support is 0.912 versus
+0.913. Cross targets do have a higher baseline target-minus-source
+lexical gap (paired difference 7.01 logits), so target-word identity is
+not held fixed; this is disclosed rather than interpreted as route
+evidence. Familywise gap differences do not predict the paired route
+shift (Pearson \(r=-0.005\), Spearman \(\rho=-0.015\),
+100,000-permutation two-sided \(p=0.986\)); leave-one-family-out Pearson
+correlations range from -0.104 to 0.148. Because neither direction norm
+nor fixed-mediator causal potency favors the cross arm, no outcome-blind
+efficacy rescaling is triggered.
+
+All 22 candidates and their route-blind screening outcomes are shown
+below. Semantic validity was assessed during pre-model curation before
+this candidate set was frozen and before tokenization, model screening,
+or route computation.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1500}}
+  >{\centering\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Family
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Source
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Same-article target
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cross-article target
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Retained
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Route-blind failure reason
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+teaching & a teacher & a tutor & an educator & yes & -- \\
+legal & a lawyer & a counsel & an attorney & no & cross local
+efficacy \\
+medicine & a doctor & a physician & an internist & no & tokenization \\
+writing & a writer & a novelist & an author & yes & -- \\
+performance & an actor & an entertainer & a performer & yes & -- \\
+assistance & an aide & an assistant & a helper & no & within/cross
+treated support \\
+events & a coordinator & a planner & an organizer & yes & -- \\
+leadership & a leader & a boss & an executive & yes & -- \\
+academia & a researcher & a scientist & an academic & yes & -- \\
+agriculture & a farmer & a grower & an agriculturist & no &
+tokenization \\
+business & a founder & a businessperson & an entrepreneur & no &
+tokenization \\
+art & an artist & an illustrator & a painter & yes & -- \\
+police & a cop & a policeman & an officer & yes & -- \\
+speaking & a speaker & a presenter & an orator & yes & -- \\
+employment & a worker & a laborer & an employee & yes & -- \\
+ownership & a proprietor & a holder & an owner & yes & -- \\
+invention & an inventor & an innovator & a creator & yes & -- \\
+students & a student & a pupil & an undergraduate & yes & -- \\
+driving & a driver & a motorist & an operator & no & cross local
+efficacy \\
+aviation & an aviator & an airman & a pilot & no & tokenization \\
+accounts & an accountant & an auditor & a bookkeeper & no &
+tokenization \\
+management & a manager & a director & an executive & yes & -- \\
+\end{longtable}
+}
+
+An independent, artifact-only recomputation imports none of the
+experiment's analysis or plotting code. Starting from frozen row-level
+outputs, it reproduces all 14 local-efficacy checks, article-support
+statistics, per-family route effects, 6/6 and 8/8 original signs,
+bootstrap summaries, exact sign-flip tests, the 0.264 independent-group
+interaction, and its exact \(p=0.00033\) label permutation test. The
+same independent runner also reconstructs all 22 triad eligibility
+decisions, the exact retained set, every paired route contrast, both
+headline tests, and all 12 robustness settings. It fails if any
+recomputed headline differs from the frozen summary beyond \(10^{-12}\).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_neutral_synonym_robustness.png}
+
+}
+
+\caption{\label{fig-app-synonym-robustness}Synonym-route robustness. A:
+the initial independent-family interaction. B: the matched-triad paired
+shift. Every strength--temperature cell is positive in both assays.}
+
+\end{figure}%
+
+\subsection{Closed-loop gain
+validation}\label{closed-loop-gain-validation}
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.92\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_attribution_channel_calibration.png}
+
+}
+
+\caption{\label{fig-gain}Closed-loop gain and held-out prediction at
+Gemma 3 270M. A: attribution is calibrated to local causal pressure,
+then composed with decoder susceptibility and continuation leverage. B:
+the composition captures the high-gain regime; orange cells have both
+observed and predicted article-policy movement above 0.9, while the
+inset resolves the low-effect cloud. Holdout excludes feature and prompt
+identity from causal-pressure calibration; intervention-off decoder
+susceptibility and branch leverage of the held-out prompt are permitted
+observed inputs. Aggregate R2 is tail-sensitive and is not a claim of
+uniformly precise cell-level prediction.}
+
+\end{figure}%
+
+The two-branch identity holds to numerical precision. Prediction fits a
+mapping from attribution to local article-margin movement on training
+features and prompts, then evaluates public TV after composition with
+intervention-off susceptibility and branch leverage. Combined
+feature-and-prompt holdout results for 270M are:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+Temperature
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Attribution only \(R^2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
++ susceptibility
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Full composition
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0.10 & -0.547 & 0.827 & 0.840 \\
+0.25 & -0.529 & 0.861 & 0.875 \\
+0.50 & -0.191 & 0.857 & 0.870 \\
+1.00 & 0.395 & 0.851 & 0.864 \\
+\end{longtable}
+}
+
+At \(\tau=0.1\), constant, susceptibility-only, leverage-only, and
+activation baselines have \(R^2=-0.052,-0.082,-0.053,-0.045\). The
+oracle using the measured margin and full leverage has \(R^2=1\) by
+identity and is not a prediction. At 1B, combined-holdout transfer is
+weak; we report that failure rather than pool scales.
+Figure~\ref{fig-app-gain} and Figure~\ref{fig-app-gain-tail} show the
+complete diagnostic set: attribution has moderate local calibration (A),
+fixed-token attribution correlations are inconclusive (B), the full 270M
+composition outperforms simple baselines (C), bin means expose
+calibration across the dynamic range (D), tail removal exposes the
+aggregate \(R^2\)'s dependence on large effects (E), and temperature and
+scale checks delimit transfer (F).
+
+The calibration intervals in panel D use 10,000 crossed bootstrap
+resamples: feature and prompt identities are sampled independently with
+replacement and their multiplicities are crossed into cell weights. The
+same blocked procedure gives aggregate \(R^2=0.840\ [-0.293,0.986]\) and
+MAE \(0.0178\ [0.0036,0.0377]\). Panel E reports MAE alongside
+tail-trimmed \(R^2\): removing large effects shrinks absolute error but
+collapses outcome variance even faster, making \(R^2\) strongly negative
+without implying large absolute mistakes.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.98\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_gain_diagnostics_appendix.png}
+
+}
+
+\caption{\label{fig-app-gain}Closed-loop gain diagnostics I. A:
+attribution-to-local-efficacy calibration. B: fixed-token target
+correlations with broad intervals. C: predictive baselines.}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.98\linewidth,height=\textheight,keepaspectratio]{manuscript/figures/fig_gain_diagnostics_appendix_tail.png}
+
+}
+
+\caption{\label{fig-app-gain-tail}Closed-loop gain diagnostics II. D:
+equal-count predicted-versus-observed calibration with crossed
+feature--prompt bootstrap intervals. E: R2 and MAE respond differently
+when the largest observed effects are excluded because the remaining
+outcome variance is tiny. F: temperature robustness at 270M and weak
+transfer for available 1B handles.}
+
+\end{figure}%
+
+\subsection{Sparse 1B ladder failures}\label{sparse-1b-ladder-failures}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2143}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2857}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2857}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2143}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Sparse handle
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+Local efficacy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\texttt{a/an} support
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+What follows?
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Frozen top four & No: 0.075-logit mean movement & Yes & No route
+claim \\
+Effect-matched 24 & Yes & No: \texttt{called} often dominates & No
+binary route claim \\
+Constrained frontier & Yes & Yes: 20/20 prompts & Low-amplitude hybrid
+route \\
+\end{longtable}
+}
+
+The original four-feature sparse intervention was independently selected
+from 1,200-node attribution graphs but moved the held-out article margin
+only 0.075 logits. A 24-feature effect-matched coalition increased local
+movement but made non-article tokens such as \texttt{called} dominate,
+invalidating the binary mediator estimand. A constrained frontier
+feature at layer 18, feature 5015, preserved article support on 20/20
+prompts. At \(7.5\times\) it changed only one greedy article, but its
+exact stochastic decomposition showed low-amplitude hybrid influence.
+Reconstruction audits reveal uneven CLT fidelity and a substantial
+affine-skip contribution; graph-cap audits make simple truncation a less
+likely sole explanation. These results motivate the ladder but do not
+establish a scale-dependent reorganization.
+
+\subsection{Negative and superseded
+studies}\label{negative-and-superseded-studies}
+
+S2 frequently leaves the intended article domain and is retained only as
+a forensic warning. A sparse layer-5 feature produces exploratory
+fixed-token movement but has weak matched controls and may encode vowel
+class. The released \texttt{is/are} subtraction task fails behavioral
+and local-efficacy prerequisites in both models, so it cannot test
+mediator capacity. Earlier first-letter synonym prompts are superseded
+because the evaluated source cue contradicted the target synonym. An
+arbitrary A/B few-shot pilot does show that context can alter target
+nouns with the code fixed (effects 0.224--0.245 across reliability
+banks), but the visible context itself remains available and the task is
+less mechanistically clean than the neutral synonym assay; it is not
+part of the main argument.
+
+\subsection{Responsible use and checklist
+notes}\label{responsible-use-and-checklist-notes}
+
+The study uses public pretrained models and synthetic prompts. No
+personal data, human subjects, or newly collected sensitive data are
+involved. Compute was run locally on Apple silicon. Code, frozen
+configurations, checkpoints, invalidated outputs, and machine-readable
+summaries are retained for release after review; the anonymous
+submission does not include the working repository because its frozen
+logs and metadata contain identifying local paths. Confidence intervals,
+exact tests, sample sizes, development/evaluation separation, and known
+post-selection are stated with each claim.
+
+The principal positive impact is improving the validity of mechanistic
+claims about model computation. A potential negative impact is
+overconfidence in mechanistic interpretations if route-identification
+assumptions are ignored or generalized beyond their validated scope;
+this work has no direct deployment path.
+
+\subsection{Assets and licenses}\label{assets-and-licenses}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Asset
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Version or snapshot
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+License or terms
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Gemma 3 270M/1B PT & \texttt{9b0cf...e0ca1}; \texttt{fcf18...8eb29} &
+Gemma Terms of Use \\
+Gemma Scope 2 PT CLTs & \texttt{b218c...02d49}; \texttt{b738d...e873} &
+CC BY 4.0 \\
+\texttt{circuit-tracer} & 0.5.0 & MIT \\
+Transformers & 4.57.3 & Apache-2.0 \\
+NNsight & 0.7.0 & MIT \\
+Hanna--Ameisen prompts & commit \texttt{993cff5...8dab} & MIT \\
+\end{longtable}
+}
+
+
+
+
+\section*{NeurIPS Paper Checklist}
+
+\begin{enumerate}
+
+\item {\bf Claims}
+    \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: The abstract and Section~1 distinguish the scoped S1 relay-and-amplification result from private-route capacity. Support includes the six-cell split, replay/rescue, precision and stochastic-policy audits, natural residual controls, a paired 14-family mediator-relative assay, held-out attribution calibration, and disjoint development/test patches.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the abstract and introduction do not include the claims made in the paper.
+        \item The abstract and/or introduction should clearly state the claims made, including the contributions made in the paper and important assumptions and limitations. A \answerNo{} or \answerNA{} answer to this question will not be perceived well by the reviewers. 
+        \item The claims made should match theoretical and experimental results, and reflect how much the results can be expected to generalize to other settings. 
+        \item It is fine to include aspirational goals as motivation as long as it is clear that these goals are not attained by the paper. 
+    \end{itemize}
+
+\item {\bf Limitations}
+    \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Section~9 scopes the evidence to one sparse handle, dictionary, and grammatical mediator; distinguishes full-residual capacity interventions from natural sparse mechanisms; rejects a monotone scaling claim; identifies donor-derived rather than spontaneous routing; reports that only 8/14 matched families show strict sign reversal; notes the absence of cross-model and cross-mediator replication; and limits the binary conditional-policy and gain-prediction claims.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper has no limitation while the answer \answerNo{} means that the paper has limitations, but those are not discussed in the paper. 
+        \item The authors are encouraged to create a separate ``Limitations'' section in their paper.
+        \item The paper should point out any strong assumptions and how robust the results are to violations of these assumptions (e.g., independence assumptions, noiseless settings, model well-specification, asymptotic approximations only holding locally). The authors should reflect on how these assumptions might be violated in practice and what the implications would be.
+        \item The authors should reflect on the scope of the claims made, e.g., if the approach was only tested on a few datasets or with a few runs. In general, empirical results often depend on implicit assumptions, which should be articulated.
+        \item The authors should reflect on the factors that influence the performance of the approach. For example, a facial recognition algorithm may perform poorly when image resolution is low or images are taken in low lighting. Or a speech-to-text system might not be used reliably to provide closed captions for online lectures because it fails to handle technical jargon.
+        \item The authors should discuss the computational efficiency of the proposed algorithms and how they scale with dataset size.
+        \item If applicable, the authors should discuss possible limitations of their approach to address problems of privacy and fairness.
+        \item While the authors might fear that complete honesty about limitations might be used by reviewers as grounds for rejection, a worse outcome might be that reviewers discover limitations that aren't acknowledged in the paper. The authors should use their best judgment and recognize that individual actions in favor of transparency play an important role in developing norms that preserve the integrity of the community. Reviewers will be specifically instructed to not penalize honesty concerning limitations.
+    \end{itemize}
+
+\item {\bf Theory assumptions and proofs}
+    \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
+    \item[] Answer: \answerNA{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: The paper uses an exact probability-vector identity and a causal identification observation, but claims no theorem requiring a formal proof.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include theoretical results. 
+        \item All the theorems, formulas, and proofs in the paper should be numbered and cross-referenced.
+        \item All assumptions should be clearly stated or referenced in the statement of any theorems.
+        \item The proofs can either appear in the main paper or the supplemental material, but if they appear in the supplemental material, the authors are encouraged to provide a short proof sketch to provide intuition. 
+        \item Inversely, any informal proof provided in the core of the paper should be complemented by formal proofs provided in appendix or supplemental material.
+        \item Theorems and Lemmas that the proof relies upon should be properly referenced. 
+    \end{itemize}
+
+    \item {\bf Experimental result reproducibility}
+    \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Sections~3--5 and the appendix specify model, transcoder, package versions, protocols, metrics, and experiment directories with configs and summaries. An independent artifact-only runner recomputes both Figure~4 assays, including all 22 paired-candidate eligibility decisions, support checks, intervals, and exact tests, without importing the original analysis code.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item If the paper includes experiments, a \answerNo{} answer to this question will not be perceived well by the reviewers: Making the paper reproducible is important, regardless of whether the code and data are provided or not.
+        \item If the contribution is a dataset and\slash or model, the authors should describe the steps taken to make their results reproducible or verifiable. 
+        \item Depending on the contribution, reproducibility can be accomplished in various ways. For example, if the contribution is a novel architecture, describing the architecture fully might suffice, or if the contribution is a specific model and empirical evaluation, it may be necessary to either make it possible for others to replicate the model with the same dataset, or provide access to the model. In general. releasing code and data is often one good way to accomplish this, but reproducibility can also be provided via detailed instructions for how to replicate the results, access to a hosted model (e.g., in the case of a large language model), releasing of a model checkpoint, or other means that are appropriate to the research performed.
+        \item While NeurIPS does not require releasing code, the conference does require all submissions to provide some reasonable avenue for reproducibility, which may depend on the nature of the contribution. For example
+        \begin{enumerate}
+            \item If the contribution is primarily a new algorithm, the paper should make it clear how to reproduce that algorithm.
+            \item If the contribution is primarily a new model architecture, the paper should describe the architecture clearly and fully.
+            \item If the contribution is a new model (e.g., a large language model), then there should either be a way to access this model for reproducing the results or a way to reproduce the model (e.g., with an open-source dataset or instructions for how to construct the dataset).
+            \item We recognize that reproducibility may be tricky in some cases, in which case authors are welcome to describe the particular way they provide for reproducibility. In the case of closed-source models, it may be that access to the model is limited in some way (e.g., to registered users), but it should be possible for other researchers to have some path to reproducing or verifying the results.
+        \end{enumerate}
+    \end{itemize}
+
+
+\item {\bf Open access to data and code}
+    \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
+    \item[] Answer: \answerNo{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: The paper and supplement provide exact model and package snapshots, frozen splits, sample sizes, intervention definitions, statistical procedures, and a claim-to-artifact reproducibility map. The working repository is withheld during anonymous review because frozen logs and metadata contain identifying local paths; a sanitized code and result release will follow review.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that paper does not include experiments requiring code.
+        \item Please see the NeurIPS code and data submission guidelines (\url{https://neurips.cc/public/guides/CodeSubmissionPolicy}) for more details.
+        \item While we encourage the release of code and data, we understand that this might not be possible, so \answerNo{} is an acceptable answer. Papers cannot be rejected simply for not including code, unless this is central to the contribution (e.g., for a new open-source benchmark).
+        \item The instructions should contain the exact command and environment needed to run to reproduce the results. See the NeurIPS code and data submission guidelines (\url{https://neurips.cc/public/guides/CodeSubmissionPolicy}) for more details.
+        \item The authors should provide instructions on data access and preparation, including how to access the raw data, preprocessed data, intermediate data, and generated data, etc.
+        \item The authors should provide scripts to reproduce all experimental results for the new proposed method and baselines. If only a subset of experiments are reproducible, they should state which ones are omitted from the script and why.
+        \item At submission time, to preserve anonymity, the authors should release anonymized versions (if applicable).
+        \item Providing as much information as possible in supplemental material (appended to the paper) is recommended, but including URLs to data and code is permitted.
+    \end{itemize}
+
+
+\item {\bf Experimental setting/details}
+    \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Section~3 and the appendix give model versions, prompts, frozen splits, layer/strength selection, intervention procedures, and evaluation metrics.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The experimental setting should be presented in the core of the paper to a level of detail that is necessary to appreciate the results and make sense of them.
+        \item The full details can be provided either with the code, in appendix, or as supplemental material.
+    \end{itemize}
+
+\item {\bf Experiment statistical significance}
+    \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Main factorial and reference effects use 10,000-resample prompt- or pair-level nonparametric bootstrap intervals; the matched-triad result additionally reports an exact one-sided binomial sign test and an exact paired sign-flip randomization test. Random seeds are averaged within pair before pair-level inference.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The authors should answer \answerYes{} if the results are accompanied by error bars, confidence intervals, or statistical significance tests, at least for the experiments that support the main claims of the paper.
+        \item The factors of variability that the error bars are capturing should be clearly stated (for example, train/test split, initialization, random drawing of some parameter, or overall run with given experimental conditions).
+        \item The method for calculating the error bars should be explained (closed form formula, call to a library function, bootstrap, etc.)
+        \item The assumptions made should be given (e.g., Normally distributed errors).
+        \item It should be clear whether the error bar is the standard deviation or the standard error of the mean.
+        \item It is OK to report 1-sigma error bars, but one should state it. The authors should preferably report a 2-sigma error bar than state that they have a 96\% CI, if the hypothesis of Normality of errors is not verified.
+        \item For asymmetric distributions, the authors should be careful not to show in tables or figures symmetric error bars that would yield results that are out of range (e.g., negative error rates).
+        \item If error bars are reported in tables or plots, the authors should explain in the text how they were calculated and reference the corresponding figures or tables in the text.
+    \end{itemize}
+
+\item {\bf Experiments compute resources}
+    \item[] Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce the experiments?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Experiments ran on one Apple M1 workstation (16~GB) using CPU inference with streamed transcoder loads and no external GPU or cluster compute. Individual timed runs are recorded in summaries or logs; their sum is approximately 13 workstation-hours, a lower bound because some early exploratory and failed runs predated systematic timing (Appendix~A.1).
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not include experiments.
+        \item The paper should indicate the type of compute workers CPU or GPU, internal cluster, or cloud provider, including relevant memory and storage.
+        \item The paper should provide the amount of compute required for each of the individual experimental runs as well as estimate the total compute. 
+        \item The paper should disclose whether the full research project required more compute than the experiments reported in the paper (e.g., preliminary or failed experiments that didn't make it into the paper). 
+    \end{itemize}
+    
+\item {\bf Code of ethics}
+    \item[] Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics \url{https://neurips.cc/public/EthicsGuidelines}?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: The work analyzes open-weight models on synthetic grammatical prompts and conforms to the NeurIPS Code of Ethics.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the authors have not reviewed the NeurIPS Code of Ethics.
+        \item If the authors answer \answerNo, they should explain the special circumstances that require a deviation from the Code of Ethics.
+        \item The authors should make sure to preserve anonymity (e.g., if there is a special consideration due to laws or regulations in their jurisdiction).
+    \end{itemize}
+
+
+\item {\bf Broader impacts}
+    \item[] Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Appendix~A.9 describes the positive methodological impact, the risk of overconfident mechanistic interpretation, and the absence of a direct deployment path.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that there is no societal impact of the work performed.
+        \item If the authors answer \answerNA{} or \answerNo, they should explain why their work has no societal impact or why the paper does not address societal impact.
+        \item Examples of negative societal impacts include potential malicious or unintended uses (e.g., disinformation, generating fake profiles, surveillance), fairness considerations (e.g., deployment of technologies that could make decisions that unfairly impact specific groups), privacy considerations, and security considerations.
+        \item The conference expects that many papers will be foundational research and not tied to particular applications, let alone deployments. However, if there is a direct path to any negative applications, the authors should point it out. For example, it is legitimate to point out that an improvement in the quality of generative models could be used to generate Deepfakes for disinformation. On the other hand, it is not needed to point out that a generic algorithm for optimizing neural networks could enable people to train models that generate Deepfakes faster.
+        \item The authors should consider possible harms that could arise when the technology is being used as intended and functioning correctly, harms that could arise when the technology is being used as intended but gives incorrect results, and harms following from (intentional or unintentional) misuse of the technology.
+        \item If there are negative societal impacts, the authors could also discuss possible mitigation strategies (e.g., gated release of models, providing defenses in addition to attacks, mechanisms for monitoring misuse, mechanisms to monitor how a system learns from feedback over time, improving the efficiency and accessibility of ML).
+    \end{itemize}
+    
+\item {\bf Safeguards}
+    \item[] Question: Does the paper describe safeguards that have been put in place for responsible release of data or models that have a high risk for misuse (e.g., pre-trained language models, image generators, or scraped datasets)?
+    \item[] Answer: \answerNA{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: The study introduces no new model or scraped dataset and therefore creates no release-specific high-risk asset.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper poses no such risks.
+        \item Released models that have a high risk for misuse or dual-use should be released with necessary safeguards to allow for controlled use of the model, for example by requiring that users adhere to usage guidelines or restrictions to access the model or implementing safety filters. 
+        \item Datasets that have been scraped from the Internet could pose safety risks. The authors should describe how they avoided releasing unsafe images.
+        \item We recognize that providing effective safeguards is challenging, and many papers do not require this, but we encourage authors to take this into account and make a best faith effort.
+    \end{itemize}
+
+\item {\bf Licenses for existing assets}
+    \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: We cite Gemma~3, Gemma Scope~2, circuit-tracer, NNsight, and the source prompt repository. Appendix~A.10 names licenses and terms (Gemma Terms of Use; Gemma Scope~2 CC BY~4.0; MIT; Transformers Apache-2.0), pinned snapshots, package versions, and the MIT-licensed Hanna--Ameisen repository commit and checksum.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not use existing assets.
+        \item The authors should cite the original paper that produced the code package or dataset.
+        \item The authors should state which version of the asset is used and, if possible, include a URL.
+        \item The name of the license (e.g., CC-BY 4.0) should be included for each asset.
+        \item For scraped data from a particular source (e.g., website), the copyright and terms of service of that source should be provided.
+        \item If assets are released, the license, copyright information, and terms of use in the package should be provided. For popular datasets, \url{paperswithcode.com/datasets} has curated licenses for some datasets. Their licensing guide can help determine the license of a dataset.
+        \item For existing datasets that are re-packaged, both the original license and the license of the derived asset (if it has changed) should be provided.
+        \item If this information is not available online, the authors are encouraged to reach out to the asset's creators.
+    \end{itemize}
+
+\item {\bf New assets}
+    \item[] Question: Are new assets introduced in the paper well documented and is the documentation provided alongside the assets?
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: Experiment configs, scripts, and JSON summaries are documented in the repository READMEs and appendix map.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not release new assets.
+        \item Researchers should communicate the details of the dataset\slash code\slash model as part of their submissions via structured templates. This includes details about training, license, limitations, etc. 
+        \item The paper should discuss whether and how consent was obtained from people whose asset is used.
+        \item At submission time, remember to anonymize your assets (if applicable). You can either create an anonymized URL or include an anonymized zip file.
+    \end{itemize}
+
+\item {\bf Crowdsourcing and research with human subjects}
+    \item[] Question: For crowdsourcing experiments and research with human subjects, does the paper include the full text of instructions given to participants and screenshots, if applicable, as well as details about compensation (if any)? 
+    \item[] Answer: \answerNA{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: No crowdsourcing or human-subjects research.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not involve crowdsourcing nor research with human subjects.
+        \item Including this information in the supplemental material is fine, but if the main contribution of the paper involves human subjects, then as much detail as possible should be included in the main paper. 
+        \item According to the NeurIPS Code of Ethics, workers involved in data collection, curation, or other labor should be paid at least the minimum wage in the country of the data collector. 
+    \end{itemize}
+
+\item {\bf Institutional review board (IRB) approvals or equivalent for research with human subjects}
+    \item[] Question: Does the paper describe potential risks incurred by study participants, whether such risks were disclosed to the subjects, and whether Institutional Review Board (IRB) approvals (or an equivalent approval/review based on the requirements of your country or institution) were obtained?
+    \item[] Answer: \answerNA{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: No human-subjects research.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the paper does not involve crowdsourcing nor research with human subjects.
+        \item Depending on the country in which research is conducted, IRB approval (or equivalent) may be required for any human subjects research. If you obtained IRB approval, you should clearly state this in the paper. 
+        \item We recognize that the procedures for this may vary significantly between institutions and locations, and we expect authors to adhere to the NeurIPS Code of Ethics and the guidelines for their institution. 
+        \item For initial submissions, do not include any information that would break anonymity (if applicable), such as the institution conducting the review.
+    \end{itemize}
+
+\item {\bf Declaration of LLM usage}
+    \item[] Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.
+    %this research? 
+    \item[] Answer: \answerYes{} % Replace by \answerYes{}, \answerNo{}, or \answerNA{}.
+    \item[] Justification: AI agents assisted with literature synthesis, experimental-design brainstorming and critique, implementation, execution, result aggregation, and manuscript editing. The authors made the final scientific decisions and independently verified the reported experiments, statistics, figures, and citations against frozen artifacts and source papers.
+    \item[] Guidelines:
+    \begin{itemize}
+        \item The answer \answerNA{} means that the core method development in this research does not involve LLMs as any important, original, or non-standard components.
+        \item Please refer to our LLM policy in the NeurIPS handbook for what should or should not be described.
+    \end{itemize}
+
+\end{enumerate}
+
+
+\end{document}

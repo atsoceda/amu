@@ -8,7 +8,18 @@ noun-distribution change is 0.893 TV. Replaying the treated article with the
 intervention off produces 0.891 TV in the same direction; the matched
 treated-article leftover is \(0.028\ [0.021,0.035]\). The exact vector
 reconstruction error is below \(10^{-7}\). Thus the large noun rewrite is
-almost entirely reproduced by substituting the article token.
+almost entirely reproduced by substituting the article token. The effect is
+carried by a single member: amplifying L13/F10231 alone at \(5\times\) gives
+total and replay TVs of 0.893 and 0.891, switches the article on the same 19/20
+prompts, and matches the four-feature total per prompt to within 0.010 TV (mean
+absolute difference 0.0016); its fixed-article leftover is 0.016. This feature
+has the selection panel's largest article attribution but weak future-noun
+attribution (Appendix A.1).
+
+Across prompts, the vector decomposition confirms that this is not merely a
+top-token coincidence: public substitution reproduces nearly all of the total
+noun-distribution movement, whereas the matched fixed-token residual is small
+(@fig-s1 B).
 
 The top-1 falsification is even more direct (@fig-s1 A). Treated-article replay
 recreates the S1-on top noun on 20/20 prompts. Restoring the baseline article
@@ -16,11 +27,6 @@ while leaving S1 active restores the baseline top noun on 20/20 prompts.
 Phenocopy and rescue residual TVs are only 0.028 and 0.030. The `pilot` example
 therefore reads as a causal sequence: S1 changes `a` to `an`; `an` licenses the
 `aviator` continuation; returning `a` restores `pilot`.
-
-Across prompts, the vector decomposition confirms that this is not merely a
-top-token coincidence: public substitution reproduces nearly all of the total
-noun-distribution movement, whereas the matched fixed-token residual is small
-(@fig-s1 B).
 
 ![The sparse S1 intervention is strongly public-dominant. A: treated-article replay phenocopies the noun and baseline-article restoration rescues it. B: public token substitution reproduces almost all free-path change; TV magnitudes are shown separately and are not additive. C: around each prompt's article boundary, the free noun distribution jumps while fixed-article paths barely move.](manuscript/figures/fig_mediation_decomposition.png){#fig-s1 width=98%}
 
@@ -38,9 +44,12 @@ Thus S1 reproduces the causal pattern motivating latent-planning analyses: a
 pre-article handle affects both the licensing article and a future noun. A
 frozen-artifact audit confirms that all four features are active pre-article and
 have positive direct attribution to the intended future noun on all eight
-selection prompts. Because the features recur across nouns and selection also
-required article influence, S1 is not independently identified as a
-noun-specific semantic planning representation. Our result concerns transmission:
+selection prompts. Because the features recur across nouns, selection also
+required article influence, and the effect is carried by the most
+article-attributed member, S1 is not independently identified as a
+noun-specific semantic planning representation. Handles selected for
+future-noun influence without an article criterion were weak in this model
+(Appendix A.8). Our result concerns transmission:
 its large free-generation noun effect travels primarily through the article,
 not through comparably large fixed-token persistence.
 

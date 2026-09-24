@@ -1,0 +1,2883 @@
+{
+  "generated_at": "2026-09-24T11:08:24.421191+00:00",
+  "model": "google/gemma-3-1b-pt",
+  "model_snapshot": "fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "scope_repo": "google/gemma-scope-2-1b-pt",
+  "scope_snapshot": "b738dc06961818c011fb2e44a316352ca0f4e873",
+  "variant": "clt/width_262k_l0_medium_affine",
+  "vector_file": "gemma_scope_2_1b_pt_affine_discussed.safetensors",
+  "vector_sha256": "cab248d941a7e913d0d2dd20b4b6cc2e84d93b9815c0ee0a48845cbfe13803d5",
+  "n_unique_features": 125,
+  "features": [
+    {
+      "layer": 0,
+      "feature_idx": 4438,
+      "roles": [
+        "S1_dual_effect",
+        "calibration_low_article_high_future",
+        "effect_matched_run_S1_original_top4_5x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L00_F04438__encoder",
+      "decoder_key": "L00_F04438__decoder",
+      "b_enc_key": "L00_F04438__b_enc",
+      "threshold_key": "L00_F04438__threshold",
+      "decoder_shape": [
+        26,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 1,
+      "feature_idx": 399,
+      "roles": [
+        "S2_article_only",
+        "calibration_high_article_low_future",
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L01_F00399__encoder",
+      "decoder_key": "L01_F00399__decoder",
+      "b_enc_key": "L01_F00399__b_enc",
+      "threshold_key": "L01_F00399__threshold",
+      "decoder_shape": [
+        25,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 1,
+      "feature_idx": 2070,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L01_F02070__encoder",
+      "decoder_key": "L01_F02070__decoder",
+      "b_enc_key": "L01_F02070__b_enc",
+      "threshold_key": "L01_F02070__threshold",
+      "decoder_shape": [
+        25,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 1,
+      "feature_idx": 9677,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L01_F09677__encoder",
+      "decoder_key": "L01_F09677__decoder",
+      "b_enc_key": "L01_F09677__b_enc",
+      "threshold_key": "L01_F09677__threshold",
+      "decoder_shape": [
+        25,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 1,
+      "feature_idx": 9977,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L01_F09977__encoder",
+      "decoder_key": "L01_F09977__decoder",
+      "b_enc_key": "L01_F09977__b_enc",
+      "threshold_key": "L01_F09977__threshold",
+      "decoder_shape": [
+        25,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 2,
+      "feature_idx": 2783,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L02_F02783__encoder",
+      "decoder_key": "L02_F02783__decoder",
+      "b_enc_key": "L02_F02783__b_enc",
+      "threshold_key": "L02_F02783__threshold",
+      "decoder_shape": [
+        24,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 2,
+      "feature_idx": 6962,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L02_F06962__encoder",
+      "decoder_key": "L02_F06962__decoder",
+      "b_enc_key": "L02_F06962__b_enc",
+      "threshold_key": "L02_F06962__threshold",
+      "decoder_shape": [
+        24,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 2,
+      "feature_idx": 7672,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L02_F07672__encoder",
+      "decoder_key": "L02_F07672__decoder",
+      "b_enc_key": "L02_F07672__b_enc",
+      "threshold_key": "L02_F07672__threshold",
+      "decoder_shape": [
+        24,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 3,
+      "feature_idx": 438,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L03_F00438__encoder",
+      "decoder_key": "L03_F00438__decoder",
+      "b_enc_key": "L03_F00438__b_enc",
+      "threshold_key": "L03_F00438__threshold",
+      "decoder_shape": [
+        23,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 3,
+      "feature_idx": 1075,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L03_F01075__encoder",
+      "decoder_key": "L03_F01075__decoder",
+      "b_enc_key": "L03_F01075__b_enc",
+      "threshold_key": "L03_F01075__threshold",
+      "decoder_shape": [
+        23,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 3,
+      "feature_idx": 3342,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L03_F03342__encoder",
+      "decoder_key": "L03_F03342__decoder",
+      "b_enc_key": "L03_F03342__b_enc",
+      "threshold_key": "L03_F03342__threshold",
+      "decoder_shape": [
+        23,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 3,
+      "feature_idx": 4789,
+      "roles": [
+        "S3_content_only",
+        "calibration_low_article_high_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L03_F04789__encoder",
+      "decoder_key": "L03_F04789__decoder",
+      "b_enc_key": "L03_F04789__b_enc",
+      "threshold_key": "L03_F04789__threshold",
+      "decoder_shape": [
+        23,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 3,
+      "feature_idx": 5100,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L03_F05100__encoder",
+      "decoder_key": "L03_F05100__decoder",
+      "b_enc_key": "L03_F05100__b_enc",
+      "threshold_key": "L03_F05100__threshold",
+      "decoder_shape": [
+        23,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 3,
+      "feature_idx": 5184,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L03_F05184__encoder",
+      "decoder_key": "L03_F05184__decoder",
+      "b_enc_key": "L03_F05184__b_enc",
+      "threshold_key": "L03_F05184__threshold",
+      "decoder_shape": [
+        23,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 4,
+      "feature_idx": 251,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L04_F00251__encoder",
+      "decoder_key": "L04_F00251__decoder",
+      "b_enc_key": "L04_F00251__b_enc",
+      "threshold_key": "L04_F00251__threshold",
+      "decoder_shape": [
+        22,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 4,
+      "feature_idx": 604,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L04_F00604__encoder",
+      "decoder_key": "L04_F00604__decoder",
+      "b_enc_key": "L04_F00604__b_enc",
+      "threshold_key": "L04_F00604__threshold",
+      "decoder_shape": [
+        22,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 4,
+      "feature_idx": 2310,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L04_F02310__encoder",
+      "decoder_key": "L04_F02310__decoder",
+      "b_enc_key": "L04_F02310__b_enc",
+      "threshold_key": "L04_F02310__threshold",
+      "decoder_shape": [
+        22,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 4,
+      "feature_idx": 3898,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L04_F03898__encoder",
+      "decoder_key": "L04_F03898__decoder",
+      "b_enc_key": "L04_F03898__b_enc",
+      "threshold_key": "L04_F03898__threshold",
+      "decoder_shape": [
+        22,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 4,
+      "feature_idx": 5418,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L04_F05418__encoder",
+      "decoder_key": "L04_F05418__decoder",
+      "b_enc_key": "L04_F05418__b_enc",
+      "threshold_key": "L04_F05418__threshold",
+      "decoder_shape": [
+        22,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 4,
+      "feature_idx": 5979,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L04_F05979__encoder",
+      "decoder_key": "L04_F05979__decoder",
+      "b_enc_key": "L04_F05979__b_enc",
+      "threshold_key": "L04_F05979__threshold",
+      "decoder_shape": [
+        22,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 5,
+      "feature_idx": 4366,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L05_F04366__encoder",
+      "decoder_key": "L05_F04366__decoder",
+      "b_enc_key": "L05_F04366__b_enc",
+      "threshold_key": "L05_F04366__threshold",
+      "decoder_shape": [
+        21,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 240,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F00240__encoder",
+      "decoder_key": "L06_F00240__decoder",
+      "b_enc_key": "L06_F00240__b_enc",
+      "threshold_key": "L06_F00240__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 387,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L06_F00387__encoder",
+      "decoder_key": "L06_F00387__decoder",
+      "b_enc_key": "L06_F00387__b_enc",
+      "threshold_key": "L06_F00387__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 562,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F00562__encoder",
+      "decoder_key": "L06_F00562__decoder",
+      "b_enc_key": "L06_F00562__b_enc",
+      "threshold_key": "L06_F00562__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 728,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F00728__encoder",
+      "decoder_key": "L06_F00728__decoder",
+      "b_enc_key": "L06_F00728__b_enc",
+      "threshold_key": "L06_F00728__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 1639,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L06_F01639__encoder",
+      "decoder_key": "L06_F01639__decoder",
+      "b_enc_key": "L06_F01639__b_enc",
+      "threshold_key": "L06_F01639__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 2701,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L06_F02701__encoder",
+      "decoder_key": "L06_F02701__decoder",
+      "b_enc_key": "L06_F02701__b_enc",
+      "threshold_key": "L06_F02701__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 3859,
+      "roles": [
+        "calibration_high_article_low_future",
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F03859__encoder",
+      "decoder_key": "L06_F03859__decoder",
+      "b_enc_key": "L06_F03859__b_enc",
+      "threshold_key": "L06_F03859__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 4686,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F04686__encoder",
+      "decoder_key": "L06_F04686__decoder",
+      "b_enc_key": "L06_F04686__b_enc",
+      "threshold_key": "L06_F04686__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 4933,
+      "roles": [
+        "calibration_high_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F04933__encoder",
+      "decoder_key": "L06_F04933__decoder",
+      "b_enc_key": "L06_F04933__b_enc",
+      "threshold_key": "L06_F04933__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 6121,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L06_F06121__encoder",
+      "decoder_key": "L06_F06121__decoder",
+      "b_enc_key": "L06_F06121__b_enc",
+      "threshold_key": "L06_F06121__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 6860,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F06860__encoder",
+      "decoder_key": "L06_F06860__decoder",
+      "b_enc_key": "L06_F06860__b_enc",
+      "threshold_key": "L06_F06860__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 8504,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F08504__encoder",
+      "decoder_key": "L06_F08504__decoder",
+      "b_enc_key": "L06_F08504__b_enc",
+      "threshold_key": "L06_F08504__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 6,
+      "feature_idx": 9120,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L06_F09120__encoder",
+      "decoder_key": "L06_F09120__decoder",
+      "b_enc_key": "L06_F09120__b_enc",
+      "threshold_key": "L06_F09120__threshold",
+      "decoder_shape": [
+        20,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 7,
+      "feature_idx": 9617,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L07_F09617__encoder",
+      "decoder_key": "L07_F09617__decoder",
+      "b_enc_key": "L07_F09617__b_enc",
+      "threshold_key": "L07_F09617__threshold",
+      "decoder_shape": [
+        19,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 8,
+      "feature_idx": 1227,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L08_F01227__encoder",
+      "decoder_key": "L08_F01227__decoder",
+      "b_enc_key": "L08_F01227__b_enc",
+      "threshold_key": "L08_F01227__threshold",
+      "decoder_shape": [
+        18,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 8,
+      "feature_idx": 3352,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L08_F03352__encoder",
+      "decoder_key": "L08_F03352__decoder",
+      "b_enc_key": "L08_F03352__b_enc",
+      "threshold_key": "L08_F03352__threshold",
+      "decoder_shape": [
+        18,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 8,
+      "feature_idx": 3868,
+      "roles": [
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L08_F03868__encoder",
+      "decoder_key": "L08_F03868__decoder",
+      "b_enc_key": "L08_F03868__b_enc",
+      "threshold_key": "L08_F03868__threshold",
+      "decoder_shape": [
+        18,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 8,
+      "feature_idx": 8388,
+      "roles": [
+        "S3_content_only",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L08_F08388__encoder",
+      "decoder_key": "L08_F08388__decoder",
+      "b_enc_key": "L08_F08388__b_enc",
+      "threshold_key": "L08_F08388__threshold",
+      "decoder_shape": [
+        18,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 337,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L09_F00337__encoder",
+      "decoder_key": "L09_F00337__decoder",
+      "b_enc_key": "L09_F00337__b_enc",
+      "threshold_key": "L09_F00337__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 1757,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L09_F01757__encoder",
+      "decoder_key": "L09_F01757__decoder",
+      "b_enc_key": "L09_F01757__b_enc",
+      "threshold_key": "L09_F01757__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 1867,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L09_F01867__encoder",
+      "decoder_key": "L09_F01867__decoder",
+      "b_enc_key": "L09_F01867__b_enc",
+      "threshold_key": "L09_F01867__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 2262,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L09_F02262__encoder",
+      "decoder_key": "L09_F02262__decoder",
+      "b_enc_key": "L09_F02262__b_enc",
+      "threshold_key": "L09_F02262__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 2657,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L09_F02657__encoder",
+      "decoder_key": "L09_F02657__decoder",
+      "b_enc_key": "L09_F02657__b_enc",
+      "threshold_key": "L09_F02657__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 2671,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L09_F02671__encoder",
+      "decoder_key": "L09_F02671__decoder",
+      "b_enc_key": "L09_F02671__b_enc",
+      "threshold_key": "L09_F02671__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 3344,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L09_F03344__encoder",
+      "decoder_key": "L09_F03344__decoder",
+      "b_enc_key": "L09_F03344__b_enc",
+      "threshold_key": "L09_F03344__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 4409,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L09_F04409__encoder",
+      "decoder_key": "L09_F04409__decoder",
+      "b_enc_key": "L09_F04409__b_enc",
+      "threshold_key": "L09_F04409__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 4672,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L09_F04672__encoder",
+      "decoder_key": "L09_F04672__decoder",
+      "b_enc_key": "L09_F04672__b_enc",
+      "threshold_key": "L09_F04672__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 6100,
+      "roles": [
+        "S3_content_only",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L09_F06100__encoder",
+      "decoder_key": "L09_F06100__decoder",
+      "b_enc_key": "L09_F06100__b_enc",
+      "threshold_key": "L09_F06100__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 9,
+      "feature_idx": 8742,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L09_F08742__encoder",
+      "decoder_key": "L09_F08742__decoder",
+      "b_enc_key": "L09_F08742__b_enc",
+      "threshold_key": "L09_F08742__threshold",
+      "decoder_shape": [
+        17,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 10,
+      "feature_idx": 72,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L10_F00072__encoder",
+      "decoder_key": "L10_F00072__decoder",
+      "b_enc_key": "L10_F00072__b_enc",
+      "threshold_key": "L10_F00072__threshold",
+      "decoder_shape": [
+        16,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 10,
+      "feature_idx": 215,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L10_F00215__encoder",
+      "decoder_key": "L10_F00215__decoder",
+      "b_enc_key": "L10_F00215__b_enc",
+      "threshold_key": "L10_F00215__threshold",
+      "decoder_shape": [
+        16,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 10,
+      "feature_idx": 1406,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L10_F01406__encoder",
+      "decoder_key": "L10_F01406__decoder",
+      "b_enc_key": "L10_F01406__b_enc",
+      "threshold_key": "L10_F01406__threshold",
+      "decoder_shape": [
+        16,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 86,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F00086__encoder",
+      "decoder_key": "L11_F00086__decoder",
+      "b_enc_key": "L11_F00086__b_enc",
+      "threshold_key": "L11_F00086__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 455,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F00455__encoder",
+      "decoder_key": "L11_F00455__decoder",
+      "b_enc_key": "L11_F00455__b_enc",
+      "threshold_key": "L11_F00455__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 712,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F00712__encoder",
+      "decoder_key": "L11_F00712__decoder",
+      "b_enc_key": "L11_F00712__b_enc",
+      "threshold_key": "L11_F00712__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 1082,
+      "roles": [
+        "S3_content_only",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F01082__encoder",
+      "decoder_key": "L11_F01082__decoder",
+      "b_enc_key": "L11_F01082__b_enc",
+      "threshold_key": "L11_F01082__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 1909,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F01909__encoder",
+      "decoder_key": "L11_F01909__decoder",
+      "b_enc_key": "L11_F01909__b_enc",
+      "threshold_key": "L11_F01909__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 3012,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F03012__encoder",
+      "decoder_key": "L11_F03012__decoder",
+      "b_enc_key": "L11_F03012__b_enc",
+      "threshold_key": "L11_F03012__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 3316,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F03316__encoder",
+      "decoder_key": "L11_F03316__decoder",
+      "b_enc_key": "L11_F03316__b_enc",
+      "threshold_key": "L11_F03316__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 4518,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F04518__encoder",
+      "decoder_key": "L11_F04518__decoder",
+      "b_enc_key": "L11_F04518__b_enc",
+      "threshold_key": "L11_F04518__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 11,
+      "feature_idx": 5309,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L11_F05309__encoder",
+      "decoder_key": "L11_F05309__decoder",
+      "b_enc_key": "L11_F05309__b_enc",
+      "threshold_key": "L11_F05309__threshold",
+      "decoder_shape": [
+        15,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 12,
+      "feature_idx": 255,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L12_F00255__encoder",
+      "decoder_key": "L12_F00255__decoder",
+      "b_enc_key": "L12_F00255__b_enc",
+      "threshold_key": "L12_F00255__threshold",
+      "decoder_shape": [
+        14,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 12,
+      "feature_idx": 1070,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L12_F01070__encoder",
+      "decoder_key": "L12_F01070__decoder",
+      "b_enc_key": "L12_F01070__b_enc",
+      "threshold_key": "L12_F01070__threshold",
+      "decoder_shape": [
+        14,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 12,
+      "feature_idx": 3693,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L12_F03693__encoder",
+      "decoder_key": "L12_F03693__decoder",
+      "b_enc_key": "L12_F03693__b_enc",
+      "threshold_key": "L12_F03693__threshold",
+      "decoder_shape": [
+        14,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 12,
+      "feature_idx": 6085,
+      "roles": [
+        "calibration_high_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L12_F06085__encoder",
+      "decoder_key": "L12_F06085__decoder",
+      "b_enc_key": "L12_F06085__b_enc",
+      "threshold_key": "L12_F06085__threshold",
+      "decoder_shape": [
+        14,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 12,
+      "feature_idx": 7392,
+      "roles": [
+        "calibration_high_article_low_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L12_F07392__encoder",
+      "decoder_key": "L12_F07392__decoder",
+      "b_enc_key": "L12_F07392__b_enc",
+      "threshold_key": "L12_F07392__threshold",
+      "decoder_shape": [
+        14,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 4,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F00004__encoder",
+      "decoder_key": "L13_F00004__decoder",
+      "b_enc_key": "L13_F00004__b_enc",
+      "threshold_key": "L13_F00004__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 363,
+      "roles": [
+        "calibration_low_article_high_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F00363__encoder",
+      "decoder_key": "L13_F00363__decoder",
+      "b_enc_key": "L13_F00363__b_enc",
+      "threshold_key": "L13_F00363__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 580,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F00580__encoder",
+      "decoder_key": "L13_F00580__decoder",
+      "b_enc_key": "L13_F00580__b_enc",
+      "threshold_key": "L13_F00580__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 1450,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L13_F01450__encoder",
+      "decoder_key": "L13_F01450__decoder",
+      "b_enc_key": "L13_F01450__b_enc",
+      "threshold_key": "L13_F01450__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 1997,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F01997__encoder",
+      "decoder_key": "L13_F01997__decoder",
+      "b_enc_key": "L13_F01997__b_enc",
+      "threshold_key": "L13_F01997__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 2594,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F02594__encoder",
+      "decoder_key": "L13_F02594__decoder",
+      "b_enc_key": "L13_F02594__b_enc",
+      "threshold_key": "L13_F02594__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 6167,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F06167__encoder",
+      "decoder_key": "L13_F06167__decoder",
+      "b_enc_key": "L13_F06167__b_enc",
+      "threshold_key": "L13_F06167__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 7252,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F07252__encoder",
+      "decoder_key": "L13_F07252__decoder",
+      "b_enc_key": "L13_F07252__b_enc",
+      "threshold_key": "L13_F07252__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 8249,
+      "roles": [
+        "S4_competing_a",
+        "calibration_low_article_high_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F08249__encoder",
+      "decoder_key": "L13_F08249__decoder",
+      "b_enc_key": "L13_F08249__b_enc",
+      "threshold_key": "L13_F08249__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 13,
+      "feature_idx": 9138,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L13_F09138__encoder",
+      "decoder_key": "L13_F09138__decoder",
+      "b_enc_key": "L13_F09138__b_enc",
+      "threshold_key": "L13_F09138__threshold",
+      "decoder_shape": [
+        13,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 34,
+      "roles": [
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L14_F00034__encoder",
+      "decoder_key": "L14_F00034__decoder",
+      "b_enc_key": "L14_F00034__b_enc",
+      "threshold_key": "L14_F00034__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 113,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L14_F00113__encoder",
+      "decoder_key": "L14_F00113__decoder",
+      "b_enc_key": "L14_F00113__b_enc",
+      "threshold_key": "L14_F00113__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 1022,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L14_F01022__encoder",
+      "decoder_key": "L14_F01022__decoder",
+      "b_enc_key": "L14_F01022__b_enc",
+      "threshold_key": "L14_F01022__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 1304,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L14_F01304__encoder",
+      "decoder_key": "L14_F01304__decoder",
+      "b_enc_key": "L14_F01304__b_enc",
+      "threshold_key": "L14_F01304__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 2097,
+      "roles": [
+        "S2_article_only",
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L14_F02097__encoder",
+      "decoder_key": "L14_F02097__decoder",
+      "b_enc_key": "L14_F02097__b_enc",
+      "threshold_key": "L14_F02097__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 2942,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L14_F02942__encoder",
+      "decoder_key": "L14_F02942__decoder",
+      "b_enc_key": "L14_F02942__b_enc",
+      "threshold_key": "L14_F02942__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 3006,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L14_F03006__encoder",
+      "decoder_key": "L14_F03006__decoder",
+      "b_enc_key": "L14_F03006__b_enc",
+      "threshold_key": "L14_F03006__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 3598,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L14_F03598__encoder",
+      "decoder_key": "L14_F03598__decoder",
+      "b_enc_key": "L14_F03598__b_enc",
+      "threshold_key": "L14_F03598__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 4542,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L14_F04542__encoder",
+      "decoder_key": "L14_F04542__decoder",
+      "b_enc_key": "L14_F04542__b_enc",
+      "threshold_key": "L14_F04542__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 14,
+      "feature_idx": 7859,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L14_F07859__encoder",
+      "decoder_key": "L14_F07859__decoder",
+      "b_enc_key": "L14_F07859__b_enc",
+      "threshold_key": "L14_F07859__threshold",
+      "decoder_shape": [
+        12,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 15,
+      "feature_idx": 186,
+      "roles": [
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L15_F00186__encoder",
+      "decoder_key": "L15_F00186__decoder",
+      "b_enc_key": "L15_F00186__b_enc",
+      "threshold_key": "L15_F00186__threshold",
+      "decoder_shape": [
+        11,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 15,
+      "feature_idx": 976,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L15_F00976__encoder",
+      "decoder_key": "L15_F00976__decoder",
+      "b_enc_key": "L15_F00976__b_enc",
+      "threshold_key": "L15_F00976__threshold",
+      "decoder_shape": [
+        11,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 15,
+      "feature_idx": 2289,
+      "roles": [
+        "S1_dual_effect",
+        "calibration_low_article_high_future",
+        "effect_matched_run_S1_original_top4_5x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L15_F02289__encoder",
+      "decoder_key": "L15_F02289__decoder",
+      "b_enc_key": "L15_F02289__b_enc",
+      "threshold_key": "L15_F02289__threshold",
+      "decoder_shape": [
+        11,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 15,
+      "feature_idx": 6600,
+      "roles": [
+        "S1_dual_effect",
+        "effect_matched_run_S1_original_top4_5x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L15_F06600__encoder",
+      "decoder_key": "L15_F06600__decoder",
+      "b_enc_key": "L15_F06600__b_enc",
+      "threshold_key": "L15_F06600__threshold",
+      "decoder_shape": [
+        11,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 15,
+      "feature_idx": 6665,
+      "roles": [
+        "noun_only_pool"
+      ],
+      "encoder_key": "L15_F06665__encoder",
+      "decoder_key": "L15_F06665__decoder",
+      "b_enc_key": "L15_F06665__b_enc",
+      "threshold_key": "L15_F06665__threshold",
+      "decoder_shape": [
+        11,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 15,
+      "feature_idx": 9117,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L15_F09117__encoder",
+      "decoder_key": "L15_F09117__decoder",
+      "b_enc_key": "L15_F09117__b_enc",
+      "threshold_key": "L15_F09117__threshold",
+      "decoder_shape": [
+        11,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 16,
+      "feature_idx": 40,
+      "roles": [
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L16_F00040__encoder",
+      "decoder_key": "L16_F00040__decoder",
+      "b_enc_key": "L16_F00040__b_enc",
+      "threshold_key": "L16_F00040__threshold",
+      "decoder_shape": [
+        10,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 16,
+      "feature_idx": 690,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L16_F00690__encoder",
+      "decoder_key": "L16_F00690__decoder",
+      "b_enc_key": "L16_F00690__b_enc",
+      "threshold_key": "L16_F00690__threshold",
+      "decoder_shape": [
+        10,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 16,
+      "feature_idx": 5346,
+      "roles": [
+        "calibration_low_article_high_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L16_F05346__encoder",
+      "decoder_key": "L16_F05346__decoder",
+      "b_enc_key": "L16_F05346__b_enc",
+      "threshold_key": "L16_F05346__threshold",
+      "decoder_shape": [
+        10,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 16,
+      "feature_idx": 5915,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L16_F05915__encoder",
+      "decoder_key": "L16_F05915__decoder",
+      "b_enc_key": "L16_F05915__b_enc",
+      "threshold_key": "L16_F05915__threshold",
+      "decoder_shape": [
+        10,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 16,
+      "feature_idx": 6541,
+      "roles": [
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L16_F06541__encoder",
+      "decoder_key": "L16_F06541__decoder",
+      "b_enc_key": "L16_F06541__b_enc",
+      "threshold_key": "L16_F06541__threshold",
+      "decoder_shape": [
+        10,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 51,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L17_F00051__encoder",
+      "decoder_key": "L17_F00051__decoder",
+      "b_enc_key": "L17_F00051__b_enc",
+      "threshold_key": "L17_F00051__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 2071,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L17_F02071__encoder",
+      "decoder_key": "L17_F02071__decoder",
+      "b_enc_key": "L17_F02071__b_enc",
+      "threshold_key": "L17_F02071__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 3517,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L17_F03517__encoder",
+      "decoder_key": "L17_F03517__decoder",
+      "b_enc_key": "L17_F03517__b_enc",
+      "threshold_key": "L17_F03517__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 4391,
+      "roles": [
+        "S2_article_only",
+        "S4_competing_a",
+        "calibration_low_article_high_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L17_F04391__encoder",
+      "decoder_key": "L17_F04391__decoder",
+      "b_enc_key": "L17_F04391__b_enc",
+      "threshold_key": "L17_F04391__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 4599,
+      "roles": [
+        "calibration_high_article_low_future",
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L17_F04599__encoder",
+      "decoder_key": "L17_F04599__decoder",
+      "b_enc_key": "L17_F04599__b_enc",
+      "threshold_key": "L17_F04599__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 5378,
+      "roles": [
+        "calibration_high_article_low_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L17_F05378__encoder",
+      "decoder_key": "L17_F05378__decoder",
+      "b_enc_key": "L17_F05378__b_enc",
+      "threshold_key": "L17_F05378__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 6057,
+      "roles": [
+        "S4_competing_a",
+        "calibration_low_article_low_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L17_F06057__encoder",
+      "decoder_key": "L17_F06057__decoder",
+      "b_enc_key": "L17_F06057__b_enc",
+      "threshold_key": "L17_F06057__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 17,
+      "feature_idx": 6482,
+      "roles": [
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L17_F06482__encoder",
+      "decoder_key": "L17_F06482__decoder",
+      "b_enc_key": "L17_F06482__b_enc",
+      "threshold_key": "L17_F06482__threshold",
+      "decoder_shape": [
+        9,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 3406,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L18_F03406__encoder",
+      "decoder_key": "L18_F03406__decoder",
+      "b_enc_key": "L18_F03406__b_enc",
+      "threshold_key": "L18_F03406__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 5015,
+      "roles": [
+        "S1_dual_effect",
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "effect_matched_run_S1_original_top4_5x",
+        "noun_only_pool",
+        "sparse_frontier_chosen"
+      ],
+      "encoder_key": "L18_F05015__encoder",
+      "decoder_key": "L18_F05015__decoder",
+      "b_enc_key": "L18_F05015__b_enc",
+      "threshold_key": "L18_F05015__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 6612,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L18_F06612__encoder",
+      "decoder_key": "L18_F06612__decoder",
+      "b_enc_key": "L18_F06612__b_enc",
+      "threshold_key": "L18_F06612__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 8460,
+      "roles": [
+        "S2_article_only",
+        "S4_competing_a",
+        "calibration_low_article_high_future",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L18_F08460__encoder",
+      "decoder_key": "L18_F08460__decoder",
+      "b_enc_key": "L18_F08460__b_enc",
+      "threshold_key": "L18_F08460__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 8538,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L18_F08538__encoder",
+      "decoder_key": "L18_F08538__decoder",
+      "b_enc_key": "L18_F08538__b_enc",
+      "threshold_key": "L18_F08538__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 9070,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L18_F09070__encoder",
+      "decoder_key": "L18_F09070__decoder",
+      "b_enc_key": "L18_F09070__b_enc",
+      "threshold_key": "L18_F09070__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 18,
+      "feature_idx": 9440,
+      "roles": [
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L18_F09440__encoder",
+      "decoder_key": "L18_F09440__decoder",
+      "b_enc_key": "L18_F09440__b_enc",
+      "threshold_key": "L18_F09440__threshold",
+      "decoder_shape": [
+        8,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 86,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F00086__encoder",
+      "decoder_key": "L19_F00086__decoder",
+      "b_enc_key": "L19_F00086__b_enc",
+      "threshold_key": "L19_F00086__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 1179,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F01179__encoder",
+      "decoder_key": "L19_F01179__decoder",
+      "b_enc_key": "L19_F01179__b_enc",
+      "threshold_key": "L19_F01179__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 2610,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F02610__encoder",
+      "decoder_key": "L19_F02610__decoder",
+      "b_enc_key": "L19_F02610__b_enc",
+      "threshold_key": "L19_F02610__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 2844,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F02844__encoder",
+      "decoder_key": "L19_F02844__decoder",
+      "b_enc_key": "L19_F02844__b_enc",
+      "threshold_key": "L19_F02844__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 4424,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F04424__encoder",
+      "decoder_key": "L19_F04424__decoder",
+      "b_enc_key": "L19_F04424__b_enc",
+      "threshold_key": "L19_F04424__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 5011,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F05011__encoder",
+      "decoder_key": "L19_F05011__decoder",
+      "b_enc_key": "L19_F05011__b_enc",
+      "threshold_key": "L19_F05011__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 5625,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F05625__encoder",
+      "decoder_key": "L19_F05625__decoder",
+      "b_enc_key": "L19_F05625__b_enc",
+      "threshold_key": "L19_F05625__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 19,
+      "feature_idx": 6259,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L19_F06259__encoder",
+      "decoder_key": "L19_F06259__decoder",
+      "b_enc_key": "L19_F06259__b_enc",
+      "threshold_key": "L19_F06259__threshold",
+      "decoder_shape": [
+        7,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 20,
+      "feature_idx": 1884,
+      "roles": [
+        "calibration_high_article_low_future",
+        "effect_matched_margin_ranked_pool",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L20_F01884__encoder",
+      "decoder_key": "L20_F01884__decoder",
+      "b_enc_key": "L20_F01884__b_enc",
+      "threshold_key": "L20_F01884__threshold",
+      "decoder_shape": [
+        6,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 20,
+      "feature_idx": 5543,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L20_F05543__encoder",
+      "decoder_key": "L20_F05543__decoder",
+      "b_enc_key": "L20_F05543__b_enc",
+      "threshold_key": "L20_F05543__threshold",
+      "decoder_shape": [
+        6,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 20,
+      "feature_idx": 5908,
+      "roles": [
+        "effect_matched_margin_ranked_pool"
+      ],
+      "encoder_key": "L20_F05908__encoder",
+      "decoder_key": "L20_F05908__decoder",
+      "b_enc_key": "L20_F05908__b_enc",
+      "threshold_key": "L20_F05908__threshold",
+      "decoder_shape": [
+        6,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    },
+    {
+      "layer": 21,
+      "feature_idx": 4304,
+      "roles": [
+        "calibration_high_article_high_future",
+        "effect_matched_margin_ranked_pool",
+        "effect_matched_run_S1_margin_top24_20x",
+        "noun_only_pool"
+      ],
+      "encoder_key": "L21_F04304__encoder",
+      "decoder_key": "L21_F04304__decoder",
+      "b_enc_key": "L21_F04304__b_enc",
+      "threshold_key": "L21_F04304__threshold",
+      "decoder_shape": [
+        5,
+        1152
+      ],
+      "decoder_note": "output layers layer..25"
+    }
+  ],
+  "noun_only_pool_rule": {
+    "score": "mean future-noun direct effect at the pre-article position; no article term",
+    "min_prompt_count": 3,
+    "size": 256,
+    "graphs": "experiments/gemma_1b_sparse_scale/results/graphs"
+  },
+  "noun_only_pool": [
+    {
+      "rank": 1,
+      "layer": 18,
+      "feature_idx": 9440,
+      "mean_future_direct_effect": 0.134765625,
+      "prompt_count": 3
+    },
+    {
+      "rank": 2,
+      "layer": 15,
+      "feature_idx": 2289,
+      "mean_future_direct_effect": 0.134033203125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 3,
+      "layer": 18,
+      "feature_idx": 5015,
+      "mean_future_direct_effect": 0.102813720703125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 4,
+      "layer": 16,
+      "feature_idx": 5346,
+      "mean_future_direct_effect": 0.075286865234375,
+      "prompt_count": 4
+    },
+    {
+      "rank": 5,
+      "layer": 16,
+      "feature_idx": 6541,
+      "mean_future_direct_effect": 0.0604248046875,
+      "prompt_count": 4
+    },
+    {
+      "rank": 6,
+      "layer": 15,
+      "feature_idx": 6600,
+      "mean_future_direct_effect": 0.04216766357421875,
+      "prompt_count": 8
+    },
+    {
+      "rank": 7,
+      "layer": 8,
+      "feature_idx": 3868,
+      "mean_future_direct_effect": 0.038655598958333336,
+      "prompt_count": 3
+    },
+    {
+      "rank": 8,
+      "layer": 0,
+      "feature_idx": 4438,
+      "mean_future_direct_effect": 0.0325469970703125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 9,
+      "layer": 16,
+      "feature_idx": 40,
+      "mean_future_direct_effect": 0.029093424479166668,
+      "prompt_count": 3
+    },
+    {
+      "rank": 10,
+      "layer": 15,
+      "feature_idx": 186,
+      "mean_future_direct_effect": 0.024922688802083332,
+      "prompt_count": 3
+    },
+    {
+      "rank": 11,
+      "layer": 8,
+      "feature_idx": 1227,
+      "mean_future_direct_effect": 0.021077473958333332,
+      "prompt_count": 3
+    },
+    {
+      "rank": 12,
+      "layer": 3,
+      "feature_idx": 4789,
+      "mean_future_direct_effect": 0.01816558837890625,
+      "prompt_count": 8
+    },
+    {
+      "rank": 13,
+      "layer": 18,
+      "feature_idx": 8460,
+      "mean_future_direct_effect": 0.0159454345703125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 14,
+      "layer": 13,
+      "feature_idx": 363,
+      "mean_future_direct_effect": 0.014048985072544642,
+      "prompt_count": 7
+    },
+    {
+      "rank": 15,
+      "layer": 7,
+      "feature_idx": 9617,
+      "mean_future_direct_effect": 0.010467529296875,
+      "prompt_count": 6
+    },
+    {
+      "rank": 16,
+      "layer": 11,
+      "feature_idx": 1082,
+      "mean_future_direct_effect": 0.010105133056640625,
+      "prompt_count": 8
+    },
+    {
+      "rank": 17,
+      "layer": 8,
+      "feature_idx": 8388,
+      "mean_future_direct_effect": 0.008214950561523438,
+      "prompt_count": 8
+    },
+    {
+      "rank": 18,
+      "layer": 13,
+      "feature_idx": 8249,
+      "mean_future_direct_effect": 0.007648468017578125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 19,
+      "layer": 17,
+      "feature_idx": 4391,
+      "mean_future_direct_effect": 0.007393836975097656,
+      "prompt_count": 8
+    },
+    {
+      "rank": 20,
+      "layer": 14,
+      "feature_idx": 2097,
+      "mean_future_direct_effect": 0.0073337554931640625,
+      "prompt_count": 8
+    },
+    {
+      "rank": 21,
+      "layer": 2,
+      "feature_idx": 6962,
+      "mean_future_direct_effect": 0.0068817138671875,
+      "prompt_count": 8
+    },
+    {
+      "rank": 22,
+      "layer": 4,
+      "feature_idx": 5418,
+      "mean_future_direct_effect": 0.006673177083333333,
+      "prompt_count": 3
+    },
+    {
+      "rank": 23,
+      "layer": 9,
+      "feature_idx": 6100,
+      "mean_future_direct_effect": 0.006076812744140625,
+      "prompt_count": 8
+    },
+    {
+      "rank": 24,
+      "layer": 14,
+      "feature_idx": 113,
+      "mean_future_direct_effect": 0.0049152374267578125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 25,
+      "layer": 6,
+      "feature_idx": 4686,
+      "mean_future_direct_effect": 0.004862467447916667,
+      "prompt_count": 3
+    },
+    {
+      "rank": 26,
+      "layer": 14,
+      "feature_idx": 7859,
+      "mean_future_direct_effect": 0.004862467447916667,
+      "prompt_count": 6
+    },
+    {
+      "rank": 27,
+      "layer": 21,
+      "feature_idx": 4304,
+      "mean_future_direct_effect": 0.004526774088541667,
+      "prompt_count": 3
+    },
+    {
+      "rank": 28,
+      "layer": 11,
+      "feature_idx": 86,
+      "mean_future_direct_effect": 0.003932952880859375,
+      "prompt_count": 4
+    },
+    {
+      "rank": 29,
+      "layer": 3,
+      "feature_idx": 5100,
+      "mean_future_direct_effect": 0.0038585662841796875,
+      "prompt_count": 8
+    },
+    {
+      "rank": 30,
+      "layer": 13,
+      "feature_idx": 2594,
+      "mean_future_direct_effect": 0.0034931727818080355,
+      "prompt_count": 7
+    },
+    {
+      "rank": 31,
+      "layer": 13,
+      "feature_idx": 1997,
+      "mean_future_direct_effect": 0.0022640228271484375,
+      "prompt_count": 8
+    },
+    {
+      "rank": 32,
+      "layer": 9,
+      "feature_idx": 1867,
+      "mean_future_direct_effect": 0.0021739602088928223,
+      "prompt_count": 8
+    },
+    {
+      "rank": 33,
+      "layer": 8,
+      "feature_idx": 3352,
+      "mean_future_direct_effect": 0.0020952224731445312,
+      "prompt_count": 4
+    },
+    {
+      "rank": 34,
+      "layer": 11,
+      "feature_idx": 3012,
+      "mean_future_direct_effect": 0.00206146240234375,
+      "prompt_count": 5
+    },
+    {
+      "rank": 35,
+      "layer": 17,
+      "feature_idx": 6482,
+      "mean_future_direct_effect": 0.00156402587890625,
+      "prompt_count": 4
+    },
+    {
+      "rank": 36,
+      "layer": 4,
+      "feature_idx": 2310,
+      "mean_future_direct_effect": 0.0015131632486979167,
+      "prompt_count": 3
+    },
+    {
+      "rank": 37,
+      "layer": 1,
+      "feature_idx": 2070,
+      "mean_future_direct_effect": 0.001503263201032366,
+      "prompt_count": 7
+    },
+    {
+      "rank": 38,
+      "layer": 13,
+      "feature_idx": 9138,
+      "mean_future_direct_effect": 0.0014934539794921875,
+      "prompt_count": 8
+    },
+    {
+      "rank": 39,
+      "layer": 17,
+      "feature_idx": 51,
+      "mean_future_direct_effect": 0.001177978515625,
+      "prompt_count": 5
+    },
+    {
+      "rank": 40,
+      "layer": 15,
+      "feature_idx": 6665,
+      "mean_future_direct_effect": 0.0008392333984375,
+      "prompt_count": 3
+    },
+    {
+      "rank": 41,
+      "layer": 10,
+      "feature_idx": 1406,
+      "mean_future_direct_effect": 0.000438690185546875,
+      "prompt_count": 3
+    },
+    {
+      "rank": 42,
+      "layer": 9,
+      "feature_idx": 2262,
+      "mean_future_direct_effect": 0.000354766845703125,
+      "prompt_count": 3
+    },
+    {
+      "rank": 43,
+      "layer": 1,
+      "feature_idx": 9677,
+      "mean_future_direct_effect": 6.375994001116072e-05,
+      "prompt_count": 7
+    },
+    {
+      "rank": 44,
+      "layer": 11,
+      "feature_idx": 4518,
+      "mean_future_direct_effect": 1.811981201171875e-05,
+      "prompt_count": 3
+    },
+    {
+      "rank": 45,
+      "layer": 11,
+      "feature_idx": 5309,
+      "mean_future_direct_effect": -1.811981201171875e-05,
+      "prompt_count": 4
+    },
+    {
+      "rank": 46,
+      "layer": 11,
+      "feature_idx": 712,
+      "mean_future_direct_effect": -0.00014495849609375,
+      "prompt_count": 3
+    },
+    {
+      "rank": 47,
+      "layer": 2,
+      "feature_idx": 2783,
+      "mean_future_direct_effect": -0.00023869105747767856,
+      "prompt_count": 7
+    },
+    {
+      "rank": 48,
+      "layer": 4,
+      "feature_idx": 5979,
+      "mean_future_direct_effect": -0.00026484898158482144,
+      "prompt_count": 7
+    },
+    {
+      "rank": 49,
+      "layer": 6,
+      "feature_idx": 9120,
+      "mean_future_direct_effect": -0.0004124641418457031,
+      "prompt_count": 8
+    },
+    {
+      "rank": 50,
+      "layer": 11,
+      "feature_idx": 455,
+      "mean_future_direct_effect": -0.0007295608520507812,
+      "prompt_count": 8
+    },
+    {
+      "rank": 51,
+      "layer": 12,
+      "feature_idx": 1070,
+      "mean_future_direct_effect": -0.000736236572265625,
+      "prompt_count": 7
+    },
+    {
+      "rank": 52,
+      "layer": 15,
+      "feature_idx": 976,
+      "mean_future_direct_effect": -0.0008805592854817709,
+      "prompt_count": 6
+    },
+    {
+      "rank": 53,
+      "layer": 6,
+      "feature_idx": 562,
+      "mean_future_direct_effect": -0.0012257893880208333,
+      "prompt_count": 3
+    },
+    {
+      "rank": 54,
+      "layer": 10,
+      "feature_idx": 215,
+      "mean_future_direct_effect": -0.0013071695963541667,
+      "prompt_count": 3
+    },
+    {
+      "rank": 55,
+      "layer": 6,
+      "feature_idx": 8504,
+      "mean_future_direct_effect": -0.001556396484375,
+      "prompt_count": 4
+    },
+    {
+      "rank": 56,
+      "layer": 13,
+      "feature_idx": 6167,
+      "mean_future_direct_effect": -0.001636505126953125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 57,
+      "layer": 13,
+      "feature_idx": 580,
+      "mean_future_direct_effect": -0.00173187255859375,
+      "prompt_count": 8
+    },
+    {
+      "rank": 58,
+      "layer": 12,
+      "feature_idx": 7392,
+      "mean_future_direct_effect": -0.002002239227294922,
+      "prompt_count": 8
+    },
+    {
+      "rank": 59,
+      "layer": 13,
+      "feature_idx": 4,
+      "mean_future_direct_effect": -0.0020599365234375,
+      "prompt_count": 4
+    },
+    {
+      "rank": 60,
+      "layer": 14,
+      "feature_idx": 2942,
+      "mean_future_direct_effect": -0.0022074381510416665,
+      "prompt_count": 3
+    },
+    {
+      "rank": 61,
+      "layer": 9,
+      "feature_idx": 2671,
+      "mean_future_direct_effect": -0.002455847603934152,
+      "prompt_count": 7
+    },
+    {
+      "rank": 62,
+      "layer": 6,
+      "feature_idx": 728,
+      "mean_future_direct_effect": -0.003185272216796875,
+      "prompt_count": 8
+    },
+    {
+      "rank": 63,
+      "layer": 4,
+      "feature_idx": 604,
+      "mean_future_direct_effect": -0.003322601318359375,
+      "prompt_count": 8
+    },
+    {
+      "rank": 64,
+      "layer": 17,
+      "feature_idx": 5378,
+      "mean_future_direct_effect": -0.0035696029663085938,
+      "prompt_count": 8
+    },
+    {
+      "rank": 65,
+      "layer": 6,
+      "feature_idx": 3859,
+      "mean_future_direct_effect": -0.0037021636962890625,
+      "prompt_count": 8
+    },
+    {
+      "rank": 66,
+      "layer": 20,
+      "feature_idx": 1884,
+      "mean_future_direct_effect": -0.00395965576171875,
+      "prompt_count": 8
+    },
+    {
+      "rank": 67,
+      "layer": 6,
+      "feature_idx": 240,
+      "mean_future_direct_effect": -0.004918416341145833,
+      "prompt_count": 6
+    },
+    {
+      "rank": 68,
+      "layer": 14,
+      "feature_idx": 34,
+      "mean_future_direct_effect": -0.0050182342529296875,
+      "prompt_count": 4
+    },
+    {
+      "rank": 69,
+      "layer": 17,
+      "feature_idx": 4599,
+      "mean_future_direct_effect": -0.005132039388020833,
+      "prompt_count": 3
+    },
+    {
+      "rank": 70,
+      "layer": 1,
+      "feature_idx": 9977,
+      "mean_future_direct_effect": -0.0053119659423828125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 71,
+      "layer": 2,
+      "feature_idx": 7672,
+      "mean_future_direct_effect": -0.0059326171875,
+      "prompt_count": 5
+    },
+    {
+      "rank": 72,
+      "layer": 11,
+      "feature_idx": 1909,
+      "mean_future_direct_effect": -0.00615234375,
+      "prompt_count": 5
+    },
+    {
+      "rank": 73,
+      "layer": 9,
+      "feature_idx": 4409,
+      "mean_future_direct_effect": -0.006245930989583333,
+      "prompt_count": 3
+    },
+    {
+      "rank": 74,
+      "layer": 6,
+      "feature_idx": 6860,
+      "mean_future_direct_effect": -0.00673675537109375,
+      "prompt_count": 7
+    },
+    {
+      "rank": 75,
+      "layer": 4,
+      "feature_idx": 3898,
+      "mean_future_direct_effect": -0.007869720458984375,
+      "prompt_count": 4
+    },
+    {
+      "rank": 76,
+      "layer": 11,
+      "feature_idx": 3316,
+      "mean_future_direct_effect": -0.008416175842285156,
+      "prompt_count": 8
+    },
+    {
+      "rank": 77,
+      "layer": 6,
+      "feature_idx": 4933,
+      "mean_future_direct_effect": -0.009304046630859375,
+      "prompt_count": 8
+    },
+    {
+      "rank": 78,
+      "layer": 14,
+      "feature_idx": 3598,
+      "mean_future_direct_effect": -0.0095977783203125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 79,
+      "layer": 3,
+      "feature_idx": 1075,
+      "mean_future_direct_effect": -0.014394124348958334,
+      "prompt_count": 6
+    },
+    {
+      "rank": 80,
+      "layer": 13,
+      "feature_idx": 7252,
+      "mean_future_direct_effect": -0.01788330078125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 81,
+      "layer": 1,
+      "feature_idx": 399,
+      "mean_future_direct_effect": -0.02040863037109375,
+      "prompt_count": 8
+    },
+    {
+      "rank": 82,
+      "layer": 12,
+      "feature_idx": 255,
+      "mean_future_direct_effect": -0.021484375,
+      "prompt_count": 8
+    },
+    {
+      "rank": 83,
+      "layer": 12,
+      "feature_idx": 6085,
+      "mean_future_direct_effect": -0.0261993408203125,
+      "prompt_count": 8
+    },
+    {
+      "rank": 84,
+      "layer": 17,
+      "feature_idx": 6057,
+      "mean_future_direct_effect": -0.029937744140625,
+      "prompt_count": 8
+    }
+  ],
+  "per_layer_tensor_file": "gemma_scope_2_1b_pt_affine_layer_skips.local.safetensors",
+  "per_layer_tensor_sha256": "4f363f359327fb693e999fa672d21d453fd1abf8ae2a3fd7cebfd5beb2b02064",
+  "per_layer_tensors": "affine_skip_connection and b_dec for every archived layer (local only, gitignored)",
+  "source_file_sha256": {
+    "config.json": "7d6e681150694c71673a0ae3c589108f86cba10da64b3bb9e8afa0d5de71d201",
+    "params_layer_0.safetensors": "d1efff29fa05a87392270d3a6699b068ccc4ee51bcdfdc579c2820df667294be",
+    "params_layer_1.safetensors": "5838d5905f38d1655c0a056b65db940be3c4f9c2badc0d579debed91cb9f5bf2",
+    "params_layer_10.safetensors": "e48c0442b718cf9d05938ea86f4cc4bf1616708f86dd7e01a273f08be34e615b",
+    "params_layer_11.safetensors": "ef59c101acb444ec28b3b58b81ed8cacd462bbd5a22b008df8567b01bc8bd64f",
+    "params_layer_12.safetensors": "7336baceacc01987a3395d3fe1b05675f39bcbd45df1a360f5e367f808276168",
+    "params_layer_13.safetensors": "c94f2818cb2ac567b42df258f508dae40f9d644983161e000aab6b76e738ee3b",
+    "params_layer_14.safetensors": "e6314cf2c471645dc22ea4562533dc2d449cbdb56e1fb83f4687c1e3e897bb00",
+    "params_layer_15.safetensors": "ee3ac27cc845311bc0db64f1cf182203a7889b8cbdb4095ea1071797ad10038b",
+    "params_layer_16.safetensors": "e9a2dd2a6489a22f0077bc9075eeae9544eef2ce71b095b75d7578d98e49725c",
+    "params_layer_17.safetensors": "5204ff02ed1275ec21107815a20bb07ede6eba90b2d54544b1b69f55efbb73dd",
+    "params_layer_18.safetensors": "27bbd64761cb6443adcfd3cc8e30c3111906ba2421d6bac81a9e4b144a05aa85",
+    "params_layer_19.safetensors": "fc034f6d5cd3e2cf4be30805a0365847b674bf3d76487061cd688dbc74b533e9",
+    "params_layer_2.safetensors": "feca8e6f5f02463dfe699b452d7b629380923076f80ee52353deac695731f3d3",
+    "params_layer_20.safetensors": "8c5afa5c4ac32d3251ade9e9e7accf790f15b75b5ddc2481dc70389e154270e7",
+    "params_layer_21.safetensors": "d024c7aa7217b7357efe74f7cde1f8fbeea6d920c142e45e850fbb05a9edad04",
+    "params_layer_22.safetensors": "e696e3173e92c3b4c12568a67d05e3bf5c2895f69c0b1b8fd0e3cab73fe9a869",
+    "params_layer_23.safetensors": "b44f976281628b0ff53af3b7d80d44768b630cf4f7c71e217e05b95624a118fe",
+    "params_layer_24.safetensors": "9ef8512a8c1cdab6bb4c1c847774031023318fd084b222e31c1a1a1bd150b287",
+    "params_layer_25.safetensors": "84531930dc7927f911c287d21a40e21f5229fd4651f71be247334ced17ba5b43",
+    "params_layer_3.safetensors": "7f79ff52111d458a5f2116cb0ee06f3ee789589f83d2d6648a106683e694cb9e",
+    "params_layer_4.safetensors": "c6977fd9227af2faf943bff13d690bea96df539ba65e9eba3095d0898c09b4af",
+    "params_layer_5.safetensors": "7096a8f69f92c957ea7d58ad777d665a50ecfa6e638c319db87a2a39ff98b8c6",
+    "params_layer_6.safetensors": "330a8a55fb41a2eadfca92bb45bea04d0a2e4d67d8e1705dc599c9119de04fd8",
+    "params_layer_7.safetensors": "eddd4a9b3c57940f8061394865b5afa763720551c6fdf042b03142594ed6dc0d",
+    "params_layer_8.safetensors": "45ccac810a8d4c4c8ec54e7b4d564a0f5d1b30d26d415cc1386ac3069a471b97",
+    "params_layer_9.safetensors": "b42295997d91cb492cf2b1edbeced420a5f8a97e47cd48eaebd8dacb9a02fa31"
+  },
+  "selection_graphs_local_manifest": [
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_administers_anesthesia_during_surgery_is__article.pt",
+      "bytes": 11099677,
+      "sha256": "c4c40490c391ac0e82d492bba3ad8689dd68524937d11767a5ccb7f784890139"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_administers_anesthesia_during_surgery_is__future.pt",
+      "bytes": 11451217,
+      "sha256": "03540342855e37b3e0803b4fee51f9a9cd5b1c74f391ac961ce80259ecfc1cb0"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_administers_anesthesia_during_surgery_is__meta.json",
+      "bytes": 431,
+      "sha256": "e46e315cd7dbd6097db243f43c96b4c884327732c74a69bd9d63fd97814911dd"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_designs_and_builds_technical_systems_is__article.pt",
+      "bytes": 11466001,
+      "sha256": "5eaa5e5a3fda87e21c3ee54d691377758d3f95f63cc5f9e88a0885d4dcbc3d43"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_designs_and_builds_technical_systems_is__future.pt",
+      "bytes": 11822981,
+      "sha256": "5caef8ff05a9b9f66bfbb381698ba85dce2c6a8319990bf36a0f1c5b7381a75f"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_designs_and_builds_technical_systems_is__meta.json",
+      "bytes": 423,
+      "sha256": "ed5816d5e533ed8927af2b7323f2c8a938bee3e73c1fdc1d9d699a7480b8cdb2"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_designs_buildings_and_structures_is__article.pt",
+      "bytes": 11098849,
+      "sha256": "d9223dc2e695fe06c17fa268c091597b89fdaa81a85627bfcf6b166dcc9ab482"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_designs_buildings_and_structures_is__future.pt",
+      "bytes": 11450133,
+      "sha256": "fa6397879eafca110180d480c0494940a6f55f622ee0161746dfc9aceb123bf3"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_designs_buildings_and_structures_is__meta.json",
+      "bytes": 413,
+      "sha256": "392440e070171f887035105e1e83198a919692151c6814984aa38607f5dd6001"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_installs_and_repairs_electrical_systems_is__article.pt",
+      "bytes": 11465973,
+      "sha256": "5f8850131f73c01e73bcea770e65e761f71878fba9c4da236e135ddbf442dde4"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_installs_and_repairs_electrical_systems_is__future.pt",
+      "bytes": 11823017,
+      "sha256": "689a6fc91b86fbb833292b0bcd046147b5c994cfcab6b644ceb4c1b039cbe461"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_installs_and_repairs_electrical_systems_is__meta.json",
+      "bytes": 438,
+      "sha256": "61bf4bc2e40a5797ed591d9a80376a82eba5251663ebb8f69011ec50dd80ac8e"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_manages_financial_records_is__article.pt",
+      "bytes": 10739597,
+      "sha256": "8d94a2eb3b0ac6e1ab25a4c0a51656871c5adb5ba5a30df6b13faa08b261bfd1"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_manages_financial_records_is__future.pt",
+      "bytes": 11084993,
+      "sha256": "7a3762efcafacdecf74083e75d40d09843aebd18d5dc11ee1c605eab6e6804e1"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_manages_financial_records_is__meta.json",
+      "bytes": 394,
+      "sha256": "01471c28838aa848576fa3972938b47d37caec65c74a671949c604fd9012fe2c"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_studies_financial_systems_and_markets_is__article.pt",
+      "bytes": 11463773,
+      "sha256": "fd00d8dc261cc74b5a2c87165ca195546be5e99db32fdc7e40a31964b73d1ed2"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_studies_financial_systems_and_markets_is__future.pt",
+      "bytes": 11820817,
+      "sha256": "5c4a038139503bf4c05072a0a79c46a701ed3b24ceeed0e8dacef82d98fef894"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_studies_financial_systems_and_markets_is__meta.json",
+      "bytes": 428,
+      "sha256": "9f72eb2527f96df1d7f0a2d2531bbf5f66ed82cc29bd77ed50defd7e8df33c32"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_studies_stars_and_planets_is__article.pt",
+      "bytes": 11099277,
+      "sha256": "72b7111bd2af7005eef09051f702e4ef6d5d376fd0b9e730cfd09f304124adbe"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_studies_stars_and_planets_is__future.pt",
+      "bytes": 11450625,
+      "sha256": "cd4bfd7d6ca0940eefcb607b5fb087cb103173e9295826cf739f2025f1986fc1"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_studies_stars_and_planets_is__meta.json",
+      "bytes": 394,
+      "sha256": "7127f8000cdf768ff448ee553beed5d44709d263accafbfe3f784024dd68ccd7"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_treats_cancer_patients_is__article.pt",
+      "bytes": 10739497,
+      "sha256": "6a0430fea8cbc9afa25c8cb21f18f512fdcd13116720aac9de4b67362278c986"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_treats_cancer_patients_is__future.pt",
+      "bytes": 11085597,
+      "sha256": "43328b4e87f9c30bcfc98cd637945408bad209b6884debfbd285a72c3bbc1f84"
+    },
+    {
+      "path": "experiments/gemma_1b_sparse_scale/results/graphs/someone_who_treats_cancer_patients_is__meta.json",
+      "bytes": 385,
+      "sha256": "dfa914079ba79a02382b26709f741d2d8149d676b175a0a98c4b0005d1fa8791"
+    }
+  ],
+  "note": "Exact slices of the 1B CLT made before deleting the local cache. Not a complete CLT; covers every 1B feature used in the experiments plus the frozen noun-only pool."
+}

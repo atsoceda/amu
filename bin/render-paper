@@ -4,6 +4,18 @@ set -euo pipefail
 target="${1:-neurips}"
 mode="${2:-submission}"
 profile="${target}-${mode}"
+
+if [[ "$target" == "neurips" ]]; then
+  cat >&2 <<'MSG'
+The NeurIPS 2026 workshop version (v35) is submitted and frozen in
+submissions/neurips-2026-workshop-v35/. The live source is the ICLR 2027
+extension, so rendering the neurips target from it is disabled.
+Render the ICLR version with:  bin/render-paper iclr submission
+To rebuild the workshop version, check out Git tag neurips-2026-workshop-v35
+in a separate worktree and render there (see AGENTS.md).
+MSG
+  exit 1
+fi
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 lock="$root/.quarto-render.lock"
 

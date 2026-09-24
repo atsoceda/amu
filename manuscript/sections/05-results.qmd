@@ -85,9 +85,13 @@ continuation leverage determines the downstream consequence. Across 32 held-out
 calibrated local pressure with intervention-off decoder susceptibility and
 branch leverage identifies and sizes the decisive-policy regime
 (aggregate \(R^2=0.840\)); prediction among small effects is weak and crossed
-feature--prompt uncertainty is wide \([-0.293,0.986]\) (@fig-gain). We therefore
-claim limited predictive validation of a mechanistically coherent 270M
-high-gain regime, not a universal predictor; full diagnostics are in
+feature--prompt uncertainty is wide \([-0.293,0.986]\) (@fig-gain). The aggregate
+fit is dominated by one feature: 19 of the 24 cells with observed public TV of
+at least 0.5 use S1's L13/F10231, and excluding that feature lowers \(R^2\) to
+0.276 (0.133 when its mirror feature L13/F10304 is also excluded), still above
+the six simple baselines, all of which have \(R^2<0\) on the same subsets
+(Appendix A.6). We therefore claim only limited predictive validation of a 270M
+high-gain regime, not a general predictor; full diagnostics are in
 @fig-app-gain and @fig-app-gain-tail.
 
 # Validity stress test at 1B

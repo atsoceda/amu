@@ -4,14 +4,26 @@ This repository uses Quarto as the manuscript controller and LaTeX as the PDF
 backend. Source text lives in `paper.qmd` and `manuscript/sections/`; generated
 LaTeX and PDFs are build artifacts.
 
+## Versions
+
+- **NeurIPS 2026 workshop submission (v35): frozen.** The submitted PDF,
+  generated `.tex`, manifest and checksums are in
+  `submissions/neurips-2026-workshop-v35/` (read-only). Its source is Git tag
+  `neurips-2026-workshop-v35`. Do not render the `neurips` target from the live
+  source; rebuild the workshop version only from the tag, in a separate worktree.
+- **ICLR 2027 main track: active.** The live source is the ICLR extension.
+
 ## Build
 
 ```bash
-bin/render-paper neurips submission
-bin/render-paper neurips camera-ready
-bin/render-paper icml submission
 bin/render-paper iclr submission
+bin/render-paper iclr camera-ready
 ```
+
+The `iclr` profile currently uses a plain `article` class because the official
+ICLR 2027 style files are not yet vendored under `_extensions/iclr/`. Its PDF is
+therefore not yet in ICLR format. The `icml` and `neurips` profiles remain for
+reference and for rebuilding the tagged workshop version.
 
 Each build writes a PDF, generated `.tex`, and `build-manifest.json` under
 `dist/<target>-<mode>/`.

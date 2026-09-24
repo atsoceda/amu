@@ -65,3 +65,9 @@ docs/collaborator-report/From Stalling*.docx
 .idea/
 
 **/*.quarto_ipynb
+
+# Large local-only CLT per-layer tensors (see experiments/archived_feature_vectors/README.md)
+*.local.safetensors
+
+# Third-party clones and downloaded metadata
+external/

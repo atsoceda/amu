@@ -1,5 +1,11 @@
 # NeurIPS 2026 Extension Assets
 
+> **Frozen use only.** The NeurIPS 2026 workshop submission (v35) is archived in
+> `submissions/neurips-2026-workshop-v35/`, and its source is Git tag
+> `neurips-2026-workshop-v35`. These assets are kept so that tagged version can
+> be rebuilt. The live manuscript now targets ICLR 2027; do not render the
+> `neurips` target from it.
+
 This directory contains the curated NeurIPS 2026 LaTeX assets used by the
 Quarto publishing profiles.
 
