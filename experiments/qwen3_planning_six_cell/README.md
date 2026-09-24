@@ -81,3 +81,26 @@ prompts with nodes; 559 vs 560 nodes). Six-cell assay on 237 prompts:
 
 Reading: as at 0.6B, published planning nodes change the planned word only
 slightly, in both directions, and only through the article.
+
+### Qwen3-4B (2026-09-25)
+
+Selection: exact per-prompt count match on 297/349 prompts; totals 3371 vs
+3373 nodes, 336 vs 335 prompts with nodes (about 10 nodes per prompt). Six-cell
+assay on 336 prompts:
+
+| Condition | Article switches | Noun TV total / public / private | \(\tau=1\) Δlog p(planned): total | public | private |
+|---|---:|---|---|---|---|
+| Planning 5x | 9.5% | 0.100 / 0.076 / 0.026 | +0.199 | +0.187 [0.112, 0.269] | +0.012 [0.000, 0.024] |
+| Random 5x | 2.7% | 0.045 / 0.011 / 0.036 | -0.030 | -0.028 [-0.056, -0.003] | -0.003 [-0.019, 0.013] |
+| Planning zeroed | 5.7% | 0.057 / 0.042 / 0.018 | -0.188 | -0.173 [-0.230, -0.120] | -0.015 [-0.022, -0.007] |
+| Random zeroed | 0.3% | 0.015 / 0.000 / 0.015 | -0.004 | -0.003 [-0.011, 0.004] | -0.001 [-0.008, 0.005] |
+
+(Noun TV columns use greedy articles over prompts with article support; the
+log-probability columns are \(\tau=1\) mixtures over all 336 prompts.)
+
+Reading: at 4B, where the authors report planning, the published planning
+nodes have an interpretable, feature-specific, bidirectional effect on the
+planned noun, and about 92-94% of it travels through the generated article.
+Fixed-article noun changes are at random-control level; the only private
+effect is a small decrease when the nodes are zeroed. Across 0.6B, 1.7B and 4B
+the planning-node effect grows with scale and stays public.
