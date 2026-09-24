@@ -1,0 +1,15 @@
+{
+  "hanna_ameisen_repo": "external/model-planning-public",
+  "hanna_ameisen_commit": "993cff51450f43e8e86c254f761cc48c008b8dab",
+  "transcoders": {
+    "Qwen3-0.6B": "mwhanna/qwen3-0.6b-transcoders-lowl0",
+    "Qwen3-1.7B": "mwhanna/qwen3-1.7b-transcoders-lowl0",
+    "Qwen3-4B": "mwhanna/qwen3-4b-transcoders"
+  },
+  "feature_index": {
+    "Qwen3-0.6B": "external/qwen3_transcoder_meta/qwen3-0.6b-transcoders-lowl0/features/index.json.gz",
+    "Qwen3-1.7B": "external/qwen3_transcoder_meta/qwen3-1.7b-transcoders-lowl0/features/index.json.gz",
+    "Qwen3-4B": "external/qwen3_transcoder_meta/qwen3-4b-transcoders/features/index.json.gz"
+  },
+  "intervention": "set each selected feature to 5x its activation at the pre-article position (the authors' 'multiplied', unconstrained); applied as +4*a*W_dec to that layer's MLP output"
+}
