@@ -496,3 +496,7 @@ Necessity split, Qwen3-32B chat: persistence +22.2; necessity all +3.98, late +1
 largest size of each family the boundary is necessary for about 11% of persistence
 (Qwen3-32B 11%, Gemma 3 27B 11%). (Qwen3-32B-plain had never run its first steps; it
 was re-queued from the screen.)
+
+Qwen3-32B per-token boundary (98 of 100 share the tokens): the comma ending line 1,
+sufficiency +1.45, necessity +2.02 [1.46, 2.67]; template tokens -0.01 to +0.08. The
+storage site is the line-ending comma in Qwen3-14B, Qwen3-32B and Gemma 3 27B.
