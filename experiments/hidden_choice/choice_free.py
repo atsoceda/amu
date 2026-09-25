@@ -31,6 +31,7 @@ sys.path.insert(0, str(EXP.parents[0] / "couplet_routes"))
 sys.path.insert(0, str(EXP.parents[0] / "derived_value_carry"))
 from chain_routes import F32Head  # noqa: E402
 from choice_routes import FRUITS, REVEAL, SEED  # noqa: E402
+from batching import generate_batch, last_logprobs  # noqa: E402
 from models import is_gemma, load  # noqa: E402
 from step34_routes import boot  # noqa: E402
 
@@ -43,10 +44,54 @@ def prompt_of(tok, lst, gemma):
     return tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True, **kw)
 
 
+def layers_of(m):
+    from models import decoder_layers
+    return decoder_layers(m)
+
+
+def cut_sentence(txt):
+    txt = txt.strip()
+    mm = re.match(r"(.+?[.!?])(\s|$)", txt.replace("\n", " "))
+    return (mm.group(1) if mm else txt.split("\n")[0]).strip()
+
+
+def batched_rows(a, tok, m, layers, gemma, fid, rng):
+    """Same pairs (same seed and screening) and cells as the one-at-a-time path, batched."""
+    pairs, tried = [], 0
+    forced = "The weather is calm and mild today.\n" + REVEAL
+    while len(pairs) < a.pairs and tried < 20 * a.pairs:
+        tried += 1
+        four = rng.sample(FRUITS, 4)
+        perms = list(itertools.permutations(four))
+        rng.shuffle(perms)
+        ys = last_logprobs(m, tok, [prompt_of(tok, list(p), gemma) + forced for p in perms[:8]], chunk=8)
+        picks = {p: max(p, key=lambda f: float(y[fid[f]])) for p, y in zip(perms[:8], ys)}
+        orig = perms[0]
+        donors = [p for p in perms[1:8] if picks[p] != picks[orig]]
+        if donors:
+            pairs.append((list(orig), list(donors[0]), picks[orig], picks[donors[0]]))
+    P0 = [prompt_of(tok, o, gemma) for o, _, _, _ in pairs]
+    P1 = [prompt_of(tok, d, gemma) for _, d, _, _ in pairs]
+    T0 = [cut_sentence(x) for x in generate_batch(m, tok, layers, P0, 40, chunk=a.batch)]
+    T1 = [cut_sentence(x) for x in generate_batch(m, tok, layers, P1, 40, chunk=a.batch)]
+    cells = last_logprobs(m, tok, [p + t + "\n" + REVEAL for p0, p1, t0, t1 in zip(P0, P1, T0, T1)
+                                   for p, t in ((p0, t0), (p1, t1), (p0, t1), (p1, t0))], chunk=a.batch)
+    rows = []
+    for i, ((orig, don, po, pdn), t_0, t_1) in enumerate(zip(pairs, T0, T1)):
+        R = lambda y: float(y[fid[pdn]] - y[fid[po]])  # noqa: E731
+        o0, d1, o1, d0 = (R(cells[4 * i + k]) for k in range(4))
+        rows.append({"list": orig, "donor_list": don, "pick": po, "donor_pick": pdn, "text0": t_0, "text1": t_1,
+                     "sentence_changed": t_0 != t_1, "names_fruit": any(f in (t_0 + " " + t_1).lower() for f in FRUITS),
+                     "total": d1 - o0, "emission": o1 - o0, "persistence_t1": d1 - o1, "persistence_t0": d0 - o0})
+    print(f"{len(rows)} pairs done (batched)", flush=True)
+    return rows, tried
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", nargs="?", default="Qwen3-8B")
     ap.add_argument("--pairs", type=int, default=100)
+    ap.add_argument("--batch", type=int, default=16, help="1 = original one-at-a-time path")
     a = ap.parse_args()
     tok, m, _ = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -72,7 +117,9 @@ def main() -> None:
 
     rng = random.Random(SEED)
     rows, t0, tried = [], time.time(), 0
-    while len(rows) < a.pairs and tried < 20 * a.pairs:
+    if a.batch > 1:
+        rows, tried = batched_rows(a, tok, m, layers_of(m), gemma, fid, rng)
+    while a.batch == 1 and len(rows) < a.pairs and tried < 20 * a.pairs:
         tried += 1
         four = rng.sample(FRUITS, 4)
         perms = list(itertools.permutations(four))

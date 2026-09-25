@@ -31,6 +31,7 @@ import torch
 
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP.parent / "couplet_routes"))
+from batching import run_edits  # noqa: E402
 from models import is_gemma, load  # noqa: E402
 from step34_routes import boot  # noqa: E402
 
@@ -93,12 +94,31 @@ def prompt(tok, v0, inc, gemma):
     return ids, toks, ends, v0_digits
 
 
+def batched_scan_and_ends(rec, ids, v0d, ends, target, dst, s0, dR, m, layers, chunk):
+    """The efficacy scan and the statement-end route split, batched over edits of one sequence."""
+    ps = list(range(v0d[0], target))
+    ys, _ = run_edits(m, layers, ids, [{p: [x[p] for x in dst]} for p in ps], chunk=chunk)
+    rec["scan"] = {p: dR(y) for p, y in zip(ps, ys)}
+    ons, son = run_edits(m, layers, ids, [{sj: [x[sj] for x in dst]} for sj in ends], want_states=True, chunk=chunk)
+    reps = []
+    for j, sj in enumerate(ends):
+        after = range(sj + 1, target)
+        later = [e for e in ends if e > sj]
+        reps += [{sj: [x[sj] for x in dst]} | {q: [x[q] for x in s0] for q in after},
+                 {q: [x[q] for x in son[j]] for q in after},
+                 {q: [x[q] for x in son[j]] for q in later}]
+    ys, _ = run_edits(m, layers, ids, reps, chunk=chunk)
+    rec["by_end"] = [{"j": j, "pos": sj, "persistence": dR(ons[j]), "retrieval": dR(ys[3 * j]), "relay": dR(ys[3 * j + 1]),
+                      "chain_relay": dR(ys[3 * j + 2]) if any(e > sj for e in ends) else 0.0} for j, sj in enumerate(ends)]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", nargs="?", default="Qwen3-1.7B")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--ks", default=",".join(map(str, KS)))
     ap.add_argument("--block-only", action="store_true", help="only the post-v0 block edit (added 2026-09-26)")
+    ap.add_argument("--batch", type=int, default=16, help="edits per forward pass (1 = original one-at-a-time path)")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -157,6 +177,12 @@ def main() -> None:
                 rows.append(rec)
                 print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} "
                       f"post-v0 block {rec['post_v0_block']:+.2f}", flush=True)
+                continue
+            if a.batch > 1:
+                batched_scan_and_ends(rec, ids, v0d, ends, target, dst, s0, dR, m, layers, a.batch)
+                rows.append(rec)
+                print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} "
+                      f"block {rec['post_v0_block']:+.2f} (batched)", flush=True)
                 continue
             for p in range(v0d[0], target):
                 rec["scan"][p] = dR(run(ids, {p: [s[p] for s in dst]})[0])
