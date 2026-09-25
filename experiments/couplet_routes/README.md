@@ -490,3 +490,9 @@ comma ending line 1 is the storage site, necessity +3.45 [2.03, 5.05] (sufficien
 (CIs include zero). **Both families store the plan at the line-ending comma** (Qwen3-14B
 necessity +2.09 on the comma). Gemma 3 4B: chat relay share 0%, boundary +0.21;
 plain 4%, boundary +0.14 (no boundary storage at 4B).
+
+Necessity split, Qwen3-32B chat: persistence +22.2; necessity all +3.98, late +1.47,
+**boundary +2.42 [1.79, 3.11]** (11%; sufficiency +1.72), early line 2 -0.01. At the
+largest size of each family the boundary is necessary for about 11% of persistence
+(Qwen3-32B 11%, Gemma 3 27B 11%). (Qwen3-32B-plain had never run its first steps; it
+was re-queued from the screen.)
