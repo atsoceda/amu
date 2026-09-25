@@ -153,3 +153,20 @@ but rhyme information at other positions is still partly retrieved (30-50% of
 the anchor's effect). The accurate description is retrieval weighted toward
 structural anchors, not anchor-only retrieval. Relay is small from every
 position (+0.6 to +0.8).
+
+## Cross-scale summary (Mac Studio for 8B; generated from the committed JSON files)
+
+| | 1.7B | 4B | 8B |
+|---|---|---|---|
+| Rhyme with original off -> on / with donor on | 83% -> 1% / 27% | 92% -> 2% / 43% | 96% -> 1% / 61% |
+| Total | +14.4 [13.1, 15.8] | +19.5 [18.0, 21.0] | +26.0 [24.2, 27.8] |
+| Emission | +2.7 [1.5, 4.1] | +3.1 [1.8, 4.4] | +3.6 [2.1, 5.2] |
+| Persistence, original words | +12.1 [10.6, 13.6] | +15.3 [13.5, 17.1] | +22.6 [20.9, 24.4] |
+| Direct retrieval | +11.5 [10.1, 12.8] | +14.0 [12.3, 15.7] | +20.4 [18.8, 22.1] |
+| Relay | +0.8 [0.5, 1.1] | +1.6 [1.2, 2.0] | +2.4 [1.9, 2.9] |
+| Median relay share of persistence | 4% | 8% | 8% |
+| Same-rhyme null: persistence | +0.1 [-0.6, 0.6] | +1.2 [0.6, 2.0] | +2.0 [1.1, 3.2] |
+
+Anchor specificity at 8B (persistence): A +22.6 [20.9, 24.4], M +8.6 [6.9, 10.4], F +5.1 [3.8, 6.5], C +10.7 [8.9, 12.5], E +10.6 [8.8, 12.4]; the anchor is again about twice as effective as any other position.
+
+Reading: direct retrieval dominates at all three sizes. Relay grows in absolute size with the whole effect, but its median share goes 4% -> 8% -> 8%: no further growth from 4B to 8B. 14B and 8B step 6 are pending.
