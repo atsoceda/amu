@@ -29,16 +29,16 @@ Hanna & Ameisen's 100-couplet steering subset per model, their prompt, their anc
 
 ## Robustness: route split under the authors' feature steering
 
-| | Qwen3-4B | Qwen3-8B |
-|---|---|---|
-| Steered line 2 rhymes with donor (ours) | 16% | 27% |
-| Same, from the authors' released generations | 12% | 35% |
-| Total | +14.8 [13.3, 16.4] | +22.1 [20.1, 24.1] |
-| Emission | +1.4 [0.5, 2.4] | +2.7 [1.5, 3.9] |
-| Persistence, original words | +11.8 [10.2, 13.3] | +20.4 [18.8, 21.9] |
-|   Direct retrieval | +10.6 [9.2, 12.1] | +17.9 [16.4, 19.4] |
-|   Relay | +1.0 [0.7, 1.3] | +1.9 [1.5, 2.3] |
-| Additivity gap | +0.1 [-0.1, 0.3] | +0.5 [0.1, 1.0] |
+| | Qwen3-4B | Qwen3-8B | Qwen3-14B |
+|---|---|---|---|
+| Steered line 2 rhymes with donor (ours) | 16% | 27% | 23% |
+| Same, from the authors' released generations | 12% | 35% | 33% |
+| Total | +14.8 [13.3, 16.4] | +22.1 [20.1, 24.1] | +26.6 [25.0, 28.2] |
+| Emission | +1.4 [0.5, 2.4] | +2.7 [1.5, 3.9] | +4.2 [2.8, 5.5] |
+| Persistence, original words | +11.8 [10.2, 13.3] | +20.4 [18.8, 21.9] | +23.1 [21.6, 24.6] |
+|   Direct retrieval | +10.6 [9.2, 12.1] | +17.9 [16.4, 19.4] | +19.3 [17.8, 20.8] |
+|   Relay | +1.0 [0.7, 1.3] | +1.9 [1.5, 2.3] | +3.2 [2.6, 3.8] |
+| Additivity gap | +0.1 [-0.1, 0.3] | +0.5 [0.1, 1.0] | +0.6 [-0.1, 1.4] |
 
 **Reading.** The milder, published intervention changes the rhyme less often at small sizes (as the authors report), but the route split has the same direction: persistence is mostly direct retrieval, relay small. This addresses the concern that the all-layer state edit is too disruptive.
 

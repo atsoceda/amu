@@ -208,3 +208,10 @@ Rhyme with original 96% -> 0%, donor 64%. Persistence with original words +25.8
 [0.4, 2.2]. Median relay share 11% (1.7B 4%, 4B 8%, 8B 8%): a modest upward trend,
 not flat. Same-rhyme null +0.8. Anchor about twice any other position. Retrieval
 still dominates; the scale trend of relay is now the key open question (32B next).
+
+### Qwen3-14B feature steering (step 6, 2026-09-25, Mac Studio)
+
+Steered line 2 rhymes with donor 23% (authors' released generations 33%), original 0%.
+Total +26.6 = emission +4.2 + persistence +22.4. Persistence with original words +23.1
+= direct retrieval +19.3 + relay +3.2 [2.6, 3.8]; additivity gap +0.6 [-0.1, 1.4]
+(the positive gap seen under the state edit is not clearly present here).
