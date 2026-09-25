@@ -58,12 +58,14 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", nargs="?", default="Qwen3-1.7B")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--control", choices=["same_rhyme"])
     a = ap.parse_args()
+    tag = f"_{a.control}" if a.control else ""
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
     m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
     layers = m.model.layers
-    rows = json.loads((EXP / "results" / a.model / "step2_rows.json").read_text())[: a.limit or None]
+    rows = json.loads((EXP / "results" / a.model / f"step2_rows{tag}.json").read_text())[: a.limit or None]
 
     def rhyme_ids(word):
         ids = set()
@@ -141,14 +143,14 @@ def main() -> None:
         print(f"{len(out_rows):3d} [{time.time()-t0:5.0f}s] total {rec['d_total']:+.2f} emis {rec['d_emission']:+.2f} "
               f"pers {rec['d_persistence']:+.2f} | p0-pers {rec['d_persistence_p0']:+.2f} = ret {rec['d_retrieval']:+.2f} + rel {rec['d_relay']:+.2f}", flush=True)
     out = EXP / "results" / a.model
-    (out / "step34_rows.json").write_text(json.dumps(out_rows, indent=1))
+    (out / f"step34_rows{tag}.json").write_text(json.dumps(out_rows, indent=1))
     keys = ["d_total", "d_emission", "d_persistence", "d_persistence_p0", "d_retrieval", "d_relay",
             "tv_total", "tv_emission", "tv_persistence", "tv_persistence_p0"]
     s = {"model": a.model, "n": len(out_rows), "elapsed_sec": time.time() - t0,
          "all": {k: boot([r[k] for r in out_rows]) for k in keys},
          "edit_succeeded": {k: boot([r[k] for r in out_rows if r["edit_succeeded"]]) for k in keys},
          "additivity_gap_p0": boot([r["d_persistence_p0"] - r["d_retrieval"] - r["d_relay"] for r in out_rows])}
-    (out / "step34_summary.json").write_text(json.dumps(s, indent=1))
+    (out / f"step34_summary{tag}.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: (round(v["mean"], 3), round(v["lo"], 3), round(v["hi"], 3)) if v else None for k, v in s["all"].items()}, indent=1))
     print("edit-succeeded subset n =", s["edit_succeeded"]["d_total"]["n"] if s["edit_succeeded"]["d_total"] else 0)
 

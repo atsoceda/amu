@@ -45,3 +45,19 @@ About 80% of the effect is persistence, and a median 96% of persistence per
 couplet is direct retrieval of the anchor; relay through the in-between
 positions is about 4% (small but above zero). The 27 couplets where the edit
 produced a donor rhyme show the same pattern (retrieval +12.3, relay +1.0).
+
+### Null control: same-rhyme donors, Qwen3-1.7B (2026-09-25)
+
+`--control same_rhyme`: the donor is another couplet from the same rhyme group
+(83 couplets with a partner; seed 20260925). Rhyme preference barely moves
+(total -0.05 [-1.04, 0.91]; persistence with original words +0.09, retrieval
++0.14, relay -0.02), while the next-word distribution still changes a lot (TV of
+persistence 0.38 vs 0.74 in the main run). The rhyme-preference measure therefore
+tracks rhyme information, not generic disruption. Part of this null is by
+construction (donor and original rhyme sets overlap).
+
+Caveat: the all-layer anchor edit is disruptive. With a same-rhyme donor it
+still cuts rhyming from 87% to about 35%, so step-2 rhyme rates mix steering and
+disruption. The route split concerns where the rhyme-specific influence travels
+and is not affected, but the milder published intervention (Hanna & Ameisen's
+rhyme-feature steering, plan step 6) should be run to confirm.

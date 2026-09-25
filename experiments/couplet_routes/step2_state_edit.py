@@ -64,6 +64,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", default="Qwen3-1.7B", nargs="?")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--control", choices=["same_rhyme"], help="null control: donor from the same rhyme group")
     a = ap.parse_args()
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
@@ -102,10 +103,19 @@ def main() -> None:
         return tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True).strip()
 
     all_rows = pd.read_csv(HA / f"{a.model}.csv", index_col=0)
+    if a.control == "same_rhyme":
+        import random
+        rng = random.Random(20260925)
+        same = {}
+        for idx, r in df.iterrows():
+            pool = [j for j, q in all_rows.iterrows() if j != idx and q["rhyme_group"] == r["rhyme_group"]]
+            if pool:
+                same[idx] = rng.choice(pool)
+        df = df.loc[list(same)]
     rows = []
     t0 = time.time()
     for idx, r in df.iterrows():
-        donor = all_rows.loc[int(r["chosen_index"])]
+        donor = all_rows.loc[same[idx] if a.control else int(r["chosen_index"])]
         orig_w, donor_w = r["first_last_word"], donor["first_last_word"]
         g0 = generate(r["first_line"])
         g1 = generate(r["first_line"], anchor_states(donor["first_line"]))
@@ -121,7 +131,8 @@ def main() -> None:
         print(f"{len(rows):3d} [{time.time()-t0:5.0f}s] off='{g0}' | on='{g1}' | donor rhyme {rec['on_rhymes_donor']}", flush=True)
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
-    (out / "step2_rows.json").write_text(json.dumps(rows, indent=1))
+    tag = f"_{a.control}" if a.control else ""
+    (out / f"step2_rows{tag}.json").write_text(json.dumps(rows, indent=1))
     n = len(rows)
     s = {"model": a.model, "n": n,
          "matches_authors_original": sum(r["matches_authors"] for r in rows) / n,
@@ -131,7 +142,7 @@ def main() -> None:
          "off_rhymes_donor": sum(r["off_rhymes_donor"] for r in rows) / n,
          "on_changed_last_word": sum(r["on_changed_word"] for r in rows) / n,
          "elapsed_sec": time.time() - t0}
-    (out / "step2_summary.json").write_text(json.dumps(s, indent=1))
+    (out / f"step2_summary{tag}.json").write_text(json.dumps(s, indent=1))
     print(json.dumps(s, indent=1))
 
 
