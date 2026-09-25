@@ -3,7 +3,7 @@
 
 Reads results/<model>/{step34,relay_positions,relay_necessity}_summary.json for every
 run present and writes results/scale_summary.md (table) and results/scale_summary.png
-(figure). Quantities are shares of persistence (original line-2 words), which makes
+(figure; hollow markers in the boundary panel are necessity). Quantities are shares of persistence (original line-2 words), which makes
 families with different log-probability scales comparable: retrieval, relay (all
 in-between positions), boundary (prompt tail after line 1), late (last 3 positions
 before the rhyme word), early line 2, and boundary necessity where measured.
@@ -79,9 +79,15 @@ def main() -> None:
             pts = sorted((r["size"], r[key]) for r in rows if r["family"] == fam and r["format"] == fmt)
             if pts:
                 ax.plot([p[0] for p in pts], [100 * p[1] for p in pts], color=c, marker=mk, ls=ls, label=f"{fam}, {fmt}")
+            if key == "boundary":
+                nec = sorted((r["size"], r["boundary_necessity"]) for r in rows
+                             if r["family"] == fam and r["format"] == fmt and r["boundary_necessity"] is not None)
+                if nec:
+                    ax.plot([p[0] for p in nec], [100 * p[1] for p in nec], color=c, marker=mk, ls="none",
+                            mfc="none", ms=9, mew=1.5, label=f"{fam}, {fmt}: necessity")
         ax.set_xscale("log"); ax.set_title(title, fontsize=10); ax.set_xlabel("parameters (B)"); ax.axhline(0, color="k", lw=0.5)
     axes[0].set_ylabel("relay, % of persistence")
-    axes[-1].legend(fontsize=7, loc="upper left")
+    axes[0].legend(fontsize=6, loc="upper left")
     fig.tight_layout()
     fig.savefig(R / "scale_summary.png", dpi=150)
 
