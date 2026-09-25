@@ -430,3 +430,16 @@ necessity_all = persistence - retrieval by construction. With additive paths the
 two agree; with interaction, necessity exceeds sufficiency. Reported next to each
 other; the Shapley average of the two is given as an interaction-robust summary.
 Models: Qwen3 8B/14B/32B and Gemma 3 12B/27B (chat), then the plain-format runs.
+
+### Necessity split, small models (2026-09-26, laptop)
+
+| | 1.7B | 4B | 1.7B-plain | 4B-plain |
+|---|---|---|---|---|
+| Necessity, all (= persistence - retrieval) | +0.64 | +1.31 | +0.61 | +1.51 |
+| Necessity, late | +0.75 | +1.18 | +0.50 | +1.38 |
+| Necessity, boundary | -0.44 [-0.74, -0.18] | -0.09 | +0.08 | -0.01 |
+| Necessity, early line 2 | -0.11 | +0.07 | +0.09 | -0.02 |
+
+Necessity matches sufficiency at these sizes (additive paths): relay is the late
+lookup, the boundary holds nothing. (At 1.7B chat, resetting the boundary slightly
+strengthens the edit, -0.44: a small interference effect, not storage.)
