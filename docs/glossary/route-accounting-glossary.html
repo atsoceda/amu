@@ -1,0 +1,390 @@
+<title>Route Accounting Glossary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,750;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#f5f7f9; --panel:#ffffff; --ink:#18212b; --ink-2:#48566a; --ink-3:#6c7a8d; --rule:#d9e0e7;
+  --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --published:#35557f; --published-bg:#e4ebf5;
+  --found:#1d6b45; --found-bg:#dff1e7;
+  --hinted:#8a5a00; --hinted-bg:#fbefd4;
+  --hypothesis:#5b3f94; --hypothesis-bg:#ece5f8;
+  --retracted:#a2322b; --retracted-bg:#f8e3e1;
+  --method:#3d4b5c; --method-bg:#e8ecf0;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#10161d; --panel:#172029; --ink:#e4eaf0; --ink-2:#b0bdca; --ink-3:#8795a5; --rule:#2a3642;
+    --accent:#7fb7de; --accent-soft:#1c2e3d;
+    --published:#9db8e0; --published-bg:#1f2b3d;
+    --found:#7fd0a3; --found-bg:#16301f;
+    --hinted:#e6bf6b; --hinted-bg:#33280f;
+    --hypothesis:#bba6ea; --hypothesis-bg:#2a2140;
+    --retracted:#f09a92; --retracted-bg:#3a1c1a;
+    --method:#b6c2cf; --method-bg:#243039;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#10161d; --panel:#172029; --ink:#e4eaf0; --ink-2:#b0bdca; --ink-3:#8795a5; --rule:#2a3642;
+  --accent:#7fb7de; --accent-soft:#1c2e3d;
+  --published:#9db8e0; --published-bg:#1f2b3d;
+  --found:#7fd0a3; --found-bg:#16301f;
+  --hinted:#e6bf6b; --hinted-bg:#33280f;
+  --hypothesis:#bba6ea; --hypothesis-bg:#2a2140;
+  --retracted:#f09a92; --retracted-bg:#3a1c1a;
+  --method:#b6c2cf; --method-bg:#243039;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.15;font-weight:750;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.lede{color:var(--ink-2);max-width:68ch;margin:0}
+h2{font-size:20px;font-weight:750;margin:0;text-wrap:balance}
+.sec{display:flex;flex-direction:column;gap:14px;scroll-margin-top:72px}
+.sec > p{margin:0;color:var(--ink-2);max-width:72ch}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+nav.toc a{color:var(--accent);text-decoration:none}
+nav.toc a:hover,nav.toc a:focus-visible{text-decoration:underline}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filters .label{font-size:13px;color:var(--ink-3);margin-right:4px}
+button.chip{font:inherit;font-size:12.5px;font-weight:600;border:1px solid transparent;border-radius:999px;padding:3px 11px;cursor:pointer;line-height:1.5}
+button.chip[aria-pressed="false"]{opacity:.45;border-color:var(--rule)}
+button.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.s{display:inline-block;font-size:12px;font-weight:600;border-radius:999px;padding:1px 9px;white-space:nowrap}
+.published{color:var(--published);background:var(--published-bg)}
+.found{color:var(--found);background:var(--found-bg)}
+.hinted{color:var(--hinted);background:var(--hinted-bg)}
+.hypothesis{color:var(--hypothesis);background:var(--hypothesis-bg)}
+.retracted{color:var(--retracted);background:var(--retracted-bg)}
+.method{color:var(--method);background:var(--method-bg)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 18px;font-size:13.5px;color:var(--ink-2)}
+.legend div{display:flex;gap:8px;align-items:baseline}
+.terms{display:grid;gap:12px}
+.term{background:var(--panel);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;display:grid;gap:8px}
+.term h3{margin:0;font-size:16.5px;font-weight:750;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.term h3 .was{font-size:12.5px;font-weight:400;color:var(--ink-3)}
+.term h3 .was s{color:var(--ink-3)}
+dl{margin:0;display:grid;grid-template-columns:120px 1fr;gap:6px 14px}
+dt{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);padding-top:2px}
+dd{margin:0;color:var(--ink)}
+dd .st{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:baseline}
+code,.f{font-family:var(--mono);font-size:13px}
+.f{background:var(--accent-soft);padding:1px 6px;border-radius:4px;white-space:nowrap}
+var{font-style:italic;font-family:var(--sans)}
+.num{font-variant-numeric:tabular-nums}
+.tablebox{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid var(--rule)}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+tr:last-child td{border-bottom:0}
+.thesis{background:var(--accent-soft);border-radius:8px;padding:16px 18px;font-size:16px;line-height:1.5;max-width:78ch}
+.thesis strong{color:var(--accent)}
+.note{font-size:13.5px;color:var(--ink-2)}
+footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media (max-width:560px){
+  dl{grid-template-columns:1fr;gap:2px}
+  dt{padding-top:6px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">AMU · ICLR 2027 extension · status as of 25 Sep 2026</span>
+    <h1>Route Accounting Glossary</h1>
+    <p class="lede">One vocabulary for how an intervention's effect reaches a later token. Each term has a mechanistic meaning, the measurement that stands for it, and the current state of evidence, so the framing and the results can be written without drifting terms.</p>
+    <div class="legend" aria-label="Status levels">
+      <div><span class="s published">Published</span> shown by others</div>
+      <div><span class="s found">Found</span> measured by us, with stated scope</div>
+      <div><span class="s hinted">Hinted</span> suggestive, not decisive</div>
+      <div><span class="s hypothesis">Hypothesis</span> proposed, untested</div>
+      <div><span class="s retracted">Retracted</span> earlier claim we reject</div>
+      <div><span class="s method">Method</span> definition or exact identity</div>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#setting">Setting</a><a href="#accounting">Accounting</a><a href="#paths">Persistence paths</a><a href="#regularities">Regularities</a><a href="#validity">Validity</a><a href="#settings">Settings</a><a href="#picture">Larger picture</a>
+  </nav>
+
+  <div class="filters" role="group" aria-label="Filter terms by status">
+    <span class="label">Show terms with status:</span>
+    <button class="chip published" data-f="published" aria-pressed="true" id="f-published">Published</button>
+    <button class="chip found" data-f="found" aria-pressed="true" id="f-found">Found</button>
+    <button class="chip hinted" data-f="hinted" aria-pressed="true" id="f-hinted">Hinted</button>
+    <button class="chip hypothesis" data-f="hypothesis" aria-pressed="true" id="f-hypothesis">Hypothesis</button>
+    <button class="chip retracted" data-f="retracted" aria-pressed="true" id="f-retracted">Retracted</button>
+    <button class="chip method" data-f="method" aria-pressed="true" id="f-method">Method</button>
+  </div>
+
+  <section class="sec" id="setting">
+    <h2>1. The setting</h2>
+    <div class="terms">
+      <article class="term" data-status="method">
+        <h3>Source position <var>t</var></h3>
+        <dl>
+          <dt>Meaning</dt><dd>The position where the upstream change is made.</dd>
+          <dt>Handle</dt><dd>Pre-article position (a/an, el/la); pre-code position (A/B); end of line 1 (couplets).</dd>
+          <dt>Status</dt><dd><span class="s method">Method</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="method">
+        <h3>Intervention</h3>
+        <dl>
+          <dt>Meaning</dt><dd>A change at <var>t</var>. A <b>state edit</b> changes features or hidden states and leaves the text unchanged. A <b>text edit</b> changes visible words.</dd>
+          <dt>Handle</dt><dd>Feature zeroing or 5x (published planning features, S1); all-layer state patch or context swap (A/B).</dd>
+          <dt>Status</dt><dd><span class="s method">Method</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="method">
+        <h3>Mediator token</h3>
+        <dl>
+          <dt>Meaning</dt><dd>A generated token between <var>t</var> and the target, read back as input by the model.</dd>
+          <dt>Handle</dt><dd><code>a</code>/<code>an</code>, <code>el</code>/<code>la</code>, the <code>A</code>/<code>B</code> code; in couplets, the line-2 words.</dd>
+          <dt>Status</dt><dd><span class="s method">Method</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="method">
+        <h3>Target</h3>
+        <dl>
+          <dt>Meaning</dt><dd>The later prediction being measured.</dd>
+          <dt>Handle</dt><dd>First noun token, term token, or rhyme word.</dd>
+          <dt>Status</dt><dd><span class="s method">Method</span></dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="accounting">
+    <h2>2. The accounting</h2>
+    <p>The total effect of an intervention on the target, with the mediator generated freely, splits exactly: <span class="f">E<sub>total</sub> = E<sub>emission</sub> + E<sub>persistence</sub></span>. Here <var>Y</var>(<var>i</var>,<var>b</var>) is the target distribution with the intervention off (0) or on (1) and mediator <var>b</var>; <var>B<sub>i</sub></var> is the mediator the model emits; <var>q<sub>i</sub></var> is the mediator policy.</p>
+    <div class="terms">
+      <article class="term" data-status="found">
+        <h3>Emission <span class="was">formerly <s>public route</s></span></h3>
+        <dl>
+          <dt>Meaning</dt><dd>The part of the effect carried by which token gets emitted.</dd>
+          <dt>Measure</dt><dd>Replay the induced token with the intervention off: <span class="f">Y(0,B<sub>1</sub>) − Y(0,B<sub>0</sub>)</span>, and the τ-weighted mixture version.</dd>
+          <dt>Status</dt><dd class="st"><span class="s method">Method</span><span class="s found">Found</span> in every setting below</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Policy movement</h3>
+        <dl>
+          <dt>Meaning</dt><dd>How much the intervention changes the mediator's probability.</dd>
+          <dt>Measure</dt><dd><span class="f">q<sub>1</sub> − q<sub>0</sub></span></dd>
+          <dt>Status</dt><dd><span class="s found">Found</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Leverage</h3>
+        <dl>
+          <dt>Meaning</dt><dd>How much the target depends on which mediator token was emitted, with the intervention off.</dd>
+          <dt>Measure</dt><dd><span class="f">TV(Y<sub>b</sub>, Y<sub>b′</sub>)</span>, or log p(target | right mediator) − log p(target | wrong mediator).</dd>
+          <dt>Status</dt><dd><span class="s found">Found</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="method">
+        <h3>Emission identity</h3>
+        <dl>
+          <dt>Meaning</dt><dd>For a binary mediator, emission equals policy movement times leverage.</dd>
+          <dt>Measure</dt><dd><span class="f">TV(E<sub>emission</sub>) = |q<sub>1</sub> − q<sub>0</sub>| · TV(Y<sub>b</sub>, Y<sub>b′</sub>)</span></dd>
+          <dt>Status</dt><dd class="st"><span class="s method">Method</span> exact algebra, not an empirical claim</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Persistence <span class="was">formerly <s>private route</s></span></h3>
+        <dl>
+          <dt>Meaning</dt><dd>The effect that remains with the mediator token held fixed. A leftover category, not a mechanism: it splits into the three paths below.</dd>
+          <dt>Measure</dt><dd><span class="f">Y(1,B<sub>1</sub>) − Y(0,B<sub>1</sub>)</span>, and the reverse order.</dd>
+          <dt>Status</dt><dd><span class="s found">Found</span></dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="paths">
+    <h2>3. Persistence paths</h2>
+    <p>In a transformer every persistent effect travels through attention, so persistence splits by which positions carry it. Each path is removed by giving chosen positions the clean (intervention-off) keys and values.</p>
+    <div class="terms">
+      <article class="term" data-status="hinted">
+        <h3>Direct retrieval <span class="was">formerly <s>anchored retrieval</s>, part of <s>carried state</s></span></h3>
+        <dl>
+          <dt>Meaning</dt><dd>The target position attends straight back to <var>t</var> and reads its altered state.</dd>
+          <dt>Measure</dt><dd>Effect removed when the target position gets clean keys/values at <var>t</var>.</dd>
+          <dt>Status</dt><dd class="st"><span class="s hinted">Hinted</span> by the published couplet circuit (qualitative); not yet measured by us. For a/an, persistence is this path by construction.</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="hypothesis">
+        <h3>Relay <span class="was">formerly <s>carried private plan</s></span></h3>
+        <dl>
+          <dt>Meaning</dt><dd>Positions between <var>t</var> and the target read <var>t</var> and carry the change forward in their own states.</dd>
+          <dt>Measure</dt><dd>Effect removed when the in-between positions get clean keys/values at <var>t</var>.</dd>
+          <dt>Status</dt><dd class="st"><span class="s hypothesis">Hypothesis</span> rare; not yet measured anywhere</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="hinted">
+        <h3>Re-reading <span class="was">formerly <s>text-reading</s>, <s>route (a)</s></span></h3>
+        <dl>
+          <dt>Meaning</dt><dd>For text edits, later positions read the changed visible words.</dd>
+          <dt>Measure</dt><dd>Effect removed when the changed words' keys/values are made clean.</dd>
+          <dt>Status</dt><dd class="st"><span class="s hinted">Hinted</span> A/B text-edit persistence of <span class="num">0.9–1.3</span>; path not isolated yet</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="method">
+        <h3>Hidden</h3>
+        <dl>
+          <dt>Meaning</dt><dd>Reserved for retrieval or relay that a monitor reading the text and tokens could not recover.</dd>
+          <dt>Status</dt><dd class="st"><span class="s method">Method</span> no result so far establishes anything hidden</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="regularities">
+    <h2>4. Regularities</h2>
+    <div class="terms">
+      <article class="term" data-status="found">
+        <h3>Leverage law</h3>
+        <dl>
+          <dt>Claim</dt><dd>Emission share scales with policy movement × leverage; persistence stays roughly constant.</dd>
+          <dt>Evidence</dt><dd><b>a/an, Qwen3-4B:</b> emission share 0.53–0.82 in the lowest-leverage third vs 0.94–0.96 in the other two; persistence about ±0.013–0.016 across leverage; the product predicts emission better than policy movement alone (r = 0.886 vs 0.831). <b>A/B, Qwen3-4B:</b> emission 0.559 at leverage 0.56 vs about 0 at leverage about 0; 10/10 units, p = 0.001.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> at 4B only; effects at 0.6B and 1.7B are too small to test it</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Dialable leverage</h3>
+        <dl>
+          <dt>Claim</dt><dd>A mediator's leverage can be set by how reliably the context ties it to the target.</dd>
+          <dt>Evidence</dt><dd>A/B code at 4B: leverage <span class="num">0.64 / 0.37 / −0.20</span> at 100 / 75 / 50% reliability.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> behavioural, 5 families</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="hinted">
+        <h3>Leverage reflects association strength</h3>
+        <dl>
+          <dt>Claim</dt><dd>Leverage is higher for more entrenched token associations (pretraining agreement above an in-context code) and grows with scale.</dd>
+          <dt>Evidence</dt><dd>a/an median leverage 3.3–5.0 nats. A/B code leverage <span class="num">0 / 0.24 / 0.64</span> at 0.6B / 1.7B / 4B.</dd>
+          <dt>Status</dt><dd class="st"><span class="s hinted">Hinted</span> two association types, three sizes; the n-gram-frequency link is a <span class="s hypothesis">Hypothesis</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Lost decision</h3>
+        <dl>
+          <dt>Claim</dt><dd>A decision held only in state, with no leveraged mediator, does not reach the target by another path.</dd>
+          <dt>Evidence</dt><dd>A/B state patch in the zero-leverage bank: total effect <span class="num">+0.004</span>.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> one setting, 5 families</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Decodable ≠ carried</h3>
+        <dl>
+          <dt>Claim</dt><dd>A feature can represent a future word and cause it, yet its downstream effect travels by emission.</dd>
+          <dt>Evidence</dt><dd>Published a/an planning features at 4B: about 92–94% emission, leverage-dependent. Our reproduction of their selection matches exactly on 344 / 338 / 297 of 349 prompts at 0.6B / 1.7B / 4B.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> planning features themselves <span class="s published">Published</span> (Hanna &amp; Ameisen)</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="validity">
+    <h2>5. Validity concepts</h2>
+    <div class="terms">
+      <article class="term" data-status="found">
+        <h3>Mediator support</h3>
+        <dl>
+          <dt>Meaning</dt><dd>The decomposition is valid only if the mediator tokens keep most of the probability mass.</dd>
+          <dt>Evidence</dt><dd>Failures: bare neutral template (a/an mass about 0.27); 1B effect-matched coalition (<code>called</code> dominates); A/B 50% bank at 4B (0.864).</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> used as a gate</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Readout component</h3>
+        <dl>
+          <dt>Meaning</dt><dd>The part of a steering vector along the mediator's local readout direction, <span class="f">g = ∂(logit<sub>b′</sub> − logit<sub>b</sub>) / ∂h</span>.</dd>
+          <dt>Evidence</dt><dd>About 4% of the named-donor vectors' length.</dd>
+          <dt>Status</dt><dd><span class="s found">Found</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Construction artifact</h3>
+        <dl>
+          <dt>Meaning</dt><dd>A route effect produced by how the vector was built, which injects the mediator decision, rather than by the model.</dd>
+          <dt>Evidence</dt><dd>Removing the readout component: matched-triad interaction <span class="num">0.120 → 0.018</span>; independent-family interaction <span class="num">0.264 → 0.057</span>, cross-class emission dominance 6/6 → 1/6 families; target efficacy unchanged.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> generality to common steering vectors is a <span class="s hypothesis">Hypothesis</span></dd>
+        </dl>
+      </article>
+      <article class="term" data-status="retracted">
+        <h3>Mediator-relative routing <span class="was">also <s>lossy public projection</s></span></h3>
+        <dl>
+          <dt>Claim</dt><dd>The article's ability to distinguish targets determines the route.</dd>
+          <dt>Evidence</dt><dd>The effect came from the construction artifact.</dd>
+          <dt>Status</dt><dd><span class="s retracted">Retracted</span></dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="settings">
+    <h2>6. Settings and what each contributes</h2>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>Setting</th><th>Status</th><th>What it shows</th></tr></thead>
+        <tbody>
+          <tr><td><b>S1</b> (Gemma 3 270M)</td><td><span class="s found">Found</span></td><td>Emission-dominant, carried by one article-attributed feature. A high-leverage example, not a planning result.</td></tr>
+          <tr><td><b>a/an planning features</b> (Qwen3 0.6B–4B)</td><td><span class="s found">Found</span></td><td>No usable effect at 0.6B or 1.7B. At 4B, emission-dominant and following the leverage law; the ceiling caveat is explained by leverage.</td></tr>
+          <tr><td><b>el/la planning features</b></td><td><span class="s found">Found</span> null, matching <span class="s published">Published</span></td><td>Null at 0.6B and 1.7B, consistent with the authors' null; 4B stopped at 31 prompts. Uninformative for routes: no policy movement. <span class="s hinted">Hinted</span> 71% of the planning features are English-concept features, suggesting conceptual plans lack grammatical gender.</td></tr>
+          <tr><td><b>A/B code</b> (Qwen3 0.6B–4B)</td><td><span class="s found">Found</span></td><td>A non-grammatical mediator with dialable leverage. Leverage law confirmed; lost decision; large re-reading persistence under text edits (path not isolated).</td></tr>
+          <tr><td><b>Named-donor synonym assays</b> (Gemma 3 1B)</td><td><span class="s found">Found</span></td><td>The construction artifact; their route claims are retracted.</td></tr>
+          <tr><td><b>Couplets</b> (Hanna &amp; Ameisen)</td><td><span class="s published">Published</span></td><td>Line-1 rhyme features are retrieved near the end of line 2, and steered line-2 words do not license the rhyme better. The natural test of relay vs direct retrieval over about 10 positions; not yet run by us.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sec" id="picture">
+    <h2>7. The larger picture</h2>
+    <p class="thesis"><strong>Thesis (hypothesis).</strong> Future-relevant information crosses positions by <strong>emission</strong>, scaled by leverage, or by <strong>retrieval</strong>: a later position reading the source position or the visible text. <strong>Relay</strong>, a plan carried privately through the positions in between, is rare.</p>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>Piece of the thesis</th><th>Status</th><th>Next experiment that moves it</th></tr></thead>
+        <tbody>
+          <tr><td>Emission, scaled by leverage</td><td><span class="s found">Found</span> a/an 4B, A/B 4B</td><td>Chain-of-thought tokens (stretch)</td></tr>
+          <tr><td>A state-held decision is lost without a leveraged mediator</td><td><span class="s found">Found</span> A/B, one setting</td><td>More A/B families</td></tr>
+          <tr><td>Retrieval of visible text</td><td><span class="s hinted">Hinted</span> A/B text edit</td><td>Attention-path split on the A/B text edit</td></tr>
+          <tr><td>Retrieval from an anchor at a distance</td><td><span class="s published">Published</span> qualitatively (couplets)</td><td>Couplets six-cell with the path split (flagship)</td></tr>
+          <tr><td><b>Relay is rare</b></td><td><span class="s hypothesis">Hypothesis</span> the claim that makes the thesis surprising</td><td>Couplets six-cell with the path split (flagship)</td></tr>
+          <tr><td>Route claims can be counterfeited by vector construction</td><td><span class="s found">Found</span> our assays; generality <span class="s hypothesis">Hypothesis</span></td><td>Steering-vector readout audit</td></tr>
+          <tr><td>Conceptual plans lack language-specific grammar</td><td><span class="s hinted">Hinted</span> el/la node languages</td><td>el/la split into Spanish-feature vs English-feature subsets</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Retired words: <b>public</b> and <b>private</b> (use emission and persistence), <b>route</b> as a model property (a route is an accounting of one intervention), <b>carrier</b> and <b>channel</b>, and <b>hidden</b> except as defined above.</p>
+  </section>
+
+  <footer>Sources: the six-cell, leverage, A/B and construction experiments in the AMU repository (experiments/qwen3_planning_six_cell, ab_qwen_gate, ab_qwen_route, matched_triads_construction) and Hanna &amp; Ameisen, "Latent planning emerges with scale" (ICLR 2026).</footer>
+</div>
+
+<script>
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('button.chip'));
+  var terms=[].slice.call(document.querySelectorAll('.term'));
+  function apply(){
+    var on={};
+    chips.forEach(function(c){on[c.dataset.f]=c.getAttribute('aria-pressed')==='true';});
+    terms.forEach(function(t){t.hidden=!on[t.dataset.status];});
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true');
+      apply();
+    });
+  });
+})();
+</script>

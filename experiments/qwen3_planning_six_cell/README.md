@@ -169,3 +169,27 @@ reported both in full and restricted to the same first-150 subset. Candidate
 features remain the documented superset (all active features passing the
 authors' el/la word test) rather than their pruned-graph nodes, which cannot be
 computed on this machine at 1.7B or 4B.
+
+### el/la results (2026-09-25) and stop decision
+
+| Model | Items | Prompts with planning nodes | 5x: public / private Δlog p(planned), \(\tau=1\) | Zeroed | Random controls |
+|---|---|---:|---|---|---|
+| Qwen3-0.6B | all 379 (and first-150 subset) | 205 | +0.008 / +0.002 | about 0 | similar |
+| Qwen3-1.7B | first-150 subset | 116 | +0.011 [-0.032, 0.054] / -0.012 | about 0 | similar |
+| Qwen3-4B | first-150 subset | 31 of 142 run | nonspecific (5x similar to random) | zeroed policy movement -0.030 | similar |
+
+- Consistent with the authors' published result (their Appendix D): el/la
+  interventions "have little effect", attributed to few planning features and
+  Qwen3's weak Spanish. Their behavioural tables show article accuracy 0.48
+  (1.7B) and 0.57 (4B).
+- For routes the task is uninformative: planning nodes barely move the article
+  (policy movement about +0.009 at 1.7B), and leverage is lower than for a/an
+  (median 2.28 vs 4.99 nats at 1.7B).
+- The 4B run was **stopped after 31 prompts** as uninformative;
+  `results/el_la/Qwen3-4B/six_cell_rows.jsonl` holds those rows and the run is
+  resumable (`AMU_TASK=el_la AMU_SUBSET=first150 six_cell.py Qwen3-4B`).
+- Lead kept for later (hinted, untested): at 4B, 71% of selected el/la nodes
+  match only the English translation (2,571 English-only, 718 Spanish-only, 313
+  both). Hypothesis: conceptual (latent-English) plans carry no grammatical
+  gender, so gender is committed only at emission. Test: intervene on
+  Spanish-only vs English-only nodes separately and compare policy movement.
