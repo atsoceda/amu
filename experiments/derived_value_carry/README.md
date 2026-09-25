@@ -203,3 +203,9 @@ Total +18.02 [15.09, 20.89] = **emission +16.80 [14.35, 19.14]** (93%) + persist
 +1.23 [0.58, 1.85] (with the edited text; +2.55 [2.08, 3.02] with the original text).
 When intermediate values are written, the answer mostly follows the written values;
 a small part re-reads the edited source digits. K = 5 and 8B-32B pending.
+
+**Batching (2026-09-26).** `written_chain.py` now generates in batches of 16
+(left-padded; `couplet_routes/batching.py`). Check on 4 items at 1.7B against the
+one-at-a-time path: 7 of 8 generations identical; where the text is identical, every
+cell agrees to 0.001; one greedy generation differs (bf16 near-ties under batching).
+The 4B and 8B runs used the one-at-a-time path; 14B and 32B use the batched path.

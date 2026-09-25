@@ -24,6 +24,7 @@ EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 sys.path.insert(0, str(EXP.parent / "couplet_routes"))
 from chain_routes import NAMES, F32Head, make_items  # noqa: E402
+from batching import generate_batch, run_edits  # noqa: E402
 from models import is_gemma, load  # noqa: E402
 from step34_routes import boot  # noqa: E402
 
@@ -52,11 +53,54 @@ def cut_chain(text, K):
     return None, None
 
 
+def batched_K(K, a, tok, m, layers, gemma, digit, states):
+    """Same items, generations and cells as the one-at-a-time path, with generation batched."""
+    prep = []
+    for it in make_items(K)[: a.limit or None]:
+        text, _ = prompt_text(tok, it["v0"], it["inc"], gemma)
+        dtext, _ = prompt_text(tok, it["dv0"], it["inc"], gemma)
+        enc = tok(text, return_tensors="pt", add_special_tokens=False, return_offsets_mapping=True)
+        dids = tok(dtext, return_tensors="pt", add_special_tokens=False).input_ids
+        if enc.input_ids.shape != dids.shape:
+            continue
+        offs = enc.offset_mapping[0].tolist()
+        s0 = text.index("a = ") + 4
+        v0pos = [i for i, (s, e) in enumerate(offs) if s0 <= s < s0 + 2 and e <= s0 + 2]
+        dst = states(dids)
+        prep.append((it, text, {p: [x[p] for x in dst] for p in v0pos}))
+    texts = [t for _, t, _ in prep]
+    g0s = generate_batch(m, tok, layers, texts, 240, chunk=a.batch)
+    g1s = generate_batch(m, tok, layers, texts, 240, patches=[pt for _, _, pt in prep], chunk=a.batch)
+    rows = []
+    for (it, text, patch), g0, g1 in zip(prep, g0s, g1s):
+        c0, val0 = cut_chain(g0, K)
+        c1, val1 = cut_chain(g1, K)
+        true_prev = it["v0"] + sum(it["inc"][:-1])
+        rec = {**it, "gen_off": g0, "gen_on": g1, "written_prev_off": val0, "written_prev_on": val1,
+               "true_prev": true_prev, "donor_prev": it["dv0"] + sum(it["inc"][:-1]), "usable": bool(c0 and c1 and val0 == true_prev)}
+        if rec["usable"]:
+            o, dn = digit[it["final"] // 10], digit[it["dfinal"] // 10]
+            R = lambda y: float(y[dn] - y[o])  # noqa: E731
+            t0ids = tok(text + c0 + "\nThe answer is ", return_tensors="pt", add_special_tokens=False).input_ids
+            t1ids = tok(text + c1 + "\nThe answer is ", return_tensors="pt", add_special_tokens=False).input_ids
+            (y00, y01), _ = run_edits(m, layers, t0ids, [{}, patch])
+            (y10, y11), _ = run_edits(m, layers, t1ids, [{}, patch])
+            v = {"off_t0": R(y00), "on_t1": R(y11), "off_t1": R(y10), "on_t0": R(y01)}
+            rec.update(v)
+            rec.update({"total": v["on_t1"] - v["off_t0"], "emission": v["off_t1"] - v["off_t0"],
+                        "persistence_t1": v["on_t1"] - v["off_t1"], "persistence_t0": v["on_t0"] - v["off_t0"],
+                        "text_changed": c0 != c1})
+        rows.append(rec)
+    print(f"K={K}: {len(rows)} items done (batched)", flush=True)
+    return rows
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", nargs="?", default="Qwen3-4B")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--ks", default="3,5")
+    ap.add_argument("--batch", type=int, default=16, help="items per generation batch (1 = original one-at-a-time path)")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -106,7 +150,9 @@ def main() -> None:
     summary, t0 = {"model": a.model, "by_K": {}}, time.time()
     for K in map(int, a.ks.split(",")):
         rows = []
-        for it in make_items(K)[: a.limit or None]:
+        if a.batch > 1:
+            rows = batched_K(K, a, tok, m, layers, gemma, digit, states)
+        for it in ([] if a.batch > 1 else make_items(K)[: a.limit or None]):
             text, lines = prompt_text(tok, it["v0"], it["inc"], gemma)
             dtext, _ = prompt_text(tok, it["dv0"], it["inc"], gemma)
             ids = tok(text, return_tensors="pt", add_special_tokens=False, return_offsets_mapping=True)
