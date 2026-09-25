@@ -3,6 +3,8 @@
 
 Question fixed 2026-09-26 before any result, after boundary relay (prompt tail
 between line 1 and line 2) appeared from Qwen3-14B on (README, position split).
+Necessity per token added 2026-09-26 (after Gemma 27B's necessity split): donor state
+at the anchor with only boundary token q reset to its clean-run state.
 Same couplets, donors, state edit, outcome and original line-2 words as
 relay_positions.py. For each boundary position q (every prompt position after the
 anchor), only q gets its edited-run state (all layers); everything else is clean
@@ -73,11 +75,15 @@ def main() -> None:
         toks = tok.convert_ids_to_tokens(ids[0])
         R = lambda p: math.log(max(float(p[dr].sum()), 1e-12)) - math.log(max(float(p[orr].sum()), 1e-12))  # noqa: E731
         y_off, _ = run(ids)
+        y_off_s, s_off = run(ids, want_states=True)
         y_on, s_on = run(ids, {anchor: donor}, want_states=True)
         tail = list(range(anchor + 1, pids.shape[1]))
-        rec = {"idx": r["idx"], "tail_tokens": [toks[q] for q in tail], "d_persistence_p0": R(y_on) - R(y_off), "by_token": []}
+        pers = R(y_on) - R(y_off)
+        rec = {"idx": r["idx"], "tail_tokens": [toks[q] for q in tail], "d_persistence_p0": pers, "by_token": [],
+               "necessity_by_token": []}
         for q in tail:
             rec["by_token"].append(R(run(ids, {q: [s[q] for s in s_on]})[0]) - R(y_off))
+            rec["necessity_by_token"].append(pers - (R(run(ids, {anchor: donor, q: [s[q] for s in s_off]})[0]) - R(y_off)))
         rec["boundary_all"] = R(run(ids, {q: [s[q] for s in s_on] for q in tail})[0]) - R(y_off)
         out_rows.append(rec)
         print(f"{len(out_rows):3d} [{time.time()-t0:5.0f}s] all {rec['boundary_all']:+.2f} | "
@@ -88,11 +94,14 @@ def main() -> None:
     same = [x for x in out_rows if x["tail_tokens"] == ref]
     s = {"model": a.model, "n": len(out_rows), "n_same_tail": len(same), "tail_tokens": ref,
          "boundary_all": boot([x["boundary_all"] for x in out_rows]),
-         "by_token": [{"offset": k + 1, "token": t, **boot([x["by_token"][k] for x in same])} for k, t in enumerate(ref)]}
+         "by_token": [{"offset": k + 1, "token": t, **boot([x["by_token"][k] for x in same])} for k, t in enumerate(ref)],
+         "necessity_by_token": [{"offset": k + 1, "token": t, **boot([x["necessity_by_token"][k] for x in same])}
+                                for k, t in enumerate(ref)]}
     (out / "relay_boundary_summary.json").write_text(json.dumps(s, indent=1))
     print("boundary all", s["boundary_all"])
-    for d in s["by_token"]:
-        print(f"  +{d['offset']:<2d} {d['token']!r:>16} {d['mean']:+.2f} [{d['lo']:.2f}, {d['hi']:.2f}]")
+    for d, e in zip(s["by_token"], s["necessity_by_token"]):
+        print(f"  +{d['offset']:<2d} {d['token']!r:>16} sufficiency {d['mean']:+.2f} [{d['lo']:.2f}, {d['hi']:.2f}]"
+              f"  necessity {e['mean']:+.2f} [{e['lo']:.2f}, {e['hi']:.2f}]")
 
 
 if __name__ == "__main__":

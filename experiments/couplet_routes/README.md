@@ -451,3 +451,18 @@ relay +0.9 (median share 3%), all late (+0.88); boundary +0.01. Gemma 12B PT pla
 screen 100/157; donor rhyme 73%; persistence +13.7 = retrieval +11.0 + relay +2.6
 (median share 17%; the instruct model in plain format: 9%); position split pending.
 Gemma 27B chat same-rhyme null: boundary +0.01, relay +0.45.
+
+### Necessity split, Gemma 3 27B IT chat (2026-09-26, Mac Studio)
+
+| | sufficiency | necessity | Shapley |
+|---|---|---|---|
+| all downstream | +1.23 [0.34, 2.32] | **+13.86 [10.85, 16.96]** | +7.54 |
+| late (last 3) | +0.29 | **+5.69 [3.89, 7.61]** | +2.99 |
+| boundary (prompt tail) | +0.68 | **+4.87 [3.18, 6.73]** | +2.78 |
+| early line 2 | +0.03 | +0.36 [-0.16, 0.85] | +0.20 |
+
+Persistence +43.1. In Gemma 27B the boundary is *necessary* for about 11% of
+persistence although alone it barely moves the rhyme: redundant storage that the
+target combines with the anchor. This corroborates Ma & Rui's (2026) Gemma-3-27B
+hand-off to the line boundary, with a route share. Carrying through the generated
+line stays near zero by both measures. Per-token boundary necessity queued.
