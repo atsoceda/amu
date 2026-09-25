@@ -475,3 +475,7 @@ does not come from post-training (Qwen3-14B-Base is queued as the Qwen check).
 Gemma 3 1B IT, plain format: screen 100/130; donor rhyme 90%; persistence +24.9 =
 retrieval +23.7 + relay +1.2 (median share 5%); late +1.01, boundary +0.18 [-0.10,
 0.45], early +0.01. No boundary storage at 1B.
+
+Necessity split, Gemma 3 12B IT chat: persistence +41.2; necessity all +4.34, late
++3.32, **boundary +0.58 [0.12, 1.09]** (1.4%; 27B: +4.87, 11%), early line 2 +0.17
+[-0.02, 0.39]. Gemma's boundary storage in the chat format grows from 12B to 27B.

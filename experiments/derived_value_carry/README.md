@@ -153,3 +153,8 @@ Post-v0 block edit at 8B (donor states at every position after v0's digits): +0.
 v0 digits alone give +45.1 / +31.1 / +18.4. Nothing downstream holds the running
 value, even redundantly: the answer position reads v0 and the increments and
 recomputes, and accuracy falls with chain length (100 / 63 / 17%).
+
+Chain task, Qwen3-1.7B and 4B (Mac Studio): accuracy 97 / 17 / 3% and 100 / 55 / 1% at
+K = 1 / 3 / 5; post-v0 block -0.02 / +0.11 / +0.04 and -0.07 / +0.29 / -0.20 (all CIs
+include zero) against v0-digit edits of +36 / +24 / +14 and +47 / +32 / +20. Same as
+8B: nothing downstream holds the running value.
