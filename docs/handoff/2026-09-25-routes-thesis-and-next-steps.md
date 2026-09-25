@@ -1,5 +1,7 @@
 # Handoff: route accounting, current thesis, and next steps (2026-09-25)
 
+> **Superseded** by `2026-09-25-couplet-routes-status.md`.
+
 Read this first when resuming. It records where the ICLR 2027 extension stands,
 what each experiment established, and the planned next steps with their gates.
 Terms follow the glossary: `docs/glossary/route-accounting-glossary.html` (open it
