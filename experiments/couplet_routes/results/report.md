@@ -12,18 +12,18 @@ Hanna & Ameisen's 100-couplet steering subset per model, their prompt, their anc
 
 ## Main result: route split under the state edit
 
-| | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B |
-|---|---|---|---|---|---|
-| Line 2 rhymes with original: off -> on; with donor: on | 83% -> 1%; 27% | 92% -> 2%; 43% | 96% -> 1%; 61% | 96% -> 0%; 64% | 98% -> 1%; 66% |
-| Total effect | +14.4 [13.1, 15.8] | +19.5 [18.0, 21.0] | +26.0 [24.2, 27.8] | +30.2 [28.7, 31.7] | +27.3 [25.8, 28.8] |
-| Emission (edited line-2 words, edit off) | +2.7 [1.5, 4.1] | +3.1 [1.8, 4.4] | +3.6 [2.1, 5.2] | +5.6 [4.1, 7.1] | +5.8 [4.4, 7.3] |
-| Persistence, original line-2 words | +12.1 [10.6, 13.6] | +15.3 [13.5, 17.1] | +22.6 [20.9, 24.4] | +25.8 [24.2, 27.3] | +22.2 [20.7, 23.7] |
-|   Direct retrieval | +11.5 [10.1, 12.8] | +14.0 [12.3, 15.7] | +20.4 [18.8, 22.1] | +21.2 [19.7, 22.8] | +18.2 [16.8, 19.6] |
-|   Relay | +0.8 [0.5, 1.1] | +1.6 [1.2, 2.0] | +2.4 [1.9, 2.9] | +3.2 [2.6, 3.8] | +3.5 [2.9, 4.1] |
-|   Additivity gap | -0.1 [-0.4, 0.1] | -0.3 [-0.7, 0.1] | -0.2 [-0.7, 0.2] | +1.3 [0.4, 2.2] | +0.5 [-0.4, 1.4] |
-| Median relay share of persistence (per couplet) | 4% | 8% | 8% | 11% | 13% |
-| Couplets with relay share above 30% | 5/88 | 8/89 | 5/98 | 6/99 | 13/100 |
-| Same-rhyme null: persistence | +0.1 [-0.6, 0.6] | +1.2 [0.6, 2.0] | +2.0 [1.1, 3.2] | +0.8 [0.3, 1.5] | +1.0 [0.4, 1.7] |
+| | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B | gemma-3-12b-it |
+|---|---|---|---|---|---|---|
+| Line 2 rhymes with original: off -> on; with donor: on | 83% -> 1%; 27% | 92% -> 2%; 43% | 96% -> 1%; 61% | 96% -> 0%; 64% | 98% -> 1%; 66% | 100% -> 0%; 95% |
+| Total effect | +14.4 [13.1, 15.8] | +19.5 [18.0, 21.0] | +26.0 [24.2, 27.8] | +30.2 [28.7, 31.7] | +27.3 [25.8, 28.8] | +52.2 [51.1, 53.2] |
+| Emission (edited line-2 words, edit off) | +2.7 [1.5, 4.1] | +3.1 [1.8, 4.4] | +3.6 [2.1, 5.2] | +5.6 [4.1, 7.1] | +5.8 [4.4, 7.3] | +11.3 [9.2, 13.4] |
+| Persistence, original line-2 words | +12.1 [10.6, 13.6] | +15.3 [13.5, 17.1] | +22.6 [20.9, 24.4] | +25.8 [24.2, 27.3] | +22.2 [20.7, 23.7] | +41.2 [38.8, 43.5] |
+|   Direct retrieval | +11.5 [10.1, 12.8] | +14.0 [12.3, 15.7] | +20.4 [18.8, 22.1] | +21.2 [19.7, 22.8] | +18.2 [16.8, 19.6] | +36.8 [34.0, 39.6] |
+|   Relay | +0.8 [0.5, 1.1] | +1.6 [1.2, 2.0] | +2.4 [1.9, 2.9] | +3.2 [2.6, 3.8] | +3.5 [2.9, 4.1] | +1.0 [0.5, 1.6] |
+|   Additivity gap | -0.1 [-0.4, 0.1] | -0.3 [-0.7, 0.1] | -0.2 [-0.7, 0.2] | +1.3 [0.4, 2.2] | +0.5 [-0.4, 1.4] | +3.4 [2.1, 4.7] |
+| Median relay share of persistence (per couplet) | 4% | 8% | 8% | 11% | 13% | 0% |
+| Couplets with relay share above 30% | 5/88 | 8/89 | 5/98 | 6/99 | 13/100 | 2/99 |
+| Same-rhyme null: persistence | +0.1 [-0.6, 0.6] | +1.2 [0.6, 2.0] | +2.0 [1.1, 3.2] | +0.8 [0.3, 1.5] | +1.0 [0.4, 1.7] | +1.6 [0.5, 2.9] |
 
 **Reading.** Most of the edit's effect on the rhyme persists when line 2's words are held fixed, so it is not carried by the words the model writes. Of that persistence, direct retrieval of the anchor accounts for most of it at every size (about 82-96%); relay is small but above zero. Relay grows in absolute size with the whole effect, and its median share rises modestly with scale (see the table); whether that trend continues is the open scale question. At the largest sizes the paths stop adding up exactly (a small positive additivity gap), a sign that retrieval and relay partly carry the same information. The same-rhyme null shows that the rhyme-preference measure tracks rhyme information rather than the edit's general disruption. A small tail of couplets has a large relay share; it is not yet explained.
 
@@ -31,14 +31,14 @@ Hanna & Ameisen's 100-couplet steering subset per model, their prompt, their anc
 
 Relay with only one group of in-between positions given its edited-run state (others clean; groups overlap on paths through both, so they need not sum to the total). `Late` = the 3 positions before the rhyme word; `boundary` = the prompt tail between line 1 and line 2 (comma and chat-template tokens); `early line 2` = line-2 positions more than 3 tokens before the rhyme word.
 
-| | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B |
-|---|---|---|---|---|---|
-| Relay, all in-between positions | +0.8 [0.5, 1.1] | +1.6 [1.2, 2.0] | +2.4 [1.9, 2.9] | +3.2 [2.6, 3.8] | +3.5 [2.9, 4.1] |
-|   Late (last 3 before rhyme word) | +0.8 [0.5, 1.0] | +1.5 [1.1, 2.0] | +2.3 [1.8, 2.7] | +1.6 [1.2, 2.0] | +1.8 [1.5, 2.1] |
-|   Boundary (prompt tail) | +0.0 [-0.1, 0.1] | +0.0 [-0.1, 0.1] | +0.1 [-0.0, 0.1] | +1.3 [1.0, 1.7] | +1.7 [1.3, 2.2] |
-|   Early line 2 | -0.1 [-0.2, 0.1] | +0.1 [-0.0, 0.2] | +0.0 [-0.0, 0.1] | -0.0 [-0.1, 0.1] | +0.2 [0.1, 0.2] |
-| Same-rhyme null: relay, all | -- | -- | +0.2 [0.0, 0.4] | +0.0 [-0.0, 0.2] | +0.0 [-0.1, 0.1] |
-| Same-rhyme null: boundary | -- | -- | -0.0 [-0.0, 0.0] | -0.0 [-0.1, 0.0] | -0.0 [-0.1, 0.0] |
+| | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B | gemma-3-12b-it |
+|---|---|---|---|---|---|---|
+| Relay, all in-between positions | +0.8 [0.5, 1.1] | +1.6 [1.2, 2.0] | +2.4 [1.9, 2.9] | +3.2 [2.6, 3.8] | +3.5 [2.9, 4.1] | +1.0 [0.5, 1.6] |
+|   Late (last 3 before rhyme word) | +0.8 [0.5, 1.0] | +1.5 [1.1, 2.0] | +2.3 [1.8, 2.7] | +1.6 [1.2, 2.0] | +1.8 [1.5, 2.1] | +0.8 [0.3, 1.4] |
+|   Boundary (prompt tail) | +0.0 [-0.1, 0.1] | +0.0 [-0.1, 0.1] | +0.1 [-0.0, 0.1] | +1.3 [1.0, 1.7] | +1.7 [1.3, 2.2] | +0.0 [-0.1, 0.2] |
+|   Early line 2 | -0.1 [-0.2, 0.1] | +0.1 [-0.0, 0.2] | +0.0 [-0.0, 0.1] | -0.0 [-0.1, 0.1] | +0.2 [0.1, 0.2] | +0.1 [-0.0, 0.1] |
+| Same-rhyme null: relay, all | -0.0 [-0.1, 0.0] | -0.0 [-0.2, 0.1] | +0.2 [0.0, 0.4] | +0.0 [-0.0, 0.2] | +0.0 [-0.1, 0.1] | +0.1 [-0.0, 0.3] |
+| Same-rhyme null: boundary | +0.0 [-0.0, 0.0] | -0.0 [-0.0, 0.0] | -0.0 [-0.0, 0.0] | -0.0 [-0.1, 0.0] | -0.0 [-0.1, 0.0] | +0.0 [-0.0, 0.1] |
 
 **Reading.** Carrying through the generated line (early line 2) stays near zero at every size. Up to 8B, relay sits in the last few positions before the rhyme word (the late lookup of Hanna & Ameisen's circuit, read in two hops) and grows with size; from 14B on it levels off there, and a second component appears in the boundary tokens between the lines, where the rhyme is written during the prompt and later read back. So the relay that emerges with scale is storage at the line boundary, not private carrying under the generated text. Relay share rises by +6.2 percentage points per decade of parameters (95% CI 2.8 to 9.6; `scale_trend.py`).
 
@@ -61,14 +61,14 @@ Relay with only one group of in-between positions given its edited-run state (ot
 
 Persistence when the donor's anchor state is placed at other positions (original line-2 words fixed):
 
-| Position | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B |
-|---|---|---|---|---|---|
-| A: last word of line 1 (anchor) | +12.1 [10.6, 13.6] | +15.3 [13.5, 17.1] | +22.6 [20.9, 24.4] | +25.8 [24.2, 27.3] | +22.2 [20.7, 23.7] |
-| E: end of user turn | +6.0 [5.1, 6.9] | +7.0 [5.8, 8.2] | +10.6 [8.8, 12.4] | +11.6 [10.1, 13.1] | +11.0 [9.7, 12.4] |
-| C: punctuation after anchor | +5.7 [4.8, 6.7] | +6.8 [5.6, 8.1] | +10.7 [8.9, 12.5] | +13.0 [11.4, 14.6] | +11.5 [10.1, 12.9] |
-| M: middle word of line 1 | +5.5 [4.4, 6.6] | +4.3 [3.3, 5.4] | +8.6 [6.9, 10.4] | +10.2 [8.7, 11.8] | +4.5 [3.6, 5.5] |
-| F: first word of line 1 | +3.5 [2.7, 4.3] | +2.7 [1.8, 3.7] | +5.1 [3.8, 6.5] | +7.4 [6.0, 8.8] | +3.8 [2.9, 4.7] |
-| Relay, range across positions | +0.6 to +0.8 | +0.4 to +1.6 | +1.2 to +2.4 | +1.2 to +3.2 | +1.4 to +3.5 |
+| Position | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B | gemma-3-12b-it |
+|---|---|---|---|---|---|---|
+| A: last word of line 1 (anchor) | +12.1 [10.6, 13.6] | +15.3 [13.5, 17.1] | +22.6 [20.9, 24.4] | +25.8 [24.2, 27.3] | +22.2 [20.7, 23.7] | +41.2 [38.8, 43.5] |
+| E: end of user turn | +6.0 [5.1, 6.9] | +7.0 [5.8, 8.2] | +10.6 [8.8, 12.4] | +11.6 [10.1, 13.1] | +11.0 [9.7, 12.4] | +15.3 [12.2, 18.4] |
+| C: punctuation after anchor | +5.7 [4.8, 6.7] | +6.8 [5.6, 8.1] | +10.7 [8.9, 12.5] | +13.0 [11.4, 14.6] | +11.5 [10.1, 12.9] | +14.2 [11.1, 17.4] |
+| M: middle word of line 1 | +5.5 [4.4, 6.6] | +4.3 [3.3, 5.4] | +8.6 [6.9, 10.4] | +10.2 [8.7, 11.8] | +4.5 [3.6, 5.5] | +10.9 [8.0, 13.8] |
+| F: first word of line 1 | +3.5 [2.7, 4.3] | +2.7 [1.8, 3.7] | +5.1 [3.8, 6.5] | +7.4 [6.0, 8.8] | +3.8 [2.9, 4.7] | +7.9 [5.6, 10.5] |
+| Relay, range across positions | +0.6 to +0.8 | +0.4 to +1.6 | +1.2 to +2.4 | +1.2 to +3.2 | +1.4 to +3.5 | +0.5 to +1.5 |
 
 **Reading.** The prediction that only the anchor is retrieved is partly supported: the anchor is about 2-3.5x more effective than any other position, but information at other line-1 positions is still partly retrieved. Relay stays small whichever position holds the information.
 

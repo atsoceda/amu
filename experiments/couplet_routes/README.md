@@ -373,3 +373,8 @@ boundary itself, not the chat template, becomes a second storage site. Retrieval
 from the rhyme word still dominates, so it is partial storage, not a hand-off; this
 is compatible with Ma & Rui's single-layer newline patching finding no hand-off in
 Qwen3 (our measure edits all layers of the naturally computed boundary state).
+
+Gemma 3 12B IT, rest of the chain: position split relay +0.97 = late +0.80, boundary
++0.03 [-0.10, 0.16], early line 2 +0.06: no boundary storage at 12B (as Qwen3 at
+8B). Anchor specificity A +41.2, E +15.3, C +14.2, M +10.9, F +7.9. Same-rhyme null
+persistence +1.6 (vs +41.2), null relay +0.12.
