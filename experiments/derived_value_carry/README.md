@@ -147,3 +147,9 @@ Accuracy K=1 100%, K=3 63%, K=5 see `results/Qwen3-8B/chain_summary.json` (gate
 K=1, +31 at K=3); donor states at any statement end, or at any single later
 position (the full scan), do nothing (all within +/-0.2). No running value is held
 downstream; the answer re-reads the chain. Post-v0 block edit queued (`--block-only`).
+
+Post-v0 block edit at 8B (donor states at every position after v0's digits): +0.05
+[-0.12, 0.21] / +0.15 [-0.25, 0.54] / -0.07 [-0.36, 0.22] at K = 1 / 3 / 5, while the
+v0 digits alone give +45.1 / +31.1 / +18.4. Nothing downstream holds the running
+value, even redundantly: the answer position reads v0 and the increments and
+recomputes, and accuracy falls with chain length (100 / 63 / 17%).
