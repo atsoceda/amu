@@ -92,6 +92,9 @@ come back. Details, measured facts and troubleshooting are in
    skills/mac-studio-remote/scripts/wait_fetch.sh couplets-8b-step2 experiments/couplet_routes/results/Qwen3-8B
    ```
 
+   For a long multi-step job, `wait_file.sh <job> <marker file> <paths>...` waits
+   for one step's output file instead, so results arrive step by step.
+
 6. **Fetch small results back** into the repo (repository-relative paths;
    files over 50 MB are refused unless `--allow-large`):
 
