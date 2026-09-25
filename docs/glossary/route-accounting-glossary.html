@@ -97,7 +97,7 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
 
 <div class="wrap">
   <header>
-    <span class="eyebrow">AMU · ICLR 2027 extension · status as of 25 Sep 2026, evening</span>
+    <span class="eyebrow">AMU · ICLR 2027 extension · status as of 26 Sep 2026, morning</span>
     <h1>Route Accounting Glossary</h1>
     <p class="lede">One vocabulary for how an intervention's effect reaches a later token. Each term has a mechanistic meaning, the measurement that stands for it, and the current state of evidence, so the framing and the results can be written without drifting terms.</p>
     <div class="legend" aria-label="Status levels">
@@ -164,6 +164,7 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
 
   <section class="sec" id="accounting">
     <h2>2. The accounting</h2>
+    <p class="thesis"><strong>Two questions, two axes.</strong> <b>Route</b> asks how an effect travels: through which token gets emitted (<b>emission</b>) or through internal states (<b>persistence</b>, split into the paths of section 3). <b>Observability</b> asks whether a reader of the text could recover the information carried (<b>visible</b> vs <b>hidden</b>). The axes are independent: persistence always travels through internal states, yet what it carries can be fully readable from the text. The NeurIPS workshop’s <s>public</s>/<s>private</s> is the route axis only (emission/persistence); it never meant visible/hidden.</p>
     <p>The total effect of an intervention on the target, with the mediator generated freely, splits exactly: <span class="f">E<sub>total</sub> = E<sub>emission</sub> + E<sub>persistence</sub></span>. Here <var>Y</var>(<var>i</var>,<var>b</var>) is the target distribution with the intervention off (0) or on (1) and mediator <var>b</var>; <var>B<sub>i</sub></var> is the mediator the model emits; <var>q<sub>i</sub></var> is the mediator policy.</p>
     <div class="terms">
       <article class="term" data-status="found">
@@ -201,7 +202,7 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
       <article class="term" data-status="found">
         <h3>Persistence <span class="was">formerly <s>private route</s></span></h3>
         <dl>
-          <dt>Meaning</dt><dd>The effect that remains with the mediator token held fixed. A leftover category, not a mechanism: it splits into the three paths below.</dd>
+          <dt>Meaning</dt><dd>The effect that remains with the mediator token held fixed. A leftover category, not a mechanism: it splits into the paths below. Private in mechanism (internal states), which says nothing about whether its content is hidden (see <b>Hidden</b>).</dd>
           <dt>Measure</dt><dd><span class="f">Y(1,B<sub>1</sub>) − Y(0,B<sub>1</sub>)</span>, and the reverse order.</dd>
           <dt>Status</dt><dd><span class="s found">Found</span></dd>
         </dl>
@@ -218,15 +219,15 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
         <dl>
           <dt>Meaning</dt><dd>The target position attends straight back to <var>t</var> and reads its altered state.</dd>
           <dt>Measure</dt><dd>Effect removed when the target position gets clean keys/values at <var>t</var>.</dd>
-          <dt>Status</dt><dd class="st"><span class="s found">Found</span> couplets: 90–96% of persistence at Qwen3-1.7B / 4B / 8B, also under the authors' feature steering; blocking it breaks rhyming up to 14B (authors' data). For a/an, persistence is this path by construction.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> couplets: 68–95% of persistence across Qwen3 1.7B–32B and Gemma 3 1B–27B, chat and plain prompts, instruct and base checkpoints; also under the authors’ feature steering (4B–14B); blocking it breaks rhyming up to 14B (authors’ data). For a/an, persistence is this path by construction.</dd>
         </dl>
       </article>
       <article class="term" data-status="found">
         <h3>Relay <span class="was">formerly <s>carried private plan</s></span></h3>
         <dl>
-          <dt>Meaning</dt><dd>Positions between <var>t</var> and the target read <var>t</var> and carry the change forward in their own states.</dd>
-          <dt>Measure</dt><dd>Effect removed when the in-between positions get clean keys/values at <var>t</var>.</dd>
-          <dt>Status</dt><dd class="st"><span class="s found">Found</span> small in couplets: median share 4% / 8% / 8% at 1.7B / 4B / 8B, above zero; a tail of 5–9% of couplets with share above 30% is unexplained. Whether relay dominates for derived information is a <span class="s hypothesis">Hypothesis</span></dd>
+          <dt>Meaning</dt><dd>Positions between <var>t</var> and the target read <var>t</var> and carry the change forward in their own states. Two kinds matter: <b>generated-text relay</b> (through positions the model wrote) and <b>boundary storage</b> (through a structural prompt position, then read back by retrieval).</dd>
+          <dt>Measure</dt><dd>Effect removed when the in-between positions get clean keys/values at <var>t</var> (sufficiency and necessity versions, section 5).</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> small in couplets but rising with scale: median share 4 / 8 / 8 / 11 / 13% at Qwen3 1.7B–32B (+6.2 pp per decade, 95% CI 2.8–9.6). The growth is boundary storage, not generated-text relay. The relay-heavy tail is line-1 copies and ratio noise. Derived values are not relayed (see <b>Recomputation</b>).</dd>
         </dl>
       </article>
       <article class="term" data-status="hinted">
@@ -237,11 +238,23 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <dt>Status</dt><dd class="st"><span class="s hinted">Hinted</span> A/B text-edit persistence of <span class="num">0.9–1.3</span>; path not isolated yet</dd>
         </dl>
       </article>
+      <article class="term" data-status="found">
+        <h3>Generated-text relay</h3>
+        <dl><dt>Meaning</dt><dd>Relay through positions the model generated (in couplets, line-2 words more than 3 tokens before the rhyme word).</dd><dt>Measure</dt><dd>Only those positions given their edited-run states (sufficiency), or reset to clean (necessity).</dd><dt>Status</dt><dd class="st"><span class="s found">Found</span> about 0% at every size and in both families (−0.1 to +0.3 nats). Line-2 relay sits in the last 3 positions: the late lookup of the authors’ circuit, read in two hops.</dd></dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Boundary storage</h3>
+        <dl><dt>Meaning</dt><dd>The plan is also written to the token that ends the line and read back from there later: relay through one structural prompt position, then retrieval.</dd><dt>Measure</dt><dd>Per-token sufficiency and necessity over the positions between line 1 and line 2.</dd><dt>Status</dt><dd class="st"><span class="s found">Found</span> appears between 8B and 14B in Qwen3 (both prompts) and by 27B in Gemma 3 (12B in the plain prompt); necessary for about 11% of persistence at Qwen3-32B and Gemma 3 27B; carried by the comma ending line 1 in Qwen3-14B, Qwen3-32B and Gemma 3 27B (chat-template tokens carry nothing); present in base checkpoints. Consistent with line-end planning sites <span class="s published">Published</span> (Lindsey et al. 2025; Ma &amp; Rui 2026).</dd></dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Recomputation</h3>
+        <dl><dt>Meaning</dt><dd>A derived value (a sum, a variable chain) is computed again at the answer from the visible source tokens instead of being carried from where it was first computable.</dd><dt>Measure</dt><dd>Donor states at every position after the sources change nothing; donor states at the source digits flip the answer.</dd><dt>Status</dt><dd class="st"><span class="s found">Found</span> two-digit sums at Qwen3 1.7B–32B; variable chains at 1.7B–8B (block edit about 0 vs +18 to +47 at the source digits); chain accuracy collapses with length (8B: 100 / 63 / 17% at 1 / 3 / 5 steps).</dd></dl>
+      </article>
       <article class="term" data-status="method">
         <h3>Hidden</h3>
         <dl>
-          <dt>Meaning</dt><dd>Reserved for retrieval or relay that a monitor reading the text and tokens could not recover.</dd>
-          <dt>Status</dt><dd class="st"><span class="s method">Method</span> no result so far establishes anything hidden</dd>
+          <dt>Meaning</dt><dd>An observability property, not a route: information carried by any persistence path whose content a monitor reading the text and tokens could not recover. Persistence is not hidden by default: in every task so far, what it carries (the rhyme sound, the operands) is readable from the text.</dd>
+          <dt>Status</dt><dd class="st"><span class="s method">Method</span> untested so far (no task yet carries unrecoverable content). Hidden influence on outputs is <span class="s published">Published</span> behaviourally (unverbalized hints in chain of thought; filler-token computation and encoded reasoning after special training), without a route-level account. A hidden-choice experiment is the <span class="s hypothesis">Hypothesis</span> test.</dd>
         </dl>
       </article>
     </div>
@@ -328,6 +341,18 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <dt>Status</dt><dd class="st"><span class="s found">Found</span> generality to common steering vectors is a <span class="s hypothesis">Hypothesis</span></dd>
         </dl>
       </article>
+      <article class="term" data-status="method">
+        <h3>Sufficiency and necessity</h3>
+        <dl><dt>Meaning</dt><dd>Two ways to credit a group of in-between positions. <b>Sufficiency</b>: only that group gets its edited-run state, the source stays clean. <b>Necessity</b>: the source is edited and only that group is reset to clean. They agree when paths add; when they interact, necessity exceeds sufficiency. The Shapley average of the two is an interaction-robust summary.</dd><dt>Status</dt><dd class="st"><span class="s method">Method</span></dd></dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Additivity gap</h3>
+        <dl><dt>Meaning</dt><dd>Persistence minus (direct retrieval + relay): how far the paths fail to add. A large positive gap signals redundant storage that the target combines.</dd><dt>Status</dt><dd class="st"><span class="s found">Found</span> within about ±5% of persistence in most models; +29% in Gemma 3 27B (chat), where necessity reveals the boundary storage that sufficiency understates.</dd></dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Positive control (induction)</h3>
+        <dl><dt>Meaning</dt><dd>A task where relay is the known mechanism: in <code>… A B … A → B</code>, the first A reaches the prediction through B’s position (previous-token and induction heads).</dd><dt>Status</dt><dd class="st"><span class="s found">Found</span> the accounting assigns about 0–2% to direct retrieval and the effect to relay at the key position in Qwen3 1.7B–14B and Gemma 3 12B/27B; partial at Qwen3-32B (direct retrieval 31%). The method can detect relay, so the relay nulls elsewhere are informative.</dd></dl>
+      </article>
       <article class="term" data-status="retracted">
         <h3>Mediator-relative routing <span class="was">also <s>lossy public projection</s></span></h3>
         <dl>
@@ -350,7 +375,9 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <tr><td><b>el/la planning features</b></td><td><span class="s found">Found</span> null, matching <span class="s published">Published</span></td><td>Null at 0.6B and 1.7B, consistent with the authors' null; 4B stopped at 31 prompts. Uninformative for routes: no policy movement. <span class="s hinted">Hinted</span> 71% of the planning features are English-concept features, suggesting conceptual plans lack grammatical gender.</td></tr>
           <tr><td><b>A/B code</b> (Qwen3 0.6B–4B)</td><td><span class="s found">Found</span></td><td>A non-grammatical mediator with dialable leverage. Leverage law confirmed; lost decision; large re-reading persistence under text edits (path not isolated).</td></tr>
           <tr><td><b>Named-donor synonym assays</b> (Gemma 3 1B)</td><td><span class="s found">Found</span></td><td>The construction artifact; their route claims are retracted.</td></tr>
-          <tr><td><b>Couplets</b> (Qwen3 1.7B–8B; 14B pending)</td><td><span class="s found">Found</span></td><td>Most of the rhyme effect persists with line 2's words fixed; 90–96% of it is direct retrieval of the line-1 anchor, relay small (4–8%). Same under the authors' feature steering. The anchor is weighted about 2x over other positions. Consistent with the authors' published circuit and attention-blocking results.</td></tr>
+          <tr><td><b>Couplets</b> (Qwen3 1.7B–32B, Gemma 3 1B–27B; chat and plain prompts; instruct and base)</td><td><span class="s found">Found</span></td><td>Most of the rhyme effect persists with line 2’s words fixed; 68–95% of it is direct retrieval of the line-1 rhyme word. Generated-text relay about 0 at every size; boundary storage at the line-ending comma from Qwen3-14B and Gemma 3 27B (about 11% by necessity at the largest sizes). Same direction under the authors’ feature steering (4B–14B). Reconciles the authors’ retrieval circuit with line-end planning sites (Lindsey et al.; Ma &amp; Rui) and small-model nulls (Jacopin).</td></tr>
+          <tr><td><b>Derived value</b> (Qwen3 1.7B–32B)</td><td><span class="s found">Found</span></td><td>Sums and variable chains are recomputed from the visible sources at the answer; nothing downstream holds the value. Written chains (4B, early): the answer mostly follows the written values (emission), with some re-reading of the sources.</td></tr>
+          <tr><td><b>Induction</b> (positive control)</td><td><span class="s found">Found</span></td><td>The accounting detects relay where relay is the mechanism (six models cleanly, Qwen3-32B partially).</td></tr>
         </tbody>
       </table>
     </div>
@@ -358,7 +385,7 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
 
   <section class="sec" id="picture">
     <h2>7. The larger picture</h2>
-    <p class="thesis"><strong>Thesis (hypothesis).</strong> Future-relevant information crosses positions by <strong>emission</strong>, scaled by leverage, or by <strong>retrieval</strong>: a later position reading the source position or the visible text. <strong>Relay</strong>, a plan carried privately through the positions in between, is rare.</p>
+    <p class="thesis"><strong>Thesis (current evidence).</strong> Future-relevant information crosses positions by <strong>emission</strong>, scaled by leverage, or by <strong>retrieval</strong>: a later position reading the source position, a structural anchor that stores it, or the visible sources (recomputation). <strong>Generated-text relay</strong> is about zero in every task measured up to 32B, although the method detects relay where it exists (induction). With scale, plans gain <strong>boundary storage</strong> at the line-ending token. Whether any path carries <strong>hidden</strong> content is untested.</p>
     <div class="tablebox">
       <table>
         <thead><tr><th>Piece of the thesis</th><th>Status</th><th>Next experiment that moves it</th></tr></thead>
@@ -366,17 +393,19 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <tr><td>Emission, scaled by leverage</td><td><span class="s found">Found</span> a/an 4B, A/B 4B</td><td>Chain-of-thought tokens (stretch)</td></tr>
           <tr><td>A state-held decision is lost without a leveraged mediator</td><td><span class="s found">Found</span> A/B, one setting</td><td>More A/B families</td></tr>
           <tr><td>Retrieval of visible text</td><td><span class="s hinted">Hinted</span> A/B text edit</td><td>Attention-path split on the A/B text edit</td></tr>
-          <tr><td>Retrieval from an anchor at a distance</td><td><span class="s found">Found</span> couplets, 1.7B–8B</td><td>14B (running)</td></tr>
-          <tr><td><b>Relay is small</b></td><td><span class="s found">Found</span> for visible information (couplets), share flat from 4B to 8B</td><td>Relay-tail analysis; derived-value carry task (where relay is most likely)</td></tr>
+          <tr><td>Retrieval from an anchor at a distance</td><td><span class="s found">Found</span> couplets, Qwen3 1.7B–32B and Gemma 3 1B–27B</td><td>Write-up</td></tr>
+          <tr><td><b>Generated-text relay is about zero</b></td><td><span class="s found">Found</span> couplets (both families, all sizes); derived values recomputed; method validated on induction</td><td>Written chains at 8B–32B (running)</td></tr>
+          <tr><td>Boundary storage emerges with scale</td><td><span class="s found">Found</span> Qwen3 14B+, Gemma 3 27B; the line-ending comma; present in base checkpoints</td><td>Qwen3-14B-Base, Gemma 27B plain (running)</td></tr>
+          <tr><td><b>Hidden content is carried</b></td><td><span class="s hypothesis">Hypothesis</span> untested</td><td>Hidden-choice experiment: a choice a reader cannot infer, then unrelated text, then the reveal</td></tr>
           <tr><td>Route claims can be counterfeited by vector construction</td><td><span class="s found">Found</span> our assays; generality <span class="s hypothesis">Hypothesis</span></td><td>Steering-vector readout audit</td></tr>
           <tr><td>Conceptual plans lack language-specific grammar</td><td><span class="s hinted">Hinted</span> el/la node languages</td><td>el/la split into Spanish-feature vs English-feature subsets</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="note">Retired words: <b>public</b> and <b>private</b> (use emission and persistence), <b>route</b> as a model property (a route is an accounting of one intervention), <b>carrier</b> and <b>channel</b>, and <b>hidden</b> except as defined above.</p>
+    <p class="note">Retired words: <b>public</b> and <b>private</b>, including <b>privately</b> (use emission and persistence; in the NeurIPS workshop version they meant exactly these), <b>carried</b> without a path (say relay or retrieval), <b>route</b> as a model property (a route is an accounting of one intervention), <b>carrier</b> and <b>channel</b>, and <b>hidden</b> except as defined above.</p>
   </section>
 
-  <footer>Sources: the six-cell, leverage, A/B and construction experiments in the AMU repository (experiments/qwen3_planning_six_cell, ab_qwen_gate, ab_qwen_route, matched_triads_construction) and Hanna &amp; Ameisen, "Latent planning emerges with scale" (ICLR 2026).</footer>
+  <footer>Sources: the six-cell, leverage, A/B and construction experiments in the AMU repository (experiments/qwen3_planning_six_cell, ab_qwen_gate, ab_qwen_route, matched_triads_construction) and Hanna &amp; Ameisen, "Latent planning emerges with scale" (ICLR 2026); also couplet_routes, derived_value_carry and relay_positive_control.</footer>
 </div>
 
 <script>

@@ -8,18 +8,25 @@ writing. Rules that apply: `AGENTS.md` (ICLR target, no length trimming, render 
 
 ## 1. Proposed thesis
 
-Future-relevant information crosses token positions in two ways. By **emission**,
-it is written into a mediator token and re-read, scaled by that token's leverage.
-By **retrieval**, a later position reads an earlier position that holds it. In
-every task tested up to 32B, in two model families, information is **not carried
-privately through the generated text in between** (relay through the generated
-line is about 0%). With scale, a plan gains a **second storage site at the line
-boundary** (the token that ends the line), which later positions also read. A route
-accounting validated on a known relay mechanism (induction) makes these claims
-measurable.
+Terms follow `docs/glossary/route-accounting-glossary.html`, which separates two axes:
+**route** (emission vs persistence; persistence split into direct retrieval, relay,
+re-reading) and **observability** (whether a reader of the text could recover the
+content: visible vs hidden). The workshop's public/private is the route axis only.
 
-Working title options: "Looked up, not carried: how latent plans cross positions in
-language models"; or keep "Closing the Causal Loop" with a subtitle on routes.
+Future-relevant information crosses token positions by **emission** (written into
+a mediator token and re-read, scaled by that token's leverage) or by **direct
+retrieval** (a later position reads the source position, a structural anchor that
+stores it, or the visible sources, i.e. recomputation). **Relay through generated
+text is about zero** in every task measured up to 32B in two families, although the
+accounting detects relay where it is the mechanism (induction). With scale, a plan
+gains **boundary storage** at the line-ending token, which later positions read
+back. In every task so far the carried content is visible (recoverable from the
+text); whether any path carries **hidden** content is the open question the
+hidden-choice experiment targets.
+
+Working title options (glossary-consistent): "Retrieved from anchors, not relayed
+through the text: how latent plans cross positions in language models"; or keep
+"Closing the Causal Loop" with a subtitle on emission, retrieval and relay.
 
 ## 2. Claims, evidence and status
 
@@ -32,7 +39,8 @@ language models"; or keep "Closing the Causal Loop" with a subtitle on routes.
 | C5 | With scale a second storage site appears at the line-ending token | Position, necessity and per-token splits: from Qwen3 14B and Gemma 12B (plain) / 27B (chat); the comma ending line 1 in both families; present in base checkpoints (Gemma 12B PT; Qwen 14B-Base running); relay-share trend +6.2 pp per decade [2.8, 9.6] | Done, with replication runs in progress |
 | C6 | C5 reconciles published accounts | Hanna & Ameisen (retrieval circuit), Lindsey et al. (line-end planning in Claude), Ma & Rui (hand-off in Gemma-3-27B only), Jacopin (no newline effect at 0.6-2.6B), Maar et al. | Writing task |
 | C7 | Derived values are recomputed from visible sources at the answer, not carried | `experiments/derived_value_carry`: two-digit sums (1.7B-32B) and variable chains (1.7B-8B; 14B/32B running); accuracy on chains collapses with length, while no downstream position holds the running value, even as a block | Mostly done |
-| C8 | Implication for monitoring: information that matters stays anchored to visible tokens; what to watch as models scale is boundary storage, not generated-text carrying | Discussion | Writing task |
+| C8 | Implication for monitoring: future-relevant information is read from visible anchors or recomputed from visible sources, not relayed through generated text; boundary storage is what to watch as models scale | Discussion | Writing task |
+| C9 | Hidden content: does a model carry a choice a reader cannot infer across its own generated text, and by which path? | Hidden-choice experiment (to design and freeze) | Next |
 
 Demoted or removed from the workshop version: mediator-relative routing (a
 vector-construction artifact, retracted in `matched_triads_construction`);
@@ -59,6 +67,10 @@ additivity gaps and Shapley summaries, per-run tables.
   control at 32B and Gemma 27B.
 - Optional: the authors' feature steering on Gemma (Gemma Scope 2 has per-layer
   transcoders) for a second-family replication of the steering result.
-- Decide the title and whether the ICLR paper keeps the public/private framing as
-  its lead or moves route accounting to the front.
+- Decide the title and whether the paper leads with the two axes (route x
+  observability). The workshop version is cited as introducing the emission /
+  persistence decomposition (then called public / private) on Gemma 3 270M; its
+  mediator-relative routing claim is retracted explicitly (construction artifact).
+  ICLR allows prior non-archival workshop versions.
+- Hidden-choice experiment (C9), the most direct test of hidden content.
 - Adapt the NeurIPS checklist material to ICLR requirements (see `AGENTS.md`).
