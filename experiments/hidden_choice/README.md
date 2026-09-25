@@ -143,3 +143,12 @@ sentence does not carry the pick (no covert textual channel at 8B).
 left padding in plain forward passes (shifted positions); the check on Qwen3-0.6B caught
 it (NaN and different pairs). That run was discarded unread and is rerun with
 same-length batching only; the 8B free result used the one-at-a-time path.
+
+**Record note (2026-09-26).** The first 8B pick-specificity rerun was overwritten on the
+Mac Studio by an older local copy (the allowlist named the whole experiment folder;
+fixed in `push_bundle.sh`). Its summary survives in the job log (post-list effect on
+the donor pick +2.01, on the donor's other fruits +1.46); the rerun is repeated.
+Gemma 3 12B: pick +5.07 [4.65, 5.50], other donor fruits +4.06 [3.72, 4.41], **pick
+specificity +1.01 [0.78, 1.24]**. Most of what the post-list positions hold is a copy
+of the donor's list; a small pick-specific part remains (about 15% of the text swap's
+pick specificity, +6.9).

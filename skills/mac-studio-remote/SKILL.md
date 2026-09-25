@@ -10,7 +10,7 @@ compatibility: >-
   Local macOS with an SSH host alias "macstudio" in ~/.ssh/config, its key unlocked in the SSH agent, and the
   user's split-tunnel VPN connected. Remote: macOS with system python3; rsync on both sides.
 metadata:
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Mac Studio remote jobs
@@ -127,6 +127,10 @@ come back. Details, measured facts and troubleshooting are in
 - **The bundle filter rejects any path containing `token`** (a credential guard):
   name scripts accordingly. Pipe `push_bundle.sh` output only with `set -o pipefail`,
   otherwise a refused push looks like success and the job runs without its script.
+- **Never allowlist a directory that holds results.** Pushing it copies local
+  (older) result files over newer remote ones; on 2026-09-26 this silently destroyed a
+  rerun. `push_bundle.sh` now skips `results/` inside listed directories; list scripts
+  individually, and list a result file by name only when a job needs it as input.
 - **Test on a model name no experiment uses** (for example `Qwen3-0.6B`): a smoke
   test under a real model name overwrites that model's remote results, and the next
   sync copies them back over committed files.

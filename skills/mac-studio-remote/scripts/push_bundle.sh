@@ -14,7 +14,9 @@ while IFS= read -r p; do
       die "forbidden path for the Mac Studio: $p" ;;
   esac
   [ -e "$p" ] || die "missing: $p"
-  while IFS= read -r f; do files+=("$f"); done < <(find "$p" -type f ! -name '*.pyc' ! -path '*/__pycache__/*')
+  # A directory entry never sends results: pushing local copies of results/ overwrites newer
+  # remote results (this destroyed a rerun on 2026-09-26). List a result file by name to send it.
+  while IFS= read -r f; do files+=("$f"); done < <(if [ -d "$p" ]; then find "$p" -type f ! -name '*.pyc' ! -path '*/__pycache__/*' ! -path '*/results/*'; else echo "$p"; fi)
 done < "$list"
 [ ${#files[@]} -gt 0 ] || die "allowlist is empty"
 bytes=$(du -ck "${files[@]}" | tail -1 | awk '{print $1*1024}')
