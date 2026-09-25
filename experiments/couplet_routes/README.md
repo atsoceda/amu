@@ -247,3 +247,13 @@ Gemma rhymes, by the authors' criterion, in the same first-line order.
 Readings fixed in advance: all three hold -> "private carrying of plans grows with
 scale"; only near-target relay grows -> "the lookup moves earlier and is held
 briefly"; flat -> "plans are looked up, not carried, up to 32B across two families".
+
+### Position-resolved relay, Qwen3-1.7B (2026-09-25, laptop)
+
+`relay_positions.py`, 100 couplets. Relay +0.79 [0.50, 1.08] = last 3 positions
+before the rhyme word +0.77 [0.54, 1.00]; all earlier positions -0.01 [-0.16, 0.14]
+(prompt tail 0.00, early line 2 -0.06). At 1.7B relay is entirely near-target: the
+late lookup of the authors' circuit read in two hops, no long-range carrying.
+Order changed (not design): position splits at 32B/14B/8B run before Gemma, since
+they decide criterion 2; the derived-value task moves up, as the remaining place
+where long-range relay is plausible.
