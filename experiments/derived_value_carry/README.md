@@ -84,3 +84,38 @@ Stage 0 passes; **stage 1 fails**: no position after the question holds the sum;
 only changing the operands moves the answer. The sum is recomputed from the visible
 operands at the answer (re-reading), as predicted under the thesis. By the frozen
 design, routes are not measured where stage 1 fails. 8B, 14B, 32B on the Mac Studio.
+
+## Stage 2 redesign: variable chains, a relay positive control (design frozen 2026-09-26, before any result)
+
+**Why.** Two-digit addition is recomputed from the visible operands at the answer
+(stage 1 fails at 1.7B-8B), so it cannot show relay. A chain of updates makes
+recomputation at the answer costly: to answer, the model must either re-execute the
+whole chain in one forward pass or carry the running value from statement to
+statement (relay by construction). The chain is therefore a positive control for
+the route accounting: if relay exists anywhere in these models, it should be here,
+and a method that never finds relay would be suspect.
+
+**Task.** Chat prompt (Qwen3, `/no_think`), user turn
+`a = {v0}\nb = a + {d1}\nc = b + {d2}\n...\nWhat is {last}?`, assistant prefill
+`The answer is `; target = first digit of the final value. Chain lengths K = 1, 3, 5
+updates. v0 two-digit (10-59), increments 1-9, final value 10-99. Donor: same
+increments, a different two-digit v0 whose final value has a different tens digit,
+so original and donor prompts align token by token. 96 items per K (seed 20260925).
+
+**Measurements** (outcome R = log p(donor first digit) - log p(original first digit)
+at the target, relative to no edit; the answer is immediate, so there is no emission):
+- Stage 0: greedy accuracy per K (gate >= 80%).
+- Efficacy scan: donor state (all layers) at each single position from v0 to the
+  token before the target; plus v0 digits together (the operand edit).
+- Route split for an edit at each statement end s_j (the newline ending statement j):
+  persistence; direct retrieval (positions after s_j clean, so only the target reads
+  s_j); relay (s_j clean, positions after s_j with edited-run states); and chain relay
+  (only the later statement ends s_{j+1..K} with edited-run states).
+
+**Predictions.** Under the thesis, statement-end edits do little and the answer is
+re-read from v0 and the increments (as in stage 1). The positive-control outcome:
+for K = 3-5, an edit at an early statement end moves the answer and most of that
+effect goes through later statement ends (chain relay CI above zero and at least 25%
+of persistence). Chain relay growing with K and with model size would be relay in
+exactly the case the thesis says it should appear: information that is computed, not
+visible, and costly to recompute.
