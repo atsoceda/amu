@@ -200,3 +200,11 @@ computed.
   about 88% retrieval.
 
 Full tables: `results/report.md` (regenerated).
+
+### Qwen3-14B (2026-09-25, Mac Studio)
+
+Rhyme with original 96% -> 0%, donor 64%. Persistence with original words +25.8
+[24.2, 27.3] = direct retrieval +21.2 + relay +3.2 [2.6, 3.8], additivity gap +1.3
+[0.4, 2.2]. Median relay share 11% (1.7B 4%, 4B 8%, 8B 8%): a modest upward trend,
+not flat. Same-rhyme null +0.8. Anchor about twice any other position. Retrieval
+still dominates; the scale trend of relay is now the key open question (32B next).

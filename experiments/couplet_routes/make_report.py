@@ -79,8 +79,10 @@ def main() -> None:
         L.append(f"| {label} | " + " | ".join(fn(m) for m in have) + " |")
     L += ["", "**Reading.** Most of the edit's effect on the rhyme persists when line 2's words are held fixed, so it is "
           "not carried by the words the model writes. Of that persistence, direct retrieval of the anchor accounts for "
-          "about 90-96% at every size; relay is small but above zero. Relay grows in absolute size with the whole "
-          "effect, but its share rises from 1.7B to 4B and then stays flat. The same-rhyme null shows that the rhyme-"
+          "most of it at every size (about 82-96%); relay is small but above zero. Relay grows in absolute size with "
+          "the whole effect, and its median share rises modestly with scale (see the table); whether that trend continues "
+          "is the open scale question. At the largest sizes the paths stop adding up exactly (a small positive additivity "
+          "gap), a sign that retrieval and relay partly carry the same information. The same-rhyme null shows that the rhyme-"
           "preference measure tracks rhyme information rather than the edit's general disruption. A small tail of "
           "couplets has a large relay share; it is not yet explained.", ""]
     st6 = {m: load(m, "step6_summary.json") for m in have}
