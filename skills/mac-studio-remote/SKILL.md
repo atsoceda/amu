@@ -83,6 +83,15 @@ come back. Details, measured facts and troubleshooting are in
    skills/mac-studio-remote/scripts/status.sh couplets-8b-step2
    ```
 
+   To be notified when a job ends, run the wait-and-fetch helper in the
+   background on the laptop. It polls every 5 minutes (`POLL=<seconds>` to
+   change), then fetches the listed result paths and exits, non-zero if the job
+   failed:
+
+   ```bash
+   skills/mac-studio-remote/scripts/wait_fetch.sh couplets-8b-step2 experiments/couplet_routes/results/Qwen3-8B
+   ```
+
 6. **Fetch small results back** into the repo (repository-relative paths;
    files over 50 MB are refused unless `--allow-large`):
 
