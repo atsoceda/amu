@@ -385,3 +385,11 @@ Screen 100/196; donor rhyme 68%; persistence +13.3 = retrieval +12.2 + relay +1.
 median relay share 9%; boundary +0.09 [0.03, 0.17], early line 2 +0.05. Same as the
 8B instruct model in this format (11%, boundary +0.10). `summarize_run.py <model>`
 prints these lines for any run.
+
+Qwen3-8B per-token boundary relay (`relay_boundary.py`): all +0.06, comma +0.03,
+every template token 0.00 +/- 0.01 (14B: comma +1.33). 32B queued.
+Mac Studio note (2026-09-26): free-memory gates let two 32B models and two smaller
+ones load at once (about 170 GB of weights on 128 GB) and the machine thrashed; the
+32B-plain run (1 couplet in 12 min) was stopped and re-queued from step 3/4 under a
+memory-budget scheduler (`jobs/runner.sh`, `jobs/chain.sh`). No results were affected
+(steps write their outputs only when complete).
