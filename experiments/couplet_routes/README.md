@@ -257,3 +257,10 @@ late lookup of the authors' circuit read in two hops, no long-range carrying.
 Order changed (not design): position splits at 32B/14B/8B run before Gemma, since
 they decide criterion 2; the derived-value task moves up, as the remaining place
 where long-range relay is plausible.
+
+### Position-resolved relay, Qwen3-4B (2026-09-25, laptop)
+
+Relay +1.60 [1.18, 2.05] = last 3 positions +1.53 [1.12, 1.97]; earlier positions
++0.11 [-0.03, 0.25] (prompt tail +0.02, early line 2 +0.07). Same picture as 1.7B.
+Note: "earlier positions" are mostly the chat-template tokens after line 1 (10
+positions) plus 3-6 early line-2 tokens; line-2 prefixes are short.

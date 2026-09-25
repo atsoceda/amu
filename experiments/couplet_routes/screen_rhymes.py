@@ -75,7 +75,8 @@ def main() -> None:
     s["second_last_word"] = [last_word(x["line2"]) for x in rows if x["rhyme_success"]]
     s["original_generation"] = [x["line2"] for x in rows if x["rhyme_success"]]
     rng = random.Random(SEED)
-    s["chosen_index"] = [rng.choice([j for j in s.index if s.at[j, "rhyme_group"] != g]) for g in s["rhyme_group"]]
+    s["chosen_index"] = [rng.choice(c) if (c := [j for j in s.index if s.at[j, "rhyme_group"] != g]) else -999 for g in s["rhyme_group"]]
+    s = s[s["chosen_index"] != -999]
     s["found_valid_row"] = True
     s.to_csv(out / "subset.csv")
     print(f"rhyme success {len(ok)}/{len(rows)} = {len(ok)/len(rows):.0%}; subset {len(s)}")
