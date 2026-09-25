@@ -184,3 +184,10 @@ digit).
 the effect (the answer reads the last written value); persistence is small. A large
 persistence would mean the answer is computed privately despite the visible chain,
 the unfaithful-CoT case.
+
+Implementation note (2026-09-26, before results): the model writes each step as
+`b = a + 4 = 23 + 4 = 27` (LaTeX). The written text is cut after the line computing
+the next-to-last variable and followed by "\nThe answer is ", so one addition from
+the last written value remains. Deviation from the frozen text: an item is usable
+when the written next-to-last value is correct (not every line checked). Laptop: 4B,
+50 items per K; Mac Studio: 8B, 14B, 32B, all items.
