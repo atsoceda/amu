@@ -335,3 +335,12 @@ frozen readings the headline is not "private carrying grows with scale". The
 growth of relay is instead (a) the late lookup up to 8B and (b) from 14B on,
 storage at the line boundary, a component the frozen readings did not anticipate.
 Next: which boundary token (`relay_boundary.py`), the plain-format replication, Gemma.
+
+### Which boundary token carries the rhyme? Qwen3-14B (2026-09-26, Mac Studio)
+
+`relay_boundary.py`, 100 couplets (all share the same 10-token boundary). Boundary
+relay +1.32 [0.97, 1.69] is carried entirely by **the comma ending line 1**: +1.33
+[0.99, 1.69]; every chat-template token (`<|im_end|>`, `assistant`, think tags,
+newlines) is 0.00 +/- 0.03. The storage site that appears with scale is the
+line-ending punctuation, the chat-format counterpart of the line-end newline where
+Lindsey et al. (2025) find Claude's rhyme plan. 8B and 32B follow.
