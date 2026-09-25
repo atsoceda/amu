@@ -80,3 +80,6 @@ experiments/qwen3_planning_six_cell/results/**/headers/
 # Couplet routes re-derivable intermediates (re-created by step6_features.py)
 experiments/couplet_routes/results/**/headers/
 experiments/couplet_routes/results/**/cards/
+
+# batching checks (jobs/verify_batching.py) use Qwen3-0.6B; never commit its outputs
+experiments/*/results/Qwen3-0.6B/
