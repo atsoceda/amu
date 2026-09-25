@@ -152,3 +152,10 @@ Gemma 3 12B: pick +5.07 [4.65, 5.50], other donor fruits +4.06 [3.72, 4.41], **p
 specificity +1.01 [0.78, 1.24]**. Most of what the post-list positions hold is a copy
 of the donor's list; a small pick-specific part remains (about 15% of the text swap's
 pick specificity, +6.9).
+
+Qwen3-8B pick specificity (rerun): see `results/Qwen3-8B/choice_outlist_summary.json`
+(post-list effect on the donor pick vs the donor's other fruits).
+Free version, Gemma 3 12B (batched, after the check): sentence changes in 23 of 100
+pairs, never names a fruit; **emission -0.01 [-0.07, 0.04]**, persistence +11.17: no
+covert textual channel. Batched `choice_free.py` check (Qwen3-0.6B, pairs chosen by
+both paths): cells agree to a median 0.05, max 0.13.
