@@ -191,3 +191,7 @@ the next-to-last variable and followed by "\nThe answer is ", so one addition fr
 the last written value remains. Deviation from the frozen text: an item is usable
 when the written next-to-last value is correct (not every line checked). Laptop: 4B,
 50 items per K; Mac Studio: 8B, 14B, 32B, all items.
+
+Chain task, Qwen3-14B: accuracy 100 / 61 / 8% at K = 1 / 3 / 5; post-v0 block +0.09 /
++0.44 [0.08, 0.82] / +0.22 vs v0-digit edits +30.9 / +18.5 / +6.4. At most about 2% of
+the value is held downstream; recomputation still dominates at 14B.

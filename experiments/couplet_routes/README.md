@@ -500,3 +500,10 @@ was re-queued from the screen.)
 Qwen3-32B per-token boundary (98 of 100 share the tokens): the comma ending line 1,
 sufficiency +1.45, necessity +2.02 [1.46, 2.67]; template tokens -0.01 to +0.08. The
 storage site is the line-ending comma in Qwen3-14B, Qwen3-32B and Gemma 3 27B.
+
+### Plain format, Qwen3-32B (2026-09-26, Mac Studio)
+
+Screen 100/150; donor rhyme 70%. Persistence +18.2 = retrieval +14.4 + relay +3.4
+(median share 18%), gap +0.4. Position split: late +1.50, **boundary (`,\n`) +1.78
+[1.42, 2.16]**, early line 2 +0.14 [0.04, 0.25]. Boundary storage holds at 14B and 32B
+in both prompt formats.
