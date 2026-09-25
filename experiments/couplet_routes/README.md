@@ -507,3 +507,9 @@ Screen 100/150; donor rhyme 70%. Persistence +18.2 = retrieval +14.4 + relay +3.
 (median share 18%), gap +0.4. Position split: late +1.50, **boundary (`,\n`) +1.78
 [1.42, 2.16]**, early line 2 +0.14 [0.04, 0.25]. Boundary storage holds at 14B and 32B
 in both prompt formats.
+
+Gemma 3 12B IT, plain format, per-token boundary (99/100 share the tokens): the
+**newline** carries it, sufficiency +0.56 [0.30, 0.82], necessity +0.68 [0.41, 0.98];
+the comma +0.11 / +0.07. So the storage site is the line's final token: the newline
+when the line ends with one (plain format; the site of Lindsey et al. and Ma & Rui),
+the comma when it is the last token before the chat template (chat format).
