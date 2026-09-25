@@ -1,4 +1,4 @@
-# Handoff: couplet routes, current thesis, and next steps (2026-09-25, evening)
+# Handoff: couplet routes, current thesis, and next steps (2026-09-25, evening) — superseded by 2026-09-26-overnight-scale-and-boundary.md
 
 Supersedes `2026-09-25-routes-thesis-and-next-steps.md`. Read this first when
 resuming. Maintenance rules: `docs/research-record.md`. Vocabulary:
