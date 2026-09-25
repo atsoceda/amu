@@ -29,16 +29,16 @@ Hanna & Ameisen's 100-couplet steering subset per model, their prompt, their anc
 
 ## Robustness: route split under the authors' feature steering
 
-| | Qwen3-4B |
-|---|---|
-| Steered line 2 rhymes with donor (ours) | 16% |
-| Same, from the authors' released generations | 12% |
-| Total | +14.8 [13.3, 16.4] |
-| Emission | +1.4 [0.5, 2.4] |
-| Persistence, original words | +11.8 [10.2, 13.3] |
-|   Direct retrieval | +10.6 [9.2, 12.1] |
-|   Relay | +1.0 [0.7, 1.3] |
-| Additivity gap | +0.1 [-0.1, 0.3] |
+| | Qwen3-4B | Qwen3-8B |
+|---|---|---|
+| Steered line 2 rhymes with donor (ours) | 16% | 27% |
+| Same, from the authors' released generations | 12% | 35% |
+| Total | +14.8 [13.3, 16.4] | +22.1 [20.1, 24.1] |
+| Emission | +1.4 [0.5, 2.4] | +2.7 [1.5, 3.9] |
+| Persistence, original words | +11.8 [10.2, 13.3] | +20.4 [18.8, 21.9] |
+|   Direct retrieval | +10.6 [9.2, 12.1] | +17.9 [16.4, 19.4] |
+|   Relay | +1.0 [0.7, 1.3] | +1.9 [1.5, 2.3] |
+| Additivity gap | +0.1 [-0.1, 0.3] | +0.5 [0.1, 1.0] |
 
 **Reading.** The milder, published intervention changes the rhyme less often at small sizes (as the authors report), but the route split has the same direction: persistence is mostly direct retrieval, relay small. This addresses the concern that the all-layer state edit is too disruptive.
 
@@ -46,14 +46,14 @@ Hanna & Ameisen's 100-couplet steering subset per model, their prompt, their anc
 
 Persistence when the donor's anchor state is placed at other positions (original line-2 words fixed):
 
-| Position | Qwen3-1.7B | Qwen3-8B |
-|---|---|---|
-| A: last word of line 1 (anchor) | +12.1 [10.6, 13.6] | +22.6 [20.9, 24.4] |
-| E: end of user turn | +6.0 [5.1, 6.9] | +10.6 [8.8, 12.4] |
-| C: punctuation after anchor | +5.7 [4.8, 6.7] | +10.7 [8.9, 12.5] |
-| M: middle word of line 1 | +5.5 [4.4, 6.6] | +8.6 [6.9, 10.4] |
-| F: first word of line 1 | +3.5 [2.7, 4.3] | +5.1 [3.8, 6.5] |
-| Relay, range across positions | +0.6 to +0.8 | +1.2 to +2.4 |
+| Position | Qwen3-1.7B | Qwen3-4B | Qwen3-8B |
+|---|---|---|---|
+| A: last word of line 1 (anchor) | +12.1 [10.6, 13.6] | +15.3 [13.5, 17.1] | +22.6 [20.9, 24.4] |
+| E: end of user turn | +6.0 [5.1, 6.9] | +7.0 [5.8, 8.2] | +10.6 [8.8, 12.4] |
+| C: punctuation after anchor | +5.7 [4.8, 6.7] | +6.8 [5.6, 8.1] | +10.7 [8.9, 12.5] |
+| M: middle word of line 1 | +5.5 [4.4, 6.6] | +4.3 [3.3, 5.4] | +8.6 [6.9, 10.4] |
+| F: first word of line 1 | +3.5 [2.7, 4.3] | +2.7 [1.8, 3.7] | +5.1 [3.8, 6.5] |
+| Relay, range across positions | +0.6 to +0.8 | +0.4 to +1.6 | +1.2 to +2.4 |
 
 **Reading.** The prediction that only the anchor is retrieved is partly supported: the anchor is about 2-3.5x more effective than any other position, but information at other line-1 positions is still partly retrieved. Relay stays small whichever position holds the information.
 

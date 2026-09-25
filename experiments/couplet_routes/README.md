@@ -188,3 +188,15 @@ systematic relay regime:
 Conclusion: relay stays small for visible rhyme information; the derived-value
 task is the real test of whether relay appears when the information must be
 computed.
+
+## Updates (2026-09-25, late evening)
+
+- **4B anchor specificity:** anchor +15.3 [13.5, 17.1]; end of turn +7.0, punctuation
+  +6.8, mid-line +4.3, first word +2.7; relay +0.4 to +1.6 from every position.
+- **8B step 6 (authors' feature steering, Mac Studio):** donor-rhyme rate 27% (authors'
+  released 35%), original 2%. Persistence with original words +20.4 [18.8, 21.9] =
+  direct retrieval +17.9 [16.4, 19.4] + relay +1.9 [1.5, 2.3] (gap +0.5); emission
+  +2.7. Where the published intervention genuinely moves the rhyme, the plan is still
+  about 88% retrieval.
+
+Full tables: `results/report.md` (regenerated).
