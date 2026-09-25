@@ -353,3 +353,11 @@ emission +11.3 + persistence +40.9; persistence with original words +41.2 =
 retrieval +36.8 [34.0, 39.6] + relay +1.0 [0.5, 1.6]; median relay share **0%**
 (Qwen3 at 8-14B: 8-11%). Gemma 12B retrieves the plan and does not relay it.
 (Log-probability scales differ across families; compare shares, not raw values.)
+
+### Plain format, Qwen3-8B (2026-09-26, Mac Studio)
+
+Screen: 100 of 192 first lines rhyme. State edit: donor rhyme 69%. Persistence +19.1
+= retrieval +17.1 + relay +1.9 [1.6, 2.3], gap +0.1; median relay share 11%.
+Position split: late +1.74, boundary (the single `,\n` token) +0.10 [-0.05, 0.26],
+early line 2 +0.07. Same as the chat format at 8B (boundary +0.06): no boundary
+storage yet. 14B and 32B decide prediction (3).
