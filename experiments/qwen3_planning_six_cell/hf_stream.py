@@ -22,8 +22,12 @@ def url(repo: str, path: str) -> str:
     return f"{HF}/{repo}/resolve/main/{path}"
 
 
-def fetch_range(u: str, start: int, end_inclusive: int, retries: int = 6) -> bytes:
-    """Fetch bytes [start, end_inclusive] with retries."""
+def fetch_range(u: str, start: int, end_inclusive: int, retries: int = 12) -> bytes:
+    """Fetch bytes [start, end_inclusive] with retries.
+
+    HTTP 429 (Hugging Face rate limit) honours Retry-After, else backs off up to 5 minutes.
+    """
+    import urllib.error
     want = end_inclusive - start + 1
     for attempt in range(retries):
         try:
@@ -33,7 +37,15 @@ def fetch_range(u: str, start: int, end_inclusive: int, retries: int = 6) -> byt
             if len(data) != want:
                 raise IOError(f"short read {len(data)} != {want}")
             return data
-        except Exception:  # noqa: BLE001 - network errors are retried
+        except urllib.error.HTTPError as e:
+            if attempt == retries - 1:
+                raise
+            if e.code == 429:
+                wait = e.headers.get("Retry-After")
+                time.sleep(float(wait) if wait and wait.isdigit() else min(300, 15 * 2 ** attempt))
+            else:
+                time.sleep(2 ** attempt)
+        except Exception:  # noqa: BLE001 - other network errors are retried
             if attempt == retries - 1:
                 raise
             time.sleep(2 ** attempt)
@@ -94,7 +106,7 @@ def load_feature_index(index_path: Path) -> dict:
 
 
 def fetch_feature_records(repo: str, index: dict, layer: int, feats: list[int],
-                          max_gap_bytes: int = 1 << 16, workers: int = 16) -> dict[int, dict | None]:
+                          max_gap_bytes: int = 1 << 16, workers: int = 4) -> dict[int, dict | None]:
     """Fetch and decode visualization records (same binary format as the authors' loader).
 
     Nearby records are merged into one range request; groups are fetched concurrently.
