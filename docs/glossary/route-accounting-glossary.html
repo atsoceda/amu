@@ -97,7 +97,7 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
 
 <div class="wrap">
   <header>
-    <span class="eyebrow">AMU · ICLR 2027 extension · status as of 25 Sep 2026</span>
+    <span class="eyebrow">AMU · ICLR 2027 extension · status as of 25 Sep 2026, evening</span>
     <h1>Route Accounting Glossary</h1>
     <p class="lede">One vocabulary for how an intervention's effect reaches a later token. Each term has a mechanistic meaning, the measurement that stands for it, and the current state of evidence, so the framing and the results can be written without drifting terms.</p>
     <div class="legend" aria-label="Status levels">
@@ -213,20 +213,20 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
     <h2>3. Persistence paths</h2>
     <p>In a transformer every persistent effect travels through attention, so persistence splits by which positions carry it. Each path is removed by giving chosen positions the clean (intervention-off) keys and values.</p>
     <div class="terms">
-      <article class="term" data-status="hinted">
+      <article class="term" data-status="found">
         <h3>Direct retrieval <span class="was">formerly <s>anchored retrieval</s>, part of <s>carried state</s></span></h3>
         <dl>
           <dt>Meaning</dt><dd>The target position attends straight back to <var>t</var> and reads its altered state.</dd>
           <dt>Measure</dt><dd>Effect removed when the target position gets clean keys/values at <var>t</var>.</dd>
-          <dt>Status</dt><dd class="st"><span class="s hinted">Hinted</span> by the published couplet circuit (qualitative); not yet measured by us. For a/an, persistence is this path by construction.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> couplets: 90–96% of persistence at Qwen3-1.7B / 4B / 8B, also under the authors' feature steering; blocking it breaks rhyming up to 14B (authors' data). For a/an, persistence is this path by construction.</dd>
         </dl>
       </article>
-      <article class="term" data-status="hypothesis">
+      <article class="term" data-status="found">
         <h3>Relay <span class="was">formerly <s>carried private plan</s></span></h3>
         <dl>
           <dt>Meaning</dt><dd>Positions between <var>t</var> and the target read <var>t</var> and carry the change forward in their own states.</dd>
           <dt>Measure</dt><dd>Effect removed when the in-between positions get clean keys/values at <var>t</var>.</dd>
-          <dt>Status</dt><dd class="st"><span class="s hypothesis">Hypothesis</span> rare; not yet measured anywhere</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> small in couplets: median share 4% / 8% / 8% at 1.7B / 4B / 8B, above zero; a tail of 5–9% of couplets with share above 30% is unexplained. Whether relay dominates for derived information is a <span class="s hypothesis">Hypothesis</span></dd>
         </dl>
       </article>
       <article class="term" data-status="hinted">
@@ -280,6 +280,14 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <dt>Claim</dt><dd>A decision held only in state, with no leveraged mediator, does not reach the target by another path.</dd>
           <dt>Evidence</dt><dd>A/B state patch in the zero-leverage bank: total effect <span class="num">+0.004</span>.</dd>
           <dt>Status</dt><dd class="st"><span class="s found">Found</span> one setting, 5 families</dd>
+        </dl>
+      </article>
+      <article class="term" data-status="found">
+        <h3>Anchor weighting</h3>
+        <dl>
+          <dt>Claim</dt><dd>Retrieval favours structural anchors: information placed at the end of line 1 is retrieved far more than the same information placed elsewhere.</dd>
+          <dt>Evidence</dt><dd>Couplets: donor rhyme state at the anchor vs other line-1 positions gives persistence +12.1 vs +3.5 to +6.0 (1.7B) and +22.6 vs +5.1 to +10.7 (8B); relay small from every position.</dd>
+          <dt>Status</dt><dd class="st"><span class="s found">Found</span> weighted, not exclusive: the anchor-only prediction was partly supported</dd>
         </dl>
       </article>
       <article class="term" data-status="found">
@@ -342,7 +350,7 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <tr><td><b>el/la planning features</b></td><td><span class="s found">Found</span> null, matching <span class="s published">Published</span></td><td>Null at 0.6B and 1.7B, consistent with the authors' null; 4B stopped at 31 prompts. Uninformative for routes: no policy movement. <span class="s hinted">Hinted</span> 71% of the planning features are English-concept features, suggesting conceptual plans lack grammatical gender.</td></tr>
           <tr><td><b>A/B code</b> (Qwen3 0.6B–4B)</td><td><span class="s found">Found</span></td><td>A non-grammatical mediator with dialable leverage. Leverage law confirmed; lost decision; large re-reading persistence under text edits (path not isolated).</td></tr>
           <tr><td><b>Named-donor synonym assays</b> (Gemma 3 1B)</td><td><span class="s found">Found</span></td><td>The construction artifact; their route claims are retracted.</td></tr>
-          <tr><td><b>Couplets</b> (Hanna &amp; Ameisen)</td><td><span class="s published">Published</span></td><td>Line-1 rhyme features are retrieved near the end of line 2, and steered line-2 words do not license the rhyme better. The natural test of relay vs direct retrieval over about 10 positions; not yet run by us.</td></tr>
+          <tr><td><b>Couplets</b> (Qwen3 1.7B–8B; 14B pending)</td><td><span class="s found">Found</span></td><td>Most of the rhyme effect persists with line 2's words fixed; 90–96% of it is direct retrieval of the line-1 anchor, relay small (4–8%). Same under the authors' feature steering. The anchor is weighted about 2x over other positions. Consistent with the authors' published circuit and attention-blocking results.</td></tr>
         </tbody>
       </table>
     </div>
@@ -358,8 +366,8 @@ footer{font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--rule);padd
           <tr><td>Emission, scaled by leverage</td><td><span class="s found">Found</span> a/an 4B, A/B 4B</td><td>Chain-of-thought tokens (stretch)</td></tr>
           <tr><td>A state-held decision is lost without a leveraged mediator</td><td><span class="s found">Found</span> A/B, one setting</td><td>More A/B families</td></tr>
           <tr><td>Retrieval of visible text</td><td><span class="s hinted">Hinted</span> A/B text edit</td><td>Attention-path split on the A/B text edit</td></tr>
-          <tr><td>Retrieval from an anchor at a distance</td><td><span class="s published">Published</span> qualitatively (couplets)</td><td>Couplets six-cell with the path split (flagship)</td></tr>
-          <tr><td><b>Relay is rare</b></td><td><span class="s hypothesis">Hypothesis</span> the claim that makes the thesis surprising</td><td>Couplets six-cell with the path split (flagship)</td></tr>
+          <tr><td>Retrieval from an anchor at a distance</td><td><span class="s found">Found</span> couplets, 1.7B–8B</td><td>14B (running)</td></tr>
+          <tr><td><b>Relay is small</b></td><td><span class="s found">Found</span> for visible information (couplets), share flat from 4B to 8B</td><td>Relay-tail analysis; derived-value carry task (where relay is most likely)</td></tr>
           <tr><td>Route claims can be counterfeited by vector construction</td><td><span class="s found">Found</span> our assays; generality <span class="s hypothesis">Hypothesis</span></td><td>Steering-vector readout audit</td></tr>
           <tr><td>Conceptual plans lack language-specific grammar</td><td><span class="s hinted">Hinted</span> el/la node languages</td><td>el/la split into Spanish-feature vs English-feature subsets</td></tr>
         </tbody>
