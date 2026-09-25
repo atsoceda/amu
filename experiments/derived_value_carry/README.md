@@ -63,3 +63,24 @@ the answer: the model reads the visible operands and computes the original sum.
 
 Qwen3-1.7B and 4B on the laptop; 8B and 14B on the Mac Studio
 (`skills/mac-studio-remote/`). Short prompts: minutes per size locally.
+
+## Results
+
+### Stage 0/1, Qwen3-1.7B and 4B (2026-09-26, laptop)
+
+Format fixed at stage 0 (before any route measurement): user turn
+`/no_think What is {a} + {b}?`, assistant prefill `{filler} The answer is `. Left
+free, the model restates the operands ("17 + 25 = 42"), which would put them back in
+the text right before the answer. 104 items (13 per tens digit).
+
+| | 1.7B | 4B |
+|---|---|---|
+| Accuracy, filler 0 / 8 / 16 / 32 tokens | 100 / 95 / 100 / 99% | 100 / 100 / 100 / 100% |
+| Donor state at `?` (pre-registered computation position) | +0.07 [-0.01, 0.14] | +0.01 [-0.11, 0.12] |
+| Donor states at every position from `?` to the target | +0.30 [0.14, 0.46] | +0.58 [0.34, 0.83] |
+| Donor states at the four operand digits | +47.8 [46.4, 49.1] | +48.0 [46.9, 49.1] |
+
+Stage 0 passes; **stage 1 fails**: no position after the question holds the sum;
+only changing the operands moves the answer. The sum is recomputed from the visible
+operands at the answer (re-reading), as predicted under the thesis. By the frozen
+design, routes are not measured where stage 1 fails. 8B, 14B, 32B on the Mac Studio.
