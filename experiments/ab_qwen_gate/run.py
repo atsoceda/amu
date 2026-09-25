@@ -41,6 +41,9 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model")
     a = ap.parse_args()
+    if (EXP / "results" / a.model / "summary.json").exists():
+        print((EXP / "results" / a.model / "summary.json").read_text())
+        return
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
     m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
