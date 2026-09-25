@@ -29,7 +29,7 @@ import torch
 
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
-from select_features import paths, prompts, load_active  # noqa: E402
+from select_features import MEDIATORS, SLOT, TASK, paths, prompts, load_active  # noqa: E402
 
 SEED = 20260924
 
@@ -71,7 +71,8 @@ def run(model_name: str, limit: int | None, out: str | None = None) -> None:
         done = {(r["prompt_index"], r["condition"]) for r in map(json.loads, out_path.read_text().splitlines())}
     tok = AutoTokenizer.from_pretrained(f"Qwen/{model_name}")
     m = AutoModelForCausalLM.from_pretrained(f"Qwen/{model_name}", dtype=torch.bfloat16).to("mps").eval()
-    a_id, an_id = (tok.encode(t, add_special_tokens=False)[0] for t in (" a", " an"))
+    # Slot "a"/"an" = the task's two mediator tokens (for el_la: el / la).
+    a_id, an_id = (tok.encode(t, add_special_tokens=False)[0] for t in MEDIATORS)
     decoders = torch.load(p["decoders"])
     selection = json.loads(p["selection"].read_text())
     active = load_active(model_name)
@@ -130,7 +131,8 @@ def run(model_name: str, limit: int | None, out: str | None = None) -> None:
                     steer[l] = steer.get(l, 0) + (target - a) * decoders[(l, f)].float()
                 steer = {l: v.to("mps") for l, v in steer.items()}
                 on = cells(steer)
-                rec = {"prompt_index": i, "condition": cond, "planned": row["planned"], "article": row["article"],
+                rec = {"prompt_index": i, "condition": cond, "planned": row["planned"], "article": SLOT[row["article"]],
+                       "task": TASK, "article_surface": row["article"],
                        "n_nodes": len(spec)}
                 for tag, d in (("off", off), ("on", on)):
                     art = d["none"]

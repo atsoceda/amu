@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -34,8 +35,18 @@ from hf_stream import SafetensorsRemote, fetch_feature_records, load_feature_ind
 CONFIG = json.loads((EXP / "config.json").read_text())
 
 
+# Task: "a_an" (default; the paper's English a/an task) or "el_la" (the authors'
+# Spanish el/la gender task). Set with the AMU_TASK environment variable.
+TASK = os.environ.get("AMU_TASK", "a_an")
+assert TASK in ("a_an", "el_la"), TASK
+# Mediator tokens as (slot "a", slot "an"). For el_la, rows use slot names
+# "a" = el and "an" = la so that the six-cell and analysis code is shared.
+MEDIATORS = {"a_an": (" a", " an"), "el_la": (" el", " la")}[TASK]
+SLOT = {"a_an": {"a": "a", "an": "an"}, "el_la": {"el": "a", "la": "an"}}[TASK]
+
+
 def paths(model: str) -> dict[str, Path]:
-    out = EXP / "results" / model
+    out = EXP / "results" / model if TASK == "a_an" else EXP / "results" / TASK / model
     out.mkdir(parents=True, exist_ok=True)
     return {"out": out, "mlp_in": out / "mlp_in_last.pt", "active": out / "active",
             "cards": out / "selected_cards.json", "selection": out / "selection.json",
@@ -44,7 +55,20 @@ def paths(model: str) -> dict[str, Path]:
 
 
 def prompts(model: str) -> pd.DataFrame:
-    return pd.read_csv(ROOT / CONFIG["hanna_ameisen_repo"] / "a_an/results/interventions" / f"{model}.csv")
+    if TASK == "a_an":
+        return pd.read_csv(ROOT / CONFIG["hanna_ameisen_repo"] / "a_an/results/interventions" / f"{model}.csv")
+    # el_la: the authors' behavioral table; their graphs prefix the EOS token. Plural
+    # items (los/las) are excluded because the six-cell mediator is binary.
+    from transformers import AutoTokenizer
+    eos = AutoTokenizer.from_pretrained(f"Qwen/{model}").eos_token
+    df = pd.read_csv(ROOT / CONFIG["hanna_ameisen_repo"] / "el_la/results/behavioral" / f"{model}.csv")
+    df = df[df["article"].isin(["el", "la"])].copy()
+    df["source_index"] = df.index
+    df = df.reset_index(drop=True)
+    df["planned"] = df["spanish_noun"]
+    df["planned_alt"] = df["english_noun"]
+    df["prompt_before_article"] = eos + df["prompt_before_article"]
+    return df
 
 
 # ---- the authors' word-feature test, copied without behavioural change ----
@@ -90,6 +114,46 @@ def is_word_feature(info, word):
             word_counts += 1
     in_logits = term_in_logits(word, info['top_logits'], info['bottom_logits'])
     return (word_counts > 5) or in_logits
+
+
+def term_in_logits_el_la(term, top, bottom, use_bottom=True, substring_ok=True, k=10):
+    """el_la/planning_node_intervention.py variant: skips Spanish articles; <=2-char matches need two hits."""
+    logits = top[:k] + bottom[:k] if use_bottom else top[:k]
+    logits = [re.sub(r'^[^\w]+|[^\w]+$', '', logit.strip()).lower() for logit in logits]
+    term = term.strip().lower()
+    if substring_ok:
+        len1 = 0
+        for logit in logits:
+            if logit in {'', 'el', 'la', 'los', 'las', 'a', 'an'}:
+                continue
+            if term.startswith(logit):
+                if len(logit) <= 2:
+                    len1 += 1
+                    if len1 >= 2:
+                        return True
+                else:
+                    return True
+        return False
+    return any(term in logit for logit in logits)
+
+
+def is_word_feature_el_la(info, word):
+    if info is None:
+        return False
+    word_counts = 0
+    for tokens, top_index in zip(info['tokens'], info['top_indices']):
+        top_segment = ''.join(tokens[top_index - 10: top_index + 10])
+        if word in top_segment:
+            word_counts += 1
+    in_logits = term_in_logits_el_la(word, info['top_logits'], info['bottom_logits'])
+    return (word_counts > 5) or in_logits
+
+
+def is_planning_node(info, row) -> bool:
+    if TASK == "a_an":
+        return is_word_feature(info, row["planned"])
+    # el_la: a node represents either the Spanish noun or its English translation.
+    return is_word_feature_el_la(info, row["planned"]) or is_word_feature_el_la(info, row["planned_alt"])
 # ---------------------------------------------------------------------------
 
 
@@ -175,7 +239,7 @@ def stage_classify(model: str) -> None:
     df = prompts(model)
     selection = []
     for i, row in df.iterrows():
-        nodes = [(l, f, a) for l, f, a in per_prompt.get(i, []) if is_word_feature(summaries[(l, f)], row["planned"])]
+        nodes = [(l, f, a) for l, f, a in per_prompt.get(i, []) if is_planning_node(summaries[(l, f)], row)]
         selection.append({"prompt_index": int(i), "planned": row["planned"], "article": row["article"],
                           "n_active": len(per_prompt.get(i, [])),
                           "nodes": [{"layer": l, "feature": f, "activation": a} for l, f, a in nodes]})
@@ -205,6 +269,15 @@ def stage_validate(model: str) -> None:
     selection = json.loads(p["selection"].read_text())
     df = prompts(model)
     ours = [len(s["nodes"]) for s in selection]
+    if TASK != "a_an":
+        # The authors released no el/la intervention table, so there is nothing to match.
+        res = {"model": model, "task": TASK, "n_prompts": len(ours), "prompts_with_nodes": sum(o > 0 for o in ours),
+               "total_nodes": sum(ours), "authors_counts_available": False,
+               "selection_rule": "all active features at the pre-article position passing the authors' el_la word test "
+                                 "(Spanish or English noun); the authors restricted to pruned-graph nodes, a subset"}
+        p["validation"].write_text(json.dumps(res, indent=1))
+        print(json.dumps(res, indent=1))
+        return
     theirs = df["selected_nodes_count"].fillna(0).astype(int).tolist()
     exact = sum(a == b for a, b in zip(ours, theirs))
     res = {"model": model, "n_prompts": len(ours), "exact_count_match": exact,

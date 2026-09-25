@@ -136,3 +136,23 @@ Route interpretation: these interventions edit a hidden state at the pre-article
 position and leave the text unchanged, so their private term is entirely a
 carried-forward state read by the article position; no text-reading component
 has to be separated.
+
+## Spanish el/la extension (design frozen 2026-09-25, before any el/la result)
+
+Run with `AMU_TASK=el_la`; outputs go to `results/el_la/<model>/`. Everything
+else (conditions, controls, estimands, full recomputation) is unchanged.
+
+- Prompts: the authors' `el_la/results/behavioral/<model>.csv` (one in-context
+  example plus a Spanish description), prefixed with the EOS token as in their
+  graph code. The 14 plural items (`los`/`las`) are excluded because the
+  six-cell mediator is binary; 379 prompts remain.
+- Mediator: ` el` vs ` la`. Rows reuse slot names `a` = el and `an` = la so the
+  shared analysis code applies; `article_surface` records the real article.
+- Planned word: the first token of the Spanish noun.
+- Selection (**documented deviation**): the authors' el/la word test, copied
+  (Spanish articles skipped in logit matching; the Spanish or the English noun
+  may match), applied to **all** active features at the pre-article position.
+  The authors applied it to pruned attribution-graph nodes, which cannot be
+  computed on this machine at 4B; our node set is therefore a superset of
+  theirs. They released no el/la intervention table, so no count validation is
+  possible.
