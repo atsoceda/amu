@@ -471,3 +471,7 @@ Gemma 3 12B PT, plain format (base checkpoint): relay +2.58 = late +1.73, **boun
 +0.66 [0.52, 0.79]** (instruct 12B plain: +0.68), early line 2 +0.11 [0.05, 0.18];
 median relay share 17%. Boundary storage is present in the pretrained model, so it
 does not come from post-training (Qwen3-14B-Base is queued as the Qwen check).
+
+Gemma 3 1B IT, plain format: screen 100/130; donor rhyme 90%; persistence +24.9 =
+retrieval +23.7 + relay +1.2 (median share 5%); late +1.01, boundary +0.18 [-0.10,
+0.45], early +0.01. No boundary storage at 1B.

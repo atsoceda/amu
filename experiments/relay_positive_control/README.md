@@ -55,3 +55,10 @@ conflicts with the key position ("previous token was y"), which suppresses B mor
 than the consistent edit; this is an interaction, so relay shares above 100% are not
 read as proportions. The retrieval-dominated results elsewhere are therefore
 informative negatives, not a blind spot of the method. 4B, 32B and Gemma pending.
+
+Added: Qwen3-4B (laptop) persistence -4.75, retrieval -0.15, relay -5.23, key -10.28;
+Gemma 3 12B IT persistence -4.90 [-5.18, -4.64], retrieval -0.02 [-0.03, -0.02],
+relay -2.61 [-3.17, -2.11], key -7.12 [-8.16, -6.08]. Retrieval stays near zero in
+both families; in Gemma the all-positions relay edit is weaker than the key position
+alone (the edited second-half positions interact), so the key-position edit is the
+cleaner relay readout.
