@@ -118,3 +118,23 @@ the forced-sentence positions themselves carry a little pick-relevant informatio
 read directly from the list in the donor run (about 5% of the text swap; 8B and
 Gemma 12B: 0). A small component of hidden content in generated positions at 4B only,
 to be read against the free version and larger sizes.
+
+### Control results: Qwen3-8B and Gemma 3 12B (2026-09-26)
+
+| | Qwen3-8B | Gemma 3 12B |
+|---|---|---|
+| Text swap (donor list in the prompt) | +38.13 | +75.23 |
+| Post-list block, out-of-list donor pick | **+2.01 [1.85, 2.18]** | **+5.07 [4.65, 5.50]** |
+| Donor pick rank improves / worsens (of 100) | 18 / 4 | 24 / 7 |
+
+By the frozen reading, the post-list positions carry information absent from the
+visible text. **Confound identified after these results (post hoc):** they may store a
+copy of the donor's list contents rather than the pick. Added measure: the same effect
+on the donor's three unpicked fruits, and pick specificity (pick minus others). Rerun
+for 8B and Gemma 12B; 14B, 32B, Gemma 27B run with it.
+
+### Free version, Qwen3-8B (2026-09-26)
+
+The model's own sentence changes with the list order in 45 of 100 pairs and never
+names a fruit; **emission +0.02 [-0.03, 0.08]**, persistence +6.68: the written
+sentence does not carry the pick (no covert textual channel at 8B).

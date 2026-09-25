@@ -4,7 +4,11 @@
 Original and donor lists are disjoint 4-fruit lists (all 8 fruits between them); the
 donor's pick is absent from the original prompt. Donor states (all layers) at the
 post-list block and at the list positions; text swap for reference. R_out = log
-p(donor pick) - log p(original pick) at the reveal, relative to no edit. Prompts align
+p(donor pick) - log p(original pick) at the reveal, relative to no edit. Added after
+the 8B and Gemma 12B results (post hoc, 2026-09-26): the same quantity for the donor's
+three unpicked fruits, and pick specificity = post-list effect on the donor pick
+minus the mean effect on the donor's other fruits (separates a stored pick from a
+stored copy of the donor list). Prompts align
 token by token because every fruit is a single token and the lists have equal length.
 """
 from __future__ import annotations
@@ -75,7 +79,10 @@ def main() -> None:
         D = lambda ps: {p: [s[p] for s in dst] for p in ps}  # noqa: E731
         R0 = R(y0)
         y_post, _ = run(ids, D(post))
+        others = [f for f in don if f != pdn]
+        R_oth = lambda y: sum(float(y[fid[f]] - y[fid[po]]) for f in others) / len(others)  # noqa: E731
         rec = {"list": orig, "donor_list": don, "pick": po, "donor_pick": pdn, "R_off": R0,
+               "post_edit_others": R_oth(y_post) - R_oth(y0), "text_swap_others": R_oth(yd) - R_oth(y0),
                "text_swap": R(yd) - R0, "list_edit": R(run(ids, D(lpos))[0]) - R0, "post_edit": R(y_post) - R0,
                "donor_rank_off": rank(y0), "donor_rank_post": rank(y_post)}
         rows.append(rec)
@@ -84,7 +91,8 @@ def main() -> None:
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "choice_outlist_rows.json").write_text(json.dumps(rows, indent=1))
-    s = {"model": a.model, "n": len(rows), **{k: boot([r[k] for r in rows]) for k in ("text_swap", "list_edit", "post_edit")},
+    s = {"model": a.model, "n": len(rows), **{k: boot([r[k] for r in rows]) for k in ("text_swap", "list_edit", "post_edit", "post_edit_others", "text_swap_others")},
+         "pick_specificity_post": boot([r["post_edit"] - r["post_edit_others"] for r in rows]),
          "donor_rank_off_mean": sum(r["donor_rank_off"] for r in rows) / len(rows),
          "donor_rank_post_mean": sum(r["donor_rank_post"] for r in rows) / len(rows)}
     (out / "choice_outlist_summary.json").write_text(json.dumps(s, indent=1))
