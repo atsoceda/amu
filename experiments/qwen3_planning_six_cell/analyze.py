@@ -64,5 +64,5 @@ if __name__ == "__main__":
                          f"{fmt(c['tv_private'])} | {fmt(c['tv_private_baseline_article'])} | {fmt(c['tau1_planned_logp_public'])} | {fmt(c['tau1_planned_logp_private'])} |")
         lines.append("")
     tag = "_first150" if os.environ.get("AMU_SUBSET") == "first150" else ""
-    (RES / f"report{tag}.md").write_text("\n".join(lines) + "\n")
+    (RES / f"tables{tag}.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))

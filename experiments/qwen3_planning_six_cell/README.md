@@ -65,7 +65,7 @@ Selection matched the authors' released node counts exactly on 344/349 prompts
 Reading: at 0.6B the published planning nodes have no interpretable effect on
 the noun; the small effect of amplifying them travels through the article.
 This matches the authors' report that planning is weak at this scale. Full
-table: `results/report.md`; rows: `results/Qwen3-0.6B/six_cell_rows.jsonl`.
+table: `results/tables.md`; rows: `results/Qwen3-0.6B/six_cell_rows.jsonl`.
 
 ### Qwen3-1.7B (2026-09-25)
 

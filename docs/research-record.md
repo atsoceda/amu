@@ -6,7 +6,18 @@ conversation that produced it.
 
 ## 1. Every experiment is self-describing
 
-Each `experiments/<name>/` has a `README.md` that holds, in this order:
+Each experiment has two documents:
+
+- `experiments/<name>/README.md`: how the experiment works (below).
+- `experiments/<name>/results/report.md`: **the bridge from raw numbers to
+  interpretation**, following the convention of the earlier experiments:
+  motivation, what was measured, results tables, a low-level reading of each
+  table, caveats, and the place of the result in the thesis. Name the source
+  JSON files at the top. For experiments still accumulating results, generate it
+  with a `make_report.py` in the experiment folder (see `experiments/couplet_routes/`).
+  Plain generated tables go in `results/tables.md`, not `report.md`.
+
+The `README.md` holds, in this order:
 
 1. **Question** and the terms used (see `docs/glossary/route-accounting-glossary.html`).
 2. **Design, frozen before any result**, with the freeze date. Materials, selection
