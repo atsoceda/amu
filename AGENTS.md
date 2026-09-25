@@ -16,6 +16,7 @@ Validated commands and defaults live in each skill's `SKILL.md` and `references/
 | Graph JSON export | [`skills/circuit-graph-export/`](skills/circuit-graph-export/) | User has a `.pt` graph and needs browser-ready JSON under `./graph_files/`. |
 | Local viewer | [`skills/circuit-graph-viewer/`](skills/circuit-graph-viewer/) | User wants to **open** / **see** the graph in a browser or start the UI server. |
 | Large-file streaming (supporting) | [`skills/hf-range-streaming/`](skills/hf-range-streaming/) | A job needs parts of very large Hugging Face files (transcoders, feature cards) that do not fit on disk, or range downloads are slow or return HTTP 429. |
+| Remote compute (supporting) | [`skills/mac-studio-remote/`](skills/mac-studio-remote/) | An experiment needs more memory than the local M1, or the user asks to use the Mac Studio. Never copy the codebase there; send only allowlisted scripts and data. |
 
 Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter + Markdown body). Optional detail lives under `references/` inside each skill.
 
@@ -202,4 +203,5 @@ skills-ref validate ./skills/circuit-attribution
 skills-ref validate ./skills/circuit-graph-export
 skills-ref validate ./skills/circuit-graph-viewer
 skills-ref validate ./skills/hf-range-streaming
+skills-ref validate ./skills/mac-studio-remote
 ```

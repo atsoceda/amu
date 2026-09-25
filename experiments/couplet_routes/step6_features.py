@@ -33,9 +33,24 @@ sys.path.insert(0, str(ROOT / "skills/hf-range-streaming/scripts"))
 from hf_stream import SafetensorsRemote, fetch_feature_records, load_feature_index  # noqa: E402
 from step2_state_edit import HA, prompt_ids  # noqa: E402
 
-REPO = {"Qwen3-1.7B": "mwhanna/qwen3-1.7b-transcoders-lowl0", "Qwen3-4B": "mwhanna/qwen3-4b-transcoders"}
-INDEX = {"Qwen3-1.7B": ROOT / "external/qwen3_transcoder_meta/qwen3-1.7b-transcoders-lowl0/features/index.json.gz",
-         "Qwen3-4B": ROOT / "external/qwen3_transcoder_meta/qwen3-4b-transcoders/features/index.json.gz"}
+REPO = {"Qwen3-1.7B": "mwhanna/qwen3-1.7b-transcoders-lowl0", "Qwen3-4B": "mwhanna/qwen3-4b-transcoders",
+        "Qwen3-8B": "mwhanna/qwen3-8b-transcoders", "Qwen3-14B": "mwhanna/qwen3-14b-transcoders-lowl0"}
+INDEX = {m: ROOT / "external/qwen3_transcoder_meta" / r.split("/")[1] / "features/index.json.gz" for m, r in REPO.items()}
+
+
+def ensure_index(model: str) -> Path:
+    """Download the transcoder feature index (about 20 MB) if it is not present."""
+    path = INDEX[model]
+    if not path.exists():
+        from hf_stream import fetch_range, url
+        import urllib.request
+        u = url(REPO[model], "features/index.json.gz")
+        with urllib.request.urlopen(urllib.request.Request(u, method="HEAD"), timeout=60) as r:
+            size = int(r.headers["Content-Length"])
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(fetch_range(u, 0, size - 1))
+        print(f"downloaded {path} ({size/1e6:.1f} MB)", flush=True)
+    return path
 
 
 def is_rhyme_feature(card: dict | None) -> bool:
@@ -112,7 +127,7 @@ def main() -> None:
 
     if "classify" in a.stages and not (out / "selection.json").exists():
         cap = torch.load(out / "anchor_mlp_in.pt")
-        index = load_feature_index(INDEX[a.model])
+        index = load_feature_index(ensure_index(a.model))
         per = defaultdict(list)
         by_layer = defaultdict(set)
         for f in sorted((out / "active").glob("layer_*.pt")):
