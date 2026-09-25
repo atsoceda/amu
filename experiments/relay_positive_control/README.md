@@ -62,3 +62,7 @@ relay -2.61 [-3.17, -2.11], key -7.12 [-8.16, -6.08]. Retrieval stays near zero 
 both families; in Gemma the all-positions relay edit is weaker than the key position
 alone (the edited second-half positions interact), so the key-position edit is the
 cleaner relay readout.
+
+Added: Gemma 3 27B IT persistence -4.55 [-4.82, -4.27], retrieval -0.02, relay -2.52,
+key -7.10; Qwen3-32B see `results/Qwen3-32B/induction_summary.json`. The positive
+control passes in all seven models (Qwen3 1.7B-32B, Gemma 3 12B and 27B).
