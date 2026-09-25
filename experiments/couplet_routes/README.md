@@ -85,3 +85,23 @@ Direct retrieval of the anchor still dominates at 4B. Relay is small but about
 twice as large as at 1.7B, which raises the hypothesis that relay grows with
 scale (two sizes only; the M1 caps us at 4B). The 43 couplets where the edit
 produced a donor rhyme show the same pattern (retrieval +15.2, relay +1.5).
+
+### Null control: same-rhyme donors, Qwen3-4B (2026-09-25)
+
+81 couplets with a same-group partner. Persistence with the original words is
++1.2 [0.6, 2.0] (retrieval +1.1, relay -0.03), against +15.3 in the main run;
+the rhyme-specific signal is more than ten times the same-rhyme edit's. The edit
+is less disruptive than at 1.7B: rhyming with the original falls from 91% to 51%
+(1.7B: 87% to 35%).
+
+### Converging evidence from the authors' released results
+
+- Attention intervention (`couplets/results/attention_intervention/`): blocking
+  the heads that read the line-1 anchor near the end of line 2 leaves line 2
+  rhyming in only 30% / 20% / 13% / 32% of couplets at 1.7B / 4B / 8B / 14B
+  (all rhymed before). Direct retrieval is necessary up to 14B; relay does not
+  replace it.
+- Their rhyme-feature steering (`rhyme_intervention_sample/`) is weak at small
+  scale: donor-rhyme rate 11% / 12% / 35% / 33% at 1.7B / 4B / 8B / 14B. Step 6
+  (the route split under their steering) will therefore have a small effect at
+  4B and serves mainly as a check on the direction of the split.
