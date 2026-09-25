@@ -1,0 +1,30 @@
+{
+ "model": "Qwen3-0.6B",
+ "by_bank": {
+  "high": {
+   "code_follows_context": 0.01947528753662482,
+   "forced_code_leverage": -0.007696074247360229,
+   "fixed_code_context_effect": 0.23226240575313567,
+   "ab_mass": 0.9969170252482097
+  },
+  "medium": {
+   "code_follows_context": 0.1461104115471244,
+   "forced_code_leverage": 0.02644341588020325,
+   "fixed_code_context_effect": 0.2487189531326294,
+   "ab_mass": 0.9850704232851665
+  },
+  "low": {
+   "code_follows_context": -0.06086501777172089,
+   "forced_code_leverage": 0.049975532293319705,
+   "fixed_code_context_effect": 0.22331347465515136,
+   "ab_mass": 0.9293455004692077
+  }
+ },
+ "gate": {
+  "G1_code_follows_context": false,
+  "G2_forced_code_moves_term": false,
+  "G3_leverage_depends_on_reliability": false,
+  "G4_support": true,
+  "pass": false
+ }
+}

@@ -1,0 +1,1292 @@
+[
+ {
+  "bank": "high",
+  "family": "legal",
+  "code": {
+   "neutral": {
+    "p_A": 0.99896240234375,
+    "p_B": 0.0010322254383936524,
+    "ab_mass": 0.9999946355819702
+   },
+   "source": {
+    "p_A": 0.9999982118606567,
+    "p_B": 1.3709566246689064e-06,
+    "ab_mass": 0.9999995827674866
+   },
+   "target": {
+    "p_A": 0.0002959547855425626,
+    "p_B": 0.9996962547302246,
+    "ab_mass": 0.9999921917915344
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.37736302614212036,
+     "formal_probability": 0.6221664547920227,
+     "formal_minus_common_probability": 0.24480342864990234,
+     "formal_minus_common_logit": 0.5,
+     "pair_probability_mass": 0.9995294809341431,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.00856954138725996,
+     "formal_probability": 0.9905043244361877,
+     "formal_minus_common_probability": 0.9819347858428955,
+     "formal_minus_common_logit": 4.75,
+     "pair_probability_mass": 0.99907386302948,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.4999251961708069,
+     "formal_probability": 0.4999251961708069,
+     "formal_minus_common_probability": 0.0,
+     "formal_minus_common_logit": 0.0,
+     "pair_probability_mass": 0.9998503923416138,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.0373203381896019,
+     "formal_probability": 0.9625042080879211,
+     "formal_minus_common_probability": 0.925183892250061,
+     "formal_minus_common_logit": 3.25,
+     "pair_probability_mass": 0.9998245239257812,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.2685440480709076,
+     "formal_probability": 0.7299783825874329,
+     "formal_minus_common_probability": 0.46143433451652527,
+     "formal_minus_common_logit": 1.0,
+     "pair_probability_mass": 0.9985224008560181,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.01798267476260662,
+     "formal_probability": 0.9818207621574402,
+     "formal_minus_common_probability": 0.9638381004333496,
+     "formal_minus_common_logit": 4.0,
+     "pair_probability_mass": 0.9998034238815308,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9996948837735999,
+  "forced_code_leverage": 0.7371313571929932,
+  "fixed_code_context_effect": 0.2500442713499069
+ },
+ {
+  "bank": "high",
+  "family": "education",
+  "code": {
+   "neutral": {
+    "p_A": 0.9999328851699829,
+    "p_B": 6.605207454413176e-05,
+    "ab_mass": 0.999998927116394
+   },
+   "source": {
+    "p_A": 0.9999966621398926,
+    "p_B": 2.9023105980741093e-06,
+    "ab_mass": 0.9999995827674866
+   },
+   "target": {
+    "p_A": 0.000487855460960418,
+    "p_B": 0.9995087385177612,
+    "ab_mass": 0.9999966025352478
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.9999514818191528,
+     "formal_probability": 9.421997901881696e-07,
+     "formal_minus_common_probability": -0.9999505281448364,
+     "formal_minus_common_logit": -13.875,
+     "pair_probability_mass": 0.9999524354934692,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.8427020907402039,
+     "formal_probability": 0.007290801499038935,
+     "formal_minus_common_probability": -0.8354113101959229,
+     "formal_minus_common_logit": -4.75,
+     "pair_probability_mass": 0.8499928712844849,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.9999351501464844,
+     "formal_probability": 1.7602321804588428e-06,
+     "formal_minus_common_probability": -0.9999333620071411,
+     "formal_minus_common_logit": -13.25,
+     "pair_probability_mass": 0.9999369382858276,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9989123344421387,
+     "formal_probability": 0.00033509774948470294,
+     "formal_minus_common_probability": -0.9985772371292114,
+     "formal_minus_common_logit": -8.0,
+     "pair_probability_mass": 0.9992474317550659,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.9999308586120605,
+     "formal_probability": 2.7534544642549008e-05,
+     "formal_minus_common_probability": -0.9999033212661743,
+     "formal_minus_common_logit": -10.5,
+     "pair_probability_mass": 0.9999583959579468,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9511565566062927,
+     "formal_probability": 0.0473552942276001,
+     "formal_minus_common_probability": -0.9038012623786926,
+     "formal_minus_common_logit": -3.0,
+     "pair_probability_mass": 0.9985118508338928,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9995058362071632,
+  "forced_code_leverage": 0.16453921794891357,
+  "fixed_code_context_effect": 0.0474030077457428
+ },
+ {
+  "bank": "high",
+  "family": "journalism",
+  "code": {
+   "neutral": {
+    "p_A": 0.999858021736145,
+    "p_B": 0.00013982178643345833,
+    "ab_mass": 0.9999978542327881
+   },
+   "source": {
+    "p_A": 0.9999970197677612,
+    "p_B": 2.5612810077291215e-06,
+    "ab_mass": 0.9999995827674866
+   },
+   "target": {
+    "p_A": 0.0004305548791307956,
+    "p_B": 0.9995643496513367,
+    "ab_mass": 0.9999949336051941
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.13126447796821594,
+     "formal_probability": 0.8559519052505493,
+     "formal_minus_common_probability": 0.7246874570846558,
+     "formal_minus_common_logit": 1.875,
+     "pair_probability_mass": 0.9872163534164429,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.3754677176475525,
+     "formal_probability": 0.6190416216850281,
+     "formal_minus_common_probability": 0.24357390403747559,
+     "formal_minus_common_logit": 0.5,
+     "pair_probability_mass": 0.9945093393325806,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.11137756705284119,
+     "formal_probability": 0.8229750990867615,
+     "formal_minus_common_probability": 0.7115975618362427,
+     "formal_minus_common_logit": 2.0,
+     "pair_probability_mass": 0.9343526363372803,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.31528326869010925,
+     "formal_probability": 0.667454719543457,
+     "formal_minus_common_probability": 0.3521714508533478,
+     "formal_minus_common_logit": 0.75,
+     "pair_probability_mass": 0.9827380180358887,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.09494782984256744,
+     "formal_probability": 0.9008399248123169,
+     "formal_minus_common_probability": 0.8058921098709106,
+     "formal_minus_common_logit": 2.25,
+     "pair_probability_mass": 0.9957877397537231,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.09527894109487534,
+     "formal_probability": 0.9039814472198486,
+     "formal_minus_common_probability": 0.8087025284767151,
+     "formal_minus_common_logit": 2.25,
+     "pair_probability_mass": 0.9992603659629822,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9995617883703289,
+  "forced_code_leverage": -0.4811135530471802,
+  "fixed_code_context_effect": 0.27541281282901764
+ },
+ {
+  "bank": "high",
+  "family": "cycling",
+  "code": {
+   "neutral": {
+    "p_A": 0.999924898147583,
+    "p_B": 7.484620437026024e-05,
+    "ab_mass": 0.9999997615814209
+   },
+   "source": {
+    "p_A": 0.9999977350234985,
+    "p_B": 1.994729245780036e-06,
+    "ab_mass": 0.9999997019767761
+   },
+   "target": {
+    "p_A": 0.0004305568872950971,
+    "p_B": 0.9995689988136292,
+    "ab_mass": 0.9999995827674866
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.08447010815143585,
+     "formal_probability": 0.908139169216156,
+     "formal_minus_common_probability": 0.8236690759658813,
+     "formal_minus_common_logit": 2.375,
+     "pair_probability_mass": 0.9926092624664307,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.007557817734777927,
+     "formal_probability": 0.98987877368927,
+     "formal_minus_common_probability": 0.9823209643363953,
+     "formal_minus_common_logit": 4.875,
+     "pair_probability_mass": 0.9974365830421448,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.10641342401504517,
+     "formal_probability": 0.8909886479377747,
+     "formal_minus_common_probability": 0.7845752239227295,
+     "formal_minus_common_logit": 2.125,
+     "pair_probability_mass": 0.9974020719528198,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.015854308381676674,
+     "formal_probability": 0.9808713793754578,
+     "formal_minus_common_probability": 0.9650170803070068,
+     "formal_minus_common_logit": 4.125,
+     "pair_probability_mass": 0.9967256784439087,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.13144110143184662,
+     "formal_probability": 0.8571035861968994,
+     "formal_minus_common_probability": 0.7256624698638916,
+     "formal_minus_common_logit": 1.875,
+     "pair_probability_mass": 0.9885447025299072,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.0035856072790920734,
+     "formal_probability": 0.9941895008087158,
+     "formal_minus_common_probability": 0.9906038641929626,
+     "formal_minus_common_logit": 5.625,
+     "pair_probability_mass": 0.997775137424469,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9995670040843834,
+  "forced_code_leverage": 0.15865188837051392,
+  "fixed_code_context_effect": -0.01666298508644104
+ },
+ {
+  "bank": "high",
+  "family": "cinema",
+  "code": {
+   "neutral": {
+    "p_A": 0.9999589920043945,
+    "p_B": 4.006365270470269e-05,
+    "ab_mass": 0.9999990463256836
+   },
+   "source": {
+    "p_A": 0.9999959468841553,
+    "p_B": 3.288746484031435e-06,
+    "ab_mass": 0.9999992251396179
+   },
+   "target": {
+    "p_A": 0.0024726141709834337,
+    "p_B": 0.9975237250328064,
+    "ab_mass": 0.9999963641166687
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.8175732493400574,
+     "formal_probability": 0.18242526054382324,
+     "formal_minus_common_probability": -0.6351479887962341,
+     "formal_minus_common_logit": -1.5,
+     "pair_probability_mass": 0.9999985098838806,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.49993324279785156,
+     "formal_probability": 0.49993324279785156,
+     "formal_minus_common_probability": 0.0,
+     "formal_minus_common_logit": 0.0,
+     "pair_probability_mass": 0.9998664855957031,
+     "top_token": "film",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.9626711010932922,
+     "formal_probability": 0.03732680901885033,
+     "formal_minus_common_probability": -0.9253442883491516,
+     "formal_minus_common_logit": -3.25,
+     "pair_probability_mass": 0.9999979138374329,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.8807567358016968,
+     "formal_probability": 0.11919745802879333,
+     "formal_minus_common_probability": -0.761559247970581,
+     "formal_minus_common_logit": -2.0,
+     "pair_probability_mass": 0.9999542236328125,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.18242299556732178,
+     "formal_probability": 0.8175631165504456,
+     "formal_minus_common_probability": 0.6351401209831238,
+     "formal_minus_common_logit": 1.5,
+     "pair_probability_mass": 0.9999861121177673,
+     "top_token": "film",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.11919186264276505,
+     "formal_probability": 0.8807153701782227,
+     "formal_minus_common_probability": 0.7615234851837158,
+     "formal_minus_common_logit": 2.0,
+     "pair_probability_mass": 0.9999072551727295,
+     "top_token": "film",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9975204362863224,
+  "forced_code_leverage": 0.6351479887962341,
+  "fixed_code_context_effect": 1.5417835712432861
+ },
+ {
+  "bank": "medium",
+  "family": "legal",
+  "code": {
+   "neutral": {
+    "p_A": 0.7056019306182861,
+    "p_B": 0.294138640165329,
+    "ab_mass": 0.9997406005859375
+   },
+   "source": {
+    "p_A": 0.9971657395362854,
+    "p_B": 0.002800833201035857,
+    "ab_mass": 0.999966561794281
+   },
+   "target": {
+    "p_A": 0.22266902029514313,
+    "p_B": 0.7771912217140198,
+    "ab_mass": 0.9998602271080017
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.11915967613458633,
+     "formal_probability": 0.8804775476455688,
+     "formal_minus_common_probability": 0.7613178491592407,
+     "formal_minus_common_logit": 2.0,
+     "pair_probability_mass": 0.999637246131897,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.05330485478043556,
+     "formal_probability": 0.9448511600494385,
+     "formal_minus_common_probability": 0.8915463089942932,
+     "formal_minus_common_logit": 2.875,
+     "pair_probability_mass": 0.9981560111045837,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.437775194644928,
+     "formal_probability": 0.5621144771575928,
+     "formal_minus_common_probability": 0.1243392825126648,
+     "formal_minus_common_logit": 0.25,
+     "pair_probability_mass": 0.9998896718025208,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.1328786015510559,
+     "formal_probability": 0.8664772510528564,
+     "formal_minus_common_probability": 0.7335986495018005,
+     "formal_minus_common_logit": 1.875,
+     "pair_probability_mass": 0.9993558526039124,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.04741854965686798,
+     "formal_probability": 0.952427089214325,
+     "formal_minus_common_probability": 0.9050085544586182,
+     "formal_minus_common_logit": 3.0,
+     "pair_probability_mass": 0.9998456239700317,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.047414910048246384,
+     "formal_probability": 0.9523539543151855,
+     "formal_minus_common_probability": 0.9049390554428101,
+     "formal_minus_common_logit": 3.0,
+     "pair_probability_mass": 0.999768853187561,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.7743903885129839,
+  "forced_code_leverage": 0.1302284598350525,
+  "fixed_code_context_effect": 0.47600483894348145
+ },
+ {
+  "bank": "medium",
+  "family": "education",
+  "code": {
+   "neutral": {
+    "p_A": 0.9045997858047485,
+    "p_B": 0.09534411132335663,
+    "ab_mass": 0.9999439120292664
+   },
+   "source": {
+    "p_A": 0.9889808893203735,
+    "p_B": 0.010986585170030594,
+    "ab_mass": 0.9999674558639526
+   },
+   "target": {
+    "p_A": 0.047423459589481354,
+    "p_B": 0.9525256752967834,
+    "ab_mass": 0.9999491572380066
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.9997474551200867,
+     "formal_probability": 2.1439993361127563e-05,
+     "formal_minus_common_probability": -0.9997259974479675,
+     "formal_minus_common_logit": -10.75,
+     "pair_probability_mass": 0.9997689127922058,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9735752940177917,
+     "formal_probability": 0.0002882218104787171,
+     "formal_minus_common_probability": -0.973287045955658,
+     "formal_minus_common_logit": -8.125,
+     "pair_probability_mass": 0.9738635420799255,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.9999498128890991,
+     "formal_probability": 3.726466047737631e-06,
+     "formal_minus_common_probability": -0.9999460577964783,
+     "formal_minus_common_logit": -12.5,
+     "pair_probability_mass": 0.99995356798172,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9992489218711853,
+     "formal_probability": 4.003520371043123e-05,
+     "formal_minus_common_probability": -0.9992088675498962,
+     "formal_minus_common_logit": -10.125,
+     "pair_probability_mass": 0.9992889761924744,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.9993029832839966,
+     "formal_probability": 0.00043044230551458895,
+     "formal_minus_common_probability": -0.9988725185394287,
+     "formal_minus_common_logit": -7.75,
+     "pair_probability_mass": 0.9997334480285645,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9935659766197205,
+     "formal_probability": 0.005213755648583174,
+     "formal_minus_common_probability": -0.9883522391319275,
+     "formal_minus_common_logit": -5.25,
+     "pair_probability_mass": 0.9987797141075134,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9415390901267529,
+  "forced_code_leverage": 0.02643895149230957,
+  "fixed_code_context_effect": 0.005965083837509155
+ },
+ {
+  "bank": "medium",
+  "family": "journalism",
+  "code": {
+   "neutral": {
+    "p_A": 0.7980439066886902,
+    "p_B": 0.20177710056304932,
+    "ab_mass": 0.9998210072517395
+   },
+   "source": {
+    "p_A": 0.9953548908233643,
+    "p_B": 0.004609407391399145,
+    "ab_mass": 0.9999642968177795
+   },
+   "target": {
+    "p_A": 0.067542165517807,
+    "p_B": 0.9323908090591431,
+    "ab_mass": 0.9999330043792725
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.11862697452306747,
+     "formal_probability": 0.8765413761138916,
+     "formal_minus_common_probability": 0.7579144239425659,
+     "formal_minus_common_logit": 2.0,
+     "pair_probability_mass": 0.9951683282852173,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.1470237523317337,
+     "formal_probability": 0.8460632562637329,
+     "formal_minus_common_probability": 0.6990395188331604,
+     "formal_minus_common_logit": 1.75,
+     "pair_probability_mass": 0.9930869936943054,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.1444137990474701,
+     "formal_probability": 0.8310440182685852,
+     "formal_minus_common_probability": 0.6866302490234375,
+     "formal_minus_common_logit": 1.75,
+     "pair_probability_mass": 0.9754577875137329,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.258512407541275,
+     "formal_probability": 0.7027095556259155,
+     "formal_minus_common_probability": 0.4441971480846405,
+     "formal_minus_common_logit": 1.0,
+     "pair_probability_mass": 0.9612219333648682,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.07575365155935287,
+     "formal_probability": 0.9228684306144714,
+     "formal_minus_common_probability": 0.8471148014068604,
+     "formal_minus_common_logit": 2.5,
+     "pair_probability_mass": 0.9986220598220825,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.04201428219676018,
+     "formal_probability": 0.9562406539916992,
+     "formal_minus_common_probability": 0.9142263531684875,
+     "formal_minus_common_logit": 3.125,
+     "pair_probability_mass": 0.9982549548149109,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9277814016677439,
+  "forced_code_leverage": -0.05887490510940552,
+  "fixed_code_context_effect": 0.31525687873363495
+ },
+ {
+  "bank": "medium",
+  "family": "cycling",
+  "code": {
+   "neutral": {
+    "p_A": 0.9940574169158936,
+    "p_B": 0.005910881794989109,
+    "ab_mass": 0.9999682903289795
+   },
+   "source": {
+    "p_A": 0.9974870681762695,
+    "p_B": 0.0024725233670324087,
+    "ab_mass": 0.9999595880508423
+   },
+   "target": {
+    "p_A": 0.00669275363907218,
+    "p_B": 0.9932926893234253,
+    "ab_mass": 0.9999854564666748
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.07509832829236984,
+     "formal_probability": 0.9148849248886108,
+     "formal_minus_common_probability": 0.8397865891456604,
+     "formal_minus_common_logit": 2.5,
+     "pair_probability_mass": 0.9899832606315613,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.017577383667230606,
+     "formal_probability": 0.959692656993866,
+     "formal_minus_common_probability": 0.9421152472496033,
+     "formal_minus_common_logit": 4.0,
+     "pair_probability_mass": 0.9772700667381287,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.13231809437274933,
+     "formal_probability": 0.8628223538398743,
+     "formal_minus_common_probability": 0.7305042743682861,
+     "formal_minus_common_logit": 1.875,
+     "pair_probability_mass": 0.9951404333114624,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.052846476435661316,
+     "formal_probability": 0.9367262125015259,
+     "formal_minus_common_probability": 0.8838797211647034,
+     "formal_minus_common_logit": 2.875,
+     "pair_probability_mass": 0.9895727038383484,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.08440558612346649,
+     "formal_probability": 0.9074455499649048,
+     "formal_minus_common_probability": 0.8230399489402771,
+     "formal_minus_common_logit": 2.375,
+     "pair_probability_mass": 0.9918511509895325,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.005893590860068798,
+     "formal_probability": 0.9911495447158813,
+     "formal_minus_common_probability": 0.9852559566497803,
+     "formal_minus_common_logit": 5.125,
+     "pair_probability_mass": 0.9970431327819824,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9908201659563929,
+  "forced_code_leverage": 0.10232865810394287,
+  "fixed_code_context_effect": 0.09695595502853394
+ },
+ {
+  "bank": "medium",
+  "family": "cinema",
+  "code": {
+   "neutral": {
+    "p_A": 0.9889642000198364,
+    "p_B": 0.010986399836838245,
+    "ab_mass": 0.9999505877494812
+   },
+   "source": {
+    "p_A": 0.998281717300415,
+    "p_B": 0.0017006925772875547,
+    "ab_mass": 0.9999824166297913
+   },
+   "target": {
+    "p_A": 0.025956306606531143,
+    "p_B": 0.974003255367279,
+    "ab_mass": 0.9999595880508423
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.8175733089447021,
+     "formal_probability": 0.18242527544498444,
+     "formal_minus_common_probability": -0.6351480484008789,
+     "formal_minus_common_logit": -1.5,
+     "pair_probability_mass": 0.9999985694885254,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.4378107190132141,
+     "formal_probability": 0.562160074710846,
+     "formal_minus_common_probability": 0.12434935569763184,
+     "formal_minus_common_logit": 0.25,
+     "pair_probability_mass": 0.9999707937240601,
+     "top_token": "film",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.9525707960128784,
+     "formal_probability": 0.047425705939531326,
+     "formal_minus_common_probability": -0.9051451086997986,
+     "formal_minus_common_logit": -3.0,
+     "pair_probability_mass": 0.9999964833259583,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.7772546410560608,
+     "formal_probability": 0.22268718481063843,
+     "formal_minus_common_probability": -0.5545674562454224,
+     "formal_minus_common_logit": -1.25,
+     "pair_probability_mass": 0.9999418258666992,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.18241780996322632,
+     "formal_probability": 0.8175398707389832,
+     "formal_minus_common_probability": 0.6351220607757568,
+     "formal_minus_common_logit": 1.5,
+     "pair_probability_mass": 0.9999576807022095,
+     "top_token": "film",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.04742434248328209,
+     "formal_probability": 0.9525434374809265,
+     "formal_minus_common_probability": 0.9051191210746765,
+     "formal_minus_common_logit": 3.0,
+     "pair_probability_mass": 0.9999677538871765,
+     "top_token": "film",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.9723025627899915,
+  "forced_code_leverage": 0.7594974040985107,
+  "fixed_code_context_effect": 1.4999768733978271
+ },
+ {
+  "bank": "low",
+  "family": "legal",
+  "code": {
+   "neutral": {
+    "p_A": 0.26854100823402405,
+    "p_B": 0.7299701571464539,
+    "ab_mass": 0.9985111951828003
+   },
+   "source": {
+    "p_A": 0.43663734197616577,
+    "p_B": 0.5606534481048584,
+    "ab_mass": 0.9972907900810242
+   },
+   "target": {
+    "p_A": 0.07578440755605698,
+    "p_B": 0.9232431054115295,
+    "ab_mass": 0.9990274906158447
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.49987855553627014,
+     "formal_probability": 0.49987855553627014,
+     "formal_minus_common_probability": 0.0,
+     "formal_minus_common_logit": 0.0,
+     "pair_probability_mass": 0.9997571110725403,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.1188296526670456,
+     "formal_probability": 0.8780390024185181,
+     "formal_minus_common_probability": 0.7592093348503113,
+     "formal_minus_common_logit": 2.0,
+     "pair_probability_mass": 0.9968686699867249,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.5621222853660583,
+     "formal_probability": 0.43778127431869507,
+     "formal_minus_common_probability": -0.12434101104736328,
+     "formal_minus_common_logit": -0.25,
+     "pair_probability_mass": 0.9999035596847534,
+     "top_token": "lawyer",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.49990811944007874,
+     "formal_probability": 0.49990811944007874,
+     "formal_minus_common_probability": 0.0,
+     "formal_minus_common_logit": 0.0,
+     "pair_probability_mass": 0.9998162388801575,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.22267849743366241,
+     "formal_probability": 0.7772243022918701,
+     "formal_minus_common_probability": 0.5545458197593689,
+     "formal_minus_common_logit": 1.25,
+     "pair_probability_mass": 0.9999027848243713,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.06007586419582367,
+     "formal_probability": 0.9397446513175964,
+     "formal_minus_common_probability": 0.8796687722206116,
+     "formal_minus_common_logit": 2.75,
+     "pair_probability_mass": 0.9998205304145813,
+     "top_token": "attorney",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.36258965730667114,
+  "forced_code_leverage": 0.7592093348503113,
+  "fixed_code_context_effect": 0.7792778015136719
+ },
+ {
+  "bank": "low",
+  "family": "education",
+  "code": {
+   "neutral": {
+    "p_A": 0.7766571044921875,
+    "p_B": 0.2225159853696823,
+    "ab_mass": 0.999173104763031
+   },
+   "source": {
+    "p_A": 0.9769819378852844,
+    "p_B": 0.022976413369178772,
+    "ab_mass": 0.999958336353302
+   },
+   "target": {
+    "p_A": 0.6764507293701172,
+    "p_B": 0.31953269243240356,
+    "ab_mass": 0.9959834218025208
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.9997510313987732,
+     "formal_probability": 2.1440069758682512e-05,
+     "formal_minus_common_probability": -0.999729573726654,
+     "formal_minus_common_logit": -10.75,
+     "pair_probability_mass": 0.9997724890708923,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9994010925292969,
+     "formal_probability": 1.669169796514325e-05,
+     "formal_minus_common_probability": -0.9993844032287598,
+     "formal_minus_common_logit": -11.0,
+     "pair_probability_mass": 0.999417781829834,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.9999567270278931,
+     "formal_probability": 7.888983418524731e-06,
+     "formal_minus_common_probability": -0.9999488592147827,
+     "formal_minus_common_logit": -11.75,
+     "pair_probability_mass": 0.9999645948410034,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9997783303260803,
+     "formal_probability": 1.5531558119619149e-06,
+     "formal_minus_common_probability": -0.9997767806053162,
+     "formal_minus_common_logit": -13.375,
+     "pair_probability_mass": 0.9997798800468445,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.9983933568000793,
+     "formal_probability": 0.0011689984239637852,
+     "formal_minus_common_probability": -0.9972243309020996,
+     "formal_minus_common_logit": -6.75,
+     "pair_probability_mass": 0.9995623826980591,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9969595670700073,
+     "formal_probability": 0.0024712157901376486,
+     "formal_minus_common_probability": -0.9944883584976196,
+     "formal_minus_common_logit": -6.0,
+     "pair_probability_mass": 0.999430775642395,
+     "top_token": "teacher",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.2965562790632248,
+  "forced_code_leverage": 0.0003451704978942871,
+  "fixed_code_context_effect": 0.004006475210189819
+ },
+ {
+  "bank": "low",
+  "family": "journalism",
+  "code": {
+   "neutral": {
+    "p_A": 0.7301295399665833,
+    "p_B": 0.26859965920448303,
+    "ab_mass": 0.9987292289733887
+   },
+   "source": {
+    "p_A": 0.678879976272583,
+    "p_B": 0.3206802010536194,
+    "ab_mass": 0.9995601773262024
+   },
+   "target": {
+    "p_A": 0.4987380802631378,
+    "p_B": 0.4987380802631378,
+    "ab_mass": 0.9974761605262756
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.07477334886789322,
+     "formal_probability": 0.9109258651733398,
+     "formal_minus_common_probability": 0.8361524939537048,
+     "formal_minus_common_logit": 2.5,
+     "pair_probability_mass": 0.9856992363929749,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.4326828718185425,
+     "formal_probability": 0.5555757880210876,
+     "formal_minus_common_probability": 0.12289291620254517,
+     "formal_minus_common_logit": 0.25,
+     "pair_probability_mass": 0.9882586598396301,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.08913878351449966,
+     "formal_probability": 0.8457252383232117,
+     "formal_minus_common_probability": 0.7565864324569702,
+     "formal_minus_common_logit": 2.25,
+     "pair_probability_mass": 0.9348640441894531,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.26068779826164246,
+     "formal_probability": 0.6253575086593628,
+     "formal_minus_common_probability": 0.36466971039772034,
+     "formal_minus_common_logit": 0.875,
+     "pair_probability_mass": 0.8860453367233276,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.022922614589333534,
+     "formal_probability": 0.9746943116188049,
+     "formal_minus_common_probability": 0.9517716765403748,
+     "formal_minus_common_logit": 3.75,
+     "pair_probability_mass": 0.9976169466972351,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.05993914231657982,
+     "formal_probability": 0.9376059770584106,
+     "formal_minus_common_probability": 0.8776668310165405,
+     "formal_minus_common_logit": 2.75,
+     "pair_probability_mass": 0.9975451231002808,
+     "top_token": "journalist",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.17805787920951843,
+  "forced_code_leverage": -0.7132595777511597,
+  "fixed_code_context_effect": 0.35409118235111237
+ },
+ {
+  "bank": "low",
+  "family": "cycling",
+  "code": {
+   "neutral": {
+    "p_A": 0.14801107347011566,
+    "p_B": 0.8517449498176575,
+    "ab_mass": 0.9997560381889343
+   },
+   "source": {
+    "p_A": 0.6789664626121521,
+    "p_B": 0.3207210302352905,
+    "ab_mass": 0.9996874928474426
+   },
+   "target": {
+    "p_A": 0.07571125030517578,
+    "p_B": 0.9223518371582031,
+    "ab_mass": 0.9980630874633789
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.09450449049472809,
+     "formal_probability": 0.8966336846351624,
+     "formal_minus_common_probability": 0.8021292090415955,
+     "formal_minus_common_logit": 2.25,
+     "pair_probability_mass": 0.9911381602287292,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.06710779666900635,
+     "formal_probability": 0.926394522190094,
+     "formal_minus_common_probability": 0.8592867255210876,
+     "formal_minus_common_logit": 2.625,
+     "pair_probability_mass": 0.9935023188591003,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.14773206412792206,
+     "formal_probability": 0.850139319896698,
+     "formal_minus_common_probability": 0.7024072408676147,
+     "formal_minus_common_logit": 1.75,
+     "pair_probability_mass": 0.9978713989257812,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.16409535706043243,
+     "formal_probability": 0.8333449959754944,
+     "formal_minus_common_probability": 0.6692496538162231,
+     "formal_minus_common_logit": 1.625,
+     "pair_probability_mass": 0.9974403381347656,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.10611646622419357,
+     "formal_probability": 0.888502299785614,
+     "formal_minus_common_probability": 0.7823858261108398,
+     "formal_minus_common_logit": 2.125,
+     "pair_probability_mass": 0.9946187734603882,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.02293516881763935,
+     "formal_probability": 0.9752281308174133,
+     "formal_minus_common_probability": 0.9522929787635803,
+     "formal_minus_common_logit": 3.75,
+     "pair_probability_mass": 0.9981632828712463,
+     "top_token": "bicycle",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.6016308069229126,
+  "forced_code_leverage": 0.05715751647949219,
+  "fixed_code_context_effect": 0.18151095509529114
+ },
+ {
+  "bank": "low",
+  "family": "cinema",
+  "code": {
+   "neutral": {
+    "p_A": 0.22231224179267883,
+    "p_B": 0.7759459614753723,
+    "ab_mass": 0.9982582330703735
+   },
+   "source": {
+    "p_A": 0.7307538986206055,
+    "p_B": 0.268829345703125,
+    "ab_mass": 0.9995832443237305
+   },
+   "target": {
+    "p_A": 0.6167142391204834,
+    "p_B": 0.3740561008453369,
+    "ab_mass": 0.9907703399658203
+   }
+  },
+  "term": {
+   "neutral": {
+    "A": {
+     "common_probability": 0.9241408109664917,
+     "formal_probability": 0.07585809379816055,
+     "formal_minus_common_probability": -0.8482826948165894,
+     "formal_minus_common_logit": -2.5,
+     "pair_probability_mass": 0.999998927116394,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.7310565710067749,
+     "formal_probability": 0.26894068717956543,
+     "formal_minus_common_probability": -0.4621158838272095,
+     "formal_minus_common_logit": -1.0,
+     "pair_probability_mass": 0.9999972581863403,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    }
+   },
+   "source": {
+    "A": {
+     "common_probability": 0.9770206212997437,
+     "formal_probability": 0.022977324202656746,
+     "formal_minus_common_probability": -0.9540432691574097,
+     "formal_minus_common_logit": -3.75,
+     "pair_probability_mass": 0.9999979734420776,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.9046428799629211,
+     "formal_probability": 0.09534865617752075,
+     "formal_minus_common_probability": -0.8092942237854004,
+     "formal_minus_common_logit": -2.25,
+     "pair_probability_mass": 0.9999915361404419,
+     "top_token": "movie",
+     "top_is_pair_member": true
+    }
+   },
+   "target": {
+    "A": {
+     "common_probability": 0.22269675135612488,
+     "formal_probability": 0.777288019657135,
+     "formal_minus_common_probability": 0.5545912981033325,
+     "formal_minus_common_logit": 1.25,
+     "pair_probability_mass": 0.9999847412109375,
+     "top_token": "film",
+     "top_is_pair_member": true
+    },
+    "B": {
+     "common_probability": 0.1480412781238556,
+     "formal_probability": 0.8519186973571777,
+     "formal_minus_common_probability": 0.7038774490356445,
+     "formal_minus_common_logit": 1.75,
+     "pair_probability_mass": 0.9999599456787109,
+     "top_token": "film",
+     "top_is_pair_member": true
+    }
+   }
+  },
+  "code_follows_context": 0.10522675514221191,
+  "forced_code_leverage": 0.3861668109893799,
+  "fixed_code_context_effect": 1.5109031200408936
+ }
+]
