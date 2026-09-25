@@ -83,3 +83,11 @@ nonzero part (about 12% of the text-swap effect) is stored in the prompt positio
 after the list and read directly at the reveal: hidden content (a pick a reader
 cannot infer) held at a prompt anchor. Nothing is relayed through the generated
 sentence. Scale (14B, 32B) and Gemma decide whether the stored part grows.
+
+### Gemma 3 12B IT (2026-09-26, Mac Studio; 100 pairs)
+
+Text swap +12.30 [11.24, 13.41]; post-list block **+1.91 [1.45, 2.40]** (median 15% of
+the text swap), all by direct retrieval (+1.95); relay through the sentence -0.06
+[-0.14, 0.01]; sentence block -0.00. Same pattern as Qwen3-8B in a second family: a
+small stored hidden pick after the list, read directly; nothing relayed through the
+generated sentence.
