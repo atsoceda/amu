@@ -378,3 +378,10 @@ Gemma 3 12B IT, rest of the chain: position split relay +0.97 = late +0.80, boun
 +0.03 [-0.10, 0.16], early line 2 +0.06: no boundary storage at 12B (as Qwen3 at
 8B). Anchor specificity A +41.2, E +15.3, C +14.2, M +10.9, F +7.9. Same-rhyme null
 persistence +1.6 (vs +41.2), null relay +0.12.
+
+### Plain format, Qwen3-8B-Base (2026-09-26, Mac Studio; base checkpoint)
+
+Screen 100/196; donor rhyme 68%; persistence +13.3 = retrieval +12.2 + relay +1.3;
+median relay share 9%; boundary +0.09 [0.03, 0.17], early line 2 +0.05. Same as the
+8B instruct model in this format (11%, boundary +0.10). `summarize_run.py <model>`
+prints these lines for any run.
