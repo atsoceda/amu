@@ -24,7 +24,7 @@ import torch
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from make_subset import COUPLETS, SEED  # noqa: E402
-from models import load, prompt_ids  # noqa: E402
+from models import cut_line, load, prompt_ids  # noqa: E402
 from step2_state_edit import rhymes  # noqa: E402
 
 LAST_WORD = re.compile(r"([A-Za-z']+)[^A-Za-z']*$")
@@ -59,7 +59,7 @@ def main() -> None:
         ids, _, _ = prompt_ids(tok, r["first_line"])
         with torch.no_grad():
             out = m.generate(ids.to("mps"), max_new_tokens=24, do_sample=False)
-        raw = tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True).strip()
+        raw = cut_line(tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True)).strip()
         line2 = sanitize(r["first_line"], raw)
         l1, l2 = last_word(r["first_line"]), last_word(line2)
         ok = bool(l1 and l2 and l2 != l1 and l2 in rhymes(l1))

@@ -296,3 +296,31 @@ Related work found tonight: Ma & Rui (2026, arXiv 2605.07984; plain-text couplet
 newline boundary) report a word-to-newline hand-off only in Gemma-3-27B and none in
 Qwen3-32B, without route shares; Jacopin (2026, arXiv 2609.18440) finds no newline
 effect at 0.6-2.6B; Maar et al. (ICLR 2026, arXiv 2601.20164) steer at the line end.
+
+## Plain-format couplets: routes through an explicit line boundary (design frozen 2026-09-26, before any result)
+
+**Why.** At 32B the relay that grows with scale sits in the tokens between line 1
+and line 2. In our chat format that boundary is the comma plus chat-template
+tokens. Ma & Rui (2026) use plain text with a newline after line 1 and report a
+word-to-newline hand-off only in Gemma-3-27B (none in Qwen3-32B); Lindsey et al.
+(2025) place Claude's rhyme plan at the line-end newline; Jacopin (2026) finds no
+newline effect at 0.6-2.6B. None measure route shares. This experiment applies our
+route accounting to their format, so the boundary is a single explicit newline.
+
+**Design.** Prompt `A rhyming couplet:\n{line 1}\n` (Ma & Rui), no chat template,
+same instruct checkpoints as the chat runs (model names `<model>-plain`, results
+in `results/<model>-plain/`); line 2 is the continuation up to the next newline.
+Subset: `screen_rhymes.py` (first 100 couplets the model rhymes by the authors'
+criterion, in the authors' first-line order; seeded donors of a different rhyme
+group). Then the same steps as the chat runs: state edit and generation
+(`step2_state_edit.py`), route split (`step34_routes.py`), position split
+(`relay_positions.py`; `tail` is now just the boundary: `,\n` in Qwen, `,` and `\n`
+in Gemma), anchor specificity (E = the newline), and same-rhyme nulls. Sizes:
+Qwen3 1.7B-32B, Gemma 3 12B/27B IT; Gemma 3 PT added as a secondary check.
+
+**Predictions fixed in advance.** (1) Retrieval from the anchor dominates at every
+size. (2) If Ma & Rui's hand-off is a route, boundary (`tail`) relay is large in
+Gemma-3-27B and small in Qwen3-32B in this format. (3) If our chat-format tail relay
+at 32B reflects the same boundary storage, Qwen3 boundary relay also grows with
+scale here; if it does not, the chat-template tokens (not the line boundary) carry
+it. Early line-2 relay stays small everywhere (criterion 2).

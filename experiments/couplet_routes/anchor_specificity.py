@@ -82,7 +82,9 @@ def main() -> None:
         ids = tok(text + p0, return_tensors="pt", add_special_tokens=False).input_ids.to("mps")
         toks = tok.convert_ids_to_tokens(ids[0])
         start = max(i for i, t in enumerate(toks[:anchor]) if t in COLON) + 1 if any(t in COLON for t in toks[:anchor]) else anchor - 6
-        positions = {"A": anchor, "M": (start + anchor) // 2, "F": start, "C": anchor + 1, "E": end_of_user(toks)}
+        while toks[start].strip("ĊĠ▁\n ") == "":  # plain format: skip the newline after "couplet:"
+            start += 1
+        positions = {"A": anchor, "M": (start + anchor) // 2, "F": start, "C": anchor + 1, "E": end_of_user(toks, anchor)}
         R = lambda p: math.log(max(float(p[dr].sum()), 1e-12)) - math.log(max(float(p[orr].sum()), 1e-12))  # noqa: E731
         y_off, s_off = run(ids, want_states=True)
         target = ids.shape[1] - 1

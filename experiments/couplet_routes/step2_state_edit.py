@@ -30,7 +30,7 @@ import pandas as pd
 import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from models import load, prompt_ids  # noqa: E402,F401  (prompt_ids re-exported for the other steps)
+from models import cut_line, load, prompt_ids  # noqa: E402,F401  (prompt_ids re-exported for the other steps)
 
 ROOT = Path(__file__).resolve().parents[2]
 EXP = Path(__file__).resolve().parent
@@ -109,7 +109,7 @@ def main() -> None:
         finally:
             for h in hooks:
                 h.remove()
-        return tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True).strip()
+        return cut_line(tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True)).strip()
 
     all_rows = pd.read_csv(subset_csv(a.model), index_col=0)
     if a.control == "same_rhyme":
