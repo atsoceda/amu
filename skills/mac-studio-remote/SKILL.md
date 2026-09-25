@@ -10,7 +10,7 @@ compatibility: >-
   Local macOS with an SSH host alias "macstudio" in ~/.ssh/config, its key unlocked in the SSH agent, and the
   user's split-tunnel VPN connected. Remote: macOS with system python3; rsync on both sides.
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Mac Studio remote jobs
@@ -28,7 +28,10 @@ come back. Details, measured facts and troubleshooting are in
    experiments' results, or credentials. `scripts/push_bundle.sh` enforces this.
 2. **The link from this laptop is slow** (VPN abroad). Keep transfers small; let
    the Mac Studio download models and transcoder data over its own connection.
-3. **Ask the user before installing or downloading anything on the Mac Studio.**
+3. **Downloads and installs:** as of 2026-09-26 the user granted full use of the
+   Mac Studio (downloads, installs, all memory and compute) without asking each
+   time. Another user's long-running process (DeepLabCut, `ioannaporfyri`) shares
+   the machine: never touch it.
 4. **The user controls the VPN and all network settings.** Never change them.
    Agents cannot type passwords or passphrases.
 
@@ -103,6 +106,36 @@ come back. Details, measured facts and troubleshooting are in
    ```
 
    Then review, document in the experiment README, and commit as usual.
+
+## Lessons from running many jobs (2026-09-26)
+
+- **Schedule by declared memory, not free memory.** Free-memory gates let two 32B
+  models and two smaller ones load together (about 170 GB of weights on 128 GB) and
+  the machine thrashed (one couplet in 12 minutes). Use the scheduler
+  `experiments/couplet_routes/jobs/runner.sh` (queue `~/amu_jobs/queue.txt`, one
+  line per job: `<name> <GB> <command>`, budget 108 GB) and the watcher
+  `scripts/wait_runner.sh`. bf16 weights plus overhead: 1.7B 6, 4B 12, 8B 20, 14B 34,
+  32B 72-76, Gemma 12B 28, Gemma 27B 60 GB. Register processes started outside the
+  runner in `~/amu_jobs/running/<name>.{pid,mem}`.
+- **The GPU saturates before memory does.** With batch-size-1 scripts the GPU shows
+  100% busy; more parallel jobs do not help. Batch inside scripts instead (see the
+  `state-edit-experiments` skill).
+- **Remote shell quirks.** The login shell is zsh and `bash` is 3.2 (no associative
+  arrays). Multi-line or heavily quoted commands break inside `run.sh`: put the job in
+  a script file in the bundle (for example `experiments/couplet_routes/jobs/*.sh`) and
+  run it by path. The remote Python is 3.9.
+- **The bundle filter rejects any path containing `token`** (a credential guard):
+  name scripts accordingly. Pipe `push_bundle.sh` output only with `set -o pipefail`,
+  otherwise a refused push looks like success and the job runs without its script.
+- **Test on a model name no experiment uses** (for example `Qwen3-0.6B`): a smoke
+  test under a real model name overwrites that model's remote results, and the next
+  sync copies them back over committed files.
+- **Watchers must run as tracked background tasks** (the harness's background mode),
+  not as detached `( … &)` subshells, or nobody is notified when they finish.
+- **Keep both machines awake for long runs:** `caffeinate -i -s -t <seconds>` locally
+  (as a tracked background task) and as a job on the Mac Studio.
+- **Check a resumed chain's inputs exist** before resuming from a later step (a
+  32B-plain chain was resumed at step 3/4 although its first steps had never run).
 
 ## Edge cases
 
