@@ -138,3 +138,8 @@ for 8B and Gemma 12B; 14B, 32B, Gemma 27B run with it.
 The model's own sentence changes with the list order in 45 of 100 pairs and never
 names a fruit; **emission +0.02 [-0.03, 0.08]**, persistence +6.68: the written
 sentence does not carry the pick (no covert textual channel at 8B).
+
+**Batching note (2026-09-26).** A first batched `choice_free.py` run for Gemma 12B used
+left padding in plain forward passes (shifted positions); the check on Qwen3-0.6B caught
+it (NaN and different pairs). That run was discarded unread and is rerun with
+same-length batching only; the 8B free result used the one-at-a-time path.

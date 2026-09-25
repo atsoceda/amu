@@ -75,12 +75,22 @@ def _left_pad(tok, texts, device):
 
 @torch.no_grad()
 def last_logprobs(m, tok, texts, chunk=16, device="mps"):
-    """Next-token log-probabilities after each text (texts may differ in length)."""
-    out = []
-    for c in range(0, len(texts), chunk):
-        ids, mask, _ = _left_pad(tok, texts[c:c + chunk], device)
-        o = m(ids, attention_mask=mask, logits_to_keep=1)
-        out.extend(torch.log_softmax(o.logits[:, -1].float(), -1).cpu())
+    """Next-token log-probabilities after each text. Texts are batched only with others of
+    the same token length (no padding): left padding in a plain forward pass shifts
+    positions and can turn fully masked rows into NaN (found in the 2026-09-26 check)."""
+    enc = [tok(t, add_special_tokens=False).input_ids for t in texts]
+    out = [None] * len(texts)
+    by_len = {}
+    for i, e in enumerate(enc):
+        by_len.setdefault(len(e), []).append(i)
+    for idx in by_len.values():
+        for c in range(0, len(idx), chunk):
+            part = idx[c:c + chunk]
+            ids = torch.tensor([enc[i] for i in part], device=device)
+            o = m(ids, logits_to_keep=1)
+            lp = torch.log_softmax(o.logits[:, -1].float(), -1).cpu()
+            for k, i in enumerate(part):
+                out[i] = lp[k]
     return out
 
 
