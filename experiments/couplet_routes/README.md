@@ -443,3 +443,11 @@ Models: Qwen3 8B/14B/32B and Gemma 3 12B/27B (chat), then the plain-format runs.
 Necessity matches sufficiency at these sizes (additive paths): relay is the late
 lookup, the boundary holds nothing. (At 1.7B chat, resetting the boundary slightly
 strengthens the edit, -0.44: a small interference effect, not storage.)
+
+### Gemma 3 1B IT (chat) and Gemma 3 12B PT (plain), partial (2026-09-26, Mac Studio)
+
+Gemma 1B chat: screen 100/188; donor rhyme 62%; persistence +24.8 = retrieval +23.7 +
+relay +0.9 (median share 3%), all late (+0.88); boundary +0.01. Gemma 12B PT plain:
+screen 100/157; donor rhyme 73%; persistence +13.7 = retrieval +11.0 + relay +2.6
+(median share 17%; the instruct model in plain format: 9%); position split pending.
+Gemma 27B chat same-rhyme null: boundary +0.01, relay +0.45.
