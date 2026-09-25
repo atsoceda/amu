@@ -27,7 +27,11 @@ rules: `docs/research-record.md`.
    readings in the experiment README, commit, then run. Additions after seeing any
    result are labelled post hoc with the date; never relabel a failed criterion.
 2. **Smoke-test on 2-3 items**, then run fully. Run smoke tests on a model name no
-   experiment uses (for example `Qwen3-0.6B`) when on the Mac Studio.
+   experiment *in that directory* uses (the batching check uses `Qwen3-0.6B` under
+   `derived_value_carry` and `hidden_choice` only). Delete test outputs by exact path,
+   never with a glob across `experiments/*/results/…`: older experiments have
+   committed results under the same model names (a glob deleted Qwen3-0.6B results of
+   `ab_qwen_gate` and `qwen3_planning_six_cell` on 2026-09-26; restored from git).
 3. **Controls:** a same-rhyme / same-choice null (disruption vs content) and, for
    any relay claim, the induction positive control (`experiments/relay_positive_control`).
 4. Record results in the README the same hour, commit and push.
