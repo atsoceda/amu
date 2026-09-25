@@ -64,5 +64,10 @@ alone (the edited second-half positions interact), so the key-position edit is t
 cleaner relay readout.
 
 Added: Gemma 3 27B IT persistence -4.55 [-4.82, -4.27], retrieval -0.02, relay -2.52,
-key -7.10; Qwen3-32B see `results/Qwen3-32B/induction_summary.json`. The positive
-control passes in all seven models (Qwen3 1.7B-32B, Gemma 3 12B and 27B).
+key -7.10. **Qwen3-32B (correction to the first note of this entry):** p(B) 0.977,
+persistence -4.83 [-5.17, -4.48], **retrieval -1.52 [-1.87, -1.19] (31% of
+persistence)**, relay -4.30 [-4.86, -3.75] (89%), key -6.24 [-6.93, -5.56]. At 32B the
+relay-share criterion (> 80%) holds but direct retrieval is not near zero: the target
+also reads the edited first A directly, so the largest model does part of the copy
+without the previous-token relay. The positive control passes cleanly in six models
+(Qwen3 1.7B-14B, Gemma 3 12B/27B) and partially at Qwen3-32B.
