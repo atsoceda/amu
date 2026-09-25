@@ -195,3 +195,11 @@ when the written next-to-last value is correct (not every line checked). Laptop:
 Chain task, Qwen3-14B: accuracy 100 / 61 / 8% at K = 1 / 3 / 5; post-v0 block +0.09 /
 +0.44 [0.08, 0.82] / +0.22 vs v0-digit edits +30.9 / +18.5 / +6.4. At most about 2% of
 the value is held downstream; recomputation still dominates at 14B.
+
+### Stage 3 (written chains), Qwen3-4B, K = 3 (2026-09-26, laptop; 50 items, all usable)
+
+With the start-digit edit, the model writes the donor's values in 100% of items.
+Total +18.02 [15.09, 20.89] = **emission +16.80 [14.35, 19.14]** (93%) + persistence
++1.23 [0.58, 1.85] (with the edited text; +2.55 [2.08, 3.02] with the original text).
+When intermediate values are written, the answer mostly follows the written values;
+a small part re-reads the edited source digits. K = 5 and 8B-32B pending.
