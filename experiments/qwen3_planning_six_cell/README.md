@@ -104,3 +104,35 @@ planned noun, and about 92-94% of it travels through the generated article.
 Fixed-article noun changes are at random-control level; the only private
 effect is a small decrease when the nodes are zeroed. Across 0.6B, 1.7B and 4B
 the planning-node effect grows with scale and stays public.
+
+## Hardening: ceiling and leverage (2026-09-25)
+
+`leverage_analysis.py` stratifies the committed rows by per-prompt leverage,
+\(L=\log p(\text{planned}\mid\text{correct article})-\log p(\text{planned}\mid\text{wrong article})\)
+with the intervention off, and by the baseline probability of the planned word.
+Output: `results/leverage_analysis.json`.
+
+Qwen3-4B, \(\tau=1\) effect on the planned word's log-probability by leverage
+tertile (cuts 2.06 and 4.37 nats):
+
+| Condition | Low L: public / private | Mid L | High L |
+|---|---|---|---|
+| Planning 5x | +0.014 / +0.013 | +0.228 / +0.011 | +0.318 / +0.013 |
+| Planning zeroed | -0.059 / -0.013 | -0.243 / -0.016 | -0.217 / -0.015 |
+
+- The private effect is small and roughly constant across leverage; the public
+  effect scales with leverage. Public share is about 0.53 (5x) and 0.82
+  (zeroed) in the lowest-leverage tertile and 0.94-0.96 elsewhere, so the
+  aggregate "92-94% public" holds only where the article strongly constrains the
+  planned word.
+- Stratifying by baseline probability instead gives the same picture: in the
+  least-certain tertile (baseline below 0.64), the 5x private effect is +0.038
+  [0.005, 0.069] against a public +0.067 [-0.016, 0.179].
+- Correlation of the public effect with policy movement x leverage beats policy
+  movement alone at 4B (0.886 vs 0.831 at 5x; 0.772 vs 0.754 zeroed) but not at
+  0.6B or 1.7B, where effects are small.
+
+Route interpretation: these interventions edit a hidden state at the pre-article
+position and leave the text unchanged, so their private term is entirely a
+carried-forward state read by the article position; no text-reading component
+has to be separated.
