@@ -10,6 +10,7 @@ import gzip
 import json
 import struct
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -22,6 +23,40 @@ def url(repo: str, path: str) -> str:
     return f"{HF}/{repo}/resolve/main/{path}"
 
 
+import re as _re
+import threading as _threading
+
+_CDN: dict[str, tuple[str, float]] = {}
+_CDN_LOCK = _threading.Lock()
+
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):  # noqa: D401 - stop at the 302
+        return None
+
+
+def _resolve(u: str) -> str:
+    """huggingface.co/.../resolve/... answers with a 302 to a signed CDN URL; each
+    resolve counts against Hugging Face's 3000-per-5-minutes limit, so we resolve
+    once per file and send range requests straight to the CDN until it expires."""
+    with _CDN_LOCK:
+        hit = _CDN.get(u)
+        if hit and hit[1] - 120 > time.time():
+            return hit[0]
+        opener = urllib.request.build_opener(_NoRedirect)
+        try:
+            opener.open(urllib.request.Request(u, headers={"Range": "bytes=0-0"}), timeout=60)
+            cdn, expires = u, time.time() + 3600  # no redirect: use as is
+        except urllib.error.HTTPError as e:
+            if e.code not in (301, 302, 303, 307, 308):
+                raise
+            cdn = e.headers["Location"]
+            m = _re.search(r"Expires=(\d+)", cdn)
+            expires = float(m.group(1)) if m else time.time() + 600
+        _CDN[u] = (cdn, expires)
+        return cdn
+
+
 def fetch_range(u: str, start: int, end_inclusive: int, retries: int = 12) -> bytes:
     """Fetch bytes [start, end_inclusive] with retries.
 
@@ -31,7 +66,8 @@ def fetch_range(u: str, start: int, end_inclusive: int, retries: int = 12) -> by
     want = end_inclusive - start + 1
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(u, headers={"Range": f"bytes={start}-{end_inclusive}"})
+            target = _resolve(u) if "/resolve/" in u else u
+            req = urllib.request.Request(target, headers={"Range": f"bytes={start}-{end_inclusive}"})
             with urllib.request.urlopen(req, timeout=120) as r:
                 data = r.read()
             if len(data) != want:
@@ -40,6 +76,10 @@ def fetch_range(u: str, start: int, end_inclusive: int, retries: int = 12) -> by
         except urllib.error.HTTPError as e:
             if attempt == retries - 1:
                 raise
+            if e.code in (403, 410):  # signed CDN URL expired or rejected: resolve again
+                with _CDN_LOCK:
+                    _CDN.pop(u, None)
+                continue
             if e.code == 429:
                 wait = e.headers.get("Retry-After")
                 time.sleep(float(wait) if wait and wait.isdigit() else min(300, 15 * 2 ** attempt))
@@ -106,7 +146,7 @@ def load_feature_index(index_path: Path) -> dict:
 
 
 def fetch_feature_records(repo: str, index: dict, layer: int, feats: list[int],
-                          max_gap_bytes: int = 1 << 16, workers: int = 4) -> dict[int, dict | None]:
+                          max_gap_bytes: int = 1 << 16, workers: int = 32) -> dict[int, dict | None]:
     """Fetch and decode visualization records (same binary format as the authors' loader).
 
     Nearby records are merged into one range request; groups are fetched concurrently.
