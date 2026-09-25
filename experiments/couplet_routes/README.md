@@ -466,3 +466,8 @@ persistence although alone it barely moves the rhyme: redundant storage that the
 target combines with the anchor. This corroborates Ma & Rui's (2026) Gemma-3-27B
 hand-off to the line boundary, with a route share. Carrying through the generated
 line stays near zero by both measures. Per-token boundary necessity queued.
+
+Gemma 3 12B PT, plain format (base checkpoint): relay +2.58 = late +1.73, **boundary
++0.66 [0.52, 0.79]** (instruct 12B plain: +0.68), early line 2 +0.11 [0.05, 0.18];
+median relay share 17%. Boundary storage is present in the pretrained model, so it
+does not come from post-training (Qwen3-14B-Base is queued as the Qwen check).
