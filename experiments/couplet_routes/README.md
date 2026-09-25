@@ -393,3 +393,8 @@ ones load at once (about 170 GB of weights on 128 GB) and the machine thrashed; 
 32B-plain run (1 couplet in 12 min) was stopped and re-queued from step 3/4 under a
 memory-budget scheduler (`jobs/runner.sh`, `jobs/chain.sh`). No results were affected
 (steps write their outputs only when complete).
+
+### Plain format, Qwen3-1.7B (2026-09-26, laptop)
+
+Screen 100/609 (16%). Persistence +9.0; relay +0.51 [0.38, 0.65] = late +0.43,
+boundary +0.03 [-0.05, 0.11], early line 2 +0.03. Same as the chat format at 1.7B.
