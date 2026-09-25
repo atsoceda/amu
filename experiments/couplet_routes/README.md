@@ -483,3 +483,10 @@ Necessity split, Gemma 3 12B IT chat: persistence +41.2; necessity all +4.34, la
 Qwen3-14B per-token boundary necessity: the comma ending line 1 +2.09 [1.50, 2.79]
 (sufficiency +1.33); every template token 0.00 +/- 0.02 by both measures. Qwen3-8B-plain
 necessity: late +1.72, boundary +0.10, early +0.05 (matches sufficiency).
+
+Gemma 3 27B IT per-token boundary (99 of 100 couplets share the boundary tokens): the
+comma ending line 1 is the storage site, necessity +3.45 [2.03, 5.05] (sufficiency
++0.53); `<end_of_turn>`, `<start_of_turn>`, `model` and the newlines are 0.00-0.11
+(CIs include zero). **Both families store the plan at the line-ending comma** (Qwen3-14B
+necessity +2.09 on the comma). Gemma 3 4B: chat relay share 0%, boundary +0.21;
+plain 4%, boundary +0.14 (no boundary storage at 4B).
