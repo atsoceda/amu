@@ -13,6 +13,10 @@ one group of those positions gets its edited-run state; all others stay clean:
   tail   prompt positions after the anchor only (line-1 punctuation, end of turn,
          assistant header)
   early  line-2 positions more than 3 tokens before the target
+Groups are not a partition of paths: positions outside the edited group are
+recomputed and can read it (e.g. with only the tail edited, late line-2 positions
+read the tail), so late and far overlap on paths through both.
+--control same_rhyme repeats it with same-rhyme donors (null).
 Outcome R = log mass on donor rhymes - log mass on original rhymes at the target.
 """
 from __future__ import annotations
@@ -39,9 +43,11 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", nargs="?", default="Qwen3-1.7B")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--control", choices=["same_rhyme"], help="null: donor from the same rhyme group (step2 --control rows)")
     a = ap.parse_args()
+    tag = f"_{a.control}" if a.control else ""
     tok, m, layers = load(a.model)
-    rows = json.loads((EXP / "results" / a.model / "step2_rows.json").read_text())[: a.limit or None]
+    rows = json.loads((EXP / "results" / a.model / f"step2_rows{tag}.json").read_text())[: a.limit or None]
 
     def rhyme_ids(word):
         return sorted({t[0] for w in rhymes(word) for t in [tok.encode(" " + w, add_special_tokens=False)] if len(t) == 1})
@@ -92,12 +98,12 @@ def main() -> None:
         print(f"{len(out_rows):3d} [{time.time()-t0:5.0f}s] pers {rec['d_persistence_p0']:+.2f} relay all {rec['d_relay_all']:+.2f} "
               f"late {rec['d_relay_late']:+.2f} far {rec['d_relay_far']:+.2f} (tail {rec['d_relay_tail']:+.2f} early {rec['d_relay_early']:+.2f})", flush=True)
     out = EXP / "results" / a.model
-    (out / "relay_positions_rows.json").write_text(json.dumps(out_rows, indent=1))
+    (out / f"relay_positions_rows{tag}.json").write_text(json.dumps(out_rows, indent=1))
     keys = ["d_persistence_p0"] + [f"d_relay_{g}" for g in ("all", "late", "far", "tail", "early")]
     s = {"model": a.model, "n": len(out_rows), "late_positions": LATE, "elapsed_sec": time.time() - t0,
          "all": {k: boot([x[k] for x in out_rows]) for k in keys},
          "far_minus_late": boot([x["d_relay_far"] - x["d_relay_late"] for x in out_rows])}
-    (out / "relay_positions_summary.json").write_text(json.dumps(s, indent=1))
+    (out / f"relay_positions_summary{tag}.json").write_text(json.dumps(s, indent=1))
     print({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) for k, v in s["all"].items() if v})
 
 

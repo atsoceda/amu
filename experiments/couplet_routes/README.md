@@ -282,3 +282,17 @@ criterion names line-2 positions more than 3 tokens before the rhyme word
 (`early` in `relay_positions.py`); the script's `far` group also includes the
 prompt tail (template tokens between line 1 and line 2). Both are reported; the
 criterion is judged on `early`, as frozen.
+
+### Position-resolved relay, Qwen3-32B (2026-09-25, Mac Studio)
+
+Relay +3.51 [2.91, 4.13]: last 3 positions +1.80 [1.47, 2.14]; earlier positions
++1.90 [1.43, 2.40], of which **prompt tail +1.72 [1.27, 2.21]** (the comma and
+chat-template tokens between line 1 and line 2; 0.00 at 1.7B, +0.02 at 4B) and
+early line 2 +0.16 [0.07, 0.25]. The relay that grows with scale is mostly the
+rhyme written into the boundary tokens after line 1 and read from there, not
+carried through the generated line. Criterion 2 (judged on early line 2, as frozen)
+awaits 8B/14B; a same-rhyme null for the position split is queued (8B-32B).
+Related work found tonight: Ma & Rui (2026, arXiv 2605.07984; plain-text couplets,
+newline boundary) report a word-to-newline hand-off only in Gemma-3-27B and none in
+Qwen3-32B, without route shares; Jacopin (2026, arXiv 2609.18440) finds no newline
+effect at 0.6-2.6B; Maar et al. (ICLR 2026, arXiv 2601.20164) steer at the line end.
