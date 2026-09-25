@@ -344,3 +344,12 @@ relay +1.32 [0.97, 1.69] is carried entirely by **the comma ending line 1**: +1.
 newlines) is 0.00 +/- 0.03. The storage site that appears with scale is the
 line-ending punctuation, the chat-format counterpart of the line-end newline where
 Lindsey et al. (2025) find Claude's rhyme plan. 8B and 32B follow.
+
+### Gemma 3 12B IT, chat format (2026-09-26, Mac Studio)
+
+Rhyme screen: 100 of the first 112 first lines rhyme (89%; Qwen3-14B 58% over all
+985). State edit: line 2 rhymes with the donor in 95% (original 0%). Total +52.2 =
+emission +11.3 + persistence +40.9; persistence with original words +41.2 =
+retrieval +36.8 [34.0, 39.6] + relay +1.0 [0.5, 1.6]; median relay share **0%**
+(Qwen3 at 8-14B: 8-11%). Gemma 12B retrieves the plan and does not relay it.
+(Log-probability scales differ across families; compare shares, not raw values.)
