@@ -139,3 +139,11 @@ post-v0 block edit (donor states at every position after v0's digits, up to the
 token before the target). Single-position edits cannot detect a running value that
 is carried redundantly across many downstream positions; this block edit can. Run
 at every size (8B via `--block-only`).
+
+### Stage 2 (variable chains), Qwen3-8B (2026-09-26, Mac Studio)
+
+Accuracy K=1 100%, K=3 63%, K=5 see `results/Qwen3-8B/chain_summary.json` (gate
+80%: only K=1 passes). Editing the starting value's digits moves the answer (+45 at
+K=1, +31 at K=3); donor states at any statement end, or at any single later
+position (the full scan), do nothing (all within +/-0.2). No running value is held
+downstream; the answer re-reads the chain. Post-v0 block edit queued (`--block-only`).
