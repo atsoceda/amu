@@ -58,3 +58,27 @@ ICLR 2026 (arXiv 2601.20164); Jacopin 2026 (arXiv 2609.18440, no newline effect 
   nulls at 1.7B/4B, then plain format at 1.7B/4B.
 - The Mac Studio also runs another user's long DeepLabCut job (`ioannaporfyri`).
   Leave it alone.
+
+## 5. Update (later in the night)
+
+- **Boundary storage localized.** At Qwen3-14B (chat) the whole boundary relay
+  (+1.32) sits on the comma ending line 1; template tokens carry nothing. At 8B,
+  nothing on any boundary token.
+- **Plain format (Ma & Rui's prompt) replicates it.** The boundary token (`,\n`)
+  carries +0.10 at 8B and +2.56 at 14B (median relay share 11% -> 21%). Frozen
+  prediction (3) is supported. Base checkpoint Qwen3-8B-Base matches 8B instruct;
+  14B-Base queued (pretraining vs post-training).
+- **Gemma 3.** 12B chat: relay share 0%, no boundary storage. 12B plain: boundary
+  +0.68. 27B chat: large path interaction (additivity gap +12.6, 29% of
+  persistence), a signature of redundant downstream storage that the relay-only
+  measure understates. A necessity split (frozen before results) is queued to
+  measure it.
+- **Derived value.** Two-digit sums are recomputed at the answer at every size
+  (1.7B-32B). Variable chains (the relay positive control) at 8B: accuracy 100 /
+  63 / 17% at K = 1 / 3 / 5. No position after the starting value holds the running
+  value, even as a block (+0.05 / +0.15 / -0.07 vs +45 / +31 / +18 for the start
+  digits). 14B/32B queued.
+- **Mac Studio.** Free-memory gates caused thrashing (about 170 GB of models on
+  128 GB). Replaced by a memory-budget scheduler: `experiments/couplet_routes/jobs/runner.sh`
+  (queue `~/amu_jobs/queue.txt`, budget 108 GB), watched by
+  `skills/mac-studio-remote/scripts/wait_runner.sh`.
