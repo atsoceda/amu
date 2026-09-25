@@ -34,13 +34,25 @@ EXP = Path(__file__).resolve().parent
 HA = ROOT / "external/model-planning-public/couplets/results/rhyme_intervention_sample"
 
 
+RHYME_CACHE = EXP / "results" / "datamuse_rhymes.json"
+_rhyme_disk = json.loads(RHYME_CACHE.read_text()) if RHYME_CACHE.exists() else {}
+
+
 @lru_cache(maxsize=None)
 def rhymes(word: str) -> frozenset:
-    q = urllib.parse.urlencode({"rel_rhy": word.lower(), "max": 1000})
+    """Datamuse rel_rhy set, cached on disk so later runs work offline."""
+    w = word.lower()
+    if w in _rhyme_disk:
+        return frozenset(_rhyme_disk[w])
+    q = urllib.parse.urlencode({"rel_rhy": w, "max": 1000})
     for attempt in range(4):
         try:
             with urllib.request.urlopen(f"https://api.datamuse.com/words?{q}", timeout=20) as r:
-                return frozenset(x["word"].lower() for x in json.load(r))
+                got = sorted(x["word"].lower() for x in json.load(r))
+            _rhyme_disk[w] = got
+            RHYME_CACHE.parent.mkdir(parents=True, exist_ok=True)
+            RHYME_CACHE.write_text(json.dumps(_rhyme_disk))
+            return frozenset(got)
         except Exception:  # noqa: BLE001
             time.sleep(2 ** attempt)
     return frozenset()

@@ -105,3 +105,28 @@ is less disruptive than at 1.7B: rhyming with the original falls from 91% to 51%
   scale: donor-rhyme rate 11% / 12% / 35% / 33% at 1.7B / 4B / 8B / 14B. Step 6
   (the route split under their steering) will therefore have a small effect at
   4B and serves mainly as a check on the direction of the split.
+
+### Step 6: route split under the authors' rhyme-feature steering, Qwen3-4B (2026-09-25)
+
+Rhyme-feature selection (`step6_features.py`, the authors' `_is_rhyme_feature`
+rule on all features active at the anchor, transcoders streamed): mean 19.1
+features per couplet vs the authors' 19.2; exact per-couplet count match on
+67/100. Steering (`step6_routes.py`): own rhyme features to -3x, donor rhyme
+features to 7x the donor's activation, at the anchor.
+
+| Component | State edit | Feature steering [95% CI] |
+|---|---|---|
+| Total | +19.5 | +14.9 [13.3, 16.4] |
+| Emission | +3.1 | +1.4 [0.5, 2.5] |
+| Persistence, original words | +15.3 | +11.8 [10.2, 13.3] |
+| Direct retrieval | +14.0 | +10.6 [9.2, 12.1] |
+| Relay | +1.6 | +1.0 [0.7, 1.3] |
+| Median retrieval / relay share | 92% / 8% | 93% / 6% |
+| Additivity gap | -0.29 | +0.11 [-0.10, 0.32] |
+| Line 2 rhymes with donor | 43% | 16% (authors' released run: 12%) |
+
+The milder published intervention gives the same split, so the state edit's
+disruption does not explain the result. Steering shifts the rhyme distribution
+strongly but rarely wins the emitted word, matching the authors' low steered
+rhyme rate at 4B. The 16 couplets that switched to the donor rhyme show the same
+pattern (retrieval +15.8, relay +1.8).
