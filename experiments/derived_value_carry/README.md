@@ -119,3 +119,17 @@ effect goes through later statement ends (chain relay CI above zero and at least
 of persistence). Chain relay growing with K and with model size would be relay in
 exactly the case the thesis says it should appear: information that is computed, not
 visible, and costly to recompute.
+
+### Stage 0/1 across Qwen3 1.7B-32B (2026-09-26)
+
+| | 1.7B | 4B | 8B | 14B | 32B |
+|---|---|---|---|---|---|
+| Accuracy (all filler lengths) | 95-100% | 100% | 100% | 100% | 100% |
+| Donor state at `?` | +0.07 | +0.01 | -0.08 | -0.06 | -0.03 |
+| Positions `?` .. target together | +0.30 | +0.58 | -0.12 | +1.62 | +1.10 |
+| Operand digits | +47.8 | +48.0 | +53.6 | +47.3 | +17.2 |
+| Post-question block / operands | 0.6% | 1.2% | -0.2% | 3.4% | 6.4% |
+
+Stage 1 fails at every size: the sum is recomputed from the visible operands at the
+answer. The post-question positions hold a small, slightly growing fraction of it at
+14B-32B. The variable-chain redesign (stage 2) is running on the Mac Studio.
