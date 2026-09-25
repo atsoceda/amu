@@ -479,3 +479,7 @@ retrieval +23.7 + relay +1.2 (median share 5%); late +1.01, boundary +0.18 [-0.1
 Necessity split, Gemma 3 12B IT chat: persistence +41.2; necessity all +4.34, late
 +3.32, **boundary +0.58 [0.12, 1.09]** (1.4%; 27B: +4.87, 11%), early line 2 +0.17
 [-0.02, 0.39]. Gemma's boundary storage in the chat format grows from 12B to 27B.
+
+Qwen3-14B per-token boundary necessity: the comma ending line 1 +2.09 [1.50, 2.79]
+(sufficiency +1.33); every template token 0.00 +/- 0.02 by both measures. Qwen3-8B-plain
+necessity: late +1.72, boundary +0.10, early +0.05 (matches sufficiency).
