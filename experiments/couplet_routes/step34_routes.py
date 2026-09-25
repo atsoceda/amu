@@ -61,10 +61,8 @@ def main() -> None:
     ap.add_argument("--control", choices=["same_rhyme"])
     a = ap.parse_args()
     tag = f"_{a.control}" if a.control else ""
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
-    m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
-    layers = m.model.layers
+    from models import load
+    tok, m, layers = load(a.model)
     rows = json.loads((EXP / "results" / a.model / f"step2_rows{tag}.json").read_text())[: a.limit or None]
 
     def rhyme_ids(word):

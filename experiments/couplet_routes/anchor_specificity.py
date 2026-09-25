@@ -10,7 +10,7 @@ original prompt:
   M  middle word of line 1
   F  first word of line 1
   C  the token right after the anchor (line-1 final punctuation)
-  E  end of the user turn (<|im_end|>)
+  E  end of the user turn (<|im_end|>; <end_of_turn> for Gemma 3)
 For each q: persistence = R(on) - R(off) at the target (first token of line 2's
 last word), split into retrieval_q (positions after q and before the target get
 clean states, so only the target reads q) and relay_q (q clean, positions after
@@ -31,7 +31,10 @@ import torch
 
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
+from models import end_of_user  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
+
+COLON = (":", "Ġ:", "▁:")
 from step34_routes import boot, strip_last_word  # noqa: E402
 
 
@@ -40,10 +43,8 @@ def main() -> None:
     ap.add_argument("model", nargs="?", default="Qwen3-1.7B")
     ap.add_argument("--limit", type=int)
     a = ap.parse_args()
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
-    m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
-    layers = m.model.layers
+    from models import load
+    tok, m, layers = load(a.model)
     rows = json.loads((EXP / "results" / a.model / "step2_rows.json").read_text())[: a.limit or None]
 
     @torch.no_grad()
@@ -80,8 +81,8 @@ def main() -> None:
         donor = [s[danchor] for s in dsts]
         ids = tok(text + p0, return_tensors="pt", add_special_tokens=False).input_ids.to("mps")
         toks = tok.convert_ids_to_tokens(ids[0])
-        start = max(i for i, t in enumerate(toks[:anchor]) if t in (":", "Ġ:")) + 1 if any(t in (":", "Ġ:") for t in toks[:anchor]) else anchor - 6
-        positions = {"A": anchor, "M": (start + anchor) // 2, "F": start, "C": anchor + 1, "E": toks.index("<|im_end|>")}
+        start = max(i for i, t in enumerate(toks[:anchor]) if t in COLON) + 1 if any(t in COLON for t in toks[:anchor]) else anchor - 6
+        positions = {"A": anchor, "M": (start + anchor) // 2, "F": start, "C": anchor + 1, "E": end_of_user(toks)}
         R = lambda p: math.log(max(float(p[dr].sum()), 1e-12)) - math.log(max(float(p[orr].sum()), 1e-12))  # noqa: E731
         y_off, s_off = run(ids, want_states=True)
         target = ids.shape[1] - 1

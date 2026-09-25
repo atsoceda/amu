@@ -215,3 +215,35 @@ Steered line 2 rhymes with donor 23% (authors' released generations 33%), origin
 Total +26.6 = emission +4.2 + persistence +22.4. Persistence with original words +23.1
 = direct retrieval +19.3 + relay +3.2 [2.6, 3.8]; additivity gap +0.6 [-0.1, 1.4]
 (the positive gap seen under the state edit is not clearly present here).
+
+## Scale extension: Qwen3-32B and Gemma 3 (design frozen 2026-09-25, before any result)
+
+**Why.** Relay share rose from 4% (1.7B) to 8%, 8% and 11% (14B). The authors ran
+Qwen3-32B only behaviourally and name cross-family comparison as a limitation;
+the state edit needs no transcoders, so both are now in reach.
+
+**Qwen3-32B subset** (`make_subset.py`). The authors' steering subsets are exactly
+the first 100 rhyme-successful couplets of `couplets/<model>.csv`, with donors
+drawn from the subset with a different rhyme group (verified for 8B and 14B). We
+apply the same rule to their released `couplets/Qwen3-32B.csv`, donors seeded
+(20260925); the rhyme-feature condition on donors is dropped (no transcoders).
+Same prompt, anchor, cells, null control and anchor specificity as 1.7B-14B.
+
+**Gemma 3** (`models.py`): IT models (12B, 27B) are primary, matching the
+post-trained Qwen3 chat setup; the prompt drops `/no_think`; the anchor is the
+token ending line 1's last word (character offsets). Subset: first 100 couplets
+Gemma rhymes, by the authors' criterion, in the same first-line order.
+
+**Pre-registered decision criteria for the relay-with-scale question.**
+1. *Trend:* the per-couplet relay share rises with log parameter count across
+   Qwen3 1.7B-32B (bootstrap CI of the slope excludes zero).
+2. *Long range:* the growth is carried by line-2 positions more than 3 tokens
+   before the rhyme word, not only by the last few. The authors' circuit already
+   fetches rhyme features into line 2 late and keeps them active for a few tokens,
+   so near-target relay alone refines their mechanism rather than adding a route.
+   (Position-resolved relay split, added for all sizes.)
+3. *Replication:* the same direction in Gemma 3.
+
+Readings fixed in advance: all three hold -> "private carrying of plans grows with
+scale"; only near-target relay grows -> "the lookup moves earlier and is held
+briefly"; flat -> "plans are looked up, not carried, up to 32B across two families".

@@ -29,9 +29,18 @@ from pathlib import Path
 import pandas as pd
 import torch
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from models import load, prompt_ids  # noqa: E402,F401  (prompt_ids re-exported for the other steps)
+
 ROOT = Path(__file__).resolve().parents[2]
 EXP = Path(__file__).resolve().parent
 HA = ROOT / "external/model-planning-public/couplets/results/rhyme_intervention_sample"
+
+
+def subset_csv(model: str) -> Path:
+    """The authors' steering subset, or ours (make_subset.py) for models they did not steer."""
+    p = HA / f"{model}.csv"
+    return p if p.exists() else EXP / "results" / model / "subset.csv"
 
 
 RHYME_CACHE = EXP / "results" / "datamuse_rhymes.json"
@@ -63,26 +72,14 @@ def last_word(text: str) -> str:
     return words[-1].lower().strip("'") if words else ""
 
 
-def prompt_ids(tok, first_line: str):
-    msgs = [{"role": "user", "content": f"/no_think Write only the next line of this rhyming couplet: {first_line.strip()}"}]
-    text = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True, enable_thinking=False)
-    ids = tok(text, return_tensors="pt", add_special_tokens=False).input_ids
-    toks = tok.convert_ids_to_tokens(ids[0])
-    anchor = toks.index("<|im_end|>") - 2
-    return ids, anchor, text
-
-
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", default="Qwen3-1.7B", nargs="?")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--control", choices=["same_rhyme"], help="null control: donor from the same rhyme group")
     a = ap.parse_args()
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
-    m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
-    layers = m.model.layers
-    df = pd.read_csv(HA / f"{a.model}.csv", index_col=0)
+    tok, m, layers = load(a.model)
+    df = pd.read_csv(subset_csv(a.model), index_col=0)
     df = df[df["found_valid_row"].astype(str).str.lower() == "true"]
     if a.limit:
         df = df.head(a.limit)
@@ -114,7 +111,7 @@ def main() -> None:
                 h.remove()
         return tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True).strip()
 
-    all_rows = pd.read_csv(HA / f"{a.model}.csv", index_col=0)
+    all_rows = pd.read_csv(subset_csv(a.model), index_col=0)
     if a.control == "same_rhyme":
         import random
         rng = random.Random(20260925)
