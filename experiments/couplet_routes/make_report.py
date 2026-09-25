@@ -85,6 +85,30 @@ def main() -> None:
           "gap), a sign that retrieval and relay partly carry the same information. The same-rhyme null shows that the rhyme-"
           "preference measure tracks rhyme information rather than the edit's general disruption. A small tail of "
           "couplets has a large relay share; it is not yet explained.", ""]
+    rp = {m: load(m, "relay_positions_summary.json") for m in have}
+    rpn = {m: load(m, "relay_positions_summary_same_rhyme.json") for m in have}
+    sp = [m for m in have if rp[m]]
+    if sp:
+        L += ["## Where relay is carried: position-resolved relay", "",
+              "Relay with only one group of in-between positions given its edited-run state (others clean; groups "
+              "overlap on paths through both, so they need not sum to the total). `Late` = the 3 positions before "
+              "the rhyme word; `boundary` = the prompt tail between line 1 and line 2 (comma and chat-template "
+              "tokens); `early line 2` = line-2 positions more than 3 tokens before the rhyme word.", "",
+              "| | " + " | ".join(sp) + " |", "|---|" + "---|" * len(sp)]
+        for label, key in [("Relay, all in-between positions", "d_relay_all"), ("  Late (last 3 before rhyme word)", "d_relay_late"),
+                           ("  Boundary (prompt tail)", "d_relay_tail"), ("  Early line 2", "d_relay_early")]:
+            L.append(f"| {label} | " + " | ".join(ci(rp[m]["all"][key]) for m in sp) + " |")
+        L.append("| Same-rhyme null: relay, all | " + " | ".join(ci(rpn[m]["all"]["d_relay_all"]) if rpn[m] else "--" for m in sp) + " |")
+        L.append("| Same-rhyme null: boundary | " + " | ".join(ci(rpn[m]["all"]["d_relay_tail"]) if rpn[m] else "--" for m in sp) + " |")
+        tr = json.loads((R / "scale_trend.json").read_text()) if (R / "scale_trend.json").exists() else None
+        L += ["", "**Reading.** Carrying through the generated line (early line 2) stays near zero at every size. "
+              "Up to 8B, relay sits in the last few positions before the rhyme word (the late lookup of Hanna & "
+              "Ameisen's circuit, read in two hops) and grows with size; from 14B on it levels off there, and a "
+              "second component appears in the boundary tokens between the lines, where the rhyme is written "
+              "during the prompt and later read back. So the relay that emerges with scale is "
+              "storage at the line boundary, not private carrying under the generated text."
+              + (f" Relay share rises by {100*tr['raw']['slope_per_decade']:+.1f} percentage points per decade of "
+                 f"parameters (95% CI {100*tr['raw']['lo']:.1f} to {100*tr['raw']['hi']:.1f}; `scale_trend.py`)." if tr else ""), ""]
     st6 = {m: load(m, "step6_summary.json") for m in have}
     s6 = [m for m in have if st6[m]]
     if s6:
@@ -129,9 +153,10 @@ def main() -> None:
           "generation path); rhyme behaviour is intact.", "",
           "## Place in the thesis", "",
           "Supports **retrieval over relay** for the flagship planning example: a plan present at a visible word is "
-          "looked up where it is needed, not carried. Open: whether relay appears when the information to carry is "
-          "derived rather than visible (planned derived-value task), whether the relay-heavy tail has an explanation, "
-          "and the 14B point.", ""]
+          "looked up where it is needed, not carried through the text in between. With scale the plan is also "
+          "written to the line boundary and read from there (from 14B on), which links the retrieval account of "
+          "Hanna & Ameisen to line-end planning sites (Lindsey et al. 2025; Ma & Rui 2026). Open: the plain-format "
+          "replication with an explicit newline boundary, Gemma 3, and the derived-value task.", ""]
     (R / "report.md").write_text("\n".join(L) + "\n")
     print((R / "report.md").read_text())
 

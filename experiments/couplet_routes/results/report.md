@@ -27,6 +27,21 @@ Hanna & Ameisen's 100-couplet steering subset per model, their prompt, their anc
 
 **Reading.** Most of the edit's effect on the rhyme persists when line 2's words are held fixed, so it is not carried by the words the model writes. Of that persistence, direct retrieval of the anchor accounts for most of it at every size (about 82-96%); relay is small but above zero. Relay grows in absolute size with the whole effect, and its median share rises modestly with scale (see the table); whether that trend continues is the open scale question. At the largest sizes the paths stop adding up exactly (a small positive additivity gap), a sign that retrieval and relay partly carry the same information. The same-rhyme null shows that the rhyme-preference measure tracks rhyme information rather than the edit's general disruption. A small tail of couplets has a large relay share; it is not yet explained.
 
+## Where relay is carried: position-resolved relay
+
+Relay with only one group of in-between positions given its edited-run state (others clean; groups overlap on paths through both, so they need not sum to the total). `Late` = the 3 positions before the rhyme word; `boundary` = the prompt tail between line 1 and line 2 (comma and chat-template tokens); `early line 2` = line-2 positions more than 3 tokens before the rhyme word.
+
+| | Qwen3-1.7B | Qwen3-4B | Qwen3-8B | Qwen3-14B | Qwen3-32B |
+|---|---|---|---|---|---|
+| Relay, all in-between positions | +0.8 [0.5, 1.1] | +1.6 [1.2, 2.0] | +2.4 [1.9, 2.9] | +3.2 [2.6, 3.8] | +3.5 [2.9, 4.1] |
+|   Late (last 3 before rhyme word) | +0.8 [0.5, 1.0] | +1.5 [1.1, 2.0] | +2.3 [1.8, 2.7] | +1.6 [1.2, 2.0] | +1.8 [1.5, 2.1] |
+|   Boundary (prompt tail) | +0.0 [-0.1, 0.1] | +0.0 [-0.1, 0.1] | +0.1 [-0.0, 0.1] | +1.3 [1.0, 1.7] | +1.7 [1.3, 2.2] |
+|   Early line 2 | -0.1 [-0.2, 0.1] | +0.1 [-0.0, 0.2] | +0.0 [-0.0, 0.1] | -0.0 [-0.1, 0.1] | +0.2 [0.1, 0.2] |
+| Same-rhyme null: relay, all | -- | -- | -- | -- | -- |
+| Same-rhyme null: boundary | -- | -- | -- | -- | -- |
+
+**Reading.** Carrying through the generated line (early line 2) stays near zero at every size. Up to 8B, relay sits in the last few positions before the rhyme word (the late lookup of Hanna & Ameisen's circuit, read in two hops) and grows with size; from 14B on it levels off there, and a second component appears in the boundary tokens between the lines, where the rhyme is written during the prompt and later read back. So the relay that emerges with scale is storage at the line boundary, not private carrying under the generated text. Relay share rises by +6.2 percentage points per decade of parameters (95% CI 2.8 to 9.6; `scale_trend.py`).
+
 ## Robustness: route split under the authors' feature steering
 
 | | Qwen3-4B | Qwen3-8B | Qwen3-14B |
@@ -70,5 +85,5 @@ Blocking the heads that read the line-1 anchor near the end of line 2 leaves lin
 
 ## Place in the thesis
 
-Supports **retrieval over relay** for the flagship planning example: a plan present at a visible word is looked up where it is needed, not carried. Open: whether relay appears when the information to carry is derived rather than visible (planned derived-value task), whether the relay-heavy tail has an explanation, and the 14B point.
+Supports **retrieval over relay** for the flagship planning example: a plan present at a visible word is looked up where it is needed, not carried through the text in between. With scale the plan is also written to the line boundary and read from there (from 14B on), which links the retrieval account of Hanna & Ameisen to line-end planning sites (Lindsey et al. 2025; Ma & Rui 2026). Open: the plain-format replication with an explicit newline boundary, Gemma 3, and the derived-value task.
 
