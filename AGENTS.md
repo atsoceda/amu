@@ -20,6 +20,16 @@ Validated commands and defaults live in each skill's `SKILL.md` and `references/
 
 Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter + Markdown body). Optional detail lives under `references/` inside each skill.
 
+## Research record
+
+Follow [`docs/research-record.md`](docs/research-record.md) for every experiment:
+a self-describing README per experiment (question, design frozen before results,
+dated deviations, dated results including nulls), committed rows and summaries
+(re-derivable intermediates gitignored), remote results fetched and committed the
+same day, one branch per workstream merged into `main` at each milestone, and a
+new dated snapshot in `docs/handoff/` at each milestone. Start a new session by
+reading the latest file in `docs/handoff/`.
+
 ## Communication preferences
 
 When writing math in chat or docs:
