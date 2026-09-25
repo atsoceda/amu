@@ -109,3 +109,12 @@ the donor pick among all 8 fruits.
 (R_out clearly above zero), those positions carry the choice itself: hidden content
 that contradicts the visible text. If it does not, the stored component is list-order
 information and the pick is re-derived.
+
+### Qwen3-4B (2026-09-26, Mac Studio; 100 pairs)
+
+Text swap +10.68 [9.79, 11.58]; post-list block +0.56 [0.40, 0.73] (median 4%);
+relay from it through the sentence +0.02; **sentence block +0.57 [0.48, 0.67]**: at 4B
+the forced-sentence positions themselves carry a little pick-relevant information,
+read directly from the list in the donor run (about 5% of the text swap; 8B and
+Gemma 12B: 0). A small component of hidden content in generated positions at 4B only,
+to be read against the free version and larger sizes.
