@@ -37,8 +37,8 @@ Relay with only one group of in-between positions given its edited-run state (ot
 |   Late (last 3 before rhyme word) | +0.8 [0.5, 1.0] | +1.5 [1.1, 2.0] | +2.3 [1.8, 2.7] | +1.6 [1.2, 2.0] | +1.8 [1.5, 2.1] |
 |   Boundary (prompt tail) | +0.0 [-0.1, 0.1] | +0.0 [-0.1, 0.1] | +0.1 [-0.0, 0.1] | +1.3 [1.0, 1.7] | +1.7 [1.3, 2.2] |
 |   Early line 2 | -0.1 [-0.2, 0.1] | +0.1 [-0.0, 0.2] | +0.0 [-0.0, 0.1] | -0.0 [-0.1, 0.1] | +0.2 [0.1, 0.2] |
-| Same-rhyme null: relay, all | -- | -- | -- | -- | -- |
-| Same-rhyme null: boundary | -- | -- | -- | -- | -- |
+| Same-rhyme null: relay, all | -- | -- | +0.2 [0.0, 0.4] | +0.0 [-0.0, 0.2] | +0.0 [-0.1, 0.1] |
+| Same-rhyme null: boundary | -- | -- | -0.0 [-0.0, 0.0] | -0.0 [-0.1, 0.0] | -0.0 [-0.1, 0.0] |
 
 **Reading.** Carrying through the generated line (early line 2) stays near zero at every size. Up to 8B, relay sits in the last few positions before the rhyme word (the late lookup of Hanna & Ameisen's circuit, read in two hops) and grows with size; from 14B on it levels off there, and a second component appears in the boundary tokens between the lines, where the rhyme is written during the prompt and later read back. So the relay that emerges with scale is storage at the line boundary, not private carrying under the generated text. Relay share rises by +6.2 percentage points per decade of parameters (95% CI 2.8 to 9.6; `scale_trend.py`).
 

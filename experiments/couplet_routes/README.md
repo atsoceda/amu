@@ -324,3 +324,14 @@ Gemma-3-27B and small in Qwen3-32B in this format. (3) If our chat-format tail r
 at 32B reflects the same boundary storage, Qwen3 boundary relay also grows with
 scale here; if it does not, the chat-template tokens (not the line boundary) carry
 it. Early line-2 relay stays small everywhere (criterion 2).
+
+### Position split: same-rhyme null and criterion 2 (2026-09-26, Mac Studio)
+
+Same-rhyme donors (null) give boundary relay -0.00 / -0.02 / -0.02 at 8B / 14B /
+32B (real donors +0.06 / +1.32 / +1.72) and total relay +0.20 / +0.04 / +0.03: the
+boundary component is rhyme-specific, not edit disruption. **Criterion 2 fails**
+(early line-2 relay -0.06 / +0.07 / +0.04 / -0.01 / +0.16 at 1.7B-32B), so by the
+frozen readings the headline is not "private carrying grows with scale". The
+growth of relay is instead (a) the late lookup up to 8B and (b) from 14B on,
+storage at the line boundary, a component the frozen readings did not anticipate.
+Next: which boundary token (`relay_boundary.py`), the plain-format replication, Gemma.
