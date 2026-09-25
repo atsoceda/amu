@@ -12,7 +12,10 @@ at each single position from v0 to the token before the target, plus the v0 digi
 together); and for each statement end s_j (the newline ending statement j):
 persistence, direct retrieval (positions after s_j clean), relay (s_j clean,
 positions after s_j with edited-run states) and chain relay (only later statement
-ends with edited-run states). R = log p(donor first digit) - log p(original first
+ends with edited-run states). Added 2026-09-26 (before the 14B/32B runs): the
+post-v0 block, donor states at every position after v0's digits up to the token
+before the target, which detects a running value carried redundantly downstream
+(single-position edits cannot). R = log p(donor first digit) - log p(original first
 digit) at the target, minus R without the edit.
 """
 from __future__ import annotations
@@ -95,6 +98,7 @@ def main() -> None:
     ap.add_argument("model", nargs="?", default="Qwen3-1.7B")
     ap.add_argument("--limit", type=int)
     ap.add_argument("--ks", default=",".join(map(str, KS)))
+    ap.add_argument("--block-only", action="store_true", help="only the post-v0 block edit (added 2026-09-26)")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -145,8 +149,15 @@ def main() -> None:
             _, dst = run(dids, want_states=True)
             R0 = float(y0[dn] - y0[o])
             dR = lambda y: float(y[dn] - y[o]) - R0  # noqa: E731
+            block = range(ends[0], target)  # everything after v0's digits, up to the token before the target
             rec = {**it, "correct": answer(ids) == it["final"], "tokens": toks, "ends": ends, "v0_digits": v0d,
-                   "scan": {}, "v0_edit": dR(run(ids, {p: [s[p] for s in dst] for p in v0d})[0]), "by_end": []}
+                   "scan": {}, "v0_edit": dR(run(ids, {p: [s[p] for s in dst] for p in v0d})[0]), "by_end": [],
+                   "post_v0_block": dR(run(ids, {p: [s[p] for s in dst] for p in block})[0])}
+            if a.block_only:
+                rows.append(rec)
+                print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} "
+                      f"post-v0 block {rec['post_v0_block']:+.2f}", flush=True)
+                continue
             for p in range(v0d[0], target):
                 rec["scan"][p] = dR(run(ids, {p: [s[p] for s in dst]})[0])
             for j, sj in enumerate(ends):
@@ -162,11 +173,19 @@ def main() -> None:
             print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} | "
                   + " ".join(f"s{d['j']}: pers {d['persistence']:+.2f} ret {d['retrieval']:+.2f} rel {d['relay']:+.2f} chain {d['chain_relay']:+.2f}"
                              for d in rec["by_end"]), flush=True)
-        (out_dir / f"chain_K{K}_rows.json").write_text(json.dumps(rows, indent=1))
+        tag = "_block" if a.block_only else ""
+        (out_dir / f"chain_K{K}_rows{tag}.json").write_text(json.dumps(rows, indent=1))
+        if a.block_only:
+            summary["by_K"][K] = {"n": len(rows), "accuracy": sum(r["correct"] for r in rows) / len(rows),
+                                  "v0_edit": boot([r["v0_edit"] for r in rows]),
+                                  "post_v0_block": boot([r["post_v0_block"] for r in rows])}
+            print(f"K={K}: v0 edit {summary['by_K'][K]['v0_edit']}; post-v0 block {summary['by_K'][K]['post_v0_block']}")
+            continue
         tq = rows[0]["tokens"]
         summary["by_K"][K] = {
             "n": len(rows), "accuracy": sum(r["correct"] for r in rows) / len(rows),
             "v0_edit": boot([r["v0_edit"] for r in rows]),
+            "post_v0_block": boot([r["post_v0_block"] for r in rows]),
             "by_end": [{k: boot([r["by_end"][j][k] for r in rows]) for k in ("persistence", "retrieval", "relay", "chain_relay")}
                        for j in range(K + 1)],
             "scan": {p - rows[0]["v0_digits"][0]: {"token": tq[p], **boot([r["scan"][p] for r in rows])} for p in rows[0]["scan"]},
@@ -176,7 +195,7 @@ def main() -> None:
         for j, d in enumerate(s["by_end"]):
             print(f"  s{j}: " + "  ".join(f"{k} {v['mean']:+.2f} [{v['lo']:.2f}, {v['hi']:.2f}]" for k, v in d.items()))
     summary["elapsed_sec"] = time.time() - t0
-    (out_dir / "chain_summary.json").write_text(json.dumps(summary, indent=1))
+    (out_dir / f"chain_summary{'_block' if a.block_only else ''}.json").write_text(json.dumps(summary, indent=1))
 
 
 if __name__ == "__main__":

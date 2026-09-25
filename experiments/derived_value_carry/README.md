@@ -133,3 +133,9 @@ visible, and costly to recompute.
 Stage 1 fails at every size: the sum is recomputed from the visible operands at the
 answer. The post-question positions hold a small, slightly growing fraction of it at
 14B-32B. The variable-chain redesign (stage 2) is running on the Mac Studio.
+
+**Addition (2026-09-26, after the 8B K=1/K=3 rows, before any 14B/32B run):** a
+post-v0 block edit (donor states at every position after v0's digits, up to the
+token before the target). Single-position edits cannot detect a running value that
+is carried redundantly across many downstream positions; this block edit can. Run
+at every size (8B via `--block-only`).
