@@ -27,6 +27,12 @@ def boot(xs, n=10000, seed=20260924):
 
 def summarize(model: str) -> dict:
     rows = [json.loads(l) for l in (RES / model / "six_cell_rows.jsonl").read_text().splitlines()]
+    if os.environ.get("AMU_SUBSET") == "first150":
+        sys.path.insert(0, str(EXP))
+        from select_features import prompts
+        df = prompts(model)
+        keep = set(df.index[df["source_index"] < 150])
+        rows = [r for r in rows if r["prompt_index"] in keep]
     out = {"model": model, "conditions": {}}
     for cond in sorted({r["condition"] for r in rows}):
         rs = [r for r in rows if r["condition"] == cond]
@@ -38,7 +44,8 @@ def summarize(model: str) -> dict:
             src = valid if k.startswith("tv_") else rs
             c[k] = boot([r[k] for r in src])
         out["conditions"][cond] = c
-    (RES / model / "summary.json").write_text(json.dumps(out, indent=1))
+    tag = "_first150" if os.environ.get("AMU_SUBSET") == "first150" else ""
+    (RES / model / f"summary{tag}.json").write_text(json.dumps(out, indent=1))
     return out
 
 
@@ -56,5 +63,6 @@ if __name__ == "__main__":
             lines.append(f"| {cond} | {c['n_prompts']} | {c['article_switch_rate']:.2f} | {fmt(c['tv_total'])} | {fmt(c['tv_public'])} | "
                          f"{fmt(c['tv_private'])} | {fmt(c['tv_private_baseline_article'])} | {fmt(c['tau1_planned_logp_public'])} | {fmt(c['tau1_planned_logp_private'])} |")
         lines.append("")
-    (RES / "report.md").write_text("\n".join(lines) + "\n")
+    tag = "_first150" if os.environ.get("AMU_SUBSET") == "first150" else ""
+    (RES / f"report{tag}.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))

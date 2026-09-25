@@ -156,3 +156,16 @@ else (conditions, controls, estimands, full recomputation) is unchanged.
   computed on this machine at 4B; our node set is therefore a superset of
   theirs. They released no el/la intervention table, so no count validation is
   possible.
+
+### Change to the el/la item set (2026-09-25, before any 1.7B or 4B el/la result)
+
+To match the authors' el/la protocol (`planning_node_intervention.py` line 87,
+`.head(150)`), the el/la six-cell assay uses only items among the first 150 rows
+of their table: 142 singular items (75 `el`, 67 `la`; the 8 plurals are excluded
+because the mediator is binary). Set with `AMU_SUBSET=first150`. Selection still
+runs on all 379 singular items, so already-computed inputs are reused. The
+Qwen3-0.6B el/la assay was started on all 379 items before this change; it is
+reported both in full and restricted to the same first-150 subset. Candidate
+features remain the documented superset (all active features passing the
+authors' el/la word test) rather than their pruned-graph nodes, which cannot be
+computed on this machine at 1.7B or 4B.

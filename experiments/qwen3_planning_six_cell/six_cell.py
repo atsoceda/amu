@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import random
 import sys
 from pathlib import Path
@@ -78,7 +79,12 @@ def run(model_name: str, limit: int | None, out: str | None = None) -> None:
     active = load_active(model_name)
     df = prompts(model_name)
     rng = random.Random(SEED)
-    todo = [s for s in selection if s["nodes"]][: limit or None]
+    todo = [s for s in selection if s["nodes"]]
+    if os.environ.get("AMU_SUBSET") == "first150":
+        # The authors' el/la protocol intervened on the first 150 items of their table.
+        keep = set(df.index[df["source_index"] < 150])
+        todo = [s for s in todo if s["prompt_index"] in keep]
+    todo = todo[: limit or None]
 
     def cells(steer):
         """Full recomputation of the prompt and both forced-article sequences.
