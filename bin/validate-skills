@@ -1,0 +1,84 @@
+#!/Users/anthony/miniconda3/bin/python
+"""Validate skills/*/ against the Agent Skills specification (https://agentskills.io/specification).
+
+A local stand-in for `skills-ref validate` when it is not installed. Checks the
+frontmatter rules of the specification and the recommendations that are
+mechanically checkable. Usage: bin/validate-skills [skill_dir ...]
+"""
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+ALLOWED = {"name", "description", "license", "compatibility", "metadata", "allowed-tools"}
+
+
+def check(skill: Path) -> list[str]:
+    errs, warns = [], []
+    md = skill / "SKILL.md"
+    if not md.exists():
+        return [f"ERROR {skill}: missing SKILL.md"]
+    text = md.read_text()
+    m = re.match(r"^---\n(.*?)\n---\n", text, re.S)
+    if not m:
+        return [f"ERROR {md}: YAML frontmatter must open and close with '---'"]
+    try:
+        fm = yaml.safe_load(m.group(1)) or {}
+    except yaml.YAMLError as e:
+        return [f"ERROR {md}: invalid YAML frontmatter: {e}"]
+    for k in fm:
+        if k not in ALLOWED:
+            errs.append(f"unknown frontmatter field '{k}'")
+    name = fm.get("name")
+    if not isinstance(name, str) or not 1 <= len(name) <= 64:
+        errs.append("name is required, 1-64 characters")
+    else:
+        if not re.fullmatch(r"[a-z0-9]+(-[a-z0-9]+)*", name):
+            errs.append(f"name '{name}': lowercase letters, digits and single hyphens only, no leading/trailing hyphen")
+        if name != skill.name:
+            errs.append(f"name '{name}' must match directory name '{skill.name}'")
+    desc = fm.get("description")
+    if not isinstance(desc, str) or not 1 <= len(desc.strip()) <= 1024:
+        errs.append("description is required, 1-1024 characters")
+    if "compatibility" in fm and not (isinstance(fm["compatibility"], str) and 1 <= len(fm["compatibility"]) <= 500):
+        errs.append("compatibility must be 1-500 characters")
+    if "metadata" in fm:
+        meta = fm["metadata"]
+        if not isinstance(meta, dict) or not all(isinstance(k, str) and isinstance(v, str) for k, v in meta.items()):
+            errs.append("metadata must map string keys to string values (quote numbers, e.g. version: \"1.0\")")
+    if "allowed-tools" in fm and not isinstance(fm["allowed-tools"], str):
+        errs.append("allowed-tools must be a space-separated string")
+    body = text[m.end():]
+    if len(text.splitlines()) > 500:
+        warns.append("SKILL.md exceeds the recommended 500 lines")
+    for target in re.findall(r"\]\(([^)#]+)\)", body):
+        if "://" in target:
+            continue
+        if not (skill / target).exists() and not (skill / target).resolve().exists():
+            warns.append(f"referenced file not found: {target}")
+        if target.count("/") > 1 and not target.startswith("../"):
+            warns.append(f"reference more than one level deep: {target}")
+    for script in (skill / "scripts").glob("*") if (skill / "scripts").is_dir() else []:
+        if script.is_file() and script.suffix in {".py", ".sh"} and not (script.stat().st_mode & 0o111):
+            warns.append(f"script not executable: scripts/{script.name}")
+    return [f"ERROR {skill.name}: {e}" for e in errs] + [f"warn  {skill.name}: {w}" for w in warns]
+
+
+def main() -> None:
+    dirs = [Path(a) for a in sys.argv[1:]] or sorted(p for p in (ROOT / "skills").iterdir() if p.is_dir())
+    problems = []
+    for d in dirs:
+        out = check(d.resolve())
+        problems += out
+        print(f"{'FAIL' if any(o.startswith('ERROR') for o in out) else 'ok  '} {d.name}")
+    for p in problems:
+        print("  " + p)
+    sys.exit(1 if any(p.startswith("ERROR") for p in problems) else 0)
+
+
+if __name__ == "__main__":
+    main()

@@ -185,10 +185,21 @@ The default run can be completed without re-downloading model weights once cache
 
 ### Optional validation
 
-Use [skills-ref validate](https://github.com/agentskills/agentskills/tree/main/skills-ref) against each skill folder if installed:
+Check every skill against the [Agent Skills specification](https://agentskills.io/specification)
+after adding or editing one. `bin/validate-skills` is a local checker for the
+specification's frontmatter rules (name format and directory match, field
+lengths, string-valued metadata) plus broken file references and non-executable
+scripts; it exits non-zero on errors:
+
+```bash
+bin/validate-skills
+```
+
+If [skills-ref](https://github.com/agentskills/agentskills/tree/main/skills-ref) is installed, also run it against each skill folder:
 
 ```bash
 skills-ref validate ./skills/circuit-attribution
 skills-ref validate ./skills/circuit-graph-export
 skills-ref validate ./skills/circuit-graph-viewer
+skills-ref validate ./skills/hf-range-streaming
 ```

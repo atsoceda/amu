@@ -1,13 +1,13 @@
 # hf-range-streaming — reference
 
-Implementation: [`experiments/qwen3_planning_six_cell/hf_stream.py`](../../../experiments/qwen3_planning_six_cell/hf_stream.py).
-First used by the Qwen3 planning-feature pipeline
-([`select_features.py`](../../../experiments/qwen3_planning_six_cell/select_features.py)).
+Implementation: [`scripts/hf_stream.py`](../scripts/hf_stream.py) (library and command-line tool).
+In this repo it is used by the Qwen3 planning-feature pipeline
+(`experiments/qwen3_planning_six_cell/`), which imports it through a thin re-export.
 
 ## API
 
 ```python
-import sys; sys.path.insert(0, "experiments/qwen3_planning_six_cell")
+import sys; sys.path.insert(0, "skills/hf-range-streaming/scripts")
 from hf_stream import SafetensorsRemote, fetch_feature_records, load_feature_index, fetch_range, url
 
 st = SafetensorsRemote("mwhanna/qwen3-4b-transcoders", "layer_12.safetensors", cache_dir)
@@ -21,6 +21,7 @@ cards = fetch_feature_records("mwhanna/qwen3-4b-transcoders", index, 12, feature
 - `fetch_range(u, start, end_inclusive)`: resolves `u` once to its signed CDN
   URL, caches it until 120 s before its `Expires`, retries up to 12 times.
   - HTTP 403/410: re-resolve the CDN URL.
+  - Other 4xx (401 gated, 404 missing, 416 bad range): fail immediately.
   - HTTP 429: honour `Retry-After`, otherwise back off up to 300 s.
 - `fetch_feature_records(..., max_gap_bytes=65536, workers=32)`: merges records
   closer than 64 KB into one request and fetches the groups concurrently.

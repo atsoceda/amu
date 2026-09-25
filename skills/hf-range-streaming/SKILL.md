@@ -8,12 +8,10 @@ description: >-
   feature cards are needed, or when range downloads are slow or return HTTP 429.
 license: MIT
 compatibility: >-
-  Python 3.10+ standard library (urllib, concurrent.futures) plus torch for tensor decoding; network access to
-  huggingface.co and its CDN; public or authorized repositories. Implementation lives in
-  experiments/qwen3_planning_six_cell/hf_stream.py; use the project conda environment.
+  Python 3.10+ standard library; torch only for decoding tensors and rows. Network access to huggingface.co
+  and its CDN; public or authorized repositories. In this repo use the project conda environment.
 metadata:
-  implementation: "experiments/qwen3_planning_six_cell/hf_stream.py"
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Hugging Face range streaming
@@ -33,25 +31,47 @@ machine with about 20 GB of free disk.
 
 ## Procedure
 
-1. Import the helpers from `experiments/qwen3_planning_six_cell/hf_stream.py`
-   (add that directory to `sys.path`). Do not write a new downloader.
-2. For safetensors files use `SafetensorsRemote(repo, path, cache_dir)`:
-   `.tensor(name)` fetches one tensor; `.rows(name, idx)` fetches selected rows of
-   a 2-D tensor, merging nearby rows. The parsed header is cached on disk.
-3. For feature-card binaries (`features/index.json.gz` + `features/layer_<n>.bin`)
-   download the small index once, then call
-   `fetch_feature_records(repo, index, layer, feature_ids)`.
-4. **Resolve once, then go direct to the CDN.** `fetch_range` resolves each
-   `.../resolve/main/<file>` URL once to its signed CDN URL, caches it, and sends
-   range requests straight to the CDN. It re-resolves shortly before the URL's
-   `Expires` time or on HTTP 403/410. Keep this behaviour; it is the difference
-   between minutes and seconds per layer.
-5. Use high concurrency only against the CDN (32 workers for card fetches). Never
-   point many parallel workers at `huggingface.co/.../resolve/...`.
-6. Checkpoint per layer (one output file per layer) and make every stage skip
-   work already on disk, so a failure costs at most one layer.
-7. Before trusting a changed fetch path, re-fetch one already-cached layer and
-   check it is byte-identical to the cache.
+1. Use the bundled script [`scripts/hf_stream.py`](scripts/hf_stream.py), as a
+   library (import it) or from the command line. Do not write a new downloader.
+   In this repo, experiment code imports it through
+   `experiments/qwen3_planning_six_cell/hf_stream.py`, a thin re-export; edit the
+   skill copy only.
+2. Size the job before fetching anything:
+
+   ```bash
+   python scripts/hf_stream.py sizes <repo> [--prefix features/]
+   python scripts/hf_stream.py header <repo> <file.safetensors>
+   ```
+
+3. If requests are slow or fail with HTTP 429, diagnose before changing code:
+
+   ```bash
+   python scripts/hf_stream.py probe <repo> <file>
+   ```
+
+   It prints the redirect, the rate-limit headers, the CDN URL lifetime, and
+   timings through `/resolve/` vs direct to the CDN.
+4. For safetensors use `SafetensorsRemote(repo, path, cache_dir)`: `.tensor(name)`
+   fetches one tensor and `.rows(name, idx)` fetches selected rows of a 2-D tensor.
+5. For feature cards, download `features/index.json.gz` once, check the cost
+   offline, then fetch:
+
+   ```bash
+   python scripts/hf_stream.py plan <index.json.gz> <layer> <ids>       # requests vs bytes
+   python scripts/hf_stream.py cards <repo> <index.json.gz> <layer> <ids> --out cards.json
+   ```
+
+   `<ids>` is `3,17,100-120` or `@file` with one id per line. In code, call
+   `fetch_feature_records(repo, index, layer, ids)`.
+6. Keep the resolve-once behaviour of `fetch_range`: it resolves each
+   `.../resolve/main/<file>` URL once to its signed CDN URL, caches it, sends range
+   requests straight to the CDN, and re-resolves before `Expires` or on HTTP
+   403/410. Client errors (401, 404, 416) fail at once; 429 backs off.
+7. Use high concurrency only against the CDN (32 workers for cards). Never point
+   many parallel workers at `huggingface.co/.../resolve/...`.
+8. Checkpoint per layer and make every stage skip work already on disk.
+9. Before trusting a changed fetch path, re-fetch a sample and compare:
+   `cards ... --verify cards.json` exits 1 unless the cards are identical.
 
 ## Pitfalls (measured 2026-09-25 on this machine)
 
