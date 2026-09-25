@@ -15,6 +15,7 @@ Validated commands and defaults live in each skill's `SKILL.md` and `references/
 | Attribution | [`skills/circuit-attribution/`](skills/circuit-attribution/) | User asks for an attribution/circuit graph, `.pt` export, or “run attribution” only. |
 | Graph JSON export | [`skills/circuit-graph-export/`](skills/circuit-graph-export/) | User has a `.pt` graph and needs browser-ready JSON under `./graph_files/`. |
 | Local viewer | [`skills/circuit-graph-viewer/`](skills/circuit-graph-viewer/) | User wants to **open** / **see** the graph in a browser or start the UI server. |
+| Large-file streaming (supporting) | [`skills/hf-range-streaming/`](skills/hf-range-streaming/) | A job needs parts of very large Hugging Face files (transcoders, feature cards) that do not fit on disk, or range downloads are slow or return HTTP 429. |
 
 Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter + Markdown body). Optional detail lives under `references/` inside each skill.
 
