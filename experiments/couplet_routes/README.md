@@ -130,3 +130,26 @@ disruption does not explain the result. Steering shifts the rhyme distribution
 strongly but rarely wins the emitted word, matching the authors' low steered
 rhyme rate at 4B. The 16 couplets that switched to the donor rhyme show the same
 pattern (retrieval +15.8, relay +1.8).
+
+## Anchor specificity (design frozen 2026-09-25 before any result; `anchor_specificity.py`)
+
+The donor's anchor states are placed at one position of the original prompt
+(original line-2 words fixed). Prediction: large persistence only at the anchor
+(A), possibly at adjacent end-of-line positions (C, E); little at content
+positions (M, F).
+
+Qwen3-1.7B, 100 couplets (rhyme-preference shift [95% CI]):
+
+| Position | Persistence | Direct retrieval | Relay |
+|---|---|---|---|
+| A: last word of line 1 (anchor) | +12.1 [10.6, 13.6] | +11.5 | +0.8 |
+| E: end of user turn | +6.0 [5.1, 7.0] | +5.8 | +0.8 |
+| C: punctuation after anchor | +5.7 [4.8, 6.7] | +5.6 | +0.7 |
+| M: middle word of line 1 | +5.5 [4.4, 6.6] | +4.1 | +0.6 |
+| F: first word of line 1 | +3.5 [2.7, 4.3] | +2.7 | +0.6 |
+
+Partly supported: the anchor is retrieved 2-3.5x more than any other position,
+but rhyme information at other positions is still partly retrieved (30-50% of
+the anchor's effect). The accurate description is retrieval weighted toward
+structural anchors, not anchor-only retrieval. Relay is small from every
+position (+0.6 to +0.8).
