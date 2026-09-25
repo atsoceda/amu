@@ -61,3 +61,27 @@ still cuts rhyming from 87% to about 35%, so step-2 rhyme rates mix steering and
 disruption. The route split concerns where the rhyme-specific influence travels
 and is not affected, but the milder published intervention (Hanna & Ameisen's
 rhyme-feature steering, plan step 6) should be run to confirm.
+
+### Qwen3-4B (2026-09-25)
+
+Step 2 (100 couplets): without the edit line 2 rhymes with the original 92%,
+donor 0%; with the edit, 2% and 43%. Unedited generations match the authors'
+released text exactly on 59%.
+
+Steps 3-4 (100 couplets, median 16 positions between anchor and rhyme):
+
+| Component | 1.7B | 4B [95% CI] |
+|---|---|---|
+| Total | +14.4 | +19.5 [18.0, 21.0] |
+| Emission | +2.8 | +3.1 [1.8, 4.4] |
+| Persistence (words fixed) | +11.7 | +16.5 [15.0, 18.0] |
+| Persistence, original words | +12.1 | +15.3 [13.5, 17.1] |
+| Direct retrieval | +11.5 | +14.0 [12.3, 15.7] |
+| Relay | +0.8 | +1.6 [1.2, 2.1] |
+| Median relay share of persistence | 4% | 8% |
+| Additivity gap | -0.15 | -0.29 [-0.69, 0.09] |
+
+Direct retrieval of the anchor still dominates at 4B. Relay is small but about
+twice as large as at 1.7B, which raises the hypothesis that relay grows with
+scale (two sizes only; the M1 caps us at 4B). The 43 couplets where the edit
+produced a donor rhyme show the same pattern (retrieval +15.2, relay +1.5).
