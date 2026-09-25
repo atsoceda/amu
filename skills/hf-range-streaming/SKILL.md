@@ -11,7 +11,7 @@ compatibility: >-
   Python 3.10+ standard library; torch only for decoding tensors and rows. Network access to huggingface.co
   and its CDN; public or authorized repositories. In this repo use the project conda environment.
 metadata:
-  version: "1.1"
+  version: "1.2"
 ---
 
 # Hugging Face range streaming
@@ -52,7 +52,8 @@ machine with about 20 GB of free disk.
    It prints the redirect, the rate-limit headers, the CDN URL lifetime, and
    timings through `/resolve/` vs direct to the CDN.
 4. For safetensors use `SafetensorsRemote(repo, path, cache_dir)`: `.tensor(name)`
-   fetches one tensor and `.rows(name, idx)` fetches selected rows of a 2-D tensor.
+   fetches one tensor and `.rows(name, idx)` fetches selected rows of a 2-D tensor
+   (nearby rows merged, requests run concurrently, 32 workers by default).
 5. For feature cards, download `features/index.json.gz` once, check the cost
    offline, then fetch:
 
@@ -67,7 +68,8 @@ machine with about 20 GB of free disk.
    `.../resolve/main/<file>` URL once to its signed CDN URL, caches it, sends range
    requests straight to the CDN, and re-resolves before `Expires` or on HTTP
    403/410. Client errors (401, 404, 416) fail at once; 429 backs off.
-7. Use high concurrency only against the CDN (32 workers for cards). Never point
+7. Use high concurrency only against the CDN (32 workers for cards and rows).
+   Any loop of many small range requests must run concurrently. Never point
    many parallel workers at `huggingface.co/.../resolve/...`.
 8. Checkpoint per layer and make every stage skip work already on disk.
 9. Before trusting a changed fetch path, re-fetch a sample and compare:
@@ -82,6 +84,11 @@ machine with about 20 GB of free disk.
 - **Redirect latency.** Going through `/resolve/` costs about 0.9 s per small
   request; direct to the CDN about 0.64 s, and 32 parallel CDN requests finish in
   about 1.2 s. Card fetching went from 4-5 min per layer to about 30 s.
+- **Sequential small requests are slow even without the rate limit.** Row fetches
+  used to run one request at a time: the 4B el/la decoder step needed about 2,700
+  requests at about 0.7 s each (about 30 min, CPU near idle). Concurrent row
+  fetching finished it in about 2 min. If CPU is low and a stage is slow, check
+  for a serial request loop first.
 - **Merging ranges does not help for scattered features.** Active features are
   spread across the whole 1.1 GB card file, so cutting the request count means
   downloading most of the file. At a 64 KB merge gap a 1.7B layer needs 847

@@ -12,7 +12,7 @@ from hf_stream import SafetensorsRemote, fetch_feature_records, load_feature_ind
 
 st = SafetensorsRemote("mwhanna/qwen3-4b-transcoders", "layer_12.safetensors", cache_dir)
 w_enc = st.tensor("W_enc")                    # whole tensor, e.g. [163840, 2560] bf16
-rows  = st.rows("W_dec", [17, 40961, 90000])  # {row_index: tensor}
+rows  = st.rows("W_dec", [17, 40961, 90000])  # {row_index: tensor}; concurrent, workers=32
 
 index = load_feature_index(path_to_local_index_json_gz)   # download features/index.json.gz once
 cards = fetch_feature_records("mwhanna/qwen3-4b-transcoders", index, 12, feature_ids)  # {feature: dict | None}
@@ -40,6 +40,8 @@ cards = fetch_feature_records("mwhanna/qwen3-4b-transcoders", index, 12, feature
 | 32 parallel direct CDN requests | 1.17 s in total |
 | Signed CDN URL lifetime | 3600 s |
 | After the fix, 32 workers direct to CDN | 329-feature layer in 8.3 s; 1.7B layers about 30-40 s; output byte-identical to the earlier cache |
+| Decoder rows, sequential (before) | 4B el/la: 2,944 rows in about 2,700 requests, about 0.7 s each, about 30 min |
+| Decoder rows, 32 concurrent workers (after) | Same 4B step about 2 min; 23 re-fetched 1.7B rows identical to the committed ones |
 | Bulk download, 1 vs 8 connections | 80 MB in 17 s vs 18 s (bandwidth-bound) |
 
 ## Transcoder layouts seen so far
