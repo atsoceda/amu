@@ -1,0 +1,139 @@
+#!/usr/bin/env python3
+"""Couplet routes, step 2: does a construction-free state edit at the line-1 rhyme
+anchor change the rhyme of the generated line 2?
+
+Couplets and donor pairings are Hanna & Ameisen's released 100-couplet steering
+subset (couplets/results/rhyme_intervention_sample/<model>.csv: each row's
+chosen_index names a donor couplet with a different rhyme group). The prompt is
+their chat format; the anchor is their rhyme-feature position (two tokens before
+the end of the user turn: the last word of line 1).
+
+State edit: at the anchor, every layer's output is replaced by the donor prompt's
+states at its own anchor; text is unchanged. We generate line 2 greedily with and
+without the edit and score the last word against Datamuse rhymes of the original
+and the donor line-1 words (the authors' rhyme criterion). Validation: the
+unedited generation should match the authors' released original_generation.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+import time
+import urllib.parse
+import urllib.request
+from functools import lru_cache
+from pathlib import Path
+
+import pandas as pd
+import torch
+
+ROOT = Path(__file__).resolve().parents[2]
+EXP = Path(__file__).resolve().parent
+HA = ROOT / "external/model-planning-public/couplets/results/rhyme_intervention_sample"
+
+
+@lru_cache(maxsize=None)
+def rhymes(word: str) -> frozenset:
+    q = urllib.parse.urlencode({"rel_rhy": word.lower(), "max": 1000})
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(f"https://api.datamuse.com/words?{q}", timeout=20) as r:
+                return frozenset(x["word"].lower() for x in json.load(r))
+        except Exception:  # noqa: BLE001
+            time.sleep(2 ** attempt)
+    return frozenset()
+
+
+def last_word(text: str) -> str:
+    words = re.findall(r"[A-Za-z']+", text.split("\n")[-1] if "\n" in text.strip() else text)
+    return words[-1].lower().strip("'") if words else ""
+
+
+def prompt_ids(tok, first_line: str):
+    msgs = [{"role": "user", "content": f"/no_think Write only the next line of this rhyming couplet: {first_line.strip()}"}]
+    text = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True, enable_thinking=False)
+    ids = tok(text, return_tensors="pt", add_special_tokens=False).input_ids
+    toks = tok.convert_ids_to_tokens(ids[0])
+    anchor = toks.index("<|im_end|>") - 2
+    return ids, anchor, text
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("model", default="Qwen3-1.7B", nargs="?")
+    ap.add_argument("--limit", type=int)
+    a = ap.parse_args()
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
+    m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
+    layers = m.model.layers
+    df = pd.read_csv(HA / f"{a.model}.csv", index_col=0)
+    df = df[df["found_valid_row"].astype(str).str.lower() == "true"]
+    if a.limit:
+        df = df.head(a.limit)
+
+    @torch.no_grad()
+    def anchor_states(first_line):
+        ids, anchor, _ = prompt_ids(tok, first_line)
+        out = m(ids.to("mps"), output_hidden_states=True)
+        return [h[0, anchor].clone() for h in out.hidden_states[1:]]
+
+    @torch.no_grad()
+    def generate(first_line, patch=None):
+        ids, anchor, _ = prompt_ids(tok, first_line)
+        hooks = []
+        if patch is not None:
+            for li, layer in enumerate(layers):
+                def fn(mod, inp, out, li=li):
+                    h = out[0] if isinstance(out, tuple) else out
+                    if h.shape[1] > anchor:  # prompt pass only; cached steps have length 1
+                        h = h.clone()
+                        h[0, anchor] = patch[li].to(h.dtype)
+                        return (h, *out[1:]) if isinstance(out, tuple) else h
+                    return out
+                hooks.append(layer.register_forward_hook(fn))
+        try:
+            out = m.generate(ids.to("mps"), max_new_tokens=24, do_sample=False)
+        finally:
+            for h in hooks:
+                h.remove()
+        return tok.decode(out[0, ids.shape[1]:], skip_special_tokens=True).strip()
+
+    all_rows = pd.read_csv(HA / f"{a.model}.csv", index_col=0)
+    rows = []
+    t0 = time.time()
+    for idx, r in df.iterrows():
+        donor = all_rows.loc[int(r["chosen_index"])]
+        orig_w, donor_w = r["first_last_word"], donor["first_last_word"]
+        g0 = generate(r["first_line"])
+        g1 = generate(r["first_line"], anchor_states(donor["first_line"]))
+        w0, w1 = last_word(g0), last_word(g1)
+        rec = {"idx": int(idx), "first_line": r["first_line"], "donor_first_line": donor["first_line"],
+               "orig_word": orig_w, "donor_word": donor_w, "gen_off": g0, "gen_on": g1,
+               "authors_original_generation": r["original_generation"],
+               "matches_authors": g0.strip() == str(r["original_generation"]).strip(),
+               "off_rhymes_orig": w0 in rhymes(orig_w), "off_rhymes_donor": w0 in rhymes(donor_w),
+               "on_rhymes_orig": w1 in rhymes(orig_w), "on_rhymes_donor": w1 in rhymes(donor_w),
+               "on_changed_word": w1 != w0}
+        rows.append(rec)
+        print(f"{len(rows):3d} [{time.time()-t0:5.0f}s] off='{g0}' | on='{g1}' | donor rhyme {rec['on_rhymes_donor']}", flush=True)
+    out = EXP / "results" / a.model
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "step2_rows.json").write_text(json.dumps(rows, indent=1))
+    n = len(rows)
+    s = {"model": a.model, "n": n,
+         "matches_authors_original": sum(r["matches_authors"] for r in rows) / n,
+         "off_rhymes_orig": sum(r["off_rhymes_orig"] for r in rows) / n,
+         "on_rhymes_orig": sum(r["on_rhymes_orig"] for r in rows) / n,
+         "on_rhymes_donor": sum(r["on_rhymes_donor"] for r in rows) / n,
+         "off_rhymes_donor": sum(r["off_rhymes_donor"] for r in rows) / n,
+         "on_changed_last_word": sum(r["on_changed_word"] for r in rows) / n,
+         "elapsed_sec": time.time() - t0}
+    (out / "step2_summary.json").write_text(json.dumps(s, indent=1))
+    print(json.dumps(s, indent=1))
+
+
+if __name__ == "__main__":
+    main()
