@@ -18,7 +18,7 @@ EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from step2_state_edit import rhymes  # noqa: E402
 
-for m in ["Qwen3-1.7B", "Qwen3-4B", "Qwen3-8B", "Qwen3-14B"]:
+for m in ["Qwen3-1.7B", "Qwen3-4B", "Qwen3-8B", "Qwen3-14B", "Qwen3-32B"]:
     d = EXP / "results" / m
     if not (d / "step34_rows.json").exists():
         continue

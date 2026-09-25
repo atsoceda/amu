@@ -13,7 +13,7 @@ from pathlib import Path
 
 EXP = Path(__file__).resolve().parent
 R = EXP / "results"
-MODELS = ["Qwen3-1.7B", "Qwen3-4B", "Qwen3-8B", "Qwen3-14B"]
+MODELS = ["Qwen3-1.7B", "Qwen3-4B", "Qwen3-8B", "Qwen3-14B", "Qwen3-32B"]
 
 
 def load(m, name):

@@ -264,3 +264,21 @@ Relay +1.60 [1.18, 2.05] = last 3 positions +1.53 [1.12, 1.97]; earlier position
 +0.11 [-0.03, 0.25] (prompt tail +0.02, early line 2 +0.07). Same picture as 1.7B.
 Note: "earlier positions" are mostly the chat-template tokens after line 1 (10
 positions) plus 3-6 early line-2 tokens; line-2 prefixes are short.
+
+### Qwen3-32B (2026-09-25, Mac Studio)
+
+Subset by the authors' rule (`make_subset.py`); unedited line 2 matches the authors'
+released 32B generation on 89%. Rhyme with original 98% -> 1%, donor 66%. Total
++27.3 = emission +5.8 + persistence +21.5; persistence with original words +22.2 =
+retrieval +18.2 + relay +3.5 [2.9, 4.1], gap +0.5 [-0.4, 1.4]. Median relay share
+13% (13/100 couplets above 30%, none explained by line-1 repetition). Same-rhyme
+null +1.0. Anchor specificity: A +22.2, C +11.5, E +11.0, M +4.5, F +3.8.
+
+**Criterion 1 (trend) holds** (`scale_trend.py`): per-couplet relay share rises by
++6.2 percentage points per decade of parameters, 95% CI [2.8, 9.6] (clipped shares
+identical; slope of per-size medians +6.4). Medians 4 / 8 / 8 / 11 / 13%.
+Criterion 2 is decided by the position split. Note for its reading: the frozen
+criterion names line-2 positions more than 3 tokens before the rhyme word
+(`early` in `relay_positions.py`); the script's `far` group also includes the
+prompt tail (template tokens between line 1 and line 2). Both are reported; the
+criterion is judged on `early`, as frozen.
