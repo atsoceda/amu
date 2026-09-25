@@ -158,3 +158,29 @@ Chain task, Qwen3-1.7B and 4B (Mac Studio): accuracy 97 / 17 / 3% and 100 / 55 /
 K = 1 / 3 / 5; post-v0 block -0.02 / +0.11 / +0.04 and -0.07 / +0.29 / -0.20 (all CIs
 include zero) against v0-digit edits of +36 / +24 / +14 and +47 / +32 / +20. Same as
 8B: nothing downstream holds the running value.
+
+## Stage 3: written chains, public vs private (design frozen 2026-09-26, before any result)
+
+**Why.** Unwritten derived values are recomputed from the visible sources (stages 1-2).
+The complementary case matters for chain-of-thought monitoring: when the model
+writes its intermediate values, does the final answer follow that visible text
+(emission) or private state (persistence)?
+
+**Task.** The variable chains of stage 2 (K = 3, 5), user turn ending "Compute each
+variable in order, one per line, then state the value of {last}." (Qwen3 chat,
+thinking off). The model's greedy continuation is the written chain (CoT) followed
+by the answer; the target is the first digit of the final value, read at the
+position where the answer begins (prefix: the written chain plus "The answer is ").
+Items where the unedited written chain is fully correct only.
+
+**Edit and cells.** Donor state (all layers) at the v0 digits (the donor's chain has a
+different final tens digit). CoT text generated without the edit (text0) and with it
+(text1). Cells as in the six-cell assay: R(off, text0), R(on, text1), R(off, text1),
+R(on, text0). Emission = R(off, text1) - R(off, text0); persistence = R(on, text1) -
+R(off, text1) (and with text0). R = log p(donor first digit) - log p(original first
+digit).
+
+**Prediction.** When intermediate values are written, emission carries nearly all of
+the effect (the answer reads the last written value); persistence is small. A large
+persistence would mean the answer is computed privately despite the visible chain,
+the unfaithful-CoT case.
