@@ -416,3 +416,17 @@ gap +1.5; median relay share 9%. Position split: late +1.81, **boundary (`,` and
 `\n`) +0.68 [0.37, 1.00]**, early line 2 +0.26 [0.14, 0.40]; same-rhyme null boundary
 -0.04. Boundary storage appears here but not in the chat format at 12B (+0.03).
 Anchor A +27.9, E +12.3, C +12.1, M +6.2, F +5.4.
+
+## Necessity split for downstream storage (analysis frozen 2026-09-26, before any result)
+
+**Why.** Relay and the position split measure *sufficiency*: downstream positions get
+their edited-run states while the anchor stays clean. When anchor and downstream
+storage interact (Gemma 27B gap +12.6), sufficiency understates downstream storage,
+because the clean anchor contradicts it. The complement is *necessity*: edit the
+anchor, reset one group of downstream positions to its clean-run state (all layers),
+recompute the rest, and measure the loss of persistence. `relay_necessity.py`,
+groups as in `relay_positions.py` (late, boundary/tail, early line 2, all);
+necessity_all = persistence - retrieval by construction. With additive paths the
+two agree; with interaction, necessity exceeds sufficiency. Reported next to each
+other; the Shapley average of the two is given as an interaction-robust summary.
+Models: Qwen3 8B/14B/32B and Gemma 3 12B/27B (chat), then the plain-format runs.
