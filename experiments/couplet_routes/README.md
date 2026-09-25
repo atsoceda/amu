@@ -398,3 +398,21 @@ memory-budget scheduler (`jobs/runner.sh`, `jobs/chain.sh`). No results were aff
 
 Screen 100/609 (16%). Persistence +9.0; relay +0.51 [0.38, 0.65] = late +0.43,
 boundary +0.03 [-0.05, 0.11], early line 2 +0.03. Same as the chat format at 1.7B.
+
+### Gemma 3 27B IT, chat format (2026-09-26, Mac Studio)
+
+Screen 100/107; donor rhyme 93%. Persistence +43.1 [40.3, 45.7] = retrieval +29.2 +
+relay +1.2 + **additivity gap +12.6 [9.4, 15.9]** (29% of persistence; Qwen at most
++1.3, Gemma 12B +3.4). The paths interact strongly: editing only the anchor
+(retrieval) or only the downstream positions (relay) leaves the target reading
+conflicting rhyme information, and the full effect needs both. That is redundant
+storage downstream, which the relay-only measure understates. Position split
+(sufficiency): late +0.29, boundary +0.68 [0.03, 1.59], early line 2 +0.03.
+
+### Gemma 3 12B IT, plain format (2026-09-26, Mac Studio)
+
+Screen 100/115; donor rhyme 91%. Persistence +27.9 = retrieval +23.8 + relay +2.6 +
+gap +1.5; median relay share 9%. Position split: late +1.81, **boundary (`,` and
+`\n`) +0.68 [0.37, 1.00]**, early line 2 +0.26 [0.14, 0.40]; same-rhyme null boundary
+-0.04. Boundary storage appears here but not in the chat format at 12B (+0.03).
+Anchor A +27.9, E +12.3, C +12.1, M +6.2, F +5.4.
