@@ -361,3 +361,15 @@ Screen: 100 of 192 first lines rhyme. State edit: donor rhyme 69%. Persistence +
 Position split: late +1.74, boundary (the single `,\n` token) +0.10 [-0.05, 0.26],
 early line 2 +0.07. Same as the chat format at 8B (boundary +0.06): no boundary
 storage yet. 14B and 32B decide prediction (3).
+
+### Plain format, Qwen3-14B (2026-09-26, Mac Studio): prediction (3) supported
+
+Screen: 100 of 137 rhyme. Donor rhyme 75%. Persistence +19.1 = retrieval +14.4 +
+relay +4.13 [3.62, 4.67]; **median relay share 21%** (8B-plain 11%). Position split:
+late +1.79, **boundary (the single `,\n` token) +2.56 [2.16, 2.98]** (8B-plain +0.10),
+early line 2 +0.07 [-0.04, 0.17]. Boundary storage appears between 8B and 14B in the
+plain format too, larger than in the chat format (+1.32, all on the comma): the line
+boundary itself, not the chat template, becomes a second storage site. Retrieval
+from the rhyme word still dominates, so it is partial storage, not a hand-off; this
+is compatible with Ma & Rui's single-layer newline patching finding no hand-off in
+Qwen3 (our measure edits all layers of the naturally computed boundary state).
