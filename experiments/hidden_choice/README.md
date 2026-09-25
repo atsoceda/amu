@@ -63,3 +63,23 @@ state edit at the list positions moved the pick inconsistently in sign (the list
 original token embeddings still feed layer 0), so the **text swap** (the donor order
 in the prompt itself, which moves the pick to the donor's by construction) is added as
 the reference for full re-derivation. Stored or relayed effects are compared with it.
+
+## Results
+
+### Qwen3-8B (2026-09-26, Mac Studio; 100 pairs from 103 lists)
+
+| Donor states at | Effect on the reveal (R) |
+|---|---|
+| text swap (donor order in the prompt; reference) | +7.09 [6.43, 7.76] |
+| list positions (state edit) | +14.25 [12.22, 16.32] (97/100 toward the donor pick) |
+| post-list block | **+0.82 [0.70, 0.96]** (median 12% of the text swap) |
+| post-list block, direct retrieval only | +0.83 [0.70, 0.96] |
+| post-list block, relay through the sentence | +0.00 [-0.04, 0.05] |
+| sentence block | -0.01 [-0.06, 0.04] |
+| post-list + sentence | +0.85 [0.72, 0.98] |
+
+The pick is mostly re-derived at the reveal from the visible list. A small, clearly
+nonzero part (about 12% of the text-swap effect) is stored in the prompt positions
+after the list and read directly at the reveal: hidden content (a pick a reader
+cannot infer) held at a prompt anchor. Nothing is relayed through the generated
+sentence. Scale (14B, 32B) and Gemma decide whether the stored part grows.
