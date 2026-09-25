@@ -170,3 +170,21 @@ position (+0.6 to +0.8).
 Anchor specificity at 8B (persistence): A +22.6 [20.9, 24.4], M +8.6 [6.9, 10.4], F +5.1 [3.8, 6.5], C +10.7 [8.9, 12.5], E +10.6 [8.8, 12.4]; the anchor is again about twice as effective as any other position.
 
 Reading: direct retrieval dominates at all three sizes. Relay grows in absolute size with the whole effect, but its median share goes 4% -> 8% -> 8%: no further growth from 4B to 8B. 14B and 8B step 6 are pending.
+
+## Relay-tail analysis (2026-09-25; `relay_tail.py`, existing data)
+
+Couplets with relay share above 30%: 5/88 (1.7B), 8/89 (4B), 5/98 (8B). No
+systematic relay regime:
+
+- At 4B, 4 of the 8 are couplets whose original line 2 first repeats line 1 (vs
+  4 of 81 among the rest). The copy puts the rhyme word among the "in-between"
+  positions, so the target can retrieve it there: retrieval from a second anchor
+  that the split counts as relay (a definitional artifact).
+- At every size the tail couplets have weaker edits (median persistence 9-17 vs
+  14-24), so part of the tail is the share ratio being noisy.
+- No other difference: no donor- or original-rhyme words elsewhere in the prefix,
+  and the same number of in-between positions (except the 4B copies).
+
+Conclusion: relay stays small for visible rhyme information; the derived-value
+task is the real test of whether relay appears when the information must be
+computed.

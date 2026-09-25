@@ -1,0 +1,39 @@
+{
+ "model": "Qwen3-4B",
+ "n_high": 8,
+ "n_rest": 81,
+ "high_idx": [
+  8,
+  65,
+  80,
+  104,
+  114,
+  133,
+  168,
+  267
+ ],
+ "line2_repeats_line1_off": {
+  "high": 4,
+  "rest": 4
+ },
+ "line2_repeats_line1_on": {
+  "high": 0,
+  "rest": 3
+ },
+ "donor_rhyme_in_prefix": {
+  "high": 1,
+  "rest": 4
+ },
+ "orig_rhyme_in_prefix": {
+  "high": 2,
+  "rest": 3
+ },
+ "median_n_between": {
+  "high": 21.5,
+  "rest": 16
+ },
+ "median_persistence": {
+  "high": 12.253830237962205,
+  "rest": 18.421225857843833
+ }
+}
