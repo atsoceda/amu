@@ -14,7 +14,7 @@ while :; do
   sleep "$poll"
 done
 cd "$REPO"
-for d in experiments/couplet_routes/results experiments/derived_value_carry/results experiments/relay_positive_control/results; do
+for d in experiments/couplet_routes/results experiments/derived_value_carry/results experiments/relay_positive_control/results experiments/hidden_choice/results; do
   rsync -az --exclude 'features/' "$HOST:$REMOTE_ROOT/bundle/$d/" "$d/"
 done
 "${SSH[@]}" "tail -8 ~/$REMOTE_ROOT/logs/runner.log; echo; echo queued:; cat ~/$REMOTE_ROOT/queue.txt | cut -d' ' -f1,2"
