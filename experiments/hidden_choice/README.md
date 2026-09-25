@@ -91,3 +91,21 @@ the text swap), all by direct retrieval (+1.95); relay through the sentence -0.0
 [-0.14, 0.01]; sentence block -0.00. Same pattern as Qwen3-8B in a second family: a
 small stored hidden pick after the list, read directly; nothing relayed through the
 generated sentence.
+
+## Control: out-of-list donor (design frozen 2026-09-26, after 8B and Gemma 12B, before any control result)
+
+**Why.** The post-list block may hold the pick itself (hidden content) or only a copy
+of the list order (visible content from which the reveal re-derives the pick). The
+main design cannot separate them. Here the donor list shares no fruit with the
+original list (two disjoint 4-item lists from 8 fruits), so the donor's pick is not
+in the visible text at all.
+
+**Measure.** Donor states at the post-list block (and, for reference, the text swap
+and the list positions); outcome R_out = log p(donor pick) - log p(original pick) at
+the reveal, where the donor pick is absent from the original prompt. Also the rank of
+the donor pick among all 8 fruits.
+
+**Readings fixed in advance.** If the post-list edit raises the out-of-list donor pick
+(R_out clearly above zero), those positions carry the choice itself: hidden content
+that contradicts the visible text. If it does not, the stored component is list-order
+information and the pick is re-derived.
