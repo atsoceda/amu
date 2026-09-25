@@ -133,26 +133,34 @@ class SafetensorsRemote:
         raw = bytearray(fetch_range(self.u, self.base + a, self.base + b - 1))
         return torch.frombuffer(raw, dtype=self._dtype(h["dtype"])).reshape(h["shape"])
 
-    def rows(self, name: str, idx: list[int], max_gap_rows: int = 64) -> dict:
+    def rows(self, name: str, idx: list[int], max_gap_rows: int = 64, workers: int = 32) -> dict:
+        """Fetch selected rows of a 2-D tensor. Nearby rows are merged into one
+        request and the requests run concurrently (they go straight to the CDN)."""
         import torch
-        """Fetch selected rows of a 2-D tensor, merging nearby rows into one request."""
+        from concurrent.futures import ThreadPoolExecutor
         h = self.header[name]
         n_rows, width = h["shape"]
         row_bytes = width * self.SIZES[h["dtype"]]
-        out: dict[int, torch.Tensor] = {}
         idx = sorted(set(idx))
-        i = 0
+        groups, i = [], 0
         while i < len(idx):
             j = i
             while j + 1 < len(idx) and idx[j + 1] - idx[j] <= max_gap_rows:
                 j += 1
-            lo, hi = idx[i], idx[j]
+            groups.append(idx[i : j + 1])
+            i = j + 1
+
+        def get(group):
+            lo, hi = group[0], group[-1]
             a = self.base + h["data_offsets"][0] + lo * row_bytes
             raw = bytearray(fetch_range(self.u, a, a + (hi - lo + 1) * row_bytes - 1))
             block = torch.frombuffer(raw, dtype=self._dtype(h["dtype"])).reshape(hi - lo + 1, width)
-            for k in idx[i : j + 1]:
-                out[k] = block[k - lo].clone()
-            i = j + 1
+            return {k: block[k - lo].clone() for k in group}
+
+        out: dict = {}
+        with ThreadPoolExecutor(workers) as ex:
+            for part in ex.map(get, groups):
+                out.update(part)
         return out
 
 
