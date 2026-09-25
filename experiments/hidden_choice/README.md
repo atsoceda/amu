@@ -159,3 +159,17 @@ Free version, Gemma 3 12B (batched, after the check): sentence changes in 23 of 
 pairs, never names a fruit; **emission -0.01 [-0.07, 0.04]**, persistence +11.17: no
 covert textual channel. Batched `choice_free.py` check (Qwen3-0.6B, pairs chosen by
 both paths): cells agree to a median 0.05, max 0.13.
+
+Out-of-list control with pick specificity, summary so far:
+
+| | Qwen3-8B | Gemma 3 12B | Qwen3-14B |
+|---|---|---|---|
+| Post-list effect on donor pick | +2.01 | +5.07 | +0.29 |
+| on the donor's other fruits | +1.46 | +4.06 | +0.30 |
+| **Pick specificity** | **+0.55 [0.46, 0.64]** | **+1.01 [0.78, 1.24]** | **-0.01 [-0.05, 0.03]** |
+| Text swap pick specificity (reference) | +5.4 | +6.9 | +3.3 |
+
+The positions after the list mostly hold a copy of the list; a small hidden,
+pick-specific part is stored at 8B and Gemma 12B (about 10-15% of the text swap's) and
+none at Qwen3-14B. So far there is no sign that stored hidden choices grow with scale;
+32B and Gemma 27B pending.
