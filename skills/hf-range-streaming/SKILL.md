@@ -11,7 +11,7 @@ compatibility: >-
   Python 3.10+ standard library; torch only for decoding tensors and rows. Network access to huggingface.co
   and its CDN; public or authorized repositories. In this repo use the project conda environment.
 metadata:
-  version: "1.2"
+  version: "1.3"
 ---
 
 # Hugging Face range streaming
@@ -93,9 +93,12 @@ machine with about 20 GB of free disk.
   spread across the whole 1.1 GB card file, so cutting the request count means
   downloading most of the file. At a 64 KB merge gap a 1.7B layer needs 847
   requests (8.8 MB); at a 4 MB gap, 24 requests but 972 MB.
-- **Bulk bandwidth is the hard ceiling** for large contiguous tensors (about
-  4.5-7 MB/s here); parallel connections did not raise it. A 4B encoder layer
-  (about 840 MB) takes about 2 minutes.
+- **Bulk bandwidth: one connection can be the ceiling on a fast link.** On this
+  laptop (about 4.5-7 MB/s) parallel connections did not help. On the Mac Studio
+  (about 69 MB/s link) one range stream reached only about 16 MB/s, and 8
+  concurrent ranges were 4x faster (200 MB in 2 s vs 8 s). `tensor()` therefore
+  splits large tensors into 8 concurrent ranges; measure with `probe` and a
+  parallel test on each new machine.
 
 Details, timings and the transcoder layouts are in
 [`references/REFERENCE.md`](references/REFERENCE.md).

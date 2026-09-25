@@ -126,11 +126,21 @@ class SafetensorsRemote:
         self.base = 8 + meta["n"]
         self.header = {k: v for k, v in meta["header"].items() if k != "__metadata__"}
 
-    def tensor(self, name: str):
+    def tensor(self, name: str, parts: int = 8, min_part: int = 32 << 20):
+        """Fetch one whole tensor. Large tensors are split into `parts` byte ranges
+        fetched concurrently (on a fast link one connection is the bottleneck:
+        measured 4x faster with 8 connections on the Mac Studio)."""
         import torch
+        from concurrent.futures import ThreadPoolExecutor
         h = self.header[name]
         a, b = h["data_offsets"]
-        raw = bytearray(fetch_range(self.u, self.base + a, self.base + b - 1))
+        start, end = self.base + a, self.base + b
+        n = max(1, min(parts, (end - start) // min_part))
+        bounds = [start + (end - start) * k // n for k in range(n + 1)]
+        raw = bytearray(end - start)
+        with ThreadPoolExecutor(n) as ex:
+            for k, chunk in enumerate(ex.map(lambda k: fetch_range(self.u, bounds[k], bounds[k + 1] - 1), range(n))):
+                raw[bounds[k] - start:bounds[k + 1] - start] = chunk
         return torch.frombuffer(raw, dtype=self._dtype(h["dtype"])).reshape(h["shape"])
 
     def rows(self, name: str, idx: list[int], max_gap_rows: int = 64, workers: int = 32) -> dict:
