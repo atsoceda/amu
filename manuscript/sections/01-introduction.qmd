@@ -50,7 +50,7 @@ stress tests. The denominator is given under each group; Qwen3 is shown filled,
 Qwen3.5 as triangles, Gemma 3 open. In the positive control,
 where relay is the known mechanism, relay is the largest path. Elsewhere the measured
 relay cells are small; interactions, reported separately in the sections, are not shown
-here.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
+here.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
 
 We introduce **route accounting**, a decomposition of an intervention's effect by
 path (@sec-method). A donor's hidden states are written at the source positions, and
@@ -146,7 +146,7 @@ prompt format.
 4. The emergence of a stored copy at the line's final token at 14B and above, and a
    reconciliation of the published accounts of rhyme planning.
 
-::: {#tbl-map}
+::: {#tbl-map tbl-pos="t"}
 
 ```{=latex}
 \footnotesize

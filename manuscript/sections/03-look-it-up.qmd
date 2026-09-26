@@ -41,7 +41,7 @@ four family and prompt combinations, by sufficiency (filled) and necessity (holl
 with base checkpoints as stars. It is absent up to 8B, appears at 14B in Qwen3 and at
 12B to 27B in Gemma 3, is present in base models, and in Gemma 3 27B with the chat
 prompt is necessary for far more than it is sufficient
-for.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100%}
+for.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100% fig-pos="t"}
 
 **The relay that grows with scale is not carrying along the generated line.** Before running the larger models we committed two criteria for the claim that carrying grows with scale. First,
 the relay share must rise with log parameter count across Qwen3 1.7B to 32B. Second,
