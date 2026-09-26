@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.10"
+  version: "1.11"
   updated: "2026-09-26"
 ---
 
@@ -88,7 +88,9 @@ things and the paper needed "early relay" and glosses of "carry"):
   first defined (abstract, introduction, method): "passed forward in the hidden states of
   the generated text, without being written". "Along the text" or "through an
   intermediate token" reads as "via the written tokens", which is emission, the opposite
-  (user question, 2026-09-26).
+  (user question, 2026-09-26). "The model's output" is just as ambiguous: write "the
+  hidden states of the generated text" for the latent path, and "a monitor reading the
+  generated text" or "a monitor that probes hidden states" for the two kinds of monitor.
 - Relay is not "the part through the generated text": the late lookup also passes
   through generated positions (the last three before the target). Relay is the part that
   holds the information across the generated text; the three lookups all read it from a

@@ -77,9 +77,11 @@ plain-format result; and no copy appears below 8B, as @jacopin2026improvisation 
 Each account is correct for the configuration it studies (Appendix @sec-app-couplets).
 
 **Why the stored copy is a lookup, not relay.** It passes through an intermediate
-position, but it is written once into a fixed structural position next to the source,
-read directly however much text intervenes, and does not move with generation: for a
-monitor, one more place to read, not a path through the model's output.
+position, but that position is a fixed structural token of the prompt next to the
+source. The copy is written there once, read directly however much text intervenes, and
+does not move with generation. It never travels through the hidden states of the
+generated text, so a monitor that probes hidden states can find it at a known prompt
+position.
 
 ## Computed values {#sec-computed}
 
