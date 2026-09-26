@@ -373,3 +373,11 @@ Combined reading (4B and 12B, three conditions each): the stored information sit
 segment-closing periods and on one function word of the instruction; the word depends on the
 wording and size ("the", "your", the possessive before "weather"), and moves when the
 instruction is reworded. Supports storage at predictable low-content tokens.
+
+### Localization check 3: Gemma 3 - 27B - hidden choice - localization, reworded instruction (2026-09-26)
+
+Pick specificity +1.63 [1.38, 1.88] (text swap +6.89, 24%). By token: **the apostrophe of
+"today's" (before "weather") +1.34 [1.14, 1.53]** (75%), the period after the list +0.37 [0.28,
+0.48] (21%); every other token below 0.05. The frozen check at its specified model: the storage
+moves with the wording (base wording: "the" in "about the weather", 77%). Supported at 4B, 12B
+and 27B.

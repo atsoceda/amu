@@ -63,7 +63,7 @@ each is a direct test.
   model's preference. A donor that changes the pick without changing the list, or a
   probe on the stored tokens, would narrow this.
 - *Scope of the models.* The models range from 1B to 32B parameters in Qwen3, Qwen3.5
-  and Gemma 3, with Gemma 4 31B for the hidden choice only. The storage site moves with the wording at 4B and 12B; at 27B the reworded check was among the last runs before submission.
+  and Gemma 3, with Gemma 4 31B for the hidden choice only. The storage site moves with the wording at 4B, 12B and 27B.
 - *Checks not run.* Several committed checks could not be run before submission: the
   Gemma 4 route split and induction control, the Qwen3.5 mixture-of-experts model, the
   Qwen3.5-27B recurrent pilot at 100 couplets (the decision rests on 24), the Qwen3-32B

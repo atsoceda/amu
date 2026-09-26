@@ -270,8 +270,10 @@ two low-content tokens. The period that ends the list accounts for \(+0.42\) [0.
 0.63] (71%), and the apostrophe of "today's", the token before "weather", for \(+0.16\)
 [0.09, 0.22] (27%). Every other token is below 0.04. Gemma 3 4B moves the same way: the
 apostrophe of "today's" takes 69% (\(+0.54\) [0.46, 0.62]) and the list-closing period
-28%. At both sizes, the function-word site moved with the wording.
-\pending{reworded instruction at Gemma 3 27B.}
+28%. Gemma 3 27B, where the base wording gave 77% on *the*, moves the same way: the
+apostrophe of "today's" takes 75% (\(+1.34\) [1.14, 1.53]) and the list-closing period 21%
+(pick specificity \(+1.63\) [1.38, 1.88], 24% of the text swap's). At all three sizes the
+function-word site moved with the wording.
 
 Across sizes and wordings, the stored information sits on two or three low-content
 tokens. These are the punctuation that closes a segment (the list or the instruction)

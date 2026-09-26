@@ -107,7 +107,7 @@ result (@sec-stress). They bound the principle rather than confirm it.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
   monitoring cares about most. Information specific to a secret pick is stored after
   the list, at a few predictable, low-content tokens: the punctuation that closes the
-  list or the instruction, and a function word of the instruction, which at 4B and 12B moves when the instruction is reworded. The reveal reads it there. The intervening sentence never
+  list or the instruction, and a function word of the instruction, which at 4B, 12B and 27B moves when the instruction is reworded. The reveal reads it there. The intervening sentence never
   names the pick and has no measurable causal effect on it through emission. Relay
   through that sentence is at most 2% of the pick's effect, although in the two
   largest Qwen models it is one eighth to one sixth of the small stored part.
