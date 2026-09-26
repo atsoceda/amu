@@ -216,6 +216,7 @@ comma in couplets).
 | Gemma 3 4B | +11.93 | **+2.59 [2.13, 3.09]** | 22% |
 | Gemma 3 12B | +8.10 | **+1.43 [1.10, 1.77]** | 18% |
 | Gemma 3 27B | +10.12 | **+4.09 [3.59, 4.58]** | 40% |
+| Qwen3-32B (added 2026-09-26) | +1.64 | **+0.12 [0.05, 0.19]** | 7% |
 
 Against the frozen predictions: in Gemma 3 the stored hidden pick is largest at 27B in
 both domains, but growth is not monotonic (4B stores more than 12B), so "4B < 12B <
@@ -268,3 +269,11 @@ Donor = the same list in another order with the **same** greedy pick. If the pos
 block carries the pick itself, the post-list edit should leave the relative preference
 for the pick, log p(pick) - mean log p(other list items), unchanged (a null near 0),
 whereas out-of-list donors move it. Fruits, 100 pairs; Gemma 3 - 27B and Qwen3 - 32B.
+
+### Replication, Qwen3 - 32B - hidden choice - replication (animals; recorded 2026-09-26)
+
+Post-list pick specificity +0.12 [0.05, 0.19] against a text-swap specificity of +1.64
+(7%). The frozen Qwen3 prediction ("near zero at 14B-32B") holds in absolute size (0.13 at
+14B, 0.12 at 32B, against 0.63 at 8B and 4.09 at Gemma 3 27B) but not strictly as zero: the
+CI excludes zero, and the share is inflated by 32B's small text-swap reference (the pick of
+32B depends less on list order). Reported as small, not absent.
