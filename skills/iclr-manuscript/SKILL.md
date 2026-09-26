@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.4"
+  version: "1.5"
   updated: "2026-09-26"
 ---
 
@@ -66,16 +66,22 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
 
 ## Wording rules learned from review
 
-- Do not use **carry**, **carried**, or **carrying** as a route name. The measured name
-  is **early relay**: relay through the generated positions that are neither the stored
-  copy nor the late lookup. **Relay** is the parent: any intermediate position passes the
-  edit on, including the stored copy, the late lookup, and early relay. The title's
-  "don't carry it" is ordinary English for that early-relay claim, glossed once in the
-  introduction. For a share of an effect write "accounts for X%", never "carries X%".
-- State why early relay matters to a monitor: it travels through the model's own output
-  without appearing in it. A stored copy is relay, and it sits at a fixed prompt
-  position. Do not claim that only relay "keeps content in the model's state" (retrieval
-  does too).
+Each path has exactly one name (fixed 2026-09-26 after "relay" had come to mean two
+things and the paper needed "early relay" and glosses of "carry"):
+
+- **indirect path**: the umbrella for everything that reaches the target through
+  intermediate positions (the quantity \(T\)). A group of positions that was not split
+  further is "the indirect path through" that group.
+- **stored copy**, **late lookup**, **relay**: the three position groups of the indirect
+  path. **Relay** means only the path along the remaining generated text, the one a
+  monitor could miss. Never write "early relay", and never use "relay" for the umbrella.
+- **looked up**: direct retrieval, the stored copy or the late lookup.
+- **path**, not "route", except in the method name "route accounting".
+- **carry** appears only in the title and the slogan "look it up, don't carry it", as
+  plain English; never define it or use it as a path name. For a share of an effect
+  write "accounts for X%", never "carries X%".
+- Use one name per quantity in figure labels and captions (for example "share of
+  necessity"), and do not add a colour bar when every shaded cell prints its value.
 - Do not use "private" (retired in the glossary); say hidden or secret.
 
 ## YAML pitfalls
@@ -114,7 +120,9 @@ and tell the user.
    earlier number; quote the number when sending a render to the user.
 2. Pages: `pdfinfo dist/iclr-submission/paper.pdf`; find where the main text ends (the
    AI use statement follows the discussion) with `pdftotext -f N -l N`. ICLR allows 9 pages
-   of main text at submission; report the count, do not cut text to fit (`AGENTS.md`).
+   of main text at submission; report the count, do not cut text to fit (`AGENTS.md`)
+   unless the user asks. When they do, move detail to the appendix (unlimited at ICLR)
+   rather than delete it, and state each result once in the main text.
 3. Look at the pages: `pdftoppm -r 70 -png dist/iclr-submission/paper.pdf pg` and tile them
    into contact sheets; check figure legibility, float placement and table breaks.
 4. Check unresolved references: `pdftotext ... | grep -n "??\|@fig\|@tbl\|@sec"`.
