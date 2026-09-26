@@ -6,10 +6,10 @@ position use the written text, or does it bypass the text and read the source ag
 This is the contrast that matters most for monitoring, and @fig-computed shows it
 directly. When the value is not written, patching the later positions barely moves the answer. When it is written, most of its effect goes through the text.
 
-![Unwritten versus written computed values (Qwen3 variable chains). The share of the
-source effect that reaches the answer through the positions after the source, with
-95% intervals. *Unwritten*: donor states at every later position together, as a share
-of the effect of the donor's source digits (\(K=3\) updates). This downstream patch effect stays near zero,
+![Unwritten versus written computed values (Qwen3 variable chains), on one axis with two
+denominators. *Unwritten:* the effect of donor states at every position after the
+source, as a share of the effect of editing the source digits. *Written:* emission
+divided by the total effect. 95% intervals. For unwritten chains (\(K=3\) updates) this downstream patch effect stays near zero,
 which is consistent with the answer re-reading the source; recomputation itself is not
 measured. *Written*: the share that goes
 through the values the model writes (emission; \(K=3\) and \(K=5\)); the answer follows

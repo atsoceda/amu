@@ -33,7 +33,7 @@ analysis, the share on the line's final token (the comma before the chat templat
 the newline in the plain prompt) against the largest share on any other boundary
 token. **B:** hidden choice. The instruction with its storage tokens highlighted, and
 for each model and wording the share of the pick-specific information on the
-segment-closing periods, on the function word before "weather", and on all other
+segment-closing periods, on one function word or possessive token (*the*, *your*, or the apostrophe of "today's"), and on all other
 tokens. At 12B and 27B it sits mostly on *the* in "about the weather"; at 4B on the
 periods; with the reworded instruction it moves to the list-closing period and the
 token before "weather". The full token maps are in Appendix

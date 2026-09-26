@@ -12,9 +12,9 @@ thinking disabled and short generated spans.
    copy stored once at a structural token. Early relay along the generated text is at
    most 1% of persistence in couplets. For computed values, every later position
    together accounts for at most 2.4% (chains) and 6% (sums) of the source effect. For the
-   hidden choice, relay through the sentence is at most 2% of the pick's effect.
+   hidden choice, relay through the sentence is at most 2% of the text-swap effect.
 3. *Storage sites are few and predictable.* The line's final token holds a copy of
-   the rhyme plan. Two or three low-content tokens (segment-closing punctuation and one function word of the instruction) hold the stored pick-specific information of a secret choice.
+   the rhyme plan. Two or three low-content tokens (segment-closing punctuation and one function word or possessive token of the instruction) hold the stored pick-specific information of a secret choice.
 4. *The stored copy grows.* It emerges at 14B and above and is present in base
    models. Once the source is beyond the local attention window, it is necessary for
    about half of the effect. It is also where hidden, pick-specific information was
@@ -23,8 +23,9 @@ thinking disabled and short generated spans.
 If these regularities extend to other tasks, a monitor of internal state could focus
 on a handful of prompt positions, the sources and their stored copies, rather than
 the whole trajectory, and should track whether stored copies keep growing with scale.
-The exception marks where this advice is weakest. With filler before line 2, relay through the generated text (including its last three positions) is 9 to 13%, and in the two largest Qwen models about an eighth of the stored
-hidden information passes through the intervening sentence.
+The exception marks where this advice is weakest. With filler before line 2, relay through the generated text (including its last three positions) is 9 to 13% by sufficiency, and in Qwen3-32B and the Qwen3.5 hybrids one eighth to
+one fifth of the small stored hidden part passes through the intervening sentence
+(2% or less of the text-swap effect).
 
 **Why look up rather than carry?** One reading is architectural. In a transformer,
 attention makes any earlier position directly readable at every layer. A later

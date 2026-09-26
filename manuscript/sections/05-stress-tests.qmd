@@ -97,7 +97,7 @@ supported. Direct retrieval is 66%, 64%, 54%, 40% and 40% of persistence at 0, 5
 1,000, 1,500 and 2,000 tokens, and the stored copy is necessary for 11%, 25%, 30%,
 45% and 49%. The largest point-estimate step is where line 1 leaves the window, but the shift has
 begun at 500 tokens, inside it. Relay through the generated text is 11%, 9%, 13% and
-12% at the four nonzero distances: it appears once filler is present and does not
+12% by sufficiency at the four nonzero distances (by necessity 10%, 14%, 11% and 10%): it appears once filler is present and does not
 grow with distance. We therefore describe a long-distance shift toward the stored
 copy, steepest across the window, rather than a precisely located window-edge transition.
 
@@ -114,15 +114,15 @@ line 2 rhymes with line 1 & 98\% & 82\%\\
 persistence & $+42.4$ [38.6, 46.0] & $+26.4$ [23.8, 28.9]\\
 direct retrieval & $+28.0$ (66\%) & $+10.5$ (40\%)\\
 stored copy: sufficiency / necessity & $+0.1$ / $+4.6$ (11\%) & $+9.7$ / \textbf{$+13.0$} (49\%)\\
-filler: sufficiency / necessity & 0.0 / 0.0 & $+0.3$ / $+0.2$\\
+filler: sufficiency / necessity & 0.0 / 0.0 & $+0.3$ / $+0.15$ [$-0.26$, 0.57]\\
 generated text: sufficiency / necessity & $+0.5$ / $+7.3$ & \textbf{$+3.2$} (12\%) / $+2.7$ (10\%)\\
 \bottomrule
 \end{tabular}
 ```
 
 Relay at a distance, Gemma 3 27B (chat prompt; 50 couplets per distance; 95%
-intervals). Shares are of persistence at the same distance. At \(D=0\) the generated
-text's necessity is the late lookup.
+intervals). Shares are of persistence at the same distance. The generated-text block is the cue
+plus all of line 2; it is not split into early relay and late lookup.
 
 :::
 
@@ -217,7 +217,8 @@ The families diverge with scale.
   [3.97, 4.93]) of the text swap's pick specificity. For Gemma 4 the route split was
   not run.
 - In Qwen3 the stored share shrinks with scale: 10 to 15% at 8B, 0 to 7% at 14B and 32B.
-  Qwen3.5-27B stores 3 to 4%. Larger Qwen models re-derive the pick at the reveal.
+  Qwen3.5-27B stores 3 to 4%. In larger Qwen models the pick is mostly not reproduced by
+the post-list patch.
 
 ::: {#tbl-hidden}
 
@@ -277,15 +278,17 @@ two low-content tokens. The period that ends the list accounts for \(+0.42\) [0.
 0.63] (71%), and the apostrophe of "today's", the token before "weather", for \(+0.16\)
 [0.09, 0.22] (27%). Every other token is below 0.04. Gemma 3 4B moves the same way: the
 apostrophe of "today's" takes 69% (\(+0.54\) [0.46, 0.62]) and the list-closing period
-28%. Gemma 3 27B, where the base wording gave 77% on *the*, moves the same way: the
-apostrophe of "today's" takes 75% (\(+1.34\) [1.14, 1.53]) and the list-closing period 21%
-(pick specificity \(+1.63\) [1.38, 1.88], 24% of the text swap's). At all three sizes the
-function-word site moved with the wording.
+28%. Gemma 3 27B, where the base wording gave 77% on *the*, moves the same way. Its stored
+pick specificity is \(+1.63\) [1.38, 1.88] (24% of the text swap's); of that, the
+apostrophe of "today's" accounts for 82% (\(+1.34\) [1.14, 1.53]) and the list-closing
+period for 23% (\(+0.37\)), which @fig-sites B shows as 75% and 21% of the row's positive
+necessity. At all three sizes the site moved with the wording, from a function word to
+the possessive token before "weather".
 
 Across sizes and wordings, the stored information sits on two or three low-content
 tokens. These are the punctuation that closes a segment (the list or the instruction)
-and one function word of the instruction, whose identity depends on the wording ("the",
-"your", or the possessive before "weather"). Segment-closing punctuation is
+and one function word or possessive token of the instruction, whose identity depends
+on the wording (*the*, *your*, or the possessive before "weather"). Segment-closing punctuation is
 the analogue of the line's final token for rhymes. In both tasks the model stores a
 copy once, at a boundary next to the source or at a predictable token of the prompt,
 and reads it at the point of use.

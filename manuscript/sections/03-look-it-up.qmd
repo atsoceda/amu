@@ -92,8 +92,9 @@ the sum would be computed. Donor states there move the answer by \(-0.08\) to
 question mark does not hold the sum. The stronger test edits every position from the
 question mark to the answer together: this block moves the answer by at most 6% of the
 effect of donor operand digits (\(+17\) to \(+54\); 6% at 32B, at most 3.4% below).
-Beyond that, route accounting finds no patch-detectable donor effect downstream, and
-the sum is recomputed from the visible operands at the answer.
+Beyond that, route accounting finds no patch-detectable donor effect downstream. This
+null is consistent with the answer re-reading the visible operands; recomputation
+itself was not measured.
 
 **Variable chains.** Sums are cheap to recompute. A chain of updates
 (`a = 23`, `b = a + 4`, `c = b + 7`, ..., `What is e?`) makes recomputation at the
@@ -106,7 +107,8 @@ than 0.4 in absolute value. Donor states at *every* position after the starting 
 together, a test that would detect a running value stored redundantly, move it by at
 most 2.4% of the source-digit effect (14B, \(K=3\): \(+0.44\) [0.08, 0.82]). In all
 other size and length combinations the interval includes zero (@fig-computed). We find
-no patch-detectable donor effect at any later position: the answer re-reads the chain.
+no patch-detectable donor effect at any later position, which is consistent with the
+answer re-reading the chain.
 Accuracy is consistent with recomputation at the answer. It falls steeply with chain
 length, from 97 to 100% at \(K=1\) to 1 to 17% at \(K=5\) (Appendix
 @fig-computed-extra). We see no sign that the model maintains the running value

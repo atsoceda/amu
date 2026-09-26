@@ -93,7 +93,7 @@ Recurrent carry & go if recurrent-only $\ge$25\%, stop if $<$10\% (largest model
 Distance & go if generated-text relay $\ge$25\%, stop if $<$10\%, else extend & 2df09ce, 09-26 11:56; v2 6caf0e5; extension 0dda3b3 & extended; 12\%: between stop and go\\
 Window curve (27B) & the change in reliance occurs between 1,000 and 1,500 tokens & a2d7c65, 09-26 15:43 & partly supported: largest point-estimate step there, but the shift begins at 500 tokens (interior points 18 couplets, endpoints 50)\\
 Window curve (12B) & plan survives inside the window, lost outside & 9edfacc, 09-26 17:00 & not supported: gradual fade from 500 tokens (distance, not the window)\\
-Hidden choice & mostly not reproduced by the post-list patch (list large, post-list and sentence small) vs stored or relayed & 144f545, 09-26 06:47 & mostly re-derived; small stored part; relay $\le$2\% of the text swap\\
+Hidden choice & mostly not reproduced by the post-list patch (list large, post-list and sentence small) vs stored or relayed & 144f545, 09-26 06:47 & mostly not reproduced by the post-list patch; small stored part; relay $\le$2\% of the text swap\\
 Out-of-list control & post-list edit raises the absent donor pick & aaa8b75, 09-26 07:23 & holds in every model\\
 Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & 061b175, 09-26 09:34 & Gemma 3 partly (4B $>$ 12B); Qwen3 small (3\%, 7\%)\\
 Localization robustness & storage concentrates on one or two function words and moves with the wording & 0ae75d6, 09-26 14:40 & supported at 4B, 12B and 27B (the site moves with the rewording at all three)\\
@@ -232,7 +232,7 @@ every later position (the block edit), \(K=1/3/5\).
 shade and the printed value give the loss of the effect when that token alone is reset
 to its clean state, with the source edited. Top rows: tokens between the rhyme word and
 line 2. Bottom rows: tokens between the hidden-choice list and the reveal (pick-specific
-part).](manuscript/figures/iclr_figA_storage_all.png){#fig-storage-all width=100%}
+part).](manuscript/figures/iclr_figA_storage_all.png){#fig-storage-all width=100% fig-pos="H"}
 
 # Hidden choice {#sec-app-hidden}
 
@@ -273,7 +273,9 @@ other items.
 
 At Qwen3-4B, the forced sentence positions hold a small part of the pick,
 \(+0.57\) [0.48, 0.67] or about 5% of the text swap. The donor run's sentence positions
-read this directly from the list. At 8B and larger the sentence positions hold nothing.
+read this directly from the list. In Qwen3 at 8B and larger and in Gemma 3 the sentence
+positions hold about nothing (Qwen3-32B about 1%); in the Qwen3.5 hybrids they hold 8%
+(9B) and 7% (27B, \(+0.15\) [0.12, 0.18]) of the text-swap effect.
 
 # Relationship to an earlier workshop version {#sec-app-workshop}
 

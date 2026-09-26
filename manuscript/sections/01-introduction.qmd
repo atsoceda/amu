@@ -99,7 +99,7 @@ result (@sec-stress). They bound the principle rather than confirm it.
   shifts from reading the rhyme word toward the stored copy at the line's final token,
   which becomes necessary for about half of persistence. The shift is gradual, steepest
   as line 1 leaves the window. Relay through the generated text (the cue and line 2,
-  including its last three positions) is 9 to 13% of persistence at every nonzero
+  including its last three positions) is 9 to 13% of persistence by sufficiency at every nonzero
   distance. This block has not been split into early relay and late lookup, and it
   falls between the committed stop (10%) and go (25%) lines, so it is a boundary case
   whose early-relay contribution remains unresolved. In the 12B model, which stores little at the line end, the plan fades
@@ -107,10 +107,10 @@ result (@sec-stress). They bound the principle rather than confirm it.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
   monitoring cares about most. Information specific to a secret pick is stored after
   the list, at a few predictable, low-content tokens: the punctuation that closes the
-  list or the instruction, and a function word of the instruction, which at 4B, 12B and 27B moves when the instruction is reworded. The reveal reads it there. The intervening sentence never
+  list or the instruction, and a function word or possessive token of the instruction, which at 4B, 12B and 27B moves when the instruction is reworded. The reveal reads it there. The intervening sentence never
   names the pick and has no measurable causal effect on it through emission. Relay
-  through that sentence is at most 2% of the pick's effect, although in the two
-  largest Qwen models it is one eighth to one sixth of the small stored part.
+  through that sentence is at most 2% of the text-swap effect, although in Qwen3-32B and the Qwen3.5 hybrids it is one eighth to one fifth of the
+  small stored part.
 
 The one route that grows is the stored copy, and it grows in three ways (@sec-storage).
 It grows with scale. The copy at the line's final token (the comma in chat prompts,
@@ -118,7 +118,7 @@ the newline in plain prompts) appears at 14B and above in Qwen3 and at 12B to 27
 Gemma 3. It is present in base checkpoints, so it is learned in pretraining. It grows
 with distance: beyond the attention window it is necessary for about half of the
 plan's effect. And it is where hidden, pick-specific information is kept, at
-segment-closing punctuation and function words of the prompt. Stored copies thus sit
+segment-closing punctuation and function words or possessive tokens of the prompt. Stored copies thus sit
 at a few predictable tokens next to their sources, which makes them a natural target
 for monitoring internal state. The same analysis reconciles published accounts of
 where the rhyme plan lives. The plan is read from the rhyme word [@hanna2026latent],
@@ -154,7 +154,7 @@ prompt format.
 \toprule
 Content (observability) & Emission & Looked up: direct retrieval, stored copy or late lookup & Carried: relay along intermediate positions\\
 \midrule
-Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is necessary for 74\%); stored copy 0--16\% by sufficiency; late lookup 1--13\% & early relay $\le$1\%\\
+Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is 37\% by sufficiency and 74\% by necessity); stored copy otherwise 0--16\% by sufficiency; late lookup 1--13\% & early relay $\le$1\%\\
 Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & generated text (incl.\ last three positions): 9--13\%\\
 Computed value, unwritten (visible) & -- & source edits effective; downstream patch effect near zero & every later position together: $\le$2.4\% of the source effect (chains), $\le$6\% (sums)\\
 Computed value, written (visible) & 83--99\% & bypass to the source 1--17\% & --\\

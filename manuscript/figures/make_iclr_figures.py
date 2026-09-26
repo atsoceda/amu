@@ -845,7 +845,7 @@ def fig3():
         y += hA + 26
     # B. The hidden-choice instruction once, with its storage tokens highlighted.
     y += 4
-    bg.text(0, y, "B   Hidden choice: the pick is stored on periods and on one function word",
+    bg.text(0, y, "B   Hidden choice: the pick is stored on periods and on one function word or possessive token",
             fontsize=8, weight="bold", va="top")
     y += 14
     fr, fa, an = ("choice_replicate_fruits_localize_summary.json", "choice_replicate_fruits_localize_alt_summary.json",
@@ -908,7 +908,7 @@ def fig3():
     if rowsB:
         hB = row_h * len(rowsB) + 4
         ax = axes_pts(112, y, Wpt - 112 - 6, hB)
-        cols = [("#00563F", "segment-closing periods"), (COL["storage"], "one function word (named)"),
+        cols = [("#00563F", "segment-closing periods"), (COL["storage"], "one function word or possessive token (named)"),
                 ("#E3E3E3", "all other tokens")]
         for i, vals in enumerate(rowsB):
             left = 0.0
@@ -1170,7 +1170,7 @@ def fig5():
     ax.set_ylim(-8, 108)
     ax.set_yticks([0, 25, 50, 75, 100])
     ax.set_xlabel("Qwen3 parameters (B)")
-    ax.set_ylabel("share of the source effect that\nreaches the answer downstream (%)")
+    ax.set_ylabel("effect through the measured\ndownstream route (%)")
     ax.set_title("Unwritten: near-zero downstream patch effect; written: the answer follows the text")
     save(fig, "iclr_fig5_computed_and_written.png")
 
