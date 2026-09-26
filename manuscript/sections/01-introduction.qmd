@@ -16,9 +16,10 @@ In a transformer, information at one position can reach a later position in thre
 are read back as input. It can be **looked up**: read from a fixed position of the
 context, where it originates or in visible text from which it can be recomputed. Or it can be **relayed**: the hidden states of the generated positions pick it up and pass it on, although the words written there do not express it. Emitted information is in the text and looked-up information stays at a fixed position of the context, where it can be read or probed; relay is the path by which a model could hold content across a chain of thought that never states it. Lookup turns out to have a
 second site: a **stored copy**, written once into a structural position of the prompt
-next to the source. Prior work locates where plans are
-formed or can be steered [@pal2023futurelens; @lindsey2025biology; @hanna2026latent;
-@maar2026plan], not which path they take to where they are used.
+next to the source. Prior work decodes upcoming tokens from hidden states [@pal2023futurelens] and locates
+where plans are formed or can be steered [@lindsey2025biology; @hanna2026latent;
+@maar2026plan], but does not measure how much of a plan's effect takes each path to
+where it is used.
 
 ![Route accounting on a rhyme plan. The paths by which a plan formed at the rhyme word
 of line 1 (where the donor state is written) reaches the position that predicts the

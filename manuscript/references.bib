@@ -1,18 +1,19 @@
-@misc{hanna2026latent,
+@inproceedings{hanna2026latent,
   title        = {Latent Planning Emerges with Scale},
   author       = {Hanna, Michael and Ameisen, Emmanuel},
+  booktitle    = {International Conference on Learning Representations},
   year         = {2026},
   eprint       = {2604.12493},
   archivePrefix= {arXiv},
-  primaryClass = {cs.LG},
-  url          = {https://arxiv.org/abs/2604.12493}
+  primaryClass = {cs.CL},
+  url          = {https://openreview.net/forum?id=H0B7pDTT0M}
 }
 
 @misc{ameisen2025attribution,
   title        = {Circuit Tracing: Revealing Computational Graphs in Language Models},
   author       = {Ameisen, Emmanuel and Lindsey, Jack and Pearce, Adam and others},
   year         = {2025},
-  howpublished = {Transformer Circuits},
+  howpublished = {Transformer Circuits Thread},
   url          = {https://transformer-circuits.pub/2025/attribution-graphs/methods.html}
 }
 
@@ -20,7 +21,7 @@
   title        = {On the Biology of a Large Language Model},
   author       = {Lindsey, Jack and others},
   year         = {2025},
-  howpublished = {Transformer Circuits},
+  howpublished = {Transformer Circuits Thread},
   url          = {https://transformer-circuits.pub/2025/attribution-graphs/biology.html}
 }
 
@@ -38,7 +39,8 @@
   year          = {2026},
   eprint        = {2605.07984},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.CL},
+  primaryClass  = {cs.LG},
+  note          = {Workshop on Mechanistic Interpretability at ICML 2026},
   url           = {https://arxiv.org/abs/2605.07984}
 }
 
@@ -46,10 +48,11 @@
   title         = {Do Models Read What They Write? Causal Registers in Scratchpad Reasoning},
   author        = {Shih, Benjamin and Winnicki, John and Darve, Eric},
   year          = {2026},
-  eprint        = {2606.29522},
+  eprint        = {2606.29522v1},
   archivePrefix = {arXiv},
   primaryClass  = {cs.LG},
-  url           = {https://arxiv.org/abs/2606.29522}
+  note          = {Version 1},
+  url           = {https://arxiv.org/abs/2606.29522v1}
 }
 
 @misc{gemmascope2,
@@ -102,7 +105,10 @@
   title     = {Investigating Gender Bias in Language Models Using Causal Mediation Analysis},
   author    = {Vig, Jesse and Gehrmann, Sebastian and Belinkov, Yonatan and Qian, Sharon and Nevo, Daniel and Singer, Yaron and Shieber, Stuart},
   booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2020}
+  volume    = {33},
+  pages     = {12388--12401},
+  year      = {2020},
+  url       = {https://proceedings.neurips.cc/paper/2020/hash/92650b2e92217715fe312e6fa7b90d82-Abstract.html}
 }
 
 @inproceedings{paul2024reasoning,
@@ -118,15 +124,18 @@
   author  = {Geiger, Atticus and Ibeling, Duligur and Zur, Amir and Chaudhary, Maheep and Chauhan, Sonakshi and Huang, Jing and Arora, Aryaman and Wu, Zhengxuan and Goodman, Noah and Potts, Christopher and Icard, Thomas},
   journal = {Journal of Machine Learning Research},
   volume  = {26},
+  number  = {83},
   year    = {2025},
-  pages   = {1--63}
+  pages   = {1--64},
+  url     = {https://jmlr.org/papers/v26/23-0058.html}
 }
 
-@article{chan2022scrubbing,
-  title   = {Causal Scrubbing: A Method for Rigorously Testing Interpretability Hypotheses},
-  author  = {Chan, Lawrence and Garriga-Alonso, Adri{\`a} and Goldowsky-Dill, Nicholas and Greenblatt, Ryan and Nitishinskaya, Jenny and Radhakrishnan, Ansh and Shlegeris, Buck and Thomas, Nate},
-  journal = {AI Alignment Forum},
-  year    = {2022},
+@misc{chan2022scrubbing,
+  title        = {Causal Scrubbing: A Method for Rigorously Testing Interpretability Hypotheses},
+  author       = {Chan, Lawrence and Garriga-Alonso, Adri{\`a} and Goldowsky-Dill, Nicholas and Greenblatt, Ryan and Nitishinskaya, Jenny and Radhakrishnan, Ansh and Shlegeris, Buck and Thomas, Nate},
+  howpublished = {AI Alignment Forum},
+  month        = dec,
+  year         = {2022},
   url     = {https://www.alignmentforum.org/posts/JvZhhzycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing}
 }
 
@@ -143,13 +152,14 @@
   url       = {https://aclanthology.org/2026.cl-1.10/}
 }
 
-@misc{wu2024plan,
+@inproceedings{wu2024plan,
   title         = {Do Language Models Plan Ahead for Future Tokens?},
   author        = {Wu, Wilson and Morris, John X. and Levine, Lionel},
+  booktitle     = {Conference on Language Modeling (COLM)},
   year          = {2024},
   eprint        = {2404.00859},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.CL}
+  url           = {https://openreview.net/forum?id=BaOAvPUyBO}
 }
 
 @misc{fiotto2025nnsight,
@@ -232,7 +242,7 @@
   year          = {2026},
   month         = feb,
   howpublished  = {Qwen blog},
-  note          = {Model cards: \url{https://huggingface.co/Qwen/Qwen3.5-27B}, \url{https://huggingface.co/Qwen/Qwen3.5-35B-A3B}},
+  note          = {Model cards: \url{https://huggingface.co/Qwen/Qwen3.5-4B}, \url{https://huggingface.co/Qwen/Qwen3.5-9B}, \url{https://huggingface.co/Qwen/Qwen3.5-27B}},
   url           = {https://qwen.ai/blog?id=qwen3.5}
 }
 
@@ -521,13 +531,15 @@
   author    = {Goyal, Sachin and Ji, Ziwei and Rawat, Ankit Singh and Menon, Aditya Krishna and Kumar, Sanjiv and Nagarajan, Vaishnavh},
   booktitle = {International Conference on Learning Representations},
   year      = {2024},
-  url       = {https://arxiv.org/abs/2310.02226}
+  eprint    = {2310.02226},
+  url       = {https://openreview.net/forum?id=ph04CRkPdC}
 }
 
-@misc{hao2024coconut,
+@inproceedings{hao2024coconut,
   title         = {Training Large Language Models to Reason in a Continuous Latent Space},
   author        = {Hao, Shibo and Sukhbaatar, Sainbayar and Su, DiJia and Li, Xian and Hu, Zhiting and Weston, Jason and Tian, Yuandong},
-  year          = {2024},
+  booktitle     = {Conference on Language Modeling (COLM)},
+  year          = {2025},
   eprint        = {2412.06769},
   archivePrefix = {arXiv},
   url           = {https://arxiv.org/abs/2412.06769}

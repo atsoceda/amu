@@ -62,7 +62,7 @@ positions. For a group \(G\) we report its **interventional sufficiency**,
 persistence when the group alone is reset to its clean states. When paths combine
 additively, the two agree and shares partition the effect. Where the interaction is
 large (at most 33% of persistence, in Gemma 3 27B couplets), shares are not exclusive,
-and we report both measures and their average, the Shapley value [@shapley1953]. Shares
+and we report both measures and their average, the two-player Shapley value [@shapley1953]. Shares
 are divided by the persistence of the same run unless another denominator is named, and
 intervals are item-bootstrap 95% intervals [@efron1994bootstrap].
 

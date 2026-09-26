@@ -47,9 +47,7 @@ appear: a large interaction and a copy stored at the line's final token.
 line 2 one at a time locates the copy. In all five runs analysed, the line's final token
 accounts for 90 to 100% of these tokens' summed necessity, and the chat-template tokens
 hold almost nothing (Appendix @fig-sites). With the chat prompt this token is the comma
-that ends line 1; with the plain prompt, the newline. The site is the last token of the
-line, whatever that token is, which is where @lindsey2025biology observed Claude's rhyme
-plan being formed.
+that ends line 1; with the plain prompt, the newline. The site is the last token of the line, whatever that token is; in the prompt of @lindsey2025biology it is the newline, where they observed Claude's rhyme plan being formed.
 
 **It emerges with scale, before instruction tuning.** In Qwen3 the copy is absent up to
 8B (necessity at most 0.9% of persistence) and appears at 14B (8% with the chat prompt
@@ -72,12 +70,12 @@ second lookup site.
 word [@hanna2026latent] are direct retrieval with the late lookup; the plan found and
 steered at the end of line 1 [@lindsey2025biology; @maar2026plan] is the stored copy of
 larger models; the hand-off to the newline in Gemma 3 27B only [@ma2026plan] matches our
-plain-format result; and no copy appears below 8B, as @jacopin2026improvisation finds.
+plain-format result; and no copy appears below 8B, consistent with the inert newline that @jacopin2026improvisation finds at 0.6B to 2.6B.
 Each account is correct for the configuration it studies (Appendix @sec-app-couplets).
 
-**Why the stored copy is a lookup, not relay.** It passes through an intermediate position, but that position is a fixed structural token next to the source. The copy is written there once, read directly however much text intervenes, and
+**Why the stored copy is a lookup, not relay.** It passes through an intermediate position, but it is a fixed structural token next to the source. The copy is written there once, read directly however much text intervenes, and
 does not move with generation. It never travels through the hidden states of the
-generated text, so a monitor that probes hidden states can find it at a known prompt
+generated text, so a monitor probing hidden states can find it at a known prompt
 position.
 
 ## Computed values {#sec-computed}

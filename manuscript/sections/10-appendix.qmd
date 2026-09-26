@@ -27,7 +27,7 @@ base (`Qwen/Qwen3-*-Base`). Gemma 3 1B, 4B, 12B and 27B instruction-tuned
 (`google/gemma-3-*-it`), and Gemma 3 12B pretrained (`google/gemma-3-12b-pt`).
 Qwen3.5 4B, 9B and 27B (`Qwen/Qwen3.5-*`). Gemma 4 31B (`google/gemma-4-31B-it`) for
 the hidden choice [@gemma4]. Qwen3 0.6B, 1.7B and 4B for the a/an analysis, with the
-per-layer transcoders of @hanna2026latent. All models run in bfloat16 on
+per-layer transcoders used by @hanna2026latent. All models run in bfloat16 on
 Apple silicon (PyTorch MPS), with full recomputation and no key-value cache across
 edited runs. Where effects are small, the output projection is recomputed in float32,
 because bfloat16 logits resolve only about 0.125 nats.
@@ -36,7 +36,7 @@ because bfloat16 logits resolve only about 0.125 nats.
 "Write only the next line of this rhyming couplet: {line 1}", preceded by
 `/no_think` for Qwen3. The plain format of @ma2026plan is `A rhyming couplet:\n{line
 1}\n`, with no template; line 2 is the continuation up to the next newline. Chat and plain are prompt formats, not checkpoint types: instruction-tuned checkpoints are run with both, base checkpoints with the plain format only. Rhymes use
-the perfect-rhyme sets of the Datamuse API, following @hanna2026latent. The outcome
+the perfect-rhyme sets of the Datamuse API, following the released code of @hanna2026latent. The outcome
 uses the single-token words of each set.
 
 **Item construction.** Qwen3 1.7B to 14B use the released 100-couplet steering
@@ -409,7 +409,7 @@ run.
 the plan lives. The disagreement dissolves once both lookup sites are measured.
 
 - @hanna2026latent find that attention heads near the end of line 2 read the rhyme
-  word, and that blocking them breaks rhyming up to 14B. In our terms this is direct
+  word, and that blocking them sharply reduces rhyming at every size up to 14B. In our terms this is direct
   retrieval together with the late lookup, which dominate at every Qwen3 size.
 - @lindsey2025biology find Claude's plan at the newline ending line 1, and @maar2026plan
   steer successfully at the end of the line. This is the stored copy, which appears
@@ -601,8 +601,7 @@ part).](manuscript/figures/iclr_figA_storage_all.png){#fig-storage-all width=100
 
 ## Beyond the attention window {#sec-app-distance}
 
-Gemma 3 alternates five local layers with a 1,024-token sliding window with one
-global layer [@gemma3; @beltagy2020longformer]. Once line 1 lies more than 1,024
+Gemma 3 alternates five local layers with a 1,024-token sliding window [@beltagy2020longformer] with one global layer [@gemma3]. Once line 1 lies more than 1,024
 tokens before the rhyme position, five of six layers can no longer read it. We
 insert \(D\) tokens of neutral filler, a seeded arrangement of fixed everyday
 sentences, at the start of the model's turn, followed by a fixed cue (`Next line:`).
@@ -688,8 +687,7 @@ copy. They also separate distance from the window.
 Across the four models, distance moves reliance onto a stored copy where one exists,
 and otherwise costs the plan. In no model does an indirect path through the generated text take over. The 12% in Gemma 3 27B is the unsplit generated-text block, including its last three positions. The rhyme word and the line's final token lie at
 the same distance from the target, yet the global layers of Gemma 3 27B read the
-line's final token. This fits the view of separator tokens as long-range summaries of
-their segment [@chen2024sepllm; @wang2023labelwords; @xiao2024sinks].
+line's final token. This fits the view of separator tokens [@chen2024sepllm] and label words [@wang2023labelwords] as summaries of their segment.
 
 ## Recurrent memory {#sec-app-recurrent}
 

@@ -18,8 +18,7 @@ patch, stored after the list, and passed through the sentence. The right subpane
 
 ## Beyond the attention window {#sec-distance}
 
-Gemma 3 alternates five local layers with a 1,024-token window with one global layer
-[@gemma3; @beltagy2020longformer], so once line 1 lies more than 1,024 tokens before the
+Gemma 3 alternates five local sliding-window layers [@beltagy2020longformer] with a 1,024-token window with one global layer [@gemma3], so once line 1 lies more than 1,024 tokens before the
 target, five of six layers cannot read it. We insert up to 2,000 tokens of neutral
 filler before line 2 and split the indirect path into the stored copy, the filler and the
 generated text (the cue and line 2). The committed decision number was the share of
@@ -37,8 +36,7 @@ further. It includes the last three positions, so it mixes relay with
 the late lookup, and it falls between "stop" and "go": how much of it is relay remains
 unresolved. The committed window prediction is only partly supported: the largest step is where line
 1 leaves the window, but the shift begins at 500 tokens. Models without a strong stored
-copy (Gemma 3 12B, and Qwen3.5-9B and Qwen3-14B, whose attention has no window) lose the
-plan instead, and in none of them does an indirect path take over. 
+copy (Gemma 3 12B, and Qwen3.5-9B and Qwen3-14B, whose attention has no window) lose the plan instead, and no indirect path takes over. 
 
 ## Recurrent memory {#sec-recurrent}
 

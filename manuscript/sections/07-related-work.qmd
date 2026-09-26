@@ -1,12 +1,11 @@
 # Related work {#sec-related}
 
-**Planning.** Hidden states anticipate tokens several positions ahead
-[@pal2023futurelens; @wu2024plan; @men2024lookahead], and attribution graphs expose
-planning in rhyming and article choice [@lindsey2025biology; @ameisen2025attribution].
+**Planning.** Hidden states carry information about tokens several positions ahead
+[@pal2023futurelens; @men2024lookahead], much of it a by-product of current-token
+computation [@wu2024plan], and attribution graphs [@ameisen2025attribution] expose
+planning in rhyming [@lindsey2025biology] and article choice [@hanna2026latent].
 @hanna2026latent show that such planning emerges with scale in Qwen3 and identify the
-circuit that retrieves the rhyme plan near the end of line 2; other studies locate or
-steer the plan at the line boundary [@maar2026plan; @ma2026plan;
-@jacopin2026improvisation]. These works ask whether and where a plan exists. We ask which
+circuit that retrieves the rhyme plan near the end of line 2; other studies locate or steer the plan at the line boundary [@maar2026plan; @ma2026plan], which @jacopin2026improvisation finds inert at 0.6B to 2.6B. These works ask whether and where a plan exists. We ask which
 path it takes, and show that the published accounts measure different lookup sites.
 
 **Causal mediation and patching.** Route accounting builds on activation patching and
@@ -16,16 +15,13 @@ positions rather than components, separates emission through generated text from
 persistence, and reports sufficiency, necessity and interaction side by side, in the
 spirit of evaluating mechanisms against explicit mediators [@mueller2026mediator].
 
-**Structural tokens.** Label words [@wang2023labelwords], separators [@chen2024sepllm],
-attention sinks [@xiao2024sinks] and registers [@darcet2024registers;
-@shih2026registers] aggregate information; the stored copies we find are causal
+**Structural tokens.** Label words [@wang2023labelwords], separators [@chen2024sepllm] and registers [@darcet2024registers] aggregate information, while attention sinks absorb surplus attention [@xiao2024sinks]; the stored copies we find are causal
 instances that grow with scale and distance.
 
 **Chain-of-thought faithfulness and monitoring.** Written reasoning can be unfaithful to
 the computation behind an answer [@turpin2023unfaithful; @lanham2023faithfulness;
-@chen2025reasoning]; models can compute with filler tokens [@pfau2024dots] and could in
+@chen2025reasoning]; models can learn to compute with filler tokens [@pfau2024dots] and could in
 principle encode reasoning steganographically [@roger2023steganography]. Monitoring is
-valuable but fragile [@korbak2025monitorability; @baker2025monitoring], and more robust
-when reasoning is necessary for the task [@emmons2025cot]. These studies measure behaviour; route accounting measures internal paths, and our
+valuable but fragile [@korbak2025monitorability; @baker2025monitoring], and more robust when reasoning is necessary for the task [@emmons2025cot]. These studies measure behaviour; route accounting measures internal paths, and our
 hidden choice, unlike secrets installed by training [@cywinski2025taboo], arises without
 it.
