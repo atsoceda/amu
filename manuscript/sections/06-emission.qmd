@@ -30,7 +30,9 @@ the text fixed).
   92% at 8B, 88% and 83% at 14B, and 98% and 101% at 32B (every chain usable after the parser fix).
 - The bypass, which re-reads the edited source digits, is 4 to 8% at 4B and 8B and 12
   to 17% at 14B. At 32B it is \(+0.15\) [0.03, 0.28] (2%) at \(K=3\)
-  and \(-0.08\) [\(-0.17\), 0.01] at \(K=5\).
+  and \(-0.08\) [\(-0.17\), 0.01] at \(K=5\). At 32B and \(K=5\), emission is 101% of the
+  total because that bypass is negative. Emission plus the bypass equals the total
+  (\(+6.62\) and \(-0.08\) sum to \(+6.54\)).
 
 Written reasoning is not decorative in these models. The answer follows the written
 values, and the part that re-reads the source stays below 17% at every size tested.

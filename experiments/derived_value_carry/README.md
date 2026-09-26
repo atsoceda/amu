@@ -239,15 +239,18 @@ Qwen3 - 14B - derived value - written chains, re-scored with the fixed parser (M
 bold markup. Qwen3-8B re-scored: K = 3 108/108 usable (was 75), emission +12.62 of +13.46
 (94%); K = 5 103/103 (was 17), +12.15 of +13.15 (92%).
 
-Deadline plan (2026-09-26): Qwen3 - 32B - derived value - variable chains (resume) and the 32B
-written-chain re-score at K = 5 were dropped (not run). The variable-chain results cover 1.7B to
-14B; written chains at 32B cover K = 3 only.
+Deadline plan (2026-09-26), superseded the same day: the 32B variable-chain resume and the
+32B written-chain re-score at K = 5 were first dropped, then run. The results are in the
+paragraphs below. Variable chains cover 1.7B to 32B, and written chains at 32B cover K = 3 and
+K = 5.
 
 Qwen3 - 1.7B - derived value - written chains (Mac Studio, 2026-09-26): K = 3 108/108 usable,
 emission +13.20 of +14.30 (92%); K = 5 103/103, emission +11.41 of +11.85 (96%).
 
 Qwen3 - 32B - derived value - variable chains (block only; 2026-09-26): accuracy 99 / 54 / 9% at
 K = 1 / 3 / 5; source-digit edit +16.5 / +10.1 / +5.2; post-v0 block +0.81 [0.61, 1.03] /
--0.02 [-0.33, 0.29] / -0.00 [-0.22, 0.19]. Nothing downstream holds the value at K = 3 and 5.
+-0.02 [-0.33, 0.29] / -0.00 [-0.22, 0.19]. At K = 1 the block is 4.9% of the source edit and
+the interval excludes zero, the largest downstream share. At K = 3 and 5 the interval includes
+zero.
 Qwen3 - 32B - written chains re-scored with the parser fix: K = 3 108/108 usable, emission +6.73
 of +6.88 (98%); K = 5 103/103, +6.62 of +6.54 (101%).

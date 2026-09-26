@@ -90,11 +90,11 @@ accuracy 95 to 100%). The committed design named the question mark as the positi
 the sum would be computed. Donor states there move the answer by \(-0.08\) to
 \(+0.07\) log-odds, so the efficacy gate fails at every size. That shows only that the
 question mark does not hold the sum. The stronger test edits every position from the
-question mark to the answer together: this block moves the answer by at most 6% of the
-effect of donor operand digits (\(+17\) to \(+54\); 6% at 32B, at most 3.4% below).
-Beyond that, route accounting finds no patch-detectable donor effect downstream. This
-null is consistent with the answer re-reading the visible operands; recomputation
-itself was not measured.
+question mark to the answer together: this block moves the answer by at most 6.4% of the
+effect of donor operand digits (\(+17\) to \(+54\); 6.4% at 32B, \(+1.10\) [0.93, 1.27]
+of \(+17.2\), and at most 3.4% at the smaller sizes). The downstream block is small
+beside the operand edit, which is consistent with the answer re-reading the visible
+operands; recomputation itself was not measured.
 
 **Variable chains.** Sums are cheap to recompute. A chain of updates
 (`a = 23`, `b = a + 4`, `c = b + 7`, ..., `What is e?`) makes recomputation at the
@@ -102,15 +102,19 @@ answer costly and carrying natural. The running value could be passed from
 statement to statement, so this task was designed as a second positive-control
 candidate for relay. It is not one. Donor states at the starting value's digits move
 the answer strongly (at 14B: \(+30.9\), \(+18.5\) and \(+6.4\) for \(K=1,3,5\) updates).
-Donor states at any single later position, or at any statement end, move it by less
-than 0.4 in absolute value. Donor states at *every* position after the starting value
-together, a test that would detect a running value stored redundantly, move it by at
-most 2.4% of the source-digit effect (14B, \(K=3\): \(+0.44\) [0.08, 0.82]); at 32B it is \(-0.02\) [\(-0.33\), 0.29] of \(+10.1\) at \(K=3\). In all
-other size and length combinations the interval includes zero (@fig-computed). We find
-no patch-detectable donor effect at any later position, which is consistent with the
-answer re-reading the chain.
+Where single positions were edited (1.7B to 14B; at 32B only the block was run), donor
+states at any later position, or at any statement end, move it by less than 0.4 in
+absolute value. Donor states at *every* position after the starting value together, a
+test that would detect a running value stored redundantly, move it by at most 4.9% of
+the source-digit effect (32B, \(K=1\): \(+0.81\) [0.61, 1.03] of \(+16.5\)). The other
+cell whose interval excludes zero is 14B at \(K=3\) (\(+0.44\) [0.08, 0.82] of \(+18.5\),
+2.4%). At 32B the block is \(-0.02\) [\(-0.33\), 0.29] of \(+10.1\) at \(K=3\) and
+\(-0.00\) [\(-0.22\), 0.19] of \(+5.2\) at \(K=5\). In the remaining size and length
+combinations the interval includes zero. @fig-computed shows the \(K=3\) series, which
+stays near zero. The downstream block is small beside the source edit, which is
+consistent with the answer re-reading the chain.
 Accuracy is consistent with recomputation at the answer. It falls steeply with chain
 length, from 97 to 100% at \(K=1\) to 1 to 17% at \(K=5\) (Appendix
-@fig-computed-extra). We see no sign that the model maintains the running value
-downstream even where doing so would make it correct, but this is a correlational
-observation, not a test of what the model could do.
+@fig-computed-extra). At \(K=5\), where maintaining a running value would make more
+answers correct, the downstream block's interval includes zero at every size. That
+agreement is correlational, not a test of what the model could do.

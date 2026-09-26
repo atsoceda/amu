@@ -11,7 +11,7 @@ thinking disabled and short generated spans.
    from the source, from the visible text from which it can be recomputed, or from a
    copy stored once at a structural token. Early relay along the generated text is at
    most 1% of persistence in couplets. For computed values, every later position
-   together accounts for at most 2.4% (chains) and 6% (sums) of the source effect. For the
+   together accounts for at most 4.9% (chains) and 6.4% (sums) of the source effect. For the
    hidden choice, relay through the sentence is at most 2% of the text-swap effect.
 3. *Storage sites are few and predictable.* The line's final token holds a copy of
    the rhyme plan. Two or three low-content tokens (segment-closing punctuation and one function word or possessive token of the instruction) hold the stored pick-specific information of a secret choice.
@@ -67,9 +67,8 @@ each is a direct test.
   and Gemma 3, with Gemma 4 31B for the hidden choice only. The storage site moves with the wording at 4B, 12B and 27B.
 - *Checks not run.* Several committed checks could not be run before submission: the
   Gemma 4 route split and induction control, the Qwen3.5 mixture-of-experts model, the
-  Qwen3.5-27B recurrent pilot at 100 couplets (the decision rests on 24), the Qwen3-32B
-  variable chains and written chains at \(K=5\), the Gemma 3 27B base model in the
-  plain format, the Gemma 3 27B animal localization and the Qwen3-32B same-pick null.
+  Qwen3.5-27B recurrent pilot at 100 couplets (the decision rests on 24), the Gemma 3
+  27B base model in the plain format and the Qwen3-32B same-pick null.
   Their designs are in the repository, and they are listed here rather than reported.
 - *Post hoc elements.* Pick specificity for fruits and the absolute-relay reading rule
   for distance were added after first results. Both are labelled, and pick specificity
