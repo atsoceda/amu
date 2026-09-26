@@ -39,7 +39,7 @@ in Qwen3 and at 12B to 27B in Gemma 3.](manuscript/figures/iclr_fig2_couplet_rou
 
 ## The stored copy {#sec-storage}
 
-Gemma 3 27B is the exception to retrieval dominance. Direct retrieval falls to 68% of
+Gemma 3 27B is the exception to the dominance of direct retrieval. Direct retrieval falls to 68% of
 persistence with the chat prompt and 19% with the plain prompt, and two components
 appear: a large interaction and a copy stored at the line's final token.
 

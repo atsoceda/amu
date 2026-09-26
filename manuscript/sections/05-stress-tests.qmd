@@ -26,7 +26,7 @@ intervening sentence, held at the sentence positions, and written into the sente
 Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
 [@yang2025gateddeltanet] with each attention layer. In a recurrent layer, information
 from the source can reach a later position only through a fixed-size state updated
-position by position, invisible in the text; the attention layers can still retrieve.
+position by position, invisible in the text; the attention layers can still look it up.
 The test asks which path the model uses when both are available. In the *attention-only*
 cell, the donor state enters at the source but the input of every recurrent layer there
 is restored to its clean value; the *recurrent-only* cell is the converse. The committed

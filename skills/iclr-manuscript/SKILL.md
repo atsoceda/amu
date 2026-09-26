@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.8"
+  version: "1.9"
   updated: "2026-09-26"
 ---
 
@@ -94,6 +94,10 @@ things and the paper needed "early relay" and glosses of "carry"):
   holds the information across the generated text; the three lookups all read it from a
   fixed prompt position. A path through prompt positions (variable-chain statements, the
   induction key) is an indirect path, never relay.
+- **Retrieval** means only **direct retrieval**, the measured path \(D\) (write it in full),
+  or a cited author's own term (the "late retrieval" and the circuit that "retrieves" in
+  Hanna and Ameisen). The umbrella is **lookup**; the verb "look up" / "looked up" names
+  the same defined category, so "retrieval-dominated" becomes "lookup-dominated".
 - Do not put a share above 100% in the abstract or introduction; write "at least X%".
   Where a table or section reports one, say why (the other paths or the interaction are
   negative).

@@ -104,7 +104,7 @@ Experiment & Decision rule or prediction & Committed & Outcome\\
 Relay grows with scale (couplets) & (1) the indirect share rises with log size; (2) the rise comes from relay (line-2 positions before the last three); (3) replicates in Gemma 3 & d4622d2, 09-25 23:11 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails, so relay does not grow\\
 Plain-format couplets & direct retrieval dominates; stored copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & 34c0cbd, 09-25 23:59 & all three hold\\
 Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 09-26 02:45 & reported for 17 runs\\
-Induction control & indirect path $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (indirect 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (retrieval 31\%, 10\%, 17\%)\\
+Induction control & indirect path $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (indirect 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (direct retrieval 31\%, 10\%, 17\%)\\
 Sums & computation-position edit must move the answer (efficacy gate) & 7f5a9a6, 09-25 22:05 & gate fails at every size; downstream block $\le$6.4\%\\
 Variable chains & indirect path through the chain $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$4.9\%\\
 Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--101\%; 101\% where the bypass is negative)\\
@@ -117,7 +117,7 @@ Out-of-list control & post-list edit raises the absent donor pick & aaa8b75, 09-
 Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & 061b175, 09-26 09:34 & Gemma 3 partly (4B $>$ 12B); Qwen3 small (3\%, 7\%)\\
 Localization robustness & storage concentrates on one or two function words and moves with the wording & 0ae75d6, 09-26 14:40 & supported at 4B, 12B and 27B (the site moves with the rewording at all three)\\
 Same-pick null & a same-pick donor leaves pick preference unchanged & a2d7c65, 09-26 15:43 & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]) and 27B ($-0.42$ [$-0.96$, 0.10])\\
-Architecture generalization & relay $<$5\%; induction retrieval $<$5\%; hidden choice through the sentence near zero; family-like storage & ead2545, 09-26 14:50 & Qwen3.5-27B: storage 3--4\%, stored part through the sentence 1\% (as predicted), induction retrieval 17\% (fails); Gemma 4 31B storage 82--91\% (family-like, as predicted); other cells not run\\
+Architecture generalization & relay $<$5\%; induction direct retrieval $<$5\%; hidden choice through the sentence near zero; family-like storage & ead2545, 09-26 14:50 & Qwen3.5-27B: storage 3--4\%, stored part through the sentence 1\% (as predicted), induction direct retrieval 17\% (fails); Gemma 4 31B storage 82--91\% (family-like, as predicted); other cells not run\\
 \bottomrule
 \end{tabular}
 ```
@@ -157,7 +157,7 @@ lies right after the source in the prompt. Structurally this path therefore rese
 that route accounting detects an effect that arrives through an intermediate position.
 Relay is the same kind of path through different positions. Persistence holds the
 generated text fixed, so during measurement generated tokens are ordinary context
-positions, and the clamp is the same operation at any position. The retrieval-dominated results in the rest of the paper are
+positions, and the clamp is the same operation at any position. The lookup-dominated results in the rest of the paper are
 therefore informative negatives, not a blind spot of the method.
 
 ::: {#tbl-control}
@@ -232,9 +232,8 @@ the choice of source position, or the edit type.
   measure tracks rhyme identity, not generic disruption.
 - *Anchor specificity.* Donor states at the rhyme word move the rhyme about two to
   three times more than donor states at any other single position of line 1 (the
-  first word, a middle word, the punctuation, the end of the turn). Rhyme
-  information at those positions is still partly retrieved, at a fifth to a half of
-  the anchor's effect. Retrieval is weighted toward the rhyme word rather than
+  first word, a middle word, the punctuation, the end of the turn). Rhyme information at those positions is still partly retrieved directly, at a fifth to a half of
+  the anchor's effect. Direct retrieval is weighted toward the rhyme word rather than
   confined to it.
 - *Published feature steering.* We reselect the rhyme features of
   @hanna2026latent with their rule. The mean is 19.1 features per couplet against
@@ -291,7 +290,7 @@ line-2 words). Total and emission in log-odds; donor rhyme rate after the edit.
 *Retrieval*: direct retrieval of the rhyme word. *Indirect*: all intermediate positions
 together, split into *Late* (the late lookup), *Stored* (the stored copy) and *Relay*,
 which need not sum exactly to it.
-*Gap*: the interaction, persistence minus retrieval minus indirect.
+*Gap*: the interaction, persistence minus direct retrieval minus indirect.
 
 :::
 
@@ -607,7 +606,7 @@ Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
 [@yang2025gateddeltanet] with each full-attention layer. A recurrent layer holds a
 fixed-size state that is updated position by position. In those layers, information
 from the source can reach a later position only through that state, passed along
-every intervening position by construction and invisible in the text. The attention layers can still retrieve.
+every intervening position by construction and invisible in the text. The attention layers can still look it up.
 The test therefore asks which path the model uses when both are available. We split
 persistence by layer type. In the *attention-only* cell, the donor state enters at the
 source, but the input of every recurrent layer at the source is restored to its clean
@@ -740,7 +739,7 @@ another order, chosen so that the greedy pick differs. The reference is a *text 
 the donor order written into the prompt, which moves the pick by construction. In
 Qwen3-8B, Gemma 3 12B and Gemma 3 27B (100 pairs each), donor states at the prompt
 positions after the list move the reveal by 12%, 15% and 16% of the text swap. The
-reveal reads all of it directly: the retrieval cell equals the post-list effect. The
+reveal reads all of it directly: the direct-retrieval cell equals the post-list effect. The
 part of this stored signal that passes through the sentence is \(+0.00\) [\(-0.04\), 0.05], \(-0.06\)
 [\(-0.14\), 0.01] and \(-0.01\) [\(-0.10\), 0.08]; it is also zero within its interval in
 Qwen3-4B and Qwen3-14B. The rest of the pick, 84 to 88%, is not reproduced by the post-list patch; it is
