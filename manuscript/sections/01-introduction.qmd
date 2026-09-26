@@ -36,7 +36,7 @@ path as the largest path in all nine models tested (@sec-control).
 
 Applied to four tasks in 15 checkpoints from three model families, route accounting finds
 one principle, within the settings tested (short generated spans, thinking disabled):
-**look it up, don't carry it**. Models read unwritten information near the point of use
+**lookup, not relay**. Models read unwritten information near the point of use
 from a fixed position of the prompt, the source or a copy stored next to it, rather than relay it through the hidden states of the text they generate (@tbl-map; @sec-lookup). Rhyme plans are read
 mainly from the rhyme word (68 to 95% of persistence in all but one configuration), and relay accounts for at most 1% in all 21 runs. Donor states at
 every position after a computed value's source move the answer by at most 4.9% (variable
