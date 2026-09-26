@@ -179,3 +179,13 @@ specificity +0.04 [0.01, 0.06]** (text swap +1.8); Gemma 3 27B: see
 `results/gemma-3-27b-it/choice_outlist_summary.json`. In Qwen3 the stored hidden
 pick shrinks with scale (8B +0.55, 14B 0, 32B +0.04): larger models re-derive the pick
 at the reveal.
+
+**Gemma 3 27B:** pick +10.30 [9.70, 10.90], others +7.82 [7.32, 8.31], **pick specificity
++2.48 [2.05, 2.91]** (text swap pick specificity +8.0, so about 31%; Gemma 12B about 15%).
+The families diverge: in Gemma the stored hidden pick grows with scale (12B -> 27B), in
+Qwen3 it shrinks (8B -> 14B -> 32B). Gemma 27B is also the model with the strongest
+redundant downstream storage in couplets (additivity gap 29%, boundary necessity 11%)
+and the one where Ma & Rui report a hand-off to the line boundary. (Specificity is the
+post-hoc measure; the frozen criterion, a positive post-list effect on the out-of-list
+pick, holds in every model.) Next: Gemma 27B forced route split and free version: is the
+stored pick relayed through, or leaked into, the generated sentence?
