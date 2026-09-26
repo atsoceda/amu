@@ -90,9 +90,10 @@ def panel_label(ax, text, x=0.0, y=1.0):
 # --------------------------------------------------------------------------- Figure 1
 
 def fig1():
-    fig = plt.figure(figsize=(W, 4.15))
-    axA = fig.add_axes([0.0, 0.52, 1.0, 0.48])
-    axB = fig.add_axes([0.1, 0.075, 0.9, 0.36])
+    fig = plt.figure(figsize=(W, 4.5))
+    axA = fig.add_axes([0.0, 0.56, 1.0, 0.44])
+    axB = fig.add_axes([0.085, 0.075, 0.43, 0.42])
+    axK = fig.add_axes([0.56, 0.075, 0.44, 0.42])
 
     # A. Paths of the rhyme plan in one couplet, line widths from Qwen3-32B (chat prompt).
     s = couplet_shares("Qwen3-32B")
@@ -153,73 +154,97 @@ def fig1():
              fontsize=6.1, color="#555555", va="center")
     axA.text(-0.1, 4.45, "A   Where a rhyme plan travels", fontsize=7.5, weight="bold", va="top")
 
-    # B. Relay along intermediate positions, every setting, next to the induction positive control.
-    groups = [("induction\n(positive control)", []), ("rhyme plan\n(couplets)", []), ("computed\nvalue", []),
-              ("hidden\nchoice", []), ("recurrent\nmemory", []), ("beyond the\nattention window", [])]
-    ctrl_ret = []
+    # B. Route plane: share looked up (x) against share relayed (y), every setting and model.
+    pts = {k: [] for k in ("control", "couplets", "hidden", "recurrent", "distance")}
     for d, fam in [("Qwen3-1.7B", "Qwen3"), ("Qwen3-4B", "Qwen3"), ("Qwen3-8B", "Qwen3"), ("Qwen3-14B", "Qwen3"),
                    ("Qwen3-32B", "Qwen3"), ("gemma-3-12b-it", "Gemma 3"), ("gemma-3-27b-it", "Gemma 3"),
                    ("Qwen3.5-27B", "Qwen3.5"), ("Qwen3.5-35B-A3B", "Qwen3.5"), ("gemma-4-31b-it", "Gemma 4")]:
         x = load(PC / d / "induction_summary.json")
         if x:
-            groups[0][1].append((fam, ratio(x["relay"], x["persistence"])))
-            ctrl_ret.append((fam, ratio(x["retrieval"], x["persistence"])))
+            pts["control"].append((fam, ratio(x["retrieval"], x["persistence"]), ratio(x["relay"], x["persistence"])))
     for runs, fam in ((QWEN, "Qwen3"), (GEMMA, "Gemma 3")):
         for d, _ in runs:
             for r in (d, d + "-plain"):
                 c = couplet_shares(r)
                 if c:
-                    groups[1][1].append((fam, c["late"] + c["early"]))
-    for d in ("Qwen3-1.7B", "Qwen3-4B", "Qwen3-8B", "Qwen3-14B"):
-        x = load(DV / d / "chain_summary_block.json") or load(DV / d / "chain_summary.json")
-        if x:
-            for K in ("1", "3", "5"):
-                k = x["by_K"].get(K, {})
-                if "post_v0_block" in k:
-                    groups[2][1].append(("Qwen3", ratio(k["post_v0_block"], k["v0_edit"])))
+                    pts["couplets"].append((fam, c["retrieval"] + c["boundary"], c["late"] + c["early"]))
     for d, fam in [("Qwen3-4B", "Qwen3"), ("Qwen3-8B", "Qwen3"), ("Qwen3-14B", "Qwen3"), ("Qwen3-32B", "Qwen3"),
                    ("gemma-3-12b-it", "Gemma 3"), ("gemma-3-27b-it", "Gemma 3"), ("Qwen3.5-27B", "Qwen3.5"),
                    ("Qwen3.5-35B-A3B", "Qwen3.5"), ("gemma-4-31b-it", "Gemma 4")]:
         x = load(HC / d / "choice_summary.json")
-        if x:
-            groups[3][1].append((fam, ratio(x["post_relay"], x["text_swap"])))
+        if x and x["post_edit"]["lo"] > 0.1:  # shares of a stored part indistinguishable from zero are noise
+            pts["hidden"].append((fam, ratio(x["post_retrieval"], x["post_edit"]), ratio(x["post_relay"], x["post_edit"])))
     for d in ("Qwen3.5-4B", "Qwen3.5-9B", "Qwen3.5-27B", "Qwen3.5-35B-A3B"):
         x = load(RC / d / "pilot_summary.json") or load(RC / d / "pilot24_summary.json")
         if x:
-            groups[4][1].append(("Qwen3.5", ratio(x["recurrent_only"], x["persistence"])))
+            pts["recurrent"].append(("Qwen3.5", ratio(x["attention_only"], x["persistence"]),
+                                     ratio(x["recurrent_only"], x["persistence"])))
+    byd = {}
     for f in ("pilot_v2x_summary.json", "pilot_v2x_window_summary.json"):
         x = load(RD / "gemma-3-27b-it" / f)
         if x:
-            for D, v in x["by_distance"].items():
-                if int(D) >= 1500 and v.get("n"):
-                    groups[5][1].append(("Gemma 3", ratio(v["relay_line2"], v["persistence"])))
-    axB.axvspan(-0.5, 0.5, color="#F1F1F1", zorder=0, lw=0)
-    for gi, (_, pts) in enumerate(groups):
-        n = len(pts)
-        for j, (fam, v) in enumerate(pts):
-            dx = (j - (n - 1) / 2) * min(0.075, 0.72 / max(n, 1))
-            axB.scatter(gi + dx, 100 * min(v, 1.45), marker=MARK[fam], s=11, color=COL["relay"], zorder=3,
-                        edgecolor="white", linewidth=0.3)
-    for j, (fam, v) in enumerate(ctrl_ret):
-        dx = (j - (len(ctrl_ret) - 1) / 2) * 0.075
-        axB.scatter(dx, 100 * v, marker=MARK[fam], s=11, facecolor="white", edgecolor=COL["retrieval"], lw=0.75,
-                    zorder=3)
-    axB.axhline(0, color="#BBBBBB", lw=0.5, zorder=1)
-    axB.set_xticks(range(len(groups)))
-    axB.set_xticklabels([g for g, _ in groups], fontsize=6.3)
-    axB.set_xlim(-0.5, len(groups) - 0.5)
-    axB.set_ylim(-8, 150)
-    axB.set_yticks([0, 50, 100])
-    axB.set_ylabel("share of the effect carried\nalong intermediate positions (%)")
-    axB.text(0.0, 149, "above 100%: interaction", fontsize=5.8, ha="center", va="top", color="#777777")
-    fams = sorted({f for _, pts in groups for f, _ in pts} | {f for f, _ in ctrl_ret}, key=list(MARK).index)
-    hs = [plt.Line2D([], [], marker=MARK[f], ls="", color="#555555", ms=3.4, label=f) for f in fams]
-    hs += [plt.Line2D([], [], marker="o", ls="", color=COL["relay"], ms=3.4, label="relay"),
-           plt.Line2D([], [], marker="o", ls="", mfc="white", mec=COL["retrieval"], ms=3.4,
-                      label="direct retrieval (control)")]
-    axB.legend(handles=hs, loc="upper right", ncol=2, fontsize=6.1, columnspacing=0.9)
-    axB.text(-0.105, 1.2, "B   Relay is detected where it is the mechanism, and is small elsewhere",
-             transform=axB.transAxes, fontsize=7.5, weight="bold", va="top")
+            byd.update({int(k): v for k, v in x["by_distance"].items() if v.get("n")})
+    for D in sorted(byd):
+        v = byd[D]
+        pts["distance"].append((D, ratio(mean(v["retrieval"]) + mean(v["relay_boundary"]), v["persistence"]),
+                                ratio(v["relay_line2"], v["persistence"])))
+    ax = axB
+    ax.add_patch(Rectangle((0.5, -0.05), 0.6, 0.3, fc="#E8F1F8", ec="none", zorder=0))
+    ax.add_patch(Rectangle((-0.05, 0.5), 0.6, 0.62, fc="#F6ECF2", ec="none", zorder=0))
+    ax.plot([0, 1], [1, 0], color="#BBBBBB", lw=0.6, ls=(0, (3, 2)), zorder=1)
+    ax.text(0.56, 0.47, "additive: lookup + relay = 100%", rotation=-38, fontsize=5.4, color="#999999",
+            ha="center", va="center", rotation_mode="anchor")
+    ax.text(0.53, 0.53, "relayed", fontsize=6.6, color="#8E4F7A", weight="bold", ha="right", va="bottom")
+    ax.text(0.52, 0.235, "looked up", fontsize=6.6, color=COL["retrieval"], weight="bold", ha="left", va="top")
+    clip = lambda v: min(max(v, -0.03), 1.1)  # noqa: E731
+    for fam, xx, yy in pts["control"]:
+        ax.scatter(clip(xx), clip(yy), marker="D", s=15, color=COL["relay"], edgecolor="white", lw=0.3, zorder=4)
+        if yy > 1.1:
+            ax.annotate("", xy=(clip(xx), 1.115), xytext=(clip(xx), 1.07),
+                        arrowprops=dict(arrowstyle="-|>", color=COL["relay"], lw=0.5, mutation_scale=4))
+    style = {"couplets": ("o", 13), "hidden": ("s", 13), "recurrent": ("^", 16)}
+    for k, (mk, sz) in style.items():
+        for fam, xx, yy in pts[k]:
+            filled = fam in ("Qwen3", "Qwen3.5")
+            ax.scatter(clip(xx), clip(yy), marker=mk, s=sz, facecolor="#444444" if filled else "white",
+                       edgecolor="#444444", lw=0.6, zorder=3)
+    if pts["distance"]:
+        ds = pts["distance"]
+        ax.plot([clip(p[1]) for p in ds], [clip(p[2]) for p in ds], "-", color="#444444", lw=0.7, zorder=3)
+        ax.scatter([clip(p[1]) for p in ds], [clip(p[2]) for p in ds], marker="*", s=30, facecolor="white",
+                   edgecolor="#444444", lw=0.6, zorder=4)
+        last = ds[-1]
+        ax.annotate(f"{last[0]:,} tokens", xy=(clip(last[1]), clip(last[2])), xytext=(clip(last[1]) - 0.32,
+                    clip(last[2]) + 0.2), fontsize=5.8, color="#333333",
+                    arrowprops=dict(arrowstyle="-", color="#888888", lw=0.5))
+    ax.set_xlim(-0.05, 1.12)
+    ax.set_ylim(-0.05, 1.14)
+    ax.set_xticks([0, 0.25, 0.5, 0.75, 1.0])
+    ax.set_xticklabels(["0", "25", "50", "75", "100"])
+    ax.set_yticks([0, 0.25, 0.5, 0.75, 1.0])
+    ax.set_yticklabels(["0", "25", "50", "75", "100"])
+    ax.set_xlabel("looked up: read from the source or a stored copy (%)")
+    ax.set_ylabel("relayed along intermediate\npositions (%)")
+    ax.text(-0.2, 1.12, "B   Every setting falls in the lookup corner except the positive control",
+            transform=ax.transAxes, fontsize=7.5, weight="bold", va="top")
+    # Key: what each marker is, and what x and y measure in that setting.
+    axK.axis("off")
+    axK.set_xlim(0, 1)
+    axK.set_ylim(0, 1)
+    rows = [("D", COL["relay"], True, "induction (positive control)", "x: direct retrieval; y: relay"),
+            ("o", "#444444", True, "rhyme plans (couplets)", "x: rhyme word + line-end copy; y: line-2 positions"),
+            ("s", "#444444", True, "hidden choice (stored part)", "x: read directly; y: relayed via the sentence"),
+            ("^", "#444444", True, "recurrent hybrid", "x: attention layers; y: recurrent memory"),
+            ("*", "#444444", False, "beyond the attention window", "Gemma 3 27B, 0 to 2,000 filler tokens")]
+    for i, (mk, c, filled, name, desc) in enumerate(rows):
+        y = 0.93 - 0.165 * i
+        axK.scatter(0.04, y, marker=mk, s=26 if mk == "*" else 16, facecolor=c if filled else "white", edgecolor=c,
+                    lw=0.6)
+        axK.text(0.1, y + 0.012, name, fontsize=6.4, va="bottom", color=COL["ink"])
+        axK.text(0.1, y - 0.012, desc, fontsize=5.8, va="top", color="#666666")
+    axK.text(0.02, 0.1, "filled: Qwen3 / Qwen3.5;  open: Gemma 3.  Values above 100% (interaction)\n"
+             "are drawn at the top edge. Computed values have no retrieval cell (relay\n"
+             "at most 2.4% of the source effect; Figure 5).", fontsize=5.6, color="#666666", va="center")
     save(fig, "iclr_fig1_overview.png")
 
 

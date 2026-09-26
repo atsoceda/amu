@@ -11,8 +11,7 @@ decision rule fixed before its first result (Appendix @sec-app-prereg).
 
 ![Stress tests. **A:** Qwen3.5 hybrids, in which three of every four layers are
 recurrent. With the edit confined to one layer type at the source, the plan reaches
-the rhyme through the full-attention layers (blue). The recurrent memory (orange)
-carries 2 to 4%, below the pre-registered stop line of 10% at the decisive size
+the rhyme through the full-attention layers (blue). The recurrent memory (orange) accounts for 2 to 4%, below the pre-registered stop line of 10% at the decisive size
 (27B). **B:** Gemma 3 27B with filler inserted between line 1 and line 2. Beyond the
 1,024-token window of its local layers (shaded), direct retrieval of the rhyme word
 falls. The copy at the line's final token becomes necessary for about half of
@@ -41,7 +40,7 @@ largest model; smaller sizes give the scale trend.
 
 The recurrent memory does not carry the plan. At 4B and 9B (40 couplets each), the
 recurrent-only cell is \(+0.28\) [0.07, 0.49] and \(+0.55\) [0.31, 0.79]: 3% and 4% of
-persistence. The attention-only cell carries 97% and 96%. At the decisive size, 27B
+persistence. The attention-only cell accounts for 97% and 96%. At the decisive size, 27B
 (48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
 [0.18, 0.64], 2% of persistence \(+18.8\) [16.3, 21.3], and attention-only 95%. The
 both-blocked cell is exactly zero in every model. Decision: stop. Even when three
@@ -71,8 +70,7 @@ direct retrieval falls from 66% to 40% of persistence. It relies instead on the 
 at the line's final token. That copy is necessary for \(+13.0\) [10.0, 16.1] of a
 persistence of \(+26.4\), about half. Absolute relay grows about thirteenfold, and
 mostly through the boundary. Relay along the generated text rises from about 1% to
-12% by sufficiency (\(+3.2\) [2.2, 4.3]), and its necessity is \(+2.7\) (10%). The
-filler carries nothing (\(+0.3\) and \(+0.15\)). By the frozen rule, 12% falls between
+12% by sufficiency (\(+3.2\) [2.2, 4.3]), and its necessity is \(+2.7\) (10%). The filler relays nothing (\(+0.3\) and \(+0.15\)). By the frozen rule, 12% falls between
 "stop" and "go". It is the largest generated-text relay we observe in any setting,
 and it remains about an eighth of the effect.
 
@@ -142,8 +140,7 @@ its interval in Qwen3-4B and Qwen3-14B. The one exception is Qwen3-32B, where th
 post-list block holds 16% of the text swap. There, relay through the sentence is small
 but nonzero: \(+0.06\) [0.04, 0.09], one eighth of the stored part and 2% of the text
 swap. The recurrent hybrid Qwen3.5-27B behaves similarly. There, relay of the stored
-part through the sentence is \(+0.03\) [0.02, 0.04], or 1% of the text swap. The sentence
-positions themselves carry 7% of the text swap (\(+0.15\) [0.12, 0.18]), the largest share
+part through the sentence is \(+0.03\) [0.02, 0.04], or 1% of the text swap. The sentence positions themselves account for 7% of the text swap (\(+0.15\) [0.12, 0.18]), the largest share
 in any model; Qwen3-4B has 5% and every other model at most 1%. This is expected when every
 position's recurrent state summarizes the prefix, including the list. The rest of the pick
 is re-derived at the reveal from the visible list.
@@ -162,8 +159,7 @@ A same-pick null, frozen before its result, gives the converse check. The donor 
 same list in another order with the *same* pick. Post-list donor states then leave the
 relative preference for the pick unchanged on average in Gemma 3 12B: \(-0.19\)
 [\(-0.53\), 0.16], against a pick specificity of \(+1.01\) [0.78, 1.24] with out-of-list
-donors. Individual pairs still move in both directions, because the block also carries
-order information about the rest of the list.
+donors. Individual pairs still move in both directions, because the block also holds order information about the rest of the list.
 
 The replication confirms a stored, pick-specific choice in both families
 (@fig-stress C; @tbl-hidden). The two families diverge with scale. In Gemma 3 the
@@ -203,7 +199,7 @@ channel for the pick.
 **Where the choice is stored.** Per-token necessity over the post-list block localizes
 the stored pick (@fig-sites B). In Gemma 3 27B, 77% of the pick-specific effect
 (\(+1.91\) [1.57, 2.24] of \(+2.48\)) sits on a single token: *the* in "about the
-weather". The period after the list carries \(+0.42\), and the period ending the
+weather". The period after the list accounts for \(+0.42\), and the period ending the
 instruction \(+0.22\). Every other token, including the end-of-turn and role tokens,
 is \(0.00\pm0.05\). Gemma 3 12B uses the same site, both with fruits (*the*: \(+0.52\) of
 \(+1.03\); the period after the list: \(+0.32\)) and with animals (*the*: \(+1.04\)
@@ -217,9 +213,7 @@ token. If it stays at a fixed position or spreads out, the site is template-spec
 With the instruction reworded to "Keep your choice private for now. Begin by
 describing today's weather in a single sentence. After that, reveal which fruit you
 picked.", Gemma 3 12B stores 12% of the text swap's pick specificity (\(+0.59\) [0.38,
-0.81]). The storage again concentrates on two low-content tokens. The period that ends
-the list carries \(+0.42\) [0.21, 0.63] (71%). The apostrophe of "today's", the token
-before "weather", carries \(+0.16\) [0.09, 0.22] (27%). Every other token is below 0.04.
+0.81]). The storage again concentrates on two low-content tokens. The period that ends the list accounts for \(+0.42\) [0.21, 0.63] (71%). The apostrophe of "today's", the token before "weather", accounts for \(+0.16\) [0.09, 0.22] (27%). Every other token is below 0.04.
 The function-word site moved with the wording, which supports storage at a predictable
 low-content token. Across sizes and wordings the stored pick concentrates on two or
 three low-content tokens. These are the punctuation that closes a segment (the list,

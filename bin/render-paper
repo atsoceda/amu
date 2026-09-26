@@ -64,6 +64,20 @@ if [[ -f "$tex" ]]; then
   tex_sha="$(shasum -a 256 "$tex" | awk '{print $1}')"
 fi
 
+# Numbered copy of every render (paper_1.pdf, paper_2.pdf, ...) for distribution to readers.
+numbered=""
+if [[ -f "$pdf" ]]; then
+  n=0
+  for f in "$root/dist/$profile"/paper_*.pdf; do
+    [[ -e "$f" ]] || continue
+    k="${f##*/paper_}"; k="${k%.pdf}"
+    if [[ "$k" =~ ^[0-9]+$ ]] && (( k > n )); then n=$k; fi
+  done
+  n=$((n + 1))
+  numbered="dist/$profile/paper_$n.pdf"
+  cp "$pdf" "$root/$numbered"
+fi
+
 cat > "$manifest" <<JSON
 {
   "target": "$target",
@@ -76,10 +90,14 @@ cat > "$manifest" <<JSON
   "pdf": "dist/$profile/paper.pdf",
   "pdf_sha256": "$pdf_sha",
   "tex": "dist/$profile/paper.tex",
-  "tex_sha256": "$tex_sha"
+  "tex_sha256": "$tex_sha",
+  "numbered_pdf": "$numbered"
 }
 JSON
 
 echo "Wrote $pdf"
 echo "Wrote $tex"
 echo "Wrote $manifest"
+if [[ -n "$numbered" ]]; then
+  echo "Wrote $root/$numbered (numbered copy for distribution)"
+fi

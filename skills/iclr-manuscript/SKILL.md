@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.0"
+  version: "1.1"
   updated: "2026-09-26"
 ---
 
@@ -64,6 +64,17 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
   Cross-references (`@tbl-name`) keep working. Inside raw LaTeX use `$...$`, `\%` and
   `\textbf{}`.
 
+## Wording rules learned from review
+
+- Define every path term before using it, and keep one meaning per word: "relay" (carrying
+  forward through intermediate positions) is the only sense of "carry"; for shares write
+  "accounts for X%", never "carries X%".
+- State why relay matters in terms of what a monitor can see: emitted content is in the
+  text, retrieved content sits at a fixed position of the context, relayed content travels
+  through the model's own output without appearing in it. Do not claim that only relay
+  "keeps content in the model's state" (retrieval does too).
+- Do not use "private" (retired in the glossary); say hidden or secret.
+
 ## YAML pitfalls
 
 - A `header-includes` entry containing `: ` (for example `[Pending: #1]`) parses as a
@@ -72,7 +83,10 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
 
 ## Render and check
 
-1. `bin/render-paper iclr submission` (outputs in `dist/iclr-submission/`).
+1. `bin/render-paper iclr submission` (outputs in `dist/iclr-submission/`). Every render
+   also writes a numbered copy, `paper_<N>.pdf` (N = highest existing number + 1; the user's
+   rule, 2026-09-26: numbered versions are easier to distribute). Never overwrite or delete an
+   earlier number; quote the number when sending a render to the user.
 2. Pages: `pdfinfo dist/iclr-submission/paper.pdf`; find where the main text ends (the
    AI use statement follows the discussion) with `pdftotext -f N -l N`. ICLR allows 9 pages
    of main text at submission; report the count, do not cut text to fit (`AGENTS.md`).

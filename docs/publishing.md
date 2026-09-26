@@ -30,6 +30,8 @@ for reference and for rebuilding the tagged workshop version.
 
 Each build writes a PDF, generated `.tex`, and `build-manifest.json` under
 `dist/<target>-<mode>/`.
+Every build also writes a numbered copy of the PDF, `paper_<N>.pdf`, for
+distribution (the manifest records it as `numbered_pdf`).
 
 ## Local Tools
 

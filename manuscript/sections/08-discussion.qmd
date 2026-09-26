@@ -16,8 +16,7 @@ information is kept in the settings we tested.
    the rhyme plan. Two or three low-content tokens (segment-closing punctuation and,
    in larger models, a function word of the instruction) hold the stored part of a
    secret choice.
-4. *The stored-copy route grows.* It emerges with scale and in pretraining. It
-   carries about half of the plan once the source is beyond the local attention
+4. *The stored-copy route grows.* It emerges with scale and in pretraining. It accounts for about half of the effect once the source is beyond the local attention
    window. It is also the route by which hidden content was stored.
 
 For monitoring internal state, the map suggests reading a handful of prompt

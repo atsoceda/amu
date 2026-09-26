@@ -25,8 +25,7 @@ prompts.
   through the generated article. The effect that bypasses the article is at
   random-control level.
 - Stratified by leverage (@fig-computed D), the effect through the article scales
-  with leverage, while the effect bypassing it stays small and constant. The article
-  carries 53 to 82% of the effect in the lowest-leverage tertile and 94 to 96%
+  with leverage, while the effect bypassing it stays small and constant. The article accounts for 53 to 82% of the effect in the lowest-leverage tertile and 94 to 96%
   elsewhere.
 - The product of policy movement and leverage predicts the public effect better
   than policy movement alone (correlation 0.886 against 0.831 for amplified
@@ -53,15 +52,14 @@ the answer's first digit. The six-cell split then shows how much of the effect g
 through the written values (emission) and how much bypasses them (persistence with
 the text fixed).
 
-- Emission carries 93% and 96% of the effect at 4B (\(K=3\) and \(K=5\)), 94% and 92% at
+- Emission accounts for 93% and 96% of the effect at 4B (\(K=3\) and \(K=5\)), 94% and 92% at
   8B, 88% and 83% at 14B, and 99% at 32B (\(K=3\)).
 - The bypass rises from 4 to 8% at 4B and 8B to 12 to 17% at 14B. At 32B it is
   \(+0.06\) [\(-0.05\), 0.16], or 1% (@fig-computed C).
 
 Written reasoning is not decorative in these models. The answer follows the written
 values, and the part that re-reads the source does not grow with scale. The
-couplets give the same picture on a smaller scale: the emitted line-2 words carry 13
-to 25% of the rhyme effect (@sec-couplets). \pending{Qwen3-32B at \(K=5\),
+couplets give the same picture on a smaller scale: the emitted line-2 words account for 13 to 25% of the rhyme effect (@sec-couplets). \pending{Qwen3-32B at \(K=5\),
 re-scored after a parser fix: 32B writes each step in bold.}
 
 Together with @sec-lookup, the two halves of route accounting give a consistent

@@ -105,7 +105,7 @@ reaches the prediction through \(B\)'s position. The design is 100 random sequen
 of 24 distinct common word tokens, repeated up to the second \(A\). The edit replaces
 the first \(A\)'s states with those of a sequence identical except for that token.
 The outcome is \(\log p(B)\) at the second \(A\). The prediction, fixed before the
-first result, was that relay carries more than 80% of persistence and direct
+first result, was that relay accounts for more than 80% of persistence and direct
 retrieval is near zero.
 
 The control passes (@fig-overview B; @tbl-control). In Qwen3 1.7B to 14B and in
@@ -115,8 +115,7 @@ above 100% reflect an interaction. With only downstream positions edited, the cl
 first \(A\) conflicts with the edited "preceded by" signal and suppresses \(B\) more
 than the consistent edit does. In Gemma 3 the all-position relay cell is weaker than
 the key position alone, for the same reason. At Qwen3-32B relay remains the main
-path (89%), but direct retrieval is 31%. In the recurrent hybrid Qwen3.5-27B, the key
-position alone carries 77% and direct retrieval 17%. The largest models also read the
+path (89%), but direct retrieval is 31%. In the recurrent hybrid Qwen3.5-27B, the key position alone accounts for 77% and direct retrieval 17%. The largest models also read the
 first \(A\) directly. The retrieval-dominated results in the rest of the paper are
 therefore informative negatives, not a blind spot of the method.
 

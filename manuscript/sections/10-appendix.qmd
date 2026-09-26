@@ -82,7 +82,7 @@ Plain-format couplets & retrieval dominates; line-end copy large in Gemma 3 27B,
 Induction control & relay > 80\% of persistence, retrieval near zero & holds in 6 models; partial at Qwen3-32B (retrieval 31\%)\\
 Sums & computation-position edit must move the answer (efficacy gate) & gate fails at every size: recomputed\\
 Variable chains & chain relay $\geq$ 25\% of persistence (positive-control outcome) & not observed: recomputed\\
-Written chains & emission carries nearly all of the effect & holds (83--99\%)\\
+Written chains & emission accounts for nearly all of the effect & holds (83--99\%)\\
 Recurrent carry & go if recurrent-only $\geq$ 25\%, stop if < 10\% (largest model) & stop (2\% at 27B)\\
 Distance & go if generated-text relay $\geq$ 25\%, stop if < 10\%, else extend & extended; 12\%: small but nonzero\\
 Hidden choice & re-derived (list large, post-list and sentence small) vs stored or relayed & mostly re-derived; small stored part; relay zero\\
@@ -246,10 +246,9 @@ other items.
 
 :::
 
-At Qwen3-4B, the forced sentence positions carry a small part of the pick,
+At Qwen3-4B, the forced sentence positions hold a small part of the pick,
 \(+0.57\) [0.48, 0.67] or about 5% of the text swap. The donor run's sentence positions
-read this directly from the list. At 8B and larger the sentence positions carry
-nothing.
+read this directly from the list. At 8B and larger the sentence positions hold nothing.
 
 # Relationship to an earlier workshop version {#sec-app-workshop}
 

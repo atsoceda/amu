@@ -17,15 +17,13 @@ by line 1 and a newline), with no chat template.
 **Behaviour.** The all-layer edit of the rhyme word moves line 2 off its rhyme:
 after the edit, at most 2% of second lines rhyme with the original, against 83 to
 100% before it. It moves line 2 onto the donor's rhyme in 27 to 75% of couplets in
-Qwen3 and 62 to 95% in Gemma 3. The emitted line-2 words carry 13 to 25% of the
-total effect. The rest is persistence: the rhyme position is pushed toward the
+Qwen3 and 62 to 95% in Gemma 3. The emitted line-2 words account for 13 to 25% of the total effect. The rest is persistence: the rhyme position is pushed toward the
 donor even when the line-2 words are held fixed.
 
 **Routes.** @fig-couplets decomposes persistence in all 21 runs. Direct retrieval of
 the rhyme word is the dominant path: 76 to 95% of persistence in every Qwen3
 configuration (1.7B to 32B, chat and plain, instruct and base), and 80 to 95% in
-Gemma 3 from 1B to 12B (including the 12B base model). The late lookup through the three positions before the
-target carries 1 to 13%. Relay along the rest of the generated line, the carrying
+Gemma 3 from 1B to 12B (including the 12B base model). The late lookup through the three positions before the target accounts for 1 to 13%. Relay along the rest of the generated line, the carrying
 that a text monitor could miss, is at most 1% of persistence in every run. Gemma 3
 27B is the exception to retrieval dominance. There, direct retrieval falls to 68%
 (chat) and 19% (plain), and two further components appear: a large interaction term
@@ -75,8 +73,7 @@ the choice of source position, or the edit type.
 - *Published feature steering.* We reselect the rhyme features of
   @hanna2026latent with their rule. The mean is 19.1 features per couplet against
   their 19.2, with an exact per-couplet count match on 67 of 100 couplets at 4B. We
-  then steer with their protocol instead of editing the state. Direct retrieval
-  carries 90%, 88% and 84% of persistence at 4B, 8B and 14B, and relay 8%, 9% and
+  then steer with their protocol instead of editing the state. Direct retrieval accounts for 90%, 88% and 84% of persistence at 4B, 8B and 14B, and relay 8%, 9% and
   14%. The state edit gives the same split (91/10, 90/11 and 82/12), so its strength
   does not drive the result.
 

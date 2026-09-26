@@ -15,12 +15,16 @@ the text says nothing about it [@pfau2024dots; @roger2023steganography;
 
 In a transformer, information present at one position can reach a later position
 by three paths (@fig-overview A). It can be **emitted**: it changes the tokens the
-model writes, which are then read back as input. It can be **retrieved directly**:
-the later position attends to the position where the information originates, or
-to the visible text from which it can be recomputed. Or it can be **relayed**:
-intermediate positions, including the model's own generated tokens, pick it up and
-pass it forward. Only relay keeps content in the model's state while the
-intervening text is silent about it, so relay is what a text monitor could miss.
+model writes, and those tokens are read back as input. It can be **retrieved**: the
+later position attends directly to the position where the information originates,
+or to the visible text from which it can be recomputed. Or it can be **relayed**,
+that is, carried forward: intermediate positions, including the tokens the model
+generates, read it and pass it on to later ones. The three paths differ in what a
+monitor can see. Emitted information is in the text. Retrieved information stays at
+a fixed position of the context, where it can be read or probed. Relayed information
+travels through the model's own output without appearing in it. Relay is therefore
+the path by which a model could hold or update content across a chain of thought
+that never states it.
 Prior work establishes that planning signals exist and are causally used: they are
 decodable ahead of time [@pal2023futurelens; @wu2024plan; @men2024lookahead],
 visible in attribution graphs [@lindsey2025biology; @hanna2026latent], and steerable
@@ -30,44 +34,43 @@ path the plan takes to the position where it is used.
 
 ![Route accounting and its central result. **A:** the paths by which a rhyme plan,
 formed at the rhyme word of line 1, can reach the position that predicts the rhyme at
-the end of line 2, with line widths proportional to each path's measured share of
-the effect in Qwen3-32B. Most of the plan is read directly from the rhyme word. A
-copy stored at the comma ending line 1 and a late lookup a few positions before the
-target carry most of the rest. Relay along the generated line carries 1%. **B:** the
-share of the effect carried along intermediate positions in every setting we study.
-Each point is one model (and prompt format or chain length); purple filled points
-are relay, hollow blue points direct retrieval. In the induction positive control,
-relay carries the effect and direct retrieval is near zero. Everywhere else relay is
-small. Rhyme plans: all generated line-2 positions, mostly the last three.
-Computed values: every position after the source. Hidden choice: the intervening
-sentence. Recurrent memory: the Qwen3.5 recurrent-only cell. Beyond the attention
-window: the generated text at 2,000 tokens of distance, Gemma 3
-27B.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
+the end of line 2. Line widths are proportional to each path's measured share of the
+effect in Qwen3-32B with the chat prompt. Most of the plan is read directly from the
+rhyme word. A copy stored at the comma ending line 1 and a late lookup a few positions
+before the target account for most of the rest. Relay along the generated line
+accounts for 1%. **B:** every setting and model on two axes: the share of the effect
+looked up (read from the source or from a stored copy) and the share relayed along
+intermediate positions. The induction positive control, where relay is the known
+mechanism, lies in the relay corner. Every task lies in the lookup corner, including
+the three stress tests (@sec-stress). The largest relay observed is the 2,000-token
+distance point (star, 12%). The key lists the two quantities used in each setting.
+Points below the dashed line reflect interaction between
+paths.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
 
 We introduce **route accounting**, a decomposition of an intervention's effect by
 path (@sec-method). A donor's hidden states are written at the source positions, and
 the effect is measured where the information is used. Clamping the states of chosen
 groups of positions to their clean or edited values, at every layer, isolates each
 path. Emission is separated from persistence by fixing the generated text. Within
-persistence, direct retrieval is separated from relay, with sufficiency and
-necessity versions for every group of intermediate positions and an explicit
-interaction term. Because a method that never finds relay would be uninformative, we
+persistence, direct retrieval is separated from relay. For every group of
+intermediate positions we measure what the group achieves alone (sufficiency) and
+what is lost without it (necessity), and we report the interaction between paths
+explicitly. Because a method that never finds relay would be uninformative, we
 validate route accounting on induction [@olsson2022induction], where relay through
 the copied token's position is the known mechanism. In that positive control, the
 accounting assigns the effect to relay, while direct retrieval stays at or below 3%
 of the effect in six of eight models (@fig-overview B).
 
 Applied to four tasks in 15 checkpoints from three model families, route accounting
-reveals a consistent principle: **look it up, don't carry it**. Unwritten information
-is read, near the point of use, from a fixed position in the prompt. That position is
-either the source itself or a copy stored at a structural token next to it. The
-information is not carried along the generated text (@tbl-map). Rhyme plans reach
+reveals a consistent principle: **look it up, don't carry it**. Models retrieve
+unwritten information rather than relay it. They read it, near the point of use,
+from a fixed position of the prompt: either the position where it originates or a
+copy stored at a structural token next to it (@tbl-map). Rhyme plans reach
 the rhyme mainly by direct retrieval of the rhyme word: 68 to 95% of persistence in
 all but one configuration (@sec-lookup). Values computed from the prompt are
 recomputed from their visible sources at the answer, even where this fails. No
 downstream position holds the running value of a variable chain, even as a block.
-When intermediate values are written out, the answer follows them: emission carries
-83 to 99% of the effect (@sec-emission). Relay along generated text more than three
+When intermediate values are written out, the answer follows them: emission accounts for 83 to 99% of the effect (@sec-emission). Relay along generated text more than three
 positions before the target never exceeds 1% of persistence in couplets. For computed
 values and hidden choices, relay through all intermediate positions is at most 2.4%
 of the effect, and in most models its interval includes zero.
@@ -79,8 +82,7 @@ result (@sec-stress):
 
 - **Recurrent memory.** In a hybrid where three of every four layers pass information
   forward only through a recurrent state [@yang2025gateddeltanet], relay is the only
-  path available to most of the network. The recurrent memory nevertheless carries
-  2 to 4% of the plan at 4B, 9B and 27B parameters.
+  path available to most of the network. The recurrent memory nevertheless accounts for only 2 to 4% of the effect at 4B, 9B and 27B parameters.
 - **Distance.** Gemma 3 interleaves five local attention layers with a 1,024-token
   window per global layer [@gemma3]. Beyond that window, most layers cannot read the
   source. At 2,000 tokens, the 27B model reads a stored copy at the line's final
@@ -92,9 +94,10 @@ result (@sec-stress):
   predictable, low-content tokens of the prompt: the punctuation that closes the list
   or the instruction and, in larger models, a function word. In Gemma 3 27B, most of
   the stored pick sits on the word *the* in "about the weather". The pick is read
-  directly at the reveal.
-  At most 2% of it is relayed through the intervening sentence, and none of it is
-  written into the sentence.
+directly at the reveal.
+  The intervening sentence never names it. At most 2% of the pick is relayed through
+  that sentence, and the sentence positions hold at most 7% (in the recurrent
+  hybrid).
 
 Across scale, the one route that grows is storage at the line's final token: the
 comma in chat prompts, the newline in plain prompts (@sec-storage). It appears from
@@ -134,19 +137,17 @@ Content (observability) & Emission & Retrieval or stored copy & Relay along gene
 Rhyme plan (visible) & 13--25\% of the total & rhyme word 68--95\% of persistence; line-end copy 0--16\% (37\% in Gemma~3 27B, plain prompt) & $\le$1\% beyond the last three positions\\
 Computed value, unwritten (visible) & -- & recomputed from the source digits & $\le$2\% (all later positions together)\\
 Computed value, written (visible) & 83--99\% & bypass 1--17\% & --\\
-Secret choice (hidden) & $\approx$0 (the sentence never names it) & re-derived from the list; 0--40\% stored after it & $\le$2\% (of the text swap)\\
+Secret choice (hidden) & $\approx$0 (the sentence never names it) & re-derived from the list; 0--40\% stored after it & $\le$2\% of the text swap relayed; the sentence positions hold $\le$7\%\\
 \midrule
 Induction (positive control) & -- & $\le$3\% (17--31\% in the two largest Qwen models) & 53--137\% (interaction above 100\%)\\
 \bottomrule
 \end{tabular}
 ```
 
-Where unwritten information travels. Each cell gives the share of the effect
-carried by a path, as a range over the models tested, from the largest effect
+Where unwritten information travels. Each cell gives the share of the effect that travels by a path, as a range over the models tested, from the largest effect
 measured in each setting. Route: *emission*, the effect through the text the model
 writes; *retrieval or storage*, a later position reads the source, a stored copy of
-it, or the visible sources from which it recomputes the content; *relay*, the effect
-carried along intermediate positions. Observability: *visible* content can be
+it, or the visible sources from which it recomputes the content; *relay*, the effect passed forward through intermediate positions. Observability: *visible* content can be
 recovered by a reader of the text; *hidden* content cannot. Dashes mark cells that
 the design rules out. Sections and figures give the full results with 95% intervals.
 
