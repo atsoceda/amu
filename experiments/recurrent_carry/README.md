@@ -46,3 +46,17 @@ so a small-model null would not be informative. The stop/go rule applies to the
 unedited line 2 is the rhyme screen's own greedy line (same prompt; identical to step 2's
 unedited generation), so step 2 is skipped (`run_pilot_fast.sh`, `pilot.py --from-screen`).
 The stop/go rule is unchanged; an in-between result extends the pilot.
+
+## Results
+
+### Supporting sizes (2026-09-26, Mac Studio; 40 couplets each)
+
+| | Persistence | Attention-only | **Recurrent-only** | Both blocked | Direct retrieval | Relay |
+|---|---|---|---|---|---|---|
+| Qwen3.5-4B | +12.0 [10.2, 13.6] | +11.6 | **+0.28 [0.07, 0.49]** (3%) | 0.00 | +10.5 | +1.6 |
+| Qwen3.5-9B | +14.7 [13.3, 16.2] | +14.1 | **+0.55 [0.31, 0.79]** (4%) | 0.00 | +12.x | see rows |
+
+In both, the plan reaches the rhyme position almost entirely through the full-attention
+layers (1 in 4); the recurrent memory (24 of 32 layers) carries 3-4%, below the 10% stop
+line at these sizes. The both-blocked sanity cell is exactly zero. The decisive 27B
+pilot (stop/go on the largest model) is running.
