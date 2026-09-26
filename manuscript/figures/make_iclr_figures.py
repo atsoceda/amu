@@ -722,9 +722,214 @@ def storage_figure(main, name):
     save(fig, name)
 
 
+def pos_share(vals):
+    tot = sum(max(v, 0.0) for v in vals) or 1e-9
+    return [max(v, 0.0) / tot for v in vals], tot
+
+
+def line_end_index(toks):
+    """Index of line 1's final token: the comma before a chat template, or the line break of a plain prompt."""
+    if len(toks) > 1 and pretty(toks[1]) == "↵":
+        return 1
+    return 0
+
+
+def colourbar_pts(ax, x, y, w=80.0, h=5.0, label="share of the row's total positive necessity"):
+    for i in range(60):
+        ax.add_patch(Rectangle((x + i * w / 60, y), w / 60 + 0.1, h, fc=CMAP3(i / 59), ec="none"))
+    ax.add_patch(Rectangle((x, y), w, h, fc="none", ec="#AAAAAA", lw=0.3))
+    for v in (0, 50, 100):
+        ax.text(x + w * v / 100, y + h + 1.0, f"{v}%", fontsize=7, ha="center", va="top", color="#444444")
+    ax.text(x - 4, y + h / 2, label, fontsize=7, ha="right", va="center", color="#444444")
+
+
 def fig3():
-    storage_figure(True, "iclr_fig3_storage_sites.png")
     storage_figure(False, "iclr_figA_storage_all.png")
+    Hpt = 318.0
+    Wpt = W * 72
+    fig = plt.figure(figsize=(W, Hpt / 72))
+    bg = fig.add_axes([0, 0, 1, 1])
+    bg.set_xlim(0, Wpt)
+    bg.set_ylim(Hpt, 0)
+    bg.axis("off")
+    bg.set_zorder(0)
+
+    def axes_pts(x0, y0, w, h):  # rectangle in points from the top-left -> figure axes
+        return fig.add_axes([x0 / Wpt, 1 - (y0 + h) / Hpt, w / Wpt, h / Hpt])
+
+    colourbar_pts(bg, Wpt - 86, 17.0, label="cell shading: share of the total")
+    bg.text(0, 1, "A   Rhyme plan: the copy is stored on line 1's final token", fontsize=8, weight="bold",
+            va="top")
+    # One annotated example: Qwen3-32B, chat prompt.
+    ex = load(CR / "Qwen3-32B" / "relay_boundary_summary.json")
+    y = 16.0
+    if ex:
+        toks = [x["token"] for x in ex["necessity_by_token"]]
+        sh, _ = pos_share([x["mean"] for x in ex["necessity_by_token"]])
+        k = line_end_index(toks)
+        bg.text(0, y, "Qwen3-32B, chat prompt: tokens between line 1 and line 2", fontsize=7,
+                style="italic", color="#444444", va="top")
+        y += 13
+        cells = [("night", "src", None)] + [(pretty(t), "end" if i == k else "tpl", sh[i])
+                                            for i, t in enumerate(toks)] + [("…", "gap", None), ("the", "tgt", None)]
+        fs, ch, gap = 7.5, 17.0, 2.0
+        widths = [text_width(c[0] + (f"  {100 * c[2]:.0f}%" if c[1] == "end" else ""), fs) + 8 for c in cells]
+        scale = min(1.0, (Wpt - 4 - gap * len(cells)) / sum(widths))
+        x = 1.0
+        for (lab, kind, v), w in zip(cells, widths):
+            w *= scale
+            if kind == "gap":
+                bg.text(x + w / 2, y + ch / 2, lab, fontsize=fs, ha="center", va="center", color="#777777")
+                x += w + gap
+                continue
+            fc = {"src": "#DCEAF5", "tgt": "white"}.get(kind, CMAP3(min(v or 0.0, 1.0)))
+            ec = {"src": COL["retrieval"], "tgt": COL["ink"], "end": COL["storage"]}.get(kind, "#C8C8C8")
+            bg.add_patch(FancyBboxPatch((x, y), w, ch, boxstyle="round,pad=0,rounding_size=2.5", fc=fc, ec=ec,
+                                        lw=1.0 if kind in ("src", "tgt", "end") else 0.5))
+            txt = f"{lab}  {100 * v:.0f}%" if kind == "end" else lab
+            bg.text(x + w / 2, y + ch / 2, txt, fontsize=fs, ha="center", va="center",
+                    color="white" if kind == "end" and v > 0.45 else COL["ink"],
+                    weight="bold" if kind in ("src", "tgt", "end") else "normal")
+            if kind in ("src", "tgt"):
+                bg.text(x + w / 2, y + ch + 2, "source" if kind == "src" else "target",
+                        fontsize=7, ha="center", va="top",
+                        color=COL["retrieval"] if kind == "src" else COL["ink"])
+            if kind == "end":
+                bg.text(x + 1, y + ch + 2, "line 1's final token", fontsize=7, ha="left", va="top",
+                        color="#1B6E53")
+            x += w + gap
+        y += ch + 26
+    # Dot strip: share on the final token vs the largest other boundary token.
+    rowsA = []
+    for run, lab in [("Qwen3-14B", "Qwen3-14B, chat"), ("Qwen3-32B", "Qwen3-32B, chat"),
+                     ("gemma-3-27b-it", "Gemma 3 27B, chat"), ("gemma-3-12b-it-plain", "Gemma 3 12B, plain"),
+                     ("gemma-3-27b-it-plain", "Gemma 3 27B, plain")]:
+        sm = load(CR / run / "relay_boundary_summary.json")
+        if not (sm and sm.get("necessity_by_token")):
+            continue
+        nb = sm["necessity_by_token"]
+        toks = [x["token"] for x in nb]
+        sh, tot = pos_share([x["mean"] for x in nb])
+        k = line_end_index(toks)
+        others = [i for i in range(len(nb)) if i != k]
+        j = max(others, key=lambda i: sh[i]) if others else None
+        fin = (100 * sh[k], 100 * max(nb[k]["lo"], 0) / tot, 100 * nb[k]["hi"] / tot)
+        oth = (100 * sh[j], 100 * max(nb[j]["lo"], 0) / tot, 100 * max(nb[j]["hi"], 0) / tot) if j is not None \
+            else (NAN, NAN, NAN)
+        rowsA.append((f"{lab} ({pretty(toks[k])})", fin, oth, pretty(toks[j]) if j is not None else ""))
+    row_h = 11.0
+    if rowsA:
+        hA = row_h * len(rowsA) + 4
+        ax = axes_pts(112, y, Wpt - 112 - 6, hA)
+        for i, (lab, fin, oth, olab) in enumerate(rowsA):
+            dot(ax, i, fin, COL["storage"], "o", True, s=18, horizontal=True)
+            dot(ax, i, oth, COL["grey"], "o", False, s=18, horizontal=True)
+        ax.set_yticks(range(len(rowsA)))
+        ax.set_yticklabels([r[0] for r in rowsA])
+        ax.set_ylim(len(rowsA) - 0.5, -0.5)
+        ax.set_xlim(-2, 102)
+        ax.set_xticks([0, 25, 50, 75, 100])
+        ax.tick_params(axis="y", length=0)
+        ax.grid(axis="x", color="#EEEEEE", lw=0.5)
+        ax.set_axisbelow(True)
+        ax.set_xlabel("share of the boundary tokens' total positive necessity (%)")
+        hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["storage"], mec=COL["storage"]),
+              Line2D([], [], ls="none", marker="o", ms=4, mfc="white", mec=COL["grey"])]
+        ax.legend(hs, ["line 1's final token", "largest other boundary token"], loc="lower right",
+                  bbox_to_anchor=(1.0, 1.0), ncol=2, handletextpad=0.2, borderaxespad=0.1)
+        y += hA + 26
+    # B. The hidden-choice instruction once, with its storage tokens highlighted.
+    y += 4
+    bg.text(0, y, "B   Hidden choice: the pick is stored on periods and on the word before \u201cweather\u201d",
+            fontsize=8, weight="bold", va="top")
+    y += 14
+    fr, fa, an = ("choice_replicate_fruits_localize_summary.json", "choice_replicate_fruits_localize_alt_summary.json",
+                  "choice_replicate_animals_localize_summary.json")
+    shown = None
+    for run, lab in (("gemma-3-27b-it", "Gemma 3 27B"), ("gemma-3-12b-it", "Gemma 3 12B")):
+        sm = load(HC / run / fr)
+        if sm and sm.get("necessity_by_token"):
+            shown = (lab, sm)
+            break
+    if shown:
+        lab, sm = shown
+        nb = sm["necessity_by_token"]
+        sh, _ = pos_share([x["mean"] for x in nb])
+        bg.text(0, y, f"{lab}, fruits: the instruction after the list (highlight: share of the pick-specific "
+                "storage)", fontsize=7, style="italic", color="#444444", va="top")
+        y += 12
+        fs, lh = 8.0, 21.0
+        x = 1.0
+        words = [("⟨list of fruits⟩ ", None, False)] + [(pretty(t) if t in PRETTY else t.replace("▁", "").replace("\n", "↵"),
+                                                         sh[i], t.startswith("▁")) for i, t in enumerate(nb and [q["token"] for q in nb])]
+        for wtxt, v, space in words:
+            wd = text_width(wtxt, fs)
+            if space:
+                x += text_width(" ", fs) + 1.0
+            if x + wd > Wpt - 4:
+                x, y = 1.0, y + lh
+            hi_ = v is not None and v >= 0.03
+            if hi_:
+                bg.add_patch(Rectangle((x - 1.2, y + 7.5), wd + 2.4, 11.5, fc=CMAP3(min(v, 1.0)), ec="none"))
+                bg.text(x + wd / 2, y + 7.0, f"{100 * v:.0f}%", fontsize=7, ha="center", va="bottom",
+                        color="#1B6E53", weight="bold")
+            bg.text(x, y + 13.25, wtxt, fontsize=fs, ha="left", va="center",
+                    color=("white" if hi_ and v > 0.45 else COL["ink"]) if v is not None else "#888888",
+                    weight="bold" if hi_ else "normal", style="normal" if v is not None else "italic")
+            x += wd + 0.8
+        y += lh + 16
+    # Composition per model and wording: periods, the word before "weather", everything else.
+    rowsB = []
+    for run, lab in (("gemma-3-4b-it", "Gemma 3 4B"), ("gemma-3-12b-it", "Gemma 3 12B"),
+                     ("gemma-3-27b-it", "Gemma 3 27B")):
+        for f, wl in ((fr, "fruits"), (fa, "fruits, reworded"), (an, "animals")):
+            sm = load(HC / run / f)
+            if not (sm and sm.get("necessity_by_token")):
+                continue
+            toks = [x["token"] for x in sm["necessity_by_token"]]
+            sh, _ = pos_share([x["mean"] for x in sm["necessity_by_token"]])
+            per = sum(v for t, v in zip(toks, sh) if t.strip() == ".")
+            wi = [i for i, t in enumerate(toks) if t.replace("▁", "") == "weather"]
+            fw = 0.0
+            if wi:
+                i = wi[0] - 1
+                while i >= 0 and toks[i].replace("▁", "") in ("the", "'", "s", "’"):
+                    fw += sh[i]
+                    i -= 1
+            rowsB.append((f"{lab}, {wl}", 100 * per, 100 * fw, 100 * max(1 - per - fw, 0.0)))
+    if rowsB:
+        hB = row_h * len(rowsB) + 4
+        ax = axes_pts(112, y, Wpt - 112 - 6, hB)
+        cols = [("#00563F", "segment-closing periods"), (COL["storage"], "word before \u201cweather\u201d"),
+                ("#E3E3E3", "all other tokens")]
+        for i, vals in enumerate(rowsB):
+            left = 0.0
+            for (c, lab), v in zip(cols, vals[1:]):
+                ax.barh(i, v, 0.72, left=left, color=c, lw=0, label=lab if i == 0 else None)
+                if v >= 9:
+                    ax.text(left + v / 2, i, f"{v:.0f}%", fontsize=7, ha="center", va="center",
+                            color="white" if c != "#E3E3E3" else "#444444", weight="bold")
+                left += v
+        ax.set_yticks(range(len(rowsB)))
+        ax.set_yticklabels([r[0] for r in rowsB])
+        ax.set_ylim(len(rowsB) - 0.5, -0.5)
+        ax.set_xlim(0, 100)
+        ax.set_xticks([0, 25, 50, 75, 100])
+        ax.tick_params(axis="y", length=0)
+        ax.spines["left"].set_visible(False)
+        ax.set_xlabel("share of the pick-specific storage (% of the row's total positive necessity)")
+        ax.legend(loc="lower left", bbox_to_anchor=(0.0, 1.0), ncol=3, handlelength=1.0, columnspacing=0.9,
+                  borderaxespad=0.1)
+        y += hB + 26
+    fig.set_size_inches(W, (y + 2) / 72)
+    Hn = y + 2
+    for a_ in fig.axes[1:]:
+        pos = a_.get_position()
+        y0 = (1 - pos.y1) * Hpt
+        a_.set_position([pos.x0, 1 - (y0 + pos.height * Hpt) / Hn, pos.width, pos.height * Hpt / Hn])
+    bg.set_position([0, 0, 1, 1])
+    bg.set_ylim(Hn, 0)
+    save(fig, "iclr_fig3_storage_sites.png")
 
 
 # --------------------------------------------------------------------------- Figure 4

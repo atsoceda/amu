@@ -30,17 +30,18 @@ and a copy stored at the line's final token. @sec-storage analyses these
 components. They are still lookups from a fixed position of the prompt, not relay
 along the generated line.
 
-![Couplet routes across scale, family and prompt format. **Top:** composition of
-persistence in each run, from the sufficiency cells: direct retrieval of the rhyme
-word (blue), the copy stored at the line's final token (green), the late lookup
-through the three positions before the target (light blue), relay along earlier
-line-2 positions (purple, at most 1% and not visible), and the non-additive
-remainder (hatched). **Bottom:** the line-end copy as a share of persistence, as
-sufficiency (filled) and necessity (hollow). Stars mark base checkpoints. The copy
-appears from 14B in Qwen3 and at 12 to 27B in Gemma 3. It is present in base models,
-and in Gemma 3 27B it is necessary for more than it is sufficient for. 100 couplets
-per run; Gemma 3 27B PT is
-pending.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100%}
+![Couplet routes across scale, family and prompt format (100 couplets per run).
+**Top: direct retrieval dominates in every run.** Composition of persistence, from the
+sufficiency cells: direct retrieval of the rhyme word (blue), the stored copy at the
+line's final token (green), the late lookup through the three positions before the
+target (light blue), early relay along the rest of line 2 (purple; at most 1% in every
+run, so barely visible), and interaction (grey). **Bottom: a stored copy at the line's
+final token emerges with scale.** Its share of persistence against model size for the
+four family and prompt combinations, by sufficiency (filled) and necessity (hollow),
+with base checkpoints as stars. It is absent up to 8B, appears at 14B in Qwen3 and at
+12B to 27B in Gemma 3, is present in base models, and in Gemma 3 27B with the chat
+prompt is necessary for far more than it is sufficient
+for.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100%}
 
 **The relay that grows with scale is not carrying.** Before running the larger models we committed two criteria for the claim that carrying grows with scale. First,
 the relay share must rise with log parameter count across Qwen3 1.7B to 32B. Second,
