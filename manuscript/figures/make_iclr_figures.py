@@ -1137,6 +1137,17 @@ def fig5():
         for d, sz in QWEN:
             s = load(DV / d / "written_summary_recut.json") or load(DV / d / "written_summary.json")
             k = (s or {}).get("by_K", {}).get(K)
+            if not (k and k.get("total") is not None):
+                rows = [r for r in (load(DV / d / f"written_K{K}_rows.json") or []) if r.get("usable")]
+                if rows:
+                    import random
+                    rng = random.Random(20260925)
+                    def bs(key):
+                        xs = [r[key] for r in rows]
+                        m = sum(xs) / len(xs)
+                        b = sorted(sum(rng.choices(xs, k=len(xs))) / len(xs) for _ in range(2000))
+                        return {"mean": m, "lo": b[50], "hi": b[1949], "n": len(xs)}
+                    k = {"emission": bs("emission"), "total": bs("total")}
             if k and k.get("total") is not None:
                 wr.setdefault(K, []).append((sz, share(k["emission"], k["total"])))
     ax.axhline(0, color="#BBBBBB", lw=0.5, zorder=0)
