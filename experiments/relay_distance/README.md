@@ -139,3 +139,22 @@ and 1500 (first 24 couplets), completing 0 / 500 / 1000 / 1500 / 2000. The slidi
 account predicts that boundary reliance (necessity) and the loss of direct retrieval
 change specifically once the target is more than 1,024 tokens from line 1 (between
 D = 1000 and D = 1500), not gradually with distance. Outputs `pilot_v2x_window_*`.
+
+### Gemma 3 - 12B - relay distance - pilot v2 (24 couplets per distance; 1 skipped at D = 2000)
+
+| | D = 0 | D = 2000 |
+|---|---|---|
+| line 2 rhymes | 100% | **0%** |
+| persistence | +40.49 [34.49, 45.86] | **+0.60 [-0.67, 1.84]** |
+| direct retrieval | +35.09 | -0.54 [-1.39, 0.19] |
+| relay (absolute) | +0.70 [0.08, 1.44] | +1.20 [0.36, 2.14] |
+| via boundary / filler / cue + line-2 words | +0.07 / 0.00 / +0.57 | +0.87 / +0.83 / -0.05 [-0.45, 0.36] |
+
+At 12B the rhyme plan does not survive 2,000 tokens of filler: line 2 is still a poem line
+("And echoes linger, soft and low.") but never rhymes with line 1, and the donor edit has no
+effect on the rhyme position. Nothing takes over when direct access is lost: no relay through
+the generated line (-0.05) and almost no boundary copy (Gemma 3 12B stores 1.4% at the line
+end in the chat format, against 11% at 27B). Read with the 27B result: at distance the model
+keeps the plan only when a stored copy at the line boundary exists; otherwise the plan is
+lost rather than relayed. The frozen stop/go number (relay share of a near-zero persistence)
+is not interpretable here and is not used.

@@ -232,3 +232,9 @@ because 32B writes each step in bold (`**b = a + 1 = 11 + 1 = 12**`) and the par
 expected the number at the end of the line. Fixed (markdown characters ignored;
 identical parses on the earlier data) and all sizes re-scored from the stored
 generations (`--from-rows`, outputs `written_K*_rows_recut.json`, `written_summary_recut.json`).
+
+Qwen3 - 14B - derived value - written chains, re-scored with the fixed parser (Mac Studio,
+`--from-rows`): identical to the first scoring (K = 3: 108/108 usable, emission +8.74 of
++9.98, 88%; K = 5: 103/103, emission +8.00 of +9.62, 83%), as expected: 14B does not use
+bold markup. Qwen3-8B re-scored: K = 3 108/108 usable (was 75), emission +12.62 of +13.46
+(94%); K = 5 103/103 (was 17), +12.15 of +13.15 (92%).

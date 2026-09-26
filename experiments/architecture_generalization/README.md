@@ -33,3 +33,12 @@ The full couplet chain (backbone; expected; already broad) is dropped. Kept, bec
 surprise-led framing rests on them: hidden choice (out-of-list specificity, animal
 replication, forced route split), the induction control, and for Qwen3.5 - 35B-A3B the
 fast recurrent-carry pilot (24 couplets). `core_suite_lite.sh`. Predictions unchanged.
+
+## Results
+
+### Qwen3.5 - 27B - hidden choice - out-of-list control (fruits; 100 pairs; 2026-09-26)
+
+Text swap +17.91 (pick specificity +1.66); post-list block: donor pick +0.16, donor's other
+fruits +0.11, **pick specificity +0.05 [0.03, 0.08]** (3% of the text swap's). As predicted
+(family-like): Qwen3.5 stores almost none of the hidden pick after the list, like Qwen3 at
+14B-32B (+0.00 / +0.04), unlike Gemma 3 (27B: +2.48, 31%).
