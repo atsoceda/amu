@@ -1,7 +1,5 @@
 # AI use statement {.unnumbered}
 
-<!-- Draft for the authors to confirm or correct before submission. -->
-
 We used an AI coding agent (Claude) extensively in this work. It wrote and ran
 experiment code, managed jobs on a remote workstation, aggregated results, generated
 the figures from the committed result files, and drafted and edited manuscript text.
@@ -9,8 +7,7 @@ Research questions, experimental designs and decision rules were discussed with 
 agent. After the initial couplet split, every design and decision rule was committed
 to version control before the corresponding result was computed. The authors reviewed the code, the committed
 results and every claim in the manuscript. Numbers in the text were checked against
-the machine-readable result files, and citations were checked against their sources, except two added at the end
-(\texttt{goyal2024pause}, \texttt{hao2024coconut}), which the authors should confirm. We take responsibility for the final content of this work, including
+the machine-readable result files, and citations were checked against their sources. We take responsibility for the final content of this work, including
 text, claims and artifacts produced with the aid of generative AI.
 
 # Ethics statement {.unnumbered}
@@ -22,17 +19,20 @@ harmless secret choices (fruits, animals). The results locate where content that
 text does not reveal is stored, which is information useful to monitors. We do not
 see a plausible route by which it helps a model conceal content. The limitations
 section states where the findings may not transfer, notably to long reasoning with
-thinking enabled and to models trained to conceal.
+thinking enabled. The discussion notes that training which rewards concealment is
+untested.
 
 # Reproducibility statement {.unnumbered}
 
 All experiments use publicly released checkpoints (Appendix @sec-app-materials) and
 public prompts, either released by @hanna2026latent and @ma2026plan or generated
-with fixed seeds. For every experiment, the anonymized repository contains the code,
-the design and decision rule as committed before the first result, the per-item
+with fixed seeds. Upon acceptance we will release the code and result files on
+GitHub. That release will contain, for every experiment, the code, the per-item
 result rows and summaries with bootstrap intervals, and the scripts that generate
-every figure and table from those files. The log of committed decision rules (Appendix
-@sec-app-prereg) lists each frozen design, its decision rule, the outcome and all
-dated deviations. Interventions, clamping and batching were checked against
-unbatched reference implementations. Compute is described in Appendix
-@sec-app-compute.
+every figure and table from those files. After the initial couplet split, it will
+also contain each design and decision rule as committed before the corresponding
+result. The log of committed decision rules (Appendix @sec-app-prereg) lists each
+frozen design, its decision rule and the outcome. Dated deviations are recorded
+with each experiment, and the main ones are listed there. Batched edits and
+generation were checked against unbatched reference implementations (Appendix
+@sec-app-materials). Compute is described in Appendix @sec-app-compute.
