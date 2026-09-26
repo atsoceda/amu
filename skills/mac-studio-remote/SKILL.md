@@ -10,7 +10,7 @@ compatibility: >-
   Local macOS with an SSH host alias "macstudio" in ~/.ssh/config, its key unlocked in the SSH agent, and the
   user's split-tunnel VPN connected. Remote: macOS with system python3; rsync on both sides.
 metadata:
-  version: "1.2"
+  version: "1.3"
 ---
 
 # Mac Studio remote jobs
@@ -127,6 +127,15 @@ come back. Details, measured facts and troubleshooting are in
 - **The bundle filter rejects any path containing `token`** (a credential guard):
   name scripts accordingly. Pipe `push_bundle.sh` output only with `set -o pipefail`,
   otherwise a refused push looks like success and the job runs without its script.
+- **Newer architectures need the second environment.** The main venv is Python 3.9 with
+  transformers 4.57 (no `qwen3_5`, Qwen3.5's hybrid Gated DeltaNet). `~/amu_jobs/.venv-next`
+  (Python 3.12 via `~/.local/bin/uv`, transformers 5.x) runs them; call its python
+  explicitly in the job script (see `experiments/recurrent_carry/run_pilot.sh`). On
+  Apple GPUs the recurrent layers use slow reference kernels (flash-linear-attention is
+  CUDA-only).
+- **Correct a running job's declared memory** by editing
+  `~/amu_jobs/running/<name>.mem` when the first guess was too high; the runner re-reads
+  it every cycle.
 - **Never allowlist a directory that holds results.** Pushing it copies local
   (older) result files over newer remote ones; on 2026-09-26 this silently destroyed a
   rerun. `push_bundle.sh` now skips `results/` inside listed directories; list scripts
