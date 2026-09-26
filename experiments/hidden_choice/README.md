@@ -336,3 +336,14 @@ segment-closing periods; the function-word site ("the") takes over at 12B-27B. C
 reading of the localization checks so far: the stored pick always concentrates on two or three
 low-content tokens, segment-closing punctuation plus (from 12B) a function word that moves with
 the wording; the single-token "the" register is size- and wording-specific.
+
+### Same-pick null: Gemma 3 - 12B - hidden choice - same-pick null (fruits; 100 pairs; 2026-09-26)
+
+Donor = the same list in another order with the same greedy pick. Relative preference for the
+pick (log p(pick) minus the mean log p of the other list items) at the reveal: text swap
+-0.13 [-0.79, 0.52]; **post-list edit -0.19 [-0.53, 0.16]** (out-of-list pick specificity at
+12B: +1.01 [0.78, 1.24]). The null holds on average, as predicted if the post-list block
+carries the pick: a donor with the same pick does not move it. Individual pairs move in both
+directions (mean absolute post-list effect 1.43): the block also carries order information
+about the rest of the list, consistent with the out-of-list finding that most of its content
+is a copy of the list.

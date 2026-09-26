@@ -153,6 +153,13 @@ therefore added, post hoc, *pick specificity*: the effect on the donor's pick mi
 the mean effect on the donor's other items. We then pre-registered it as the primary
 measure of a replication in a second domain (animals; disjoint lists of six).
 
+A same-pick null, frozen before its result, gives the converse check. The donor is the
+same list in another order with the *same* pick. Post-list donor states then leave the
+relative preference for the pick unchanged on average in Gemma 3 12B: \(-0.19\)
+[\(-0.53\), 0.16], against a pick specificity of \(+1.01\) [0.78, 1.24] with out-of-list
+donors. Individual pairs still move in both directions, because the block also carries
+order information about the rest of the list.
+
 The replication confirms a stored, pick-specific choice in both families
 (@fig-stress C; @tbl-hidden). The two families diverge with scale. In Gemma 3 the
 stored share is largest at 27B in both domains (40% and 31%). The pre-registered
@@ -216,4 +223,4 @@ with the wording. Segment-closing punctuation is the analogue of the line's fina
 token for rhymes: in both tasks the model stores a copy once, at a boundary next to
 the source or at a predictable token of the prompt, and reads it at the point of
 use. \pending{reworded instruction and animals at Gemma 3 27B; same-pick
-null (Gemma 3 27B, Qwen3-32B).}
+null at Gemma 3 27B and Qwen3-32B.}
