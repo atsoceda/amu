@@ -61,5 +61,8 @@ into three groups: boundary (prompt positions after the anchor), filler, and cue
 line-2 words. Same stop/go number, judged on relay through the cue plus line-2 words
 (relay through generated text). Qwen3 - 14B - relay distance - pilot v2 as the control.
 
-Control v1: Qwen3 - 14B - relay distance - pilot, see `results/Qwen3-14B/pilot_summary.json`
-(many couplets abandon the task at D = 2000; v2 adds the cue).
+Control v1: Qwen3 - 14B - relay distance - pilot (20 couplets): D = 0 relay +2.87 [1.98,
+3.76] (share 12%); D = 2000 relay +0.29 [0.03, 0.62] (share 3%) but **line 2 rhymes in
+0 of 20** (the model abandons the task after the filler), so the D = 2000 control is not
+interpretable. The v1 contrast (Gemma relay large at distance, Qwen small) fits the
+sliding-window hypothesis but needs v2 on both sides.
