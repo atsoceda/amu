@@ -1,11 +1,14 @@
-# Where a stored copy sits: the line's final token {#sec-storage}
+# Where the stored copy sits: mostly on the line's final token {#sec-storage}
 
 @sec-couplets found that the relay growing with scale sits in the positions between
 line 1 and line 2, not in the generated line. Here we locate it token by token, test
 whether it is specific to rhymes and to post-training, and compare it with
 published accounts.
 
-**It is one token: the line's final token.** Necessity is measured one token at a
+**Almost all of the copy sits on the line's final token.** In the five runs with a
+per-token analysis, the line's final token carries 90 to 100% of the boundary
+positions' total positive necessity (Qwen3-14B 98%, Qwen3-32B 95% and Gemma 3 27B 93%
+with the chat prompt; Gemma 3 12B 90% and 27B 100% with the plain prompt). Necessity is measured one token at a
 time over the positions between the rhyme word and line 2. Every boundary token is
 reset to its clean state in turn, with the rhyme word edited (@fig-sites A).
 
@@ -39,7 +42,7 @@ periods; with the reworded instruction it moves to the list-closing period and t
 token before "weather". The full token maps are in Appendix
 @fig-storage-all.](manuscript/figures/iclr_fig3_storage_sites.png){#fig-sites width=100%}
 
-**It emerges with scale and comes from pretraining.** @tbl-storage gives the copy's
+**The copy appears from about 12 to 14B parameters, and the base checkpoints we tested have it too.** @tbl-storage gives the copy's
 share of persistence by both measures (bottom row of @fig-couplets).
 
 - In Qwen3 the copy is absent up to 8B (necessity at most 0.9% of persistence in
@@ -50,13 +53,14 @@ share of persistence by both measures (bottom row of @fig-couplets).
 - The base checkpoints store it as well. Qwen3-14B-Base stores 16% by sufficiency,
   against 13% for the instruct model in the same format; Gemma 3 12B PT stores 5%
   and 6% against 2% and 3%. Qwen3-8B-Base, like the 8B instruct model, stores
-  nothing. Storage at the line's final token is therefore learned in pretraining;
-  instruction tuning does not introduce it.
+  nothing. In the three base checkpoints tested, the copy is present wherever the
+  matching instruct model has it, so it most likely arises in pretraining rather than
+  from instruction tuning.
 - With same-rhyme donors, the boundary component vanishes (\(-0.02\) to \(+0.01\) at 8B
   to 32B, against \(+0.06\) to \(+1.72\) with different-rhyme donors). It encodes the
   rhyme, not the disruption of the edit.
 
-**Sufficiency understates it when paths interact.** In Gemma 3 27B with the chat
+**Where paths interact, the copy matters more than its sufficiency suggests.** In Gemma 3 27B with the chat
 prompt, the line-end copy alone moves the rhyme by only \(+0.68\), yet resetting it
 removes \(+4.87\) [3.18, 6.73] of a persistence of \(+43.1\). The additivity gap is
 29% of persistence (Qwen3 at most 5%). The target combines the rhyme word and the

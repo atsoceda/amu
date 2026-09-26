@@ -15,8 +15,8 @@ thinking disabled and short generated spans.
    hidden choice, relay through the sentence is at most 2% of the text-swap effect.
 3. *Storage sites are few and predictable.* The line's final token holds a copy of
    the rhyme plan. Two or three low-content tokens (segment-closing punctuation and one function word or possessive token of the instruction) hold the stored pick-specific information of a secret choice.
-4. *The stored copy grows.* It emerges at 14B and above and is present in base
-   models. Once the source is beyond the local attention window, it is necessary for
+4. *The stored copy grows.* It appears from about 12 to 14B parameters and is
+   present in the base checkpoints we tested. Once the source is beyond the local attention window, it is necessary for
    about half of the effect. It is also where hidden, pick-specific information was
    stored.
 

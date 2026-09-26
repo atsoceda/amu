@@ -537,7 +537,7 @@ def fig2():
           Line2D([], [], ls="none", marker="*", ms=6, color=COL["ink"])]
     bx.legend(hs, ["sufficiency (patched in)", "necessity (patched out)", "base checkpoint"], loc="upper left",
               handletextpad=0.2, labelspacing=0.2, borderaxespad=0.1)
-    fig.text(0.0, bx.get_position().y1 + 0.035, "B   A stored copy at the line's final token emerges with scale",
+    fig.text(0.0, bx.get_position().y1 + 0.035, "B   A stored copy at the line's final token appears from about 12 to 14B parameters",
              fontsize=8, weight="bold", va="bottom")
     save(fig, "iclr_fig2_couplet_routes.png")
 
@@ -763,7 +763,7 @@ def fig3():
         return fig.add_axes([x0 / Wpt, 1 - (y0 + h) / Hpt, w / Wpt, h / Hpt])
 
     colourbar_pts(bg, Wpt - 86, 17.0, label="cell shading: share of the total")
-    bg.text(0, 1, "A   Rhyme plan: the copy is stored on line 1's final token", fontsize=8, weight="bold",
+    bg.text(0, 1, "A   Rhyme plan: the copy sits almost entirely on line 1's final token", fontsize=8, weight="bold",
             va="top")
     # One annotated example: Qwen3-32B, chat prompt.
     ex = load(CR / "Qwen3-32B" / "relay_boundary_summary.json")
@@ -845,7 +845,7 @@ def fig3():
         y += hA + 26
     # B. The hidden-choice instruction once, with its storage tokens highlighted.
     y += 4
-    bg.text(0, y, "B   Hidden choice: the pick is stored on periods and on one function word or possessive token",
+    bg.text(0, y, "B   Hidden choice: the stored signal sits mostly on periods and one function word or possessive token",
             fontsize=8, weight="bold", va="top")
     y += 14
     fr, fa, an = ("choice_replicate_fruits_localize_summary.json", "choice_replicate_fruits_localize_alt_summary.json",

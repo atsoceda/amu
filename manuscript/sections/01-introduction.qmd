@@ -115,7 +115,8 @@ result (@sec-stress). They bound the principle rather than confirm it.
 The one route that grows is the stored copy, and it grows in three ways (@sec-storage).
 It grows with scale. The copy at the line's final token (the comma in chat prompts,
 the newline in plain prompts) appears at 14B and above in Qwen3 and at 12B to 27B in
-Gemma 3. It is present in base checkpoints, so it is learned in pretraining. It grows
+Gemma 3. It is also present in the base checkpoints we tested, so it most likely arises in
+pretraining. It grows
 with distance: beyond the attention window it is necessary for about half of the
 plan's effect. And it is where hidden, pick-specific information is kept, at
 segment-closing punctuation and function words or possessive tokens of the prompt. Stored copies thus sit

@@ -164,7 +164,7 @@ can compute it. For the route split, the model's turn is prefilled with a fixed
 weather sentence and "The fruit I chose is". The outcome is the log-odds of the
 donor's pick against the original pick at the next token.
 
-**Partly stored, barely relayed.** The donor is the same list in
+**A small part of the pick-specific signal is stored after the list, and almost none is relayed.** The donor is the same list in
 another order, chosen so that the greedy pick differs. The reference is a *text swap*:
 the donor order written into the prompt, which moves the pick by construction. In
 Qwen3-8B, Gemma 3 12B and Gemma 3 27B (100 pairs each), donor states at the prompt
@@ -184,7 +184,7 @@ same pattern (relay 2%, sentence positions 8%). These are the largest in any mod
   expected when every position's recurrent state summarizes the prefix, including the
   list.
 
-**What is stored.** An order swap cannot separate a stored pick from a stored copy of
+**What the stored signal could be.** An order swap cannot separate a stored pick from a stored copy of
 the list order. In the out-of-list control, the donor list shares no item with the
 original, so the donor's pick does not occur in the prompt at all. The committed
 criterion is that post-list donor states raise the absent pick, and it holds in every
@@ -248,13 +248,13 @@ the result.
 
 :::
 
-**Not written into the text.** In the free version, the model writes its own weather
+**The written sentence has no measurable effect on the reveal.** In the free version, the model writes its own weather
 sentence. The sentence changes with the donor in 17 to 45% of pairs, but it never names
 an item. Emission is \(+0.02\) [\(-0.03\), 0.08], \(-0.01\) [\(-0.07\), 0.04] and \(-0.00\)
 in Qwen3-8B, Gemma 3 12B and Gemma 3 27B. The written sentence has no measurable causal
 effect on the reveal.
 
-**Where it is stored.** Per-token necessity over the post-list block localizes the
+**Where the stored signal sits.** Per-token necessity over the post-list block localizes the
 stored information (@fig-sites B).
 
 - In Gemma 3 27B, 77% of the pick-specific effect (\(+1.91\) [1.57, 2.24] of \(+2.48\))
