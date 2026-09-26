@@ -314,11 +314,16 @@ def pretty(t):
     return PRETTY.get(t, t.replace("▁", "").replace("Ġ", "").replace("Ċ", "↵").replace("\n", "↵"))
 
 
-def layout(toks, width_pt):
+def cell_text(t, v, vmax):
+    return f"{pretty(t)}  {v:+.2f}" if v >= 0.1 * vmax else pretty(t)
+
+
+def layout(toks, vals, width_pt):
     """Token cells with widths proportional to their text; wraps to new lines. Returns [(line, x, w)]."""
+    vmax = max(max(vals), 1e-6)
     out, x, line = [], 0.0, 0
-    for t in toks:
-        w = max(len(pretty(t)) * CH + 5.0, 17.0)
+    for t, v in zip(toks, vals):
+        w = max(len(cell_text(t, v, vmax)) * CH + 5.0, 15.0)
         if x + w > width_pt and x > 0:
             line, x = line + 1, 0.0
         out.append((line, x, w))
@@ -340,6 +345,7 @@ def fig3():
             ("gemma-3-12b-it", "choice_replicate_fruits_localize_summary.json", "Gemma 3 12B, fruits"),
             ("gemma-3-27b-it", "choice_replicate_animals_localize_summary.json", "Gemma 3 27B, animals"),
             ("gemma-3-12b-it", "choice_replicate_animals_localize_summary.json", "Gemma 3 12B, animals"),
+            ("gemma-3-4b-it", "choice_replicate_fruits_localize_summary.json", "Gemma 3 4B, fruits"),
             ("gemma-3-27b-it", "choice_replicate_fruits_localize_alt_summary.json",
              "Gemma 3 27B, fruits, reworded instruction"),
             ("gemma-3-12b-it", "choice_replicate_fruits_localize_alt_summary.json",
@@ -349,7 +355,7 @@ def fig3():
             rows.append(("B", lab, [x["token"] for x in s["necessity_by_token"]],
                          [x["mean"] for x in s["necessity_by_token"]]))
     width_pt = W * 72 - 4
-    line_h, lab_h, head_h, gap = 15.0, 18.0, 13.0, 5.0
+    line_h, lab_h, head_h, gap = 13.5, 10.5, 12.0, 4.0
     plan, y = [], 0.0
     for key in ("A", "B"):
         sel = [r for r in rows if r[0] == key]
@@ -358,11 +364,11 @@ def fig3():
         plan.append(("head", key, y))
         y += head_h
         for _, lab, t, v in sel:
-            lay = layout(t, width_pt)
+            lay = layout(t, v, width_pt)
             plan.append(("row", (lab, t, v, lay), y))
             y += lab_h + line_h * (max(l for l, _, _ in lay) + 1) + gap
-        y += 4.0
-    H = y + 2
+        y += 5.0
+    H = y + 1
     fig = plt.figure(figsize=(W, H / 72))
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, W * 72)
@@ -376,17 +382,15 @@ def fig3():
             continue
         lab, toks, vals, lay = obj
         vmax = max(max(vals), 1e-6)
-        ax.text(1, y0 + 2, lab, fontsize=6.4, va="top", color=COL["ink"])
+        ax.text(1, y0 + 1, lab, fontsize=6.4, va="top", color="#444444", style="italic")
         for (line, x, w), t, v in zip(lay, toks, vals):
             a = max(0.0, min(1.0, v / vmax))
             yt = y0 + lab_h + line * line_h
-            ax.add_patch(Rectangle((x + 1, yt), w, line_h - 4.0, fc=COL["storage"], alpha=0.05 + 0.9 * a,
+            ax.add_patch(Rectangle((x + 1, yt), w, line_h - 2.5, fc=COL["storage"], alpha=0.05 + 0.9 * a,
                                    ec="#D0D0D0", lw=0.3))
-            ax.text(x + 1 + w / 2, yt + (line_h - 4.0) / 2, pretty(t), ha="center", va="center", fontsize=FS3,
-                    color="white" if a > 0.55 else COL["ink"])
-            if v >= 0.1 * vmax:
-                ax.text(x + 1 + w / 2, yt - 0.8, f"{v:+.2f}", ha="center", va="bottom", fontsize=5.6,
-                        color="#1B6E53")
+            ax.text(x + 1 + w / 2, yt + (line_h - 2.5) / 2, cell_text(t, v, vmax), ha="center", va="center",
+                    fontsize=FS3, color="white" if a > 0.55 else COL["ink"],
+                    weight="bold" if v >= 0.1 * vmax else "normal")
     save(fig, "iclr_fig3_storage_sites.png")
 
 
