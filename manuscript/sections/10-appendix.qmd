@@ -52,51 +52,59 @@ persistence \(Y(1,B_1)-Y(0,B_1)\). Under a stochastic policy \(q_i(b)\), emissio
 for binary mediators. The multi-token version of @sec-method replaces the mediator
 with the generated text \(g\).
 
-# Pre-registration log {#sec-app-prereg}
+# Decision rules committed before the results {#sec-app-prereg}
 
 After the initial couplet split, every experiment's design, decision rule and
-predictions were committed to the repository before its first result. @tbl-prereg lists them with their outcomes.
-Deviations are dated in each experiment's record. The main ones:
+predictions were committed to the project repository before its first result. These
+are commitments in version control, not entries in an external registry. @tbl-prereg
+lists each rule with the commit that recorded it (committer time, UTC+9) and its
+outcome. Deviations are dated in each experiment's record. The main ones:
 
 - the text-swap reference in the hidden choice, added after a 3-pair smoke test at
   1.7B and before any real run;
-- pick specificity, added post hoc for fruits, then pre-registered for animals;
+- pick specificity, added post hoc for fruits, then committed as the primary measure
+  of the animal replication before its result;
 - the absolute-relay reading rule for distance, added after the full-attention
   control and before the Gemma 3 result;
 - the fast path for the Qwen3.5-27B pilot (24 couplets, screen generations reused),
-  fixed before its result;
+  committed before its result;
 - the block edit for chains, added after the first 8B rows and before any 14B or 32B
-  run.
+  run;
+- for the submission deadline, the 27B window curve shortened to 18 couplets, and the
+  checks listed in @sec-limitations not run, recorded before the affected results.
 
 ::: {#tbl-prereg}
 
 ```{=latex}
 \footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.9cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}p{4.9cm}@{}}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{4.7cm}@{}}
 \toprule
-Experiment & Decision rule or prediction fixed in advance & Outcome\\
+Experiment & Decision rule or prediction & Committed & Outcome\\
 \midrule
-Relay grows with scale (couplets) & (1) relay share rises with log size; (2) the rise comes from early line 2; (3) replicates in Gemma 3 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails; not "carrying grows"\\
-Plain-format couplets & retrieval dominates; line-end copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & all three hold\\
-Induction control & relay > 80\% of persistence, retrieval near zero & holds in 6 models; partial at Qwen3-32B (retrieval 31\%)\\
-Sums & computation-position edit must move the answer (efficacy gate) & gate fails at every size: recomputed\\
-Variable chains & chain relay $\geq$ 25\% of persistence (positive-control outcome) & not observed: recomputed\\
-Written chains & emission accounts for nearly all of the effect & holds (83--99\%)\\
-Recurrent carry & go if recurrent-only $\geq$ 25\%, stop if < 10\% (largest model) & stop (2\% at 27B)\\
-Distance & go if generated-text relay $\geq$ 25\%, stop if < 10\%, else extend & extended; 12\%: small but nonzero\\
-Hidden choice & re-derived (list large, post-list and sentence small) vs stored or relayed & mostly re-derived; small stored part; relay zero\\
-Out-of-list control & post-list edit raises the absent donor pick & holds in every model\\
-Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & Gemma 3 partly (4B > 12B); Qwen3 small (3\%, 7\%)\\
-Localization robustness & storage concentrates on one or two function words and moves with the wording & supported at 12B (two domains; reworded: list-final period 71\%, token before ``weather'' 27\%); at 4B the site is the segment-closing periods (91\%); 27B \pending{}\\
-Window curve & the change in boundary reliance occurs between 1,000 and 1,500 tokens & \pending{}\\
-Same-pick null & post-list edit with a same-pick donor leaves pick preference unchanged & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]); 27B and Qwen3-32B \pending{}\\
-Architecture generalization & early relay under 5\%; induction retrieval under 5\%; hidden relay near zero; family-like storage & Qwen3.5-27B: storage 3--4\% and relay of the stored part 1\% (as predicted); induction retrieval 17\% (prediction $<$5\% fails: partial pass); Gemma~4 31B and Qwen3.5-35B-A3B \pending{}\\
+Relay grows with scale (couplets) & (1) relay share rises with log size; (2) the rise comes from early line 2; (3) replicates in Gemma 3 & d4622d2, 09-25 23:11 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails; not ``carrying grows''\\
+Plain-format couplets & direct retrieval dominates; line-end copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & 34c0cbd, 09-25 23:59 & all three hold\\
+Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 09-26 02:45 & reported for 17 runs\\
+Induction control & relay $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (relay 53--55\%) and Qwen3-32B, Qwen3.5-27B (retrieval 31\%, 17\%)\\
+Sums & computation-position edit must move the answer (efficacy gate) & 7f5a9a6, 09-25 22:05 & gate fails at every size; downstream block $\le$6\%\\
+Variable chains & chain relay $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$2.4\%\\
+Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--99\%)\\
+Recurrent carry & go if recurrent-only $\ge$25\%, stop if $<$10\% (largest model) & 784c78b, 09-26 10:24 & stop (2\% at 27B)\\
+Distance & go if generated-text relay $\ge$25\%, stop if $<$10\%, else extend & 2df09ce, 09-26 11:56; v2 6caf0e5; extension 0dda3b3 & extended; 12\%: between stop and go\\
+Window curve (27B) & the change in reliance occurs between 1,000 and 1,500 tokens & a2d7c65, 09-26 15:43 & \pending{}\\
+Window curve (12B) & plan survives inside the window, lost outside & 9edfacc, 09-26 17:00 & not supported: gradual fade from 500 tokens (distance, not the window)\\
+Hidden choice & re-derived (list large, post-list and sentence small) vs stored or relayed & 144f545, 09-26 06:47 & mostly re-derived; small stored part; relay $\le$2\% of the text swap\\
+Out-of-list control & post-list edit raises the absent donor pick & aaa8b75, 09-26 07:23 & holds in every model\\
+Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & 061b175, 09-26 09:34 & Gemma 3 partly (4B $>$ 12B); Qwen3 small (3\%, 7\%)\\
+Localization robustness & storage concentrates on one or two function words and moves with the wording & 0ae75d6, 09-26 14:40 & supported at 12B (two domains; reworded); at 4B the segment-closing periods; 27B \pending{}\\
+Same-pick null & a same-pick donor leaves pick preference unchanged & a2d7c65, 09-26 15:43 & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]); 27B \pending{}\\
+Architecture generalization & early relay $<$5\%; induction retrieval $<$5\%; hidden relay near zero; family-like storage & ead2545, 09-26 14:50 & Qwen3.5-27B: storage 3--4\%, relay of the stored part 1\% (as predicted), induction retrieval 17\% (fails); Gemma 4 31B storage 82--91\% (family-like, as predicted); other cells not run\\
 \bottomrule
 \end{tabular}
 ```
 
-Pre-registered decisions and outcomes.
+Decision rules and predictions, the commit that recorded each before its result, and
+the outcome.
 
 :::
 
@@ -173,7 +181,7 @@ answer. @tbl-sums gives the efficacy scan.
  & 1.7B & 4B & 8B & 14B & 32B\\
 \midrule
 Accuracy (all filler lengths) & 95--100\% & 100\% & 100\% & 100\% & 100\%\\
-Donor state at \texttt{?} (pre-registered) & $+0.07$ & $+0.01$ & $-0.08$ & $-0.06$ & $-0.03$\\
+Donor state at \texttt{?} (committed) & $+0.07$ & $+0.01$ & $-0.08$ & $-0.06$ & $-0.03$\\
 Every position from \texttt{?} to the target & $+0.30$ & $+0.58$ & $-0.12$ & $+1.62$ & $+1.10$\\
 Operand digits & $+47.8$ & $+48.0$ & $+53.6$ & $+47.3$ & $+17.2$\\
 \bottomrule
@@ -236,6 +244,8 @@ Qwen3.5-27B & animals & $+1.27$ & $+0.18$ [0.12, 0.23] & $+0.05$ [0.01, 0.08]\\
 Gemma 3 4B & animals & $+11.93$ & $+8.17$ [7.25, 9.09] & $+2.59$ [2.13, 3.09]\\
 Gemma 3 12B & animals & $+8.10$ & $+4.94$ [4.30, 5.59] & $+1.43$ [1.10, 1.77]\\
 Gemma 3 27B & animals & $+10.12$ & $+14.24$ [13.44, 15.05] & $+4.09$ [3.59, 4.58]\\
+Gemma 4 31B & fruits & $+3.59$ & $+9.19$ [8.88, 9.50] & $+2.93$ [2.56, 3.30]\\
+Gemma 4 31B & animals & $+4.90$ & $+11.06$ [10.67, 11.45] & $+4.44$ [3.97, 4.93]\\
 \bottomrule
 \end{tabular}
 ```

@@ -1,52 +1,57 @@
-# Stress tests: where carrying should appear {#sec-stress}
+# Stress tests: bounds on the principle {#sec-stress}
 
 The principle could be an artifact of the settings in which we found it. When every
-layer can read every earlier position, carrying is never necessary. When the
-content is visible in the text, it can always be re-read. We therefore test three
-settings chosen to break it: an architecture in which most layers can pass
-information forward only by carrying it, a distance at which most attention layers
-cannot reach the source, and content that is not in the text at all. Each test had a
-decision rule fixed before its first result (Appendix @sec-app-prereg).
-@fig-stress summarizes the three.
+layer can read every earlier position, carrying is never necessary. When the content
+is visible in the text, it can always be re-read. We therefore test three settings
+chosen to make carrying useful or invisible: an architecture in which most layers can
+pass information forward only by carrying it, a distance at which most attention
+layers cannot reach the source, and content that is not in the text at all. Each test
+has a decision rule committed before its first result (Appendix @sec-app-prereg). The
+tests bound the principle: they measure which route the model uses when carrying is
+available, and how far that choice moves when lookup becomes harder. @fig-stress
+summarizes them.
 
 ![Stress tests. **A:** Qwen3.5 hybrids, in which three of every four layers are
-recurrent. With the edit confined to one layer type at the source, the plan reaches
-the rhyme through the full-attention layers (blue). The recurrent memory (orange) accounts for 2 to 4%, below the pre-registered stop line of 10% at the decisive size
-(27B). **B:** Gemma 3 27B with filler inserted between line 1 and line 2. Beyond the
-1,024-token window of its local layers (shaded), direct retrieval of the rhyme word
-falls. The copy at the line's final token becomes necessary for about half of
-persistence. Relay along the generated text rises to about 12%. The window curve at
-500, 1,000 and 1,500 tokens is pending. **C:** hidden choice. Bars: the part of a
-secret pick stored in the prompt after the list, as a share of the text-swap
-reference, in the pre-registered replication (animals) and the first domain (fruits).
-Markers below zero: the part relayed through the intervening sentence (triangles)
-and the part written into it (crosses), all indistinguishable from
-zero except at Qwen3-32B (2%).](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100%}
+recurrent. With the donor state allowed to enter only one layer type at the source,
+the plan reaches the rhyme through the attention layers (blue). The recurrent memory,
+which can only relay (purple), accounts for 2 to 4% of persistence, below the committed
+stop line (10%); the both-blocked cell is zero. **B:** Gemma 3 27B with filler between
+line 1 and line 2, at the measured distances only. Past the 1,024-token window of its
+local layers (shaded), direct retrieval of the rhyme word falls, the stored copy at
+the line's final token becomes necessary for about half of persistence, and early
+relay rises to 12%, between the committed stop and go lines. Side panels: absolute
+persistence, and the share of second lines that still rhyme in four models. **C:**
+hidden choice, as shares of the text-swap reference: re-derived at the reveal, stored
+after the list, and (right, on a scale centred on zero, with 95% intervals) relayed
+through the intervening sentence, held at the sentence positions, and written into the
+sentence.](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100%}
 
 ## Recurrent memory {#sec-recurrent}
 
 Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
 [@yang2025gateddeltanet] with each full-attention layer. A recurrent layer holds a
 fixed-size state that is updated position by position. In those layers, information
-from the source can reach a later position only by being carried in that state. This
-is relay by construction, and invisible in the text. We split persistence by layer
-type. In the *attention-only* cell, the donor state enters at the source, but the
-input of every recurrent layer at the source is restored to its clean value, so the
-edit can move forward only through the full-attention layers. The *recurrent-only*
-cell is the converse. A cell with both routes blocked is a sanity check. The rule
-fixed in advance was "go" if recurrent-only is at least 25% of persistence with its
-interval above zero, and "stop" if it is below 10%. The decision is made on the
-largest model; smaller sizes give the scale trend.
+from the source can reach a later position only by being carried in that state: relay
+by construction, and invisible in the text. The attention layers can still retrieve.
+The test therefore asks which route the model uses when both are available. We split
+persistence by layer type. In the *attention-only* cell, the donor state enters at the
+source, but the input of every recurrent layer at the source is restored to its clean
+value, so the edit can move forward only through the attention layers. The
+*recurrent-only* cell is the converse. A cell with both routes blocked is a sanity
+check. The rule committed in advance was "go" if recurrent-only is at least 25% of
+persistence with its interval above zero, and "stop" if it is below 10%. It is decided
+on the largest model; smaller sizes give the trend.
 
-The recurrent memory does not carry the plan. At 4B and 9B (40 couplets each), the
+The model uses the attention layers. At 4B and 9B (40 couplets each), the
 recurrent-only cell is \(+0.28\) [0.07, 0.49] and \(+0.55\) [0.31, 0.79]: 3% and 4% of
-persistence. The attention-only cell accounts for 97% and 96%. At the decisive size, 27B
-(48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
+persistence. The attention-only cell accounts for 97% and 96%. At the decisive size,
+27B (48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
 [0.18, 0.64], 2% of persistence \(+18.8\) [16.3, 21.3], and attention-only 95%. The
-both-blocked cell is exactly zero in every model. Decision: stop. Even when three
-quarters of the network can pass the plan forward only by carrying it, the plan
-travels by direct retrieval through the quarter that can look it up.
-\pending{Qwen3.5-27B at 100 couplets; Qwen3.5-35B-A3B (mixture of experts).}
+both-blocked cell is exactly zero in every model. Decision: stop. Although three
+quarters of the layers can pass the plan forward only by carrying it, the plan travels
+by direct retrieval through the quarter that can look it up. The recurrent layers are
+not idle: they carry a small but nonzero share, which bounds the principle at 2 to 4%
+of persistence for this architecture.
 
 ## Beyond the attention window {#sec-distance}
 
@@ -55,24 +60,28 @@ global layer [@gemma3; @beltagy2020longformer]. Once line 1 lies more than 1,024
 tokens before the rhyme position, five of six layers can no longer read it. We
 insert \(D\) tokens of neutral filler, a seeded arrangement of fixed everyday
 sentences, at the start of the model's turn, followed by a fixed cue (`Next line:`).
-The model then writes line 2. Relay is split into three groups: the boundary (the
+The model then writes line 2. Relay is split into three groups: the stored copy (the
 prompt positions after line 1), the filler, and the generated text (the cue and
-line 2). The frozen decision number is the share of persistence relayed through the
-generated text: "go" at 25% or more, "stop" below 10%, and extension to 50 couplets
-in between. A full-attention control, Qwen3-14B, showed before the Gemma result
-that relay *shares* can rise with distance only because direct retrieval weakens.
-We therefore added, before that result, the rule that a rise counts only if
+line 2). The committed decision number is the share of persistence relayed through
+the generated text: "go" at 25% or more, "stop" below 10%, and extension to 50
+couplets in between. A full-attention control, Qwen3-14B, showed before the Gemma
+result that relay *shares* can rise with distance only because direct retrieval
+weakens. We therefore added, before that result, the rule that a rise counts only if
 absolute relay also grows.
 
 @tbl-distance gives the extended run. At 2,000 tokens, Gemma 3 27B still writes a
-rhyming line 2 in 82% of couplets. It reads less of the plan from the rhyme word:
-direct retrieval falls from 66% to 40% of persistence. It relies instead on the copy
-at the line's final token. That copy is necessary for \(+13.0\) [10.0, 16.1] of a
-persistence of \(+26.4\), about half. Absolute relay grows about thirteenfold, and
-mostly through the boundary. Relay along the generated text rises from about 1% to
-12% by sufficiency (\(+3.2\) [2.2, 4.3]), and its necessity is \(+2.7\) (10%). The filler relays nothing (\(+0.3\) and \(+0.15\)). By the frozen rule, 12% falls between
-"stop" and "go". It is the largest generated-text relay we observe in any setting,
-and it remains about an eighth of the effect.
+rhyming line 2 in 82% of couplets, but persistence falls from \(+42.4\) to \(+26.4\).
+The model reads less of the plan from the rhyme word: direct retrieval falls from 66%
+to 40% of persistence. It relies instead on the stored copy at the line's final token,
+which is necessary for \(+13.0\) [10.0, 16.1], about half of persistence. Absolute
+relay grows about thirteenfold (\(+1.0\) to \(+13.1\)), mostly through the stored copy.
+The filler relays nothing (\(+0.3\) by sufficiency, \(+0.15\) by necessity). Relay
+along the generated text rises from about 1% to 12% by sufficiency (\(+3.2\) [2.2,
+4.3]); its necessity is \(+2.7\), or 10%. This is the largest early relay we observe in
+any setting and the one clear exception to the principle. By the committed rule it
+falls between "stop" and "go", so whether it grows further with distance is
+inconclusive; even at 2,000 tokens it is a minority route, about an eighth of the
+effect. \pending{Gemma 3 27B window curve at \(D=500, 1{,}000, 1{,}500\).}
 
 ::: {#tbl-distance}
 
@@ -86,7 +95,7 @@ and it remains about an eighth of the effect.
 line 2 rhymes with line 1 & 98\% & 82\%\\
 persistence & $+42.4$ [38.6, 46.0] & $+26.4$ [23.8, 28.9]\\
 direct retrieval & $+28.0$ (66\%) & $+10.5$ (40\%)\\
-line-end copy: sufficiency / necessity & $+0.1$ / $+4.6$ (11\%) & $+9.7$ / \textbf{$+13.0$} (49\%)\\
+stored copy: sufficiency / necessity & $+0.1$ / $+4.6$ (11\%) & $+9.7$ / \textbf{$+13.0$} (49\%)\\
 filler: sufficiency / necessity & 0.0 / 0.0 & $+0.3$ / $+0.2$\\
 generated text: sufficiency / necessity & $+0.5$ / $+7.3$ & \textbf{$+3.2$} (12\%) / $+2.7$ (10\%)\\
 \bottomrule
@@ -94,26 +103,35 @@ generated text: sufficiency / necessity & $+0.5$ / $+7.3$ & \textbf{$+3.2$} (12\
 ```
 
 Relay at a distance, Gemma 3 27B (chat prompt; 50 couplets per distance; 95%
-intervals). Shares are of persistence at the same distance.
+intervals). Shares are of persistence at the same distance. At \(D=0\) the generated
+text's necessity is the late lookup.
 
 :::
 
-Two models without a strong line-end copy show what happens when lookup fails.
-Gemma 3 12B (24 couplets), which stores little at the line end (@tbl-storage), loses
-the plan at 2,000 tokens. Its line 2 is still a poem line, but it never rhymes with
-line 1 (0 of 23), and persistence is \(+0.6\) [\(-0.7\), 1.8]. In the Qwen3.5-9B
-hybrid, whose full-attention layers have no window, rhyming falls from 92% to 4%.
-What remains of persistence (\(+3.6\)) is still 81% direct retrieval, and absolute
-relay does not grow (\(+1.2\) to \(+0.8\)). The full-attention control, Qwen3-14B,
-largely abandons the task after the filler (8% rhyming), and its absolute relay stays
-flat (\(+2.3\) to \(+2.8\)). Across the four models, distance moves reliance onto a
-stored copy where one exists, and otherwise costs the plan. No model responds by
-carrying the plan along the text it writes. The rhyme word and the line's final token
-lie at the same distance from the target. The global layers nevertheless read the
-line-end token, which fits the view of separator tokens as long-range summaries of
+Three further models show what happens when lookup gets harder without a strong stored
+copy. They also separate distance from the window.
+
+- *Gemma 3 12B*, which stores little at the line end (@tbl-storage), loses the plan.
+  The window curve, committed before its result, predicted that the plan would
+  survive while line 1 is inside the window (500 and 1,000 tokens) and vanish outside
+  it. Instead, the plan fades gradually and is mostly gone inside the window.
+  Second lines rhyme in 100%, 39%, 8%, 0% and 0% of couplets at 0, 500, 1,000, 1,500
+  and 2,000 tokens, and persistence falls from \(+40.5\) to \(+11.5\) [8.1, 14.9] at 500
+  tokens and \(+4.0\) at 1,000. At 12B the loss reflects the distance itself, not the
+  window. Relay never takes over: absolute relay stays at \(+0.8\) to \(+2.3\), and
+  early relay at or below \(+0.9\).
+- *Qwen3.5-9B*, a hybrid whose attention layers have no window, also fades: rhyming
+  falls from 92% to 4% at 2,000 tokens. What remains of persistence (\(+3.6\)) is still
+  81% direct retrieval, and absolute relay does not grow (\(+1.2\) to \(+0.8\)).
+- *Qwen3-14B*, with full attention, largely abandons the task after the filler (8%
+  rhyming), and its absolute relay stays flat (\(+2.3\) to \(+2.8\)).
+
+Across the four models, distance moves reliance onto a stored copy where one exists,
+and otherwise costs the plan. No model responds by carrying the plan along the text it
+writes, beyond the 12% in Gemma 3 27B. The rhyme word and the line's final token lie at
+the same distance from the target, yet the global layers of Gemma 3 27B read the
+line-end token. This fits the view of separator tokens as long-range summaries of
 their segment [@chen2024sepllm; @wang2023labelwords; @xiao2024sinks].
-\pending{window curve at \(D=500, 1{,}000, 1{,}500\), predicted to change between
-1,000 and 1,500 tokens.}
 
 ## Hidden content {#sec-hidden}
 
@@ -123,103 +141,122 @@ about is content that cannot be recovered from the text. We create it with a sec
 choice. The prompt reads: "Secretly choose one fruit from this list: {4 fruits}. Do not
 write your choice yet. First write one sentence about the weather. Then write the
 fruit you chose." Under greedy decoding the pick is a deterministic function of the
-prompt. It depends on the model's own preferences and on the list order, so no
-reader can compute it. For the route split, the model's turn is prefilled with a
-fixed weather sentence and "The fruit I chose is". The outcome is the log-odds of the
+prompt. It depends on the model's own preferences and on the list order, so no reader
+can compute it. For the route split, the model's turn is prefilled with a fixed
+weather sentence and "The fruit I chose is". The outcome is the log-odds of the
 donor's pick against the original pick at the next token.
 
 **Mostly re-derived, partly stored, barely relayed.** The donor is the same list in
-another order, chosen so that the greedy pick differs. The reference is a *text
-swap*: the donor order written into the prompt, which moves the pick by
-construction. In Qwen3-8B, Gemma 3 12B and Gemma 3 27B (100 pairs each), donor states
-at the prompt positions after the list move the reveal by 12%, 15% and 16% of the
-text swap. The reveal reads all of it directly: the retrieval cell equals the
-post-list effect. Relay through the sentence is \(+0.00\) [\(-0.04\), 0.05],
-\(-0.06\) [\(-0.14\), 0.01] and \(-0.01\) [\(-0.10\), 0.08]. It is also zero within
-its interval in Qwen3-4B and Qwen3-14B. The one exception is Qwen3-32B, where the
-post-list block holds 16% of the text swap. There, relay through the sentence is small
-but nonzero: \(+0.06\) [0.04, 0.09], one eighth of the stored part and 2% of the text
-swap. The recurrent hybrid Qwen3.5-27B behaves similarly. There, relay of the stored
-part through the sentence is \(+0.03\) [0.02, 0.04], or 1% of the text swap. The sentence positions themselves account for 7% of the text swap (\(+0.15\) [0.12, 0.18]), the largest share
-in any model; Qwen3-4B has 5% and every other model at most 1%. This is expected when every
-position's recurrent state summarizes the prefix, including the list. The rest of the pick
-is re-derived at the reveal from the visible list.
+another order, chosen so that the greedy pick differs. The reference is a *text swap*:
+the donor order written into the prompt, which moves the pick by construction. In
+Qwen3-8B, Gemma 3 12B and Gemma 3 27B (100 pairs each), donor states at the prompt
+positions after the list move the reveal by 12%, 15% and 16% of the text swap. The
+reveal reads all of it directly: the retrieval cell equals the post-list effect. Relay
+of this stored part through the sentence is \(+0.00\) [\(-0.04\), 0.05], \(-0.06\)
+[\(-0.14\), 0.01] and \(-0.01\) [\(-0.10\), 0.08]; it is also zero within its interval in
+Qwen3-4B and Qwen3-14B. The rest of the pick, 84 to 88%, is re-derived at the reveal
+from the visible list. The two largest Qwen models are the exception.
 
-**The stored part is the choice itself.** An order swap cannot separate a stored
-pick from a stored copy of the list order. In the out-of-list control, the donor
-list shares no item with the original, so the donor's pick does not occur in the
-prompt at all. The frozen criterion is that post-list donor states raise the absent
-pick. It holds in every model. After the first results we identified a confound:
-the positions might hold a copy of the donor's list rather than its pick. We
-therefore added, post hoc, *pick specificity*: the effect on the donor's pick minus
-the mean effect on the donor's other items. We then pre-registered it as the primary
-measure of a replication in a second domain (animals; disjoint lists of six).
+- In *Qwen3-32B*, relay through the sentence is small but nonzero: \(+0.06\) [0.04,
+  0.09]. That is 2% of the text swap but one eighth of the stored part.
+- In the recurrent hybrid *Qwen3.5-27B*, relay of the stored part is \(+0.03\) [0.02,
+  0.04]: 1% of the text swap and one sixth of the stored part. Its sentence positions
+  themselves account for 7% of the text swap (\(+0.15\) [0.12, 0.18]). That is the
+  largest in any model; Qwen3-4B has 5% and every other model at most 1%. This is
+  expected when every position's recurrent state summarizes the prefix, including the
+  list.
 
-A same-pick null, frozen before its result, gives the converse check. The donor is the
-same list in another order with the *same* pick. Post-list donor states then leave the
-relative preference for the pick unchanged on average in Gemma 3 12B: \(-0.19\)
-[\(-0.53\), 0.16], against a pick specificity of \(+1.01\) [0.78, 1.24] with out-of-list
-donors. Individual pairs still move in both directions, because the block also holds order information about the rest of the list.
+**What is stored.** An order swap cannot separate a stored pick from a stored copy of
+the list order. In the out-of-list control, the donor list shares no item with the
+original, so the donor's pick does not occur in the prompt at all. The committed
+criterion is that post-list donor states raise the absent pick, and it holds in every
+model. After the first results we identified a confound: the positions might hold a
+copy of the donor's list rather than its pick. We therefore added, post hoc, *pick
+specificity*: the effect on the donor's pick minus the mean effect on the donor's other
+items. We then committed it, before the results, as the primary measure of a
+replication in a second domain (animals; disjoint lists of six). The replication
+confirms that pick-specific information is stored after the list, in both families
+(@fig-stress C; @tbl-hidden). A same-pick null, committed before its result, gives the
+converse check. The donor is the same list in another order with the *same* pick.
+Post-list donor states then leave the relative preference for the pick unchanged on
+average in Gemma 3 12B: \(-0.19\) [\(-0.53\), 0.16], against \(+1.01\) [0.78, 1.24] with
+out-of-list donors. \pending{same-pick null at Gemma 3 27B.}
 
-The replication confirms a stored, pick-specific choice in both families
-(@fig-stress C; @tbl-hidden). The two families diverge with scale. In Gemma 3 the
-stored share is largest at 27B in both domains (40% and 31%). The pre-registered
-monotone prediction (4B below 12B below 27B) is only partly supported, because 4B
-stores more than 12B. In Qwen3 the stored share shrinks with scale, from 10 to 15% at
-8B to 0 to 7% at 14B and 32B. Qwen3.5-27B stores 3 to 4%. Larger Qwen models re-derive
-the pick at the reveal.
+These controls do not settle what the stored information is. The post-list positions
+could hold the pick itself. They could also hold a copy of the list from which the
+reveal re-derives the pick by applying the model's preference. Both accounts predict
+pick specificity with out-of-list donors, and both predict the same-pick null. We
+therefore claim only that information specific to the pick, and absent from the
+visible text, is stored after the list and read at the reveal.
+
+The families diverge with scale.
+
+- In Gemma the stored share grows with generation and size. Gemma 3 stores 18 to 22%
+  at 4B, 15 to 18% at 12B and 31 to 40% at 27B. The committed monotone prediction (4B
+  below 12B below 27B) is only partly supported, because 4B stores more than 12B.
+  Gemma 4 31B stores 82% (fruits; \(+2.93\) [2.56, 3.30]) and 91% (animals; \(+4.44\)
+  [3.97, 4.93]) of the text swap's pick specificity. For Gemma 4 the route split was
+  not run.
+- In Qwen3 the stored share shrinks with scale: 10 to 15% at 8B, 0 to 7% at 14B and 32B.
+  Qwen3.5-27B stores 3 to 4%. Larger Qwen models re-derive the pick at the reveal.
 
 ::: {#tbl-hidden}
 
 ```{=latex}
 \footnotesize
-\setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{@{}lccccccc@{}}
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}lcccccccc@{}}
 \toprule
- & Qwen3-8B & Qwen3-14B & Qwen3-32B & Qwen3.5-27B & Gemma 3 4B & Gemma 3 12B & Gemma 3 27B\\
+ & Qwen3-8B & Qwen3-14B & Qwen3-32B & Qwen3.5-27B & Gemma 3 4B & Gemma 3 12B & Gemma 3 27B & Gemma 4 31B\\
 \midrule
-Fruits & 10\% & 0\% & 2\% & 3\% & 18\% & 15\% & 31\%\\
-Animals (pre-registered) & 15\% & 3\% & 7\% & 4\% & 22\% & 18\% & 40\%\\
+Fruits & 10\% & 0\% & 2\% & 3\% & 18\% & 15\% & 31\% & 82\%\\
+Animals (committed before the result) & 15\% & 3\% & 7\% & 4\% & 22\% & 18\% & 40\% & 91\%\\
 \bottomrule
 \end{tabular}
 ```
 
-Stored hidden pick: pick specificity of the post-list edit as a share of the
-text-swap pick specificity (100 pairs per cell; values with 95% intervals in Appendix
-@sec-app-hidden). Fruits: specificity added post hoc. Animals: pre-registered.
+Stored pick-specific information: pick specificity of the post-list edit as a share of
+the text-swap pick specificity (100 pairs per cell; values with 95% intervals in
+Appendix @sec-app-hidden). Fruits: specificity added post hoc. Animals: committed before
+the result.
 
 :::
 
-**Not written into the text either.** In the free version, the model writes its own
-weather sentence. The sentence changes with the donor in 17 to 45% of pairs, but it
-never names an item. Emission is \(+0.02\) [\(-0.03\), 0.08], \(-0.01\) [\(-0.07\), 0.04]
-and \(-0.00\) in Qwen3-8B, Gemma 3 12B and Gemma 3 27B. The sentence is not a covert
-channel for the pick.
+**Not written into the text.** In the free version, the model writes its own weather
+sentence. The sentence changes with the donor in 17 to 45% of pairs, but it never names
+an item. Emission is \(+0.02\) [\(-0.03\), 0.08], \(-0.01\) [\(-0.07\), 0.04] and \(-0.00\)
+in Qwen3-8B, Gemma 3 12B and Gemma 3 27B. The written sentence has no measurable causal
+effect on the reveal.
 
-**Where the choice is stored.** Per-token necessity over the post-list block localizes
-the stored pick (@fig-sites B). In Gemma 3 27B, 77% of the pick-specific effect
-(\(+1.91\) [1.57, 2.24] of \(+2.48\)) sits on a single token: *the* in "about the
-weather". The period after the list accounts for \(+0.42\), and the period ending the
-instruction \(+0.22\). Every other token, including the end-of-turn and role tokens,
-is \(0.00\pm0.05\). Gemma 3 12B uses the same site, both with fruits (*the*: \(+0.52\) of
-\(+1.03\); the period after the list: \(+0.32\)) and with animals (*the*: \(+1.04\)
-[0.80, 1.28] of \(+1.42\), or 73%). The site therefore replicates across two sizes
-and two domains with the same wording. Gemma 3 4B stores as much of the pick (18%)
-but places it differently: on the period that closes the instruction (\(+0.78\)
-[0.65, 0.91], 58%) and the period that closes the list (\(+0.44\), 33%), with only
-7% on *the*. The decisive check, frozen before its result, changes the wording. If the
-storage moves with the function words, it is register-like storage at a predictable
-token. If it stays at a fixed position or spreads out, the site is template-specific.
-With the instruction reworded to "Keep your choice private for now. Begin by
-describing today's weather in a single sentence. After that, reveal which fruit you
-picked.", Gemma 3 12B stores 12% of the text swap's pick specificity (\(+0.59\) [0.38,
-0.81]). The storage again concentrates on two low-content tokens. The period that ends the list accounts for \(+0.42\) [0.21, 0.63] (71%). The apostrophe of "today's", the token before "weather", accounts for \(+0.16\) [0.09, 0.22] (27%). Every other token is below 0.04.
-The function-word site moved with the wording, which supports storage at a predictable
-low-content token. Across sizes and wordings the stored pick concentrates on two or
-three low-content tokens. These are the punctuation that closes a segment (the list,
-or the instruction) and, from 12B on, a function word of the instruction that moves
-with the wording. Segment-closing punctuation is the analogue of the line's final
-token for rhymes: in both tasks the model stores a copy once, at a boundary next to
-the source or at a predictable token of the prompt, and reads it at the point of
-use. \pending{reworded instruction and animals at Gemma 3 27B; same-pick
-null at Gemma 3 27B and Qwen3-32B.}
+**Where it is stored.** Per-token necessity over the post-list block localizes the
+stored information (@fig-sites B).
+
+- In Gemma 3 27B, 77% of the pick-specific effect (\(+1.91\) [1.57, 2.24] of \(+2.48\))
+  sits on a single token: *the* in "about the weather". The period after the list
+  accounts for \(+0.42\), and the period ending the instruction \(+0.22\). Every other
+  token, including the end-of-turn and role tokens, is \(0.00\pm0.05\).
+- Gemma 3 12B uses the same site with fruits (*the*: \(+0.52\) of \(+1.03\); the period
+  after the list: \(+0.32\)) and with animals (*the*: \(+1.04\) [0.80, 1.28] of
+  \(+1.42\), 73%).
+- Gemma 3 4B stores as much (18%) but places it on the period that closes the
+  instruction (\(+0.78\) [0.65, 0.91], 58%) and the period that closes the list (33%),
+  with 7% on *the*.
+
+The decisive check, committed before its result, changes the wording. If the storage
+moves with the function words, it is storage at a predictable low-content token. If it
+stays at a fixed position or spreads out, the site is template-specific. We reworded
+the instruction to "Keep your choice private for now. Begin by describing today's
+weather in a single sentence. After that, reveal which fruit you picked." Gemma 3 12B
+then stores 12% of the text swap's pick specificity (\(+0.59\) [0.38, 0.81]), again on
+two low-content tokens. The period that ends the list accounts for \(+0.42\) [0.21,
+0.63] (71%), and the apostrophe of "today's", the token before "weather", for \(+0.16\)
+[0.09, 0.22] (27%). Every other token is below 0.04. At 12B, the function-word site
+moved with the wording.
+\pending{reworded instruction at Gemma 3 27B.}
+
+Across sizes and wordings, the stored information sits on two or three low-content
+tokens. These are the punctuation that closes a segment (the list or the instruction)
+and, from 12B on, a function word of the instruction. Segment-closing punctuation is
+the analogue of the line's final token for rhymes. In both tasks the model stores a
+copy once, at a boundary next to the source or at a predictable token of the prompt,
+and reads it at the point of use.

@@ -1,67 +1,80 @@
 # Discussion {#sec-discussion}
 
-**A map for monitoring.** The results assemble into a map of where unwritten
-information is kept in the settings we tested.
+**A map for monitoring, in the settings tested.** The results assemble into a map of
+where unwritten information is kept, for the tasks and checkpoints we tested, with
+thinking disabled and short generated spans.
 
 1. *Written content is used.* When a model writes an intermediate value, later
    positions follow it. The effect of the text scales with the leverage of the
    written token.
 2. *Unwritten content is looked up, not carried.* It is read near the point of use
    from the source, from the visible text from which it can be recomputed, or from a
-   copy stored once at a structural token. Relay along the generated text is at or
-   below 1% of the effect beyond the last three positions in couplets. For computed
-   values and hidden choices it is at most 2 to 2.4%, and usually indistinguishable
-   from zero.
+   copy stored once at a structural token. Early relay along the generated text is at
+   most 1% of persistence in couplets. For computed values, every later position
+   together accounts for at most 2.4% (chains) and 6% (sums) of the source effect. For the
+   hidden choice, relay through the sentence is at most 2% of the pick's effect.
 3. *Storage sites are few and predictable.* The line's final token holds a copy of
    the rhyme plan. Two or three low-content tokens (segment-closing punctuation and,
-   in larger models, a function word of the instruction) hold the stored part of a
-   secret choice.
-4. *The stored-copy route grows.* It emerges with scale and in pretraining. It accounts for about half of the effect once the source is beyond the local attention
-   window. It is also the route by which hidden content was stored.
+   from 12B on, a function word of the instruction) hold the stored pick-specific
+   information of a secret choice.
+4. *The stored copy grows.* It emerges at 14B and above and is present in base
+   models. Once the source is beyond the local attention window, it is necessary for
+   about half of the effect. It is also where hidden, pick-specific information was
+   stored.
 
-For monitoring internal state, the map suggests reading a handful of prompt
-positions rather than the whole trajectory, and watching whether stored copies keep
-growing with scale.
+If these regularities extend to other tasks, a monitor of internal state could focus
+on a handful of prompt positions, the sources and their stored copies, rather than
+the whole trajectory, and should track whether stored copies keep growing with scale.
+The exception marks where this advice is weakest. At 2,000 tokens of distance, early
+relay reaches 12%, and in the two largest Qwen models about an eighth of the stored
+hidden information passes through the intervening sentence.
 
 **Why look up rather than carry?** One reading is architectural. In a transformer,
 attention makes any earlier position directly readable at every layer. A later
 position can therefore compute what it needs when it needs it, and carrying the
-content forward gains nothing. The stress tests argue that this is not the whole
-story. In the Qwen3.5 hybrid, three quarters of the layers can only carry, and the
-model still routes the plan through the quarter that can look it up. Beyond the
-attention window, where carrying along the text would help, Gemma 3 reads a stored
-copy instead, or loses the plan. Carrying through the model's own output appears to
-be a disfavoured solution, not merely an unneeded one.
+content forward gains nothing. The stress tests suggest that this is not the whole
+story. In the Qwen3.5 hybrid, three quarters of the layers can only carry, yet the
+model routes the plan through the quarter that can look it up. Beyond the attention
+window, Gemma 3 27B reads a stored copy rather than carrying the plan along the text;
+Gemma 3 12B loses the plan. When lookup is available, carrying through the model's own
+output appears to be the disfavoured solution, not merely an unneeded one.
 
-**What would overturn the principle.** The largest generated-text relay we observe
-is about 12%, in the setting built to demand it. The principle predicts that
-generated-text relay stays a minority path wherever a lookup site exists. Stronger
-pressure could break it: much longer generated text, reasoning with thinking
-enabled, tasks that cannot be recomputed from the prompt, or training that rewards
-concealment [@baker2025monitoring]. Route accounting applies unchanged to each of
-these, and each is a direct test.
+**What would overturn the principle.** The largest early relay we observe is about
+12%, in the setting built to demand it. The principle predicts that early relay stays
+a minority path wherever a lookup site exists. Stronger pressure could break it: much
+longer generated text, reasoning with thinking enabled, tasks that cannot be
+recomputed from the prompt, or training that rewards concealment
+[@baker2025monitoring]. Route accounting applies unchanged to each of these, and each
+is a direct test.
 
 ## Limitations {#sec-limitations}
 
 - *Tasks and lengths.* The generated text between source and target is short: part
   of a line, a sentence, or a filler of up to 2,000 tokens. Long chains of thought
-  with thinking enabled are not tested. Qwen3 runs with thinking disabled throughout.
+  with thinking enabled are not tested; Qwen3 runs with thinking disabled throughout.
+  The tasks are constructed, and the principle is established only for them.
 - *Interventions.* All-layer state edits are strong and can take a model off its
   natural distribution. We replicate the couplet split with the published feature
-  steering, and report same-rhyme nulls. Sufficiency and necessity diverge where
-  paths interact, so we report both.
-- *Scope.* The models range from 1B to 32B parameters, in three families plus a
-  mixture-of-experts variant. Gemma 4, a fourth family generation, is pending. The
-  hidden choice is a constructed task with forced reveals. Its storage site is
-  established for one wording so far, and checks with a second domain and a reworded
-  instruction are pending.
+  steering and report same-rhyme nulls. Sufficiency and necessity diverge where paths
+  interact, so we report both and the interaction.
+- *What the hidden choice stores.* The controls show that information specific to the
+  pick, and absent from the visible text, is stored after the list. They do not
+  distinguish a stored pick from a stored list copy to which the reveal applies the
+  model's preference. A donor that changes the pick without changing the list, or a
+  probe on the stored tokens, would narrow this.
+- *Scope of the models.* The models range from 1B to 32B parameters in Qwen3, Qwen3.5
+  and Gemma 3, with Gemma 4 31B for the hidden choice only. The storage site moves with
+  the wording at 12B; at 27B the reworded check was the last run before submission.
+- *Checks not run.* Several committed checks could not be run before submission: the
+  Gemma 4 route split and induction control, the Qwen3.5 mixture-of-experts model, the
+  Qwen3.5-27B recurrent pilot at 100 couplets (the decision rests on 24), the Qwen3-32B
+  variable chains and written chains at \(K=5\), the Gemma 3 27B base model in the
+  plain format, the Gemma 3 27B animal localization and the Qwen3-32B same-pick null.
+  Their designs are in the repository, and they are listed here rather than reported.
 - *Post hoc elements.* Pick specificity for fruits and the absolute-relay reading rule
-  for distance were added after first results. Both are labelled, and pick
-  specificity was then pre-registered for the replication. The relay-with-scale
-  analysis was pre-registered, and its second criterion failed.
-- *Correlational framing of accuracy.* The collapse of accuracy on unwritten chains
-  is consistent with recomputation at the answer. It is not by itself a causal test
-  of capacity.
-
-\pending{Gemma 4 31B and Qwen3.5-35B-A3B core suites (hidden choice, induction control,
-recurrent pilot).}
+  for distance were added after first results. Both are labelled, and pick specificity
+  was then committed as the primary measure of the replication before its result. The
+  relay-with-scale analysis was committed before its result, and its second criterion
+  failed.
+- *Correlational evidence.* The collapse of accuracy on unwritten chains is consistent
+  with recomputation at the answer. It is not by itself a causal test of capacity.

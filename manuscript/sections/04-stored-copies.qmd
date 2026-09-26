@@ -23,16 +23,20 @@ The storage site is therefore not a fixed token type. It is the last token of th
 line, whatever that token is. This is the position at which @lindsey2025biology
 observed Claude's rhyme plan being formed.
 
-![Where stored copies sit. Each cell is one token; shading and labels give the loss
-of the effect when that token alone is reset to its clean state (necessity), with the
-source edited. **A:** rhyme plan, tokens between the rhyme word and line 2. The copy
-sits on the line's final token: the comma before the chat template, or the newline
-in the plain prompt. **B:** hidden choice (@sec-hidden), tokens between the list and
-the reveal, for the pick-specific part of the stored choice. At 12B and 27B it sits
-mostly on *the* in "about the weather", in both domains (Gemma 3 12B, animals: 73%).
-At 4B it sits on the periods that close the list and the instruction. With a
-reworded instruction (bottom row), it moves to the period that closes the list and to
-the token before "weather".](manuscript/figures/iclr_fig3_storage_sites.png){#fig-sites width=100%}
+![Where stored copies sit. Values are interventional necessity: the loss of the
+effect when one token alone is reset to its clean state, with the source edited, as a
+share of the total over the tokens examined. **A:** rhyme plan. Top, an annotated
+example (Qwen3-32B, chat prompt): of all tokens between the rhyme word and line 2,
+only the comma that ends line 1 matters. Below, for every model with a per-token
+analysis, the share on the line's final token (the comma before the chat template, or
+the newline in the plain prompt) against the largest share on any other boundary
+token. **B:** hidden choice. The instruction with its storage tokens highlighted, and
+for each model and wording the share of the pick-specific information on the
+segment-closing periods, on the function word before "weather", and on all other
+tokens. At 12B and 27B it sits mostly on *the* in "about the weather"; at 4B on the
+periods; with the reworded instruction it moves to the list-closing period and the
+token before "weather". The full token maps are in Appendix
+@fig-storage-all.](manuscript/figures/iclr_fig3_storage_sites.png){#fig-sites width=100%}
 
 **It emerges with scale and comes from pretraining.** @tbl-storage gives the copy's
 share of persistence by both measures (bottom row of @fig-couplets).

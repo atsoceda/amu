@@ -23,8 +23,7 @@ donor even when the line-2 words are held fixed.
 **Routes.** @fig-couplets decomposes persistence in all 21 runs. Direct retrieval of
 the rhyme word is the dominant path: 76 to 95% of persistence in every Qwen3
 configuration (1.7B to 32B, chat and plain, instruct and base), and 80 to 95% in
-Gemma 3 from 1B to 12B (including the 12B base model). The late lookup through the three positions before the target accounts for 1 to 13%. Relay along the rest of the generated line, the carrying
-that a text monitor could miss, is at most 1% of persistence in every run. Gemma 3
+Gemma 3 from 1B to 12B (including the 12B base model). The late lookup through the three positions before the target accounts for 1 to 13%. Early relay, the carrying along the generated line that a text monitor could miss, is at most 1% of persistence in every run, by sufficiency in all 21 and by necessity in the 17 where it was measured. Gemma 3
 27B is the exception to retrieval dominance. There, direct retrieval falls to 68%
 (chat) and 19% (plain), and two further components appear: a large interaction term
 and a copy stored at the line's final token. @sec-storage analyses these
@@ -43,8 +42,7 @@ and in Gemma 3 27B it is necessary for more than it is sufficient for. 100 coupl
 per run; Gemma 3 27B PT is
 pending.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100%}
 
-**The relay that grows with scale is not carrying.** Before running the larger
-models we fixed two criteria for the claim that carrying grows with scale. First,
+**The relay that grows with scale is not carrying.** Before running the larger models we committed two criteria for the claim that carrying grows with scale. First,
 the relay share must rise with log parameter count across Qwen3 1.7B to 32B. Second,
 the rise must come from line-2 positions more than three tokens before the rhyme
 word, because the published circuit already retrieves the plan into the last few
@@ -52,8 +50,7 @@ positions [@hanna2026latent]. The first criterion holds: the per-couplet relay s
 rises by 6.2 percentage points per decade of parameters (95% interval [2.8, 9.6];
 medians 4, 8, 8, 11 and 13%). The second fails. Early line-2 relay is \(-0.06\),
 \(+0.07\), \(+0.04\), \(-0.01\) and \(+0.16\) at 1.7B, 4B, 8B, 14B and 32B, against
-persistence of 12 to 26. By the readings fixed in advance, relay does not grow as
-carrying along the generated text. It grows as the late lookup up to 8B and, from
+persistence of 12 to 26. By the readings committed in advance, relay does not grow as carrying along the generated text. It grows as the late lookup up to 8B and, from
 14B, as a copy at the line boundary (@sec-storage).
 
 **Controls.** Three checks rule out that the split reflects disruption by the edit,
@@ -88,13 +85,14 @@ computations with a donor that changes the value (Appendix @sec-app-computed).
 
 **Sums.** The prompt poses a two-digit addition. The model writes an answer-neutral
 filler of 0 to 32 tokens and then the answer (104 items per model, Qwen3 1.7B to 32B;
-accuracy 95 to 100%). The design fixed the question mark as the position where the
-sum would be computed. Donor states there move the answer by \(-0.08\) to \(+0.07\)
-log-odds. Donor states at every position from the question mark to the answer
-together move it by at most 6% of the effect of donor operand digits (\(+17\) to
-\(+54\)). The pre-registered efficacy gate therefore fails at every size: no
-position after the question holds the sum. It is recomputed from the visible
-operands at the answer.
+accuracy 95 to 100%). The committed design named the question mark as the position where
+the sum would be computed. Donor states there move the answer by \(-0.08\) to
+\(+0.07\) log-odds, so the efficacy gate fails at every size. That shows only that the
+question mark does not hold the sum. The stronger test edits every position from the
+question mark to the answer together: this block moves the answer by at most 6% of the
+effect of donor operand digits (\(+17\) to \(+54\); 6% at 32B, at most 3.4% below).
+Beyond that, route accounting finds no patch-detectable donor effect downstream, and
+the sum is recomputed from the visible operands at the answer.
 
 **Variable chains.** Sums are cheap to recompute. A chain of updates
 (`a = 23`, `b = a + 4`, `c = b + 7`, ..., `What is e?`) makes recomputation at the
@@ -106,8 +104,10 @@ Donor states at any single later position, or at any statement end, move it by l
 than 0.4 in absolute value. Donor states at *every* position after the starting value
 together, a test that would detect a running value stored redundantly, move it by at
 most 2.4% of the source-digit effect (14B, \(K=3\): \(+0.44\) [0.08, 0.82]). In all
-other size and length combinations the interval includes zero (@fig-computed B). The
-answer re-reads the chain. Accuracy falls steeply with chain length, from 97 to 100%
-at \(K=1\) to 1 to 17% at \(K=5\) (@fig-computed A). The model does not maintain the
-value even where this would make it correct. Carrying is not the fallback when
-recomputation fails.
+other size and length combinations the interval includes zero (@fig-computed). We find
+no patch-detectable donor effect at any later position: the answer re-reads the chain.
+Accuracy is consistent with recomputation at the answer. It falls steeply with chain
+length, from 97 to 100% at \(K=1\) to 1 to 17% at \(K=5\) (Appendix
+@fig-computed-extra). We see no sign that the model maintains the running value
+downstream even where doing so would make it correct, but this is a correlational
+observation, not a test of what the model could do.
