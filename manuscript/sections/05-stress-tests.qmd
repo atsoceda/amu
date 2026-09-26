@@ -1,12 +1,12 @@
-# Stress tests: bounds on the principle {#sec-stress}
+# Settings built to favour relay {#sec-stress}
 
 When every layer can read every earlier position, relay is never necessary, and visible
-content can always be re-read. We therefore test three settings that make relay useful
-where attention cannot do the work, or make the content invisible, each with a decision
-rule committed before its first result (@fig-stress; Appendix @sec-app-prereg,
+content can always be re-read. We therefore run three stress tests, settings that make relay useful where attention
+cannot do the work or make the content invisible, each with a decision rule committed
+before its first result (@fig-stress; Appendix @sec-app-prereg,
 @sec-app-stress and @sec-app-hidden).
 
-![Stress tests. **A:** Gemma 3 27B with filler between line 1 and line 2 (couplets per
+![In settings built to favour relay, models still look up information. **A:** Gemma 3 27B with filler between line 1 and line 2 (couplets per
 distance in brackets; the dotted line marks where line 1 leaves the 1,024-token window).
 Direct retrieval falls while the stored copy becomes necessary for about half of
 persistence; the generated text (the cue and line 2, not split into late lookup and relay)

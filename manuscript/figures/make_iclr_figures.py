@@ -989,7 +989,7 @@ def fig4():
                     title="donor state enters through", title_fontsize=6.5, frameon=True, fancybox=False,
                     edgecolor="#BBBBBB", framealpha=1.0)
     leg._legend_box.align = "left"
-    ax.set_title("B   Recurrent hybrid", x=-0.3)
+    ax.set_title("B   Recurrent hybrid:\n     entry via attention", x=-0.3)
 
     # B. Beyond Gemma 3's local attention window: measured distances only.
     byd = distance_data()
