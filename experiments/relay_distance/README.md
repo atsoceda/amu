@@ -188,3 +188,7 @@ Outputs `pilot_v2x_window_*` in `results/gemma-3-12b-it/`.
 relay distance - window curve runs the first 18 couplets at D = 1000 and 1500 only (the two
 distances that bracket the 1,024-token window), instead of 24 couplets at 500, 1000 and 1500.
 D = 0 and 2000 come from the 50-couplet extension. Same cells and outputs (`pilot_v2x_window_*`).
+
+**Amendment (2026-09-26, 10:35 CEST, still before any 27B window result):** after a review
+asked for the full curve, the 27B window curve runs D = 500, 1000 and 1500 on the first 18
+couplets (the 24-couplet design shortened for the deadline).

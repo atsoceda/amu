@@ -81,3 +81,7 @@ induction control; Qwen3.5 - 9B hidden choice forced route split and induction (
 alongside). Dropped (moved to `~/amu_jobs/queue.later.txt`, not run): Gemma 4 - 31B hidden
 choice forced route split (about 90 min at this model's speed), and the whole Qwen3.5 - 35B-A3B
 core suite. The trimmed-suite predictions for these remain untested.
+
+Amendment (2026-09-26, 10:35 CEST, before results): Gemma 4 - 31B induction control and the
+Qwen3.5 - 9B additions were also dropped, to give the Gemma 3 - 27B checks the remaining time.
+Gemma 4 contributes the out-of-list control and the animal replication only.

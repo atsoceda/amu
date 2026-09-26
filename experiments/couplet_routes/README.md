@@ -524,3 +524,7 @@ checkpoint in Qwen too (as in Gemma 12B PT): it comes from pretraining.
 Deadline plan (2026-09-26): Gemma 3 - 27B PT - couplet routes - plain format (resume from step
 3/4) was dropped (not run); base-checkpoint evidence is Qwen3-8B-Base, Qwen3-14B-Base and
 Gemma 3 12B PT.
+
+Deadline plan, amendment (2026-09-26, 10:35 CEST, before results): added Gemma 3 - 27B -
+couplet routes - necessity (plain) and, if time allows, boundary tokens (plain): the missing
+cells under the clearest hand-off example (plain-format boundary sufficiency 37%).
