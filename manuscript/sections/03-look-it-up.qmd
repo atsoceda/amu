@@ -1,124 +1,127 @@
-# Rhyme plans and computed values are mostly read from fixed positions {#sec-lookup}
+# Unwritten information is looked up {#sec-lookup}
 
 ## Rhyme plans {#sec-couplets}
 
-**Task.** Rhyming couplets are the flagship case of latent planning. The model
-commits to a rhyme at the end of line 1 and realizes it at the end of line 2
-[@lindsey2025biology; @hanna2026latent]. We use the couplet prompts released by
-@hanna2026latent and their chat format, with thinking disabled. For Qwen3 1.7B to
-14B we use their 100-couplet steering subsets. For Qwen3-32B and Gemma 3 we apply
-their selection rule: the first 100 first lines the model rhymes, judged by their
-perfect-rhyme criterion. The source is their anchor, the last word of line 1. The
-donor is a couplet from a different rhyme group. The target is the position that
-predicts the first token of line 2's last word, with the line-2 prefix fixed. We
-repeat every run with the plain prompt of @ma2026plan (`A rhyming couplet:` followed
-by line 1 and a newline), with no chat template.
+Rhyming couplets are the flagship case of latent planning: the model commits to a rhyme
+at the end of line 1 and realizes it at the end of line 2 [@lindsey2025biology;
+@hanna2026latent]. We use the couplet prompts and chat format of @hanna2026latent and
+repeat every run with the plain prompt of @ma2026plan (100 couplets per run; Appendix
+@sec-app-couplets). The source is the last word of line 1, the donor a couplet from a
+different rhyme group, and the target the position that predicts the first token of
+line 2's last word, with the line-2 prefix fixed. The edit moves line 2 off its rhyme (at
+most 2% of second lines still rhyme with the original, against 83 to 100% before the
+edit) and onto the donor's rhyme in 27 to 95% of couplets. The emitted line-2 words
+account for 13 to 25% of the total effect; the rest is persistence.
 
-**Behaviour.** The all-layer edit of the rhyme word moves line 2 off its rhyme:
-after the edit, at most 2% of second lines rhyme with the original, against 83 to
-100% before it. It moves line 2 onto the donor's rhyme in 27 to 75% of couplets in
-Qwen3 and 62 to 95% in Gemma 3. The emitted line-2 words account for 13 to 25% of the total effect. The rest is persistence: the rhyme position is pushed toward the
-donor even when the line-2 words are held fixed.
+**Direct retrieval dominates, and relay is at most 1%.** @fig-couplets decomposes
+persistence in all 21 runs. Direct retrieval of the rhyme word accounts for 76 to 95% of
+persistence in every Qwen3 configuration (1.7B to 32B, chat and plain, instruct and base)
+and 80 to 95% in Gemma 3 1B to 12B. The late lookup accounts for 1 to 13%. Relay along the
+rest of the generated line is at most 1% of persistence in every run, by sufficiency in
+all 21 and by necessity in the 17 where it was measured. Before running the larger
+models we committed two criteria for the claim that relay grows with scale: the indirect
+share must rise with log parameter count across Qwen3 1.7B to 32B, and the rise must come
+from relay. The first holds (6.2 percentage points per decade, 95% interval [2.8, 9.6]);
+the second fails (relay is \(-0.06\) to \(+0.16\), against persistence of 12 to 26). The
+indirect share grows as the late lookup up to 8B and as the stored copy from 14B. Three
+controls support the split (Appendix @sec-app-couplets). A donor from the same rhyme
+group leaves the rhyme almost unchanged, so the measure tracks rhyme identity, not
+disruption. Donor states at the rhyme word move the rhyme two to three times more than
+donor states at any other position of line 1. And the published feature steering of
+@hanna2026latent gives the same split as the state edit: direct retrieval accounts for
+90, 88 and 84% of persistence at 4B, 8B and 14B, against 91, 90 and 82%. The Qwen3.5
+hybrids show the same structure (direct retrieval 84 to 88%).
 
-**Paths.** @fig-couplets decomposes persistence in all 21 runs. Direct retrieval of
-the rhyme word is the dominant path: 76 to 95% of persistence in every Qwen3
-configuration (1.7B to 32B, chat and plain, instruct and base), and 80 to 95% in
-Gemma 3 from 1B to 12B (including the 12B base model). The late lookup through the three positions before the target accounts for 1 to 13%. Relay along the rest of the generated line, the path a text monitor could miss, is at most 1% of persistence in every run, by sufficiency in all 21 and by necessity in the 17 where it was measured. Gemma 3
-27B is the exception to retrieval dominance. There, direct retrieval falls to 68%
-(chat) and 19% (plain), and two further components appear: a large interaction term
-and a copy stored at the line's final token. @sec-storage analyses these
-components. They are still lookups from a fixed position of the prompt, not relay
-along the generated line.
+![Couplet paths across scale, family and prompt format (100 couplets per run;
+instruction-tuned checkpoints; Appendix @tbl-storage adds the base checkpoints).
+**Top:** composition of persistence from the sufficiency cells: direct retrieval of the
+rhyme word (blue), the stored copy at the line's final token (green), the late lookup
+through the three positions before the target (light blue), relay along the rest of
+line 2 (purple; at most 1%, so barely visible) and interaction (grey), one bar per model.
+**Bottom:** the stored copy's share of persistence against model size (log scale), by
+sufficiency (filled) and necessity (hollow). It is absent up to 8B and present from 14B
+in Qwen3 and at 12B to 27B in Gemma 3.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100% fig-pos="t"}
 
-![Couplet paths across scale, family and prompt format (100 couplets per run).
-**Top: direct retrieval dominates in every run except Gemma 3 27B with the plain prompt, where the stored copy takes over.** Composition of persistence, from the
-sufficiency cells: direct retrieval of the rhyme word (blue), the stored copy at the
-line's final token (green), the late lookup through the three positions before the
-target (light blue), relay along the rest of line 2 (purple; at most 1% in every
-run, so barely visible), and interaction (grey). One bar per model, labelled with its
-size. **Bottom: a stored copy at the line's
-final token appears from about 12 to 14B parameters.** Its share of persistence against model size (log scale) for the
-four family and prompt combinations, by sufficiency (filled) and necessity (hollow).
-It is absent up to 8B, appears at 14B in Qwen3 and at
-12B to 27B in Gemma 3, and in Gemma 3 27B with the chat
-prompt is necessary for far more than it is sufficient
-for. Both panels show instruction-tuned checkpoints; @tbl-storage compares them with the
-base checkpoints.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100% fig-pos="t"}
+## The stored copy {#sec-storage}
 
-**What grows with scale is the stored copy, not relay.** Before running the larger
-models we committed two criteria for the claim that relay grows with scale. First, the
-share of persistence that takes an indirect path must rise with log parameter count
-across Qwen3 1.7B to 32B. Second, the rise must come from line-2 positions more than
-three tokens before the rhyme word, that is, from relay, because the published circuit
-already retrieves the plan into the last few positions [@hanna2026latent]. The first
-criterion holds: the per-couplet indirect share rises by 6.2 percentage points per
-decade of parameters (95% interval [2.8, 9.6]; medians 4, 8, 8, 11 and 13%). The second
-fails. Relay is \(-0.06\), \(+0.07\), \(+0.04\), \(-0.01\) and \(+0.16\) at 1.7B, 4B, 8B,
-14B and 32B, against persistence of 12 to 26. By the readings committed in advance,
-relay does not grow with scale. The indirect share grows as the late lookup up to 8B
-and, from 14B, as the stored copy at the end of line 1 (@sec-storage).
+Gemma 3 27B is the exception to retrieval dominance. Direct retrieval falls to 68% of
+persistence with the chat prompt and 19% with the plain prompt, and two components
+appear: a large interaction and a copy stored at the line's final token.
 
-**Controls.** Three checks rule out that the split reflects disruption by the edit,
-the choice of source position, or the edit type.
+**It sits on the line's final token.** Resetting the tokens between the rhyme word and
+line 2 one at a time locates the copy. In all five runs analysed, the line's final token
+accounts for 90 to 100% of these tokens' summed necessity, and the chat-template tokens
+hold almost nothing (Appendix @fig-sites). With the chat prompt this token is the comma
+that ends line 1; with the plain prompt, the newline. The site is the last token of the
+line, whatever that token is, which is where @lindsey2025biology observed Claude's rhyme
+plan being formed.
 
-- *Same-rhyme donors.* A donor from the same rhyme group leaves the rhyme almost
-  unchanged. Persistence is \(+0.1\) to \(+2.0\), against \(+12.1\) to \(+22.6\) with
-  different-rhyme donors in Qwen3 1.7B to 8B, and \(+1.6\) against \(+41.2\) in
-  Gemma 3 12B. The next-word distribution still changes substantially, so the
-  measure tracks rhyme identity, not generic disruption.
-- *Anchor specificity.* Donor states at the rhyme word move the rhyme about two to
-  three times more than donor states at any other single position of line 1 (the
-  first word, a middle word, the punctuation, the end of the turn). Rhyme
-  information at those positions is still partly retrieved, at a fifth to a half of
-  the anchor's effect. Retrieval is weighted toward the rhyme word rather than
-  confined to it.
-- *Published feature steering.* We reselect the rhyme features of
-  @hanna2026latent with their rule. The mean is 19.1 features per couplet against
-  their 19.2, with an exact per-couplet count match on 67 of 100 couplets at 4B. We
-  then steer with their protocol instead of editing the state. Direct retrieval accounts for 90%, 88% and 84% of persistence at 4B, 8B and 14B, and
-  indirect paths for 8%, 9% and 14%. The state edit gives the same split (91/10, 90/11 and 82/12), so its strength
-  does not drive the result.
+**It emerges with scale, before instruction tuning.** In Qwen3 the copy is absent up to
+8B (necessity at most 0.9% of persistence) and appears at 14B (8% with the chat prompt
+and 16% with the plain prompt, by necessity), remaining at 32B (11% and 13%). In Gemma 3
+it is small at 12B (1 to 3%) and present at 27B: 11% by necessity with the chat prompt
+and, with the plain prompt, 37% by sufficiency and 74% by necessity, more than is read
+from the rhyme word (19%), while relay stays at 1%. The base checkpoints we tested have
+the copy wherever the matching instruct model does (Qwen3-14B-Base 16% against 13%;
+Gemma 3 12B PT 5% against 2%), so it most likely arises in pretraining. Same-rhyme donors
+remove it, so it encodes the rhyme.
 
-The Qwen3.5 hybrids show the same structure of paths (direct retrieval 84 to 88% of
-persistence; @sec-recurrent).
+**Where paths interact, sufficiency understates it.** In Gemma 3 27B with the chat
+prompt, the copy alone moves the rhyme by only \(+0.68\), yet resetting it removes
+\(+4.87\) [3.18, 6.73] of a persistence of \(+43.1\); the interaction is 29% of
+persistence (Qwen3 at most 5%). The target combines the rhyme word and the copy, and
+reads conflicting evidence when only one of them is edited: the copy is a redundant
+second lookup site.
+
+**Reconciling published accounts.** @hanna2026latent find attention heads near the end
+of line 2 that read the rhyme word: direct retrieval with the late lookup, which dominate
+at every Qwen3 size. @lindsey2025biology find Claude's plan at the newline ending line 1,
+and @maar2026plan steer it there: the stored copy of larger models. @ma2026plan report a
+hand-off to the newline in Gemma 3 27B only, as we measure, and @jacopin2026improvisation
+finds no newline effect at 0.6B to 2.6B, where we also find no copy. Each account is
+correct for the configuration it studies (Appendix @sec-app-couplets).
+
+**Why the stored copy is a lookup, not relay.** It reaches the target through an
+intermediate position, as relay does, but it is written once into a fixed structural
+position next to the source, read directly however much text intervenes, and does not
+move with generation. For a monitor it is one more place to read, not a path through the
+model's output.
 
 ## Computed values {#sec-computed}
 
-A rhyme plan is a property of a visible word. Information that is *computed* is not
-present at any single token, and is where relay would seem most useful. We test two
-computations with a donor that changes the value (Appendix @sec-app-computed).
+Computed information is not present at any single token, which is where relay would seem
+most useful (Appendix @sec-app-computed). In two-digit sums (Qwen3 1.7B to 32B, 104
+items, a filler of 0 to 32 tokens before the answer), donor states at every position from
+the question mark to the answer move the answer by at most 6.4% of the effect of donor
+operand digits. Variable chains (`a = 23`, `b = a + 4`, ..., `What is e?`) make
+recomputation at the answer costly and relay the natural path, so we designed them as a
+second positive-control candidate for relay. They are not one. Donor states at every
+position after the starting value together, a test that would detect a running value
+stored redundantly, move the answer by at most 4.9% of the effect of editing the starting
+value (32B, one update), and their interval includes zero at every size with five
+updates, where a running value would help most. This is consistent with the answer
+re-reading its visible sources; recomputation itself is not measured.
 
-**Sums.** The prompt poses a two-digit addition. The model writes an answer-neutral
-filler of 0 to 32 tokens and then the answer (104 items per model, Qwen3 1.7B to 32B;
-accuracy 95 to 100%). The committed design named the question mark as the position where
-the sum would be computed. Donor states there move the answer by \(-0.08\) to
-\(+0.07\) log-odds, so the efficacy gate fails at every size. That shows only that the
-question mark does not hold the sum. The stronger test edits every position from the
-question mark to the answer together: this block moves the answer by at most 6.4% of the
-effect of donor operand digits (\(+17\) to \(+54\); 6.4% at 32B, \(+1.10\) [0.93, 1.27]
-of \(+17.2\), and at most 3.4% at the smaller sizes). The downstream block is small
-beside the operand edit, which is consistent with the answer re-reading the visible
-operands; recomputation itself was not measured.
+## Written values {#sec-emission}
 
-**Variable chains.** Sums are cheap to recompute. A chain of updates
-(`a = 23`, `b = a + 4`, `c = b + 7`, ..., `What is e?`) makes recomputation at the
-answer costly and makes relay the natural path. The running value could be passed from
-statement to statement, so this task was designed as a second positive-control
-candidate for relay. It is not one. Donor states at the starting value's digits move
-the answer strongly (at 14B: \(+30.9\), \(+18.5\) and \(+6.4\) for \(K=1,3,5\) updates).
-Where single positions were edited (1.7B to 14B; at 32B only the block was run), donor
-states at any later position, or at any statement end, move it by less than 0.4 in
-absolute value. Donor states at *every* position after the starting value together, a
-test that would detect a running value stored redundantly, move it by at most 4.9% of
-the source-digit effect (32B, \(K=1\): \(+0.81\) [0.61, 1.03] of \(+16.5\)). The other
-cell whose interval excludes zero is 14B at \(K=3\) (\(+0.44\) [0.08, 0.82] of \(+18.5\),
-2.4%). At 32B the block is \(-0.02\) [\(-0.33\), 0.29] of \(+10.1\) at \(K=3\) and
-\(-0.00\) [\(-0.22\), 0.19] of \(+5.2\) at \(K=5\). In the remaining size and length
-combinations the interval includes zero. @fig-computed shows the \(K=3\) series, which
-stays near zero. The downstream block is small beside the source edit, which is
-consistent with the answer re-reading the chain.
-Accuracy is consistent with recomputation at the answer. It falls steeply with chain
-length, from 97 to 100% at \(K=1\) to 1 to 17% at \(K=5\) (Appendix
-@fig-computed-extra). At \(K=5\), where maintaining a running value would make more
-answers correct, the downstream block's interval includes zero at every size. That
-agreement is correlational, not a test of what the model could do.
+When asked to compute each variable in order, the model writes the donor's values in 86
+to 100% of items, and the answer follows the text. With the chain cut before its last
+value, emission accounts for 83 to 101% of the effect at 1.7B to 32B, and the bypass that
+re-reads the source stays below 17%; the 101%, at 32B with five updates, reflects a
+slightly negative bypass. How much of an effect travels through a written token depends
+on that token's **leverage**. For a binary mediator \(B\in\{b_0,b_1\}\), such as the
+article *a* or *an* before a planned noun, let \(q_i=P(B=b_1\mid I=i)\) with the
+intervention off (\(i=0\)) or on (\(i=1\)), and let \(Y(0,b)\) be the outcome with the
+intervention off and the mediator fixed to \(b\). Policy-weighted emission,
+\(E_{\rm emit}=\sum_b [q_1(b)-q_0(b)]\,Y(0,b)\), then equals
+
+$$
+E_{\rm emit} \;=\; (q_1-q_0)\,\big(Y(0,b_1)-Y(0,b_0)\big),
+$$
+
+the change in what is written times how much the written token matters. For the a/an
+planning features of @hanna2026latent in Qwen3-4B, 92 to 94% of their feature-specific
+effect on the planned noun travels through the generated article, the effect bypassing
+it is at the level of random features, and the effect through the article scales with
+leverage (Appendix @sec-app-computed). What the model writes, it uses, in proportion to
+the written token's leverage.
