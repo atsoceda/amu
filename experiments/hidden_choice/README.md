@@ -189,3 +189,20 @@ and the one where Ma & Rui report a hand-off to the line boundary. (Specificity 
 post-hoc measure; the frozen criterion, a positive post-list effect on the out-of-list
 pick, holds in every model.) Next: Gemma 27B forced route split and free version: is the
 stored pick relayed through, or leaked into, the generated sentence?
+
+## Replication and localization (designs frozen 2026-09-26, before any result)
+
+**Replication (second domain, pick specificity pre-registered).** Same design as the
+out-of-list control with animals instead of fruits: the first 12 single-token animals
+of a fixed 16-word pool (`choice_replicate.py`); original
+and donor lists are disjoint 6-item lists; prompt "Secretly choose one animal from this
+list: … Then write the animal you chose."; reveal "The animal I chose is". Primary
+measure, fixed in advance: **pick specificity** = post-list effect on the donor's pick
+minus the mean effect on the donor's other five animals. Prediction from the fruit
+results: positive and growing with scale in Gemma 3 (4B < 12B < 27B), near zero in
+Qwen3 at 14B-32B. Models: Gemma 3 4B/12B/27B, Qwen3 8B/14B/32B.
+
+**Localization (Gemma 3 27B, fruits).** Per-token necessity over the post-list block:
+the donor's post-list states everywhere, then one token reset to its clean state; the
+drop in the pick-specific effect localizes the storage (analogue of the line-ending
+comma in couplets).
