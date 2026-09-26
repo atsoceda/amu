@@ -513,3 +513,10 @@ Gemma 3 12B IT, plain format, per-token boundary (99/100 share the tokens): the
 the comma +0.11 / +0.07. So the storage site is the line's final token: the newline
 when the line ends with one (plain format; the site of Lindsey et al. and Ma & Rui),
 the comma when it is the last token before the chat template (chat format).
+
+### Plain format, Qwen3-14B-Base (2026-09-26, Mac Studio; base checkpoint)
+
+Screen 100/163; donor rhyme 71%. Persistence +14.6 = retrieval +11.3 + relay +3.4
+(median share 22%; instruct 14B-plain 21%). Position split: late +1.02, **boundary
++2.38 [2.04, 2.74]**, early line 2 +0.03. Boundary storage is present in the base
+checkpoint in Qwen too (as in Gemma 12B PT): it comes from pretraining.

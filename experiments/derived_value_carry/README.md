@@ -209,3 +209,16 @@ a small part re-reads the edited source digits. K = 5 and 8B-32B pending.
 one-at-a-time path: 7 of 8 generations identical; where the text is identical, every
 cell agrees to 0.001; one greedy generation differs (bf16 near-ties under batching).
 The 4B and 8B runs used the one-at-a-time path; 14B and 32B use the batched path.
+
+### Stage 3 across sizes (2026-09-26)
+
+| | 4B K=3 | 4B K=5 | 8B K=3 | 8B K=5 | 14B K=3 | 14B K=5 |
+|---|---|---|---|---|---|---|
+| Usable items | 50/50 | 50/50 | 75/108 | 17/103 | 108/108 | 103/103 |
+| Total | +18.0 | +16.3 | +12.9 | +12.2 | +10.0 | +9.6 |
+| Emission (share) | +16.8 (93%) | +15.6 (96%) | +12.1 (94%) | +11.5 (94%) | +8.7 (88%) | +8.0 (83%) |
+| Persistence, edited text | +1.2 | +0.7 | +0.8 | +0.8 | +1.2 | +1.6 |
+
+When the chain is written out, the answer follows the written values (83-96% emission).
+The part that bypasses the text (re-reading the edited source digits) grows modestly
+with size (about 4-7% at 4B-8B, 12-17% at 14B). 32B pending.
