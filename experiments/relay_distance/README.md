@@ -84,3 +84,30 @@ before the Gemma v2 result (clarifying, not changing, the frozen criterion): a r
 share rise counts as relay emerging only if **absolute** relay also grows with distance;
 otherwise it is a smaller denominator. At D = 2000 Qwen3 14B rarely rhymes (8%): the plan
 largely fades after long filler.
+
+### Gemma 3 - 27B - relay distance - pilot v2 (24 couplets per distance; 0 skipped)
+
+| | D = 0 | D = 2000 |
+|---|---|---|
+| line 2 rhymes | 54% | 71% |
+| persistence | +43.65 | +28.19 |
+| direct retrieval | +29.93 | +12.30 |
+| **relay (absolute)** | **+1.44 [0.18, 3.05]** (share 3%) | **+15.49 [11.78, 19.25]** (share 55% [43, 67]) |
+| via boundary (prompt positions after line 1) | +0.08 | **+12.08 [8.27, 16.16]** |
+| via filler | 0.00 | +0.72 [0.02, 1.40] |
+| via cue + line-2 words (generated text) | +0.91 | **+2.91 [1.59, 4.29]** (about 10%) |
+
+Relay emerges at distance in the sliding-window model: absolute relay grows about 10x
+(the full-attention control stays flat, +2.3 -> +2.8). It is mostly **boundary storage**:
+with five of six layers unable to reach line 1, the plan is read far more from the
+tokens just after line 1 than from the rhyme word. Relay through generated text rises
+too but modestly (+0.9 -> +2.9, about 10% of persistence). By the frozen v2 rule (judged
+on generated-text relay) this is at the stop/extend boundary: extend to 50 couplets.
+
+## Pilot v2 extension (frozen 2026-09-26, before any extension result)
+
+Gemma 3 - 27B - relay distance - pilot v2 extension: 50 couplets, D = 0 and 2000, same
+cells, plus necessity for the three groups (edit the anchor; reset one group to clean),
+added because Gemma's paths interact (sufficiency understated boundary storage before).
+Decision on generated-text relay share (sufficiency, as frozen): go >= 25%, stop < 10%;
+necessity reported alongside.
