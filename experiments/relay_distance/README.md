@@ -192,3 +192,18 @@ D = 0 and 2000 come from the 50-couplet extension. Same cells and outputs (`pilo
 **Amendment (2026-09-26, 10:35 CEST, still before any 27B window result):** after a review
 asked for the full curve, the 27B window curve runs D = 500, 1000 and 1500 on the first 18
 couplets (the 24-couplet design shortened for the deadline).
+
+### Gemma 3 - 12B - relay distance - window curve (24 couplets per distance; 2026-09-26)
+
+| | D = 0 (v2) | 500 | 1000 | 1500 | 2000 (v2) |
+|---|---|---|---|---|---|
+| line 2 rhymes | 100% | 39% | 8% | 0% | 0% |
+| persistence | +40.5 | +11.5 [8.1, 14.9] | +4.0 [2.4, 5.8] | -0.2 [-1.0, 0.6] | +0.6 |
+| direct retrieval | +35.1 | +7.2 | +1.4 | -1.1 | -0.5 |
+| relay (absolute) | +0.7 | +2.3 [1.4, 3.4] | +2.1 | +0.8 | +1.2 |
+| generated-text relay (cue + line 2) | +0.6 | +0.9 | +0.3 | -0.5 | -0.1 |
+
+Against the frozen reading: the 12B plan does not survive inside the window and vanish outside
+it; it fades gradually and is already mostly gone at 500 tokens (well inside the 1,024-token
+window). So at 12B the loss reflects distance (the filler) itself, not the local window. Relay
+never compensates: absolute relay stays at +0.8 to +2.3 and generated-text relay at or below +0.9.

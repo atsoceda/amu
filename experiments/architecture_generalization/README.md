@@ -85,3 +85,9 @@ core suite. The trimmed-suite predictions for these remain untested.
 Amendment (2026-09-26, 10:35 CEST, before results): Gemma 4 - 31B induction control and the
 Qwen3.5 - 9B additions were also dropped, to give the Gemma 3 - 27B checks the remaining time.
 Gemma 4 contributes the out-of-list control and the animal replication only.
+
+### Gemma 4 - 31B - hidden choice - replication (animals; pick specificity committed before results)
+
+Text swap pick specificity +4.90; post-list **pick specificity +4.44 [3.97, 4.93]** (91%;
+fruits 82%). Gemma 4 stores nearly all of the pick-specific signal after the list, the
+largest share of any model (Gemma 3 27B 40%, Qwen3.5-27B 4%).
