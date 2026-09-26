@@ -903,23 +903,6 @@ read this directly from the list. In Qwen3 at 8B and larger and in Gemma 3 the s
 positions hold about nothing (Qwen3-32B about 1%); in the Qwen3.5 hybrids they hold 8%
 (9B) and 7% (27B, \(+0.15\) [0.12, 0.18]) of the text-swap effect.
 
-# Relationship to an earlier workshop version {#sec-app-workshop}
-
-A non-archival workshop version of this work introduced the emission and persistence
-decomposition, there called public and private routes, on Gemma 3 270M and 1B with
-sparse-feature and residual interventions on the article *a/an*. That version also
-reported *mediator-relative routing*: target-directed interventions appeared to shift
-toward emission when two alternatives required different articles. A
-construction audit, frozen before its result, retracts that claim. The
-named-donor direction contains an article-readout component, about 4% of its norm.
-Removing it leaves lexical efficacy unchanged but removes nearly all of the
-shift: the paired interaction falls from 0.120 [0.079, 0.161] to 0.018
-[\(-0.000\), 0.038]. The component alone reproduces most of the shift. The shift
-was therefore a property of how the intervention vector was built, not of the model.
-The present paper keeps the decomposition, extends it to paths within persistence and
-to multi-token generation, and replaces the small-model experiments with the study
-reported here.
-
 # Compute {#sec-app-compute}
 
 Experiments ran on one Apple M1 laptop (16 GB) and one Apple M4 Max workstation
