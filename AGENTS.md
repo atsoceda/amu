@@ -40,6 +40,14 @@ When writing math in chat or docs:
 - Avoid `$...$` for inline math in chat; it may show raw delimiters instead of rendering.
 - Do not put math inside fenced code blocks like ` ```latex `.
 
+## Naming models and experiments
+
+With many models and experiments in play, refer to each one as
+**model name & generation - model size - experiment class - experiment name**, for example
+"Gemma 3 - 27B - relay distance - pilot" or "Qwen3 - 14B - couplet routes - position split
+(plain)". Experiment classes: couplet routes, derived value, hidden choice, relay positive
+control, recurrent carry, relay distance.
+
 ## Paper versions and venue targets
 
 There are two versions of the paper. Keep them separate.
