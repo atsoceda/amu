@@ -44,9 +44,11 @@ The copy stored at the comma ending line 1 and the late lookup through the last 
 positions account for most of the rest. Early relay along the generated line accounts
 for 1%. **B:** for every setting and model, the share of the effect that is looked up
 (blue) and the share that is relayed (purple), with 95% intervals. The positive
-control is on its own scale (0 to 150%), with the committed 80% criterion; all other
-settings are on a 0 to 15% scale, with the committed stop (10%) and go (25%) lines of
-the stress tests. The denominator is given under each group. In the positive control,
+control has its own axis (0 to 150%) with the committed 80% criterion. The other
+settings share a broken axis: looked-up shares on the upper segment, relayed shares on
+the lower segment (to 30%), with the committed stop (10%) and go (25%) lines of the
+stress tests. The denominator is given under each group; Qwen3 is shown filled,
+Qwen3.5 as triangles, Gemma 3 open. In the positive control,
 where relay is the known mechanism, relay is the largest path. Everywhere else, relay
 is small and the information is looked up.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
 

@@ -309,7 +309,7 @@ def fig1():
     for i, (lab, fam, look, rel) in enumerate(ctrl):
         pair([axC], i, fam, look, rel)
     axC.axhline(80, color=COL["relay"], lw=0.7, ls=(0, (3, 2)), zorder=1)
-    axC.text(-0.55, 77, "frozen 80%\nrelay line", fontsize=7, color="#8E4F7A", ha="left", va="top",
+    axC.text(-0.55, 77, "committed 80%\nrelay line", fontsize=7, color="#8E4F7A", ha="left", va="top",
              linespacing=0.95)
     axC.set_ylim(-5, 150)
     axC.set_yticks([0, 50, 100, 150])
@@ -494,7 +494,7 @@ def fig2():
     bx = fig.add_subplot(gs[1, :])
     x_band = (lx(12) + lx(14)) / 2
     bx.axvspan(x_band, lx(60), color="#E6F4EE", lw=0, zorder=0)
-    bx.text(x_band + 0.02, 44, "copy present (≥ 14B)", fontsize=7, color="#1B6E53", va="top", ha="left")
+    bx.text(x_band + 0.03, 57, "copy present\n(≥ 14B)", fontsize=7, color="#1B6E53", va="top", ha="left")
     style = {"Qwen3, chat": ("o", "-"), "Qwen3, plain": ("o", (0, (3, 1.6))),
              "Gemma 3, chat": ("s", "-"), "Gemma 3, plain": ("s", (0, (3, 1.6)))}
     ends = []
@@ -508,6 +508,11 @@ def fig2():
         if nec:
             bx.scatter([lx(p[0]) for p in nec], [p[1] for p in nec], marker=mk, s=16, facecolor="white",
                        edgecolor=COL["storage"], lw=0.8, zorder=4)
+            for p_ in nec:
+                if p_[1] > 45:
+                    bx.annotate(f"necessity {p_[1]:.0f}%", xy=(lx(p_[0]), p_[1]),
+                                xytext=(lx(p_[0]) + 0.12, p_[1]), fontsize=7, color="#1B6E53", ha="left",
+                                va="center", arrowprops=dict(arrowstyle="-", color="#9BCDB9", lw=0.5))
         if base_pts:
             bx.scatter([lx(p[0]) for p in base_pts], [p[1] for p in base_pts], marker="*", s=34,
                        color=COL["ink"], zorder=5)
@@ -515,7 +520,7 @@ def fig2():
     ends.sort(key=lambda e: e[1])
     ly = [e[1] for e in ends]
     for i in range(1, len(ly)):
-        ly[i] = max(ly[i], ly[i - 1] + 4.2)
+        ly[i] = max(ly[i], ly[i - 1] + 9.0)
     for (x, y, lab), yy in zip(ends, ly):
         bx.annotate(lab, xy=(x, y), xytext=(lx(34) + 0.04, yy), fontsize=7, color="#1B6E53", va="center",
                     ha="left", arrowprops=dict(arrowstyle="-", color="#9BCDB9", lw=0.5))
@@ -523,8 +528,8 @@ def fig2():
     bx.set_xlim(lx(0.85), lx(60))
     bx.set_xticks([lx(v) for v in xt])
     bx.set_xticklabels([str(v) for v in xt])
-    bx.set_ylim(-5, 45)
-    bx.set_yticks([0, 10, 20, 30, 40])
+    bx.set_ylim(-5, 82)
+    bx.set_yticks([0, 20, 40, 60, 80])
     bx.set_xlabel("parameters (B)")
     bx.set_ylabel("stored copy\n(% of persistence)")
     hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["storage"], mec=COL["storage"]),
@@ -840,7 +845,7 @@ def fig3():
         y += hA + 26
     # B. The hidden-choice instruction once, with its storage tokens highlighted.
     y += 4
-    bg.text(0, y, "B   Hidden choice: the pick is stored on periods and on the word before \u201cweather\u201d",
+    bg.text(0, y, "B   Hidden choice: the pick is stored on periods and on one function word",
             fontsize=8, weight="bold", va="top")
     y += 14
     fr, fa, an = ("choice_replicate_fruits_localize_summary.json", "choice_replicate_fruits_localize_alt_summary.json",
@@ -889,25 +894,29 @@ def fig3():
             toks = [x["token"] for x in sm["necessity_by_token"]]
             sh, _ = pos_share([x["mean"] for x in sm["necessity_by_token"]])
             per = sum(v for t, v in zip(toks, sh) if t.strip() == ".")
-            wi = [i for i, t in enumerate(toks) if t.replace("▁", "") == "weather"]
-            fw = 0.0
-            if wi:
-                i = wi[0] - 1
-                while i >= 0 and toks[i].replace("▁", "") in ("the", "'", "s", "’"):
-                    fw += sh[i]
-                    i -= 1
-            rowsB.append((f"{lab}, {wl}", 100 * per, 100 * fw, 100 * max(1 - per - fw, 0.0)))
+            # function word: the largest non-period, non-template token (with a trailing "s" of a possessive)
+            cand = [(v, i) for i, (t, v) in enumerate(zip(toks, sh))
+                    if t.strip() != "." and not t.startswith("<") and t.strip() not in ("", "model")]
+            fw, word = 0.0, ""
+            if cand:
+                v, i = max(cand)
+                fw, word = v, toks[i].replace("\u2581", "").strip()
+                if word in ("'", "\u2019") and i + 1 < len(toks) and toks[i + 1].replace("\u2581", "") == "s":
+                    fw += sh[i + 1]
+                    word = "'s"
+            rowsB.append((f"{lab}, {wl}", 100 * per, 100 * fw, 100 * max(1 - per - fw, 0.0), word))
     if rowsB:
         hB = row_h * len(rowsB) + 4
         ax = axes_pts(112, y, Wpt - 112 - 6, hB)
-        cols = [("#00563F", "segment-closing periods"), (COL["storage"], "word before \u201cweather\u201d"),
+        cols = [("#00563F", "segment-closing periods"), (COL["storage"], "one function word (named)"),
                 ("#E3E3E3", "all other tokens")]
         for i, vals in enumerate(rowsB):
             left = 0.0
-            for (c, lab), v in zip(cols, vals[1:]):
+            for k, ((c, lab), v) in enumerate(zip(cols, vals[1:4])):
                 ax.barh(i, v, 0.72, left=left, color=c, lw=0, label=lab if i == 0 else None)
                 if v >= 9:
-                    ax.text(left + v / 2, i, f"{v:.0f}%", fontsize=7, ha="center", va="center",
+                    txt = f"\u201c{vals[4]}\u201d {v:.0f}%" if k == 1 else f"{v:.0f}%"
+                    ax.text(left + v / 2, i, txt, fontsize=7, ha="center", va="center",
                             color="white" if c != "#E3E3E3" else "#444444", weight="bold")
                 left += v
         ax.set_yticks(range(len(rowsB)))
