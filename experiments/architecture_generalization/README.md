@@ -27,3 +27,9 @@ Qwen3.5 - 35B-A3B (recurrent hybrid, mixture-of-experts).
 - Stored pick specificity: family-like (Gemma 4 like Gemma 3, i.e. clearly positive;
   Qwen3.5 like Qwen3 at its size, i.e. near zero); a reversal would be reported as a
   family-by-generation difference.
+
+**Trimmed suite (2026-09-26, before any result; time budget about 1 hour per model).**
+The full couplet chain (backbone; expected; already broad) is dropped. Kept, because the
+surprise-led framing rests on them: hidden choice (out-of-list specificity, animal
+replication, forced route split), the induction control, and for Qwen3.5 - 35B-A3B the
+fast recurrent-carry pilot (24 couplets). `core_suite_lite.sh`. Predictions unchanged.
