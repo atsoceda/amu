@@ -238,9 +238,9 @@ stored information (@fig-sites B).
 - Gemma 3 12B uses the same site with fruits (*the*: \(+0.52\) of \(+1.03\); the period
   after the list: \(+0.32\)) and with animals (*the*: \(+1.04\) [0.80, 1.28] of
   \(+1.42\), 73%).
-- Gemma 3 4B stores as much (18%) but places it on the period that closes the
-  instruction (\(+0.78\) [0.65, 0.91], 58%) and the period that closes the list (33%),
-  with 7% on *the*.
+- Gemma 3 4B stores as much (18 to 22%) but places it mostly on the periods that close
+  the list and the instruction (91% with fruits, 65% with animals), with a function word
+  taking the rest (7% on *the* with fruits; 32% on *your* with animals).
 
 The decisive check, committed before its result, changes the wording. If the storage
 moves with the function words, it is storage at a predictable low-content token. If it
@@ -250,13 +250,15 @@ weather in a single sentence. After that, reveal which fruit you picked." Gemma 
 then stores 12% of the text swap's pick specificity (\(+0.59\) [0.38, 0.81]), again on
 two low-content tokens. The period that ends the list accounts for \(+0.42\) [0.21,
 0.63] (71%), and the apostrophe of "today's", the token before "weather", for \(+0.16\)
-[0.09, 0.22] (27%). Every other token is below 0.04. At 12B, the function-word site
-moved with the wording.
+[0.09, 0.22] (27%). Every other token is below 0.04. Gemma 3 4B moves the same way: the
+apostrophe of "today's" takes 69% (\(+0.54\) [0.46, 0.62]) and the list-closing period
+28%. At both sizes, the function-word site moved with the wording.
 \pending{reworded instruction at Gemma 3 27B.}
 
 Across sizes and wordings, the stored information sits on two or three low-content
 tokens. These are the punctuation that closes a segment (the list or the instruction)
-and, from 12B on, a function word of the instruction. Segment-closing punctuation is
+and one function word of the instruction, whose identity depends on the wording ("the",
+"your", or the possessive before "weather"). Segment-closing punctuation is
 the analogue of the line's final token for rhymes. In both tasks the model stores a
 copy once, at a boundary next to the source or at a predictable token of the prompt,
 and reads it at the point of use.

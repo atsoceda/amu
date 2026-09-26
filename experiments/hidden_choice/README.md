@@ -356,3 +356,20 @@ Deadline plan (2026-09-26, 10:30 CEST, before the affected results): kept Gemma 
 localization with the reworded instruction (frozen check 3) and the Gemma 3 - 27B same-pick
 null; dropped Gemma 3 - 27B localization with animals and the Qwen3 - 32B same-pick null (not
 run). Checks 1 and 3 are answered at 12B (and 4B) instead; 27B contributes check 3 only.
+
+### Localization additions at 4B (2026-09-26)
+
+Gemma 3 - 4B - hidden choice - localization (animals): pick specificity +2.59 [2.13, 3.09];
+by token: the period ending the instruction +0.90, **"your" in "Do not write your choice
+yet" +0.82**, the period after the list +0.78; other tokens below 0.05. Segment-closing
+periods 65%, a function word 32%.
+
+Gemma 3 - 4B - hidden choice - localization (fruits, reworded instruction): pick specificity
++0.78 [0.58, 0.98] (text swap +4.64, 17%); by token: **the apostrophe of "today's" (the token
+before "weather") +0.54 [0.46, 0.62]** (69%), the period after the list +0.22 [0.07, 0.38]
+(28%). As at 12B, the storage moves with the wording to the token before "weather".
+
+Combined reading (4B and 12B, three conditions each): the stored information sits on
+segment-closing periods and on one function word of the instruction; the word depends on the
+wording and size ("the", "your", the possessive before "weather"), and moves when the
+instruction is reworded. Supports storage at predictable low-content tokens.

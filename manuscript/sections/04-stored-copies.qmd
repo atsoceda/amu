@@ -45,9 +45,7 @@ share of persistence by both measures (bottom row of @fig-couplets).
   either format). It appears at 14B: 8% of persistence in the chat format and 16% in
   the plain format, by necessity. It remains at 32B (11% and 13%).
 - In Gemma 3 it is absent at 1B and 4B, small at 12B (1 to 3%), and present at 27B:
-  11% by necessity in the chat format, and 37% by sufficiency in the plain format.
-  The latter is the one configuration in which more of the plan is read from the
-  line's final token than from the rhyme word (19%).
+  11% by necessity in the chat format, and in the plain format 37% by sufficiency and 74% by necessity (\(+19.8\) [18.2, 21.5] of \(+26.9\)). The plain format at 27B is the one configuration in which more of the plan is read from the line's final token than from the rhyme word (19%): a near-complete hand-off to the stored copy, while early relay stays at 1%.
 - The base checkpoints store it as well. Qwen3-14B-Base stores 16% by sufficiency,
   against 13% for the instruct model in the same format; Gemma 3 12B PT stores 5%
   and 6% against 2% and 3%. Qwen3-8B-Base, like the 8B instruct model, stores
@@ -86,7 +84,7 @@ Gemma 3 1B & 0\% & 0\% & 1\% & 0\%\\
 Gemma 3 4B & 1\% & -- & 0\% & --\\
 Gemma 3 12B & 0\% & 1\% & 2\% & 3\%\\
 Gemma 3 12B PT & -- & -- & 5\% & 6\%\\
-Gemma 3 27B & 2\% & 11\% & 37\% & \pending{}\\
+Gemma 3 27B & 2\% & 11\% & 37\% & \textbf{74\%}\\
 \bottomrule
 \end{tabular}
 ```

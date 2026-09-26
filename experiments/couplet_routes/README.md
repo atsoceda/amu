@@ -528,3 +528,12 @@ Gemma 3 12B PT.
 Deadline plan, amendment (2026-09-26, 10:35 CEST, before results): added Gemma 3 - 27B -
 couplet routes - necessity (plain) and, if time allows, boundary tokens (plain): the missing
 cells under the clearest hand-off example (plain-format boundary sufficiency 37%).
+
+### Necessity split, Gemma 3 - 27B - couplet routes - necessity (plain format; 2026-09-26)
+
+Persistence +26.89 [25.18, 28.58]; necessity: all downstream +21.84 (81%), late +3.40 (13%),
+**stored copy (boundary: `,` and the newline) +19.82 [18.24, 21.47] (74%)**, early line 2
++0.22 [0.03, 0.41] (1%). Sufficiency of the boundary was +9.97 (37%). In the plain format the
+27B plan is carried to the rhyme mostly by the stored copy at the line's final token: the
+line-end copy is necessary for three quarters of persistence, the clearest hand-off in the
+study (Ma & Rui 2026 report the hand-off in Gemma-3-27B). Early relay stays at 1%.

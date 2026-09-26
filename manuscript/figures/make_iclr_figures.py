@@ -6,7 +6,7 @@ Run from the repository root:
 Every number is read from experiments/*/results. Runs that are still in progress are skipped
 silently, so the figures can be regenerated as results arrive. Figures are drawn at their
 printed size (ICLR text width 5.5 in), so font sizes are the sizes on the page (at least 7 pt).
-One colour per route throughout (Okabe-Ito): source retrieval blue, the stored copy at the
+One colour per route throughout (Okabe-Ito): direct retrieval blue, the stored copy at the
 line's final token green, late lookup via the last three positions sky blue, early relay along
 generated text (and recurrent memory, which is relay by construction) reddish purple, emission
 vermillion, interaction light grey; totals and references are grey. One marker per model family
@@ -210,23 +210,23 @@ def fig1_schematic(axA):
              color="#666666")
     y0 = 0.68
     # Source retrieval and the stored copy at the line's final token.
-    bez(axA, cx["night"], y0, cx["the"], y0, 3.35, s["retrieval"], COL["retrieval"])
-    bez(axA, cx["night"] + 0.12, y0, cx[","], y0, 1.15, s["boundary"], COL["storage"])
-    bez(axA, cx[","], y0, cx["the"] - 0.08, y0, 2.55, s["boundary"], COL["storage"])
+    bez(axA, cx["night"], y0, cx["the"], y0, 2.2, s["retrieval"], COL["retrieval"])
+    bez(axA, cx["night"] + 0.12, y0, cx[","], y0, 0.98, s["boundary"], COL["storage"])
+    bez(axA, cx[","], y0, cx["the"] - 0.08, y0, 1.72, s["boundary"], COL["storage"])
     # Late lookup: into a bracket over the last three line-2 positions, then a short arc to the target.
     bx0, bx1 = box["guide"][0] + 0.02, box["through"][0] + box["through"][1] - 0.02
-    by = 1.32
-    axA.plot([bx0, bx0, bx1, bx1], [by - 0.14, by, by, by - 0.14], color=COL["late"], lw=0.9)
+    by = 1.02
+    axA.plot([bx0, bx0, bx1, bx1], [by - 0.12, by, by, by - 0.12], color=COL["late"], lw=0.9)
     bm = (bx0 + bx1) / 2
-    bez(axA, cx["night"] - 0.12, y0, bm - 0.35, by + 0.02, 2.05, s["late"], COL["late"])
-    bez(axA, bm + 0.35, by + 0.02, cx["the"] + 0.08, y0, 1.6, s["late"], COL["late"], arrow=True)
+    bez(axA, cx["night"] - 0.12, y0, bm - 0.2, by + 0.02, 1.42, s["late"], COL["late"])
+    bez(axA, bx1 - 0.1, by + 0.02, cx["the"] + 0.1, y0, 1.22, s["late"], COL["late"], arrow=True)
     # Early relay: a chain of small arcs from the rhyme word through line 2 to the target.
     chain = ["night", "And", "stars", "will", "guide", "me", "through", "the"]
     for a, b in zip(chain[:-1], chain[1:]):
-        h = 1.05 if a == "night" else 0.9
+        h = 0.86 if a == "night" else 0.8
         bez(axA, cx[a] + (0.18 if a == "night" else 0.0), y0, cx[b], y0, h, max(s["early"], 0.0),
             COL["relay"], ls=(0, (1.6, 1.0)), arrow=(b == "the"))
-    rows = [(COL["retrieval"], "-", "source retrieval from the rhyme word", f"{100 * s['retrieval']:.0f}%"),
+    rows = [(COL["retrieval"], "-", "direct retrieval from the rhyme word", f"{100 * s['retrieval']:.0f}%"),
             (COL["storage"], "-", "stored copy at the line's final token",
              f"{100 * s['boundary']:.0f}% (nec. {100 * s['nec_boundary']:.0f}%)"),
             (COL["late"], "-", "late lookup via the last three positions", f"{100 * s['late']:.0f}%"),
@@ -252,16 +252,15 @@ def fig1_points():
         if x:
             ctrl.append((lab, fam, share(x["retrieval"], x["persistence"]), share(x["relay"], x["persistence"])))
     coup = []
-    for runs, fam, suffix, sub in ((QWEN, "Qwen3", "", "Qwen3\nchat"), (QWEN, "Qwen3", "-plain", "Qwen3\nplain"),
-                                   (GEMMA, "Gemma 3", "", "Gemma 3\nchat"),
-                                   (GEMMA, "Gemma 3", "-plain", "Gemma 3\nplain")):
+    for runs, fam, suffix, sub in ((QWEN, "Qwen3", "", "chat"), (QWEN, "Qwen3", "-plain", "plain"),
+                                   (GEMMA, "Gemma 3", "", "chat"), (GEMMA, "Gemma 3", "-plain", "plain")):
         grp = []
         for d, size in runs:
             c = couplet_route_ci(d + suffix)
             if c:
                 grp.append((f"{size:g}B", fam, c[0], c[1]))
         if grp:
-            coup.append((sub, grp))
+            coup.append((sub, fam, grp))
     hid = []
     for d, fam, lab in [("Qwen3-4B", "Qwen3", "4B"), ("Qwen3-8B", "Qwen3", "8B"), ("Qwen3-14B", "Qwen3", "14B"),
                         ("Qwen3-32B", "Qwen3", "32B"), ("Qwen3.5-27B", "Qwen3.5", "27B"),
@@ -279,26 +278,27 @@ def fig1_points():
 
 
 def fig1():
-    H = 5.0
+    H = 5.15
     fig = plt.figure(figsize=(W, H))
     fy = lambda inch: inch / H  # noqa: E731
     fx = lambda inch: inch / W  # noqa: E731
-    axA = fig.add_axes([0.0, fy(3.22), 1.0, fy(1.78)])
+    axA = fig.add_axes([0.0, fy(3.36), 1.0, fy(1.79)])
     fig1_schematic(axA)
     ctrl, coup, hid, rec, dist = fig1_points()
 
     # B. Paired marks per setting: looked up (blue) and relayed (purple).
-    ybot, ytop = 0.78, 2.72     # inches: plot area of panel B
+    ybot, ytop = 0.92, 2.64     # inches: plot area of panel B
     brk = 0.07                  # gap of the broken axis
     top_frac = 0.40             # share of the right-hand plot height given to the upper segment
     hb = (ytop - ybot - brk) * (1 - top_frac)
     ht = (ytop - ybot - brk) * top_frac
     axC = fig.add_axes([fx(0.42), fy(ybot), fx(0.98), fy(ytop - ybot)])
-    xr0, xr1 = 1.92, 5.47
+    xr0, xr1 = 1.92, 5.3
     axT = fig.add_axes([fx(xr0), fy(ybot + hb + brk), fx(xr1 - xr0), fy(ht)])
     axL = fig.add_axes([fx(xr0), fy(ybot), fx(xr1 - xr0), fy(hb)])
-    fig.text(0.0, fy(3.16), "B   Relay carries induction; elsewhere information is looked up", fontsize=8,
+    fig.text(0.0, fy(3.3), "B   Relay carries induction; elsewhere information is looked up", fontsize=8,
              weight="bold", va="top")
+    den_y = fy(0.5)
 
     def pair(axes, x, fam, look, rel, s=13):
         for ax in axes:
@@ -309,7 +309,7 @@ def fig1():
     for i, (lab, fam, look, rel) in enumerate(ctrl):
         pair([axC], i, fam, look, rel)
     axC.axhline(80, color=COL["relay"], lw=0.7, ls=(0, (3, 2)), zorder=1)
-    axC.text(len(ctrl) - 0.5, 81.5, "80% relay\n(frozen)", fontsize=7, color="#8E4F7A", ha="right", va="bottom",
+    axC.text(-0.55, 77, "frozen 80%\nrelay line", fontsize=7, color="#8E4F7A", ha="left", va="top",
              linespacing=0.95)
     axC.set_ylim(-5, 150)
     axC.set_yticks([0, 50, 100, 150])
@@ -321,34 +321,33 @@ def fig1():
     axC.axhline(0, color="#CCCCCC", lw=0.5, zorder=0)
 
     # Right-hand groups on a broken axis: upper 40-125%, lower -5-30%.
-    xpos, labels, spans = [], [], []
+    xpos, labels, spans, sub_spans, stress = [], [], [], [], []
     x = 0.0
-    sub_spans = []
-    for sub, grp in coup:
+    cstep = 0.85
+    for sub, fam_, grp in coup:
         x0 = x
         for lab, fam, look, rel in grp:
             pair([axT, axL], x, fam, look, rel)
             xpos.append(x)
-            labels.append(lab)
-            x += 1.0
-        sub_spans.append((x0, x - 1.0, sub))
-        x += 0.7
+            labels.append("")
+            x += cstep
+        rng = f"{grp[0][0][:-1]}–{grp[-1][0]}"
+        sub_spans.append((x0, x - cstep, f"{sub}\n{rng}", fam_))
+        x += 0.9
     if coup:
-        spans.append(("rhyme plans\n(couplets)", sub_spans[0][0], sub_spans[-1][1], "share of persistence"))
-    x += 0.6
+        spans.append(("rhyme plans (couplets)", sub_spans[0][0], sub_spans[-1][1], "share of persistence", "task"))
+    x += 0.5
     if hid:
         x0 = x
         for lab, fam, look, rel in hid:
             pair([axT, axL], x, fam, look, rel)
             xpos.append(x)
             labels.append(lab)
-            x += 1.0
-        spans.append(("hidden\nchoice", x0, x - 1.0, "share of the\nstored part"))
+            x += 1.3
+        spans.append(("hidden\nchoice", x0, x - 1.3, "share of the\nstored part", "task"))
         x += 0.6
-    x += 1.2
-    stress = []
-    for grp, step, name, den in ((rec, 1.25, "recurrent\nhybrid", "share of\npersistence"),
-                                 (dist, 1.45, "beyond the\nwindow", "share of\npersistence\nat each\ndistance")):
+    x += 1.4
+    for grp, step, name in ((rec, 1.7, "recurrent\nhybrid"), (dist, 1.9, "beyond the\nwindow")):
         if not grp:
             continue
         x0 = x
@@ -357,20 +356,19 @@ def fig1():
             xpos.append(x)
             labels.append(lab)
             x += step
-        spans.append((name, x0, x - step, den))
-        stress.append((x0 - 0.5, x - step + 0.5))
-        x += 0.6
-    xmax = x - 0.6 + 0.5
+        spans.append((name, x0, x - step, None, "stress"))
+        stress.append((x0 - 0.6, x - step + 0.6))
+        x += 1.1
+    xmax = x - 1.1 + 0.6
     for ax in (axT, axL):
         ax.set_xlim(-0.6, xmax)
     # Frozen decision lines for the stress tests.
     for sx0, sx1 in stress:
-        for yv, c in ((10, "#8E4F7A"), (25, "#8E4F7A")):
-            axL.plot([sx0, sx1], [yv, yv], color=c, lw=0.7, ls=(0, (3, 2)) if yv == 10 else "-", zorder=1)
+        for yv in (10, 25):
+            axL.plot([sx0, sx1], [yv, yv], color="#8E4F7A", lw=0.7, ls=(0, (3, 2)) if yv == 10 else "-", zorder=1)
     if stress:
-        sx1 = stress[-1][1]
-        axL.text(sx1 + 0.1, 10, "stop", fontsize=7, color="#8E4F7A", va="center", ha="left")
-        axL.text(sx1 + 0.1, 25, "go", fontsize=7, color="#8E4F7A", va="center", ha="left")
+        axL.text(xmax + 0.1, 10, "stop", fontsize=7, color="#8E4F7A", va="center", ha="left", clip_on=False)
+        axL.text(xmax + 0.1, 25, "go", fontsize=7, color="#8E4F7A", va="center", ha="left", clip_on=False)
     axT.set_ylim(40, 125)
     axT.set_yticks([50, 75, 100])
     axL.set_ylim(-5, 30)
@@ -381,49 +379,51 @@ def fig1():
     axL.set_xticklabels(labels, rotation=90)
     axL.tick_params(axis="x", length=0)
     axL.axhline(0, color="#CCCCCC", lw=0.5, zorder=0)
-    # Break marks on the left spine.
-    for ax, yy in ((axT, 0.0), (axL, 1.0)):
+    for ax, yy in ((axT, 0.0), (axL, 1.0)):  # break marks on the left spine
         ax.plot([-0.012, 0.012], [yy - 0.03, yy + 0.03], transform=ax.transAxes, color="k", lw=0.6,
                 clip_on=False)
     axL.set_ylabel("% of the denominator\nnamed under each group", y=(hb + brk + ht) / 2 / hb)
-    # Sub-group labels for the couplet runs, in the empty upper part of the lower segment.
-    for x0, x1, sub in sub_spans:
-        axL.text((x0 + x1) / 2, 28, sub, fontsize=7, ha="center", va="top", color=COL["muted"], linespacing=0.95)
-    # Group names above, super-group labels on top, denominators below.
+    fams = {}
+    for x0, x1, sub, fam_ in sub_spans:  # couplet sub-groups, in the empty upper part of the lower segment
+        w1, w2 = sub.split("\n")
+        axL.text((x0 + x1) / 2, 21.6, w1, fontsize=7, ha="center", va="baseline", color=COL["muted"])
+        axL.text((x0 + x1) / 2, 18.4, w2, fontsize=7, ha="center", va="baseline", color=COL["muted"])
+        fams.setdefault(fam_, []).extend([x0, x1])
+    for fam_, xs_ in fams.items():
+        axL.text((min(xs_) + max(xs_)) / 2, 28.5, fam_, fontsize=7, ha="center", va="top", color=COL["ink"])
+
+    def xin(xd):  # data x of the right-hand axes -> figure fraction
+        return fx(xr0 + (xd + 0.6) / (xmax + 0.6) * (xr1 - xr0))
     trT = axT.get_xaxis_transform()
-    trL = axL.get_xaxis_transform()
-    for name, x0, x1, den in spans:
-        axT.text((x0 + x1) / 2, 1.04, name, transform=trT, fontsize=7, ha="center", va="bottom", linespacing=0.95)
-        axL.text((x0 + x1) / 2, -0.36, den, transform=trL, fontsize=7, ha="center", va="top",
-                 color=COL["muted"], linespacing=0.95)
+    for name, x0, x1, den, kind in spans:
+        axT.text((x0 + x1) / 2, 1.03, name, transform=trT, fontsize=7, ha="center", va="bottom", linespacing=0.95)
+        if den:
+            fig.text(xin((x0 + x1) / 2), den_y, den, fontsize=7, ha="center", va="top", color=COL["muted"],
+                     linespacing=0.95)
+    st = [sp for sp in spans if sp[4] == "stress"]
+    if st:
+        fig.text(xin((st[0][1] + st[-1][2]) / 2), den_y, "share of persistence\n(at each distance)", fontsize=7,
+                 ha="center", va="top", color=COL["muted"], linespacing=0.95)
     trC = axC.get_xaxis_transform()
-    axC.text((len(ctrl) - 1) / 2, 1.0 + 1.04 * 0 + (ht * 1.04 + 0.0) / (ytop - ybot) * 0 + 1.04 * 0, "",
-             transform=trC)
     axC.text((len(ctrl) - 1) / 2, 1.02, "induction", transform=trC, fontsize=7, ha="center", va="bottom")
-    axC.text((len(ctrl) - 1) / 2, -0.21, "share of\npersistence", transform=trC, fontsize=7, ha="center",
-             va="top", color=COL["muted"], linespacing=0.95)
-    sup_y = fy(ytop + 0.30)
-    fig.text(fx(0.42 + 0.49), sup_y, "positive control", fontsize=7, ha="center", va="bottom", weight="bold",
-             color=COL["ink"])
-    if spans:
-        def xin(xd):  # data x of the right-hand axes -> figure fraction
-            return fx(xr0 + (xd + 0.6) / (xmax + 0.6) * (xr1 - xr0))
-        task = [s for s in spans if "couplets" in s[0] or "hidden" in s[0]]
-        strs = [s for s in spans if s not in task]
-        for grp, lab in ((task, "tasks"), (strs, "stress tests")):
-            if grp:
-                a, b = xin(grp[0][1] - 0.4), xin(grp[-1][2] + 0.4)
-                fig.text((a + b) / 2, sup_y, lab, fontsize=7, ha="center", va="bottom", weight="bold")
-                fig.add_artist(Line2D([a, b], [sup_y - fy(0.02)] * 2, color="#999999", lw=0.6))
+    fig.text(fx(0.42 + 0.49), den_y, "share of\npersistence", fontsize=7, ha="center", va="top",
+             color=COL["muted"], linespacing=0.95)
+    sup_y = fy(ytop + 0.33)
+    fig.text(fx(0.42 + 0.49), sup_y, "positive control", fontsize=7, ha="center", va="bottom", weight="bold")
     fig.add_artist(Line2D([fx(0.47), fx(1.35)], [sup_y - fy(0.02)] * 2, color="#999999", lw=0.6))
-    # Legend.
+    for kind, lab in (("task", "tasks"), ("stress", "stress tests")):
+        grp = [sp for sp in spans if sp[4] == kind]
+        if grp:
+            a_, b_ = xin(grp[0][1] - 0.4), xin(grp[-1][2] + 0.4)
+            fig.text((a_ + b_) / 2, sup_y, lab, fontsize=7, ha="center", va="bottom", weight="bold")
+            fig.add_artist(Line2D([a_, b_], [sup_y - fy(0.02)] * 2, color="#999999", lw=0.6))
     hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["retrieval"], mec=COL["retrieval"]),
           Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["relay"], mec=COL["relay"]),
           Line2D([], [], ls="none", marker="o", ms=4, mfc="#444444", mec="#444444"),
           Line2D([], [], ls="none", marker="^", ms=4, mfc="#444444", mec="#444444"),
           Line2D([], [], ls="none", marker="s", ms=4, mfc="white", mec="#444444")]
     fig.legend(hs, ["looked up (source or stored copy)", "relayed along intermediate positions", "Qwen3",
-                    "Qwen3.5", "Gemma 3"], loc="lower center", bbox_to_anchor=(0.5, -0.01), ncol=5,
+                    "Qwen3.5", "Gemma 3"], loc="lower center", bbox_to_anchor=(0.5, -0.005), ncol=5,
                handletextpad=0.2, columnspacing=0.9)
     save(fig, "iclr_fig1_overview.png")
 
@@ -440,7 +440,7 @@ def fig2():
     fig = plt.figure(figsize=(W, 4.0))
     gs = fig.add_gridspec(2, 4, height_ratios=[1.25, 1.0], hspace=0.66, wspace=0.12,
                           left=0.09, right=0.99, top=0.83, bottom=0.1)
-    parts = [("retrieval", "source retrieval", COL["retrieval"]),
+    parts = [("retrieval", "direct retrieval", COL["retrieval"]),
              ("boundary", "stored copy at the line's final token", COL["storage"]),
              ("late", "late lookup (last 3 positions)", COL["late"]),
              ("early", "early relay along line 2", COL["relay"])]
@@ -502,7 +502,7 @@ def fig2():
         mk, ls = style[title]
         if suff:
             xs, ys = [lx(p[0]) for p in suff], [p[1] for p in suff]
-            bx.plot(xs, ys, ls=ls, color=COL["storage"], lw=1.1, zorder=3)
+            bx.plot(xs, ys, ls=ls, color=COL["storage"], lw=1.4, zorder=3)
             bx.scatter(xs, ys, marker=mk, s=16, color=COL["storage"], zorder=4)
             ends.append([xs[-1], ys[-1], title.replace(",", "")])
         if nec:
@@ -526,7 +526,7 @@ def fig2():
     bx.set_ylim(-5, 45)
     bx.set_yticks([0, 10, 20, 30, 40])
     bx.set_xlabel("parameters (B)")
-    bx.set_ylabel("stored copy at the line's\nfinal token (% of persistence)")
+    bx.set_ylabel("stored copy\n(% of persistence)")
     hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["storage"], mec=COL["storage"]),
           Line2D([], [], ls="none", marker="o", ms=4, mfc="white", mec=COL["storage"]),
           Line2D([], [], ls="none", marker="*", ms=6, color=COL["ink"])]
@@ -769,7 +769,7 @@ def fig3():
         k = line_end_index(toks)
         bg.text(0, y, "Qwen3-32B, chat prompt: tokens between line 1 and line 2", fontsize=7,
                 style="italic", color="#444444", va="top")
-        y += 13
+        y += 18
         cells = [("night", "src", None)] + [(pretty(t), "end" if i == k else "tpl", sh[i])
                                             for i, t in enumerate(toks)] + [("…", "gap", None), ("the", "tgt", None)]
         fs, ch, gap = 7.5, 17.0, 2.0
@@ -935,9 +935,9 @@ def fig3():
 # --------------------------------------------------------------------------- Figure 4
 
 def fig4():
-    fig = plt.figure(figsize=(W, 4.6))
-    gs = fig.add_gridspec(2, 1, height_ratios=[1, 1.08], hspace=0.62)
-    g1 = gs[0].subgridspec(1, 4, width_ratios=[1.05, 1.1, 0.55, 0.7], wspace=0.62)
+    fig = plt.figure(figsize=(W, 4.95))
+    gs = fig.add_gridspec(2, 1, height_ratios=[1, 1.08], hspace=0.78)
+    g1 = gs[0].subgridspec(1, 4, width_ratios=[1.05, 1.05, 0.5, 0.8], wspace=0.62)
     g2 = gs[1].subgridspec(1, 2, width_ratios=[1.5, 1.0], wspace=0.08)
 
     # A. Recurrent hybrid.
@@ -947,24 +947,25 @@ def fig4():
         a = share(x["attention_only"], x["persistence"])
         r = share(x["recurrent_only"], x["persistence"])
         b = share(x.get("both_blocked"), x["persistence"])
-        ax.bar(i - 0.2, a[0], 0.34, color=COL["retrieval"], label="through attention layers" if i == 0 else None)
-        ax.bar(i + 0.16, r[0], 0.34, color=COL["relay"], label="through recurrent memory" if i == 0 else None)
+        ax.bar(i - 0.2, a[0], 0.34, color=COL["retrieval"], label="attention layers" if i == 0 else None)
+        ax.bar(i + 0.16, r[0], 0.34, color=COL["relay"], label="recurrent memory" if i == 0 else None)
         for xx, v in ((i - 0.2, a), (i + 0.16, r)):
             if np.isfinite(v[1]):
                 ax.plot([xx, xx], [v[1], v[2]], color=COL["ink"], lw=0.7)
-        ax.text(i + 0.16, max(r[2] if np.isfinite(r[2]) else r[0], r[0]) + 2.5, f"{r[0]:.0f}%", ha="center",
-                fontsize=7, color="#8E4F7A")
+        ax.text(i + 0.27, 11.5, f"{r[0]:.0f}%", ha="center", va="bottom", fontsize=7, color="#8E4F7A")
         if np.isfinite(b[0]):
             ax.scatter(i + 0.44, b[0], marker="x", s=10, color=COL["grey"], lw=0.8, zorder=4,
                        label="both blocked" if i == 0 else None)
-    for yv, lab, ls in ((10, "stop 10%", (0, (3, 2))), (25, "go 25%", "-")):
+    for yv, lab, ls in ((10, "stop", (0, (3, 2))), (25, "go", "-")):
         ax.axhline(yv, color="#8E4F7A", lw=0.6, ls=ls, zorder=0)
-        ax.text(len(rows) - 0.45, yv + 1, lab, fontsize=7, color="#8E4F7A", ha="right", va="bottom")
+        ax.text(len(rows) + 0.12, yv, lab, fontsize=7, color="#8E4F7A", ha="right", va="center",
+                bbox=dict(fc="white", ec="none", pad=0.3))
     ax.set_xticks(range(len(rows)))
     ax.set_xticklabels([r[0] for r in rows])
-    ax.set_xlim(-0.55, len(rows) - 0.4)
-    ax.set_ylim(0, 150)
-    ax.set_yticks([0, 25, 50, 75, 100])
+    ax.set_xlim(-0.55, len(rows) + 0.15)
+    ax.set_ylim(0, 172)
+    ax.spines["left"].set_bounds(0, 100)
+    ax.set_yticks([0, 10, 25, 50, 75, 100])
     ax.set_ylabel("% of persistence")
     ax.set_xlabel("Qwen3.5 (75% of layers recurrent)")
     ax.legend(loc="upper left", handlelength=1.0, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(0, 1.04))
@@ -986,7 +987,9 @@ def fig4():
     ax.set_xticks(range(len(ds)))
     ax.set_xticklabels([f"{D:,}" for D in ds])
     ax.set_xlim(-0.6, len(ds) - 0.4)
-    ax.set_ylim(-6, 100)
+    ax.set_ylim(-6, 132)
+    ax.set_yticks([0, 25, 50, 75, 100])
+    ax.spines["left"].set_bounds(-6, 100)
     xr = len(ds) - 0.42
     ax.text(xr, 4, "stop", fontsize=7, color="#8E4F7A", ha="right", va="center")
     ax.text(xr, 17.5, "extend", fontsize=7, color="#8E4F7A", ha="right", va="center")
@@ -995,8 +998,8 @@ def fig4():
     ax.set_ylabel("% of persistence")
     hs = [Line2D([], [], ls="none", marker="s", ms=3.5, mfc="white", mec=c) for c in
           (COL["retrieval"], COL["storage"], COL["relay"])]
-    ax.legend(hs, ["source retrieval", "stored copy at line end", "relay along generated text"], loc="upper right",
-              handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.03, 1.04))
+    ax.legend(hs, ["direct retrieval", "stored copy", "relay along line 2"], loc="upper right",
+              handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.04, 1.04))
     ax.set_title("B   Beyond the attention window (Gemma 3 27B)", x=-0.3)
     # B, side: absolute persistence at each distance.
     ax = fig.add_subplot(g1[2])
@@ -1013,10 +1016,10 @@ def fig4():
     # B, side: how often line 2 still rhymes with the original word.
     ax = fig.add_subplot(g1[3])
     rh = []
-    for d, f, lab, fam in [("gemma-3-27b-it", "pilot_v2x_summary.json", "G3\n27B", "Gemma 3"),
-                           ("gemma-3-12b-it", "pilot_v2_summary.json", "G3\n12B", "Gemma 3"),
-                           ("Qwen3-14B", "pilot_v2_summary.json", "Q3\n14B", "Qwen3"),
-                           ("Qwen3.5-9B", "pilot_v2_summary.json", "Q3.5\n9B", "Qwen3.5")]:
+    for d, f, lab, fam in [("gemma-3-27b-it", "pilot_v2x_summary.json", "Gemma 3 27B", "Gemma 3"),
+                           ("gemma-3-12b-it", "pilot_v2_summary.json", "Gemma 3 12B", "Gemma 3"),
+                           ("Qwen3-14B", "pilot_v2_summary.json", "Qwen3-14B", "Qwen3"),
+                           ("Qwen3.5-9B", "pilot_v2_summary.json", "Qwen3.5-9B", "Qwen3.5")]:
         x = load(RD / d / f)
         bd = (x or {}).get("by_distance", {})
         if "0" in bd and "2000" in bd:
@@ -1026,14 +1029,18 @@ def fig4():
         ax.scatter(i, r0, marker=MARK[fam], s=14, facecolor="white", edgecolor=COL["grey"], lw=0.8, zorder=3)
         ax.scatter(i, r2, marker=MARK[fam], s=14, facecolor=COL["ink"], edgecolor=COL["ink"], lw=0.8, zorder=3)
     ax.set_xticks(range(len(rh)))
-    ax.set_xticklabels([r[0] for r in rh], linespacing=0.95)
+    ax.set_xticklabels([r[0] for r in rh], rotation=90)
+    ax.tick_params(axis="x", length=0)
+    ax.spines["bottom"].set_visible(False)
     ax.set_xlim(-0.6, len(rh) - 0.4)
-    ax.set_ylim(-4, 104)
+    ax.set_ylim(-34, 104)
+    ax.set_yticks([0, 25, 50, 75, 100])
+    ax.spines["left"].set_bounds(0, 100)
     ax.set_ylabel("line 2 rhymes (% of couplets)")
     hs = [Line2D([], [], ls="none", marker="o", ms=3.5, mfc="white", mec=COL["grey"]),
           Line2D([], [], ls="none", marker="o", ms=3.5, mfc=COL["ink"], mec=COL["ink"])]
-    ax.legend(hs, ["0 tokens", "2,000"], loc="lower left", handletextpad=0.1, borderaxespad=0.0,
-              labelspacing=0.2)
+    ax.legend(hs, ["0", "2,000 tokens"], loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=2,
+              handletextpad=0.05, borderaxespad=0.1, columnspacing=0.4)
 
     # C. Hidden choice: composition of the text-swap reference.
     models = [("Qwen3-4B", "Qwen3 4B"), ("Qwen3-8B", "Qwen3 8B"), ("Qwen3-14B", "Qwen3 14B"),

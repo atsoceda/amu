@@ -103,18 +103,22 @@ result (@sec-stress). They bound the principle rather than confirm it.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
   monitoring cares about most. Information specific to a secret pick is stored after
   the list, at a few predictable, low-content tokens: the punctuation that closes the
-  list or the instruction and, in larger models, a function word, which at 12B moves
-  when the instruction is reworded. The reveal reads it there. The intervening sentence never
+  list or the instruction, and a function word of the instruction, which at 4B and 12B moves when the instruction is reworded. The reveal reads it there. The intervening sentence never
   names the pick and has no measurable causal effect on it through emission. Relay
   through that sentence is at most 2% of the pick's effect, although in the two
   largest Qwen models it is one eighth to one sixth of the small stored part.
 
-Across scale, the one route that grows is the stored copy at the line's final token:
-the comma in chat prompts, the newline in plain prompts (@sec-storage). It appears at
-14B and above in Qwen3, and at 12B to 27B in Gemma 3. It is present in base
-checkpoints, so it is learned in pretraining. This reconciles published accounts of
+The one route that grows is the stored copy, and it grows in three ways (@sec-storage).
+It grows with scale. The copy at the line's final token (the comma in chat prompts,
+the newline in plain prompts) appears at 14B and above in Qwen3 and at 12B to 27B in
+Gemma 3. It is present in base checkpoints, so it is learned in pretraining. It grows
+with distance: beyond the attention window it is necessary for about half of the
+plan's effect. And it is where hidden, pick-specific information is kept, at
+segment-closing punctuation and function words of the prompt. Stored copies thus sit
+at a few predictable tokens next to their sources, which makes them a natural target
+for monitoring internal state. The same analysis reconciles published accounts of
 where the rhyme plan lives. The plan is read from the rhyme word [@hanna2026latent],
-and it is also placed at the line boundary [@lindsey2025biology; @ma2026plan]: these
+and it is also placed at the line boundary [@lindsey2025biology; @ma2026plan]. These
 are two lookup sites that coexist, in proportions that depend on scale, family and
 prompt format.
 
