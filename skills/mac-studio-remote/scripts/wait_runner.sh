@@ -14,7 +14,7 @@ while :; do
   sleep "$poll"
 done
 cd "$REPO"
-for d in experiments/couplet_routes/results experiments/derived_value_carry/results experiments/relay_positive_control/results experiments/hidden_choice/results experiments/recurrent_carry/results; do
+for d in experiments/couplet_routes/results experiments/derived_value_carry/results experiments/relay_positive_control/results experiments/hidden_choice/results experiments/recurrent_carry/results experiments/relay_distance/results; do
   # a results folder may not exist remotely yet (new experiment): skip it rather than fail
   "${SSH[@]}" "test -d ~/$REMOTE_ROOT/bundle/$d" || continue
   mkdir -p "$d"
