@@ -956,8 +956,8 @@ def fig4():
         a = share(x["attention_only"], x["persistence"])
         r = share(x["recurrent_only"], x["persistence"])
         b = share(x.get("both_blocked"), x["persistence"])
-        ax.bar(i - 0.2, a[0], 0.34, color=COL["retrieval"], label="entry via attention layers" if i == 0 else None)
-        ax.bar(i + 0.16, r[0], 0.34, color=COL["relay"], label="entry via recurrent layers" if i == 0 else None)
+        ax.bar(i - 0.2, a[0], 0.34, color=COL["retrieval"], label="via attention layers" if i == 0 else None)
+        ax.bar(i + 0.16, r[0], 0.34, color=COL["relay"], label="via recurrent layers" if i == 0 else None)
         for xx, v in ((i - 0.2, a), (i + 0.16, r)):
             if np.isfinite(v[1]):
                 ax.plot([xx, xx], [v[1], v[2]], color=COL["ink"], lw=0.7)
@@ -977,7 +977,7 @@ def fig4():
     ax.set_yticks([0, 10, 25, 50, 75, 100])
     ax.set_ylabel("% of persistence")
     ax.set_xlabel("Qwen3.5 (75% of layers recurrent)")
-    ax.legend(loc="upper left", handlelength=1.0, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(0, 1.04))
+    ax.legend(loc="upper left", handlelength=1.0, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(0, 1.04), fontsize=6.5, title="donor entry", title_fontsize=6.5)
     ax.set_title("A   Recurrent hybrid", x=-0.3)
 
     # B. Beyond Gemma 3's local attention window: measured distances only.
