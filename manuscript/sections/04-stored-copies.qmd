@@ -17,7 +17,8 @@ reset to its clean state in turn, with the rhyme word edited (@fig-sites A).
   the other boundary tokens are 0.00 to 0.11, with intervals that include zero.
 - With the plain prompt, where line 1 ends in a newline, the copy moves to the
   newline. In Gemma 3 12B the newline has necessity \(+0.68\) [0.41, 0.98] and the
-  comma \(+0.07\).
+  comma \(+0.07\). In Gemma 3 27B, where the copy is necessary for 74% of persistence,
+  it sits entirely on the newline (\(+19.7\) [18.1, 21.4]; the comma \(0.00\)).
 
 The storage site is therefore not a fixed token type. It is the last token of the
 line, whatever that token is. This is the position at which @lindsey2025biology

@@ -198,7 +198,8 @@ confirms that pick-specific information is stored after the list, in both famili
 converse check. The donor is the same list in another order with the *same* pick.
 Post-list donor states then leave the relative preference for the pick unchanged on
 average in Gemma 3 12B: \(-0.19\) [\(-0.53\), 0.16], against \(+1.01\) [0.78, 1.24] with
-out-of-list donors. \pending{same-pick null at Gemma 3 27B.}
+out-of-list donors. Gemma 3 27B gives the same null: \(-0.42\) [\(-0.96\), 0.10], against
+\(+2.48\) with out-of-list donors.
 
 These controls do not settle what the stored information is. The post-list positions
 could hold the pick itself. They could also hold a copy of the list from which the

@@ -537,3 +537,7 @@ Persistence +26.89 [25.18, 28.58]; necessity: all downstream +21.84 (81%), late 
 27B plan is carried to the rhyme mostly by the stored copy at the line's final token: the
 line-end copy is necessary for three quarters of persistence, the clearest hand-off in the
 study (Ma & Rui 2026 report the hand-off in Gemma-3-27B). Early relay stays at 1%.
+
+Gemma 3 - 27B - couplet routes - boundary tokens (plain; 2026-09-26): the stored copy sits
+entirely on the newline ending line 1, necessity +19.74 [18.12, 21.40] (sufficiency +9.56); the
+comma is 0.00 [-0.08, 0.07]. The line's final token again, as in every other run.

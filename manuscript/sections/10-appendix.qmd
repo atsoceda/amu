@@ -97,7 +97,7 @@ Hidden choice & mostly not reproduced by the post-list patch (list large, post-l
 Out-of-list control & post-list edit raises the absent donor pick & aaa8b75, 09-26 07:23 & holds in every model\\
 Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & 061b175, 09-26 09:34 & Gemma 3 partly (4B $>$ 12B); Qwen3 small (3\%, 7\%)\\
 Localization robustness & storage concentrates on one or two function words and moves with the wording & 0ae75d6, 09-26 14:40 & supported at 4B, 12B and 27B (the site moves with the rewording at all three)\\
-Same-pick null & a same-pick donor leaves pick preference unchanged & a2d7c65, 09-26 15:43 & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]); 27B \pending{}\\
+Same-pick null & a same-pick donor leaves pick preference unchanged & a2d7c65, 09-26 15:43 & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]) and 27B ($-0.42$ [$-0.96$, 0.10])\\
 Architecture generalization & early relay $<$5\%; induction retrieval $<$5\%; hidden relay near zero; family-like storage & ead2545, 09-26 14:50 & Qwen3.5-27B: storage 3--4\%, relay of the stored part 1\% (as predicted), induction retrieval 17\% (fails); Gemma 4 31B storage 82--91\% (family-like, as predicted); other cells not run\\
 \bottomrule
 \end{tabular}

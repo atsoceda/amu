@@ -381,3 +381,9 @@ Pick specificity +1.63 [1.38, 1.88] (text swap +6.89, 24%). By token: **the apos
 0.48] (21%); every other token below 0.05. The frozen check at its specified model: the storage
 moves with the wording (base wording: "the" in "about the weather", 77%). Supported at 4B, 12B
 and 27B.
+
+### Same-pick null: Gemma 3 - 27B - hidden choice - same-pick null (fruits; 100 pairs; 2026-09-26)
+
+Post-list edit, relative pick preference -0.42 [-0.96, 0.10] (text swap -0.39 [-0.91, 0.11]),
+against out-of-list pick specificity +2.48 at 27B. The null holds (interval includes zero), as at
+12B; like the 12B null it cannot separate a stored pick from a stored list copy.
