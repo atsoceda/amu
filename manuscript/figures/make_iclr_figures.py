@@ -314,7 +314,7 @@ def fig1(panel):
     xr0, xr1 = 1.92, 5.3
     axT = fig.add_axes([fx(xr0), fy(ybot + hb + brk), fx(xr1 - xr0), fy(ht)])
     axL = fig.add_axes([fx(xr0), fy(ybot), fx(xr1 - xr0), fy(hb)])
-    fig.text(0.0, fy(3.3), "The indirect path carries induction; elsewhere relay, or an unsplit indirect path, is small", fontsize=8,
+    fig.text(0.0, fy(3.3), "In every task and stress test, most of the effect is looked up", fontsize=8,
              weight="bold", va="top")
     den_y = fy(0.5)
 
