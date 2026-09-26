@@ -28,3 +28,9 @@ only when direct access is impossible, it should appear in Gemma at long distanc
   hidden choice, Gemma 12B) if Gemma 3 27B's relay share of persistence at D = 2000 is
   at least 25% with its 95% CI above zero; stop if below 10%; in between, extend to 50
   couplets. Qwen3-14B is the control (predicted flat).
+
+**Note (2026-09-26, after the first rows, before any summary):** at D = 2000 the Qwen3-14B
+control sometimes abandons the task (line 2 starts "Okay, I need to write…" or repeats
+line 1), which makes its rhyme measure uninterpretable for those couplets. The frozen
+design had no behavioural gate; results will be reported for all couplets and, as a
+post-hoc filter, for couplets whose line 2 rhymes with line 1 (`line2_rhymes_orig`).
