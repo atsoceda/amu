@@ -111,3 +111,23 @@ cells, plus necessity for the three groups (edit the anchor; reset one group to 
 added because Gemma's paths interact (sufficiency understated boundary storage before).
 Decision on generated-text relay share (sufficiency, as frozen): go >= 25%, stop < 10%;
 necessity reported alongside.
+
+### Gemma 3 - 27B - relay distance - pilot v2 extension (50 couplets per distance; 0 skipped)
+
+| | D = 0 | D = 2000 |
+|---|---|---|
+| line 2 rhymes | 98% | 82% |
+| persistence | +42.43 [38.57, 45.96] | +26.43 [23.77, 28.91] |
+| direct retrieval | +28.00 | +10.48 |
+| relay (absolute) | +0.98 [0.12, 1.92] | +13.09 [10.70, 15.59] (share 53%) |
+| boundary, sufficiency / necessity | +0.06 / +4.56 | +9.75 / **+13.00 [10.00, 16.11]** |
+| filler, sufficiency / necessity | 0.00 / 0.00 | +0.31 / +0.15 |
+| generated line 2 (cue + words), sufficiency / necessity | +0.45 / +7.34 | +3.20 [2.24, 4.27] / +2.70 [1.78, 3.65] |
+
+Decision on the frozen number (generated-text relay share, sufficiency): mean ratio 12%,
+median 10%, between the stop (10%) and go (25%) lines after the extension: generated-text
+relay at 2,000 tokens is small but nonzero. The dominant change with distance is the
+boundary: by necessity it carries about half of persistence at D = 2000 (13.0 of 26.4),
+while the generated line's necessity falls (7.3 -> 2.7; at D = 0 it is the late lookup in
+the last positions before the rhyme word). Distance shifts reliance onto the stored copy
+at the line boundary, not onto the generated text.
