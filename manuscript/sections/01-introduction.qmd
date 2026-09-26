@@ -11,17 +11,17 @@ recovered from, the text the model writes [@korbak2025monitorability;
 never states [@pfau2024dots; @roger2023steganography; @turpin2023unfaithful;
 @chen2025reasoning].
 
-In a transformer, information at one position can reach a later position by three paths
+In a transformer, information at one position can reach a later position in three ways
 (@fig-overview). It can be **emitted**: it changes the tokens the model writes, which
-are read back as input. It can be **retrieved**: the later position attends directly to
-where the information originates, or to visible text from which it can be recomputed. Or
-it can be **relayed**: positions of the generated text pick it up and pass it on.
-Emitted information is in the text, and retrieved information stays at a fixed position
-of the context, where it can be read or probed. Relayed information travels through the
-model's own output without appearing in it, so relay is the path by which a model could
-hold content across a chain of thought that never states it. A fourth possibility turns
-out to matter: a **stored copy**, written once into a structural position of the prompt
-next to the source and read directly from there. Prior work locates where plans are
+are read back as input. It can be **looked up**: read from a fixed position of the
+context, where it originates or in visible text from which it can be recomputed. Or it
+can be **relayed**: positions of the generated text pick it up and pass it on. Emitted
+information is in the text, and looked-up information stays at a fixed position of the
+context, where it can be read or probed. Relayed information travels through the model's
+own output without appearing in it, so relay is the path by which a model could hold
+content across a chain of thought that never states it. Lookup turns out to have a
+second site: a **stored copy**, written once into a structural position of the prompt
+next to the source. Prior work locates where plans are
 formed or can be steered [@pal2023futurelens; @lindsey2025biology; @hanna2026latent;
 @maar2026plan], not which path they take to where they are used.
 
@@ -36,9 +36,7 @@ We introduce **route accounting** (@sec-method). A donor's hidden states are wri
 the source positions, and the effect is measured where the information is used. Fixing
 the generated text separates emission from persistence. Clamping the states of chosen
 groups of positions, at every layer, separates direct retrieval of the source from
-indirect paths through intermediate positions, which we split by position into the
-stored copy, the late lookup just before the target, and relay along the rest of the
-generated text. For every group we report interventional sufficiency, necessity and their
+indirect paths through intermediate positions, which we split by position into the stored copy, the late lookup just before the target, and relay along the rest of the generated text. Direct retrieval, the stored copy and the late lookup are the three forms of lookup; relay is the one part of the indirect path that runs along the generated text. For every group we report interventional sufficiency, necessity and their
 interaction. On induction [@olsson2022induction], where the known mechanism passes
 information through the position of a copied token, route accounting finds that indirect
 path as the largest path in all nine models tested (@sec-control).
@@ -52,7 +50,7 @@ mainly from the rhyme word (68 to 95% of persistence in all but one configuratio
 relay along the generated line accounts for at most 1% in all 21 runs. Donor states at
 every position after a computed value's source move the answer by at most 4.9% (variable
 chains) and 6.4% (sums) of the source effect, while written intermediate values are
-followed: emission accounts for 83 to 101% of the effect.
+followed: emission accounts for at least 83% of the effect.
 
 Three stress tests with committed decision rules make relay useful or the content
 invisible (@sec-stress). In a recurrent hybrid, entry through the recurrent layers
@@ -63,9 +61,7 @@ its effect passes through the intervening sentence. The one path that grows is t
 copy: it appears at 14B and above in Qwen3 and at 12B to 27B in Gemma 3, is present in
 base checkpoints, and reconciles published accounts of where the rhyme plan lives.
 
-**Contributions.** (1) Route accounting, a position-level decomposition of intervention
-effects into emission, direct retrieval and indirect paths, validated on a positive
-control. (2) The principle that unwritten information is looked up, not relayed, across
+**Contributions.** (1) Route accounting, a position-level decomposition of intervention effects into emission, lookup and relay, validated on a positive control. (2) The principle that unwritten information is looked up, not relayed, across
 tasks, families, sizes, prompt formats, checkpoints and intervention types. (3) Three
 stress tests with committed decision rules that bound it. (4) A stored copy that emerges
 with scale, reconciling published accounts of rhyme planning.
@@ -96,7 +92,8 @@ the models tested, of persistence unless stated. *Looked up*: the target reads t
 a copy stored at a structural token next to it, or the late lookup. *Relay, or an unsplit
 indirect path*: relay along the generated text where it was separated (rhyme plans);
 otherwise the named group of intermediate positions. *Visible* content can be recovered by
-a reader of the text; *hidden* content cannot. Dashes mark cells the design rules out.
+a reader of the text; *hidden* content cannot. Dashes mark cells the design rules out. A
+share above 100% means that the other paths, or their interaction, are negative.
 The sections and appendix give the full results with 95% intervals.
 
 :::

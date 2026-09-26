@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.5"
+  version: "1.6"
   updated: "2026-09-26"
 ---
 
@@ -76,6 +76,17 @@ things and the paper needed "early relay" and glosses of "carry"):
   path. **Relay** means only the path along the remaining generated text, the one a
   monitor could miss. Never write "early relay", and never use "relay" for the umbrella.
 - **looked up**: direct retrieval, the stored copy or the late lookup.
+- The abstract, introduction and contributions use one top-level trio: **emission,
+  lookup, relay**. The measurement split (direct retrieval versus indirect path, and the
+  indirect path's three parts) appears only where route accounting is described, with the
+  sentence that ties the two: direct retrieval, the stored copy and the late lookup are
+  the three forms of lookup; relay is one part of the indirect path. Mixing the trios
+  (for example "emission, retrieval, relay" in the abstract and "emission, direct
+  retrieval, indirect paths" in the contributions) made the user ask whether relay and
+  indirect path are the same thing.
+- Do not put a share above 100% in the abstract or introduction; write "at least X%".
+  Where a table or section reports one, say why (the other paths or the interaction are
+  negative).
 - **path**, not "route", except in the method name "route accounting".
 - **carry** appears only in the title and the slogan "look it up, don't carry it", as
   plain English; never define it or use it as a path name. For a share of an effect
