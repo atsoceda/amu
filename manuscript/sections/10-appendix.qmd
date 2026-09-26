@@ -36,7 +36,7 @@ because bfloat16 logits resolve only about 0.125 nats.
 **Couplet prompts.** The chat format of @hanna2026latent. The user turn is
 "Write only the next line of this rhyming couplet: {line 1}", preceded by
 `/no_think` for Qwen3. The plain format of @ma2026plan is `A rhyming couplet:\n{line
-1}\n`, with no template; line 2 is the continuation up to the next newline. Rhymes use
+1}\n`, with no template; line 2 is the continuation up to the next newline. Chat and plain are prompt formats, not checkpoint types: instruction-tuned checkpoints are run with both, base checkpoints with the plain format only. Rhymes use
 the perfect-rhyme sets of the Datamuse API, following @hanna2026latent. The outcome
 uses the single-token words of each set.
 

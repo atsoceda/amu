@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.9"
+  version: "1.10"
   updated: "2026-09-26"
 ---
 
@@ -98,6 +98,11 @@ things and the paper needed "early relay" and glosses of "carry"):
   or a cited author's own term (the "late retrieval" and the circuit that "retrieves" in
   Hanna and Ameisen). The umbrella is **lookup**; the verb "look up" / "looked up" names
   the same defined category, so "retrieval-dominated" becomes "lookup-dominated".
+- **Chat** and **plain** are prompt formats (the chat template of Hanna and Ameisen; the
+  template-free prompt of Ma and Rui), not checkpoint types. Instruct checkpoints run with
+  both; base checkpoints only with plain. Say so where the formats are introduced, or
+  readers take plain for pretrained. Label every figure point that carries a number with
+  its series, not just the number (a bare "necessity 74%" label confused the user).
 - Do not put a share above 100% in the abstract or introduction; write "at least X%".
   Where a table or section reports one, say why (the other paths or the interaction are
   negative).

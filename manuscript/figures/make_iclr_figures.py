@@ -521,7 +521,7 @@ def fig2():
                        edgecolor=COL["storage"], lw=0.8, zorder=4)
             for p_ in nec:
                 if p_[1] > 45:
-                    bx.annotate(f"necessity {p_[1]:.0f}%", xy=(lx(p_[0]), p_[1]),
+                    bx.annotate(f"{title.replace(',', '')}: necessity {p_[1]:.0f}%", xy=(lx(p_[0]), p_[1]),
                                 xytext=(lx(p_[0]) + 0.12, p_[1]), fontsize=7, color="#1B6E53", ha="left",
                                 va="center", arrowprops=dict(arrowstyle="-", color="#9BCDB9", lw=0.5))
     # Direct labels at the line ends, spread so they do not overlap.

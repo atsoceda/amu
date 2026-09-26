@@ -2,11 +2,12 @@
 
 ## Rhyme plans {#sec-couplets}
 
-Rhyming couplets are the flagship case of latent planning: the model commits to a rhyme
-at the end of line 1 and realizes it at the end of line 2 [@lindsey2025biology;
-@hanna2026latent]. We use the couplet prompts and chat format of @hanna2026latent and
-repeat every run with the plain prompt of @ma2026plan (100 couplets per run; Appendix
-@sec-app-couplets). The source is the last word of line 1, the donor a couplet from a
+Rhyming couplets are the flagship case of latent planning [@lindsey2025biology;
+@hanna2026latent]. We use the couplet prompts of @hanna2026latent in their chat format
+and repeat every run with the plain prompt of @ma2026plan, which has no chat template.
+*Chat* and *plain* name prompt formats, not checkpoints: instruction-tuned models are
+run with both, and base checkpoints, which have no chat template, with the plain prompt
+only (100 couplets per run; Appendix @sec-app-couplets). The source is the last word of line 1, the donor a couplet from a
 different rhyme group, and the target the position that predicts the first token of
 line 2's last word, with the line-2 prefix fixed. The edit moves line 2 off its rhyme (at
 most 2% of second lines still rhyme with the original, against 83 to 100% before the
