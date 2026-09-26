@@ -27,9 +27,9 @@ positions and generated tokens.
 label words in in-context learning [@wang2023labelwords], separators that summarize
 a segment [@chen2024sepllm], attention sinks [@xiao2024sinks], and register tokens in
 vision transformers [@darcet2024registers]. @shih2026registers study whether models
-read the registers they write in scratchpads. The line-end copy and the stored hidden
-pick extend this picture. Under causal tests, these positions store task content
-that a later position reads directly, and the line-end copy grows with scale and
+read the registers they write in scratchpads. The stored copy of the rhyme plan and the
+stored hidden pick extend this picture. Under causal tests, these positions store task content
+that a later position reads directly, and the stored copy grows with scale and
 distance.
 
 **Chain-of-thought faithfulness and monitoring.** Written reasoning can be
@@ -42,7 +42,7 @@ is necessary for the task [@emmons2025cot]. These studies measure behaviour. Rou
 accounting measures the internal paths directly. Its two findings bear on
 monitorability: written values are used in proportion to their leverage, and
 unwritten content is looked up at a few prompt positions rather than passed along
-the generated text by early relay. Work on eliciting secrets from models trained to keep them
+the generated text. Work on eliciting secrets from models trained to keep them
 [@cywinski2025taboo] studies hidden content that training installs. Our hidden choice
 arises without any training.
 

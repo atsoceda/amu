@@ -17,15 +17,16 @@ In a transformer, information present at one position can reach a later position
 by three paths (@fig-overview A). It can be **emitted**: it changes the tokens the
 model writes, and those tokens are read back as input. It can be **retrieved**: the
 later position attends directly to the position where the information originates,
-or to the visible text from which it can be recomputed. Or it can be **relayed**: intermediate positions, including the tokens the model
-generates, read it and pass it on to later ones. The three paths differ in what a
-monitor can see. Emitted information is in the text. Retrieved information stays at
-a fixed position of the context, where it can be read or probed. Relayed information
-travels through the model's own output without appearing in it. Relay is therefore
-the path by which a model could hold or update content across a chain of thought
-that never states it. Between retrieval and relay sits a fourth possibility that
-turns out to matter: a **stored copy**, written once into a structural position of
-the prompt next to the source and read directly from there.
+or to the visible text from which it can be recomputed. Or it can be **relayed**:
+positions of the text the model generates pick it up and pass it on to later ones.
+The three paths differ in what a monitor can see. Emitted information is in the text.
+Retrieved information stays at a fixed position of the context, where it can be read
+or probed. Relayed information travels through the model's own output without
+appearing in it. Relay is therefore the path by which a model could hold or update
+content across a chain of thought that never states it. A fourth possibility turns
+out to matter: a **stored copy**, written once into a structural position of the
+prompt next to the source and read directly from there. Like retrieval, it leaves the
+information at a fixed position of the context.
 
 Prior work establishes that planning signals exist and are causally used: they are
 decodable ahead of time [@pal2023futurelens; @wu2024plan; @men2024lookahead],
@@ -40,15 +41,18 @@ position that predicts the rhyme at the end of line 2, with the line-2 words hel
 fixed. Line widths are proportional to each path's measured share of persistence in
 Qwen3-32B with the chat prompt. Most of the plan is read directly from the rhyme word.
 The copy stored at the comma ending line 1 and the late lookup through the last three
-positions account for most of the rest. Early relay along the generated line accounts
-for 1%. **B:** for every setting and model, the share of the effect that is looked up
-(blue) and the share that is relayed (purple), with 95% intervals. The positive control has its own axis (0 to 150%), with the pass threshold set before the experiment (relay above 80% of persistence). The other
-settings share a broken axis: looked-up shares on the upper segment, relayed shares on
-the lower segment (to 30%), with the committed stop (10%) and go (25%) lines of the
-stress tests. The denominator is given under each group; Qwen3 is shown filled,
-Qwen3.5 as triangles, Gemma 3 open. In the positive control,
-where relay is the known mechanism, relay is the largest path. Elsewhere the measured
-relay cells are small; interactions, reported separately in the sections, are not shown
+positions account for most of the rest. Relay along the generated line accounts for
+1%. **B:** for every setting and model, the share of the effect that is looked up
+(blue) and the share that is relayed, or takes an indirect path that was not split
+further (purple), with 95% intervals. The positive control has its own axis (0 to 150%), with
+the pass threshold set before the experiment (an indirect path above 80% of
+persistence). The other settings share a broken axis: looked-up shares on the upper
+segment, purple shares on the lower segment (to 30%), with the committed stop (10%)
+and go (25%) lines of the stress tests. The group of intermediate positions and the
+denominator are given under each group; Qwen3 is shown filled, Qwen3.5 as triangles,
+Gemma 3 open. In the positive control, where an indirect path is the known mechanism,
+it is the largest path. Elsewhere the purple shares are small; interactions,
+reported separately in the sections, are not shown
 here.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
 
 We introduce **route accounting**, a decomposition of an intervention's effect by
@@ -56,26 +60,30 @@ path (@sec-method). A donor's hidden states are written at the source positions,
 the effect is measured where the information is used. Clamping the states of chosen
 groups of positions to their clean or edited values, at every layer, isolates each
 path. Emission is separated from persistence by fixing the generated text. Within
-persistence, direct retrieval is separated from relay, and relay is split by position
-into the stored copy, the late lookup just before the target, and early relay along
-the generated text. For every group of positions we measure what the group achieves
-alone (interventional sufficiency) and what is lost without it (interventional
-necessity), and we report the interaction between paths explicitly. Because a method
-that never finds relay would be uninformative, we validate route accounting on
-induction [@olsson2022induction], where relay through the copied token's position is
-the known mechanism. Relay is the largest path in all nine models tested. The committed criterion (relay above 80%, direct retrieval near zero) holds cleanly in four and partly in five, for reasons we identify (@sec-control).
+persistence, direct retrieval of the source is separated from indirect paths through
+intermediate positions, and those are split by position into the stored copy, the
+late lookup just before the target, and relay along the rest of the generated text.
+For every group of positions we measure what the group achieves alone
+(interventional sufficiency) and what is lost without it (interventional necessity),
+and we report the interaction between paths explicitly. A method that never finds an
+indirect path would be uninformative, so we validate route accounting on induction
+[@olsson2022induction], where the known mechanism passes information through the
+position of a copied token. That indirect path is the largest path in all nine models
+tested. The committed criterion (the indirect path above 80% of persistence, direct
+retrieval near zero) holds cleanly in four and partly in five, for reasons we identify
+(@sec-control).
 
 Applied to four tasks in 15 checkpoints from three model families, route accounting
 finds a consistent principle, within the settings tested (short generated spans,
-thinking disabled): **look it up, don't carry it**. In that sentence, carry means early relay. Models read unwritten
-information near the point of use from a fixed
-position of the prompt: the position where it originates, or a copy stored at a
-structural token next to it, rather than pass it along the generated text (@tbl-map).
+thinking disabled): **look it up, don't carry it**. Models read unwritten information
+near the point of use from a fixed position of the prompt, the position where it
+originates or a copy stored at a structural token next to it, rather than relay it
+along the text they generate (@tbl-map).
 
 - *Visible plans.* Rhyme plans reach the rhyme mainly by direct retrieval of the rhyme
-  word: 68 to 95% of persistence in every configuration but one (@sec-lookup). Early
-  relay along the generated line is at most 1% of persistence: by sufficiency in all
-  21 runs, and by necessity in the 17 where it was measured.
+  word: 68 to 95% of persistence in every configuration but one (@sec-lookup). Relay
+  along the generated line is at most 1% of persistence: by sufficiency in all 21
+  runs, and by necessity in the 17 where it was measured.
 - *Computed values.* Donor states at every position after the source move the answer by
   at most 4.9% of the source effect in variable chains, and 6.4% in sums, while edits of
   the source remain effective. This near-zero downstream patch effect is consistent
@@ -86,59 +94,62 @@ structural token next to it, rather than pass it along the generated text (@tbl-
 
 A regularity found under favourable conditions is only as strong as the tests that
 could have broken it. We therefore test the principle in three settings chosen to make
-relay useful where attention cannot do the work, or to make the content invisible, each with a decision rule committed before the
-result (@sec-stress). They bound the principle rather than confirm it.
+relay useful where attention cannot do the work, or to make the content invisible,
+each with a decision rule committed before the result (@sec-stress). They bound the
+principle rather than confirm it.
 
 - **Recurrent memory.** In the Qwen3.5 hybrid, three of every four layers can pass
-  information forward only through a recurrent state, so relay is available to most  of the network [@yang2025gateddeltanet]. The test asks which route the model uses
-  when both exist. When the donor signal may enter only through the recurrent layers at
-  the source, it produces 2 to 4% of persistence at 4B, 9B and 27B parameters, below the
+  information forward only through a recurrent state, so relay is available to most of
+  the network [@yang2025gateddeltanet]. The test asks which path the model uses when
+  both exist. When the donor signal may enter only through the recurrent layers at the
+  source, it produces 2 to 4% of persistence at 4B, 9B and 27B parameters, below the
   committed stop line; entering through the attention layers, it produces 95 to 97%.
 - **Distance.** Beyond Gemma 3's 1,024-token local window, five of six layers cannot
   read the source [@gemma3]. As filler grows from 0 to 2,000 tokens, the 27B model
   shifts from reading the rhyme word toward the stored copy at the line's final token,
   which becomes necessary for about half of persistence. The shift is gradual, steepest
-  as line 1 leaves the window. Relay through the generated text (the cue and line 2,
-  including its last three positions) is 9 to 13% of persistence by sufficiency at every nonzero
-  distance. This block has not been split into early relay and late lookup, and it
-  falls between the committed stop (10%) and go (25%) lines, so it is a boundary case
-  whose early-relay contribution remains unresolved. In the 12B model, which stores little at the line end, the plan fades
-  with distance, already inside the window, and relay never takes over.
+  as line 1 leaves the window. The indirect path through the generated text (the cue
+  and line 2) is 9 to 13% of persistence by sufficiency at every nonzero distance. It
+  was not split into late lookup and relay, and it falls between the committed stop
+  (10%) and go (25%) lines, so how much of it is relay remains unresolved. In the 12B
+  model, which stores little at the end of the line, the plan fades with distance,
+  already inside the window, and no indirect path takes over.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
   monitoring cares about most. Information specific to a secret pick is stored after
   the list, at a few predictable, low-content tokens: the punctuation that closes the
-  list or the instruction, and a function word or possessive token of the instruction, which at 4B, 12B and 27B moves when the instruction is reworded. The reveal reads it there. The intervening sentence never
-  names the pick and has no measurable causal effect on it through emission. Relay
-  through that sentence is at most 2% of the text-swap effect, although in Qwen3-32B and the Qwen3.5 hybrids it is one eighth to one fifth of the
-  small stored part.
+  list or the instruction, and a function word or possessive token of the instruction,
+  which at 4B, 12B and 27B moves when the instruction is reworded. The reveal reads it
+  there. The intervening sentence never names the pick and has no measurable causal
+  effect on it through emission. The indirect path through that sentence is at most 2%
+  of the text-swap effect, although in Qwen3-32B and the Qwen3.5 hybrids it is one
+  eighth to one fifth of the small stored part.
 
-The one route that grows is the stored copy, and it grows in three ways (@sec-storage).
+The one path that grows is the stored copy, and it grows in three ways (@sec-storage).
 It grows with scale. The copy at the line's final token (the comma in chat prompts,
 the newline in plain prompts) appears at 14B and above in Qwen3 and at 12B to 27B in
-Gemma 3. It is also present in the base checkpoints we tested, so it most likely arises in
-pretraining. It grows
-with distance: beyond the attention window it is necessary for about half of the
-plan's effect. And it is where hidden, pick-specific information is kept, at
-segment-closing punctuation and function words or possessive tokens of the prompt. Stored copies thus sit
-at a few predictable tokens next to their sources, which makes them a natural target
-for monitoring internal state. The same analysis reconciles published accounts of
-where the rhyme plan lives. The plan is read from the rhyme word [@hanna2026latent],
-and it is also placed at the line boundary [@lindsey2025biology; @ma2026plan]. These
-are two lookup sites that coexist, in proportions that depend on scale, family and
-prompt format.
+Gemma 3. It is also present in the base checkpoints we tested, so it most likely
+arises in pretraining. It grows with distance: beyond the attention window it is
+necessary for about half of the plan's effect. And it is where hidden, pick-specific
+information is kept, at segment-closing punctuation and function words or possessive
+tokens of the prompt. Stored copies thus sit at a few predictable tokens next to their
+sources, which makes them a natural target for monitoring internal state. The same
+analysis reconciles published accounts of where the rhyme plan lives. The plan is
+read from the rhyme word [@hanna2026latent], and it is also placed at the end of the
+line [@lindsey2025biology; @ma2026plan]. These are two lookup sites that coexist, in
+proportions that depend on scale, family and prompt format.
 
 **Contributions.**
 
 1. Route accounting: a path-level decomposition of intervention effects in
    autoregressive generation. It separates emission from persistence, direct
-   retrieval from relay, and the stored copy, the late lookup and early relay from one
-   another. It reports interventional sufficiency, necessity and interaction for every
-   group of positions, and is validated on a positive control.
+   retrieval from indirect paths, and the stored copy, the late lookup and relay from
+   one another. It reports interventional sufficiency, necessity and interaction for
+   every group of positions, and is validated on a positive control.
 2. A principle with its evidence and its scope: in the settings tested, unwritten
-   information is looked up, not passed on by early relay. The evidence covers visible plans, computed
-   values and hidden choices, across families, sizes, prompt formats and instruct
-   versus base checkpoints. It holds under the published feature steering of
-   @hanna2026latent as well as under state edits.
+   information is looked up, not relayed along the generated text. The evidence covers
+   visible plans, computed values and hidden choices, across families, sizes, prompt
+   formats and instruct versus base checkpoints. It holds under the published feature
+   steering of @hanna2026latent as well as under state edits.
 3. Three stress tests with decision rules committed before their results (recurrent
    memory, attention distance, hidden content). They bound where the principle holds
    and quantify the largest deviation we observe.
@@ -153,13 +164,13 @@ prompt format.
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.35cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{4.75cm}>{\raggedright\arraybackslash}p{3.75cm}@{}}
 \toprule
-Content (observability) & Emission & Looked up: direct retrieval, stored copy or late lookup & Other relay\\
+Content (observability) & Emission & Looked up: direct retrieval, stored copy or late lookup & Relay, or an unsplit indirect path\\
 \midrule
-Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is 37\% by sufficiency and 74\% by necessity); stored copy otherwise 0--16\% by sufficiency; late lookup 1--13\% & early relay $\le$1\%\\
-Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & generated text (incl.\ last three positions): 9--13\%\\
+Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is 37\% by sufficiency and 74\% by necessity); stored copy otherwise 0--16\% by sufficiency; late lookup 1--13\% & relay $\le$1\%\\
+Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & through the generated text, late lookup and relay together: 9--13\%\\
 Computed value, unwritten (visible) & -- & source edits effective; downstream patch effect near zero & every later position together: $\le$4.9\% of the source effect (chains), $\le$6.4\% (sums)\\
 Computed value, written (visible) & 83--101\% & bypass to the source $-1$--17\% & --\\
-Secret choice (hidden) & no measurable effect (the sentence never names it) & pick-specific information stored after the list: 0--40\% of the text-swap reference, read directly at the reveal (Gemma~4 31B stores 82--91\%; its route split was not run); the rest not reproduced by the post-list patch & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$8\% (Qwen3.5 hybrids)\\
+Secret choice (hidden) & no measurable effect (the sentence never names it) & pick-specific information stored after the list: 0--40\% of the text-swap reference, read directly at the reveal (Gemma~4 31B stores 82--91\%; its path split was not run); the rest not reproduced by the post-list patch & through the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$8\% (Qwen3.5 hybrids)\\
 \midrule
 Induction (positive control) & -- & direct retrieval $\le$3\% (10--31\% in Qwen3-32B and the Qwen3.5 hybrids) & through the copied token's position (prompt): 53--137\%\\
 \bottomrule
@@ -170,8 +181,12 @@ Where unwritten information travels. Each cell gives the share of the effect tha
 travels by a path, as a range over the models tested; the denominator is persistence
 unless stated. *Looked up*: the target reads the source, a copy stored at a structural
 token next to it, or positions just before the target that read it (late lookup).
-*Other relay*: relay that is not in the looked-up column. Each cell names its own group. Only the rhyme-plan cell is early relay. The filler-distance cell is the unsplit generated-text block, including the last three positions. The unwritten-value cell is every later position together. The hidden-choice cell is relay through the sentence. The induction cell is relay through the copied prompt token. Observability: *visible* content can be recovered by a
-reader of the text; *hidden* content cannot. Dashes mark cells that the design rules
-out. For written computed values, 101% is 32B at \(K=5\): the bypass is slightly negative, and emission plus that bypass equals the total. Sections and figures give the full results with 95% intervals.
+*Relay, or an unsplit indirect path*: relay along the generated text where it was
+separated from the late lookup (rhyme plans); otherwise the named group of
+intermediate positions, not split further. Observability: *visible* content can be
+recovered by a reader of the text; *hidden* content cannot. Dashes mark cells that the
+design rules out. For written computed values, 101% is 32B at \(K=5\): the bypass is
+slightly negative, and emission plus that bypass equals the total. Sections and
+figures give the full results with 95% intervals.
 
 :::

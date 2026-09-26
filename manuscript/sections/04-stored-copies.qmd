@@ -1,7 +1,8 @@
 # Where the stored copy sits: mostly on the line's final token {#sec-storage}
 
-@sec-couplets found that the relay growing with scale sits in the positions between
-line 1 and line 2, not in the generated line. Here we locate it token by token, test
+@sec-couplets found that the indirect share that grows with scale sits in the
+positions between line 1 and line 2 (the boundary positions), not in the generated
+line. Here we locate it token by token, test
 whether it is specific to rhymes and to post-training, and compare it with
 published accounts.
 
@@ -49,19 +50,19 @@ share of persistence by both measures (bottom row of @fig-couplets).
   either format). It appears at 14B: 8% of persistence in the chat format and 16% in
   the plain format, by necessity. It remains at 32B (11% and 13%).
 - In Gemma 3 it is absent at 1B and 4B, small at 12B (1 to 3%), and present at 27B:
-  11% by necessity in the chat format, and in the plain format 37% by sufficiency and 74% by necessity (\(+19.8\) [18.2, 21.5] of \(+26.9\)). The plain format at 27B is the one configuration in which more of the plan is read from the line's final token than from the rhyme word (19%): a near-complete hand-off to the stored copy, while early relay stays at 1%.
+  11% by necessity in the chat format, and in the plain format 37% by sufficiency and 74% by necessity (\(+19.8\) [18.2, 21.5] of \(+26.9\)). The plain format at 27B is the one configuration in which more of the plan is read from the line's final token than from the rhyme word (19%): a near-complete hand-off to the stored copy, while relay stays at 1%.
 - The base checkpoints store it as well. Qwen3-14B-Base stores 16% by sufficiency,
   against 13% for the instruct model in the same format; Gemma 3 12B PT stores 5%
   and 6% against 2% and 3%. Qwen3-8B-Base, like the 8B instruct model, stores
   nothing. In the three base checkpoints tested, the copy is present wherever the
   matching instruct model has it, so it most likely arises in pretraining rather than
   from instruction tuning.
-- With same-rhyme donors, the boundary component vanishes (\(-0.02\) to \(+0.01\) at 8B
+- With same-rhyme donors, the stored copy vanishes (\(-0.02\) to \(+0.01\) at 8B
   to 32B, against \(+0.06\) to \(+1.72\) with different-rhyme donors). It encodes the
   rhyme, not the disruption of the edit.
 
 **Where paths interact, the copy matters more than its sufficiency suggests.** In Gemma 3 27B with the chat
-prompt, the line-end copy alone moves the rhyme by only \(+0.68\), yet resetting it
+prompt, the stored copy alone moves the rhyme by only \(+0.68\), yet resetting it
 removes \(+4.87\) [3.18, 6.73] of a persistence of \(+43.1\). The additivity gap is
 29% of persistence (Qwen3 at most 5%). The target combines the rhyme word and the
 copy. When only one of them is edited, it reads conflicting evidence and moves less
@@ -108,12 +109,12 @@ the plan lives. The disagreement dissolves once both lookup sites are measured.
   word, and that blocking them breaks rhyming up to 14B. In our terms this is direct
   retrieval together with the late lookup, which dominate at every Qwen3 size.
 - @lindsey2025biology find Claude's plan at the newline ending line 1, and @maar2026plan
-  steer successfully at the line end. This is the line-end copy, which appears in
-  larger models.
+  steer successfully at the end of the line. This is the stored copy, which appears
+  in larger models.
 - @ma2026plan patch single layers in plain-text couplets. They report a hand-off from
   the rhyme word to the newline in Gemma 3 27B only, and none in Qwen3-32B. Our
-  plain-format measurements agree: Gemma 3 27B reads more of the plan from the line
-  end (37%) than from the rhyme word (19%). Qwen3-32B keeps a partial copy (10 to
+  plain-format measurements agree: Gemma 3 27B reads more of the plan from the stored
+  copy (37%) than from the rhyme word (19%). Qwen3-32B keeps a partial copy (10 to
   13%), which a single-layer patch of the naturally computed state can plausibly
   miss.
 - @jacopin2026improvisation finds no newline effect at 0.6B to 2.6B. We also find
@@ -122,10 +123,10 @@ the plan lives. The disagreement dissolves once both lookup sites are measured.
 Each account is correct for the configuration it studies. The proportions of the two
 sites depend on scale, family and prompt format.
 
-**Is a stored copy early relay?** The line-end copy passes through an intermediate
-position, so formally it is relay. It differs from early relay in three
-ways. It is written once, into a fixed structural position of the prompt next to the
-source. It is read directly by the target, however much text intervenes. And it
-does not move with generation. For a monitor, it is one more place to read, not a
-path that runs through the model's output. We therefore report it separately, as a
-stored copy. Early relay is the name for the path along the generated text.
+**Why the stored copy is not counted as relay.** The stored copy reaches the target
+through an intermediate position, as relay does. It differs in three ways. It is
+written once, into a fixed structural position of the prompt next to the source. It is
+read directly by the target, however much text intervenes. And it does not move with
+generation. For a monitor, it is one more place to read, not a path that runs through
+the model's output. We therefore count it as a lookup, and keep the name relay for the
+path along the generated text.

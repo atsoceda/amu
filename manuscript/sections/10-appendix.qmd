@@ -64,7 +64,8 @@ outcome. Deviations are dated in each experiment's record. The main ones:
   1.7B and before any real run;
 - pick specificity, added post hoc for fruits, then committed as the primary measure
   of the animal replication before its result;
-- the absolute-relay reading rule for distance, added after the full-attention
+- the absolute-effect reading rule for distance (a rise in the indirect share counts
+  only if the absolute indirect effect also grows), added after the full-attention
   control and before the Gemma 3 result;
 - the fast path for the Qwen3.5-27B pilot (24 couplets, screen generations reused),
   committed before its result;
@@ -82,23 +83,23 @@ outcome. Deviations are dated in each experiment's record. The main ones:
 \toprule
 Experiment & Decision rule or prediction & Committed & Outcome\\
 \midrule
-Relay grows with scale (couplets) & (1) relay share rises with log size; (2) the rise comes from early line 2; (3) replicates in Gemma 3 & d4622d2, 09-25 23:11 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails; not ``carrying grows''\\
-Plain-format couplets & direct retrieval dominates; line-end copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & 34c0cbd, 09-25 23:59 & all three hold\\
+Relay grows with scale (couplets) & (1) the indirect share rises with log size; (2) the rise comes from relay (line-2 positions before the last three); (3) replicates in Gemma 3 & d4622d2, 09-25 23:11 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails, so relay does not grow\\
+Plain-format couplets & direct retrieval dominates; stored copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & 34c0cbd, 09-25 23:59 & all three hold\\
 Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 09-26 02:45 & reported for 17 runs\\
-Induction control & relay $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (relay 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (retrieval 31\%, 10\%, 17\%)\\
+Induction control & indirect path $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (indirect 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (retrieval 31\%, 10\%, 17\%)\\
 Sums & computation-position edit must move the answer (efficacy gate) & 7f5a9a6, 09-25 22:05 & gate fails at every size; downstream block $\le$6.4\%\\
-Variable chains & chain relay $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$4.9\%\\
+Variable chains & indirect path through the chain $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$4.9\%\\
 Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--101\%; 101\% where the bypass is negative)\\
-Recurrent carry & go if recurrent-only $\ge$25\%, stop if $<$10\% (largest model) & 784c78b, 09-26 10:24 & stop (2\% at 27B)\\
-Distance & go if generated-text relay $\ge$25\%, stop if $<$10\%, else extend & 2df09ce, 09-26 11:56; v2 6caf0e5; extension 0dda3b3 & extended; 12\%: between stop and go\\
+Recurrent memory & go if recurrent-only $\ge$25\%, stop if $<$10\% (largest model) & 784c78b, 09-26 10:24 & stop (2\% at 27B)\\
+Distance & go if the indirect path through the generated text $\ge$25\%, stop if $<$10\%, else extend & 2df09ce, 09-26 11:56; v2 6caf0e5; extension 0dda3b3 & extended; 12\%: between stop and go\\
 Window curve (27B) & the change in reliance occurs between 1,000 and 1,500 tokens & a2d7c65, 09-26 15:43 & partly supported: largest point-estimate step there, but the shift begins at 500 tokens (interior points 18 couplets, endpoints 50)\\
 Window curve (12B) & plan survives inside the window, lost outside & 9edfacc, 09-26 17:00 & not supported: gradual fade from 500 tokens (distance, not the window)\\
-Hidden choice & mostly not reproduced by the post-list patch (list large, post-list and sentence small) vs stored or relayed & 144f545, 09-26 06:47 & mostly not reproduced by the post-list patch; small stored part; relay $\le$2\% of the text swap\\
+Hidden choice & mostly not reproduced by the post-list patch (list large, post-list and sentence small) vs stored or passed through the sentence & 144f545, 09-26 06:47 & mostly not reproduced by the post-list patch; small stored part; through the sentence $\le$2\% of the text swap\\
 Out-of-list control & post-list edit raises the absent donor pick & aaa8b75, 09-26 07:23 & holds in every model\\
 Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & 061b175, 09-26 09:34 & Gemma 3 partly (4B $>$ 12B); Qwen3 small (3\%, 7\%)\\
 Localization robustness & storage concentrates on one or two function words and moves with the wording & 0ae75d6, 09-26 14:40 & supported at 4B, 12B and 27B (the site moves with the rewording at all three)\\
 Same-pick null & a same-pick donor leaves pick preference unchanged & a2d7c65, 09-26 15:43 & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]) and 27B ($-0.42$ [$-0.96$, 0.10])\\
-Architecture generalization & early relay $<$5\%; induction retrieval $<$5\%; hidden relay near zero; family-like storage & ead2545, 09-26 14:50 & Qwen3.5-27B: storage 3--4\%, relay of the stored part 1\% (as predicted), induction retrieval 17\% (fails); Gemma 4 31B storage 82--91\% (family-like, as predicted); other cells not run\\
+Architecture generalization & relay $<$5\%; induction retrieval $<$5\%; hidden choice through the sentence near zero; family-like storage & ead2545, 09-26 14:50 & Qwen3.5-27B: storage 3--4\%, stored part through the sentence 1\% (as predicted), induction retrieval 17\% (fails); Gemma 4 31B storage 82--91\% (family-like, as predicted); other cells not run\\
 \bottomrule
 \end{tabular}
 ```
@@ -110,8 +111,8 @@ the outcome.
 
 # Additional couplet results {#sec-app-couplets}
 
-@tbl-couplets-full gives the route split for every couplet run. Shapley values
-for the line-end copy (the average of sufficiency and necessity) are \(+1.73\)
+@tbl-couplets-full gives the path split for every couplet run. Shapley values
+for the stored copy (the average of sufficiency and necessity) are \(+1.73\)
 (Qwen3-14B), \(+2.07\) (Qwen3-32B), \(+2.78\) (Gemma 3 27B), \(+2.81\) (Qwen3-14B plain), \(+2.05\)
 (Qwen3-32B plain) and \(+0.77\) (Gemma 3 12B plain).
 
@@ -122,7 +123,7 @@ for the line-end copy (the average of sufficiency and necessity) are \(+1.73\)
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}lcccccccccc@{}}
 \toprule
-Run & Donor rhyme & Total & Emission & Persistence & Retrieval & Relay & Late & Line end & Early & Gap\\
+Run & Donor rhyme & Total & Emission & Persistence & Retrieval & Indirect & Late & Stored & Relay & Gap\\
 \midrule
 Qwen3-1.7B & 27\% & 14.4 & 2.7 & 12.1 & 95\% & 7\% & 6\% & 0\% & $-1$\% & $-1$\%\\
 Qwen3-4B & 43\% & 19.5 & 3.1 & 15.3 & 91\% & 10\% & 10\% & 0\% & 0\% & $-2$\%\\
@@ -149,8 +150,12 @@ Gemma 3 12B PT, plain & 73\% & 16.7 & 4.0 & 13.7 & 80\% & 19\% & 13\% & 5\% & 1\
 \end{tabular}
 ```
 
-Couplet routes for every run (100 couplets; shares of persistence with the original
+Couplet paths for every run (100 couplets; shares of persistence with the original
 line-2 words). Total and emission in log-odds; donor rhyme rate after the edit.
+*Retrieval*: direct retrieval of the rhyme word. *Indirect*: all intermediate positions
+together, split into *Late* (the late lookup), *Stored* (the stored copy) and *Relay*,
+which need not sum exactly to it.
+*Gap*: the interaction, persistence minus retrieval minus indirect.
 
 :::
 
@@ -158,12 +163,13 @@ line-2 words). Total and emission in log-odds; donor rhyme rate after the edit.
 Qwen3-1.7B: the rhyme word \(+12.1\), end of turn \(+6.0\), punctuation \(+5.7\), a
 middle word \(+5.5\), the first word \(+3.5\). At 8B: \(+22.6\), \(+10.6\), \(+10.7\), \(+8.6\)
 and \(+5.1\). At 32B: \(+22.2\), \(+11.0\), \(+11.5\), \(+4.5\) and \(+3.8\). At Gemma 3 12B:
-\(+41.2\), \(+15.3\), \(+14.2\), \(+10.9\) and \(+7.9\). Relay is small from every position.
+\(+41.2\), \(+15.3\), \(+14.2\), \(+10.9\) and \(+7.9\). The indirect path is small from
+every source position.
 
 **Converging evidence from the released attention intervention.** @hanna2026latent
 block the heads that read the rhyme word near the end of line 2. Afterwards only 30%,
 20%, 13% and 32% of couplets still rhyme at 1.7B, 4B, 8B and 14B, all of which rhymed
-before. Direct retrieval is necessary, and relay does not replace it.
+before. Direct retrieval is necessary, and no indirect path replaces it.
 
 # Computed values {#sec-app-computed}
 
@@ -283,12 +289,12 @@ A non-archival workshop version of this work introduced the emission and persist
 decomposition, there called public and private routes, on Gemma 3 270M and 1B with
 sparse-feature and residual interventions on the article *a/an*. That version also
 reported *mediator-relative routing*: target-directed interventions appeared to shift
-toward the emission route when two alternatives required different articles. A
+toward emission when two alternatives required different articles. A
 construction audit, frozen before its result, retracts that claim. The
 named-donor direction contains an article-readout component, about 4% of its norm.
-Removing it leaves lexical efficacy unchanged but removes nearly all of the route
+Removing it leaves lexical efficacy unchanged but removes nearly all of the
 shift: the paired interaction falls from 0.120 [0.079, 0.161] to 0.018
-[\(-0.000\), 0.038]. The component alone reproduces most of the shift. The route shift
+[\(-0.000\), 0.038]. The component alone reproduces most of the shift. The shift
 was therefore a property of how the intervention vector was built, not of the model.
 The present paper keeps the decomposition, extends it to paths within persistence and
 to multi-token generation, and replaces the small-model experiments with the study
@@ -299,6 +305,6 @@ reported here.
 Experiments ran on one Apple M1 laptop (16 GB) and one Apple M4 Max workstation
 (128 GB unified memory), with no GPU cluster. Jobs were scheduled under a declared
 memory budget and checkpointed per item, so interrupted runs resume without loss. A
-27B to 32B couplet chain (screen, edit and generation, route split, position split and
+27B to 32B couplet chain (screen, edit and generation, path split, position split and
 necessity) takes one to three hours. The hidden-choice runs take 10 to 30 minutes
 per model.

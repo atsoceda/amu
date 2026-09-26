@@ -48,10 +48,10 @@ used for single-token mediators (Appendix @sec-app-sixcell).
 
 ## Paths within persistence
 
-Persistence can reach the target by two structurally different paths. The target
+Persistence can reach the target in two structurally different ways. The target
 can read the edited source positions itself (**direct retrieval**). Alternatively,
 intermediate positions read the edited source and pass it on, and the target reads
-them (**relay**). We separate the two by clamping states. Let \(h^{0}\) and \(h^{1}\)
+them (an **indirect path**). We separate the two by clamping states. Let \(h^{0}\) and \(h^{1}\)
 be the per-layer states of the clean run and of the edited run, both with the text
 fixed. Write \(R[\,S\!\leftarrow\!a,\;G\!\leftarrow\!b\,]\) for the outcome when the
 source positions receive the states of run \(a\), and a group of intermediate
@@ -62,7 +62,7 @@ $$
 \begin{aligned}
 P &= R[S\!\leftarrow\!1] - R_0 &&\text{persistence,}\\
 D &= R[S\!\leftarrow\!1,\;M\!\leftarrow\!0] - R_0 &&\text{direct retrieval (every intermediate position clean),}\\
-T &= R[M\!\leftarrow\!1] - R_0 &&\text{relay (source clean, intermediates as in the edited run),}\\
+T &= R[M\!\leftarrow\!1] - R_0 &&\text{indirect paths (source clean, intermediates as in the edited run),}\\
 \Delta &= P - D - T &&\text{interaction (additivity gap).}
 \end{aligned}
 $$
@@ -87,28 +87,29 @@ are reported with item-bootstrap 95% intervals (10,000 resamples; @efron1994boot
 divided by the persistence of the same run, unless another denominator is named,
 which makes model families with different log-probability scales comparable.
 
-**Route names.** We split the intermediate positions into three groups by position,
-not by any hypothesis about their content, and name the relay through each:
+**Path names.** We split the intermediate positions into three groups by position,
+not by any hypothesis about their content, and name the indirect path through each:
 
-- the **stored copy**: relay through the prompt positions right after the source line
-  (in couplets, the comma ending line 1 and the chat template). It is formally two
-  hops, but the copy is written once into a fixed position of the prompt and read
-  directly from there;
-- the **late lookup**: relay through the three positions immediately before the
-  target. This is the late retrieval of @hanna2026latent read in two hops: those
+- the **stored copy**: the path through the prompt positions right after the source
+  line (in couplets, the comma ending line 1 and the chat template). The copy is
+  written once into a fixed position of the prompt and read directly from there;
+- the **late lookup**: the path through the three positions immediately before the
+  target. This is the late retrieval of @hanna2026latent read in two steps: those
   positions retrieve the plan just before use, and the target reads them;
-- **early relay**: relay through the remaining generated positions, along the generated
-  text. This is the path monitoring is concerned with.
+- **relay**: the path through the remaining positions of the generated text. This is
+  the path monitoring is concerned with.
 
-Throughout the paper, *direct retrieval*, *stored copy*, *late lookup*, *early relay*,
+Throughout the paper, *direct retrieval*, *stored copy*, *late lookup*, *relay*,
 *emission* and *interaction* keep these meanings and one colour each (@fig-overview A).
-We say information is **looked up** when it arrives by direct retrieval, a stored
-copy or the late lookup.
+We say information is **looked up** when it arrives by direct retrieval, a stored copy
+or the late lookup. Where a group of intermediate positions was not split into these
+parts, we name the group and call its effect the indirect path through it.
 
 ## Positive control: induction {#sec-control}
 
-A decomposition that never reports relay could be blind to it. We therefore apply
-route accounting where relay is the established mechanism. In a repeated sequence
+A decomposition that never reports an indirect path could be blind to one. We
+therefore apply route accounting where an indirect path is the established
+mechanism. In a repeated sequence
 \(\ldots A\,B\ldots A\), a previous-token head writes "preceded by \(A\)" into the
 position of \(B\), and an induction head at the second \(A\) finds that position and
 copies \(B\) [@olsson2022induction]. Information about the first \(A\) therefore
@@ -116,31 +117,36 @@ reaches the prediction through \(B\)'s position. The design is 100 random sequen
 of 24 distinct common word tokens, repeated up to the second \(A\). The edit replaces
 the first \(A\)'s states with those of a sequence identical except for that token.
 The outcome is \(\log p(B)\) at the second \(A\). The criterion, committed before the
-first result, was that relay accounts for more than 80% of persistence and direct
-retrieval is near zero.
+first result, was that the indirect path accounts for more than 80% of persistence and
+direct retrieval is near zero.
 
 The control passes cleanly in four models and partly in five (@fig-overview B;
 @tbl-control).
 
 - *Clean pass.* In Qwen3 1.7B, 4B, 8B and 14B, direct retrieval is 1 to 3% of
-  persistence, and relay is 108 to 137%. Relay shares above 100% reflect an
+  persistence, and the indirect path is 108 to 137%. Shares above 100% reflect an
   interaction: with only the downstream positions edited, the clean first \(A\)
   conflicts with the edited "preceded by" signal and suppresses \(B\) more than the
   consistent edit does.
 - *Partial pass, from the same interaction.* In Gemma 3 12B and 27B, direct retrieval
-  is 0.4%, but relay through all intermediate positions is only 53% and 55%. Editing
+  is 0.4%, but the indirect path through all intermediate positions is only 53% and
+  55%. Editing
   \(B\)'s first position alone gives 145% and 156%, so the conflicting edited positions
   weaken the all-position cell.
-- *Partial pass, because the model also reads the source.* Relay remains the main path
+- *Partial pass, because the model also reads the source.* The indirect path remains
+  the main path
   in Qwen3-32B (89%) and in the recurrent hybrids Qwen3.5-9B and 27B (key position alone
   96% and 77%). But direct retrieval is 31%, 10% and 17%: these models also read the
   first \(A\) directly.
 
-In every model, relay is the largest path, so the method detects relay where relay is
-the mechanism. The control uses prompt positions, but the result transfers to
-generated ones. Persistence holds the generated text fixed, so during measurement
-generated tokens are ordinary context positions, and the clamp is the same operation
-at any position. The retrieval-dominated results in the rest of the paper are
+In every model, the indirect path is the largest path, so the method detects an
+indirect path where one is the mechanism. The key position, \(B\)'s first occurrence,
+lies right after the source in the prompt. Structurally this path therefore resembles
+a stored copy more than relay along generated text. What the control establishes is
+that route accounting detects an effect that arrives through an intermediate position.
+Relay is the same kind of path through different positions. Persistence holds the
+generated text fixed, so during measurement generated tokens are ordinary context
+positions, and the clamp is the same operation at any position. The retrieval-dominated results in the rest of the paper are
 therefore informative negatives, not a blind spot of the method.
 
 ::: {#tbl-control}
@@ -150,7 +156,7 @@ therefore informative negatives, not a blind spot of the method.
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}lccccc@{}}
 \toprule
-Model & $p(B)$, clean & Persistence & Direct retrieval & Relay (all positions) & Key position only\\
+Model & $p(B)$, clean & Persistence & Direct retrieval & Indirect (all positions) & Key position only\\
 \midrule
 Qwen3-1.7B & 1.000 & $-4.26$ [$-4.60$, $-3.91$] & $-0.08$ [$-0.13$, $-0.03$] & $-5.85$ [$-6.63$, $-5.10$] & $-9.24$ [$-10.21$, $-8.26$]\\
 Qwen3-4B & 1.000 & $-4.75$ [$-5.06$, $-4.43$] & $-0.15$ [$-0.27$, $-0.06$] & $-5.23$ [$-6.10$, $-4.39$] & $-10.28$ [$-11.45$, $-9.08$]\\
@@ -168,7 +174,7 @@ Qwen3.5-27B & 0.984 & $-4.34$ [$-4.55$, $-4.12$] & $-0.72$ [$-0.85$, $-0.61$] & 
 Positive control: induction. Effects on \(\log p(B)\) of the edit at the first
 \(A\) (95% intervals), 100 sequences per model. *Key position*: only \(B\)'s first
 occurrence receives its edited-run state. The criterion committed before the result:
-relay above 80% of persistence and direct retrieval near zero.
+the indirect path above 80% of persistence and direct retrieval near zero.
 
 :::
 

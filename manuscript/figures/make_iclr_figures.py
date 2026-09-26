@@ -6,15 +6,15 @@ Run from the repository root:
 Every number is read from experiments/*/results. Runs that are still in progress are skipped
 silently, so the figures can be regenerated as results arrive. Figures are drawn at their
 printed size (ICLR text width 5.5 in), so font sizes are the sizes on the page (at least 7 pt).
-One colour per route throughout (Okabe-Ito): direct retrieval blue, the stored copy at the
-line's final token green, late lookup via the last three positions sky blue, early relay along
-generated text (and recurrent memory, which is relay by construction) reddish purple, emission
+One colour per path throughout (Okabe-Ito): direct retrieval blue, the stored copy at the
+line's final token green, late lookup via the last three positions sky blue, relay along
+generated text (and any indirect path not split further, and recurrent memory) reddish purple, emission
 vermillion, interaction light grey; totals and references are grey. One marker per model family
 (filled: Qwen3 / Qwen3.5, open: Gemma 3).
 
 Intervals are 95% bootstrap intervals from the summary JSON. For a share num/den, the interval
 is the numerator's interval divided by the mean denominator (the denominator is held fixed);
-for a sum of routes, the half-widths are combined in quadrature.
+for a sum of paths, the half-widths are combined in quadrature.
 """
 from __future__ import annotations
 
@@ -122,7 +122,7 @@ def couplet_shares(run):
 
 
 def couplet_route_ci(run):
-    """(looked up, early relay) as % of persistence with intervals, for Figure 1B."""
+    """(looked up, relay) as % of persistence with intervals, for Figure 1B."""
     s34, pos = load(CR / run / "step34_summary.json"), load(CR / run / "relay_positions_summary.json")
     if not s34 or not pos:
         return None
@@ -168,7 +168,7 @@ def dot(ax, x, v, color, marker="o", filled=True, s=14, lw=0.7, z=4, horizontal=
 # --------------------------------------------------------------------------- Figure 1
 
 def bez(ax, x0, y0, x1, y1, h, share_, col, ls="-", arrow=True):
-    """Quadratic arc from (x0, y0) to (x1, y1) peaking near height h; width from the route share."""
+    """Quadratic arc from (x0, y0) to (x1, y1) peaking near height h; width from the path share."""
     t = np.linspace(0, 1, 80)
     xm, c = (x0 + x1) / 2, 2 * h - (y0 + y1) / 2
     xs = (1 - t) ** 2 * x0 + 2 * t * (1 - t) * xm + t ** 2 * x1
@@ -220,7 +220,7 @@ def fig1_schematic(axA):
     bm = (bx0 + bx1) / 2
     bez(axA, cx["night"] - 0.12, y0, bm - 0.2, by + 0.02, 1.42, s["late"], COL["late"])
     bez(axA, bx1 - 0.1, by + 0.02, cx["the"] + 0.1, y0, 1.22, s["late"], COL["late"], arrow=True)
-    # Early relay: a chain of small arcs from the rhyme word through line 2 to the target.
+    # Relay: a chain of small arcs from the rhyme word through line 2 to the target.
     chain = ["night", "And", "stars", "will", "guide", "me", "through", "the"]
     for a, b in zip(chain[:-1], chain[1:]):
         h = 0.86 if a == "night" else 0.8
@@ -230,7 +230,7 @@ def fig1_schematic(axA):
             (COL["storage"], "-", "stored copy at the line's final token",
              f"{100 * s['boundary']:.0f}% (nec. {100 * s['nec_boundary']:.0f}%)"),
             (COL["late"], "-", "late lookup via the last three positions", f"{100 * s['late']:.0f}%"),
-            (COL["relay"], (0, (1.6, 1.0)), "early relay along line 2", f"{100 * s['early']:.0f}%")]
+            (COL["relay"], (0, (1.6, 1.0)), "relay along line 2", f"{100 * s['early']:.0f}%")]
     for i, (c, ls, lab, num) in enumerate(rows):
         yy = 4.0 - 0.42 * i
         axA.plot([3.75, 4.2], [yy, yy], color=c, lw=2.0, ls=ls)
@@ -242,7 +242,7 @@ def fig1_schematic(axA):
 
 
 def fig1_points():
-    """Groups of (label, family, looked up, relayed) for Figure 1B, in % of each group's denominator."""
+    """Groups of (label, family, looked up, relay or unsplit indirect) for Figure 1B, in % of each group's denominator."""
     ctrl = []
     for d, fam, lab in [("Qwen3-1.7B", "Qwen3", "1.7B"), ("Qwen3-4B", "Qwen3", "4B"), ("Qwen3-8B", "Qwen3", "8B"),
                         ("Qwen3-14B", "Qwen3", "14B"), ("Qwen3-32B", "Qwen3", "32B"),
@@ -286,7 +286,7 @@ def fig1():
     fig1_schematic(axA)
     ctrl, coup, hid, rec, dist = fig1_points()
 
-    # B. Paired marks per setting: looked up (blue) and relayed (purple).
+    # B. Paired marks per setting: looked up (blue) and relay or unsplit indirect (purple).
     ybot, ytop = 0.92, 2.64     # inches: plot area of panel B
     brk = 0.07                  # gap of the broken axis
     top_frac = 0.40             # share of the right-hand plot height given to the upper segment
@@ -296,7 +296,7 @@ def fig1():
     xr0, xr1 = 1.92, 5.3
     axT = fig.add_axes([fx(xr0), fy(ybot + hb + brk), fx(xr1 - xr0), fy(ht)])
     axL = fig.add_axes([fx(xr0), fy(ybot), fx(xr1 - xr0), fy(hb)])
-    fig.text(0.0, fy(3.3), "B   Measured lookup and relay cells: relay carries induction, and is small elsewhere", fontsize=8,
+    fig.text(0.0, fy(3.3), "B   The indirect path carries induction; elsewhere relay, or an unsplit indirect path, is small", fontsize=8,
              weight="bold", va="top")
     den_y = fy(0.5)
 
@@ -422,7 +422,7 @@ def fig1():
           Line2D([], [], ls="none", marker="o", ms=4, mfc="#444444", mec="#444444"),
           Line2D([], [], ls="none", marker="^", ms=4, mfc="#444444", mec="#444444"),
           Line2D([], [], ls="none", marker="s", ms=4, mfc="white", mec="#444444")]
-    fig.legend(hs, ["looked up (source, stored copy or late lookup)", "relayed along intermediate positions", "Qwen3",
+    fig.legend(hs, ["looked up (source, stored copy or late lookup)", "relay, or an unsplit indirect path", "Qwen3",
                     "Qwen3.5", "Gemma 3"], loc="lower center", bbox_to_anchor=(0.5, -0.005), ncol=5,
                handletextpad=0.2, columnspacing=0.9)
     save(fig, "iclr_fig1_overview.png")
@@ -443,7 +443,7 @@ def fig2():
     parts = [("retrieval", "direct retrieval", COL["retrieval"]),
              ("boundary", "stored copy at the line's final token", COL["storage"]),
              ("late", "late lookup (last 3 positions)", COL["late"]),
-             ("early", "early relay along line 2", COL["relay"])]
+             ("early", "relay along line 2", COL["relay"])]
     lx = np.log10
     xt = [1, 2, 4, 8, 16, 32]
     series = []
@@ -481,7 +481,7 @@ def fig2():
             ax.set_ylabel("share of persistence (%)")
         else:
             ax.set_yticklabels([])
-    fig.text(0.0, 0.995, "A   Direct retrieval dominates, except Gemma 3 27B (plain), where the stored copy takes over; early relay ≤ 1%", fontsize=8,
+    fig.text(0.0, 0.995, "A   Direct retrieval dominates, except Gemma 3 27B (plain), where the stored copy takes over; relay ≤ 1%", fontsize=8,
              weight="bold", va="top")
     hs = [Rectangle((0, 0), 1, 1, color=c) for _, _, c in parts]
     hs.append(Rectangle((0, 0), 1, 1, color=COL["interaction"]))
@@ -1016,7 +1016,7 @@ def fig4():
     ax.set_ylabel("% of persistence")
     hs = [Line2D([], [], ls="none", marker="s", ms=3.5, mfc="white", mec=c) for c in
           (COL["retrieval"], COL["storage"], COL["relay"])]
-    ax.legend(hs, ["direct retrieval", "stored copy (nec.)", "cue + line 2\n(incl. last 3)"], loc="upper right",
+    ax.legend(hs, ["direct retrieval", "stored copy (nec.)", "late lookup + relay\n(cue and line 2)"], loc="upper right",
               handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.02, 1.0), fontsize=6.5)
     ax.set_title("B   Beyond the attention window (Gemma 3 27B)", x=-0.3)
     # B, side: absolute persistence at each distance.
@@ -1073,7 +1073,7 @@ def fig4():
         st = share(c["post_edit"], c["text_swap"])
         rl = share(c["post_relay"], c["text_swap"])
         stored, relayed = max(st[0], 0.0), min(max(rl[0], 0.0), max(st[0], 0.0))
-        axc.barh(i, relayed, 0.62, color=COL["relay"], lw=0, label="relayed" if first else None)
+        axc.barh(i, relayed, 0.62, color=COL["relay"], lw=0, label="via the sentence" if first else None)
         axc.barh(i, stored - relayed, 0.62, left=relayed, color=COL["storage"], lw=0,
                  label="stored after the list" if first else None)
         axc.barh(i, 100 - stored, 0.62, left=stored, color=COL["retrieval"], lw=0, alpha=0.85,
@@ -1095,9 +1095,9 @@ def fig4():
     axc.set_xlim(0, 100)
     axc.set_xticks([0, 25, 50, 75, 100])
     axc.set_xlabel("% of the text-swap reference")
-    axc.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3, handlelength=1.0, columnspacing=0.8,
-               borderaxespad=0.1)
-    axc.set_title("C   Hidden choice: stored after the list or not reproduced by\n     the post-list patch; not relayed or written", x=-0.24, pad=16)
+    axc.legend(loc="lower center", bbox_to_anchor=(0.44, 1.0), ncol=3, handlelength=0.9, columnspacing=0.6,
+               handletextpad=0.4, borderaxespad=0.1)
+    axc.set_title("C   Hidden choice: stored after the list or not reproduced by\n     the post-list patch; the sentence adds almost nothing", x=-0.24, pad=16)
     axz.axvline(0, color="#999999", lw=0.6, zorder=0)
     axz.tick_params(axis="y", labelleft=False)
     axz.set_xlim(-8, 12)
@@ -1106,7 +1106,7 @@ def fig4():
     hs = [Line2D([], [], ls="none", marker="o", ms=3.5, mfc=COL["relay"], mec=COL["relay"]),
           Line2D([], [], ls="none", marker="o", ms=3.5, mfc="white", mec=COL["relay"]),
           Line2D([], [], ls="none", marker="D", ms=3.2, mfc=COL["emission"], mec=COL["emission"])]
-    axz.legend(hs, ["relayed through the sentence", "sentence positions", "written (free version)"],
+    axz.legend(hs, ["via the sentence (indirect)", "sentence positions", "written (free version)"],
                loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=1, handletextpad=0.1, borderaxespad=0.1,
                labelspacing=0.15)
     save(fig, "iclr_fig4_stress_tests.png")
@@ -1187,7 +1187,7 @@ def fig5():
     ax.set_ylim(-8, 108)
     ax.set_yticks([0, 25, 50, 75, 100])
     ax.set_xlabel("Qwen3 parameters (B)")
-    ax.set_ylabel("effect through the measured\ndownstream route (%)")
+    ax.set_ylabel("effect through the measured\ndownstream path (%)")
     ax.set_title("Unwritten: near-zero downstream patch effect; written: the answer follows the text")
     save(fig, "iclr_fig5_computed_and_written.png")
 
