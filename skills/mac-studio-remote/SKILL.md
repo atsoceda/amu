@@ -10,7 +10,7 @@ compatibility: >-
   Local macOS with an SSH host alias "macstudio" in ~/.ssh/config, its key unlocked in the SSH agent, and the
   user's split-tunnel VPN connected. Remote: macOS with system python3; rsync on both sides.
 metadata:
-  version: "1.3"
+  version: "1.4"
 ---
 
 # Mac Studio remote jobs
@@ -158,6 +158,24 @@ come back. Details, measured facts and troubleshooting are in
   (as a tracked background task) and as a job on the Mac Studio.
 - **Check a resumed chain's inputs exist** before resuming from a later step (a
   32B-plain chain was resumed at step 3/4 although its first steps had never run).
+
+### Planning to a deadline
+
+- With a 108 GB budget, any two jobs of 60 GB or more cannot run together: 27B-32B jobs form
+  a single sequential chain. Estimate the finish time as the sum of their durations (take them
+  from earlier logs: `grep -o "start ..."` and `exit ...` lines), not from the queue length.
+- Newer-architecture models in `.venv-next` can be about twice as slow as the same step on
+  Qwen3 or Gemma 3 (Gemma 4 31B: out-of-list 16 min, route split about 90 min). Time one
+  step before promising a suite.
+- To stop a running suite cleanly after a given step, wait for that step's output file, then
+  kill the job's process tree (outer `bash -c` pid in `running/<job>.pid`, its children and
+  grandchildren); the runner then frees the memory and starts the next job. Killing only the
+  inner bash leaves an orphaned python holding memory the runner no longer counts.
+- Rewrite the queue atomically (write `queue.new`, then `mv` it over `queue.txt`) and move
+  cut jobs to `queue.later.txt`. Add a guard script that empties `queue.txt` at the latest
+  safe start time so nothing starts that cannot finish before the deadline.
+- Record every cut or shortened run in the experiment README before its result, as a dated
+  deviation.
 
 ## Edge cases
 
