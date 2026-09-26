@@ -238,3 +238,17 @@ after the list +0.42 [0.29, 0.55], the period ending the instruction +0.22 [0.14
 every other token, including `<end_of_turn>` and the model-turn header, 0.00 +/- 0.05.
 The stored hidden pick sits mostly on one low-content function word inside the
 instruction, not at the turn boundary: register-like storage at a predictable token.
+
+## Localization robustness (designs frozen 2026-09-26, before any result)
+
+The Gemma 3 - 27B localization (most of the stored pick on "the" in "about the weather")
+comes from one model, one domain and one instruction wording. Three checks:
+(1) Gemma 3 - 27B - hidden choice - localization, animals (same wording);
+(2) Gemma 3 - 12B - hidden choice - localization, fruits;
+(3) Gemma 3 - 27B - hidden choice - localization, fruits, reworded instruction ("Keep your
+choice private for now. Begin by describing today's weather in a single sentence. After
+that, reveal which fruit you picked."), which changes and moves the function words.
+Readings fixed in advance: if the storage again concentrates on one or two function
+words in every check (moving with the wording), the "register-like storage on a
+low-content token" claim is supported; if it sits at a fixed position regardless of
+wording, or spreads out, the original result is reported as template-specific.

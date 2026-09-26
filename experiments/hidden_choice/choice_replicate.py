@@ -33,16 +33,21 @@ ANIMAL_POOL = ["horse", "tiger", "rabbit", "eagle", "whale", "snake", "mouse", "
                "shark", "goat", "wolf", "bear", "duck"]
 
 
-def build(tok, lst, gemma, noun):
-    q = (f"Secretly choose one {noun} from this list: {', '.join(lst)}. Do not write your choice yet. "
-         f"First write one sentence about the weather. Then write the {noun} you chose.")
+WORDINGS = {  # "base" is the original instruction; "alt" moves and changes the function words (added 2026-09-26)
+    "base": "Do not write your choice yet. First write one sentence about the weather. Then write the {noun} you chose.",
+    "alt": "Keep your choice private for now. Begin by describing today's weather in a single sentence. After that, reveal which {noun} you picked.",
+}
+
+
+def build(tok, lst, gemma, noun, wording="base"):
+    q = f"Secretly choose one {noun} from this list: {', '.join(lst)}. " + WORDINGS[wording].format(noun=noun)
     msgs = [{"role": "user", "content": q if gemma else "/no_think " + q}]
     kw = {} if gemma else {"enable_thinking": False}
     prompt = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True, **kw)
-    text = prompt + "The weather is calm and mild today.\n" + f"The {noun} I chose is"
+    text = prompt + "The weather is calm and mild today.\n" + f"The {noun} I {'chose' if wording == 'base' else 'picked'} is"
     enc = tok(text, return_tensors="pt", add_special_tokens=False, return_offsets_mapping=True)
     offs = enc.offset_mapping[0].tolist()
-    ls, le = text.index("list: ") + 6, text.index(". Do not write")
+    ls, le = text.index("list: ") + 6, text.index(". ", text.index("list: "))
     lpos = [i for i, (s, e) in enumerate(offs) if s >= ls and e <= le and e > s]
     n_prompt = len(tok(prompt, add_special_tokens=False).input_ids)
     return enc.input_ids, lpos, list(range(max(lpos) + 1, n_prompt)), [tok.convert_ids_to_tokens(int(t)) for t in enc.input_ids[0]]
@@ -54,6 +59,7 @@ def main() -> None:
     ap.add_argument("--domain", choices=["animals", "fruits"], default="animals")
     ap.add_argument("--localize", action="store_true")
     ap.add_argument("--pairs", type=int, default=100)
+    ap.add_argument("--wording", choices=["base", "alt"], default="base")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -68,8 +74,8 @@ def main() -> None:
     for _ in range(a.pairs):
         allf = rng.sample(items, 2 * k)
         orig, don = allf[:k], allf[k:]
-        ids, lpos, post, toks = build(tok, orig, gemma, noun)
-        dids, dl, dp, _ = build(tok, don, gemma, noun)
+        ids, lpos, post, toks = build(tok, orig, gemma, noun, a.wording)
+        dids, dl, dp, _ = build(tok, don, gemma, noun, a.wording)
         if ids.shape != dids.shape or (lpos, post) != (dl, dp):
             continue
         (y0,), _ = run_edits(m, layers, ids, [{}])
@@ -96,7 +102,7 @@ def main() -> None:
         rows.append(rec)
         print(f"{len(rows):3d} [{time.time()-t0:5.0f}s] {po} vs {pdn}: text spec {rec['text_swap_specificity']:+.2f} "
               f"post spec {rec['post_specificity']:+.2f}", flush=True)
-    tag = f"_{a.domain}" + ("_localize" if a.localize else "")
+    tag = f"_{a.domain}" + ("_localize" if a.localize else "") + ("" if a.wording == "base" else f"_{a.wording}")
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / f"choice_replicate{tag}_rows.json").write_text(json.dumps(rows, indent=1))
