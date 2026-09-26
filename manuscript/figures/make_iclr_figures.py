@@ -772,11 +772,17 @@ def fig3():
         toks = [x["token"] for x in ex["necessity_by_token"]]
         sh, _ = pos_share([x["mean"] for x in ex["necessity_by_token"]])
         k = line_end_index(toks)
-        bg.text(0, y, "Qwen3-32B, chat prompt: tokens between line 1 and line 2", fontsize=7,
+        bg.text(0, y, "Qwen3-32B, chat prompt. Example couplet:", fontsize=7, style="italic", color="#444444", va="top")
+        y += 11
+        bg.text(8, y, "line 1: \u201cIn shadows deep where silence weeps,\u201d", fontsize=7, color="#444444", va="top")
+        y += 10
+        bg.text(8, y, "line 2: \u201cThe moon whispers through the dark it keeps.\u201d", fontsize=7, color="#444444", va="top")
+        y += 12
+        bg.text(0, y, "Tokens between the rhyme word and line 2 (shares averaged over 100 couplets):", fontsize=7,
                 style="italic", color="#444444", va="top")
-        y += 18
-        cells = [("night", "src", None)] + [(pretty(t), "end" if i == k else "tpl", sh[i])
-                                            for i, t in enumerate(toks)] + [("…", "gap", None), ("the", "tgt", None)]
+        y += 16
+        cells = [("weeps", "src", None)] + [(pretty(t), "end" if i == k else "tpl", sh[i])
+                                            for i, t in enumerate(toks)] + [("The moon \u2026 dark", "gap", None), ("it", "tgt", None)]
         fs, ch, gap = 7.5, 17.0, 2.0
         widths = [text_width(c[0] + (f"  {100 * c[2]:.0f}%" if c[1] == "end" else ""), fs) + 8 for c in cells]
         scale = min(1.0, (Wpt - 4 - gap * len(cells)) / sum(widths))
