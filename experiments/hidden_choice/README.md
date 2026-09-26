@@ -252,3 +252,12 @@ Readings fixed in advance: if the storage again concentrates on one or two funct
 words in every check (moving with the wording), the "register-like storage on a
 low-content token" claim is supported; if it sits at a fixed position regardless of
 wording, or spreads out, the original result is reported as template-specific.
+
+### Localization check 2: Gemma 3 - 12B - hidden choice - localization (fruits)
+
+Post-list pick specificity +1.03 [0.79, 1.26] (text swap +6.95). By token: **"the" in
+"about the weather" +0.52 [0.44, 0.61]**, the period right after the list +0.32
+[0.11, 0.54], "the" in "write the fruit" +0.15 [0.08, 0.23]; every other token about 0.
+The same storage site as Gemma 3 - 27B ("the" +1.91, period after the list +0.42): it
+replicates across two sizes with the same wording. Checks 1 (animals) and 3 (reworded
+instruction) pending.
