@@ -2,9 +2,9 @@
 title: "Look It Up, Don't Carry It: How Language Models Move Unwritten Information Across Their Own Text"
 bibliography: manuscript/references.bib
 number-sections: true
-header-includes:
-  - \usepackage{xcolor}
-  - \newcommand{\pending}[1]{\textcolor{red!65!black}{[Pending: #1]}}
+header-includes: |
+  \usepackage{xcolor}
+  \newcommand{\pending}[1]{\textcolor{red!65!black}{[Pending:~#1]}}
 ---
 
 {{< include manuscript/sections/01-introduction.qmd >}}

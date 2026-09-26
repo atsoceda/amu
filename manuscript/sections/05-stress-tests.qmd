@@ -76,17 +76,29 @@ filler carries nothing (\(+0.3\) and \(+0.15\)). By the frozen rule, 12% falls b
 "stop" and "go". It is the largest generated-text relay we observe in any setting,
 and it remains about an eighth of the effect.
 
-: Relay at a distance, Gemma 3 27B (chat prompt; 50 couplets per distance; 95%
-intervals). Shares are of persistence at the same distance. {#tbl-distance}
+::: {#tbl-distance}
 
-| | \(D=0\) | \(D=2{,}000\) |
-|---|---|---|
-| line 2 rhymes with line 1 | 98% | 82% |
-| persistence | \(+42.4\) [38.6, 46.0] | \(+26.4\) [23.8, 28.9] |
-| direct retrieval | \(+28.0\) (66%) | \(+10.5\) (40%) |
-| line-end copy: sufficiency / necessity | \(+0.1\) / \(+4.6\) (11%) | \(+9.7\) / **\(+13.0\)** (49%) |
-| filler: sufficiency / necessity | 0.0 / 0.0 | \(+0.3\) / \(+0.2\) |
-| generated text: sufficiency / necessity | \(+0.5\) / \(+7.3\) | **\(+3.2\)** (12%) / \(+2.7\) (10%) |
+```{=latex}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lll@{}}
+\toprule
+ & $D=0$ & $D=2{,}000$\\
+\midrule
+line 2 rhymes with line 1 & 98\% & 82\%\\
+persistence & $+42.4$ [38.6, 46.0] & $+26.4$ [23.8, 28.9]\\
+direct retrieval & $+28.0$ (66\%) & $+10.5$ (40\%)\\
+line-end copy: sufficiency / necessity & $+0.1$ / $+4.6$ (11\%) & $+9.7$ / \textbf{$+13.0$} (49\%)\\
+filler: sufficiency / necessity & 0.0 / 0.0 & $+0.3$ / $+0.2$\\
+generated text: sufficiency / necessity & $+0.5$ / $+7.3$ & \textbf{$+3.2$} (12\%) / $+2.7$ (10\%)\\
+\bottomrule
+\end{tabular}
+```
+
+Relay at a distance, Gemma 3 27B (chat prompt; 50 couplets per distance; 95%
+intervals). Shares are of persistence at the same distance.
+
+:::
 
 Two models without a strong line-end copy show what happens when lookup fails.
 Gemma 3 12B (24 couplets), which stores little at the line end (@tbl-storage), loses
@@ -146,14 +158,26 @@ stores more than 12B. In Qwen3 the stored share shrinks with scale, from 10 to 1
 8B to 0 to 7% at 14B and 32B. Qwen3.5-27B stores 3 to 4%. Larger Qwen models re-derive
 the pick at the reveal.
 
-: Stored hidden pick: pick specificity of the post-list edit as a share of the
-text-swap pick specificity (100 pairs per cell; values with 95% intervals in Appendix
-@sec-app-hidden). Fruits: specificity added post hoc. Animals: pre-registered. {#tbl-hidden}
+::: {#tbl-hidden}
 
-| | Qwen3-8B | Qwen3-14B | Qwen3-32B | Qwen3.5-27B | Gemma 3 4B | Gemma 3 12B | Gemma 3 27B |
-|---|---|---|---|---|---|---|---|
-| Fruits | 10% | 0% | 2% | 3% | -- | 15% | 31% |
-| Animals (pre-registered) | 15% | 3% | 7% | 4% | 22% | 18% | 40% |
+```{=latex}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+ & Qwen3-8B & Qwen3-14B & Qwen3-32B & Qwen3.5-27B & Gemma 3 4B & Gemma 3 12B & Gemma 3 27B\\
+\midrule
+Fruits & 10\% & 0\% & 2\% & 3\% & -- & 15\% & 31\%\\
+Animals (pre-registered) & 15\% & 3\% & 7\% & 4\% & 22\% & 18\% & 40\%\\
+\bottomrule
+\end{tabular}
+```
+
+Stored hidden pick: pick specificity of the post-list edit as a share of the
+text-swap pick specificity (100 pairs per cell; values with 95% intervals in Appendix
+@sec-app-hidden). Fruits: specificity added post hoc. Animals: pre-registered.
+
+:::
 
 **Not written into the text either.** In the free version, the model writes its own
 weather sentence. The sentence changes with the donor in 17 to 45% of pairs, but it

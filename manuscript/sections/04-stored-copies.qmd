@@ -60,25 +60,37 @@ than the two effects would suggest. This is redundant storage: a second lookup s
 that backs up the first. Reporting sufficiency alone would miss most of it. Shapley
 values, the average of the two measures, are given in Appendix @sec-app-couplets.
 
-: The copy at the line's final token, as a share of persistence (100 couplets per
+::: {#tbl-storage}
+
+```{=latex}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Model & Chat: sufficiency & Chat: necessity & Plain: sufficiency & Plain: necessity\\
+\midrule
+Qwen3-1.7B & 0\% & $-4$\% & 0\% & 1\%\\
+Qwen3-4B & 0\% & $-1$\% & 1\% & 0\%\\
+Qwen3-8B & 0\% & 0\% & 1\% & 1\%\\
+Qwen3-8B-Base & -- & -- & 1\% & 0\%\\
+Qwen3-14B & 5\% & 8\% & 13\% & 16\%\\
+Qwen3-14B-Base & -- & -- & 16\% & --\\
+Qwen3-32B & 8\% & 11\% & 10\% & 13\%\\
+Gemma 3 1B & 0\% & 0\% & 1\% & 0\%\\
+Gemma 3 4B & 1\% & -- & 0\% & --\\
+Gemma 3 12B & 0\% & 1\% & 2\% & 3\%\\
+Gemma 3 12B PT & -- & -- & 5\% & 6\%\\
+Gemma 3 27B & 2\% & 11\% & 37\% & \pending{}\\
+\bottomrule
+\end{tabular}
+```
+
+The copy at the line's final token, as a share of persistence (100 couplets per
 run). Sufficiency: the boundary positions alone receive their edited-run states.
 Necessity: the boundary positions alone are reset with the rhyme word edited. --: not
-run. {#tbl-storage}
+run.
 
-| Model | Chat: sufficiency | Chat: necessity | Plain: sufficiency | Plain: necessity |
-|---|---|---|---|---|
-| Qwen3-1.7B | 0% | \(-4\)% | 0% | 1% |
-| Qwen3-4B | 0% | \(-1\)% | 1% | 0% |
-| Qwen3-8B | 0% | 0% | 1% | 1% |
-| Qwen3-8B-Base | -- | -- | 1% | 0% |
-| Qwen3-14B | 5% | 8% | 13% | 16% |
-| Qwen3-14B-Base | -- | -- | 16% | -- |
-| Qwen3-32B | 8% | 11% | 10% | 13% |
-| Gemma 3 1B | 0% | 0% | 1% | 0% |
-| Gemma 3 4B | 1% | -- | 0% | -- |
-| Gemma 3 12B | 0% | 1% | 2% | 3% |
-| Gemma 3 12B PT | -- | -- | 5% | 6% |
-| Gemma 3 27B | 2% | 11% | 37% | \pending{} |
+:::
 
 **Reconciling published accounts.** Accounts of rhyme planning disagree on where
 the plan lives. The disagreement dissolves once both lookup sites are measured.

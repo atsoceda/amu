@@ -28,6 +28,22 @@ at the planning site [@maar2026plan; @ma2026plan; @jacopin2026improvisation]. Th
 methods locate where a plan is formed or can be changed. They do not measure which
 path the plan takes to the position where it is used.
 
+![Route accounting and its central result. **A:** the paths by which a rhyme plan,
+formed at the rhyme word of line 1, can reach the position that predicts the rhyme at
+the end of line 2, with line widths proportional to each path's measured share of
+the effect in Qwen3-32B. Most of the plan is read directly from the rhyme word. A
+copy stored at the comma ending line 1 and a late lookup a few positions before the
+target carry most of the rest. Relay along the generated line carries 1%. **B:** the
+share of the effect carried along intermediate positions in every setting we study.
+Each point is one model (and prompt format or chain length); purple filled points
+are relay, hollow blue points direct retrieval. In the induction positive control,
+relay carries the effect and direct retrieval is near zero. Everywhere else relay is
+small. Rhyme plans: all generated line-2 positions, mostly the last three.
+Computed values: every position after the source. Hidden choice: the intervening
+sentence. Recurrent memory: the Qwen3.5 recurrent-only cell. Beyond the attention
+window: the generated text at 2,000 tokens of distance, Gemma 3
+27B.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
+
 We introduce **route accounting**, a decomposition of an intervention's effect by
 path (@sec-method). A donor's hidden states are written at the source positions, and
 the effect is measured where the information is used. Clamping the states of chosen
@@ -101,7 +117,27 @@ proportions depend on scale, family and prompt format.
 4. A scale law for storage at the line's final token, and a reconciliation of the
    published accounts of rhyme planning.
 
-: Where unwritten information travels. Each cell gives the share of the effect
+::: {#tbl-map}
+
+```{=latex}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.55cm}>{\raggedright\arraybackslash}p{2.15cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}p{3.6cm}@{}}
+\toprule
+Content (observability) & Emission & Retrieval or stored copy & Relay along generated text\\
+\midrule
+Rhyme plan (visible) & 13--25\% of the total & rhyme word 68--95\% of persistence; line-end copy 0--16\% (37\% in Gemma~3 27B, plain prompt) & $\le$1\% beyond the last three positions\\
+Computed value, unwritten (visible) & -- & recomputed from the source digits & $\le$2\% (all later positions together)\\
+Computed value, written (visible) & 83--99\% & bypass 1--17\% & --\\
+Secret choice (hidden) & $\approx$0 (the sentence never names it) & re-derived from the list; 0--40\% stored after it & $\approx$0\\
+\midrule
+Induction (positive control) & -- & $\le$3\% (31\% at Qwen3-32B) & 53--137\% (interaction above 100\%)\\
+\bottomrule
+\end{tabular}
+```
+
+Where unwritten information travels. Each cell gives the share of the effect
 carried by a path, as a range over the models tested, from the largest effect
 measured in each setting. Route: *emission*, the effect through the text the model
 writes; *retrieval or storage*, a later position reads the source, a stored copy of
@@ -109,12 +145,5 @@ it, or the visible sources from which it recomputes the content; *relay*, the ef
 carried along intermediate positions. Observability: *visible* content can be
 recovered by a reader of the text; *hidden* content cannot. Dashes mark cells that
 the design rules out. Sections and figures give the full results with 95% intervals.
-{#tbl-map}
 
-| Content (observability) | Emission | Retrieval or stored copy | Relay along generated text |
-|---|---|---|---|
-| Rhyme plan (visible) | 13--25% of the total | rhyme word 68--95% of persistence; line-end copy 0--16% (37% in Gemma 3 27B, plain) | $\le$ 1% beyond the last three positions |
-| Computed value, unwritten (visible) | -- | recomputed from the source digits | $\le$ 2% (all later positions together) |
-| Computed value, written (visible) | 83--99% | bypass 1--17% | -- |
-| Secret choice (hidden) | $\approx$ 0 (the sentence never names it) | re-derived from the list; 0--40% stored after it | $\approx$ 0 |
-| Induction (positive control) | -- | $\le$ 3% (31% at Qwen3-32B) | 53--137% (interaction above 100%) |
+:::

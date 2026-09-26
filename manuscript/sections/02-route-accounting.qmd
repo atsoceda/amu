@@ -119,19 +119,31 @@ path (89%), but direct retrieval is 31%: the largest model also reads the first
 \(A\) directly. The retrieval-dominated results in the rest of the paper are
 therefore informative negatives, not a blind spot of the method.
 
-: Positive control: induction. Effects on \(\log p(B)\) of the edit at the first
-\(A\) (95% intervals), 100 sequences per model. *Key position*: only \(B\)'s first
-occurrence receives its edited-run state. {#tbl-control}
+::: {#tbl-control}
 
-| Model | \(p(B)\), clean | Persistence | Direct retrieval | Relay (all positions) | Key position only |
-|---|---|---|---|---|---|
-| Qwen3-1.7B | 1.000 | \(-4.26\) [\(-4.60\), \(-3.91\)] | \(-0.08\) [\(-0.13\), \(-0.03\)] | \(-5.85\) | \(-9.24\) |
-| Qwen3-4B | 1.000 | \(-4.75\) | \(-0.15\) | \(-5.23\) | \(-10.28\) |
-| Qwen3-8B | 0.999 | \(-3.83\) [\(-4.11\), \(-3.54\)] | \(-0.05\) [\(-0.09\), \(-0.02\)] | \(-4.13\) | \(-10.20\) |
-| Qwen3-14B | 0.998 | \(-3.81\) [\(-4.14\), \(-3.46\)] | \(-0.10\) [\(-0.15\), \(-0.05\)] | \(-4.64\) | \(-8.86\) |
-| Qwen3-32B | 0.977 | \(-4.83\) [\(-5.17\), \(-4.48\)] | \(-1.52\) [\(-1.87\), \(-1.19\)] | \(-4.30\) | \(-6.24\) |
-| Gemma 3 12B | -- | \(-4.90\) [\(-5.18\), \(-4.64\)] | \(-0.02\) [\(-0.03\), \(-0.02\)] | \(-2.61\) | \(-7.12\) |
-| Gemma 3 27B | -- | \(-4.55\) [\(-4.82\), \(-4.27\)] | \(-0.02\) | \(-2.52\) | \(-7.10\) |
+```{=latex}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lcllll@{}}
+\toprule
+Model & $p(B)$, clean & Persistence & Direct retrieval & Relay (all positions) & Key position only\\
+\midrule
+Qwen3-1.7B & 1.000 & $-4.26$ [$-4.60$, $-3.91$] & $-0.08$ [$-0.13$, $-0.03$] & $-5.85$ & $-9.24$\\
+Qwen3-4B & 1.000 & $-4.75$ & $-0.15$ & $-5.23$ & $-10.28$\\
+Qwen3-8B & 0.999 & $-3.83$ [$-4.11$, $-3.54$] & $-0.05$ [$-0.09$, $-0.02$] & $-4.13$ & $-10.20$\\
+Qwen3-14B & 0.998 & $-3.81$ [$-4.14$, $-3.46$] & $-0.10$ [$-0.15$, $-0.05$] & $-4.64$ & $-8.86$\\
+Qwen3-32B & 0.977 & $-4.83$ [$-5.17$, $-4.48$] & $-1.52$ [$-1.87$, $-1.19$] & $-4.30$ & $-6.24$\\
+Gemma 3 12B & -- & $-4.90$ [$-5.18$, $-4.64$] & $-0.02$ [$-0.03$, $-0.02$] & $-2.61$ & $-7.12$\\
+Gemma 3 27B & -- & $-4.55$ [$-4.82$, $-4.27$] & $-0.02$ & $-2.52$ & $-7.10$\\
+\bottomrule
+\end{tabular}
+```
+
+Positive control: induction. Effects on \(\log p(B)\) of the edit at the first
+\(A\) (95% intervals), 100 sequences per model. *Key position*: only \(B\)'s first
+occurrence receives its edited-run state.
+
+:::
 
 ## Models, materials and protocol {#sec-models}
 
