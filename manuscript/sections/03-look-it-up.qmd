@@ -32,8 +32,7 @@ same split as the state edit (direct retrieval 90, 88 and 84% at 4B, 8B and 14B,
 ![Couplet paths across scale, family and prompt format (100 couplets per run;
 instruction-tuned checkpoints; Appendix @tbl-storage adds the base checkpoints).
 **Top:** composition of persistence from the sufficiency cells: direct retrieval of the
-rhyme word (blue), the stored copy at the line's final token (green), the late lookup
-through the three positions before the target (light blue), relay through the rest of line 2 (purple; at most 1%, so barely visible) and interaction (grey), one bar per model.
+rhyme word (blue), the stored copy at the line's final token (green), the late lookup (light blue), relay through the rest of line 2 (purple; at most 1%, so barely visible) and interaction (grey), one bar per model.
 **Bottom:** the stored copy's share of persistence against model size (log scale), by
 sufficiency (filled) and necessity (hollow). It is absent up to 8B and present from 14B
 in Qwen3 and at 12B to 27B in Gemma 3.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100% fig-pos="t"}
@@ -76,9 +75,7 @@ larger models; the hand-off to the newline in Gemma 3 27B only [@ma2026plan] mat
 plain-format result; and no copy appears below 8B, as @jacopin2026improvisation finds.
 Each account is correct for the configuration it studies (Appendix @sec-app-couplets).
 
-**Why the stored copy is a lookup, not relay.** It passes through an intermediate
-position, but that position is a fixed structural token of the prompt next to the
-source. The copy is written there once, read directly however much text intervenes, and
+**Why the stored copy is a lookup, not relay.** It passes through an intermediate position, but that position is a fixed structural token next to the source. The copy is written there once, read directly however much text intervenes, and
 does not move with generation. It never travels through the hidden states of the
 generated text, so a monitor that probes hidden states can find it at a known prompt
 position.

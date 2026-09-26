@@ -1,26 +1,20 @@
 # Settings built to favour relay {#sec-stress}
 
-When every layer can read every earlier position, relay is never necessary, and visible
-content can always be re-read. We therefore run three stress tests, settings that make relay useful where attention
-cannot do the work or make the content invisible, each with a decision rule committed
-before its first result (@fig-stress; Appendix @sec-app-prereg,
+Relay is never necessary when every layer can read every earlier position and the
+content is visible. We therefore run three stress tests that remove one of these
+conditions, each with a decision rule committed before its first result (@fig-stress; Appendix @sec-app-prereg,
 @sec-app-stress and @sec-app-hidden).
 
 ![In settings built to favour relay, models still look up information. **A:** Gemma 3 27B with filler between line 1 and line 2 (couplets per
 distance in brackets; the dotted line marks where line 1 leaves the 1,024-token window).
 Direct retrieval falls while the stored copy becomes necessary for about half of
 persistence; the generated text (the cue and line 2, not split into late lookup and relay)
-is 9 to 13%, between the committed stop and go lines. Side panels: absolute persistence,
-and for four unedited models the share of couplets whose line 2 still rhymes, with no
-filler (open) and after 2,000 filler tokens (filled). **B:** Qwen3.5 hybrids (three of
+is 9 to 13%, between the committed stop and go lines. Side panels: absolute persistence, and for four unedited models the share of couplets whose line 2 still rhymes, with no filler (open) and after 2,000 filler tokens (filled). **B:** Qwen3.5 hybrids (three of
 every four layers recurrent), with the donor state allowed to enter only one layer type at
 the source. Entry through the attention layers accounts for nearly all of persistence;
 entry through the recurrent layers produces 2 to 4%, below the committed stop line (10%).
 **C:** hidden choice, as shares of the text-swap reference: not reproduced by the post-list
-patch, stored after the list, and passed through the sentence. The right subpanel shares
-the bars' model rows and magnifies three small quantities, with 95% intervals: the
-indirect path through the sentence, the pick held at the sentence positions themselves,
-and emission through a sentence the model writes (as a share of that run's total).](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100% fig-pos="t"}
+patch, stored after the list, and passed through the sentence. The right subpanel shares the bars' rows and magnifies, with 95% intervals, the indirect path through the sentence, the pick held at the sentence positions, and emission through a sentence the model writes (share of that run's total).](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100% fig-pos="t"}
 
 ## Beyond the attention window {#sec-distance}
 
@@ -78,7 +72,7 @@ text swap, but one eighth to one fifth of the stored part. A sentence the model 
 the reveal (emission \(-0.01\) to \(+0.02\)).
 
 **The stored signal is pick-specific and sits at predictable tokens.** In an out-of-list
-control, the donor's pick does not occur in the prompt at all, yet post-list donor states
+control, the donor's pick does not occur in the prompt, yet post-list donor states
 raise it more than the donor's other items. This *pick specificity*, added post hoc for
 fruits, was then committed as the primary measure of a replication with animals, which
 confirms it in both families; a donor with the same pick leaves the preference unchanged.
