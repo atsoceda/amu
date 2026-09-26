@@ -46,12 +46,15 @@ filler before line 2 and split the indirect path into the stored copy, the fille
 generated text (the cue and line 2). The committed decision number was the share of
 persistence through the generated text: "go" at 25%, "stop" below 10%, and an extension
 to 50 couplets in between; a rise counts only if the absolute indirect effect also
-grows. At 2,000 tokens Gemma 3 27B still rhymes in 82% of couplets. Direct retrieval
-falls from 66% to 40% of persistence, and the stored copy at the line's final token
-becomes necessary for about half (\(+13.0\) [10.0, 16.1] of \(+26.4\)); the filler passes
-on nothing. The generated text accounts for 9 to 13% by sufficiency at every nonzero
-distance (12% at 2,000 tokens, \(+3.2\) [2.2, 4.3]). It appears once filler is present
-and does not grow further. It includes the last three positions, so it mixes relay with
+grows. At 2,000 tokens Gemma 3 27B still rhymes in 82% of couplets, and it hands the plan from
+the rhyme word to the stored copy at the line's final token. Direct retrieval falls from
+66% to 40% of persistence (\(+28.0\) to \(+10.5\)), while the copy's necessity rises
+from 11% to 49% (\(+4.6\) to \(+13.0\) [10.0, 16.1]) although persistence falls from
+\(+42.4\) to \(+26.4\); the copy alone moves the rhyme by \(+0.1\) without filler and by
+\(+9.7\) with it. The rise is absolute, so it passes the committed rule; the filler
+passes on nothing. The generated text rises from 1% to about 11% by sufficiency as soon
+as filler is present (12% at 2,000 tokens, \(+3.2\) [2.2, 4.3]) and does not grow
+further. It includes the last three positions, so it mixes relay with
 the late lookup, and it falls between "stop" and "go": how much of it is relay remains
 unresolved. The committed window prediction is only partly supported: the largest step is where line
 1 leaves the window, but the shift begins at 500 tokens. Models without a strong stored

@@ -44,8 +44,7 @@ followed: emission accounts for at least 83% of the effect.
 
 Three stress tests with committed decision rules make relay useful or the content
 invisible (@sec-stress). In a recurrent hybrid, entry through the recurrent layers
-produces 2 to 4% of persistence. Beyond Gemma 3's attention window, Gemma 3 27B relies on
-the stored copy, and the generated text accounts for 9 to 13%, not split into late lookup
+produces 2 to 4% of persistence. Beyond Gemma 3's attention window, Gemma 3 27B hands the plan from the rhyme word to the stored copy, and the generated text accounts for 9 to 13%, not split into late lookup
 and relay. A secret choice is stored at a few low-content prompt tokens, and at most 2% of its effect passes through the hidden states of the intervening sentence. The one path that grows is the stored
 copy: it appears at 14B and above in Qwen3 and at 12B to 27B in Gemma 3, is present in
 base checkpoints, and reconciles published accounts of where the rhyme plan lives.

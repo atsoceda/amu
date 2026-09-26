@@ -1015,7 +1015,7 @@ def fig4():
           (COL["retrieval"], COL["storage"], COL["relay"])]
     ax.legend(hs, ["direct retrieval", "stored copy (nec.)", "late lookup + relay\n(cue and line 2)"], loc="upper right",
               handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.02, 1.0), fontsize=6.5)
-    ax.set_title("B   Beyond the attention window (Gemma 3 27B)", x=-0.3)
+    ax.set_title("B   With distance, Gemma 3 27B hands the plan to the stored copy", x=-0.3)
     # B, side: absolute persistence at each distance.
     ax = fig.add_subplot(g1[2])
     for i, D in enumerate(ds):
