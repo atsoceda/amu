@@ -60,3 +60,17 @@ In both, the plan reaches the rhyme position almost entirely through the full-at
 layers (1 in 4); the recurrent memory (24 of 32 layers) carries 3-4%, below the 10% stop
 line at these sizes. The both-blocked sanity cell is exactly zero. The decisive 27B
 pilot (stop/go on the largest model) is running.
+
+### Decisive size: Qwen3.5-27B (2026-09-26, fast path, 24 couplets)
+
+Persistence +18.77 [16.34, 21.27]; attention-only +17.90 [15.47, 20.43] (95%);
+**recurrent-only +0.41 [0.18, 0.64]** (median share 2%); both blocked 0.00; direct
+retrieval +15.82, relay +2.95.
+
+**Decision by the frozen rule: stop** (recurrent-only far below 10% at the largest
+model). In a hybrid where 48 of 64 layers can pass information forward only through a
+recurrent memory, the rhyme plan still reaches its target through the 16 full-attention
+layers by direct retrieval; the recurrent memory carries 2-4% at 4B, 9B and 27B and does
+not take over when attention is denied the edit. "Retrieved, not relayed" extends to a
+recurrent hybrid architecture. The open form of H1 is distance (attention that cannot
+reach the source, e.g. Gemma 3's 1,024-token local layers).
