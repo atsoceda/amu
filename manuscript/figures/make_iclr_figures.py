@@ -431,15 +431,15 @@ def fig1():
 # --------------------------------------------------------------------------- Figure 2
 
 def fig2():
-    panels = [("Qwen3, chat", [(d, s, False) for d, s in QWEN]),
-              ("Qwen3, plain", [(d + "-plain", s, False) for d, s in QWEN]
-               + [("Qwen3-8B-Base-plain", 8, True), ("Qwen3-14B-Base-plain", 14, True)]),
-              ("Gemma 3, chat", [(d, s, False) for d, s in GEMMA]),
-              ("Gemma 3, plain", [(d + "-plain", s, False) for d, s in GEMMA]
-               + [("gemma-3-12b-pt-plain", 12, True), ("gemma-3-27b-pt-plain", 27, True)])]
+    # Instruction-tuned checkpoints only; the base-checkpoint comparison is in Table 3 and the appendix.
+    panels = [("Qwen3, chat", [(d, s) for d, s in QWEN]),
+              ("Qwen3, plain", [(d + "-plain", s) for d, s in QWEN]),
+              ("Gemma 3, chat", [(d, s) for d, s in GEMMA]),
+              ("Gemma 3, plain", [(d + "-plain", s) for d, s in GEMMA])]
     fig = plt.figure(figsize=(W, 4.0))
-    gs = fig.add_gridspec(2, 4, height_ratios=[1.25, 1.0], hspace=0.66, wspace=0.12,
-                          left=0.09, right=0.99, top=0.83, bottom=0.1)
+    # Panel widths proportional to the number of models, so every bar has the same width.
+    gs = fig.add_gridspec(2, 4, height_ratios=[1.25, 1.0], width_ratios=[len(r) for _, r in panels],
+                          hspace=0.66, wspace=0.12, left=0.09, right=0.99, top=0.83, bottom=0.1)
     parts = [("retrieval", "direct retrieval", COL["retrieval"]),
              ("boundary", "stored copy at the line's final token", COL["storage"]),
              ("late", "late lookup (last 3 positions)", COL["late"]),
@@ -450,30 +450,24 @@ def fig2():
     for ci, (title, runs) in enumerate(panels):
         ax = fig.add_subplot(gs[0, ci])
         avail = [r for r in runs if couplet_shares(r[0])]
-        sizes = [r[1] for r in avail]
-        suff, nec, base_pts = [], [], []
-        for run, size, is_base in avail:
+        suff, nec = [], []
+        # One evenly spaced bar per model, labelled with its actual size.
+        for x, (run, size) in enumerate(avail):
             c = couplet_shares(run)
-            paired = sizes.count(size) > 1
-            w = 0.1 if paired else 0.17
-            x = lx(size) + ((0.055 if is_base else -0.055) if paired else 0.0)
             bottom = 0.0
             for k, _, colr in parts:
                 v = 100 * max(c[k], 0.0)
-                ax.bar(x, v, w, bottom=bottom, color=colr, lw=0)
+                ax.bar(x, v, 0.62, bottom=bottom, color=colr, lw=0)
                 bottom += v
-            ax.bar(x, max(100 - bottom, 0.0), w, bottom=bottom, color=COL["interaction"], lw=0)
-            if is_base:
-                ax.scatter(x, 106, marker="*", s=18, color=COL["ink"], clip_on=False, zorder=5)
-                base_pts.append((size, 100 * c["boundary"]))
-            else:
-                suff.append((size, 100 * c["boundary"]))
-                if "nec_boundary" in c:
-                    nec.append((size, 100 * c["nec_boundary"]))
-        series.append((title, suff, nec, base_pts))
-        ax.set_xlim(lx(0.8), lx(42))
-        ax.set_xticks([lx(v) for v in xt])
-        ax.set_xticklabels([str(v) for v in xt])
+            ax.bar(x, max(100 - bottom, 0.0), 0.62, bottom=bottom, color=COL["interaction"], lw=0)
+            suff.append((size, 100 * c["boundary"]))
+            if "nec_boundary" in c:
+                nec.append((size, 100 * c["nec_boundary"]))
+        series.append((title, suff, nec))
+        ax.set_xlim(-0.6, len(avail) - 0.4)
+        ax.set_xticks(range(len(avail)))
+        ax.set_xticklabels([f"{r[1]:g}" for r in avail])
+        ax.tick_params(axis="x", length=0)
         ax.set_ylim(0, 100)
         ax.set_title(title, fontsize=7, weight="normal", pad=3)
         ax.set_xlabel("parameters (B)")
@@ -485,8 +479,7 @@ def fig2():
              weight="bold", va="top")
     hs = [Rectangle((0, 0), 1, 1, color=c) for _, _, c in parts]
     hs.append(Rectangle((0, 0), 1, 1, color=COL["interaction"]))
-    hs.append(Line2D([], [], ls="none", marker="*", ms=5, color=COL["ink"]))
-    fig.legend(hs, [l for _, l, _ in parts] + ["interaction", "base checkpoint"], loc="upper left", ncol=3,
+    fig.legend(hs, [l for _, l, _ in parts] + ["interaction"], loc="upper left", ncol=3,
                bbox_to_anchor=(0.04, 0.955), handlelength=1.0, columnspacing=0.9, labelspacing=0.2,
                borderaxespad=0.0)
 
@@ -498,7 +491,7 @@ def fig2():
     style = {"Qwen3, chat": ("o", "-"), "Qwen3, plain": ("o", (0, (3, 1.6))),
              "Gemma 3, chat": ("s", "-"), "Gemma 3, plain": ("s", (0, (3, 1.6)))}
     ends = []
-    for title, suff, nec, base_pts in series:
+    for title, suff, nec in series:
         mk, ls = style[title]
         if suff:
             xs, ys = [lx(p[0]) for p in suff], [p[1] for p in suff]
@@ -513,9 +506,6 @@ def fig2():
                     bx.annotate(f"necessity {p_[1]:.0f}%", xy=(lx(p_[0]), p_[1]),
                                 xytext=(lx(p_[0]) + 0.12, p_[1]), fontsize=7, color="#1B6E53", ha="left",
                                 va="center", arrowprops=dict(arrowstyle="-", color="#9BCDB9", lw=0.5))
-        if base_pts:
-            bx.scatter([lx(p[0]) for p in base_pts], [p[1] for p in base_pts], marker="*", s=34,
-                       color=COL["ink"], zorder=5)
     # Direct labels at the line ends, spread so they do not overlap.
     ends.sort(key=lambda e: e[1])
     ly = [e[1] for e in ends]
@@ -533,9 +523,8 @@ def fig2():
     bx.set_xlabel("parameters (B)")
     bx.set_ylabel("stored copy\n(% of persistence)")
     hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["storage"], mec=COL["storage"]),
-          Line2D([], [], ls="none", marker="o", ms=4, mfc="white", mec=COL["storage"]),
-          Line2D([], [], ls="none", marker="*", ms=6, color=COL["ink"])]
-    bx.legend(hs, ["sufficiency (patched in)", "necessity (patched out)", "base checkpoint"], loc="upper left",
+          Line2D([], [], ls="none", marker="o", ms=4, mfc="white", mec=COL["storage"])]
+    bx.legend(hs, ["sufficiency (patched in)", "necessity (patched out)"], loc="upper left",
               handletextpad=0.2, labelspacing=0.2, borderaxespad=0.1)
     fig.text(0.0, bx.get_position().y1 + 0.035, "B   A stored copy at the line's final token appears from about 12 to 14B parameters",
              fontsize=8, weight="bold", va="bottom")
@@ -1042,23 +1031,25 @@ def fig4():
         bd = (x or {}).get("by_distance", {})
         if "0" in bd and "2000" in bd:
             rh.append((lab, fam, 100 * bd["0"]["rhymes_orig"], 100 * bd["2000"]["rhymes_orig"]))
+    # One marker shape here: the models are named on the axis, so the legend can match every point.
     for i, (lab, fam, r0, r2) in enumerate(rh):
         ax.plot([i, i], [r0, r2], color="#BBBBBB", lw=0.8, zorder=1)
-        ax.scatter(i, r0, marker=MARK[fam], s=14, facecolor="white", edgecolor=COL["grey"], lw=0.8, zorder=3)
-        ax.scatter(i, r2, marker=MARK[fam], s=14, facecolor=COL["ink"], edgecolor=COL["ink"], lw=0.8, zorder=3)
+        ax.scatter(i, r0, marker="o", s=14, facecolor="white", edgecolor=COL["grey"], lw=0.8, zorder=3)
+        ax.scatter(i, r2, marker="o", s=14, facecolor=COL["ink"], edgecolor=COL["ink"], lw=0.8, zorder=3)
     ax.set_xticks(range(len(rh)))
     ax.set_xticklabels([r[0] for r in rh], rotation=90)
     ax.tick_params(axis="x", length=0)
     ax.spines["bottom"].set_visible(False)
     ax.set_xlim(-0.6, len(rh) - 0.4)
-    ax.set_ylim(-34, 104)
+    ax.set_ylim(-44, 104)
     ax.set_yticks([0, 25, 50, 75, 100])
     ax.spines["left"].set_bounds(0, 100)
     ax.set_ylabel("line 2 rhymes (% of couplets)")
     hs = [Line2D([], [], ls="none", marker="o", ms=3.5, mfc="white", mec=COL["grey"]),
           Line2D([], [], ls="none", marker="o", ms=3.5, mfc=COL["ink"], mec=COL["ink"])]
-    ax.legend(hs, ["0", "2,000 tokens"], loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=2,
-              handletextpad=0.05, borderaxespad=0.1, columnspacing=0.4)
+    ax.legend(hs, ["no filler", "2,000 filler"], loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=1,
+              handletextpad=0.1, borderaxespad=0.1, labelspacing=0.2, frameon=True, fancybox=False,
+              edgecolor="#BBBBBB", framealpha=1.0, fontsize=6.5)
 
     # C. Hidden choice: composition of the text-swap reference.
     models = [("Qwen3-4B", "Qwen3 4B"), ("Qwen3-8B", "Qwen3 8B"), ("Qwen3-14B", "Qwen3 14B"),
