@@ -156,7 +156,7 @@ Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of per
 Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & generated text (incl.\ last three positions): 9--13\%\\
 Computed value, unwritten (visible) & -- & recomputed from the source & every later position together: $\le$2.4\% of the source effect (chains), $\le$6\% (sums)\\
 Computed value, written (visible) & 83--99\% & bypass to the source 1--17\% & --\\
-Secret choice (hidden) & no measurable effect (the sentence never names it) & pick-specific information stored after the list: 0--40\% of the text-swap reference, read directly at the reveal (Gemma~4 31B stores 82--91\%; its route split was not run); the rest not reproduced by the post-list patch & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$7\%\\
+Secret choice (hidden) & no measurable effect (the sentence never names it) & pick-specific information stored after the list: 0--40\% of the text-swap reference, read directly at the reveal (Gemma~4 31B stores 82--91\%; its route split was not run); the rest not reproduced by the post-list patch & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$8\% (Qwen3.5 hybrids)\\
 \midrule
 Induction (positive control) & -- & direct retrieval $\le$3\% (10--31\% in Qwen3-32B and the Qwen3.5 hybrids) & through the copied token's position (prompt): 53--137\%\\
 \bottomrule

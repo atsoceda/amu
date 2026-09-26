@@ -97,3 +97,9 @@ largest share of any model (Gemma 3 27B 40%, Qwen3.5-27B 4%).
 p(B) clean 0.988; persistence -3.81 [-4.01, -3.62]; direct retrieval -0.37 [-0.44, -0.31]
 (10%); relay -2.33 (61%); key position alone -3.66 (96%). Partial pass, as at Qwen3.5-27B:
 relay is the main path (key position 96%), but direct retrieval (10%) exceeds near zero.
+
+### Qwen3.5 - 9B - hidden choice - forced route split (fruits; 100 pairs; 2026-09-26)
+
+Text swap +1.00 [0.91, 1.09] (the pick depends weakly on order at 9B); post-list block +0.08
+(8%); relay through the sentence +0.02 [0.01, 0.03] (2%); sentence positions +0.08 [0.06,
+0.10] (8%). Same pattern as Qwen3.5-27B (1% relay, 7% sentence positions).

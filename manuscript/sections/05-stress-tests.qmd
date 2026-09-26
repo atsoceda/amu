@@ -174,8 +174,8 @@ from the visible list. The two largest Qwen models are the exception.
   0.09]. That is 2% of the text swap but one eighth of the stored part.
 - In the recurrent hybrid *Qwen3.5-27B*, relay of the stored part is \(+0.03\) [0.02,
   0.04]: 1% of the text swap and one sixth of the stored part. Its sentence positions
-  themselves account for 7% of the text swap (\(+0.15\) [0.12, 0.18]). That is the
-  largest in any model; Qwen3-4B has 5% and every other model at most 1%. This is
+  themselves account for 7% of the text swap (\(+0.15\) [0.12, 0.18]); Qwen3.5-9B gives the
+same pattern (relay 2%, sentence positions 8%). These are the largest in any model; Qwen3-4B has 5% and every other model at most 1%. This is
   expected when every position's recurrent state summarizes the prefix, including the
   list.
 
