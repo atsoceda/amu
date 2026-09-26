@@ -141,7 +141,12 @@ post-list effect. Relay through the sentence is \(+0.00\) [\(-0.04\), 0.05],
 its interval in Qwen3-4B and Qwen3-14B. The one exception is Qwen3-32B, where the
 post-list block holds 16% of the text swap. There, relay through the sentence is small
 but nonzero: \(+0.06\) [0.04, 0.09], one eighth of the stored part and 2% of the text
-swap. The rest of the pick is re-derived at the reveal from the visible list.
+swap. The recurrent hybrid Qwen3.5-27B behaves similarly. There, relay of the stored
+part through the sentence is \(+0.03\) [0.02, 0.04], or 1% of the text swap. The sentence
+positions themselves carry 7% of the text swap (\(+0.15\) [0.12, 0.18]), the largest share
+in any model; Qwen3-4B has 5% and every other model at most 1%. This is expected when every
+position's recurrent state summarizes the prefix, including the list. The rest of the pick
+is re-derived at the reveal from the visible list.
 
 **The stored part is the choice itself.** An order swap cannot separate a stored
 pick from a stored copy of the list order. In the out-of-list control, the donor

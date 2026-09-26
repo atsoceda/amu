@@ -55,7 +55,7 @@ interaction term. Because a method that never finds relay would be uninformative
 validate route accounting on induction [@olsson2022induction], where relay through
 the copied token's position is the known mechanism. In that positive control, the
 accounting assigns the effect to relay, while direct retrieval stays at or below 3%
-of the effect in six of seven models (@fig-overview B).
+of the effect in six of eight models (@fig-overview B).
 
 Applied to four tasks in 15 checkpoints from three model families, route accounting
 reveals a consistent principle: **look it up, don't carry it**. Unwritten information
@@ -136,7 +136,7 @@ Computed value, unwritten (visible) & -- & recomputed from the source digits & $
 Computed value, written (visible) & 83--99\% & bypass 1--17\% & --\\
 Secret choice (hidden) & $\approx$0 (the sentence never names it) & re-derived from the list; 0--40\% stored after it & $\le$2\% (of the text swap)\\
 \midrule
-Induction (positive control) & -- & $\le$3\% (31\% at Qwen3-32B) & 53--137\% (interaction above 100\%)\\
+Induction (positive control) & -- & $\le$3\% (17--31\% in the two largest Qwen models) & 53--137\% (interaction above 100\%)\\
 \bottomrule
 \end{tabular}
 ```

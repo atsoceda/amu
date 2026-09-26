@@ -115,8 +115,9 @@ above 100% reflect an interaction. With only downstream positions edited, the cl
 first \(A\) conflicts with the edited "preceded by" signal and suppresses \(B\) more
 than the consistent edit does. In Gemma 3 the all-position relay cell is weaker than
 the key position alone, for the same reason. At Qwen3-32B relay remains the main
-path (89%), but direct retrieval is 31%: the largest model also reads the first
-\(A\) directly. The retrieval-dominated results in the rest of the paper are
+path (89%), but direct retrieval is 31%. In the recurrent hybrid Qwen3.5-27B, the key
+position alone carries 77% and direct retrieval 17%. The largest models also read the
+first \(A\) directly. The retrieval-dominated results in the rest of the paper are
 therefore informative negatives, not a blind spot of the method.
 
 ::: {#tbl-control}
@@ -135,6 +136,7 @@ Qwen3-14B & 0.998 & $-3.81$ [$-4.14$, $-3.46$] & $-0.10$ [$-0.15$, $-0.05$] & $-
 Qwen3-32B & 0.977 & $-4.83$ [$-5.17$, $-4.48$] & $-1.52$ [$-1.87$, $-1.19$] & $-4.30$ & $-6.24$\\
 Gemma 3 12B & -- & $-4.90$ [$-5.18$, $-4.64$] & $-0.02$ [$-0.03$, $-0.02$] & $-2.61$ & $-7.12$\\
 Gemma 3 27B & -- & $-4.55$ [$-4.82$, $-4.27$] & $-0.02$ & $-2.52$ & $-7.10$\\
+Qwen3.5-27B & 0.984 & $-4.34$ [$-4.55$, $-4.12$] & $-0.72$ [$-0.85$, $-0.61$] & $-2.41$ & $-3.35$\\
 \bottomrule
 \end{tabular}
 ```

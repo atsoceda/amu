@@ -91,7 +91,7 @@ Animal replication & pick specificity positive, growing in Gemma 3, near zero in
 Localization robustness & storage concentrates on one or two function words and moves with the wording & supported at 12B (two domains; reworded: list-final period 71\%, token before ``weather'' 27\%); at 4B the site is the segment-closing periods (91\%); 27B \pending{}\\
 Window curve & the change in boundary reliance occurs between 1,000 and 1,500 tokens & \pending{}\\
 Same-pick null & post-list edit with a same-pick donor leaves pick preference unchanged & holds at Gemma~3 12B ($-0.19$ [$-0.53$, 0.16]); 27B and Qwen3-32B \pending{}\\
-Architecture generalization & early relay under 5\%; induction retrieval under 5\%; hidden relay near zero; family-like storage & Qwen3.5-27B storage 3--4\% (as predicted); rest \pending{}\\
+Architecture generalization & early relay under 5\%; induction retrieval under 5\%; hidden relay near zero; family-like storage & Qwen3.5-27B: storage 3--4\% and relay of the stored part 1\% (as predicted); induction retrieval 17\% (prediction $<$5\% fails: partial pass); Gemma~4 31B and Qwen3.5-35B-A3B \pending{}\\
 \bottomrule
 \end{tabular}
 ```
