@@ -9,8 +9,9 @@ information is kept in the settings we tested.
 2. *Unwritten content is looked up, not carried.* It is read near the point of use
    from the source, from the visible text from which it can be recomputed, or from a
    copy stored once at a structural token. Relay along the generated text is at or
-   below 1% of the effect beyond the last three positions in couplets, and
-   indistinguishable from zero for computed values and hidden choices.
+   below 1% of the effect beyond the last three positions in couplets. For computed
+   values and hidden choices it is at most 2 to 2.4%, and usually indistinguishable
+   from zero.
 3. *Storage sites are few and predictable.* The line's final token holds a copy of
    the rhyme plan. A single function word of the instruction holds most of the
    stored part of a secret choice.

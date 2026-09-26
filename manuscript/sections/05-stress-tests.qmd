@@ -22,7 +22,7 @@ secret pick stored in the prompt after the list, as a share of the text-swap
 reference, in the pre-registered replication (animals) and the first domain (fruits).
 Markers below zero: the part relayed through the intervening sentence (triangles)
 and the part written into it (crosses), all indistinguishable from
-zero.](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100%}
+zero except at Qwen3-32B (2%).](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100%}
 
 ## Recurrent memory {#sec-recurrent}
 
@@ -130,15 +130,18 @@ reader can compute it. For the route split, the model's turn is prefilled with a
 fixed weather sentence and "The fruit I chose is". The outcome is the log-odds of the
 donor's pick against the original pick at the next token.
 
-**Mostly re-derived, partly stored, never relayed.** The donor is the same list in
+**Mostly re-derived, partly stored, barely relayed.** The donor is the same list in
 another order, chosen so that the greedy pick differs. The reference is a *text
 swap*: the donor order written into the prompt, which moves the pick by
 construction. In Qwen3-8B, Gemma 3 12B and Gemma 3 27B (100 pairs each), donor states
 at the prompt positions after the list move the reveal by 12%, 15% and 16% of the
 text swap. The reveal reads all of it directly: the retrieval cell equals the
 post-list effect. Relay through the sentence is \(+0.00\) [\(-0.04\), 0.05],
-\(-0.06\) [\(-0.14\), 0.01] and \(-0.01\) [\(-0.10\), 0.08]. The rest of the pick is
-re-derived at the reveal from the visible list.
+\(-0.06\) [\(-0.14\), 0.01] and \(-0.01\) [\(-0.10\), 0.08]. It is also zero within
+its interval in Qwen3-4B and Qwen3-14B. The one exception is Qwen3-32B, where the
+post-list block holds 16% of the text swap. There, relay through the sentence is small
+but nonzero: \(+0.06\) [0.04, 0.09], one eighth of the stored part and 2% of the text
+swap. The rest of the pick is re-derived at the reveal from the visible list.
 
 **The stored part is the choice itself.** An order swap cannot separate a stored
 pick from a stored copy of the list order. In the out-of-list control, the donor

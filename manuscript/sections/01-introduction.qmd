@@ -68,8 +68,9 @@ recomputed from their visible sources at the answer, even where this fails. No
 downstream position holds the running value of a variable chain, even as a block.
 When intermediate values are written out, the answer follows them: emission carries
 83 to 99% of the effect (@sec-emission). Relay along generated text more than three
-positions before the target never exceeds 1% of persistence in couplets. In the
-other tasks it is indistinguishable from zero.
+positions before the target never exceeds 1% of persistence in couplets. For computed
+values and hidden choices, relay through all intermediate positions is at most 2.4%
+of the effect, and in most models its interval includes zero.
 
 A regularity found under favourable conditions is only as strong as the tests that
 could have broken it. We therefore test the principle in three settings designed to
@@ -90,7 +91,8 @@ result (@sec-stress):
   monitoring cares about most. Models store part of a secret pick at a predictable,
   low-content token of the instruction. In Gemma 3 27B, most of the stored pick sits
   on the word *the* in "about the weather". The pick is read directly at the reveal.
-  It is not relayed through the intervening sentence and not written into it.
+  At most 2% of it is relayed through the intervening sentence, and none of it is
+  written into the sentence.
 
 Across scale, the one route that grows is storage at the line's final token: the
 comma in chat prompts, the newline in plain prompts (@sec-storage). It appears from
@@ -130,7 +132,7 @@ Content (observability) & Emission & Retrieval or stored copy & Relay along gene
 Rhyme plan (visible) & 13--25\% of the total & rhyme word 68--95\% of persistence; line-end copy 0--16\% (37\% in Gemma~3 27B, plain prompt) & $\le$1\% beyond the last three positions\\
 Computed value, unwritten (visible) & -- & recomputed from the source digits & $\le$2\% (all later positions together)\\
 Computed value, written (visible) & 83--99\% & bypass 1--17\% & --\\
-Secret choice (hidden) & $\approx$0 (the sentence never names it) & re-derived from the list; 0--40\% stored after it & $\approx$0\\
+Secret choice (hidden) & $\approx$0 (the sentence never names it) & re-derived from the list; 0--40\% stored after it & $\le$2\% (of the text swap)\\
 \midrule
 Induction (positive control) & -- & $\le$3\% (31\% at Qwen3-32B) & 53--137\% (interaction above 100\%)\\
 \bottomrule

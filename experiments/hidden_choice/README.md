@@ -286,3 +286,17 @@ specificity +1.42 [1.08, 1.76] (text swap +8.10). By token: **"the" in "about th
 after the list +0.09; every other token below 0.07. The storage site is the same in a second
 domain (fruits at 12B: "the" +0.52 of +1.03). Gemma 3 27B animals and the reworded
 instruction (27B and 12B) pending.
+
+### Forced route split, Qwen3-4B / 14B / 32B (recorded 2026-09-26 from committed summaries)
+
+| | Qwen3-4B | Qwen3-14B | Qwen3-32B |
+|---|---|---|---|
+| Text swap | +10.68 | +6.96 | +2.92 |
+| Post-list block | +0.56 (5%) | +0.11 [0.01, 0.21] (2%) | +0.48 [0.37, 0.59] (16%) |
+| of which direct retrieval | +0.58 | +0.11 | +0.40 |
+| relay through the sentence | +0.02 [-0.05, 0.08] | -0.02 [-0.05, 0.02] | **+0.06 [0.04, 0.09]** |
+| Sentence block | +0.57 | -0.01 | +0.03 [0.01, 0.06] |
+
+Qwen3-32B is the one model in which relay through the sentence is nonzero: small (2% of the
+text swap, one eighth of the stored part) but with an interval above zero. Reported in the
+manuscript as "at most 2%" rather than zero.
