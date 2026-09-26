@@ -133,6 +133,11 @@ come back. Details, measured facts and troubleshooting are in
   explicitly in the job script (see `experiments/recurrent_carry/run_pilot.sh`). On
   Apple GPUs the recurrent layers use slow reference kernels (flash-linear-attention is
   CUDA-only).
+- **Stopping jobs without losing work.** Pause with `kill -STOP` on the job's whole
+  process tree and resume with `kill -CONT` (memory stays allocated; see
+  `experiments/recurrent_carry/yield_to_27b.sh`). Long scripts checkpoint finished rows
+  (`experiments/couplet_routes/checkpoint.py`: `<final>.partial.jsonl`, resumed on
+  restart); scripts without it lose all progress when killed, so pause them instead.
 - **Correct a running job's declared memory** by editing
   `~/amu_jobs/running/<name>.mem` when the first guess was too high; the runner re-reads
   it every cycle.

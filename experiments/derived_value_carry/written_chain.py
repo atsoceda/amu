@@ -54,45 +54,50 @@ def cut_chain(text, K):
 
 
 def batched_K(K, a, tok, m, layers, gemma, digit, states):
-    """Same items, generations and cells as the one-at-a-time path, with generation batched."""
-    prep = []
-    for it in make_items(K)[: a.limit or None]:
-        text, _ = prompt_text(tok, it["v0"], it["inc"], gemma)
-        dtext, _ = prompt_text(tok, it["dv0"], it["inc"], gemma)
-        enc = tok(text, return_tensors="pt", add_special_tokens=False, return_offsets_mapping=True)
-        dids = tok(dtext, return_tensors="pt", add_special_tokens=False).input_ids
-        if enc.input_ids.shape != dids.shape:
-            continue
-        offs = enc.offset_mapping[0].tolist()
-        s0 = text.index("a = ") + 4
-        v0pos = [i for i, (s, e) in enumerate(offs) if s0 <= s < s0 + 2 and e <= s0 + 2]
-        dst = states(dids)
-        prep.append((it, text, {p: [x[p] for x in dst] for p in v0pos}))
-    texts = [t for _, t, _ in prep]
-    g0s = generate_batch(m, tok, layers, texts, 240, chunk=a.batch)
-    g1s = generate_batch(m, tok, layers, texts, 240, patches=[pt for _, _, pt in prep], chunk=a.batch)
-    rows = []
-    for (it, text, patch), g0, g1 in zip(prep, g0s, g1s):
-        c0, val0 = cut_chain(g0, K)
-        c1, val1 = cut_chain(g1, K)
-        true_prev = it["v0"] + sum(it["inc"][:-1])
-        rec = {**it, "gen_off": g0, "gen_on": g1, "written_prev_off": val0, "written_prev_on": val1,
-               "true_prev": true_prev, "donor_prev": it["dv0"] + sum(it["inc"][:-1]), "usable": bool(c0 and c1 and val0 == true_prev)}
-        if rec["usable"]:
-            o, dn = digit[it["final"] // 10], digit[it["dfinal"] // 10]
-            R = lambda y: float(y[dn] - y[o])  # noqa: E731
-            t0ids = tok(text + c0 + "\nThe answer is ", return_tensors="pt", add_special_tokens=False).input_ids
-            t1ids = tok(text + c1 + "\nThe answer is ", return_tensors="pt", add_special_tokens=False).input_ids
-            (y00, y01), _ = run_edits(m, layers, t0ids, [{}, patch])
-            (y10, y11), _ = run_edits(m, layers, t1ids, [{}, patch])
-            v = {"off_t0": R(y00), "on_t1": R(y11), "off_t1": R(y10), "on_t0": R(y01)}
-            rec.update(v)
-            rec.update({"total": v["on_t1"] - v["off_t0"], "emission": v["off_t1"] - v["off_t0"],
-                        "persistence_t1": v["on_t1"] - v["off_t1"], "persistence_t0": v["on_t0"] - v["off_t0"],
-                        "text_changed": c0 != c1})
-        rows.append(rec)
-    print(f"K={K}: {len(rows)} items done (batched)", flush=True)
-    return rows
+    """Same items, generations and cells as the one-at-a-time path, with generation batched.
+    Checkpointed per chunk (couplet_routes/checkpoint.py): a restarted run resumes."""
+    from checkpoint import Checkpoint
+    key = lambda r: f"{r['v0']}-{r['dv0']}-{'-'.join(map(str, r['inc']))}"  # noqa: E731
+    ck = Checkpoint(EXP / "results" / a.model / f"written_K{K}_rows.json", key)
+    todo = [it for it in make_items(K)[: a.limit or None] if not ck.has(key(it))]
+    for c in range(0, len(todo), a.batch):
+        prep = []
+        for it in todo[c:c + a.batch]:
+            text, _ = prompt_text(tok, it["v0"], it["inc"], gemma)
+            dtext, _ = prompt_text(tok, it["dv0"], it["inc"], gemma)
+            enc = tok(text, return_tensors="pt", add_special_tokens=False, return_offsets_mapping=True)
+            dids = tok(dtext, return_tensors="pt", add_special_tokens=False).input_ids
+            if enc.input_ids.shape != dids.shape:
+                continue
+            offs = enc.offset_mapping[0].tolist()
+            s0 = text.index("a = ") + 4
+            v0pos = [i for i, (s, e) in enumerate(offs) if s0 <= s < s0 + 2 and e <= s0 + 2]
+            dst = states(dids)
+            prep.append((it, text, {p: [x[p] for x in dst] for p in v0pos}))
+        texts = [t for _, t, _ in prep]
+        g0s = generate_batch(m, tok, layers, texts, 240, chunk=a.batch)
+        g1s = generate_batch(m, tok, layers, texts, 240, patches=[pt for _, _, pt in prep], chunk=a.batch)
+        for (it, text, patch), g0, g1 in zip(prep, g0s, g1s):
+            c0, val0 = cut_chain(g0, K)
+            c1, val1 = cut_chain(g1, K)
+            true_prev = it["v0"] + sum(it["inc"][:-1])
+            rec = {**it, "gen_off": g0, "gen_on": g1, "written_prev_off": val0, "written_prev_on": val1,
+                   "true_prev": true_prev, "donor_prev": it["dv0"] + sum(it["inc"][:-1]), "usable": bool(c0 and c1 and val0 == true_prev)}
+            if rec["usable"]:
+                o, dn = digit[it["final"] // 10], digit[it["dfinal"] // 10]
+                R = lambda y: float(y[dn] - y[o])  # noqa: E731
+                t0ids = tok(text + c0 + "\nThe answer is ", return_tensors="pt", add_special_tokens=False).input_ids
+                t1ids = tok(text + c1 + "\nThe answer is ", return_tensors="pt", add_special_tokens=False).input_ids
+                (y00, y01), _ = run_edits(m, layers, t0ids, [{}, patch])
+                (y10, y11), _ = run_edits(m, layers, t1ids, [{}, patch])
+                v = {"off_t0": R(y00), "on_t1": R(y11), "off_t1": R(y10), "on_t0": R(y01)}
+                rec.update(v)
+                rec.update({"total": v["on_t1"] - v["off_t0"], "emission": v["off_t1"] - v["off_t0"],
+                            "persistence_t1": v["on_t1"] - v["off_t1"], "persistence_t0": v["on_t0"] - v["off_t0"],
+                            "text_changed": c0 != c1})
+            ck.add(rec)
+        print(f"K={K}: {len(ck.rows)} items done (batched, checkpointed)", flush=True)
+    return ck.rows
 
 
 def main() -> None:
@@ -188,6 +193,7 @@ def main() -> None:
                   f"{rec['donor_prev']}) " + (f"total {rec['total']:+.2f} emis {rec['emission']:+.2f} pers(t0) {rec['persistence_t0']:+.2f} "
                   f"pers(t1) {rec['persistence_t1']:+.2f}" if rec["usable"] else "unusable"), flush=True)
         (out_dir / f"written_K{K}_rows.json").write_text(json.dumps(rows, indent=1))
+        (out_dir / f"written_K{K}_rows.partial.jsonl").unlink(missing_ok=True)
         u = [r for r in rows if r["usable"]]
         summary["by_K"][K] = {"n": len(rows), "n_usable": len(u),
                               "on_writes_donor_prev": sum(r["written_prev_on"] == r["donor_prev"] for r in rows) / len(rows),
