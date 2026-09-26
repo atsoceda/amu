@@ -60,6 +60,7 @@ def main() -> None:
     ap.add_argument("--localize", action="store_true")
     ap.add_argument("--pairs", type=int, default=100)
     ap.add_argument("--wording", choices=["base", "alt"], default="base")
+    ap.add_argument("--null-same-pick", action="store_true", help="donor = same list reordered with the same pick (added 2026-09-26)")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -71,9 +72,27 @@ def main() -> None:
     print("items:", items, flush=True)
     rng = random.Random(SEED + (3 if a.domain == "animals" else 1))
     rows, t0 = [], time.time()
-    for _ in range(a.pairs):
+    import itertools
+    for _ in range(a.pairs if not a.null_same_pick else 4 * a.pairs):
+        if len(rows) >= a.pairs:
+            break
         allf = rng.sample(items, 2 * k)
         orig, don = allf[:k], allf[k:]
+        if a.null_same_pick:
+            ids0, _, _, _ = build(tok, orig, gemma, noun, a.wording)
+            (y00,), _ = run_edits(m, layers, ids0, [{}])
+            pk = max(orig, key=lambda f: float(y00[fid[f]]))
+            perms = [list(p) for p in itertools.permutations(orig) if list(p) != orig]
+            rng.shuffle(perms)
+            don = None
+            for p in perms[:8]:
+                idsp, _, _, _ = build(tok, p, gemma, noun, a.wording)
+                (yp,), _ = run_edits(m, layers, idsp, [{}])
+                if max(p, key=lambda f: float(yp[fid[f]])) == pk:
+                    don = p
+                    break
+            if don is None:
+                continue
         ids, lpos, post, toks = build(tok, orig, gemma, noun, a.wording)
         dids, dl, dp, _ = build(tok, don, gemma, noun, a.wording)
         if ids.shape != dids.shape or (lpos, post) != (dl, dp):
@@ -83,6 +102,8 @@ def main() -> None:
         dst = dsts[0]
         po = max(orig, key=lambda f: float(y0[fid[f]]))
         pdn = max(don, key=lambda f: float(yd[fid[f]]))
+        if a.null_same_pick:
+            rel = lambda y: float(y[fid[po]]) - sum(float(y[fid[f]]) for f in orig if f != po) / (len(orig) - 1)  # noqa: E731
         others = [f for f in don if f != pdn]
         spec = lambda y: float(y[fid[pdn]] - y[fid[po]]) - sum(float(y[fid[f]] - y[fid[po]]) for f in others) / len(others)  # noqa: E731
         pick = lambda y: float(y[fid[pdn]] - y[fid[po]])  # noqa: E731
@@ -93,6 +114,12 @@ def main() -> None:
             s0 = s0[0]
             reps += [{p: v for p, v in Dpost.items() if p != q} | {q: [s[q] for s in s0]} for q in post]
         ys, _ = run_edits(m, layers, ids, reps)
+        if a.null_same_pick:
+            (ypost,), _ = run_edits(m, layers, ids, [{p: [s[p] for s in dst] for p in post}])
+            rows.append({"list": orig, "donor_list": don, "pick": po, "donor_pick": pdn,
+                         "text_swap_rel": rel(yd) - rel(y0), "post_rel": rel(ypost) - rel(y0)})
+            print(f"{len(rows):3d} same-pick {po}: text {rows[-1]['text_swap_rel']:+.2f} post {rows[-1]['post_rel']:+.2f}", flush=True)
+            continue
         rec = {"list": orig, "donor_list": don, "pick": po, "donor_pick": pdn,
                "text_swap_pick": pick(yd) - pick(y0), "text_swap_specificity": spec(yd) - spec(y0),
                "post_pick": pick(ys[0]) - pick(y0), "post_specificity": spec(ys[0]) - spec(y0)}
@@ -103,6 +130,16 @@ def main() -> None:
         print(f"{len(rows):3d} [{time.time()-t0:5.0f}s] {po} vs {pdn}: text spec {rec['text_swap_specificity']:+.2f} "
               f"post spec {rec['post_specificity']:+.2f}", flush=True)
     tag = f"_{a.domain}" + ("_localize" if a.localize else "") + ("" if a.wording == "base" else f"_{a.wording}")
+    if a.null_same_pick:
+        tag += "_samepick"
+        out = EXP / "results" / a.model
+        out.mkdir(parents=True, exist_ok=True)
+        (out / f"choice_replicate{tag}_rows.json").write_text(json.dumps(rows, indent=1))
+        s_ = {"model": a.model, "n": len(rows), "text_swap_rel": boot([r["text_swap_rel"] for r in rows]),
+              "post_rel": boot([r["post_rel"] for r in rows])}
+        (out / f"choice_replicate{tag}_summary.json").write_text(json.dumps(s_, indent=1))
+        print(s_)
+        return
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / f"choice_replicate{tag}_rows.json").write_text(json.dumps(rows, indent=1))

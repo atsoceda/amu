@@ -261,3 +261,10 @@ Post-list pick specificity +1.03 [0.79, 1.26] (text swap +6.95). By token: **"th
 The same storage site as Gemma 3 - 27B ("the" +1.91, period after the list +0.42): it
 replicates across two sizes with the same wording. Checks 1 (animals) and 3 (reworded
 instruction) pending.
+
+## Same-pick null (design frozen 2026-09-26, before any result)
+
+Donor = the same list in another order with the **same** greedy pick. If the post-list
+block carries the pick itself, the post-list edit should leave the relative preference
+for the pick, log p(pick) - mean log p(other list items), unchanged (a null near 0),
+whereas out-of-list donors move it. Fruits, 100 pairs; Gemma 3 - 27B and Qwen3 - 32B.

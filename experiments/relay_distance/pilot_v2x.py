@@ -69,6 +69,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model")
     ap.add_argument("--n", type=int, default=50)
+    ap.add_argument("--out-tag", default="", help="suffix for output files (e.g. _window)")
     ap.add_argument("--distances", default="0,2000")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
@@ -76,7 +77,7 @@ def main() -> None:
     df = df[df["found_valid_row"].astype(str).str.lower() == "true"].head(a.n)
     allrows = pd.read_csv(subset_csv(a.model), index_col=0)
     dists = [int(x) for x in a.distances.split(",")]
-    ck = Checkpoint(EXP / "results" / a.model / "pilot_v2x_rows.json", key=lambda r: f"{r['idx']}-{r['distance']}")
+    ck = Checkpoint(EXP / "results" / a.model / f"pilot_v2x{a.out_tag}_rows.json", key=lambda r: f"{r['idx']}-{r['distance']}")
 
     def rhyme_ids(word):
         return sorted({t[0] for w in rhymes(word) for t in [tok.encode(" " + w, add_special_tokens=False)] if len(t) == 1})
@@ -204,7 +205,7 @@ def main() -> None:
     s["skipped"] = skipped
     ck.finish(rows)
     out = EXP / "results" / a.model
-    (out / "pilot_v2x_summary.json").write_text(json.dumps(s, indent=1))
+    (out / f"pilot_v2x{a.out_tag}_summary.json").write_text(json.dumps(s, indent=1))
     for D, v in s["by_distance"].items():
         print(D, {k: (round(x["mean"], 2), round(x["lo"], 2), round(x["hi"], 2)) if isinstance(x, dict) and x else x for k, x in v.items()})
 

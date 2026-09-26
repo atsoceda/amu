@@ -131,3 +131,11 @@ boundary: by necessity it carries about half of persistence at D = 2000 (13.0 of
 while the generated line's necessity falls (7.3 -> 2.7; at D = 0 it is the late lookup in
 the last positions before the rhyme word). Distance shifts reliance onto the stored copy
 at the line boundary, not onto the generated text.
+
+## Window curve (design frozen 2026-09-26, before any result)
+
+Gemma 3 - 27B - relay distance - window curve: the v2 extension cells at D = 500, 1000
+and 1500 (first 24 couplets), completing 0 / 500 / 1000 / 1500 / 2000. The sliding-window
+account predicts that boundary reliance (necessity) and the loss of direct retrieval
+change specifically once the target is more than 1,024 tokens from line 1 (between
+D = 1000 and D = 1500), not gradually with distance. Outputs `pilot_v2x_window_*`.
