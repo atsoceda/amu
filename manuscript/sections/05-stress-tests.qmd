@@ -19,8 +19,7 @@ absolute persistence, and for four unedited models the share of couplets whose l
 still rhymes, with no filler (open) and after 2,000 filler tokens (filled). **C:** hidden
 choice, as shares of the text-swap reference: not reproduced by the post-list patch,
 stored after the list, and (right, centred on zero, 95% intervals) passed through the
-intervening sentence, held at the sentence positions, and written into the
-sentence](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100% fig-pos="t"}
+intervening sentence, held at the sentence positions, and written into the sentence.](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100% fig-pos="t"}
 
 ## Recurrent memory {#sec-recurrent}
 
@@ -28,7 +27,7 @@ Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
 [@yang2025gateddeltanet] with each attention layer. In a recurrent layer, information
 from the source can reach a later position only through a fixed-size state updated
 position by position, invisible in the text; the attention layers can still retrieve.
-The test asks which the model uses when both are available. In the *attention-only*
+The test asks which path the model uses when both are available. In the *attention-only*
 cell, the donor state enters at the source but the input of every recurrent layer there
 is restored to its clean value; the *recurrent-only* cell is the converse. The committed
 rule, decided on the largest model, was "go" if recurrent-only is at least 25% of
