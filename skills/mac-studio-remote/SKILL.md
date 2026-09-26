@@ -140,8 +140,8 @@ come back. Details, measured facts and troubleshooting are in
   restart); scripts without it lose all progress when killed, so pause them instead.
 - **Backfill competes for the GPU.** Freeing memory for a priority job lets the runner
   start other small queued jobs in that space, which then slow the priority job. For a
-  time-critical run, keep the queue short or hold other jobs out of `queue.txt` until it
-  starts. Never edit `runner.sh` while it runs (bash reads scripts incrementally).
+  time-critical run, move the other jobs from `queue.txt` into `~/amu_jobs/queue.later.txt`
+  (the runner ignores it) and move them back when the priority work is done. Never edit `runner.sh` while it runs (bash reads scripts incrementally).
 - **Correct a running job's declared memory** by editing
   `~/amu_jobs/running/<name>.mem` when the first guess was too high; the runner re-reads
   it every cycle.
