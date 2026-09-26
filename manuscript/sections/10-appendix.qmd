@@ -16,7 +16,8 @@ Qwen3.5 4B, 9B and 27B (`Qwen/Qwen3.5-*`). Gemma 4 31B (`google/gemma-4-31B-it`)
 the hidden choice [@gemma4]. Qwen3 0.6B, 1.7B and 4B for the a/an analysis, with the
 per-layer transcoders of @hanna2026latent. All models run in bfloat16 on
 Apple silicon (PyTorch MPS), with full recomputation and no key-value cache across
-edited runs.
+edited runs. Where effects are small, the output projection is recomputed in float32,
+because bfloat16 logits resolve only about 0.125 nats.
 
 **Couplet prompts.** The chat format of @hanna2026latent. The user turn is
 "Write only the next line of this rhyming couplet: {line 1}", preceded by
@@ -106,6 +107,69 @@ Architecture generalization & relay $<$5\%; induction retrieval $<$5\%; hidden c
 
 Decision rules and predictions, the commit that recorded each before its result, and
 the outcome.
+
+:::
+
+# Positive control: details {#sec-app-control}
+
+The design is 100 random sequences of 24 distinct common word tokens, repeated up to the
+second \(A\). The edit replaces the first \(A\)'s states with those of a sequence
+identical except for that token. The outcome is \(\log p(B)\) at the second \(A\).
+The control passes cleanly in four models and partly in five (@fig-overview B;
+@tbl-control).
+
+- *Clean pass.* In Qwen3 1.7B, 4B, 8B and 14B, direct retrieval is 1 to 3% of
+  persistence, and the indirect path is 108 to 137%. Shares above 100% reflect an
+  interaction: with only the downstream positions edited, the clean first \(A\)
+  conflicts with the edited "preceded by" signal and suppresses \(B\) more than the
+  consistent edit does.
+- *Partial pass, from the same interaction.* In Gemma 3 12B and 27B, direct retrieval
+  is 0.4%, but the indirect path through all intermediate positions is only 53% and
+  55%. Editing
+  \(B\)'s first position alone gives 145% and 156%, so the conflicting edited positions
+  weaken the all-position cell.
+- *Partial pass, because the model also reads the source.* The indirect path remains
+  the main path
+  in Qwen3-32B (89%) and in the recurrent hybrids Qwen3.5-9B and 27B (key position alone
+  96% and 77%). But direct retrieval is 31%, 10% and 17%: these models also read the
+  first \(A\) directly.
+
+In every model, the indirect path is the largest path, so the method detects an
+indirect path where one is the mechanism. The key position, \(B\)'s first occurrence,
+lies right after the source in the prompt. Structurally this path therefore resembles
+a stored copy more than relay along generated text. What the control establishes is
+that route accounting detects an effect that arrives through an intermediate position.
+Relay is the same kind of path through different positions. Persistence holds the
+generated text fixed, so during measurement generated tokens are ordinary context
+positions, and the clamp is the same operation at any position. The retrieval-dominated results in the rest of the paper are
+therefore informative negatives, not a blind spot of the method.
+
+::: {#tbl-control}
+
+```{=latex}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Model & $p(B)$, clean & Persistence & Direct retrieval & Indirect (all positions) & Key position only\\
+\midrule
+Qwen3-1.7B & 1.000 & $-4.26$ [$-4.60$, $-3.91$] & $-0.08$ [$-0.13$, $-0.03$] & $-5.85$ [$-6.63$, $-5.10$] & $-9.24$ [$-10.21$, $-8.26$]\\
+Qwen3-4B & 1.000 & $-4.75$ [$-5.06$, $-4.43$] & $-0.15$ [$-0.27$, $-0.06$] & $-5.23$ [$-6.10$, $-4.39$] & $-10.28$ [$-11.45$, $-9.08$]\\
+Qwen3-8B & 0.999 & $-3.83$ [$-4.11$, $-3.54$] & $-0.05$ [$-0.09$, $-0.02$] & $-4.13$ [$-4.83$, $-3.45$] & $-10.20$ [$-11.40$, $-9.02$]\\
+Qwen3-14B & 0.998 & $-3.81$ [$-4.14$, $-3.46$] & $-0.10$ [$-0.15$, $-0.05$] & $-4.64$ [$-5.33$, $-3.95$] & $-8.86$ [$-9.82$, $-7.88$]\\
+Qwen3-32B & 0.977 & $-4.83$ [$-5.17$, $-4.48$] & $-1.52$ [$-1.87$, $-1.19$] & $-4.30$ [$-4.86$, $-3.75$] & $-6.24$ [$-6.93$, $-5.56$]\\
+Gemma 3 12B & 0.999 & $-4.90$ [$-5.18$, $-4.64$] & $-0.02$ [$-0.03$, $-0.02$] & $-2.61$ [$-3.17$, $-2.11$] & $-7.12$ [$-8.16$, $-6.08$]\\
+Gemma 3 27B & 0.998 & $-4.55$ [$-4.82$, $-4.27$] & $-0.02$ [$-0.02$, $-0.02$] & $-2.52$ [$-2.96$, $-2.10$] & $-7.10$ [$-8.05$, $-6.16$]\\
+Qwen3.5-9B & 0.988 & $-3.81$ [$-4.01$, $-3.62$] & $-0.37$ [$-0.44$, $-0.31$] & $-2.33$ [$-2.67$, $-2.01$] & $-3.66$ [$-4.22$, $-3.12$]\\
+Qwen3.5-27B & 0.984 & $-4.34$ [$-4.55$, $-4.12$] & $-0.72$ [$-0.85$, $-0.61$] & $-2.41$ [$-2.69$, $-2.15$] & $-3.35$ [$-3.90$, $-2.83$]\\
+\bottomrule
+\end{tabular}
+```
+
+Positive control: induction. Effects on \(\log p(B)\) of the edit at the first
+\(A\) (95% intervals), 100 sequences per model. *Key position*: only \(B\)'s first
+occurrence receives its edited-run state. The criterion committed before the result:
+the indirect path above 80% of persistence and direct retrieval near zero.
 
 :::
 

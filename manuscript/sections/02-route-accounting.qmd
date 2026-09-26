@@ -1,33 +1,28 @@
 # Route accounting {#sec-method}
 
-## Setting
-
-A model processes a prompt and generates text. An intervention changes the
-information available at a set of **source** positions \(S\). Its effect is measured
-at a later **target** position \(t\), where that information is used. The positions
-strictly between them, \(M\), include the end of the prompt and the tokens generated
-so far. Every intervention in this paper is an **all-layer state edit**: the residual
-stream at every layer of each source position is replaced by the corresponding
-states of a *donor* prompt that differs only in the content under study. Examples
-are a first line with a different rhyme, or a list in a different order. The text of
-the prompt is unchanged. The outcome is a log-odds contrast at the target:
+**Setting.** A model processes a prompt and generates text. An intervention changes the
+information at a set of **source** positions \(S\), and its effect is measured at a
+later **target** position \(t\) where that information is used. The positions strictly
+between them, \(M\), include the end of the prompt and the tokens generated so far.
+Every intervention is an **all-layer state edit**: the residual stream at every layer of
+each source position is replaced by the states of a *donor* prompt that differs only in
+the content under study (a first line with a different rhyme, a list in a different
+order), while the prompt text is unchanged. The outcome is a log-odds contrast at the
+target,
 
 $$
 R \;=\; \log \sum_{v\in\mathcal V_{\rm donor}} p(v\mid\cdot) \;-\; \log \sum_{v\in\mathcal V_{\rm orig}} p(v\mid\cdot),
 $$
 
 where \(\mathcal V_{\rm donor}\) and \(\mathcal V_{\rm orig}\) are the tokens
-consistent with the donor's and the original content. Examples are the single-token
-perfect rhymes of each rhyme word, the donor's and the original pick, or the donor's
-and the original first digit. Effects are changes in \(R\) relative to the unedited
+consistent with the donor's and the original content, for example the single-token
+perfect rhymes of each rhyme word. Effects are changes in \(R\) relative to the unedited
 run; positive values move the target toward the donor.
 
-## Emission and persistence
-
-Generation closes a loop: the edit can change what the model writes, and the
+**Emission and persistence.** The edit can change what the model writes, and the
 written tokens are read back. Let \(g_0\) and \(g_1\) be the texts generated with the
-edit off and on, and let \(R(i,g)\) be the outcome with the edit in state
-\(i\in\{0,1\}\) and the text fixed to \(g\). Then
+edit off and on, and \(R(i,g)\) the outcome with the edit in state \(i\in\{0,1\}\) and
+the text fixed to \(g\). Then
 
 $$
 \underbrace{R(1,g_1)-R(0,g_0)}_{\text{total}}
@@ -37,26 +32,20 @@ $$
 \underbrace{R(1,g_1)-R(0,g_1)}_{\text{persistence}} .
 $$
 
-**Emission** is the effect of the edited text alone: the edited words are replayed
-with the edit off. **Persistence** is what the edit does when the text is held fixed.
-We also report persistence with the original text, \(R(1,g_0)-R(0,g_0)\), which is
-the other order of the decomposition. Where the two orders differ, we give both. For a binary mediator
-such as the article *a/an*, emission factorizes exactly into the change in the
-mediator policy times the leverage of the mediator on the continuation
-(@sec-emission). This four-cell design is the multi-token form of the six-cell assay
-used for single-token mediators (Appendix @sec-app-sixcell).
+**Emission** replays the edited words with the edit off. **Persistence** is what the
+edit does with the text held fixed. We also report persistence with the original text,
+\(R(1,g_0)-R(0,g_0)\), the other order of the decomposition, where the two differ. For a
+binary mediator such as the article *a/an*, emission factorizes into the change in the
+mediator policy times the leverage of the mediator (@sec-emission; Appendix
+@sec-app-sixcell).
 
-## Paths within persistence
-
-Persistence can reach the target in two structurally different ways. The target
-can read the edited source positions itself (**direct retrieval**). Alternatively,
-intermediate positions read the edited source and pass it on, and the target reads
-them (an **indirect path**). We separate the two by clamping states. Let \(h^{0}\) and \(h^{1}\)
-be the per-layer states of the clean run and of the edited run, both with the text
-fixed. Write \(R[\,S\!\leftarrow\!a,\;G\!\leftarrow\!b\,]\) for the outcome when the
-source positions receive the states of run \(a\), and a group of intermediate
-positions \(G\subseteq M\) receives the states of run \(b\), at every layer. All
-other positions are recomputed. With \(R_0\) the clean outcome,
+**Paths within persistence.** The target can read the edited source itself (**direct
+retrieval**), or intermediate positions can read it and pass it on (an **indirect
+path**). We separate the two by clamping states. Let \(h^{0}\) and \(h^{1}\) be the
+per-layer states of the clean and the edited run, both with the text fixed, and write
+\(R[\,S\!\leftarrow\!a,\;G\!\leftarrow\!b\,]\) for the outcome when the source receives
+the states of run \(a\) and a group \(G\subseteq M\) those of run \(b\), at every layer,
+with all other positions recomputed. With \(R_0\) the clean outcome,
 
 $$
 \begin{aligned}
@@ -67,131 +56,60 @@ T &= R[M\!\leftarrow\!1] - R_0 &&\text{indirect paths (source clean, intermediat
 \end{aligned}
 $$
 
-Because the intermediate states are overwritten at every layer, \(D\) can reach the
-target only through the target's own attention to the source. \(T\) can reach it
-only through the intermediate positions. For a group \(G\) we report its
-**interventional sufficiency**, \(\mathrm{Suf}(G)=R[G\!\leftarrow\!1]-R_0\): the
-effect of the group alone, given its edited-run states. We also report its
+Because the intermediate states are overwritten at every layer, \(D\) reaches the target
+only through its own attention to the source, and \(T\) only through intermediate
+positions. For a group \(G\) we report its **interventional sufficiency**,
+\(\mathrm{Suf}(G)=R[G\!\leftarrow\!1]-R_0\), the effect of the group alone, and its
 **interventional necessity**,
-\(\mathrm{Nec}(G)=P-\big(R[S\!\leftarrow\!1,\,G\!\leftarrow\!0]-R_0\big)\): the loss of
-persistence when the group alone is reset to its clean states. By construction
-\(\mathrm{Nec}(M)=P-D\). When paths combine additively, the two measures agree and the
-interaction is small. Shares then partition the effect, and we write that a share
-"travels by" a path. When the interaction is large, shares are not exclusive. A clean
-source that contradicts an edited copy downstream makes sufficiency understate the
-copy, and necessity does not. There we report both measures, the interaction, and the
-Shapley value of the two-player game between the source and the group, which is
-their average [@shapley1953]. The largest interactions are in Gemma 3 27B couplets
-(29% of persistence with the chat prompt, 33% with the plain prompt). All quantities
-are reported with item-bootstrap 95% intervals (10,000 resamples; @efron1994bootstrap). Shares are
-divided by the persistence of the same run, unless another denominator is named,
-which makes model families with different log-probability scales comparable.
+\(\mathrm{Nec}(G)=P-\big(R[S\!\leftarrow\!1,\,G\!\leftarrow\!0]-R_0\big)\), the loss of
+persistence when the group alone is reset to its clean states. When paths combine
+additively, the two agree and shares partition the effect. Where the interaction is
+large (at most 33% of persistence, in Gemma 3 27B couplets), shares are not exclusive,
+and we report both measures and their average, the Shapley value [@shapley1953]. Shares
+are divided by the persistence of the same run unless another denominator is named, and
+intervals are item-bootstrap 95% intervals [@efron1994bootstrap].
 
-**Path names.** We split the intermediate positions into three groups by position,
-not by any hypothesis about their content, and name the indirect path through each:
-
-- the **stored copy**: the path through the prompt positions right after the source
-  line (in couplets, the comma ending line 1 and the chat template). The copy is
-  written once into a fixed position of the prompt and read directly from there;
-- the **late lookup**: the path through the three positions immediately before the
-  target. This is the late retrieval of @hanna2026latent read in two steps: those
-  positions retrieve the plan just before use, and the target reads them;
-- **relay**: the path through the remaining positions of the generated text. This is
-  the path monitoring is concerned with.
-
-Throughout the paper, *direct retrieval*, *stored copy*, *late lookup*, *relay*,
-*emission* and *interaction* keep these meanings and one colour each (@fig-overview A).
-We say information is **looked up** when it arrives by direct retrieval, a stored copy
-or the late lookup. Where a group of intermediate positions was not split into these
-parts, we name the group and call its effect the indirect path through it.
+**Path names.** We split \(M\) into three groups by position, not by any hypothesis
+about their content, and name the indirect path through each. The **stored copy** passes
+through the prompt positions right after the source line (in couplets, the token that
+ends line 1 and the chat template). The **late lookup** passes through the three
+positions just before the target; it is the late retrieval of @hanna2026latent read in
+two steps. **Relay** passes through the remaining positions of the generated text; it is
+the path monitoring is concerned with. Information is **looked up** when it arrives by
+direct retrieval, the stored copy or the late lookup. Where a group was not split
+further, we name it and call its effect the indirect path through it. These names and
+their colours (@fig-overview A) are fixed throughout.
 
 ## Positive control: induction {#sec-control}
 
-A decomposition that never reports an indirect path could be blind to one. We
-therefore apply route accounting where an indirect path is the established
-mechanism. In a repeated sequence
-\(\ldots A\,B\ldots A\), a previous-token head writes "preceded by \(A\)" into the
-position of \(B\), and an induction head at the second \(A\) finds that position and
-copies \(B\) [@olsson2022induction]. Information about the first \(A\) therefore
-reaches the prediction through \(B\)'s position. The design is 100 random sequences
-of 24 distinct common word tokens, repeated up to the second \(A\). The edit replaces
-the first \(A\)'s states with those of a sequence identical except for that token.
-The outcome is \(\log p(B)\) at the second \(A\). The criterion, committed before the
-first result, was that the indirect path accounts for more than 80% of persistence and
-direct retrieval is near zero.
+A decomposition that never reports an indirect path could be blind to one. In a
+repeated sequence \(\ldots A\,B\ldots A\), a previous-token head writes "preceded by
+\(A\)" into the position of \(B\), and an induction head at the second \(A\) finds that
+position and copies \(B\) [@olsson2022induction]. Information about the first \(A\)
+therefore reaches the prediction through an intermediate position. We edit the first
+\(A\) in 100 random sequences and measure \(\log p(B)\) at the second \(A\). The
+criterion, committed before the first result, was an indirect path above 80% of
+persistence with direct retrieval near zero. It holds cleanly in Qwen3 1.7B to 14B:
+direct retrieval is 1 to 3% and the indirect path 108 to 137%, the excess over 100%
+being an interaction. In Gemma 3 12B and 27B direct retrieval is 0.4%, but conflicting
+edited positions lower the all-position cell to 53 to 55% (the key position alone gives
+145 to 156%). Qwen3-32B and the Qwen3.5 hybrids also read the source directly (10 to
+31%). In every model the indirect path is the largest path (@fig-overview B; Appendix
+@sec-app-control). The key position lies right after the source, so this path resembles
+a stored copy more than relay. What the control establishes is that route accounting
+detects an effect that arrives through an intermediate position. Relay is the same kind
+of path through different positions: with the generated text fixed, generated tokens
+are ordinary context positions, and the clamp is the same operation at any position.
+The retrieval-dominated results that follow are therefore informative negatives, not a
+blind spot of the method.
 
-The control passes cleanly in four models and partly in five (@fig-overview B;
-@tbl-control).
-
-- *Clean pass.* In Qwen3 1.7B, 4B, 8B and 14B, direct retrieval is 1 to 3% of
-  persistence, and the indirect path is 108 to 137%. Shares above 100% reflect an
-  interaction: with only the downstream positions edited, the clean first \(A\)
-  conflicts with the edited "preceded by" signal and suppresses \(B\) more than the
-  consistent edit does.
-- *Partial pass, from the same interaction.* In Gemma 3 12B and 27B, direct retrieval
-  is 0.4%, but the indirect path through all intermediate positions is only 53% and
-  55%. Editing
-  \(B\)'s first position alone gives 145% and 156%, so the conflicting edited positions
-  weaken the all-position cell.
-- *Partial pass, because the model also reads the source.* The indirect path remains
-  the main path
-  in Qwen3-32B (89%) and in the recurrent hybrids Qwen3.5-9B and 27B (key position alone
-  96% and 77%). But direct retrieval is 31%, 10% and 17%: these models also read the
-  first \(A\) directly.
-
-In every model, the indirect path is the largest path, so the method detects an
-indirect path where one is the mechanism. The key position, \(B\)'s first occurrence,
-lies right after the source in the prompt. Structurally this path therefore resembles
-a stored copy more than relay along generated text. What the control establishes is
-that route accounting detects an effect that arrives through an intermediate position.
-Relay is the same kind of path through different positions. Persistence holds the
-generated text fixed, so during measurement generated tokens are ordinary context
-positions, and the clamp is the same operation at any position. The retrieval-dominated results in the rest of the paper are
-therefore informative negatives, not a blind spot of the method.
-
-::: {#tbl-control}
-
-```{=latex}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lccccc@{}}
-\toprule
-Model & $p(B)$, clean & Persistence & Direct retrieval & Indirect (all positions) & Key position only\\
-\midrule
-Qwen3-1.7B & 1.000 & $-4.26$ [$-4.60$, $-3.91$] & $-0.08$ [$-0.13$, $-0.03$] & $-5.85$ [$-6.63$, $-5.10$] & $-9.24$ [$-10.21$, $-8.26$]\\
-Qwen3-4B & 1.000 & $-4.75$ [$-5.06$, $-4.43$] & $-0.15$ [$-0.27$, $-0.06$] & $-5.23$ [$-6.10$, $-4.39$] & $-10.28$ [$-11.45$, $-9.08$]\\
-Qwen3-8B & 0.999 & $-3.83$ [$-4.11$, $-3.54$] & $-0.05$ [$-0.09$, $-0.02$] & $-4.13$ [$-4.83$, $-3.45$] & $-10.20$ [$-11.40$, $-9.02$]\\
-Qwen3-14B & 0.998 & $-3.81$ [$-4.14$, $-3.46$] & $-0.10$ [$-0.15$, $-0.05$] & $-4.64$ [$-5.33$, $-3.95$] & $-8.86$ [$-9.82$, $-7.88$]\\
-Qwen3-32B & 0.977 & $-4.83$ [$-5.17$, $-4.48$] & $-1.52$ [$-1.87$, $-1.19$] & $-4.30$ [$-4.86$, $-3.75$] & $-6.24$ [$-6.93$, $-5.56$]\\
-Gemma 3 12B & 0.999 & $-4.90$ [$-5.18$, $-4.64$] & $-0.02$ [$-0.03$, $-0.02$] & $-2.61$ [$-3.17$, $-2.11$] & $-7.12$ [$-8.16$, $-6.08$]\\
-Gemma 3 27B & 0.998 & $-4.55$ [$-4.82$, $-4.27$] & $-0.02$ [$-0.02$, $-0.02$] & $-2.52$ [$-2.96$, $-2.10$] & $-7.10$ [$-8.05$, $-6.16$]\\
-Qwen3.5-9B & 0.988 & $-3.81$ [$-4.01$, $-3.62$] & $-0.37$ [$-0.44$, $-0.31$] & $-2.33$ [$-2.67$, $-2.01$] & $-3.66$ [$-4.22$, $-3.12$]\\
-Qwen3.5-27B & 0.984 & $-4.34$ [$-4.55$, $-4.12$] & $-0.72$ [$-0.85$, $-0.61$] & $-2.41$ [$-2.69$, $-2.15$] & $-3.35$ [$-3.90$, $-2.83$]\\
-\bottomrule
-\end{tabular}
-```
-
-Positive control: induction. Effects on \(\log p(B)\) of the edit at the first
-\(A\) (95% intervals), 100 sequences per model. *Key position*: only \(B\)'s first
-occurrence receives its edited-run state. The criterion committed before the result:
-the indirect path above 80% of persistence and direct retrieval near zero.
-
-:::
-
-## Models, materials and protocol {#sec-models}
-
-We study Qwen3 1.7B to 32B, dense with full attention [@yang2025qwen3], and Gemma 3
-1B to 27B, which interleaves five sliding-window layers with a 1,024-token window per
-global layer [@gemma3]. Both families are used as instruction-tuned models, with base
-checkpoints as checks. We also study Qwen3.5 4B, 9B and 27B, hybrids in which three of
-every four layers are Gated DeltaNet recurrent layers [@qwen2026qwen35;
-@yang2025gateddeltanet], and Gemma 4 31B [@gemma4] for the hidden choice. Qwen3 runs
-with thinking disabled throughout, so every generated span is short: part of a line,
-a sentence, or up to 2,000 tokens of filler. Models run in bfloat16. Where effects are
-small, the output projection is recomputed in float32, because bfloat16 logits resolve
-only about 0.125 nats. After the initial couplet split, the design, decision rule and
-predictions of every experiment and extension were committed to the repository before
-its first result. Later additions are dated and labelled post hoc (Appendix
-@sec-app-prereg). Nulls are reported with the same prominence as effects. Model
-identifiers, prompts, item construction and per-run tables are in Appendix
-@sec-app-materials.
+**Models and protocol.** We study Qwen3 1.7B to 32B, dense with full attention
+[@yang2025qwen3]; Gemma 3 1B to 27B, which interleaves five sliding-window layers with a
+1,024-token window per global layer [@gemma3]; Qwen3.5 4B, 9B and 27B, hybrids in which
+three of every four layers are Gated DeltaNet recurrent layers [@qwen2026qwen35;
+@yang2025gateddeltanet]; and Gemma 4 31B [@gemma4] for the hidden choice. We use
+instruction-tuned checkpoints, with base checkpoints as checks, and disable thinking, so
+the generated spans are short. After the initial couplet split, the design and decision
+rule of every experiment were committed to the repository before its first result;
+later additions are labelled post hoc (Appendix @sec-app-prereg). Materials and per-run
+tables are in Appendix @sec-app-materials.
