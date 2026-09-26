@@ -322,3 +322,6 @@ token right after the source, and a function word the model reuses.
 Text swap pick specificity +7.22; post-list block: donor pick +4.85, donor's other fruits
 +3.52, **pick specificity +1.33 [1.04, 1.61]** (18%; animals 22%). Gemma 3 stores a
 pick-specific hidden choice at 4B in both domains (12B: 15% / 18%; 27B: 31% / 40%).
+
+Same-pick null, addition (2026-09-26, before any null result): Gemma 3 12B added to the
+frozen same-pick null (same design), queued to use idle memory.
