@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.11"
+  version: "1.12"
   updated: "2026-09-26"
 ---
 
@@ -42,6 +42,11 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
   never use Helvetica (`failed to load glyph`).
 - One colour per path everywhere (Okabe-Ito; see the script header). Check every figure by
   opening the PNG: overlapping legends, labels and titles are the usual failure.
+- Every element must explain itself (the user flagged each of these): a legend title
+  needs a frame or it floats ("donor entry"); a subpanel that shares another's axis
+  says so in the caption and uses row bands; a numbered label names its series; ticks
+  sit under real data points (categorical axes for one bar per model). Lead a figure
+  with its strongest panel and keep the section order the same as the panel order.
 
 ## Tables
 

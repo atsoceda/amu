@@ -600,35 +600,6 @@ part).](manuscript/figures/iclr_figA_storage_all.png){#fig-storage-all width=100
 
 # Stress tests: details {#sec-app-stress}
 
-## Recurrent memory {#sec-app-recurrent}
-
-Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
-[@yang2025gateddeltanet] with each full-attention layer. A recurrent layer holds a
-fixed-size state that is updated position by position. In those layers, information
-from the source can reach a later position only through that state, passed along
-every intervening position by construction and invisible in the text. The attention layers can still look it up.
-The test therefore asks which path the model uses when both are available. We split
-persistence by layer type. In the *attention-only* cell, the donor state enters at the
-source, but the input of every recurrent layer at the source is restored to its clean
-value, so the edit can move forward only through the attention layers. The
-*recurrent-only* cell is the converse. A cell with both layer types blocked is a sanity
-check. The rule committed in advance was "go" if recurrent-only is at least 25% of
-persistence with its interval above zero, and "stop" if it is below 10%. It is decided
-on the largest model; smaller sizes give the trend.
-
-When the donor signal can enter at the source through either layer type, entry through the attention layers accounts for nearly all of its effect. At 4B and 9B (40 couplets each), the
-recurrent-only cell is \(+0.28\) [0.07, 0.49] and \(+0.55\) [0.31, 0.79]: 3% and 4% of
-persistence. The attention-only cell accounts for 97% and 96%. At the decisive size,
-27B (48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
-[0.18, 0.64], 2% of persistence \(+18.8\) [16.3, 21.3], and attention-only 95%. As a sanity check, blocking both layer types at the source cancels the donor: that
-cell is zero on every couplet, as it must be. Decision: stop. Although three
-quarters of the layers can pass the plan forward only through the recurrent state, a donor signal
-that enters through them at the source produces only 2 to 4% of persistence. The design controls
-which layer type receives the donor signal at the source; it does not isolate every
-later path through each layer type, so it measures the share of donor entry, not the
-recurrent memory's natural share. Entry through the recurrent layers is small but
-nonzero, which bounds the principle at 2 to 4% of persistence for this architecture.
-
 ## Beyond the attention window {#sec-app-distance}
 
 Gemma 3 alternates five local layers with a 1,024-token sliding window with one
@@ -720,6 +691,35 @@ and otherwise costs the plan. In no model does an indirect path through the gene
 the same distance from the target, yet the global layers of Gemma 3 27B read the
 line's final token. This fits the view of separator tokens as long-range summaries of
 their segment [@chen2024sepllm; @wang2023labelwords; @xiao2024sinks].
+
+## Recurrent memory {#sec-app-recurrent}
+
+Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
+[@yang2025gateddeltanet] with each full-attention layer. A recurrent layer holds a
+fixed-size state that is updated position by position. In those layers, information
+from the source can reach a later position only through that state, passed along
+every intervening position by construction and invisible in the text. The attention layers can still look it up.
+The test therefore asks which path the model uses when both are available. We split
+persistence by layer type. In the *attention-only* cell, the donor state enters at the
+source, but the input of every recurrent layer at the source is restored to its clean
+value, so the edit can move forward only through the attention layers. The
+*recurrent-only* cell is the converse. A cell with both layer types blocked is a sanity
+check. The rule committed in advance was "go" if recurrent-only is at least 25% of
+persistence with its interval above zero, and "stop" if it is below 10%. It is decided
+on the largest model; smaller sizes give the trend.
+
+When the donor signal can enter at the source through either layer type, entry through the attention layers accounts for nearly all of its effect. At 4B and 9B (40 couplets each), the
+recurrent-only cell is \(+0.28\) [0.07, 0.49] and \(+0.55\) [0.31, 0.79]: 3% and 4% of
+persistence. The attention-only cell accounts for 97% and 96%. At the decisive size,
+27B (48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
+[0.18, 0.64], 2% of persistence \(+18.8\) [16.3, 21.3], and attention-only 95%. As a sanity check, blocking both layer types at the source cancels the donor: that
+cell is zero on every couplet, as it must be. Decision: stop. Although three
+quarters of the layers can pass the plan forward only through the recurrent state, a donor signal
+that enters through them at the source produces only 2 to 4% of persistence. The design controls
+which layer type receives the donor signal at the source; it does not isolate every
+later path through each layer type, so it measures the share of donor entry, not the
+recurrent memory's natural share. Entry through the recurrent layers is small but
+nonzero, which bounds the principle at 2 to 4% of persistence for this architecture.
 
 # Hidden choice {#sec-app-hidden}
 

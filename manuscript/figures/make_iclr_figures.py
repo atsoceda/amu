@@ -948,12 +948,12 @@ def fig3():
 
 def fig4():
     fig = plt.figure(figsize=(W, 4.95))
-    gs = fig.add_gridspec(2, 1, height_ratios=[1, 1.08], hspace=0.78)
-    g1 = gs[0].subgridspec(1, 4, width_ratios=[1.05, 1.05, 0.5, 0.8], wspace=0.62)
+    gs = fig.add_gridspec(2, 1, height_ratios=[0.92, 1.08], hspace=0.98)
+    g1 = gs[0].subgridspec(1, 4, width_ratios=[1.05, 0.5, 0.8, 1.05], wspace=0.62)
     g2 = gs[1].subgridspec(1, 2, width_ratios=[1.5, 1.0], wspace=0.08)
 
-    # A. Recurrent hybrid.
-    ax = fig.add_subplot(g1[0])
+    # B. Recurrent hybrid (right of the distance panels).
+    ax = fig.add_subplot(g1[3])
     rows = recurrent_data()
     for i, (lab, x) in enumerate(rows):
         a = share(x["attention_only"], x["persistence"])
@@ -980,13 +980,21 @@ def fig4():
     ax.set_yticks([0, 10, 25, 50, 75, 100])
     ax.set_ylabel("% of persistence")
     ax.set_xlabel("Qwen3.5 (75% of layers recurrent)")
-    ax.legend(loc="upper left", handlelength=1.0, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(0, 1.04), fontsize=6.5, title="donor entry", title_fontsize=6.5)
-    ax.set_title("A   Recurrent hybrid", x=-0.3)
+    h_, l_ = ax.get_legend_handles_labels()
+    order = [l_.index(k) for k in ("via attention layers", "via recurrent layers", "both blocked") if k in l_]
+    names = {"via attention layers": "attention layers only", "via recurrent layers": "recurrent layers only",
+             "both blocked": "neither (both blocked)"}
+    leg = ax.legend([h_[k] for k in order], [names[l_[k]] for k in order], loc="upper left", handlelength=1.0,
+                    borderaxespad=0.2, labelspacing=0.2, bbox_to_anchor=(0, 1.04), fontsize=6.5,
+                    title="donor state enters through", title_fontsize=6.5, frameon=True, fancybox=False,
+                    edgecolor="#BBBBBB", framealpha=1.0)
+    leg._legend_box.align = "left"
+    ax.set_title("B   Recurrent hybrid", x=-0.3)
 
     # B. Beyond Gemma 3's local attention window: measured distances only.
     byd = distance_data()
     ds = sorted(byd)
-    ax = fig.add_subplot(g1[1])
+    ax = fig.add_subplot(g1[0])
     ax.axhspan(-6, 10, color="#EFEFEF", lw=0, zorder=0)
     ax.axhspan(10, 25, color="#F8ECF3", lw=0, zorder=0)
     for yv in (10, 25):
@@ -1015,9 +1023,9 @@ def fig4():
           (COL["retrieval"], COL["storage"], COL["relay"])]
     ax.legend(hs, ["direct retrieval", "stored copy (nec.)", "late lookup + relay\n(cue and line 2)"], loc="upper right",
               handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.02, 1.0), fontsize=6.5)
-    ax.set_title("B   With distance, Gemma 3 27B hands the plan to the stored copy", x=-0.3)
-    # B, side: absolute persistence at each distance.
-    ax = fig.add_subplot(g1[2])
+    ax.set_title("A   Gemma 3 27B hands the plan to the stored copy", x=-0.3)
+    # A, side: absolute persistence at each distance.
+    ax = fig.add_subplot(g1[1])
     for i, D in enumerate(ds):
         p = byd[D]["persistence"]
         dot(ax, i, (p["mean"], p["lo"], p["hi"]), COL["grey"], "s", True, s=14)
@@ -1028,8 +1036,8 @@ def fig4():
     ax.axhline(0, color="#CCCCCC", lw=0.5)
     ax.set_ylabel("persistence (log-odds)")
     ax.set_xlabel("filler tokens")
-    # B, side: how often line 2 still rhymes with the original word.
-    ax = fig.add_subplot(g1[3])
+    # A, side: how often line 2 still rhymes with the original word.
+    ax = fig.add_subplot(g1[2])
     rh = []
     for d, f, lab, fam in [("gemma-3-27b-it", "pilot_v2x_summary.json", "Gemma 3 27B", "Gemma 3"),
                            ("gemma-3-12b-it", "pilot_v2_summary.json", "Gemma 3 12B", "Gemma 3"),
@@ -1052,7 +1060,7 @@ def fig4():
     ax.set_ylim(-44, 104)
     ax.set_yticks([0, 25, 50, 75, 100])
     ax.spines["left"].set_bounds(0, 100)
-    ax.set_ylabel("line 2 rhymes (% of couplets)")
+    ax.set_ylabel("line 2 rhymes (%)")
     hs = [Line2D([], [], ls="none", marker="o", ms=3.5, mfc="white", mec=COL["grey"]),
           Line2D([], [], ls="none", marker="o", ms=3.5, mfc=COL["ink"], mec=COL["ink"])]
     ax.legend(hs, ["no filler", "2,000 filler"], loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=1,
@@ -1083,6 +1091,8 @@ def fig4():
                  color="white", weight="bold")
         first = False
         fr = load(HC / d / "choice_free_summary.json")
+        if i % 2 == 0:
+            axz.axhspan(i - 0.5, i + 0.5, color="#F2F2F2", lw=0, zorder=0)
         dot(axz, i + 0.22, share(c["post_relay"], c["text_swap"]), COL["relay"], "o", True, s=12, horizontal=True)
         dot(axz, i, share(c["sentence_edit"], c["text_swap"]), COL["relay"], "o", False, s=12, horizontal=True)
         if fr:
@@ -1094,19 +1104,20 @@ def fig4():
     axc.set_xlim(0, 100)
     axc.set_xticks([0, 25, 50, 75, 100])
     axc.set_xlabel("% of the text-swap reference")
-    axc.legend(loc="lower center", bbox_to_anchor=(0.44, 1.0), ncol=3, handlelength=0.9, columnspacing=0.6,
+    axc.legend(loc="lower center", bbox_to_anchor=(0.40, 1.0), ncol=3, handlelength=0.9, columnspacing=0.5,
                handletextpad=0.4, borderaxespad=0.1)
     axc.set_title("C   Hidden choice: stored after the list or not reproduced by\n     the post-list patch; the sentence adds almost nothing", x=-0.24, pad=16)
     axz.axvline(0, color="#999999", lw=0.6, zorder=0)
     axz.tick_params(axis="y", labelleft=False)
     axz.set_xlim(-8, 12)
     axz.set_xticks([-5, 0, 5, 10])
-    axz.set_xlabel("% of the text-swap reference\n(written: % of the free-choice total)")
+    axz.set_xlabel("% of the text-swap reference\n(emission: % of the free-choice total)")
     hs = [Line2D([], [], ls="none", marker="o", ms=3.5, mfc=COL["relay"], mec=COL["relay"]),
           Line2D([], [], ls="none", marker="o", ms=3.5, mfc="white", mec=COL["relay"]),
           Line2D([], [], ls="none", marker="D", ms=3.2, mfc=COL["emission"], mec=COL["emission"])]
-    axz.legend(hs, ["via the sentence (indirect)", "sentence positions", "written (free version)"],
-               loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=1, handletextpad=0.1, borderaxespad=0.1,
+    axz.legend(hs, ["through the sentence (indirect)", "held at sentence positions",
+                    "written sentence (emission)"],
+               loc="lower right", bbox_to_anchor=(1.0, 1.0), ncol=1, handletextpad=0.1, borderaxespad=0.1,
                labelspacing=0.15)
     save(fig, "iclr_fig4_stress_tests.png")
 

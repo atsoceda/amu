@@ -10,10 +10,9 @@ relay, and one eighth to one fifth of the small stored hidden part in Qwen3-32B 
 Qwen3.5 hybrids.
 
 **Why look up rather than relay?** Attention makes any earlier position readable at
-every layer, so a later position can compute what it needs when it needs it. But even
-where three quarters of the layers can pass a plan forward only through a recurrent
-state, entry through the attention layers accounts for nearly all of the effect, and at
-a distance the model relies on a stored copy or loses the plan. Relay appears
+every layer, so a later position can compute what it needs when it needs it. But at a distance the model relies on a stored copy or loses the plan, and even where
+three quarters of the layers can pass a plan forward only through a recurrent state,
+entry through the attention layers accounts for nearly all of the effect. Relay appears
 disfavoured when lookup is available, not merely unneeded.
 
 **What would overturn the principle.** Much longer generated text, thinking enabled,
