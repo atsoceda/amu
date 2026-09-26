@@ -229,3 +229,12 @@ Text swap +10.72; post-list block **+1.77 [1.26, 2.27]** (16%), all by direct re
 (+1.77); **relay through the sentence -0.01 [-0.10, 0.08]**; sentence block -0.18. Even
 where the most hidden pick is stored, it is read directly from where it was stored and
 is not relayed through the generated sentence.
+
+### Localization, Gemma 3 27B (fruits; per-token necessity; 2026-09-26)
+
+Post-list pick specificity +2.48 [2.04, 2.92] (text swap +8.03). Resetting one post-list
+token at a time: **`▁the` in "about the weather" +1.91 [1.57, 2.24]**, the period right
+after the list +0.42 [0.29, 0.55], the period ending the instruction +0.22 [0.14, 0.30];
+every other token, including `<end_of_turn>` and the model-turn header, 0.00 +/- 0.05.
+The stored hidden pick sits mostly on one low-content function word inside the
+instruction, not at the turn boundary: register-like storage at a predictable token.
