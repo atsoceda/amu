@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.3"
+  version: "1.4"
   updated: "2026-09-26"
 ---
 
@@ -66,16 +66,16 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
 
 ## Wording rules learned from review
 
-- Define every path term before using it, and keep one meaning per word. **Carried**
-  means early relay only: the effect arrives through the generated positions that are
-  neither the stored copy nor the late lookup. **Relay** is the parent term: any
-  intermediate position passes the edit on, including the stored copy, the late lookup,
-  and early relay. Do not gloss all of relay as carrying. For a share of an effect write
-  "accounts for X%", never "carries X%".
-- State why relay matters in terms of what a monitor can see: emitted content is in the
-  text, retrieved content sits at a fixed position of the context, relayed content travels
-  through the model's own output without appearing in it. Do not claim that only relay
-  "keeps content in the model's state" (retrieval does too).
+- Do not use **carry**, **carried**, or **carrying** as a route name. The measured name
+  is **early relay**: relay through the generated positions that are neither the stored
+  copy nor the late lookup. **Relay** is the parent: any intermediate position passes the
+  edit on, including the stored copy, the late lookup, and early relay. The title's
+  "don't carry it" is ordinary English for that early-relay claim, glossed once in the
+  introduction. For a share of an effect write "accounts for X%", never "carries X%".
+- State why early relay matters to a monitor: it travels through the model's own output
+  without appearing in it. A stored copy is relay, and it sits at a fixed prompt
+  position. Do not claim that only relay "keeps content in the model's state" (retrieval
+  does too).
 - Do not use "private" (retired in the glossary); say hidden or secret.
 
 ## YAML pitfalls

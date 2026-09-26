@@ -97,13 +97,13 @@ not by any hypothesis about their content, and name the relay through each:
 - the **late lookup**: relay through the three positions immediately before the
   target. This is the late retrieval of @hanna2026latent read in two hops: those
   positions retrieve the plan just before use, and the target reads them;
-- **early relay**: relay through the remaining generated positions. This is carrying
-  along the generated text, the path monitoring is concerned with.
+- **early relay**: relay through the remaining generated positions, along the generated
+  text. This is the path monitoring is concerned with.
 
 Throughout the paper, *direct retrieval*, *stored copy*, *late lookup*, *early relay*,
 *emission* and *interaction* keep these meanings and one colour each (@fig-overview A).
 We say information is **looked up** when it arrives by direct retrieval, a stored
-copy or the late lookup, and **carried** when it arrives by early relay.
+copy or the late lookup.
 
 ## Positive control: induction {#sec-control}
 

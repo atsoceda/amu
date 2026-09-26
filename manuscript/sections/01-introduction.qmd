@@ -67,10 +67,10 @@ the known mechanism. Relay is the largest path in all nine models tested. The co
 
 Applied to four tasks in 15 checkpoints from three model families, route accounting
 finds a consistent principle, within the settings tested (short generated spans,
-thinking disabled): **look it up, don't carry it**. Models retrieve unwritten
-information rather than relay it. They read it near the point of use from a fixed
+thinking disabled): **look it up, don't carry it**. In that sentence, carry means early relay. Models read unwritten
+information near the point of use from a fixed
 position of the prompt: the position where it originates, or a copy stored at a
-structural token next to it (@tbl-map).
+structural token next to it, rather than pass it along the generated text (@tbl-map).
 
 - *Visible plans.* Rhyme plans reach the rhyme mainly by direct retrieval of the rhyme
   word: 68 to 95% of persistence in every configuration but one (@sec-lookup). Early
@@ -135,7 +135,7 @@ prompt format.
    another. It reports interventional sufficiency, necessity and interaction for every
    group of positions, and is validated on a positive control.
 2. A principle with its evidence and its scope: in the settings tested, unwritten
-   information is looked up, not carried. The evidence covers visible plans, computed
+   information is looked up, not passed on by early relay. The evidence covers visible plans, computed
    values and hidden choices, across families, sizes, prompt formats and instruct
    versus base checkpoints. It holds under the published feature steering of
    @hanna2026latent as well as under state edits.
@@ -153,7 +153,7 @@ prompt format.
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.35cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{4.75cm}>{\raggedright\arraybackslash}p{3.75cm}@{}}
 \toprule
-Content (observability) & Emission & Looked up: direct retrieval, stored copy or late lookup & Carried: relay along intermediate positions\\
+Content (observability) & Emission & Looked up: direct retrieval, stored copy or late lookup & Other relay\\
 \midrule
 Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is 37\% by sufficiency and 74\% by necessity); stored copy otherwise 0--16\% by sufficiency; late lookup 1--13\% & early relay $\le$1\%\\
 Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & generated text (incl.\ last three positions): 9--13\%\\
@@ -170,8 +170,7 @@ Where unwritten information travels. Each cell gives the share of the effect tha
 travels by a path, as a range over the models tested; the denominator is persistence
 unless stated. *Looked up*: the target reads the source, a copy stored at a structural
 token next to it, or positions just before the target that read it (late lookup).
-*Carried*: the effect passes through intermediate positions (for tasks, early relay
-along the generated text). Observability: *visible* content can be recovered by a
+*Other relay*: relay that is not in the looked-up column. Each cell names its own group. Only the rhyme-plan cell is early relay. The filler-distance cell is the unsplit generated-text block, including the last three positions. The unwritten-value cell is every later position together. The hidden-choice cell is relay through the sentence. The induction cell is relay through the copied prompt token. Observability: *visible* content can be recovered by a
 reader of the text; *hidden* content cannot. Dashes mark cells that the design rules
 out. For written computed values, 101% is 32B at \(K=5\): the bypass is slightly negative, and emission plus that bypass equals the total. Sections and figures give the full results with 95% intervals.
 

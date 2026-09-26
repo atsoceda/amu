@@ -1,7 +1,7 @@
 # Stress tests: bounds on the principle {#sec-stress}
 
 The principle could be an artifact of the settings in which we found it. When every
-layer can read every earlier position, carrying is never necessary. When the content
+layer can read every earlier position, early relay is never necessary. When the content
 is visible in the text, it can always be re-read. We therefore test three settings
 chosen to make relay useful where attention cannot do the work, or to make the content invisible: an architecture in which most layers can
 pass information forward only by relaying it, a distance at which most attention
@@ -145,8 +145,8 @@ copy. They also separate distance from the window.
   rhyming), and its absolute relay stays flat (\(+2.3\) to \(+2.8\)).
 
 Across the four models, distance moves reliance onto a stored copy where one exists,
-and otherwise costs the plan. No model responds by carrying the plan along the text it
-writes, beyond the 12% in Gemma 3 27B. The rhyme word and the line's final token lie at
+and otherwise costs the plan. No model responds by early relay along the text it
+writes. The 12% in Gemma 3 27B is the unsplit generated-text block, including its last three positions. The rhyme word and the line's final token lie at
 the same distance from the target, yet the global layers of Gemma 3 27B read the
 line-end token. This fits the view of separator tokens as long-range summaries of
 their segment [@chen2024sepllm; @wang2023labelwords; @xiao2024sinks].
