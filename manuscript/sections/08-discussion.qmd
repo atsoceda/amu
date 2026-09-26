@@ -29,9 +29,9 @@ one fifth of the small stored hidden part passes through the intervening sentenc
 
 **Why look up rather than carry?** One reading is architectural. In a transformer,
 attention makes any earlier position directly readable at every layer. A later
-position can therefore compute what it needs when it needs it, and carrying the
+position can therefore compute what it needs when it needs it, and passing the
 content forward gains nothing. The stress tests suggest that this is not the whole
-story. In the Qwen3.5 hybrid, three quarters of the layers can only carry, yet the
+story. In the Qwen3.5 hybrid, three quarters of the layers can pass a plan forward only by relaying it, yet the
 donor signal entering through the quarter that can look it up accounts for nearly all
 of the effect. With distance, the line-end copy of Gemma 3 27B becomes more necessary,
 while the generated-text block remains unsplit; Gemma 3 12B loses the plan. In the

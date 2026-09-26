@@ -98,7 +98,7 @@ operands; recomputation itself was not measured.
 
 **Variable chains.** Sums are cheap to recompute. A chain of updates
 (`a = 23`, `b = a + 4`, `c = b + 7`, ..., `What is e?`) makes recomputation at the
-answer costly and carrying natural. The running value could be passed from
+answer costly and makes relay the natural route. The running value could be passed from
 statement to statement, so this task was designed as a second positive-control
 candidate for relay. It is not one. Donor states at the starting value's digits move
 the answer strongly (at 14B: \(+30.9\), \(+18.5\) and \(+6.4\) for \(K=1,3,5\) updates).

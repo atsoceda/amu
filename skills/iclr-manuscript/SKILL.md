@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.2"
+  version: "1.3"
   updated: "2026-09-26"
 ---
 
@@ -66,8 +66,11 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
 
 ## Wording rules learned from review
 
-- Define every path term before using it, and keep one meaning per word: "relay" (carrying
-  forward through intermediate positions) is the only sense of "carry"; for shares write
+- Define every path term before using it, and keep one meaning per word. **Carried**
+  means early relay only: the effect arrives through the generated positions that are
+  neither the stored copy nor the late lookup. **Relay** is the parent term: any
+  intermediate position passes the edit on, including the stored copy, the late lookup,
+  and early relay. Do not gloss all of relay as carrying. For a share of an effect write
   "accounts for X%", never "carries X%".
 - State why relay matters in terms of what a monitor can see: emitted content is in the
   text, retrieved content sits at a fixed position of the context, relayed content travels

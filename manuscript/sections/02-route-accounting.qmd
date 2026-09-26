@@ -83,7 +83,7 @@ copy, and necessity does not. There we report both measures, the interaction, an
 Shapley value of the two-player game between the source and the group, which is
 their average [@shapley1953]. The largest interactions are in Gemma 3 27B couplets
 (29% of persistence with the chat prompt, 33% with the plain prompt). All quantities
-carry item-bootstrap 95% intervals (10,000 resamples; @efron1994bootstrap). Shares are
+are reported with item-bootstrap 95% intervals (10,000 resamples; @efron1994bootstrap). Shares are
 divided by the persistence of the same run, unless another denominator is named,
 which makes model families with different log-probability scales comparable.
 

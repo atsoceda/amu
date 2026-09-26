@@ -17,8 +17,7 @@ In a transformer, information present at one position can reach a later position
 by three paths (@fig-overview A). It can be **emitted**: it changes the tokens the
 model writes, and those tokens are read back as input. It can be **retrieved**: the
 later position attends directly to the position where the information originates,
-or to the visible text from which it can be recomputed. Or it can be **relayed**,
-that is, carried forward: intermediate positions, including the tokens the model
+or to the visible text from which it can be recomputed. Or it can be **relayed**: intermediate positions, including the tokens the model
 generates, read it and pass it on to later ones. The three paths differ in what a
 monitor can see. Emitted information is in the text. Retrieved information stays at
 a fixed position of the context, where it can be read or probed. Relayed information
@@ -87,7 +86,7 @@ structural token next to it (@tbl-map).
 
 A regularity found under favourable conditions is only as strong as the tests that
 could have broken it. We therefore test the principle in three settings chosen to make
-carrying useful or to make it invisible, each with a decision rule committed before the
+relay useful where attention cannot do the work, or to make the content invisible, each with a decision rule committed before the
 result (@sec-stress). They bound the principle rather than confirm it.
 
 - **Recurrent memory.** In the Qwen3.5 hybrid, three of every four layers can pass

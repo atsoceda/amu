@@ -3,12 +3,12 @@
 The principle could be an artifact of the settings in which we found it. When every
 layer can read every earlier position, carrying is never necessary. When the content
 is visible in the text, it can always be re-read. We therefore test three settings
-chosen to make carrying useful or invisible: an architecture in which most layers can
-pass information forward only by carrying it, a distance at which most attention
+chosen to make relay useful where attention cannot do the work, or to make the content invisible: an architecture in which most layers can
+pass information forward only by relaying it, a distance at which most attention
 layers cannot reach the source, and content that is not in the text at all. Each test
 has a decision rule committed before its first result (Appendix @sec-app-prereg). The
-tests bound the principle: they measure which route the model uses when carrying is
-available, and how far that choice moves when lookup becomes harder. @fig-stress
+tests bound the principle: they measure which route the model uses when relay and
+retrieval are both available, and how far that choice moves when lookup becomes harder. @fig-stress
 summarizes them.
 
 ![Stress tests. **A:** Qwen3.5 hybrids, in which three of every four layers are
@@ -35,7 +35,7 @@ sentence.](manuscript/figures/iclr_fig4_stress_tests.png){#fig-stress width=100%
 Qwen3.5 [@qwen2026qwen35] interleaves three Gated DeltaNet layers
 [@yang2025gateddeltanet] with each full-attention layer. A recurrent layer holds a
 fixed-size state that is updated position by position. In those layers, information
-from the source can reach a later position only by being carried in that state: relay
+from the source can reach a later position only through that state: relay
 by construction, and invisible in the text. The attention layers can still retrieve.
 The test therefore asks which route the model uses when both are available. We split
 persistence by layer type. In the *attention-only* cell, the donor state enters at the
@@ -52,7 +52,7 @@ persistence. The attention-only cell accounts for 97% and 96%. At the decisive s
 27B (48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
 [0.18, 0.64], 2% of persistence \(+18.8\) [16.3, 21.3], and attention-only 95%. As a sanity check, blocking both layer types at the source cancels the donor: that
 cell is zero on every couplet, as it must be. Decision: stop. Although three
-quarters of the layers can pass the plan forward only by carrying it, a donor signal
+quarters of the layers can pass the plan forward only by relaying it, a donor signal
 that enters through them at the source produces only 2 to 4% of persistence. The design controls
 which layer type receives the donor signal at the source; it does not isolate every
 later path through each layer type, so it measures the share of donor entry, not the
@@ -259,7 +259,7 @@ stored information (@fig-sites B).
 
 - In Gemma 3 27B, 77% of the pick-specific effect (\(+1.91\) [1.57, 2.24] of \(+2.48\))
   sits on a single token: *the* in "about the weather". With animals the same token
-  carries 83% (\(+3.36\) [2.92, 3.80] of \(+4.07\)). The period after the list
+  accounts for 83% (\(+3.36\) [2.92, 3.80] of \(+4.07\)). The period after the list
   accounts for \(+0.42\), and the period ending the instruction \(+0.22\). Every other
   token, including the end-of-turn and role tokens, is \(0.00\pm0.05\).
 - Gemma 3 12B uses the same site with fruits (*the*: \(+0.52\) of \(+1.03\); the period
