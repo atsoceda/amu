@@ -48,8 +48,9 @@ settings share a broken axis: looked-up shares on the upper segment, relayed sha
 the lower segment (to 30%), with the committed stop (10%) and go (25%) lines of the
 stress tests. The denominator is given under each group; Qwen3 is shown filled,
 Qwen3.5 as triangles, Gemma 3 open. In the positive control,
-where relay is the known mechanism, relay is the largest path. Everywhere else, relay
-is small and the information is looked up.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
+where relay is the known mechanism, relay is the largest path. Elsewhere the measured
+relay cells are small; interactions, reported separately in the sections, are not shown
+here.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100%}
 
 We introduce **route accounting**, a decomposition of an intervention's effect by
 path (@sec-method). A donor's hidden states are written at the source positions, and
@@ -76,9 +77,10 @@ structural token next to it (@tbl-map).
   word: 68 to 95% of persistence in every configuration but one (@sec-lookup). Early
   relay along the generated line is at most 1% of persistence: by sufficiency in all
   21 runs, and by necessity in the 17 where it was measured.
-- *Computed values.* Values computed from the prompt are recomputed from their visible
-  sources at the answer. Donor states at every position after the source move the
-  answer by at most 2.4% of the source effect in variable chains, and 6% in sums.
+- *Computed values.* Donor states at every position after the source move the answer by
+  at most 2.4% of the source effect in variable chains, and 6% in sums, while edits of
+  the source remain effective. This near-zero downstream patch effect is consistent
+  with the answer re-reading its visible sources.
 - *Written values.* When the model writes its intermediate values, the answer follows
   them: emission accounts for 83 to 99% of the effect (@sec-emission).
 
@@ -98,9 +100,9 @@ result (@sec-stress). They bound the principle rather than confirm it.
   which becomes necessary for about half of persistence. The shift is gradual, steepest
   as line 1 leaves the window. Relay through the generated text (the cue and line 2,
   including its last three positions) is 9 to 13% of persistence at every nonzero
-  distance. It is the one clear exception to the principle. It falls between the
-  committed stop (10%) and go (25%) lines, and it has not been split into early relay
-  and late lookup, so it remains inconclusive. In the 12B model, which stores little at the line end, the plan fades
+  distance. This block has not been split into early relay and late lookup, and it
+  falls between the committed stop (10%) and go (25%) lines, so it is a boundary case
+  whose early-relay contribution remains unresolved. In the 12B model, which stores little at the line end, the plan fades
   with distance, already inside the window, and relay never takes over.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
   monitoring cares about most. Information specific to a secret pick is stored after
@@ -154,7 +156,7 @@ Content (observability) & Emission & Looked up: direct retrieval, stored copy or
 \midrule
 Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is necessary for 74\%); stored copy 0--16\% by sufficiency; late lookup 1--13\% & early relay $\le$1\%\\
 Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & generated text (incl.\ last three positions): 9--13\%\\
-Computed value, unwritten (visible) & -- & recomputed from the source & every later position together: $\le$2.4\% of the source effect (chains), $\le$6\% (sums)\\
+Computed value, unwritten (visible) & -- & source edits effective; downstream patch effect near zero & every later position together: $\le$2.4\% of the source effect (chains), $\le$6\% (sums)\\
 Computed value, written (visible) & 83--99\% & bypass to the source 1--17\% & --\\
 Secret choice (hidden) & no measurable effect (the sentence never names it) & pick-specific information stored after the list: 0--40\% of the text-swap reference, read directly at the reveal (Gemma~4 31B stores 82--91\%; its route split was not run); the rest not reproduced by the post-list patch & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$8\% (Qwen3.5 hybrids)\\
 \midrule

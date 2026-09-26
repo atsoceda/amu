@@ -91,9 +91,9 @@ Variable chains & chain relay $\ge$25\% of persistence (positive-control outcome
 Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--99\%)\\
 Recurrent carry & go if recurrent-only $\ge$25\%, stop if $<$10\% (largest model) & 784c78b, 09-26 10:24 & stop (2\% at 27B)\\
 Distance & go if generated-text relay $\ge$25\%, stop if $<$10\%, else extend & 2df09ce, 09-26 11:56; v2 6caf0e5; extension 0dda3b3 & extended; 12\%: between stop and go\\
-Window curve (27B) & the change in reliance occurs between 1,000 and 1,500 tokens & a2d7c65, 09-26 15:43 & \pending{}\\
+Window curve (27B) & the change in reliance occurs between 1,000 and 1,500 tokens & a2d7c65, 09-26 15:43 & partly supported: largest point-estimate step there, but the shift begins at 500 tokens (interior points 18 couplets, endpoints 50)\\
 Window curve (12B) & plan survives inside the window, lost outside & 9edfacc, 09-26 17:00 & not supported: gradual fade from 500 tokens (distance, not the window)\\
-Hidden choice & re-derived (list large, post-list and sentence small) vs stored or relayed & 144f545, 09-26 06:47 & mostly re-derived; small stored part; relay $\le$2\% of the text swap\\
+Hidden choice & mostly not reproduced by the post-list patch (list large, post-list and sentence small) vs stored or relayed & 144f545, 09-26 06:47 & mostly re-derived; small stored part; relay $\le$2\% of the text swap\\
 Out-of-list control & post-list edit raises the absent donor pick & aaa8b75, 09-26 07:23 & holds in every model\\
 Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & 061b175, 09-26 09:34 & Gemma 3 partly (4B $>$ 12B); Qwen3 small (3\%, 7\%)\\
 Localization robustness & storage concentrates on one or two function words and moves with the wording & 0ae75d6, 09-26 14:40 & supported at 4B and 12B (two domains; the site moves with the rewording at both); 27B \pending{}\\

@@ -31,10 +31,11 @@ attention makes any earlier position directly readable at every layer. A later
 position can therefore compute what it needs when it needs it, and carrying the
 content forward gains nothing. The stress tests suggest that this is not the whole
 story. In the Qwen3.5 hybrid, three quarters of the layers can only carry, yet the
-model routes the plan through the quarter that can look it up. Beyond the attention
-window, Gemma 3 27B reads a stored copy rather than carrying the plan along the text;
-Gemma 3 12B loses the plan. When lookup is available, carrying through the model's own
-output appears to be the disfavoured solution, not merely an unneeded one.
+donor signal entering through the quarter that can look it up accounts for nearly all
+of the effect. With distance, the line-end copy of Gemma 3 27B becomes more necessary,
+while the generated-text block remains unsplit; Gemma 3 12B loses the plan. In the
+settings tested, carrying through the model's own output appears disfavoured when
+lookup is available, not merely unneeded.
 
 **What would overturn the principle.** The largest relay through generated text we observe is about 12%, in the setting built to demand it, and it is not yet split into early relay and late lookup. The principle predicts that early relay stays
 a minority path wherever a lookup site exists. Stronger pressure could break it: much

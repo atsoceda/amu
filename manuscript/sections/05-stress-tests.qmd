@@ -13,13 +13,17 @@ summarizes them.
 
 ![Stress tests. **A:** Qwen3.5 hybrids, in which three of every four layers are
 recurrent. With the donor state allowed to enter only one layer type at the source,
-the plan reaches the rhyme through the attention layers (blue). Entry through the recurrent layers,
-which can only relay (purple), produces 2 to 4% of persistence, below the committed
-stop line (10%); the both-blocked cell is zero. **B:** Gemma 3 27B with filler between
-line 1 and line 2, at the measured distances only. Past the 1,024-token window of its
-local layers (shaded), direct retrieval of the rhyme word falls, the stored copy at
-the line's final token becomes necessary for about half of persistence, and early
-relay rises to 12%, between the committed stop and go lines. Side panels: absolute
+a donor signal entering through the attention layers (blue) accounts for nearly all
+of persistence. Entry through the recurrent layers, which can only relay (purple),
+produces 2 to 4%, below the committed stop line (10%); the both-blocked cell is zero.
+**B:** Gemma 3 27B with filler between line 1 and line 2, at the measured distances
+only (couplets per distance in brackets; interior points 18 couplets, endpoints 50;
+the dotted line marks where line 1 leaves the 1,024-token window). With distance,
+direct retrieval of the rhyme word falls and the stored copy at the line's final token
+becomes necessary for about half of persistence. The generated-text block (the cue and
+line 2, including its last three positions, not split into early relay and late
+lookup) is 9 to 13% at every nonzero distance, between the committed stop and go
+lines (shaded bands). Side panels: absolute
 persistence, and the share of second lines that still rhyme in four models. **C:**
 hidden choice, as shares of the text-swap reference: not reproduced by the post-list
 patch, stored after the list, and (right, on a scale centred on zero, with 95% intervals) relayed
@@ -42,14 +46,14 @@ check. The rule committed in advance was "go" if recurrent-only is at least 25% 
 persistence with its interval above zero, and "stop" if it is below 10%. It is decided
 on the largest model; smaller sizes give the trend.
 
-When both routes are open, the donor signal travels through the attention layers. At 4B and 9B (40 couplets each), the
+When the donor signal can enter at the source through either layer type, entry through the attention layers accounts for nearly all of its effect. At 4B and 9B (40 couplets each), the
 recurrent-only cell is \(+0.28\) [0.07, 0.49] and \(+0.55\) [0.31, 0.79]: 3% and 4% of
 persistence. The attention-only cell accounts for 97% and 96%. At the decisive size,
 27B (48 recurrent and 16 attention layers; 24 couplets), recurrent-only is \(+0.41\)
 [0.18, 0.64], 2% of persistence \(+18.8\) [16.3, 21.3], and attention-only 95%. The
 both-blocked cell is exactly zero in every model. Decision: stop. Although three
-quarters of the layers can pass the plan forward only by carrying it, the plan travels
-by direct retrieval through the quarter that can look it up. The design controls
+quarters of the layers can pass the plan forward only by carrying it, a donor signal
+that enters through them at the source produces only 2 to 4% of persistence. The design controls
 which layer type receives the donor signal at the source; it does not isolate every
 later path through each layer type, so it measures the share of donor entry, not the
 recurrent memory's natural share. Entry through the recurrent layers is small but
@@ -81,20 +85,21 @@ The filler relays nothing (\(+0.3\) by sufficiency, \(+0.15\) by necessity). Rel
 along the generated text rises from about 1% to 12% by sufficiency (\(+3.2\) [2.2,
 4.3]); its necessity is \(+2.7\), or 10%. This block contains the cue and all of line 2,
 including its last three positions, so it mixes early relay with the late lookup; the
-split was not run. It is the largest relay through generated text in any setting and
-the one clear exception to the principle. By the committed rule it falls between
-"stop" and "go", and it remains inconclusive: even at 2,000 tokens it is a minority
-route, about an eighth of the effect.
+split was not run. It is the largest generated-text block we measure, a boundary case
+rather than a demonstrated exception: by the committed rule it falls between "stop" and
+"go", and its early-relay contribution remains unresolved. Even at 2,000 tokens it is a
+minority route, about an eighth of the effect.
 
 The window curve, committed before its result, predicted a change specifically
-between 1,000 and 1,500 tokens (18 couplets per distance). It is only partly
+between 1,000 and 1,500 tokens. The interior distances use 18 couplets each and the
+endpoints the 50 couplets of @tbl-distance, so the curve is not one uniform sample. It is only partly
 supported. Direct retrieval is 66%, 64%, 54%, 40% and 40% of persistence at 0, 500,
 1,000, 1,500 and 2,000 tokens, and the stored copy is necessary for 11%, 25%, 30%,
-45% and 49%. The steepest step is where line 1 leaves the window, but the shift has
+45% and 49%. The largest point-estimate step is where line 1 leaves the window, but the shift has
 begun at 500 tokens, inside it. Relay through the generated text is 11%, 9%, 13% and
 12% at the four nonzero distances: it appears once filler is present and does not
 grow with distance. We therefore describe a long-distance shift toward the stored
-copy, steepest across the window, rather than a window-edge mechanism.
+copy, steepest across the window, rather than a precisely located window-edge transition.
 
 ::: {#tbl-distance}
 
@@ -159,7 +164,7 @@ can compute it. For the route split, the model's turn is prefilled with a fixed
 weather sentence and "The fruit I chose is". The outcome is the log-odds of the
 donor's pick against the original pick at the next token.
 
-**Mostly re-derived, partly stored, barely relayed.** The donor is the same list in
+**Partly stored, barely relayed.** The donor is the same list in
 another order, chosen so that the greedy pick differs. The reference is a *text swap*:
 the donor order written into the prompt, which moves the pick by construction. In
 Qwen3-8B, Gemma 3 12B and Gemma 3 27B (100 pairs each), donor states at the prompt
@@ -167,8 +172,8 @@ positions after the list move the reveal by 12%, 15% and 16% of the text swap. T
 reveal reads all of it directly: the retrieval cell equals the post-list effect. Relay
 of this stored part through the sentence is \(+0.00\) [\(-0.04\), 0.05], \(-0.06\)
 [\(-0.14\), 0.01] and \(-0.01\) [\(-0.10\), 0.08]; it is also zero within its interval in
-Qwen3-4B and Qwen3-14B. The rest of the pick, 84 to 88%, is re-derived at the reveal
-from the visible list. The two largest Qwen models are the exception.
+Qwen3-4B and Qwen3-14B. The rest of the pick, 84 to 88%, is not reproduced by the post-list patch; it is
+presumably re-derived at the reveal from the visible list. The two largest Qwen models are the exception.
 
 - In *Qwen3-32B*, relay through the sentence is small but nonzero: \(+0.06\) [0.04,
   0.09]. That is 2% of the text swap but one eighth of the stored part.

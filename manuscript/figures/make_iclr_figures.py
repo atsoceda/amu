@@ -296,7 +296,7 @@ def fig1():
     xr0, xr1 = 1.92, 5.3
     axT = fig.add_axes([fx(xr0), fy(ybot + hb + brk), fx(xr1 - xr0), fy(ht)])
     axL = fig.add_axes([fx(xr0), fy(ybot), fx(xr1 - xr0), fy(hb)])
-    fig.text(0.0, fy(3.3), "B   Relay carries induction; elsewhere information is looked up", fontsize=8,
+    fig.text(0.0, fy(3.3), "B   Measured lookup and relay cells: relay carries induction, and is small elsewhere", fontsize=8,
              weight="bold", va="top")
     den_y = fy(0.5)
 
@@ -956,8 +956,8 @@ def fig4():
         a = share(x["attention_only"], x["persistence"])
         r = share(x["recurrent_only"], x["persistence"])
         b = share(x.get("both_blocked"), x["persistence"])
-        ax.bar(i - 0.2, a[0], 0.34, color=COL["retrieval"], label="attention layers" if i == 0 else None)
-        ax.bar(i + 0.16, r[0], 0.34, color=COL["relay"], label="recurrent memory" if i == 0 else None)
+        ax.bar(i - 0.2, a[0], 0.34, color=COL["retrieval"], label="entry via attention layers" if i == 0 else None)
+        ax.bar(i + 0.16, r[0], 0.34, color=COL["relay"], label="entry via recurrent layers" if i == 0 else None)
         for xx, v in ((i - 0.2, a), (i + 0.16, r)):
             if np.isfinite(v[1]):
                 ax.plot([xx, xx], [v[1], v[2]], color=COL["ink"], lw=0.7)
@@ -994,21 +994,24 @@ def fig4():
                           (0.22, "relay_line2", COL["relay"])):
             dot(ax, i + off, share(v[k], v["persistence"]), c, "s", False, s=16)
     ax.set_xticks(range(len(ds)))
-    ax.set_xticklabels([f"{D:,}" for D in ds])
+    ax.set_xticklabels([f"{D:,} ({byd[D]['n']})" for D in ds], rotation=45, ha="right", rotation_mode="anchor")
     ax.set_xlim(-0.6, len(ds) - 0.4)
     ax.set_ylim(-6, 132)
+    if 1000 in ds and 1500 in ds:
+        xw = (ds.index(1000) + ds.index(1500)) / 2
+        ax.axvline(xw, color="#555555", lw=0.8, ls=(0, (1, 1.5)), zorder=1)
     ax.set_yticks([0, 25, 50, 75, 100])
     ax.spines["left"].set_bounds(-6, 100)
     xr = len(ds) - 0.42
     ax.text(xr, 4, "stop", fontsize=7, color="#8E4F7A", ha="right", va="center")
     ax.text(xr, 17.5, "extend", fontsize=7, color="#8E4F7A", ha="right", va="center")
     ax.text(xr, 28, "go", fontsize=7, color="#8E4F7A", ha="right", va="bottom")
-    ax.set_xlabel("filler tokens before line 2")
+    ax.set_xlabel("filler tokens before line 2 (couplets)")
     ax.set_ylabel("% of persistence")
     hs = [Line2D([], [], ls="none", marker="s", ms=3.5, mfc="white", mec=c) for c in
           (COL["retrieval"], COL["storage"], COL["relay"])]
-    ax.legend(hs, ["direct retrieval", "stored copy", "relay along line 2"], loc="upper right",
-              handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.04, 1.04))
+    ax.legend(hs, ["direct retrieval", "stored copy (nec.)", "cue + line 2\n(incl. last 3)"], loc="upper right",
+              handletextpad=0.1, borderaxespad=0.0, labelspacing=0.2, bbox_to_anchor=(1.02, 1.0), fontsize=6.5)
     ax.set_title("B   Beyond the attention window (Gemma 3 27B)", x=-0.3)
     # B, side: absolute persistence at each distance.
     ax = fig.add_subplot(g1[2])
@@ -1068,7 +1071,7 @@ def fig4():
         axc.barh(i, stored - relayed, 0.62, left=relayed, color=COL["storage"], lw=0,
                  label="stored after the list" if first else None)
         axc.barh(i, 100 - stored, 0.62, left=stored, color=COL["retrieval"], lw=0, alpha=0.85,
-                 label="not reproduced by the post-list patch" if first else None)
+                 label="not reproduced by the patch" if first else None)
         if np.isfinite(st[1]):
             axc.plot([st[1], st[2]], [i, i], color=COL["ink"], lw=0.7)
         axc.text(max(st[2], stored) + 1.5, i, f"{stored:.0f}%", fontsize=7, va="center", ha="left",
@@ -1088,7 +1091,7 @@ def fig4():
     axc.set_xlabel("% of the text-swap reference")
     axc.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3, handlelength=1.0, columnspacing=0.8,
                borderaxespad=0.1)
-    axc.set_title("C   Re-derived or stored, not relayed or written", x=-0.24, pad=16)
+    axc.set_title("C   Hidden choice: stored after the list or not reproduced by\n     the post-list patch; not relayed or written", x=-0.24, pad=16)
     axz.axvline(0, color="#999999", lw=0.6, zorder=0)
     axz.tick_params(axis="y", labelleft=False)
     axz.set_xlim(-8, 12)
@@ -1168,7 +1171,7 @@ def fig5():
     ax.set_yticks([0, 25, 50, 75, 100])
     ax.set_xlabel("Qwen3 parameters (B)")
     ax.set_ylabel("share of the source effect that\nreaches the answer downstream (%)")
-    ax.set_title("Unwritten values are recomputed; written values are followed")
+    ax.set_title("Unwritten: near-zero downstream patch effect; written: the answer follows the text")
     save(fig, "iclr_fig5_computed_and_written.png")
 
 

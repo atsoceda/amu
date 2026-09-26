@@ -31,7 +31,7 @@ components. They are still lookups from a fixed position of the prompt, not rela
 along the generated line.
 
 ![Couplet routes across scale, family and prompt format (100 couplets per run).
-**Top: direct retrieval dominates in every run.** Composition of persistence, from the
+**Top: direct retrieval dominates in every run except Gemma 3 27B with the plain prompt, where the stored copy takes over.** Composition of persistence, from the
 sufficiency cells: direct retrieval of the rhyme word (blue), the stored copy at the
 line's final token (green), the late lookup through the three positions before the
 target (light blue), early relay along the rest of line 2 (purple; at most 1% in every
