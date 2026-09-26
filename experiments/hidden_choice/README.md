@@ -387,3 +387,10 @@ and 27B.
 Post-list edit, relative pick preference -0.42 [-0.96, 0.10] (text swap -0.39 [-0.91, 0.11]),
 against out-of-list pick specificity +2.48 at 27B. The null holds (interval includes zero), as at
 12B; like the 12B null it cannot separate a stored pick from a stored list copy.
+
+### Localization check 1: Gemma 3 - 27B - hidden choice - localization (animals; 2026-09-26)
+
+Pick specificity +4.07 [3.57, 4.57] (text swap +10.12). By token: **"the" in "about the weather"
++3.36 [2.92, 3.80]** (83% of the pick specificity), the period ending the instruction +0.39
+(10%), the period after the list +0.16 (4%). Same site as with fruits (77%): the frozen check 1
+holds.
