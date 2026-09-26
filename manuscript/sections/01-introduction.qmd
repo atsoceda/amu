@@ -1,72 +1,120 @@
-# Introduction
+# Introduction {#sec-intro}
 
-Language-model outputs are usually treated as readouts of internal computation.
-In an autoregressive model they are also interventions on the model's future:
-each sampled token is appended to context and processed again. This feedback
-creates two causal routes from an internal state to a later prediction. Influence
-can remain **private**, propagated through contextual hidden state, or become
-**public**, projected into a generated symbol and returned as a high-leverage
-input. A later-token change observed under free generation does not say which
-route carried it.
+Language models routinely act on information they have not written down. A model
+completing a rhyming couplet selects its rhyme before it writes the line that ends
+in it [@lindsey2025biology; @hanna2026latent]. A model asked for the result of a
+calculation, or to make a choice and reveal it later, must hold or reconstruct that
+content across the tokens it writes in between. How such unwritten information
+reaches the position that uses it is a basic question about autoregressive
+computation. It is also a practical one. Chain-of-thought monitoring assumes that
+the reasoning relevant to a decision passes through, or can be recovered from, the
+text the model writes [@korbak2025monitorability; @baker2025monitoring]. The
+central risk to that assumption is content that travels in the model's state while
+the text says nothing about it [@pfau2024dots; @roger2023steganography;
+@turpin2023unfaithful; @chen2025reasoning].
 
-This ambiguity is acute in work on latent planning. Hanna and Ameisen define it
-as an internal representation that both causes a specific future token or
-concept and shapes preceding context to license it [@hanna2026latent]. Those
-criteria do not distinguish whether the future effect persists privately or is
-transmitted through the preceding context the representation caused. Thus a
-rewrite from `a pilot` to `an aviator` could reflect persistent noun control or
-a closed loop in which changing `a` to `an` changes the next prediction. Our
-question is not whether such a signal is causal, but how its influence travels.
+In a transformer, information present at one position can reach a later position
+by three paths (@fig-overview A). It can be **emitted**: it changes the tokens the
+model writes, which are then read back as input. It can be **retrieved directly**:
+the later position attends to the position where the information originates, or
+to the visible text from which it can be recomputed. Or it can be **relayed**:
+intermediate positions, including the model's own generated tokens, pick it up and
+pass it forward. Only relay keeps content in the model's state while the
+intervening text is silent about it, so relay is what a text monitor could miss.
+Prior work establishes that planning signals exist and are causally used: they are
+decodable ahead of time [@pal2023futurelens; @wu2024plan; @men2024lookahead],
+visible in attribution graphs [@lindsey2025biology; @hanna2026latent], and steerable
+at the planning site [@maar2026plan; @ma2026plan; @jacopin2026improvisation]. These
+methods locate where a plan is formed or can be changed. They do not measure which
+path the plan takes to the position where it is used.
 
-We develop an intervention framework that separates them. A six-cell assay
-crosses intervention off/on with free generation, forced `a`, and forced `an`.
-It decomposes the downstream probability-vector change into a component
-reproduced by public-token substitution and a matched-token component that
-persists privately. A four-stage **causal-validity ladder** additionally requires
-that a candidate signal be locally causal, that the mediator states induced by
-the intervention lie within the assay's support, and only then that its
-transmission route be interpreted.
+We introduce **route accounting**, a decomposition of an intervention's effect by
+path (@sec-method). A donor's hidden states are written at the source positions, and
+the effect is measured where the information is used. Clamping the states of chosen
+groups of positions to their clean or edited values, at every layer, isolates each
+path. Emission is separated from persistence by fixing the generated text. Within
+persistence, direct retrieval is separated from relay, with sufficiency and
+necessity versions for every group of intermediate positions and an explicit
+interaction term. Because a method that never finds relay would be uninformative, we
+validate route accounting on induction [@olsson2022induction], where relay through
+the copied token's position is the known mechanism. In that positive control, the
+accounting assigns the effect to relay, while direct retrieval stays at or below 3%
+of the effect in six of seven models (@fig-overview B).
 
-The experiments reveal a coherent organization of causal state.
+Applied to four tasks in 15 checkpoints from three model families, route accounting
+reveals a consistent principle: **look it up, don't carry it**. Unwritten information
+is read, near the point of use, from a fixed position in the prompt. That position is
+either the source itself or a copy stored at a structural token next to it. The
+information is not carried along the generated text (@tbl-map). Rhyme plans reach
+the rhyme mainly by direct retrieval of the rhyme word: 68 to 95% of persistence in
+all but one configuration (@sec-lookup). Values computed from the prompt are
+recomputed from their visible sources at the answer, even where this fails. No
+downstream position holds the running value of a variable chain, even as a block.
+When intermediate values are written out, the answer follows them: emission carries
+83 to 99% of the effect (@sec-emission). Relay along generated text more than three
+positions before the target never exceeds 1% of persistence in couplets. In the
+other tasks it is indistinguishable from zero.
 
-1. **Public projection can dominate apparent future-token control.** In Gemma 3
-   270M, an attribution-selected sparse intervention produces a 0.893-TV noun
-   rewrite, of which 0.891 is reproduced by article substitution; only 0.028 TV
-   remains with the treated article fixed. Article replay and rescue recover the
-   corresponding top noun on every one of 20 held-out prompts.
-2. **Private target information remains causally effective.**
-   Natural-state-derived residual patches move target nouns while article identity is fixed at
-   both 270M and 1B. Public mediation is therefore not the only available route.
-3. **Routing is mediator-relative.** In a neutral-prompt 1B synonym assay, both
-   lexical alternatives remain correct. In a matched 14-family assay holding
-   semantic family and source state fixed, crossing the article-equivalence
-   boundary shifts causal influence toward the public route in 13/14 families;
-   an independent-family assay shows the corresponding public/private double
-   dissociation in all 14 families.
-4. **Public effects have closed-loop gain.** Once a distinction enters the
-   public route, its downstream magnitude is the product of mediator-policy
-   movement and continuation-branch leverage. At 270M, composing local causal
-   pressure with decoder susceptibility and leverage provides limited
-   predictive validation in the decisive-policy regime, whereas attribution
-   alone does not; that regime is dominated by one feature, and prediction
-   among small effects remains weak.
+A regularity found under favourable conditions is only as strong as the tests that
+could have broken it. We therefore test the principle in three settings designed to
+make carrying necessary or undetectable, each with a decision rule fixed before the
+result (@sec-stress):
 
-The resulting claim is not that hidden computation is absent, nor that the
-model spontaneously chooses between two independent memories. Rather, a
-generated token is a **lossy public projection** of future-relevant state.
-Distinctions visible in that projection can acquire a public causal route;
-distinctions collapsed by it cannot travel through token identity and remain
-target-aligned through private context in our controlled assay. Mechanistic
-claims about future tokens must therefore identify both **routing**---where the
-causal influence travels---and **gain**---how the decoding loop amplifies it.
+- **Recurrent memory.** In a hybrid where three of every four layers pass information
+  forward only through a recurrent state [@yang2025gateddeltanet], relay is the only
+  path available to most of the network. The recurrent memory nevertheless carries
+  2 to 4% of the plan at 4B, 9B and 27B parameters.
+- **Distance.** Gemma 3 interleaves five local attention layers with a 1,024-token
+  window per global layer [@gemma3]. Beyond that window, most layers cannot read the
+  source. At 2,000 tokens, the 27B model reads a stored copy at the line's final
+  token, which is necessary for about half of the effect. Relay along the generated
+  line rises only to about 12%, the largest value we observe. A 12B model, which
+  stores no such copy, loses the plan instead of relaying it.
+- **Hidden content.** A choice that a reader cannot infer from the text is the case
+  monitoring cares about most. Models store part of a secret pick at a predictable,
+  low-content token of the instruction. In Gemma 3 27B, most of the stored pick sits
+  on the word *the* in "about the weather". The pick is read directly at the reveal.
+  It is not relayed through the intervening sentence and not written into it.
 
-This extends prior distinctions between decodable and causally used planning
-signals [@ma2026plan], and complements work showing that hidden state beneath
-fixed visible scratchpad tokens can matter [@shih2026registers]. Generated-token
-mediation itself is not new [@vig2020mediation; @paul2024reasoning]. Our
-contribution is to turn it into an operational validity standard for internal
-mechanistic interventions and to show public dominance, private persistence,
-and mediator-relative route reversal within one controlled setting.
-Transmission route is orthogonal to functional interpretation: a state may
-satisfy a latent-planning definition while its future effect is public, private,
-or hybrid.
+Across scale, the one route that grows is storage at the line's final token: the
+comma in chat prompts, the newline in plain prompts (@sec-storage). It appears from
+14B in Qwen3 and at 12 to 27B in Gemma 3, and is present in base checkpoints, so it is
+learned in pretraining. This result reconciles published accounts of where the rhyme
+plan lives. The account that the plan is read from the rhyme word
+[@hanna2026latent] and the account that it is placed at the line boundary
+[@lindsey2025biology; @ma2026plan] describe two lookup sites that coexist. Their
+proportions depend on scale, family and prompt format.
+
+**Contributions.**
+
+1. Route accounting: a path-level decomposition of intervention effects in
+   autoregressive generation. It separates emission from persistence, and direct
+   retrieval from relay, and reports sufficiency, necessity and interaction for
+   every group of positions. It is validated on a positive control.
+2. A principle with its evidence: unwritten information is looked up, not carried.
+   The evidence covers visible plans, computed values and hidden choices, across
+   families, sizes, prompt formats and instruct versus base checkpoints. It holds
+   under the authors' published feature steering as well as under state edits.
+3. Three pre-registered stress tests (recurrent memory, attention distance, hidden
+   content) that bound where the principle holds and quantify the largest deviation
+   we observe.
+4. A scale law for storage at the line's final token, and a reconciliation of the
+   published accounts of rhyme planning.
+
+: Where unwritten information travels. Each cell gives the share of the effect
+carried by a path, as a range over the models tested, from the largest effect
+measured in each setting. Route: *emission*, the effect through the text the model
+writes; *retrieval or storage*, a later position reads the source, a stored copy of
+it, or the visible sources from which it recomputes the content; *relay*, the effect
+carried along intermediate positions. Observability: *visible* content can be
+recovered by a reader of the text; *hidden* content cannot. Dashes mark cells that
+the design rules out. Sections and figures give the full results with 95% intervals.
+{#tbl-map}
+
+| Content (observability) | Emission | Retrieval or stored copy | Relay along generated text |
+|---|---|---|---|
+| Rhyme plan (visible) | 13--25% of the total | rhyme word 68--95% of persistence; line-end copy 0--16% (37% in Gemma 3 27B, plain) | $\le$ 1% beyond the last three positions |
+| Computed value, unwritten (visible) | -- | recomputed from the source digits | $\le$ 2% (all later positions together) |
+| Computed value, written (visible) | 83--99% | bypass 1--17% | -- |
+| Secret choice (hidden) | $\approx$ 0 (the sentence never names it) | re-derived from the list; 0--40% stored after it | $\approx$ 0 |
+| Induction (positive control) | -- | $\le$ 3% (31% at Qwen3-32B) | 53--137% (interaction above 100%) |

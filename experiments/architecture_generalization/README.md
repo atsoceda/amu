@@ -42,3 +42,8 @@ Text swap +17.91 (pick specificity +1.66); post-list block: donor pick +0.16, do
 fruits +0.11, **pick specificity +0.05 [0.03, 0.08]** (3% of the text swap's). As predicted
 (family-like): Qwen3.5 stores almost none of the hidden pick after the list, like Qwen3 at
 14B-32B (+0.00 / +0.04), unlike Gemma 3 (27B: +2.48, 31%).
+
+### Qwen3.5 - 27B - hidden choice - replication (animals; pre-registered specificity)
+
+Text swap specificity +1.27; post-list pick specificity **+0.05 [0.01, 0.08]** (4%). As
+predicted: Qwen3.5 like Qwen3 at its size (Qwen3-32B 7%), unlike Gemma 3 27B (40%).

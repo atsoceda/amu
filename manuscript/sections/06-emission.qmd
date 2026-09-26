@@ -1,0 +1,70 @@
+# When the model writes it down: emission follows leverage {#sec-emission}
+
+The principle concerns information the model has not written. When the information
+*is* written, route accounting asks the complementary question: does the later
+position use the written text, or does it bypass the text and read the source again?
+
+**Leverage.** For a binary mediator \(B\in\{b_0,b_1\}\), such as the article *a* or
+*an* before a planned noun, the emission term factorizes exactly. Let
+\(q_i=P(B=b_1\mid I=i)\) and let \(Y(0,b)\) be the continuation distribution with the
+intervention off and the mediator fixed to \(b\). Then
+
+$$
+E_{\rm emit} \;=\; (q_1-q_0)\,\big(Y(0,b_1)-Y(0,b_0)\big).
+$$
+
+The effect through the text is the change in what is written, times how much the
+written token matters to what follows. We call the second factor its *leverage*. We
+apply the six-cell assay to the a/an planning features of @hanna2026latent, which are
+selected by a rule with no article criterion. We use their per-layer transcoders for
+Qwen3 0.6B, 1.7B and 4B and reproduce their node counts exactly on 297 to 344 of 349
+prompts.
+
+- At 4B, where they report planning, the features have a bidirectional,
+  feature-specific effect on the planned noun. Of that effect, 92 to 94% travels
+  through the generated article. The effect that bypasses the article is at
+  random-control level.
+- Stratified by leverage (@fig-computed D), the effect through the article scales
+  with leverage, while the effect bypassing it stays small and constant. The article
+  carries 53 to 82% of the effect in the lowest-leverage tertile and 94 to 96%
+  elsewhere.
+- The product of policy movement and leverage predicts the public effect better
+  than policy movement alone (correlation 0.886 against 0.831 for amplified
+  features).
+- At 0.6B and 1.7B the effects are small and travel almost entirely through the article.
+
+![Computed values and written reasoning. **A:** accuracy of unwritten variable
+chains falls with the number of updates. **B:** donor states at the starting value's
+digits move the answer (blue). Donor states at every later position together barely
+move it (purple; labels give the value, \(K=3\)), so no running value is carried. **C:**
+when the model writes the chain out, the answer follows the written values
+(emission, vermillion). The part that bypasses them and re-reads the edited source
+(grey) does not grow with scale. **D:** a/an planning features in Qwen3-4B. The
+effect through the article scales with its leverage over the planned noun; the effect
+bypassing it stays at control level. Amplified features are shown in full colour,
+zeroed features faded.](manuscript/figures/iclr_fig5_computed_and_written.png){#fig-computed width=100%}
+
+**Written reasoning is followed.** We return to the variable chains of
+@sec-computed, now with the instruction "Compute each variable in order, one per
+line, then state the value of \(e\)". The model writes each intermediate value.
+The edit at the starting value's digits makes it write the donor's values in 86 to
+100% of items. We cut the written chain after the second-to-last value and measure
+the answer's first digit. The six-cell split then shows how much of the effect goes
+through the written values (emission) and how much bypasses them (persistence with
+the text fixed).
+
+- Emission carries 93% and 96% of the effect at 4B (\(K=3\) and \(K=5\)), 94% and 92% at
+  8B, 88% and 83% at 14B, and 99% at 32B (\(K=3\)).
+- The bypass rises from 4 to 7% at 4B and 8B to 12 to 17% at 14B. At 32B it is
+  \(+0.06\) [\(-0.05\), 0.16], or 1% (@fig-computed C).
+
+Written reasoning is not decorative in these models. The answer follows the written
+values, and the part that re-reads the source does not grow with scale. The
+couplets give the same picture on a smaller scale: the emitted line-2 words carry 13
+to 25% of the rhyme effect (@sec-couplets). \pending{Qwen3-32B at \(K=5\),
+re-scored after a parser fix: 32B writes each step in bold.}
+
+Together with @sec-lookup, the two halves of route accounting give a consistent
+picture for monitoring. What the model writes, it uses, in proportion to the
+leverage of the written token. What it does not write, it looks up at the point of
+use from a small set of prompt positions.

@@ -1,0 +1,54 @@
+# Related work {#sec-related}
+
+**Planning in language models.** Hidden states anticipate tokens several positions
+ahead [@pal2023futurelens; @wu2024plan; @men2024lookahead]. Attribution graphs expose
+explicit planning in rhyming and in article choice [@lindsey2025biology;
+@ameisen2025attribution]. @hanna2026latent show that such planning emerges with
+scale in Qwen3 and identify the circuit that retrieves the rhyme plan near the end of
+line 2. Three studies locate the plan at the line boundary or probe it there
+[@maar2026plan; @ma2026plan; @jacopin2026improvisation]. These works ask whether and
+where a plan exists and whether it can be steered. We ask which path it takes to its
+target, and show that the published accounts measure different lookup sites whose
+proportions change with scale (@sec-storage).
+
+**Causal mediation and patching.** Route accounting builds on activation patching
+and causal mediation [@vig2020mediation; @meng2022rome; @geiger2025abstraction;
+@chan2022scrubbing] and follows their best practices for metrics and corruption
+[@zhang2024patching; @heimersheim2024patching]. It is closest to path patching
+[@wang2023ioi; @goldowskydill2023path] and to attention knockout on information flow
+[@geva2023recall]. It differs in three ways. The paths are defined over positions
+rather than components. Emission through generated text is separated from
+persistence. And sufficiency and necessity are reported side by side with an explicit
+interaction term, which matters where storage is redundant (@sec-storage). @mueller2026mediator
+argue for evaluating mechanisms against explicit causal mediators; our mediators are
+positions and generated tokens.
+
+**Anchors, separators and registers.** Structural tokens aggregate information:
+label words in in-context learning [@wang2023labelwords], separators that summarize
+a segment [@chen2024sepllm], attention sinks [@xiao2024sinks], and register tokens in
+vision transformers [@darcet2024registers]. @shih2026registers study whether models
+read the registers they write in scratchpads. The line-end copy and the stored hidden
+pick extend this picture. Under causal tests, these positions store task content
+that a later position reads directly, and the line-end copy grows with scale and
+distance.
+
+**Chain-of-thought faithfulness and monitoring.** Written reasoning can be
+unfaithful to the computation behind an answer [@turpin2023unfaithful;
+@lanham2023faithfulness; @chen2025reasoning]. Models can compute with filler tokens
+[@pfau2024dots] and could in principle encode reasoning steganographically
+[@roger2023steganography]. Monitoring the chain of thought is valuable but fragile
+[@korbak2025monitorability; @baker2025monitoring]. It is more robust when reasoning
+is necessary for the task [@emmons2025cot]. These studies measure behaviour. Route
+accounting measures the internal paths directly. Its two findings bear on
+monitorability: written values are used in proportion to their leverage, and
+unwritten content is looked up at a few prompt positions rather than carried along
+the generated text. Work on eliciting secrets from models trained to keep them
+[@cywinski2025taboo] studies hidden content that training installs. Our hidden choice
+arises without any training.
+
+**Architectures.** Gated DeltaNet and related recurrent layers replace attention
+with a fixed-size state [@yang2025gateddeltanet]. Hybrids interleave them with
+attention [@qwen2026qwen35], and sliding-window hybrids limit how far most layers can
+see [@beltagy2020longformer; @gemma3]. These designs restrict direct lookup, which is
+why we use them as stress tests. In both, the models keep the lookup where some layer
+can still perform it (@sec-stress).

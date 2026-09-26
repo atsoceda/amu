@@ -1,26 +1,33 @@
 ---
-title: "Closing the Causal Loop: Public and Private Routes in Autoregressive Models"
+title: "Look It Up, Don't Carry It: How Language Models Move Unwritten Information Across Their Own Text"
 bibliography: manuscript/references.bib
 number-sections: true
+header-includes:
+  - \usepackage{xcolor}
+  - \newcommand{\pending}[1]{\textcolor{red!65!black}{[Pending: #1]}}
 ---
 
 {{< include manuscript/sections/01-introduction.qmd >}}
 
-{{< include manuscript/sections/02-background.qmd >}}
+{{< include manuscript/sections/02-route-accounting.qmd >}}
 
-{{< include manuscript/sections/03-method.qmd >}}
+{{< include manuscript/sections/03-look-it-up.qmd >}}
 
-{{< include manuscript/sections/04-experiments.qmd >}}
+{{< include manuscript/sections/04-stored-copies.qmd >}}
 
-{{< include manuscript/sections/05-results.qmd >}}
+{{< include manuscript/sections/05-stress-tests.qmd >}}
 
-{{< include manuscript/sections/06-discussion.qmd >}}
+{{< include manuscript/sections/06-emission.qmd >}}
 
-{{< include manuscript/sections/07-limitations.qmd >}}
+{{< include manuscript/sections/07-related-work.qmd >}}
+
+{{< include manuscript/sections/08-discussion.qmd >}}
+
+{{< include manuscript/sections/09-statements.qmd >}}
 
 # References {.unnumbered}
 
 ::: {#refs}
 :::
 
-{{< include manuscript/sections/08-appendix.qmd >}}
+{{< include manuscript/sections/10-appendix.qmd >}}

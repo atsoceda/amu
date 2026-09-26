@@ -321,11 +321,15 @@ def fig3():
         if s and s.get("necessity_by_token"):
             rows.append((lab, [x["token"] for x in s["necessity_by_token"]], [x["mean"] for x in s["necessity_by_token"]]))
     hid = []
-    for run, dom, lab in [("gemma-3-27b-it", "fruits", "Gemma 3 27B, fruits"), ("gemma-3-12b-it", "fruits",
-                                                                                   "Gemma 3 12B, fruits"),
+    for run, dom, lab in [("gemma-3-27b-it", "fruits", "Gemma 3 27B, fruits"),
+                          ("gemma-3-12b-it", "fruits", "Gemma 3 12B, fruits"),
                           ("gemma-3-27b-it", "animals", "Gemma 3 27B, animals"),
-                          ("gemma-3-27b-it", "fruits_alt", "Gemma 3 27B, fruits, reworded instruction")]:
-        s = load(HC / run / f"choice_replicate_{dom}_localize_summary.json")
+                          ("gemma-3-12b-it", "animals", "Gemma 3 12B, animals"),
+                          ("gemma-3-27b-it", "fruits_alt", "Gemma 3 27B, fruits, reworded instruction"),
+                          ("gemma-3-12b-it", "fruits_alt", "Gemma 3 12B, fruits, reworded instruction")]:
+        name = "choice_replicate_fruits_localize_alt_summary.json" if dom == "fruits_alt" else \
+            f"choice_replicate_{dom}_localize_summary.json"
+        s = load(HC / run / name)
         if s:
             hid.append((lab, [x["token"] for x in s["necessity_by_token"]], [x["mean"] for x in s["necessity_by_token"]]))
     n = len(rows) + len(hid)

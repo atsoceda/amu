@@ -1,0 +1,218 @@
+\appendix
+
+```{=latex}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+```
+
+# Models and materials {#sec-app-materials}
+
+**Models.** Qwen3 1.7B, 4B, 8B, 14B and 32B (`Qwen/Qwen3-*`), and Qwen3 8B and 14B
+base (`Qwen/Qwen3-*-Base`). Gemma 3 1B, 4B, 12B and 27B instruction-tuned
+(`google/gemma-3-*-it`), and Gemma 3 12B and 27B pretrained (`google/gemma-3-*-pt`).
+Qwen3.5 4B, 9B and 27B (`Qwen/Qwen3.5-*`). Qwen3 0.6B, 1.7B and 4B for the a/an
+analysis, with the per-layer transcoders of @hanna2026latent. Pending: Qwen3.5-35B-A3B
+and Gemma 4 31B (`google/gemma-4-31b-it`) [@gemma4]. All models run in bfloat16 on
+Apple silicon (PyTorch MPS), with full recomputation and no key-value cache across
+edited runs.
+
+**Couplet prompts.** The chat format of @hanna2026latent. The user turn is
+"Write only the next line of this rhyming couplet: {line 1}", preceded by
+`/no_think` for Qwen3. The plain format of @ma2026plan is `A rhyming couplet:\n{line
+1}\n`, with no template; line 2 is the continuation up to the next newline. Rhymes use
+the perfect-rhyme sets of the Datamuse API, following @hanna2026latent. The outcome
+uses the single-token words of each set.
+
+**Item construction.** Qwen3 1.7B to 14B use the released 100-couplet steering
+subsets and donor pairings of @hanna2026latent. Other models use their rule: the
+first 100 first lines, in their order, that the model rhymes, with donors of a
+different rhyme group drawn with seed 20260925. Hidden-choice lists are drawn from 8
+single-token fruits (4-item lists) or from the first 12 single-token animals of a
+fixed 16-word pool (6-item lists), with seed 20260925. Chains and sums are drawn with
+the same seed, balanced over first digits.
+
+**Batching.** Where batched, forward passes group sequences of equal length only; we
+found that left padding shifts positions in patched forward passes. Batched and
+unbatched cells agree to a median of 0.05 and a maximum of 0.13 log-odds in a
+reference check. Batched generation uses left padding with per-row patches. It
+reproduces unbatched greedy generations in 7 of 8 checks, and the remaining one is
+a bfloat16 near-tie.
+
+# The six-cell assay for single-token mediators {#sec-app-sixcell}
+
+For a mediator token \(B\) with support \(\{b_0,b_1\}\), the six cells are
+\(I\in\{0,1\}\times B\in\{\text{free},\operatorname{do}(b_0),\operatorname{do}(b_1)\}\).
+Free generation is a policy, not a third value of \(B\). With \(B_i\) the greedy
+mediator under \(I=i\) and \(Y(i,b)\) the continuation distribution, the total effect
+\(Y(1,B_1)-Y(0,B_0)\) splits exactly into emission \(Y(0,B_1)-Y(0,B_0)\) and
+persistence \(Y(1,B_1)-Y(0,B_1)\). Under a stochastic policy \(q_i(b)\), emission is
+\(\sum_b [q_1(b)-q_0(b)]\,Y(0,b)\), which gives the leverage identity of @sec-emission
+for binary mediators. The multi-token version of @sec-method replaces the mediator
+with the generated text \(g\).
+
+# Pre-registration log {#sec-app-prereg}
+
+Every experiment's design, decision rule and predictions were committed to the
+repository before its first result. @tbl-prereg lists them with their outcomes.
+Deviations are dated in each experiment's record. The main ones:
+
+- the text-swap reference in the hidden choice, added after a 3-pair smoke test at
+  1.7B and before any real run;
+- pick specificity, added post hoc for fruits, then pre-registered for animals;
+- the absolute-relay reading rule for distance, added after the full-attention
+  control and before the Gemma 3 result;
+- the fast path for the Qwen3.5-27B pilot (24 couplets, screen generations reused),
+  fixed before its result;
+- the block edit for chains, added after the first 8B rows and before any 14B or 32B
+  run.
+
+: Pre-registered decisions and outcomes. {#tbl-prereg}
+
+| Experiment | Decision rule or prediction fixed in advance | Outcome |
+|---|---|---|
+| Relay grows with scale (couplets) | (1) relay share rises with log size; (2) the rise comes from early line 2; (3) replicates in Gemma 3 | (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails; not "carrying grows" |
+| Plain-format couplets | retrieval dominates; line-end copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale | all three hold |
+| Induction control | relay > 80% of persistence, retrieval near zero | holds in 6 models; partial at Qwen3-32B (retrieval 31%) |
+| Sums | computation-position edit must move the answer (efficacy gate) | gate fails at every size: recomputed |
+| Variable chains | chain relay \(\geq\) 25% of persistence (positive-control outcome) | not observed: recomputed |
+| Written chains | emission carries nearly all of the effect | holds (83--99%) |
+| Recurrent carry | go if recurrent-only \(\geq\) 25%, stop if < 10% (largest model) | stop (2% at 27B) |
+| Distance | go if generated-text relay \(\geq\) 25%, stop if < 10%, else extend | extended; 12%: small but nonzero |
+| Hidden choice | re-derived (list large, post-list and sentence small) vs stored or relayed | mostly re-derived; small stored part; relay zero |
+| Out-of-list control | post-list edit raises the absent donor pick | holds in every model |
+| Animal replication | pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B | Gemma 3 partly (4B > 12B); Qwen3 small (3%, 7%) |
+| Localization robustness | storage concentrates on one or two function words and moves with the wording | \pending{} |
+| Window curve | the change in boundary reliance occurs between 1,000 and 1,500 tokens | \pending{} |
+| Same-pick null | post-list edit with a same-pick donor leaves pick preference unchanged | \pending{} |
+| Architecture generalization | early relay under 5%; induction retrieval under 5%; hidden relay near zero; family-like storage | Qwen3.5-27B storage 3--4% (as predicted); rest \pending{} |
+
+# Additional couplet results {#sec-app-couplets}
+
+@tbl-couplets-full gives the route split for every couplet run. Shapley values
+for the line-end copy (the average of sufficiency and necessity) are \(+1.73\)
+(Qwen3-14B), \(+2.07\) (Qwen3-32B), \(+2.78\) (Gemma 3 27B), \(+2.81\) (Qwen3-14B plain), \(+2.05\)
+(Qwen3-32B plain) and \(+0.77\) (Gemma 3 12B plain).
+
+: Couplet routes for every run (100 couplets; shares of persistence with the original
+line-2 words). Total and emission in log-odds; donor rhyme rate after the edit.
+{#tbl-couplets-full}
+
+| Run | Donor rhyme | Total | Emission | Persistence | Retrieval | Relay | Late | Line end | Early | Gap |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Qwen3-1.7B | 27% | 14.4 | 2.7 | 12.1 | 95% | 7% | 6% | 0% | \(-1\)% | \(-1\)% |
+| Qwen3-4B | 43% | 19.5 | 3.1 | 15.3 | 91% | 10% | 10% | 0% | 0% | \(-2\)% |
+| Qwen3-8B | 61% | 26.0 | 3.6 | 22.6 | 90% | 11% | 10% | 0% | 0% | \(-1\)% |
+| Qwen3-14B | 64% | 30.2 | 5.6 | 25.8 | 82% | 13% | 6% | 5% | 0% | 5% |
+| Qwen3-32B | 66% | 27.3 | 5.8 | 22.2 | 82% | 16% | 8% | 8% | 1% | 2% |
+| Qwen3-1.7B, plain | 36% | 10.1 | 2.4 | 9.0 | 93% | 6% | 5% | 0% | 0% | 1% |
+| Qwen3-4B, plain | 54% | 17.8 | 2.4 | 16.5 | 91% | 11% | 10% | 1% | 1% | \(-2\)% |
+| Qwen3-8B, plain | 69% | 21.0 | 3.0 | 19.1 | 89% | 10% | 9% | 1% | 0% | 0% |
+| Qwen3-14B, plain | 75% | 23.8 | 3.9 | 19.1 | 76% | 22% | 9% | 13% | 0% | 3% |
+| Qwen3-32B, plain | 70% | 23.0 | 5.4 | 18.2 | 79% | 19% | 8% | 10% | 1% | 2% |
+| Qwen3-8B-Base, plain | 68% | 14.9 | 2.5 | 13.3 | 92% | 10% | 9% | 1% | 0% | \(-2\)% |
+| Qwen3-14B-Base, plain | 71% | 18.2 | 4.0 | 14.6 | 77% | 23% | 7% | 16% | 0% | 0% |
+| Gemma 3 1B | 62% | 27.6 | 3.7 | 24.8 | 95% | 4% | 4% | 0% | 0% | 1% |
+| Gemma 3 4B | 86% | 50.3 | 7.3 | 41.4 | 95% | 2% | 1% | 1% | 0% | 3% |
+| Gemma 3 12B | 95% | 52.2 | 11.3 | 41.2 | 89% | 2% | 2% | 0% | 0% | 8% |
+| Gemma 3 27B | 93% | 51.8 | 7.0 | 43.1 | 68% | 3% | 1% | 2% | 0% | 29% |
+| Gemma 3 1B, plain | 90% | 31.5 | 6.9 | 24.9 | 95% | 5% | 4% | 1% | 0% | 0% |
+| Gemma 3 4B, plain | 95% | 43.3 | 8.7 | 34.4 | 94% | 5% | 4% | 0% | 0% | 1% |
+| Gemma 3 12B, plain | 91% | 39.1 | 9.8 | 27.9 | 85% | 9% | 6% | 2% | 1% | 5% |
+| Gemma 3 27B, plain | 94% | 36.4 | 9.2 | 26.9 | 19% | 48% | 7% | 37% | 1% | 33% |
+| Gemma 3 12B PT, plain | 73% | 16.7 | 4.0 | 13.7 | 80% | 19% | 13% | 5% | 1% | 1% |
+
+**Anchor specificity** (persistence, donor states at one position of line 1). At
+Qwen3-1.7B: the rhyme word \(+12.1\), end of turn \(+6.0\), punctuation \(+5.7\), a
+middle word \(+5.5\), the first word \(+3.5\). At 8B: \(+22.6\), \(+10.6\), \(+10.7\), \(+8.6\)
+and \(+5.1\). At 32B: \(+22.2\), \(+11.0\), \(+11.5\), \(+4.5\) and \(+3.8\). At Gemma 3 12B:
+\(+41.2\), \(+15.3\), \(+14.2\), \(+10.9\) and \(+7.9\). Relay is small from every position.
+
+**Converging evidence from the released attention intervention.** @hanna2026latent
+block the heads that read the rhyme word near the end of line 2. Afterwards only 30%,
+20%, 13% and 32% of couplets still rhyme at 1.7B, 4B, 8B and 14B, all of which rhymed
+before. Direct retrieval is necessary, and relay does not replace it.
+
+# Computed values {#sec-app-computed}
+
+**Sums.** The user turn is `/no_think What is {a} + {b}?`. The assistant turn is
+prefilled with the filler and `The answer is`. The target is the first digit of the
+answer. @tbl-sums gives the efficacy scan.
+
+: Sums: donor states at each position group (log-odds toward the donor's first digit;
+104 items). {#tbl-sums}
+
+| | 1.7B | 4B | 8B | 14B | 32B |
+|---|---|---|---|---|---|
+| Accuracy (all filler lengths) | 95--100% | 100% | 100% | 100% | 100% |
+| Donor state at `?` (pre-registered) | \(+0.07\) | \(+0.01\) | \(-0.08\) | \(-0.06\) | \(-0.03\) |
+| Every position from `?` to the target | \(+0.30\) | \(+0.58\) | \(-0.12\) | \(+1.62\) | \(+1.10\) |
+| Operand digits | \(+47.8\) | \(+48.0\) | \(+53.6\) | \(+47.3\) | \(+17.2\) |
+
+**Chains.** The user turn is `a = {v0}\nb = a + {d1}\n...\nWhat is {last}?`, with
+\(K=1,3,5\) updates, 103 to 108 items per \(K\), and the same increments for original
+and donor, so the tokens align. @tbl-chains gives the edits.
+
+: Variable chains (unwritten). Donor states at the starting value's digits versus at
+every later position (the block edit), \(K=1/3/5\). {#tbl-chains}
+
+| | Accuracy | Source digits | Every later position |
+|---|---|---|---|
+| Qwen3-1.7B | 97 / 17 / 3% | \(+36.3\) / \(+24.4\) / \(+13.6\) | \(-0.02\) / \(+0.11\) / \(+0.04\) |
+| Qwen3-4B | 100 / 55 / 1% | \(+47.1\) / \(+32.2\) / \(+20.1\) | \(-0.07\) / \(+0.29\) / \(-0.20\) |
+| Qwen3-8B | 100 / 63 / 17% | \(+45.1\) / \(+31.1\) / \(+18.4\) | \(+0.05\) / \(+0.15\) / \(-0.07\) |
+| Qwen3-14B | 100 / 61 / 8% | \(+30.9\) / \(+18.5\) / \(+6.4\) | \(+0.09\) / \(+0.44\) / \(+0.22\) |
+
+# Hidden choice {#sec-app-hidden}
+
+: Hidden choice, out-of-list control and replication (log-odds, 95% intervals).
+Specificity is the effect on the donor's pick minus the mean effect on the donor's
+other items. {#tbl-hidden-full}
+
+| Model | Domain | Text-swap specificity | Post-list: donor pick | Post-list: pick specificity |
+|---|---|---|---|---|
+| Qwen3-8B | fruits | \(+5.4\) | \(+2.01\) [1.85, 2.18] | \(+0.55\) [0.46, 0.64] |
+| Qwen3-14B | fruits | \(+3.3\) | \(+0.29\) | \(-0.01\) [\(-0.05\), 0.03] |
+| Qwen3-32B | fruits | \(+1.8\) | \(+0.20\) | \(+0.04\) [0.01, 0.06] |
+| Qwen3.5-27B | fruits | \(+1.66\) | \(+0.16\) [0.11, 0.22] | \(+0.05\) [0.03, 0.08] |
+| Gemma 3 12B | fruits | \(+6.9\) | \(+5.07\) [4.65, 5.50] | \(+1.01\) [0.78, 1.24] |
+| Gemma 3 27B | fruits | \(+8.0\) | \(+10.30\) [9.70, 10.90] | \(+2.48\) [2.05, 2.91] |
+| Qwen3-8B | animals | \(+4.30\) | \(+2.68\) [2.46, 2.91] | \(+0.63\) [0.50, 0.76] |
+| Qwen3-14B | animals | \(+4.80\) | \(+0.80\) [0.69, 0.93] | \(+0.13\) [0.06, 0.21] |
+| Qwen3-32B | animals | \(+1.64\) | \(+0.52\) [0.40, 0.65] | \(+0.12\) [0.05, 0.19] |
+| Qwen3.5-27B | animals | \(+1.27\) | \(+0.18\) [0.12, 0.23] | \(+0.05\) [0.01, 0.08] |
+| Gemma 3 4B | animals | \(+11.93\) | \(+8.17\) [7.25, 9.09] | \(+2.59\) [2.13, 3.09] |
+| Gemma 3 12B | animals | \(+8.10\) | \(+4.94\) [4.30, 5.59] | \(+1.43\) [1.10, 1.77] |
+| Gemma 3 27B | animals | \(+10.12\) | \(+14.24\) [13.44, 15.05] | \(+4.09\) [3.59, 4.58] |
+
+At Qwen3-4B, the forced sentence positions carry a small part of the pick,
+\(+0.57\) [0.48, 0.67] or about 5% of the text swap. The donor run's sentence positions
+read this directly from the list. At 8B and larger the sentence positions carry
+nothing.
+
+# Relationship to an earlier workshop version {#sec-app-workshop}
+
+A non-archival workshop version of this work introduced the emission and persistence
+decomposition, there called public and private routes, on Gemma 3 270M and 1B with
+sparse-feature and residual interventions on the article *a/an*. That version also
+reported *mediator-relative routing*: target-directed interventions appeared to shift
+toward the emission route when two alternatives required different articles. A
+construction audit, frozen before its result, retracts that claim. The
+named-donor direction contains an article-readout component, about 4% of its norm.
+Removing it leaves lexical efficacy unchanged but removes nearly all of the route
+shift: the paired interaction falls from 0.120 [0.079, 0.161] to 0.018
+[\(-0.000\), 0.038]. The component alone reproduces most of the shift. The route shift
+was therefore a property of how the intervention vector was built, not of the model.
+The present paper keeps the decomposition, extends it to paths within persistence and
+to multi-token generation, and replaces the small-model experiments with the study
+reported here.
+
+# Compute {#sec-app-compute}
+
+Experiments ran on one Apple M1 laptop (16 GB) and one Apple M4 Max workstation
+(128 GB unified memory), with no GPU cluster. Jobs were scheduled under a declared
+memory budget and checkpointed per item, so interrupted runs resume without loss. A
+27B to 32B couplet chain (screen, edit and generation, route split, position split and
+necessity) takes one to three hours. The hidden-choice runs take 10 to 30 minutes
+per model.

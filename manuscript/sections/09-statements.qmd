@@ -1,0 +1,38 @@
+# AI use statement {.unnumbered}
+
+<!-- Draft for the authors to confirm or correct before submission. -->
+
+We used an AI coding agent (Claude) extensively in this work. It wrote and ran
+experiment code, managed jobs on a remote workstation, aggregated results, generated
+the figures from the committed result files, and drafted and edited manuscript text.
+Research questions, experimental designs and decision rules were discussed with the
+agent. Every design and decision rule was committed to version control before the
+corresponding result was computed. The authors reviewed the code, the committed
+results and every claim in the manuscript. Numbers in the text were checked against
+the machine-readable result files, and every citation was verified against its
+primary source. We take responsibility for the final content of this work, including
+text, claims and artifacts produced with the aid of generative AI.
+
+# Ethics statement {.unnumbered}
+
+This work studies how openly released language models use information they have
+not written. Its aim is to support the monitoring of such models. It involves no
+human subjects, personal data or harmful content. The hidden-choice task elicits
+harmless secret choices (fruits, animals). The results locate where content that the
+text does not reveal is stored, which is information useful to monitors. We do not
+see a plausible route by which it helps a model conceal content. The limitations
+section states where the findings may not transfer, notably to long reasoning with
+thinking enabled and to models trained to conceal.
+
+# Reproducibility statement {.unnumbered}
+
+All experiments use publicly released checkpoints (Appendix @sec-app-materials) and
+public prompts, either released by @hanna2026latent and @ma2026plan or generated
+with fixed seeds. For every experiment, the anonymized repository contains the code,
+the design and decision rule as committed before the first result, the per-item
+result rows and summaries with bootstrap intervals, and the scripts that generate
+every figure and table from those files. The pre-registration log (Appendix
+@sec-app-prereg) lists each frozen design, its decision rule, the outcome and all
+dated deviations. Interventions, clamping and batching were checked against
+unbatched reference implementations. Compute is described in Appendix
+@sec-app-compute.

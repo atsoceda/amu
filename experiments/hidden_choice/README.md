@@ -277,3 +277,12 @@ Post-list pick specificity +0.12 [0.05, 0.19] against a text-swap specificity of
 14B, 0.12 at 32B, against 0.63 at 8B and 4.09 at Gemma 3 27B) but not strictly as zero: the
 CI excludes zero, and the share is inflated by 32B's small text-swap reference (the pick of
 32B depends less on list order). Reported as small, not absent.
+
+### Localization check (added): Gemma 3 - 12B - hidden choice - localization (animals; 2026-09-26)
+
+Added to the frozen robustness checks (same design; queued to use idle memory). Post-list pick
+specificity +1.42 [1.08, 1.76] (text swap +8.10). By token: **"the" in "about the weather"
++1.04 [0.80, 1.28]** (73%), "the" in "write the animal" +0.19 [0.10, 0.30], the period right
+after the list +0.09; every other token below 0.07. The storage site is the same in a second
+domain (fruits at 12B: "the" +0.52 of +1.03). Gemma 3 27B animals and the reworded
+instruction (27B and 12B) pending.
