@@ -66,8 +66,9 @@ Rules:
   extension, so a NeurIPS render would write ICLR content into
   `dist/neurips-submission/` and blur the two versions. To inspect the submitted
   version, open the frozen folder. To rebuild it, check out the tag in a separate
-  worktree (link the untracked `.tools/` and `.home/` into it) and render there;
-  that reproduces the frozen `paper.tex` byte for byte.
+  worktree and render there; that reproduces the frozen `paper.tex` byte for byte.
+  Link `.tools` and `.home` only from inside that worktree, never over the real
+  directories (`skills/iclr-manuscript`).
 - Do not edit `dist/neurips-submission/`. Its versioned PDFs (`...-v14.pdf`
   through `...-v35.pdf`) are historical drafts; v35 is the submitted one.
 - Do not shorten, condense, or delete manuscript text just to meet a page limit.

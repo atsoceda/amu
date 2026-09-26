@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.1"
+  version: "1.2"
   updated: "2026-09-26"
 ---
 
@@ -82,6 +82,28 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
   literal block (`header-includes: |`).
 
 ## Render and check
+
+Render from the checkout that already has the real `.tools` directory, normally
+`/Users/anthony/repos/amu`. The command is `bin/render-paper iclr submission`.
+Quarto 1.9.38 is `.tools/quarto/bin/quarto` and latexmk is `.tools/bin/latexmk`.
+Fonts are vendored in `_extensions/texmf`. Do not download Quarto, latexmk, or a
+TeX tree, and do not `rm` `.tools`.
+
+`.tools/` and `.home/` are gitignored local installs, so a new worktree does not
+have them. Do not create a worktree just to render. If a worktree already exists,
+link from inside that worktree only:
+
+```bash
+ln -s /Users/anthony/repos/amu/.tools .tools
+ln -s /Users/anthony/repos/amu/.home .home
+```
+
+Never run those in the main checkout, and never copy the worktree's `.tools`
+symlink back onto `/Users/anthony/repos/amu/.tools`. That replaces the install
+with a symlink to itself. `.gitignore` lists `.tools/`, which ignores a directory
+and does not ignore a symlink, so a broken symlink shows up as an untracked file:
+do not commit it. If `.tools/quarto/bin/quarto` is not an executable file, stop
+and tell the user.
 
 1. `bin/render-paper iclr submission` (outputs in `dist/iclr-submission/`). Every render
    also writes a numbered copy, `paper_<N>.pdf` (N = highest existing number + 1; the user's
