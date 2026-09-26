@@ -35,3 +35,9 @@ construction, and invisible in the text. Does the rhyme plan travel that way?
   distance, hidden choice) if recurrent-only is at least 25% of persistence with its
   95% CI above zero; stop if it is below 10%; in between, extend the pilot to 100
   couplets before deciding.
+
+**Amendment (2026-09-26, before any pilot result).** The pilot runs at Qwen3.5-4B, 9B and
+27B (dense hybrid, 64 layers: 48 Gated DeltaNet, 16 full attention). Qwen3.5-4B rhymes
+rarely (about 1 in 6 first lines), and in Qwen3 storage effects appeared only from 14B,
+so a small-model null would not be informative. The stop/go rule applies to the
+**largest model piloted**; smaller sizes are reported as the scale trend.
