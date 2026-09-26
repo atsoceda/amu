@@ -66,3 +66,21 @@ Control v1: Qwen3 - 14B - relay distance - pilot (20 couplets): D = 0 relay +2.8
 0 of 20** (the model abandons the task after the filler), so the D = 2000 control is not
 interpretable. The v1 contrast (Gemma relay large at distance, Qwen small) fits the
 sliding-window hypothesis but needs v2 on both sides.
+
+### Qwen3 - 14B - relay distance - pilot v2 (control; 24 couplets per distance)
+
+| | D = 0 | D = 2000 |
+|---|---|---|
+| line 2 rhymes | 59% | 8% |
+| persistence | +23.60 | +8.02 |
+| direct retrieval | +20.34 | +5.40 |
+| relay (absolute) | +2.31 [1.49, 3.12] | +2.77 [1.73, 3.97] |
+| relay share | 13% | 32% [23, 40] |
+| relay via boundary / filler / line 2 | +0.92 / 0.00 / +1.60 | +1.13 / +0.12 / +1.76 |
+
+In the full-attention control, **absolute relay does not grow with distance**; the share
+rises only because direct retrieval weakens over the long context. Reading rule added
+before the Gemma v2 result (clarifying, not changing, the frozen criterion): a relay
+share rise counts as relay emerging only if **absolute** relay also grows with distance;
+otherwise it is a smaller denominator. At D = 2000 Qwen3 14B rarely rhymes (8%): the plan
+largely fades after long filler.
