@@ -158,3 +158,19 @@ end in the chat format, against 11% at 27B). Read with the 27B result: at distan
 keeps the plan only when a stored copy at the line boundary exists; otherwise the plan is
 lost rather than relayed. The frozen stop/go number (relay share of a near-zero persistence)
 is not interpretable here and is not used.
+
+### Qwen3.5 - 9B - relay distance - pilot v2 (recurrent hybrid; 24 couplets per distance)
+
+| | D = 0 | D = 2000 |
+|---|---|---|
+| line 2 rhymes | 92% | 4% |
+| persistence | +14.83 [12.74, 16.85] | +3.58 [1.99, 5.41] |
+| direct retrieval | +13.53 (91%) | +2.90 [1.38, 4.62] (81% of what remains) |
+| relay (absolute) | +1.16 [0.64, 1.81] | +0.82 [0.50, 1.20] |
+| via boundary / filler / cue + line-2 words | -0.00 / 0.00 / +1.17 | +0.02 / +0.36 / +0.48 [0.18, 0.85] |
+
+In the recurrent hybrid (1 in 4 layers full attention, no local window) the plan mostly fades
+over 2,000 tokens of filler (rhyming 92% -> 4%, persistence down by three quarters). What
+remains is still read directly from line 1 by the full-attention layers; absolute relay does
+not grow (+1.16 -> +0.82), and nothing moves onto the boundary. As in Gemma 3 12B, distance
+without a stored copy loses the plan rather than moving it onto a relay path.
