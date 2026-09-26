@@ -85,7 +85,7 @@ Experiment & Decision rule or prediction & Committed & Outcome\\
 Relay grows with scale (couplets) & (1) relay share rises with log size; (2) the rise comes from early line 2; (3) replicates in Gemma 3 & d4622d2, 09-25 23:11 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails; not ``carrying grows''\\
 Plain-format couplets & direct retrieval dominates; line-end copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & 34c0cbd, 09-25 23:59 & all three hold\\
 Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 09-26 02:45 & reported for 17 runs\\
-Induction control & relay $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (relay 53--55\%) and Qwen3-32B, Qwen3.5-27B (retrieval 31\%, 17\%)\\
+Induction control & relay $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (relay 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (retrieval 31\%, 10\%, 17\%)\\
 Sums & computation-position edit must move the answer (efficacy gate) & 7f5a9a6, 09-25 22:05 & gate fails at every size; downstream block $\le$6\%\\
 Variable chains & chain relay $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$2.4\%\\
 Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--99\%)\\

@@ -119,7 +119,7 @@ The outcome is \(\log p(B)\) at the second \(A\). The criterion, committed befor
 first result, was that relay accounts for more than 80% of persistence and direct
 retrieval is near zero.
 
-The control passes cleanly in four models and partly in four (@fig-overview B;
+The control passes cleanly in four models and partly in five (@fig-overview B;
 @tbl-control).
 
 - *Clean pass.* In Qwen3 1.7B, 4B, 8B and 14B, direct retrieval is 1 to 3% of
@@ -132,9 +132,9 @@ The control passes cleanly in four models and partly in four (@fig-overview B;
   \(B\)'s first position alone gives 145% and 156%, so the conflicting edited positions
   weaken the all-position cell.
 - *Partial pass, because the model also reads the source.* Relay remains the main path
-  in Qwen3-32B (89%) and in the recurrent hybrid Qwen3.5-27B (key position alone 77%).
-  But direct retrieval is 31% and 17%: the largest models also read the first \(A\)
-  directly.
+  in Qwen3-32B (89%) and in the recurrent hybrids Qwen3.5-9B and 27B (key position alone
+  96% and 77%). But direct retrieval is 31%, 10% and 17%: these models also read the
+  first \(A\) directly.
 
 In every model, relay is the largest path, so the method detects relay where relay is
 the mechanism. The control uses prompt positions, but the result transfers to
@@ -159,6 +159,7 @@ Qwen3-14B & 0.998 & $-3.81$ [$-4.14$, $-3.46$] & $-0.10$ [$-0.15$, $-0.05$] & $-
 Qwen3-32B & 0.977 & $-4.83$ [$-5.17$, $-4.48$] & $-1.52$ [$-1.87$, $-1.19$] & $-4.30$ & $-6.24$\\
 Gemma 3 12B & -- & $-4.90$ [$-5.18$, $-4.64$] & $-0.02$ [$-0.03$, $-0.02$] & $-2.61$ & $-7.12$\\
 Gemma 3 27B & -- & $-4.55$ [$-4.82$, $-4.27$] & $-0.02$ & $-2.52$ & $-7.10$\\
+Qwen3.5-9B & 0.988 & $-3.81$ [$-4.01$, $-3.62$] & $-0.37$ [$-0.44$, $-0.31$] & $-2.33$ & $-3.66$\\
 Qwen3.5-27B & 0.984 & $-4.34$ [$-4.55$, $-4.12$] & $-0.72$ [$-0.85$, $-0.61$] & $-2.41$ & $-3.35$\\
 \bottomrule
 \end{tabular}

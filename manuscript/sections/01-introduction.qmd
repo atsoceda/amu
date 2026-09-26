@@ -43,8 +43,7 @@ Qwen3-32B with the chat prompt. Most of the plan is read directly from the rhyme
 The copy stored at the comma ending line 1 and the late lookup through the last three
 positions account for most of the rest. Early relay along the generated line accounts
 for 1%. **B:** for every setting and model, the share of the effect that is looked up
-(blue) and the share that is relayed (purple), with 95% intervals. The positive
-control has its own axis (0 to 150%) with the committed 80% criterion. The other
+(blue) and the share that is relayed (purple), with 95% intervals. The positive control has its own axis (0 to 150%), with the pass threshold set before the experiment (relay above 80% of persistence). The other
 settings share a broken axis: looked-up shares on the upper segment, relayed shares on
 the lower segment (to 30%), with the committed stop (10%) and go (25%) lines of the
 stress tests. The denominator is given under each group; Qwen3 is shown filled,
@@ -64,9 +63,7 @@ alone (interventional sufficiency) and what is lost without it (interventional
 necessity), and we report the interaction between paths explicitly. Because a method
 that never finds relay would be uninformative, we validate route accounting on
 induction [@olsson2022induction], where relay through the copied token's position is
-the known mechanism. Relay is the largest path in all eight models tested. The
-committed criterion (relay above 80%, direct retrieval near zero) holds cleanly in
-four and partly in four, for reasons we identify (@sec-control).
+the known mechanism. Relay is the largest path in all nine models tested. The committed criterion (relay above 80%, direct retrieval near zero) holds cleanly in four and partly in five, for reasons we identify (@sec-control).
 
 Applied to four tasks in 15 checkpoints from three model families, route accounting
 finds a consistent principle, within the settings tested (short generated spans,
@@ -157,7 +154,7 @@ Computed value, unwritten (visible) & -- & recomputed from the source & every la
 Computed value, written (visible) & 83--99\% & bypass to the source 1--17\% & --\\
 Secret choice (hidden) & no measurable effect (the sentence never names it) & mostly re-derived from the list; pick-specific information stored after the list: 0--40\% of the text-swap reference (Gemma~4 31B: 82--91\%) & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$7\%\\
 \midrule
-Induction (positive control) & -- & direct retrieval $\le$3\% (17--31\% in the two largest Qwen models) & through the copied token's position (prompt): 53--137\%\\
+Induction (positive control) & -- & direct retrieval $\le$3\% (10--31\% in Qwen3-32B and the Qwen3.5 hybrids) & through the copied token's position (prompt): 53--137\%\\
 \bottomrule
 \end{tabular}
 ```

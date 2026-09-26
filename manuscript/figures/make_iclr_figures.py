@@ -246,7 +246,7 @@ def fig1_points():
     ctrl = []
     for d, fam, lab in [("Qwen3-1.7B", "Qwen3", "1.7B"), ("Qwen3-4B", "Qwen3", "4B"), ("Qwen3-8B", "Qwen3", "8B"),
                         ("Qwen3-14B", "Qwen3", "14B"), ("Qwen3-32B", "Qwen3", "32B"),
-                        ("Qwen3.5-27B", "Qwen3.5", "27B"), ("Qwen3.5-35B-A3B", "Qwen3.5", "35B"),
+                        ("Qwen3.5-9B", "Qwen3.5", "9B"), ("Qwen3.5-27B", "Qwen3.5", "27B"), ("Qwen3.5-35B-A3B", "Qwen3.5", "35B"),
                         ("gemma-3-12b-it", "Gemma 3", "12B"), ("gemma-3-27b-it", "Gemma 3", "27B")]:
         x = load(PC / d / "induction_summary.json")
         if x:
@@ -263,7 +263,7 @@ def fig1_points():
             coup.append((sub, fam, grp))
     hid = []
     for d, fam, lab in [("Qwen3-4B", "Qwen3", "4B"), ("Qwen3-8B", "Qwen3", "8B"), ("Qwen3-14B", "Qwen3", "14B"),
-                        ("Qwen3-32B", "Qwen3", "32B"), ("Qwen3.5-27B", "Qwen3.5", "27B"),
+                        ("Qwen3-32B", "Qwen3", "32B"), ("Qwen3.5-9B", "Qwen3.5", "9B"), ("Qwen3.5-27B", "Qwen3.5", "27B"),
                         ("Qwen3.5-35B-A3B", "Qwen3.5", "35B"), ("gemma-3-12b-it", "Gemma 3", "12B"),
                         ("gemma-3-27b-it", "Gemma 3", "27B")]:
         x = load(HC / d / "choice_summary.json")
@@ -309,7 +309,7 @@ def fig1():
     for i, (lab, fam, look, rel) in enumerate(ctrl):
         pair([axC], i, fam, look, rel)
     axC.axhline(80, color=COL["relay"], lw=0.7, ls=(0, (3, 2)), zorder=1)
-    axC.text(-0.55, 77, "committed 80%\nrelay line", fontsize=7, color="#8E4F7A", ha="left", va="top",
+    axC.text(-0.55, 77, "pass threshold\nset in advance (80%)", fontsize=7, color="#8E4F7A", ha="left", va="top",
              linespacing=0.95)
     axC.set_ylim(-5, 150)
     axC.set_yticks([0, 50, 100, 150])
@@ -1053,7 +1053,7 @@ def fig4():
 
     # C. Hidden choice: composition of the text-swap reference.
     models = [("Qwen3-4B", "Qwen3 4B"), ("Qwen3-8B", "Qwen3 8B"), ("Qwen3-14B", "Qwen3 14B"),
-              ("Qwen3-32B", "Qwen3 32B"), ("Qwen3.5-27B", "Qwen3.5 27B"), ("gemma-3-12b-it", "Gemma 3 12B"),
+              ("Qwen3-32B", "Qwen3 32B"), ("Qwen3.5-9B", "Qwen3.5 9B"), ("Qwen3.5-27B", "Qwen3.5 27B"), ("gemma-3-12b-it", "Gemma 3 12B"),
               ("gemma-3-27b-it", "Gemma 3 27B")]
     models = [(d, lab) for d, lab in models if load(HC / d / "choice_summary.json")]
     axc = fig.add_subplot(g2[0])

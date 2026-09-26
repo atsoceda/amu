@@ -91,3 +91,9 @@ Gemma 4 contributes the out-of-list control and the animal replication only.
 Text swap pick specificity +4.90; post-list **pick specificity +4.44 [3.97, 4.93]** (91%;
 fruits 82%). Gemma 4 stores nearly all of the pick-specific signal after the list, the
 largest share of any model (Gemma 3 27B 40%, Qwen3.5-27B 4%).
+
+### Qwen3.5 - 9B - relay positive control - induction (100 sequences; 2026-09-26)
+
+p(B) clean 0.988; persistence -3.81 [-4.01, -3.62]; direct retrieval -0.37 [-0.44, -0.31]
+(10%); relay -2.33 (61%); key position alone -3.66 (96%). Partial pass, as at Qwen3.5-27B:
+relay is the main path (key position 96%), but direct retrieval (10%) exceeds near zero.
