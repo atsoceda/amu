@@ -4,26 +4,23 @@
 proportion to the leverage of the written token, and what it does not write, it looks up
 from a few prompt positions: the sources and copies stored at structural tokens next to
 them. If this extends to other tasks, a monitor of internal state could focus on those
-positions rather than the whole trajectory, and should track whether stored copies keep
-growing with scale. The advice is weakest where the indirect path through generated text
+positions and track whether stored copies keep growing with scale. The advice is weakest where the indirect path through generated text
 is largest: 9 to 13% of persistence after filler, not yet split into late lookup and
 relay, and one eighth to one fifth of the small stored hidden part in Qwen3-32B and the
 Qwen3.5 hybrids.
 
-**Why look up rather than relay?** Attention makes any earlier position readable at every
-layer, so a later position can compute what it needs when it needs it. The stress tests
-suggest that this is not the whole story. Even where three quarters of the layers can pass
-a plan forward only through a recurrent state, the donor signal entering through the
-attention layers accounts for nearly all of the effect, and at a distance the model relies
-on a stored copy or loses the plan. Relay appears disfavoured when lookup is available,
-not merely unneeded.
+**Why look up rather than relay?** Attention makes any earlier position readable at
+every layer, so a later position can compute what it needs when it needs it. But even
+where three quarters of the layers can pass a plan forward only through a recurrent
+state, entry through the attention layers accounts for nearly all of the effect, and at
+a distance the model relies on a stored copy or loses the plan. Relay appears
+disfavoured when lookup is available, not merely unneeded.
 
-**What would overturn the principle.** Much longer generated text, reasoning with
-thinking enabled, tasks that cannot be recomputed from the prompt, or training that
-rewards concealment [@baker2025monitoring] could break it. Models trained to compute over
-otherwise uninformative positions, with pause tokens [@goyal2024pause] or continuous
-latent reasoning [@hao2024coconut], are designed to do what we rarely see, so the
-principle is not an architectural law. Route accounting applies unchanged to each case.
+**What would overturn the principle.** Much longer generated text, thinking enabled,
+tasks that cannot be recomputed from the prompt, or training that rewards concealment
+[@baker2025monitoring] could break it, and pause tokens [@goyal2024pause] or continuous
+latent reasoning [@hao2024coconut] are designed to do what we rarely see. Route
+accounting applies unchanged to each case.
 
 ## Limitations {#sec-limitations}
 
@@ -32,9 +29,5 @@ principle is established only for them. All-layer state edits are strong and can
 model off its natural distribution, which the feature-steering replication and the
 same-rhyme nulls address only in part. The hidden-choice controls do not distinguish a
 stored pick from a stored copy of the list. The models span 1B to 32B parameters in three
-families, with Gemma 4 31B for the hidden choice only. The accuracy collapse on unwritten
-chains is correlational evidence for recomputation, not a causal test. Several committed
-checks were not run: the Gemma 4 path split and induction control, the Qwen3.5
-mixture-of-experts model, the Qwen3.5-27B recurrent test at 100 couplets (the decision
-rests on 24), the Gemma 3 27B base model in the plain format, and the Qwen3-32B same-pick
-null. Post hoc elements are labelled (Appendix @sec-app-prereg).
+families, with Gemma 4 31B for the hidden choice only. Recomputation at the answer is inferred, not measured. Five committed checks were not run, and post hoc elements are labelled (Appendix
+@sec-app-prereg).

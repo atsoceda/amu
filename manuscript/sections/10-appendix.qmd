@@ -63,7 +63,7 @@ Free generation is a policy, not a third value of \(B\). With \(B_i\) the greedy
 mediator under \(I=i\) and \(Y(i,b)\) the continuation distribution, the total effect
 \(Y(1,B_1)-Y(0,B_0)\) splits exactly into emission \(Y(0,B_1)-Y(0,B_0)\) and
 persistence \(Y(1,B_1)-Y(0,B_1)\). Under a stochastic policy \(q_i(b)\), emission is
-\(\sum_b [q_1(b)-q_0(b)]\,Y(0,b)\), which gives the leverage identity of @sec-emission
+\(\sum_b [q_1(b)-q_0(b)]\,Y(0,b)\), which gives the leverage identity of Appendix @sec-app-computed
 for binary mediators. The multi-token version of @sec-method replaces the mediator
 with the generated text \(g\).
 
@@ -87,7 +87,10 @@ outcome. Deviations are dated in each experiment's record. The main ones:
 - the block edit for chains, added after the first 8B rows and before any 14B or 32B
   run;
 - for the submission deadline, the 27B window curve shortened to 18 couplets, and the
-  checks listed in @sec-limitations not run, recorded before the affected results.
+  following committed checks not run, recorded before the affected results: the Gemma 4
+  path split and induction control, the Qwen3.5 mixture-of-experts model, the Qwen3.5-27B
+  recurrent test at 100 couplets (the decision rests on 24), the Gemma 3 27B base model
+  in the plain format, and the Qwen3-32B same-pick null.
 
 ::: {#tbl-prereg}
 

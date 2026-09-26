@@ -20,15 +20,14 @@ spirit of evaluating mechanisms against explicit mediators [@mueller2026mediator
 
 **Structural tokens.** Label words [@wang2023labelwords], separators [@chen2024sepllm],
 attention sinks [@xiao2024sinks] and registers [@darcet2024registers;
-@shih2026registers] aggregate information. The stored copies we find are causal
-instances of this: they hold task content that a later position reads directly, and they
-grow with scale and distance.
+@shih2026registers] aggregate information; the stored copies we find are causal
+instances that grow with scale and distance.
 
 **Chain-of-thought faithfulness and monitoring.** Written reasoning can be unfaithful to
 the computation behind an answer [@turpin2023unfaithful; @lanham2023faithfulness;
 @chen2025reasoning]; models can compute with filler tokens [@pfau2024dots] and could in
 principle encode reasoning steganographically [@roger2023steganography]. Monitoring is
 valuable but fragile [@korbak2025monitorability; @baker2025monitoring], and more robust
-when reasoning is necessary for the task [@emmons2025cot]. These studies measure
-behaviour; route accounting measures the internal paths. Unlike secrets installed by
-training [@cywinski2025taboo], our hidden choice arises without any training.
+when reasoning is necessary for the task [@emmons2025cot]. These studies measure behaviour; route accounting measures internal paths, and our
+hidden choice, unlike secrets installed by training [@cywinski2025taboo], arises without
+it.

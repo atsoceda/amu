@@ -23,14 +23,12 @@ models we committed two criteria for the claim that relay grows with scale: the 
 share must rise with log parameter count across Qwen3 1.7B to 32B, and the rise must come
 from relay. The first holds (6.2 percentage points per decade, 95% interval [2.8, 9.6]);
 the second fails (relay is \(-0.06\) to \(+0.16\), against persistence of 12 to 26). The
-indirect share grows as the late lookup up to 8B and as the stored copy from 14B. Three
-controls support the split (Appendix @sec-app-couplets). A donor from the same rhyme
-group leaves the rhyme almost unchanged, so the measure tracks rhyme identity, not
-disruption. Donor states at the rhyme word move the rhyme two to three times more than
-donor states at any other position of line 1. And the published feature steering of
-@hanna2026latent gives the same split as the state edit: direct retrieval accounts for
-90, 88 and 84% of persistence at 4B, 8B and 14B, against 91, 90 and 82%. The Qwen3.5
-hybrids show the same structure (direct retrieval 84 to 88%).
+indirect share grows as the late lookup up to 8B and as the stored copy from 14B. Controls support the split (Appendix @sec-app-couplets): same-rhyme donors leave the
+rhyme almost unchanged, the rhyme word matters two to three times more than any other
+position of line 1, and the published feature steering of @hanna2026latent gives the
+same split as the state edit (direct retrieval 90, 88 and 84% at 4B, 8B and 14B, against
+91, 90 and 82%). The Qwen3.5 hybrids show the same structure (direct retrieval 84 to
+88%).
 
 ![Couplet paths across scale, family and prompt format (100 couplets per run;
 instruction-tuned checkpoints; Appendix @tbl-storage adds the base checkpoints).
@@ -73,19 +71,17 @@ persistence (Qwen3 at most 5%). The target combines the rhyme word and the copy,
 reads conflicting evidence when only one of them is edited: the copy is a redundant
 second lookup site.
 
-**Reconciling published accounts.** @hanna2026latent find attention heads near the end
-of line 2 that read the rhyme word: direct retrieval with the late lookup, which dominate
-at every Qwen3 size. @lindsey2025biology find Claude's plan at the newline ending line 1,
-and @maar2026plan steer it there: the stored copy of larger models. @ma2026plan report a
-hand-off to the newline in Gemma 3 27B only, as we measure, and @jacopin2026improvisation
-finds no newline effect at 0.6B to 2.6B, where we also find no copy. Each account is
-correct for the configuration it studies (Appendix @sec-app-couplets).
+**Reconciling published accounts.** The heads near the end of line 2 that read the rhyme
+word [@hanna2026latent] are direct retrieval with the late lookup; the plan found and
+steered at the end of line 1 [@lindsey2025biology; @maar2026plan] is the stored copy of
+larger models; the hand-off to the newline in Gemma 3 27B only [@ma2026plan] matches our
+plain-format result; and no copy appears below 8B, as @jacopin2026improvisation finds.
+Each account is correct for the configuration it studies (Appendix @sec-app-couplets).
 
-**Why the stored copy is a lookup, not relay.** It reaches the target through an
-intermediate position, as relay does, but it is written once into a fixed structural
-position next to the source, read directly however much text intervenes, and does not
-move with generation. For a monitor it is one more place to read, not a path through the
-model's output.
+**Why the stored copy is a lookup, not relay.** It passes through an intermediate
+position, but it is written once into a fixed structural position next to the source,
+read directly however much text intervenes, and does not move with generation: for a
+monitor, one more place to read, not a path through the model's output.
 
 ## Computed values {#sec-computed}
 
@@ -106,22 +102,12 @@ re-reading its visible sources; recomputation itself is not measured.
 
 When asked to compute each variable in order, the model writes the donor's values in 86
 to 100% of items, and the answer follows the text. With the chain cut before its last
-value, emission accounts for 83 to 101% of the effect at 1.7B to 32B, and the bypass that
-re-reads the source stays below 17%; the 101%, at 32B with five updates, reflects a
-slightly negative bypass. How much of an effect travels through a written token depends
-on that token's **leverage**. For a binary mediator \(B\in\{b_0,b_1\}\), such as the
-article *a* or *an* before a planned noun, let \(q_i=P(B=b_1\mid I=i)\) with the
-intervention off (\(i=0\)) or on (\(i=1\)), and let \(Y(0,b)\) be the outcome with the
-intervention off and the mediator fixed to \(b\). Policy-weighted emission,
-\(E_{\rm emit}=\sum_b [q_1(b)-q_0(b)]\,Y(0,b)\), then equals
-
-$$
-E_{\rm emit} \;=\; (q_1-q_0)\,\big(Y(0,b_1)-Y(0,b_0)\big),
-$$
-
-the change in what is written times how much the written token matters. For the a/an
-planning features of @hanna2026latent in Qwen3-4B, 92 to 94% of their feature-specific
-effect on the planned noun travels through the generated article, the effect bypassing
-it is at the level of random features, and the effect through the article scales with
-leverage (Appendix @sec-app-computed). What the model writes, it uses, in proportion to
-the written token's leverage.
+value, emission accounts for 83 to 101% of the effect at 1.7B to 32B, and the bypass
+that re-reads the source stays below 17% (the 101%, at 32B with five updates, reflects a
+slightly negative bypass). For a binary mediator such as the article *a* or *an* before
+a planned noun, emission factorizes exactly into the change in what is written times the
+written token's **leverage**, how much it matters to what follows (Appendix
+@sec-app-computed). For the a/an planning features of @hanna2026latent in Qwen3-4B, 92
+to 94% of their feature-specific effect on the planned noun travels through the
+generated article, the bypass is at the level of random features, and the effect through
+the article scales with leverage.

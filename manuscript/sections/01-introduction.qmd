@@ -1,15 +1,14 @@
 # Introduction {#sec-intro}
 
-Language models routinely act on information they have not written down. A model
-completing a rhyming couplet selects its rhyme before it writes the line that ends in it
-[@lindsey2025biology; @hanna2026latent]; a model asked for a calculation, or to make a
-secret choice and reveal it later, must hold or reconstruct that content across the tokens
-it writes in between. How such unwritten information reaches the position that uses it is
-a basic question about autoregressive computation, and a practical one. Chain-of-thought
-monitoring assumes that the reasoning relevant to a decision passes through, or can be
+Language models routinely act on information they have not written down: a model
+completing a couplet selects its rhyme before writing the line that ends in it
+[@lindsey2025biology; @hanna2026latent], and a model asked for a calculation or a secret
+choice must hold or reconstruct that content across the tokens it writes in between. How
+such information reaches the position that uses it matters for chain-of-thought
+monitoring, which assumes that decision-relevant reasoning passes through, or can be
 recovered from, the text the model writes [@korbak2025monitorability;
-@baker2025monitoring]. The central risk to that assumption is content that the model uses
-but never states [@pfau2024dots; @roger2023steganography; @turpin2023unfaithful;
+@baker2025monitoring]. The central risk to that assumption is content the model uses but
+never states [@pfau2024dots; @roger2023steganography; @turpin2023unfaithful;
 @chen2025reasoning].
 
 In a transformer, information at one position can reach a later position by three paths
@@ -22,11 +21,9 @@ of the context, where it can be read or probed. Relayed information travels thro
 model's own output without appearing in it, so relay is the path by which a model could
 hold content across a chain of thought that never states it. A fourth possibility turns
 out to matter: a **stored copy**, written once into a structural position of the prompt
-next to the source and read directly from there. Prior work shows that planning signals
-are decodable ahead of time [@pal2023futurelens; @wu2024plan; @men2024lookahead],
-visible in attribution graphs [@lindsey2025biology; @hanna2026latent] and steerable
-[@maar2026plan; @ma2026plan; @jacopin2026improvisation]. These methods locate where a
-plan is formed or can be changed, not which path it takes to where it is used.
+next to the source and read directly from there. Prior work locates where plans are
+formed or can be steered [@pal2023futurelens; @lindsey2025biology; @hanna2026latent;
+@maar2026plan], not which path they take to where they are used.
 
 ![Route accounting on a rhyme plan. The paths by which a plan formed at the rhyme word
 of line 1 (where the donor state is written) reaches the position that predicts the
@@ -57,29 +54,21 @@ every position after a computed value's source move the answer by at most 4.9% (
 chains) and 6.4% (sums) of the source effect, while written intermediate values are
 followed: emission accounts for 83 to 101% of the effect.
 
-Three stress tests, each with a decision rule committed before its result, make relay
-useful or the content invisible (@sec-stress). In the Qwen3.5 hybrid, where three of every
-four layers can pass information forward only through a recurrent state, a donor signal
-entering through the recurrent layers produces 2 to 4% of persistence. When filler moves
-line 1 beyond Gemma 3's attention window, Gemma 3 27B shifts toward the stored copy, which
-becomes necessary for about half of persistence; the generated text accounts for 9 to 13%,
-not split into late lookup and relay, so how much of it is relay remains unresolved. For a
-secret choice, pick-specific information is stored at a few low-content prompt tokens and
-read at the reveal, and at most 2% of the text-swap effect passes through the intervening
-sentence. The one path that grows is the stored copy. It appears at 14B and above in
-Qwen3 and at 12B to 27B in Gemma 3, is present in the base checkpoints we tested, and
-reconciles published accounts of where the rhyme plan lives [@hanna2026latent;
-@lindsey2025biology; @ma2026plan].
+Three stress tests with committed decision rules make relay useful or the content
+invisible (@sec-stress). In a recurrent hybrid, entry through the recurrent layers
+produces 2 to 4% of persistence. Beyond Gemma 3's attention window, Gemma 3 27B relies on
+the stored copy, and the generated text accounts for 9 to 13%, not split into late lookup
+and relay. A secret choice is stored at a few low-content prompt tokens, and at most 2% of
+its effect passes through the intervening sentence. The one path that grows is the stored
+copy: it appears at 14B and above in Qwen3 and at 12B to 27B in Gemma 3, is present in
+base checkpoints, and reconciles published accounts of where the rhyme plan lives.
 
 **Contributions.** (1) Route accounting, a position-level decomposition of intervention
-effects in autoregressive generation into emission, direct retrieval and indirect paths,
-with sufficiency, necessity and interaction, validated on a positive control. (2) A
-principle with its evidence and scope: in the settings tested, unwritten information is
-looked up, not relayed along the generated text, across visible plans, computed values
-and hidden choices, families, sizes, prompt formats, instruct and base checkpoints, and
-under published feature steering as well as state edits. (3) Three stress tests with
-committed decision rules that bound it. (4) A stored copy at the line's final token that
-emerges with scale, and a reconciliation of published accounts of rhyme planning.
+effects into emission, direct retrieval and indirect paths, validated on a positive
+control. (2) The principle that unwritten information is looked up, not relayed, across
+tasks, families, sizes, prompt formats, checkpoints and intervention types. (3) Three
+stress tests with committed decision rules that bound it. (4) A stored copy that emerges
+with scale, reconciling published accounts of rhyme planning.
 
 ::: {#tbl-map tbl-pos="t"}
 

@@ -34,10 +34,8 @@ $$
 
 **Emission** replays the edited words with the edit off. **Persistence** is what the
 edit does with the text held fixed. We also report persistence with the original text,
-\(R(1,g_0)-R(0,g_0)\), the other order of the decomposition, where the two differ. For a
-binary mediator such as the article *a/an*, emission factorizes into the change in the
-mediator policy times the leverage of the mediator (@sec-emission; Appendix
-@sec-app-sixcell).
+\(R(1,g_0)-R(0,g_0)\), the other order of the decomposition, where the two differ
+(Appendix @sec-app-sixcell gives the single-token form).
 
 **Paths within persistence.** The target can read the edited source itself (**direct
 retrieval**), or intermediate positions can read it and pass it on (an **indirect
@@ -88,27 +86,21 @@ repeated sequence \(\ldots A\,B\ldots A\), a previous-token head writes "precede
 position and copies \(B\) [@olsson2022induction]. Information about the first \(A\)
 therefore reaches the prediction through an intermediate position. We edit the first
 \(A\) in 100 random sequences and measure \(\log p(B)\) at the second \(A\). The
-criterion, committed before the first result, was an indirect path above 80% of
-persistence with direct retrieval near zero. It holds cleanly in Qwen3 1.7B to 14B:
-direct retrieval is 1 to 3% and the indirect path 108 to 137%, the excess over 100%
-being an interaction. In Gemma 3 12B and 27B direct retrieval is 0.4%, but conflicting
-edited positions lower the all-position cell to 53 to 55% (the key position alone gives
-145 to 156%). Qwen3-32B and the Qwen3.5 hybrids also read the source directly (10 to
-31%). In every model the indirect path is the largest path (Appendix @sec-app-control). The key position lies right after the source, so this path resembles
-a stored copy more than relay. What the control establishes is that route accounting
-detects an effect that arrives through an intermediate position. Relay is the same kind
-of path through different positions: with the generated text fixed, generated tokens
-are ordinary context positions, and the clamp is the same operation at any position.
-The retrieval-dominated results that follow are therefore informative negatives, not a
-blind spot of the method.
+committed criterion (an indirect path above 80% of persistence, direct retrieval near
+zero) holds cleanly in Qwen3 1.7B to 14B (indirect path 108 to 137%, the excess an
+interaction; direct retrieval 1 to 3%). It holds partly in Gemma 3 12B and 27B, where
+conflicting edited positions lower the all-position cell to 53 to 55%, and in Qwen3-32B
+and the Qwen3.5 hybrids, which also read the source directly (10 to 31%). In every model
+the indirect path is the largest path (Appendix @sec-app-control). The key position lies
+right after the source, so this path resembles a stored copy more than relay; but with
+the generated text fixed, generated tokens are ordinary context positions, and the clamp
+is the same operation at any position. The retrieval-dominated results that follow are
+therefore informative negatives, not a blind spot of the method.
 
-**Models and protocol.** We study Qwen3 1.7B to 32B, dense with full attention
-[@yang2025qwen3]; Gemma 3 1B to 27B, which interleaves five sliding-window layers with a
-1,024-token window per global layer [@gemma3]; Qwen3.5 4B, 9B and 27B, hybrids in which
-three of every four layers are Gated DeltaNet recurrent layers [@qwen2026qwen35;
-@yang2025gateddeltanet]; and Gemma 4 31B [@gemma4] for the hidden choice. We use
-instruction-tuned checkpoints, with base checkpoints as checks, and disable thinking, so
-the generated spans are short. After the initial couplet split, the design and decision
-rule of every experiment were committed to the repository before its first result;
-later additions are labelled post hoc (Appendix @sec-app-prereg). Materials and per-run
-tables are in Appendix @sec-app-materials.
+**Models and protocol.** We study Qwen3 1.7B to 32B [@yang2025qwen3], Gemma 3 1B to 27B
+[@gemma3], the recurrent hybrids Qwen3.5 4B, 9B and 27B [@qwen2026qwen35], and Gemma 4
+31B [@gemma4] for the hidden choice, as instruction-tuned checkpoints with base
+checkpoints as checks and thinking disabled. After the initial couplet split, the design
+and decision rule of every experiment were committed to the repository before its first
+result, and later additions are labelled post hoc (Appendix @sec-app-prereg; materials
+in Appendix @sec-app-materials).

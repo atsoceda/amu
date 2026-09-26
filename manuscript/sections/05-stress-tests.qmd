@@ -1,11 +1,10 @@
 # Stress tests: bounds on the principle {#sec-stress}
 
-The principle could be an artifact of the settings in which we found it: when every
-layer can read every earlier position relay is never necessary, and visible content can
-always be re-read. We therefore test three settings chosen to make relay useful where
-attention cannot do the work, or to make the content invisible. Each has a decision rule
-committed before its first result (Appendix @sec-app-prereg; details in Appendix
-@sec-app-stress and @sec-app-hidden), and @fig-stress summarizes them.
+When every layer can read every earlier position, relay is never necessary, and visible
+content can always be re-read. We therefore test three settings that make relay useful
+where attention cannot do the work, or make the content invisible, each with a decision
+rule committed before its first result (@fig-stress; Appendix @sec-app-prereg,
+@sec-app-stress and @sec-app-hidden).
 
 ![Stress tests. **A:** Qwen3.5 hybrids (three of every four layers recurrent), with the
 donor state allowed to enter only one layer type at the source. Entry through the
@@ -55,31 +54,28 @@ on nothing. The generated text accounts for 9 to 13% by sufficiency at every non
 distance (12% at 2,000 tokens, \(+3.2\) [2.2, 4.3]). It appears once filler is present
 and does not grow further. It includes the last three positions, so it mixes relay with
 the late lookup, and it falls between "stop" and "go": how much of it is relay remains
-unresolved. The committed window prediction is only partly supported, because the
-largest step is where line 1 leaves the window but the shift begins at 500 tokens. Models
-without a strong stored copy lose the plan instead: Gemma 3 12B already inside the
-window, and Qwen3.5-9B and Qwen3-14B, whose attention has no window. In none of them does
-an indirect path take over. The rhyme word and the line's final token lie at the same
-distance from the target, yet the global layers read the final token, which fits the
-view of separators as long-range summaries of their segment [@chen2024sepllm;
-@wang2023labelwords; @xiao2024sinks].
+unresolved. The committed window prediction is only partly supported: the largest step is where line
+1 leaves the window, but the shift begins at 500 tokens. Models without a strong stored
+copy (Gemma 3 12B, and Qwen3.5-9B and Qwen3-14B, whose attention has no window) lose the
+plan instead, and in none of them does an indirect path take over. That the global
+layers read the line's final token rather than the equally distant rhyme word fits the
+view of separators as summaries of their segment [@chen2024sepllm; @wang2023labelwords;
+@xiao2024sinks].
 
 ## Hidden content {#sec-hidden}
 
 A choice that no reader can infer from the text is the case monitoring cares about
 most. The prompt reads: "Secretly choose one fruit from this list: {4 fruits}. Do not
 write your choice yet. First write one sentence about the weather. Then write the fruit
-you chose." Under greedy decoding the pick depends on the model's preferences and the
-list order, so no reader can compute it. The donor is the same list in another order with
-a different pick, and the reference is a *text swap* that writes the donor order into the
-prompt. In Qwen3-8B and Gemma 3 12B and 27B, donor states at the positions after the list
+you chose." The greedy pick depends on the model's preferences and the list order, so no reader can
+compute it. The donor is the list in another order with a different pick; the reference
+is a *text swap* that writes that order into the prompt. In Qwen3-8B and Gemma 3 12B and 27B, donor states at the positions after the list
 move the reveal by 12 to 16% of the text swap, all of it read directly; the part that
 passes through the sentence is zero within its interval, and the rest of the pick is
 presumably re-derived at the reveal from the visible list. In Qwen3-32B and the Qwen3.5
 hybrids the indirect path through the sentence is small but nonzero: at most 2% of the
-text swap, but one eighth to one fifth of the stored part. When the model writes its own
-sentence, it never names an item and has no measurable effect on the reveal (emission
-\(-0.01\) to \(+0.02\)).
+text swap, but one eighth to one fifth of the stored part. A sentence the model writes itself never names an item and has no measurable effect on
+the reveal (emission \(-0.01\) to \(+0.02\)).
 
 **The stored signal is pick-specific and sits at predictable tokens.** In an out-of-list
 control, the donor's pick does not occur in the prompt at all, yet post-list donor states
@@ -92,8 +88,7 @@ to 7% at 14B and 32B). Per-token necessity places it on two or three low-content
 close the list or the instruction, and one function word or possessive token of the
 instruction (in Gemma 3 27B, 77% on *the* in "about the weather"). When the instruction
 is reworded, the site moves with the wording at 4B, 12B and 27B (Appendix @fig-sites).
-These controls do not distinguish a stored pick from a stored copy of the list that the
-reveal re-reads with the model's preference, so we claim only that pick-specific
-information absent from the text is stored after the list and read at the reveal. As for
-rhymes, the model stores a copy once, at a segment-closing or predictable token next to
-the source, and reads it at the point of use.
+These controls do not distinguish a stored pick from a stored copy of the list, so we
+claim only that pick-specific information absent from the text is stored after the list
+and read at the reveal. As for rhymes, the copy is stored once, at a segment-closing or
+predictable token, and read at the point of use.
