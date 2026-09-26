@@ -78,7 +78,7 @@ two steps. **Relay** passes through the remaining positions of the generated tex
 the path monitoring is concerned with. Information is **looked up** when it arrives by
 direct retrieval, the stored copy or the late lookup. Where a group was not split
 further, we name it and call its effect the indirect path through it. These names and
-their colours (@fig-overview A) are fixed throughout.
+their colours (@fig-overview) are fixed throughout.
 
 ## Positive control: induction {#sec-control}
 
@@ -94,8 +94,7 @@ direct retrieval is 1 to 3% and the indirect path 108 to 137%, the excess over 1
 being an interaction. In Gemma 3 12B and 27B direct retrieval is 0.4%, but conflicting
 edited positions lower the all-position cell to 53 to 55% (the key position alone gives
 145 to 156%). Qwen3-32B and the Qwen3.5 hybrids also read the source directly (10 to
-31%). In every model the indirect path is the largest path (@fig-overview B; Appendix
-@sec-app-control). The key position lies right after the source, so this path resembles
+31%). In every model the indirect path is the largest path (Appendix @sec-app-control). The key position lies right after the source, so this path resembles
 a stored copy more than relay. What the control establishes is that route accounting
 detects an effect that arrives through an intermediate position. Relay is the same kind
 of path through different positions: with the generated text fixed, generated tokens

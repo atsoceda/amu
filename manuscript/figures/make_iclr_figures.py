@@ -251,7 +251,7 @@ def fig1_schematic(axA):
         axA.text(4.32, yy, lab, va="center", fontsize=7, color=COL["ink"])
         axA.text(9.35, yy, num, va="center", ha="right", fontsize=7,
                  color=c if c != COL["late"] else "#2B86BD", weight="bold")
-    axA.text(-0.1, 4.45, "A   Where a rhyme plan travels", fontsize=8, weight="bold", va="top")
+    axA.text(-0.1, 4.45, "Where a rhyme plan travels", fontsize=8, weight="bold", va="top")
     axA.text(-0.1, 3.95, "Qwen3-32B, chat prompt", fontsize=7, color=COL["muted"], va="top")
 
 
@@ -291,13 +291,17 @@ def fig1_points():
     return ctrl, coup, hid, rec, dist
 
 
-def fig1():
-    H = 5.15
+def fig1(panel):
+    """Panel "A" (the schematic) is Figure 1; panel "B" (every setting's shares) is an appendix figure."""
+    if panel == "A":
+        fig = plt.figure(figsize=(W, 1.79))
+        fig1_schematic(fig.add_axes([0.0, 0.0, 1.0, 1.0]))
+        save(fig, "iclr_fig1_overview.png")
+        return
+    H = 3.36
     fig = plt.figure(figsize=(W, H))
     fy = lambda inch: inch / H  # noqa: E731
     fx = lambda inch: inch / W  # noqa: E731
-    axA = fig.add_axes([0.0, fy(3.36), 1.0, fy(1.79)])
-    fig1_schematic(axA)
     ctrl, coup, hid, rec, dist = fig1_points()
 
     # B. Paired marks per setting: looked up (blue) and relay or unsplit indirect (purple).
@@ -310,7 +314,7 @@ def fig1():
     xr0, xr1 = 1.92, 5.3
     axT = fig.add_axes([fx(xr0), fy(ybot + hb + brk), fx(xr1 - xr0), fy(ht)])
     axL = fig.add_axes([fx(xr0), fy(ybot), fx(xr1 - xr0), fy(hb)])
-    fig.text(0.0, fy(3.3), "B   The indirect path carries induction; elsewhere relay, or an unsplit indirect path, is small", fontsize=8,
+    fig.text(0.0, fy(3.3), "The indirect path carries induction; elsewhere relay, or an unsplit indirect path, is small", fontsize=8,
              weight="bold", va="top")
     den_y = fy(0.5)
 
@@ -439,7 +443,7 @@ def fig1():
     fig.legend(hs, ["looked up (source, stored copy or late lookup)", "relay, or an unsplit indirect path", "Qwen3",
                     "Qwen3.5", "Gemma 3"], loc="lower center", bbox_to_anchor=(0.5, -0.005), ncol=5,
                handletextpad=0.2, columnspacing=0.9)
-    save(fig, "iclr_fig1_overview.png")
+    save(fig, "iclr_figA_overview_points.png")
 
 
 # --------------------------------------------------------------------------- Figure 2
@@ -1231,5 +1235,5 @@ def figA_computed():
 
 
 if __name__ == "__main__":
-    for f in (fig1, fig2, fig3, fig4, fig5, figA_computed):
+    for f in (lambda: fig1("A"), lambda: fig1("B"), fig2, fig3, fig4, fig5, figA_computed):
         f()

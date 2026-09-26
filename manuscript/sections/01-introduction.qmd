@@ -13,7 +13,7 @@ but never states [@pfau2024dots; @roger2023steganography; @turpin2023unfaithful;
 @chen2025reasoning].
 
 In a transformer, information at one position can reach a later position by three paths
-(@fig-overview A). It can be **emitted**: it changes the tokens the model writes, which
+(@fig-overview). It can be **emitted**: it changes the tokens the model writes, which
 are read back as input. It can be **retrieved**: the later position attends directly to
 where the information originates, or to visible text from which it can be recomputed. Or
 it can be **relayed**: positions of the generated text pick it up and pass it on.
@@ -28,17 +28,12 @@ visible in attribution graphs [@lindsey2025biology; @hanna2026latent] and steera
 [@maar2026plan; @ma2026plan; @jacopin2026improvisation]. These methods locate where a
 plan is formed or can be changed, not which path it takes to where it is used.
 
-![Route accounting and its central result. **A:** the paths by which a rhyme plan,
-formed at the rhyme word of line 1 (where the donor state is written), reaches the
-position that predicts the rhyme, with the line-2 words held fixed. Widths are each
-path's measured share of persistence in Qwen3-32B with the chat prompt. **B:** for every
-setting and model, the share of the effect that is looked up (blue) and the share that is
-relayed, or takes an indirect path not split further (purple), with 95% intervals. The
-positive control has its own axis, with its committed pass threshold (80%); the other
-settings share a broken axis with the stress tests' committed stop (10%) and go (25%)
-lines. The group of positions and the denominator are given under each group; Qwen3
-filled, Qwen3.5 triangles, Gemma 3 open. Interactions are reported in the
-sections](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
+![Route accounting on a rhyme plan. The paths by which a plan formed at the rhyme word
+of line 1 (where the donor state is written) reaches the position that predicts the
+rhyme, with the line-2 words held fixed. Widths are each path's measured share of
+persistence in Qwen3-32B with the chat prompt: most of the plan is read directly from the
+rhyme word, and relay along line 2 accounts for 1%. Appendix @fig-overview-points gives
+the looked-up and relayed shares for every setting and model.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
 
 We introduce **route accounting** (@sec-method). A donor's hidden states are written at
 the source positions, and the effect is measured where the information is used. Fixing

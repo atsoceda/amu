@@ -7,6 +7,20 @@
 \renewcommand{\thetable}{A\arabic{table}}
 ```
 
+# All settings at a glance {#sec-app-overview}
+
+![For every setting and model, the share of the effect that is looked up (blue) and the
+share that is relayed, or takes an indirect path not split further (purple), with 95%
+intervals. The positive control has its own axis (0 to 150%), with the pass threshold set
+before the experiment (an indirect path above 80% of persistence). The other settings
+share a broken axis: looked-up shares on the upper segment, purple shares on the lower
+segment (to 30%), with the committed stop (10%) and go (25%) lines of the stress tests.
+The group of intermediate positions and the denominator are given under each group;
+Qwen3 is shown filled, Qwen3.5 as triangles, Gemma 3 open. In the positive control, where
+an indirect path is the known mechanism, it is the largest path. Elsewhere the purple
+shares are small; interactions are reported in the
+sections.](manuscript/figures/iclr_figA_overview_points.png){#fig-overview-points width=100%}
+
 # Models and materials {#sec-app-materials}
 
 **Models.** Qwen3 1.7B, 4B, 8B, 14B and 32B (`Qwen/Qwen3-*`), and Qwen3 8B and 14B
@@ -115,7 +129,7 @@ the outcome.
 The design is 100 random sequences of 24 distinct common word tokens, repeated up to the
 second \(A\). The edit replaces the first \(A\)'s states with those of a sequence
 identical except for that token. The outcome is \(\log p(B)\) at the second \(A\).
-The control passes cleanly in four models and partly in five (@fig-overview B;
+The control passes cleanly in four models and partly in five (@fig-overview-points;
 @tbl-control).
 
 - *Clean pass.* In Qwen3 1.7B, 4B, 8B and 14B, direct retrieval is 1 to 3% of
