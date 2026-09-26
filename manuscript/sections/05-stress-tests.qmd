@@ -1,6 +1,6 @@
 # Settings built to favour relay {#sec-stress}
 
-Relay is never necessary when every layer can read every earlier position and the
+Relay is not required when every layer can read every earlier position and the
 content is visible. We therefore run three stress tests that remove one of these
 conditions, each with a decision rule committed before its first result (@fig-stress; Appendix @sec-app-prereg,
 @sec-app-stress and @sec-app-hidden).
