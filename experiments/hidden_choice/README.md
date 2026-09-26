@@ -316,3 +316,9 @@ at a predictable token is supported. Refinement: with this wording most of the s
 sits on the period that ends the list, the list's boundary token (in the base wording at 12B
 it held 31%, at 27B 17%). The two sites are the analogues of the couplet results: a boundary
 token right after the source, and a function word the model reuses.
+
+### Out-of-list control, Gemma 3 - 4B - hidden choice - out-of-list (fruits; added 2026-09-26)
+
+Text swap pick specificity +7.22; post-list block: donor pick +4.85, donor's other fruits
++3.52, **pick specificity +1.33 [1.04, 1.61]** (18%; animals 22%). Gemma 3 stores a
+pick-specific hidden choice at 4B in both domains (12B: 15% / 18%; 27B: 31% / 40%).
