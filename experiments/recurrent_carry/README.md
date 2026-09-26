@@ -41,3 +41,8 @@ construction, and invisible in the text. Does the rhyme plan travel that way?
 rarely (about 1 in 6 first lines), and in Qwen3 storage effects appeared only from 14B,
 so a small-model null would not be informative. The stop/go rule applies to the
 **largest model piloted**; smaller sizes are reported as the scale trend.
+
+**Fast path for the 27B pilot (2026-09-26, before any result):** 24 couplets, and the
+unedited line 2 is the rhyme screen's own greedy line (same prompt; identical to step 2's
+unedited generation), so step 2 is skipped (`run_pilot_fast.sh`, `pilot.py --from-screen`).
+The stop/go rule is unchanged; an in-between result extends the pilot.

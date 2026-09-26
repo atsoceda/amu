@@ -41,11 +41,20 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("model", nargs="?", default="Qwen3.5-4B")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--from-screen", action="store_true",
+                    help="use the rhyme screen's own greedy line 2 as the unedited line (skips step 2)")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     mix = mixers(layers)
     print("mixers:", [k for k, _ in mix], flush=True)
-    rows = json.loads((CR / "results" / a.model / "step2_rows.json").read_text())[: a.limit or None]
+    if a.from_screen:
+        import pandas as pd
+        sub = pd.read_csv(CR / "results" / a.model / "subset.csv", index_col=0)
+        rows = [{"idx": int(i), "first_line": r["first_line"], "donor_first_line": sub.loc[int(r["chosen_index"]), "first_line"],
+                 "orig_word": r["first_last_word"], "donor_word": sub.loc[int(r["chosen_index"]), "first_last_word"],
+                 "gen_off": r["original_generation"]} for i, r in sub.iterrows()][: a.limit or None]
+    else:
+        rows = json.loads((CR / "results" / a.model / "step2_rows.json").read_text())[: a.limit or None]
 
     def rhyme_ids(word):
         return sorted({t[0] for w in rhymes(word) for t in [tok.encode(" " + w, add_special_tokens=False)] if len(t) == 1})
