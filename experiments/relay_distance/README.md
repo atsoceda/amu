@@ -34,3 +34,29 @@ control sometimes abandons the task (line 2 starts "Okay, I need to write…" or
 line 1), which makes its rhyme measure uninterpretable for those couplets. The frozen
 design had no behavioural gate; results will be reported for all couplets and, as a
 post-hoc filter, for couplets whose line 2 rhymes with line 1 (`line2_rhymes_orig`).
+
+## Pilot v1 results: Gemma 3 - 27B - relay distance - pilot (2026-09-26)
+
+| | D = 0 (20 couplets) | D = 2000 (5 couplets) |
+|---|---|---|
+| line 2 rhymes with line 1 | 100% | 40% |
+| persistence | +43.11 [36.18, 48.78] | +21.27 [9.82, 30.61] |
+| direct retrieval | +30.89 | +7.40 |
+| **relay (all in-between positions)** | **+0.65 [0.00, 1.89]** (share 2%) | **+13.59 [5.23, 21.26]** (share 66% [40, 93]) |
+| relay through the filler only | 0.00 | +0.38 [0.26, 0.49] |
+
+By the frozen number the pilot is a "go" (share >= 25%, CI above zero), but it is not
+decisive: at D = 2000 only 5 of 20 couplets produced usable rows (15 skipped silently
+because line 2 was empty or one word; one of the 5 continued the filler), and the
+filler itself carries almost nothing, so the relay sits either in the boundary tokens
+after line 1 (known boundary storage, read by the global layers) or in the line-2
+positions before the rhyme word (relay through generated text, the headline-changing
+case). Pilot v2 separates them.
+
+## Pilot v2 (design frozen 2026-09-26, before any v2 result)
+
+Same couplets and distances (D = 0, 2000) with a fixed cue after the filler ("Next
+line:") at both distances; 24 couplets; skips logged with the generated text; relay split
+into three groups: boundary (prompt positions after the anchor), filler, and cue plus
+line-2 words. Same stop/go number, judged on relay through the cue plus line-2 words
+(relay through generated text). Qwen3 - 14B - relay distance - pilot v2 as the control.
