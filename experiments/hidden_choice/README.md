@@ -347,3 +347,7 @@ carries the pick: a donor with the same pick does not move it. Individual pairs 
 directions (mean absolute post-list effect 1.43): the block also carries order information
 about the rest of the list, consistent with the out-of-list finding that most of its content
 is a copy of the list.
+
+Localization additions (2026-09-26, before any result): Gemma 3 4B with the reworded
+instruction and with animals, to complete the size x condition grid (4B / 12B / 27B x base
+fruits / animals / reworded). Same design; queued to use idle memory.
