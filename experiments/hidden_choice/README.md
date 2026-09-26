@@ -206,3 +206,26 @@ Qwen3 at 14B-32B. Models: Gemma 3 4B/12B/27B, Qwen3 8B/14B/32B.
 the donor's post-list states everywhere, then one token reset to its clean state; the
 drop in the pick-specific effect localizes the storage (analogue of the line-ending
 comma in couplets).
+
+### Replication results, animals (pick specificity pre-registered; 2026-09-26)
+
+| Model | Text swap specificity | **Post-list pick specificity** | Share |
+|---|---|---|---|
+| Qwen3-8B | +4.30 | **+0.63 [0.50, 0.76]** | 15% |
+| Qwen3-14B | +4.80 | **+0.13 [0.06, 0.21]** | 3% |
+| Gemma 3 4B | +11.93 | **+2.59 [2.13, 3.09]** | 22% |
+| Gemma 3 12B | +8.10 | **+1.43 [1.10, 1.77]** | 18% |
+| Gemma 3 27B | +10.12 | **+4.09 [3.59, 4.58]** | 40% |
+
+Against the frozen predictions: in Gemma 3 the stored hidden pick is largest at 27B in
+both domains, but growth is not monotonic (4B stores more than 12B), so "4B < 12B <
+27B" is **only partly supported**. The Qwen3 prediction (near zero at 14B-32B) holds at
+14B; 32B pending. A stored, pick-specific hidden choice replicates in a second domain
+in both families.
+
+### Gemma 3 27B forced route split (fruits)
+
+Text swap +10.72; post-list block **+1.77 [1.26, 2.27]** (16%), all by direct retrieval
+(+1.77); **relay through the sentence -0.01 [-0.10, 0.08]**; sentence block -0.18. Even
+where the most hidden pick is stored, it is read directly from where it was stored and
+is not relayed through the generated sentence.
