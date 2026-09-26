@@ -23,8 +23,7 @@ thinking disabled and short generated spans.
 If these regularities extend to other tasks, a monitor of internal state could focus
 on a handful of prompt positions, the sources and their stored copies, rather than
 the whole trajectory, and should track whether stored copies keep growing with scale.
-The exception marks where this advice is weakest. At 2,000 tokens of distance, early
-relay reaches 12%, and in the two largest Qwen models about an eighth of the stored
+The exception marks where this advice is weakest. With filler before line 2, relay through the generated text (including its last three positions) is 9 to 13%, and in the two largest Qwen models about an eighth of the stored
 hidden information passes through the intervening sentence.
 
 **Why look up rather than carry?** One reading is architectural. In a transformer,
@@ -37,13 +36,15 @@ window, Gemma 3 27B reads a stored copy rather than carrying the plan along the 
 Gemma 3 12B loses the plan. When lookup is available, carrying through the model's own
 output appears to be the disfavoured solution, not merely an unneeded one.
 
-**What would overturn the principle.** The largest early relay we observe is about
-12%, in the setting built to demand it. The principle predicts that early relay stays
+**What would overturn the principle.** The largest relay through generated text we observe is about 12%, in the setting built to demand it, and it is not yet split into early relay and late lookup. The principle predicts that early relay stays
 a minority path wherever a lookup site exists. Stronger pressure could break it: much
 longer generated text, reasoning with thinking enabled, tasks that cannot be
 recomputed from the prompt, or training that rewards concealment
-[@baker2025monitoring]. Route accounting applies unchanged to each of these, and each
-is a direct test.
+[@baker2025monitoring]. Models trained to compute over otherwise uninformative
+positions, with pause tokens [@goyal2024pause] or continuous latent reasoning
+[@hao2024coconut], are designed to do exactly what we rarely see, so the principle is
+not an architectural law. Route accounting applies unchanged to each of these, and
+each is a direct test.
 
 ## Limitations {#sec-limitations}
 

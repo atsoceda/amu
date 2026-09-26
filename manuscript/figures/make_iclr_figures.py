@@ -422,7 +422,7 @@ def fig1():
           Line2D([], [], ls="none", marker="o", ms=4, mfc="#444444", mec="#444444"),
           Line2D([], [], ls="none", marker="^", ms=4, mfc="#444444", mec="#444444"),
           Line2D([], [], ls="none", marker="s", ms=4, mfc="white", mec="#444444")]
-    fig.legend(hs, ["looked up (source or stored copy)", "relayed along intermediate positions", "Qwen3",
+    fig.legend(hs, ["looked up (source, stored copy or late lookup)", "relayed along intermediate positions", "Qwen3",
                     "Qwen3.5", "Gemma 3"], loc="lower center", bbox_to_anchor=(0.5, -0.005), ncol=5,
                handletextpad=0.2, columnspacing=0.9)
     save(fig, "iclr_fig1_overview.png")
@@ -481,7 +481,7 @@ def fig2():
             ax.set_ylabel("share of persistence (%)")
         else:
             ax.set_yticklabels([])
-    fig.text(0.0, 0.995, "A   Direct retrieval dominates in every run; early relay ≤ 1%", fontsize=8,
+    fig.text(0.0, 0.995, "A   Direct retrieval dominates, except Gemma 3 27B (plain), where the stored copy takes over; early relay ≤ 1%", fontsize=8,
              weight="bold", va="top")
     hs = [Rectangle((0, 0), 1, 1, color=c) for _, _, c in parts]
     hs.append(Rectangle((0, 0), 1, 1, color=COL["interaction"]))
@@ -1068,7 +1068,7 @@ def fig4():
         axc.barh(i, stored - relayed, 0.62, left=relayed, color=COL["storage"], lw=0,
                  label="stored after the list" if first else None)
         axc.barh(i, 100 - stored, 0.62, left=stored, color=COL["retrieval"], lw=0, alpha=0.85,
-                 label="re-derived from the list" if first else None)
+                 label="not reproduced by the post-list patch" if first else None)
         if np.isfinite(st[1]):
             axc.plot([st[1], st[2]], [i, i], color=COL["ink"], lw=0.7)
         axc.text(max(st[2], stored) + 1.5, i, f"{stored:.0f}%", fontsize=7, va="center", ha="left",
@@ -1141,7 +1141,7 @@ def fig5():
         ax.plot([lx(p[0]) for p in unw], [p[1][0] for p in unw], "-", color=COL["relay"], lw=0.9, zorder=2)
         for sz, v in unw:
             dot(ax, lx(sz), v, COL["relay"], "o", True, s=16)
-        ax.text(lx(unw[-1][0]) + 0.05, unw[-1][1][0] + 6, "unwritten: recomputed from the source",
+        ax.text(lx(unw[-1][0]) + 0.05, unw[-1][1][0] + 6, "unwritten: downstream patch effect \u2248 0",
                 fontsize=7, color="#8E4F7A", ha="right", va="bottom", weight="bold")
     for K, mk, off in (("3", "o", -0.012), ("5", "s", 0.012)):
         pts = wr.get(K, [])

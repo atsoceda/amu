@@ -88,16 +88,19 @@ carrying useful or to make it invisible, each with a decision rule committed bef
 result (@sec-stress). They bound the principle rather than confirm it.
 
 - **Recurrent memory.** In the Qwen3.5 hybrid, three of every four layers can pass
-  information forward only through a recurrent state, so relay is available to most
-  of the network [@yang2025gateddeltanet]. The test asks which route the model uses
-  when both exist. The recurrent memory accounts for 2 to 4% of persistence at 4B, 9B
-  and 27B parameters, below the committed stop line.
+  information forward only through a recurrent state, so relay is available to most  of the network [@yang2025gateddeltanet]. The test asks which route the model uses
+  when both exist. When the donor signal may enter only through the recurrent layers at
+  the source, it produces 2 to 4% of persistence at 4B, 9B and 27B parameters, below the
+  committed stop line; entering through the attention layers, it produces 95 to 97%.
 - **Distance.** Beyond Gemma 3's 1,024-token local window, five of six layers cannot
-  read the source [@gemma3]. At 2,000 tokens, the 27B model relies on the stored copy
-  at the line's final token, which is necessary for about half of persistence. Early
-  relay rises to 12% of persistence. That is the one clear exception to the principle
-  and falls between the committed stop (10%) and go (25%) lines, so it remains
-  inconclusive. In the 12B model, which stores little at the line end, the plan fades
+  read the source [@gemma3]. As filler grows from 0 to 2,000 tokens, the 27B model
+  shifts from reading the rhyme word toward the stored copy at the line's final token,
+  which becomes necessary for about half of persistence. The shift is gradual, steepest
+  as line 1 leaves the window. Relay through the generated text (the cue and line 2,
+  including its last three positions) is 9 to 13% of persistence at every nonzero
+  distance. It is the one clear exception to the principle. It falls between the
+  committed stop (10%) and go (25%) lines, and it has not been split into early relay
+  and late lookup, so it remains inconclusive. In the 12B model, which stores little at the line end, the plan fades
   with distance, already inside the window, and relay never takes over.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
   monitoring cares about most. Information specific to a secret pick is stored after
@@ -149,10 +152,11 @@ prompt format.
 \toprule
 Content (observability) & Emission & Looked up: direct retrieval, stored copy or late lookup & Carried: relay along intermediate positions\\
 \midrule
-Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (19\% in Gemma~3 27B, plain); stored copy 0--16\% (37\%); late lookup 1--13\% & early relay $\le$1\%\\
+Rhyme plan (visible) & 13--25\% of the total effect & rhyme word 68--95\% of persistence (exception: 19\% in Gemma~3 27B, plain, where the stored copy is necessary for 74\%); stored copy 0--16\% by sufficiency; late lookup 1--13\% & early relay $\le$1\%\\
+Rhyme plan after 500--2,000 filler tokens (Gemma~3 27B) & -- & rhyme word 40--64\%; stored copy necessary for 25--49\% & generated text (incl.\ last three positions): 9--13\%\\
 Computed value, unwritten (visible) & -- & recomputed from the source & every later position together: $\le$2.4\% of the source effect (chains), $\le$6\% (sums)\\
 Computed value, written (visible) & 83--99\% & bypass to the source 1--17\% & --\\
-Secret choice (hidden) & no measurable effect (the sentence never names it) & mostly re-derived from the list; pick-specific information stored after the list: 0--40\% of the text-swap reference (Gemma~4 31B: 82--91\%) & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$7\%\\
+Secret choice (hidden) & no measurable effect (the sentence never names it) & pick-specific information stored after the list: 0--40\% of the text-swap reference, read directly at the reveal (Gemma~4 31B stores 82--91\%; its route split was not run); the rest not reproduced by the post-list patch & via the sentence: $\le$2\% of the text swap ($\le$16\% of the stored part); sentence positions $\le$7\%\\
 \midrule
 Induction (positive control) & -- & direct retrieval $\le$3\% (10--31\% in Qwen3-32B and the Qwen3.5 hybrids) & through the copied token's position (prompt): 53--137\%\\
 \bottomrule
