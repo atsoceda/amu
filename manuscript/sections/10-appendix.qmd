@@ -11,10 +11,10 @@
 
 **Models.** Qwen3 1.7B, 4B, 8B, 14B and 32B (`Qwen/Qwen3-*`), and Qwen3 8B and 14B
 base (`Qwen/Qwen3-*-Base`). Gemma 3 1B, 4B, 12B and 27B instruction-tuned
-(`google/gemma-3-*-it`), and Gemma 3 12B and 27B pretrained (`google/gemma-3-*-pt`).
-Qwen3.5 4B, 9B and 27B (`Qwen/Qwen3.5-*`). Qwen3 0.6B, 1.7B and 4B for the a/an
-analysis, with the per-layer transcoders of @hanna2026latent. Pending: Qwen3.5-35B-A3B
-and Gemma 4 31B (`google/gemma-4-31b-it`) [@gemma4]. All models run in bfloat16 on
+(`google/gemma-3-*-it`), and Gemma 3 12B pretrained (`google/gemma-3-12b-pt`).
+Qwen3.5 4B, 9B and 27B (`Qwen/Qwen3.5-*`). Gemma 4 31B (`google/gemma-4-31B-it`) for
+the hidden choice [@gemma4]. Qwen3 0.6B, 1.7B and 4B for the a/an analysis, with the
+per-layer transcoders of @hanna2026latent. All models run in bfloat16 on
 Apple silicon (PyTorch MPS), with full recomputation and no key-value cache across
 edited runs.
 
