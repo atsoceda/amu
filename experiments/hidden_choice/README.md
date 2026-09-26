@@ -300,3 +300,19 @@ instruction (27B and 12B) pending.
 Qwen3-32B is the one model in which relay through the sentence is nonzero: small (2% of the
 text swap, one eighth of the stored part) but with an interval above zero. Reported in the
 manuscript as "at most 2%" rather than zero.
+
+### Localization check 3 (12B): Gemma 3 - 12B - hidden choice - localization, reworded instruction (fruits; 2026-09-26)
+
+Instruction: "Keep your choice private for now. Begin by describing today's weather in a single
+sentence. After that, reveal which fruit you picked." Post-list pick specificity +0.59 [0.38,
+0.81] (text swap +5.00, 12%; base wording 15%). By token: **the period right after the list
++0.42 [0.21, 0.63]** (71%), **the apostrophe in "today's" +0.16 [0.09, 0.22]** (27%); every
+other token, including "weather", the template and the role tokens, below 0.04.
+
+Against the frozen reading: the storage again concentrates on one or two low-content tokens,
+and the non-boundary site moved with the wording ("the" in "about the weather" -> the
+possessive in "today's weather", both the token before "weather"), so register-like storage
+at a predictable token is supported. Refinement: with this wording most of the stored pick
+sits on the period that ends the list, the list's boundary token (in the base wording at 12B
+it held 31%, at 27B 17%). The two sites are the analogues of the couplet results: a boundary
+token right after the source, and a function word the model reuses.

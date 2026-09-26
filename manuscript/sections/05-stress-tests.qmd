@@ -198,8 +198,17 @@ is \(0.00\pm0.05\). Gemma 3 12B uses the same site, both with fruits (*the*: \(+
 [0.80, 1.28] of \(+1.42\), or 73%). The hidden choice is stored like the rhyme copy,
 once, at a predictable low-content token of the prompt, and read at the point of use.
 The site therefore replicates across two sizes and two domains with the same
-wording. The decisive check changes the wording, and it was frozen before its result.
-If the storage moves with the function words, it is register-like storage at a
-predictable token; if it stays at a fixed position, the site is template-specific.
-\pending{localization with the reworded instruction (Gemma 3 27B and 12B) and with
-animals at 27B; same-pick null (Gemma 3 27B, Qwen3-32B).}
+wording. The decisive check, frozen before its result, changes the wording. If the
+storage moves with the function words, it is register-like storage at a predictable
+token. If it stays at a fixed position or spreads out, the site is template-specific.
+With the instruction reworded to "Keep your choice private for now. Begin by
+describing today's weather in a single sentence. After that, reveal which fruit you
+picked.", Gemma 3 12B stores 12% of the text swap's pick specificity (\(+0.59\) [0.38,
+0.81]). The storage again concentrates on two low-content tokens. The period that ends
+the list carries \(+0.42\) [0.21, 0.63] (71%). The apostrophe of "today's", the token
+before "weather", carries \(+0.16\) [0.09, 0.22] (27%). Every other token is below 0.04.
+The function-word site moved with the wording, which supports storage at a predictable
+low-content token. The period that ends the list is the list's boundary token, the
+analogue of the line's final token for rhymes, and under this wording it carries most
+of the stored pick. \pending{reworded instruction and animals at Gemma 3 27B; same-pick
+null (Gemma 3 27B, Qwen3-32B).}
