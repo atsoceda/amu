@@ -174,3 +174,12 @@ over 2,000 tokens of filler (rhyming 92% -> 4%, persistence down by three quarte
 remains is still read directly from line 1 by the full-attention layers; absolute relay does
 not grow (+1.16 -> +0.82), and nothing moves onto the boundary. As in Gemma 3 12B, distance
 without a stored copy loses the plan rather than moving it onto a relay path.
+
+## Window curve at 12B (design frozen 2026-09-26, before any result)
+
+Gemma 3 - 12B - relay distance - window curve: the v2x cells at D = 500, 1000 and 1500 (24
+couplets). At D = 2000 the 12B plan is lost (0% rhyme). The sliding-window account predicts
+that the plan survives while line 1 is within the 1,024-token window (D = 500, 1000: rhyming
+and persistence near the D = 0 values) and is lost once it is not (D = 1500: rhyming near 0).
+A gradual decline instead would mean the loss reflects distance itself, not the window.
+Outputs `pilot_v2x_window_*` in `results/gemma-3-12b-it/`.

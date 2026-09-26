@@ -47,3 +47,20 @@ fruits +0.11, **pick specificity +0.05 [0.03, 0.08]** (3% of the text swap's). A
 
 Text swap specificity +1.27; post-list pick specificity **+0.05 [0.01, 0.08]** (4%). As
 predicted: Qwen3.5 like Qwen3 at its size (Qwen3-32B 7%), unlike Gemma 3 27B (40%).
+
+### Qwen3.5 - 27B - hidden choice - forced route split (fruits; 100 pairs; 2026-09-26)
+
+Text swap +2.28; post-list block +0.19 [0.13, 0.25] (8%), direct retrieval +0.16; **relay
+through the sentence +0.03 [0.02, 0.04]** (1% of the text swap; small but above zero, as in
+Qwen3-32B); **sentence block +0.15 [0.12, 0.18]** (7% of the text swap). Prediction ("relay
+through the generated sentence about 0") holds for relay of the stored part (1%). The sentence
+positions themselves carry a small part of the pick (7%, the largest of any model; Qwen3-4B 5%,
+Qwen3-32B 1%, Gemma 3 0), expected in a recurrent hybrid where each position's recurrent
+state summarizes the prefix, including the list.
+
+### Qwen3.5 - 27B - relay positive control - induction (100 sequences)
+
+p(B) clean 0.984; persistence -4.34 [-4.55, -4.12]; **direct retrieval -0.72 [-0.85, -0.61]
+(17%)**; relay -2.41 (55%); key position alone -3.35 (77%). Prediction ("direct retrieval under
+5%, relay large"): relay is the main path, but direct retrieval (17%) exceeds 5%: a partial
+pass, like Qwen3-32B (31%). The largest models also read the first A directly.
