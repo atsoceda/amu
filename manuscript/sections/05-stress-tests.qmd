@@ -223,12 +223,18 @@ The families diverge with scale.
 ```{=latex}
 \footnotesize
 \setlength{\tabcolsep}{3.2pt}
-\begin{tabular}{@{}lcccccccc@{}}
+\begin{tabular}{@{}lcc@{}}
 \toprule
- & Qwen3-8B & Qwen3-14B & Qwen3-32B & Qwen3.5-27B & Gemma 3 4B & Gemma 3 12B & Gemma 3 27B & Gemma 4 31B\\
+Model & Fruits (post hoc) & Animals (committed before the result)\\
 \midrule
-Fruits & 10\% & 0\% & 2\% & 3\% & 18\% & 15\% & 31\% & 82\%\\
-Animals (committed before the result) & 15\% & 3\% & 7\% & 4\% & 22\% & 18\% & 40\% & 91\%\\
+Qwen3-8B & 10\% & 15\%\\
+Qwen3-14B & 0\% & 3\%\\
+Qwen3-32B & 2\% & 7\%\\
+Qwen3.5-27B & 3\% & 4\%\\
+Gemma 3 4B & 18\% & 22\%\\
+Gemma 3 12B & 15\% & 18\%\\
+Gemma 3 27B & 31\% & 40\%\\
+Gemma 4 31B & 82\% & 91\%\\
 \bottomrule
 \end{tabular}
 ```
