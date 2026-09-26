@@ -242,3 +242,6 @@ bold markup. Qwen3-8B re-scored: K = 3 108/108 usable (was 75), emission +12.62 
 Deadline plan (2026-09-26): Qwen3 - 32B - derived value - variable chains (resume) and the 32B
 written-chain re-score at K = 5 were dropped (not run). The variable-chain results cover 1.7B to
 14B; written chains at 32B cover K = 3 only.
+
+Qwen3 - 1.7B - derived value - written chains (Mac Studio, 2026-09-26): K = 3 108/108 usable,
+emission +13.20 of +14.30 (92%); K = 5 103/103, emission +11.41 of +11.85 (96%).

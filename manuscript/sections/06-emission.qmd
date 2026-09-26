@@ -16,7 +16,7 @@ through the values the model writes (emission; \(K=3\) and \(K=5\)); the answer 
 the text. The remainder of the written case is the bypass to the edited
 source. The two series cover different sizes because of which runs exist: unwritten
 chains were run at 1.7B to 14B (the 32B run was cut for the deadline), written chains at
-4B to 32B, and at 32B only for \(K=3\).](manuscript/figures/iclr_fig5_computed_and_written.png){#fig-computed width=100%}
+1.7B to 32B, and at 32B only for \(K=3\).](manuscript/figures/iclr_fig5_computed_and_written.png){#fig-computed width=100%}
 
 **In these chains the answer follows the written values.** We return to the variable chains of
 @sec-computed, now with the instruction "Compute each variable in order, one per
@@ -27,7 +27,7 @@ the answer's first digit. The six-cell split then shows how much of the effect g
 through the written values (emission) and how much bypasses them (persistence with
 the text fixed).
 
-- Emission accounts for 93% and 96% of the effect at 4B (\(K=3\) and \(K=5\)), 94% and
+- Emission accounts for 92% and 96% of the effect at 1.7B (\(K=3\) and \(K=5\)), 93% and 96% at 4B (\(K=3\) and \(K=5\)), 94% and
   92% at 8B, 88% and 83% at 14B, and 99% at 32B (\(K=3\); \(K=5\) was not scored at 32B).
 - The bypass, which re-reads the edited source digits, is 4 to 8% at 4B and 8B and 12
   to 17% at 14B. At 32B it is \(+0.06\) [\(-0.05\), 0.16], or 1%.
