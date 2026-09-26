@@ -245,3 +245,9 @@ written-chain re-score at K = 5 were dropped (not run). The variable-chain resul
 
 Qwen3 - 1.7B - derived value - written chains (Mac Studio, 2026-09-26): K = 3 108/108 usable,
 emission +13.20 of +14.30 (92%); K = 5 103/103, emission +11.41 of +11.85 (96%).
+
+Qwen3 - 32B - derived value - variable chains (block only; 2026-09-26): accuracy 99 / 54 / 9% at
+K = 1 / 3 / 5; source-digit edit +16.5 / +10.1 / +5.2; post-v0 block +0.81 [0.61, 1.03] /
+-0.02 [-0.33, 0.29] / -0.00 [-0.22, 0.19]. Nothing downstream holds the value at K = 3 and 5.
+Qwen3 - 32B - written chains re-scored with the parser fix: K = 3 108/108 usable, emission +6.73
+of +6.88 (98%); K = 5 103/103, +6.62 of +6.54 (101%).

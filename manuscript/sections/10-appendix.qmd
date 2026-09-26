@@ -88,7 +88,7 @@ Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 
 Induction control & relay $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (relay 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (retrieval 31\%, 10\%, 17\%)\\
 Sums & computation-position edit must move the answer (efficacy gate) & 7f5a9a6, 09-25 22:05 & gate fails at every size; downstream block $\le$6\%\\
 Variable chains & chain relay $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$2.4\%\\
-Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--99\%)\\
+Written chains & emission accounts for nearly all of the effect & 694af09, 09-26 05:03 & holds (83--100\%)\\
 Recurrent carry & go if recurrent-only $\ge$25\%, stop if $<$10\% (largest model) & 784c78b, 09-26 10:24 & stop (2\% at 27B)\\
 Distance & go if generated-text relay $\ge$25\%, stop if $<$10\%, else extend & 2df09ce, 09-26 11:56; v2 6caf0e5; extension 0dda3b3 & extended; 12\%: between stop and go\\
 Window curve (27B) & the change in reliance occurs between 1,000 and 1,500 tokens & a2d7c65, 09-26 15:43 & partly supported: largest point-estimate step there, but the shift begins at 500 tokens (interior points 18 couplets, endpoints 50)\\
