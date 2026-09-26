@@ -9,8 +9,8 @@ reaches the position that uses it is a basic question about autoregressive
 computation. It is also a practical one. Chain-of-thought monitoring assumes that
 the reasoning relevant to a decision passes through, or can be recovered from, the
 text the model writes [@korbak2025monitorability; @baker2025monitoring]. The
-central risk to that assumption is content that travels in the model's state while
-the text says nothing about it [@pfau2024dots; @roger2023steganography;
+central risk to that assumption is decision-relevant content that the model uses
+but never states in its text [@pfau2024dots; @roger2023steganography;
 @turpin2023unfaithful; @chen2025reasoning].
 
 In a transformer, information present at one position can reach a later position
