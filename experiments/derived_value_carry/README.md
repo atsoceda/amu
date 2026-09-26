@@ -222,3 +222,13 @@ The 4B and 8B runs used the one-at-a-time path; 14B and 32B use the batched path
 When the chain is written out, the answer follows the written values (83-96% emission).
 The part that bypasses the text (re-reading the edited source digits) grows modestly
 with size (about 4-7% at 4B-8B, 12-17% at 14B). 32B pending.
+
+### Stage 3 at Qwen3-32B, and a parser fix (2026-09-26)
+
+Qwen3 - 32B - derived value - written chains, K = 3: 90/108 usable; total +6.64 [5.50, 7.73]
+= **emission +6.58 (99%)** + persistence +0.06 [-0.05, 0.16]. The bypass (4-7% at 4B-8B,
+12-17% at 14B) is about 1% at 32B: it does not grow with scale. K = 5 was 0/103 usable
+because 32B writes each step in bold (`**b = a + 1 = 11 + 1 = 12**`) and the parser
+expected the number at the end of the line. Fixed (markdown characters ignored;
+identical parses on the earlier data) and all sizes re-scored from the stored
+generations (`--from-rows`, outputs `written_K*_rows_recut.json`, `written_summary_recut.json`).

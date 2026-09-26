@@ -45,8 +45,9 @@ def cut_chain(text, K):
     pos = 0
     for line in text.split("\n"):
         end = pos + len(line)
-        if re.search(rf"\b{name}\s*=", line):
-            nums = re.findall(r"=\s*\$?\s*(\d+)\s*\$?\s*$", line.strip().rstrip(".").rstrip())
+        plain = re.sub(r"[*$`]", "", line)  # markdown bold / LaTeX delimiters (32B writes **b = ... = 12**)
+        if re.search(rf"\b{name}\s*=", plain):
+            nums = re.findall(r"=\s*(\d+)\s*[.,;]?\s*$", plain.strip())
             if nums:
                 return text[:end], int(nums[-1])
         pos = end + 1
@@ -58,8 +59,10 @@ def batched_K(K, a, tok, m, layers, gemma, digit, states):
     Checkpointed per chunk (couplet_routes/checkpoint.py): a restarted run resumes."""
     from checkpoint import Checkpoint
     key = lambda r: f"{r['v0']}-{r['dv0']}-{'-'.join(map(str, r['inc']))}"  # noqa: E731
-    ck = Checkpoint(EXP / "results" / a.model / f"written_K{K}_rows.json", key)
-    todo = [it for it in make_items(K)[: a.limit or None] if not ck.has(key(it))]
+    final = EXP / "results" / a.model / f"written_K{K}_rows.json"
+    stored = {key(r): r for r in json.loads(final.read_text())} if a.from_rows else {}
+    ck = Checkpoint(final.with_name(final.stem + ("_recut" if a.from_rows else "") + ".json"), key)
+    todo = [it for it in make_items(K)[: a.limit or None] if not ck.has(key(it)) and (not a.from_rows or key(it) in stored)]
     for c in range(0, len(todo), a.batch):
         prep = []
         for it in todo[c:c + a.batch]:
@@ -75,8 +78,12 @@ def batched_K(K, a, tok, m, layers, gemma, digit, states):
             dst = states(dids)
             prep.append((it, text, {p: [x[p] for x in dst] for p in v0pos}))
         texts = [t for _, t, _ in prep]
-        g0s = generate_batch(m, tok, layers, texts, 240, chunk=a.batch)
-        g1s = generate_batch(m, tok, layers, texts, 240, patches=[pt for _, _, pt in prep], chunk=a.batch)
+        if a.from_rows:
+            g0s = [stored[key(it)]["gen_off"] for it, _, _ in prep]
+            g1s = [stored[key(it)]["gen_on"] for it, _, _ in prep]
+        else:
+            g0s = generate_batch(m, tok, layers, texts, 240, chunk=a.batch)
+            g1s = generate_batch(m, tok, layers, texts, 240, patches=[pt for _, _, pt in prep], chunk=a.batch)
         for (it, text, patch), g0, g1 in zip(prep, g0s, g1s):
             c0, val0 = cut_chain(g0, K)
             c1, val1 = cut_chain(g1, K)
@@ -106,6 +113,7 @@ def main() -> None:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--ks", default="3,5")
     ap.add_argument("--batch", type=int, default=16, help="items per generation batch (1 = original one-at-a-time path)")
+    ap.add_argument("--from-rows", action="store_true", help="reuse the stored generations (re-cut and re-score only)")
     a = ap.parse_args()
     tok, m, layers = load(a.model)
     m.lm_head = F32Head(m.lm_head.weight)
@@ -192,8 +200,9 @@ def main() -> None:
             print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] prev written off {val0} on {val1} (true {true_prev}, donor "
                   f"{rec['donor_prev']}) " + (f"total {rec['total']:+.2f} emis {rec['emission']:+.2f} pers(t0) {rec['persistence_t0']:+.2f} "
                   f"pers(t1) {rec['persistence_t1']:+.2f}" if rec["usable"] else "unusable"), flush=True)
-        (out_dir / f"written_K{K}_rows.json").write_text(json.dumps(rows, indent=1))
-        (out_dir / f"written_K{K}_rows.partial.jsonl").unlink(missing_ok=True)
+        rs = "_recut" if a.from_rows else ""
+        (out_dir / f"written_K{K}_rows{rs}.json").write_text(json.dumps(rows, indent=1))
+        (out_dir / f"written_K{K}_rows{rs}.partial.jsonl").unlink(missing_ok=True)
         u = [r for r in rows if r["usable"]]
         summary["by_K"][K] = {"n": len(rows), "n_usable": len(u),
                               "on_writes_donor_prev": sum(r["written_prev_on"] == r["donor_prev"] for r in rows) / len(rows),
@@ -201,7 +210,7 @@ def main() -> None:
         s = summary["by_K"][K]
         print(f"K={K}: usable {len(u)}/{len(rows)}; edited run writes donor values {s['on_writes_donor_prev']:.0%}; "
               + " ".join(f"{k} {s[k]['mean']:+.2f} [{s[k]['lo']:.2f}, {s[k]['hi']:.2f}]" for k in ("total", "emission", "persistence_t0", "persistence_t1") if s[k]))
-    (out_dir / "written_summary.json").write_text(json.dumps(summary, indent=1))
+    (out_dir / f"written_summary{'_recut' if a.from_rows else ''}.json").write_text(json.dumps(summary, indent=1))
 
 
 if __name__ == "__main__":
