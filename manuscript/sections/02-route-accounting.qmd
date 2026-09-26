@@ -38,8 +38,7 @@ edit does with the text held fixed. We also report persistence with the original
 (Appendix @sec-app-sixcell gives the single-token form).
 
 **Paths within persistence.** The target can read the edited source itself (**direct
-retrieval**), or intermediate positions can read it and pass it on (an **indirect
-path**). We separate the two by clamping states. Let \(h^{0}\) and \(h^{1}\) be the
+retrieval**), or the hidden states of intermediate positions can read it and pass it on (an **indirect path**). We separate the two by clamping states. Let \(h^{0}\) and \(h^{1}\) be the
 per-layer states of the clean and the edited run, both with the text fixed, and write
 \(R[\,S\!\leftarrow\!a,\;G\!\leftarrow\!b\,]\) for the outcome when the source receives
 the states of run \(a\) and a group \(G\subseteq M\) those of run \(b\), at every layer,
@@ -72,19 +71,16 @@ about their content, and name the indirect path through each. The **stored copy*
 through the prompt positions right after the source line (in couplets, the token that
 ends line 1 and the chat template). The **late lookup** passes through the three
 positions just before the target; it is the late retrieval of @hanna2026latent read in
-two steps. **Relay** passes through the remaining positions of the generated text; it is
-the path monitoring is concerned with. Information is **looked up** when it arrives by
+two steps. **Relay** passes through the remaining positions of the generated text; it is the path monitoring is concerned with. Because the text is held fixed, every indirect path, relay included, passes information only in hidden states; information in the written words themselves is emission. Information is **looked up** when it arrives by
 direct retrieval, the stored copy or the late lookup. Where a group was not split
-further, we name it and call its effect the indirect path through it. These names and
-their colours (@fig-overview) are fixed throughout.
+further, we name it and call its effect the indirect path through it. 
 
 ## Positive control: induction {#sec-control}
 
 A decomposition that never reports an indirect path could be blind to one. In a
 repeated sequence \(\ldots A\,B\ldots A\), a previous-token head writes "preceded by
 \(A\)" into the position of \(B\), and an induction head at the second \(A\) finds that
-position and copies \(B\) [@olsson2022induction]. Information about the first \(A\)
-therefore reaches the prediction through an intermediate position. We edit the first
+position and copies \(B\) [@olsson2022induction]. Information about the first \(A\) therefore reaches the prediction through the hidden state of an intermediate position, while the token \(B\) itself is unchanged. We edit the first
 \(A\) in 100 random sequences and measure \(\log p(B)\) at the second \(A\). The
 committed criterion (an indirect path above 80% of persistence, direct retrieval near
 zero) holds cleanly in Qwen3 1.7B to 14B (indirect path 108 to 137%, the excess an

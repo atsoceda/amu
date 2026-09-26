@@ -56,10 +56,7 @@ the late lookup, and it falls between "stop" and "go": how much of it is relay r
 unresolved. The committed window prediction is only partly supported: the largest step is where line
 1 leaves the window, but the shift begins at 500 tokens. Models without a strong stored
 copy (Gemma 3 12B, and Qwen3.5-9B and Qwen3-14B, whose attention has no window) lose the
-plan instead, and in none of them does an indirect path take over. That the global
-layers read the line's final token rather than the equally distant rhyme word fits the
-view of separators as summaries of their segment [@chen2024sepllm; @wang2023labelwords;
-@xiao2024sinks].
+plan instead, and in none of them does an indirect path take over. 
 
 ## Hidden content {#sec-hidden}
 

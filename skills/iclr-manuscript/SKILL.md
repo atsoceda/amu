@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.6"
+  version: "1.7"
   updated: "2026-09-26"
 ---
 
@@ -84,6 +84,11 @@ things and the paper needed "early relay" and glosses of "carry"):
   (for example "emission, retrieval, relay" in the abstract and "emission, direct
   retrieval, indirect paths" in the contributions) made the user ask whether relay and
   indirect path are the same thing.
+- Say that relay and every indirect path are **hidden-state** paths wherever they are
+  first defined (abstract, introduction, method): "passed forward in the hidden states of
+  the generated text, without being written". "Along the text" or "through an
+  intermediate token" reads as "via the written tokens", which is emission, the opposite
+  (user question, 2026-09-26).
 - Do not put a share above 100% in the abstract or introduction; write "at least X%".
   Where a table or section reports one, say why (the other paths or the interaction are
   negative).
