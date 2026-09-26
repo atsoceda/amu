@@ -158,8 +158,14 @@ def main() -> None:
     summary, t0 = {"model": a.model, "by_K": {}}, time.time()
     for K in map(int, a.ks.split(",")):
         items = make_items(K)[: a.limit or None]
-        rows = []
+        tag = "_block" if a.block_only else ""
+        from checkpoint import Checkpoint  # resume support (couplet_routes/checkpoint.py)
+        ikey = lambda r: f"{r['v0']}-{r['dv0']}-{'-'.join(map(str, r['inc']))}"  # noqa: E731
+        ck = Checkpoint(out_dir / f"chain_K{K}_rows{tag}.json", ikey)
+        rows = ck.rows
         for it in items:
+            if ck.has(ikey(it)):
+                continue
             ids, toks, ends, v0d = prompt(tok, it["v0"], it["inc"], gemma)
             dids, _, dends, dv0d = prompt(tok, it["dv0"], it["inc"], gemma)
             assert ids.shape == dids.shape and ends == dends and v0d == dv0d
@@ -174,13 +180,13 @@ def main() -> None:
                    "scan": {}, "v0_edit": dR(run(ids, {p: [s[p] for s in dst] for p in v0d})[0]), "by_end": [],
                    "post_v0_block": dR(run(ids, {p: [s[p] for s in dst] for p in block})[0])}
             if a.block_only:
-                rows.append(rec)
+                ck.add(rec)
                 print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} "
                       f"post-v0 block {rec['post_v0_block']:+.2f}", flush=True)
                 continue
             if a.batch > 1:
                 batched_scan_and_ends(rec, ids, v0d, ends, target, dst, s0, dR, m, layers, a.batch)
-                rows.append(rec)
+                ck.add(rec)
                 print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} "
                       f"block {rec['post_v0_block']:+.2f} (batched)", flush=True)
                 continue
@@ -195,12 +201,13 @@ def main() -> None:
                      "relay": dR(run(ids, {q: [s[q] for s in s_on] for q in after})[0]),
                      "chain_relay": dR(run(ids, {q: [s[q] for s in s_on] for q in later})[0]) if later else 0.0}
                 rec["by_end"].append(d)
-            rows.append(rec)
+            ck.add(rec)
             print(f"K={K} {len(rows):3d} [{time.time()-t0:5.0f}s] ok={rec['correct']} v0-edit {rec['v0_edit']:+.1f} | "
                   + " ".join(f"s{d['j']}: pers {d['persistence']:+.2f} ret {d['retrieval']:+.2f} rel {d['relay']:+.2f} chain {d['chain_relay']:+.2f}"
                              for d in rec["by_end"]), flush=True)
         tag = "_block" if a.block_only else ""
         (out_dir / f"chain_K{K}_rows{tag}.json").write_text(json.dumps(rows, indent=1))
+        (out_dir / f"chain_K{K}_rows{tag}.partial.jsonl").unlink(missing_ok=True)
         if a.block_only:
             summary["by_K"][K] = {"n": len(rows), "accuracy": sum(r["correct"] for r in rows) / len(rows),
                                   "v0_edit": boot([r["v0_edit"] for r in rows]),

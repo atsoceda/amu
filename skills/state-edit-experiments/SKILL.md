@@ -35,6 +35,10 @@ rules: `docs/research-record.md`.
 3. **Controls:** a same-rhyme / same-choice null (disruption vs content) and, for
    any relay claim, the induction positive control (`experiments/relay_positive_control`).
 4. Record results in the README the same hour, commit and push.
+5. **Checkpoint any script that can run longer than a few minutes** with
+   `experiments/couplet_routes/checkpoint.py` (append each finished row; skip finished
+   rows on restart). A stopped unchekpointed job loses everything (a 19-minute 32B chain
+   run was lost this way on 2026-09-26). Test resume with `jobs/test_resume.sh`.
 
 ## Models and positions (`experiments/couplet_routes/models.py`)
 
