@@ -154,8 +154,9 @@ checkpoints as checks. We also study Qwen3.5 4B, 9B and 27B, hybrids in which th
 every four layers are Gated DeltaNet recurrent layers [@qwen2026qwen35;
 @yang2025gateddeltanet]. Qwen3 runs with thinking disabled. Models run in bfloat16.
 Where effects are small, the output projection is recomputed in float32, because
-bfloat16 logits resolve only about 0.125 nats. Every experiment has a design, a
-decision rule and predictions written and committed before its first result. Later
-additions are dated and labelled post hoc (Appendix @sec-app-prereg). Nulls are
+bfloat16 logits resolve only about 0.125 nats. After the initial couplet split, the
+design, decision rule and predictions of every experiment and extension were committed
+before its first result. Later additions are dated and labelled post hoc (Appendix
+@sec-app-prereg). Nulls are
 reported with the same prominence as effects. Model identifiers, prompts, item
 construction and per-run tables are in Appendix @sec-app-materials.

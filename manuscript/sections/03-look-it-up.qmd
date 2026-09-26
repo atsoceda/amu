@@ -23,8 +23,8 @@ donor even when the line-2 words are held fixed.
 
 **Routes.** @fig-couplets decomposes persistence in all 21 runs. Direct retrieval of
 the rhyme word is the dominant path: 76 to 95% of persistence in every Qwen3
-configuration (1.7B to 32B, chat and plain, instruct and base), and 85 to 95% in
-Gemma 3 from 1B to 12B. The late lookup through the three positions before the
+configuration (1.7B to 32B, chat and plain, instruct and base), and 80 to 95% in
+Gemma 3 from 1B to 12B (including the 12B base model). The late lookup through the three positions before the
 target carries 1 to 13%. Relay along the rest of the generated line, the carrying
 that a text monitor could miss, is at most 1% of persistence in every run. Gemma 3
 27B is the exception to retrieval dominance. There, direct retrieval falls to 68%
@@ -66,18 +66,18 @@ the choice of source position, or the edit type.
   different-rhyme donors in Qwen3 1.7B to 8B, and \(+1.6\) against \(+41.2\) in
   Gemma 3 12B. The next-word distribution still changes substantially, so the
   measure tracks rhyme identity, not generic disruption.
-- *Anchor specificity.* Donor states at the rhyme word move the rhyme two to three
-  and a half times more than donor states at any other single position of line 1
-  (the first word, a middle word, the punctuation, the end of the turn). Rhyme
-  information at those positions is still partly retrieved, at 20 to 50% of the
-  anchor's effect. Retrieval is weighted toward the rhyme word rather than
+- *Anchor specificity.* Donor states at the rhyme word move the rhyme about two to
+  three times more than donor states at any other single position of line 1 (the
+  first word, a middle word, the punctuation, the end of the turn). Rhyme
+  information at those positions is still partly retrieved, at a fifth to a half of
+  the anchor's effect. Retrieval is weighted toward the rhyme word rather than
   confined to it.
 - *Published feature steering.* We reselect the rhyme features of
   @hanna2026latent with their rule. The mean is 19.1 features per couplet against
   their 19.2, with an exact per-couplet count match on 67 of 100 couplets at 4B. We
   then steer with their protocol instead of editing the state. Direct retrieval
-  carries 93%, 88% and 84% of persistence at 4B, 8B and 14B, and relay 6%, 9% and
-  14%. The state edit gives the same split (92/8, 90/11 and 82/13), so its strength
+  carries 90%, 88% and 84% of persistence at 4B, 8B and 14B, and relay 8%, 9% and
+  14%. The state edit gives the same split (91/10, 90/11 and 82/12), so its strength
   does not drive the result.
 
 The Qwen3.5 hybrids show the same route structure (direct retrieval 84 to 88% of
