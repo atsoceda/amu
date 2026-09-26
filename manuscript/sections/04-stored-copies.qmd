@@ -28,9 +28,11 @@ The storage site is therefore not a fixed token type. It is the last token of th
 line, whatever that token is. This is the position at which @lindsey2025biology
 observed Claude's rhyme plan being formed.
 
-![Where stored copies sit. Values are interventional necessity: the loss of the
-effect when one token alone is reset to its clean state, with the source edited, as a
-share of the total over the tokens examined. **A:** rhyme plan. Top, an annotated
+![Where stored copies sit. Every value is a token's *share of necessity*: its
+interventional necessity (the loss of the effect when that token alone is reset to its
+clean state, with the source edited) divided by the summed positive necessity of all
+tokens examined, so the shares of a row add up to 100%. Cell shading and printed
+percentages show the same quantity. **A:** rhyme plan. Top, an annotated
 example (Qwen3-32B, chat prompt): of all tokens between the rhyme word and line 2,
 only the comma that ends line 1 matters. Below, for every model with a per-token
 analysis, the share on the line's final token (the comma before the chat template, or

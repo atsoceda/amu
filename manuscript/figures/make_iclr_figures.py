@@ -28,7 +28,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 from matplotlib.colors import LinearSegmentedColormap  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
-from matplotlib.patches import FancyBboxPatch, Rectangle  # noqa: E402
+from matplotlib.patches import ArrowStyle, FancyArrowPatch, FancyBboxPatch, Rectangle  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "manuscript" / "figures"
@@ -168,15 +168,26 @@ def dot(ax, x, v, color, marker="o", filled=True, s=14, lw=0.7, z=4, horizontal=
 # --------------------------------------------------------------------------- Figure 1
 
 def bez(ax, x0, y0, x1, y1, h, share_, col, ls="-", arrow=True):
-    """Quadratic arc from (x0, y0) to (x1, y1) peaking near height h; width from the path share."""
-    t = np.linspace(0, 1, 80)
+    """Quadratic arc from (x0, y0) to (x1, y1) peaking near height h; width from the path share.
+
+    The arrowhead is a filled triangle along the arc's final direction, sized to the line width
+    (so a thick line cannot hide it); the line stops at the head's base.
+    """
+    t = np.linspace(0, 1, 400)
     xm, c = (x0 + x1) / 2, 2 * h - (y0 + y1) / 2
     xs = (1 - t) ** 2 * x0 + 2 * t * (1 - t) * xm + t ** 2 * x1
     ys = (1 - t) ** 2 * y0 + 2 * t * (1 - t) * c + t ** 2 * y1
     lw = 0.7 + 6.0 * max(share_, 0.0)
-    ax.plot(xs, ys, color=col, lw=lw, ls=ls, solid_capstyle="butt", alpha=0.95)
+    k = len(xs) - 1
     if arrow:
-        ax.plot([x1], [y1 + 0.05], marker="v", ms=2.6 + 0.3 * lw, color=col, mec="none")
+        hl, hw = 3.4 + 0.6 * lw, 1.9 + 0.5 * lw  # head length and half-width, in points
+        px = ax.transData.transform(np.c_[xs, ys])
+        dist = np.hypot(*(px - px[-1]).T) * 72.0 / ax.figure.dpi
+        k = int(np.nonzero(dist >= hl)[0][-1])
+        ax.add_patch(FancyArrowPatch((xs[k], ys[k]), (x1, y1), arrowstyle=ArrowStyle("-|>", head_length=hl,
+                                     head_width=hw), mutation_scale=1, color=col, lw=0, shrinkA=0, shrinkB=0,
+                                     zorder=3))
+    ax.plot(xs[:k + 1], ys[:k + 1], color=col, lw=lw, ls=ls, solid_capstyle="butt", alpha=0.95)
 
 
 def fig1_schematic(axA):
@@ -210,22 +221,25 @@ def fig1_schematic(axA):
              color="#666666")
     y0 = 0.68
     # Source retrieval and the stored copy at the line's final token.
-    bez(axA, cx["night"], y0, cx["the"], y0, 2.2, s["retrieval"], COL["retrieval"])
+    # The four paths arrive at separate points across the top of the target box.
+    tx0, tw = box["the"]
+    arrive = {"relay": tx0 + 0.04, "storage": tx0 + 0.18, "retrieval": tx0 + 0.37, "late": tx0 + tw - 0.05}
+    bez(axA, cx["night"], y0, arrive["retrieval"], y0, 2.2, s["retrieval"], COL["retrieval"])
     bez(axA, cx["night"] + 0.12, y0, cx[","], y0, 0.98, s["boundary"], COL["storage"])
-    bez(axA, cx[","], y0, cx["the"] - 0.08, y0, 1.72, s["boundary"], COL["storage"])
+    bez(axA, cx[","], y0, arrive["storage"], y0, 1.72, s["boundary"], COL["storage"])
     # Late lookup: into a bracket over the last three line-2 positions, then a short arc to the target.
     bx0, bx1 = box["guide"][0] + 0.02, box["through"][0] + box["through"][1] - 0.02
     by = 1.02
     axA.plot([bx0, bx0, bx1, bx1], [by - 0.12, by, by, by - 0.12], color=COL["late"], lw=0.9)
     bm = (bx0 + bx1) / 2
     bez(axA, cx["night"] - 0.12, y0, bm - 0.2, by + 0.02, 1.42, s["late"], COL["late"])
-    bez(axA, bx1 - 0.1, by + 0.02, cx["the"] + 0.1, y0, 1.22, s["late"], COL["late"], arrow=True)
+    bez(axA, bx1 - 0.1, by + 0.02, arrive["late"], y0, 1.22, s["late"], COL["late"], arrow=True)
     # Relay: a chain of small arcs from the rhyme word through line 2 to the target.
     chain = ["night", "And", "stars", "will", "guide", "me", "through", "the"]
     for a, b in zip(chain[:-1], chain[1:]):
         h = 0.86 if a == "night" else 0.8
-        bez(axA, cx[a] + (0.18 if a == "night" else 0.0), y0, cx[b], y0, h, max(s["early"], 0.0),
-            COL["relay"], ls=(0, (1.6, 1.0)), arrow=(b == "the"))
+        bez(axA, cx[a] + (0.18 if a == "night" else 0.0), y0, arrive["relay"] if b == "the" else cx[b], y0, h,
+            max(s["early"], 0.0), COL["relay"], ls=(0, (1.6, 1.0)), arrow=(b == "the"))
     rows = [(COL["retrieval"], "-", "direct retrieval from the rhyme word", f"{100 * s['retrieval']:.0f}%"),
             (COL["storage"], "-", "stored copy at the line's final token",
              f"{100 * s['boundary']:.0f}% (nec. {100 * s['nec_boundary']:.0f}%)"),
@@ -708,7 +722,7 @@ def storage_figure(main, name):
     ax.add_patch(Rectangle((cb_x, 4.0), cb_w, cb_h, fc="none", ec="#AAAAAA", lw=0.3))
     for v in (0, 50, 100):
         ax.text(cb_x + cb_w * v / 100, 4.0 + cb_h + 1.0, f"{v}%", fontsize=7, ha="center", va="top", color="#444444")
-    ax.text(cb_x - 4, 4.0 + cb_h / 2, "share of the row's total positive necessity", fontsize=7, ha="right",
+    ax.text(cb_x - 4, 4.0 + cb_h / 2, "share of necessity (each row sums to 100%)", fontsize=7, ha="right",
             va="center", color="#444444")
     if main:
         ax.text(1, 4.0 + cb_h / 2, "grey: consecutive tokens under 3%, joined", fontsize=7, ha="left",
@@ -728,15 +742,6 @@ def line_end_index(toks):
     return 0
 
 
-def colourbar_pts(ax, x, y, w=80.0, h=5.0, label="share of the row's total positive necessity"):
-    for i in range(60):
-        ax.add_patch(Rectangle((x + i * w / 60, y), w / 60 + 0.1, h, fc=CMAP3(i / 59), ec="none"))
-    ax.add_patch(Rectangle((x, y), w, h, fc="none", ec="#AAAAAA", lw=0.3))
-    for v in (0, 50, 100):
-        ax.text(x + w * v / 100, y + h + 1.0, f"{v}%", fontsize=7, ha="center", va="top", color="#444444")
-    ax.text(x - 4, y + h / 2, label, fontsize=7, ha="right", va="center", color="#444444")
-
-
 def fig3():
     storage_figure(False, "iclr_figA_storage_all.png")
     Hpt = 318.0
@@ -751,7 +756,6 @@ def fig3():
     def axes_pts(x0, y0, w, h):  # rectangle in points from the top-left -> figure axes
         return fig.add_axes([x0 / Wpt, 1 - (y0 + h) / Hpt, w / Wpt, h / Hpt])
 
-    colourbar_pts(bg, Wpt - 86, 17.0, label="cell shading: share of the total")
     bg.text(0, 1, "A   Rhyme plan: the copy sits almost entirely on line 1's final token", fontsize=8, weight="bold",
             va="top")
     # One annotated example: Qwen3-32B, chat prompt.
@@ -767,7 +771,7 @@ def fig3():
         y += 10
         bg.text(8, y, "line 2: \u201cThe moon whispers through the dark it keeps.\u201d", fontsize=7, color="#444444", va="top")
         y += 12
-        bg.text(0, y, "Tokens between the rhyme word and line 2 (shares averaged over 100 couplets):", fontsize=7,
+        bg.text(0, y, "Tokens between the rhyme word and line 2, shaded by share of necessity (mean over 100 couplets):", fontsize=7,
                 style="italic", color="#444444", va="top")
         y += 16
         cells = [("weeps", "src", None)] + [(pretty(t), "end" if i == k else "tpl", sh[i])
@@ -832,7 +836,7 @@ def fig3():
         ax.tick_params(axis="y", length=0)
         ax.grid(axis="x", color="#EEEEEE", lw=0.5)
         ax.set_axisbelow(True)
-        ax.set_xlabel("share of the boundary tokens' total positive necessity (%)")
+        ax.set_xlabel("share of necessity among the tokens between line 1 and line 2 (%)")
         hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["storage"], mec=COL["storage"]),
               Line2D([], [], ls="none", marker="o", ms=4, mfc="white", mec=COL["grey"])]
         ax.legend(hs, ["line 1's final token", "largest other boundary token"], loc="lower right",
@@ -855,8 +859,8 @@ def fig3():
         lab, sm = shown
         nb = sm["necessity_by_token"]
         sh, _ = pos_share([x["mean"] for x in nb])
-        bg.text(0, y, f"{lab}, fruits: the instruction after the list (highlight: share of the pick-specific "
-                "storage)", fontsize=7, style="italic", color="#444444", va="top")
+        bg.text(0, y, f"{lab}, fruits: the instruction after the list, shaded by share of necessity "
+                "(pick-specific part)", fontsize=7, style="italic", color="#444444", va="top")
         y += 12
         fs, lh = 8.0, 21.0
         x = 1.0
@@ -921,7 +925,7 @@ def fig3():
         ax.set_xticks([0, 25, 50, 75, 100])
         ax.tick_params(axis="y", length=0)
         ax.spines["left"].set_visible(False)
-        ax.set_xlabel("share of the pick-specific storage (% of the row's total positive necessity)")
+        ax.set_xlabel("share of necessity among the tokens between the list and the reveal (%)")
         ax.legend(loc="lower left", bbox_to_anchor=(0.0, 1.0), ncol=3, handlelength=1.0, columnspacing=0.9,
                   borderaxespad=0.1)
         y += hB + 26
