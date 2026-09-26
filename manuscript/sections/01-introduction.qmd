@@ -88,9 +88,11 @@ result (@sec-stress):
   line rises only to about 12%, the largest value we observe. A 12B model, which
   stores no such copy, loses the plan instead of relaying it.
 - **Hidden content.** A choice that a reader cannot infer from the text is the case
-  monitoring cares about most. Models store part of a secret pick at a predictable,
-  low-content token of the instruction. In Gemma 3 27B, most of the stored pick sits
-  on the word *the* in "about the weather". The pick is read directly at the reveal.
+  monitoring cares about most. Models store part of a secret pick at a few
+  predictable, low-content tokens of the prompt: the punctuation that closes the list
+  or the instruction and, in larger models, a function word. In Gemma 3 27B, most of
+  the stored pick sits on the word *the* in "about the weather". The pick is read
+  directly at the reveal.
   At most 2% of it is relayed through the intervening sentence, and none of it is
   written into the sentence.
 

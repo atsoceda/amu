@@ -88,7 +88,7 @@ Distance & go if generated-text relay $\geq$ 25\%, stop if < 10\%, else extend &
 Hidden choice & re-derived (list large, post-list and sentence small) vs stored or relayed & mostly re-derived; small stored part; relay zero\\
 Out-of-list control & post-list edit raises the absent donor pick & holds in every model\\
 Animal replication & pick specificity positive, growing in Gemma 3, near zero in Qwen3 at 14--32B & Gemma 3 partly (4B > 12B); Qwen3 small (3\%, 7\%)\\
-Localization robustness & storage concentrates on one or two function words and moves with the wording & supported at 12B (two domains; reworded: list-final period 71\%, token before ``weather'' 27\%); 27B \pending{}\\
+Localization robustness & storage concentrates on one or two function words and moves with the wording & supported at 12B (two domains; reworded: list-final period 71\%, token before ``weather'' 27\%); at 4B the site is the segment-closing periods (91\%); 27B \pending{}\\
 Window curve & the change in boundary reliance occurs between 1,000 and 1,500 tokens & \pending{}\\
 Same-pick null & post-list edit with a same-pick donor leaves pick preference unchanged & \pending{}\\
 Architecture generalization & early relay under 5\%; induction retrieval under 5\%; hidden relay near zero; family-like storage & Qwen3.5-27B storage 3--4\% (as predicted); rest \pending{}\\

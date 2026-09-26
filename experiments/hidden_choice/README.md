@@ -325,3 +325,14 @@ pick-specific hidden choice at 4B in both domains (12B: 15% / 18%; 27B: 31% / 40
 
 Same-pick null, addition (2026-09-26, before any null result): Gemma 3 12B added to the
 frozen same-pick null (same design), queued to use idle memory.
+
+### Localization (added): Gemma 3 - 4B - hidden choice - localization (fruits; 2026-09-26)
+
+Post-list pick specificity +1.35 [1.06, 1.63] (text swap +7.22, 19%). By token: **the period
+ending the instruction ("...the fruit you chose.") +0.78 [0.65, 0.91]** (58%), **the period
+right after the list +0.44 [0.23, 0.64]** (33%), "the" in "about the weather" +0.10 [0.06,
+0.14], "fruit" +0.10; all other tokens at most 0.03. At 4B the stored pick sits on the
+segment-closing periods; the function-word site ("the") takes over at 12B-27B. Combined
+reading of the localization checks so far: the stored pick always concentrates on two or three
+low-content tokens, segment-closing punctuation plus (from 12B) a function word that moves with
+the wording; the single-token "the" register is size- and wording-specific.

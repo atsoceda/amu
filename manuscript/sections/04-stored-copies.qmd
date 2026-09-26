@@ -28,10 +28,11 @@ of the effect when that token alone is reset to its clean state (necessity), wit
 source edited. **A:** rhyme plan, tokens between the rhyme word and line 2. The copy
 sits on the line's final token: the comma before the chat template, or the newline
 in the plain prompt. **B:** hidden choice (@sec-hidden), tokens between the list and
-the reveal, for the pick-specific part of the stored choice. It sits mostly on
-*the* in "about the weather", in both models and in both domains (Gemma 3 12B,
-animals: 73%). With a reworded instruction (bottom row), it moves to the period that
-ends the list and to the token before "weather".](manuscript/figures/iclr_fig3_storage_sites.png){#fig-sites width=100%}
+the reveal, for the pick-specific part of the stored choice. At 12B and 27B it sits
+mostly on *the* in "about the weather", in both domains (Gemma 3 12B, animals: 73%).
+At 4B it sits on the periods that close the list and the instruction. With a
+reworded instruction (bottom row), it moves to the period that closes the list and to
+the token before "weather".](manuscript/figures/iclr_fig3_storage_sites.png){#fig-sites width=100%}
 
 **It emerges with scale and comes from pretraining.** @tbl-storage gives the copy's
 share of persistence by both measures (bottom row of @fig-couplets).
