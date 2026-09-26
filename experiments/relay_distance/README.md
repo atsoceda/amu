@@ -207,3 +207,21 @@ Against the frozen reading: the 12B plan does not survive inside the window and 
 it; it fades gradually and is already mostly gone at 500 tokens (well inside the 1,024-token
 window). So at 12B the loss reflects distance (the filler) itself, not the local window. Relay
 never compensates: absolute relay stays at +0.8 to +2.3 and generated-text relay at or below +0.9.
+
+### Gemma 3 - 27B - relay distance - window curve (18 couplets at 500/1000/1500; 2026-09-26)
+
+| D | 0 (50) | 500 | 1000 | 1500 | 2000 (50) |
+|---|---|---|---|---|---|
+| line 2 rhymes | 98% | 100% | 83% | 78% | 82% |
+| persistence | +42.4 | +38.8 | +31.6 | +24.7 | +26.4 |
+| direct retrieval (% of persistence) | 66% | 64% | 54% | 40% | 40% |
+| stored copy, necessity | 11% | 25% | 30% | 45% | 49% |
+| stored copy, sufficiency | 0% | 13% | 30% | 38% | 37% |
+| generated text (cue + line 2, incl. last 3 positions), sufficiency | 1% | 11% | 9% | 13% | 12% |
+
+Against the frozen prediction (change specifically between 1000 and 1500, not gradual): partly
+supported. The largest step is between 1000 and 1500 (retrieval 54 -> 40%, stored-copy
+necessity 30 -> 45%), but the shift toward the stored copy has already begun at 500 tokens,
+inside the window. Relay through the generated text is 9-13% at every nonzero distance, not
+rising with distance; the measured block includes the last three positions (late lookup), so it
+is not isolated early relay (a split was not run before the deadline).
