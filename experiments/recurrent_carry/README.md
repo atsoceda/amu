@@ -74,3 +74,6 @@ layers by direct retrieval; the recurrent memory carries 2-4% at 4B, 9B and 27B 
 not take over when attention is denied the edit. "Retrieved, not relayed" extends to a
 recurrent hybrid architecture. The open form of H1 is distance (attention that cannot
 reach the source, e.g. Gemma 3's 1,024-token local layers).
+
+Deadline plan (2026-09-26): Qwen3.5 - 27B - recurrent carry - pilot at 100 couplets and the
+Qwen3.5 - 35B-A3B pilot were dropped (not run). The decision rests on the 24-couplet 27B pilot.

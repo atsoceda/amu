@@ -238,3 +238,7 @@ Qwen3 - 14B - derived value - written chains, re-scored with the fixed parser (M
 +9.98, 88%; K = 5: 103/103, emission +8.00 of +9.62, 83%), as expected: 14B does not use
 bold markup. Qwen3-8B re-scored: K = 3 108/108 usable (was 75), emission +12.62 of +13.46
 (94%); K = 5 103/103 (was 17), +12.15 of +13.15 (92%).
+
+Deadline plan (2026-09-26): Qwen3 - 32B - derived value - variable chains (resume) and the 32B
+written-chain re-score at K = 5 were dropped (not run). The variable-chain results cover 1.7B to
+14B; written chains at 32B cover K = 3 only.

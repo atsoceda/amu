@@ -183,3 +183,8 @@ that the plan survives while line 1 is within the 1,024-token window (D = 500, 1
 and persistence near the D = 0 values) and is lost once it is not (D = 1500: rhyming near 0).
 A gradual decline instead would mean the loss reflects distance itself, not the window.
 Outputs `pilot_v2x_window_*` in `results/gemma-3-12b-it/`.
+
+**Deviation (2026-09-26, 10:30 CEST, before any 27B window result), deadline:** Gemma 3 - 27B -
+relay distance - window curve runs the first 18 couplets at D = 1000 and 1500 only (the two
+distances that bracket the 1,024-token window), instead of 24 couplets at 500, 1000 and 1500.
+D = 0 and 2000 come from the 50-couplet extension. Same cells and outputs (`pilot_v2x_window_*`).

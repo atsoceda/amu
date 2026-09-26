@@ -351,3 +351,8 @@ is a copy of the list.
 Localization additions (2026-09-26, before any result): Gemma 3 4B with the reworded
 instruction and with animals, to complete the size x condition grid (4B / 12B / 27B x base
 fruits / animals / reworded). Same design; queued to use idle memory.
+
+Deadline plan (2026-09-26, 10:30 CEST, before the affected results): kept Gemma 3 - 27B
+localization with the reworded instruction (frozen check 3) and the Gemma 3 - 27B same-pick
+null; dropped Gemma 3 - 27B localization with animals and the Qwen3 - 32B same-pick null (not
+run). Checks 1 and 3 are answered at 12B (and 4B) instead; 27B contributes check 3 only.

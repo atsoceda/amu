@@ -64,3 +64,20 @@ p(B) clean 0.984; persistence -4.34 [-4.55, -4.12]; **direct retrieval -0.72 [-0
 (17%)**; relay -2.41 (55%); key position alone -3.35 (77%). Prediction ("direct retrieval under
 5%, relay large"): relay is the main path, but direct retrieval (17%) exceeds 5%: a partial
 pass, like Qwen3-32B (31%). The largest models also read the first A directly.
+
+### Gemma 4 - 31B - hidden choice - out-of-list control (fruits; 100 pairs; 2026-09-26)
+
+Text swap: donor pick +34.90, donor's other fruits +31.31 (pick specificity +3.59). Post-list
+block: donor pick +9.19 [8.88, 9.50], other donor fruits +6.26, **pick specificity +2.93 [2.56,
+3.30]** (82% of the text swap's; Gemma 3 27B 31%, Qwen3.5-27B 3%). Prediction (family-like:
+Gemma 4 like Gemma 3, clearly positive) holds; the stored hidden pick is the largest of any
+model.
+
+## Deadline plan (2026-09-26, 10:30 CEST; user: all results by 19:30 JST = 12:30 CEST)
+
+Only one job of 60 GB or more fits the memory budget at a time, so the queue was cut before any
+of the affected results. Kept: Gemma 4 - 31B hidden choice animal replication (running) and
+induction control; Qwen3.5 - 9B hidden choice forced route split and induction (small, run
+alongside). Dropped (moved to `~/amu_jobs/queue.later.txt`, not run): Gemma 4 - 31B hidden
+choice forced route split (about 90 min at this model's speed), and the whole Qwen3.5 - 35B-A3B
+core suite. The trimmed-suite predictions for these remain untested.
