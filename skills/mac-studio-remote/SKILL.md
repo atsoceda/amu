@@ -138,6 +138,10 @@ come back. Details, measured facts and troubleshooting are in
   `experiments/recurrent_carry/yield_to_27b.sh`). Long scripts checkpoint finished rows
   (`experiments/couplet_routes/checkpoint.py`: `<final>.partial.jsonl`, resumed on
   restart); scripts without it lose all progress when killed, so pause them instead.
+- **Backfill competes for the GPU.** Freeing memory for a priority job lets the runner
+  start other small queued jobs in that space, which then slow the priority job. For a
+  time-critical run, keep the queue short or hold other jobs out of `queue.txt` until it
+  starts. Never edit `runner.sh` while it runs (bash reads scripts incrementally).
 - **Correct a running job's declared memory** by editing
   `~/amu_jobs/running/<name>.mem` when the first guess was too high; the runner re-reads
   it every cycle.
