@@ -173,3 +173,9 @@ The positions after the list mostly hold a copy of the list; a small hidden,
 pick-specific part is stored at 8B and Gemma 12B (about 10-15% of the text swap's) and
 none at Qwen3-14B. So far there is no sign that stored hidden choices grow with scale;
 32B and Gemma 27B pending.
+
+Out-of-list control, larger models: Qwen3-32B pick +0.20, others +0.16, **pick
+specificity +0.04 [0.01, 0.06]** (text swap +1.8); Gemma 3 27B: see
+`results/gemma-3-27b-it/choice_outlist_summary.json`. In Qwen3 the stored hidden
+pick shrinks with scale (8B +0.55, 14B 0, 32B +0.04): larger models re-derive the pick
+at the reveal.
