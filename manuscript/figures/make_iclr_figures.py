@@ -244,7 +244,7 @@ def fig1_schematic(axA):
             (COL["storage"], "-", "stored copy at the line's final token",
              f"{100 * s['boundary']:.0f}% (nec. {100 * s['nec_boundary']:.0f}%)"),
             (COL["late"], "-", "late lookup via the last three positions", f"{100 * s['late']:.0f}%"),
-            (COL["relay"], (0, (1.6, 1.0)), "relay along line 2", f"{100 * s['early']:.0f}%")]
+            (COL["relay"], (0, (1.6, 1.0)), "relay via the hidden states of line 2", f"{100 * s['early']:.0f}%")]
     for i, (c, ls, lab, num) in enumerate(rows):
         yy = 4.0 - 0.42 * i
         axA.plot([3.75, 4.2], [yy, yy], color=c, lw=2.0, ls=ls)
@@ -461,7 +461,7 @@ def fig2():
     parts = [("retrieval", "direct retrieval", COL["retrieval"]),
              ("boundary", "stored copy at the line's final token", COL["storage"]),
              ("late", "late lookup (last 3 positions)", COL["late"]),
-             ("early", "relay along line 2", COL["relay"])]
+             ("early", "relay via line 2's hidden states", COL["relay"])]
     lx = np.log10
     xt = [1, 2, 4, 8, 16, 32]
     series = []

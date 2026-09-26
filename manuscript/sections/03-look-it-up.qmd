@@ -16,8 +16,7 @@ account for 13 to 25% of the total effect; the rest is persistence.
 **Direct retrieval dominates, and relay is at most 1%.** @fig-couplets decomposes
 persistence in all 21 runs. Direct retrieval of the rhyme word accounts for 76 to 95% of
 persistence in every Qwen3 configuration (1.7B to 32B, chat and plain, instruct and base)
-and 80 to 95% in Gemma 3 1B to 12B. The late lookup accounts for 1 to 13%. Relay along the
-rest of the generated line is at most 1% of persistence in every run, by sufficiency in
+and 80 to 95% in Gemma 3 1B to 12B. The late lookup accounts for 1 to 13%. Relay through the rest of the generated line is at most 1% of persistence in every run, by sufficiency in
 all 21 and by necessity in the 17 where it was measured. Before running the larger
 models we committed two criteria for the claim that relay grows with scale: the indirect
 share must rise with log parameter count across Qwen3 1.7B to 32B, and the rise must come
@@ -33,8 +32,7 @@ same split as the state edit (direct retrieval 90, 88 and 84% at 4B, 8B and 14B,
 instruction-tuned checkpoints; Appendix @tbl-storage adds the base checkpoints).
 **Top:** composition of persistence from the sufficiency cells: direct retrieval of the
 rhyme word (blue), the stored copy at the line's final token (green), the late lookup
-through the three positions before the target (light blue), relay along the rest of
-line 2 (purple; at most 1%, so barely visible) and interaction (grey), one bar per model.
+through the three positions before the target (light blue), relay through the rest of line 2 (purple; at most 1%, so barely visible) and interaction (grey), one bar per model.
 **Bottom:** the stored copy's share of persistence against model size (log scale), by
 sufficiency (filled) and necessity (hollow). It is absent up to 8B and present from 14B
 in Qwen3 and at 12B to 27B in Gemma 3.](manuscript/figures/iclr_fig2_couplet_routes.png){#fig-couplets width=100% fig-pos="t"}
@@ -84,13 +82,10 @@ monitor, one more place to read, not a path through the model's output.
 
 ## Computed values {#sec-computed}
 
-Computed information is not present at any single token, which is where relay would seem
-most useful (Appendix @sec-app-computed). In two-digit sums (Qwen3 1.7B to 32B, 104
+Computed information is not present at any single token, which is where an indirect path would seem most useful (Appendix @sec-app-computed). In two-digit sums (Qwen3 1.7B to 32B, 104
 items, a filler of 0 to 32 tokens before the answer), donor states at every position from
 the question mark to the answer move the answer by at most 6.4% of the effect of donor
-operand digits. Variable chains (`a = 23`, `b = a + 4`, ..., `What is e?`) make
-recomputation at the answer costly and relay the natural path, so we designed them as a
-second positive-control candidate for relay. They are not one. Donor states at every
+operand digits. Variable chains (`a = 23`, `b = a + 4`, ..., `What is e?`) make recomputation at the answer costly and an indirect path, passing the running value from statement to statement, the natural one, so we designed them as a second positive-control candidate for an indirect path. They are not one. Donor states at every
 position after the starting value together, a test that would detect a running value
 stored redundantly, move the answer by at most 4.9% of the effect of editing the starting
 value (32B, one update), and their interval includes zero at every size with five

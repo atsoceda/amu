@@ -10,7 +10,7 @@ compatibility: >-
   Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
   with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.7"
+  version: "1.8"
   updated: "2026-09-26"
 ---
 
@@ -89,6 +89,11 @@ things and the paper needed "early relay" and glosses of "carry"):
   the generated text, without being written". "Along the text" or "through an
   intermediate token" reads as "via the written tokens", which is emission, the opposite
   (user question, 2026-09-26).
+- Relay is not "the part through the generated text": the late lookup also passes
+  through generated positions (the last three before the target). Relay is the part that
+  holds the information across the generated text; the three lookups all read it from a
+  fixed prompt position. A path through prompt positions (variable-chain statements, the
+  induction key) is an indirect path, never relay.
 - Do not put a share above 100% in the abstract or introduction; write "at least X%".
   Where a table or section reports one, say why (the other paths or the interaction are
   negative).
