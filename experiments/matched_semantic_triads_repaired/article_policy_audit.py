@@ -11,6 +11,7 @@ import torch
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id
 from experiments.lib.aan_protocol import token_id_for_text
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 RESULTS = EXP / "results"
@@ -51,7 +52,7 @@ def main():
         and row["strength"] == cfg["primary_strength"]
     }
 
-    rm = ResidualModel(cfg["model_snapshot"], getattr(torch, cfg["dtype"]))
+    rm = ResidualModel(local(cfg["model_snapshot"]), getattr(torch, cfg["dtype"]))
     tok = rm.tokenizer
     article_ids = {
         article: token_id_for_text(tok, f" {article}") for article in ("a", "an")

@@ -32,6 +32,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id, stats  # noqa: E402
 from experiments.lib.aan_protocol import token_id_for_text  # noqa: E402
+from experiments.lib.model_refs import local  # noqa: E402
 from experiments.matched_semantic_triads_repaired.run import (  # noqa: E402
     atomic_json, bootstrap, capture, exact_sign_flip, vector)
 
@@ -71,7 +72,7 @@ def main() -> None:
     screen = json.loads((FROZEN / "results/screen_summary.json").read_text())
     triads = [t for t in cfg["triads"] if t["id"] in set(screen["admissible_ids"])]
     layer = cfg["fixed_layer"]
-    rm = ResidualModel(cfg["model_snapshot"], getattr(torch, cfg["dtype"]))
+    rm = ResidualModel(local(cfg["model_snapshot"]), getattr(torch, cfg["dtype"]))
     tok = rm.tokenizer
     ids = {a: token_id_for_text(tok, f" {a}") for a in ("a", "an")}
     art = [ids["a"], ids["an"]]

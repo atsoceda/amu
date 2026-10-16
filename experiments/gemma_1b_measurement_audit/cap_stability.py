@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 
 from experiments.lib.aan_protocol import slugify,token_id_for_text,write_json
 from experiments.lib.core import feature_effect_map,load_replacement_model
+from experiments.lib.model_refs import local
 
 EXP=Path(__file__).resolve().parent;RESULTS=EXP/"results";GRAPH_DIR=RESULTS/"cap_graphs"
 CONFIG=json.loads((ROOT/"experiments/gemma_1b_sparse_scale/config.json").read_text())
@@ -48,7 +49,7 @@ def load_graph(kind,cap):
 
 def analyze():
     from transformers import AutoTokenizer
-    tokenizer=AutoTokenizer.from_pretrained(CONFIG["model_snapshot"],local_files_only=True);meta,_=prompts(tokenizer)
+    tokenizer=AutoTokenizer.from_pretrained(local(CONFIG["model_snapshot"]),local_files_only=True);meta,_=prompts(tokenizer)
     a_id,an_id=token_id_for_text(tokenizer," a"),token_id_for_text(tokenizer," an");future_id=token_id_for_text(tokenizer,meta["content_token_text"])
     position=len(tokenizer(meta["article_prompt"],add_special_tokens=True).input_ids)-1;blocks={}
     for cap in CAPS:

@@ -7,7 +7,7 @@ pairs for near-boundary baseline logit gaps.
 ## Run
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/fixed_b_positive_control/run.py
+python experiments/fixed_b_positive_control/run.py
 ```
 
 ## Outputs

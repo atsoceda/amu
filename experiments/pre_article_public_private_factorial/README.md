@@ -14,7 +14,7 @@ TV, target top-1 rate, and the public-token × private-state interaction.
 Run with:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/pre_article_public_private_factorial/run.py
+python experiments/pre_article_public_private_factorial/run.py
 ```
 
 This is a full-residual capacity/reference intervention. It does not establish

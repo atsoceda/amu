@@ -17,6 +17,7 @@ from experiments.lib.core import (
     logits_for_prompt,
     token_id_for_text,
 )
+from experiments.lib.model_refs import local
 
 
 def verify_dataset(
@@ -74,8 +75,8 @@ def load_tokenizer(config: dict[str, Any]):
     from transformers import AutoTokenizer
 
     model_ref = (
-        config["model_snapshot"]
-        if Path(config["model_snapshot"]).exists()
+        local(config["model_snapshot"])
+        if Path(local(config["model_snapshot"])).exists()
         else config["model"]
     )
     return AutoTokenizer.from_pretrained(model_ref)

@@ -2,7 +2,7 @@
   "experiment_name": "is_are_behavioral_screen",
   "description": "Screens the paper's released is/are dataset for cases where Gemma generates are followed by the correct singular answer 1.",
   "model": "google/gemma-3-270m",
-  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+  "model_snapshot": "hf:google/gemma-3-270m@9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
   "dtype": "float32",
   "device": "mps",
   "batch_size": 24,
@@ -15,6 +15,6 @@
     "sha256": "e2167d1a6ed8ca0849fcda75a790f1f2d41c594113cbd342560edcc05e6eeccd"
   },
   "transcoder_set": "mwhanna/gemma-scope-2-270m-pt/clt/width_262k_l0_medium_affine",
-  "transcoder_config_snapshot": "/Users/anthony/repos/amu/experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
-  "transcoder_weight_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49"
+  "transcoder_config_snapshot": "experiments/lib/transcoder_configs/gemma-scope-2-270m-pt-width_262k_l0_medium_affine.yaml",
+  "transcoder_weight_snapshot": "hf:google/gemma-scope-2-270m-pt@b218cd5d69dc2fa71cff448b68d625e6c9702d49"
 }

@@ -38,7 +38,7 @@ branches), and target-vs-source log-odds at every endpoint.
 ## Run
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/matched_triads_construction/run.py
+python experiments/matched_triads_construction/run.py
 ```
 
 ## Results (2026-09-25)

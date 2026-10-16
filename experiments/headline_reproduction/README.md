@@ -6,5 +6,5 @@ files: S1's six-cell vector magnitudes, the prompt-aligned boundary result, and
 the pre-article target-minus-random effect.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/headline_reproduction/run.py
+python experiments/headline_reproduction/run.py
 ```

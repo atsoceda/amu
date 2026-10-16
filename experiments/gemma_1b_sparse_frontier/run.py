@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 
 from experiments.lib.aan_protocol import write_json
 from experiments.lib.core import load_replacement_model,token_id_for_text
+from experiments.lib.model_refs import local
 from experiments.six_cell_family_sweep.run import activations_at_position,next_logits
 
 EXP=Path(__file__).resolve().parent;RESULTS=EXP/"results"
@@ -29,7 +30,7 @@ MAX_MEAN_KL=0.1;MIN_MEAN_ARTICLE_MASS=0.5
 
 
 def decoder_norms(features):
-    root=Path(CONFIG["transcoder_weight_snapshot"])/"clt/width_262k_l0_medium_affine";by_layer={};out={}
+    root=Path(local(CONFIG["transcoder_weight_snapshot"]))/"clt/width_262k_l0_medium_affine";by_layer={};out={}
     for feature in features:by_layer.setdefault(int(feature["layer"]),[]).append(int(feature["feature_idx"]))
     for layer,ids in by_layer.items():
         with safe_open(root/f"params_layer_{layer}.safetensors",framework="pt",device="cpu") as sf:

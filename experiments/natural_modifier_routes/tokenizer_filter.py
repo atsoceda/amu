@@ -5,10 +5,14 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from collections import Counter
 from pathlib import Path
 
 from transformers import AutoTokenizer
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+from model_refs import local  # noqa: E402
 
 
 EXP = Path(__file__).resolve().parent
@@ -25,7 +29,7 @@ def one_token(tokenizer, word: str) -> tuple[bool, list[int]]:
 
 def main() -> None:
     rows = json.loads(INPUT.read_text())
-    tokenizer = AutoTokenizer.from_pretrained(CFG["model"]["snapshot"], local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(local(CFG["model"]["snapshot"]), local_files_only=True)
     OUTPUT.mkdir(parents=True, exist_ok=True)
     decisions, retained = [], []
     seen_pairs = set()

@@ -16,7 +16,7 @@ visible prefix exactly constant and varies only the internal S1 intervention.
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/s1_article_factorial/run.py
+python experiments/s1_article_factorial/run.py
 ```
 
 Outputs:

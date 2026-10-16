@@ -18,11 +18,12 @@ if str(ROOT) not in sys.path: sys.path.insert(0,str(ROOT))
 
 from experiments.lib.aan_protocol import slugify, token_id_for_text, write_json
 from experiments.lib.core import load_replacement_model
+from experiments.lib.model_refs import local
 from experiments.six_cell_family_sweep.run import next_logits
 
 EXP=Path(__file__).resolve().parent;RESULTS=EXP/"results"
 SOURCE=json.loads((ROOT/"experiments/gemma_1b_sparse_scale/config.json").read_text())
-WEIGHTS=Path(SOURCE["transcoder_weight_snapshot"])/"clt/width_262k_l0_medium_affine"
+WEIGHTS=Path(local(SOURCE["transcoder_weight_snapshot"]))/"clt/width_262k_l0_medium_affine"
 GRAPH_DIR=ROOT/"experiments/gemma_1b_sparse_scale/results/graphs"
 LAYERS=(0,14,15,18,25)
 SENTENCES=(SOURCE["selection_sentences"][0],SOURCE["selection_sentences"][1],SOURCE["selection_sentences"][3],SOURCE["selection_sentences"][6])
@@ -38,7 +39,7 @@ def nmse(prediction,target):
 
 class NativeCapture:
     def __init__(self):
-        path=SOURCE["model_snapshot"];self.tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
+        path=local(SOURCE["model_snapshot"]);self.tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
         self.model=AutoModelForCausalLM.from_pretrained(path,dtype=torch.bfloat16,local_files_only=True,low_cpu_mem_usage=True).eval();self.layers=self.model.model.layers
 
     @torch.inference_mode()

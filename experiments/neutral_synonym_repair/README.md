@@ -20,5 +20,5 @@ pilot is retained under `results_bare_neutral_invalid_support/` and explicitly
 excluded because it failed mediator-support validity.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/neutral_synonym_repair/run.py
+python experiments/neutral_synonym_repair/run.py
 ```

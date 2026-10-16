@@ -18,8 +18,8 @@ article flipping.
 Run:
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/fixed_pair_generalization/run.py
 ```
 

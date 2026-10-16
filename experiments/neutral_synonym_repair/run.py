@@ -16,6 +16,7 @@ import torch
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, cosine, first_id, stats
 from experiments.lib.aan_protocol import token_id_for_text
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 RESULTS = EXP / "results"
@@ -75,7 +76,7 @@ def main() -> None:
     atomic_json(RESULTS/"run_metadata.json",{"started_at":datetime.now(timezone.utc).isoformat(),"config":cfg,
         "pair_ids":[p["id"] for p in pairs],"inference":"direct full prompt; use_cache=False",
         "intervention":"h_neutral + strength * (h_target_donor - h_source_donor)"})
-    started=time.time(); rm=ResidualModel(cfg["model_snapshot"],getattr(torch,cfg["dtype"])); tok=rm.tokenizer
+    started=time.time(); rm=ResidualModel(local(cfg["model_snapshot"]),getattr(torch,cfg["dtype"])); tok=rm.tokenizer
     articles={a:token_id_for_text(tok,f" {a}") for a in ("a","an")}; layers=list(range(rm.n_layers)); cache={}
     screen_rows=[]
     for i,pair in enumerate(pairs,1):

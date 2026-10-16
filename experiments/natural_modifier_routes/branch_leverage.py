@@ -5,12 +5,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+from model_refs import local  # noqa: E402
 
 
 EXP = Path(__file__).resolve().parent
@@ -32,11 +36,11 @@ def main() -> None:
     args = parser.parse_args()
     OUTPUT.mkdir(parents=True, exist_ok=True)
     families = json.loads(INPUT.read_text())
-    tokenizer = AutoTokenizer.from_pretrained(CFG["model"]["snapshot"], local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(local(CFG["model"]["snapshot"]), local_files_only=True)
     tokenizer.padding_side = "left"
     if tokenizer.pad_token_id is None: tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
-        CFG["model"]["snapshot"], dtype=getattr(torch, CFG["model"]["dtype"]),
+        local(CFG["model"]["snapshot"]), dtype=getattr(torch, CFG["model"]["dtype"]),
         local_files_only=True, low_cpu_mem_usage=True
     ).eval()
     existing = json.loads(ROWS_PATH.read_text()) if ROWS_PATH.exists() else []

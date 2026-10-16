@@ -10,5 +10,5 @@ Run from the repository root after the six-cell sweep (they should not share
 RAM with the transcoder model):
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/article_prefix_baseline/run.py
+python experiments/article_prefix_baseline/run.py
 ```

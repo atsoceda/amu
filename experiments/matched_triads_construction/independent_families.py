@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id, stats  # noqa: E402
 from experiments.lib.aan_protocol import token_id_for_text  # noqa: E402
+from experiments.lib.model_refs import local  # noqa: E402
 from experiments.matched_semantic_triads_repaired.run import atomic_json  # noqa: E402
 from experiments.matched_triads_construction.run import article_gradient  # noqa: E402
 from experiments.neutral_synonym_repair.run import difference_interval, exact_permutation, prompt, vec  # noqa: E402
@@ -30,7 +31,7 @@ def main() -> None:
     cfg = json.loads((SRC / "config.json").read_text())
     pairs = json.loads((SRC / cfg["selected_pairs_path"]).resolve().read_text())
     selected = json.loads((SRC / "results/summary.json").read_text())["selected_layers"]
-    rm = ResidualModel(cfg["model_snapshot"], getattr(torch, cfg["dtype"]))
+    rm = ResidualModel(local(cfg["model_snapshot"]), getattr(torch, cfg["dtype"]))
     tok = rm.tokenizer
     ids = {a: token_id_for_text(tok, f" {a}") for a in ("a", "an")}
     art = [ids["a"], ids["an"]]

@@ -12,5 +12,5 @@ held-out occupation/twin vocabulary within the stored top-10 tokens.
 No model forwards are performed.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/s2_forensics/run.py
+python experiments/s2_forensics/run.py
 ```

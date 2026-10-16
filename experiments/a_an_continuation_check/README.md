@@ -6,8 +6,8 @@ This circuit-free follow-up tests what Gemma 3 270M generates after the strong
 Run:
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/a_an_continuation_check/run.py
 ```
 

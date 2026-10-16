@@ -15,6 +15,7 @@ import torch
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, cosine, first_id, stats
 from experiments.lib.aan_protocol import token_id_for_text
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 RESULTS = EXP / "results"
@@ -51,7 +52,7 @@ def capture(rm: ResidualModel, text: str) -> tuple[int, list[torch.Tensor]]:
 
 def screen(cfg: dict) -> None:
     RESULTS.mkdir(parents=True, exist_ok=True)
-    rm = ResidualModel(cfg["model_snapshot"], getattr(torch, cfg["dtype"]))
+    rm = ResidualModel(local(cfg["model_snapshot"]), getattr(torch, cfg["dtype"]))
     tok = rm.tokenizer
     article_ids = {a: token_id_for_text(tok, f" {a}") for a in ("a", "an")}
     rows = load(RESULTS / "screen_rows.json") if (RESULTS / "screen_rows.json").exists() else []
@@ -172,7 +173,7 @@ def assay(cfg: dict) -> None:
         raise RuntimeError(f"Only {screen_summary['admissible_triads']} admissible triads; refusing to weaken the frozen gate")
     selected = set(screen_summary["admissible_ids"])
     triads = [t for t in cfg["triads"] if t["id"] in selected]
-    rm = ResidualModel(cfg["model_snapshot"], getattr(torch, cfg["dtype"]))
+    rm = ResidualModel(local(cfg["model_snapshot"]), getattr(torch, cfg["dtype"]))
     tok = rm.tokenizer
     article_ids = {a: token_id_for_text(tok, f" {a}") for a in ("a", "an")}
     rows = load(RESULTS / "rows.json") if (RESULTS / "rows.json").exists() else []

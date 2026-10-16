@@ -9,6 +9,7 @@ from typing import Any
 import torch
 
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id
 
 
@@ -49,7 +50,7 @@ def main() -> None:
     config = load(EXP_DIR / "config.json")
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     spec = config["models"][args.model]
-    model = ResidualModel(spec["model_snapshot"], getattr(torch, config["dtype"]))
+    model = ResidualModel(local(spec["model_snapshot"]), getattr(torch, config["dtype"]))
     tokenizer = model.tokenizer
     a_id = token_id_for_text(tokenizer, " a")
     an_id = token_id_for_text(tokenizer, " an")

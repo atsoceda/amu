@@ -19,8 +19,8 @@ For each twin family:
 ## Run
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python -m experiments.per_noun_fixed_b_c_to_c.run
+cd "$(git rev-parse --show-toplevel)"
+python -m experiments.per_noun_fixed_b_c_to_c.run
 ```
 
 Graphs are built in isolated subprocesses (one attribution at a time).

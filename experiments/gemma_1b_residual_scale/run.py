@@ -14,6 +14,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 
 EXP_DIR = Path(__file__).resolve().parent
@@ -103,7 +104,7 @@ def mixture(article_logits: torch.Tensor, branches: dict[str, torch.Tensor], ids
 def main() -> None:
     cfg=load(EXP_DIR/"config.json"); natural=load((EXP_DIR/cfg["natural_config_path"]).resolve())
     e1=load((EXP_DIR/cfg["e1_config_path"]).resolve()); RESULTS_DIR.mkdir(parents=True,exist_ok=True)
-    started=time.time(); dtype=getattr(torch,cfg["dtype"]); rm=ResidualModel(cfg["model_snapshot"],dtype)
+    started=time.time(); dtype=getattr(torch,cfg["dtype"]); rm=ResidualModel(local(cfg["model_snapshot"]),dtype)
     tok=rm.tokenizer; ids={a:token_id_for_text(tok,f" {a}") for a in ("a","an")}; demo=cfg["demonstration"]
     layers=list(range(rm.n_layers)); pairs=natural["pairs"]
 

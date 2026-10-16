@@ -11,13 +11,13 @@ contrasts \(E_T = E_M + E_R\) before total-variation distances.
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/six_cell_family_sweep/run.py
+python experiments/six_cell_family_sweep/run.py
 ```
 
 Optional smoke test:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/six_cell_family_sweep/run.py --max-prompts 1
+python experiments/six_cell_family_sweep/run.py --max-prompts 1
 ```
 
 Outputs:

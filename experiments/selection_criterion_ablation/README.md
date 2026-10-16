@@ -15,8 +15,8 @@ protocol on held-out occupation `a`/`an` prompts.
 ## Run
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/selection_criterion_ablation/run.py
 ```
 
@@ -24,7 +24,7 @@ Optional:
 
 ```bash
 # Graphs + selection.json only
-/Users/anthony/miniconda3/bin/python \
+python \
   experiments/selection_criterion_ablation/run.py --selection-only
 ```
 

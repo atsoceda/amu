@@ -8,5 +8,5 @@ wrong target from the same onset class. Seven original cross-class twins
 provide a positive-reference arm.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/l5_same_class_lexicality/run.py
+python experiments/l5_same_class_lexicality/run.py
 ```

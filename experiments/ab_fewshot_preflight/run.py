@@ -15,6 +15,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from experiments.gemma_1b_residual_scale.run import first_id
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 
 EXP = Path(__file__).resolve().parent
@@ -101,12 +102,12 @@ def main() -> None:
         "config": cfg,
     }
     atomic_write_json(results / "run_metadata.json", run_metadata)
-    tok = AutoTokenizer.from_pretrained(cfg["model_snapshot"], local_files_only=True)
+    tok = AutoTokenizer.from_pretrained(local(cfg["model_snapshot"]), local_files_only=True)
     tok.padding_side = "left"
     if tok.pad_token_id is None:
         tok.pad_token = tok.eos_token
     model = AutoModelForCausalLM.from_pretrained(
-        cfg["model_snapshot"], dtype=getattr(torch, cfg["dtype"]),
+        local(cfg["model_snapshot"]), dtype=getattr(torch, cfg["dtype"]),
         local_files_only=True, low_cpu_mem_usage=True
     ).eval()
     code_ids = {code: token_id_for_text(tok, f" {code}") for code in ("A", "B")}

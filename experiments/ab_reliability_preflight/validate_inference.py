@@ -17,6 +17,7 @@ from experiments.ab_reliability_preflight.run_preflight import (
     one_id,
 )
 from experiments.lib.aan_protocol import write_json
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 CFG = json.loads((EXP / "config.json").read_text())
@@ -63,10 +64,10 @@ def main() -> None:
         "order_repeat_prefix_differs": a["prefix"] != order_alt["prefix"],
     }
     model_cfg = CFG["model"]
-    tokenizer = AutoTokenizer.from_pretrained(model_cfg["snapshot"], local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(local(model_cfg["snapshot"]), local_files_only=True)
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(model_cfg["snapshot"], dtype=getattr(torch, model_cfg["dtype"]),
+    model = AutoModelForCausalLM.from_pretrained(local(model_cfg["snapshot"]), dtype=getattr(torch, model_cfg["dtype"]),
                                                  local_files_only=True, low_cpu_mem_usage=True).eval()
     code_ids = {letter: one_id(tokenizer, letter) for letter in ("A", "B")}
     cached = evaluate_variant(model, tokenizer, a, [row], code_ids, batch_size=1, inference_mode="cached")[0]

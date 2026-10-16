@@ -20,8 +20,8 @@ That cannot falsify independent \(C \to c\). This experiment keeps content clamp
 ## Run
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python -m experiments.causal_edge_independence.run
+cd "$(git rev-parse --show-toplevel)"
+python -m experiments.causal_edge_independence.run
 ```
 
 Outputs: `results/summary.json`, `results/rows.json`, `results/report.md`, `results/run.log`.

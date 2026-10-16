@@ -5,7 +5,7 @@ This repeatable experiment tests whether Gemma 3 270M contains causal handles th
 Regenerate results from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/semantic_commitment_sprint/run.py
+python experiments/semantic_commitment_sprint/run.py
 ```
 
 Primary outputs:

@@ -9,6 +9,7 @@ import torch
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 
 EXP=Path(__file__).resolve().parent; RESULTS=EXP/"results"
@@ -22,7 +23,7 @@ def generation(rm,prompt):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--config",default="config.json");parser.add_argument("--output-suffix",default="")
     args=parser.parse_args();cfg=json.loads((EXP/args.config).read_text());RESULTS.mkdir(parents=True,exist_ok=True)
-    rm=ResidualModel(cfg["model_snapshot"],getattr(torch,cfg["dtype"]));tok=rm.tokenizer
+    rm=ResidualModel(local(cfg["model_snapshot"]),getattr(torch,cfg["dtype"]));tok=rm.tokenizer
     article_ids={a:token_id_for_text(tok,f" {a}") for a in ("a","an")};rows=[]
     for index,triad in enumerate(cfg["triads"],1):
         prompts={role:cfg["prompt_template"].format(initial=triad[f"{role}_word"][0].upper(),definition=triad["definition"]) for role in ("source","within","cross")}

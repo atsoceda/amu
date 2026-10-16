@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Archive the small subset of 270M CLT vectors discussed in the paper."""
 from __future__ import annotations
-import hashlib, json
+import hashlib, json, sys
 from datetime import datetime, timezone
 from pathlib import Path
 from safetensors import safe_open
@@ -9,7 +9,9 @@ from safetensors.torch import save_file
 import torch
 
 ROOT=Path(__file__).resolve().parents[2]; EXP=ROOT/"experiments"; OUT=Path(__file__).resolve().parent
-WEIGHTS=Path("/Users/anthony/.cache/huggingface/hub/models--google--gemma-scope-2-270m-pt/snapshots/b218cd5d69dc2fa71cff448b68d625e6c9702d49/clt/width_262k_l0_medium_affine")
+sys.path.insert(0,str(EXP/"lib"))
+from model_refs import local  # noqa: E402
+WEIGHTS=Path(local("hf:google/gemma-scope-2-270m-pt@b218cd5d69dc2fa71cff448b68d625e6c9702d49/clt/width_262k_l0_medium_affine"))
 
 def load(p): return json.loads(Path(p).read_text())
 def sha256(p):

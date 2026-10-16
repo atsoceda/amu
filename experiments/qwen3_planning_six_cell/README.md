@@ -39,8 +39,8 @@ card represents the planned word. The rule has no article term.
 ## Run
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/qwen3_planning_six_cell/select_features.py Qwen3-0.6B
-/Users/anthony/miniconda3/bin/python experiments/qwen3_planning_six_cell/six_cell.py Qwen3-0.6B
+python experiments/qwen3_planning_six_cell/select_features.py Qwen3-0.6B
+python experiments/qwen3_planning_six_cell/six_cell.py Qwen3-0.6B
 ```
 
 Outputs go to `results/<model>/`. Streaming the encoders takes about 25 minutes

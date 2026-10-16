@@ -6,5 +6,5 @@ token restoration asks whether restoring the baseline article while leaving S1
 on rescues the baseline noun distribution.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/s1_replay_rescue/run.py
+python experiments/s1_replay_rescue/run.py
 ```

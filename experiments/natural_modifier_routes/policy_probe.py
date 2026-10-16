@@ -3,10 +3,12 @@
 
 from __future__ import annotations
 
-import argparse,json,time
+import argparse,json,sys,time
 from pathlib import Path
 import torch
 from transformers import AutoModelForCausalLM,AutoTokenizer
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"lib"))
+from model_refs import local  # noqa: E402
 
 EXP=Path(__file__).resolve().parent;CFG=json.loads((EXP/"config.json").read_text())
 INPUT=EXP/"artifacts/09_semantic_pass/passed.json";OUTPUT=EXP/"artifacts/10_dev_policy_probe";ROWS=OUTPUT/"rows.json"
@@ -17,8 +19,8 @@ def atomic(path,value):
 def main():
     p=argparse.ArgumentParser();p.add_argument("--batch-size",type=int,default=12);p.add_argument("--limit",type=int);args=p.parse_args()
     items=json.loads(INPUT.read_text());OUTPUT.mkdir(parents=True,exist_ok=True)
-    tok=AutoTokenizer.from_pretrained(CFG["model"]["snapshot"],local_files_only=True);tok.padding_side="left";tok.pad_token=tok.eos_token
-    model=AutoModelForCausalLM.from_pretrained(CFG["model"]["snapshot"],dtype=getattr(torch,CFG["model"]["dtype"]),local_files_only=True,low_cpu_mem_usage=True).eval()
+    tok=AutoTokenizer.from_pretrained(local(CFG["model"]["snapshot"]),local_files_only=True);tok.padding_side="left";tok.pad_token=tok.eos_token
+    model=AutoModelForCausalLM.from_pretrained(local(CFG["model"]["snapshot"]),dtype=getattr(torch,CFG["model"]["dtype"]),local_files_only=True,low_cpu_mem_usage=True).eval()
     existing=json.loads(ROWS.read_text()) if ROWS.exists() else [];done={(r["candidate_id"],r["regime"],r["state"],r["paraphrase_index"]) for r in existing}
     jobs=[]
     for item in items:

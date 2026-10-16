@@ -6,10 +6,11 @@ from pathlib import Path
 import torch
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id, mixture, stats, tv
 from experiments.lib.aan_protocol import token_id_for_text
+from experiments.lib.model_refs import local
 
 EXP=Path(__file__).resolve().parent; ROOT=EXP.parents[1]; OUT=EXP/"results/rows_270m_matched.json"
 cfg=json.loads((EXP/"config.json").read_text()); natural=json.loads((EXP/cfg["natural_config_path"]).resolve().read_text())
-snapshot="/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1"
+snapshot=local("hf:google/gemma-3-270m@9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1")
 rm=ResidualModel(snapshot,torch.bfloat16); tok=rm.tokenizer; article_ids={a:token_id_for_text(tok,f" {a}") for a in ("a","an")}
 demo=cfg["demonstration"]; layer=12; rows=[]; tests=[p for p in natural["pairs"] if p["split"]=="test"]
 for i,pair in enumerate(tests,1):

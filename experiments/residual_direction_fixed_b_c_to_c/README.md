@@ -21,6 +21,6 @@ For each twin family:
 ## Run
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python -m experiments.residual_direction_fixed_b_c_to_c.run
+cd "$(git rev-parse --show-toplevel)"
+python -m experiments.residual_direction_fixed_b_c_to_c.run
 ```

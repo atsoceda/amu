@@ -21,8 +21,8 @@ repair, trajectory-class switching, or nonspecific disruption.
 ## Run
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/planning_gain_content_clincher/run.py
 ```
 

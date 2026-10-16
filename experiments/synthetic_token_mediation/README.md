@@ -8,8 +8,8 @@ Ground-truth check that the generated-token mediation estimands discriminate:
 ## Run
 
 ```bash
-/Users/anthony/miniconda3/bin/python -m experiments.synthetic_token_mediation.run
-/Users/anthony/miniconda3/bin/python -m experiments.synthetic_token_mediation.plot
+python -m experiments.synthetic_token_mediation.run
+python -m experiments.synthetic_token_mediation.plot
 ```
 
 ## Outputs

@@ -7,7 +7,7 @@ work better together than either one alone?
 Run:
 
 ```bash
-/Users/anthony/miniconda3/bin/python /Users/anthony/repos/amu/experiments/paired_shared_feature_suppression/run.py
+python experiments/paired_shared_feature_suppression/run.py
 ```
 
 Outputs:

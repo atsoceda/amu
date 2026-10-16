@@ -14,6 +14,7 @@ from safetensors import safe_open
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 ROOT = EXP.parents[1]
@@ -56,7 +57,7 @@ def bootstrap(left,right,seed,resamples=10000):
 
 class NativeFeatureModel:
     def __init__(self):
-        path=CONFIG["model_snapshot"]
+        path=local(CONFIG["model_snapshot"])
         self.tokenizer=AutoTokenizer.from_pretrained(path,local_files_only=True)
         self.model=AutoModelForCausalLM.from_pretrained(path,dtype=torch.bfloat16,local_files_only=True,low_cpu_mem_usage=True).eval()
         self.layers=self.model.model.layers

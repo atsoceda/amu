@@ -14,8 +14,8 @@ The class-only direction is estimated from the previously frozen between-class
 families in `experiments/correctness_preserving_aan`, not from triad outcomes.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads/screen.py
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads/screen.py --config config_batch2.json --output-suffix batch2
+python experiments/matched_semantic_triads/screen.py
+python experiments/matched_semantic_triads/screen.py --config config_batch2.json --output-suffix batch2
 ```
 
 Batch 1 is the frozen fresh bank. Because it yields only one admissible triad,
@@ -28,7 +28,7 @@ pre-existing synonym lexicon. It uses no new logits or causal outcomes during
 construction and permits at most one selected triad per semantic family:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads/build_exhaustive_bank.py
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads/screen.py --config config_batch3.json --output-suffix batch3
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads/analyze_screening.py
+python experiments/matched_semantic_triads/build_exhaustive_bank.py
+python experiments/matched_semantic_triads/screen.py --config config_batch3.json --output-suffix batch3
+python experiments/matched_semantic_triads/analyze_screening.py
 ```

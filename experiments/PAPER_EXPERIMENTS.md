@@ -9,7 +9,7 @@
 
 Last updated: 2026-08-07  
 Model stack: `google/gemma-3-270m` + Gemma Scope 2 PT CLT `clt/width_262k_l0_medium_affine`  
-Env: `/Users/anthony/miniconda3/bin/python`
+Env: `python`
 
 **Stack decision:** Primary runs are **pretrained + affine**, not IT. Latent Planning Appendix J found base models slightly better on a/an than IT; the PT clincher already produced a clean Outcome-B signal. IT + non-affine was abandoned as the primary stack (Hub IT `medium_affine` layer-0 is empty; IT is a weaker instrument for this task).
 

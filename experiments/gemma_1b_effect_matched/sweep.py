@@ -20,6 +20,7 @@ from safetensors import safe_open
 from experiments.lib.aan_protocol import slugify, write_json
 from experiments.lib.core import load_replacement_model, setup_file_logging, token_id_for_text
 from experiments.lib.mediation_estimands import total_variation_from_logits
+from experiments.lib.model_refs import local
 from experiments.six_cell_family_sweep.run import activations_at_position, build_interventions, next_logits
 
 EXP = Path(__file__).resolve().parent
@@ -31,7 +32,7 @@ def load(path: Path):
 
 
 def decoder_norms(config: dict, features: list[dict]) -> dict[tuple[int, int], float]:
-    root = Path(config["transcoder_weight_snapshot"]) / "clt/width_262k_l0_medium_affine"
+    root = Path(local(config["transcoder_weight_snapshot"])) / "clt/width_262k_l0_medium_affine"
     by_layer: dict[int, list[int]] = {}
     for f in features:
         by_layer.setdefault(int(f["layer"]), []).append(int(f["feature_idx"]))

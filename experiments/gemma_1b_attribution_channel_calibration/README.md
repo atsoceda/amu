@@ -14,5 +14,5 @@ within the intended `a`/`an` mediator support.
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/gemma_1b_attribution_channel_calibration/run.py
+python experiments/gemma_1b_attribution_channel_calibration/run.py
 ```

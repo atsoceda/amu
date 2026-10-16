@@ -307,7 +307,7 @@ def write_report(summary: dict[str, Any]) -> None:
         "",
         "## Regenerate",
         "",
-        "Run `/Users/anthony/miniconda3/bin/python /Users/anthony/repos/amu/experiments/paired_shared_feature_suppression/run.py`.",
+        "Run `python experiments/paired_shared_feature_suppression/run.py` from the repository root.",
     ]
     (RESULTS_DIR / "report.md").write_text("\n".join(lines))
 

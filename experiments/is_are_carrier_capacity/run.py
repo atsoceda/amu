@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, cosine, interval, stats, tv
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 RESULTS = EXP / "results"
@@ -52,7 +53,7 @@ def make_pairs(rows, dev_animals):
 
 
 def run_model(cfg, spec, pairs):
-    started=time.time(); rm=ResidualModel(spec["snapshot"],getattr(torch,cfg["dtype"])); tok=rm.tokenizer
+    started=time.time(); rm=ResidualModel(local(spec["snapshot"]),getattr(torch,cfg["dtype"])); tok=rm.tokenizer
     ids={name:token_id_for_text(tok,f" {name}") for name in ("is","are")}
     # Gemma emits a shared whitespace token after is/are before the digit.
     # Clamp that formatting token so the outcome distribution is over number tokens.

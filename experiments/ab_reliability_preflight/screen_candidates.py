@@ -13,6 +13,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from experiments.lib.aan_protocol import write_json
+from experiments.lib.model_refs import local
 
 EXP = Path(__file__).resolve().parent
 CFG = json.loads((EXP / "config.json").read_text())
@@ -93,12 +94,12 @@ def main() -> None:
     candidate_path = ART / "01_candidates/all_candidates.json"
     candidates = deduplicate(json.loads(candidate_path.read_text()))
     model_cfg = CFG["model"]
-    tokenizer = AutoTokenizer.from_pretrained(model_cfg["snapshot"], local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(local(model_cfg["snapshot"]), local_files_only=True)
     tokenizer.padding_side = "left"
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
-        model_cfg["snapshot"], dtype=getattr(torch, model_cfg["dtype"]),
+        local(model_cfg["snapshot"]), dtype=getattr(torch, model_cfg["dtype"]),
         local_files_only=True, low_cpu_mem_usage=True,
     ).eval()
     screen = CFG["lexical_screen"]

@@ -4,11 +4,15 @@ from __future__ import annotations
 import json
 import math
 import random
+import sys
 from pathlib import Path
 
 import numpy as np
 import torch
 from safetensors import safe_open
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+from model_refs import local  # noqa: E402
 
 EXP = Path(__file__).resolve().parent
 RESULTS = EXP / "results"
@@ -66,7 +70,7 @@ def auc(scores, labels):
 
 
 def decoder_norms(config, features):
-    root = Path(config["transcoder_weight_snapshot"]) / "clt/width_262k_l0_medium_affine"
+    root = Path(local(config["transcoder_weight_snapshot"])) / "clt/width_262k_l0_medium_affine"
     by_layer = {}
     for feature in features:
         by_layer.setdefault(int(feature["layer"]), []).append(int(feature["feature_idx"]))
