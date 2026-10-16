@@ -28,7 +28,8 @@ EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from models import load  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+from summaries import relay_boundary_summary  # noqa: E402
 
 
 def main() -> None:
@@ -90,13 +91,7 @@ def main() -> None:
               + " ".join(f"{t}:{v:+.2f}" for t, v in zip(rec["tail_tokens"], rec["by_token"])), flush=True)
     out = EXP / "results" / a.model
     (out / "relay_boundary_rows.json").write_text(json.dumps(out_rows, indent=1))
-    ref = out_rows[0]["tail_tokens"]
-    same = [x for x in out_rows if x["tail_tokens"] == ref]
-    s = {"model": a.model, "n": len(out_rows), "n_same_tail": len(same), "tail_tokens": ref,
-         "boundary_all": boot([x["boundary_all"] for x in out_rows]),
-         "by_token": [{"offset": k + 1, "token": t, **boot([x["by_token"][k] for x in same])} for k, t in enumerate(ref)],
-         "necessity_by_token": [{"offset": k + 1, "token": t, **boot([x["necessity_by_token"][k] for x in same])}
-                                for k, t in enumerate(ref)]}
+    s = relay_boundary_summary(a.model, out_rows)
     (out / "relay_boundary_summary.json").write_text(json.dumps(s, indent=1))
     print("boundary all", s["boundary_all"])
     for d, e in zip(s["by_token"], s["necessity_by_token"]):

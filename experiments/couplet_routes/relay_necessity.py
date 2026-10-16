@@ -26,7 +26,8 @@ EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from models import load  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+from summaries import relay_necessity_summary  # noqa: E402
 
 LATE = 3
 
@@ -90,14 +91,8 @@ def main() -> None:
               f"late {rec['necessity_late']:+.2f} tail {rec['necessity_tail']:+.2f} early {rec['necessity_early']:+.2f}", flush=True)
     out = EXP / "results" / a.model
     (out / "relay_necessity_rows.json").write_text(json.dumps(out_rows, indent=1))
-    keys = ["d_persistence_p0"] + [f"necessity_{g}" for g in ("all", "late", "tail", "early")]
-    s = {"model": a.model, "n": len(out_rows), "all": {k: boot([x[k] for x in out_rows]) for k in keys}}
     suff = out / "relay_positions_rows.json"
-    if suff.exists():
-        srows = {x["idx"]: x for x in json.loads(suff.read_text())}
-        both = [(x, srows[x["idx"]]) for x in out_rows if x["idx"] in srows]
-        s["shapley"] = {g: boot([(x[f"necessity_{g}"] + y[f"d_relay_{g}"]) / 2 for x, y in both]) for g in ("all", "late", "tail", "early")}
-        s["sufficiency"] = {g: boot([y[f"d_relay_{g}"] for _, y in both]) for g in ("all", "late", "tail", "early")}
+    s = relay_necessity_summary(a.model, out_rows, json.loads(suff.read_text()) if suff.exists() else None)
     (out / "relay_necessity_summary.json").write_text(json.dumps(s, indent=1))
     print({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) for k, v in s["all"].items()})
     if "shapley" in s:

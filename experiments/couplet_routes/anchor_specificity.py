@@ -35,7 +35,8 @@ from models import end_of_user  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
 
 COLON = (":", "Ġ:", "▁:")
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+from summaries import anchor_specificity_summary  # noqa: E402
 
 
 def main() -> None:
@@ -102,9 +103,7 @@ def main() -> None:
         print(f"{len(out_rows):3d} [{time.time()-t0:5.0f}s] " + " ".join(f"{k}:{rec[k+'_persistence']:+.1f}" for k in positions), flush=True)
     out = EXP / "results" / a.model
     (out / "anchor_specificity_rows.json").write_text(json.dumps(out_rows, indent=1))
-    s = {"model": a.model, "n": len(out_rows), "elapsed_sec": time.time() - t0,
-         "by_position": {k: {m_: boot([r[f"{k}_{m_}"] for r in out_rows]) for m_ in ("persistence", "retrieval", "relay", "tv")}
-                         for k in ("A", "M", "F", "C", "E")}}
+    s = anchor_specificity_summary(a.model, out_rows, time.time() - t0)
     (out / "anchor_specificity_summary.json").write_text(json.dumps(s, indent=1))
     for k, v in s["by_position"].items():
         print(k, {m_: (round(x["mean"], 2), round(x["lo"], 2), round(x["hi"], 2)) for m_, x in v.items()})

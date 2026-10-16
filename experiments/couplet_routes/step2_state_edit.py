@@ -78,6 +78,9 @@ def main() -> None:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--control", choices=["same_rhyme"], help="null control: donor from the same rhyme group")
     a = ap.parse_args()
+    # Imported here, not at module level: other experiments import this module and may
+    # have their own summaries.py on sys.path.
+    from summaries import step2_summary
     tok, m, layers = load(a.model)
     df = pd.read_csv(subset_csv(a.model), index_col=0)
     df = df[df["found_valid_row"].astype(str).str.lower() == "true"]
@@ -142,15 +145,7 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     tag = f"_{a.control}" if a.control else ""
     (out / f"step2_rows{tag}.json").write_text(json.dumps(rows, indent=1))
-    n = len(rows)
-    s = {"model": a.model, "n": n,
-         "matches_authors_original": sum(r["matches_authors"] for r in rows) / n,
-         "off_rhymes_orig": sum(r["off_rhymes_orig"] for r in rows) / n,
-         "on_rhymes_orig": sum(r["on_rhymes_orig"] for r in rows) / n,
-         "on_rhymes_donor": sum(r["on_rhymes_donor"] for r in rows) / n,
-         "off_rhymes_donor": sum(r["off_rhymes_donor"] for r in rows) / n,
-         "on_changed_last_word": sum(r["on_changed_word"] for r in rows) / n,
-         "elapsed_sec": time.time() - t0}
+    s = step2_summary(a.model, rows, time.time() - t0)
     (out / f"step2_summary{tag}.json").write_text(json.dumps(s, indent=1))
     print(json.dumps(s, indent=1))
 
