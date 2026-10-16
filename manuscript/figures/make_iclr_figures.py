@@ -322,7 +322,7 @@ def fig1(panel):
     xr0, xr1 = 1.92, 5.3
     axT = fig.add_axes([fx(xr0), fy(ybot + hb + brk), fx(xr1 - xr0), fy(ht)])
     axL = fig.add_axes([fx(xr0), fy(ybot), fx(xr1 - xr0), fy(hb)])
-    fig.text(0.0, fy(3.3), "In every task and stress test, most of the effect is looked up", fontsize=8,
+    fig.text(0.0, fy(3.3), "In every task and every setting built to favour relay, most of the effect is looked up", fontsize=8,
              weight="bold", va="top")
     den_y = fy(0.5)
 
@@ -437,7 +437,7 @@ def fig1(panel):
     sup_y = fy(ytop + 0.33)
     fig.text(fx(0.42 + 0.49), sup_y, "positive control", fontsize=7, ha="center", va="bottom", weight="bold")
     fig.add_artist(Line2D([fx(0.47), fx(1.35)], [sup_y - fy(0.02)] * 2, color="#999999", lw=0.6))
-    for kind, lab in (("task", "tasks"), ("stress", "stress tests")):
+    for kind, lab in (("task", "tasks"), ("stress", "settings built\nto favour relay")):
         grp = [sp for sp in spans if sp[4] == kind]
         if grp:
             a_, b_ = xin(grp[0][1] - 0.4), xin(grp[-1][2] + 0.4)

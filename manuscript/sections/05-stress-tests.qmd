@@ -1,8 +1,8 @@
 # Settings built to favour relay {#sec-stress}
 
 Relay is not required when every layer can read every earlier position and the
-content is visible. We therefore run three stress tests that remove one of these
-conditions, each with a decision rule committed before its first result (@fig-stress; Appendix @sec-app-prereg,
+content is visible. We therefore build three settings that each remove one of these
+conditions, and commit a decision rule for each before its first result (@fig-stress; Appendix @sec-app-prereg,
 @sec-app-stress and @sec-app-hidden).
 
 ![In settings built to favour relay, models still look up information. **A:** Gemma 3 27B with filler between line 1 and line 2 (couplets per

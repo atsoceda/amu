@@ -43,8 +43,9 @@ every position after a computed value's source move the answer by at most 4.9% (
 chains) and 6.4% (sums) of the source effect, while written intermediate values are
 followed: emission accounts for at least 83% of the effect.
 
-Three stress tests with committed decision rules make relay useful or the content
-invisible (@sec-stress). Beyond Gemma 3's attention window, Gemma 3 27B hands the plan from the rhyme word to the
+We then test three settings built to favour relay, because relay would be useful there
+or the content is invisible. Each has a decision rule committed before its first result
+(@sec-stress). Beyond Gemma 3's attention window, Gemma 3 27B hands the plan from the rhyme word to the
 stored copy, and the generated text accounts for 9 to 13%, not split into late lookup
 and relay. In a recurrent hybrid, entry through the recurrent layers produces 2 to 4% of
 persistence. A secret choice is stored at a few low-content prompt tokens, and at most 2% of its effect passes through the hidden states of the intervening sentence. The one path that grows is the stored
@@ -53,7 +54,8 @@ base checkpoints, and reconciles published accounts of where the rhyme plan live
 
 **Contributions.** (1) Route accounting, a position-level decomposition of intervention effects into emission, lookup and relay, validated on a positive control. (2) The principle that unwritten information is looked up, not relayed, across
 tasks, families, sizes, prompt formats, checkpoints and intervention types. (3) Three
-stress tests with committed decision rules that bound it. (4) A stored copy that emerges
+settings built to favour relay, each with a decision rule committed in advance, that
+test where the principle holds. (4) A stored copy that emerges
 with scale, reconciling published accounts of rhyme planning.
 
 ::: {#tbl-map tbl-pos="t"}
