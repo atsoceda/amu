@@ -25,6 +25,7 @@ import torch
 
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
+from models import pinned  # noqa: E402  (recorded revision from env/models.json, if any)
 from step2_state_edit import HA, last_word, prompt_ids, rhymes  # noqa: E402
 from step34_routes import strip_last_word  # noqa: E402
 from summaries import step6_summary  # noqa: E402
@@ -39,8 +40,8 @@ def main() -> None:
     fdir = EXP / "results" / a.model / "features"
     sel = json.loads((fdir / "selection.json").read_text())
     dec = torch.load(fdir / "decoders.pt")
-    tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
-    m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
+    tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}", **pinned(f"Qwen/{a.model}"))
+    m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16, **pinned(f"Qwen/{a.model}")).to("mps").eval()
     layers = m.model.layers
     df = pd.read_csv(HA / f"{a.model}.csv", index_col=0)
     df = df[df["found_valid_row"].astype(str).str.lower() == "true"]

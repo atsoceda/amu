@@ -29,6 +29,7 @@ import torch
 ROOT = Path(__file__).resolve().parents[2]
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
+from models import pinned  # noqa: E402  (recorded revision from env/models.json, if any)
 sys.path.insert(0, str(ROOT / "skills/hf-range-streaming/scripts"))
 from hf_stream import SafetensorsRemote, fetch_feature_records, load_feature_index  # noqa: E402
 from step2_state_edit import HA, prompt_ids  # noqa: E402
@@ -89,8 +90,8 @@ def main() -> None:
 
     if "capture" in a.stages and not (out / "anchor_mlp_in.pt").exists():
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}")
-        m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16).to("mps").eval()
+        tok = AutoTokenizer.from_pretrained(f"Qwen/{a.model}", **pinned(f"Qwen/{a.model}"))
+        m = AutoModelForCausalLM.from_pretrained(f"Qwen/{a.model}", dtype=torch.bfloat16, **pinned(f"Qwen/{a.model}")).to("mps").eval()
         store = {}
         pos = {"a": None}
         hooks = [m.model.layers[i].post_attention_layernorm.register_forward_hook(

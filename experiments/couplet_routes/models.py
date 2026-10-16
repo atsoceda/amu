@@ -53,12 +53,18 @@ def decoder_layers(m):
     raise AttributeError("no decoder layers found")
 
 
+def pinned(repo_id: str) -> dict:
+    """{"revision": <hash>} for a repository recorded in env/models.json, else {}."""
+    rev = revision(repo_id)
+    return {"revision": rev} if rev else {}
+
+
 def load(model: str, device: str = "mps"):
     """Tokenizer, model and decoder layers. A model whose revision is recorded in
     env/models.json loads at exactly that revision; others load the Hub's current one."""
     from transformers import AutoModelForCausalLM, AutoTokenizer
     FORMAT["plain"] = model.endswith(PLAIN)
-    pin = {"revision": revision(hf_id(model))} if revision(hf_id(model)) else {}
+    pin = pinned(hf_id(model))
     tok = AutoTokenizer.from_pretrained(hf_id(model), **pin)
     m = AutoModelForCausalLM.from_pretrained(hf_id(model), dtype=torch.bfloat16, **pin).to(device).eval()
     return tok, m, decoder_layers(m)
