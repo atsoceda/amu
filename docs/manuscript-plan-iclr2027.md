@@ -1,5 +1,8 @@
 # Manuscript plan: ICLR 2027 main track (draft, 2026-09-26)
 
+> Historical (2026-10-16): the paper was not submitted to ICLR 2027 and will not be.
+> The live manuscript is the venue-undecided working paper; see the root README.
+
 Status: plan only. It does not edit `paper.qmd` or `manuscript/`; the frozen NeurIPS
 workshop version (v35) is untouched. Numbers come from the experiment READMEs and
 `results/report.md` files named below and should be re-read from there when

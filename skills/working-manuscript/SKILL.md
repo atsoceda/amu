@@ -13,8 +13,9 @@ metadata:
 # Working-manuscript workflow
 
 The live source is a venue-undecided working paper. The NeurIPS workshop
-submission and unsubmitted ICLR deadline draft are frozen (see `AGENTS.md`
-and the root README). Never render `neurips` or `iclr` from the live source;
+submission (v35, accepted) and unsubmitted ICLR deadline draft are frozen; the
+workshop camera-ready is edited only on branch `paper/neurips-workshop` (see
+`AGENTS.md` and the root README). Never render `neurips` or `iclr` from the live source;
 use `bin/build-paper-version <version>` to rebuild a frozen tag.
 
 ## Structure

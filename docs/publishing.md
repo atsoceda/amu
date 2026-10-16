@@ -11,13 +11,20 @@ Git tags, not by keeping permanent research branches.
 - **NeurIPS 2026 workshop v35: submitted and frozen.** The exact PDF, generated
   TeX, original manifest and checksums are in
   `submissions/neurips-2026-workshop-v35/`. Source tag:
-  `neurips-2026-workshop-v35`.
+  `neurips-2026-workshop-v35`. The paper was accepted.
+- **NeurIPS 2026 workshop camera-ready: in preparation.** Edited and rendered
+  only on branch `paper/neurips-workshop` (from the v35 tag, never merged into
+  `main`; see its `CAMERA-READY.md`). Preview it from `main` with
+  `bin/build-paper-version neurips-2026-workshop-camera-ready`. When uploaded,
+  tag it and archive the exact files under `submissions/` like v35.
 - **ICLR 2027 deadline draft: not submitted and frozen.** Its last local PDF,
   generated TeX, original manifest and checksums are in
   `milestones/iclr-2027-deadline-unsubmitted/`. Source tag:
   `iclr-2027-deadline-unsubmitted`.
-- **Working paper: venue undecided.** The current source is on `main`, rendered
-  with an internal ICLR-like layout but no claim of ICLR review.
+- **Working paper: venue undecided** (another conference or a journal; ICLR is
+  out). The current source is on `main`, rendered with an internal ICLR-like
+  layout but no claim of ICLR review. Check it against the committed results with
+  `bin/verify-paper`.
 
 Do not edit frozen archive files. The historical manifests are preserved as
 original records, including any `git_dirty` status. The version builder checks

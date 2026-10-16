@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figures for the ICLR 2027 manuscript, generated from the committed experiment results.
+"""Figures for the working paper (first drafted for ICLR 2027), generated from the committed experiment results.
 
 Run from the repository root:
     python manuscript/figures/make_iclr_figures.py
