@@ -53,6 +53,21 @@ paper status and repository workflow. Scientific state is unchanged since
   Qwen3.5-35B-A3B everywhere) and silently draws without them. The manifest freezes
   that state; whether those rows should exist is a scientific question.
 
+## Later the same day (renders paper_67, paper_68)
+
+- Section 3 and the pre-registration table said relay was measured by necessity in 17
+  couplet runs; it is 18 (still at most 1%, max 0.96%). The free-generation check is
+  now reported for all five models it was run in. `manuscript/claims.py`: 28 claims.
+- `bin/freeze-paper-version` freezes a submission in one step (tested end to end in
+  a scratch clone); `AGENTS.md`, "Submitting the working paper", documents the venue
+  lifecycle; `bin/render-paper` allows a venue profile on `main` once registered.
+- The 24 absent figure inputs: 6 are fallbacks to an older file that exists; 4 are
+  Qwen3.5-35B-A3B, dropped before the ICLR deadline and never mentioned in the text;
+  the rest are analyses run only on a subset of models (per-token boundary split in 9
+  runs, couplet necessity in Gemma 3 4B, free generation in 3 models), which the text
+  scopes correctly. The Mac Studio was unreachable over SSH (VPN up), so whether any of
+  these exist only there is unchecked.
+
 ## Remaining engineering (not started)
 
 - Summaries are computed inside model-loading runners; recomputing them from the
