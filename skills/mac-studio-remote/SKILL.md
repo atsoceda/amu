@@ -10,7 +10,7 @@ compatibility: >-
   Local macOS with an SSH host alias "macstudio" in ~/.ssh/config, its key unlocked in the SSH agent, and the
   user's split-tunnel VPN connected. Remote: macOS with system python3; rsync on both sides.
 metadata:
-  version: "1.4"
+  version: "1.5"
 ---
 
 # Mac Studio remote jobs
@@ -106,6 +106,20 @@ come back. Details, measured facts and troubleshooting are in
    ```
 
    Then review, document in the experiment README, and commit as usual.
+
+7. **Account for remote work** before relying on the repository as complete (for
+   example before a submission or a milestone), and whenever jobs ran unattended:
+
+   ```bash
+   skills/mac-studio-remote/scripts/inventory.sh <scratch>/inventory.tsv
+   python3 skills/mac-studio-remote/scripts/compare_inventory.py <scratch>/inventory.tsv
+   ```
+
+   The inventory is read-only. The comparison classes every remote result as `same`,
+   `differs`, `remote-only` or `large`, and lists running processes, queues and logs.
+   Fetch and commit `differs` and `remote-only` files that an experiment README
+   reports (after checking which copy is the right one), record the hf_revisions and
+   envs sections in `env/`, and leave `large` intermediates remote.
 
 ## Lessons from running many jobs (2026-09-26)
 
