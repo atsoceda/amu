@@ -38,7 +38,7 @@ fi
 fail() { echo "freeze-paper-version: $*" >&2; exit 1; }
 
 [[ "$(git rev-parse --abbrev-ref HEAD)" == "main" ]] || fail "run on main (the working paper's branch)."
-[[ -z "$(git status --porcelain --untracked-files=normal -- . ':!dist')" ]] || fail "commit or stash every change first; the frozen source must be a clean commit."
+[[ -z "$(git status --porcelain --untracked-files=normal -- . ':!dist' ':!.tools' ':!.home')" ]] || fail "commit or stash every change first; the frozen source must be a clean commit."
 git rev-parse -q --verify "refs/tags/$version" >/dev/null && fail "tag $version already exists."
 archive="$kind/$version"
 [[ ! -e "$archive" ]] || fail "$archive already exists."
