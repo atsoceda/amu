@@ -12,6 +12,7 @@ pick). Output projection in float32.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import itertools
 import json
 import random
@@ -26,7 +27,10 @@ sys.path.insert(0, str(EXP.parents[0] / "couplet_routes"))
 sys.path.insert(0, str(EXP.parents[0] / "derived_value_carry"))
 from chain_routes import F32Head  # noqa: E402
 from models import is_gemma, load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("hidden_choice_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 SEED = 20260925
 FRUITS = ["apple", "banana", "cherry", "grape", "lemon", "mango", "peach", "plum"]
@@ -128,8 +132,7 @@ def main() -> None:
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "choice_rows.json").write_text(json.dumps(rows, indent=1))
-    keys = ["text_swap", "list_edit", "post_edit", "post_retrieval", "post_relay", "sentence_edit", "post_and_sentence"]
-    s = {"model": a.model, "n": len(rows), "lists_tried": tried, **{k: boot([r[k] for r in rows]) for k in keys}}
+    s = summaries.choice_summary(rows, a.model, tried)
     (out / "choice_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) if isinstance(v, dict) else v for k, v in s.items()}))
 

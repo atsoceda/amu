@@ -25,6 +25,7 @@ question mark) moves R clearly above zero.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import random
 import sys
@@ -36,7 +37,10 @@ import torch
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP.parent / "couplet_routes"))
 from models import load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("derived_value_carry_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 SEED = 20260925
 PASSAGE = ("The weather is calm and the sky is a pale shade of blue over the quiet town where people walk "
@@ -155,17 +159,12 @@ def main() -> None:
         rows.append(rec)
         print(f"{len(rows):3d} [{time.time()-t0:5.0f}s] {it['a']}+{it['b']} donor {it['da']}+{it['db']}: "
               f"'?' {rec['by_position'][q]:+.2f} after-? block {rec['after_question']:+.2f} operands {rec['operands']:+.2f}", flush=True)
-    toks0 = rows[0]["tokens"]
-    offs = sorted({p - r["qmark"] for r in rows for p in r["by_position"]})
-    stage1 = {"qmark": boot([r["by_position"][r["qmark"]] for r in rows]), "operands": boot([r["operands"] for r in rows]),
-              "after_question": boot([r["after_question"] for r in rows]),
-              "by_offset_from_qmark": {o: {"token": toks0[rows[0]["qmark"] + o],
-                                           **boot([r["by_position"][r["qmark"] + o] for r in rows])} for o in offs}}
+    s = summaries.stage01_summary(rows, a.model, stage0, time.time() - t0)
+    stage1 = s["stage1"]
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "stage01_rows.json").write_text(json.dumps(rows, indent=1))
-    (out / "stage01_summary.json").write_text(json.dumps({"model": a.model, "n": len(rows), "stage0": stage0, "stage1": stage1,
-                                                          "elapsed_sec": time.time() - t0}, indent=1))
+    (out / "stage01_summary.json").write_text(json.dumps(s, indent=1))
     print("stage 1 '?':", stage1["qmark"], "after-? block:", stage1["after_question"], "operands:", stage1["operands"])
     for o, v in stage1["by_offset_from_qmark"].items():
         print(f"  {o:+3d} {v['token']!r:>14} {v['mean']:+.2f} [{v['lo']:.2f}, {v['hi']:.2f}]")

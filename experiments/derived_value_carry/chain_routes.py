@@ -21,6 +21,7 @@ digit) at the target, minus R without the edit.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import random
 import sys
@@ -33,7 +34,10 @@ EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP.parent / "couplet_routes"))
 from batching import run_edits  # noqa: E402
 from models import is_gemma, load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("derived_value_carry_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 SEED = 20260925
 NAMES = "abcdefgh"
@@ -208,21 +212,10 @@ def main() -> None:
         tag = "_block" if a.block_only else ""
         (out_dir / f"chain_K{K}_rows{tag}.json").write_text(json.dumps(rows, indent=1))
         (out_dir / f"chain_K{K}_rows{tag}.partial.jsonl").unlink(missing_ok=True)
+        summary["by_K"][K] = summaries.chain_K_summary(rows, K, a.block_only)
         if a.block_only:
-            summary["by_K"][K] = {"n": len(rows), "accuracy": sum(r["correct"] for r in rows) / len(rows),
-                                  "v0_edit": boot([r["v0_edit"] for r in rows]),
-                                  "post_v0_block": boot([r["post_v0_block"] for r in rows])}
             print(f"K={K}: v0 edit {summary['by_K'][K]['v0_edit']}; post-v0 block {summary['by_K'][K]['post_v0_block']}")
             continue
-        tq = rows[0]["tokens"]
-        summary["by_K"][K] = {
-            "n": len(rows), "accuracy": sum(r["correct"] for r in rows) / len(rows),
-            "v0_edit": boot([r["v0_edit"] for r in rows]),
-            "post_v0_block": boot([r["post_v0_block"] for r in rows]),
-            "by_end": [{k: boot([r["by_end"][j][k] for r in rows]) for k in ("persistence", "retrieval", "relay", "chain_relay")}
-                       for j in range(K + 1)],
-            "scan": {p - rows[0]["v0_digits"][0]: {"token": tq[p], **boot([r["scan"][p] for r in rows])} for p in rows[0]["scan"]},
-        }
         s = summary["by_K"][K]
         print(f"K={K}: accuracy {s['accuracy']:.0%}; v0 edit {s['v0_edit']['mean']:+.1f}")
         for j, d in enumerate(s["by_end"]):

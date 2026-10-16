@@ -17,6 +17,7 @@ Checkpointed per couplet and distance (couplet_routes/checkpoint.py).
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import math
 import random
@@ -33,7 +34,11 @@ sys.path.insert(0, str(CR))
 from checkpoint import Checkpoint  # noqa: E402
 from models import load  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes, subset_csv  # noqa: E402
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("relay_distance_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 SEED = 20260925
 SENTENCES = [
@@ -195,14 +200,7 @@ def main() -> None:
             print(f"{len(ck.rows):3d} [{time.time()-t0:5.0f}s] D={D:5d} T={rec['n_tokens']:5d} pers {rec['persistence']:+.2f} "
                   f"ret {rec['retrieval']:+.2f} relay {rec['relay']:+.2f} (boundary {rec['relay_boundary']:+.2f}/{rec['necessity_boundary']:+.2f} filler {rec['relay_filler']:+.2f}/{rec['necessity_filler']:+.2f} line2 {rec['relay_line2']:+.2f}/{rec['necessity_line2']:+.2f}) | {line2[:50]!r}", flush=True)
     rows = ck.rows
-    s = {"model": a.model, "by_distance": {}}
-    for D in dists:
-        rr = [x for x in rows if x["distance"] == D]
-        s["by_distance"][D] = {"n": len(rr), "rhymes_orig": sum(x["line2_rhymes_orig"] for x in rr) / max(len(rr), 1),
-                               **{k: boot([x[k] for x in rr]) for k in ("persistence", "retrieval", "relay", "relay_boundary", "relay_filler", "relay_line2",
-                                                                        "necessity_boundary", "necessity_filler", "necessity_line2")},
-                               "relay_share": boot([x["relay"] / x["persistence"] for x in rr if abs(x["persistence"]) > 1])}
-    s["skipped"] = skipped
+    s = summaries.distance_summary(rows, a.model, dists, summaries.PILOT_V2X_KEYS, skipped)
     ck.finish(rows)
     out = EXP / "results" / a.model
     (out / f"pilot_v2x{a.out_tag}_summary.json").write_text(json.dumps(s, indent=1))

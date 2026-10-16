@@ -15,6 +15,7 @@ Also reports how often the sentence differs and whether it names a fruit.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import itertools
 import json
 import random
@@ -33,7 +34,10 @@ from chain_routes import F32Head  # noqa: E402
 from choice_routes import FRUITS, REVEAL, SEED  # noqa: E402
 from batching import generate_batch, last_logprobs  # noqa: E402
 from models import is_gemma, load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("hidden_choice_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 
 def prompt_of(tok, lst, gemma):
@@ -146,11 +150,7 @@ def main() -> None:
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "choice_free_rows.json").write_text(json.dumps(rows, indent=1))
-    ch = [r for r in rows if r["sentence_changed"]]
-    s = {"model": a.model, "n": len(rows), "n_sentence_changed": len(ch),
-         "n_names_fruit": sum(r["names_fruit"] for r in rows),
-         **{k: boot([r[k] for r in rows]) for k in ("total", "emission", "persistence_t1", "persistence_t0")},
-         "emission_when_changed": boot([r["emission"] for r in ch])}
+    s = summaries.free_summary(rows, a.model)
     (out / "choice_free_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) if isinstance(v, dict) and v else v for k, v in s.items()}))
 

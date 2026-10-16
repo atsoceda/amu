@@ -10,6 +10,7 @@ post-list states everywhere, each post-list token reset to clean in turn; batche
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import random
 import sys
@@ -26,7 +27,10 @@ from batching import run_edits  # noqa: E402
 from chain_routes import F32Head  # noqa: E402
 from choice_routes import FRUITS, SEED  # noqa: E402
 from models import is_gemma, load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("hidden_choice_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 # Pool rule fixed in advance: the first 12 of these that are single tokens (with a leading space)
 ANIMAL_POOL = ["horse", "tiger", "rabbit", "eagle", "whale", "snake", "mouse", "sheep", "zebra", "camel", "otter",
@@ -129,26 +133,19 @@ def main() -> None:
         rows.append(rec)
         print(f"{len(rows):3d} [{time.time()-t0:5.0f}s] {po} vs {pdn}: text spec {rec['text_swap_specificity']:+.2f} "
               f"post spec {rec['post_specificity']:+.2f}", flush=True)
-    tag = f"_{a.domain}" + ("_localize" if a.localize else "") + ("" if a.wording == "base" else f"_{a.wording}")
+    tag = summaries.replicate_tag(a.domain, a.localize, a.wording, a.null_same_pick)
     if a.null_same_pick:
-        tag += "_samepick"
         out = EXP / "results" / a.model
         out.mkdir(parents=True, exist_ok=True)
         (out / f"choice_replicate{tag}_rows.json").write_text(json.dumps(rows, indent=1))
-        s_ = {"model": a.model, "n": len(rows), "text_swap_rel": boot([r["text_swap_rel"] for r in rows]),
-              "post_rel": boot([r["post_rel"] for r in rows])}
+        s_ = summaries.samepick_summary(rows, a.model)
         (out / f"choice_replicate{tag}_summary.json").write_text(json.dumps(s_, indent=1))
         print(s_)
         return
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / f"choice_replicate{tag}_rows.json").write_text(json.dumps(rows, indent=1))
-    s = {"model": a.model, "domain": a.domain, "n": len(rows),
-         **{k_: boot([r[k_] for r in rows]) for k_ in ("text_swap_pick", "text_swap_specificity", "post_pick", "post_specificity")}}
-    if a.localize and rows:
-        ref = rows[0]["post_tokens"]
-        same = [r for r in rows if r["post_tokens"] == ref]
-        s["necessity_by_token"] = [{"token": t, **boot([r["necessity_by_token"][i] for r in same])} for i, t in enumerate(ref)]
+    s = summaries.replicate_summary(rows, a.model, a.domain, a.localize)
     (out / f"choice_replicate{tag}_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k_: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) if isinstance(v, dict) else v
                       for k_, v in s.items() if k_ != "necessity_by_token"}))
