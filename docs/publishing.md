@@ -80,6 +80,10 @@ their own `.home`; the builder removes them after a successful or failed render.
 - Keep all figure and table paths relative to the repository.
 - Vendor official conference `.sty`, `.cls`, and `.bst` files under
   `_extensions/<venue>/` before relying on a target for submission.
-- After a real submission, tag its clean source commit and archive the exact
-  PDF, TeX, manifest and checksums under `submissions/`. For an unsubmitted
-  checkpoint use `milestones/`. Update `paper-versions.json` and the root README.
+- At a real submission run `bin/freeze-paper-version <version>`: it tags the clean
+  source commit, archives the exact PDF, TeX, manifest and checksums under
+  `submissions/`, updates `paper-versions.json` and proves the rebuild. For an
+  unsubmitted checkpoint add `--milestone` (archive under `milestones/`). Then add
+  the version to the root README. The full journal or conference lifecycle
+  (registering a venue, revisions, acceptance) is in `AGENTS.md`, "Submitting the
+  working paper".

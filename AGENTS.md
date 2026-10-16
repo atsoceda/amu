@@ -119,6 +119,43 @@ workflow. Additional publishing notes live in [`docs/publishing.md`](docs/publis
 The vendored NeurIPS 2026 assets remain under [`_extensions/neurips/`](_extensions/neurips/)
 so that its tagged workshop version can be rebuilt.
 
+## Submitting the working paper (journal or conference)
+
+The working paper on `main` goes through submission, review and revision with the
+same three tools: `bin/verify-paper`, `bin/freeze-paper-version` and
+`bin/build-paper-version`. Use version names `<venue>-<year>-v1` for the first
+submission and `<venue>-<year>-r1`, `-r2` for revised resubmissions.
+
+1. **Venue chosen.** Vendor its official style files under `_extensions/<venue>/`
+   (never edit them), add `_quarto-<venue>-submission.yml`, and register the version
+   in `paper-versions.json` as in preparation: `{"status": "in preparation",
+   "render_target": "<venue>", "render_mode": "submission"}` (plus `"derived_from"`
+   for a revision). `bin/render-paper <venue> submission` then works from `main`,
+   and its numbered PDFs continue the working paper's series. Check the venue's
+   anonymity, length, checklist, data and code-availability rules and record them in
+   the entry's `note`. Report length overflow to the user; never cut text to fit.
+2. **Editing.** Edit `paper.qmd` and `manuscript/` on `main`, commit, render a new
+   numbered PDF, and keep `bin/verify-paper` passing (update `manuscript/claims.py`
+   when a headline number changes). New experiments follow `docs/research-record.md`.
+3. **Submitting.** With everything committed, run `bin/freeze-paper-version
+   <venue>-<year>-v1`. It verifies, renders clean `HEAD`, archives the exact PDF, TeX,
+   manifest and checksums under `submissions/`, tags the source, records it in
+   `paper-versions.json`, and proves the rebuild. Upload exactly the archived PDF.
+   Add a row to the version tables in `README.md` and this file, then
+   `git push origin main <version>`.
+4. **Under review.** Keep editing on `main`. Keep reviews and responses under
+   `docs/reviews/<version>/` (reviews as received; the response letter as Markdown).
+5. **Revision.** Register `<venue>-<year>-r1` with `"derived_from":
+   "<venue>-<year>-v1"`, edit, then freeze it the same way. For a marked-up diff,
+   rebuild both versions with `bin/build-paper-version` and compare their `paper.tex`.
+6. **Accepted.** If `main` has moved on to other work, create
+   `paper/<venue>` from the accepted tag for the camera-ready, as with
+   `paper/neurips-workshop`; otherwise finish it on `main` and freeze it as
+   `<venue>-<year>-camera-ready`.
+
+Never move or delete a version tag, and never edit an archive folder: a correction
+after submission is a new version.
+
 ## Google Drive / `.gdoc` workflow
 
 `drive-sync-amu/*.gdoc` files are Google Drive pointer files. Do **not** create or edit them manually as document contents.

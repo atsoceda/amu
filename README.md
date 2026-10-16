@@ -45,6 +45,13 @@ submitted and milestone PDFs that matter are archived in `submissions/` and
 `milestones/`; older numbered drafts (`paper_N.pdf`) are backed up on Google
 Drive, so `dist/` can be deleted to free disk space and rebuilt on demand.
 
+## Submit the working paper
+
+Register the venue in `paper-versions.json`, edit on `main`, and freeze each
+submitted version with `bin/freeze-paper-version <venue>-<year>-v1` (archive, tag,
+index entry and rebuild proof in one step). The full lifecycle, including revisions,
+is in [AGENTS.md](AGENTS.md#submitting-the-working-paper-journal-or-conference).
+
 ## Reproduce the findings
 
 Three levels, from cheapest to complete:
