@@ -203,14 +203,16 @@ def fig1_schematic(axA):
     axA.set_xlim(-0.1, 9.35)
     axA.set_ylim(-0.75, 4.45)
     axA.axis("off")
-    toks = [(0.0, 0.7, "lonely", "ctx"), (0.8, 0.7, "night", "src"), (1.6, 0.36, ",", "bd"),
-            (2.06, 0.74, "⟨turn⟩", "tpl"), (3.0, 0.55, "And", "gen"), (3.65, 0.65, "stars", "gen"),
-            (4.4, 0.55, "will", "gen"), (5.05, 0.65, "guide", "late"), (5.8, 0.5, "me", "late"),
-            (6.4, 0.8, "through", "late"), (7.3, 0.55, "the", "tgt")]
+    # An actual Qwen3-32B couplet (chat prompt, item 123), at Qwen3's token boundaries:
+    # "Winds whisper tales of roads unseen," / "Moonlight paints the paths between."
+    toks = [(0.0, 0.75, "roads", "ctx"), (0.85, 0.85, "unseen", "src"), (1.8, 0.36, ",", "bd"),
+            (2.26, 0.74, "⟨turn⟩", "tpl"), (3.2, 0.7, "Moon", "gen"), (4.02, 0.7, "light", "late"),
+            (4.84, 0.8, "paints", "late"), (5.76, 0.55, "the", "late"), (6.43, 0.75, "paths", "tgt")]
     fc = {"ctx": "#F5F5F5", "src": "#DCEAF5", "bd": "#D9F0E7", "tpl": "#F3F3F3", "gen": "#F8EEF4",
           "late": "#E6F4FB", "tgt": "#FFFFFF"}
     ec = {"ctx": "#C8C8C8", "src": COL["retrieval"], "bd": COL["storage"], "tpl": "#C8C8C8", "gen": COL["relay"],
           "late": COL["late"], "tgt": COL["ink"]}
+    SRC, TGT = "unseen", "paths"
     cx, box = {}, {}
     for x, w, t, k in toks:
         axA.add_patch(FancyBboxPatch((x, 0.0), w, 0.62, boxstyle="round,pad=0.015,rounding_size=0.1", fc=fc[k],
@@ -219,35 +221,35 @@ def fig1_schematic(axA):
                  weight="bold" if k in ("src", "tgt") else "normal")
         cx[t], box[t] = x + w / 2, (x, w)
     # Donor badge on the rhyme word.
-    axA.text(cx["night"], -0.02, "donor", ha="center", va="center", fontsize=7, color="white", weight="bold",
+    axA.text(cx[SRC], -0.02, "donor", ha="center", va="center", fontsize=7, color="white", weight="bold",
              bbox=dict(boxstyle="round,pad=0.12,rounding_size=0.25", fc=COL["retrieval"], ec="none"))
-    axA.text(7.95, 0.31, "→ rhyme?", ha="left", va="center", fontsize=7, color="#666666", style="italic")
-    axA.plot([0.0, 2.8], [-0.3, -0.3], color="#AAAAAA", lw=0.6)
-    axA.plot([3.0, 7.85], [-0.3, -0.3], color="#AAAAAA", lw=0.6)
-    axA.text(1.4, -0.4, "end of line 1 (prompt)", ha="center", va="top", fontsize=7, color="#666666")
-    axA.text(5.42, -0.4, "line 2 so far (generated, held fixed)", ha="center", va="top", fontsize=7,
+    axA.text(7.28, 0.31, "→ between", ha="left", va="center", fontsize=7, color="#666666", style="italic")
+    axA.plot([0.0, 3.0], [-0.3, -0.3], color="#AAAAAA", lw=0.6)
+    axA.plot([3.2, 7.18], [-0.3, -0.3], color="#AAAAAA", lw=0.6)
+    axA.text(1.5, -0.4, "end of line 1 (prompt)", ha="center", va="top", fontsize=7, color="#666666")
+    axA.text(5.19, -0.4, "line 2 so far (generated, held fixed)", ha="center", va="top", fontsize=7,
              color="#666666")
     y0 = 0.68
     # Source retrieval and the stored copy at the line's final token.
     # The four paths arrive at separate points across the top of the target box.
-    tx0, tw = box["the"]
+    tx0, tw = box[TGT]
     arrive = {"relay": tx0 + 0.04, "storage": tx0 + 0.18, "retrieval": tx0 + 0.37, "late": tx0 + tw - 0.05}
-    bez(axA, cx["night"], y0, arrive["retrieval"], y0, 2.2, s["retrieval"], COL["retrieval"])
-    bez(axA, cx["night"] + 0.12, y0, cx[","], y0, 0.98, s["boundary"], COL["storage"])
+    bez(axA, cx[SRC], y0, arrive["retrieval"], y0, 2.2, s["retrieval"], COL["retrieval"])
+    bez(axA, cx[SRC] + 0.12, y0, cx[","], y0, 0.98, s["boundary"], COL["storage"])
     bez(axA, cx[","], y0, arrive["storage"], y0, 1.72, s["boundary"], COL["storage"])
     # Late lookup: into a bracket over the last three line-2 positions, then a short arc to the target.
-    bx0, bx1 = box["guide"][0] + 0.02, box["through"][0] + box["through"][1] - 0.02
+    bx0, bx1 = box["light"][0] + 0.02, box["the"][0] + box["the"][1] - 0.02
     by = 1.02
     axA.plot([bx0, bx0, bx1, bx1], [by - 0.12, by, by, by - 0.12], color=COL["late"], lw=0.9)
     bm = (bx0 + bx1) / 2
-    bez(axA, cx["night"] - 0.12, y0, bm - 0.2, by + 0.02, 1.42, s["late"], COL["late"])
+    bez(axA, cx[SRC] - 0.12, y0, bm - 0.2, by + 0.02, 1.42, s["late"], COL["late"])
     bez(axA, bx1 - 0.1, by + 0.02, arrive["late"], y0, 1.22, s["late"], COL["late"], arrow=True)
     # Relay: a chain of small arcs from the rhyme word through line 2 to the target.
-    chain = ["night", "And", "stars", "will", "guide", "me", "through", "the"]
+    chain = [SRC, "Moon", "light", "paints", "the", TGT]
     for a, b in zip(chain[:-1], chain[1:]):
-        h = 0.86 if a == "night" else 0.8
-        bez(axA, cx[a] + (0.18 if a == "night" else 0.0), y0, arrive["relay"] if b == "the" else cx[b], y0, h,
-            max(s["early"], 0.0), COL["relay"], ls=(0, (1.6, 1.0)), arrow=(b == "the"))
+        h = 0.86 if a == SRC else 0.8
+        bez(axA, cx[a] + (0.18 if a == SRC else 0.0), y0, arrive["relay"] if b == TGT else cx[b], y0, h,
+            max(s["early"], 0.0), COL["relay"], ls=(0, (1.6, 1.0)), arrow=(b == TGT))
     rows = [(COL["retrieval"], "-", "direct retrieval from the rhyme word", f"{100 * s['retrieval']:.0f}%"),
             (COL["storage"], "-", "stored copy at the line's final token",
              f"{100 * s['boundary']:.0f}% (nec. {100 * s['nec_boundary']:.0f}%)"),

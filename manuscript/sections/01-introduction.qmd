@@ -25,7 +25,9 @@ where it is used.
 of line 1 (where the donor state is written) reaches the position that predicts the
 rhyme, with the line-2 words held fixed. Widths are each path's measured share of
 persistence in Qwen3-32B with the chat prompt: most of the plan is read directly from the
-rhyme word, and relay through the hidden states of line 2 accounts for 1%. Appendix @fig-overview-points gives, for every setting and model, the looked-up share and the share of relay or of an unsplit indirect path.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
+rhyme word, and relay through the hidden states of line 2 accounts for 1%. The couplet is one
+Qwen3-32B wrote (boxes are its tokens); with a donor plan for "tight" written in at "unseen", it
+wrote "Moonlight guides the traveler's flight" instead. Appendix @fig-overview-points gives, for every setting and model, the looked-up share and the share of relay or of an unsplit indirect path.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
 
 We introduce **route accounting** (@sec-method). A donor's hidden states are written at
 the source positions, and the effect is measured where the information is used. Fixing
