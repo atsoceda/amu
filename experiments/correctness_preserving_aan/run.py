@@ -15,6 +15,7 @@ import torch
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, cosine, first_id, stats
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 
 EXP = Path(__file__).resolve().parent
@@ -101,7 +102,7 @@ def main() -> None:
     if min(sum(p["analysis_regime"] == r for p in pairs) for r in ("between", "within")) < 5:
         raise RuntimeError("Fewer than five independent semantic families in a regime")
     started = time.time(); spec = cfg["models"]["gemma_1b"]
-    rm = ResidualModel(spec["model_snapshot"], getattr(torch, cfg["dtype"])); tok = rm.tokenizer
+    rm = ResidualModel(local(spec["model_snapshot"]), getattr(torch, cfg["dtype"])); tok = rm.tokenizer
     frozen_layer = int(cfg["frozen_layer"]); article_ids = {a: token_id_for_text(tok, f" {a}") for a in ("a", "an")}
     cache: dict[str, dict[str, Any]] = {}
     for index, pair in enumerate(pairs, 1):

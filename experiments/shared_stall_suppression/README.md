@@ -7,7 +7,7 @@ regimen.
 Run:
 
 ```bash
-/Users/anthony/miniconda3/bin/python /Users/anthony/repos/amu/experiments/shared_stall_suppression/run.py
+python experiments/shared_stall_suppression/run.py
 ```
 
 Outputs:

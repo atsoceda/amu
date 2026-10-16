@@ -10,6 +10,6 @@ decomposition, target enhancement/source suppression, wrong-target and
 matched-norm controls, and exact stochastic two-article mixtures.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/gemma_1b_residual_scale/run.py
-/Users/anthony/miniconda3/bin/python experiments/gemma_1b_residual_scale/plot.py
+python experiments/gemma_1b_residual_scale/run.py
+python experiments/gemma_1b_residual_scale/plot.py
 ```

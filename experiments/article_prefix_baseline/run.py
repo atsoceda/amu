@@ -22,6 +22,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from experiments.lib.core import setup_file_logging, token_id_for_text
 from experiments.lib.mediation_estimands import total_variation_from_logits
+from experiments.lib.model_refs import local
 
 
 EXP_DIR = Path(__file__).resolve().parent
@@ -110,8 +111,8 @@ def main() -> None:
     examples = heldout + an_targets
 
     model_ref = (
-        config["model_snapshot"]
-        if Path(config["model_snapshot"]).exists()
+        local(config["model_snapshot"])
+        if Path(local(config["model_snapshot"])).exists()
         else config["model"]
     )
     if torch.backends.mps.is_available():

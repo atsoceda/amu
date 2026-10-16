@@ -9,8 +9,8 @@ memory-feasibility test on the 16 GB M1 host. If it succeeds, run the complete
 selection phase and then the held-out assay.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/gemma_1b_sparse_scale/run.py --graph-only someone-who-installs-and-repairs-electrical-systems-is article
-/Users/anthony/miniconda3/bin/python experiments/gemma_1b_sparse_scale/run.py --selection-only
-/Users/anthony/miniconda3/bin/python experiments/gemma_1b_sparse_scale/run.py
+python experiments/gemma_1b_sparse_scale/run.py --graph-only someone-who-installs-and-repairs-electrical-systems-is article
+python experiments/gemma_1b_sparse_scale/run.py --selection-only
+python experiments/gemma_1b_sparse_scale/run.py
 ```
 

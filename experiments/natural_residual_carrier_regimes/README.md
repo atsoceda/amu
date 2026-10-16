@@ -8,6 +8,6 @@ pooled development set for layer selection and includes cyclic wrong-target,
 sign-reversed, and reverse natural-patch controls.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/natural_residual_carrier_regimes/run.py
-/Users/anthony/miniconda3/bin/python experiments/natural_residual_carrier_regimes/plot.py
+python experiments/natural_residual_carrier_regimes/run.py
+python experiments/natural_residual_carrier_regimes/plot.py
 ```

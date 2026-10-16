@@ -22,5 +22,5 @@ This intervention is:
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/fixed_article_residual_reference/run.py
+python experiments/fixed_article_residual_reference/run.py
 ```

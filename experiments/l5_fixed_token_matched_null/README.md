@@ -7,5 +7,5 @@ Each single feature is amplified at 5x on the 20 held-out prompts under fixed
 `an` and compared on full-vocabulary TV and pre-specified twin contrasts.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/l5_fixed_token_matched_null/run.py
+python experiments/l5_fixed_token_matched_null/run.py
 ```

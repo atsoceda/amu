@@ -28,9 +28,9 @@ Run candidate generation from a login shell so `GOOGLE_GEMINI_API_KEY` is
 available from `~/.zprofile`:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/natural_modifier_routes/generate_candidates.py
-/Users/anthony/miniconda3/bin/python experiments/natural_modifier_routes/tokenizer_filter.py
-/Users/anthony/miniconda3/bin/python experiments/natural_modifier_routes/branch_leverage.py
+python experiments/natural_modifier_routes/generate_candidates.py
+python experiments/natural_modifier_routes/tokenizer_filter.py
+python experiments/natural_modifier_routes/branch_leverage.py
 ```
 
 Raw API payloads and responses live under `artifacts/00_raw_generation/`.

@@ -7,8 +7,8 @@ This circuit-free experiment screens the full subtraction dataset released with
 Run:
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/is_are_behavioral_screen/run.py
 ```
 

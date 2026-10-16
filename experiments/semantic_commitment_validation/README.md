@@ -5,7 +5,7 @@ This repeatable sprint validates whether the strongest causal handles from `sema
 Regenerate results from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/semantic_commitment_validation/run.py
+python experiments/semantic_commitment_validation/run.py
 ```
 
 Primary outputs:

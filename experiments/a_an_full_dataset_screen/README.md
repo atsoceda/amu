@@ -10,8 +10,8 @@ The source dataset is downloaded once from a pinned commit of
 Run:
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/a_an_full_dataset_screen/run.py
 ```
 

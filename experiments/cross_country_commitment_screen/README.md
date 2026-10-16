@@ -5,7 +5,7 @@ This sprint tests whether answer-over-stall interventions behave like plausible 
 Run:
 
 ```bash
-/Users/anthony/miniconda3/bin/python /Users/anthony/repos/amu/experiments/cross_country_commitment_screen/run.py
+python experiments/cross_country_commitment_screen/run.py
 ```
 
 Outputs:

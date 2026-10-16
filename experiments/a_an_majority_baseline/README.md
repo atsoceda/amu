@@ -7,8 +7,8 @@ the majority article `a` when a prompted future noun requires `an`.
 Run:
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/a_an_majority_baseline/run.py
 ```
 

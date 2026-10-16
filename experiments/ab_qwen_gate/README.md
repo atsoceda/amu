@@ -17,7 +17,7 @@ not below the prespecified one-third cutoff at 50%. With the code fixed, the
 visible context still moves the term more (0.42-0.57).
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/ab_qwen_gate/run.py Qwen3-4B
+python experiments/ab_qwen_gate/run.py Qwen3-4B
 ```
 
 At 4B the code is a strong in-context mediator whose leverage tracks reliability

@@ -8,8 +8,8 @@ both intended article+noun realizations and have single-token noun readouts are
 eligible for the causal assay.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/screen.py
-/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/screen.py --model gemma_1b
+python experiments/correctness_preserving_aan/screen.py
+python experiments/correctness_preserving_aan/screen.py --model gemma_1b
 ```
 
 The planned causal phase uses one development-selected natural-state-derived
@@ -23,8 +23,8 @@ retained under `results/frozen_layer14/`; it fails local efficacy and is not
 used for the route claim.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/run.py
-/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/analyze.py
-/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/simple_effects.py
-/Users/anthony/miniconda3/bin/python experiments/correctness_preserving_aan/plot.py
+python experiments/correctness_preserving_aan/run.py
+python experiments/correctness_preserving_aan/analyze.py
+python experiments/correctness_preserving_aan/simple_effects.py
+python experiments/correctness_preserving_aan/plot.py
 ```

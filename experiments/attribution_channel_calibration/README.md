@@ -6,6 +6,6 @@ their article-logit, free-noun, token-substitution, and fixed-token effects on
 the twenty held-out occupations. No new attribution graphs are constructed.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/attribution_channel_calibration/run.py
-/Users/anthony/miniconda3/bin/python experiments/attribution_channel_calibration/plot.py
+python experiments/attribution_channel_calibration/run.py
+python experiments/attribution_channel_calibration/plot.py
 ```

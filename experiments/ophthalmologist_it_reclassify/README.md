@@ -5,8 +5,8 @@ E1–E6 protocol (complete; historical): [`../PAPER_EXPERIMENTS.md`](../PAPER_EX
 ## Run
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python experiments/ophthalmologist_it_reclassify/run.py
+cd "$(git rev-parse --show-toplevel)"
+python experiments/ophthalmologist_it_reclassify/run.py
 ```
 
 Requires prior experiment outputs where noted in `config.json` (E1 selection/summary, etc.).

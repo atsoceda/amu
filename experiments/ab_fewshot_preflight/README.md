@@ -15,7 +15,7 @@ intervention, layer selection, causal route decomposition, or test confirmation
 is run at this stage.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/ab_fewshot_preflight/run.py
+python experiments/ab_fewshot_preflight/run.py
 ```
 
 The default rerun output is `results_corrected_direct/`. The runner uses direct

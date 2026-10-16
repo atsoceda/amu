@@ -11,5 +11,5 @@ mechanistic ablation.
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/s1_propagation_diagnostics/run.py
+python experiments/s1_propagation_diagnostics/run.py
 ```

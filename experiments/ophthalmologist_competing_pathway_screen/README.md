@@ -22,8 +22,8 @@ the individual intervention outcomes. No answer feature is augmented.
 Run:
 
 ```bash
-cd /Users/anthony/repos/amu
-/Users/anthony/miniconda3/bin/python \
+cd "$(git rev-parse --show-toplevel)"
+python \
   experiments/ophthalmologist_competing_pathway_screen/run.py
 ```
 

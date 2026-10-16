@@ -10,6 +10,8 @@ from typing import Any
 
 import torch
 
+from experiments.lib.model_refs import local
+
 
 @dataclass(frozen=True)
 class CandidateFeature:
@@ -83,7 +85,7 @@ def patch_hf_cache(config: dict[str, Any]) -> None:
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     import circuit_tracer.utils.hf_utils as h
 
-    weight_root = Path(config["transcoder_weight_snapshot"])
+    weight_root = Path(local(config["transcoder_weight_snapshot"]))
     expected_repo = _google_scope_repo_id(config)
 
     def local_download_hf_uris(uris, max_workers=8):
@@ -187,10 +189,10 @@ def load_replacement_model(config: dict[str, Any]):
     import yaml
 
     patch_hf_cache(config)
-    model_ref = config["model_snapshot"] if Path(config["model_snapshot"]).exists() else config["model"]
+    model_ref = local(config["model_snapshot"]) if Path(local(config["model_snapshot"])).exists() else config["model"]
     dtype = getattr(torch, config.get("dtype", "float32"))
 
-    config_snapshot = Path(config.get("transcoder_config_snapshot", ""))
+    config_snapshot = Path(local(config.get("transcoder_config_snapshot", "")))
     if config_snapshot.exists():
         logging.info("Loading transcoder config %s", config_snapshot)
         transcoder_config = yaml.safe_load(config_snapshot.read_text())

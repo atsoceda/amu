@@ -18,6 +18,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from experiments.lib.core import setup_file_logging, token_id_for_text
+from experiments.lib.model_refs import local, to_ref
 
 EXP_DIR = Path(__file__).resolve().parent
 CONFIG_PATH = EXP_DIR / "config.json"
@@ -227,7 +228,7 @@ def main() -> None:
     os.environ.setdefault("HF_HUB_OFFLINE", "1")
     device = choose_device()
     dtype = getattr(torch, config["dtype"])
-    model_ref = config["model_snapshot"] if Path(config["model_snapshot"]).exists() else config["model"]
+    model_ref = local(config["model_snapshot"]) if Path(local(config["model_snapshot"])).exists() else config["model"]
     logging.info("Loading %s on %s", model_ref, device)
     tokenizer = AutoTokenizer.from_pretrained(model_ref, local_files_only=True)
     model = AutoModelForCausalLM.from_pretrained(
@@ -273,7 +274,7 @@ def main() -> None:
         "experiment_name": config["experiment_name"],
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "model": config["model"],
-        "model_ref": model_ref,
+        "model_ref": to_ref(model_ref),
         "device": str(device),
         "runtime_seconds": time.time() - started,
         "source": config["source"],

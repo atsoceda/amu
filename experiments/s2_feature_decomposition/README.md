@@ -6,5 +6,5 @@ fixed-`an` noun distribution. The analysis separates grammatical-continuation
 validity from pre-specified twin target movement.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/s2_feature_decomposition/run.py
+python experiments/s2_feature_decomposition/run.py
 ```

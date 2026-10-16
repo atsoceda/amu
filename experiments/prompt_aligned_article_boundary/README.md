@@ -7,5 +7,5 @@ inserted at both gains, yielding an exact local token-substitution plus
 fixed-token-residual split across the decoding boundary.
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/prompt_aligned_article_boundary/run.py
+python experiments/prompt_aligned_article_boundary/run.py
 ```

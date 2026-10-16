@@ -13,13 +13,14 @@ import torch
 
 from experiments.gemma_1b_residual_scale.run import ResidualModel, first_id, mixture, stats, tv
 from experiments.lib.aan_protocol import token_id_for_text, write_json
+from experiments.lib.model_refs import local
 
 EXP=Path(__file__).resolve().parent;ROOT=EXP.parents[1];RESULTS=EXP/"results"
 NATURAL=json.loads((ROOT/"experiments/natural_residual_carrier_regimes/config.json").read_text())
 PAIRS=[pair for pair in NATURAL["pairs"] if pair["split"]=="test"]
 MODELS={
-    "gemma_270m":{"snapshot":"/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-270m/snapshots/9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1","layer":12},
-    "gemma_1b":{"snapshot":"/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29","layer":14},
+    "gemma_270m":{"snapshot":"hf:google/gemma-3-270m@9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1","layer":12},
+    "gemma_1b":{"snapshot":"hf:google/gemma-3-1b-pt@fcf18a2a879aab110ca39f8bffbccd5d49d8eb29","layer":14},
 }
 STRENGTHS=(0.5,1.0,1.5);TEMPERATURES=(0.1,1.0);DEMO=NATURAL["demonstration"]
 
@@ -30,7 +31,7 @@ def interval(values,seed,resamples=10000):
 
 
 def run_model(name,config):
-    rm=ResidualModel(config["snapshot"],torch.bfloat16);tok=rm.tokenizer;layer=config["layer"]
+    rm=ResidualModel(local(config["snapshot"]),torch.bfloat16);tok=rm.tokenizer;layer=config["layer"]
     article_ids={article:token_id_for_text(tok,f" {article}") for article in ("a","an")};cache={};source_states=[]
     for pair in PAIRS:
         source_prompt=f"{DEMO} {pair['source_sentence']}";target_prompt=f"{DEMO} {pair['target_sentence']}"

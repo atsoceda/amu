@@ -3,7 +3,7 @@
   "frozen_before_screening": "2026-08-31T14:05:00+09:00",
   "construction": "Outcome-blind exhaustive enumeration within semantic-family labels and lexical alternatives frozen in correctness_preserving_aan/config.json. The modal existing definition is selected deterministically per family; no new logits or causal outcomes enter construction.",
   "model": "google/gemma-3-1b-pt",
-  "model_snapshot": "/Users/anthony/.cache/huggingface/hub/models--google--gemma-3-1b-pt/snapshots/fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+  "model_snapshot": "hf:google/gemma-3-1b-pt@fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
   "dtype": "bfloat16",
   "prompt_template": "Answer with an occupation beginning with {initial}. {definition} is",
   "screening_rule": "Identical to frozen batches 1-2: all nouns are single-token readouts; each prompt preserves its intended article; the source prompt favors source over both targets; each target prompt favors target over source. At most one triad per family may enter inference, selected by the frozen behavioral-only score.",

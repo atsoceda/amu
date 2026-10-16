@@ -8,8 +8,8 @@ policy at four temperatures into policy-mediated and fixed-token terms.
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/boundary_precision_policy/run.py
-/Users/anthony/miniconda3/bin/python experiments/boundary_precision_policy/plot.py
+python experiments/boundary_precision_policy/run.py
+python experiments/boundary_precision_policy/plot.py
 ```
 
 Outputs follow the repository convention under `results/`.

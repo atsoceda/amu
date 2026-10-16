@@ -13,8 +13,8 @@ computes or selects on public/private route contrast.
 Run with checkpointing:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads_repaired/run.py screen
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads_repaired/run.py assay
+python experiments/matched_semantic_triads_repaired/run.py screen
+python experiments/matched_semantic_triads_repaired/run.py assay
 ```
 
 The assay refuses to run unless at least eight independent triads pass the
@@ -24,12 +24,12 @@ family at layer 17, strength 1, and article-policy temperature 1.
 Submission audits:
 
 ```bash
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads_repaired/potency_audit.py
+python experiments/matched_semantic_triads_repaired/potency_audit.py
 python experiments/matched_semantic_triads_repaired/analyze.py
 python experiments/matched_semantic_triads_repaired/make_appendix_table.py
 python experiments/neutral_synonym_repair/recompute_headlines.py
 python experiments/matched_semantic_triads_repaired/component_diagnostic.py
-/Users/anthony/miniconda3/bin/python experiments/matched_semantic_triads_repaired/article_policy_audit.py
+python experiments/matched_semantic_triads_repaired/article_policy_audit.py
 ```
 
 `potency_audit.py` recomputes donor-direction norms and baseline lexical gaps

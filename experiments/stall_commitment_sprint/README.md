@@ -17,7 +17,7 @@ A useful intervention increases the commitment margin, ideally by reducing the s
 Run from the repository root:
 
 ```bash
-/Users/anthony/miniconda3/bin/python /Users/anthony/repos/amu/experiments/stall_commitment_sprint/run.py
+python experiments/stall_commitment_sprint/run.py
 ```
 
 Outputs:
