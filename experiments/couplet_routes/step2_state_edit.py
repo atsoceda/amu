@@ -34,7 +34,7 @@ from models import cut_line, load, prompt_ids  # noqa: E402,F401  (prompt_ids re
 
 ROOT = Path(__file__).resolve().parents[2]
 EXP = Path(__file__).resolve().parent
-HA = ROOT / "external/model-planning-public/couplets/results/rhyme_intervention_sample"
+HA = ROOT / "third_party/hanna-ameisen-model-planning/couplets/results/rhyme_intervention_sample"
 
 
 def subset_csv(model: str) -> Path:

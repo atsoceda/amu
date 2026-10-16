@@ -20,7 +20,7 @@ from pathlib import Path
 import pandas as pd
 
 EXP = Path(__file__).resolve().parent
-COUPLETS = EXP.parents[1] / "external/model-planning-public/couplets/results/couplets"
+COUPLETS = EXP.parents[1] / "third_party/hanna-ameisen-model-planning/couplets/results/couplets"
 SEED = 20260925
 
 
