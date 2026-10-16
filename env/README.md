@@ -25,6 +25,11 @@ example with `skills/hf-range-streaming`). Result files written before 2026-10-1
 still record absolute paths from the development Mac; the revision hash in such a
 path is the one recorded here.
 
+Known quirk: with transformers 4.57.3, loading a tokenizer by repository name makes
+one metadata request to the Hub (a Mistral-tokenizer check) even when the files are
+cached, so `HF_HUB_OFFLINE=1` makes the load fail. Run online; the weights still come
+from the cache.
+
 ## Not yet recorded
 
 - **Models run on the large-memory machine** (Qwen3-8B to 32B, Qwen3.5, Gemma 3

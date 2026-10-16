@@ -68,18 +68,33 @@ paper status and repository workflow. Scientific state is unchanged since
   scopes correctly. The Mac Studio was unreachable over SSH (VPN up), so whether any of
   these exist only there is unchecked.
 
-## Remaining engineering (not started)
+## Code-release preparation (done the same day)
 
-- Summaries are computed inside model-loading runners; recomputing them from the
-  committed rows needs pure summary functions and a torch-free `boot()`
-  (`experiments/couplet_routes/step34_routes.py`).
-- About 60 experiment configs hold absolute `model_snapshot` paths on the
-  development Mac; replace with model id + revision from `env/models.json`.
-- Record the Mac Studio's model and transcoder revisions and both remote
-  environments (`env/README.md`, "Not yet recorded") when the VPN is up.
-- Render numbering: the working paper's numbered PDFs continue from
-  `dist/iclr-submission/` (paper_65) into `dist/working-draft/` (paper_66 onward);
-  stray paper_1 and paper_2 there came from before the fix.
+- **Summaries from rows:** every committed summary of the working paper's six
+  experiments (258 files) is rebuilt from its committed rows by `bin/resummarize`
+  (torch-free, about 5 minutes) and matches. The summary code now lives in
+  `experiments/<exp>/summaries.py`, called by the runners; `boot` moved to
+  `experiments/couplet_routes/route_stats.py`. Three summaries came from older script
+  versions (Qwen3 1.7B/4B/8B relay_boundary before per-token necessity; Qwen3-8B
+  chain_summary before the post-v0 block) and are reproduced by those versions' logic,
+  kept as separate commented functions. `bin/verify-paper` runs this check
+  (`--quick` skips it).
+- **Model versions:** the route-accounting loader (`couplet_routes/models.py`) loads
+  the revision recorded in `env/models.json` when there is one. The older
+  experiments' 53 configs use `hf:<org>/<name>@<revision>` and repository-relative
+  paths, resolved by `experiments/lib/model_refs.py`; on this laptop all 147 rewritten
+  values resolve to the same files as before. No laptop path remains in experiment
+  code, configs or READMEs (result files and binary graphs keep theirs as records).
+
+## Remaining engineering
+
+- Record the Mac Studio's model and transcoder revisions (then the loader pins those
+  models too) and both remote environments (`env/README.md`) when SSH works; on
+  2026-10-16 the VPN was up (full-tunnel profile) but SSH timed out.
+- Runners were compiled and imported with the new code; hidden_choice/choice_routes.py
+  and derived_value_carry/chain_routes.py were also run end to end on Qwen3-0.6B
+  (3 items; outputs deleted) and their fresh summaries matched `bin/resummarize`. The
+  other runners' first real run will be their first end-to-end test.
 - Public release (licence, history scan) is deferred until after camera-ready or
   the conference. `dist/` (210 MB locally, untracked) is disposable; its numbered
   PDFs are backed up on Google Drive.
