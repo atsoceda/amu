@@ -211,10 +211,11 @@ Check every skill against the [Agent Skills specification](https://agentskills.i
 after adding or editing one. `bin/validate-skills` is a local checker for the
 specification's frontmatter rules (name format and directory match, field
 lengths, string-valued metadata) plus broken file references and non-executable
-scripts; it exits non-zero on errors:
+scripts; it exits non-zero on errors. It needs PyYAML, so run it with the project
+Python:
 
 ```bash
-bin/validate-skills
+/Users/anthony/miniconda3/bin/python bin/validate-skills
 ```
 
 If [skills-ref](https://github.com/agentskills/agentskills/tree/main/skills-ref) is installed, also run it against each skill folder:

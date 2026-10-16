@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Verify the working paper from committed results, without model weights:
+#   1. regenerate every figure into a temporary folder and require the exact set of input
+#      files in manuscript/figures/figure_inputs.json (none missing, none new);
+#   2. compare each regenerated figure with the committed PNG, pixel by pixel;
+#   3. check the headline numbers in the text (manuscript/claims.py).
+# Frozen versions are verified by bin/build-paper-version <version>, which checks the TeX hash.
+# Usage: bin/verify-paper [--update-inputs]   (after an intended change to the figure inputs)
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+py="${PYTHON:-python3}"
+cd "$root"
+
+tmp="$(mktemp -d "${TMPDIR:-/tmp}/amu-verify.XXXXXX")"
+trap 'rm -rf "$tmp"' EXIT
+
+echo "== Figures"
+AMU_FIG_OUT="$tmp/figures" AMU_FIG_INPUTS="$tmp/figure_inputs.json" \
+  "$py" manuscript/figures/make_iclr_figures.py >/dev/null
+if [[ "${1:-}" == "--update-inputs" ]]; then
+  cp "$tmp/figure_inputs.json" manuscript/figures/figure_inputs.json
+  echo "Updated manuscript/figures/figure_inputs.json; review and commit it."
+fi
+
+status=0
+"$py" - "$tmp" <<'PY' || status=1
+import json
+import sys
+from pathlib import Path
+
+import matplotlib.image as mi
+import numpy as np
+
+tmp = Path(sys.argv[1])
+want = json.loads(Path("manuscript/figures/figure_inputs.json").read_text())
+got = json.loads((tmp / "figure_inputs.json").read_text())
+bad = False
+for key, label in (("read", "read"), ("absent", "looked for but absent")):
+    for p in sorted(set(want[key]) - set(got[key])):
+        print(f"FAIL input no longer {label}: {p}")
+        bad = True
+    for p in sorted(set(got[key]) - set(want[key])):
+        print(f"FAIL input newly {label}: {p}")
+        bad = True
+print(f"{len(got['read'])} inputs read, {len(got['absent'])} looked for but absent (as recorded)" if not bad else "")
+for f in sorted((tmp / "figures").glob("*.png")):
+    ref = Path("manuscript/figures") / f.name
+    if not ref.exists():
+        print(f"FAIL {f.name}: no committed figure")
+        bad = True
+        continue
+    a, b = mi.imread(f), mi.imread(ref)
+    diff = float(np.abs(a - b).max()) if a.shape == b.shape else None
+    if diff is None or diff > 1 / 255:
+        print(f"FAIL {f.name}: differs from the committed figure ({'size' if diff is None else f'max {diff:.3f}'})")
+        bad = True
+    else:
+        print(f"ok   {f.name}")
+sys.exit(1 if bad else 0)
+PY
+
+echo "== Claims"
+"$py" manuscript/claims.py || status=1
+
+if [[ $status -eq 0 ]]; then echo "Paper verified."; else echo "Verification FAILED." >&2; fi
+exit $status

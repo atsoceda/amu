@@ -2,10 +2,13 @@
 """Figures for the ICLR 2027 manuscript, generated from the committed experiment results.
 
 Run from the repository root:
-    /Users/anthony/miniconda3/bin/python manuscript/figures/make_iclr_figures.py
-Every number is read from experiments/*/results. Runs that are still in progress are skipped
-silently, so the figures can be regenerated as results arrive. Figures are drawn at their
-printed size (ICLR text width 5.5 in), so font sizes are the sizes on the page (at least 7 pt).
+    python manuscript/figures/make_iclr_figures.py
+Every number is read from experiments/*/results. Missing inputs are skipped, so the figures can
+be regenerated as results arrive; bin/verify-paper checks the exact set of files read against
+manuscript/figures/figure_inputs.json, so a verification build fails if any input goes missing.
+Environment: AMU_FIG_OUT writes figures to another folder (default manuscript/figures);
+AMU_FIG_INPUTS writes the list of files read and files looked for but absent to a JSON file.
+Figures are drawn at their printed size (ICLR text width 5.5 in), so font sizes are the sizes on the page (at least 7 pt).
 One colour per path throughout (Okabe-Ito): direct retrieval blue, the stored copy at the
 line's final token green, late lookup via the last three positions sky blue, relay along
 generated text (and any indirect path not split further, and recurrent memory) reddish purple, emission
@@ -20,6 +23,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 from pathlib import Path
 
 import matplotlib
@@ -31,7 +35,7 @@ from matplotlib.lines import Line2D  # noqa: E402
 from matplotlib.patches import ArrowStyle, FancyArrowPatch, FancyBboxPatch, Rectangle  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "manuscript" / "figures"
+OUT = Path(os.environ.get("AMU_FIG_OUT", ROOT / "manuscript" / "figures"))
 EXP = ROOT / "experiments"
 CR, HC, PC = EXP / "couplet_routes/results", EXP / "hidden_choice/results", EXP / "relay_positive_control/results"
 RC, RD, DV = EXP / "recurrent_carry/results", EXP / "relay_distance/results", EXP / "derived_value_carry/results"
@@ -57,8 +61,12 @@ QWEN = [("Qwen3-1.7B", 1.7), ("Qwen3-4B", 4), ("Qwen3-8B", 8), ("Qwen3-14B", 14)
 GEMMA = [("gemma-3-1b-it", 1), ("gemma-3-4b-it", 4), ("gemma-3-12b-it", 12), ("gemma-3-27b-it", 27)]
 
 
+LOADED: dict[str, bool] = {}  # repository-relative path -> existed when looked for
+
+
 def load(p):
     p = Path(p)
+    LOADED[str(p.resolve().relative_to(ROOT))] = p.exists()
     return json.loads(p.read_text()) if p.exists() else None
 
 
@@ -1246,5 +1254,10 @@ def figA_computed():
 
 
 if __name__ == "__main__":
+    OUT.mkdir(parents=True, exist_ok=True)
     for f in (lambda: fig1("A"), lambda: fig1("B"), fig2, fig3, fig4, fig5, figA_computed):
         f()
+    if os.environ.get("AMU_FIG_INPUTS"):
+        Path(os.environ["AMU_FIG_INPUTS"]).write_text(json.dumps(
+            {"read": sorted(k for k, v in LOADED.items() if v),
+             "absent": sorted(k for k, v in LOADED.items() if not v)}, indent=1) + "\n")

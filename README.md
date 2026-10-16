@@ -40,6 +40,37 @@ folders; newly rendered PDFs may differ byte-for-byte because of build
 timestamps. Rebuilt outputs go under ignored `dist/version-builds/`, while the
 working draft goes under ignored `dist/working-draft/`.
 
+Everything under `dist/` is disposable build output and is not tracked. The
+submitted and milestone PDFs that matter are archived in `submissions/` and
+`milestones/`; older numbered drafts (`paper_N.pdf`) are backed up on Google
+Drive, so `dist/` can be deleted to free disk space and rebuilt on demand.
+
+## Reproduce the findings
+
+Three levels, from cheapest to complete:
+
+1. **Rebuild a submitted paper exactly**: `bin/build-paper-version <version>`
+   (above).
+2. **Verify the working paper from the committed results** (no model weights,
+   minutes, numpy and matplotlib only):
+
+   ```bash
+   bin/verify-paper
+   ```
+
+   It regenerates every figure into a temporary folder, requires the exact set
+   of result files recorded in `manuscript/figures/figure_inputs.json`,
+   compares each figure pixel by pixel with the committed PNG, and checks the
+   headline numbers in the text against the summaries
+   ([`manuscript/claims.py`](manuscript/claims.py)). Known discrepancies awaiting
+   an author decision are reported as `OPEN`.
+3. **Rerun the experiments**: install [`env/`](env/README.md) (pinned packages,
+   exact model revisions) and follow each `experiments/<name>/README.md`. Data
+   from Hanna & Ameisen's model-planning repository is vendored under
+   [`third_party/`](third_party/hanna-ameisen-model-planning/SOURCE.md). Runs of
+   8B and larger models need a large-memory machine
+   ([`skills/mac-studio-remote`](skills/mac-studio-remote/SKILL.md)).
+
 ## Research record
 
 - `experiments/<name>/README.md` states the question, frozen design,
@@ -48,7 +79,10 @@ working draft goes under ignored `dist/working-draft/`.
   outcomes and summaries. See [research-record.md](docs/research-record.md).
 - `manuscript/figures/make_iclr_figures.py` regenerates manuscript figures from
   committed results; figure PNGs are also tracked, so paper builds do not need
-  model inference.
+  model inference. When a figure's inputs change on purpose, run
+  `bin/verify-paper --update-inputs` and commit the manifest with the figure.
+- When an edit changes a headline number, update its entry in
+  `manuscript/claims.py` in the same commit.
 - [Publishing workflow](docs/publishing.md) explains versioning and build
   provenance. [Open-source readiness](docs/open-source-readiness.md) lists the
   remaining checks before inviting external replication.

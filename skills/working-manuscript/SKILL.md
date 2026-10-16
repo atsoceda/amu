@@ -6,7 +6,7 @@ description: >-
   Use when editing, extending or rendering the live paper, or adding a figure or table.
 license: MIT
 metadata:
-  version: "2.0"
+  version: "2.1"
   updated: "2026-10-16"
 ---
 
@@ -150,3 +150,9 @@ and cleans up. For a fresh clone, `bin/check-paper-env` explains missing tools.
 3. Look at the pages: `pdftoppm -r 70 -png dist/working-draft/paper.pdf pg` and tile them
    into contact sheets; check figure legibility, float placement and table breaks.
 4. Check unresolved references: `pdftotext ... | grep -n "??\|@fig\|@tbl\|@sec"`.
+5. Verify figures and headline numbers against the committed results:
+   `PYTHON=/Users/anthony/miniconda3/bin/python bin/verify-paper`. If you changed a headline
+   number, update its claim in `manuscript/claims.py` (exact text, source, stated value) in the
+   same commit; if a figure's inputs changed on purpose, add `--update-inputs` and commit
+   `manuscript/figures/figure_inputs.json`. Never edit a claim just to make it pass: a
+   mismatch is either a text error or a stale summary, and the user decides which.

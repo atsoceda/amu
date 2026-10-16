@@ -1,0 +1,19 @@
+# Python packages used by the experiments, pinned to the versions on the
+# development Mac (Python 3.13.13, macOS, Apple Silicon / MPS), 2026-10-16.
+# Install into a fresh environment: python -m pip install -r env/requirements-research.txt
+# The Mac Studio environment (skills/mac-studio-remote) is recorded separately in
+# env/README.md once verified.
+torch==2.12.1
+transformers==4.57.3
+tokenizers==0.22.2
+safetensors==0.8.0
+accelerate==1.14.0
+huggingface_hub==0.36.2
+circuit-tracer==0.5.0
+nnsight==0.7.0
+transformer-lens==3.2.1
+einops==0.8.2
+numpy==2.5.0
+pandas==3.0.4
+matplotlib==3.11.1
+pyyaml==6.0.3

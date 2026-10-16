@@ -1,0 +1,16 @@
+{
+  "note": "Hugging Face repositories and exact revisions used by the experiments. Load with revision=<hash> (from_pretrained / snapshot_download). Revisions marked null are not yet recorded; read them from the machine that ran the experiment.",
+  "models": {
+    "google/gemma-3-270m": "9b0cfec892e2bc2afd938c98eabe4e4a7b1e0ca1",
+    "google/gemma-3-1b-pt": "fcf18a2a879aab110ca39f8bffbccd5d49d8eb29",
+    "Qwen/Qwen3-0.6B": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "Qwen/Qwen3-1.7B": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "Qwen/Qwen3-4B": "1cfa9a7208912126459214e8b04321603b3df60c"
+  },
+  "transcoders": {
+    "mwhanna/gemma-scope-2-270m-pt": "fada11860ac1d337c1e41e9da308798405b94c8e",
+    "google/gemma-scope-2-270m-pt": "b218cd5d69dc2fa71cff448b68d625e6c9702d49",
+    "google/gemma-scope-2-1b-pt": "b738dc06961818c011fb2e44a316352ca0f4e873"
+  },
+  "pending_remote": "Models run on the Mac Studio (Qwen3-8B, Qwen3-14B and any others used there) and the mwhanna/qwen3-*-transcoders repositories: record their revisions from the Mac Studio cache."
+}

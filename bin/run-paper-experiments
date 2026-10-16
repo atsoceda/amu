@@ -3,7 +3,7 @@
 # Usage: bin/run-paper-experiments
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PY=/Users/anthony/miniconda3/bin/python
+PY="${PYTHON:-python3}"
 cd "$ROOT"
 
 run_one() {
