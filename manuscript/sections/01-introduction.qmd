@@ -21,13 +21,13 @@ where plans are formed or can be steered [@lindsey2025biology; @hanna2026latent;
 @maar2026plan], but does not measure how much of a plan's effect takes each path to
 where it is used.
 
-![Route accounting on a rhyme plan. The paths by which a plan formed at the rhyme word
-of line 1 (where the donor state is written) reaches the position that predicts the
-rhyme, with the line-2 words held fixed. Widths are each path's measured share of
-persistence in Qwen3-32B with the chat prompt: most of the plan is read directly from the
-rhyme word, and relay through the hidden states of line 2 accounts for 1%. The couplet is one
-Qwen3-32B wrote (boxes are its tokens); with a donor plan for "tight" written in at "unseen", it
-wrote "Moonlight guides the traveler's flight" instead. Appendix @fig-overview-points gives, for every setting and model, the looked-up share and the share of relay or of an unsplit indirect path.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
+![Route accounting on a rhyme plan, in a couplet Qwen3-32B wrote (boxes are its tokens).
+Arrows are the paths by which the plan formed at the rhyme word of line 1, where the donor
+state is written, reaches the position that predicts the rhyme, with the line-2 words held
+fixed. Widths are each path's share of persistence (chat prompt). Most of the plan is read
+directly from the rhyme word, and relay through the hidden states of line 2 accounts for 1%.
+With a donor plan for "tight" written in at "unseen", the model wrote "Moonlight guides the
+traveler's flight". Appendix @fig-overview-points gives the looked-up and relayed shares for every setting and model.](manuscript/figures/iclr_fig1_overview.png){#fig-overview width=100% fig-pos="t"}
 
 We introduce **route accounting** (@sec-method). A donor's hidden states are written at
 the source positions, and the effect is measured where the information is used. Fixing
