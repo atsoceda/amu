@@ -36,22 +36,7 @@ import torch
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
-
-
-def boot(xs, n=10000, seed=20260925):
-    xs = [x for x in xs if x == x]
-    if not xs:
-        return None
-    rng = random.Random(seed)
-    bs = sorted(sum(rng.choices(xs, k=len(xs))) / len(xs) for _ in range(n))
-    return {"mean": sum(xs) / len(xs), "lo": bs[int(0.025 * n)], "hi": bs[int(0.975 * n) - 1], "n": len(xs)}
-
-
-def strip_last_word(line: str) -> str | None:
-    s = line.rstrip()
-    s = s.rstrip(".,;:!?\"'")
-    i = s.rstrip().rfind(" ")
-    return s[:i] if i > 0 else None
+from route_stats import boot, strip_last_word  # noqa: E402,F401  (re-exported for older imports)
 
 
 def main() -> None:
