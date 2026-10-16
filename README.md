@@ -11,7 +11,8 @@ Its PDF uses an ICLR-like *internal layout*; it is not under ICLR review.
 | --- | --- | --- | --- | --- |
 | Current working paper | Active; venue undecided | Run `bin/build-paper-version working`, then open `dist/working-draft/paper.pdf` | `paper.qmd`, `manuscript/` on `main` | `bin/build-paper-version working` |
 | ICLR 2027 deadline draft | Frozen **unsubmitted** milestone | [PDF](milestones/iclr-2027-deadline-unsubmitted/paper.pdf) and [record](milestones/iclr-2027-deadline-unsubmitted/README.md) | [Source tag](https://github.com/atsoceda/amu/tree/iclr-2027-deadline-unsubmitted) | `bin/build-paper-version iclr-2027-deadline-unsubmitted` |
-| NeurIPS 2026 workshop v35 | Frozen **submitted** paper | [PDF](submissions/neurips-2026-workshop-v35/paper.pdf) and [record](submissions/neurips-2026-workshop-v35/README.md) | [Source tag](https://github.com/atsoceda/amu/tree/neurips-2026-workshop-v35) | `bin/build-paper-version neurips-2026-workshop-v35` |
+| NeurIPS 2026 workshop camera-ready | **In preparation** (paper accepted) | Run `bin/build-paper-version neurips-2026-workshop-camera-ready`, then open `dist/version-builds/neurips-2026-workshop-camera-ready/paper.pdf` | Branch [`paper/neurips-workshop`](https://github.com/atsoceda/amu/tree/paper/neurips-workshop) (from the v35 tag; never merged into `main`) | `bin/build-paper-version neurips-2026-workshop-camera-ready` |
+| NeurIPS 2026 workshop v35 | Frozen **submitted** paper (accepted) | [PDF](submissions/neurips-2026-workshop-v35/paper.pdf) and [record](submissions/neurips-2026-workshop-v35/README.md) | [Source tag](https://github.com/atsoceda/amu/tree/neurips-2026-workshop-v35) | `bin/build-paper-version neurips-2026-workshop-v35` |
 
 A tag is a human-readable name for one frozen Git commit. Tags are not working
 branches (`git tag --list` shows them); the table above makes them visible so

@@ -58,8 +58,9 @@ exact historical artifacts. Working branches are not version archives.
 | Version | Status | Where it lives |
 | --- | --- | --- |
 | **NeurIPS 2026 workshop submission (v35)** | **Submitted and frozen.** Never edit or replace the archive. | [`submissions/neurips-2026-workshop-v35/`](submissions/neurips-2026-workshop-v35/) (exact submitted PDF, generated `.tex`, manifest, checksums). Source tag: `neurips-2026-workshop-v35`. |
+| **NeurIPS 2026 workshop camera-ready** | **In preparation; the paper was accepted.** | Branch `paper/neurips-workshop`, created from the v35 tag and never merged into `main`. Edit and render only there (`bin/render-paper neurips camera-ready`; see its `CAMERA-READY.md`). Preview from `main` with `bin/build-paper-version neurips-2026-workshop-camera-ready`. When uploaded: tag `neurips-2026-workshop-camera-ready` and archive the exact PDF under `submissions/` on `main`. |
 | **ICLR 2027 deadline draft** | **Not submitted; frozen milestone.** Never edit or replace the archive. | [`milestones/iclr-2027-deadline-unsubmitted/`](milestones/iclr-2027-deadline-unsubmitted/) (last local ICLR-formatted draft). Source tag: `iclr-2027-deadline-unsubmitted`. |
-| **Working paper** | **Active; venue undecided.** | Live [`paper.qmd`](paper.qmd) and [`manuscript/`](manuscript/) on `main`. Render with `bin/build-paper-version working`. |
+| **Working paper** | **Active; venue undecided** (another conference or a journal; ICLR is out). | Live [`paper.qmd`](paper.qmd) and [`manuscript/`](manuscript/) on `main`. Render with `bin/build-paper-version working`. |
 
 Rules:
 

@@ -2,13 +2,21 @@
   "schema_version": 1,
   "versions": {
     "neurips-2026-workshop-v35": {
-      "status": "submitted",
+      "status": "submitted and accepted (frozen as reviewed)",
       "source_tag": "neurips-2026-workshop-v35",
       "source_commit": "e7e13728a97ece92c141a0be5817ebac7e4f90ca",
       "render_target": "neurips",
       "render_mode": "submission",
       "archive": "submissions/neurips-2026-workshop-v35",
       "expected_tex_sha256": "fdef132e59a8d0148c99e36e3f3d2292bace48d7443281f0a2552d92fe4057ad"
+    },
+    "neurips-2026-workshop-camera-ready": {
+      "status": "camera-ready in preparation",
+      "source_branch": "paper/neurips-workshop",
+      "derived_from": "neurips-2026-workshop-v35",
+      "render_target": "neurips",
+      "render_mode": "camera-ready",
+      "note": "Built from the branch head until uploaded; then tag neurips-2026-workshop-camera-ready, archive under submissions/, and add source_tag, source_commit, archive and expected_tex_sha256 here."
     },
     "iclr-2027-deadline-unsubmitted": {
       "status": "unsubmitted milestone",
@@ -20,7 +28,7 @@
       "expected_tex_sha256": "34b3ab9f7108dcd4f5aa3fadbc5042bb31d63077dbfe18b8815237c1ecbd14cb"
     },
     "working": {
-      "status": "active working paper; venue undecided",
+      "status": "active working paper; venue undecided (not ICLR; another conference or a journal)",
       "render_target": "working",
       "render_mode": "draft"
     }

@@ -24,6 +24,36 @@ if [[ "$version" == "working" ]]; then
   exec "$root/bin/render-paper" working draft
 fi
 
+branch="$(python3 - "$root/paper-versions.json" "$version" <<'PY'
+import json
+import sys
+
+entry = json.load(open(sys.argv[1], encoding="utf-8"))["versions"].get(sys.argv[2], {})
+if "source_branch" in entry and "source_tag" not in entry:
+    print("\t".join((entry["source_branch"], entry["render_target"], entry["render_mode"])))
+PY
+)"
+if [[ -n "$branch" ]]; then
+  # A paper line still in preparation: build the branch head in a temporary worktree.
+  IFS=$'\t' read -r source_branch target mode <<< "$branch"
+  if ! git -C "$root" rev-parse --verify -q "refs/heads/$source_branch" >/dev/null; then
+    git -C "$root" fetch -q origin "$source_branch:$source_branch" || { echo "Missing branch $source_branch." >&2; exit 1; }
+  fi
+  temp_parent="$(mktemp -d "${TMPDIR:-/tmp}/amu-paper-version.XXXXXX")"
+  checkout="$temp_parent/checkout"
+  trap 'git -C "$root" worktree remove --force "$checkout" >/dev/null 2>&1 || true; rmdir "$temp_parent" >/dev/null 2>&1 || true' EXIT
+  git -C "$root" worktree add --detach "$checkout" "$source_branch" >/dev/null
+  mkdir -p "$checkout/.home"
+  if [[ -d "$root/.tools" ]]; then ln -s "$root/.tools" "$checkout/.tools"; fi
+  (cd "$checkout" && bin/render-paper "$target" "$mode")
+  output="$root/dist/version-builds/$version"
+  mkdir -p "$output"
+  cp "$checkout/dist/$target-$mode/paper.pdf" "$checkout/dist/$target-$mode/paper.tex" "$checkout/dist/$target-$mode/build-manifest.json" "$output/"
+  printf 'Built %s from branch %s at %s (in preparation; not a frozen version).\n' "$version" "$source_branch" "$(git -C "$root" rev-parse --short "$source_branch")"
+  printf 'PDF: %s/paper.pdf\n' "$output"
+  exit 0
+fi
+
 fields="$(python3 - "$root/paper-versions.json" "$version" <<'PY'
 import json
 import sys
