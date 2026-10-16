@@ -546,7 +546,7 @@ def fig2():
     bx.set_xticklabels([str(v) for v in xt])
     bx.set_ylim(-5, 82)
     bx.set_yticks([0, 20, 40, 60, 80])
-    bx.set_xlabel("parameters (B)")
+    bx.set_xlabel("parameters (B, log scale)")
     bx.set_ylabel("stored copy\n(% of persistence)")
     hs = [Line2D([], [], ls="none", marker="o", ms=4, mfc=COL["storage"], mec=COL["storage"]),
           Line2D([], [], ls="none", marker="o", ms=4, mfc="white", mec=COL["storage"])]
