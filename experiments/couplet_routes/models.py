@@ -14,8 +14,13 @@ so line 1 ends at an explicit newline boundary and line 2 is a plain continuatio
 from __future__ import annotations
 
 import re
+import sys
+from pathlib import Path
 
 import torch
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
+from model_refs import revision  # noqa: E402  (torch-free; reads env/models.json)
 
 END_OF_USER = ("<|im_end|>", "<end_of_turn>")
 PLAIN = "-plain"
@@ -49,10 +54,13 @@ def decoder_layers(m):
 
 
 def load(model: str, device: str = "mps"):
+    """Tokenizer, model and decoder layers. A model whose revision is recorded in
+    env/models.json loads at exactly that revision; others load the Hub's current one."""
     from transformers import AutoModelForCausalLM, AutoTokenizer
     FORMAT["plain"] = model.endswith(PLAIN)
-    tok = AutoTokenizer.from_pretrained(hf_id(model))
-    m = AutoModelForCausalLM.from_pretrained(hf_id(model), dtype=torch.bfloat16).to(device).eval()
+    pin = {"revision": revision(hf_id(model))} if revision(hf_id(model)) else {}
+    tok = AutoTokenizer.from_pretrained(hf_id(model), **pin)
+    m = AutoModelForCausalLM.from_pretrained(hf_id(model), dtype=torch.bfloat16, **pin).to(device).eval()
     return tok, m, decoder_layers(m)
 
 
