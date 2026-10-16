@@ -14,6 +14,7 @@ token by token because every fruit is a single token and the lists have equal le
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import random
 import sys
@@ -29,7 +30,10 @@ sys.path.insert(0, str(EXP.parents[0] / "derived_value_carry"))
 from chain_routes import F32Head  # noqa: E402
 from choice_routes import FRUITS, SEED, build  # noqa: E402
 from models import is_gemma, load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("hidden_choice_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 
 def main() -> None:
@@ -91,10 +95,7 @@ def main() -> None:
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "choice_outlist_rows.json").write_text(json.dumps(rows, indent=1))
-    s = {"model": a.model, "n": len(rows), **{k: boot([r[k] for r in rows]) for k in ("text_swap", "list_edit", "post_edit", "post_edit_others", "text_swap_others")},
-         "pick_specificity_post": boot([r["post_edit"] - r["post_edit_others"] for r in rows]),
-         "donor_rank_off_mean": sum(r["donor_rank_off"] for r in rows) / len(rows),
-         "donor_rank_post_mean": sum(r["donor_rank_post"] for r in rows) / len(rows)}
+    s = summaries.outlist_summary(rows, a.model)
     (out / "choice_outlist_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) if isinstance(v, dict) else v for k, v in s.items()}))
 

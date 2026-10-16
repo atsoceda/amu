@@ -12,6 +12,7 @@ digit) at the answer position. Output projection in float32 (see chain_routes.py
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import re
 import sys
@@ -26,7 +27,10 @@ sys.path.insert(0, str(EXP.parent / "couplet_routes"))
 from chain_routes import NAMES, F32Head, make_items  # noqa: E402
 from batching import generate_batch, run_edits  # noqa: E402
 from models import is_gemma, load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("derived_value_carry_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 INSTR = "Compute each variable in order, one per line, then state the value of {last}."
 
@@ -204,9 +208,7 @@ def main() -> None:
         (out_dir / f"written_K{K}_rows{rs}.json").write_text(json.dumps(rows, indent=1))
         (out_dir / f"written_K{K}_rows{rs}.partial.jsonl").unlink(missing_ok=True)
         u = [r for r in rows if r["usable"]]
-        summary["by_K"][K] = {"n": len(rows), "n_usable": len(u),
-                              "on_writes_donor_prev": sum(r["written_prev_on"] == r["donor_prev"] for r in rows) / len(rows),
-                              **{k: boot([r[k] for r in u]) for k in ("total", "emission", "persistence_t0", "persistence_t1")}}
+        summary["by_K"][K] = summaries.written_K_summary(rows)
         s = summary["by_K"][K]
         print(f"K={K}: usable {len(u)}/{len(rows)}; edited run writes donor values {s['on_writes_donor_prev']:.0%}; "
               + " ".join(f"{k} {s[k]['mean']:+.2f} [{s[k]['lo']:.2f}, {s[k]['hi']:.2f}]" for k in ("total", "emission", "persistence_t0", "persistence_t1") if s[k]))

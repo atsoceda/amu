@@ -9,6 +9,7 @@ with forward pre-hooks on each layer's token mixer (linear_attn or self_attn).
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import math
 import sys
@@ -22,7 +23,11 @@ CR = EXP.parents[0] / "couplet_routes"
 sys.path.insert(0, str(CR))
 from models import load  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+# Loaded by path: every experiment has a summaries.py and several experiment folders are on sys.path.
+_spec = importlib.util.spec_from_file_location("recurrent_carry_summaries", EXP / "summaries.py")
+summaries = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(summaries)
 
 
 def mixers(layers):
@@ -126,9 +131,7 @@ def main() -> None:
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "pilot_rows.json").write_text(json.dumps(out_rows, indent=1))
-    keys = ["persistence", "attention_only", "recurrent_only", "both_blocked", "retrieval", "relay"]
-    s = {"model": a.model, "n": len(out_rows), **{k: boot([x[k] for x in out_rows]) for k in keys},
-         "recurrent_share": boot([x["recurrent_only"] / x["persistence"] for x in out_rows if abs(x["persistence"]) > 1])}
+    s = summaries.pilot_summary(out_rows, a.model)
     (out / "pilot_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) if isinstance(v, dict) else v for k, v in s.items()}))
 
