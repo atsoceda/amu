@@ -34,7 +34,7 @@ paper status and repository workflow. Scientific state is unchanged since
    regenerates the eight figures into a temporary folder (all pixel-identical to the
    committed PNGs today), requires the exact input set in
    `manuscript/figures/figure_inputs.json` (113 read, 24 looked for but absent), and
-   checks 18 headline numbers with `manuscript/claims.py`.
+   checks 26 headline numbers with `manuscript/claims.py` (all pass, including every cell of the appendix hidden-choice table).
 3. **Full replication**: `env/` (pinned packages; Hugging Face revisions of the
    locally run models), vendored Hanna & Ameisen data in
    `third_party/hanna-ameisen-model-planning/` (4.3 MB, MIT, commit 993cff5, checksums),
@@ -42,12 +42,12 @@ paper status and repository workflow. Scientific state is unchanged since
 
 ## Open items for the authors
 
-- **Two headline numbers are off by one point** (`manuscript/claims.py`, reported as
-  OPEN): Section 5's "Gemma 4 31B 82 to 91%" computes as 81.4 to 90.7, and the
-  appendix's "0 to 7% at 14B and 32B" computes as −0.3 to 7.5 (Qwen3-32B animals rounds
-  to 8). The table's "0–40%" range, earlier suspected, does reproduce: it is pick
-  specificity from `choice_outlist_summary` (fruits) and
-  `choice_replicate_animals_summary`, not `choice_summary`.
+- **Corrected (render paper_66):** two hidden-choice shares had been divided after
+  rounding to two decimals. Qwen3-32B animals is 7.5% (now 8%, was 7%) and Gemma 4 31B
+  fruits is 81.4% (now 81%, was 82%), in the introduction table, Section 5 and the
+  appendix. The table's "0–40%" range reproduces: it is pick specificity from
+  `choice_outlist_summary` (fruits) and `choice_replicate_animals_summary`. The
+  NeurIPS v35 text contains neither number.
 - The figure script asks for 24 files that do not exist (for example
   `relay_boundary_summary.json` for several Qwen3-plain and small Gemma runs, and
   Qwen3.5-35B-A3B everywhere) and silently draws without them. The manifest freezes
@@ -62,6 +62,9 @@ paper status and repository workflow. Scientific state is unchanged since
   development Mac; replace with model id + revision from `env/models.json`.
 - Record the Mac Studio's model and transcoder revisions and both remote
   environments (`env/README.md`, "Not yet recorded") when the VPN is up.
+- Render numbering: the working paper's numbered PDFs continue from
+  `dist/iclr-submission/` (paper_65) into `dist/working-draft/` (paper_66 onward);
+  stray paper_1 and paper_2 there came from before the fix.
 - Public release (licence, history scan) is deferred until after camera-ready or
   the conference. `dist/` (210 MB locally, untracked) is disposable; its numbered
   PDFs are backed up on Google Drive.
