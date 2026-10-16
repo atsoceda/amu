@@ -43,10 +43,14 @@ def tracked(rel):
 
 def main(inv):
     s = sections(inv)
-    for k, v in s.get("host", []):
-        print(f"{k}: {v}")
+    for row in s.get("host", []):
+        print(f"{row[0]}: {' '.join(row[1:])}")
     groups = defaultdict(list)
-    for rel, size, mtime, digest in s.get("results", []):
+    for row in s.get("results", []):
+        if len(row) != 4:
+            print(f"unparsed result line: {row}")
+            continue
+        rel, size, mtime, digest = row
         local = REPO / rel
         if digest == "large":
             groups["large"].append((rel, size, mtime, ""))

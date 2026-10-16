@@ -88,9 +88,17 @@ paper status and repository workflow. Scientific state is unchanged since
 
 ## Remaining engineering
 
-- Record the Mac Studio's model and transcoder revisions (then the loader pins those
-  models too) and both remote environments (`env/README.md`) when SSH works; on
-  2026-10-16 the VPN was up (full-tunnel profile) but SSH timed out.
+- Mac Studio accounted for (2026-10-16, `inventory.sh` + `compare_inventory.py`): no job
+  running, main queue empty; all 657 result files there are committed here byte for
+  byte. The only file missing here, a 52-of-108-row checkpoint of the cut 32B full
+  variable-chain run, is now committed and recorded as a deviation. Of 145 logs, three
+  ended in errors: two were rerun successfully, and the failed Qwen3-4B written-chain
+  re-score is moot (the fixed parser parses all 200 stored generations identically; noted
+  in the README). The 13 parked jobs: 7 ran (results committed); the other 6 are exactly
+  the checks the appendix lists as not run. Model revisions of every remote model are in
+  `env/models.json` (so the loader now pins them), and both remote environments are in
+  `env/requirements-remote*.txt`. Remote disk: 758 GB free; the job folder holds 521 GB
+  of model cache, which can be pruned at the user's discretion.
 - Runners were compiled and imported with the new code; hidden_choice/choice_routes.py
   and derived_value_carry/chain_routes.py were also run end to end on Qwen3-0.6B
   (3 items; outputs deleted) and their fresh summaries matched `bin/resummarize`. The

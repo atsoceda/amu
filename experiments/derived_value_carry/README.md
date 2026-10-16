@@ -233,6 +233,12 @@ expected the number at the end of the line. Fixed (markdown characters ignored;
 identical parses on the earlier data) and all sizes re-scored from the stored
 generations (`--from-rows`, outputs `written_K*_rows_recut.json`, `written_summary_recut.json`).
 
+Correction (2026-10-16, from an inventory of the Mac Studio): Qwen3-4B was not re-scored.
+Its re-score job failed because its rows came from the laptop and were never on the Mac
+Studio. The fixed parser gives the same parse as the original on all 200 stored Qwen3-4B
+generations (K = 3 and K = 5, both conditions), so the committed Qwen3-4B written-chain
+results stand unchanged.
+
 Qwen3 - 14B - derived value - written chains, re-scored with the fixed parser (Mac Studio,
 `--from-rows`): identical to the first scoring (K = 3: 108/108 usable, emission +8.74 of
 +9.98, 88%; K = 5: 103/103, emission +8.00 of +9.62, 83%), as expected: 14B does not use
@@ -246,6 +252,11 @@ K = 5.
 
 Qwen3 - 1.7B - derived value - written chains (Mac Studio, 2026-09-26): K = 3 108/108 usable,
 emission +13.20 of +14.30 (92%); K = 5 103/103, emission +11.41 of +11.85 (96%).
+
+Deviation (recorded 2026-10-16, from an inventory of the Mac Studio): the full per-position
+32B variable-chain run stopped after 52 of 108 items at K = 1 (checkpoint committed as
+`results/Qwen3-32B/chain_K1_rows.partial.jsonl`) and was not resumed; only the block edit
+below was run to completion. No result from the partial run is reported.
 
 Qwen3 - 32B - derived value - variable chains (block only; 2026-09-26): accuracy 99 / 54 / 9% at
 K = 1 / 3 / 5; source-digit edit +16.5 / +10.1 / +5.2; post-v0 block +0.81 [0.61, 1.03] /

@@ -30,19 +30,19 @@ one metadata request to the Hub (a Mistral-tokenizer check) even when the files 
 cached, so `HF_HUB_OFFLINE=1` makes the load fail. Run online; the weights still come
 from the cache.
 
-## Not yet recorded
+## Mac Studio (large-memory machine)
 
-- **Models run on the large-memory machine** (Qwen3-8B to 32B, Qwen3.5, Gemma 3
-  12B and 27B, Gemma 4 31B) and their transcoders: revisions are marked as
-  pending in `models.json` until they are read from that machine's cache.
-- **That machine's two environments** (Python 3.9 with transformers 4.57, and
-  Python 3.12 with transformers 5.x for Qwen3.5 and Gemma 4; see
-  [`skills/mac-studio-remote`](../skills/mac-studio-remote/SKILL.md)): record
-  their `pip freeze` here as `requirements-remote.txt` and
-  `requirements-remote-next.txt`.
+Read from the machine on 2026-10-16:
 
-## Verifying without models
+- [`requirements-remote.txt`](requirements-remote.txt): the main environment (Python 3.9.6,
+  torch 2.8.0, transformers 4.57.6), which ran the Qwen3 and Gemma 3 jobs.
+- [`requirements-remote-next.txt`](requirements-remote-next.txt): the second environment
+  (Python 3.12.14, built with `uv`; torch 2.14.0, transformers 5.17.0), which ran Qwen3.5
+  and Gemma 4.
+- The revisions of every model run there are in `models.json`. The Qwen3.5 and Gemma 4
+  weights had been removed from that machine's cache; its records still name the revision
+  used. No transcoder repository is in that cache: the feature-card step streamed only the
+  parts it needed (`skills/hf-range-streaming`).
 
-`bin/verify-paper` needs only numpy and matplotlib: it regenerates the working
-paper's figures from the committed results and checks its headline numbers. See
-the root README.
+To account for remote work again (results not yet fetched, failed jobs, revisions), use
+`inventory.sh` and `compare_inventory.py` in `skills/mac-studio-remote/scripts/`.
