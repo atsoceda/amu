@@ -2,8 +2,17 @@
 set -euo pipefail
 
 target="${1:-neurips}"
-mode="${2:-submission}"
+mode="${2:-camera-ready}"
 profile="${target}-${mode}"
+
+# This branch (paper/neurips-workshop) is the camera-ready line of the accepted
+# NeurIPS 2026 workshop paper. Only the camera-ready profile may be rendered here;
+# the submitted version is frozen (tag neurips-2026-workshop-v35, archive on main).
+if [[ "$target" != "neurips" || "$mode" != "camera-ready" ]]; then
+  echo "On paper/neurips-workshop only 'bin/render-paper neurips camera-ready' is allowed." >&2
+  echo "The submitted v35 paper is frozen; rebuild it from main with bin/build-paper-version neurips-2026-workshop-v35." >&2
+  exit 1
+fi
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 lock="$root/.quarto-render.lock"
 

@@ -1,5 +1,8 @@
 # Agent guidance (AMU)
 
+> **Branch note (paper/neurips-workshop):** this branch is the camera-ready line of the accepted NeurIPS 2026 workshop paper. Read `CAMERA-READY.md` first. Render only with `bin/render-paper neurips camera-ready`. The current project instructions for everything else live in `AGENTS.md` on `main`.
+
+
 This repository uses **[Agent Skills](https://agentskills.io/specification)**-style skill folders under [`skills/`](skills/) so coding agents can reliably execute the three-phase [`circuit-tracer`](https://github.com/decoderesearch/circuit-tracer) workflow:
 
 1. **Attribution** — compute the attribution graph (features, errors, tokens, logits).
