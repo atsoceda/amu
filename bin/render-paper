@@ -5,18 +5,32 @@ target="${1:-working}"
 mode="${2:-draft}"
 profile="${target}-${mode}"
 
-if [[ "$target" != "working" || "$mode" != "draft" ]]; then
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Allowed from the live source: the working draft, and any profile registered in
+# paper-versions.json as in preparation on this branch (an entry with this
+# render_target and render_mode, no source_tag, and source_branch absent or main).
+allowed="$(python3 - "$root/paper-versions.json" "$target" "$mode" <<'PY'
+import json
+import sys
+
+versions = json.load(open(sys.argv[1], encoding="utf-8"))["versions"].values()
+ok = (sys.argv[2], sys.argv[3]) == ("working", "draft") or any(
+    v.get("render_target") == sys.argv[2] and v.get("render_mode") == sys.argv[3]
+    and "source_tag" not in v and v.get("source_branch", "main") == "main"
+    for v in versions)
+print("yes" if ok else "no")
+PY
+)"
+if [[ "$allowed" != "yes" ]]; then
   cat >&2 <<'MSG'
-The live manuscript is a venue-undecided working paper. The NeurIPS 2026
-workshop submission and the unsubmitted ICLR 2027 deadline draft are frozen.
-Do not render an old venue profile from the evolving source.
-Use: bin/build-paper-version working
-To rebuild a frozen version, run bin/build-paper-version <version>.
-See README.md for available versions.
+This profile is not registered for the live source. The NeurIPS 2026 workshop
+paper and the unsubmitted ICLR 2027 deadline draft are frozen; render them with
+bin/build-paper-version <version>. To prepare a new venue, register it in
+paper-versions.json first (see "Submitting the working paper" in AGENTS.md).
 MSG
   exit 1
 fi
-root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 lock="$root/.quarto-render.lock"
 
 export HOME="$root/.home"
@@ -68,8 +82,9 @@ fi
 numbered=""
 if [[ -f "$pdf" ]]; then
   n=0
-  # The working paper continues the numbering of its earlier output folder (paper_1 to paper_65).
-  for f in "$root/dist/$profile"/paper_*.pdf "$root/dist/iclr-submission"/paper_*.pdf; do
+  # One series for every render of main's manuscript, whatever the profile; it continues the
+  # working paper's earlier folder (paper_1 to paper_65 in dist/iclr-submission).
+  for f in "$root/dist/$profile"/paper_*.pdf "$root/dist/working-draft"/paper_*.pdf "$root/dist/iclr-submission"/paper_*.pdf; do
     [[ -e "$f" ]] || continue
     k="${f##*/paper_}"; k="${k%.pdf}"
     if [[ "$k" =~ ^[0-9]+$ ]] && (( k > n )); then n=$k; fi

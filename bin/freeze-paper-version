@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+# Freeze the exact paper you are about to submit (or a milestone) so it can be rebuilt later.
+#
+# Usage: bin/freeze-paper-version <version> [--milestone] [--note "<text>"]
+#   <version>  a name such as tmlr-2027-v1 or tmlr-2027-r1 (letters, digits, dots, hyphens).
+#              If paper-versions.json already has an in-preparation entry of that name, its
+#              render_target, render_mode and derived_from are used; otherwise the working draft.
+#   --milestone  archive under milestones/ (not submitted) instead of submissions/.
+#
+# Steps: require a clean checkout on main with the tag and archive folder unused; run
+# bin/verify-paper; render from HEAD; check the build manifest names HEAD and is clean;
+# copy PDF, TeX and manifest into the archive with SHA256SUMS and a README; tag HEAD;
+# record the version in paper-versions.json; commit the archive; rebuild the tag with
+# bin/build-paper-version to prove the TeX hash reproduces. Nothing is pushed: push
+# main and the tag afterwards (git push origin main <version>).
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$root"
+
+version="${1:-}"
+shift || true
+kind="submissions"
+note=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --milestone) kind="milestones" ;;
+    --note) note="$2"; shift ;;
+    *) echo "Unknown argument: $1" >&2; exit 1 ;;
+  esac
+  shift
+done
+if [[ ! "$version" =~ ^[a-z0-9][a-z0-9.-]*$ ]]; then
+  echo "Usage: bin/freeze-paper-version <version> [--milestone] [--note \"<text>\"]" >&2
+  exit 1
+fi
+
+fail() { echo "freeze-paper-version: $*" >&2; exit 1; }
+
+[[ "$(git rev-parse --abbrev-ref HEAD)" == "main" ]] || fail "run on main (the working paper's branch)."
+[[ -z "$(git status --porcelain --untracked-files=normal -- . ':!dist')" ]] || fail "commit or stash every change first; the frozen source must be a clean commit."
+git rev-parse -q --verify "refs/tags/$version" >/dev/null && fail "tag $version already exists."
+archive="$kind/$version"
+[[ ! -e "$archive" ]] || fail "$archive already exists."
+
+read -r target mode derived <<< "$(python3 - "$version" <<'PY'
+import json
+import sys
+
+entry = json.load(open("paper-versions.json", encoding="utf-8"))["versions"].get(sys.argv[1], {})
+if "source_tag" in entry:
+    sys.exit("already frozen")
+print(entry.get("render_target", "working"), entry.get("render_mode", "draft"), entry.get("derived_from", "-"))
+PY
+)"
+commit="$(git rev-parse HEAD)"
+echo "Freezing $version from $commit (profile $target-$mode) into $archive"
+
+echo "== Verify"
+bin/verify-paper
+
+echo "== Render"
+bin/render-paper "$target" "$mode"
+out="dist/$target-$mode"
+python3 - "$out/build-manifest.json" "$commit" <<'PY'
+import json
+import sys
+
+m = json.load(open(sys.argv[1]))
+if m["git_commit"] != sys.argv[2] or m["git_dirty"]:
+    sys.exit(f"render is not of clean HEAD: commit {m['git_commit']}, dirty {m['git_dirty']}")
+PY
+
+echo "== Archive"
+mkdir -p "$archive"
+cp "$out/paper.pdf" "$out/paper.tex" "$out/build-manifest.json" "$archive/"
+numbered="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1])).get("numbered_pdf", ""))' "$archive/build-manifest.json")"
+(cd "$archive" && shasum -a 256 paper.pdf paper.tex build-manifest.json > SHA256SUMS)
+tex_sha="$(awk '$2 == "paper.tex" {print $1}' "$archive/SHA256SUMS")"
+today="$(date +%Y-%m-%d)"
+status="submitted $today"
+[[ "$kind" == "milestones" ]] && status="unsubmitted milestone $today"
+cat > "$archive/README.md" <<EOF
+# $version: frozen ($status)
+
+Exact paper as frozen on $today. Do not edit, re-render into, or replace anything here.
+${note:+
+$note
+}
+| File | Origin |
+|---|---|
+| \`paper.pdf\` | \`bin/render-paper $target $mode\` at commit \`${commit:0:7}\` (numbered copy \`${numbered:-none}\`) |
+| \`paper.tex\` | Generated LaTeX for that build |
+| \`build-manifest.json\` | Its build manifest |
+
+Source: Git tag \`$version\` (commit \`$commit\`). \`bin/build-paper-version $version\`
+rebuilds it in a temporary worktree and checks that \`paper.tex\` reproduces byte for byte
+(\`SHA256SUMS\`); the rebuilt PDF differs only in embedded timestamps.
+EOF
+
+git tag -a "$version" "$commit" -m "Paper version $version ($status)"
+python3 - "$version" "$status" "$commit" "$target" "$mode" "$archive" "$tex_sha" "$derived" "$note" <<'PY'
+import json
+import sys
+
+version, status, commit, target, mode, archive, tex_sha, derived, note = sys.argv[1:]
+path = "paper-versions.json"
+data = json.load(open(path, encoding="utf-8"))
+entry = {"status": status, "source_tag": version, "source_commit": commit, "render_target": target,
+         "render_mode": mode, "archive": archive, "expected_tex_sha256": tex_sha}
+if derived != "-":
+    entry["derived_from"] = derived
+if note:
+    entry["note"] = note
+versions = data["versions"]
+working = versions.pop("working", None)
+versions[version] = entry  # replaces an in-preparation entry of the same name
+if working is not None:
+    versions["working"] = working  # keep the live paper last
+open(path, "w", encoding="utf-8").write(json.dumps(data, indent=2) + "\n")
+PY
+git add "$archive" paper-versions.json
+git commit -q -m "Archive $version ($status)
+
+Tag $version -> ${commit:0:7}; TeX SHA-256 $tex_sha."
+
+echo "== Prove the rebuild"
+bin/build-paper-version "$version"
+
+cat <<EOF
+
+Frozen $version. Upload exactly $archive/paper.pdf.
+Next: add a row for it to the version table in README.md (and AGENTS.md), commit, then
+  git push origin main $version
+EOF
