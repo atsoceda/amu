@@ -67,7 +67,7 @@ passes through the sentence is zero within its interval, and the rest of the pic
 presumably re-derived at the reveal from the visible list. In Qwen3-32B and the Qwen3.5
 hybrids the indirect path through the sentence is small but nonzero: at most 2% of the
 text swap, but one eighth to one fifth of the stored part. A sentence the model writes itself never names an item and has no measurable effect on
-the reveal (emission \(-0.01\) to \(+0.02\)).
+the reveal (emission \(-0.01\) to \(+0.02\) in the five models tested).
 
 **The stored signal is pick-specific and sits at predictable tokens.** In an out-of-list
 control, the donor's pick does not occur in the prompt, yet post-list donor states

@@ -143,6 +143,12 @@ def choice_through_sentence():
             for d in runs("hidden_choice", "choice_summary.json")}
 
 
+def choice_free_emission():
+    """Emission of the model's own sentence, in units of the reveal logit difference (not percent)."""
+    return {d: mean(load(f"hidden_choice/results/{d}/choice_free_summary.json")["emission"])
+            for d in runs("hidden_choice", "choice_free_summary.json")}
+
+
 def choice_stored(models):
     """Pick-specific stored share: post-list patch over the text swap, both as pick specificity.
     Fruits (out-of-list control) and animals (committed replication) for each model."""
@@ -195,6 +201,8 @@ CLAIMS = [
      recurrent_only, "range", (2, 4), {}),
     ("choice-through-sentence", "01-introduction.qmd", "at most 2% of its effect passes through",
      choice_through_sentence, "max", 2, {}),
+    ("choice-free-emission", "05-stress-tests.qmd", r"(emission \(-0.01\) to \(+0.02\) in the five models tested)",
+     choice_free_emission, "range", (-0.01, 0.02), {"decimals": 2, "count": 5}),
     ("choice-stored-range", "01-introduction.qmd", r"pick-specific information stored after the list: 0--40\%",
      lambda: choice_stored(QWEN3 + GEMMA3), "range", (0, 40), {"clamp": True}),
     ("choice-stored-gemma3", "05-stress-tests.qmd", "(Gemma 3 15 to 40%",
