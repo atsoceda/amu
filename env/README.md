@@ -13,11 +13,17 @@ Set up a fresh environment (any tool; for example):
 python3.13 -m venv .venv && .venv/bin/python -m pip install -r env/requirements-research.txt
 ```
 
-Load models at the recorded revision, for example
-`AutoModelForCausalLM.from_pretrained(name, revision=models["models"][name])`, so a
-later upload to the Hub cannot change a result. Several experiment configs still
-name a local snapshot folder on the development Mac (`model_snapshot`); the
-revision hash in that path is the same one recorded here.
+Code loads models at the recorded revision, so a later upload to the Hub cannot
+change a result. The route-accounting experiments go through
+`experiments/couplet_routes/models.py` (`load`, `pinned`); the older experiments'
+configs name models and transcoders as `hf:<org>/<name>@<revision>[/<subfolder>]`
+and repository files by repository-relative paths, resolved by
+[`experiments/lib/model_refs.py`](../experiments/lib/model_refs.py). Recorded model
+repositories are downloaded on first use; transcoder repositories hold many large
+weight sets and are never downloaded automatically (fetch the subfolder you need, for
+example with `skills/hf-range-streaming`). Result files written before 2026-10-16 may
+still record absolute paths from the development Mac; the revision hash in such a
+path is the one recorded here.
 
 ## Not yet recorded
 

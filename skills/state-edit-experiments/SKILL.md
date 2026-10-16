@@ -12,7 +12,7 @@ compatibility: >-
   PyTorch with MPS (Apple Silicon), transformers 4.57, the repo's
   experiments/couplet_routes/models.py and batching.py.
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # State-edit route experiments
@@ -39,10 +39,23 @@ rules: `docs/research-record.md`.
    `experiments/couplet_routes/checkpoint.py` (append each finished row; skip finished
    rows on restart). A stopped unchekpointed job loses everything (a 19-minute 32B chain
    run was lost this way on 2026-09-26). Test resume with `jobs/test_resume.sh`.
+6. **Summaries must be recomputable from the committed rows.** Put the summary
+   computation in a pure, torch-free function in `experiments/<exp>/summaries.py`
+   (bootstrap: `boot` from `couplet_routes/route_stats.py`; Python 3.9 compatible for
+   the remote machine), have the runner call it, and register it in that file's
+   `CHECKS` so `bin/resummarize` can compare the committed summary with one rebuilt
+   from the rows. Store in the rows everything the summary needs (for example the chain
+   lengths or distances requested). Load the module by file path under a unique name
+   (`importlib.util.spec_from_file_location("<exp>_summaries", EXP / "summaries.py")`):
+   several experiment folders are on `sys.path` and each has a `summaries.py`. Add
+   `summaries.py` and `route_stats.py` to the job's remote allowlist.
 
 ## Models and positions (`experiments/couplet_routes/models.py`)
 
-- `load(model)` handles Qwen3 (`Qwen/…`) and Gemma 3 (`google/…`). Gemma 3 4B-27B load
+- `load(model)` handles Qwen3 (`Qwen/…`) and Gemma 3 (`google/…`), at the revision
+  recorded in `env/models.json` when there is one (`pinned(repo_id)` gives the
+  `revision=` argument for direct `from_pretrained` calls). After a run on a new
+  model, record its revision there (`refs/main` in the machine's Hugging Face cache). Gemma 3 4B-27B load
   as `Gemma3ForConditionalGeneration`; decoder layers are
   `model.language_model.layers` (`decoder_layers` finds them). Gemma has no
   `/no_think`; its end of turn is `<end_of_turn>`.

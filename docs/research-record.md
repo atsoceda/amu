@@ -33,7 +33,8 @@ file they come from), so they can be regenerated.
 ## 2. What to commit and what to regenerate
 
 - **Commit:** scripts, configs, per-item rows (`*_rows.json`/`.jsonl`), summaries
-  (`*_summary.json`), selections, and small tensors needed to reproduce an
+  (`*_summary.json`, recomputable from the rows by `bin/resummarize`; see the
+  state-edit-experiments skill), selections, and small tensors needed to reproduce an
   intervention exactly (for example selected decoder rows).
 - **Do not commit** re-derivable intermediates: feature cards, safetensors headers,
   captured activations (`*mlp_in*.pt`), model or transcoder caches. They are

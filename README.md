@@ -69,8 +69,10 @@ Three levels, from cheapest to complete:
    of result files recorded in `manuscript/figures/figure_inputs.json`,
    compares each figure pixel by pixel with the committed PNG, and checks the
    headline numbers in the text against the summaries
-   ([`manuscript/claims.py`](manuscript/claims.py)). Known discrepancies awaiting
-   an author decision are reported as `OPEN`.
+   ([`manuscript/claims.py`](manuscript/claims.py)), and recomputes every
+   experiment summary from its committed rows (`bin/resummarize`, torch-free,
+   a few minutes; `--quick` skips it). Known discrepancies awaiting an author
+   decision are reported as `OPEN`.
 3. **Rerun the experiments**: install [`env/`](env/README.md) (pinned packages,
    exact model revisions) and follow each `experiments/<name>/README.md`. Data
    from Hanna & Ameisen's model-planning repository is vendored under

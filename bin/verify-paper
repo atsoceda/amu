@@ -3,9 +3,12 @@
 #   1. regenerate every figure into a temporary folder and require the exact set of input
 #      files in manuscript/figures/figure_inputs.json (none missing, none new);
 #   2. compare each regenerated figure with the committed PNG, pixel by pixel;
-#   3. check the headline numbers in the text (manuscript/claims.py).
+#   3. check the headline numbers in the text (manuscript/claims.py);
+#   4. recompute every experiment summary from its committed rows (bin/resummarize, a few
+#      minutes; skipped with --quick).
 # Frozen versions are verified by bin/build-paper-version <version>, which checks the TeX hash.
-# Usage: bin/verify-paper [--update-inputs]   (after an intended change to the figure inputs)
+# Usage: bin/verify-paper [--quick] [--update-inputs]   (--update-inputs after an intended
+#        change to the figure inputs)
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -18,7 +21,16 @@ trap 'rm -rf "$tmp"' EXIT
 echo "== Figures"
 AMU_FIG_OUT="$tmp/figures" AMU_FIG_INPUTS="$tmp/figure_inputs.json" \
   "$py" manuscript/figures/make_iclr_figures.py >/dev/null
-if [[ "${1:-}" == "--update-inputs" ]]; then
+quick=false
+update=false
+for arg in "$@"; do
+  case "$arg" in
+    --quick) quick=true ;;
+    --update-inputs) update=true ;;
+    *) echo "Unknown argument: $arg" >&2; exit 1 ;;
+  esac
+done
+if $update; then
   cp "$tmp/figure_inputs.json" manuscript/figures/figure_inputs.json
   echo "Updated manuscript/figures/figure_inputs.json; review and commit it."
 fi
@@ -62,6 +74,12 @@ PY
 
 echo "== Claims"
 "$py" manuscript/claims.py || status=1
+
+if ! $quick; then
+  echo "== Summaries from rows"
+  "$py" bin/resummarize > "$tmp/resummarize.txt" || status=1
+  grep -v '^ok ' "$tmp/resummarize.txt" || true
+fi
 
 if [[ $status -eq 0 ]]; then echo "Paper verified."; else echo "Verification FAILED." >&2; fi
 exit $status
