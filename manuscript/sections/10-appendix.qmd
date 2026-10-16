@@ -102,7 +102,7 @@ Experiment & Decision rule or prediction & Committed & Outcome\\
 \midrule
 Relay grows with scale (couplets) & (1) the indirect share rises with log size; (2) the rise comes from relay (line-2 positions before the last three); (3) replicates in Gemma 3 & d4622d2, 09-25 23:11 & (1) holds, +6.2 pp/decade [2.8, 9.6]; (2) fails, so relay does not grow\\
 Plain-format couplets & direct retrieval dominates; stored copy large in Gemma 3 27B, small in Qwen3-32B; the Qwen3 copy grows with scale & 34c0cbd, 09-25 23:59 & all three hold\\
-Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 09-26 02:45 & reported for 17 runs\\
+Necessity split & report necessity with sufficiency; Shapley summary & f201b42, 09-26 02:45 & reported for 18 runs\\
 Induction control & indirect path $>$80\% of persistence, direct retrieval near zero & 01c27f1, 09-26 03:18 & clean in Qwen3 1.7--14B; partial in Gemma 3 12B/27B (indirect 53--55\%) and Qwen3-32B, Qwen3.5-9B, Qwen3.5-27B (direct retrieval 31\%, 10\%, 17\%)\\
 Sums & computation-position edit must move the answer (efficacy gate) & 7f5a9a6, 09-25 22:05 & gate fails at every size; downstream block $\le$6.4\%\\
 Variable chains & indirect path through the chain $\ge$25\% of persistence (positive-control outcome) & 59af2bc, 09-26 00:23 & not observed: downstream block $\le$4.9\%\\

@@ -18,7 +18,7 @@ account for 13 to 25% of the total effect; the rest is persistence.
 persistence in all 21 runs. Direct retrieval of the rhyme word accounts for 76 to 95% of
 persistence in every Qwen3 configuration (1.7B to 32B, chat and plain, instruct and base)
 and 80 to 95% in Gemma 3 1B to 12B. The late lookup accounts for 1 to 13%. Relay through the rest of the generated line is at most 1% of persistence in every run, by sufficiency in
-all 21 and by necessity in the 17 where it was measured. Before running the larger
+all 21 and by necessity in the 18 where it was measured. Before running the larger
 models we committed two criteria for the claim that relay grows with scale: the indirect
 share must rise with log parameter count across Qwen3 1.7B to 32B, and the rise must come
 from relay. The first holds (6.2 percentage points per decade, 95% interval [2.8, 9.6]);

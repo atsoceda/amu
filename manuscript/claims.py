@@ -54,6 +54,13 @@ def couplet_relay():
             for d in runs("couplet_routes", "step34_summary.json", "relay_positions_summary.json")}
 
 
+def couplet_relay_necessity():
+    return {d: pct(load(f"couplet_routes/results/{d}/relay_necessity_summary.json")["all"]["necessity_early"],
+                   load(f"couplet_routes/results/{d}/relay_necessity_summary.json")["all"]["d_persistence_p0"])
+            for d in runs("couplet_routes", "step34_summary.json", "relay_positions_summary.json",
+                          "relay_necessity_summary.json")}
+
+
 def couplet_retrieval(exclude=("gemma-3-27b-it-plain",)):
     out = {}
     for d in runs("couplet_routes", "step34_summary.json", "relay_positions_summary.json"):
@@ -163,6 +170,8 @@ QWEN3 = ("Qwen3-8B", "Qwen3-14B", "Qwen3-32B")
 CLAIMS = [
     ("couplet-relay-21-runs", "01-introduction.qmd", "relay accounts for at most 1% in all 21 runs",
      couplet_relay, "bound", 1, {"count": 21}),
+    ("couplet-relay-necessity-18", "03-look-it-up.qmd", "by necessity in the 18 where it was measured",
+     couplet_relay_necessity, "bound", 1, {"count": 18}),
     ("couplet-rhyme-word", "01-introduction.qmd", "68 to 95% of persistence in all but one configuration",
      couplet_retrieval, "range", (68, 95), {}),
     ("couplet-exception", "01-introduction.qmd",
