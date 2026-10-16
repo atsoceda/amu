@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+version="${1:-}"
+if [[ "$version" == "--list" && "${2:-}" == "" ]]; then
+  python3 - "$root/paper-versions.json" <<'PY'
+import json
+import sys
+
+for name, entry in json.load(open(sys.argv[1], encoding="utf-8"))["versions"].items():
+    print(f"{name}\t{entry['status']}")
+PY
+  exit 0
+fi
+if [[ -z "$version" || "${2:-}" != "" ]]; then
+  echo "Usage: bin/build-paper-version <version> | --list" >&2
+  exit 2
+fi
+
+"$root/bin/check-paper-env" >/dev/null
+
+if [[ "$version" == "working" ]]; then
+  exec "$root/bin/render-paper" working draft
+fi
+
+fields="$(python3 - "$root/paper-versions.json" "$version" <<'PY'
+import json
+import sys
+
+versions = json.load(open(sys.argv[1], encoding="utf-8"))["versions"]
+entry = versions.get(sys.argv[2])
+if not entry or "source_tag" not in entry:
+    sys.exit(f"Unknown frozen paper version: {sys.argv[2]}")
+print("\t".join(entry[key] for key in (
+    "source_tag", "source_commit", "render_target", "render_mode", "archive", "expected_tex_sha256"
+)))
+PY
+)"
+IFS=$'\t' read -r source_tag source_commit target mode archive expected_tex_sha <<< "$fields"
+
+resolved_commit="$(git -C "$root" rev-parse --verify "refs/tags/$source_tag^{commit}" 2>/dev/null || true)"
+if [[ -z "$resolved_commit" ]]; then
+  echo "Missing source tag $source_tag. Fetch tags before rebuilding." >&2
+  exit 1
+fi
+if [[ "$resolved_commit" != "$source_commit" ]]; then
+  echo "Source tag $source_tag points to $resolved_commit, expected $source_commit; refusing to build." >&2
+  exit 1
+fi
+
+archive_dir="$root/$archive"
+if [[ ! -f "$archive_dir/SHA256SUMS" ]]; then
+  echo "Missing archived artifact/checksums: $archive_dir" >&2
+  exit 1
+fi
+(cd "$archive_dir" && shasum -a 256 -c SHA256SUMS)
+
+temp_parent="$(mktemp -d "${TMPDIR:-/tmp}/amu-paper-version.XXXXXX")"
+checkout="$temp_parent/checkout"
+cleanup() {
+  if [[ -d "$checkout" ]]; then
+    git -C "$root" worktree remove --force "$checkout" >/dev/null 2>&1 || true
+  fi
+  rmdir "$temp_parent" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT
+
+git -C "$root" worktree add --detach "$checkout" "$source_tag" >/dev/null
+mkdir -p "$checkout/.home"
+if [[ -d "$root/.tools" ]]; then
+  ln -s "$root/.tools" "$checkout/.tools"
+fi
+
+(cd "$checkout" && bin/render-paper "$target" "$mode")
+
+built="$checkout/dist/$target-$mode"
+output="$root/dist/version-builds/$version"
+mkdir -p "$output"
+cp "$built/paper.pdf" "$built/paper.tex" "$built/build-manifest.json" "$output/"
+actual_tex_sha="$(shasum -a 256 "$output/paper.tex" | awk '{print $1}')"
+if [[ "$actual_tex_sha" != "$expected_tex_sha" ]]; then
+  printf 'TeX mismatch for %s\nexpected: %s\nobserved: %s\n' "$version" "$expected_tex_sha" "$actual_tex_sha" >&2
+  printf 'Inspect the rebuilt outputs at %s\n' "$output" >&2
+  exit 1
+fi
+
+printf 'Verified %s: source tag %s, archived checksums valid, regenerated TeX SHA-256 matches.\n' "$version" "$source_tag"
+printf 'Rebuilt PDF (timestamps may differ): %s/paper.pdf\n' "$output"
+printf 'Exact historical PDF: %s/paper.pdf\n' "$archive_dir"

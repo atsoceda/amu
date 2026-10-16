@@ -1,23 +1,21 @@
 ---
-name: iclr-manuscript
+name: working-manuscript
 description: >-
-  Writes, renders and checks the AMU ICLR 2027 manuscript (paper.qmd, manuscript/sections,
-  manuscript/figures/make_iclr_figures.py): Quarto-to-LaTeX pitfalls, figures drawn at printed
-  size from committed results, float tables, pending-result markers, page counting and visual
-  checks. Use when editing, extending or rendering the paper, or when adding a figure or table.
+  Writes, renders and checks the AMU working paper using an internal ICLR-like layout
+  (paper.qmd, manuscript/sections, manuscript/figures/make_iclr_figures.py).
+  Use when editing, extending or rendering the live paper, or adding a figure or table.
 license: MIT
-compatibility: >-
-  Repo-local Quarto 1.9 and latexmk via bin/render-paper; /Users/anthony/miniconda3/bin/python
-  with matplotlib for figures; poppler (pdfinfo, pdftotext, pdftoppm) for checks.
 metadata:
-  version: "1.12"
-  updated: "2026-09-26"
+  version: "2.0"
+  updated: "2026-10-16"
 ---
 
-# ICLR manuscript workflow
+# Working-manuscript workflow
 
-The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) is frozen
-(see `AGENTS.md`). Never render the `neurips` target.
+The live source is a venue-undecided working paper. The NeurIPS workshop
+submission and unsubmitted ICLR deadline draft are frozen (see `AGENTS.md`
+and the root README). Never render `neurips` or `iclr` from the live source;
+use `bin/build-paper-version <version>` to rebuild a frozen tag.
 
 ## Structure
 
@@ -32,10 +30,10 @@ The live source is the ICLR 2027 extension; the NeurIPS workshop version (v35) i
 
 ## Figures
 
-- `manuscript/figures/make_iclr_figures.py` builds every ICLR figure from committed results
+- `manuscript/figures/make_iclr_figures.py` builds the live paper's figures from committed results
   and skips pending runs, so re-run it after each sync:
   `/Users/anthony/miniconda3/bin/python manuscript/figures/make_iclr_figures.py`.
-- Draw at printed size: ICLR text width is 5.5 in (`W` in the script). A figure drawn at
+- Draw at printed size: the working ICLR-like text width is 5.5 in (`W` in the script). A figure drawn at
   7 in and scaled down shrinks 7 pt text to 5.5 pt; keep fonts at 6 to 7.5 pt at 5.5 in.
 - Glyphs such as ⟨ ⟩ ↵ are missing from Arial: set `font.family` to the list
   `["Arial", "DejaVu Sans"]` (a `font.sans-serif` list does not trigger fallback), and
@@ -129,37 +127,26 @@ things and the paper needed "early relay" and glosses of "carry"):
 
 ## Render and check
 
-Render from the checkout that already has the real `.tools` directory, normally
-`/Users/anthony/repos/amu`. The command is `bin/render-paper iclr submission`.
+Render the live source from the checkout that already has the real `.tools`
+directory, normally `/Users/anthony/repos/amu`. The command is
+`bin/build-paper-version working`.
 Quarto 1.9.38 is `.tools/quarto/bin/quarto` and latexmk is `.tools/bin/latexmk`.
 Fonts are vendored in `_extensions/texmf`. Do not download Quarto, latexmk, or a
 TeX tree, and do not `rm` `.tools`.
 
-`.tools/` and `.home/` are gitignored local installs, so a new worktree does not
-have them. Do not create a worktree just to render. If a worktree already exists,
-link from inside that worktree only:
+`.tools/` and `.home/` are gitignored local installs. Do not make ad hoc
+worktrees just to render a frozen paper: `bin/build-paper-version` creates an
+isolated worktree, stages tool access inside it, checks the archived TeX hash,
+and cleans up. For a fresh clone, `bin/check-paper-env` explains missing tools.
 
-```bash
-ln -s /Users/anthony/repos/amu/.tools .tools
-ln -s /Users/anthony/repos/amu/.home .home
-```
-
-Never run those in the main checkout, and never copy the worktree's `.tools`
-symlink back onto `/Users/anthony/repos/amu/.tools`. That replaces the install
-with a symlink to itself. `.gitignore` lists `.tools/`, which ignores a directory
-and does not ignore a symlink, so a broken symlink shows up as an untracked file:
-do not commit it. If `.tools/quarto/bin/quarto` is not an executable file, stop
-and tell the user.
-
-1. `bin/render-paper iclr submission` (outputs in `dist/iclr-submission/`). Every render
+1. `bin/build-paper-version working` (outputs in `dist/working-draft/`). Every render
    also writes a numbered copy, `paper_<N>.pdf` (N = highest existing number + 1; the user's
    rule, 2026-09-26: numbered versions are easier to distribute). Never overwrite or delete an
    earlier number; quote the number when sending a render to the user.
-2. Pages: `pdfinfo dist/iclr-submission/paper.pdf`; find where the main text ends (the
-   AI use statement follows the discussion) with `pdftotext -f N -l N`. ICLR allows 9 pages
-   of main text at submission; report the count, do not cut text to fit (`AGENTS.md`)
-   unless the user asks. When they do, move detail to the appendix (unlimited at ICLR)
-   rather than delete it, and state each result once in the main text.
-3. Look at the pages: `pdftoppm -r 70 -png dist/iclr-submission/paper.pdf pg` and tile them
+2. Pages: `pdfinfo dist/working-draft/paper.pdf`; find where the main text ends (the
+   AI use statement follows the discussion) with `pdftotext -f N -l N`. Report the
+   count, but do not apply an ICLR page limit while the venue is undecided or
+   cut text to fit unless the user asks. State each result once in the main text.
+3. Look at the pages: `pdftoppm -r 70 -png dist/working-draft/paper.pdf pg` and tile them
    into contact sheets; check figure legibility, float placement and table breaks.
 4. Check unresolved references: `pdftotext ... | grep -n "??\|@fig\|@tbl\|@sec"`.

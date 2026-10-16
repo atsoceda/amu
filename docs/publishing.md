@@ -1,50 +1,78 @@
-# Publishing Workflow
+# Paper versions and publishing
 
 This repository uses Quarto as the manuscript controller and LaTeX as the PDF
-backend. Source text lives in `paper.qmd` and `manuscript/sections/`; generated
-LaTeX and PDFs are build artifacts.
+backend. The root [README](../README.md) is the reader-facing version index;
+`paper-versions.json` is the machine-readable rebuild registry. The live source
+is `paper.qmd` plus `manuscript/`. Historical source is preserved by annotated
+Git tags, not by keeping permanent research branches.
 
 ## Versions
 
-- **NeurIPS 2026 workshop submission (v35): frozen.** The submitted PDF,
-  generated `.tex`, manifest and checksums are in
-  `submissions/neurips-2026-workshop-v35/` (read-only). Its source is Git tag
-  `neurips-2026-workshop-v35`. Do not render the `neurips` target from the live
-  source; rebuild the workshop version only from the tag, in a separate worktree.
-- **ICLR 2027 main track: active.** The live source is the ICLR extension.
+- **NeurIPS 2026 workshop v35: submitted and frozen.** The exact PDF, generated
+  TeX, original manifest and checksums are in
+  `submissions/neurips-2026-workshop-v35/`. Source tag:
+  `neurips-2026-workshop-v35`.
+- **ICLR 2027 deadline draft: not submitted and frozen.** Its last local PDF,
+  generated TeX, original manifest and checksums are in
+  `milestones/iclr-2027-deadline-unsubmitted/`. Source tag:
+  `iclr-2027-deadline-unsubmitted`.
+- **Working paper: venue undecided.** The current source is on `main`, rendered
+  with an internal ICLR-like layout but no claim of ICLR review.
+
+Do not edit frozen archive files. The historical manifests are preserved as
+original records, including any `git_dirty` status. The version builder checks
+each archive's SHA-256 and compares the tagged-source rebuild's TeX hash with
+the archived TeX; a rebuilt PDF may differ in embedded timestamps.
 
 ## Build
 
 ```bash
-bin/render-paper iclr submission
-bin/render-paper iclr camera-ready
+bin/check-paper-env
+bin/build-paper-version neurips-2026-workshop-v35
+bin/build-paper-version iclr-2027-deadline-unsubmitted
+bin/build-paper-version working
 ```
 
-The `iclr` profiles use the official ICLR 2027 files vendored unmodified under
-`_extensions/iclr/`. Fonts the style requires (Helvetica, Courier) come from TeX
-Live packages vendored under `_extensions/texmf/fonts/`, which the render script
-exposes via `TEXMFHOME`; the `.bst` is exposed to BibTeX as
-`_extensions/texmf/bibtex/bst/iclr2027conference.bst` (a symlink, because Quarto
-escapes underscores in `biblio-style`). The `icml` and `neurips` profiles remain
-for reference and for rebuilding the tagged workshop version.
+`bin/build-paper-version` renders frozen source tags in isolated temporary Git
+worktrees, without switching or modifying your current branch. It copies rebuilt
+outputs to ignored `dist/version-builds/<version>/`. The `working` target renders
+the live source to ignored `dist/working-draft/`. `bin/render-paper neurips` and
+`bin/render-paper iclr` are intentionally blocked from the live source; the
+tagged historical scripts still know how to render those profiles.
 
-Each build writes a PDF, generated `.tex`, and `build-manifest.json` under
-`dist/<target>-<mode>/`.
-Every build also writes a numbered copy of the PDF, `paper_<N>.pdf`, for
-distribution (the manifest records it as `numbered_pdf`).
+The working profile loads the unmodified ICLR 2027 style under
+`_extensions/iclr/`, then replaces its visible "under review" language using
+`_extensions/working-paper/header-draft.tex`. This preserves the familiar layout
+but is not an official venue submission build. The fonts and bibliography style
+are vendored under `_extensions/texmf/` and `_extensions/iclr/` respectively.
+When a new venue is chosen, add or validate its own official target.
+
+Each working build writes a PDF, generated TeX, manifest, and an additional
+numbered PDF under `dist/working-draft/`. Frozen builds produce temporary
+numbered PDFs only inside their isolated worktrees; the exact historical PDFs
+remain in the archive folders.
 
 ## Local Tools
 
-The first setup uses a no-admin Quarto CLI under `.tools/quarto` and a vendored
-CTAN `latexmk` script under `.tools/bin`. These paths are ignored by Git.
+The development machine has Quarto 1.9.38 under `.tools/quarto` and latexmk 4.88
+under `.tools/bin`; both are gitignored. On a fresh clone, install matching
+Quarto and a TeX Live/MacTeX distribution with latexmk, pdflatex and bibtex,
+then run `bin/check-paper-env`. The builder can use installed system commands
+when `.tools/` is absent. The repository does not yet pin a full redistributable
+TeX environment; see [open-source readiness](open-source-readiness.md).
 
-Quarto is run with `HOME=.home` so its cache stays inside the repository's
-ignored local state rather than `~/Library/Caches`.
+Quarto is run with `HOME=.home` so its cache stays inside the checkout's ignored
+local state rather than `~/Library/Caches`. Temporary tagged worktrees receive
+their own `.home`; the builder removes them after a successful or failed render.
 
 ## Editing Rules
 
-- Edit `.qmd` source files and `manuscript/references.bib`.
+- Edit live `.qmd` source files and `manuscript/references.bib` only for the
+  working paper. Historical changes require a new version, never archive edits.
 - Do not edit generated `.tex` files.
 - Keep all figure and table paths relative to the repository.
 - Vendor official conference `.sty`, `.cls`, and `.bst` files under
   `_extensions/<venue>/` before relying on a target for submission.
+- After a real submission, tag its clean source commit and archive the exact
+  PDF, TeX, manifest and checksums under `submissions/`. For an unsubmitted
+  checkpoint use `milestones/`. Update `paper-versions.json` and the root README.

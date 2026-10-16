@@ -1,4 +1,10 @@
-# ICLR 2027 Extension Assets
+# ICLR 2027 layout assets
+
+The ICLR 2027 deadline draft was **not submitted**. Its last local PDF is frozen
+under `milestones/iclr-2027-deadline-unsubmitted/`, with source tag
+`iclr-2027-deadline-unsubmitted`. The live paper has no chosen venue; its
+internal layout loads these official files without changing them, then
+replaces the visible ICLR review claims in `_extensions/working-paper/`.
 
 Official ICLR 2027 LaTeX template files, copied unmodified from
 https://github.com/ICLR/Master-Template/tree/master/iclr2027 (downloaded

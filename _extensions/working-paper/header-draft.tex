@@ -1,0 +1,10 @@
+% Internal working-paper layout. The official ICLR style remains unmodified.
+% Its geometry, type and bibliography style are reused, but review claims are removed.
+\pdfmapfile{+uhv.map}\pdfmapfile{+ucr.map}
+\usepackage{_extensions/iclr/iclr2027_conference,times}
+\input{_extensions/iclr/math_commands.tex}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@maketitle}{Under review as a conference paper at ICLR 2027}{Working paper --- venue to be determined}{}{\PackageError{amu-working-paper}{Could not replace ICLR review header}{Check the vendored style file.}}
+\patchcmd{\@maketitle}{Paper under double-blind review}{Unsubmitted research draft}{}{\PackageError{amu-working-paper}{Could not replace ICLR review status}{Check the vendored style file.}}
+\makeatother

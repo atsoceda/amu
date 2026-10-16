@@ -56,7 +56,9 @@ which machine produced them. Intermediates stay on the Mac Studio. See
 - **Merge into `main` at each milestone** (a completed model size, a completed
   experiment, or before any manuscript work), so `main` always reflects the
   current state. Delete merged branches locally and on GitHub.
-- Frozen submissions are protected by tags and `submissions/`, not by branches.
+- Frozen submitted papers are protected by tags and `submissions/`, not by
+  branches. Unsubmitted deadline checkpoints use tags and `milestones/`.
+  `paper-versions.json` and the root README expose both without branch browsing.
 
 ## 5. State of the project
 
@@ -73,3 +75,16 @@ which machine produced them. Intermediates stay on the Mac Studio. See
 
 State the result, not just the action: model, key numbers with intervals, and
 the reading. A reader of `git log` should be able to follow the findings.
+
+## 7. Paper versions
+
+- Keep the live manuscript on `main`; do not duplicate `paper.qmd` or
+  `manuscript/` for each venue. Name each frozen source commit with an annotated
+  tag and list it in `paper-versions.json` and the root README.
+- Preserve exact submitted PDFs under `submissions/` and unsubmitted snapshots
+  under `milestones/`, with generated TeX, the original build manifest, hashes
+  and a README that states the status without ambiguity. Do not edit archives.
+- Rebuild with `bin/build-paper-version <version>`. It must leave the current
+  checkout alone and compare regenerated TeX against the archived hash.
+- Before public release, check the fresh-clone build, licenses, personal data,
+  and frozen-result recomputation in `docs/open-source-readiness.md`.

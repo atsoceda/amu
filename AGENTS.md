@@ -18,7 +18,7 @@ Validated commands and defaults live in each skill's `SKILL.md` and `references/
 | Large-file streaming (supporting) | [`skills/hf-range-streaming/`](skills/hf-range-streaming/) | A job needs parts of very large Hugging Face files (transcoders, feature cards) that do not fit on disk, or range downloads are slow or return HTTP 429. |
 | State-edit experiments (supporting) | [`skills/state-edit-experiments/`](skills/state-edit-experiments/) | Writing or running route-accounting experiments that patch hidden states (couplets, derived value, positive control, hidden choice), including batching and known pitfalls. |
 | Remote compute (supporting) | [`skills/mac-studio-remote/`](skills/mac-studio-remote/) | An experiment needs more memory than the local M1, or the user asks to use the Mac Studio. Never copy the codebase there; send only allowlisted scripts and data. |
-| Manuscript (supporting) | [`skills/iclr-manuscript/`](skills/iclr-manuscript/) | Editing, extending or rendering the ICLR 2027 paper, or adding a figure or table to it. |
+| Manuscript (supporting) | [`skills/working-manuscript/`](skills/working-manuscript/) | Editing, extending or rendering the active venue-undecided paper, or adding a figure or table to it. |
 
 Each skill’s **`SKILL.md`** follows the Agent Skills format (YAML frontmatter + Markdown body). Optional detail lives under `references/` inside each skill.
 
@@ -51,35 +51,35 @@ control, recurrent carry, relay distance.
 
 ## Paper versions and venue targets
 
-There are two versions of the paper. Keep them separate.
+The root [`README.md`](README.md) and [`paper-versions.json`](paper-versions.json)
+index the paper versions. Tags name frozen source commits; archive folders hold
+exact historical artifacts. Working branches are not version archives.
 
 | Version | Status | Where it lives |
 | --- | --- | --- |
-| **NeurIPS 2026 workshop submission (v35)** | **Submitted and frozen.** Never edit, re-render, or replace it. | [`submissions/neurips-2026-workshop-v35/`](submissions/neurips-2026-workshop-v35/) (exact submitted PDF, generated `.tex`, manifest, `SHA256SUMS`, all read-only). Source: Git tag `neurips-2026-workshop-v35` (commit `e7e1372`). |
-| **ICLR 2027 main-track extension** | **Active target.** All new manuscript work goes here. | The live source: [`paper.qmd`](paper.qmd), [`manuscript/sections/`](manuscript/sections/), [`manuscript/references.bib`](manuscript/references.bib). Render target `iclr`. |
+| **NeurIPS 2026 workshop submission (v35)** | **Submitted and frozen.** Never edit or replace the archive. | [`submissions/neurips-2026-workshop-v35/`](submissions/neurips-2026-workshop-v35/) (exact submitted PDF, generated `.tex`, manifest, checksums). Source tag: `neurips-2026-workshop-v35`. |
+| **ICLR 2027 deadline draft** | **Not submitted; frozen milestone.** Never edit or replace the archive. | [`milestones/iclr-2027-deadline-unsubmitted/`](milestones/iclr-2027-deadline-unsubmitted/) (last local ICLR-formatted draft). Source tag: `iclr-2027-deadline-unsubmitted`. |
+| **Working paper** | **Active; venue undecided.** | Live [`paper.qmd`](paper.qmd) and [`manuscript/`](manuscript/) on `main`. Render with `bin/build-paper-version working`. |
 
 Rules:
 
-- Treat any request to update, extend, or render "the paper" as ICLR 2027 work
-  unless the user explicitly names the NeurIPS workshop version.
-- Do **not** run `bin/render-paper neurips ...`. The live source is now the ICLR
-  extension, so a NeurIPS render would write ICLR content into
-  `dist/neurips-submission/` and blur the two versions. To inspect the submitted
-  version, open the frozen folder. To rebuild it, check out the tag in a separate
-  worktree and render there; that reproduces the frozen `paper.tex` byte for byte.
-  Link `.tools` and `.home` only from inside that worktree, never over the real
-  directories (`skills/iclr-manuscript`).
+- Treat an unqualified request to update, extend, or render "the paper" as work
+  on the venue-undecided manuscript. Do not infer a new target venue.
+- Do **not** run `bin/render-paper neurips ...` or `bin/render-paper iclr ...`
+  from the live source. To rebuild either frozen version without switching the
+  current checkout, use `bin/build-paper-version <version>`; it renders the
+  tagged source in a temporary worktree and verifies the archived TeX hash.
 - Do not edit `dist/neurips-submission/`. Its versioned PDFs (`...-v14.pdf`
   through `...-v35.pdf`) are historical drafts; v35 is the submitted one.
 - Do not shorten, condense, or delete manuscript text just to meet a page limit.
   Write corrections at the length the content needs, and report any page-limit
   overflow to the user.
 
-## ICLR paper drafting and publishing
+## Working-paper drafting and publishing
 
 When the user gives a high-level request such as "generate an updated draft of
 our results as a complete paper," treat it as a manuscript editing plus render
-task for the ICLR 2027 main track, not as a DOCX or Google Docs task.
+task for the venue-undecided working paper, not as a DOCX or Google Docs task.
 
 Use the Quarto publishing workflow:
 
@@ -88,28 +88,27 @@ Use the Quarto publishing workflow:
    - Body sections: [`manuscript/sections/`](manuscript/sections/)
    - Bibliography: [`manuscript/references.bib`](manuscript/references.bib)
    - Figures/assets: use repository-relative paths. Figures are tracked in Git,
-     so the tag preserves the NeurIPS versions; updating a figure for ICLR is fine.
+     so source tags preserve their historical versions.
 2. Do **not** edit generated files under `dist/` or root-level generated
    `paper.tex` files. Generated `.tex` is an output artifact, not the source of truth.
 3. Render with:
 
    ```bash
-   bin/render-paper iclr submission
+   bin/build-paper-version working
    ```
 
-   Outputs go to `dist/iclr-submission/` (`paper.pdf`, `paper.tex`,
-   `build-manifest.json`); camera-ready builds use `iclr camera-ready`.
-4. The `iclr` profiles use the official, unmodified ICLR 2027 style files
-   vendored under [`_extensions/iclr/`](_extensions/iclr/) (see its README).
-   The Helvetica and Courier fonts the style needs are vendored in the
-   repo-local TeX tree `_extensions/texmf/`, which `bin/render-paper` sets as
-   `TEXMFHOME`. ICLR 2027 allows **9 pages of main text** at submission (10 for
-   rebuttal/camera-ready), with unlimited pages for references and appendix.
-   Report the main-text page count to the user; do not trim text to fit.
-5. The manuscript still contains NeurIPS-specific material (for example the
-   NeurIPS paper checklist and checklist notes in the appendix). Adapt these to
-   ICLR requirements as part of the extension, never by editing the frozen copy.
-6. Before reporting completion, verify that the render command succeeds and
+   Outputs go to `dist/working-draft/` (`paper.pdf`, `paper.tex`,
+   `build-manifest.json`).
+4. The working profile reuses ICLR 2027 geometry and bibliography but replaces
+   its visible review-status claims. It is **not an official submission
+   template**. The official files under [`_extensions/iclr/`](_extensions/iclr/)
+   stay unmodified for rebuilding the ICLR deadline milestone. Fonts are
+   vendored in `_extensions/texmf/`. Report the main-text page count, but do
+   not apply a venue page limit until the next venue is selected.
+5. When a venue is selected, add or validate its official style, checklist,
+   anonymity and page-limit requirements. Do not retroactively alter frozen
+   versions.
+6. Before reporting completion, verify that the working render succeeds and
    mention any remaining manuscript TODOs.
 
 The helper script configures repo-local Quarto, `latexmk`, and TeX search paths.
@@ -117,7 +116,7 @@ Do not install a new TeX environment or create a Python virtual environment
 unless the render fails for a reason that cannot be solved with the vendored
 workflow. Additional publishing notes live in [`docs/publishing.md`](docs/publishing.md).
 The vendored NeurIPS 2026 assets remain under [`_extensions/neurips/`](_extensions/neurips/)
-only so that the tagged workshop version can be rebuilt.
+so that its tagged workshop version can be rebuilt.
 
 ## Google Drive / `.gdoc` workflow
 
@@ -225,6 +224,6 @@ skills-ref validate ./skills/circuit-graph-export
 skills-ref validate ./skills/circuit-graph-viewer
 skills-ref validate ./skills/hf-range-streaming
 skills-ref validate ./skills/mac-studio-remote
-skills-ref validate ./skills/iclr-manuscript
+skills-ref validate ./skills/working-manuscript
 skills-ref validate ./skills/state-edit-experiments
 ```

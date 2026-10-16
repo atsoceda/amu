@@ -1,0 +1,16 @@
+project:
+  output-dir: dist/working-draft
+
+format:
+  pdf:
+    keep-tex: true
+    pdf-engine: latexmk
+    documentclass: article
+    biblio-style: iclr2027conference
+    include-in-header:
+      - _extensions/working-paper/header-draft.tex
+
+params:
+  target: working
+  mode: draft
+  anonymous: true

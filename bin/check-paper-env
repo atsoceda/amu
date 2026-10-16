@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+missing=0
+
+check() {
+  local name="$1" local_path="$2"
+  if [[ -n "$local_path" && -x "$local_path" ]]; then
+    printf '%-10s %s\n' "$name" "$local_path"
+  elif command -v "$name" >/dev/null 2>&1; then
+    printf '%-10s %s\n' "$name" "$(command -v "$name")"
+  else
+    printf '%-10s MISSING\n' "$name" >&2
+    missing=1
+  fi
+}
+
+check quarto "$root/.tools/quarto/bin/quarto"
+check latexmk "$root/.tools/bin/latexmk"
+check pdflatex ""
+check bibtex ""
+check python3 ""
+check git ""
+
+if (( missing )); then
+  cat >&2 <<'MSG'
+Install Quarto 1.9.38 and a TeX Live/MacTeX distribution with latexmk,
+pdflatex and bibtex, then rerun this check. The repository includes its venue
+style files and paper-specific fonts, but not the full TeX distribution.
+MSG
+  exit 1
+fi
+
+printf '\nQuarto: '
+if [[ -x "$root/.tools/quarto/bin/quarto" ]]; then
+  "$root/.tools/quarto/bin/quarto" --version
+else
+  quarto --version
+fi
+printf 'latexmk: '
+if [[ -x "$root/.tools/bin/latexmk" ]]; then
+  "$root/.tools/bin/latexmk" -v | head -n 1
+else
+  latexmk -v | head -n 1
+fi
