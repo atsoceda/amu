@@ -26,7 +26,8 @@ import torch
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from step2_state_edit import HA, last_word, prompt_ids, rhymes  # noqa: E402
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+from summaries import step6_summary  # noqa: E402
 
 
 def main() -> None:
@@ -141,15 +142,7 @@ def main() -> None:
               + (f"total {rec['d_total']:+.2f} emis {rec['d_emission']:+.2f} ret {rec['d_retrieval']:+.2f} rel {rec['d_relay']:+.2f}" if "d_total" in rec else ""), flush=True)
     out = EXP / "results" / a.model
     (out / "step6_rows.json").write_text(json.dumps(rows, indent=1))
-    keys = ["d_total", "d_emission", "d_persistence", "d_persistence_p0", "d_retrieval", "d_relay"]
-    sub = [r for r in rows if "d_total" in r]
-    s = {"model": a.model, "n": len(rows), "n_routes": len(sub), "elapsed_sec": time.time() - t0,
-         "on_rhymes_donor": sum(r["on_rhymes_donor"] for r in rows) / len(rows),
-         "on_rhymes_orig": sum(r["on_rhymes_orig"] for r in rows) / len(rows),
-         "authors_steered_rhymes_donor": sum(r["authors_steered_rhymes_donor"] for r in rows) / len(rows),
-         "routes": {k: boot([r[k] for r in sub]) for k in keys},
-         "routes_edit_succeeded": {k: boot([r[k] for r in sub if r["on_rhymes_donor"]]) for k in keys},
-         "additivity_gap_p0": boot([r["d_persistence_p0"] - r["d_retrieval"] - r["d_relay"] for r in sub])}
+    s = step6_summary(a.model, rows, time.time() - t0)
     (out / "step6_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: s[k] for k in ("n", "n_routes", "on_rhymes_donor", "on_rhymes_orig", "authors_steered_rhymes_donor")}, indent=1))
     print({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) for k, v in s["routes"].items() if v})

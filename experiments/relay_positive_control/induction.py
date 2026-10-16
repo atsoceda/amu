@@ -21,8 +21,9 @@ import torch
 
 EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP.parent / "couplet_routes"))
+sys.path.insert(0, str(EXP))  # this folder's summaries.py ahead of couplet_routes/summaries.py
 from models import load  # noqa: E402
-from step34_routes import boot  # noqa: E402
+from summaries import induction_summary  # noqa: E402
 
 SEED, L, K, N = 20260925, 24, 11, 100
 
@@ -103,9 +104,7 @@ def main() -> None:
     out = EXP / "results" / a.model
     out.mkdir(parents=True, exist_ok=True)
     (out / "induction_rows.json").write_text(json.dumps(rows, indent=1))
-    s = {"model": a.model, "n": len(rows), "mean_p_clean": sum(r["p_clean"] for r in rows) / len(rows),
-         **{k: boot([r[k] for r in rows]) for k in ("persistence", "retrieval", "relay", "key_relay")},
-         "relay_share": boot([r["relay"] / r["persistence"] for r in rows if r["persistence"] < -1])}
+    s = induction_summary(a.model, rows)
     (out / "induction_summary.json").write_text(json.dumps(s, indent=1))
     print(json.dumps({k: (round(v["mean"], 3) if isinstance(v, dict) else v) for k, v in s.items()}, indent=1))
 

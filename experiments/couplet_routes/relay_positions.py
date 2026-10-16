@@ -34,7 +34,8 @@ EXP = Path(__file__).resolve().parent
 sys.path.insert(0, str(EXP))
 from models import load  # noqa: E402
 from step2_state_edit import prompt_ids, rhymes  # noqa: E402
-from step34_routes import boot, strip_last_word  # noqa: E402
+from step34_routes import strip_last_word  # noqa: E402
+from summaries import relay_positions_summary  # noqa: E402
 
 LATE = 3
 
@@ -99,10 +100,7 @@ def main() -> None:
               f"late {rec['d_relay_late']:+.2f} far {rec['d_relay_far']:+.2f} (tail {rec['d_relay_tail']:+.2f} early {rec['d_relay_early']:+.2f})", flush=True)
     out = EXP / "results" / a.model
     (out / f"relay_positions_rows{tag}.json").write_text(json.dumps(out_rows, indent=1))
-    keys = ["d_persistence_p0"] + [f"d_relay_{g}" for g in ("all", "late", "far", "tail", "early")]
-    s = {"model": a.model, "n": len(out_rows), "late_positions": LATE, "elapsed_sec": time.time() - t0,
-         "all": {k: boot([x[k] for x in out_rows]) for k in keys},
-         "far_minus_late": boot([x["d_relay_far"] - x["d_relay_late"] for x in out_rows])}
+    s = relay_positions_summary(a.model, out_rows, LATE, time.time() - t0)
     (out / f"relay_positions_summary{tag}.json").write_text(json.dumps(s, indent=1))
     print({k: (round(v["mean"], 2), round(v["lo"], 2), round(v["hi"], 2)) for k, v in s["all"].items() if v})
 
