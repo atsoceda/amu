@@ -1,5 +1,7 @@
 # Handoff: paper versions and venue-undecided working draft (2026-10-16)
 
+Superseded by `2026-10-16-repo-structure-and-reproducibility.md` (same day).
+
 Supersedes the publishing-status portions of
 `2026-09-26-iclr-submission-state.md` and
 `2026-09-26-overnight-scale-and-boundary.md`. The latter remains the historical
