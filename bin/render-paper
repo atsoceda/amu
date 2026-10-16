@@ -68,7 +68,8 @@ fi
 numbered=""
 if [[ -f "$pdf" ]]; then
   n=0
-  for f in "$root/dist/$profile"/paper_*.pdf; do
+  # The working paper continues the numbering of its earlier output folder (paper_1 to paper_65).
+  for f in "$root/dist/$profile"/paper_*.pdf "$root/dist/iclr-submission"/paper_*.pdf; do
     [[ -e "$f" ]] || continue
     k="${f##*/paper_}"; k="${k%.pdf}"
     if [[ "$k" =~ ^[0-9]+$ ]] && (( k > n )); then n=$k; fi

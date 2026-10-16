@@ -781,10 +781,10 @@ The families diverge with scale.
 - In Gemma the stored share grows with generation and size. Gemma 3 stores 18 to 22%
   at 4B, 15 to 18% at 12B and 31 to 40% at 27B. The committed monotone prediction (4B
   below 12B below 27B) is only partly supported, because 4B stores more than 12B.
-  Gemma 4 31B stores 82% (fruits; \(+2.93\) [2.56, 3.30]) and 91% (animals; \(+4.44\)
+  Gemma 4 31B stores 81% (fruits; \(+2.93\) [2.56, 3.30]) and 91% (animals; \(+4.44\)
   [3.97, 4.93]) of the text swap's pick specificity. For Gemma 4 the path split was
   not run.
-- In Qwen3 the stored share shrinks with scale: 10 to 15% at 8B, 0 to 7% at 14B and 32B.
+- In Qwen3 the stored share shrinks with scale: 10 to 15% at 8B, 0 to 8% at 14B and 32B.
   Qwen3.5-27B stores 3 to 4%. In larger Qwen models the pick is mostly not reproduced by
 the post-list patch.
 
@@ -799,12 +799,12 @@ Model & Fruits (post hoc) & Animals (committed before the result)\\
 \midrule
 Qwen3-8B & 10\% & 15\%\\
 Qwen3-14B & 0\% & 3\%\\
-Qwen3-32B & 2\% & 7\%\\
+Qwen3-32B & 2\% & 8\%\\
 Qwen3.5-27B & 3\% & 4\%\\
 Gemma 3 4B & 18\% & 22\%\\
 Gemma 3 12B & 15\% & 18\%\\
 Gemma 3 27B & 31\% & 40\%\\
-Gemma 4 31B & 82\% & 91\%\\
+Gemma 4 31B & 81\% & 91\%\\
 \bottomrule
 \end{tabular}
 ```

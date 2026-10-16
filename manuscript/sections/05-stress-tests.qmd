@@ -75,8 +75,8 @@ raise it more than the donor's other items. This *pick specificity*, added post 
 fruits, was then committed as the primary measure of a replication with animals, which
 confirms it in both families; a donor with the same pick leaves the preference unchanged.
 The stored share is larger in Gemma and grows with generation (Gemma 3 15 to 40%, Gemma 4
-31B 82 to 91% of the text swap's pick specificity), and it shrinks with scale in Qwen3 (0
-to 7% at 14B and 32B). Per-token necessity places it on two or three low-content tokens: the periods that
+31B 81 to 91% of the text swap's pick specificity), and it shrinks with scale in Qwen3 (0
+to 8% at 14B and 32B). Per-token necessity places it on two or three low-content tokens: the periods that
 close the list or the instruction, and one function word or possessive token of the
 instruction (in Gemma 3 27B, 77% on *the* in "about the weather"). When the instruction
 is reworded, the site moves with the wording at 4B, 12B and 27B (Appendix @fig-sites).
